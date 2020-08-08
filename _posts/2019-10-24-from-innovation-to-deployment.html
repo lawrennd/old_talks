@@ -23,8 +23,8 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
-<script src="/talks/figure-magnify.js"></script>
-<script src="/talks/figure-animate.js"></script>
+
+
     
 <div id="modal-frame" class="modal">
   <span class="close" onclick="closeMagnify()">&times;</span>
@@ -67,7 +67,7 @@ categories:
 </div>
 </div>
 <div id="safe-boda-system-magnify" class="magnify" onclick="magnifyFigure(&#39;safe-boda-system&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="safe-boda-system-caption" class="caption-frame">
 <p>Figure: SafeBoda is a ride allocation system for Boda Boda drivers. Let’s imagine the capabilities we need for such an AI system.</p>
@@ -93,7 +93,7 @@ categories:
 </object>
 </div>
 <div id="ride-allocation-system-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-allocation-system&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ride-allocation-system-caption" class="caption-frame">
 <p>Figure: Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.</p>
@@ -137,7 +137,7 @@ categories:
 </iframe>
 </div>
 <div id="peppercorn-siri-magnify" class="magnify" onclick="magnifyFigure(&#39;peppercorn-siri&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="peppercorn-siri-caption" class="caption-frame">
 <p>Figure: A peppercorn is a system design failure which is not a bug, but a conformance to design specification that causes problems when the system is deployed in the real world with mischevious and adversarial actors.</p>
@@ -208,7 +208,7 @@ categories:
 </object>
 </div>
 <div id="hypothetical-prices-magnify" class="magnify" onclick="magnifyFigure(&#39;hypothetical-prices&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="hypothetical-prices-caption" class="caption-frame">
 <p>Figure: Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure</p>
@@ -239,7 +239,7 @@ categories:
 </object>
 </div>
 <div id="ride-share-service-soa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-soa&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ride-share-service-soa-caption" class="caption-frame">
 <p>Figure: Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.</p>
@@ -252,7 +252,7 @@ categories:
 </object>
 </div>
 <div id="ride-share-service-doa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ride-share-service-doa-caption" class="caption-frame">
 <p>Figure: Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.</p>
@@ -268,7 +268,7 @@ categories:
 </object>
 </div>
 <div id="ride-share-service-doa-hypothetical-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa-hypothetical&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ride-share-service-doa-hypothetical-caption" class="caption-frame">
 <p>Figure: Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.</p>
@@ -299,7 +299,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="statistical-emulation-1-caption" class="caption-frame">
 <p>Figure: Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
@@ -312,7 +312,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-2-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-2&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="statistical-emulation-2-caption" class="caption-frame">
 <p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
@@ -325,7 +325,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="statistical-emulation-5-caption" class="caption-frame">
 <p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
@@ -337,7 +337,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-6-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-6&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="statistical-emulation-6-caption" class="caption-frame">
 <p>Figure: In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..</p>
@@ -353,7 +353,7 @@ categories:
 </object>
 </div>
 <div id="ml-system-downstream-pedestrain-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-pedestrain&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ml-system-downstream-pedestrain-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -383,7 +383,7 @@ domain.-->
 </object>
 </div>
 <div id="ml-system-downstream-pedestrain-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-pedestrain&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ml-system-downstream-pedestrain-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -395,7 +395,7 @@ domain.-->
 </object>
 </div>
 <div id="ml-system-downstream-pedestrain-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-pedestrain&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="ml-system-downstream-pedestrain-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>

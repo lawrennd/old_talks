@@ -1,6 +1,24 @@
 ---
 layout: post
 ---
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="{{ "/assets/js/figure-magnify.js" | relative_url }}"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <div class="post">
 
   <article class="post-content">

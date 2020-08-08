@@ -25,8 +25,8 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
-<script src="/talks/figure-magnify.js"></script>
-<script src="/talks/figure-animate.js"></script>
+
+
     
 <div id="modal-frame" class="modal">
   <span class="close" onclick="closeMagnify()">&times;</span>
@@ -56,7 +56,7 @@ categories:
 </div>
 </div>
 <div id="cosmic-microwave-background-magnify" class="magnify" onclick="magnifyFigure(&#39;cosmic-microwave-background&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="cosmic-microwave-background-caption" class="caption-frame">
 <p>Figure: The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.</p>
@@ -69,7 +69,7 @@ categories:
 </div>
 </div>
 <div id="modern-universe-non-linear-function-magnify" class="magnify" onclick="magnifyFigure(&#39;modern-universe-non-linear-function&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="modern-universe-non-linear-function-caption" class="caption-frame">
 <p>Figure: What we observe today is some non-linear function of the cosmic microwave background.</p>
@@ -84,7 +84,7 @@ categories:
 </div>
 </div>
 <div id="sparse-gp-comic-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-gp-comic&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="sparse-gp-comic-caption" class="caption-frame">
 <p>Figure: In recent years, approximations for Gaussian process models haven't been the most fashionable approach to machine learning. Image credit: Kai Arulkumaran</p>
@@ -218,7 +218,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="sparse-demo-full-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-demo-full-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="sparse-demo-full-gp-caption" class="caption-frame">
 <p>Figure: Full Gaussian process fitted to the data set.</p>
@@ -244,7 +244,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="sparse-demo-constrained-inducing-6-unlearned-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-demo-constrained-inducing-6-unlearned-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="sparse-demo-constrained-inducing-6-unlearned-gp-caption" class="caption-frame">
 <p>Figure: Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.</p>
@@ -263,7 +263,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="sparse-demo-constrained-inducing-6-learned-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-demo-constrained-inducing-6-learned-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="sparse-demo-constrained-inducing-6-learned-gp-caption" class="caption-frame">
 <p>Figure: Gaussian process fitted with inducing variables fixed and parameters optimized</p>
@@ -283,7 +283,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="sparse-demo-unconstrained-inducing-6-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-demo-unconstrained-inducing-6-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="sparse-demo-unconstrained-inducing-6-gp-caption" class="caption-frame">
 <p>Figure: Gaussian process fitted with location of inducing variables and parameters both optimized</p>
@@ -309,7 +309,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="sparse-demo-sparse-inducing-8-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-demo-sparse-inducing-8&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="sparse-demo-sparse-inducing-8-caption" class="caption-frame">
 <p>Figure: Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.</p>
@@ -337,7 +337,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 </div>
 <div id="house-price-country-magnify" class="magnify" onclick="magnifyFigure(&#39;house-price-country&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="house-price-country-caption" class="caption-frame">
 <p>Figure: House prices across the UK are now easily available. <a href="http://landregistry.data.gov.uk/" class="uri">http://landregistry.data.gov.uk/</a></p>
@@ -353,7 +353,7 @@ Proxy for index of deprivation?
 </div>
 </div>
 <div id="house-price-peak-district-magnify" class="magnify" onclick="magnifyFigure(&#39;house-price-peak-district&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="house-price-peak-district-caption" class="caption-frame">
 <p>Figure: Zooming in on house prices across the UK's Peak District shows different areas of wealth. Could these house prices be used, e.g., as a proxy for the <a href="https://en.wikipedia.org/wiki/Multiple_deprivation_index">Index of Multiple Deprivation</a>. Or are such indices merely intermediate indices for the real measures we're interested in?</p>
@@ -377,7 +377,7 @@ Proxy for index of deprivation?
 </div>
 </div>
 <div id="gps-for-big-data-magnify" class="magnify" onclick="magnifyFigure(&#39;gps-for-big-data&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="gps-for-big-data-caption" class="caption-frame">
 <p>Figure: We can now take advantage of modern variational scaling techniques such as stochastic variational inference to fit Gaussian processes to very large data sets. <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a></p>
@@ -403,7 +403,7 @@ Proxy for index of deprivation?
 </div>
 </div>
 <div id="svi-gps-for-big-data-magnify" class="magnify" onclick="magnifyFigure(&#39;svi-gps-for-big-data&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="svi-gps-for-big-data-caption" class="caption-frame">
 <p>Figure: New approaches to scaling Gaussian processes bring the potential to model these indices and others directly. <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a></p>
@@ -428,7 +428,7 @@ Proxy for index of deprivation?
 </object>
 </div>
 <div id="deep-neural-network-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-neural-network&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-neural-network-caption" class="caption-frame">
 <p>Figure: A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.</p>
@@ -456,7 +456,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="low-rank-mapping-magnify" class="magnify" onclick="magnifyFigure(&#39;low-rank-mapping&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="low-rank-mapping-caption" class="caption-frame">
 <p>Figure: Pictorial representation of the low rank form of the matrix <span class="math inline">$\mappingMatrix$</span>.</p>
@@ -469,7 +469,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="deep-nn-bottleneck-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-bottleneck&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-nn-bottleneck-caption" class="caption-frame">
 <p>Figure: Inserting the bottleneck layers introduces a new set of variables.</p>
@@ -513,7 +513,7 @@ $$</span><br /></p>
 </div>
 </div>
 <div id="deep-face-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-face&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-face-caption" class="caption-frame">
 <p>Figure: The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
@@ -528,7 +528,7 @@ $$</span><br /></p>
 </div>
 </div>
 <div id="early-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;early-pinball&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="early-pinball-caption" class="caption-frame">
 <p>Figure: Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</p>
@@ -550,7 +550,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="pinball-initialization-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-initialization&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="pinball-initialization-caption" class="caption-frame">
 <p>Figure: At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</p>
@@ -562,7 +562,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="pinball-trained-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-trained&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="pinball-trained-caption" class="caption-frame">
 <p>Figure: After learning the pins are now in the right place to bring the balls to the correct decisions.</p>
@@ -584,7 +584,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="deep-markov-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-markov&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-markov-caption" class="caption-frame">
 <p>Figure: Probabilistically the deep Gaussian process can be represented as a Markov chain.</p>
@@ -596,7 +596,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="deep-markov-vertical-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-markov-vertical&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-markov-vertical-caption" class="caption-frame">
 <p>Figure: More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.</p>
@@ -614,7 +614,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="deep-markov-vertical-side-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-markov-vertical-side&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-markov-vertical-side-caption" class="caption-frame">
 <p>Figure: More generally we aren't constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.</p>
@@ -628,7 +628,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="nonlinear-mapping-3d-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;nonlinear-mapping-3d-plot&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="nonlinear-mapping-3d-plot-caption" class="caption-frame">
 <p>Figure: A two dimensional grid mapped into three dimensions to form a two dimensional manifold.</p>
@@ -640,7 +640,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="non-linear-mapping-2d-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;non-linear-mapping-2d-plot&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="non-linear-mapping-2d-plot-caption" class="caption-frame">
 <p>Figure: A one dimensional line mapped into two dimensions by two separate independent functions. Each point can be mapped exactly through the mappings.</p>
@@ -652,7 +652,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="gaussian-through-nonlinear-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-through-nonlinear&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="gaussian-through-nonlinear-caption" class="caption-frame">
 <p>Figure: A Gaussian density over the input of a non linear function leads to a very non Gaussian output. Here the output is multimodal.</p>
@@ -669,7 +669,7 @@ $$</span><br /></p>
 </object>
 </div>
 <div id="stack-pca-sample-magnify" class="magnify" onclick="magnifyFigure(&#39;stack-pca-sample&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="stack-pca-sample-caption" class="caption-frame">
 <p>Figure: Composition of linear functions just leads to a new linear function. Here you see the result of multiple affine transformations applied to a square in two dimensions.</p>
@@ -706,7 +706,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 </object>
 </div>
 <div id="stack-gp-sample-magnify" class="magnify" onclick="magnifyFigure(&#39;stack-gp-sample&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="stack-gp-sample-caption" class="caption-frame">
 <p>Figure: Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.</p>
@@ -725,7 +725,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 </iframe>
 </div>
 <div id="visualization-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;visualization-deep-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="visualization-deep-gp-caption" class="caption-frame">
 <p>Figure: Visualization of mapping of a two dimensional space through a deep Gaussian process.</p>
@@ -740,7 +740,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 </div>
 </div>
 <div id="gpy-software-magnify" class="magnify" onclick="magnifyFigure(&#39;gpy-software&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="gpy-software-caption" class="caption-frame">
 <p>Figure: GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></p>
@@ -806,7 +806,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-caption" class="caption-frame">
 <p>Figure: Olympic marathon pace times since 1892.</p>
@@ -833,7 +833,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </table>
 </div>
 <div id="turing-run-times-magnify" class="magnify" onclick="magnifyFigure(&#39;turing-run-times&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="turing-run-times-caption" class="caption-frame">
 <p>Figure: Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</p>
@@ -866,7 +866,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="olympic-marathon-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-gp-caption" class="caption-frame">
 <p>Figure: Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.</p>
@@ -904,7 +904,7 @@ m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_ite
 </object>
 </div>
 <div id="olympic-marathon-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-caption" class="caption-frame">
 <p>Figure: Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.</p>
@@ -924,7 +924,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="olympic-marathon-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-samples&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-samples-caption" class="caption-frame">
 <p>Figure: Point samples run through the deep Gaussian process show the distribution of output locations.</p>
@@ -945,7 +945,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="olympic-marathon-deep-gp-layer-0-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-layer-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-layer-0-caption" class="caption-frame">
 <p>Figure: The mapping from input to the latent layer is broadly, with some flattening as time goes on. Variance is high across the input range.</p>
@@ -957,7 +957,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="olympic-marathon-deep-gp-layer-1-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-layer-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-layer-1-caption" class="caption-frame">
 <p>Figure: The mapping from the latent layer to the output layer.</p>
@@ -975,7 +975,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="olympic-marathon-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-pinball&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-pinball-caption" class="caption-frame">
 <p>Figure: A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.</p>
@@ -1022,7 +1022,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="della-gatta-gene-data-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-data&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-data-caption" class="caption-frame">
 <p>Figure: Gene expression levels over time for a gene from data provided by <span class="citation">Della Gatta et al. (2008)</span>. We would like to understand whethere there is signal in the data, or we are only observing noise.</p>
@@ -1038,7 +1038,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 </div>
 <div id="a-simple-approach-to-ranking-magnify" class="magnify" onclick="magnifyFigure(&#39;a-simple-approach-to-ranking&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="a-simple-approach-to-ranking-caption" class="caption-frame">
 <p>Figure: The example is taken from the paper &quot;A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression.&quot; <span class="citation">Kalaitzis and Lawrence (2011)</span>.</p>
@@ -1072,7 +1072,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="della-gatta-gene-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-gp-caption" class="caption-frame">
 <p>Figure: Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.</p>
@@ -1097,7 +1097,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="della-gatta-gene-gp2-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp2&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-gp2-caption" class="caption-frame">
 <p>Figure: Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.</p>
@@ -1123,7 +1123,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="della-gatta-gene-gp3-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp3&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-gp3-caption" class="caption-frame">
 <p>Figure: Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.</p>
@@ -1135,7 +1135,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 </div>
 <div id="gp-multiple-optima000-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-multiple-optima000&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="gp-multiple-optima000-caption" class="caption-frame">
 <p>Figure:</p>
@@ -1168,7 +1168,7 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 </object>
 </div>
 <div id="della-gatta-gene-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-deep-gp-caption" class="caption-frame">
 <p>Figure: Deep Gaussian process fit to the Della Gatta gene expression data.</p>
@@ -1187,7 +1187,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="della-gatta-gene-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-samples&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-deep-gp-samples-caption" class="caption-frame">
 <p>Figure: Deep Gaussian process samples fitted to the Della Gatta gene expression data.</p>
@@ -1203,7 +1203,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="della-gatta-gene-deep-gp-layer-0-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-layer-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-deep-gp-layer-0-caption" class="caption-frame">
 <p>Figure: Gaussian process mapping from input to latent layer for the della Gatta gene expression data.</p>
@@ -1216,7 +1216,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="della-gatta-gene-deep-gp-layer-1-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-layer-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-deep-gp-layer-1-caption" class="caption-frame">
 <p>Figure: Gaussian process mapping from latent to output layer for the della Gatta gene expression data.</p>
@@ -1233,7 +1233,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="della-gatta-gene-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-pinball&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="della-gatta-gene-deep-gp-pinball-caption" class="caption-frame">
 <p>Figure: A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. Pinball plot of the della Gatta gene expression data.</p>
@@ -1268,7 +1268,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="step-function-data-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-data&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="step-function-data-caption" class="caption-frame">
 <p>Figure: Simulation study of step function data artificially generated. Here there is a small overlap between the two lines.</p>
@@ -1293,7 +1293,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,filename<span class="op">=<
 </object>
 </div>
 <div id="step-function-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="step-function-gp-caption" class="caption-frame">
 <p>Figure: Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.</p>
@@ -1330,7 +1330,7 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 </object>
 </div>
 <div id="step-function-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="step-function-deep-gp-caption" class="caption-frame">
 <p>Figure: Deep Gaussian process fit to the step function data.</p>
@@ -1352,7 +1352,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="step-function-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-samples&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="step-function-deep-gp-samples-caption" class="caption-frame">
 <p>Figure: Samples from the deep Gaussian process model for the step function fit.</p>
@@ -1374,7 +1374,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="step-function-deep-gp-mappings-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-mappings&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="step-function-deep-gp-mappings-caption" class="caption-frame">
 <p>Figure: From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.</p>
@@ -1391,7 +1391,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="step-function-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-pinball&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="step-function-deep-gp-pinball-caption" class="caption-frame">
 <p>Figure: Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.</p>
@@ -1421,7 +1421,7 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 </object>
 </div>
 <div id="motorcycle-helment-data-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helment-data&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helment-data-caption" class="caption-frame">
 <p>Figure: Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.</p>
@@ -1436,7 +1436,7 @@ _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parame
 </object>
 </div>
 <div id="motorcycle-helmet-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helmet-gp-caption" class="caption-frame">
 <p>Figure: Gaussian process fit to the motorcycle helmet accelerometer data.</p>
@@ -1472,7 +1472,7 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 </object>
 </div>
 <div id="motorcycle-helmet-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helmet-deep-gp-caption" class="caption-frame">
 <p>Figure: Deep Gaussian process fit to the motorcycle helmet accelerometer data.</p>
@@ -1494,7 +1494,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="motorcycle-helmet-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-samples&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helmet-deep-gp-samples-caption" class="caption-frame">
 <p>Figure: Samples from the deep Gaussian process as fitted to the motorcycle helmet accelerometer data.</p>
@@ -1511,7 +1511,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="motorcycle-helmet-deep-gp-layer-0-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-layer-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helmet-deep-gp-layer-0-caption" class="caption-frame">
 <p>Figure: Mappings from the input to the latent layer for the motorcycle helmet accelerometer data.</p>
@@ -1524,7 +1524,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="motorcycle-helmet-deep-gp-layer-1-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-layer-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helmet-deep-gp-layer-1-caption" class="caption-frame">
 <p>Figure: Mappings from the latent layer to the output layer for the motorcycle helmet accelerometer data.</p>
@@ -1542,7 +1542,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="motorcycle-helmet-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-pinball&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="motorcycle-helmet-deep-gp-pinball-caption" class="caption-frame">
 <p>Figure: Pinball plot for the mapping from input to output layer for the motorcycle helmet accelerometer data.</p>
@@ -1570,7 +1570,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="robot-wireless-ground-truth-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-ground-truth&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="robot-wireless-ground-truth-caption" class="caption-frame">
 <p>Figure: Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.</p>
@@ -1599,7 +1599,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="robot-wireless-data-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-data-dim-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="robot-wireless-data-dim-1-caption" class="caption-frame">
 <p>Figure: Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.</p>
@@ -1622,7 +1622,7 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 </object>
 </div>
 <div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="-caption" class="caption-frame">
 <p>Figure:</p>
@@ -1653,7 +1653,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="robot-wireless-deep-gp-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-deep-gp-dim-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="robot-wireless-deep-gp-dim-1-caption" class="caption-frame">
 <p>Figure: Fit of the deep Gaussian process to dimension 1 of the robot wireless data.</p>
@@ -1674,7 +1674,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <h2 id="robot-wifi-data-latent-space">Robot WiFi Data Latent Space</h2>
 </div>
 <div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="-caption" class="caption-frame">
 <p>Figure:</p>
@@ -1696,7 +1696,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="robot-wireless-latent-space-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-latent-space&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="robot-wireless-latent-space-caption" class="caption-frame">
 <p>Figure: Inferred two dimensional latent space of the model for the robot wireless data.</p>
@@ -1714,7 +1714,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="shared-latent-variable-model-graph-magnify" class="magnify" onclick="magnifyFigure(&#39;shared-latent-variable-model-graph&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="shared-latent-variable-model-graph-caption" class="caption-frame">
 <p>Figure: Shared latent variable model structure. Here two related data sets are brought together with a set of latent variables that are partially shared and partially specific to one of the data sets.</p>
@@ -1725,7 +1725,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p><img class="" src="../slides/diagrams/deep-gp-high-five2.png" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
 </div>
 <div id="deep-gp-high-five-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-gp-high-five&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-gp-high-five-caption" class="caption-frame">
 <p>Figure: Latent spaces of the 'high five' data. The structure of the model is automatically learnt. One of the latent spaces is coordinating how the two figures walk together, the other latent spaces contain latent variables that are specific to each of the figures separately.</p>
@@ -1798,7 +1798,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="usps-digits-latent-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-latent&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="usps-digits-latent-caption" class="caption-frame">
 <p>Figure: Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the USPS digit data.</p>
@@ -1828,7 +1828,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="usps-digits-hidden-1-0-caption" class="caption-frame">
 <p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
@@ -1840,7 +1840,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="usps-digits-hidden-1-0-caption" class="caption-frame">
 <p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
@@ -1852,7 +1852,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="usps-digits-hidden-1-0-caption" class="caption-frame">
 <p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
@@ -1864,7 +1864,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="usps-digits-hidden-1-0-caption" class="caption-frame">
 <p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
@@ -1898,7 +1898,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="digit-samples-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;digit-samples-deep-gp&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="digit-samples-deep-gp-caption" class="caption-frame">
 <p>Figure: These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.</p>
@@ -1911,7 +1911,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 </div>
 <div id="deep-health-model-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-health-model&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-health-model-caption" class="caption-frame">
 <p>Figure: The deep health model uses different layers of abstraction in the deep Gaussian process to represent information about diagnostics and treatment to model interelationships between a patients different data modalities.</p>
@@ -1935,7 +1935,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </div>
 </div>
 <div id="emukit-playground-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-playground&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="emukit-playground-caption" class="caption-frame">
 <p>Figure: Emukit playground is a tutorial for understanding the simulation/emulation relationship. <a href="https://amzn.github.io/emukit-playground/" class="uri">https://amzn.github.io/emukit-playground/</a></p>
@@ -1948,7 +1948,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </div>
 </div>
 <div id="emukit-playground-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-playground-bayes-opt&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="emukit-playground-bayes-opt-caption" class="caption-frame">
 <p>Figure: Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization" class="uri">https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization</a></p>
@@ -1974,7 +1974,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </div>
 </div>
 <div id="mountain-car-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mountain-car-caption" class="caption-frame">
 <p>Figure: The mountain car simulation from the Open AI gym.</p>
@@ -2030,7 +2030,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Ran
 </iframe>
 </div>
 <div id="mountain-car-random-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-random&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mountain-car-random-caption" class="caption-frame">
 <p>Figure: Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.</p>
@@ -2050,7 +2050,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </iframe>
 </div>
 <div id="mountain-car-similated-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-similated-bayes-opt&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mountain-car-similated-bayes-opt-caption" class="caption-frame">
 <p>Figure: Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.</p>
@@ -2104,7 +2104,7 @@ velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</sp
 </object>
 </div>
 <div id="emu-sim-comparison-magnify" class="magnify" onclick="magnifyFigure(&#39;emu-sim-comparison&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="emu-sim-comparison-caption" class="caption-frame">
 <p>Figure: Comparison between the mountain car simulator and the emulator.</p>
@@ -2146,7 +2146,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </iframe>
 </div>
 <div id="mountain-car-emulated-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-emulated&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mountain-car-emulated-caption" class="caption-frame">
 <p>Figure: Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.</p>
@@ -2224,7 +2224,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </iframe>
 </div>
 <div id="mountain-car-multi-fidelity-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-multi-fidelity&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mountain-car-multi-fidelity-caption" class="caption-frame">
 <p>Figure: Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.</p>
@@ -2239,7 +2239,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </div>
 </div>
 <div id="emukit-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-software-page&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="emukit-software-page-caption" class="caption-frame">
 <p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
@@ -2254,7 +2254,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </div>
 </div>
 <div id="mxfusion-software-magnify" class="magnify" onclick="magnifyFigure(&#39;mxfusion-software&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mxfusion-software-caption" class="caption-frame">
 <p>Figure: MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>.</p>
@@ -2280,7 +2280,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </table>
 </div>
 <div id="mxfusion-software-logo-magnify" class="magnify" onclick="magnifyFigure(&#39;mxfusion-software-logo&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="mxfusion-software-logo-caption" class="caption-frame">
 <p>Figure: The MXFusion software.</p>

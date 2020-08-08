@@ -42,7 +42,7 @@
 \contents
 </div>
 <div class="magnify" id="\concat{\label}{-magnify}" onclick="magnifyFigure('\label')">
-<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+<img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex">
 </div>
 <div class="caption-frame" id="\concat{\label}{-caption}">
 Figure: \captionContents
