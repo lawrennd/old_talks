@@ -1,13 +1,14 @@
 import os
-import re
 from datetime import date
-import yaml
+
 import _python.ndltex as latex
+import _python.ndlyaml as ny
 
 
 today = date.today()
 
-defaults = {'slidedir': '../slides/',
+# Update default values.
+ny.defaults = {'slidedir': '../slides/',
             'notedir': '../_notes/',
             'notebookdir': '../_notebooks/',
             'postdir': '../_posts/',
@@ -32,49 +33,13 @@ defaults = {'slidedir': '../slides/',
 # Load defaults from config file if it exists.
 default_file = '_config.yml'
 if os.path.isfile(default_file):
-    md= open(default_file, 'r')
-    text = md.read()
-    md.close()
-    defaults.update(yaml.load(text, Loader=yaml.FullLoader))
+    ny.defaults = ny.update_from_file(ny.defaults, default_file)
     
-
-class FileFormatError(Exception):
-    pass
-
-def extract_header_body(filename):
-    """Extract the text of the headers and body from a talk file."""
-    md= open(filename, 'r')
-    text = md.read()
-    md.close()
-    z = re.fullmatch("(^---[\s\S]+---)\n([\s\S]*)", text)
-    if z:
-        return z.groups()[0].replace('---', ''), z.groups()[1]
-    else:
-        raise FileFormatError(1, "This does not appear to be a valid talk file.", filename)
-    
-def header_fields(filename):
-    """Extract headers from a talk file."""
-    head, _ = extract_header_body(filename)
-    return yaml.load(head, Loader=yaml.FullLoader)
-
-    raise FileFormatError(1, "This does not appear to be a valid talk file.", filename)
 
 def talk_field(field, filename):
     """Return one field from a talk."""
-    fields = header_fields(filename)
-    return header_field(field, fields)    
-
-
-def header_field(field, fields):
-    """Return one field from talk header fields."""
-    if field not in fields:
-        if field in defaults:
-            answer=defaults[field]
-        else:
-            raise FileFormatError(1, "Field not found in file or defaults.", field)
-    else:
-        answer = fields[field]
-    return answer
+    fields = ny.header_fields(filename)
+    return ny.header_field(field, fields)    
         
 def extract_bibinputs(filename):
     """Extract bibinput files form a talk"""
@@ -85,21 +50,21 @@ def extract_all(filename):
     """List the different files the talk file creates."""
     basename = os.path.basename(filename)
     base = os.path.splitext(basename)[0]
-    fields = header_fields(filename)
+    fields = ny.header_fields(filename)
     list_files = []
-    if header_field('posts', fields):
+    if ny.header_field('posts', fields):
         list_files += [base + '.posts.html']
-    if header_field('ipynb', fields):
+    if ny.header_field('ipynb', fields):
         list_files += [base + '.ipynb']
-    if header_field('docx', fields):
+    if ny.header_field('docx', fields):
         list_files += [base + '.docx']
-    if header_field('notespdf', fields):
+    if ny.header_field('notespdf', fields):
         list_files += [base + '.notes.pdf']
-    if header_field('reveal', fields):
+    if ny.header_field('reveal', fields):
         list_files += [base + '.slides.html']
-    if header_field('slidesipynb', fields):
+    if ny.header_field('slidesipynb', fields):
         list_files += [base + '.slides.ipynb']
-    if header_field('pptx', fields):
+    if ny.header_field('pptx', fields):
         list_files += [base + '.pptx']
         
     return list_files
