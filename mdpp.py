@@ -6,6 +6,7 @@ import os
 import argparse
 import yaml
 import _python.ndltalk as nt
+import _python.ndlyaml as ny
 
 parser = argparse.ArgumentParser()
 
@@ -108,7 +109,7 @@ if args.no_header:
    body = md.read()
    md.close()
 else:
-   headertxt,bodytxt = nt.extract_header_body(args.filename)
+   headertxt,bodytxt = ny.extract_header_body(args.filename)
 
 header = {}
 default_file = '_config.yml'

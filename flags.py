@@ -3,6 +3,7 @@
 import argparse
 import os
 import _python.ndltalk as nt
+import _python.ndlyaml as ny
 
 
 parser = argparse.ArgumentParser()
@@ -19,17 +20,17 @@ args = parser.parse_args()
 
 filename = args.base + '.md'
 
-fields = nt.header_fields(filename)
-date = nt.header_field('date', fields).strftime("%Y-%m-%d")
+fields = ny.header_fields(filename)
+date = ny.header_field('date', fields).strftime("%Y-%m-%d")
 try:
-    week = int(nt.header_field('week', fields))
+    week = int(ny.header_field('week', fields))
     weekarg = """ --metadata week={week}""".format(week=week)
 except nt.FileFormatError:
     week = 0
     weekarg = ''
 
 try:
-    layout = nt.header_field('layout', fields)
+    layout = ny.header_field('layout', fields)
 except nt.FileFormatError:
     layout = 'talk'
 
@@ -48,17 +49,17 @@ if args.output == 'prefix':
 elif args.output == 'post':
     lines = """--metadata date={date} """
     for ext in ['docx', 'pptx']:
-        if nt.header_field(ext, fields):
+        if ny.header_field(ext, fields):
             lines += """ --metadata {ext}={{out}}.{ext}""".format(ext=ext)
-    if nt.header_field('reveal', fields):
+    if ny.header_field('reveal', fields):
         lines += """ --metadata reveal={out}.slides.html"""
-    if nt.header_field('ipynb', fields):
+    if ny.header_field('ipynb', fields):
         lines += """ --metadata ipynb={out}.ipynb"""
-    if nt.header_field('slidesipynb', fields):
+    if ny.header_field('slidesipynb', fields):
         lines += """ --metadata slidesipynb={out}.slides.ipynb"""
-    if nt.header_field('notespdf', fields):
+    if ny.header_field('notespdf', fields):
         lines += """ --metadata notespdf={out}.notes.pdf"""
-    if nt.header_field('pdf', fields):
+    if ny.header_field('pdf', fields):
         lines += """ --metadata pdf={out}.pdf"""
     if args.output == 'post':
         lines += weekarg + """ --metadata layout={layout}""".format(layout=layout)
@@ -66,16 +67,16 @@ elif args.output == 'post':
     print(lines.format(out=out, date=date))
 
 elif args.output=='docx':
-    lines = '--reference-doc ' + nt.header_field('dotx', fields)
+    lines = '--reference-doc ' + ny.header_field('dotx', fields)
     print(lines)
 
 elif args.output=='pptx':
-    lines = '--reference-doc ' + nt.header_field('potx', fields)
+    lines = '--reference-doc ' + ny.header_field('potx', fields)
     print(lines)
 
 elif args.output=='pp':
     lines = '--include-path ./..'
     # Flags for the preprocessor.
-    if nt.header_field('assignment', fields):
+    if ny.header_field('assignment', fields):
         lines += """ --assignment"""
     print(lines)
