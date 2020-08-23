@@ -63,6 +63,8 @@ of the measurements missing, perhaps due to problems in data collection.
 I'd argue that if we are to model complex processes (such as the brain,
 or the cell, or human health) then almost all the data is missing.}
 
+\installcode{daft}
+
 \setupplotcode{import daft
 from matplotlib import rc
 
