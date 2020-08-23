@@ -1,3 +1,3 @@
-BASE=machine-learning-and-intellectual-debt
+BASE=modelling-things
 include ../make-talk-flags.mk
 include ../make-talk.mk
