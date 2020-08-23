@@ -34,7 +34,7 @@ achieve good generalization.
 
 [^assuming]: Assuming we are ignoring parameters in the link function and the distribution function.}
 
-\notes{Naturally, as [@Zhang:understanding17] starkly illustrate with
+\notes{Naturally, as @Zhang:understanding17 starkly illustrate with
 their random labels experiment, within the dark forest there are some
 terrible places, big bad wolves of overfitting that will gobble up
 your model. But, as empirical evidence shows there is also a safe and
