@@ -76,7 +76,7 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
 
 pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
 
