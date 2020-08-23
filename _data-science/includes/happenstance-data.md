@@ -46,9 +46,9 @@ today there is a strong temptation to do it on the cheap. To use
 happenstance data to achieve what had been done in the past only
 through rigorous data-fieldwork. A Professor Efron points out, early
 attempts to achieve this, such as the Google flu predictor have been
-somewhat naive [Ginsberg:detecting09,@Halevy:unreasonable09], but as
+somewhat naive [@Ginsberg:detecting09,@Halevy:unreasonable09], but as
 these methodologies are gaining traction in the social sciences
-[@Salganik:bibbybit18] and the field of Computational Social Science
+[@Salganik:bitbybit18] and the field of Computational Social Science
 [@Alvarez:computational16] emerges we can expect more innovation and
 more ideas that may help us bridge the fundamentally different
 characters of qualitative and quantitative research. For the moment,
