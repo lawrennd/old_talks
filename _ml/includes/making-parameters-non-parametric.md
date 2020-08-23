@@ -169,23 +169,26 @@ p(\dataVector|\numData^*) = p(\dataVector).
 $$
 
 \setupplotcode{import daft}
-\plotcode{%%tikz --scale 2 --size 300,300 -f svg
-% Define nodes
-\begin{tikzpicture}[scale=1]
-\draw node[obs] (y) {$\dataVector$};
-\draw node[latent, above=of y] (f) {$\mappingFunctionVector$};
-\draw node[latent, above right=of f, draw=gray] (ustar) {\color{gray}$\inducingVector^*$};
-\draw node[latent, above=of f] (u) {$\inducingVector$};
+\plotcode{pgm = daft.PGM(shape=[2, 3],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
 
-        
-% Connect the nodes
-\draw [-, draw=gray] (ustar) to (u);%
-\draw [-, draw=gray,color=gray] (ustar) to (f);%
-\draw [->] (f) to (y);%
-\draw [-] (u) to (f);%
-\end{tikzpicture}}
+pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$\mathbf{f}$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 2.5, fixed=False))
+
+pgm.add_edge("u", "f", directed=False)
+pgm.add_edge("f", "y")
+pgm.add_edge("ustar", "f", directed=False)
+pgm.add_edge("u", "ustar", directed=False)
+
+pgm.render().figure.savefig("\diagramsDir/ml/u-to-f-to-y-ustar-to-f.svg", transparent=True)}
  
-\figure{} 
+\figure{\includediagram{\diagramsDir/ml/u-to-f-to-y-ustar-to-f}{30%}}{We introduce the fundamental variable $\mappingFunctionVector$ which sits between $\inducingVector$ and $\dataVector$.}{u-to-f-to-y-ustar-to-f} 
 
 \notes{Now we assume some form of factorization for our data observations,
 $\dataVector$, given the fundamental variables,
