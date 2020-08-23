@@ -93,26 +93,34 @@ flexibility we need in terms of modeling, whilst keeping computational
 complexity and memory demands manageable and appropriate to the task at
 hand.}
 
-\setupplotcode{import daft}
-\plotcode{
-%%tikz --scale 2 --size 200,200 -f svg
-% Define nodes
-\begin{tikzpicture}[scale=1]
-\draw node[obs] (y) {$\dataVector$};
-\draw node[latent, left=of y] (ystar) {$\dataVector^*$};
-\draw node[latent, above=of y] (u) {$\inducingVector$};
-\draw node[latent, above=of ystar] (ustar) {$\inducingVector^*$};
-        
-% Connect the nodes
-\draw [-] (u) to (y);%
-\draw [-] (ustar) to (y);%
-\draw [-] (ustar) to (u);%
-\draw [-] (ystar) to (y);%
-\draw [-] (ustar) to (ystar);%
-\draw [-] (u) to (ystar);%
-\end{tikzpicture}}
+\setupplotcode{import daft
+from matplotlib import rc
+
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
+
+\plotcode{pgm = daft.PGM(shape=[2, 3],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
+
+pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("ystar", r"$\mathbf{y}^*$", 1.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 1.5, fixed=False))
+
+pgm.add_edge("u", "y")
+pgm.add_edge("ustar", "y")
+pgm.add_edge("ustar", "u")
+pgm.add_edge("ystar", "y")
+pgm.add_edge("ustar", "ystar")
+pgm.add_edge("u", "ystar")
+
+pgm.render().figure.savefig("\diagramsDir/ml/u-to-y-ustar-to-y.svg", transparent=True)}
  
-\figure{}
+\figure{\includediagram{\diagramsDir/ml/u-to-y-ustar-to-y}{30%}}{We can also augment the graphical model with data that is only seen at 'run time', or 'test data'. In this case we use the superscript of $*$ to indicate the test data.}{u-to-y-ustar-to-y}
 
 \notes{Adding in the test data and the inducing variables we have not yet
 chosen to instantiate. Here we see that we still haven't defined any
