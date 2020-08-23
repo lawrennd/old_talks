@@ -484,7 +484,7 @@ of a mauna loa data to demonstrate, with a mean function included?}
 \setupcode{import GPy
 import pods}
 
-\code{data = pods.util.datasets.mauna_loa()
+\code{data = pods.datasets.mauna_loa()
 kern = GPy.kern.Linear(1) + GPy.kern.RBF(1) + GPy.kern.Bias(1)
 model = GPy.models.GPRegression(data['X'], data['Y'], kern)
 #model.optimize()}
