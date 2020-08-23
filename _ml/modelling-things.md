@@ -67,6 +67,8 @@ An excellent characterisation of generalization is normally given by the bias-va
 
 \include{_ml/includes/bias-variance-dilemma.md}
 
+One of Breiman's ideas for improving predictive performance is known as Bagging. The idea is to train a number of models on the data such that they overfit (high variance). Then average the predictions of these models. The models are trained on different bootstrap samples and their predictions are aggregated giving us the acronym, Bagging. By combining decision trees with Bagging we recover Random Forests
+
 Bias and variance can be estimated through the Bootstrap, and the traditional view has been that there's a form of Goldilocks effect, where the best predictions are given by the model that is 'just right' for the amount of data available. Not to simple, not too complex. The idea is that bias decreases with increasing model complexity and variance increases with increasing model complexity. Typically plots begin with the Mummy bear on the left (too much bias) end with the Daddy bear on the right (too much variance) and show a dip in the middle where the Baby bear (just) right finds themselves. 
 
 The Daddy bear is typically positioned at the point where the model is able to exactly interpolate the data. For a generalized linear model [@McCullagh:gen_linear89], this is the point at which the number of parameters is equal to the number of data[^assuming]. But the modern empirical finding is that when we move beyond Daddy bear, into the dark forest of the massively overparameterized model we can achieve good generalization.
@@ -91,91 +93,28 @@ As Professor Efron points out, modern machine learning models are often fitted u
 The OpenAI model represents just a recent example from a wave of *deep* neural network models has proved highly
 performant across a range of challenges that were previously seen as being beyond our statistical modelling capabilities. 
 
-practical classification applications
-including imagenet [@Krizhevsky:imagenet12], face identification
-[@Taigman:deepface14], and speech recognition [@], translation [] and text generation []. However, there remain some
-key problems. 
+They stem from the courage of a group of researchers who saw that methods were improving with increasing data and chose to collect and label data sets of ever increasing size, in particular the ImageNet team led by Fei-Fei Li [@Russakovsky-imagenet15] who collected a large data set of images for object detection (currently 14 million images)o. To make these neural network methods work on such large data sets new implementations were required. By deploying neural network training algorithms on graphics processing units (GPUs) breakthrough results were achieved on these large data sets [@Krizhevsky:imagenet12]. Similar capabilities have then been shown in the domains of face identification
+[@Taigman:deepface14], and speech recognition [@Hinton:acoustic12], translation [@Sutskever:sequence14] and language modelling [@Radford:language19,@Devlin:bert19]. 
 
-One particular apect of these models is that they have very many parameters. The GPT-3 model used for generating text has 175 billion parameters. The scale of the training data used was also 
-In particular, such models have very many parameters and
-although it appears they need to have very many parameters to learn the
-structure of the data, regularisation is required to ensure that they
-don't overfit. For example, 'dropout' [@] effectively halves
-the network size perceived by each data point.
+Impressive though these performances are, they are reliant on massive data and enormous costs of training. Yet they can be seen through the lense of regression, as  outlined by Professor Efron in his paper. They map from inputs to outputs. For language modelling, extensive use of auto-regression allows for sequences to be generated. 
 
-One of the most interesting aspects of the recent deep learning
-revolution is that the architectures and techniques of the succesful
-models haven't changed a great deal since the late 1990s, with some
-notable acceptions like dropout and linear rectified units, most of the
-developments have come with larger data set sizes and improved
-processing power, enabling many more data points to be used in training
-of these models. Probabilistic approaches such as discrete graphical
-models and kernel methods dominated for the first decade of this
-millenium.
+## New Methods Required
 
-A recent result in face identification also may lead us to believe that
-their is merit in returning to probabilistic approaches for making
-progress. The DeepFace model was able to approach human performance on
-the cropped version of the learning faces in the wild (LFW) test data
-[@lfw]. It used over 400 million training faces to do so. However,
-the GaussianFace model [@Lu:surpassing14] was the first model to
-*surpass* human level performance on this data. It used only 200,000
-training faces and did not make use of the complex pre-processing of
-faces to remove the 3D rotation that was present in DeepFace.
-GaussianFace uses a Gaussian process latent variable model (GP-LVM)
-variant for learning.
-
-Whilst 400 million training faces were available to researchers at
-Facebook for the construction of the DeepFace model, the GaussianFace
-result may lead us to believe that a lot more can be done for a lot
-less. This is important, because whilst it is worthwhile collecting vast
-volumes of data for keystone tasks such as face identification and
-speech recognition, there are many tasks when such data richness will
-not be available.
-
-This result may lead us to speculate that for more complex tasks If it
-is true that the failure of deep modeling around the turn of the century
-was in part due to lack of available data, then it may be the case that
-such models will also encounter problems when applied to more complex
-domains than that of vision and speech. In particular, our interest is
-in domains of highly interrelated variables with many missing values.
-
-We might envisage three imminent challenges. The second two of which are
-so interelated that we conflate them here.
-
-1.  When big data is small.
-2.  Massively multimodal data and Massively Missing Data
-
-**When big data is small** There has been a lot of talk about big data
-(maybe a little too much talk), perhaps to the extent where it is no
-longer clear what it means, if it was ever apparent in the first place.
-I do believe there was a point at which it meant something new, in
-particular it represented the challenges of integrating very large
-multi-modal data sets that resulted from the open interconnectedness of
-the internet. Large data sets in silos have always been available and
-represent their own challenges. The challenges of big data emerged due
+The challenges of big data emerged due
 to companies being able to rapidly interconnect multiple sources of
 information. This leads to challenges in storage, distributed processing
-and modeling. Google were at the forefront of this revolution. In
+and modeling. Google's search engine were at the forefront of this revolution. In
 particular they were able to demonstrate that some tasks can be easily
-resolved with fairly simple models and very large data sets. However,
-what if these tasks were actually quite easy to resolve in the first
-place? It is only natural that when very large interconnected data sets
-become available the we will positively report on results for things
-that did seem difficult, but now are much more achievable. A good
-example is machine translation, where great strides forward have been
-achieved for languages where enough data is available. It is harder,
-however, to translate between less common languages. A common trick is
-to move to an intermediate language (like English) to do this [@].
-There are domains where the complexity of the underlying system is so
-immense that it may be that even in the modern interconnected world of
-data we don't have enough information to resolve the system. For
-example, if we take a holistic view of health and the many ways in which
-we can become unhealthy, through genomic and environmental affects. We
-don't have a full understanding of all the operations in a single
-eukaryotic cell despite the wealth of gene expression and protein data
+resolved with fairly simple models and very large data sets [@Halevy:unreasonable09]. What we are now learning is that many tasks can be solved with complex models and even bigger data sets. 
+
+While GPT-3 does an impressive job on language generation, it can do so because of the vast quantities of language data we have made available to it. What happens if we take a more complex system, for which such vast data is not available. Or, at least not available in the homogeneous form that language data can be found. Let's take human health. 
+
+Consider we take a holistic view of health and the many ways in which
+we can become unhealthy, through genomic and environmental affects. Firstly, let's remember that we don't have a full understanding, even on all the operations in a single eukaryotic cell. Indeed we don't even understand all the mechanisms by which transcription and translation occur in bacterial and archaeal cells. That is despite the wealth of gene expression and protein data
 about these cells. Even if we were to pull all this information
-together, would it be enough to develop that understanding? In these
+together, would it be enough to develop that understanding? Health is an accumulation of 
+
+There are large quantities of data, but the complexity of these systems iIn these
 domains we'd argue that even big data is small. The volume of the data
 is not large enough to determine the parameters of such complex models.
 
@@ -288,20 +227,9 @@ The wave of Developing the hypothesis that the main reason that these
 models became neglected was because there was not enough data to justify
 their implementation we advocate a return to tmotivate a return It is
 arguable that the main reason that
-%
-
-Modelling Things
-================
 
 
-### Neil Lawrence
 
-
-((*- extends 'my_article.tplx' -*))
-
-
-Introduction
-------------
 
 
 Machine learning involves taking data and combining it with a model in
@@ -326,9 +254,7 @@ collected. If the model is chosen well we will be able to interpolate
 the data and precit likely values of future data points. If it is chosen
 badly our predictions will be overconfident and wrong.
 
-
 ### Models vs Algorithms
-
 
 Much of the technical focus in machine learning is on algorithms. In
 this document I want to retain a strong separation between the *model*
@@ -355,8 +281,7 @@ covariance matrix, and people often refer to this algorithm as principal
 component analysis. However, that algorithm also finds the linear
 directions of maximum variance in the data. Seeking directions of
 maximum variance in the data was not the objective of Hotelling, but it
-is related to a challenge posed by
-`<cite nodata-cite="Pearson:01">`{=html}Pearson (1901)`</cite>`{=html}
+is related to a challenge posed by @Pearson:01
 who sought a variant of regression that predicted symmetrically
 regardless of which variable was considered to be the covariate and
 which variable the response. Coincidentally the algorithm for this model
@@ -376,12 +301,12 @@ moment we will leave algorithmic considerations to one side and focus
 *only* on the model.
 
 
-Is my Model Useful?
--------------------
+## Is my Model Useful?
 
 
-*All models are wrong, but some are useful* \-\-- :
-`<cite nodata-cite="Box:science76">`{=html}Box (1976)`</cite>`{=html}
+> All models are wrong, but some are useful
+>
+> @Box:science76
 
 
 This important quote has become worn by overuse (like a favourite
@@ -416,9 +341,10 @@ matrix form, $\dataMatrix\in \Re^{\numData\times \dataDim}$ it is
 somehow implicit that we are suggesting factorization assumptions across
 the $\numData$ data points.
 
+\begin{align*}
+p(\dataMatrix) = \prod_{i=1}^\numData p(\dataVector_{i, :} \| \boldsymbol{\theta})
+\end{align*}
 
-\begin{align*}p(\dataMatrix) = \prod_{i=1}^\numData
-p(\dataVector_{i, :} \| \boldsymbol{\theta})\end{align*}
 
 
 This assumption allows us to easily make predictions about new data
@@ -511,11 +437,9 @@ parameters, $\hat{\paramVector}$, perhaps obtained by optimizing the
 likelihood on the training data, then due to our assumption of
 independence across data then we can easily predict for the new point
 using the conditional distribution:
-
-
-$$p(\dataVector_*|\hat{\paramVector})$$.
-
-
+$$
+p(\dataVector_*|\hat{\paramVector}).
+$$
 Perhaps, though, we should find this ease of prediction suspicious.
 Let's momentarily examine what we are really saying here. We are
 assuming that all the information we wish to store about the world, and
@@ -532,7 +456,7 @@ throughout its operational life. If the model is complex enough to
 represent the full spectrum of possible human ailments, then when the
 model is first brought on stream, it is unlikely to have sufficient data
 to determine the parameters. In the standard modeling framework we are
-faced with the bias variance dilema
+faced with the bias variance dilema 
 `<cite data-cite=\"Geman:bias92\">`{=html}(Geman et al,
 1992)`</cite>`{=html}. If the model is complex enough to represent the
 underlying data structure, the parameters will be badly determined for
@@ -552,7 +476,6 @@ determined parameters unless we truly believe we have sufficient data to
 capture some underlying deterministic truth. Medical outcome is laced
 with uncertainty, and this uncertainty needs to be modeled correctly
 because its structure has a significant effect on treatment.
-
 
 A major challenge in the domain we've described is to build a model
 that is complex enough to represent the diversity of human health
@@ -580,18 +503,12 @@ reversed. Of course, from a modelling perspective this issue is
 trivially solved by assuming independence across the $\dataDim$ data
 dimensions and allowing the parameters to scale with the number of data
 $\numData$. This is a characteristic exhibited, for example by the
-Gaussian process latent variable model
-`<cite data-cite="Lawrence:pnpca05">`{=html}(Lawrence,
-2005)`</cite>`{=html} which in standard form assumes independence
+Gaussian process latent variable model [@Lawrence:pnpca05] which in standard form assumes independence
 arcross $\dataDim$ for high dimensional data and associates each data
 point with a latent variable that is treated as a parameter. In
-`<cite data-cite="Lawrence:unifying12">`{=html}Lawrence
-(2010)`</cite>`{=html} we argued that the succesful class of *spectral*
+[@Lawrence:unifying12] I argued that the succesful class of *spectral*
 approaches to dimensionality reduction (e.g.
-`<cite data-cite="Roweis:lle00">`{=html}LLE, Roweis and Saul
-2001`</cite>`{=html} and
-`<cite data-cite="Weinberger:learning04">`{=html}maximum variance
-unfolding, Weinberger et al, 2004`</cite>`{=html}), which are widely
+ LLE @Roweis:lle00 and maximum variance unfolding @Weinberger:learning04, which are widely
 applied in the large $\dataDim$ small $\numData$ domain, also have a
 probabilistic intepretation where the underlying likelihood factorizes
 across data dimensions. Regardless of our choice of factorization
@@ -633,23 +550,13 @@ missing data where a table of values, $\dataMatrix$, might have 10%-50%
 of the measurements missing, perhaps due to problems in data collection.
 I'd argue that if we are to model complex processes (such as the brain,
 or the cell, or human health) then almost all the data is missing.
-:::
 
-::: {.cell .code execution_count="3"}
-``` {.python}
-%%tikz --size 50,50 -f svg
-%\begin{figure}
-\begin{tikzpicture}[scale=2]
+\plotcode{
 % Define nodes
 \draw node[obs] (y) {$\dataVector$};
 \end{tikzpicture}
 %\end{figure}
-```
-
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
+}
 
 
 A model that's not wrong, just not useful. I like graphical
