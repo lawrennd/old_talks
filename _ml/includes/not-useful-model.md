@@ -76,16 +76,10 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False))
 
 pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
 
-\plotcode{
-# Define nodes
-\draw node[obs] (y) {$\dataVector$};
-\end{tikzpicture}
-%\end{figure}
-}
 
 \figure{\includediagram{\diagramsDir/ml/y-only-graph}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$.}{y-only-graph}
 
