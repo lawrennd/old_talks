@@ -35,7 +35,7 @@ pgm.add_edge("u", "y")
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
 
-\figure{\includediagram{\diagramsDir/ml/u-to-y.svg}{40%}}{Augmenting the variable space with a set of latent *inducing vectors*}{u-to-y}
+\figure{\includediagram{\diagramsDir/ml/u-to-y}{40%}}{Augmenting the variable space with a set of latent *inducing vectors*}{u-to-y}
 
 \notes{Our simple graphical model augmented with $\inducingVector$ which we
 refer to as inducing variables. Note that the model is still totally

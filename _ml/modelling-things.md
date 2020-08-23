@@ -1,5 +1,6 @@
 ---
 title: Modelling Things
+layout: talk
 abstract: >
   Machine learning solutions, in particular those based on deep
   learning methods, form an underpinning of the current revolution in
@@ -24,6 +25,7 @@ geometry: ['a4paper', 'margin=1in']
 date: 2020-09-04
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
+date: 2020-08-23
 transition: None
 ---
 

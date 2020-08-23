@@ -87,7 +87,7 @@ pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True
 %\end{figure}
 }
 
-\figure{\includediagram{\diagramsDir/ml/y-only-graph.svg}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$.}{y-only-graph}
+\figure{\includediagram{\diagramsDir/ml/y-only-graph}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$.}{y-only-graph}
 
 \notes{A model that's not wrong, just not useful. I like graphical
 representations of probabilistic models and this is my favourite graph.

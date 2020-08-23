@@ -95,7 +95,7 @@ mlai.write_figure(figure=fig,
                   filename='\diagramsDir/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 				  
-\figure{\includediagram{\diagramsDir/gp/sparse-demo-full-gp.svg}{60%}}{A full Gaussian process fit to the simulated data set.}{sparse-demo-full-gp}
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-full-gp}{60%}}{A full Gaussian process fit to the simulated data set.}{sparse-demo-full-gp}
 
 \notes{Now we set up the inducing variables, $\inducingVector$. Each inducing
 variable has its own associated input index, $\mathbf{Z}$, which lives
