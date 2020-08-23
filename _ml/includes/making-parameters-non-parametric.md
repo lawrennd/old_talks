@@ -165,7 +165,7 @@ p(\dataVector|\numData^*) = \int p(\dataVector|\mappingFunctionVector) p(\mappin
 $$
 \notes{and since we enforce Kolmogorov consistency we have}
 $$
-p(\dataVector|\numData*) = p(\dataVector).
+p(\dataVector|\numData^*) = p(\dataVector).
 $$
 
 \setupplotcode{import daft}
