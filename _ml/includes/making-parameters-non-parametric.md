@@ -29,8 +29,8 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False))
-pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 1.5, fixed=False))
 pgm.add_edge("u", "y")
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
