@@ -113,7 +113,7 @@ pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 1.5, fixed=False))
 
 pgm.add_edge("u", "y")
 pgm.add_edge("ustar", "y")
-pgm.add_edge("ustar", "u")
+pgm.add_edge("u", "ustar")
 pgm.add_edge("ystar", "y")
 pgm.add_edge("ustar", "ystar")
 pgm.add_edge("u", "ystar")
