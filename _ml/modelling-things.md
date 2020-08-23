@@ -96,6 +96,8 @@ badly our predictions will be overconfident and wrong.}
 
 \include{_ml/includes/big-data-consistency.md}
 
+\include{_ml/includes/parameter-bottleneck.md}
+
 \include{_ml/includes/non-parametric-challenge.md}
 
 \include{_ml/includes/multivariate-gaussian-closure.md}
