@@ -33,13 +33,6 @@ transition: None
 
 \section{Introduction}
 
-\include{_data-science/includes/pods-install.md}
-
-\include{_gp/includes/gpy-install.md}
-
-\downloadcode{mlai.py}
-\downloadcode{teaching_plots.py}
-\downloadcode{gp_tutorial.py}
 
 \include{_ml/includes/ml-and-statistics-interface.md}
 \include{_data-science/includes/happenstance-data.md}
