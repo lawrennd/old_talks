@@ -32,6 +32,8 @@ locations, $\inputMatrix$, are in two separate clusters. The response
 variable, $\dataVector$, is sampled from a Gaussian process with an
 exponentiated quadratic covariance.}
 
+\include{_gp/includes/gpy-install.md}
+
 \setupcode{import numpy as np
 import GPy
 from scipy import optimize
@@ -55,6 +57,8 @@ offset = np.mean(y)}
 \notes{First we perform a full Gaussian process regression on the data. We
 create a GP model, `m_full`, and fit it to the data, plotting the
 resulting fit.}
+
+\downloadcode{gp_tutorial}
 
 \setuphelpercode{import matplotlib.pyplot as plt
 from gp_tutorial import ax_default, meanplot, gpplot}
@@ -83,6 +87,9 @@ from gp_tutorial import ax_default, meanplot, gpplot}
 
 \code{m_full = GPy.models.GPRegression(X,y)
 m_full.optimize() # Optimize parameters of covariance function}
+
+\downloadcode{teaching_plots}
+\downloadcode{mlai}
 
 \setupplotcode{import teaching_plots as plot
 import mlai}

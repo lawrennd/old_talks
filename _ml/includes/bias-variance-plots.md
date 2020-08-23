@@ -52,6 +52,8 @@
                      colors=[[0.5, 1.0, 0.5], [1.0, 0.5, 0.5]])
     return out}
 
+\downloadcode{mlai}
+
 
 \setuphelpercode{import mlai
 import os}
@@ -124,6 +126,8 @@ for samp in range(num_samps):
                            titles=titles,
                           xlim=xlim,
                           ylim=ylim)}
+
+\include{_data-science/includes/pods-install.md}
 
 
 \displaycode{import pods
