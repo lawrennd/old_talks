@@ -33,6 +33,10 @@ transition: None
 
 \section{Introduction}
 
+\include{_data-science/includes/pods-install.md}
+\include{_gp/includes/gpy-install.md}
+
+
 \include{_ml/includes/ml-and-statistics-interface.md}
 \include{_data-science/includes/happenstance-data.md}
 
