@@ -6,6 +6,7 @@ baseurl: "/talks" # the subpath of your site, e.g. /blog/
 # Exclude directories for preprocessing.
 exclude:
   - slides/reveal.js/plugin/markdown/example
+#  - slides
 #  - slides/reveal.js/css/theme/
 reveal:
   width: 512
@@ -26,10 +27,17 @@ nbviewer: https://nbviewer.jupyter.org
 comments: true
 disqus:
   shortname: inverseprobabilitycom
-github:
+ghub:
   edit: true
+  repository: talks
 
 permalink: "/:categories/:title.html"
+plugins:
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-remote-theme
+remote_theme: lawrennd/proceedings
+style: ndltalk
 
 analytics:
   google:

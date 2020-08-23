@@ -14,6 +14,43 @@
      Flink application that executes the program.
 }
 
+\newslide{}
+
+\slides{
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic000}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+}
+\slides{
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic001}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+}
+\slides{
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic002}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+}
+\slides{
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic003}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+}
+\slides{
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic004}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+}
+
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+
+\newslide{}
+
+\figure{\includepng{\diagramsDir/software/milan}{80%}}{The Milan Software is designed for building modern AI systems. <https://github.com/amzn/milan/>}{milan-software-page}
+
+
 \notes{At Amazon my team built a *data-oriented programming* language which is
 [now available through BSD license](https://github.com/amzn/milan). The language is called Milan. The
 team was led by Tom Borchert, quoting from [Tom's blog
@@ -45,7 +82,7 @@ multiple services cannot occur without a signature existing within the
 stream algebra. The Milan IL becomes the key information structure that
 is required to reason about the wider software system.}
 
-\subsection{Context}
+\notes{\subsection{Context}}
 
 \notes{This deals with the challenges that arise through the *death of the
 programmer* because we can now see the context around each service. This
@@ -59,7 +96,7 @@ must have the capability to deploy new (statistical) tests after
 deployment as the uses to which each service is placed extend to
 previously un-envisaged domains.}
 
-\subsection{Stateless Services}
+\notes{\subsection{Stateless Services}}
 
 \notes{Importantly, Milan does not place onerous constraints on the builders of
 individual machine learning models (or other components). Standard

@@ -23,8 +23,8 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
-<script src="/talks/figure-magnify.js"></script>
-<script src="/talks/figure-animate.js"></script>
+
+
     
 <div id="modal-frame" class="modal">
   <span class="close" onclick="closeMagnify()">&times;</span>
@@ -198,7 +198,7 @@ categories:
 </div>
 </div>
 <div id="deep-face-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-face&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="deep-face-caption" class="caption-frame">
 <p>Figure: The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
@@ -213,7 +213,7 @@ categories:
 </div>
 </div>
 <div id="early-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;early-pinball&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="early-pinball-caption" class="caption-frame">
 <p>Figure: Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</p>
@@ -235,7 +235,7 @@ categories:
 </object>
 </div>
 <div id="pinball-initialization-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-initialization&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="pinball-initialization-caption" class="caption-frame">
 <p>Figure: At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.</p>
@@ -247,7 +247,7 @@ categories:
 </object>
 </div>
 <div id="pinball-trained-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-trained&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<p><img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"></p>
 </div>
 <div id="pinball-trained-caption" class="caption-frame">
 <p>Figure: After learning the pins are now in the right place to bring the balls to the correct decisions.</p>

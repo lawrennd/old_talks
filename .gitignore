@@ -1,3 +1,4 @@
+Gemfile.lock
 .DS_Store
 _site
 .sass-cache
@@ -29,6 +30,9 @@ _site
 *.d
 *.tmp.html
 *.bak
+*.bbl
+*.blg
+*.log
 _*/*.ipynb
 !_notebooks/*.ipynb
 _*/*.slides.html

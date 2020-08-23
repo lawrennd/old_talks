@@ -4,7 +4,6 @@
 
 \section{Evolved Relationship with Information}
 
-
 \notes{The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
 
 Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of *mathematical* statistics and how our cognitive biases can mislead us. 
@@ -19,7 +18,7 @@ Better mediation of this flow actually requires a better understanding of human-
 
 For further thoughts see \addguardian{marketing in the internet era}{2015/jul/23/data-driven-economy-marketing} from 2015.}
 
-\notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}.
+\notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}\notes{.}
 
 \newslide{Evolved Relationship}
 

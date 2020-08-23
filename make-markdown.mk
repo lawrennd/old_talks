@@ -20,6 +20,9 @@
 %.notes.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to ipynb --code ipynb ${PPFLAGS} 
 
+%.full.ipynb.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to ipynb --code full ${PPFLAGS} 
+
 %.slides.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format slides --to ipynb ${PPFLAGS} 
 

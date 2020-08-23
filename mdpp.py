@@ -6,6 +6,7 @@ import os
 import argparse
 import yaml
 import _python.ndltalk as nt
+import _python.ndlyaml as ny
 
 parser = argparse.ArgumentParser()
 
@@ -39,7 +40,7 @@ parser.add_argument("-F", "--format", type=str,
 		   help="Target output file contents")
 
 parser.add_argument("-c", "--code", type=str, default='none',
-		    choices=['none', 'sparse', 'ipynb', 'diagnostic', 'plot'],
+		    choices=['none', 'sparse', 'ipynb', 'diagnostic', 'plot', 'full'],
                     help="Which parts of the code to include.")
 
 parser.add_argument("-e", "--exercises", default=True, action='store_true',
@@ -79,6 +80,11 @@ if args.code is not None and args.code != 'none':
       arglist.append('-DHELPERCODE=1')
       arglist.append('-DPLOTCODE=1')
       arglist.append('-DMAGICCODE=1')
+   elif args.code == 'full':
+      arglist.append('-DDISPLAYCODE=1')
+      arglist.append('-DHELPERCODE=1')
+      arglist.append('-DPLOTCODE=1')
+      arglist.append('-DMAGICCODE=1')
    if args.code == 'plot':
       arglist.append('-DHELPERCODE=1')
       arglist.append('-DPLOTCODE=1')
@@ -108,7 +114,7 @@ if args.no_header:
    body = md.read()
    md.close()
 else:
-   headertxt,bodytxt = nt.extract_header_body(args.filename)
+   headertxt,bodytxt = ny.extract_header_body(args.filename)
 
 header = {}
 default_file = '_config.yml'

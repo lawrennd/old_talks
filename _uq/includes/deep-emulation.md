@@ -5,7 +5,7 @@
 
 \subsection{Deep Emulation}
 
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}
 
 \notes{As a solution we can use of *emulators*. When constructing an ML system, software engineers,
 ML engineers, economists and operations researchers are
@@ -94,10 +94,14 @@ domain.--> Recomposing the ML system requires structural learning of the network
 
 \newslide{Deep Emulation}
 
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing1}
 
 \newslide{Deep Emulation}
 
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing002}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing2}
+
+\newslide{Deep Emulation}
+
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing003}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing3}
 
 \endif
