@@ -34,7 +34,7 @@ achieve good generalization.
 
 [^assuming]: Assuming we are ignoring parameters in the link function and the distribution function.}
 
-\notes{Naturally, as @Zhang:understanding17 starkly illustrate with
+\notes{As @Zhang:understanding17 starkly illustrated with
 their random labels experiment, within the dark forest there are some
 terrible places, big bad wolves of overfitting that will gobble up
 your model. But, as empirical evidence shows there is also a safe and
@@ -88,6 +88,6 @@ orthogonalization of the design matrix [@Lawson:least95].}
 \notes{It seems that with a highly overparameterized model, these
 locations become easier to find and generalize well. In machine
 learning this is known as the "double descent phenomenon" (see
-e.g. @Belkin:reconciling19). }
+e.g. @Belkin:reconciling19).}
 
 \endif
