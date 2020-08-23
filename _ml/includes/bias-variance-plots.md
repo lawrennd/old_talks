@@ -97,6 +97,7 @@ matplotlib.rc('font', **font)
 import matplotlib.pyplot as plt}
 
 
+\setupcode{from sklearn import svm}
 
 \code{# Create an instance of SVM and fit the data. 
 C = 100.0  # SVM regularization parameter

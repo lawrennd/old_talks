@@ -31,7 +31,7 @@ rc("text", usetex=True)}
 
 pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
 pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 1.5, fixed=False))
-pgm.add_edge("u", "y")
+pgm.add_edge("u", "y", directed=False)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
 
@@ -111,12 +111,12 @@ pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 1.5, fixed=False))
 pgm.add_node(daft.Node("ystar", r"$\mathbf{y}^*$", 1.5, 0.5, fixed=False, observed=True))
 pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 1.5, fixed=False))
 
-pgm.add_edge("u", "y")
-pgm.add_edge("ustar", "y")
-pgm.add_edge("ustar", "u")
-pgm.add_edge("ystar", "y")
-pgm.add_edge("ustar", "ystar")
-pgm.add_edge("u", "ystar")
+pgm.add_edge("u", "y", directed=False)
+pgm.add_edge("ustar", "y", directed=False)
+pgm.add_edge("u", "ustar", directed=False)
+pgm.add_edge("ystar", "y", directed=False)
+pgm.add_edge("ustar", "ystar", directed=False)
+pgm.add_edge("u", "ystar", directed=False)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y-ustar-to-y.svg", transparent=True)}
  
@@ -165,7 +165,7 @@ p(\dataVector|\numData^*) = \int p(\dataVector|\mappingFunctionVector) p(\mappin
 $$
 \notes{and since we enforce Kolmogorov consistency we have}
 $$
-p(\dataVector|\numData*) = p(\dataVector).
+p(\dataVector|\numData^*) = p(\dataVector).
 $$
 
 \setupplotcode{import daft}

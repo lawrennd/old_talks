@@ -40,8 +40,8 @@ np.random.seed(101)}
 \code{N = 50
 noise_var = 0.01
 X = np.zeros((50, 1))
-X[:25, :] = np.linspace(0,3,25)[:,None] # First cluster of inputs/covariates
-X[25:, :] = np.linspace(7,10,25)[:,None] # Second cluster of inputs/covariates
+X[:25, :] = np.linspace(0,3,25)[:,np.newaxis] # First cluster of inputs/covariates
+X[25:, :] = np.linspace(7,10,25)[:,np.newaxis] # Second cluster of inputs/covariates
 
 xlim = (-2,12)
 ylim = (-4, 0)
@@ -88,7 +88,7 @@ m_full.optimize() # Optimize parameters of covariance function}
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='$x', ylabel='$y$', fontsize=20, portion=0.2)
+plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
@@ -115,7 +115,7 @@ m.inducing_inputs.constrain_fixed()
 \displaycode{print(m) # why is it not printing noise variance correctly?}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='$x', ylabel='$y$', fontsize=20, portion=0.2)
+plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
