@@ -22,7 +22,7 @@ breakthrough results were achieved on these large data sets
 [@Krizhevsky:imagenet12]. Similar capabilities have then been shown in
 the domains of face identification [@Taigman:deepface14], and speech
 recognition [@Hinton:acoustic12], translation [@Sutskever:sequence14]
-and language modelling [@Radford:language19,@Devlin:bert19]. }
+and language modelling [@Radford:language19;@Devlin:bert19]. }
 
 \notes{Impressive though these performances are, they are reliant on
 massive data and enormous costs of training. Yet they can be seen
