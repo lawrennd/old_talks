@@ -67,7 +67,7 @@ An excellent characterisation of generalization is normally given by the bias-va
 
 \include{_ml/includes/bias-variance-dilemma.md}
 
-One of Breiman's ideas for improving predictive performance is known as Bagging. The idea is to train a number of models on the data such that they overfit (high variance). Then average the predictions of these models. The models are trained on different bootstrap samples and their predictions are aggregated giving us the acronym, Bagging. By combining decision trees with Bagging we recover Random Forests
+\notes{One of Breiman's ideas for improving predictive performance is known as Bagging. The idea is to train a number of models on the data such that they overfit (high variance). Then average the predictions of these models. The models are trained on different bootstrap samples and their predictions are aggregated giving us the acronym, Bagging. By combining decision trees with Bagging we recover Random Forests
 
 Bias and variance can be estimated through the Bootstrap, and the traditional view has been that there's a form of Goldilocks effect, where the best predictions are given by the model that is 'just right' for the amount of data available. Not to simple, not too complex. The idea is that bias decreases with increasing model complexity and variance increases with increasing model complexity. Typically plots begin with the Mummy bear on the left (too much bias) end with the Daddy bear on the right (too much variance) and show a dip in the middle where the Baby bear (just) right finds themselves. 
 
@@ -87,10 +87,11 @@ Intuitively, it seems that a highly over-parameterised model places Grandma's ho
 
 It seems that with a highly overparameterized model, these locations become easier to find and generalize well. In machine learning this is known as the "double descent phenomenon" (see e.g. @Belkin:reconciling19). 
 
-As Professor Efron points out, modern machine learning models are often fitted using many millions of data points. The most extreme example of late is known as GPT-3. This neural network model, known as a Transformer, has in its largest form 175 billion parameters. The model was trained on a data set containing 499 billion tokens (about 2 Terrabytes of text). Estimates suggest that the model costs around $4.5 million dollars to train (see e.g. @Li:openai20). 
+As Professor Efron points out, modern machine learning models are often fitted using many millions of data points. The most extreme example of late is known as GPT-3. This neural network model, known as a Transformer, has in its largest form 175 billion parameters. The model was trained on a data set containing 499 billion tokens (about 2 Terrabytes of text). Estimates suggest that the model costs around $4.5 million dollars to train (see e.g. @Li:openai20).} 
 
+\subsection{Deep Learning}
 
-The OpenAI model represents just a recent example from a wave of *deep* neural network models has proved highly
+\notes{The OpenAI model represents just a recent example from a wave of *deep* neural network models has proved highly
 performant across a range of challenges that were previously seen as being beyond our statistical modelling capabilities. 
 
 They stem from the courage of a group of researchers who saw that methods were improving with increasing data and chose to collect and label data sets of ever increasing size, in particular the ImageNet team led by Fei-Fei Li [@Russakovsky-imagenet15] who collected a large data set of images for object detection (currently 14 million images)o. To make these neural network methods work on such large data sets new implementations were required. By deploying neural network training algorithms on graphics processing units (GPUs) breakthrough results were achieved on these large data sets [@Krizhevsky:imagenet12]. Similar capabilities have then been shown in the domains of face identification
@@ -254,7 +255,7 @@ collected. If the model is chosen well we will be able to interpolate
 the data and precit likely values of future data points. If it is chosen
 badly our predictions will be overconfident and wrong.
 
-### Models vs Algorithms
+\subsubsection{Models vs Algorithms}
 
 Much of the technical focus in machine learning is on algorithms. In
 this document I want to retain a strong separation between the *model*
@@ -342,7 +343,7 @@ somehow implicit that we are suggesting factorization assumptions across
 the $\numData$ data points.
 
 \begin{align*}
-p(\dataMatrix) = \prod_{i=1}^\numData p(\dataVector_{i, :} \| \boldsymbol{\theta})
+p(\dataMatrix) = \prod_{i=1}^\numData p(\dataVector_{i, :} | \boldsymbol{\theta})
 \end{align*}
 
 
@@ -370,7 +371,7 @@ assumptions are not useful, indeed we will make use of them below, but
 they should *not* be the first thing we write down.
 
 
-### A Motivating Big Data Example
+\subsubsection{A Motivating Big Data Example}
 
 
 Statisticians like Pearson, Fisher and Student worked with tables of
@@ -489,10 +490,9 @@ However, any uncertainty in the parameters gives a much more structured
 uncertainty distribution for the data.
 
 
-### Uncertainty in Parameters
+\subsubsection{Uncertainty in Parameters}
 
-
-If the parameters are badly determined, then small fluctuations in the
+\notes{If the parameters are badly determined, then small fluctuations in the
 data set lead to larger fluctuations in prediction. One approach to this
 problem is to build models in which the parameters are well determined.
 For teh independence across data points case, this involves having many
@@ -514,13 +514,12 @@ probabilistic intepretation where the underlying likelihood factorizes
 across data dimensions. Regardless of our choice of factorization
 though, we are still making the same claim: a particular vector, or
 matrix, of parameters is suffcient for us to consider that the data
-independent, either across features or data points.
+independent, either across features or data points.}
 
 
-### Massively Missing Data
+\subsubsection{Massively Missing Data}
 
-
-I'd like to argue that the separation of the data into features and
+\notes{I'd like to argue that the separation of the data into features and
 data points is rather arbitrary. I believe it stems from the origin of
 the field of statistics, where the intention was to make a strong
 scientific claim based on numbers take from a *table* of data. A table
@@ -531,10 +530,10 @@ find sufficient number of items so that you can make strong claims about
 which features are important. For example, does smoking correlate with
 lung cancer? This explains the desire to write down the data as a matrix
 $\dataMatrix$. I think this view of data, whilst important at the time,
-is outdated when considering modern big data problems.
+is outdated when considering modern big data problems.}
 
 
-The modern data analysis challenge is very different. We receive
+\notes{The modern data analysis challenge is very different. We receive
 streaming data of varying provenance. If each number we receive is given
 by an observation $\dataScalar_i$, where $\dataScalar_i$ could be in the
 natural numbers, the real numbers or binary or in any processable form,
@@ -549,7 +548,24 @@ missing data*. Contrast this situation with that traditionally faced in
 missing data where a table of values, $\dataMatrix$, might have 10%-50%
 of the measurements missing, perhaps due to problems in data collection.
 I'd argue that if we are to model complex processes (such as the brain,
-or the cell, or human health) then almost all the data is missing.
+or the cell, or human health) then almost all the data is missing.}
+
+\setupplotcode{import daft}
+from matplotlib import rc
+
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
+
+\plotcode{pgm = daft.PGM(shape=[1, 1],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
+
+pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False))
+
+pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
 
 \plotcode{
 % Define nodes
@@ -558,8 +574,9 @@ or the cell, or human health) then almost all the data is missing.
 %\end{figure}
 }
 
+\figure{\includediagram{\diagramsDir/ml/y-only-graph.svg}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$.}{y-only-graph}
 
-A model that's not wrong, just not useful. I like graphical
+\notes{A model that's not wrong, just not useful. I like graphical
 representations of probabilistic models and this is my favourite graph.
 It is the most simple but also the most general. It says that all the
 data in our vector $\dataVector$ is governed by an unspecified
@@ -568,10 +585,10 @@ express the conditional independence relationships in the data, with
 this graph we are not a priori considering any such relationships. This
 is the most general model (it includes all factorized models as special
 cases). It is not wrong, but since it doesn't suggest what the next
-steps are or give us any handles on the problem it is also not useful.
+steps are or give us any handles on the problem it is also not useful.}
 
 
-This is the nature of modern streaming data, what has been called big
+\notes{This is the nature of modern streaming data, what has been called big
 data, although in the UK it looks like that term will gain a more
 diffuse meaning now that the government has associated a putative 189
 billion pounds of funding to it. But the characteristic of massive
@@ -582,10 +599,10 @@ we need to build models that not only take into account all current
 clinical tests, but all tests that will be invented in the future. This
 leads to the idea of massive missing data. The classical statistical
 table of data is merely the special case where someone has filled in a
-block of information.
+block of information.}
 
 
-To deal with massively missing data we need to think about the
+\notes{To deal with massively missing data we need to think about the
 *Kolmogorov consistency* of a process. Let me introduce Kolmogorov
 consistency by way of an example heard from Tony O'Hagan, but one that
 he credits originally to Michael Goldstein. Imagine you are on jury
@@ -614,53 +631,42 @@ dimensional vector, $\dataVector$, to be an (indexed) vector of all our
 instantiated observations of the world that we have *at the current
 time*. Then we take the $\numData^*$ dimensional vector, $\dataVector^*$
 to be the observations of the world that we are *yet to see*. From the
-sum rule of probability we have
-
-
-\begin{align*} p(\dataVector\|\numData^*) = \int p(\dataVector,
-\dataVector^*) \text{d}\dataVector^* \end{align*}
-
-
-where the dependence of the marginal distribution for $\dataVector$
+sum rule of probability we have}
+\begin{align*} 
+p(\dataVector|\numData^*) = \int p(\dataVector, \dataVector^*) \text{d}\dataVector^*,
+\end{align*}
+\notes{where the dependence of the marginal distribution for $\dataVector$
 aries from the fact that we are forming an $\numData^*$ dimensional
 integral over $\dataVector^*$. If our distribution is Kolmogorov
 consistent, then we know that the distribution over $\dataVector$ is
 *independent* of the value of $\numData^*$. So in other words
 $p(\dataVector|\numData*)=p(\dataVector)$. So Kolmogorov consistency
 says that the form of $p(\dataVector)$ remains the same *regardless* of
-the number of observations of the world that are yet to come.
+the number of observations of the world that are yet to come.}
 
+\subsection{Parametric Models}
 
-Parametric Models
------------------
-
-
-We can achieve Kolomogrov consistency almost trivially in a parametric
+\notes{We can achieve Kolomogrov consistency almost trivially in a parametric
 model if we assume that the probability distribution is independent
 given the parameters. Then the property of being closed under
-marginalization is trivially satisfied through the independence,
-
-
-\begin{align*}p(\dataVector, \dataVector^*) = \int
-\prod_{i=1}^\numData p(\dataScalar_{i} \|
-\boldsymbol{\theta})\prod_{i=1}^{\numData^*}p(\dataScalar^*_i\|\boldsymbol{\theta})
-p(\paramVector) \text{d}\paramVector\end{align*}
-
-
-which allows us to marginalize for all future data leaving a joint
+marginalization is trivially satisfied through the independence,}
+\begin{align*}
+p(\dataVector, \dataVector^*) = \int\prod_{i=1}^\numData p(\dataScalar_{i} |
+\boldsymbol{\theta})\prod_{i=1}^{\numData^*}p(\dataScalar^*_i|\boldsymbol{\theta})
+p(\paramVector) \text{d}\paramVector,
+\end{align*}
+\notes{which allows us to marginalize for all future data leaving a joint
 distribution which isn't dependent on $\numData^*$ because each future
-data point can be marginalized independently.
-
-
-\begin{align*}p(\dataVector) = \int \prod_{i=1}^\numData
-p(\dataScalar_{i} \|
+data point can be marginalized independently.}
+\begin{align*}
+p(\dataVector) = \int \prod_{i=1}^\numData
+p(\dataScalar_{i} |
 \boldsymbol{\theta})\prod_{i=1}^{\numData^*} \int
-p(\dataScalar^*_i\|\boldsymbol{\theta})
-\text{d}\dataScalar^*_i p(\paramVector)
-\text{d}\paramVector\end{align*}
-
-
-But, as we've already argued, this involves an assumption that is often
+p(\dataScalar^*_i|\boldsymbol{\theta})
+\text{d}\dataScalar^*_i p(\paramVector).
+\text{d}\paramVector
+\end{align*}
+\notes{But, as we've already argued, this involves an assumption that is often
 flawed in practice. It is unlikely that, in a complex model, we will be
 able to determine the parameter vector well enough, given limited data,
 for us to truly believe that all the information about the training data
@@ -669,33 +675,24 @@ fixed length parameter vector. This is what this independence assumption
 implies. If we consider that the model will also be acquiring new data
 at run time, then there is the question of hot to update the parameter
 vector in a consistent manner, accounting for new information, e.g. new
-clinical results in the case of personalized health.
+clinical results in the case of personalized health.}
 
-
-Conversely, a general assumption about independence across *features*
+\notes{Conversely, a general assumption about independence across *features*
 would lead to models which *don't* exhibit *Komlogorov consistency*. In
 these models the dimensionality of the test data, $\dataVector^*$,
 denoted by $\numData^*$ would have to be fixed and each
 $\dataScalar^*_i$ would require marginalization. So the nature of the
-test data would need to be known at model *design* time.
+test data would need to be known at model *design* time.}
 
+\subsection{Parametric Bottleneck}
 
-Parametric Bottleneck
----------------------
-
-
-In practice Bayesian methods suggest placing a prior over
+\notes{In practice Bayesian methods suggest placing a prior over
 $\boldsymbol{\theta}$ and using the posterior,
-$p(\boldsymbol{\theta}|\dataVector)$ for making predictions.
-
-
-\begin{align*} p(\dataVector^*\|\dataVector) = \int \prod_i
-p(\dataScalar_i^* \| \boldsymbol{\theta})
-p(\boldsymbol{\theta}\|\dataVector)\text{d}\boldsymbol{\theta}
+$p(\boldsymbol{\theta}|\dataVector)$ for making predictions.}
+\begin{align*} 
+p(\dataVector^*|\dataVector) = \int \prod_i p(\dataScalar_i^* | \boldsymbol{\theta})p(\boldsymbol{\theta}|\dataVector)\text{d}\boldsymbol{\theta}.
 \end{align*}
-
-
-We have a model that obeys Kolmogorov consistency, and is sophisticated
+\notes{We have a model that obeys Kolmogorov consistency, and is sophisticated
 enough to represent the behaviour of a very: it may well require a large
 number of parameters. One way of seeing the requirement for a large
 number of parameters is to look at how we are storing information from
@@ -711,24 +708,20 @@ bandwidth that is restricted by our choice of the dimensionality of
 $\boldsymbol{\theta}$ at *design* time. This seems foolish. Better to
 ensure we choose a model that allows for that channel to be potentially
 infinite. This implies a non-parametric approach. Our prior over
-$\boldsymbol{\theta}$ should be *non parametric*.
-
-
-$$p(\paramVector | \dataVector)$$
-
-
-which, as we argued above, allows us to retain the necessary sense of
+$\boldsymbol{\theta}$ should be *non parametric*.}
+$$
+p(\paramVector | \dataVector),
+$$
+\notes{which, as we argued above, allows us to retain the necessary sense of
 uncertainty about the parameters that is required in a very complex
 system when we have seen relatively little data. How much information
 can we store, then, about the training data? The information gain from
 the training data is given by the Kullback Leibler divergence between
-our prior distribution and our posterior distribution.
-
-
-$$\KL{p(\paramVector|\dataVector)}{p(\paramVector)}$$
-
-
-This is the information gained, measured in 'nats' if we use natural
+our prior distribution and our posterior distribution.}
+$$
+\KL{p(\paramVector|\dataVector)}{p(\paramVector)}
+$$
+\notes{This is the information gained, measured in 'nats' if we use natural
 logarithms, but it could equally be measured in bits, about our
 parameters having observed the training data. In the case that our
 likelihood is log concave[^3] then this information gain provably will increase, with every
@@ -742,13 +735,12 @@ $\dataVector$ and the form of the prior $p(\paramVector)$.
 
 [^3]: This is a definite constraint on the
 model, there are many very reasonable likelihoods that are not log
-concave.
+concave.}
 
 
-The Non-parametric Challenge
-----------------------------
+\subsection{The Non-parametric Challenge}
 
-We have argued that we want models that are unconstrained, at design
+\notes{We have argued that we want models that are unconstrained, at design
 time, by a fixed bandwidth for the communication between the training
 data, $\dataVector$, and the test data, $\dataVector^*$ and that the
 answer is to be non parameteric. By non-parametric we are proposing
@@ -763,11 +755,10 @@ being modeled may not even be well understood at *design time*. We must
 turn to paradigms that allow us to be adaptable at *run time*. Non
 parametrics provides just such a paradigm, because the effect parameter
 vector increases in size as we observe more data. This seems ideal, but
-it also presents a problem.
+it also presents a problem.}
 
-
-Human beings, despite are large, interconnected brains, only have finite
-storage. Similar for digital computers. So we need to assume that we can
+\notes{Human beings, despite are large, interconnected brains, only have finite
+storage. It is estimated that we have between 100 and 1000 trillion synapses in our brains. Similar for digital computers, even the GPT-3 model is restricted to 175 billion parameters. So we need to assume that we can
 only store a finite number of things about the data $\dataVector$. This
 seems to push us back towards non-parametric models. Here, though, we
 choose to go a different way. We choose to introduce a set of auxiliary
@@ -793,13 +784,11 @@ non-parametric conditional distribution. But, importantly, whilst this
 parametric approximation will suffer from the constraints on the
 bandwidth of the TT channel that drove us to non-parametric models in
 the first place, we will be able to change the number of parameters at
-*run time* not simply at design time.
+*run time* not simply at design time.}
 
+\subsubsection{The Multivariate Gaussian: Closure Under Marginalization}
 
-### The Multivariate Gaussian: Closure Under Marginalization
-
-
-Being closed under marginalization is a remarkable property of our old
+\notes{Being closed under marginalization is a remarkable property of our old
 friend the multivariate Gaussian distribution (old friends often have
 remarkable properties that we often take for granted, I think this is
 particularly true for the multivariate Gaussian). In particular, if we
@@ -813,84 +802,76 @@ a $2\times 2$ matrix, and it can only depend on the indices of the two
 data points in $\dataVector$. Since this covariance matrix must remain
 the same for any two values *regardless* of the length of $\dataVector$
 and $\dataVector^*$ then the value of the elements of this covariance
-must depend only on the two indices associated with $\dataVector$.
+must depend only on the two indices associated with $\dataVector$.}
 
-
-vec ihis implies that the covariance matrix must be dependent only Since
-the covariance matrix is specified pairwise, dependent only on the index
+\notes{Since the covariance matrix is specified pairwise, this implies that the covariance matrix must be dependent only  on the index
 of the two observations $\dataScalar_i$ and $\dataScalar_j$ for which
 the covariance is being computed. In general we can also think of this
-index as being infinite: it could be a spatial or temporal location.
-
-
-\begin{align*} p(\dataVector) = \int p(\dataVector, \dataVector^*)
+index as being infinite: it could be a spatial or temporal location.}
+\begin{align*} 
+p(\dataVector) = \int p(\dataVector, \dataVector^*)
 \text{d}\dataVector^*=
 \frac{\exp\left(\begin{bmatrix}\dataVector\
 \dataVector^*\end{bmatrix}^\top\begin{bmatrix}\kernelMatrix &
 \kernelMatrix_*\ \kernelMatrix_*^\top &
-\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector\
+\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector
 \dataVector^*\end{bmatrix}\right)}{\int
 \exp\left(\begin{bmatrix}\dataVector\
 \dataVector^*\end{bmatrix}^\top\begin{bmatrix}\kernelMatrix &
 \kernelMatrix_*\ \kernelMatrix_*^\top &
-\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector\
+\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector
 \dataVector^*\end{bmatrix}\right) \text{d}\dataVector
-\text{d}\dataVector^*} = \mathcal{N}(\mathbf{0} \|\kernelMatrix)\
+\text{d}\dataVector^*} = \mathcal{N}(\mathbf{0} |\kernelMatrix),
 \end{align*}
-
-
-where each $\dataScalar_i$ is now defined across the real line, and the
+\notes{where each $\dataScalar_i$ is now defined across the real line, and the
 dimensionality of $\dataVector*$ is irrelevant. Prediction consists of
 conditioning the joint density on $\dataVector^*$. So for any new value
 of $\dataVector^*$, given its index we compute
-$p(\dataVector^* | \dataVector)$.
+$p(\dataVector^* | \dataVector)$.}
 
 
-Making Parameters non-Parametric
---------------------------------
+\subsection{Making Parameters non-Parametric}
 
-
-We will start by introducing a set of variables, $\inducingVector$, that
+\notes{We will start by introducing a set of variables, $\inducingVector$, that
 are finite dimensional. These variables will eventually be used to
 communicate information between the training and test data, i.e. across
-the TT channel.
-
-
+the TT channel.}
 $$
 p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) q(\inducingVector|\dataVector) \text{d}\inducingVector
 $$
-
-
-where we have introduced a distribution over $\inducingVector$,
+\notes{where we have introduced a distribution over $\inducingVector$,
 $q(\inducingVector|\dataVector)$ which is not necessarily the true
-posterior distribution.
-:::
+posterior distribution.}
 
-::: {.cell .code execution_count="4"}
-``` {.python}
-%%tikz --size 180,180 -f svg
-\begin{tikzpicture}[scale=2]
-% Define nodes
-\draw node[obs] (y) {$\dataVector$};
-\draw node[latent, above=of y] (u) {$\inducingVector$};
+\setupplotcode{import daft
+from matplotlib import rc
 
-\draw [-] (u) to (y);%
-\end{tikzpicture}
-```
-:::
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
 
-::: {.cell .code markdown}
+\plotcode{pgm = daft.PGM(shape=[1, 3],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
 
+pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 1.5, fixed=False))
+pgm.add_edge("u", "y")
 
-Our simple graphical model augmented with $\inducingVector$ which we
+pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
+
+\figure{\includediagram{\diagramsDir/ml/u-to-y.svg}{40%}}{Augmenting the variable space with a set of latent *inducing vectors*}{u-to-y}
+
+\notes{Our simple graphical model augmented with $\inducingVector$ which we
 refer to as inducing variables. Note that the model is still totally
 general because $p(\dataVector, \inducingVector)$ is an augmented
 variable model and the original $p(\dataVector)$ is easily recovered by
 simple marginalization of $\inducingVector$. We haven't yet made any
-assumptions about our data.
+assumptions about our data.}
 
-
-The model we've introduced now seems remarkably like the parametric
+\notes{The model we've introduced now seems remarkably like the parametric
 model we argued against in the previous section. So what's going on
 here, is there going to be some kind of parametric/non parametric 3 card
 trick where with sleight of hand we are trying to introduce a parametric
@@ -906,25 +887,23 @@ not going to specify the dimensionality of $\inducingVector$ (i.e. the
 size of the TT channel) at *design* time. We are going to allow it to
 change at *run* time. We will do this by ensuring that the inducing
 variables also obey Kolmogorov consistency. In particular we require
-that If we build a joint density as follows:
-
-
-\begin{align*} p(\dataVector, \inducingVector\|\numInducing^*,
+that If we build a joint density as follows:}
+\begin{align*} 
+p(\dataVector, \inducingVector|\numInducing^*,
 \numData^*) = \int p(\dataVector^*, \dataVector,
 \inducingVector^*, \inducingVector) \text{d}\dataVector^*
-\text{d}\inducingVector^* \end{align*}
-
-
-where $\inducingVector$ are the inducing variables we choose might
+\text{d}\inducingVector^*,
+\end{align*}
+\notes{where $\inducingVector$ are the inducing variables we choose might
 choose to instantiate at any given time (of dimensionality
 $\numInducing$) and $\inducingVector^*$ is the $\numInducing^*$
 dimensional pool of future inducing variables we have *not yet* chosen
 to instantiate (where $\numInducing^*$ could be infinite). Our new
-Kolmogorov consistency condition requires that
+Kolmogorov consistency condition requires that}
 $$
 p(\dataVector, \inducingVector|\numInducing^*,\numData^*) = p(\dataVector, \inducingVector).
 $$
-It doesn't need to be predetermined at *design time* because we allow
+\notes{It doesn't need to be predetermined at *design time* because we allow
 for the presence of a (potentially infinite) number of inducing
 variables $\inducingVector^*$ that we may wish to *later* instantiate to
 improve the quality of our model. In other words, it is very similar to
@@ -939,11 +918,10 @@ channel. The quality of this approximation can be varied at run time. It
 is not necessary to specify it at design time. This gives us the
 flexibility we need in terms of modeling, whilst keeping computational
 complexity and memory demands manageable and appropriate to the task at
-hand.
-:::
+hand.}
 
-::: {.cell .code execution_count="5"}
-``` {.python}
+\setupplotcode{import daft}
+\plotcode{
 %%tikz --scale 2 --size 200,200 -f svg
 % Define nodes
 \begin{tikzpicture}[scale=1]
@@ -959,29 +937,21 @@ hand.
 \draw [-] (ystar) to (y);%
 \draw [-] (ustar) to (ystar);%
 \draw [-] (u) to (ystar);%
-\end{tikzpicture}
+\end{tikzpicture}}
  
-```
+\figure{}
 
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-
-
-Adding in the test data and the inducing variables we have not yet
+\notes{Adding in the test data and the inducing variables we have not yet
 chosen to instantiate. Here we see that we still haven't defined any
 structure in the graph, and therefore we have not yet made any
 assumptions about our data. Not shown in the graph is the additional
 assumption that whilst $\dataVector$ has $\numData$ dimensions and
 $\inducingVector$ has $\numInducing$ dimensions, $\dataVector^*$ and
-$\inducingVector^*$ are potentially infinite dimensional.
+$\inducingVector^*$ are potentially infinite dimensional.}
 
+\subsubsection{Fundamental Variables}
 
-### Fundamental Variables
-
-
-To focus our model further, we assume that we observe observations,
+\notes{To focus our model further, we assume that we observe observations,
 $\dataVector$ that are derived from some underlying fundamental,
 $\mappingFunctionVector$, through simple factorized likelihoods. The
 idea of the fundamental variables is that they are sufficient to
@@ -989,11 +959,11 @@ describe the world around us, but we might not be able to observe them
 directly. In particular we might observe relatively simple corruptions
 of the fundamental variables such as independent addition of noise, or
 thresholding. We might observe something relative about two fundamental
-veriables. For example if we took $\mappingFunction_12,345$ to be the
-height of Tom Cruise and $\mappingFunction_23,789$ to be the height of
+veriables. For example if we took $\mappingFunction_{12,345}$ to be the
+height of Tom Cruise and $\mappingFunction_{23,789}$ to be the height of
 Penelope Cruz then we might take for an observation a binary value
 indicating the relative heights, so
-$\datascalar_72,394 = \mappingFunction_12,345 < \mappingFunction_23,789$.
+$\datascalar_{72,394} = \mappingFunction_{12,345} < \mappingFunction_{23,789}$.
 The fundamental variable is an artificial construct, but it can prove to
 be a useful one. In particular we'd like to assume that the
 relationship between our observations, $\dataVector$ and the fundamental
@@ -1008,21 +978,17 @@ over $\numData$ the model is still general if we allow the factors of
 the likelihood to be Dirac delta functions suggesing that
 $\dataScalar_i = \mappingFunction_i$. Since we haven't yet specified
 any forms for the probability distributions this *is* allowed and
-therefore the formulation is still totally general.
+therefore the formulation is still totally general.}
+$$
+p(\dataVector|\numData^*) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector, \mappingFunctionVector^*)\text{d}\mappingFunctionVector \text{d}\mappingFunctionVector^*
+$$
+\notes{and since we enforce Kolmogorov consistency we have}
+$$
+p(\dataVector|\numData*) = p(\dataVector).
+$$
 
-
-$$p(\dataVector|\numData^*) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector, \mappingFunctionVector^*)\text{d}\mappingFunctionVector \text{d}\mappingFunctionVector^*$$
-
-
-and since we enforce Kolmogorov consistency we have
-
-
-$$p(\dataVector|\numData*) = p(\dataVector)$$
-:::
-
-::: {.cell .code execution_count="6"}
-``` {.python}
-%%tikz --scale 2 --size 300,300 -f svg
+\setupplotcode{import daft}
+\plotcode{%%tikz --scale 2 --size 300,300 -f svg
 % Define nodes
 \begin{tikzpicture}[scale=1]
 \draw node[obs] (y) {$\dataVector$};
@@ -1036,37 +1002,29 @@ $$p(\dataVector|\numData*) = p(\dataVector)$$
 \draw [-, draw=gray,color=gray] (ustar) to (f);%
 \draw [->] (f) to (y);%
 \draw [-] (u) to (f);%
-\end{tikzpicture}
+\end{tikzpicture}}
  
-```
+\figure{} 
 
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-
-
-Now we assume some form of factorization for our data observations,
+\notes{Now we assume some form of factorization for our data observations,
 $\dataVector$, given the fundamental variables,
-$\mappingFunctionVector$, so that we have
+$\mappingFunctionVector$, so that we have}
 $$
 p(\dataVector|\mappingFunctionVector) = \prod_{i} p(\dataVector^i| \mappingFunctionVector^i)
 $$
-so that we have subsets of the data $\dataVector^i$ which are dependent
+\notes{so that we have subsets of the data $\dataVector^i$ which are dependent
 on sub sets of the fundamental variables, $\mappingFunction$. For
 simplicity of notation we will assume a factorization across the entire
 data set, so each observation, $\dataScalar_i$, has a single underlying
 fundamental variable, $\mappingFunction_i$, although more complex
 factorizations are also possible and can be considered within the
-analysis.
+analysis.}
 $$
 p(\dataVector|\mappingFunctionVector) = \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i)
 $$
-:::
 
-::: {.cell .code execution_count="7"}
-``` {.python}
-%%tikz --size 300,300 -f svg
+\setupplotcode{import daft}
+\plotcode{%%tikz --size 300,300 -f svg
 % Define nodes
 \begin{tikzpicture}[scale=1]
 \draw node[obs] (y) {$\dataScalar_i$};
@@ -1081,33 +1039,20 @@ $$
 \draw [-] (u) to (f);%
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-\end{tikzpicture}
+\end{tikzpicture}}
         
- 
-```
-
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-
-
-We now decompose, without loss of generality, our joint distribution
-over inducing variables and fundamentals into the following parts
+\notes{We now decompose, without loss of generality, our joint distribution
+over inducing variables and fundamentals into the following parts}
+$$
+p(\inducingVector, \mappingFunctionVector) = p(\mappingFunctionVector|\inducingVector)p(\inducingVector),
+$$
+\notes{where we assume that we have marginalised $\mappingFunctionVector^*$ and
+$\inducingVector^*$.}
 
 
-$$p(\inducingVector, \mappingFunctionVector) = p(\mappingFunctionVector|\inducingVector)p(\inducingVector)$$
+\setupplotcode{import daft}
 
-
-where we assume that we have marginalised $\mappingFunctionVector^*$ and
-$\inducingVector^*$.
-
-
-:::
-
-::: {.cell .code execution_count="8"}
-``` {.python}
-%%tikz --size 300,300 -f svg
+\plotcode{%%tikz --size 300,300 -f svg
 % Define nodes
 \begin{tikzpicture}[scale=1]
 \draw node[obs] (y) {$\dataScalar_i$};
@@ -1119,18 +1064,11 @@ $\inducingVector^*$.
 \draw [->] (u) to (f);%
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-\end{tikzpicture}
-```
+\end{tikzpicture}}
 
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-:::
 
-::: {.cell .code execution_count="9"}
-``` {.python}
-%%tikz --scale 2 --size 300,300 -f svg
+\setupplotcode{import daft}
+\plotcode{%%tikz --scale 2 --size 300,300 -f svg
 % Define nodes
 \begin{tikzpicture}[scale=2]
 \draw node[obs] (y) {$\dataVector$};
@@ -1154,18 +1092,12 @@ $\inducingVector^*$.
 \draw [->] (u) to (f);%
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-\end{tikzpicture}
- 
-```
+\end{tikzpicture}}
 
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-:::
 
-::: {.cell .code execution_count="10"}
-``` {.python}
+\setupplotcode{import daft}
+
+\plotcode{
 %%tikz --size 300,300 -f svg
 % Define nodes
 \begin{tikzpicture}[scale=2]
@@ -1190,17 +1122,10 @@ $\inducingVector^*$.
 \draw [->] (u) to (f);%
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-\end{tikzpicture}
-```
+\end{tikzpicture}}
 
-::: {.output .stream .stderr}
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-:::
-
-::: {.cell .code execution_count="11"}
-``` {.python}
+\setupplotcode{import daft}
+\plotcode{
 %%tikz --scale 2 --size 300,300 -f svg
 % Define nodes
 \draw node[obs] (y) {$\dataVector$};
@@ -1224,577 +1149,11 @@ $\inducingVector^*$.
 \draw [->] (u) to (f);%
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-        
+}        
  
-```
-
-::: {.output .stream .stderr}
-    LaTeX terminated with signal -1
-    pdf2svg terminated with signal -127
-    No image generated.
-:::
-
-::: {.output .display_data}
-    This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.5)  9 OCT 2014 07:01
-    entering extended mode
-     \write18 enabled.
-     %&-line parsing enabled.
-    **tikz.tex
-    (./tikz.tex
-    LaTeX2e <2011/06/27>
-    Babel <3.9f> and hyphenation patterns for 78 languages loaded.
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/standalone/standalone.cls
-    Document Class: standalone 2012/09/15 v1.1b Class to compile TeX sub-files stan
-    dalone
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-    Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-    Package ifluatex Info: LuaTeX not detected.
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-    Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-    Package ifpdf Info: pdfTeX in PDF mode is detected.
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-    Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-    Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-    \XKV@toks=\toks14
-    \XKV@tempa@toks=\toks15
-    \XKV@depth=\count79
-    File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/xkeyval/keyval.tex)))
-    \sa@internal=\count80
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/standalone/standalone.cfg
-    File: standalone.cfg 2012/09/15 v1.1b Default configuration file for 'standalon
-    e' class
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
-    Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo
-    File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
-    )
-    \c@part=\count81
-    \c@section=\count82
-    \c@subsection=\count83
-    \c@subsubsection=\count84
-    \c@paragraph=\count85
-    \c@subparagraph=\count86
-    \c@figure=\count87
-    \c@table=\count88
-    \abovecaptionskip=\skip41
-    \belowcaptionskip=\skip42
-    \bibindent=\dimen102
-    )
-    \sa@box=\box26
-    runsystem(pdflatex  -shell-escape  -jobname 'tikz' '\expandafter\def\csname sa@
-    internal@run\endcsname{1}\input{tikz}')...executed.
-
-    runsystem(convert -density 300 tikz.pdf -resize 300x300 -quality 90 tikz.png)..
-    .executed.
 
 
-
-    Class standalone Warning: Conversion unsuccessful!
-    (standalone)              There might be something wrong with your
-    (standalone)              conversation software or the file permissions!
-
-    ) (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-    x
-    \pgfutil@everybye=\toks16
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-    \pgfutil@abb=\box27
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/ms/everyshi.sty
-    Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-    Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
-    ))
-    Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
-    Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
-    Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
-    Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
-    File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
-    )
-    Package graphics Info: Driver file: pdftex.def on input line 91.
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
-    File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-    Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-    Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-    )
-    \Gread@gobject=\count89
-    ))
-    \Gin@req@height=\dimen103
-    \Gin@req@width=\dimen104
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-    Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-    \pgfkeys@pathtoks=\toks17
-    \pgfkeys@temptoks=\toks18
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-    ode.tex
-    \pgfkeys@tmptoks=\toks19
-    ))
-    \pgf@x=\dimen105
-    \pgf@y=\dimen106
-    \pgf@xa=\dimen107
-    \pgf@ya=\dimen108
-    \pgf@xb=\dimen109
-    \pgf@yb=\dimen110
-    \pgf@xc=\dimen111
-    \pgf@yc=\dimen112
-    \w@pgf@writea=\write3
-    \r@pgf@reada=\read1
-    \c@pgf@counta=\count90
-    \c@pgf@countb=\count91
-    \c@pgf@countc=\count92
-    \c@pgf@countd=\count93
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-    File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
-    )
-    Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-    ef
-    File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-    df.def
-    File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
-    )))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-    code.tex
-    File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-    \pgfsyssoftpath@smallbuffer@items=\count94
-    \pgfsyssoftpath@bigbuffer@items=\count95
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-    code.tex
-    File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-    )) (/usr/local/texlive/2013/texmf-dist/tex/latex/xcolor/xcolor.sty
-    Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
-    File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-    )
-    Package xcolor Info: Driver file: pdftex.def on input line 225.
-    Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-    Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-    Package xcolor Info: Model `RGB' extended on input line 1353.
-    Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-    Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-    Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-    Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-    Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-    Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-    Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-    \pgfmath@dimen=\dimen113
-    \pgfmath@count=\count96
-    \pgfmath@box=\box28
-    \pgfmath@toks=\toks20
-    \pgfmath@stack@operand=\toks21
-    \pgfmath@stack@operation=\toks22
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-    tex
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-    .code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-    nometric.code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-    m.code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-    rison.code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-    code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-    .code.tex)
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-    code.tex)))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-    \c@pgfmathroundto@lastzeros=\count97
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-    de.tex
-    File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-    \pgf@picminx=\dimen114
-    \pgf@picmaxx=\dimen115
-    \pgf@picminy=\dimen116
-    \pgf@picmaxy=\dimen117
-    \pgf@pathminx=\dimen118
-    \pgf@pathmaxx=\dimen119
-    \pgf@pathminy=\dimen120
-    \pgf@pathmaxy=\dimen121
-    \pgf@xx=\dimen122
-    \pgf@xy=\dimen123
-    \pgf@yx=\dimen124
-    \pgf@yy=\dimen125
-    \pgf@zx=\dimen126
-    \pgf@zy=\dimen127
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-    ruct.code.tex
-    File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-    \pgf@path@lastx=\dimen128
-    \pgf@path@lasty=\dimen129
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-    .code.tex
-    File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-    \pgf@shorten@end@additional=\dimen130
-    \pgf@shorten@start@additional=\dimen131
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-    de.tex
-    File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-    \pgfpic=\box29
-    \pgf@hbox=\box30
-    \pgf@layerbox@main=\box31
-    \pgf@picture@serial@count=\count98
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-    ate.code.tex
-    File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-    \pgflinewidth=\dimen132
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-    ations.code.tex
-    File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-    \pgf@pt@x=\dimen133
-    \pgf@pt@y=\dimen134
-    \pgf@pt@temp=\dimen135
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-    e.tex
-    File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-    ode.tex
-    File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-    ssing.code.tex
-    File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-    de.tex
-    File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-    e.tex
-    File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-    \pgf@max=\dimen136
-    \pgf@sys@shading@range@num=\count99
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-    e.tex
-    File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-    code.tex
-    File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-    \pgfexternal@startupbox=\box32
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-    de.tex
-    File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-    ncy.code.tex
-    File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-    code.tex
-    File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
-    )))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-    e.tex
-    File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-    \pgfnodeparttextbox=\box33
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-    tex
-    File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
-    -0-65.sty
-    Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-    \pgf@nodesepstart=\dimen137
-    \pgf@nodesepend=\dimen138
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
-    -1-18.sty
-    Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-    ) (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-    Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-    \pgffor@iter=\dimen139
-    \pgffor@skip=\dimen140
-    \pgffor@stack=\toks23
-    \pgffor@toks=\toks24
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
-    e.tex
-    Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
-    dlers.code.tex
-    File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-    \pgf@plot@mark@count=\count100
-    \pgfplotmarksize=\dimen141
-    )
-    \tikz@lastx=\dimen142
-    \tikz@lasty=\dimen143
-    \tikz@lastxsaved=\dimen144
-    \tikz@lastysaved=\dimen145
-    \tikzleveldistance=\dimen146
-    \tikzsiblingdistance=\dimen147
-    \tikz@figbox=\box34
-    \tikz@tempbox=\box35
-    \tikztreelevel=\count101
-    \tikznumberofchildren=\count102
-    \tikznumberofcurrentchild=\count103
-    \tikz@fig@count=\count104
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
-    e.tex
-    File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-    \pgfmatrixcurrentrow=\count105
-    \pgfmatrixcurrentcolumn=\count106
-    \pgf@matrix@numberofcolumns=\count107
-    )
-    \tikz@expandcount=\count108
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibrarytopaths.code.tex
-    File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-    )))
-    (/Users/neil/SheffieldML/publications/tex_inputs/definitions.tex
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/verbatim.sty
-    Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-    \every@verbatim=\toks25
-    \verbatim@line=\toks26
-    \verbatim@in@stream=\read2
-    ))
-    (/Users/neil/SheffieldML/publications/tex_inputs/notationDef.tex)
-    (/Users/neil/SheffieldML/publications/tex_inputs/graphicalModels.tex
-    (/Users/neil/SheffieldML/publications/tex_inputs/tikz-bayesnet/tikzlibrarybayes
-    net.code.tex
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.code.tex
-    File: tikzlibraryshapes.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.geometric.code.tex
-    File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-    shapes.geometric.code.tex
-    File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.misc.code.tex
-    File: tikzlibraryshapes.misc.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-    shapes.misc.code.tex
-    File: pgflibraryshapes.misc.code.tex 2008/10/07 v2.10 (rcs-revision 1.3)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.symbols.code.tex
-    File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-    shapes.symbols.code.tex
-    File: pgflibraryshapes.symbols.code.tex 2009/10/27 v2.10 (rcs-revision 1.3)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.arrows.code.tex
-    File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-    shapes.arrows.code.tex
-    File: pgflibraryshapes.arrows.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.callouts.code.tex
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-    shapes.callouts.code.tex))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryshapes.multipart.code.tex
-    File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-    shapes.multipart.code.tex
-    File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
-    \pgfnodepartlowerbox=\box36
-    \pgfnodeparttwobox=\box37
-    \pgfnodepartthreebox=\box38
-    \pgfnodepartfourbox=\box39
-    \pgfnodeparttwentybox=\box40
-    \pgfnodepartnineteenbox=\box41
-    \pgfnodeparteighteenbox=\box42
-    \pgfnodepartseventeenbox=\box43
-    \pgfnodepartsixteenbox=\box44
-    \pgfnodepartfifteenbox=\box45
-    \pgfnodepartfourteenbox=\box46
-    \pgfnodepartthirteenbox=\box47
-    \pgfnodeparttwelvebox=\box48
-    \pgfnodepartelevenbox=\box49
-    \pgfnodeparttenbox=\box50
-    \pgfnodepartninebox=\box51
-    \pgfnodeparteightbox=\box52
-    \pgfnodepartsevenbox=\box53
-    \pgfnodepartsixbox=\box54
-    \pgfnodepartfivebox=\box55
-    )))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryfit.code.tex
-    File: tikzlibraryfit.code.tex 2008/06/21 v2.10 (rcs-revision 1.3)
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibrarychains.code.tex
-    File: tikzlibrarychains.code.tex 2008/02/27 v2.10 (rcs-revision 1.5)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibrarypositioning.code.tex
-    File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-    s/tikzlibraryarrows.code.tex
-    File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-    code.tex
-    File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
-    \arrowsize=\dimen148
-    )))) (./tikz.aux)
-    \openout1 = `tikz.aux'.
-
-    LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-    LaTeX Font Info:    ... okay on input line 7.
-    LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-    LaTeX Font Info:    ... okay on input line 7.
-    LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-    LaTeX Font Info:    ... okay on input line 7.
-    LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-    LaTeX Font Info:    ... okay on input line 7.
-    LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-    LaTeX Font Info:    ... okay on input line 7.
-    LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-    LaTeX Font Info:    ... okay on input line 7.
-     ABD: EveryShipout initializing macros
-    (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
-    [Loading MPS to PDF converter (version 2006.09.02).]
-    \scratchcounter=\count109
-    \scratchdimen=\dimen149
-    \scratchbox=\box56
-    \nofMPsegments=\count110
-    \nofMParguments=\count111
-    \everyMPshowfont=\toks27
-    \MPscratchCnt=\count112
-    \MPscratchDim=\dimen150
-    \MPnumerator=\count113
-    \makeMPintoPDFobject=\count114
-    \everyMPtoPDFconversion=\toks28
-    ) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-    Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-    )
-    Package pdftexcmds Info: LuaTeX not detected.
-    Package pdftexcmds Info: \pdf@primitive is available.
-    Package pdftexcmds Info: \pdf@ifprimitive is available.
-    Package pdftexcmds Info: \pdfdraftmode found.
-    )
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-    Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
-    Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-    Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-    ))
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-    Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-    Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-    (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-    Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-    Package etexcmds Info: Could not find \expanded.
-    (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-    (etexcmds)             that some package has redefined \expanded.
-    (etexcmds)             In the latter case, load this package earlier.
-    )))
-    Package grfext Info: Graphics extension search list:
-    (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-    G,.JBIG2,.JB2,.eps]
-    (grfext)             \AppendGraphicsExtensions on input line 452.
-
-    (/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-    File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-    e
-    ))
-    ! Undefined control sequence.
-    l.8 \draw
-              node[obs] (y) {$\dataVector$};
-    ? 
-    ! Emergency stop.
-    l.8 \draw
-              node[obs] (y) {$\dataVector$};
-    End of file on the terminal!
-
-     
-    Here is how much of TeX's memory you used:
-     12714 strings out of 493315
-     261271 string characters out of 6137905
-     332853 words of memory out of 5000000
-     15908 multiletter control sequences out of 15000+600000
-     3640 words of font info for 14 fonts, out of 8000000 for 9000
-     957 hyphenation exceptions out of 8191
-     56i,0n,56p,417b,83s stack positions out of 5000i,500n,10000p,200000b,80000s
-    !  ==> Fatal error occurred, no output PDF file produced!
-:::
-
-
-Instantiating the Model
------------------------
-
+\subsection{Instantiating the Model}
 
 So far we haven't made any assumptions about the data in our model,
 other than a factorization assumption between the fundamental variables
@@ -1821,7 +1180,7 @@ expect to observe about the data? For example, Brownian motion is
 modelled as a stochastic differential equation.
 
 
-### Gaussian Processes
+\subsubsection{Gaussian Processes}
 
 
 A flexible class of models that fulfils the constraints of being
@@ -1845,7 +1204,7 @@ the covariance also need to be indexed by the when, the where and the
 what.
 
 
-### Augmenting with Inducing Variables in Gaussian Processes
+\subsubsection{Augmenting with Inducing Variables in Gaussian Processes}
 
 
 To define our model we need to describe the relationship between the
@@ -1887,7 +1246,7 @@ most of the modelling decisions take place in the construction of
 $\kernelScalar_\mappingFunction(\cdot)$.
 
 
-### The Mean Function
+\subsubsection{The Mean Function}
 
 
 The mean of the process is given by a vector $\mathbf{m}$ which is
@@ -1965,46 +1324,26 @@ function and focus only on the covariance function.
 
 \todo{Mention here an example of things going wrong? Or do a short run
 of a mauna loa data to demonstrate, with a mean function included?}
-:::
 
-::: {.cell .code execution_count="12"}
-``` {.python}
-%pylab inline
-import GPy
-data = GPy.util.datasets.mauna_loa()
+\setupcode{import GPy
+import pods}
+
+\code{
+data = pods.util.datasets.mauna_loa()
 kern = GPy.kern.Linear(1) + GPy.kern.RBF(1) + GPy.kern.Bias(1)
 model = GPy.models.GPRegression(data['X'], data['Y'], kern)
-#model.optimize()
-```
+#model.optimize()}
 
-::: {.output .stream .stdout}
-    Populating the interactive namespace from numpy and matplotlib
-:::
 
-::: {.output .error ename="IndentationError" evalue="unexpected indent (coregionalize.py, line 154)"}
-      File "/Users/neil/SheffieldML/GPy/GPy/kern/_src/coregionalize.py", line 154
-        def _gradient_reduce_numpy(self, dL_dK, index, index2):
-        ^
-    IndentationError: unexpected indent
-:::
-:::
-
-::: {.cell .code collapsed="true"}
-``` {.python}
-```
-:::
-
-::: {.cell .code collapsed="true"}
-``` {.python}
-pb.plot(xlim
-```
+\plotcode{
+pb.plot(xlim}
 
 
 So we *could* interpret Gaussian process models as approaches to dealing
 with residuals
 
 
-### Modelling $\mappingFunctionVector$
+\subsubsection{Modelling $\mappingFunctionVector$}
 
 
 In conclusion, for a non parametric framework, our model for
@@ -2019,42 +1358,29 @@ There are a range of ways in which the inducing variables can interelate
 with the
 
 
-### Illustrative Example
+\subsubsection{Illustrative Example}
 
 
 For this illustrative example, we'll consider a simple regression
 problem. The example is based on one that James Hensman showed at the
 January 2014 Gaussian process winter school in his talk is on low rank
 Gaussian process approximations.
-:::
-
-::: {.cell .code execution_count="36" collapsed="true" slideshow="{\"slide_type\":\"slide\"}"}
-``` {.python}
-%matplotlib inline
-import GPy
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import optimize
-import teaching_plots as plot
-from gp_tutorial import ax_default, meanplot, gpplot
-import mlai
-np.random.seed(101)
-```
 
 
-A Simple Regression Problem
----------------------------
+\subsection{Back to a Simple Regression Problem}
 
 
 Here we set up a simple one dimensional regression problem. The input
 locations, $\inputMatrix$, are in two separate clusters. The response
 variable, $\dataVector$, is sampled from a Gaussian process with an
-exponentiated quadratic covariance.
-:::
+exponentiated quadratic covariance.}
 
-::: {.cell .code execution_count="37" collapsed="true"}
-``` {.python}
-N = 50
+\setupcode{import numpy as np
+import GPy
+from scipy import optimize
+np.random.seed(101)}
+
+\code{N = 50
 noise_var = 0.01
 X = np.zeros((50, 1))
 X[:25, :] = np.linspace(0,3,25)[:,None] # First cluster of inputs/covariates
@@ -2067,18 +1393,16 @@ ylim = (-4, 0)
 k = GPy.kern.RBF(1)
 y = np.random.multivariate_normal(np.zeros(N),k.K(X)+np.eye(N)*np.sqrt(noise_var)).reshape(-1,1)
 scale = np.sqrt(np.var(y))
-offset = np.mean(y)
-```
+offset = np.mean(y)}
 
-
-First we perform a full Gaussian process regression on the data. We
+\notes{First we perform a full Gaussian process regression on the data. We
 create a GP model, `m_full`, and fit it to the data, plotting the
-resulting fit.
-:::
+resulting fit.}
 
-::: {.cell .code execution_count="38" collapsed="true"}
-``` {.python}
-def plot_model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
+\setuphelpercode{import matplotlib.pyplot as plt
+from gp_tutorial import ax_default, meanplot, gpplot}
+
+\helpercode{def plot_model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
     if ax is None:
         fig, ax = plt.subplots(figsize=plot.big_figsize)
     ax.plot(model.X.flatten(), model.Y[:, output_dim]*scale + offset, 'r.',markersize=10)
@@ -2096,61 +1420,32 @@ def plot_model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabe
                yt_mean[:, output_dim],
                yt_mean[:, output_dim]-2*yt_sd.flatten(),
                yt_mean[:, output_dim]+2*yt_sd.flatten(), 
-               ax=ax)
-```
-:::
+               ax=ax)}
 
-::: {.cell .code execution_count="63"}
-``` {.python}
-m.plot
-```
 
-::: {.output .error ename="AttributeError" evalue="'function' object has no attribute '__file__'"}
-    ---------------------------------------------------------------------------
-    AttributeError                            Traceback (most recent call last)
-    <ipython-input-63-da31fe6ce98f> in <module>()
-    ----> 1 m.plot.__file__
 
-    AttributeError: 'function' object has no attribute '__file__'
-:::
-:::
+\code{m_full = GPy.models.GPRegression(X,y)
+m_full.optimize() # Optimize parameters of covariance function}
 
-::: {.cell .code execution_count="39"}
-``` {.python}
-m_full = GPy.models.GPRegression(X,y)
-m_full.optimize() # Optimize parameters of covariance function
-```
+\setupplotcode{import teaching_plots as plot
+import mlai}
 
-::: {.output .execute_result execution_count="39"}
-    <paramz.optimization.optimization.opt_lbfgsb at 0x120d63f28>
-:::
-:::
-
-::: {.cell .code execution_count="40"}
-``` {.python}
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='$x', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../../slides/diagrams/gp/sparse-demo-full-gp.svg', 
-                  transparent=True, frameon=True)
-```
+                  filename='\diagramsDir/gp/sparse-demo-full-gp.svg', 
+                  transparent=True, frameon=True)}
+				  
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-full-gp.svg}{60%}}{A full Gaussian process fit to the simulated data set.}{sparse-demo-full-gp}
 
-::: {.output .display_data}
-![](fa9e88c44f609dad691ce5416d005212c7afcc07.png)
-:::
-
-
-Now we set up the inducing variables, $\mathbf{u}$. Each inducing
+Now we set up the inducing variables, $\inducingVector$. Each inducing
 variable has its own associated input index, $\mathbf{Z}$, which lives
 in the same space as $\inputMatrix$. Here we are using the true
 covariance function parameters to generate the fit.
-:::
 
-::: {.cell .code execution_count="49"}
-``` {.python}
-kern = GPy.kern.RBF(1)
+\code{kern = GPy.kern.RBF(1)
 Z = np.hstack(
         (np.linspace(2.5,4.,3),
         np.linspace(7,8.5,3)))[:,None]
@@ -2158,174 +1453,79 @@ m = GPy.models.SparseGPRegression(X,y,kernel=kern,Z=Z)
 m.noise_var = noise_var
 m.inducing_inputs.constrain_fixed()
 #m.tie_params('.*variance')
-#m.ensure_default_constraints()
-print(m) # why is it not printing noise variance correctly?
-```
+#m.ensure_default_constraints()}
 
-::: {.output .stream .stdout}
+\displaycode{print(m) # why is it not printing noise variance correctly?}
 
-    Name : sparse_gp
-    Objective : 70.4565562039284
-    Number of Parameters : 9
-    Number of Optimization Parameters : 3
-    Updates : True
-    Parameters:
-      sparse_gp.               |   value  |  constraints  |  priors
-      inducing_inputs          |  (6, 1)  |     fixed     |        
-      rbf.variance             |     1.0  |      +ve      |        
-      rbf.lengthscale          |     1.0  |      +ve      |        
-      Gaussian_noise.variance  |     1.0  |      +ve      |        
-:::
-:::
-
-::: {.cell .code execution_count="42"}
-``` {.python}
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='$x', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
-                  transparent=True, frameon=True)
-```
+                  filename='\diagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
+                  transparent=True, frameon=True)}
 
-::: {.output .display_data}
-![](bdcd29134b35c5e3867bc75207a06127163d8255.png)
-:::
-:::
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp}{60%}}{Sparse Gaussian process with six constrained inducing variables and parameters learned.}{sparse-demo-constrained-inducing-6-unlearned-gp}
 
-::: {.cell .code execution_count="43"}
-``` {.python}
-m.optimize()
-```
+\code{m.optimize()}
 
-::: {.output .execute_result execution_count="43"}
-    <paramz.optimization.optimization.opt_lbfgsb at 0x120f7bf98>
-:::
-:::
 
-::: {.cell .code execution_count="44"}
-``` {.python}
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
-                  transparent=True, frameon=True)
-```
+                  filename='\diagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
+                  transparent=True, frameon=True)}
 
-::: {.output .display_data}
-![](acf18cf6069c80db2a8bd1db286c6411b846e1ce.png)
-:::
-:::
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp}{60%}}{Sparse Gaussian process with six constrained inducing variables and parameters learned.}{sparse-demo-constrained-inducing-6-learned-gp}
 
-::: {.cell .code execution_count="45"}
-``` {.python}
-print(m)
-```
+\displaycode{print(m)}
 
-::: {.output .stream .stdout}
 
-    Name : sparse_gp
-    Objective : 33.070783992616896
-    Number of Parameters : 9
-    Number of Optimization Parameters : 3
-    Updates : True
-    Parameters:
-      sparse_gp.               |           value  |  constraints  |  priors
-      inducing_inputs          |          (6, 1)  |     fixed     |        
-      rbf.variance             |    2.2954561541  |      +ve      |        
-      rbf.lengthscale          |   5.02432986416  |      +ve      |        
-      Gaussian_noise.variance  |  0.161887276492  |      +ve      |        
-:::
-:::
 
-::: {.cell .code execution_count="46"}
-``` {.python}
-m.randomize()
+\code{m.randomize()
 m.inducing_inputs.unconstrain()
-m.optimize()
-```
+m.optimize()}
 
-::: {.output .execute_result execution_count="46"}
-    <paramz.optimization.optimization.opt_lbfgsb at 0x120f9df98>
-:::
-:::
 
-::: {.cell .code execution_count="47"}
-``` {.python}
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
-                  transparent=True, frameon=True)
-```
+                  filename='\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
+                  transparent=True, frameon=True)}
 
-::: {.output .display_data}
-![](c5337db27a5b3b9ade7ec483995507344bdb81fd.png)
-:::
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp}{60%}}{Sparse Gaussian process with six unconstrained inducing variables, initialized randomly and then optimized.}{sparse-demo-unconstrained-inducing-6-gp}
 
+Now we will vary the number of inducing points used to form the approximation.
 
-Now we will vary the number of inducing points used to form the
-approximation.
-:::
+\displaycode{m.Z.values}
 
-::: {.cell .code execution_count="52"}
-``` {.python}
-m.Z.values
-```
-
-::: {.output .execute_result execution_count="52"}
-    array([[ 2.5 ],
-           [ 3.25],
-           [ 4.  ],
-           [ 7.  ],
-           [ 7.75],
-           [ 8.5 ]])
-:::
-:::
-
-::: {.cell .code execution_count="59"}
-``` {.python}
-m.num_inducing=8
+\code{m.num_inducing=8
 m.randomize()
 M = 8
 
 m.set_Z(np.random.rand(M,1)*12)
 
-m.optimize()
-```
+m.optimize()}
 
-::: {.output .execute_result execution_count="59"}
-    <paramz.optimization.optimization.opt_lbfgsb at 0x120de54a8>
-:::
-:::
 
-::: {.cell .code execution_count="60"}
-``` {.python}
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
-                  transparent=True, frameon=True)
+                  filename='\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp.svg', 
+                  transparent=True, frameon=True)}
 
-print(m.log_likelihood(), m_full.log_likelihood())
-```
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp}{60%}}{Sparse Gaussian process with eight inducing variables, initialized randomly and then optimized.}{sparse-demo-sparse-inducing-8-gp}
 
-::: {.output .stream .stdout}
-    [[-29.86773317]] -29.8277529184
-:::
+\displaycode{print(m.log_likelihood(), m_full.log_likelihood())}
 
-::: {.output .display_data}
-![](0e1cab5c7c6ff29e254f62b63a72b233d036b722.png)
-:::
 
-### Uncertainty about the Provenance of the Data
+\subsubsection{Uncertainty about the Provenance of the Data}
 
 Provenance could include the time that the data was acquired, the
 location that the data was acquired, even the 'type' of data that is
@@ -2339,7 +1539,7 @@ covariance is nonlinearly related.
 
 
 \begin{align*} 
-k(\dataVector, \dataVector^\prime) = \exp(-\|\|\dataVector-\dataVector^\prime\|\|^2) 
+k(\dataVector, \dataVector^\prime) = \exp(-||\dataVector-\dataVector^\prime||^2) 
 \end{align*}
 
 These variables become *latent* or *confounders*.
@@ -2352,8 +1552,7 @@ person is infinite. But there are a set of fundamental limitations to
 what can go wrong with the individual.
 
 
-Ethics
-------
+\subsection{Ethics}
 
 
 Ownership of data, returning it to the individual. In healthcare the
