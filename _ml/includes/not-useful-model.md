@@ -63,7 +63,7 @@ of the measurements missing, perhaps due to problems in data collection.
 I'd argue that if we are to model complex processes (such as the brain,
 or the cell, or human health) then almost all the data is missing.}
 
-\setupplotcode{import daft}
+\setupplotcode{import daft
 from matplotlib import rc
 
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
@@ -81,7 +81,7 @@ pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False))
 pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
 
 \plotcode{
-% Define nodes
+# Define nodes
 \draw node[obs] (y) {$\dataVector$};
 \end{tikzpicture}
 %\end{figure}
