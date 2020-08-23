@@ -31,221 +31,52 @@ transition: None
 
 \section{Introduction}
 
-\section{The Machine Learning and Statistics Interface}
+\include{_ml/includes/ml-and-statistics-interface.md}
+\include{_data-science/includes/happenstance-data.md}
 
-\notes{Machine learning and Statistics are academic cousins, founded on the same mathematical princples, but often with different objectives in mind. But the differences can be as informative as the overlaps.
+\notes{Professor Efron's paper does an excellent job a summarising the
+range of predictive models that now lie at our disposal, but of
+particular interest are deep neural networks. This is because they go
+beyond the traditional notions of what generalisation is or rather,
+what it has been, to practitioners on both the statistical and machine
+learning sides of the fence.}
 
-In [@Efron:prediction20] Efron rightly alludes to the fundamental differences to the new wave of predictive models that have arisen in the last decades of machine learning. And these cultures were also beautifully described by Leo Breiman [@Breiman:cultures00]. 
+\include{_ml/includes/deep-models-and-generalization.md}
 
-Although the prediction culture does not sit entirely in the machine learning domain, an excellent example of a prediction focussed approach would be Le Breiman's Bagging [@Breiman:bagging96]. Although it's notable when he chose to publish the outlet was a machine learning journal.
-
-From my personal perspective, the strand of work that is most inspirational in prediction also comes from a statistician. Phil  Dawid's prequential ideas [Dawid:callibrated82,Dawid:prequential84], do provides some hope that a predictive approach can be reconciled with a scientific approach, in the sense that they allow us to falsify poorly calibrated models [@Lawrence:licsbintro10]. 
-
-The quote, apocraphally credited to Disraeli by Mark Twain "There are three kinds of lies: lies, damned lies and statistics" stems from the late 19th century. After Laplace, Gauss, Legendre and Galton and made their forays into regression, but well before Fisher, Pearson and others had begun to formulate statistics on a mathematical basis. Today, the academic discipline of statistics is so widely understood to be underpinned by mathematical rigour that we no longer bother to give the domain its full title of *mathematical statistics*, but the challenges that Efron outlines in [@Efron:prediction20] are part of a new phenomenon, that which was briefly called "big data". In the modern world, we can see that there are still three types of lies: lies damned lies and big data. And the reason is the same as that which infected the late 19th century, the lack of a rigorous mathematical underpinning of this new domain.
-
-Following the revolution of mathematical statistics, data became a carefully curated commodity. It was actively connected in response to a scientific hypothesis. While different approaches to statistical hypothesis testing have been the subject of longstanding debates, there is no controversy around the notion that in order to remove confounders you must have a well designed experiment, and randomization has been a mainstay of statistical data collection for a century now. Randomized trials are used today more so than ever before, in particular due to their widespread use in interface design by large tech companies. Social experiments involving randomization across many millions of users are trivially implementable in real time. These A/B tests dictate our modern user experience. 
-
-Such experiments are still carefully designed to remain valid, but the modern data environment is not only about larger experimental data, but perhaps more so about what I term "happenstance data". Data that was not collected with a particular purpose in mind, but which is simply being recorded in the normal course of events due to increasing interconnection between portable digital devices and decreasing cost of storage. 
-
-Happenstance data are the breadcrumbs of our trail through the forest of life. They may be being written for a particular purpose, but later we wish to consume them for a different purpose. For example, within the recent Covid-19 pandemic, the Royal Society DELVE initiative [@Delve:economics20] was able to draw on transaction data to give near-real time assessments on the effect on GDP[^payments] of the the pandemic and governmental response (see also @Carvalho:tracking20).
-
-[^payments]: Although challenges with availability of payments data within the UK meant that the researchers were able to get good assessment of the Spanish and French economies, but struggled to assess their main target, the United Kingdom.
-
-Historically, data was expensive. It was carefully collected according to a design. Statistical surveys are still expensive, but today there is a strong temptation to do it on the cheap. To use happenstance data to achieve what had been done in the past only through rigorous data-fieldwork. A Professor Efron points out, early attempts to achieve this, such as the Google flu predictor have been somewhat naive [Ginsberg:detecting09,@Halevy:unreasonable09], but as these methodologies are gaining traction in the social sciences [@Salganik:bibbybit18] and the field of Computational Social Science [@Alvarez:computational16] emerges we can expect more innovation and more ideas that may help us bridge the fundamentally different characters of qualitative and quantitative research. For the moment, one particularly promising approach is to use measures derived from happenstance data (such as searches for flu) as proxy indicators for statistics that are rigorously surveilled. With the Royal Society's DELVE initiative, examples of this approach include work of Peter Diggle to visualize the progression of the Covid-19 disease. Across the UK the "Zoe App" has been used for self reporting of Covid symptons [@Menni:tracking20], and by interconnecting this data with Office for National Statistics surveys [@ONS:covid19infection20], Peter has been able to calibrate the Zoe map of Covid-19 prevalence, allowing nowcasting of the diesease that was validated by the production of ONS surveys. These enriched surveys can already be done without innovation to our underlying mathematical 
-
-So the statistical methodologies remain the gold-standard by which these new methodologies should be judged. The situation reminds me somewhat of the challenges Xerox faced with the advent of the computer revolution. With great prescience, Xerox realised that the advent of the computer meant that information was going to be shared more often on screens. As a company whose main revenue stream was coming from photocopying documents the notion of the paperless office represented something of a threat to Xerox. Xerox famously responded by funding their PARC research centre, where many of the innovations that underpin the modern computer were developed: the Xerox Alto (the first graphical user interface), the laser printer, ethernet. These inventions were commercial successes, although often for other companies, but as they propagated there was a greater need for paper. The computers produced more information, and much of it was still shared on paper. Per capita paper consumption continued to rise in the US until it peaked at around the turn of the millenium [@Andres:internet14]. A similar story should now applies with the advent of predictive models and data science. The increasing use of predictive methodologies does not obviate the need for classical statistical approaches, it makes them more important than ever before.
-
-So, we may breathe easy that there is an ongoing role for the classical methodologies we have at our disposal, and historical precedent indicates the demand for those methodologies will likely increase before any fading. What about new mathematical theories? How can we come to a formalism for a new mathematical data science, just as early 20th century statisticians were able to reformulate statistics on a rigorous mathematical footing.
-
-Professor Efron's paper does an excellent job a summarising the range of predictive models that now lie at our disposal, but of particular interest are deep neural networks. This is because they go beyond the traditional notions of what generalisation is or rather, what it has been, to practitioners on both the statistical and machine learning sides of the fence. Perhaps the paper that most clearly demonstrated something was amis was  [@Zhang:understanding17], who trained a large neural network via stochastic gradient descent to label an image data set. Within Professor Efron's categorization of regression model, such a model is a very complex regression model with a particular link function and highly structured adaptive basis functions, which are by tradition called neurons. Despite the structuring of these basis functions (known as convolutional layers), their adaptive nature means that the model contains many millions of parameters. Traditional approaches to generalisation suggest that the model should over fit and [@Zhang:understanding17] proved that such models can do just that. The data they used to fit the model, the training set, was modified. They flipped labels randomly, removing any information in the data. After training, the resulting model was able to classify the training data with 100% accuracy. The experiment clearly demonstrates that all our gravest doubts about overparameterised models are true. If this model has the capacity to fit data which is obviously nonsense, then it is clearly not regularised. Our classical theories suggest that such models should not generalize well on previously unseen data, or test data, but yet the empirical experience is that they do generalize well. So, what's going on?
-
-During a period of deploying machine learning models at Amazon, I was indoctrinated in a set of Leadership Principles, fourteen different ideas to help individual Amazonians structure their thinking. One of them was called "Dive Deep", and a key trigger for a "Dive Deep" was when anecdote and data are in conflict. If there were to be a set of Academic leadership principles, then clearly "Dive Deep" should be triggered when empirical evidence and theory are in conflict. The purpose of the principle within Amazon was to ensure people don't depend overly on anecdotes *or* data when making their decisions, but to develop deeper understandings of their business. In academia, we are equally guilty of relying too much on empirical studies or theory without ensuring they are reconciled. The theoreticians disbelief of what the experimenter tells them is encapsulated in Kahnemann's idea of "theory induced blindness" [@Kahneman:fastslow11]. Fortunately, the evidence for good generalisation in these mammoth models is now large enough that the theory-blinders are falling away and a serious look is being taken and how and why these models can generalize well.
-
-An in depth technical understanding that applies to all these cases is not yet available. But some key ideas are. Firstly, if the neural network model is over-capacity, and can fit nonsense data in the manner demonstrated by [@Zhang:understanding17] then that immediately implies that the good generalization is arising from how the model is fitted to the data. When the number of parameters is so large, the parameters are very badly determined. In machine learning, the concept of version space [@Mitchell:version77] is the subset of all the hypotheses that are consistent with the training examples. For a neural network, the version space is where the neural network parameters (or weights) give predictions for the training data 100% accuracy. A traditional statistical perspective would eschew this regime, convinced that the implication is that overfitting must have occurred. But the empirical evidence from the deep learning community is that these regimes produce classification algorithms with excellent generalization properties. The resolution to this dilemma is *where* in the version space the algorithm comes to rest. 
-
-An excellent characterisation of generalization is normally given by the bias-variance dilemma. The bias-variance decomposition for regression models separates the generalization error into two components [@Geman:biasvariance92].}
+\notes{An excellent characterisation of generalization is normally
+given by the bias-variance dilemma. The bias-variance decomposition
+for regression models separates the generalization error into two
+components [@Geman:biasvariance92].}
 
 \include{_ml/includes/bias-variance-dilemma.md}
 
-\notes{One of Breiman's ideas for improving predictive performance is known as Bagging. The idea is to train a number of models on the data such that they overfit (high variance). Then average the predictions of these models. The models are trained on different bootstrap samples and their predictions are aggregated giving us the acronym, Bagging. By combining decision trees with Bagging we recover Random Forests
+\include{_ml/includes/double-descent.md}
 
-Bias and variance can be estimated through the Bootstrap, and the traditional view has been that there's a form of Goldilocks effect, where the best predictions are given by the model that is 'just right' for the amount of data available. Not to simple, not too complex. The idea is that bias decreases with increasing model complexity and variance increases with increasing model complexity. Typically plots begin with the Mummy bear on the left (too much bias) end with the Daddy bear on the right (too much variance) and show a dip in the middle where the Baby bear (just) right finds themselves. 
+\notes{As Professor Efron points out, modern machine learning models
+are often fitted using many millions of data points. The most extreme
+example of late is known as GPT-3. This neural network model, known as
+a Transformer, has in its largest form 175 billion parameters. The
+model was trained on a data set containing 499 billion tokens (about 2
+Terrabytes of text). Estimates suggest that the model costs around
+$4.5 million dollars to train (see e.g. @Li:openai20).}
 
-The Daddy bear is typically positioned at the point where the model is able to exactly interpolate the data. For a generalized linear model [@McCullagh:gen_linear89], this is the point at which the number of parameters is equal to the number of data[^assuming]. But the modern empirical finding is that when we move beyond Daddy bear, into the dark forest of the massively overparameterized model we can achieve good generalization.
+\include{_ml/includes/empirical-effectiveness-of-deep-learning.md}
 
-[^assuming]: Assuming we are ignoring parameters in the link function and the distribution function.
+\include{_ml/includes/new-methods-required.md}
 
-Naturally, as [@Zhang:understanding17] starkly illustrate with their random labels experiment, within the dark forest there are some terrible places, big bad wolves of overfitting that will gobble up your model. But, as empirical evidence shows there is also a safe and hospitable Grandma's house where these highly overparameterised models are safely consumed. Fundamentally, it must be about the route you take through the forest, and the precautions you take to ensure the wolf doesn't see where you're going and beat you to the door.
+\include{_ml/includes/massively-missing-data.md}
 
-There are two implications of this empirical result. Firstly, that there is a great deal of new theory that needs to be developed. Secondly, that theory is now obliged to conflate two aspects to modelling that we generally like to keep separate: the model and the algorithm.
-
-Classical statistical theory around predictive generalisation focusses specfically on the class of models that is being used for data fitting. Historically, whether that theory follows a Fisher-aligned estimation approach (see e.g. @Vapnik:book98) or model-based Bayesian approach (see e.g. @Ghahramani:probabilistic15), neither is fully equipped to deal with these new circumstances because, to continue our rather tortured analogy, these theories provide us with a characterisation of the *destination* of the algorithm, and seek to ensure that we reach that destination. Modern machine learning requires theories of the *journey* and what our route through the forest should be. 
-
-Crucially, the destination is always associated with 100% accuracy on the training set. An objective that is always achievable for the overparameterized model.
-
-Intuitively, it seems that a highly over-parameterised model places Grandma's house on the edge of the dark forest. Making it easily and quickly accessible to the algorithm. The larger the model, the more exposed Grandma's house becomes. Perhaps this is due to some form of blessing of dimensionality brings Grandma's house closer to the edge of the forest in a high dimensional stting. Really we should think of Grandma's house as a low dimensional manifold of destinations that are safe. A path through the forest where the wolf of overfitting doesn't venture. In the GLM case, we know already that when the number of parameters matches the number of data there is precisely one location in parameter space where accuracy on the training data is 100%. Our previous misunderstanding of generalization stemmed from the fact that (seemingly) it is highly unlikely that this single point is a good place to be from the perspective of generalization. Additionally, it is often difficult to find. Finding the precise polynomial coefficients in a least squares regression to exactly fit the basis to a small data set such as the Olympic marathon data requires careful consideration of the numerics and an orthogonalization of the design matrix [@Lawson:least95]. 
-
-It seems that with a highly overparameterized model, these locations become easier to find and generalize well. In machine learning this is known as the "double descent phenomenon" (see e.g. @Belkin:reconciling19). 
-
-As Professor Efron points out, modern machine learning models are often fitted using many millions of data points. The most extreme example of late is known as GPT-3. This neural network model, known as a Transformer, has in its largest form 175 billion parameters. The model was trained on a data set containing 499 billion tokens (about 2 Terrabytes of text). Estimates suggest that the model costs around $4.5 million dollars to train (see e.g. @Li:openai20).} 
-
-\subsection{Deep Learning}
-
-\notes{The OpenAI model represents just a recent example from a wave of *deep* neural network models has proved highly
-performant across a range of challenges that were previously seen as being beyond our statistical modelling capabilities. 
-
-They stem from the courage of a group of researchers who saw that methods were improving with increasing data and chose to collect and label data sets of ever increasing size, in particular the ImageNet team led by Fei-Fei Li [@Russakovsky-imagenet15] who collected a large data set of images for object detection (currently 14 million images)o. To make these neural network methods work on such large data sets new implementations were required. By deploying neural network training algorithms on graphics processing units (GPUs) breakthrough results were achieved on these large data sets [@Krizhevsky:imagenet12]. Similar capabilities have then been shown in the domains of face identification
-[@Taigman:deepface14], and speech recognition [@Hinton:acoustic12], translation [@Sutskever:sequence14] and language modelling [@Radford:language19,@Devlin:bert19]. 
-
-Impressive though these performances are, they are reliant on massive data and enormous costs of training. Yet they can be seen through the lense of regression, as  outlined by Professor Efron in his paper. They map from inputs to outputs. For language modelling, extensive use of auto-regression allows for sequences to be generated. 
-
-## New Methods Required
-
-The challenges of big data emerged due
-to companies being able to rapidly interconnect multiple sources of
-information. This leads to challenges in storage, distributed processing
-and modeling. Google's search engine were at the forefront of this revolution. In
-particular they were able to demonstrate that some tasks can be easily
-resolved with fairly simple models and very large data sets [@Halevy:unreasonable09]. What we are now learning is that many tasks can be solved with complex models and even bigger data sets. 
-
-While GPT-3 does an impressive job on language generation, it can do so because of the vast quantities of language data we have made available to it. What happens if we take a more complex system, for which such vast data is not available. Or, at least not available in the homogeneous form that language data can be found. Let's take human health. 
-
-Consider we take a holistic view of health and the many ways in which
-we can become unhealthy, through genomic and environmental affects. Firstly, let's remember that we don't have a full understanding, even on all the operations in a single eukaryotic cell. Indeed we don't even understand all the mechanisms by which transcription and translation occur in bacterial and archaeal cells. That is despite the wealth of gene expression and protein data
-about these cells. Even if we were to pull all this information
-together, would it be enough to develop that understanding? Health is an accumulation of 
-
-There are large quantities of data, but the complexity of these systems iIn these
-domains we'd argue that even big data is small. The volume of the data
-is not large enough to determine the parameters of such complex models.
-
-**Massively multimodal data and Massively Missing Data** Our
-understanding of data still seems heavily influenced by the goals of
-early statistics. In particular, early mathematical statistics was
-heavily influenced by the need to overcome inductive biases in the
-human. To do this they encouraged statisticians to collect tables of
-data, with a focus on randomised control trials, to remove such
-inductive biases and ensure any conclusions drawn were valid. These
-developments were absolutely vital in ensuring rigorous evaluation of
-statistical claims. Whether it is concious or unconcious we see myriad
-examples from marketing and advertising which are designed to appeal to
-the, apparently, irrational aspects\footnote{Whether they are
-irrational or not depends on how we view them. They are the consequence
-of millions of years of evolution and it is only within the last 250
-years that we understood the rational basis of probability and companies
-were able to exploit areas where people appear irrational to their own
-benefit. A particularly depressing read is a section of Laplace's
-''Philosophical Essay on Probabilities'' where he advocates a new
-utopia based on rational thinking espousing that
-
-> even the common man under the guidance of great minds will begin to
-> understand ... [@] TODO check quote.
-
-It is an inspiring quote, until you realise that the reality was more of
-a dystopia where large (normally commercial) organisations have become
-expert in exploiting those irrational aspects that Laplace began to
-identify and individual people have little to no understanding of the
-rational basis of uncertainty that Laplace was so convinced would become
-endemic.} of humans and trick them to doing something which is not to
-their individual benefit, but is profitable for the (normally corporate)
-entity that is doing the marketing. This may not matter a great deal
-when we are buying pet insurance or a new jacket, but is extremely
-dangerous when we are making claims for a particular drug to patients.
-Classical statistics acts as our final guardian against these claims,
-and even then it is subject to manipulation through failure to report on
-negative results.[^2]
-
-[^2]: I was once railing against the limitations
-of classical statistics to Darren Wilkinson and Joe Whittaker at a very
-pleasant meeting in the Lorenz institute, organized by Ernst Wit. It was
-Joe Whittaker that drove home this important point to me, although the
-connection to the Laplace quote is my own. That came from reading his
-Philosophical Essay on Probabilities, and for a moment I became carried
-away with him, when he glorified in the new world of rationality, until
-I was brought back to the present reality with an unpleasant jolt, in
-particular due to the stories about 'Fixed Odds Betting Machines' that
-were in the British media at the time. Laplace singles out games where
-the odds are stacked against the player a 'particular evil' TODO
-check. I'm not one for absolutes, but I think I'd agree with the idea
-that a larger entity, which has a deep understanding of rational
-behavior, exploiting a vulnerable smaller entity, who has little
-understanding of it, does come close to such evils.
-
-However, classical
-statistics does seem to give us a peculiar bias to tables of data: data
-where someone has carefully collected all the relevant features about
-the particular entites we are focussed on. That is a very different
-challenge to that of machine learning. In talks about this I like to
-tell the audience that my mum drives an Humvee. I then ask them what the
-audience thinks about that, what it makes them think about my mum.
-Certainly they probably think she's unusual. Maybe it also affects what
-they think about me. Of course, she actually drives a VW Golf, which
-makes her much more of a normal mum. Importantly, the audience didn't
-know I was going to say that before I started, but they were able to
-assimilate new information about the entity (my mum) through a feature
-they may have known existed, but they were unlikely to have predicted I
-was going to use before the talk. If we think about clinical data, the
-situation is even more extreme. If we are going to track someone's
-health state throughout their life then we need to build models that
-might need to take into account clinical tests that don't even exist
-yet. This is not an unusual situation, in fact it is the normal
-situation. The table of carefully collected statistical values is the
-unusual (and valuable) situation. That's why so much attention is
-normally given to experimental design in statistics. But if we don't
-have those controls what should we do? First we should recognize that
-missing data is the norm, not the exception: even when the table of data
-we collected is full there are probably many more things we *could have*
-collected but didn't. Secondly we should recognise that the missing
-data normally dominates. It would be impossible to enumerate all the
-different types of data we would be missing for any complex system. The
-technique of imputation is suitable when missing data is only up to
-around half of our data set. The real world presents the challenge of
-massively missing data. Whenever you are doing analysis you are looking
-only a very tiny fraction of the things you could know. Interestingly,
-the visual and auditory systems present interesting counter examples to
-this analysis. Ignoring context (and concepts like sensor fusion) we can
-certainly think of the auditory and visual systems as presenting fixed
-dimensional signals about the entities they observe. This may explain
-why such success has been possible in these domains. But, from another
-perspective, both visual and auditory systems are *just* a very complex
-sensor. And in the type of intelligence we envisage we could have an
-arbitary number of sensors, and new sensors could be developed at all
-times. To understand the entire scene we must be able to incorporate
-such sensors as they are produced. Computational researchers who have
-worked in the biological sciences will know that over recent years
-sensorics has developed at such a rate that the most success can be
-garned by being the first to apply any method (typically PCA) to the
-sensoring domain, and that we all barely have time to catch our breath
-before the next generation of sensorics may render our work on the
-previous generation obsolete. What doesn't change though, is the
-validity of the underlying modelling techniques that attempt to
-assimilate these data into a coherent whole.
-
-Consider the challenges of a highly multimodal domain like health data.
-Whilst we have ensured through clever engineering that speech and
-
-The wave of Developing the hypothesis that the main reason that these
-models became neglected was because there was not enough data to justify
-their implementation we advocate a return to tmotivate a return It is
-arguable that the main reason that
-
-
-
-
-
-Machine learning involves taking data and combining it with a model in
+\notes{Machine learning involves taking data and combining it with a model in
 order to make a prediction. The data consist of measurements recorded
 about the world around us. A model consists of our assumptions about how
 the data is likely to interrelate, typical assumptions include
 smoothness. Our assumptions reflect some undelying belief about the
 regularities of the universe that we expect to hold across a range of
-data sets.
-
-
-$$\text{data} + \text{model} \rightarrow \text{prediction}$$
-
-
-From my perspective, the model is where all the innovation in machine
+data sets.}
+$$
+\text{data} + \text{model} \rightarrow \text{prediction}
+$$
+\notes{From my perspective, the model is where all the innovation in machine
 learning goes. The etymology of the data indicates that it is given
 (although in some cases, such as active learning, we have a choice as to
 how it is gotten), our main control is over the model. This is the key
@@ -253,242 +84,13 @@ to making good predictions. The model is a mathematical abstraction of
 the regularities of the universe that we believe underly the data as
 collected. If the model is chosen well we will be able to interpolate
 the data and precit likely values of future data points. If it is chosen
-badly our predictions will be overconfident and wrong.
+badly our predictions will be overconfident and wrong.}
 
-\subsubsection{Models vs Algorithms}
+\include{_ml/includes/model-vs-algorithm.md}
 
-Much of the technical focus in machine learning is on algorithms. In
-this document I want to retain a strong separation between the *model*
-and the *algorithm*. The model is a mathematical abstraction of the
-world that encapsulates our assumptions about the data. Normally it will
-depend on one or more parameters which are adaptable. The algorithm
-provides a procedure for adapting the model to different contexts, often
-through the provision of a set of data that is used for training the
-model.
+\include{_ml/includes/is-my-model-useful.md}
 
-
-Despite the different role of model and algorithm, the two concepts are
-often conflated. This sometimes leads to a confused discussion. I was
-recently asked "Is it correct to remove the mean from the data before
-you do principal component analysis." This question is about an
-algorithmic procedure, but the correct answer depends on what modelling
-assumption you are seeking to make when you are constructing your
-principal component analysis. Principal component analysis was
-originally proposed by a *model* for data by [@Hotelling:analysis33]. It is a latent variable model that was directly
-inspired by work in the social sciences on factor analysis. However,
-much of our discussion of PCA today focusses on PCA as an algorithm. The
-algorithm for fitting the PCA model is to seek the eigenvectors of the
-covariance matrix, and people often refer to this algorithm as principal
-component analysis. However, that algorithm also finds the linear
-directions of maximum variance in the data. Seeking directions of
-maximum variance in the data was not the objective of Hotelling, but it
-is related to a challenge posed by @Pearson:01
-who sought a variant of regression that predicted symmetrically
-regardless of which variable was considered to be the covariate and
-which variable the response. Coincidentally the algorithm for this model
-is also the eigenvector decomposition of the covariance matrix. However,
-the underlying model is different. The difference becomes clear when you
-begin to seek non-linear variants of principal component analysis.
-Depending on your interpretation (finding directions of maximum variance
-in the data or a latent variable model) the corresponding algorithm
-differs. For the Pearson model a valid non-linearization is kernel PCA
-`<cite nodata-cite="Schoelkopf:">`{=html}(Schoelkopf et al,
-1999)`</cite>`{=html}, but for the Hotelling model this generalization
-doesn't make sense. A valid generalization of the Hotelling model is
-provided by the Gaussian process latent variable model
-`<cite nodata-cite="Lawrence:pnpca05">`{=html}(Lawrence,
-2005)`</cite>`{=html}. This confusion is often unhelpful, so for the
-moment we will leave algorithmic considerations to one side and focus
-*only* on the model.
-
-
-## Is my Model Useful?
-
-
-> All models are wrong, but some are useful
->
-> @Box:science76
-
-
-This important quote has become worn by overuse (like a favourite
-sweater). Worse still it is almost being bandied around to mean that
-*because* my model is wrong it *might* be useful. It seems that people
-almost equate the statement to meaning probobability of my model being
-wrong given that its useful is = 1. Which would be an incorrect model,
-but seems to be useful in practice when trying to justify poor
-assumptions.
-
-
-Perhaps we should be more focussing on the quote \"\... the scientist
-must be alert to what is importantly wrong. It is inappropriate to be
-concerned about mice when there are tigers abroad.\" from the same
-paper. Let's have a think about where the tigers might be in the domain
-of big data. To consider this, let's first see what we can write down
-about our data that isn't implicitly wrong. If we are interested in
-multivariate data we could first write down our data in the following
-form.
-
-
-$$\text{data} = \mathbf{\dataMatrix} \in \Re^{\numData\times \dataDim},$$
-
-
-where here we are assuming we have $\numData$ data points and $\dataDim$
-features. However, as soon as we write down our data in this form it
-invites particular assumptions about your data that were valid, perhaps
-in the 1930s, when people were worried about tables of data. They
-collected tables of data with a specific purpose in mind and the data
-naturally sat in a matrix. Immediately we write down our data in a
-matrix form, $\dataMatrix\in \Re^{\numData\times \dataDim}$ it is
-somehow implicit that we are suggesting factorization assumptions across
-the $\numData$ data points.
-
-\begin{align*}
-p(\dataMatrix) = \prod_{i=1}^\numData p(\dataVector_{i, :} | \boldsymbol{\theta})
-\end{align*}
-
-
-
-This assumption allows us to easily make predictions about new data
-points given a parameter vector that is derived from the training data.
-This assumptions will generally be wrong, and also leads to concerns
-about the parameters when $\numData<<\dataDim$, the so called \`large
-$\dataDim$, small $\numData$' domain. They also lead to concerns such
-as large $\dataDim$, small $\numData$ concerns.
-
-
-I think that this is a wrongheaded way of thinking about modern data,
-because in practice, $\dataDim$, doesn't really exist, at least not in
-the sense that the above model implies we should treat it. It doesn't
-exist as a static view of the data: $\dataDim$ is much more fluid than
-the model above implies. Indeed, I'll argue below that rather than
-increasing $\dataDim$ when we obtain a new feature about a data point,
-we should be increasing $\numData$. That adding writing down our data in
-matrix form, $\dataMatrix$, may even be constraining our thinking to
-these factorized models. And the fact that the factorization is strong:
-i.e. it assumes that all becomes independent given the parameters, it is
-very often wrong. That is not to say that these factorization
-assumptions are not useful, indeed we will make use of them below, but
-they should *not* be the first thing we write down.
-
-
-\subsubsection{A Motivating Big Data Example}
-
-
-Statisticians like Pearson, Fisher and Student worked with tables of
-data that they'd carefully collected, often with the specific purpose
-of answering a particular question. The decided at experiment *design*
-time what was to be measured $\numData$. The number of samples was
-determined by statistical power calculations *CHECK THIS*, this was
-something that could be varied.
-
-
-One of my own interests is personalized health: what we can learn about
-patients' state of health and when we should make an interviention. In
-the big data era, we aren't only interested in what data we might
-collect for answering a specific question (although data of this type
-remains very important) but we are also interested in existing data that
-might be assimilated to improve our understanding of an individual's
-health. When imagining future systems that monitor our health status, we
-should not be restricted to the type of data that might be stored in a
-doctor's office or a hospital data base. Indeed, it might be argued
-that such data focusses on sickness rather than health, giving us an
-incomplete picture.
-
-
-Modern data availabilities means that we could build models that
-incorporate an individual's exercise regime (for example through
-websites such as Strava and Endomomndo). We could include information
-about an individual's dietary habits (e.g. through loyalty card
-information like the Nectar card). If we were monitoring potential
-degradation in health then we may also be interested in an individual's
-social network activity (Twitter, Facebook, Google+). Even musical
-tastes may feed in to our overall picture of the patient's well being
-through music services like spotify. For a full perspective on a
-patient's health, this data would need to be combined with more
-traditional sources phenotype and genotyp infomration. For example, high
-resolution scans of the genome providing a detailed characterization of
-genotype. Large scale gene expression measurements, giving detailed
-insights into phenotype at the cellular level. Images containing x-rays
-or biopsies. Doctor's notes, but handwritten and those that encode a
-diangosis. Clinical tests, for example in cardiovascular disease
-cholestorol level. To provide a full picture of health status all this
-information needs to be assimilated. In a traditional model, we might
-encode each piece of information as another element on a feature vector:
-in other words, all the above contributes to increasing $\dataDim$.
-However, for most patients, most of the information above is likely to
-be missing. The paradigm of missing data is often discussed, but in this
-domain we have a situation we might refer to as *massivelv missing
-data*. A situation where a missing value becomes the norm rather than an
-exception.
-
-
-Another facet of the personalized health problem will be the streaming
-nature of data. When acquiring data passively data doesn't arrive in
-blocks, it arrives in a haphazard fashion. Our model may need to update
-because patient 2,342 has just had the results of a blood test logged,
-or because patient 28,344,219 has just been for a run or because patient
-12,012,345 just listened to a Leonard Cohen track or because patient
-12,182 just gave birth.
-
-
-One possible motivation for making independence assumptions across data
-points is the ease with which predictions can be made for a previously
-unseen vector $\dataVector^*$. Given an estimate of a vector of
-parameters, $\hat{\paramVector}$, perhaps obtained by optimizing the
-likelihood on the training data, then due to our assumption of
-independence across data then we can easily predict for the new point
-using the conditional distribution:
-$$
-p(\dataVector_*|\hat{\paramVector}).
-$$
-Perhaps, though, we should find this ease of prediction suspicious.
-Let's momentarily examine what we are really saying here. We are
-assuming that all the information we wish to store about the world, and
-communicate to a test data set is storable in a parameter vector,
-$\paramVector$, the nature of which (for example its length) is set at
-design time, before we've seen the data. That is precisely the meaning
-of statistical *independence given the parameters*.
-
-
-For applications like the personalized health monitoring system
-described above, we need a model that will give well calibrated
-predictions from the first day of it being brought on line, and
-throughout its operational life. If the model is complex enough to
-represent the full spectrum of possible human ailments, then when the
-model is first brought on stream, it is unlikely to have sufficient data
-to determine the parameters. In the standard modeling framework we are
-faced with the bias variance dilema 
-`<cite data-cite=\"Geman:bias92\">`{=html}(Geman et al,
-1992)`</cite>`{=html}. If the model is complex enough to represent the
-underlying data structure, the parameters will be badly determined for
-small, or badly designed data sets, and the model will exhibit a large
-error due to variance. A traditional solution is to err towards bias, by
-constructing a simpler model, but one where the parameters can be well
-determined by the data, we reduce variance at the expense of some bias.
-In the context of our medical application, there are three major
-problems with this approach. Firstly, the size and scope of the data is
-continually evolving: we do not have a fixed design. This means that
-even if we were to find a good initial compromise between bias and
-variance, this compromise may be rapidly invalidated. Secondly, the
-compromise we find would have to apply equally to all patients despite
-the diversity of data we have associated with those patients. Finally,
-we should fear the confidence of predictions from a model with well
-determined parameters unless we truly believe we have sufficient data to
-capture some underlying deterministic truth. Medical outcome is laced
-with uncertainty, and this uncertainty needs to be modeled correctly
-because its structure has a significant effect on treatment.
-
-A major challenge in the domain we've described is to build a model
-that is complex enough to represent the diversity of human health
-outcomes. For streaming data this necessarily means that some of those
-parameters will be badly determined. I'd also argue further that if the
-parameters are well determined this is actually a warning. If all
-parameters are well determined, then our assumption of statistical
-independence becomes a strong one: the residual uncertainty is only in
-the noise, which by its independent nature, is impossible to model.
-However, any uncertainty in the parameters gives a much more structured
-uncertainty distribution for the data.
-
+\include{_ml/includes/big-data-health-motivation.md}
 
 \subsubsection{Uncertainty in Parameters}
 
@@ -1066,7 +668,6 @@ $\inducingVector^*$.}
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
 \end{tikzpicture}}
 
-
 \setupplotcode{import daft}
 \plotcode{%%tikz --scale 2 --size 300,300 -f svg
 % Define nodes
@@ -1149,13 +750,11 @@ $\inducingVector^*$.}
 \draw [->] (u) to (f);%
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-}        
+}
  
-
-
 \subsection{Instantiating the Model}
 
-So far we haven't made any assumptions about the data in our model,
+\notes{So far we haven't made any assumptions about the data in our model,
 other than a factorization assumption between the fundamental variables
 and the observations, $\dataVector$. Even this assumption does not
 affect the generality of the model decomposition, because in the worst
@@ -1167,23 +766,20 @@ $p(\mappingFunctionVector, \inducingVector)$ should be Kolmogorov
 consistent with $\mappingFunctionVector^*$ and $\inducingVector^*$ being
 marginalised and we have argued that non-parametric models are important
 in practice to ensure that all the information in our training data can
-be passed to the test data.
+be passed to the test data.}
 
-
-For a model to be useful, we need to specify relationships between our
+\notes{For a model to be useful, we need to specify relationships between our
 data variables. Of course, this is the point at which a model also
-typically becomes wrong. The following considerations should arise:
+typically becomes wrong. The following considerations should arise:}
 
-
-If our model is not correct, is it a useful abstraction given what we
+\notes{If our model is not correct, is it a useful abstraction given what we
 expect to observe about the data? For example, Brownian motion is
-modelled as a stochastic differential equation.
+modelled as a stochastic differential equation.}
 
 
 \subsubsection{Gaussian Processes}
 
-
-A flexible class of models that fulfils the constraints of being
+\notes{A flexible class of models that fulfils the constraints of being
 non-parametric and Kolmogorov consistent is Gaussian processes. Gaussian
 processes assume that the data is jointly Gaussian distributed. Each
 data point, $\dataScalar_i$, is is jointly distributed with each other
@@ -1201,41 +797,34 @@ is given by a (potentially discrete) index indicating the further
 provenance of the data. To define a joint Gaussian density, we need to
 define the mean of the density and the covariance. Both this mean and
 the covariance also need to be indexed by the when, the where and the
-what.
-
+what.}
 
 \subsubsection{Augmenting with Inducing Variables in Gaussian Processes}
 
-
-To define our model we need to describe the relationship between the
+\notes{To define our model we need to describe the relationship between the
 fundamental variables, $\dataMappingVector$, and the inducing variables,
 $\inducingVector$. This needs to be done in such a way that the inducing
 variables are also Kolmogorov consistent. A straightforward way of
 achieving this is through a joint Gaussian process model over the
 inducing variables and the data mapping variables, so in other words we
-define a Gaussian process prior over
-
-
-$$\begin{bmatrix}\mappingFunctionVector \ \inducingVector\end{bmatrix} \sim \gaussianDist{\mathbf{m}}{\kernelMatrix}$$
-
-
-where the covariance matrix has a block form,
-
-
-$$\kernelMatrix = \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector\mappingFunctionVector} & \kernelMatrix_{\mappingFunctionVector\inducingVector} \ \kernelMatrix_{\inducingVector\mappingFunctionVector} & \kernelMatrix_{\inducingVector\inducingVector}\end{bmatrix}$$
-
-
-and $\kernelMatrix_{\mappingFunctionVector\mappingFunctionVector}$ gives
+define a Gaussian process prior over}
+$$
+\begin{bmatrix}\mappingFunctionVector \inducingVector\end{bmatrix} \sim \gaussianDist{\mathbf{m}}{\kernelMatrix}
+$$
+\notes{where the covariance matrix has a block form,}
+$$
+\kernelMatrix = \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector\mappingFunctionVector} & \kernelMatrix_{\mappingFunctionVector\inducingVector} \ \kernelMatrix_{\inducingVector\mappingFunctionVector} & \kernelMatrix_{\inducingVector\inducingVector}\end{bmatrix}
+$$
+\notes{and $\kernelMatrix_{\mappingFunctionVector\mappingFunctionVector}$ gives
 the covariance between the fundamentals vector,
 $\kernelMatrix_{\inducingVector\inducingVector}$ gives the covariance
 matrix between the inducing variables and
 $\kernelMatrix_{\inducingVector\mappingFunctionVector} = \kernelMatrix_{\mappingFunctionVector\inducingVector}^\top$
 gives the cross covariance between the inducing variables,
 $\inducingVector$ and the mapping function variables,
-$\mappingFunctionVector$.
+$\mappingFunctionVector$.}
 
-
-The elements of
+\notes{The elements of
 $\kernelMatrix_{\mappingFunctionVector\mappingFunctionVector}$ will be
 computed through a covariance function (or kernel) given by
 $\kernelScalar_\mappingFunction(\inputVector, \inputVector^\prime)$
@@ -1243,13 +832,13 @@ where $\inputVector$ is a vector representing the *provenance* of the
 data, which as we discussed earlier could involve a spatial location, a
 time, or something about the nature of the data. In a Gaussian process
 most of the modelling decisions take place in the construction of
-$\kernelScalar_\mappingFunction(\cdot)$.
+$\kernelScalar_\mappingFunction(\cdot)$.}
 
 
 \subsubsection{The Mean Function}
 
 
-The mean of the process is given by a vector $\mathbf{m}$ which is
+\notes{The mean of the process is given by a vector $\mathbf{m}$ which is
 derived from a mean function $m(\inputVector)$. There are many occasions
 when it is useful to include a mean function, but normally the mean
 function will have a parametric form, $m(\inputVector;\paramVector)$,
@@ -1264,13 +853,11 @@ see that the covariance function is mopping up the *residuals* that are
 not captured by the mean function. If we genuinely were interested in
 the form of a parametric mean function, as we often are in statistics,
 where the mean function may include a set of covariates and potential
-effects, often denoted by
-
-
-$$m(\inputVector) = \boldsymbol{\beta}^\top \inputVector,$$
-
-
-where here the provenance of the data is known as the covariates, and
+effects, often denoted by}
+$$
+m(\inputVector) = \boldsymbol{\beta}^\top \inputVector,
+$$
+\notes{where here the provenance of the data is known as the covariates, and
 the variable associated with $\dataVector$ is typically known as a
 *response* variable. In this case the particular influence of each of
 the covariates is being encoded in a vector $\boldsymbol{\beta}$. To a
@@ -1293,10 +880,9 @@ independent. An underestimate of disease at one spatial location, may
 imply an underestimate of disease rates at a nearby location. The
 mismatch between the observed disease rate and that predicted by
 modeling the relationship with the covariates through the mean function
-is then given by the covariance function.
+is then given by the covariance function.}
 
-
-The modeling philosophy in machine learning is somewhat different from
+\notes{The modeling philosophy in machine learning is somewhat different from
 that followed in traditional statistics. In machine learning the aim is
 often to be predictive, rather than explanatory. There is typically less
 need for an interpretable model, and so the mean function is much less
@@ -1319,8 +905,7 @@ when predicting for the new data. For this reason in machine learning we
 often prefer to leave out the mean function to ensure that the signal
 variance is explained through non parametric part of the model rather
 than the parametric mean function. In what follows we will drop the mean
-function and focus only on the covariance function.
-
+function and focus only on the covariance function.}
 
 \todo{Mention here an example of things going wrong? Or do a short run
 of a mauna loa data to demonstrate, with a mean function included?}
@@ -1328,25 +913,22 @@ of a mauna loa data to demonstrate, with a mean function included?}
 \setupcode{import GPy
 import pods}
 
-\code{
-data = pods.util.datasets.mauna_loa()
+\code{data = pods.util.datasets.mauna_loa()
 kern = GPy.kern.Linear(1) + GPy.kern.RBF(1) + GPy.kern.Bias(1)
 model = GPy.models.GPRegression(data['X'], data['Y'], kern)
 #model.optimize()}
 
 
-\plotcode{
-pb.plot(xlim}
+\plotcode{pb.plot(xlim}
 
 
-So we *could* interpret Gaussian process models as approaches to dealing
-with residuals
+\notes{So we *could* interpret Gaussian process models as approaches to dealing
+with residuals}
 
 
 \subsubsection{Modelling $\mappingFunctionVector$}
 
-
-In conclusion, for a non parametric framework, our model for
+\notes{In conclusion, for a non parametric framework, our model for
 $\mappingFunctionVector$ is predominantly in the covariance function
 $\kernelMatrix_{\mappingFunctionVector\mappingFunctionVector}$. This is
 our data model. We are assuming the inducing variables are drawn from a
@@ -1355,22 +937,20 @@ covariance between $\inducingVector$ and $\mappingFunctionVector$ is
 given by $\kernelMatrix_{\mappingFunctionVector\inducingVector}$. This
 gives the relationship between the function and the inducing variables.
 There are a range of ways in which the inducing variables can interelate
-with the
+with the}
 
 
 \subsubsection{Illustrative Example}
 
-
-For this illustrative example, we'll consider a simple regression
+\notes{For this illustrative example, we'll consider a simple regression
 problem. The example is based on one that James Hensman showed at the
 January 2014 Gaussian process winter school in his talk is on low rank
-Gaussian process approximations.
+Gaussian process approximations.}
 
 
 \subsection{Back to a Simple Regression Problem}
 
-
-Here we set up a simple one dimensional regression problem. The input
+\notes{Here we set up a simple one dimensional regression problem. The input
 locations, $\inputMatrix$, are in two separate clusters. The response
 variable, $\dataVector$, is sampled from a Gaussian process with an
 exponentiated quadratic covariance.}
@@ -1440,10 +1020,10 @@ mlai.write_figure(figure=fig,
 				  
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-full-gp.svg}{60%}}{A full Gaussian process fit to the simulated data set.}{sparse-demo-full-gp}
 
-Now we set up the inducing variables, $\inducingVector$. Each inducing
+\notes{Now we set up the inducing variables, $\inducingVector$. Each inducing
 variable has its own associated input index, $\mathbf{Z}$, which lives
 in the same space as $\inputMatrix$. Here we are using the true
-covariance function parameters to generate the fit.
+covariance function parameters to generate the fit.}
 
 \code{kern = GPy.kern.RBF(1)
 Z = np.hstack(
@@ -1499,7 +1079,7 @@ mlai.write_figure(figure=fig,
 
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp}{60%}}{Sparse Gaussian process with six unconstrained inducing variables, initialized randomly and then optimized.}{sparse-demo-unconstrained-inducing-6-gp}
 
-Now we will vary the number of inducing points used to form the approximation.
+\notes{Now we will vary the number of inducing points used to form the approximation.}
 
 \displaycode{m.Z.values}
 
@@ -1510,7 +1090,6 @@ M = 8
 m.set_Z(np.random.rand(M,1)*12)
 
 m.optimize()}
-
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
@@ -1527,7 +1106,7 @@ mlai.write_figure(figure=fig,
 
 \subsubsection{Uncertainty about the Provenance of the Data}
 
-Provenance could include the time that the data was acquired, the
+\notes{Provenance could include the time that the data was acquired, the
 location that the data was acquired, even the 'type' of data that is
 acquired. For example, in computer vision pixels are arriving from
 different objects. We are uncertain about the provenance of the pixels
@@ -1535,27 +1114,23 @@ in terms of which *object* they are arriving from. The spatial location
 of the object in the image. This uncertainty relates to uncertainty
 about the covariance function. Unfortunately, it is not directly on the
 covariance function itself, but relates to values through which the
-covariance is nonlinearly related.
-
-
+covariance is nonlinearly related.}
 \begin{align*} 
 k(\dataVector, \dataVector^\prime) = \exp(-||\dataVector-\dataVector^\prime||^2) 
 \end{align*}
+\notes{These variables become *latent* or *confounders*.}
 
-These variables become *latent* or *confounders*.
-
-
-**Not sure about this**: Provenance of data is often finite. Consider a
+\notes{**Not sure about this**: Provenance of data is often finite. Consider a
 diseased person. That person consists of a finite (if very large) state
 vector. Of course the number of measurements we can make about that
 person is infinite. But there are a set of fundamental limitations to
-what can go wrong with the individual.
+what can go wrong with the individual.}
 
 
 \subsection{Ethics}
 
 
-Ownership of data, returning it to the individual. In healthcare the
+\notes{Ownership of data, returning it to the individual. In healthcare the
 danger of confusing it with marketing, Laplace, and the utopian view of
 data. Invalidity of insurance. How the results are presented to the
-patient.
+patient.}
