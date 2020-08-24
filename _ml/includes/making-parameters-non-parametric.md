@@ -168,7 +168,11 @@ $$
 p(\dataVector|\numData^*) = p(\dataVector).
 $$
 
-\setupplotcode{import daft}
+\setupplotcode{import daft
+from matplotlib import rc
+
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
 \plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
@@ -207,14 +211,32 @@ $$
 p(\dataVector|\mappingFunctionVector) = \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i)
 $$
 
-\setupplotcode{import daft}
-\plotcode{%%tikz --size 300,300 -f svg
-% Define nodes
-\begin{tikzpicture}[scale=1]
-\draw node[obs] (y) {$\dataScalar_i$};
-\draw node[latent, above=of y] (f) {$\mappingFunction_i$};
-\draw node[latent, above=of f] (u) {$\inducingVector$};
-\draw node[latent, above right=of f, draw=gray] (ustar) {\color{gray}$\inducingVector^*$};
+\setupplotcode{import daft
+
+from matplotlib import rc
+
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
+
+\plotcode{pgm = daft.PGM(shape=[2, 3],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
+grey_edge={"ec": "#303030"}
+pgm.add_node(daft.Node("y", r"$y_i$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$f_i$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 1.5, fixed=False, plot_params=grey_edge))
+pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$")
+
+pgm.add_edge("u", "f", directed=False)
+pgm.add_edge("f", "y")
+pgm.add_edge("ustar", "f", directed=False, plot_params=grey_edge)
+pgm.add_edge("u", "ustar", directed=False, plot_params=grey_edge)
+
+pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f.svg", transparent=True)}
         
 % Connect the nodes
 \draw [-, draw=gray] (ustar) to (u);%
@@ -224,7 +246,9 @@ $$
 
 \plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
 \end{tikzpicture}}
-        
+
+\figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f}{30%}}{The relationship between $\mappingFunctionVector$ and $\dataVector$ is assumed to be factorized, which we indicate here using plate notation.}{u-to-f_i-to-y_i-ustar-to-f} 
+
 \notes{We now decompose, without loss of generality, our joint distribution
 over inducing variables and fundamentals into the following parts}
 $$
@@ -234,7 +258,11 @@ $$
 $\inducingVector^*$.}
 
 
-\setupplotcode{import daft}
+\setupplotcode{import daft
+from matplotlib import rc
+
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
 
 \plotcode{%%tikz --size 300,300 -f svg
 % Define nodes
