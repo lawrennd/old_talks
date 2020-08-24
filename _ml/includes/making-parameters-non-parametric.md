@@ -29,8 +29,8 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
-pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 1.5, fixed=False))
 pgm.add_edge("u", "y", directed=False)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
@@ -410,7 +410,7 @@ what.}
 \subsubsection{Augmenting with Inducing Variables in Gaussian Processes}
 
 \notes{To define our model, we need to describe the relationship between the
-fundamental variables, $\dataMappingVector$, and the inducing variables,
+fundamental variables, $\mappingFunctionVector$, and the inducing variables,
 $\inducingVector$. This needs to be done in such a way that the inducing
 variables are also Kolmogorov consistent. A straightforward way of
 achieving this is through a joint Gaussian process model over the
