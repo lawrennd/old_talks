@@ -32,18 +32,29 @@ $$
 \text{data} = \mathbf{\dataMatrix} \in \Re^{\numData\times \dataDim},
 $$
 where here we are assuming we have $\numData$ data points and $\dataDim$
-features. However, as soon as we write down our data in this form it
-invites particular assumptions about your data that were valid, perhaps
-in the 1930s, when people were worried about tables of data. They
-collected tables of data with a specific purpose in mind and the data
-naturally sat in a matrix. Immediately we write down our data in a
-matrix form, $\dataMatrix\in \Re^{\numData\times \dataDim}$ it is
-somehow implicit that we are suggesting factorization assumptions across
+features. As soon as we write down our data in this form it
+invites particular assumptions about the data that may have been valid
+in the 1930s, when there was more focus on survey data. Experimental designs 
+stipulated a table of data with a specific set of hypotheses in mind. The data
+naturally sat in a matrix. 
+
+As soon as we write down our data in a
+matrix form, $\dataMatrix\in \Re^{\numData\times \dataDim}$ it almost second nature 
+to begin making factorization assumptions. In particular, an independence assumption across
 the $\numData$ data points.}
 \begin{align*}
-p(\dataMatrix) = \prod_{i=1}^\numData p(\dataVector_{i, :} | \boldsymbol{\theta})
+p(\dataMatrix|\parameterVector) = \prod_{i=1}^\numData p(\dataVector_{i, :} | \boldsymbol{\theta})
 \end{align*}
-\notes{This assumption allows us to easily make predictions about new data
+\notes{This factorization gives several advantages. It has a theoretical framing, that easily allows us
+to show that by optimizing the resulting lieklihood, we are minimizing a sample based approximation to a
+Kullback-Leibler divergence between our model and the true data generating density (see e.g. @Wasserman:all03). 
+\begin{align*}
+\log p(\dataMatrix|\parameterVector) =& \sum_{i=1}^\numData \log p(\dataVector_{i, :} | \boldsymbol{\theta}) + \text{const}
+\approx & \int \Pr(\dataMatrix) \log \frac{p(\dataMatrix|\parameterVector)}{\Pr(\dataMatrix)}
+\end{align*}
+where \Pr(\dataMatrix) is the true data generating distribution.
+
+From pragmatist's perspective, the assumption allows us to easily make predictions about new data
 points given a parameter vector that is derived from the training data.
 This assumption will generally be wrong, and also leads to concerns
 about the parameters when $\numData<<\dataDim$, the so called \`large
