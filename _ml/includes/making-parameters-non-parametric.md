@@ -319,17 +319,17 @@ rc("text", usetex=True)}
 reduce_alpha={"alpha": 0.3}
 pgm.add_node(daft.Node("y", r"$\dataScalar_i$", 0.5, 0.5, fixed=False, observed=True))
 pgm.add_node(daft.Node("f", r"$\mappingFunction_i$", 0.5, 1.5, fixed=False))
-pgm.add_node(daft.Node("u", r"$\parameterVector$", 0.5, 2.5, fixed=True))
-pgm.add_node(daft.Node("ustar", r"$\parameterVector^*$", 1.5, 1.5, fixed=True, plot_params=reduce_alpha))
+pgm.add_node(daft.Node("theta", r"$\parameterVector$", 0.5, 2.5, fixed=True))
+pgm.add_node(daft.Node("thetastar", r"$\parameterVector^*$", 1.5, 1.5, fixed=True, plot_params=reduce_alpha))
 pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 
 pgm.add_edge("f", "y")
-pgm.add_edge("u", "f")
-pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
+pgm.add_edge("theta", "f")
+pgm.add_edge("thetastar", "f", plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}        
+pgm.render().figure.savefig("\diagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}        
 
-\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{given-u-to-f_i-to-y_i}
+\figure{\includediagram{\diagramsDir/ml/given-theta-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{given-theta-to-f_i-to-y_i}
 
 \subsection{Instantiating the Model}
 
