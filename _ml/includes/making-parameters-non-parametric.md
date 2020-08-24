@@ -144,7 +144,7 @@ veriables. For example if we took $\mappingFunction_{12,345}$ to be the
 height of Tom Cruise and $\mappingFunction_{23,789}$ to be the height of
 Penelope Cruz then we might take for an observation a binary value
 indicating the relative heights, so
-$\datascalar_{72,394} = \mappingFunction_{12,345} < \mappingFunction_{23,789}$.
+$\dataScalar_{72,394} = \mappingFunction_{12,345} < \mappingFunction_{23,789}$.
 The fundamental variable is an artificial construct, but it can prove to
 be a useful one. In particular we'd like to assume that the
 relationship between our observations, $\dataVector$ and the fundamental
