@@ -6,12 +6,12 @@
 \subsection{Double Descent}
 
 \notes{One of Breiman's ideas for improving predictive performance is
-known as Bagging. The idea is to train a number of models on the data
+known as bagging [@Breiman:bagging96]. The idea is to train a number of models on the data
 such that they overfit (high variance). Then average the predictions
 of these models. The models are trained on different bootstrap samples
 and their predictions are aggregated giving us the acronym,
-Bagging. By combining decision trees with Bagging we recover Random
-Forests}
+Bagging. By combining decision trees with bagging we recover Random
+Forests.}
 
 \notes{Bias and variance can be estimated through the Bootstrap, and
 the traditional view has been that there's a form of Goldilocks
@@ -37,7 +37,7 @@ achieve good generalization.
 \notes{As @Zhang:understanding17 starkly illustrated with
 their random labels experiment, within the dark forest there are some
 terrible places, big bad wolves of overfitting that will gobble up
-your model. But, as empirical evidence shows there is also a safe and
+your model. But as empirical evidence shows there is also a safe and
 hospitable Grandma's house where these highly overparameterised models
 are safely consumed. Fundamentally, it must be about the route you
 take through the forest, and the precautions you take to ensure the
@@ -49,14 +49,14 @@ developed. Secondly, that theory is now obliged to conflate two
 aspects to modelling that we generally like to keep separate: the
 model and the algorithm.}
 
-\notes{Classical statistical theory around predictive generalisation
-focusses specfically on the class of models that is being used for
+\notes{Classical statistical theory around predictive generalization
+focusses specifically on the class of models that is being used for
 data fitting. Historically, whether that theory follows a
 Fisher-aligned estimation approach (see e.g. @Vapnik:book98) or
 model-based Bayesian approach (see e.g. @Ghahramani:probabilistic15),
 neither is fully equipped to deal with these new circumstances
 because, to continue our rather tortured analogy, these theories
-provide us with a characterisation of the *destination* of the
+provide us with a characterization of the *destination* of the
 algorithm, and seek to ensure that we reach that destination. Modern
 machine learning requires theories of the *journey* and what our route
 through the forest should be. }
@@ -65,12 +65,12 @@ through the forest should be. }
 accuracy on the training set. An objective that is always achievable
 for the overparameterized model.}
 
-\notes{Intuitively, it seems that a highly over-parameterised model
+\notes{Intuitively, it seems that a highly overparameterized model
 places Grandma's house on the edge of the dark forest. Making it
 easily and quickly accessible to the algorithm. The larger the model,
 the more exposed Grandma's house becomes. Perhaps this is due to some
 form of blessing of dimensionality brings Grandma's house closer to
-the edge of the forest in a high dimensional stting. Really we should
+the edge of the forest in a high dimensional setting. Really, we should
 think of Grandma's house as a low dimensional manifold of destinations
 that are safe. A path through the forest where the wolf of overfitting
 doesn't venture. In the GLM case, we know already that when the number
@@ -82,7 +82,7 @@ a good place to be from the perspective of
 generalization. Additionally, it is often difficult to find. Finding
 the precise polynomial coefficients in a least squares regression to
 exactly fit the basis to a small data set such as the Olympic marathon
-data requires careful consideration of the numerics and an
+data requires careful consideration of the numerical properties and an
 orthogonalization of the design matrix [@Lawson:least95].}
 
 \notes{It seems that with a highly overparameterized model, these

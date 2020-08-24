@@ -6,7 +6,7 @@
 \subsection{Deep Models and Generalization}
 
 \notes{When it comes to the mismatch between our expectations about generalization and the reality of deep models, perhaps the paper that most clearly
-demonstrated something was amis was [@Zhang:understanding17], who
+demonstrated something was amiss was [@Zhang:understanding17], who
 trained a large neural network via stochastic gradient descent to
 label an image data set. Within Professor Efron's categorization of
 regression model, such a model is a very complex regression model with
@@ -14,22 +14,22 @@ a particular link function and highly structured adaptive basis
 functions, which are by tradition called neurons. Despite the
 structuring of these basis functions (known as convolutional layers),
 their adaptive nature means that the model contains many millions of
-parameters. Traditional approaches to generalisation suggest that the
+parameters. Traditional approaches to generalization suggest that the
 model should over fit and [@Zhang:understanding17] proved that such
 models can do just that. The data they used to fit the model, the
 training set, was modified. They flipped labels randomly, removing any
 information in the data. After training, the resulting model was able
 to classify the training data with 100% accuracy. The experiment
 clearly demonstrates that all our gravest doubts about
-overparameterised models are true. If this model has the capacity to
+overparameterized models are true. If this model has the capacity to
 fit data which is obviously nonsense, then it is clearly not
-regularised. Our classical theories suggest that such models should
+regularized. Our classical theories suggest that such models should
 not generalize well on previously unseen data, or test data, but yet
 the empirical experience is that they do generalize well. So, what's
 going on?}
 
 \notes{During a period of deploying machine learning models at Amazon,
-I was indoctrinated in a set of Leadership Principles, fourteen
+I was introduced to a set of leadership principles, fourteen
 different ideas to help individual Amazonians structure their
 thinking. One of them was called "Dive Deep", and a key trigger for a
 "Dive Deep" was when anecdote and data are in conflict. If there were
@@ -40,14 +40,14 @@ people don't depend overly on anecdotes *or* data when making their
 decisions, but to develop deeper understandings of their business. In
 academia, we are equally guilty of relying too much on empirical
 studies or theory without ensuring they are reconciled. The
-theoreticians disbelief of what the experimenter tells them is
+theoreticians' disbelief of what the experimenter tells them is
 encapsulated in Kahnemann's idea of "theory induced blindness"
 [@Kahneman:fastslow11]. Fortunately, the evidence for good
 generalisation in these mammoth models is now large enough that the
-theory-blinders are falling away and a serious look is being taken and
+theory-blinders are falling away, and a serious look is being taken and
 how and why these models can generalize well.}
 
-\notes{An in depth technical understanding that applies to all these
+\notes{An in-depth technical understanding that applies to all these
 cases is not yet available. But some key ideas are. Firstly, if the
 neural network model is over-capacity, and can fit nonsense data in
 the manner demonstrated by [@Zhang:understanding17] then that

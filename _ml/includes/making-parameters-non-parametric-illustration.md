@@ -5,7 +5,7 @@
 
 \subsubsection{Modelling $\mappingFunctionVector$}
 
-\notes{In conclusion, for a non parametric framework, our model for
+\notes{In conclusion, for a nonparametric framework, our model for
 $\mappingFunctionVector$ is predominantly in the covariance function
 $\kernelMatrix_{\mappingFunctionVector\mappingFunctionVector}$. This is
 our data model. We are assuming the inducing variables are drawn from a
@@ -27,7 +27,7 @@ Gaussian process approximations.}
 
 \subsection{Back to a Simple Regression Problem}
 
-\notes{Here we set up a simple one dimensional regression problem. The input
+\notes{Here we set up a simple one-dimensional regression problem. The input
 locations, $\inputMatrix$, are in two separate clusters. The response
 variable, $\dataVector$, is sampled from a Gaussian process with an
 exponentiated quadratic covariance.}
@@ -54,7 +54,7 @@ y = np.random.multivariate_normal(np.zeros(N),k.K(X)+np.eye(N)*np.sqrt(noise_var
 scale = np.sqrt(np.var(y))
 offset = np.mean(y)}
 
-\notes{First we perform a full Gaussian process regression on the data. We
+\notes{First, we perform a full Gaussian process regression on the data. We
 create a GP model, `m_full`, and fit it to the data, plotting the
 resulting fit.}
 

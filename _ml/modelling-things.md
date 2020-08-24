@@ -37,10 +37,10 @@ transition: None
 \include{_ml/includes/ml-and-statistics-interface.md}
 \include{_data-science/includes/happenstance-data.md}
 
-\notes{Professor Efron's paper does an excellent job a summarising the
+\notes{Professor Efron's paper does an excellent job a summarizing the
 range of predictive models that now lie at our disposal, but of
 particular interest are deep neural networks. This is because they go
-beyond the traditional notions of what generalisation is or rather,
+beyond the traditional notions of what generalization is or rather,
 what it has been, to practitioners on both the statistical and machine
 learning sides of the fence.}
 
@@ -60,7 +60,7 @@ are often fitted using many millions of data points. The most extreme
 example of late is known as GPT-3. This neural network model, known as
 a Transformer, has in its largest form 175 billion parameters. The
 model was trained on a data set containing 499 billion tokens (about 2
-Terrabytes of text). Estimates suggest that the model costs around
+terabytes of text). Estimates suggest that the model costs around
 $4.5 million dollars to train (see e.g. @Li:openai20).}
 
 \include{_ml/includes/empirical-effectiveness-of-deep-learning.md}
@@ -73,7 +73,7 @@ $4.5 million dollars to train (see e.g. @Li:openai20).}
 order to make a prediction. The data consist of measurements recorded
 about the world around us. A model consists of our assumptions about how
 the data is likely to interrelate, typical assumptions include
-smoothness. Our assumptions reflect some undelying belief about the
+smoothness. Our assumptions reflect some underlying belief about the
 regularities of the universe that we expect to hold across a range of
 data sets.}
 $$
@@ -85,8 +85,8 @@ learning goes. The etymology of the data indicates that it is given
 how it is gotten), our main control is over the model. This is the key
 to making good predictions. The model is a mathematical abstraction of
 the regularities of the universe that we believe underly the data as
-collected. If the model is chosen well we will be able to interpolate
-the data and precit likely values of future data points. If it is chosen
+collected. If the model is well-chosen we will be able to interpolate
+the data and predict likely values of future data points. If it is chosen
 badly our predictions will be overconfident and wrong.}
 
 \include{_ml/includes/model-vs-algorithm.md}
@@ -141,6 +141,10 @@ what can go wrong with the individual.}
 danger of confusing it with marketing, Laplace, and the utopian view of
 data. Invalidity of insurance. How the results are presented to the
 patient.}
+
+\subsection{Acknowledgments}
+
+I've benefited over the years from conversations with a number of extraordinary thinkers, among those I can identify that influenced the thinking in this paper are Tony O'Hagan, John Kent, David J.C. MacKay, Richard Wilkinson, Darren Wilkinson, Bernhard Sch\"olkopf, Zoubin Ghahramani.
 
 
 \thanks

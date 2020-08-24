@@ -17,7 +17,11 @@ number of parameters. One way of seeing the requirement for a large
 number of parameters is to look at how we are storing information from
 the training data to pass to the test data. The sum of all our knowledge
 about the training data is stored in the conditional distribution of the
-parameters given the training data, Uncertainty complex systA key design
+parameters given the training data, Uncertainty complex syst
+
+\tk{FIXME}
+
+A key design
 time problem is the *parametric bottleneck*. If we choose the number of
 parameters at design time, but the system turns out to be more
 complicated that we expected, we need to design a new model to deal with
@@ -26,8 +30,8 @@ test data is like an information channel. This TT channel has a
 bandwidth that is restricted by our choice of the dimensionality of
 $\boldsymbol{\theta}$ at *design* time. This seems foolish. Better to
 ensure we choose a model that allows for that channel to be potentially
-infinite. This implies a non-parametric approach. Our prior over
-$\boldsymbol{\theta}$ should be *non parametric*.}
+infinite. This implies a nonparametric approach. Our prior over
+$\boldsymbol{\theta}$ should be *nonparametric*.}
 $$
 p(\paramVector | \dataVector),
 $$
@@ -46,7 +50,7 @@ parameters having observed the training data. In the case that our
 likelihood is log concave[^3] then this information gain provably will increase, with every
 observed data point. How much information we gain will depend on the
 likelihood associated with each data $\dataScalar_i$. This Kullback
-Leibler divernece has an infomration theoretic interpretation as a
+Leibler divergence has an information theoretic interpretation as a
 communication channel passing information from the training data to the
 test data. From an information theoretic perspective, the channel
 bandwidth is controlled by the dimensionality of the parameter vector

@@ -8,7 +8,7 @@
 \notes{If the parameters are badly determined, then small fluctuations in the
 data set lead to larger fluctuations in prediction. One approach to this
 problem is to build models in which the parameters are well determined.
-For teh independence across data points case, this involves having many
+For the independence across data points case, this involves having many
 observations (large $\numData$) relative to the number of parameters
 (which often scales with $\dataDim$). This motivates the issues of the
 large $\dataDim$ small $\numData$ domain, where the conditions are
@@ -17,16 +17,16 @@ trivially solved by assuming independence across the $\dataDim$ data
 dimensions and allowing the parameters to scale with the number of data
 $\numData$. This is a characteristic exhibited, for example by the
 Gaussian process latent variable model [@Lawrence:pnpca05] which in standard form assumes independence
-arcross $\dataDim$ for high dimensional data and associates each data
+across $\dataDim$ for high dimensional data and associates each data
 point with a latent variable that is treated as a parameter. In
-[@Lawrence:unifying12] I argued that the succesful class of *spectral*
+[@Lawrence:unifying12] I argued that the successful class of *spectral*
 approaches to dimensionality reduction (e.g.
  LLE @Roweis:lle00 and maximum variance unfolding @Weinberger:learning04, which are widely
 applied in the large $\dataDim$ small $\numData$ domain, also have a
-probabilistic intepretation where the underlying likelihood factorizes
+probabilistic interpretation where the underlying likelihood factorizes
 across data dimensions. Regardless of our choice of factorization
 though, we are still making the same claim: a particular vector, or
-matrix, of parameters is suffcient for us to consider that the data
+matrix, of parameters is sufficient for us to consider that the data
 independent, either across features or data points.}
 
 
@@ -54,7 +54,7 @@ then $\dataScalar_{17}$ might be the price of a return rail fair from
 Sheffield to Oxford on 6th February 2014, whilst $\dataScalar_{29}$
 might be the number of people on the 8:20 train that day, but
 $\dataScalar_{72,394}$ could be the temperature of the Atlantic ocean on
-23rd August 2056 at a point on the artic circle midway between Greenland
+23rd August 2056 at a point on the Arctic circle midway between Greenland
 and Norway. When we see data in this form, we realize that most of the
 time we are missing most of the data. This leads to the idea of *massive
 missing data*. Contrast this situation with that traditionally faced in
@@ -87,9 +87,11 @@ pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True
 
 \notes{A model that's not wrong, just not useful. I like graphical
 representations of probabilistic models and this is my favourite graph.
-It is the most simple but also the most general. It says that all the
+It is the simplest graph but also the most general model. It says that all the
 data in our vector $\dataVector$ is governed by an unspecified
-probability disribution $p(\dataVector)$. Graphical models normally
+probability disribution $p(\dataVector)$. 
+
+Graphical models normally
 express the conditional independence relationships in the data, with
 this graph we are not a priori considering any such relationships. This
 is the most general model (it includes all factorized models as special

@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Making Parameters non-Parametric}
+\subsection{Making Parameters Nonparametric}
 
 \notes{We will start by introducing a set of variables, $\inducingVector$, that
 are finite dimensional. These variables will eventually be used to
@@ -22,7 +22,7 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{pgm = daft.PGM(shape=[1, 3],
+\plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
@@ -45,8 +45,8 @@ simple marginalization of $\inducingVector$. We haven't yet made any
 assumptions about our data.}
 
 \notes{The model we've introduced now seems remarkably like the parametric
-model we argued against in the previous section. So what's going on
-here, is there going to be some kind of parametric/non parametric 3 card
+model we argued against in the previous section. What's going on
+here? Is there going to be some kind of parametric/nonparametric 3 card
 trick where with sleight of hand we are trying to introduce a parametric
 model? Well clearly not, because I've just given the game away. But I
 believe there are some important differences to the traditional approach
@@ -85,7 +85,7 @@ additional parameters, $\inducingVector^*$ that we can call upon to
 increase the bandwidth of the TT channel as appropriate. In parametric
 modelling, calling upon such parameters has a significant effect on the
 likelihood of the model, but here these variables are auxiliary
-variables that will *not* effect the likelihood of the model. They
+variables that will *not* affect the likelihood of the model. They
 merely effect our ability to approximate the true bandwidth of the TT
 channel. The quality of this approximation can be varied at run time. It
 is not necessary to specify it at design time. This gives us the
@@ -163,7 +163,7 @@ therefore the formulation is still totally general.}
 $$
 p(\dataVector|\numData^*) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector, \mappingFunctionVector^*)\text{d}\mappingFunctionVector \text{d}\mappingFunctionVector^*
 $$
-\notes{and since we enforce Kolmogorov consistency we have}
+\notes{and since we enforce Kolmogorov consistency, we have}
 $$
 p(\dataVector|\numData^*) = p(\dataVector).
 $$
@@ -201,7 +201,7 @@ $$
 p(\dataVector|\mappingFunctionVector) = \prod_{i} p(\dataVector^i| \mappingFunctionVector^i)
 $$
 \notes{so that we have subsets of the data $\dataVector^i$ which are dependent
-on sub sets of the fundamental variables, $\mappingFunction$. For
+on subsets of the fundamental variables, $\mappingFunction$. For
 simplicity of notation we will assume a factorization across the entire
 data set, so each observation, $\dataScalar_i$, has a single underlying
 fundamental variable, $\mappingFunction_i$, although more complex
@@ -362,7 +362,7 @@ pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=T
  
 \subsection{Instantiating the Model}
 
-\notes{So far we haven't made any assumptions about the data in our model,
+\notes{So far, we haven't made *any* assumptions about the data in our model,
 other than a factorization assumption between the fundamental variables
 and the observations, $\dataVector$. Even this assumption does not
 affect the generality of the model decomposition, because in the worst
@@ -372,7 +372,7 @@ and allowing us to include complex interelations between $\dataVector$
 directly in $p(\mappingFunctionVector)$. We have specified that
 $p(\mappingFunctionVector, \inducingVector)$ should be Kolmogorov
 consistent with $\mappingFunctionVector^*$ and $\inducingVector^*$ being
-marginalised and we have argued that non-parametric models are important
+marginalised and we have argued that nonparametric models are important
 in practice to ensure that all the information in our training data can
 be passed to the test data.}
 
@@ -400,7 +400,7 @@ common etymology. This is appropriate because the index indicates the
 provenance of the data. In effect we have multivariate indices to
 account for the full provenance, so that our observations of the world
 are given as a function of, for example, the when, the where and the
-what. When is given by time, where is given by spatial location and what
+what. "When" is given by time, "where" is given by spatial location and "what"
 is given by a (potentially discrete) index indicating the further
 provenance of the data. To define a joint Gaussian density, we need to
 define the mean of the density and the covariance. Both this mean and
@@ -409,7 +409,7 @@ what.}
 
 \subsubsection{Augmenting with Inducing Variables in Gaussian Processes}
 
-\notes{To define our model we need to describe the relationship between the
+\notes{To define our model, we need to describe the relationship between the
 fundamental variables, $\dataMappingVector$, and the inducing variables,
 $\inducingVector$. This needs to be done in such a way that the inducing
 variables are also Kolmogorov consistent. A straightforward way of
@@ -476,14 +476,14 @@ used in a *generalised* linear model through a link function to
 represent a rate or risk of disease [@Diggle:somewhere]. The
 covariates should *co-vary* (or move together) with the response
 variable. Appropriate covariates for malaria incidence rate might
-include known influencers of the disease. For example if we are dealing
+include known influencers of the disease. For example, if we are dealing
 with *malaria* then we might expect disease rates to be influenced by
 altitude, average temperature, average rainfall, local distribution of
 prophylactic measures (such as nets) etc. The covariance of the Gaussian
 process then has the role of taking care of the *residual* variance in
 the data: the data that is not explained by the mean function, i.e. the
 variance that cannot be explained by the parametric model. In a disease
-mapping model it makes sense to assume that these residuals may not be
+mapping model, it makes sense to assume that these residuals may not be
 independent. An underestimate of disease at one spatial location, may
 imply an underestimate of disease rates at a nearby location. The
 mismatch between the observed disease rate and that predicted by
@@ -504,14 +504,14 @@ determined. If the mean function does capture the majority of the
 variance of our observations, then the role of the covariance function
 will be reduced to capture only the variance of the residuals. But at
 this point we are left with a model that is dominated by is parametric
-part at the expense of its non parametric part. If the parameters have
+part at the expense of its nonparametric part. If the parameters have
 become well determined then the uncertainty about future predictions
 will be reduced. However, if we enter a novel domain (one where the
-provenance of the data differs significantly from the data we observed
-at training time) then we will still make very confident extrapolations
-when predicting for the new data. For this reason in machine learning we
+provenance of the new data differs significantly from the original data we observed
+at training time (see e.g. @Quinonero:dataset09) then we will still make very confident extrapolations
+when predicting for the new data. For this reason, in machine learning, we
 often prefer to leave out the mean function to ensure that the signal
-variance is explained through non parametric part of the model rather
+variance is explained through nonparametric part of the model rather
 than the parametric mean function. In what follows we will drop the mean
 function and focus only on the covariance function.}
 
@@ -531,6 +531,6 @@ model = GPy.models.GPRegression(data['X'], data['Y'], kern)
 
 
 \notes{So we *could* interpret Gaussian process models as approaches to dealing
-with residuals}
+with residuals \tk{FIXME}}
 
 \endif

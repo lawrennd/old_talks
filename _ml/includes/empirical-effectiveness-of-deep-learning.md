@@ -26,7 +26,7 @@ and language modelling [@Radford:language19;@Devlin:bert19].}
 
 \notes{Impressive though these performances are, they are reliant on
 massive data and enormous costs of training. Yet they can be seen
-through the lense of regression, as outlined by Professor Efron in his
+through the lens of regression, as outlined by Professor Efron in his
 paper. They map from inputs to outputs. For language modelling,
 extensive use of auto-regression allows for sequences to be
 generated.}

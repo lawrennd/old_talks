@@ -23,7 +23,7 @@ must depend only on the two indices associated with $\dataVector$.}
 
 \notes{Since the covariance matrix is specified pairwise, this implies that the covariance matrix must be dependent only  on the index
 of the two observations $\dataScalar_i$ and $\dataScalar_j$ for which
-the covariance is being computed. In general we can also think of this
+the covariance is being computed. In general, we can also think of this
 index as being infinite: it could be a spatial or temporal location.}
 \begin{align*} 
 p(\dataVector) = \int p(\dataVector, \dataVector^*)

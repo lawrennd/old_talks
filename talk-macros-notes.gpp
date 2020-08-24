@@ -27,9 +27,27 @@
 
 \define{\newframe{contents}{name}{style}}{\contents}
 
-\define{\section{text}}{# \text \ifdef{editText}\editText\undef{editText}\endif}
-\define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
-\define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\section{text}}{# \text \ifdef{editText}
+
+\editText\undef{editText}\endif
+
+}
+\define{\subsection{text}}{## \text \ifdef{editText}
+
+\editText\undef{editText}\endif
+
+}
+\define{\subsubsection{text}}{### \text \ifdef{editText}
+
+\editText\undef{editText}\endif
+
+}
+\define{\editlink}{\ifdef{editText}
+
+\editText\undef{editText}\endif
+
+}
+
 
 \define{\codeblockstart}{```}
 \define{\codeblockend}{```}

@@ -8,7 +8,7 @@
 \notes{The challenges of big data emerged due to companies being able
 to rapidly interconnect multiple sources of information. This leads to
 challenges in storage, distributed processing and modeling. Google's
-search engine were at the forefront of this revolution. In particular
+search engine was at the forefront of this revolution. In particular
 they were able to demonstrate that some tasks can be easily resolved
 with fairly simple models and very large data sets
 [@Halevy:unreasonable09]. What we are now learning is that many tasks
@@ -23,18 +23,17 @@ health.}
 
 \notes{Consider we take a holistic view of health and the many ways in
 which we can become unhealthy, through genomic and environmental
-affects. Firstly, let's remember that we don't have a full
+effects. Firstly, let's remember that we don't have a full
 understanding, even on all the operations in a single eukaryotic
-cell. Indeed we don't even understand all the mechanisms by which
+cell. Indeed, we don't even understand all the mechanisms by which
 transcription and translation occur in bacterial and archaeal
 cells. That is despite the wealth of gene expression and protein data
 about these cells. Even if we were to pull all this information
 together, would it be enough to develop that understanding? Health is
 an accumulation of \tk{FIXME}}
 
-\notes{There are large quantities of data, but the complexity of these
-systems iIn these domains we'd argue that even big data is small. The
-volume of the data is not large enough to determine the parameters of
+\notes{There are large quantities of data, but the complexity of the underlying 
+systems in these domains, even the terabytes of data we have today may not be enough to determine the parameters of
 such complex models.}
 
 \endif

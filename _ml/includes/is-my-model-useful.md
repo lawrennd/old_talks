@@ -9,22 +9,25 @@
 >
 > @Box:science76
 
-\notes{This important quote has become worn by overuse (like a favourite
+\notes{This important quote has become worn by overuse (like a favorite
 sweater). Worse still it is almost being bandied around to mean that
 *because* my model is wrong it *might* be useful. It seems that people
-almost equate the statement to meaning probobability of my model being
-wrong given that its useful is = 1. Which would be an incorrect model,
+almost equate the statement to meaning probability of my model being
+wrong given that its useful is = 1. Which would be an incorrect model
 but seems to be useful in practice when trying to justify poor
 assumptions.}
 
-\notes{Perhaps we should be more focussing on the quote \"\... the scientist
-must be alert to what is importantly wrong. It is inappropriate to be
-concerned about mice when there are tigers abroad.\" from the same
-paper. Let's have a think about where the tigers might be in the domain
-of big data. To consider this, let's first see what we can write down
-about our data that isn't implicitly wrong. If we are interested in
-multivariate data we could first write down our data in the following
-form.}
+\notes{Perhaps we should be more focusing on the quote from the same paper
+
+> the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad. 
+>
+> @Box:science76
+
+First highlighted to me by Richard Wilkinson. Let's have a think about
+where the tigers might be in the domain of big data. To consider this,
+let's first see what we can write down about our data that isn't
+implicitly wrong. If we are interested in multivariate data we could
+first write down our data in the following form.}
 $$
 \text{data} = \mathbf{\dataMatrix} \in \Re^{\numData\times \dataDim},
 $$
@@ -42,10 +45,9 @@ p(\dataMatrix) = \prod_{i=1}^\numData p(\dataVector_{i, :} | \boldsymbol{\theta}
 \end{align*}
 \notes{This assumption allows us to easily make predictions about new data
 points given a parameter vector that is derived from the training data.
-This assumptions will generally be wrong, and also leads to concerns
+This assumption will generally be wrong, and also leads to concerns
 about the parameters when $\numData<<\dataDim$, the so called \`large
-$\dataDim$, small $\numData$' domain. They also lead to concerns such
-as large $\dataDim$, small $\numData$ concerns.}
+$\dataDim$, small $\numData$' domain.}
 
 \notes{I think that this is a wrongheaded way of thinking about modern data,
 because in practice, $\dataDim$, doesn't really exist, at least not in

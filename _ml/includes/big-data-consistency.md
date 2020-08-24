@@ -29,7 +29,7 @@ weighing all the evidence. You are just about to pronounce your decision
 when a maid comes running in and shouts \"He didn't do it! He didn't
 do it!\". The maid wasn't on the witness list and isn't accounted for
 in your model. How does this effect your inference? The pragmatists
-answer might be: not at all, because the maid wasn't in the model. But
+answer might be: "not at all, because the maid wasn't in the model." But
 in the interests of justice we might want to include this information in
 our inference process. If, as a result of the maid's entry, we now
 think it is less likely that Lord Safebury committed the crime, then
@@ -98,7 +98,7 @@ clinical results in the case of personalized health.}
 would lead to models which *don't* exhibit *Komlogorov consistency*. In
 these models the dimensionality of the test data, $\dataVector^*$,
 denoted by $\numData^*$ would have to be fixed and each
-$\dataScalar^*_i$ would require marginalization. So the nature of the
+$\dataScalar^*_i$ would require marginalization. So, the nature of the
 test data would need to be known at model *design* time.}
 
 \endif
