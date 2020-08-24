@@ -24,7 +24,7 @@ learning journal.}
 
 \notes{From my personal perspective, the strand of work that is most
 inspirational in prediction also comes from a statistician. Phil
-Dawid's prequential ideas [Dawid:callibrated82;Dawid:prequential84],
+Dawid's prequential ideas [@Dawid:callibrated82;@Dawid:prequential84],
 do provides some hope that a predictive approach can be reconciled
 with a scientific approach, in the sense that they allow us to falsify
 poorly calibrated models [@Lawrence:licsbintro10]. }
