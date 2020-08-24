@@ -417,11 +417,14 @@ achieving this is through a joint Gaussian process model over the
 inducing variables and the data mapping variables, so in other words we
 define a Gaussian process prior over}
 $$
-\begin{bmatrix}\mappingFunctionVector \inducingVector\end{bmatrix} \sim \gaussianDist{\mathbf{m}}{\kernelMatrix}
+\begin{bmatrix}
+\mappingFunctionVector \\ 
+\inducingVector
+\end{bmatrix} \sim \gaussianSamp{\mathbf{m}}{\kernelMatrix}
 $$
 \notes{where the covariance matrix has a block form,}
 $$
-\kernelMatrix = \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector\mappingFunctionVector} & \kernelMatrix_{\mappingFunctionVector\inducingVector} \ \kernelMatrix_{\inducingVector\mappingFunctionVector} & \kernelMatrix_{\inducingVector\inducingVector}\end{bmatrix}
+\kernelMatrix = \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector\mappingFunctionVector} & \kernelMatrix_{\mappingFunctionVector\inducingVector} \\ \kernelMatrix_{\inducingVector\mappingFunctionVector} & \kernelMatrix_{\inducingVector\inducingVector}\end{bmatrix}
 $$
 \notes{and $\kernelMatrix_{\mappingFunctionVector\mappingFunctionVector}$ gives
 the covariance between the fundamentals vector,
