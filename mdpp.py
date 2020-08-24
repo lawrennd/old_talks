@@ -52,6 +52,8 @@ parser.add_argument("-a", "--assignment", default=False, action='store_true',
 parser.add_argument("-d", "--diagrams-dir", type=str,
                     help="Directory to find the diagrams in")
 
+parser.add_argument("-r", "--replace-notation", default=False, action='store_true',
+                    help="Whether to replace the latex macros in the files, or to retain them for later processing (default is False, retain them")
 
 args = parser.parse_args()
 
@@ -68,7 +70,7 @@ if args.exercises:
    arglist.append('-DEXERCISES=1')
 if args.assignment:
    arglist.append('-DASSIGNMENT=1')
-
+   
 if args.code is not None and args.code != 'none':
    arglist.append('-DCODE=1')
    if args.code == 'ipynb':
@@ -103,6 +105,12 @@ if args.include_before_body:
 else:
    before_text = ''
 
+if args.replace_notation:
+   before_text += '\n\n'
+   with open('../_includes/talk-notation.tex', 'r') as fd:
+      before_text += fd.read()
+
+   
 if args.include_after_body:
    with open(args.include_after_body, 'r') as fd:
       after_text = fd.read()

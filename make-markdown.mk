@@ -15,13 +15,13 @@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@
 
 %.notes.docx.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to docx --code sparse ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to docx --code sparse --replace-notation ${PPFLAGS} 
 
 %.notes.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to ipynb --code ipynb ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to ipynb --code ipynb --replace-notation ${PPFLAGS} 
 
 %.full.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to ipynb --code full ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to ipynb --code full --replace-notation ${PPFLAGS} 
 
 %.slides.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format slides --to ipynb ${PPFLAGS} 

@@ -106,10 +106,10 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
-pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 1.5, fixed=False))
-pgm.add_node(daft.Node("ystar", r"$\mathbf{y}^*$", 1.5, 0.5, fixed=False))
-pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("ystar", r"$\dataVector^*$", 1.5, 0.5, fixed=False))
+pgm.add_node(daft.Node("ustar", r"$\inducingVector^*$", 1.5, 1.5, fixed=False))
 
 pgm.add_edge("u", "y", directed=False)
 pgm.add_edge("ustar", "y", directed=False)
@@ -180,10 +180,10 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
-pgm.add_node(daft.Node("f", r"$\mathbf{f}$", 0.5, 1.5, fixed=False))
-pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 2.5, fixed=False))
-pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$\mappingFunctionVector$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("ustar", r"$\inducingVector^*$", 1.5, 2.5, fixed=False))
 
 pgm.add_edge("u", "f", directed=False)
 pgm.add_edge("f", "y")
@@ -225,10 +225,10 @@ rc("text", usetex=True)}
                observed_style='shaded',
               line_width=3)
 reduce_alpha={"alpha": 0.3}
-pgm.add_node(daft.Node("y", r"$y_i$", 0.5, 0.5, fixed=False, observed=True))
-pgm.add_node(daft.Node("f", r"$f_i$", 0.5, 1.5, fixed=False))
-pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 2.5, fixed=False))
-pgm.add_node(daft.Node("ustar", r"$\mathbf{u}^*$", 1.5, 1.5, fixed=False, plot_params=reduce_alpha))
+pgm.add_node(daft.Node("y", r"$\dataScalar_i$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$\mappingFunction_i$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("ustar", r"$\inducingVector^*$", 1.5, 1.5, fixed=False, plot_params=reduce_alpha))
 pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 
 pgm.add_edge("u", "f", directed=False)
@@ -256,110 +256,81 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{pgm = daft.PGM(shape=[2, 3],
+\plotcode{\plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
                observed_style='shaded',
               line_width=3)
 reduce_alpha={"alpha": 0.3}
-pgm.add_node(daft.Node("y", r"$y_i$", 0.5, 0.5, fixed=False, observed=True))
-pgm.add_node(daft.Node("f", r"$f_i$", 0.5, 1.5, fixed=False))
-pgm.add_node(daft.Node("u", r"$\mathbf{u}$", 0.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("y", r"$\dataScalar_i$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$\mappingFunction_i$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 2.5, fixed=False))
+pgm.add_node(daft.Node("ustar", r"$\inducingVector^*$", 1.5, 1.5, fixed=False, plot_params=reduce_alpha))
 pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 
 pgm.add_edge("f", "y")
 pgm.add_edge("u", "f")
+pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}
-        
+pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}        
 
 \figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{u-to-f_i-to-y_i}
 
-\setupplotcode{import daft}
-\plotcode{%%tikz --scale 2 --size 300,300 -f svg
-% Define nodes
-\begin{tikzpicture}[scale=2]
-\draw node[obs] (y) {$\dataVector$};
-\draw node[latent, above=of y] (f) {$\mappingFunctionVector$};
-\draw node[obs] (y) {$\dataScalar_i$};
-\draw node[latent, above=of y] (f) {$\mappingFunction_i$};
-\draw node[latent, above=of y] (u) {$\inducingVector$};
-\draw node[latent, above left=of y] (u) {$\inducingVector$};
-\draw node[latent, above right=of y] (ustar) {$\inducingVector^*$};
-\draw node[latent, above=of f] (u) {$\inducingVector$};
-\draw node[latent, above right=of f, draw=gray] (ustar) {\color{gray}$\inducingVector^*$};
-\draw node[const, above=of f] (u) {$\inducingVector$};
-        
-% Connect the nodes
-\draw [->] (u) to (y);%
-\draw [->] (ustar) to (y);%
-\draw [-] (ustar) to (u);%
-\draw [-, draw=gray] (ustar) to (u);%
-\draw [->, draw=gray,color=gray] (ustar) to (f);%
-\draw [->] (f) to (y);%
-\draw [->] (u) to (f);%
+\setupplotcode{import daft
+from matplotlib import rc
 
-\plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-\end{tikzpicture}}
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
 
+\plotcode{\plotcode{pgm = daft.PGM(shape=[2, 3],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
+reduce_alpha={"alpha": 0.3}
+pgm.add_node(daft.Node("y", r"$\dataScalar_i$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$\mappingFunction_i$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 2.5, fixed=True))
+pgm.add_node(daft.Node("ustar", r"$\inducingVector^*$", 1.5, 1.5, fixed=True, plot_params=reduce_alpha))
+pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 
-\setupplotcode{import daft}
+pgm.add_edge("f", "y")
+pgm.add_edge("u", "f")
+pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
-\plotcode{
-%%tikz --size 300,300 -f svg
-% Define nodes
-\begin{tikzpicture}[scale=2]
-\draw node[obs] (y) {$\dataVector$};
-\draw node[latent, above=of y] (f) {$\mappingFunctionVector$};
-\draw node[obs] (y) {$\dataScalar_i$};
-\draw node[latent, above=of y] (f) {$\mappingFunction_i$};
-\draw node[latent, above=of y] (u) {$\inducingVector$};
-\draw node[latent, above left=of y] (u) {$\inducingVector$};
-\draw node[latent, above right=of y] (ustar) {$\inducingVector^*$};
-\draw node[latent, above=of f] (u) {$\inducingVector$};
-\draw node[latent, above right=of f, draw=gray] (ustar) {\color{gray}$\inducingVector^*$};
-\draw node[const, above=of f] (u) {$\inducingVector$};
-        
-% Connect the nodes
-\draw [->] (u) to (y);%
-\draw [->] (ustar) to (y);%
-\draw [-] (ustar) to (u);%
-\draw [-, draw=gray] (ustar) to (u);%
-\draw [->, draw=gray,color=gray] (ustar) to (f);%
-\draw [->] (f) to (y);%
-\draw [->] (u) to (f);%
+pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}        
 
-\plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-\end{tikzpicture}}
+\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{given-u-to-f_i-to-y_i}
 
-\setupplotcode{import daft}
-\plotcode{
-%%tikz --scale 2 --size 300,300 -f svg
-% Define nodes
-\draw node[obs] (y) {$\dataVector$};
-\draw node[latent, above=of y] (f) {$\mappingFunctionVector$};
-\draw node[obs] (y) {$\dataScalar_i$};
-\draw node[latent, above=of y] (f) {$\mappingFunction_i$};
-\draw node[latent, above=of y] (u) {$\inducingVector$};
-\draw node[latent, above left=of y] (u) {$\inducingVector$};
-\draw node[latent, above right=of y] (ustar) {$\inducingVector^*$};
-\draw node[latent, above=of f] (u) {$\inducingVector$};
-\draw node[latent, above right=of f, draw=gray] (ustar) {\color{gray}$\inducingVector^*$};
-\draw node[const, above=of f] (u) {$\inducingVector$};
-        
-% Connect the nodes
-\draw [->] (u) to (y);%
-\draw [->] (ustar) to (y);%
-\draw [-] (ustar) to (u);%
-\draw [-, draw=gray] (ustar) to (u);%
-\draw [->, draw=gray,color=gray] (ustar) to (f);%
-\draw [->] (f) to (y);%
-\draw [->] (u) to (f);%
+\setupplotcode{import daft
+from matplotlib import rc
 
-\plate[inner sep=10pt] {fy} {(f)(y)} {$i=1\dots\numData$} ;
-}
- 
+rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
+rc("text", usetex=True)}
+
+\plotcode{\plotcode{pgm = daft.PGM(shape=[2, 3],
+               origin=[0, 0], 
+               grid_unit=5, 
+               node_unit=1.9, 
+               observed_style='shaded',
+              line_width=3)
+reduce_alpha={"alpha": 0.3}
+pgm.add_node(daft.Node("y", r"$\dataScalar_i$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("f", r"$\mappingFunction_i$", 0.5, 1.5, fixed=False))
+pgm.add_node(daft.Node("u", r"$\parameterVector$", 0.5, 2.5, fixed=True))
+pgm.add_node(daft.Node("ustar", r"$\parameterVector^*$", 1.5, 1.5, fixed=True, plot_params=reduce_alpha))
+pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
+
+pgm.add_edge("f", "y")
+pgm.add_edge("u", "f")
+pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
+
+pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}        
+
+\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{given-u-to-f_i-to-y_i}
+
 \subsection{Instantiating the Model}
 
 \notes{So far, we haven't made *any* assumptions about the data in our model,

@@ -15,7 +15,9 @@
 \editText\undef{editText}\endif
 
 }
-\define{\subsection{text}}{## \text \ifdef{editText}
+\define{\subsection{text}}{## \text
+
+\ifdef{editText}
 
 \editText\undef{editText}\endif
 
