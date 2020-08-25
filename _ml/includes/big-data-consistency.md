@@ -26,19 +26,19 @@ he credits originally to Michael Goldstein. Imagine you are on jury
 duty. You are asked to adjudicate on the guilt or innocence of Lord
 Safebury, and you are going to base your judgement on a model that is
 weighing all the evidence. You are just about to pronounce your decision
-when a maid comes running in and shouts \"He didn't do it! He didn't
-do it!\". The maid wasn't on the witness list and isn't accounted for
+when a maid comes running in and shouts "He didn't do it! He didn't
+do it!". The maid wasn't on the witness list and isn't accounted for
 in your model. How does this effect your inference? The pragmatists
 answer might be: "not at all, because the maid wasn't in the model." But
 in the interests of justice we might want to include this information in
 our inference process. If, as a result of the maid's entry, we now
 think it is less likely that Lord Safebury committed the crime, then
 necessarily every time that the (unannounced) maid doesn't enter the
-room we have to assume that it is more likely that Safebury commited the
+room we have to assume that it is more likely that Safebury committed the
 crime (to ensure that the conditional probability of guilt given the
 maid's evidence normalizes. But we didn't know about the maid, so how
 can we account for this? Further, how can we account for all possible
-other surprise evidence, from the announced butlers, gardners,
+other surprise evidence, from the announced butlers, gardeners,
 chauffeurs and footmen? Kolmogorov consistency says that the net effect
 of marginalizing for all these potential bits of new information is
 null. It is a particular property of the model. Making it (only
@@ -56,8 +56,8 @@ p(\dataVector|\numData^*) = \int p(\dataVector, \dataVector^*) \text{d}\dataVect
 aries from the fact that we are forming an $\numData^*$ dimensional
 integral over $\dataVector^*$. If our distribution is Kolmogorov
 consistent, then we know that the distribution over $\dataVector$ is
-*independent* of the value of $\numData^*$. So in other words
-$p(\dataVector|\numData*)=p(\dataVector)$. So Kolmogorov consistency
+*independent* of the value of $\numData^*$. So, in other words
+$p(\dataVector|\numData*)=p(\dataVector)$. Kolmogorov consistency
 says that the form of $p(\dataVector)$ remains the same *regardless* of
 the number of observations of the world that are yet to come.}
 

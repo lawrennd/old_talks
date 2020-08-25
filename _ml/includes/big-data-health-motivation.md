@@ -42,7 +42,7 @@ be assimilated.
 
 In a traditional model, we might encode each piece of information as
 another element on a feature vector: in other words, each data snippet mentioned contributes to increasing $\dataDim$.  However, for most patients,
-most of the information above will be missing. We obtain only snippets of information about music tastes and social media habits alongside the occasional clincal measurement. Missing data is often discussed, but not at the scale we are considering here. In a classical analysis we might consider 30% missingness to be a big number. In this new scenario of data snippets almost all the data is missing almost all the time. A typical amount of missingness might be 99.9%. The data snippet domain is one which we might refer to as *massively missing data*. A situation
+most of the information above will be missing. We obtain only snippets of information about music tastes and social media habits alongside the occasional clinical measurement. Missing data is often discussed, but not at the scale we are considering here. In a classical analysis we might consider 30% missingness to be a big number. In this new scenario of data snippets almost all the data is missing almost all the time. A typical amount of missingness might be 99.9%. The data snippet domain is one which we might refer to as *massively missing data*. A situation
 where a missing value becomes the norm and a data observation is the exception.}
 
 \notes{Alongside the patchy nature of these data snippets, another challenge would be how they arrive. This happenstance data is constantly evolving. In computer systems terminology it is referred to as streaming data. The table form of the design matrix is a consequence of active surveillance of the population. When acquiring data passively it updates haphazardly. 
@@ -59,14 +59,14 @@ throughout its operational life. If the model is complex enough to
 represent the full spectrum of possible human ailments, then when the
 model is first brought on stream, it is unlikely to have sufficient
 data to determine the parameters. In the standard modeling framework,
-we are faced with the bias-variance dillema [@Geman:bias92]. If the model is complex enough to represent the
+we are faced with the bias-variance dilemma [@Geman:bias92]. If the model is complex enough to represent the
 underlying data structure, the parameters will be badly determined for
 small, or badly designed data sets, and the model will exhibit a large
-error due to variance. We are still learning how the deep learning frameworks provide a route out of this dillemma. A part of the story is their overparameterization. But what is the formalism by which we can incorporate more information about each individual patient within these highly parameterized models?}
+error due to variance. We are still learning how the deep learning frameworks provide a route out of this dilemma. A part of the story is their overparameterization. But what is the formalism by which we can incorporate more information about each individual patient within these highly parameterized models?}
 
 \notes{A major challenge in the domain we've described is to build a model
 that is complex enough to represent the diversity of human health
 outcomes. For streaming data this necessarily means that some (or most) of those
-parameters will be badly determined. This is reminiscient of the overparameterized deep learning models.}
+parameters will be badly determined. This is reminiscent of the overparameterized deep learning models.}
 
 \endif

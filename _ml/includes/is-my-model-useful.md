@@ -9,7 +9,7 @@
 
 [^corfield]: This was pointed out to me by Bernhard Schölkopf, who by recollection credited the observation to the philosopher David Corfield. 
 
-\notes{Many critics of the Bayesian approach ask where the Bayesian prior comes from from. But one might just as well ask, where does the likelihood come from? Or where does the link function come from? All of these are subjective modeling questions. The prior is not the problem. The challenge is providing objective guarantees for our subjective model choices. The classical Bayesian approach provides guarantees, but only for the $\mathcal{M}$-closed domain [@Bernardo:bayesian94], where the *true* model is one of the models under consideration. This is the critical belief at the heart of the Church of Bayes: the doctrine of model correctness.}
+\notes{Many critics of the Bayesian approach ask where the Bayesian prior comes from. But one might just as well ask, where does the likelihood come from? Or where does the link function come from? All of these are subjective modeling questions. The prior is not the problem. The challenge is providing objective guarantees for our subjective model choices. The classical Bayesian approach provides guarantees, but only for the $\mathcal{M}$-closed domain [@Bernardo:bayesian94], where the *true* model is one of the models under consideration. This is the critical belief at the heart of the Church of Bayes: the doctrine of model correctness.}
 
 \notes{The beauty of the Bayesian approach is that you don't have to have much imagination. You work as hard as possible with your models of probability distributions to represent the problem as best you understand it, then you work as hard as possible to approximate the posterior distributions of interest and estimate the marginal likelihoods and any corresponding Bayes's factors. If we have faith in the doctrine of model correctness, then we can pursue our modeling aims without the shadows of doubt to disturb us.
 
@@ -32,7 +32,7 @@ Bayesian approaches have a lot in common with more traditional regularization te
 > All models are wrong, but some are useful
 
 \notes{Box's important quote has become worn by overuse (like a favorite
-sweater). Indeed, I most often see it quoted at the beginning of a talk in a way that confuses correlation with causality. Presentations proceed in the following way. 1) Here is my model. 2) It is wrong. 3) Here is George Box's quote. 4) My model is wrong, but it might be  might be useful. Sometimes I feel at stage 4) a confusion about the arrow of causality occurs, it feels to me that people are almost saying "*Because* my model is wrong it *might* be useful."}
+sweater). Indeed, I most often see it quoted at the beginning of a talk in a way that confuses correlation with causality. Presentations proceed in the following way. (1) Here is my model. (2) It is wrong. (3) Here is George Box's quote. (4) My model is wrong, but it might be useful. Sometimes I feel at stage (4) a confusion about the arrow of causality occurs, it feels to me that people are almost saying "*Because* my model is wrong it *might* be useful."}
 
 \notes{Perhaps we should be more focusing on the quote from the same paper[^rich]
 

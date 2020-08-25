@@ -24,7 +24,7 @@ approaches to dimensionality reduction (e.g.
  LLE @Roweis:lle00 and maximum variance unfolding @Weinberger:learning04, which are widely
 applied in the large $\dataDim$ small $\numData$ domain, also have a
 probabilistic interpretation where the underlying likelihood factorizes
-across data dimensions. For these models dimensionality becomes a blessing rather than a curse. Its a neat trick, but it still doesn't solve the fundamental problem. What happens when $\numData \approx \dataDim$? Neither factorization leads to well determined parameters.}
+across data dimensions. For these models, dimensionality becomes a blessing rather than a curse. It's a neat trick, but it still doesn't solve the fundamental problem. What happens when $\numData \approx \dataDim$? Neither factorization leads to well determined parameters.}
 
 
 \subsubsection{Massively Missing Data}
@@ -80,13 +80,14 @@ pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=Tru
 pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
 
 
-\figure{\includediagram{\diagramsDir/ml/y-only-graph}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$.}{y-only-graph}
+\figure{\includediagram{\diagramsDir/ml/y-only-graph}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$. It represents the unconstrained probability distribution $p(\dataVector)$.}{y-only-graph}
 
-\notes{A model that's not wrong, just not useful. I like graphical
-representations of probabilistic models and this is my favourite graph.
-It is the simplest graph but also the most general model. It says that all the
-data in our vector $\dataVector$ is governed by an unspecified
-probability disribution $p(\dataVector)$. 
+\notes{Figure \ref{y-only-graph} gives a graphical representation of a
+model that's not wrong, just not useful. I like graphical
+representations of probabilistic models and this is my favorite
+graph.  It is the simplest graph but also the most general model. It
+says that all the data in our vector $\dataVector$ is governed by an
+unspecified probability disribution $p(\dataVector)$.
 
 Graphical models normally
 express the conditional independence relationships in the data, with
