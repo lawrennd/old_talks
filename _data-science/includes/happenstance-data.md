@@ -69,28 +69,23 @@ which these new methodologies should be judged. The situation reminds
 me somewhat of the challenges Xerox faced with the advent of the
 computer revolution. With great prescience, Xerox realized that the
 advent of the computer meant that information was going to be shared
-more often on screens. As a company whose main revenue stream was
-coming from photocopying documents the notion of the paperless office
-represented something of a threat to Xerox. Xerox famously responded
-by funding their PARC research center, where many of the innovations
-that underpin the modern computer were developed: the Xerox Alto (the
-first graphical user interface), the laser printer, ethernet. These
-inventions were commercial successes, although often for other
-companies, but as they propagated there was a greater need for
-paper. The computers produced more information, and much of it was
+more often via electronic screens. As a company whose main revenue stream was
+coming from photocopying documents, the notion of the paperless office
+represented something of a threat to Xerox. They responded
+by funding a research center, known as Xerox PARC. They developed many of the innovations
+that underpin the modern information revolution: the Xerox Alto (the
+first graphical user interface), the laser printer, ethernet. All of these
+inventions were commercial successes, but created a need for *more* paper, not less. The computers produced more information, and much of it was
 still shared on paper. Per capita paper consumption continued to rise
 in the US until it peaked at around the turn of the millennium
-[@Andres:internet14]. A similar story should now apply with the
+[@Andres:internet14]. A similar story will now apply with the
 advent of predictive models and data science. The increasing use of
-predictive methodologies does not obviate the need for classical
-statistical approaches, it makes them more important than ever
+predictive methodologies does not obviate the need for confirmatory data analysis, it makes them more important than ever
 before.}
 
-\notes{So, we may breathe easy that there is an ongoing role for the
-classical methodologies we have at our disposal, and historical
-precedent indicates the demand for those methodologies will likely
-increase before any fading. What about new mathematical theories? How
-can we come to a formalism for a new mathematical data science, just
+\notes{Not only is there an ongoing role for the
+classical methodologies we have at our disposal, it is likely to be an increasing demand in the near future. But what about new mathematical theories? How
+can we come to a formalism for the  new approacches of mathematical data science, just
 as early 20th century statisticians were able to reformulate
 statistics on a rigorous mathematical footing?}
 

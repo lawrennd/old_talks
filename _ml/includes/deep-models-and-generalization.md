@@ -5,6 +5,8 @@
 
 \subsection{Deep Models and Generalization}
 
+\notes{The new wave of predictive modelling techniques owes a great deal to the tradition of regression. But their success in generalizing to out-of-sample examples owes little to our traditional understanding of the theory of generalization. These models are highly overparamerized. As such, the traditional view would be that they should 'overfit' the data. But in reality, these very large models generalize well. Is it because they can't overfit?}
+
 \notes{When it comes to the mismatch between our expectations about generalization and the reality of deep models, perhaps the paper that most clearly
 demonstrated something was amiss was [@Zhang:understanding17], who
 trained a large neural network via stochastic gradient descent to
