@@ -7,11 +7,11 @@
 
 \notes{Following the revolution in mathematical statistics, data
 became a carefully curated commodity. It was actively collected in
-response to a scientific hypothesis. Popper suggests [@Popper:conjectures63] that the answer to which comes first, the hypothesis or the data, is the same as the chicken and the egg. The answer is that they co-evolve. 
+response to a scientific hypothesis. Popper suggests [@Popper:conjectures63] that the answer to which comes first, the hypothesis or the data, is the same as the chicken and the egg. The answer is that they co-evolve.}
 
-Until now, the expense of data collection has meant that a classical approach to statistical testing is normally followed. The question is formulated, typically as a null hypothesis, a power calculation is performed, and the study has launched. 
+\notes{In the last century, the expense of data collection dominated the cost of science. As a result, the classical approach to statistical testing is to formulate the scientific question first. The study is then launched once an appropriate null hypothesis has been described and requisite sample size established.}
 
-What Tukey described as confirmatory data analysis [Tukey:exploratory77] is still the mainstay of statistics. While the philosophy of statistical hypothesis testing has been the subject of longstanding debates, there is no controversy around the notion that in order to remove confounders you must have a well-designed experiment, and randomization for statistical data collection is the foundation of confimatory work. Today, randomized trials are deployed today more than ever
+\notes{What Tukey described as confirmatory data analysis [Tukey:exploratory77] is still the mainstay of statistics. While the philosophy of statistical hypothesis testing has been the subject of longstanding debates, there is no controversy around the notion that in order to remove confounders you must have a well-designed experiment, and randomization for statistical data collection is the foundation of confimatory work. Today, randomized trials are deployed today more than ever
 before, in particular due to their widespread use in computer interface design. Without our knowledge, we are daily assigned to social experiments that place us in treatment and control groups to determine what dose of different interface ideas will keep us more tightly engaged with our machines. These A/B tests social experiments involve randomization
 across many millions of users and dictate our modern user experience (see e.g. @Kohavi-online17). }
 
