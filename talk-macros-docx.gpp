@@ -23,9 +23,26 @@
 \define{\colorgreen{block}}{{\color{\greenColor} \block}}
 \define{\colorblue{block}}{{\color{\blueColor} \block}}
 
-\define{\section{text}}{# \text}
-\define{\subsection{text}}{## \text}
-\define{\subsubsection{text}}{### \text}
+\define{\section{text}}{# \text
+
+\ifdef{editText}\editText\undef{editText}\endif
+
+}
+\define{\subsection{text}}{## \text
+
+\ifdef{editText}\editText\undef{editText}\endif
+
+}
+\define{\subsubsection{text}}{### \text
+
+\ifdef{editText}\editText\undef{editText}\endif
+
+}
+\define{\editlink}{\ifdef{editText}
+
+\editText\undef{editText}\endif
+
+}
 
 \define{\xrightarrow{block}}{\rightarrow{\block}}
 

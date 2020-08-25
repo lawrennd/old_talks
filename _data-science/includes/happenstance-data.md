@@ -11,7 +11,7 @@ response to a scientific hypothesis. Popper suggests [@Popper:conjectures63] tha
 
 \notes{In the last century, the expense of data collection dominated the cost of science. As a result, the classical approach to statistical testing is to formulate the scientific question first. The study is then launched once an appropriate null hypothesis has been described and requisite sample size established.}
 
-\notes{What Tukey described as confirmatory data analysis [@Tukey:exploratory77] is still the mainstay of statistics. While the philosophy of statistical hypothesis testing has been the subject of longstanding debates, there is no controversy around the notion that in order to remove confounders you must have a well-designed experiment, and randomization for statistical data collection is the foundation of confimatory work. Today, randomized trials are deployed today more than ever
+\notes{What Tukey described as confirmatory data analysis [@Tukey:exploratory77] is a mainstay of statistics. While the philosophy of statistical hypothesis testing has been the subject of longstanding debates, there is no controversy around the notion that in order to remove confounders you must have a well-designed experiment, and randomization for statistical data collection is the foundation of confirmatory work. Today, randomized trials are deployed today more than ever
 before, in particular due to their widespread use in computer interface design. Without our knowledge, we are daily assigned to social experiments that place us in treatment and control groups to determine what dose of different interface ideas will keep us more tightly engaged with our machines. These A/B tests social experiments involve randomization
 across many millions of users and dictate our modern user experience (see e.g. @Kohavi-online17). }
 
@@ -53,7 +53,7 @@ happenstance data (such as searches for flu) as proxy indicators for
 statistics that are rigorously surveilled. With the Royal Society's
 DELVE initiative, examples of this approach include work of Peter
 Diggle to visualize the progression of the Covid-19 disease. Across
-the UK the "Zoe App" has been used for self-reporting of Covid
+the UK the "Zoe App" has been used for self-reporting of Covid-19
 symptoms [@Menni:tracking20], and by interconnecting this data with
 Office for National Statistics surveys [@ONS:covid19infection20],
 Peter has been able to calibrate the Zoe map of Covid-19 prevalence,
@@ -85,7 +85,7 @@ before.}
 
 \notes{Not only is there an ongoing role for the
 classical methodologies we have at our disposal, it is likely to be an increasing demand in the near future. But what about new mathematical theories? How
-can we come to a formalism for the  new approacches of mathematical data science, just
+can we come to a formalism for the  new approaches of mathematical data science, just
 as early 20th century statisticians were able to reformulate
 statistics on a rigorous mathematical footing?}
 

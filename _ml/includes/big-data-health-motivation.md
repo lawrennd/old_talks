@@ -7,10 +7,11 @@
 
 \notes{To motivate the movement from matrix to vector, we'll consider the type of challenge that might arise in today's era of happenstance data. Mathematical statisticians worked with tables of data that they'd carefully collected, often with
 the specific purpose of answering a particular question. The decided
-at experiment *design* time what was to be measured $\numData$. We continue to do this today, we even use statistical power calculations to decide how many subjects we need in our data sample.}
+at experiment *design* time what was to be measured $\numData$. We continue to do this today; we even use statistical power calculations to decide how many subjects we need in our data sample.}
 
-\notes{Our motivation will be personalized health: what we can
-learn about patients' state of health and when should we suggest interventions? 
+\notes{Our motivation will be personalized health: what we can learn
+about patients' state of health and when should we suggest
+interventions?}
 
 \notes{In the big data era, we are not only interested in what
 data we might collect for answering a specific question (although this data remains important) but we are also interested in
@@ -33,16 +34,15 @@ the patient's well-being through music services like Spotify.}
 \notes{For a full perspective on a patient's health, this data needs to be
 combined with more traditional sources like phenotype and genotype
 information. For example, high resolution scans of the genome
-provide a detailed characterization of genotype. Large scale gene
-expression measurements, give high resolution understanding of phenotype at
+provide a detailed characterization of genotype. Large-scale gene-expression measurements, give high resolution understanding of phenotype at
 the cellular level. Imaging domains can contain X-rays scans, MRIs or pathologists' samples. Doctor's
-notes, both free-form notes and those that encode diagnosis through emerging EHR/EMR coding standards such as the WHO's International Classification of Diseases (ICD-11, see @WHO-icd20). And also the results of clinical tests, such as cholesterol levels. To
+notes, both free-form notes and those that encode diagnosis through emerging EHR/EMR coding standards such as the WHO's International Classification of Diseases (ICD-11, see @WHO-icd20). And also, the results of clinical tests, such as cholesterol levels. To
 provide a full picture of health status all this information needs to
 be assimilated. 
 
 In a traditional model, we might encode each piece of information as
 another element on a feature vector: in other words, each data snippet mentioned contributes to increasing $\dataDim$.  However, for most patients,
-most of the information above will be missing. We obtain only snippets of information about music tastes and social media habits alongside the occasional clincal measurement. Missing data is often discussed, but not at the scale we are considering here. In a classical analysis we might consider 30% missingness to be a big number. In this new scenario of data snippets almost all the data is missing almost all the time. A typical amount of missingness might be 99.9%. The data snippet domain is one which we migh refer to as *massivelv missing data*. A situation
+most of the information above will be missing. We obtain only snippets of information about music tastes and social media habits alongside the occasional clincal measurement. Missing data is often discussed, but not at the scale we are considering here. In a classical analysis we might consider 30% missingness to be a big number. In this new scenario of data snippets almost all the data is missing almost all the time. A typical amount of missingness might be 99.9%. The data snippet domain is one which we might refer to as *massively missing data*. A situation
 where a missing value becomes the norm and a data observation is the exception.}
 
 \notes{Alongside the patchy nature of these data snippets, another challenge would be how they arrive. This happenstance data is constantly evolving. In computer systems terminology it is referred to as streaming data. The table form of the design matrix is a consequence of active surveillance of the population. When acquiring data passively it updates haphazardly. 
@@ -52,8 +52,6 @@ blood test logged, or because patient 28,344,219 has just been for a
 run or because patient 12,012,345 just listened to a Leonard Cohen
 track or because patient 12,182 just gave birth.}
 
-\notes{A happenstance data stream requires a \TK}
-
 \notes{For applications like the personalized health monitoring system
 described above, we need a model that will give well calibrated
 predictions from the first day of it being brought online, and
@@ -61,35 +59,14 @@ throughout its operational life. If the model is complex enough to
 represent the full spectrum of possible human ailments, then when the
 model is first brought on stream, it is unlikely to have sufficient
 data to determine the parameters. In the standard modeling framework,
-we are faced with the bias variance dilema [@Geman:bias92]. If the model is complex enough to represent the
+we are faced with the bias-variance dillema [@Geman:bias92]. If the model is complex enough to represent the
 underlying data structure, the parameters will be badly determined for
 small, or badly designed data sets, and the model will exhibit a large
-error due to variance. A traditional solution is to err towards bias,
-by constructing a simpler model, but one where the parameters can be
-well determined by the data, we reduce variance at the expense of some
-bias.  In the context of our medical application, there are three
-major problems with this approach. Firstly, the size and scope of the
-data is continually evolving, we do not have a fixed design. This
-means that even if we were to find a good initial compromise between
-bias and variance, this compromise may be rapidly
-invalidated. Secondly, the compromise we find would have to apply
-equally to all patients despite the diversity of data we have
-associated with those patients. Finally, we should fear the confidence
-of predictions from a model with well determined parameters unless we
-truly believe we have sufficient data to capture some underlying
-deterministic truth. Medical outcome is laced with uncertainty, and
-this uncertainty needs to be modeled correctly because its structure
-has a significant effect on treatment.}
+error due to variance. We are still learning how the deep learning frameworks provide a route out of this dillemma. A part of the story is their overparameterization. But what is the formalism by which we can incorporate more information about each individual patient within these highly parameterized models?}
 
 \notes{A major challenge in the domain we've described is to build a model
 that is complex enough to represent the diversity of human health
-outcomes. For streaming data this necessarily means that some of those
-parameters will be badly determined. I'd also argue further that if the
-parameters are well determined this is actually a warning. If all
-parameters are well determined, then our assumption of statistical
-independence becomes a strong one: the residual uncertainty is only in
-the noise, which by its independent nature, is impossible to model.
-However, any uncertainty in the parameters gives a much more structured
-uncertainty distribution for the data.}
+outcomes. For streaming data this necessarily means that some (or most) of those
+parameters will be badly determined. This is reminiscient of the overparameterized deep learning models.}
 
 \endif

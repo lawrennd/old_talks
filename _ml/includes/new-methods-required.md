@@ -8,11 +8,12 @@
 \notes{The challenges of big data emerged due to companies being able
 to rapidly interconnect multiple sources of information. This leads to
 challenges in storage, distributed processing and modeling. Google's
-search engine was at the forefront of this revolution. In particular
-they were able to demonstrate that some tasks can be easily resolved
-with fairly simple models and very large data sets
-[@Halevy:unreasonable09]. What we are now learning is that many tasks
-can be solved with complex models and even bigger data sets.}
+search engine was at the forefront of this revolution in data
+processing. Google researchers were among the first to notice that
+some tasks can be easily resolved with fairly simple models and very
+large data sets [@Halevy:unreasonable09]. What we are now learning is
+that many tasks can be solved with complex models and even bigger data
+sets.}
 
 \notes{While GPT-3 does an impressive job on language generation, it
 can do so because of the vast quantities of language data we have made
@@ -29,8 +30,7 @@ cell. Indeed, we don't even understand all the mechanisms by which
 transcription and translation occur in bacterial and archaeal
 cells. That is despite the wealth of gene expression and protein data
 about these cells. Even if we were to pull all this information
-together, would it be enough to develop that understanding? Health is
-an accumulation of \tk{FIXME}}
+together, would it be enough to develop that understanding?}
 
 \notes{There are large quantities of data, but the complexity of the underlying 
 systems in these domains, even the terabytes of data we have today may not be enough to determine the parameters of

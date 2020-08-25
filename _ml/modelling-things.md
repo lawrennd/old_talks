@@ -47,7 +47,7 @@ learning sides of the data sciences.}
 
 \include{_ml/includes/deep-models-and-generalization.md}
 
-\notes{An excellent characterisation of generalization is normally
+\notes{An excellent characterization of generalization is normally
 given by the bias-variance dilemma. The bias-variance decomposition
 for regression models separates the generalization error into two
 components [@Geman:biasvariance92].}
@@ -68,7 +68,7 @@ $4.5 million dollars to train (see e.g. @Li:openai20).}
 
 \include{_ml/includes/new-methods-required.md}
 
-\include{_ml/includes/massively-missing-data.md}
+<!--include{_ml/includes/massively-missing-data.md}-->
 
 \notes{Machine learning involves taking data and combining it with a model in
 order to make a prediction. The data consist of measurements recorded
@@ -81,20 +81,23 @@ $$
 \text{data} + \text{model} \stackrel{\text{algorithm}}{\rightarrow}  \text{prediction}
 $$
 \notes{The data and the model are combined in computation through an algorithm.  The etymology of the data indicates that it is given
-(data comes from latin *dare*). In some cases, for example an approach known as active learning, we have a choice as to how the data is gotten. But our main control is over the model and the algorithm. 
+(data comes from Latin *dare*). In some cases, for example an approach known as active learning, we have a choice as to how the data is gotten. But our main control is over the model and the algorithm. 
 
-This is true for both statisticians and machine learning scientists. Although there is a difference in the core motivating philosophy. The mathematical statisticians were motivated by a desire to remove subjectivity from the analysis, reducing the problem to rigorous statistical proof. The statistician is nervous of the inductive biases humans exhibit when drawing conclusions from data. Machine learning scientists, on the other hand, sit closer to the artificial intelligence community. Traditionally, they are inspired by human inductive biases to develop algorithms that allow computers to emulate human performance on tasks. In the past I've summarised the situation as
+\notes{This is true for both statisticians and machine learning scientists. Although there is a difference in the core motivating philosophy. The mathematical statisticians were motivated by a desire to remove subjectivity from the analysis, reducing the problem to rigorous statistical proof. The statistician is nervous of the inductive biases humans exhibit when drawing conclusions from data. Machine learning scientists, on the other hand, sit closer to the artificial intelligence community. Traditionally, they are inspired by human inductive biases to develop algorithms that allow computers to emulate human performance on tasks. In the past I've summarized the situation as}
 
 > Statisticians want to turn humans into computers, machine learners want to turn computers into humans. Neither is possible so we meet somewhere in the middle.
 
-### Traditional Model and Algorithm Separation
+\subsubsection{Traditional Model-Algorithm Separation}
 
-Across both statistics and machine learning, the traditional view was that the modeling assumptions are the key to making good predictions. Those assumptions might include smoothness assumptions, or linearity assumptions. In some domains we might also wish to incorporate some of our mechanistic understanding of the data (see e.g. @Alvarez:llfm13). The paradigm of model based machine learning (@Winn:mbml19), builds on the idea that the aim of machine learning is to describe ones views about the world as accurately as possible within a model. The domain expert becomes the model-designer. The process of algorithm design is then automated to as great an extent as possible. This idea originates in the ground breaking work of the MRC Biostatistics Unit on BUGS that dates to 1997 (see e.g. Lunn-bugs09). It is no suprise that this notion has gained most traction in the Bayesian community, because the probabilistic philosophy promises the separation of modeling and inference. As long as the probabilistic model we build is complex enough to capture the true generating process, we can separate the process of model building and probabilistic inference. Inference becomes turning the handle on the machine. Unfortunately, the handle turning in Bayesian inference involves high dimensional integrals and much of the work in this domain has focussed on developing new methods of inference based around either sampling (see e.g. @Carpenter-stan17) or deterministic approximations (see e.g. @Tran-edward16).
+\notes{Across both statistics and machine learning, the traditional view was that the modeling assumptions are the key to making good predictions. Those assumptions might include smoothness assumptions, or linearity assumptions. In some domains we might also wish to incorporate some of our mechanistic understanding of the data (see e.g. @Alvarez:llfm13). The paradigm of model-based machine learning (@Winn:mbml19), builds on the idea that the aim of machine learning is to describe ones views about the world as accurately as possible within a model. The domain expert becomes the model-designer. The process of algorithm design is then automated to as great an extent as possible. This idea originates in the ground-breaking work of the MRC Biostatistics Unit on BUGS that dates to 1997 (see e.g. Lunn-bugs09). It is no surprise that this notion has gained most traction in the Bayesian community, because the probabilistic philosophy promises the separation of modeling and inference. As long as the probabilistic model we build is complex enough to capture the true generating process, we can separate the process of model building and probabilistic inference. Inference becomes turning the handle on the machine. Unfortunately, the handle turning in Bayesian inference involves high dimensional integrals and much of the work in this domain has focused on developing new methods of inference based around either sampling (see e.g. @Carpenter-stan17) or deterministic approximations (see e.g. @Tran-edward16).}
 
-There are two principle challenges for model based machine learning. The challenge of combining that model with the data, the algorithm design challenge, is then process of probabilistic inference should then be undertaken on the although there has been some work to include more compThis is the key
-to making good predictions. The model is a mathematical abstraction of
+\notes{There are two principle challenges for model-based machine learning. The first is the model design challenge, and the second is the algorithm design challenge. The basic philosophy of the model-based approach is to make it as easy as possible for experts to express their ideas in a modeling language (typically probabilistic) and then automate as much as possible the algorithmic process of fitting that model to data (typically probabilistic inference).}
+
+\notes{The challenge of combining that model with the data, the algorithm design challenge, is then the process of probabilistic inference.}
+
+\notes{The model is a mathematical abstraction of
 the regularities of the universe that we believe underly the data as
-collected. If the model is well-chosen we will be able to interpolate
+collected. If the model is well-chosen, we will be able to interpolate
 the data and predict likely values of future data points. If it is chosen
 badly our predictions will be overconfident and wrong.}
 

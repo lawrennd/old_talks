@@ -7,56 +7,7 @@
 
 \subsection{Massively Missing Data}
 
-Our understanding of data still seems heavily influenced by the goals of
-early statistics. In particular, early mathematical statistics was
-heavily influenced by the need to overcome inductive biases in the
-human. To do this they encouraged statisticians to collect tables of
-data, with a focus on randomized control trials, to remove such
-inductive biases and ensure any conclusions drawn were valid. These
-developments were absolutely vital in ensuring rigorous evaluation of
-statistical claims. Whether it is conscious or unconscious we see myriad
-examples from marketing and advertising which are designed to appeal
-to the, apparently, irrational aspects[^irrational] of humans and
-trick them to doing something which is not to their individual
-benefit, but is profitable for the (normally corporate) entity that is
-doing the marketing. This may not matter a great deal when we are
-buying pet insurance or a new jacket but is extremely dangerous when
-we are making claims for a particular drug to patients.  Classical
-statistics acts as our final guardian against these claims, and even
-then, it is subject to manipulation through failure to report on
-negative results.[^results]
-
-[^irrational]: Whether they are
-irrational or not depends on how we view them. They are the consequence
-of millions of years of evolution and it is only within the last 250
-years that we understood the rational basis of probability and companies
-were able to exploit areas where people appear irrational to their own
-benefit. A particularly depressing read is a section of Laplace's
-*Philosophical Essay on Probabilities* [@Laplace-essai14] where he advocates a new
-utopia based on rational thinking espousing that " even the common man under the guidance of great minds will begin to
- understand ... [@] TODO check quote." It is an inspiring quote, until you realise that the reality was more of
-a dystopia where large (normally commercial) organisations have become
-expert in exploiting those irrational aspects that Laplace began to
-identify and individual people have little to no understanding of the
-rational basis of uncertainty that Laplace was so convinced would become
-endemic. 
-
-[^results]: I was once railing against the limitations of classical
-statistics to Darren Wilkinson and Joe Whittaker at a very pleasant
-meeting in the Lorenz institute, organized by Ernst Wit. It was Joe
-Whittaker that drove home this important point to me, although the
-connection to the Laplace quote is my own. That came from reading his
-Philosophical Essay on Probabilities, and for a moment I became
-carried away with him, when he glorified in the new world of
-rationality, until I was brought back to the present reality with an
-unpleasant jolt, in particular due to the stories about 'Fixed Odds
-Betting Machines' that were in the British media at the time. Laplace
-singles out games where the odds are stacked against the player a
-'particular evil' TODO check. I'm not one for absolutes, but I think
-I'd agree with the idea that a larger entity, which has a deep
-understanding of rational behavior, exploiting a vulnerable smaller
-entity, who has little understanding of it, does come close to such
-evils.}
+Classical statistical methods act as our principal guardian against misrepresentation of data, particularly in domains such as clinical trials.}
 
 \notes{However, classical statistics does seem to give us a peculiar
 bias to tables of data: data where someone has carefully collected all
@@ -73,9 +24,9 @@ about the entity (my mum) through a feature they may have known
 existed, but they were unlikely to have predicted I was going to use
 before the talk. If we think about clinical data, the situation is
 even more extreme. If we are going to track someone's health state
-throughout their life then we need to build models that might need to
+throughout their life, then we need to build models that might need to
 take into account clinical tests that don't even exist yet. This is
-not an unusual situation, in fact it is the normal situation. The
+not an unusual situation; in fact it is the normal situation. The
 table of carefully collected statistical values is the unusual (and
 valuable) situation. That's why so much attention is normally given to
 experimental design in statistics. But if we don't have those controls

@@ -5,7 +5,7 @@
 
 \subsection{Deep Models and Generalization}
 
-\notes{The new wave of predictive modelling techniques owes a great deal to the tradition of regression. But their success in generalizing to out-of-sample examples owes little to our traditional understanding of the theory of generalization. These models are highly overparamerized. As such, the traditional view would be that they should 'overfit' the data. But in reality, these very large models generalize well. Is it because they can't overfit?}
+\notes{The new wave of predictive modelling techniques owes a great deal to the tradition of regression. But their success in generalizing to out-of-sample examples owes little to our traditional understanding of the theory of generalization. These models are highly overparameterized. As such, the traditional view would be that they should 'overfit' the data. But in reality, these very large models generalize well. Is it because they can't overfit?}
 
 \notes{When it comes to the mismatch between our expectations about generalization and the reality of deep models, perhaps the paper that most clearly
 demonstrated something was amiss was [@Zhang:understanding17], who
@@ -45,7 +45,7 @@ studies or theory without ensuring they are reconciled. The
 theoreticians' disbelief of what the experimenter tells them is
 encapsulated in Kahnemann's idea of "theory induced blindness"
 [@Kahneman:fastslow11]. Fortunately, the evidence for good
-generalisation in these mammoth models is now large enough that the
+generalization in these mammoth models is now large enough that the
 theory-blinders are falling away, and a serious look is being taken and
 how and why these models can generalize well.}
 

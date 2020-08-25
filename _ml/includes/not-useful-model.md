@@ -5,8 +5,8 @@
 
 \subsubsection{Uncertainty in Parameters}
 
-\notes{If the parameters are badly determined, then small fluctuations in the
-data set lead to larger fluctuations in prediction. One approach to this
+\notes{When parameters are badly determined, we expect high variance. So, small fluctuations in the
+data set should lead to larger fluctuations in prediction. One approach to this
 problem is to build models in which the parameters are well determined.
 For the independence across data points case, this involves having many
 observations (large $\numData$) relative to the number of parameters
@@ -24,32 +24,29 @@ approaches to dimensionality reduction (e.g.
  LLE @Roweis:lle00 and maximum variance unfolding @Weinberger:learning04, which are widely
 applied in the large $\dataDim$ small $\numData$ domain, also have a
 probabilistic interpretation where the underlying likelihood factorizes
-across data dimensions. Regardless of our choice of factorization
-though, we are still making the same claim: a particular vector, or
-matrix, of parameters is sufficient for us to consider that the data
-independent, either across features or data points.}
+across data dimensions. For these models dimensionality becomes a blessing rather than a curse. Its a neat trick, but it still doesn't solve the fundamental problem. What happens when $\numData \approx \dataDim$? Neither factorization leads to well determined parameters.}
 
 
 \subsubsection{Massively Missing Data}
 
-\notes{I'd like to argue that the separation of the data into features and
-data points is rather arbitrary. I believe it stems from the origin of
-the field of statistics, where the intention was to make a strong
-scientific claim based on numbers take from a *table* of data. A table
-naturally lends itself towards a matrix form. In these data a
-statistical design normally involved measuring a fixed number of
-*features* for a perhaps variable number of *items*. The objective is to
-find sufficient number of items so that you can make strong claims about
-which features are important. For example, does smoking correlate with
-lung cancer? This explains the desire to write down the data as a matrix
-$\dataMatrix$. I think this view of data, whilst important at the time,
-is outdated when considering modern big data problems.}
-
+\notes{I'm going to argue that the separation of the data into
+features and data points is a distraction for happenstance data. It
+stems from mathematical statistics when the intention was to make a
+strong scientific claim based on numbers take from a *table* of
+data. A table naturally lends itself towards a matrix form. In these
+data a statistical design normally involved measuring a fixed number
+of *features* for a perhaps variable number of *items*. The objective
+is to find sufficient number of items so that you can make strong
+claims about which features are important. For example, does smoking
+correlate with lung cancer? This explains the desire to write down the
+data as a matrix $\dataMatrix$. I think this view of data, while
+historically important and still of great utility today, is
+restrictive when considering modern big data problems.}
 
 \notes{The modern data analysis challenge is very different. We receive
 streaming data of varying provenance. If each number we receive is given
 by an observation $\dataScalar_i$, where $\dataScalar_i$ could be in the
-natural numbers, the real numbers or binary or in any processable form,
+natural numbers, the real numbers, binary or in any processable form,
 then $\dataScalar_{17}$ might be the price of a return rail fair from
 Sheffield to Oxford on 6th February 2014, whilst $\dataScalar_{29}$
 might be the number of people on the 8:20 train that day, but
