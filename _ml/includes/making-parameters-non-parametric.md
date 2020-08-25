@@ -35,28 +35,30 @@ pgm.add_edge("u", "y", directed=False)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
 
-\figure{\includediagram{\diagramsDir/ml/u-to-y}{40%}}{Augmenting the variable space with a set of latent *inducing vectors*}{u-to-y}
+\figure{\includediagram{\diagramsDir/ml/u-to-y}{40%}}{Augmenting the variable space with a set of latent *inducing vectors*. The graphical model represents the factorization of the distribution into the form $\int p(\dataVector|\inducingVector)p(\inducingVector)\text{d}\inducingVector$}{u-to-y}
 
-\notes{Our simple graphical model augmented with $\inducingVector$ which we
+\notes{In Figure \ref{u-to-y} we have augmented our simple graphical model augmented with a vector $\inducingVector$ which we
 refer to as inducing variables. Note that the model is still totally
 general because $p(\dataVector, \inducingVector)$ is an augmented
 variable model and the original $p(\dataVector)$ is easily recovered by
-simple marginalization of $\inducingVector$. We haven't yet made any
-assumptions about our data.}
+simple marginalization of $\inducingVector$. So we haven't yet made any
+assumptions about our data, our model is still correct, but useless.}
 
-\notes{The model we've introduced now seems remarkably like the parametric
-model we argued against in the previous section. What's going on
-here? Is there going to be some kind of parametric/nonparametric 3 card
+\notes{The model we've introduced now looks somewhat like the parametric
+model we argued against in the previous section,
+$$
+p(\dataVector)=\int p(\dataVector|\parameterVector)p(\parameterVector)\text{d}\parameterVector.
+$$
+What's going on here? Is there going to be some kind of parametric/nonparametric 3 card
 trick where with sleight of hand we are trying to introduce a parametric
 model? Well clearly not, because I've just given the game away. But I
 believe there are some important differences to the traditional approach
 for parameterizing a model. Philosophically, our variables
 $\inducingVector$ are variables that augment the model. We have not
-yet made any assumptions by introducing them. Normally the
-parameterization of the model instantiates assumptions, but this is not
+yet made any assumptions by introducing them. Normally, 
+parameterizing of the model instantiates assumptions, but this is not
 happening here. In particular note that we have *not* assumed that the
-training data factorize given the inducing variables. Secondly, we are
-not going to specify the dimensionality of $\inducingVector$ (i.e. the
+training data factorize given the inducing variables. Secondly, have not specified the dimensionality of $\inducingVector$ (i.e. the
 size of the TT channel) at *design* time. We are going to allow it to
 change at *run* time. We will do this by ensuring that the inducing
 variables also obey Kolmogorov consistency. In particular we require
