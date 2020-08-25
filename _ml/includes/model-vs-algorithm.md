@@ -7,7 +7,7 @@
 
 \notes{The new wave of modern machine learning methods is conflating two aspects that we used to try to keep distinct. The mathematical model encodes our assumptions about the data. The algorithm is a set of computational instructions that combine our modeling assumptions with data to make predictions.}
 
-\note{Much of the technical focus in machine learning is on algorithms. In
+\notes{Much of the technical focus in machine learning is on algorithms. In
 this document I want to retain a strong separation between the *model*
 and the *algorithm*. The model is a mathematical abstraction of the
 world that encapsulates our assumptions about the data. Normally it will

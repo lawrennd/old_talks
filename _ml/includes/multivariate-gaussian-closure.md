@@ -28,15 +28,15 @@ index as being infinite: it could be a spatial or temporal location.}
 \begin{align*} 
 p(\dataVector) = \int p(\dataVector, \dataVector^*)
 \text{d}\dataVector^*=
-\frac{\exp\left(\begin{bmatrix}\dataVector\
+\frac{\exp\left(\begin{bmatrix}\dataVector \\
 \dataVector^*\end{bmatrix}^\top\begin{bmatrix}\kernelMatrix &
-\kernelMatrix_*\ \kernelMatrix_*^\top &
-\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector
+\kernelMatrix_* \\ \kernelMatrix_*^\top &
+\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector \\
 \dataVector^*\end{bmatrix}\right)}{\int
-\exp\left(\begin{bmatrix}\dataVector\
+\exp\left(\begin{bmatrix}\dataVector \\
 \dataVector^*\end{bmatrix}^\top\begin{bmatrix}\kernelMatrix &
-\kernelMatrix_*\ \kernelMatrix_*^\top &
-\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector
+\kernelMatrix_* \\ \kernelMatrix_*^\top &
+\kernelMatrix_{**}\end{bmatrix}^{-1} \begin{bmatrix}\dataVector \\
 \dataVector^*\end{bmatrix}\right) \text{d}\dataVector
 \text{d}\dataVector^*} = \mathcal{N}(\mathbf{0} |\kernelMatrix),
 \end{align*}
