@@ -16,8 +16,7 @@ arisen in the last decades of machine learning. And these cultures
 were also beautifully described by @Breiman:cultures00. }
 
 \notes{In the discussion of Professor Efron's paper @Friedman:discussion20 highlight the continuum between the classical approaches and the emphasis on prediction. Indeed, the prediction culture does not sit entirely in the
-machine learning domain, an excellent example of a prediction-focussed approach would be Le Breiman's Bagging [@Breiman:bagging96]. Although
-it's notable when he chose to publish the outlet was a machine
+machine learning domain, an excellent example of a prediction-focussed approach would be Leo Breiman's bagging of models [@Breiman:bagging96], although it's notable that Breiman, a statistician, chose to publish this paper in a machine
 learning journal.}
 
 \notes{From a personal perspective, a strand of work that is highly inspirational in prediction also comes from a statistician. The prequential formalism [@Dawid:callibrated82;@Dawid:prequential84] also emerges from statistics. It provides some hope that a predictive approach can be reconciled with attribution in the manner highlighted also by @Friedman:discussion20. The prequential approach is predictive, but allows us to falsify
