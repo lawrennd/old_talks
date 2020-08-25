@@ -5,9 +5,9 @@
 
 \subsection{Happenstance Data}
 
-\notes{Following the revolution of mathematical statistics, data
+\notes{Following the revolution in mathematical statistics, data
 became a carefully curated commodity. It was actively collected in
-response to a scientific hypothesis. Popper suggests [Popper:conjectures63] that the answer to which comes first, the hypothesis or the data, is the same as the chicken and the egg. The answer is that they co-evolve. 
+response to a scientific hypothesis. Popper suggests [@Popper:conjectures63] that the answer to which comes first, the hypothesis or the data, is the same as the chicken and the egg. The answer is that they co-evolve. 
 
 Until now, the expense of data collection has meant that a classical approach to statistical testing is normally followed. The question is formulated, typically as a null hypothesis, a power calculation is performed, and the study has launched. 
 
