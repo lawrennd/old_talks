@@ -11,7 +11,8 @@ $p(\boldsymbol{\theta}|\dataVector)$ for making predictions.}
 \begin{align*} p(\dataVector^*|\dataVector) = \int \prod_i
 p(\dataScalar_i^* |
 \boldsymbol{\theta})p(\boldsymbol{\theta}|\dataVector)\text{d}\boldsymbol{\theta}.
-\end{align*} \notes{We have a model that obeys Kolmogorov consistency,
+\end{align*} 
+\notes{We have a model that obeys Kolmogorov consistency,
 and is sophisticated enough to represent the behavior of a very comlex
 dataset, it may well require a large number of parameters, just like
 those deep learning models. One way of seeing the requirement for a

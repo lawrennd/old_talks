@@ -42,7 +42,7 @@ p(\dataVector) = \int p(\dataVector, \dataVector^*)
 \end{align*}
 \notes{where each $\dataScalar_i$ is now defined across the real line, and the
 dimensionality of $\dataVector*$ is irrelevant. Prediction consists of
-conditioning the joint density on $\dataVector^*$. So for any new value
+conditioning the joint density on $\dataVector^*$. So, for any new value
 of $\dataVector^*$, given its index we compute
 $p(\dataVector^* | \dataVector)$.}
 

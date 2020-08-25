@@ -51,7 +51,7 @@ trick where with sleight of hand we are trying to introduce a parametric
 model? Well clearly not, because I've just given the game away. But I
 believe there are some important differences to the traditional approach
 for parameterizing a model. Philosophically, our variables
-$\inducingVector$ are variables that augment the the model. We have not
+$\inducingVector$ are variables that augment the model. We have not
 yet made any assumptions by introducing them. Normally the
 parameterization of the model instantiates assumptions, but this is not
 happening here. In particular note that we have *not* assumed that the
@@ -140,7 +140,7 @@ describe the world around us, but we might not be able to observe them
 directly. In particular we might observe relatively simple corruptions
 of the fundamental variables such as independent addition of noise, or
 thresholding. We might observe something relative about two fundamental
-veriables. For example if we took $\mappingFunction_{12,345}$ to be the
+variables. For example if we took $\mappingFunction_{12,345}$ to be the
 height of Tom Cruise and $\mappingFunction_{23,789}$ to be the height of
 Penelope Cruz then we might take for an observation a binary value
 indicating the relative heights, so
@@ -154,7 +154,7 @@ $p(\dataVector|\inducingVector)$ as the *likelihood*. We can ensure that
 assuming the likelihood factorizes does not at all reduce the generality
 of our model, by forcing the distribution over the fundamentals,
 $p(\mappingFunctionVector)$ to also be Kolmogorov consistent. This
-ensures that in the case where the the likelihood is fully factorized
+ensures that in the case where the likelihood is fully factorized
 over $\numData$ the model is still general if we allow the factors of
 the likelihood to be Dirac delta functions suggesing that
 $\dataScalar_i = \mappingFunction_i$. Since we haven't yet specified
@@ -246,7 +246,7 @@ over inducing variables and fundamentals into the following parts}
 $$
 p(\inducingVector, \mappingFunctionVector) = p(\mappingFunctionVector|\inducingVector)p(\inducingVector),
 $$
-\notes{where we assume that we have marginalised $\mappingFunctionVector^*$ and
+\notes{where we assume that we have marginalized $\mappingFunctionVector^*$ and
 $\inducingVector^*$.}
 
 
@@ -343,7 +343,7 @@ and allowing us to include complex interelations between $\dataVector$
 directly in $p(\mappingFunctionVector)$. We have specified that
 $p(\mappingFunctionVector, \inducingVector)$ should be Kolmogorov
 consistent with $\mappingFunctionVector^*$ and $\inducingVector^*$ being
-marginalised and we have argued that nonparametric models are important
+marginalized and we have argued that nonparametric models are important
 in practice to ensure that all the information in our training data can
 be passed to the test data.}
 
@@ -446,8 +446,8 @@ the covariates is being encoded in a vector $\boldsymbol{\beta}$. To a
 statistician, the relative values of the elements of this vector are
 often important in making a judgement about the influence of the
 covariates. For example, in disease modelling the mean function might be
-used in a *generalised* linear model through a link function to
-represent a rate or risk of disease [@Diggle:somewhere]. The
+used in a *generalized* linear model through a link function to
+represent a rate or risk of disease (e.g. @Saul:chained16). The
 covariates should *co-vary* (or move together) with the response
 variable. Appropriate covariates for malaria incidence rate might
 include known influencers of the disease. For example, if we are dealing
@@ -479,7 +479,7 @@ variance of our observations, then the role of the covariance function
 will be reduced to capture only the variance of the residuals. But at
 this point we are left with a model that is dominated by is parametric
 part at the expense of its nonparametric part. If the parameters have
-become well determined then the uncertainty about future predictions
+become well determined, then the uncertainty about future predictions
 will be reduced. However, if we enter a novel domain (one where the
 provenance of the new data differs significantly from the original data we observed
 at training time (see e.g. @Quinonero:dataset09) then we will still make very confident extrapolations

@@ -6,22 +6,22 @@
 
 \subsection{The Nonparametric Challenge}
 
-\notes{We have argued that we want models that are unconstrained, at design
-time, by a fixed bandwidth for the communication between the training
-data, $\dataVector$, and the test data, $\dataVector^*$ and that the
-answer is to be nonparametric. By nonparametric we are proposing
-using classes of models for which the conditional distribution,
-$p(\dataVector^*|\dataVector)$ is not decomposable into the expectation
-of $p(\dataVector^*|\paramVector)$ under the posterior distribution of
-the parameters, $p(\paramVector|\dataVector)$ for any fixed length
-parameter vector $\paramVector$. We don't want to impose such a strong
-constraint on our model at *design time*. Our model may be required to
-be operational for many years and the true complexity of the system
-being modeled may not even be well understood at *design time*. We must
-turn to paradigms that allow us to be adaptable at *run time*. Non
-parametrics provides just such a paradigm, because the effect parameter
-vector increases in size as we observe more data. This seems ideal, but
-it also presents a problem.}
+\notes{We have argued that we want models that are unconstrained, at
+design time, by a fixed bandwidth for the communication between the
+training data, $\dataVector$, and the test data, $\dataVector^*$ and
+that the answer is to be nonparametric. By nonparametric we are
+proposing using classes of models for which the conditional
+distribution, $p(\dataVector^*|\dataVector)$ is not decomposable into
+the expectation of $p(\dataVector^*|\paramVector)$ under the posterior
+distribution of the parameters, $p(\paramVector|\dataVector)$ for any
+fixed length parameter vector $\paramVector$. We don't want to impose
+such a strong constraint on our model at *design time*. Our model may
+be required to be operational for many years and the true complexity
+of the system being modeled may not even be well understood at *design
+time*. We must turn to paradigms that allow us to be adaptable at *run
+time*. Nonparametrics provides just such a paradigm, because the
+effect parameter vector increases in size as we observe more
+data. This seems ideal, but it also presents a problem.}
 
 \notes{Human beings, despite are large, interconnected brains, only have finite
 storage. It is estimated that we have between 100 and 1000 trillion synapses in our brains. Similar for digital computers, even the GPT-3 model is restricted to 175 billion parameters. So, we need to assume that we can
@@ -43,7 +43,7 @@ presents a problem for real systems in practice. We are now faced with a
 compromise; how can we have a distribution which is flexible enough to
 respond at *run time* to unforeseen complexity in the training data?
 Yet, simultaneously doesn't require unbounded storage to retain all the
-information in the training data? We will now introduce a perspective on
+information in the training data. We will now introduce a perspective on
 variational inference that will allow us to retain the advantages of
 both worlds. We will construct a parametric approximation to the true
 nonparametric conditional distribution. But, importantly, whilst this

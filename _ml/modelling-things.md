@@ -122,41 +122,17 @@ badly our predictions will be overconfident and wrong.}
 \include{_ml/includes/making-parameters-non-parametric-illustration.md}
 
 
+\section{Conclusion}
 
-\subsubsection{Uncertainty about the Provenance of the Data}
+\notes{Modern machine learning methods for prediction are based on highly overparameterized models that have empirically performed well in tasks that were previously considered challenging or impossible such as machine translation, object detection in images, natural language generation. These models raise new questions for our thinking about how models generalize their predictions. In particular, the conflate the conceptual separation between model and algorithm and our best understanding is that they regularize themselves implicitly through their optimization algorithms.
 
-\notes{Provenance could include the time that the data was acquired, the
-location that the data was acquired, even the 'type' of data that is
-acquired. For example, in computer vision pixels are arriving from
-different objects. We are uncertain about the provenance of the pixels
-in terms of which *object* they are arriving from. The spatial location
-of the object in the image. This uncertainty relates to uncertainty
-about the covariance function. Unfortunately, it is not directly on the
-covariance function itself, but relates to values through which the
-covariance is nonlinearly related.}
-\begin{align*} 
-k(\dataVector, \dataVector^\prime) = \exp(-||\dataVector-\dataVector^\prime||^2) 
-\end{align*}
-\notes{These variables become *latent* or *confounders*.}
+Despite the range of questions these models raise for our classical view of generalization, in another sense, these models are very traditional. They operate on tables of data that have been curated through appropriate curation. These deep learning models operate on (very large) design matrices.
 
-\notes{**Not sure about this**: Provenance of data is often finite. Consider a
-diseased person. That person consists of a finite (if very large) state
-vector. Of course the number of measurements we can make about that
-person is infinite. But there are a set of fundamental limitations to
-what can go wrong with the individual.}
-
-
-\subsection{Ethics}
-
-
-\notes{Ownership of data, returning it to the individual. In healthcare the
-danger of confusing it with marketing, Laplace, and the utopian view of
-data. Invalidity of insurance. How the results are presented to the
-patient.}
+We've argued that the new frontiers for the data sciences lie in the domain of what we term "happenstance data". The data that hasn't been explicitly collected with a purpose in mind, but is laid down through the rhythms of our modern lives. We've claimed that the traditional view of data as sitting in a table is restrictive for this new domain, and outlined how we might model such data through nonparametrics. We illustrated these ideas with a very trivial example using Gaussian process regression.
 
 \subsection{Acknowledgments}
 
-I've benefited over the years from conversations with a number of extraordinary thinkers, among those I can identify that influenced the thinking in this paper are Tony O'Hagan, John Kent, David J.C. MacKay, Richard Wilkinson, Darren Wilkinson, Bernhard Sch\"olkopf, Zoubin Ghahramani.
+I've benefited over the years from conversations with a number of friends and colleagues, among those I can identify that influenced the thinking in this paper are Tony O'Hagan, John Kent, David J. C. MacKay, Richard Wilkinson, Darren Wilkinson, Bernhard Sch\"olkopf, Zoubin Ghahramani. Naturally, the responsibility for the sensible bits is theirs, the errors are all mine. 
 
 
 \thanks
