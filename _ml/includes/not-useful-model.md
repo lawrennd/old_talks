@@ -68,14 +68,14 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{pgm = daft.PGM(shape=[1, 1],
+\plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
                observed_style='shaded',
               line_width=3)
 
-pgm.add_node(daft.Node("y", r"$\mathbf{y}$", 0.5, 0.5, fixed=False, observed=True))
+pgm.add_node(daft.Node("y", r"$\dataMatrix$", 0.5, 0.5, fixed=False, observed=True))
 
 pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
 
