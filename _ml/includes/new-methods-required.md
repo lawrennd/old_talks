@@ -3,7 +3,7 @@
 
 \editme 
 
-\subsection{New Methods Required}
+\section{New Methods Required}
 
 \notes{The challenges of big data emerged due to companies being able
 to rapidly interconnect multiple sources of information. This leads to

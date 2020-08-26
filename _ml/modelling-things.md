@@ -37,10 +37,30 @@ transition: None
 
 \section{Introduction}
 
+\notes{Machine learning and Statistics are academic cousins, founded
+on the same mathematical princples, but often with different
+objectives in mind. But the differences can be as informative as the
+overlaps.}
+
+\notes{@Efron:prediction20 rightly alludes to the
+fundamental differences to the new wave of predictive models that have
+arisen in the last decades of machine learning. And these cultures
+were also beautifully described by @Breiman:cultures00. }
+
+\notes{In the discussion of Professor Efron's paper @Friedman:discussion20 highlight the continuum between the classical approaches and the emphasis on prediction. Indeed, the prediction culture does not sit entirely in the
+machine learning domain, an excellent example of a prediction-focused approach would be Leo Breiman's bagging of models [@Breiman:bagging96], although it's notable that Breiman, a statistician, chose to publish this paper in a machine
+learning journal.}
+
+\notes{From a personal perspective, a strand of work that is highly inspirational in prediction also comes from a statistician. The prequential formalism [@Dawid:callibrated82;@Dawid:prequential84] also emerges from statistics. It provides some hope that a predictive approach can be reconciled with attribution in the manner highlighted also by @Friedman:discussion20. The prequential approach is predictive but allows us to falsify
+poorly calibrated models [@Lawrence:licsbintro10]. So while it doesn't give us truth, it does give as falsehood in line with Popper's vision of the philosophy of science [@Popper:conjectures63].}
 
 \include{_ml/includes/ml-and-statistics-interface.md}
 
 \include{_data-science/includes/happenstance-data.md}
+
+\section{Generalization}
+
+\notes{Machine Learning practicioners focus on out-of-sample predictive capability as their main objective. This is the ability of a model to generalize its learnings.}
 
 \notes{Professor Efron's paper does an excellent job a summarizing the
 range of predictive models that now lie at our disposal, but of
@@ -84,26 +104,16 @@ data sets.}
 $$
 \text{data} + \text{model} \stackrel{\text{algorithm}}{\rightarrow}  \text{prediction}
 $$
-\notes{The data and the model are combined in computation through an algorithm.  The etymology of the data indicates that it is given
-(data comes from Latin *dare*). In some cases, for example an approach known as active learning, we have a choice as to how the data is gotten. But our main control is over the model and the algorithm. 
+\notes{The data and the model are combined in computation through an
+algorithm.  The etymology of the data indicates that it is given (data
+comes from Latin *dare*). In some cases, for example an approach known
+as active learning, we have a choice as to how the data is gotten. But
+our main control is over the model and the algorithm.
 
 \notes{This is true for both statisticians and machine learning scientists. Although there is a difference in the core motivating philosophy. The mathematical statisticians were motivated by a desire to remove subjectivity from the analysis, reducing the problem to rigorous statistical proof. The statistician is nervous of the inductive biases humans exhibit when drawing conclusions from data. Machine learning scientists, on the other hand, sit closer to the artificial intelligence community. Traditionally, they are inspired by human inductive biases to develop algorithms that allow computers to emulate human performance on tasks. In the past I've summarized the situation as}
 
 > Statisticians want to turn humans into computers, machine learners want to turn computers into humans. Neither is possible so we meet somewhere in the middle.
 
-\subsubsection{Traditional Model-Algorithm Separation}
-
-\notes{Across both statistics and machine learning, the traditional view was that the modeling assumptions are the key to making good predictions. Those assumptions might include smoothness assumptions, or linearity assumptions. In some domains we might also wish to incorporate some of our mechanistic understanding of the data (see e.g. @Alvarez:llfm13). The paradigm of model-based machine learning (@Winn:mbml19), builds on the idea that the aim of machine learning is to describe one's views about the world as accurately as possible within a model. The domain expert becomes the model-designer. The process of algorithm design is then automated to as great an extent as possible. This idea originates in the ground-breaking work of the MRC Biostatistics Unit on BUGS that dates to 1997 (see e.g. Lunn-bugs09). It is no surprise that this notion has gained most traction in the Bayesian community, because the probabilistic philosophy promises the separation of modeling and inference. As long as the probabilistic model we build is complex enough to capture the true generating process, we can separate the process of model building and probabilistic inference. Inference becomes turning the handle on the machine. Unfortunately, the handle turning in Bayesian inference involves high dimensional integrals and much of the work in this domain has focused on developing new methods of inference based around either sampling (see e.g. @Carpenter-stan17) or deterministic approximations (see e.g. @Tran-edward16).}
-
-\notes{There are two principle challenges for model-based machine learning. The first is the model design challenge, and the second is the algorithm design challenge. The basic philosophy of the model-based approach is to make it as easy as possible for experts to express their ideas in a modeling language (typically probabilistic) and then automate as much as possible the algorithmic process of fitting that model to data (typically probabilistic inference).}
-
-\notes{The challenge of combining that model with the data, the algorithm design challenge, is then the process of probabilistic inference.}
-
-\notes{The model is a mathematical abstraction of
-the regularities of the universe that we believe underly the data as
-collected. If the model is well-chosen, we will be able to interpolate
-the data and predict likely values of future data points. If it is chosen
-badly our predictions will be overconfident and wrong.}
 
 \include{_ml/includes/model-vs-algorithm.md}
 
@@ -122,6 +132,7 @@ badly our predictions will be overconfident and wrong.}
 \include{_ml/includes/multivariate-gaussian-closure.md}
 
 \include{_ml/includes/making-parameters-non-parametric.md}
+\include{_ml/includes/instantiating-the-model.md}
 
 \include{_ml/includes/making-parameters-non-parametric-illustration.md}
 

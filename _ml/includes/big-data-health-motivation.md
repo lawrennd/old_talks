@@ -3,7 +3,7 @@
 
 \editme
 
-\subsubsection{A Motivating Big Data Example}
+\section{A Motivating Example}
 
 \notes{To motivate the movement from matrix to vector, we'll consider the type of challenge that might arise in today's era of happenstance data. Mathematical statisticians worked with tables of data that they'd carefully collected, often with
 the specific purpose of answering a particular question. The decided

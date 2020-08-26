@@ -3,9 +3,21 @@
 
 \editme
 
-\subsubsection{Models vs Algorithms}
+\subsection{Traditional Model-Algorithm Separation}
 
-\notes{The new wave of modern machine learning methods is conflating two aspects that we used to try to keep distinct. The mathematical model encodes our assumptions about the data. The algorithm is a set of computational instructions that combine our modeling assumptions with data to make predictions.}
+\notes{Across both statistics and machine learning, the traditional view was that the modeling assumptions are the key to making good predictions. Those assumptions might include smoothness assumptions, or linearity assumptions. In some domains we might also wish to incorporate some of our mechanistic understanding of the data (see e.g. @Alvarez:llfm13). The paradigm of model-based machine learning (@Winn:mbml19), builds on the idea that the aim of machine learning is to describe one's views about the world as accurately as possible within a model. The domain expert becomes the model-designer. The process of algorithm design is then automated to as great an extent as possible. This idea originates in the ground-breaking work of the MRC Biostatistics Unit on BUGS that dates to 1997 (see e.g. Lunn-bugs09). It is no surprise that this notion has gained most traction in the Bayesian community, because the probabilistic philosophy promises the separation of modeling and inference. As long as the probabilistic model we build is complex enough to capture the true generating process, we can separate the process of model building and probabilistic inference. Inference becomes turning the handle on the machine. Unfortunately, the handle turning in Bayesian inference involves high dimensional integrals and much of the work in this domain has focused on developing new methods of inference based around either sampling (see e.g. @Carpenter-stan17) or deterministic approximations (see e.g. @Tran-edward16).}
+
+\notes{There are two principle challenges for model-based machine learning. The first is the model design challenge, and the second is the algorithm design challenge. The basic philosophy of the model-based approach is to make it as easy as possible for experts to express their ideas in a modeling language (typically probabilistic) and then automate as much as possible the algorithmic process of fitting that model to data (typically probabilistic inference).}
+
+\notes{The challenge of combining that model with the data, the algorithm design challenge, is then the process of probabilistic inference.}
+
+\notes{The model is a mathematical abstraction of
+the regularities of the universe that we believe underly the data as
+collected. If the model is well-chosen, we will be able to interpolate
+the data and predict likely values of future data points. If it is chosen
+badly our predictions will be overconfident and wrong.}
+
+\notes{Deep learning methods conflate two aspects that we used to try to keep distinct. The mathematical model encodes our assumptions about the data. The algorithm is a set of computational instructions that combine our modeling assumptions with data to make predictions.}
 
 \notes{Much of the technical focus in machine learning is on algorithms. In
 this document I want to retain a strong separation between the *model*

@@ -3,24 +3,7 @@
 
 \editme
 
-\section{The Machine Learning and Statistics Interface}
-
-\notes{Machine learning and Statistics are academic cousins, founded
-on the same mathematical princples, but often with different
-objectives in mind. But the differences can be as informative as the
-overlaps.}
-
-\notes{@Efron:prediction20 rightly alludes to the
-fundamental differences to the new wave of predictive models that have
-arisen in the last decades of machine learning. And these cultures
-were also beautifully described by @Breiman:cultures00. }
-
-\notes{In the discussion of Professor Efron's paper @Friedman:discussion20 highlight the continuum between the classical approaches and the emphasis on prediction. Indeed, the prediction culture does not sit entirely in the
-machine learning domain, an excellent example of a prediction-focused approach would be Leo Breiman's bagging of models [@Breiman:bagging96], although it's notable that Breiman, a statistician, chose to publish this paper in a machine
-learning journal.}
-
-\notes{From a personal perspective, a strand of work that is highly inspirational in prediction also comes from a statistician. The prequential formalism [@Dawid:callibrated82;@Dawid:prequential84] also emerges from statistics. It provides some hope that a predictive approach can be reconciled with attribution in the manner highlighted also by @Friedman:discussion20. The prequential approach is predictive but allows us to falsify
-poorly calibrated models [@Lawrence:licsbintro10]. So while it doesn't give us truth, it does give as falsehood in line with Popper's vision of the philosophy of science [@Popper:conjectures63].}
+\subsection{Lies and Damned Lies}
 
 \notes{There is a quote, that is apocryphally credited to Disraeli by Mark Twain.
 

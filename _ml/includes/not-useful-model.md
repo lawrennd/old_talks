@@ -3,7 +3,7 @@
 
 \editme
 
-\subsubsection{Uncertainty in Parameters}
+\subsection{Uncertainty in Parameters}
 
 \notes{When parameters are badly determined, we expect high variance. So, small fluctuations in the
 data set should lead to larger fluctuations in prediction. One approach to this
@@ -27,7 +27,7 @@ probabilistic interpretation where the underlying likelihood factorizes
 across data dimensions. For these models, dimensionality becomes a blessing rather than a curse. It's a neat trick, but it still doesn't solve the fundamental problem. What happens when $\numData \approx \dataDim$? Neither factorization leads to well determined parameters.}
 
 
-\subsubsection{Massively Missing Data}
+\subsection{Massively Missing Data}
 
 \notes{I'm going to argue that the separation of the data into
 features and data points is a distraction for happenstance data. It
@@ -68,7 +68,7 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{pgm = daft.PGM(shape=[2, 3],
+\plotcode{pgm = daft.PGM(shape=[2, 1],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
