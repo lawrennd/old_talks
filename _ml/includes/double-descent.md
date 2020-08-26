@@ -8,13 +8,13 @@
 \notes{One of Breiman's ideas for improving predictive performance is
 known as bagging [@Breiman:bagging96]. The idea is to train a number of models on the data
 such that they overfit (high variance). Then average the predictions
-of these models. The models are trained on different bootstrap samples
+of these models. The models are trained on different bootstrap samples [@Efron:bootstrap79]
 and their predictions are aggregated giving us the acronym,
 Bagging. By combining decision trees with bagging, we recover random
 forests [@Breiman-forests01].}
 
-\notes{Bias and variance can be estimated through Professor Efron's
-bootstrap, and the traditional view has been that there's a form of
+\notes{Bias and variance can also be estimated through Professor Efron's
+bootstrap [@Efron:bootstrap79], and the traditional view has been that there's a form of
 Goldilocks effect, where the best predictions are given by the model
 that is 'just right' for the amount of data available. Not to simple,
 not too complex. The idea is that bias decreases with increasing model

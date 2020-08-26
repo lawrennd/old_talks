@@ -258,7 +258,7 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{\plotcode{pgm = daft.PGM(shape=[2, 3],
+\plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
@@ -275,7 +275,7 @@ pgm.add_edge("f", "y")
 pgm.add_edge("u", "f")
 pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}        
+pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized $p(\dataVector) = \int \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector | \inducingVector) p(\inducingVector)\text{d}\inducingVector$.}{u-to-f_i-to-y_i}
 
@@ -285,7 +285,7 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{\plotcode{pgm = daft.PGM(shape=[2, 3],
+\plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
@@ -302,7 +302,7 @@ pgm.add_edge("f", "y")
 pgm.add_edge("u", "f")
 pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}        
+pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model conditioned on the inducing variables $p(\dataVector|\inducingVector, \inducingVector^*) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\inducingVector, \inducingVector^*)\text{d}\mappingFunctionVector$.}{given-u-to-f_i-to-y_i}
 
@@ -312,7 +312,7 @@ from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
 rc("text", usetex=True)}
 
-\plotcode{\plotcode{pgm = daft.PGM(shape=[2, 3],
+\plotcode{pgm = daft.PGM(shape=[2, 3],
                origin=[0, 0], 
                grid_unit=5, 
                node_unit=1.9, 
@@ -328,9 +328,11 @@ pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 pgm.add_edge("f", "y")
 pgm.add_edge("theta", "f")
 
-pgm.render().figure.savefig("\diagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}        
+pgm.render().figure.savefig("\diagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/given-theta-to-f_i-to-y_i}{30%}}{The model as a classical parametric model with independence across data points indexed by $i$ that is conditional on parameters $\parameterVector$, $p(\dataVector|\parameterVector) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\parameterVector)\text{d}\mappingFunctionVector$. The model is graphically the same as the nonparametric variant but here the dimension of $\parameterVector$ has to be fixed for Kolmogorov consistency, in the inducing vector variant the dimension of $\inducingVector$ can vary.}{given-theta-to-f_i-to-y_i}
+
+In Figure \ref{given-theta-to-f_i-to-y_i} we visualise the graphical model of a classical parametric form. This model is very general, the deep neural network models for supervised learning tasks can be seen as variants of this model with very large dimensions for the parameter vector $\parameterVector$. 
 
 \subsection{Instantiating the Model}
 
