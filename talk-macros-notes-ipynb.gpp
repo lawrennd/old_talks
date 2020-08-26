@@ -3,14 +3,6 @@
 
 \include{talk-macros-notes-html.gpp}
 
-\ifdef{draft}
-\define{\editme}{\href{file://\talksDir\file}{\file}}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-
-}
-\else
-\define{\editme}{\define{editText}{[\href{\githubBaseUrl\file}{edit}]}}
-\endif
 
 \define{\section{text}}{\endCell
 

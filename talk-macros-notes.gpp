@@ -15,16 +15,6 @@
 \define{\recommendation{text}}{**Recommendation**: \text}
 
 
-
-\ifdef{draft}
-\define{\editme}{\href{file://\talksDir\file}{\file}}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-
-}
-\else
-\define{\editme}{\define{editText}{\span{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);"}}{editsection}\span{]}{editsection-bracket}}{}{text-align:right;}{}}}
-\endif
-
 \define{\newframe{contents}{name}{style}}{\contents}
 
 \define{\section{text}}{# \text
@@ -32,6 +22,7 @@
 \ifdef{editText}\editText\undef{editText}\endif
 
 }
+
 \define{\subsection{text}}{## \text
 
 \ifdef{editText}\editText\undef{editText}\endif

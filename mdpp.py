@@ -52,8 +52,14 @@ parser.add_argument("-a", "--assignment", default=False, action='store_true',
 parser.add_argument("-d", "--diagrams-dir", type=str,
                     help="Directory to find the diagrams in")
 
+parser.add_argument("-D", "--draft", default=False, action='store_true',
+		   help="Whether this is a draft version (default False)")
+
+parser.add_argument("-E", "--edit-links", default=False, action='store_true',
+		   help="Whether to show edit links (default False)")
+
 parser.add_argument("-r", "--replace-notation", default=False, action='store_true',
-                    help="Whether to replace the latex macros in the files, or to retain them for later processing (default is False, retain them")
+                    help="Whether to replace the latex macros in the files, or to retain them for later processing (default is False, retain them)")
 
 args = parser.parse_args()
 
@@ -70,7 +76,11 @@ if args.exercises:
    arglist.append('-DEXERCISES=1')
 if args.assignment:
    arglist.append('-DASSIGNMENT=1')
-   
+if args.edit_links:
+   arglist.append('-DEDIT=1')
+if args.draft:
+   arglist.append('-DDRAFT=1')
+    
 if args.code is not None and args.code != 'none':
    arglist.append('-DCODE=1')
    if args.code == 'ipynb':

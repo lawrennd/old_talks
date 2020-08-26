@@ -1,0 +1,8 @@
+\ifndef{talkMacrosDraft}
+\define{talkMacrosDraft}
+
+\define{\todo{text}}{\colorRed{Todo: \text}}
+\define{\tk{text}}{\colorRed{TK: \text}}
+\define{\TK{text}}{\colorRed{TK: \text}}
+
+\endif

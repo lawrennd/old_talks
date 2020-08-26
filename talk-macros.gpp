@@ -73,6 +73,12 @@
 \include{talk-macros-back.gpp}
 \include{talk-people.gpp}
 \include{talk-logos.gpp}
+\ifdef{EDIT}
+\include{talk-macros-edit.gpp}
+\endif
+\ifdef{DRAFT}
+\include{talk-macros-draft.gpp}
+\endif
 \ifdef{EXERCISES}
 \include{talk-macros-exercises.gpp}
 \endif

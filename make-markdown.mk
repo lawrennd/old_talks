@@ -6,10 +6,10 @@
 	${PP} $< -o $@ --to html --format slides --code sparse ${PPFLAGS} 
 
 %.notes.html.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to html --code sparse ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to html --code sparse --edit-links ${PPFLAGS} 
 
 %.notes.tex.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to tex --code sparse ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to tex --code sparse --edit-links ${PPFLAGS} 
 	# Fix percentage width for latex.
 	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' $@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@
@@ -21,13 +21,13 @@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@
 
 %.notes.docx.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to docx --code sparse --replace-notation ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to docx --code sparse --replace-notation --edit-links ${PPFLAGS} 
 
 %.notes.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to ipynb --code ipynb --replace-notation ${PPFLAGS} 
 
 %.full.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to ipynb --code full --replace-notation ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to ipynb --code full --edit-links --replace-notation ${PPFLAGS} 
 
 %.slides.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format slides --to ipynb ${PPFLAGS} 

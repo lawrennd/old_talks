@@ -1,13 +1,7 @@
 \ifndef{talkMacroSlides}
 \define{talkMacroSlides}
+
 \define{\slidenotes{slidetext}{notetext}}{\slidetext}
-\ifdef{DRAFT}
-\define{\editme}{\href{file://\talksDir\file}{\file}}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-
-}
-\endif
-
 
 \define{\section{text}}{<!-- SECTION \text -->
 ## \text \ifdef{editText}
@@ -15,9 +9,7 @@
 \editText\undef{editText}\endif
 
 }
-\define{\subsection{text}}{## \text
-
-\ifdef{editText}
+\define{\subsection{text}}{## \text \ifdef{editText}
 
 \editText\undef{editText}\endif
 
