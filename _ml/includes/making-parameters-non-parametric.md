@@ -122,7 +122,7 @@ pgm.add_edge("u", "ystar", directed=False)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y-ustar-to-y.svg", transparent=True)}
  
-\figure{\includediagram{\diagramsDir/ml/u-to-y-ustar-to-y}{30%}}{We can also augment the graphical model with data that is only seen at 'run time', or 'test data'. In this case we use the superscript of $*$ to indicate the test data. This graph represents the interaction between data we've seen, $\dataVector$, and data we've yet to see, $\dataVector^*$ as well as the augmented variables $\inducingVector$ and $\inducingVector$, $p(\dataVector) = \int p(\dataVector, \dataVector^*, \inducingVector, \inducingVector^*) \text{d}\dataVector \text{d}\dataVector^* \text{d}\inducingVector \text{d}\inducingVector^*$. As the fully connected graph implies we are making no assumptions about the data.}{u-to-y-ustar-to-y}
+\figure{\includediagram{\diagramsDir/ml/u-to-y-ustar-to-y}{30%}}{We can also augment the graphical model with data that is only seen at 'run time', or 'test data'. In this case we use the superscript of $*$ to indicate the test data. This graph represents the interaction between data we've seen, $\dataVector$, and data we've yet to see, $\dataVector^*$ as well as the augmented variables $\inducingVector$ and $\inducingVector$, $p(\dataVector) = \int p(\dataVector, \dataVector^*, \inducingVector, \inducingVector^*) \text{d}\dataVector^* \text{d}\inducingVector \text{d}\inducingVector^*$. As the fully connected graph implies we are making no assumptions about the data.}{u-to-y-ustar-to-y}
 
 \notes{Adding in the test data and the inducing variables we have not yet
 chosen to instantiate (Figure \ref{u-to-y-ustar-to-y}). Here we see that we still haven't defined any
@@ -241,7 +241,7 @@ pgm.add_edge("u", "ustar", directed=False, plot_params=reduce_alpha)
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f.svg", transparent=True)}
         
 
-\figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f}{30%}}{The relationship between $\mappingFunctionVector$ and $\dataVector$ is assumed to be factorized, which we indicate here using plate notation.}{u-to-f_i-to-y_i-ustar-to-f} 
+\figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f}{30%}}{The relationship between $\mappingFunctionVector$ and $\dataVector$ is assumed to be factorized, which we indicate here using plate notation, $p(\dataVector) = \int \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector | \inducingVector, \inducingVector^*) p(\inducingVector, \inducingVector^*)\text{d}\inducingVector \text{d}\inducingVector^*$.}{u-to-f_i-to-y_i-ustar-to-f} 
 
 \notes{We now decompose, without loss of generality, our joint distribution
 over inducing variables and fundamentals into the following parts}
@@ -277,7 +277,7 @@ pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}        
 
-\figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{u-to-f_i-to-y_i}
+\figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized $p(\dataVector) = \int \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector | \inducingVector) p(\inducingVector)\text{d}\inducingVector$.}{u-to-f_i-to-y_i}
 
 \setupplotcode{import daft
 from matplotlib import rc
@@ -304,7 +304,7 @@ pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
 pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}        
 
-\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model conditioned on the inducing variables $p(\dataVector|\inducingVector) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$.}{given-u-to-f_i-to-y_i}
+\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model conditioned on the inducing variables $p(\dataVector|\inducingVector, \inducingVector^*) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\inducingVector, \inducingVector^*)\text{d}\mappingFunctionVector$.}{given-u-to-f_i-to-y_i}
 
 \setupplotcode{import daft
 from matplotlib import rc
@@ -322,12 +322,11 @@ reduce_alpha={"alpha": 0.3}
 pgm.add_node(daft.Node("y", r"$\dataScalar_i$", 0.5, 0.5, fixed=False, observed=True))
 pgm.add_node(daft.Node("f", r"$\mappingFunction_i$", 0.5, 1.5, fixed=False))
 pgm.add_node(daft.Node("theta", r"$\parameterVector$", 0.5, 2.5, fixed=True))
-pgm.add_node(daft.Node("thetastar", r"$\parameterVector^*$", 1.5, 1.5, fixed=True, plot_params=reduce_alpha))
+e, plot_params=reduce_alpha))
 pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 
 pgm.add_edge("f", "y")
 pgm.add_edge("theta", "f")
-pgm.add_edge("thetastar", "f", plot_params=reduce_alpha)
 
 pgm.render().figure.savefig("\diagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}        
 
@@ -351,20 +350,16 @@ be passed to the test data.}
 
 \notes{For a model to be useful, we need to specify relationships between our
 data variables. Of course, this is the point at which a model also
-typically becomes wrong. The following considerations should arise:}
-
-\notes{If our model is not correct, is it a useful abstraction given what we
-expect to observe about the data? For example, Brownian motion is
-modelled as a stochastic differential equation.}
+typically becomes wrong. At least if our model isn't correct, then it should be a useful abstraction of the system.}
 
 
 \subsubsection{Gaussian Processes}
 
 \notes{A flexible class of models that fulfils the constraints of being
-non-parametric and Kolmogorov consistent is Gaussian processes. Gaussian
-processes assume that the data is jointly Gaussian distributed. Each
-data point, $\dataScalar_i$, is is jointly distributed with each other
-data point $\dataScalar_j$ as a multivariate Gaussian. The covariance of
+non-parametric and Kolmogorov consistent is Gaussian processes. A Gaussian
+process prior for our fundamental variables, $\mappingFunctionVector$ assumes that they are jointly Gaussian distributed. Each
+data point, $\mappingFunction_i$, is is jointly distributed with each other
+data point $\mappingFunction_j$ as a multivariate Gaussian. The covariance of
 this Gaussian is a function of the indices of the two data, in this case
 $i$ and $j$. But these indices are not just restricted to discrete
 values. The index can be a continuous value such as time, $t$, or

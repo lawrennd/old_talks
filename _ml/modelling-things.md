@@ -132,13 +132,12 @@ badly our predictions will be overconfident and wrong.}
 
 Despite the range of questions these models raise for our classical view of generalization, in another sense, these models are very traditional. They operate on tables of data that have been curated through appropriate curation. These deep learning models operate on (very large) design matrices.
 
-We've argued that the new frontiers for the data sciences lie in the domain of what we term "happenstance data". The data that hasn't been explicitly collected with a purpose in mind, but is laid down through the rhythms of our modern lives. We've claimed that the traditional view of data as sitting in a table is restrictive for this new domain, and outlined how we might model such data through nonparametrics. We illustrated these ideas with a very trivial example using Gaussian process regression.
+We've argued that the new frontiers for the data sciences lie in the domain of what we term "happenstance data". The data that hasn't been explicitly collected with a purpose in mind, but is laid down through the rhythms of our modern lives. We've claimed that the traditional view of data as sitting in a table is restrictive for this new domain, and outlined how we might model such data through nonparametrics. We illustrated these ideas with a very trivial example using Gaussian process regression.}
 
 \subsection{Acknowledgments}
 
-I've benefited over the years from conversations with a number of friends and colleagues, among those I can identify that influenced the thinking in this paper are Tony O'Hagan, John Kent, David J. C. MacKay, Richard Wilkinson, Darren Wilkinson, Bernhard Schölkopf, Zoubin Ghahramani. Naturally, the responsibility for the sensible bits is theirs, the errors are all mine. 
+I've benefited over the years from conversations with a number of colleagues, among those I can identify that influenced the thinking in this paper are Tony O'Hagan, John Kent, David J. C. MacKay, Richard Wilkinson, Darren Wilkinson, Bernhard Schölkopf, Zoubin Ghahramani. Naturally, the responsibility for the sensible bits is theirs, the errors are all mine. 
 
 
-\thanks
 
 \references

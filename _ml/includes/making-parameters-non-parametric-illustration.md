@@ -20,9 +20,7 @@ with the}
 \subsubsection{Illustrative Example}
 
 \notes{For this illustrative example, we'll consider a simple regression
-problem. The example is based on one that James Hensman showed at the
-January 2014 Gaussian process winter school in his talk is on low rank
-Gaussian process approximations.}
+problem.}
 
 
 \subsection{Back to a Simple Regression Problem}
@@ -81,7 +79,7 @@ from gp_tutorial import ax_default, meanplot, gpplot}
                yt_mean[:, output_dim],
                yt_mean[:, output_dim]-2*yt_sd.flatten(),
                yt_mean[:, output_dim]+2*yt_sd.flatten(), 
-               ax=ax)}
+               ax=ax, fillcol='#040404', edgecol='#101010')}
 
 
 
@@ -96,6 +94,7 @@ import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
@@ -123,6 +122,7 @@ m.inducing_inputs.constrain_fixed()
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
@@ -136,6 +136,7 @@ mlai.write_figure(figure=fig,
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
@@ -155,6 +156,7 @@ m.optimize()}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
@@ -177,6 +179,7 @@ m.optimize()}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
