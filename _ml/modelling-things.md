@@ -133,9 +133,12 @@ our main control is over the model and the algorithm.
 
 \include{_ml/includes/making-parameters-non-parametric.md}
 \include{_ml/includes/instantiating-the-model.md}
+%\include{_ml/includes/the-mean-function.md}
+%\include{_ml/includes/making-parameters-non-parametric-illustration.md}
 
-\include{_ml/includes/making-parameters-non-parametric-illustration.md}
+The use of inducing variables in Gaussian process models to make inference efficient is now commonplace. By exploiting the parametric form given in Figure \ref{given-u-to-f_i-to-y_i} @Hensman:bigdata13 were able to adapt the stochastic variational inference approach of @Hoffman:stochastic12 to the nonparametric formalism. This promising direction may allow us to bridge from a rigorous probabilistic formalism for predictive modeling as enabled by nonparametric methods to the very rich modeling frameworks provided by deep learning. In particular, work in composition of Gaussian processes by @Damianou:deepgp13 has been extended to incorporate variational inference formalisms (see e.g. @Hensman:nested14;@Dai:variationally16;@Salimbeni:doubly2017). The scale at which these models can operate means that they are now being deployed in some of the domains where deep neural networks have traditionally dominated (@Dutordoir-bayesian20).
 
+These methods have not yet been fully verified on the domain which has motivated much of the thinking this paper, that of *happenstance data*. But the hope is that the rigorous probabilistic underpinnings combined with the flexibility of these methods will allow these challenges to be tackled.
 
 \section{Conclusion}
 
@@ -143,7 +146,9 @@ our main control is over the model and the algorithm.
 
 Despite the range of questions these models raise for our classical view of generalization, in another sense, these models are very traditional. They operate on tables of data that have been curated through appropriate curation. These deep learning models operate on (very large) design matrices.
 
-We've argued that the new frontiers for the data sciences lie in the domain of what we term "happenstance data". The data that hasn't been explicitly collected with a purpose in mind, but is laid down through the rhythms of our modern lives. We've claimed that the traditional view of data as sitting in a table is restrictive for this new domain, and outlined how we might model such data through nonparametrics. We illustrated these ideas with a very trivial example using Gaussian process regression.}
+We've argued that the new frontiers for the data sciences lie in the domain of what we term "happenstance data". The data that hasn't been explicitly collected with a purpose in mind, but is laid down through the rhythms of our modern lives. We've claimed that the traditional view of data as sitting in a table is restrictive for this new domain, and outlined how we might model such data through nonparametrics. 
+
+Finally, we highlighted work where these ideas are beginning to be formulated and flexible non-parametric probabilistic models are being deployed on large scale data. The next horizon for these models is to move beyond the traditional data formats, in particular tabular data, on to the domain of massivel missing data where mere snippets of data are available, but the interactions between those snippets are of sufficient complexity to require the complex modeling formalisms inspired by the modern range of deep learning methodologies.}
 
 \subsection{Acknowledgments}
 
