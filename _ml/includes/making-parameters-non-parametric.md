@@ -122,10 +122,10 @@ pgm.add_edge("u", "ystar", directed=False)
 
 pgm.render().figure.savefig("\diagramsDir/ml/u-to-y-ustar-to-y.svg", transparent=True)}
  
-\figure{\includediagram{\diagramsDir/ml/u-to-y-ustar-to-y}{30%}}{We can also augment the graphical model with data that is only seen at 'run time', or 'test data'. In this case we use the superscript of $*$ to indicate the test data.}{u-to-y-ustar-to-y}
+\figure{\includediagram{\diagramsDir/ml/u-to-y-ustar-to-y}{30%}}{We can also augment the graphical model with data that is only seen at 'run time', or 'test data'. In this case we use the superscript of $*$ to indicate the test data. This graph represents the interaction between data we've seen, $\dataVector$, and data we've yet to see, $\dataVector^*$ as well as the augmented variables $\inducingVector$ and $\inducingVector$, $p(\dataVector) = \int p(\dataVector, \dataVector^*, \inducingVector, \inducingVector^*) \text{d}\dataVector \text{d}\dataVector^* \text{d}\inducingVector \text{d}\inducingVector^*$. As the fully connected graph implies we are making no assumptions about the data.}{u-to-y-ustar-to-y}
 
 \notes{Adding in the test data and the inducing variables we have not yet
-chosen to instantiate. Here we see that we still haven't defined any
+chosen to instantiate (Figure \ref{u-to-y-ustar-to-y}). Here we see that we still haven't defined any
 structure in the graph, and therefore we have not yet made any
 assumptions about our data. Not shown in the graph is the additional
 assumption that whilst $\dataVector$ has $\numData$ dimensions and
@@ -304,7 +304,7 @@ pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
 pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}        
 
-\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{given-u-to-f_i-to-y_i}
+\figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model conditioned on the inducing variables $p(\dataVector|\inducingVector) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$.}{given-u-to-f_i-to-y_i}
 
 \setupplotcode{import daft
 from matplotlib import rc
@@ -331,7 +331,7 @@ pgm.add_edge("thetastar", "f", plot_params=reduce_alpha)
 
 pgm.render().figure.savefig("\diagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}        
 
-\figure{\includediagram{\diagramsDir/ml/given-theta-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized.}{given-theta-to-f_i-to-y_i}
+\figure{\includediagram{\diagramsDir/ml/given-theta-to-f_i-to-y_i}{30%}}{The model as a classical parametric model with independence across data points indexed by $i$ that is conditional on parameters $\parameterVector$, $p(\dataVector|\parameterVector) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\parameterVector)\text{d}\mappingFunctionVector$. The model is graphically the same as the nonparametric variant but here the dimension of $\parameterVector$ has to be fixed for Kolmogorov consistency, in the inducing vector variant the dimension of $\inducingVector$ can vary.}{given-theta-to-f_i-to-y_i}
 
 \subsection{Instantiating the Model}
 

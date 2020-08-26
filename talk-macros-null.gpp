@@ -94,6 +94,8 @@
 \define{\matlabblockstart}{}
 \define{\matlabblockend}{}
 
+\define{\downloadcode}{}
+\define{\installcode}{}
 
 \define{\setupplotcode{block}}{}
 \define{\loadplotcode{object}{filename}}{}
