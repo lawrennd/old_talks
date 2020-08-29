@@ -72,6 +72,11 @@ layout: post
   {% endif %}
 
   {{ content | markdownify }}
+    
+  {%- if site.disqus.shortname -%}
+  {%- include disqus_comments.html -%}
+  {%- endif -%}
+
   </article>
 
 </div>

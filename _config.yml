@@ -41,6 +41,10 @@ plugins:
 remote_theme: lawrennd/proceedings
 style: ndltalk
 
+comments: True
+disqus:
+  shortname: inverseprobabilitycom
+
 analytics:
   google:
     tracking_id: UA-62968536-1
