@@ -12,7 +12,7 @@ With this new set up there is a potential for assimilating far more information 
 
 For example, for me, it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself  distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place. 
 
-There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now  this phenomenon is also infuencing us in our daily lives as data measured by *happenstance* is increasingly used to characterize us.
+There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now  this phenomenon is also infuencing us in our daily lives as data measured by *happenstance* is increasingly used to characterize us.
 
 Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.
 

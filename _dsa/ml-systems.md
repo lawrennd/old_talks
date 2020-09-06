@@ -47,7 +47,8 @@ and many machine learning courses focus a lot on the model part. But to build a 
 \notes{
 \subsection{Datasets}
 
-In this notebook , we download 3 datasets: 
+In this notebook , we download 4 datasets: 
+
 * Nigeria NMIS health facility data
 * Population data for Administrative Zone 1 (states) areas in Nigeria
 * Map boundaries for Nigerian states (for plotting and binning)
@@ -135,7 +136,7 @@ Administrative regions have various names like cities, counties, districts or st
 
 Of course, if we had a knowlegdeable Nigerian, we could ask her about what the right location for each of these health facilities is, which state is it in? But given that we have the latitude and longitude, we should be able to find out automatically what the different states are. 
 
-This is where "geo" data becomes important. We need to download a dataset that stores the location of the different states in Nigeria. These files are known as 'outline' files. Because the draw the different states of different countries in outline. 
+This is where "geo" data becomes important. We need to download a dataset that stores the location of the different states in Nigeria. These files are known as 'outline' files. Because they draw the different states of different countries in outline. 
 
 There are special databases for storing this type of information, the database we are using is in the ```gdb``` or GeoDataBase format. It comes in a zip file. Let's download the outline files for the Nigerian states. They have been made available by the [Humanitarian Data Exchange](https://data.humdata.org/), you can also find other states data from the same site.}
 
