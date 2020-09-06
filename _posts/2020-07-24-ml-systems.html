@@ -69,7 +69,14 @@ categories:
 \text{model} + \text{data} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /> and many machine learning courses focus a lot on the model part. But to build a machine learning system in practice, a lot of work has to be put into the data part. This notebook gives some pointers on that work and how to think about your machine learning systems design.</p>
 <h2 id="datasets">Datasets</h2>
-<p>In this notebook , we download 3 datasets: * Nigeria NMIS health facility data * Population data for Administrative Zone 1 (states) areas in Nigeria * Map boundaries for Nigerian states (for plotting and binning) * Covid cases across Nigeria (as of May 20, 2020)</p>
+<p>In this notebook, we download 4 datasets: 
+  <ol>
+    <li>Nigeria NMIS health facility data </li>
+    <li>Population data for Administrative Zone 1 (states) areas in Nigeria </li>
+    <li>Map boundaries for Nigerian states (for plotting and binning) </li>
+    <li>Covid cases across Nigeria (as of May 20, 2020)</li>
+  </ol>
+</p>
 <p>But joining these data sets together is just an example. As another example, you could think of <a href="https://safeboda.com/ng/">SafeBoda</a>, a ride-hailing app that’s available in Lagos and Kampala. As well as looking at the health examples, try to imagine how SafeBoda may have had to design their systems to be scalable and reliable for storing and sharing data.</p>
 <h2 id="imports-installs-and-downloads">Imports, Installs, and Downloads</h2>
 <p>First, we’re going to download some particular python libraries for dealing with geospatial data. We’re dowloading <a href="https://geopandas.org"><code>geopandas</code></a> which will help us deal with ‘shape files’ that give the geographical lay out of Nigeria. We’ll also download <a href="https://pygeos.readthedocs.io/en/latest/"><code>pygeos</code></a>, a library for dealing with points rapidly in python. And finally, to get a small database set up running quickly, we’re installing <a href="https://pypi.org/project/csv-to-sqlite/"><code>csv-to-sqlite</code></a> which allows us to convert CSV data to a simple database.</p>
@@ -104,7 +111,7 @@ $$</span><br /> and many machine learning courses focus a lot on the model part.
 <p>A very common operation is the need to map from locations in a country to the administrative regions. If we were building a ride sharing app, we might also want to map riders to locations in the city, so that we could know how many riders we had in different city areas.</p>
 <p>Administrative regions have various names like cities, counties, districts or states. These conversions for the administrative regions are important for getting the right information to the right people.</p>
 <p>Of course, if we had a knowlegdeable Nigerian, we could ask her about what the right location for each of these health facilities is, which state is it in? But given that we have the latitude and longitude, we should be able to find out automatically what the different states are.</p>
-<p>This is where “geo” data becomes important. We need to download a dataset that stores the location of the different states in Nigeria. These files are known as ‘outline’ files. Because the draw the different states of different countries in outline.</p>
+<p>This is where “geo” data becomes important. We need to download a dataset that stores the location of the different states in Nigeria. These files are known as ‘outline’ files. Because they draw the different states of different countries in outline.</p>
 <p>There are special databases for storing this type of information, the database we are using is in the <code>gdb</code> or GeoDataBase format. It comes in a zip file. Let’s download the outline files for the Nigerian states. They have been made available by the <a href="https://data.humdata.org/">Humanitarian Data Exchange</a>, you can also find other states data from the same site.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> zipfile</span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>admin_zones_url <span class="op">=</span> <span class="st">&#39;https://data.humdata.org/dataset/81ac1d38-f603-4a98-804d-325c658599a3/resource/0bc2f7bb-9ff6-40db-a569-1989b8ffd3bc/download/nga_admbnda_osgof_eha_itos.gdb.zip&#39;</span></span>
