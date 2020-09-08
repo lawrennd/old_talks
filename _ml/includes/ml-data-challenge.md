@@ -38,17 +38,6 @@ heavily neglected in courses on machine learning and data science.
 Despite data being half the equation, most University courses spend
 little to no time on its challenges.}
 
-\notes{Anecdotally, talking to data modelling scientists. Most say they spend
-80% of their time acquiring and cleaning data. This is precipitating
-what I refer to as the “data crisis”. This is an analogy with software.
-The “software crisis” was the phenomenon of inability to deliver
-software solutions due to increasing complexity of implementation. There
-was no single shot solution for the software crisis, it involved better
-practice (scrum, test orientated development, sprints, code review),
-improved programming paradigms (object orientated, functional) and
-better tools (CVS, then SVN, then git).}
-
-
 \include{_data-science/includes/the-data-crisis.md}
 
 \notes{Data is the new software, and the data crisis is already upon us. It is
