@@ -1,3 +1,3 @@
-BASE=open-challenges-for-auto-ml-solving-intellectual-debt-with-auto-ai
+BASE=fit-machine-learning-systems
 include ../make-talk-flags.mk
 include ../make-talk.mk
