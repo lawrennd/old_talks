@@ -30,14 +30,17 @@ transition: None
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 
-\include{_ai/includes/intellectual-debt.md}
-
+\section{The Problem}
+\include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/buying-system.md}
 \include{_ai/includes/buying-to-banking.md}
 \include{_ai/includes/fit-systems.md}
+\section{A Technology}
 \include{_uq/includes/emulation.md}
+\section{A Solution}
 \include{_data-science/includes/data-oriented-architectures-short.md}
 \include{_data-science/includes/milan.md}
+\include{_uq/includes/deep-emulation.md}
 
 \section{Conclusion}
 \slides{
