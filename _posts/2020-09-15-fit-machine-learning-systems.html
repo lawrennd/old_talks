@@ -68,7 +68,7 @@ categories:
 </div>
 </div>
 <h1 id="intellectual-debt">Intellectual Debt</h1>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <div class="figure">
 <div id="intellectual-debt-figure" class="figure-frame">
 <div class="centered" style="">
@@ -90,6 +90,7 @@ categories:
 <p>You save on engineer time at the beginning, but you pay it back with high interest when you need a much higher operations load once the system is deployed.</p>
 <p>The notion of the Sculley paper is that there are particular challenges for machine learning models around technical debt.</p>
 <h2 id="the-mythical-man-month">The Mythical Man-month</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/mythical-man-month.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/mythical-man-month.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <div class="figure">
 <div id="intellectual-debt-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -107,6 +108,7 @@ categories:
 <p>To deploy large and complex software systems, an engineering approach known as “separation of concerns” is taken. Frederick Brooks’ book “The Mythical Man-month” <span class="citation" data-cites="Brooks:mythical75">(Brooks, n.d.)</span>, has itself gained almost mythical status in the community. It focuses on what has become known as Brooks’ law “adding manpower to a late software project makes it later”.</p>
 <p>Adding people (men or women!) to a project delays it because of the communication overhead required to get people up to speed.</p>
 <h2 id="separation-of-concerns">Separation of Concerns</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/separation-of-concerns.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/separation-of-concerns.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>To construct such complex systems an approach known as “separation of concerns” has been developed. The idea is that you architect your system, which consists of a large-scale complex task, into a set of simpler tasks. Each of these tasks is separately implemented. This is known as the decomposition of the task.</p>
 <p>This is where Jonathan Zittrain’s beautifully named term “intellectual debt” rises to the fore. Separation of concerns enables the construction of a complex system. But who is concerned with the overall system?</p>
 <ul>
@@ -114,23 +116,133 @@ categories:
 <li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
 </ul>
 <p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
-<h2 id="adding-data">Adding Data</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/data-and-intellectual-debt.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/data-and-intellectual-debt.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>This does lead to technical debt, but more perniciously it leads to intellectual debt. Even if your system is functioning, you struggle to explain how and why it is working.</p>
-<p>This situation is not good enough, but it becomes far worse when data is involved.</p>
-<p>With the introduction of machine learning we see three principle effects in these complex systems.</p>
-<ol type="1">
-<li><p>Machine learning models are being deployed as regular software; this means their very existence in the complex infrastructure is not being declared. Maybe Lancelot knows, but he’s likely too busy dealing with some other issue.</p>
-<p>This is a challenge because the machine learning model has a sell-by date. It is trained and validated on data from a particular time period which reflects a particular snapshot of the population. In practice the statistical population will evolve, and the quality of the model with decay over time. Unless the team placed in particular infrastructure to monitor this performance loss (which they often don’t, because they are under pressure to deploy). The time frame over which a model can become stale can be extremely short, because often the very deployment of a model (if done at scale) effects the dynamics of data production rendering the training data non-representative.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
-<li><p>In the rush to adopt “AI” and make use of machine learning technology, standard software engineering sanity checks are often suspended because people are told that ‘machine learning is different’. It is indeed different; it is much worse than standard software in its potential failure modes and extra safeguards need to be put in place.</p></li>
-<li><p>The individual models are sometimes difficult to interpret and there is potential for bias to enter in the modelling or from the data. Performance of these models is normally measured empirically and is therefore driven by the ‘average case’. Exceptional circumstances are often handled extremely badly.</p></li>
-</ol>
-<p>We are beginning to broach the subject of intellectual debt around the interpretability of individual models. And indeed, there is a field known as Fairness, Accountability and Transparency Machine learning that is looking to address these issues for single models. This is where, unfortunately, the death of the programmer enters.</p>
+<h2 id="buying-system">Buying System</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div class="figure">
+<div id="buying-system-components-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/software/buying-schematic.svg" width="40%" style=" ">
+</object>
+</div>
+<div id="buying-system-components-magnify" class="magnify" onclick="magnifyFigure(&#39;buying-system-components&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="buying-system-components-caption" class="caption-frame">
+<p>Figure: The components of a putative automated buying system</p>
+</div>
+</div>
+<h2 id="monolithic-system">Monolithic System</h2>
+<div class="figure">
+<div id="ml-system-monolith-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-monolith-purchasing.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="ml-system-monolith-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-monolith&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-monolith-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<h2 id="service-oriented-architecture">Service Oriented Architecture</h2>
+<div class="figure">
+<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-purchasing-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<h2 id="buying">Buying …</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-to-banking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-to-banking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div class="figure">
+<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-purchasing-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<h2 id="to-banking">… to Banking</h2>
+<div class="figure">
+<div id="ml-system-downstream-banking-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-banking000.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-banking-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-banking&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-banking-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
 <h2 id="fit-models-to-fit-systems">FIT Models to FIT Systems</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/fit-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/fit-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>Zittrain points out the challenge around the lack of interpretability of individual ML models as the origin of intellectual debt. In machine learning I refer to work in this area as fairness, interpretability and transparency or FIT models. To an extent I agree with Zittrain, but if we understand the context and purpose of the decision making, I believe this is readily put right by the correct monitoring and retraining regime around the model. A concept I refer to as “progression testing”. Indeed, the best teams do this at the moment, and their failure to do it feels more of a matter of technical debt rather than intellectual, because arguably it is a maintenance task rather than an explanation task. After all, we have good statistical tools for interpreting individual models and decisions when we have the context. We can linearise around the operating point, we can perform counterfactual tests on the model. We can build empirical validation sets that explore fairness or accuracy of the model.</p>
 <p>So, this is where, my understanding of intellectual debt in ML systems departs, I believe from John Zittrain’s. The long-term challenge is <em>not</em> in the individual model. We have excellent statistical tools for validating what any individual model, the long-term challenge is the complex interaction between different components in the decomposed system, where the original intent of each component has been forgotten (except perhaps by Lancelot) and each service has been repurposed. We need to move from FIT models to FIT systems.</p>
 <p>How to address these challenges? With collaborators I’ve been working towards a solution that contains broadly two parts. The first part is what we refer to as “Data-Oriented Architectures”. The second part is “meta modelling”, machine learning techniques that help us model the models.</p>
+<h2 id="emulation">Emulation</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div class="figure">
+<div id="statistical-emulation-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="statistical-emulation-1-caption" class="caption-frame">
+<p>Figure: Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
+</div>
+</div>
+<p>In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. The UK Met office uses the same code for both, but operates climate simulations one at greater spatial and temporal resolutions.</p>
+<div class="figure">
+<div id="statistical-emulation-2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation001.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-2-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-2&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="statistical-emulation-2-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
+</div>
+</div>
+<p>A statistical emulator is a data-driven model that learns about the underlying simulation. Importantly, learns with uncertainty, so it ‘knows what it doesn’t know’. In practice, we can call the emulator in place of the simulator. If the emulator ‘doesn’t know’, it can call the simulator for the answer.</p>
+<div class="figure">
+<div id="statistical-emulation-5-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation004.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="statistical-emulation-5-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
+</div>
+</div>
+<div class="figure">
+<div id="statistical-emulation-6-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation005.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-6-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-6&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="statistical-emulation-6-caption" class="caption-frame">
+<p>Figure: In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..</p>
+</div>
+</div>
+<p>As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.</p>
+<p>Similarly, the emulator can adjudicate between simulations. This is known as <em>multi-fidelity emulation</em>. The emulator characterizes which emulations perform well where.</p>
+<p>If all this modelling is done with judiscious handling of the uncertainty, the <em>computational doubt</em>, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.</p>
 <h2 id="data-oriented-architectures">Data-oriented Architectures</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-oriented-architectures-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-oriented-architectures-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>Data-oriented architectures aim to address the rat’s nest that is the current interaction between the services in a service-oriented architecture. It does this by introducing data-oriented programming. The data-oriented programming language tracks the movement of data between each service.</p>
@@ -213,10 +325,4 @@ categories:
 <p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
 </div>
 </div>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>I’m excited by the <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">EPSRC Funded Closed Loop Data Science</a> project at the University of Glasgow run by Rod Murray-Smith for addressing this.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
