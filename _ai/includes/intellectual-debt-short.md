@@ -9,6 +9,9 @@
 
 \newslide{Technical Debt}
 
+\slides{* Compare with *technical debt*.
+* Highlighted by @Sculley:debt15.}
+
 \notes{In computer systems the concept of *technical debt* has been surfaced by
 authors including @Sculley:debt15. It is an important concept, that I
 think is somewhat hidden from the academic community, because it is a
