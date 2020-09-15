@@ -10,8 +10,9 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-venue: Gaussian Process Summer School
-date: 2020-09-15
+venue: Virtual Gaussian Process Summer School
+ipynb: true
+date: 2020-09-16
 transition: None
 ---
 
