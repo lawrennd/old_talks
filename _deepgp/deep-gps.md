@@ -17,7 +17,20 @@ transition: None
 ---
 
 \include{talk-macros.tex}
-\subsection{Deep Gaussian Processes}
+
+
+\section{Deep Gaussian Processes}
+
+\downloadcode{teaching_plots}
+\downloadcode{mlai}
+\downloadcode{gp_tutorial}
+
+\include{_data-science/includes/pods-install.md}
+\include{_gp/includes/gpy-install.md}
+\include{_deepgp/includes/pydeepgp-include.md}
+
+
+\include{_gp/includes/planck-cmp-master-gp.md}
 
 \include{_gp/includes/approximate-gps-short.md}
 

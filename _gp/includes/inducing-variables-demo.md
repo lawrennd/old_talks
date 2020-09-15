@@ -7,6 +7,7 @@
 
 Here we set up a simple one dimensional regression problem. The input locations, $\inputMatrix$, are in two separate clusters. The response variable, $\dataVector$, is sampled from a Gaussian process with an exponentiated quadratic covariance.}
 
+\include{_gp/includes/gpy-include.md}
 
 \setupcode{import numpy as np
 import GPy}
