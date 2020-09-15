@@ -3,9 +3,10 @@
 
 \editme
 
-\subsection{Buying ...}
+\newslide{Buying ...}
 
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}
+\slides{
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}}
 
 \subsection{... to Banking}
 
