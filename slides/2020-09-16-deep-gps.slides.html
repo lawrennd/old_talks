@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2020-09-15">
+  <meta name="dcterms.date" content="2020-09-16">
   <title>Deep GPs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -340,8 +340,8 @@
 <section id="title-slide">
   <h1 class="title">Deep GPs</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
-  <p class="date" style="text-align:center"><time>2020-09-15</time></p>
-  <p class="venue" style="text-align:center">Gaussian Process Summer School</p>
+  <p class="date" style="text-align:center"><time>2020-09-16</time></p>
+  <p class="venue" style="text-align:center">Virtual Gaussian Process Summer School</p>
 </section>
 
 <section class="slide level2">
@@ -353,9 +353,63 @@
 <!--
 
 -->
+<!-- SECTION Deep Gaussian Processes -->
 </section>
 <section id="deep-gaussian-processes" class="slide level2">
 <h2>Deep Gaussian Processes</h2>
+</section>
+<section id="gpy-a-gaussian-process-framework-in-python" class="slide level2">
+<h2>GPy: A Gaussian Process Framework in Python</h2>
+<div class="figure">
+<div id="gpy-software-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<center>
+<a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+</center>
+</section>
+<section id="gpy-a-gaussian-process-framework-in-python-1" class="slide level2">
+<h2>GPy: A Gaussian Process Framework in Python</h2>
+<ul>
+<li>BSD Licensed software base.</li>
+<li>Wide availability of libraries, ‘modern’ scripting language.</li>
+<li>Allows us to set projects to undergraduates in Comp Sci that use GPs.</li>
+<li>Available through GitHub <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></li>
+<li>Reproducible Research with Jupyter Notebook.</li>
+</ul>
+</section>
+<section id="features" class="slide level2">
+<h2>Features</h2>
+<ul>
+<li>Probabilistic-style programming (specify the model, not the algorithm).</li>
+<li>Non-Gaussian likelihoods.</li>
+<li>Multivariate outputs.</li>
+<li>Dimensionality reduction.</li>
+<li>Approximations for large data sets.</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="cosmic-microwave-background-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="modern-universe-non-linear-function-figure" class="figure-frame">
+<div style="fontsize:120px;vertical-align:middle">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
+</div>
+</div>
 </section>
 <section id="low-rank-gaussian-processes" class="slide level2">
 <h2>Low Rank Gaussian Processes</h2>
@@ -705,7 +759,7 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -833,7 +887,7 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pinball-initialization-figure" class="figure-frame">
@@ -842,7 +896,7 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </div>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pinball-trained-figure" class="figure-frame">
@@ -874,7 +928,7 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </div>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-markov-vertical-figure" class="figure-frame">
@@ -903,12 +957,12 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-markov-vertical.svg" width style=" ">
 </object>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-markov-vertical-side-figure" class="figure-frame">
@@ -1050,35 +1104,35 @@ showDivs(0, 'stack-pca-sample');
 </script>
 <p><small></small> <input id="range-stack-pca-sample" type="range" min="0" max="4" value="0" onchange="setDivs('stack-pca-sample')" oninput="setDivs('stack-pca-sample')"> <button onclick="plusDivs(-1, 'stack-pca-sample')">❮</button> <button onclick="plusDivs(1, 'stack-pca-sample')">❯</button></p>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-0.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-1.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-2.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-3.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-4.svg" width="10%" style=" ">
@@ -1092,35 +1146,35 @@ showDivs(0, 'stack-gp-sample');
 </script>
 <p><small></small> <input id="range-stack-gp-sample" type="range" min="0" max="4" value="0" onchange="setDivs('stack-gp-sample')" oninput="setDivs('stack-gp-sample')"> <button onclick="plusDivs(-1, 'stack-gp-sample')">❮</button> <button onclick="plusDivs(1, 'stack-gp-sample')">❯</button></p>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-0.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-1.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-2.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-3.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-4.svg" width="10%" style=" ">
@@ -1142,39 +1196,6 @@ showDivs(0, 'stack-gp-sample');
 </iframe>
 </div>
 </div>
-</section>
-<section id="gpy-a-gaussian-process-framework-in-python" class="slide level2">
-<h2>GPy: A Gaussian Process Framework in Python</h2>
-<div class="figure">
-<div id="gpy-software-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<center>
-<a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
-</center>
-</section>
-<section id="gpy-a-gaussian-process-framework-in-python-1" class="slide level2">
-<h2>GPy: A Gaussian Process Framework in Python</h2>
-<ul>
-<li>BSD Licensed software base.</li>
-<li>Wide availability of libraries, ‘modern’ scripting language.</li>
-<li>Allows us to set projects to undergraduates in Comp Sci that use GPs.</li>
-<li>Available through GitHub <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></li>
-<li>Reproducible Research with Jupyter Notebook.</li>
-</ul>
-</section>
-<section id="features" class="slide level2">
-<h2>Features</h2>
-<ul>
-<li>Probabilistic-style programming (specify the model, not the algorithm).</li>
-<li>Non-Gaussian likelihoods.</li>
-<li>Multivariate outputs.</li>
-<li>Dimensionality reduction.</li>
-<li>Approximations for large data sets.</li>
-</ul>
 </section>
 <section id="olympic-marathon-data" class="slide level2">
 <h2>Olympic Marathon Data</h2>
@@ -1209,7 +1230,7 @@ showDivs(0, 'stack-gp-sample');
 <section id="alan-turing" class="slide level2">
 <h2>Alan Turing</h2>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="turing-run-times-figure" class="figure-frame">
 <table>
 <tr>
 <td width="50%">
@@ -1226,7 +1247,6 @@ showDivs(0, 'stack-gp-sample');
 </table>
 </div>
 </div>
-<p>.}{turing-run-times}</p>
 </section>
 <section id="probability-winning-olympics" class="slide level2">
 <h2>Probability Winning Olympics?</h2>
@@ -1321,7 +1341,7 @@ showDivs(0, 'stack-gp-sample');
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="a-simple-approach-to-ranking-figure" class="figure-frame">
@@ -1334,7 +1354,7 @@ showDivs(0, 'stack-gp-sample');
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
 </center>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 </section>
 <section id="tp53-gene-data-gp" class="slide level2">
@@ -1625,7 +1645,7 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-gp-high-five-figure" class="figure-frame">
@@ -1640,7 +1660,7 @@ showDivs(0, 'stack-gp-sample');
 <h2>Fitting a Deep GP to a the MNIST Digits Subsample</h2>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-latent-figure" class="figure-frame">
@@ -1649,7 +1669,7 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1658,7 +1678,7 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1667,7 +1687,7 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1676,7 +1696,7 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1685,7 +1705,7 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="digit-samples-deep-gp-figure" class="figure-frame">
