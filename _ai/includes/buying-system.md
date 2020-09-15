@@ -11,6 +11,8 @@
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-monolith-purchasing}{60%}}{A potential path of models in a machine learning system.}{ml-system-monolith}
 
+\includes{_software/includes/separation-of-concerns.md}
+
 \subsection{Service Oriented Architecture}
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}
