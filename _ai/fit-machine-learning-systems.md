@@ -20,7 +20,6 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-youtube: H99hXegNG-c
 date: 2020-09-15
 venue: Huawei-Cambridge Workshop
 transition: None
