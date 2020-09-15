@@ -5,6 +5,11 @@
 
 \subsection{FIT Models to FIT Systems}
 
+\slides{* Focus in machine learning has been on FAcT learning.
+* Fairness, accountability and Transparency in individual models.
+* But individual models aren't the problem. 
+* Fariness, interpetability and transparency required for whole system.}
+
 \notes{Zittrain points out the challenge around the lack of interpretability
 of individual ML models as the origin of intellectual debt. In machine
 learning I refer to work in this area as fairness, interpretability

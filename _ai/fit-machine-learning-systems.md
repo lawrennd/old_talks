@@ -32,8 +32,10 @@ transition: None
 
 \include{_ai/includes/intellectual-debt.md}
 
-\include{_ai/includes/data-and-intellectual-debt.md}
+\include{_ai/includes/buying-system.md}
+\include{_ai/includes/buying-to-banking.md}
 \include{_ai/includes/fit-systems.md}
+\include{_uq/includes/emulation.md}
 \include{_data-science/includes/data-oriented-architectures-short.md}
 \include{_data-science/includes/milan.md}
 
