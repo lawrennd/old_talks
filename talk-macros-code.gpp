@@ -14,7 +14,7 @@
 \block
 \pythonblockend}
 \define{\loadcode{object}{filename}}{\pythonblockstart
-\if{MAGICCODE}%load -s \object \filename.py\else
+\ifdef{MAGICCODE}%load -s \object \filename.py\else
 from \filename import \object\endif
 \pythonblockend}
 \define{\code{block}}{\pythonblockstart

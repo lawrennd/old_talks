@@ -1,54 +1,37 @@
+---
+layout: talk
+title: "Deep GPs"
+abstract: >
+  In this talk we introduce deep Gaussian processes, an approach to stochastic process modelling that relies on the composition of individual stochastic proceses.
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
+venue: Gaussian Process Summer School
+date: 2020-09-15
+transition: None
+---
 
-### Structures for Extracting Information from Data
+\include{talk-macros.tex}
+\subsection{Deep Gaussian Processes}
 
-\begin{columns}[c]
-\column{5cm}
-\vspace{0.75cm}
-  \inputdiagram{../../../gplvm/tex/diagrams/stackGpSample2}
-\column{5cm}
-\def\layersep{1cm}
-\def\nodesep{1cm}
+\include{_gp/includes/approximate-gps-short.md}
 
-    \begin{tikzpicture}[node distance=\layersep]
-      \tikzstyle{annot} = [text width=4em, text centered]    % Draw the input layer nodes
-      \node[obs] (Y) at (0cm, 0) {$\dataVector$};
+\subsection{Modern Review}
 
-      % Draw the hidden layer nodes
-      \node[latent] (X1) at (0cm, \layersep) {$\latentVector_1$};
+* *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
+    @Thang:unifying17
 
-      % Draw the hidden layer nodes
-      \node[latent] (X2) at (0cm, \layersep*2) {$\latentVector_2$};
+* *Deep Gaussian Processes and Variational Propagation of Uncertainty*
+    @Damianou:thesis2015
 
-      % Draw the hidden layer nodes
-      \node[latent] (X3) at (0cm, \layersep*3) {$\latentVector_3$};
-      
-      % Draw the hidden layer nodes
-      \node[latent] (X4) at (0cm, \layersep*4) {$\latentVector_4$};
+\include{_deepgp/includes/deep-gaussian-processes.md}
 
-      % Connect every node in the latent layer with every node in the
-      % data layer.
-      \draw[->] (X1) -- (Y);
-      \draw[->] (X2) -- (X1);
-      \draw[->] (X3) -- (X2);
-      \draw[->] (X4) -- (X3);
+\thanks
 
-
-
-      % Annotate the layers
-      \node[annot,right of=X4, node distance=2cm, text width=3cm] (ls) {Latent layer 4};
-      \node[annot,right of=X3, node distance=2cm, text width=3cm] (ls) {Latent layer 3};
-      \node[annot,right of=X2, node distance=2cm, text width=3cm] (ls) {Latent layer 2};
-      \node[annot,right of=X1, node distance=2cm, text width=3cm] (ls) {Latent layer 1};
-      \node[annot,right of=Y, node distance=2cm, text width=3cm] (ds) {Data space};
-    \end{tikzpicture}
-
-\end{columns}
-
-
-### 
-
-@Damianou:deepgp13\hfill\raggedleft{\andreasPicture{1.5cm}}\
-
-[\includegraphics[page=1,trim=0cm 16cm 0cm 0.5cm, width=0.4\textwidth, clip=true, width=1.0\textwidth]{../../../gp/tex/diagrams/damianou13a.pdf}](http://jmlr.org/proceedings/papers/v31/damianou13a.pdf)
+\references
 
 

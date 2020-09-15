@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Emulation}
+\subsection{Statistical Emulation}
 
 
 \figure{\includediagram{\diagramsDir/uq/statistical-emulation000}{80%}}{Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.}{statistical-emulation-1}
