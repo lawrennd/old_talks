@@ -9,7 +9,7 @@
 
 First load in the MNIST data set from scikit learn. This can take a little while because it's large to download.}
 
-\setupcode{from sklearn.datasets import fetch_mldata}
+\setupcode{from sklearn.datasets import fetch_openml}
 \code{mnist = fetch_mldata('MNIST original')}
 
 \notes{Sub-sample the dataset to make the training faster.}
