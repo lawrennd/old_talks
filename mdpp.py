@@ -52,6 +52,9 @@ parser.add_argument("-a", "--assignment", default=False, action='store_true',
 parser.add_argument("-d", "--diagrams-dir", type=str,
                     help="Directory to find the diagrams in")
 
+parser.add_argument("-w", "--write-diagrams-dir", type=str,
+                    help="Directory to write diagrams in for code")
+
 parser.add_argument("-D", "--draft", default=False, action='store_true',
 		   help="Whether this is a draft version (default False)")
 
@@ -64,8 +67,12 @@ parser.add_argument("-r", "--replace-notation", default=False, action='store_tru
 args = parser.parse_args()
 
 diagrams_dir = '../slides/diagrams'
+write_diagrams_dir = '../slides/diagrams'
 if args.diagrams_dir:
     diagrams_dir = args.diagrams_dir
+
+if args.write_diagrams_dir:
+    write_diagrams_dir = args.write_diagrams_dir
 
 arglist = ['+n', '-U "\\\\" "" "{" "}{" "}" "{" "}" "#" ""']
 if args.to:
@@ -102,6 +109,7 @@ if args.code is not None and args.code != 'none':
       arglist.append('-DPLOTCODE=1')
 
 arglist.append('-DdiagramsDir={diagrams_dir}'.format(diagrams_dir=diagrams_dir))
+arglist.append('-DwriteDiagramsDir={write_diagrams_dir}'.format(diagrams_dir=diagrams_dir))
 
 if args.include_path:
    arglist.append('-I{include}'.format(include=args.include_path))

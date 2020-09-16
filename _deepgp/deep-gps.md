@@ -25,6 +25,7 @@ transition: None
 \downloadcode{teaching_plots}
 \downloadcode{mlai}
 \downloadcode{gp_tutorial}
+\downloadcode{deepgp_tutorial}
 
 \include{_data-science/includes/pods-install.md}
 \include{_gp/includes/gpy-install.md}

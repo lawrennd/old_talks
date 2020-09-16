@@ -41,15 +41,21 @@ mlai.write_figure(figure=fig,
 \notes{
 \subsection{Fit Quality}
 
-In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, ```m_clean```, where that point is removed. 
+In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this make a version of the model, ```m_clean```, where that point is removed. 
 
-```
-x_clean=np.vstack((x[0:2, :], x[3:, :]))
+\code{x_clean=np.vstack((x[0:2, :], x[3:, :]))
 y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
-_ = m_clean.optimize()
-```
+_ = m_clean.optimize()}
 }
+
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+plot.model_output(m_clean, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+mlai.write_figure(figure=fig,
+                  filename='\diagramsDir/gp/olympic-marathon-gp.svg', 
+                  transparent=True, frameon=True)}
 
 \endif
