@@ -52,7 +52,7 @@ parser.add_argument("-a", "--assignment", default=False, action='store_true',
 parser.add_argument("-d", "--diagrams-dir", type=str,
                     help="Directory to find the diagrams in")
 
-parser.add_argument("-w", "--write-diagrams-dir", type=str,
+parser.add_argument("-W", "--write-diagrams-dir", type=str,
                     help="Directory to write diagrams in for code")
 
 parser.add_argument("-D", "--draft", default=False, action='store_true',
@@ -109,7 +109,7 @@ if args.code is not None and args.code != 'none':
       arglist.append('-DPLOTCODE=1')
 
 arglist.append('-DdiagramsDir={diagrams_dir}'.format(diagrams_dir=diagrams_dir))
-arglist.append('-DwriteDiagramsDir={write_diagrams_dir}'.format(diagrams_dir=diagrams_dir))
+arglist.append('-DwriteDiagramsDir={write_diagrams_dir}'.format(write_diagrams_dir=write_diagrams_dir))
 
 if args.include_path:
    arglist.append('-I{include}'.format(include=args.include_path))
