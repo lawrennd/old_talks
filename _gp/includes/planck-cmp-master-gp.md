@@ -10,7 +10,7 @@
 
 \newslide{}
 
-\figure{\div{<img src="\diagramsDir/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$=f\Bigg($<img src="\diagramsDir/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$\Bigg)$}{}{fontsize:120px;vertical-align:middle}}{What we observe today is some non-linear function of the cosmic microwave background.}{modern-universe-non-linear-function}
+\figure{\div{<img src="\writeDiagramsDir/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$=f\Bigg($<img src="\writeDiagramsDir/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$\Bigg)$}{}{fontsize:120px;vertical-align:middle}}{What we observe today is some non-linear function of the cosmic microwave background.}{modern-universe-non-linear-function}
 
 
 \endif

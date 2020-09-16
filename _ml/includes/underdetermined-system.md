@@ -5,7 +5,7 @@
 \section{Underdetermined System}
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.under_determined_system(diagrams='\diagramsDir/ml')}
+\plotcode{plot.under_determined_system(diagrams='\writeDiagramsDir/ml')}
 
 \notes{What about the situation where you have more parameters than data in your simultaneous equation? This is known as an *underdetermined* system. In fact this set up is in some sense *easier* to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a *modelling* perspective to do so).
 
@@ -32,7 +32,7 @@ $$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', 
-                            directory='\diagramsDir/ml', samp=IntSlider(0, 0, 10, 1))}
+                            directory='\writeDiagramsDir/ml', samp=IntSlider(0, 0, 10, 1))}
 
 \slides{
 \define{width}{40%}

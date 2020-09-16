@@ -29,7 +29,7 @@ for i in range(100):
 
 \plotcode{f, ax = plt.subplots(figsize=(5,5))
 regression_contour(f, ax, m_vals, c_vals, E_grid)
-mlai.write_figure(filename='\diagramsDir/ml/regression_contour.svg')}
+mlai.write_figure(filename='\writeDiagramsDir/ml/regression_contour.svg')}
 
 \includediagram{\diagramsDir/ml/regression_contour}
 
@@ -104,7 +104,7 @@ changes all the time.
 plot.regression_contour(f, ax, m_vals, c_vals, E_grid)
 ax.plot(m_star, c_star, 'g*', markersize=20)
 ax.arrow(m_star, c_star, -m_grad*0.1, -c_grad*0.1, head_width=0.2)
-mlai.write_figure(filename='\diagramsDir/ml/regression_contour_step001.svg', transparent=True)}
+mlai.write_figure(filename='\writeDiagramsDir/ml/regression_contour_step001.svg', transparent=True)}
 
 \includediagram{\diagramsDir/ml/regression_contour_step001}
 
@@ -137,11 +137,11 @@ print("New m is", m_star, "and new c is", c_star)}
 
 ### Gradient Descent Algorithm
 
-\code{num_plots = plot.regression_contour_fit(x, y, diagrams='\diagramsDir/ml')}
+\code{num_plots = plot.regression_contour_fit(x, y, diagrams='\writeDiagramsDir/ml')}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('regression_contour_fit{num:0>3}.svg', directory='\diagramsDir/ml', num=IntSlider(0, 0, num_plots, 1))}
+\displaycode{pods.notebook.display_plots('regression_contour_fit{num:0>3}.svg', directory='\writeDiagramsDir/ml', num=IntSlider(0, 0, num_plots, 1))}
 
 \slides{
 \startslides{regression_contour_fit}{1}{28}
@@ -239,12 +239,12 @@ c_star = c_star + 2*learn_rate*(y[i]-m_star*x[i] - c_star)}
 Putting it all together in an algorithm, we can
 do stochastic gradient descent for our regression data.
 
-\plotcode{num_plots = plot.regression_contour_sgd(x, y, diagrams='\diagramsDir/ml')}
+\plotcode{num_plots = plot.regression_contour_sgd(x, y, diagrams='\writeDiagramsDir/ml')}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('regression_sgd_contour_fit{num:0>3}.svg', 
-    directory='\diagramsDir/mlai', num=IntSlider(0, 0, num_plots, 1))}
+    directory='\writeDiagramsDir/mlai', num=IntSlider(0, 0, num_plots, 1))}
 
 \slides{
 \startslides{regression_sgd_contour_fit}{0}{58}

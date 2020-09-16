@@ -4,7 +4,7 @@
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('uk_tin_coal_railways{sample:0>3}.svg', 
-                            '\diagramsDir/data-science', sample=(1,5))}
+                            '\writeDiagramsDir/data-science', sample=(1,5))}
 
 \notes{\figure{\columns{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways004}{100%}}{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways005}{100%}}{50%}{50%}}}{The evolution of the UK railway network in relation to tin and coal mines.}{uk-tin-coal-railways}
 

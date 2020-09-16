@@ -61,18 +61,18 @@ ax[2].set_position([0.35, 0.15, basewidth/q*k2, basewidth/q*k1])
 plot.matrix(np.dot(U,VT), ax=ax[2], type='image')
 ax[3].set_frame_on(True)
 ax[3].axes.get_yaxis().set_visible(True)
-mlai.write_figure(figure=fig, filename='../\diagramsDir/wisuvt.svg')
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/wisuvt.svg')
 }
 
 \subsection{Low Rank Approximation}
 
-\includediagram{../\diagramsDir/wisuvt}
+\includediagram{\writeDiagramsDir/wisuvt}
 
-\plotcode{plot.deep_nn_bottleneck(diagrams='../\diagramsDir/deepgp')}
+\plotcode{plot.deep_nn_bottleneck(diagrams='\writeDiagramsDir/deepgp')}
 
 \subsection{Deep Neural Network}
 
-\includediagram{../\diagramsDir/deepgp/deep-nn-bottleneck2}
+\includediagram{\writeDiagramsDir/deepgp/deep-nn-bottleneck2}
 
 \subsection{What is a Deep Gaussian Process?}
 

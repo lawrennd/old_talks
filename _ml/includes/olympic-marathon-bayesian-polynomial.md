@@ -26,13 +26,13 @@ max_basis = y.shape[0]}
 			  data_limits=data_limits,
               xlim=data_limits, 
 			  objective_ylim=[0.5,1.6]
-			  diagrams='\diagramsDir/ml')}
+			  diagrams='\writeDiagramsDir/ml')}
 
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_BLM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml/', 
+                            directory='\writeDiagramsDir/ml/', 
 							num_basis=IntSlider(1, 1, 27, 1))}
 
 
@@ -77,7 +77,7 @@ from ipywidgets import IntSlider}
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.holdout_fit(x, y, param_name='number', param_range=(1, 27),
-              diagrams='\diagramsDir/ml',
+              diagrams='\writeDiagramsDir/ml',
               model=mlai.BLM, 
               basis=basis, 
               alpha=1, 
@@ -89,7 +89,7 @@ from ipywidgets import IntSlider}
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_BLM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
                             num_basis=IntSlider(1, 1, 27, 1))}
 
 \slides{
@@ -131,7 +131,7 @@ from ipywidgets import IntSlider}
 
 \plotcode{num_parts=5
 plot.cv_fit(x, y, param_name='number', param_range=(1, 27),  
-            diagrams='\diagramsDir/ml',
+            diagrams='\writeDiagramsDir/ml',
             model=mlai.BLM, 
             basis=basis, 
             alpha=1, 
@@ -143,7 +143,7 @@ plot.cv_fit(x, y, param_name='number', param_range=(1, 27),
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_5cv{part:0>2}_BLM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							part=(0, 5), 
 							num_basis=IntSlider(1, 1, 27, 1))}
 

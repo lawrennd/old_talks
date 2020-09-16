@@ -108,7 +108,7 @@ $$
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.logistic('\diagramsDir/ml/logistic.svg')}
+\plotcode{plot.logistic('\writeDiagramsDir/ml/logistic.svg')}
 
 \newslide{Logistic function}
 \slides{

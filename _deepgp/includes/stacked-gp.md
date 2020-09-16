@@ -5,10 +5,10 @@
 \subsection{Stacked GP}
 
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.RBF,
-                     diagrams="../\diagramsDir/deepgp")}
+                     diagrams="\writeDiagramsDir/deepgp")}
 				
 \displaycode{pods.notebook.display_plots('stack-gp-sample-RBF-{sample:0>1}.svg', 
-                            directory='../\diagramsDir/deepgp', sample=(0,4))}
+                            directory='\writeDiagramsDir/deepgp', sample=(0,4))}
 
 \slides{
 \define{width}{10%}

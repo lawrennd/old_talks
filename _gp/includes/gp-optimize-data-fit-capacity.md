@@ -13,7 +13,7 @@ import mlai
 import gp_tutorial}
 
 \plotcode{np.random.seed(125)
-diagrams = '\diagramsDir/gp'
+diagrams = '\writeDiagramsDir/gp'
 
 black_color=[0., 0., 0.]
 red_color=[1., 0., 0.]

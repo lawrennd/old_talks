@@ -7,7 +7,7 @@
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.logistic('\diagramsDir/ml/logistic.svg')}
+\plotcode{plot.logistic('\writeDiagramsDir/ml/logistic.svg')}
 
 \figure{\includediagram{\diagramsDir/ml/logistic}{80%}}{The logistic function.}{the-logistic-function}
 

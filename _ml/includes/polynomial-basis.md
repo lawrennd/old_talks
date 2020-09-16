@@ -22,7 +22,7 @@ text =['$\phi(x) = 1$',
 
 plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3, 
            fig=f, ax=ax, loc=loc, text=text, num_basis=5,
-		   diagrams='\diagramsDir/ml')
+		   diagrams='\writeDiagramsDir/ml')
 }
 
 \subsection{Functions Derived from Polynomial Basis}
@@ -46,7 +46,7 @@ $$
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 			    num_basis=IntSlider(1,1,5,1))}
 
 \endif

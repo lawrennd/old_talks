@@ -31,13 +31,13 @@ However, in the Gaussian process case, when the likelihood also assumes Gaussian
 np.random.seed(10)
 import teaching_plots as plot}
 \plotcode{plot.rejection_samples(kernel=kernel, 
-    diagrams='\diagramsDir/gp')}
+    diagrams='\writeDiagramsDir/gp')}
 
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('gp_rejection_sample{sample:0>3}.png', 
-                            directory='\diagramsDir/gp', 
+                            directory='\writeDiagramsDir/gp', 
 							sample=IntSlider(1,1,5,1))}
 \slides{
 \newslide{}

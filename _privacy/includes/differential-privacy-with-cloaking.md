@@ -53,7 +53,7 @@
 
 *Left*: Function change. *Right*: test point change
 
-\newslide{DP Vectors}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{DP Vectors}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * Hall et al. (2013) also presented a bound on vectors.
 
@@ -69,7 +69,7 @@ its Mahalanobis distance (wrt the added noise covariance).
     We get to pick $\mathbf{M}$
 
 
-\newslide{Cloaking}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Cloaking}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * Intuitively we want to construct $\mathbf{M}$ so that it has greatest
 covariance in those directions most affected by changes in training
@@ -85,7 +85,7 @@ represented in the cloaking matrix,
   $$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$
 
 
-\newslide{Cloaking}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Cloaking}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * We assume we are protecting only one training input's change, by at most
 $d$.
@@ -104,7 +104,7 @@ element, $i$.\
   where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
-\newslide{Cloaking}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Cloaking}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * Dealing with $d$ elsewhere and setting $\Delta = 1$ (thus $0 \leq
 \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1$) and minimise
@@ -123,7 +123,7 @@ The noise added by this method is now practical.
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
-\newslide{Cloaking: Results}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Cloaking: Results}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 It also has some interesting features;
 

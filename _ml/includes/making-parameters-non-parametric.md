@@ -33,7 +33,7 @@ pgm.add_node(daft.Node("y", r"$\dataVector$", 0.5, 0.5, fixed=False, observed=Tr
 pgm.add_node(daft.Node("u", r"$\inducingVector$", 0.5, 1.5, fixed=False))
 pgm.add_edge("u", "y", directed=False)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-y.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/u-to-y.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/u-to-y}{40%}}{Augmenting the variable space with a set of latent *inducing vectors*. The graphical model represents the factorization of the distribution into the form $\int p(\dataVector|\inducingVector)p(\inducingVector)\text{d}\inducingVector$}{u-to-y}
 
@@ -118,7 +118,7 @@ pgm.add_edge("ystar", "y", directed=False)
 pgm.add_edge("ustar", "ystar", directed=False)
 pgm.add_edge("u", "ystar", directed=False)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-y-ustar-to-y.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/u-to-y-ustar-to-y.svg", transparent=True)}
  
 \figure{\includediagram{\diagramsDir/ml/u-to-y-ustar-to-y}{30%}}{We can also augment the graphical model with data that is only seen at 'run time', or 'test data'. In this case we use the superscript of $*$ to indicate the test data. This graph represents the interaction between data we've seen, $\dataVector$, and data we've yet to see, $\dataVector^*$ as well as the augmented variables $\inducingVector$ and $\inducingVector$, $p(\dataVector) = \int p(\dataVector, \dataVector^*, \inducingVector, \inducingVector^*) \text{d}\dataVector^* \text{d}\inducingVector \text{d}\inducingVector^*$. As the fully connected graph implies we are making no assumptions about the data.}{u-to-y-ustar-to-y}
 
@@ -190,7 +190,7 @@ pgm.add_edge("f", "y")
 pgm.add_edge("ustar", "f", directed=False)
 pgm.add_edge("u", "ustar", directed=False)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-f-to-y-ustar-to-f.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/u-to-f-to-y-ustar-to-f.svg", transparent=True)}
  
 \figure{\includediagram{\diagramsDir/ml/u-to-f-to-y-ustar-to-f}{30%}}{We introduce the fundamental variable $\mappingFunctionVector$ which sits between $\inducingVector$ and $\dataVector$.}{u-to-f-to-y-ustar-to-f} 
 
@@ -236,7 +236,7 @@ pgm.add_edge("f", "y")
 pgm.add_edge("ustar", "f", directed=False, plot_params=reduce_alpha)
 pgm.add_edge("u", "ustar", directed=False, plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f.svg", transparent=True)}
         
 
 \figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i-ustar-to-f}{30%}}{The relationship between $\mappingFunctionVector$ and $\dataVector$ is assumed to be factorized, which we indicate here using plate notation, $p(\dataVector) = \int \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector | \inducingVector, \inducingVector^*) p(\inducingVector, \inducingVector^*)\text{d}\inducingVector \text{d}\inducingVector^*$.}{u-to-f_i-to-y_i-ustar-to-f} 
@@ -273,7 +273,7 @@ pgm.add_edge("f", "y")
 pgm.add_edge("u", "f")
 pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/u-to-f_i-to-y_i.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/u-to-f_i-to-y_i}{30%}}{The model with future inducing points marginalized $p(\dataVector) = \int \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector | \inducingVector) p(\inducingVector)\text{d}\inducingVector$.}{u-to-f_i-to-y_i}
 
@@ -300,7 +300,7 @@ pgm.add_edge("f", "y")
 pgm.add_edge("u", "f")
 pgm.add_edge("ustar", "f", plot_params=reduce_alpha)
 
-pgm.render().figure.savefig("\diagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/given-u-to-f_i-to-y_i.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/given-u-to-f_i-to-y_i}{30%}}{The model conditioned on the inducing variables $p(\dataVector|\inducingVector, \inducingVector^*) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\inducingVector, \inducingVector^*)\text{d}\mappingFunctionVector$.}{given-u-to-f_i-to-y_i}
 
@@ -326,7 +326,7 @@ pgm.add_plate([0.125, 0.125, 0.75, 1.75], label=r"$i=1\dots N$", fontsize=18)
 pgm.add_edge("f", "y")
 pgm.add_edge("theta", "f")
 
-pgm.render().figure.savefig("\diagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/given-theta-to-f_i-to-y_i.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/given-theta-to-f_i-to-y_i}{30%}}{The model as a classical parametric model with independence across data points indexed by $i$ that is conditional on parameters $\parameterVector$, $p(\dataVector|\parameterVector) = \int\prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i) p(\mappingFunctionVector|\parameterVector)\text{d}\mappingFunctionVector$. The model is graphically the same as the nonparametric variant but here the dimension of $\parameterVector$ has to be fixed for Kolmogorov consistency, in the inducing vector variant the dimension of $\inducingVector$ can vary.}{given-theta-to-f_i-to-y_i}
 

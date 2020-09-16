@@ -81,7 +81,7 @@ ax.plot(f, g, 'r-', linewidth=3)
 ax.set_title('Logistic Function', fontsize=20)
 ax.set_xlabel('$f_i$', fontsize=20)
 ax.set_ylabel('$g_i$', fontsize=20)
-plt.savefig('\diagramsDir/ml/logistic.svg')}
+plt.savefig('\writeDiagramsDir/ml/logistic.svg')}
 
 \newslide{Logistic function}
 
@@ -254,7 +254,7 @@ ax.set_title('Poisson Distribution', fontsize=20)
 ax.set_xlabel('$y_i$', fontsize=20)
 ax.set_ylabel('$p(y_i)$', fontsize=20)
 ax.legend(fontsize=20)
-plt.savefig('\diagramsDir/ml/poisson.svg')}
+plt.savefig('\writeDiagramsDir/ml/poisson.svg')}
 
 \newslide{Poisson Distribution}
 

@@ -71,7 +71,7 @@ text =['$\phi(x) = 1$',
 
 plot.basis(quadratic, x_min=-1.3, x_max=1.3, 
            fig=f, ax=ax, loc=loc, text=text,
-		   diagrams='\diagramsDir/ml')
+		   diagrams='\writeDiagramsDir/ml')
 }
 
 \define{\basisfunction}{quadratic_basis}
@@ -90,7 +90,7 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 from ipywidgets import IntSlider}
 
 \displaycode{pods.notebook.display_plots('\basisfunction{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
 
@@ -130,7 +130,7 @@ _ = ax.set_title('Quadratic Basis Functions')}
 from ipywidgets import IntSlider}
 
 \displaycode{pods.notebook.display_plots('quadratic_function{num_function:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
 \endif

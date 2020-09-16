@@ -97,7 +97,7 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='\diagramsDir/uq', 
+                  diagrams='\writeDiagramsDir/uq', 
 				  filename='mountain_car_random.html')}
 
 \newslide{Random Linear Controller}
@@ -119,7 +119,7 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='\diagramsDir/uq', 
+                  diagrams='\writeDiagramsDir/uq', 
 				  filename='mountain_car_simulated.html')}
 
 \newslide{Best Controller after 50 Iterations of Bayesian Optimization}

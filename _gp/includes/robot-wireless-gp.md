@@ -14,7 +14,7 @@ plot.model_output(m_full, output_dim=output_dim, scale=scale, offset=offset, ax=
                   xlabel='time', ylabel='signal strength', fontsize=20, portion=0.5)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(filename='\diagramsDir/gp/robot-wireless-gp-dim-' + str(output_dim)+ '.svg', 
+mlai.write_figure(filename='\writeDiagramsDir/gp/robot-wireless-gp-dim-' + str(output_dim)+ '.svg', 
             transparent=True, frameon=True)}
 
 \subsection{Robot WiFi Data GP}

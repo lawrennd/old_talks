@@ -29,7 +29,7 @@ import mlai}
 plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='time', ylabel='acceleration/$g$', fontsize=20, portion=0.5)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(filename='\diagramsDir/deepgp/motorcycle-helmet-deep-gp.svg', 
+mlai.write_figure(filename='\writeDiagramsDir/deepgp/motorcycle-helmet-deep-gp.svg', 
             transparent=True, frameon=True)}
 
 \subsection{Motorcycle Helmet Data Deep GP}
@@ -43,7 +43,7 @@ plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, xlabel='time',
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
 
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/motorcycle-helmet-deep-gp-samples.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/motorcycle-helmet-deep-gp-samples.svg', 
                   transparent=True, frameon=True)}
 
 \subsection{Motorcycle Helmet Data Deep GP}
@@ -53,7 +53,7 @@ mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/motorcycle-helmet-de
 \displaycode{m.visualize(xlim=xlim, ylim=ylim, scale=scale,offset=offset, 
             xlabel="time", ylabel="acceleration/$g$", portion=0.5,
             dataset='motorcycle-helmet',
-            diagrams='\diagramsDir/deepgp')}
+            diagrams='\writeDiagramsDir/deepgp')}
 
 \subsection{Motorcycle Helmet Data Latent 1}
 
@@ -66,7 +66,7 @@ mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/motorcycle-helmet-de
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(ax=ax, xlabel='time', ylabel='acceleration/g', 
                     points=50, scale=scale, offset=offset, portion=0.1)
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/motorcycle-helmet-deep-gp-pinball.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/motorcycle-helmet-deep-gp-pinball.svg', 
                   transparent=True, frameon=True)}
 
 \subsection{Motorcycle Helmet Pinball Plot}

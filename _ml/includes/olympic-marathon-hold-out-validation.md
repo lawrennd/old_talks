@@ -25,12 +25,12 @@ max_basis = 11}
                  model=mlai.LM, basis=basis, 
                  permute=False, objective_ylim=[0, 0.8], 
                  xlim=data_limits, prefix='olympic_val_extra', 
-                 diagrams='\diagramsDir/ml')}
+                 diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_extra_LM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \newslide{Future Prediction: Extrapolation}
@@ -76,12 +76,12 @@ from ipywidgets import IntSlider}
                  model=mlai.LM, basis=basis, 
                  xlim=data_limits, prefix='olympic_val_inter', 
 				 objective_ylim=[0.1, 0.6], permute=True,
-   			     diagrams='\diagramsDir/ml')}
+   			     diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_inter_LM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \newslide{Future Prediction: Interpolation}

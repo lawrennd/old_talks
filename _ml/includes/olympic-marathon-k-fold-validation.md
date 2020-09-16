@@ -29,12 +29,12 @@ plot.cv_fit(x, y, param_name='number',
             xlim=data_limits, 
             objective_ylim=[0.2,0.6], 
             num_parts=num_parts,
-            diagrams='\diagramsDir/ml')}
+            diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('olympic_{num_parts}'.format(num_parts=num_parts) + 'cv{part:0>2}_LM_polynomial_number{number:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
                             part=IntSlider(0,0,5,1),
                             number=IntSlider(1, 1, max_basis, 1))}
 

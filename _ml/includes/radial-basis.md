@@ -24,14 +24,14 @@ text = ['$\phi_1(x) = e^{-(x + 1)^2}$',
         '$\phi_3(x) = e^{-2(x-1)^2}$']
 plot.basis(mlai.radial, x_min=-2, x_max=2, 
            fig=f, ax=ax, loc=loc, text=text,
-           diagrams='\diagramsDir/ml')}
+           diagrams='\writeDiagramsDir/ml')}
 
 \displaycode{pods.notebook.display_prediction(basis=mlai.radial, num_basis=4)}
 
 \setupcode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
 \subsection{Functions Derived from Radial Basis}
@@ -53,7 +53,7 @@ $$
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='\diagramsDir/ml', func_num=IntSlider(0,0,2,1))}
+\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='\writeDiagramsDir/ml', func_num=IntSlider(0,0,2,1))}
 
 
 \endif

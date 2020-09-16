@@ -14,7 +14,7 @@ xlim=(-20,80)
 ylim=(-180,120)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(figure=fig,filename='../\diagramsDir/gp/motorcycle-helmet-gp.svg', 
+mlai.write_figure(figure=fig,filename='\writeDiagramsDir/gp/motorcycle-helmet-gp.svg', 
             transparent=True, frameon=True)}
 
 

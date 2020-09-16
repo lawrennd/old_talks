@@ -34,6 +34,6 @@
     line(x, y, 'color', redColor, 'linewidth', 3);
     line([xlim(1) xlim(1)], ylim, 'color', blackColor);
     line(xlim, [ylim(1) ylim(1)], 'color', blackColor);
-    printLatexPlot('gaussian-histogram', '\diagramsDir/ml', 0.75*textWidth)}
+    printLatexPlot('gaussian-histogram', '\writeDiagramsDir/ml', 0.75*textWidth)}
 
 \endif

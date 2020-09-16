@@ -2,13 +2,13 @@
 
 \setupcode{import teaching_plots as plot}
 
-\plotcode{plot.three_pillars_innovation(diagrams='\diagramsDir/ai')}
+\plotcode{plot.three_pillars_innovation(diagrams='\writeDiagramsDir/ai')}
 
 \notesfigure{\includediagram{\diagramsDir/ai/three_pillars_innovation003}}
 
 \displaycode{import pods
 pods.notebook.display_plots('three-pillars-innovation{sample:0>3}.svg', 
-                            '\diagramsDir/ai', sample=(1,3))}
+                            '\writeDiagramsDir/ai', sample=(1,3))}
 
 \slides{
 ### Three Pillars of Disruption {.slide: data-transition="none"}

@@ -29,12 +29,12 @@ max_basis = 11}
 \plotcode{plot.loo_fit(x, y, param_name='number', param_range=(1, max_basis+1),  
              model=mlai.LM, basis=basis, 
              xlim=data_limits, objective_ylim=[0, 0.8], prefix='olympic_loo',
-			 diagrams='\diagramsDir/ml')}
+			 diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('olympic_loo{part:0>3}_LM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1), 
 							part=IntSlider(0, 0, x.shape[0], 1))}
 

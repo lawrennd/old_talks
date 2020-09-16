@@ -19,7 +19,7 @@ xlim = (-20, 80)
 ylim = (-175, 125)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-mlai.write_figure(filename='\diagramsDir/datasets/motorcycle-helmet.svg', 
+mlai.write_figure(filename='\writeDiagramsDir/datasets/motorcycle-helmet.svg', 
             transparent=True, frameon=True)}
 
 \subsection{Motorcycle Helmet Data}

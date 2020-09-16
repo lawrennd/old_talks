@@ -29,13 +29,13 @@
 		
 \setupcode{import teaching_plots as plot}
 
-\plotcode{plot.kronecker_illustrate(diagrams='\diagramsDir/kern')}
+\plotcode{plot.kronecker_illustrate(diagrams='\writeDiagramsDir/kern')}
 
 ### Kronecker Product
 
 \includediagram{\diagramsDir/kern/kronecker_illustrate}
 
-\plotcode{plot.kronecker_IK(diagrams='\diagramsDir/kern')}
+\plotcode{plot.kronecker_IK(diagrams='\writeDiagramsDir/kern')}
 
 ### Kronecker Product
 
@@ -62,11 +62,11 @@ gpKalmanFilterKroneckerPlot2
 For this stacking the marginal distribution over *time* is given
 by the block diagonals.
 
-\plotcode{plot.kronecker_IK_highlight(diagrams='\diagramsDir/kern')}
+\plotcode{plot.kronecker_IK_highlight(diagrams='\writeDiagramsDir/kern')}
 
 \setupcode{import pods}
 \displaycode{pods.notebook.display_plots('kronecker_IK_highlighted{count:0>3}.svg', 
-                            diagrams='\diagramsDir/kern', count=(1,5))}
+                            diagrams='\writeDiagramsDir/kern', count=(1,5))}
 
 ### {data-transition="none"}
 
@@ -107,11 +107,11 @@ gpKalmanFilterKroneckerPlot3
 For this stacking the marginal distribution over the latent
 *dimensions* is given by the block diagonals.
 
-\plotcode{plot.kronecker_IK_highlight(reverse=True, diagrams='\diagramsDir/kern')}
+\plotcode{plot.kronecker_IK_highlight(reverse=True, diagrams='\writeDiagramsDir/kern')}
 
-\displaycode{pods.notebook.display_plots('kronecker_KI_highlighted{count:0>3}.svg', '\diagramsDir/kern', count=(1,5))}
+\displaycode{pods.notebook.display_plots('kronecker_KI_highlighted{count:0>3}.svg', '\writeDiagramsDir/kern', count=(1,5))}
 
-\plotcode{plot.kronecker_IK(reverse=True, diagrams='\diagramsDir/kern')}
+\plotcode{plot.kronecker_IK(reverse=True, diagrams='\writeDiagramsDir/kern')}
 
 ### {data-transition="none"}
 
@@ -147,7 +147,7 @@ matrix,
 $$\dataVector_{i, :} = \mappingMatrix\inputVector_{i, :} + \noiseVector_{i, :}$$
 $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 
-\plotcode{plot.kronecker_WX(diagrams='\diagramsDir/kern')}
+\plotcode{plot.kronecker_WX(diagrams='\writeDiagramsDir/kern')}
 
 ### {data-transition="none"}
 

@@ -30,7 +30,7 @@ plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylab
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/olympic-marathon-gp.svg', 
+                  filename='\writeDiagramsDir/gp/olympic-marathon-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Olympic Marathon Data GP}
@@ -55,7 +55,7 @@ plot.model_output(m_clean, scale=scale, offset=offset, ax=ax, xlabel='year', yla
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/olympic-marathon-gp.svg', 
+                  filename='\writeDiagramsDir/gp/olympic-marathon-gp.svg', 
                   transparent=True, frameon=True)}
 
 \endif

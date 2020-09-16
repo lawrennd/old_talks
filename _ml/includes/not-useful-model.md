@@ -77,7 +77,7 @@ rc("text", usetex=True)}
 
 pgm.add_node(daft.Node("y", r"$\dataMatrix$", 0.5, 0.5, fixed=False, observed=True))
 
-pgm.render().figure.savefig("\diagramsDir/ml/y-only-graph.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/y-only-graph.svg", transparent=True)}
 
 
 \figure{\includediagram{\diagramsDir/ml/y-only-graph}{30%}}{The most general graphical model. It makes no assumptions about conditional probability relationships between variables in the vector $\dataVector$. It represents the unconstrained probability distribution $p(\dataVector)$.}{y-only-graph}

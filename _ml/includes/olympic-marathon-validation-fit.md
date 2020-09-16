@@ -79,11 +79,11 @@ num_data = x.shape[0]}
 \plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, max_basis+1), 
               model=mlai.LM, basis=basis, 
               xlim=data_limits, objective_ylim=[0, 0.8],
-			  diagrams='\diagramsDir/ml')}
+			  diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_LM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \slides{

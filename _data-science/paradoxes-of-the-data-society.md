@@ -149,7 +149,7 @@ question or to be subject to a particular analysis.
 
 \newslide{Digital Revolution and Inequality?}
 
-<img src="\diagramsDir/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
+<img src="\writeDiagramsDir/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
 
 \newslide{Amelioration}
 

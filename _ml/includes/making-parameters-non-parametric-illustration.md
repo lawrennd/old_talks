@@ -98,7 +98,7 @@ ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/sparse-demo-full-gp.svg', 
+                  filename='\writeDiagramsDir/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 				  
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-full-gp}{60%}}{A full Gaussian process fit to the simulated data set.}{sparse-demo-full-gp}
@@ -126,7 +126,7 @@ ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
+                  filename='\writeDiagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
                   transparent=True, frameon=True)}
 
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp}{60%}}{Sparse Gaussian process with six constrained inducing variables and parameters learned.}{sparse-demo-constrained-inducing-6-unlearned-gp}
@@ -140,7 +140,7 @@ ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
+                  filename='\writeDiagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
                   transparent=True, frameon=True)}
 
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp}{60%}}{Sparse Gaussian process with six constrained inducing variables and parameters learned.}{sparse-demo-constrained-inducing-6-learned-gp}
@@ -160,7 +160,7 @@ ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
+                  filename='\writeDiagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
                   transparent=True, frameon=True)}
 
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp}{60%}}{Sparse Gaussian process with six unconstrained inducing variables, initialized randomly and then optimized.}{sparse-demo-unconstrained-inducing-6-gp}
@@ -183,7 +183,7 @@ ax.plot(m.Z, np.ones(m.Z.shape)*ylim[0], 'k^', markersize=30)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp.svg', 
+                  filename='\writeDiagramsDir/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}
 
 \figure{\includediagram{\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp}{60%}}{Sparse Gaussian process with eight inducing variables, initialized randomly and then optimized.}{sparse-demo-sparse-inducing-8-gp}

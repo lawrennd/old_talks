@@ -71,7 +71,7 @@ fig, ax = plt.subplots(figsize=plot.big_figsize)
 for d in digits:
     ax.plot(m.layer_1.X.mean[labels==d,0],m.layer_1.X.mean[labels==d,1],'.',label=str(d))
 _ = plt.legend()
-mlai.write_figure(figure=fig, filename="\diagramsDir/deepgp/mnist-digits-subsample-latent.svg", transparent=True)}
+mlai.write_figure(figure=fig, filename="\writeDiagramsDir/deepgp/mnist-digits-subsample-latent.svg", transparent=True)}
 
 \newslide{}
 
@@ -99,7 +99,7 @@ for i in range(5):
         plt.legend()
         plt.xlabel('dimension ' + str(dims[0]))
         plt.ylabel('dimension ' + str(dims[1]))
-        mlai.write_figure(figure=fig, filename="\diagramsDir/deepgp/mnist-digits-subsample-hidden-" + str(dims[0]) + '-' + str(dims[1]) + '.svg', transparent=True)}
+        mlai.write_figure(figure=fig, filename="\writeDiagramsDir/deepgp/mnist-digits-subsample-hidden-" + str(dims[0]) + '-' + str(dims[1]) + '.svg', transparent=True)}
 		
 \newslide{}
 
@@ -144,7 +144,7 @@ for i in range(rows):
                         cmap='gray', interpolation='none',
                         aspect='equal')
         axs[i,j].set_axis_off()
-mlai.write_figure(figure=fig, filename="\diagramsDir/deepgp/digit-samples-deep-gp.svg", transparent=True)}
+mlai.write_figure(figure=fig, filename="\writeDiagramsDir/deepgp/digit-samples-deep-gp.svg", transparent=True)}
 
 \newslide{}
 

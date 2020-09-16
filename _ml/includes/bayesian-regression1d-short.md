@@ -29,12 +29,12 @@
 \newslide{Bayes Update}
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.bayes_update(diagrams='\diagramsDir/ml')}
+\plotcode{plot.bayes_update(diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>2}.svg', 
-                            diagrams='\diagramsDir/ml', 
+                            diagrams='\writeDiagramsDir/ml', 
 							stage=IntSlider(1, 1, 3, 1))}
 \slides{
 \define{width}{70%}

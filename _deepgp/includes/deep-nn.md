@@ -3,7 +3,7 @@
 \editme
 
 \setupcode{import teaching_plots as plot}
-\plotcode{plot.deep_nn(diagrams='\diagramsDir/deepgp/')}
+\plotcode{plot.deep_nn(diagrams='\writeDiagramsDir/deepgp/')}
 
 \newslide{Deep Neural Network}
 

@@ -51,7 +51,7 @@ plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='p
 ax.set_xlim(xlim)
 
 ax.set_ylim(ylim)
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/olympic-marathon-deep-gp.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/olympic-marathon-deep-gp.svg', 
                 transparent=True, frameon=True)}
 
 \subsection{Olympic Marathon Data Deep GP}
@@ -63,7 +63,7 @@ plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax,
                   xlabel='year', ylabel='pace min/km', portion = 0.225)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/olympic-marathon-deep-gp-samples.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/olympic-marathon-deep-gp-samples.svg', 
                   transparent=True, frameon=True)}
 
 
@@ -79,12 +79,12 @@ Now we explore the GPs the model has used to fit each layer. First of all, we lo
 \displaycode{m.visualize(scale=scale, offset=offset, xlabel='year',
             ylabel='pace min/km',xlim=xlim, ylim=ylim,
             dataset='olympic-marathon',
-            diagrams='\diagramsDir/deepgp')}
+            diagrams='\writeDiagramsDir/deepgp')}
 
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
-                            '\diagramsDir/deepgp', sample=(0,1))}
+                            '\writeDiagramsDir/deepgp', sample=(0,1))}
 
 \newslide{Olympic Marathon Data Latent 1}
 
@@ -97,7 +97,7 @@ Now we explore the GPs the model has used to fit each layer. First of all, we lo
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(ax=ax, scale=scale, offset=offset, points=30, portion=0.1,
                     xlabel='year', ylabel='pace km/min', vertical=True)
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/olympic-marathon-deep-gp-pinball.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/olympic-marathon-deep-gp-pinball.svg', 
                   transparent=True, frameon=True)}
 
 \subsection{Olympic Marathon Pinball Plot}

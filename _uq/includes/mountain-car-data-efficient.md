@@ -87,7 +87,7 @@ Given some input parameters of the linear controlling, how do the dynamics of th
 \code{controller_gains = np.atleast_2d([0, .6, 1])  # change the valus of the linear controller to observe the trayectories.}
 
 \plotcode{mc.emu_sim_comparison(env, controller_gains, [position_model, velocity_model], 
-                      max_steps=500, diagrams='\diagramsDir/uq')}
+                      max_steps=500, diagrams='\writeDiagramsDir/uq')}
 
 \newslide{Comparison of Emulation and Simulation}
 
@@ -137,7 +137,7 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='\diagramsDir/uq', 
+                  diagrams='\writeDiagramsDir/uq', 
 				  filename='mountain_car_emulated.html')}
 
 \newslide{Data Efficiency}

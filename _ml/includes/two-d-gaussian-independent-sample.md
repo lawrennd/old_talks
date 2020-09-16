@@ -6,13 +6,13 @@
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.independent_height_weight(num_samps=8, 
-                               diagrams='\diagramsDir/ml')}
+                               diagrams='\writeDiagramsDir/ml')}
 							   
 							
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('independent_height_weight{fig:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							fig=IntSlider(0, 0, 7, 1))}
 
 \slides{

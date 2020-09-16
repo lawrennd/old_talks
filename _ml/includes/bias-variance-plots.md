@@ -122,7 +122,7 @@ for samp in range(num_samps):
     models = (cl.fit(X, y) for cl in models)
     xlim, ylim = decision_boundary_plot(models, X, y, 
                            axs=ax, 
-                           filename='\diagramsDir/ml/bias-variance{samp:0>3}.svg'.format(samp=samp), 
+                           filename='\writeDiagramsDir/ml/bias-variance{samp:0>3}.svg'.format(samp=samp), 
                            titles=titles,
                           xlim=xlim,
                           ylim=ylim)}
@@ -133,7 +133,7 @@ for samp in range(num_samps):
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bias-variance{samp:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 						    samp=IntSlider(0,0,10,1))}
 							
 \newslide{}

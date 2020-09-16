@@ -52,7 +52,7 @@ def bernoulli(y_i, pi):
 import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
-plot.bernoulli_urn(ax, diagrams='\diagramsDir/ml/')}
+plot.bernoulli_urn(ax, diagrams='\writeDiagramsDir/ml/')}
 
 \newslide{Jacob Bernoulli's Bernoulli}
 
@@ -80,7 +80,7 @@ For this reason in Bayes's distribution there is considered to be *aleatoric* un
 import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
-plot.bayes_billiard(ax, diagrams='\diagramsDir/ml/')}
+plot.bayes_billiard(ax, diagrams='\writeDiagramsDir/ml/')}
 
 \slides{
 \define{width}{40%}
@@ -102,6 +102,6 @@ plot.bayes_billiard(ax, diagrams='\diagramsDir/ml/')}
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 							counter=IntSlider(0,0,9,1))}
 \endif

@@ -92,7 +92,7 @@ anim=mc.animate_frames(frames, 'Best controller with multi-fidelity emulator')}
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='\diagramsDir/uq', 
+                  diagrams='\writeDiagramsDir/uq', 
 				  filename='mountain_car_multi_fidelity.html')}
 
 \subsubsection{Best Controller with Multi-Fidelity Emulator}

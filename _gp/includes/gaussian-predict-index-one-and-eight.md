@@ -5,7 +5,7 @@
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', 
-                            '\diagramsDir/gp', 
+                            '\writeDiagramsDir/gp', 
 							sample=IntSlider(13, 13, 17, 1))}
 							
 \notes{\figure{\includediagram{\diagramsDir/gp/two_point_sample013}{80%}}{Sample from the joint Gaussian model, points indexed by 1 and 8 highlighted.}{two-point-sample-13}}

@@ -4,11 +4,11 @@
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.Linear,
-                     diagrams="../\diagramsDir/deepgp")}
+                     diagrams="\writeDiagramsDir/deepgp")}
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('stack-gp-sample-Linear-{sample:0>1}.svg', 
-                            directory='../\diagramsDir/deepgp', sample=(0,4))}
+                            directory='\writeDiagramsDir/deepgp', sample=(0,4))}
 
 \subsection{Stacked PCA}
 \slides{

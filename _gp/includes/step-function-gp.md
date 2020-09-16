@@ -21,7 +21,7 @@ plot.model_output(m_full, scale=scale, offset=offset, ax=ax, fontsize=20, portio
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
 
-mlai.write_figure(figure=fig,filename='\diagramsDir/gp/step-function-gp.svg', 
+mlai.write_figure(figure=fig,filename='\writeDiagramsDir/gp/step-function-gp.svg', 
             transparent=True, frameon=True)}
 			
 

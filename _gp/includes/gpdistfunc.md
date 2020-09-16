@@ -23,11 +23,11 @@ $$
 \setupplotcode{import teaching_plots as plot
 from mlai import Kernel, exponentiated_quadratic}
 \plotcode{kernel=Kernel(function=exponentiated_quadratic, lengthscale=0.5)
-plot.two_point_sample(kernel.K, diagrams='\diagramsDir/gp')}
+plot.two_point_sample(kernel.K, diagrams='\writeDiagramsDir/gp')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', '\diagramsDir/gp', sample=IntSlider(0, 0, 8, 1))}
+\displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', '\writeDiagramsDir/gp', sample=IntSlider(0, 0, 8, 1))}
 
 							
 \newslide{Gaussian Distribution Sample}

@@ -25,7 +25,7 @@ xlim = (-2, 2)
 ylim = (-0.6, 1.6)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(figure=fig, filename='../\diagramsDir/datasets/step-function.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/step-function.svg', 
             transparent=True, frameon=True)}
 			
 \subsection{Step Function Data}

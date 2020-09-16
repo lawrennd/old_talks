@@ -18,7 +18,7 @@ rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'],'size':30})
 rc("text", usetex=True)}
 
 \plotcode{pgm = plot.horizontal_chain(depth=5)
-pgm.render().figure.savefig("\diagramsDir/deepgp/deep-markov.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/deepgp/deep-markov.svg", transparent=True)}
 
 \newslide{Equivalent to Markov Chain}
 \slides{
@@ -34,7 +34,7 @@ rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'], 'size':15})
 rc("text", usetex=True)}
 
 \plotcode{pgm = plot.vertical_chain(depth=5)
-pgm.render().figure.savefig("\diagramsDir/deepgp/deep-markov-vertical.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/deepgp/deep-markov-vertical.svg", transparent=True)}
 
 \newslide{}
 
@@ -68,7 +68,7 @@ A one off discontinuity is easy to model with a Gaussian process, or even multip
 \plotcode{pgm = plot.vertical_chain(depth=5, shape=[2, 7])
 pgm.add_node(daft.Node('y_2', r'$\mathbf{y}_2$', 1.5, 3.5, observed=True))
 pgm.add_edge('f_2', 'y_2')
-pgm.render().figure.savefig("\diagramsDir/deepgp/deep-markov-vertical-side.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/deepgp/deep-markov-vertical-side.svg", transparent=True)}
 
 \newslide{}
 

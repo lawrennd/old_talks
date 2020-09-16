@@ -21,7 +21,7 @@ yhat = (y-offset)/scale}
 plt.plot(data['X'][:, 1], data['X'][:, 2], 'r.', markersize=5)
 ax.set_xlabel('x position', fontsize=20)
 ax.set_ylabel('y position', fontsize=20)
-mlai.write_figure(figure=fig, filename='../\diagramsDir/datasets/robot-wireless-ground-truth.svg', transparent=True, frameon=True)}
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/robot-wireless-ground-truth.svg', transparent=True, frameon=True)}
 
 \subsection{Robot Wireless Ground Truth}
 
@@ -42,7 +42,7 @@ ylim = (-0.6, 2.0)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, filename='\diagramsDir/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
             transparent=True, frameon=True)}
 
 

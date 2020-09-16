@@ -37,7 +37,7 @@ transition: None
 \include{_privacy/includes/differential-privacy-with-cloaking.md}
 
 
-\newslide{Conclusions}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Conclusions}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * **Summary** We have developed an improved method for performing
 differentially private regression.
@@ -61,7 +61,7 @@ skyline](https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffields
 
 \references
 
-<!--###  {.allowframebreaks data-background="\diagramsDir/pres_bg.png"}
+<!--###  {.allowframebreaks data-background="\writeDiagramsDir/pres_bg.png"}
 
 * [**The go-to book on differential privacy, by Dwork and Roth;**\
 ]{style="margin-left:-50px;"} Dwork, Cynthia, and Aaron Roth. "The

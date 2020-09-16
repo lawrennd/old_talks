@@ -83,7 +83,7 @@ real['21/5/2019':] = np.NaN}
 import teaching_plots as plot
 import matplotlib.pyplot as plt}
 
-\plotcode{diagrams = '\diagramsDir/data-science/'
+\plotcode{diagrams = '\writeDiagramsDir/data-science/'
 fontsize=16}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)

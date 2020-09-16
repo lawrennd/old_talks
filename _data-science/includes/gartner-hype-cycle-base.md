@@ -5,12 +5,12 @@
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.google_trends(terms=[\terms], 
                   initials='\initials', 
-				  diagrams='\diagramsDir/data-science')}
+				  diagrams='\writeDiagramsDir/data-science')}
 				  
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('\initials-google-trends{sample:0>3}.svg', 
-                            '\diagramsDir/data-science/', sample=IntSlider(0, 1, 4, 1))}
+                            '\writeDiagramsDir/data-science/', sample=IntSlider(0, 1, 4, 1))}
 
 \newslide{Gartner Hype Cycle}
 

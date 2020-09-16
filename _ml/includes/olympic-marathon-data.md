@@ -45,7 +45,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
 mlai.write_figure(figure=fig, 
-                  filename='\diagramsDir/datasets/olympic-marathon.svg', 
+                  filename='\writeDiagramsDir/datasets/olympic-marathon.svg', 
 				  transparent=True, 
 				  frameon=True)}
 

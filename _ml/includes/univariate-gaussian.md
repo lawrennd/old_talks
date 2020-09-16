@@ -15,7 +15,7 @@
   \end{align}$$
  
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.gaussian_of_height(diagrams='../\diagramsDir/ml')}
+\plotcode{plot.gaussian_of_height(diagrams='\writeDiagramsDir/ml')}
 
 \newslide{Gaussian Density}
 

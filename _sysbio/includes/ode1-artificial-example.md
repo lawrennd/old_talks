@@ -26,7 +26,7 @@
     blackColor = 1- blackColor;
     fillColor = 1-fillColor;
   end
-  directory = '\diagramsDir/sysbio/';
+  directory = '\writeDiagramsDir/sysbio/';
 }
 
 ###

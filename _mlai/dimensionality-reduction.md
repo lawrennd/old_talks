@@ -55,7 +55,7 @@ for i in range(num_centres):
 mlai.write_figure(\diagramsDir/ml/cluster_data01.svg')}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('cluster_data{counter:0>2}.svg', directory='\diagramsDir/ml', counter=(0, 1))}
+\displaycode{pods.notebook.display_plots('cluster_data{counter:0>2}.svg', directory='\writeDiagramsDir/ml', counter=(0, 1))}
 
 \newslide{Clustering}
 
@@ -102,7 +102,7 @@ mlai.write_figure(\diagramsDir/ml/cluster_data01.svg')}
 import numpy as np}
 
 \plotcode{def write_plot(counter, caption):
-    filebase = '\diagramsDir/ml/kmeans_clustering_{counter:0>3}'.format(counter=counter)
+    filebase = '\writeDiagramsDir/ml/kmeans_clustering_{counter:0>3}'.format(counter=counter)
     plt.savefig(filebase + '.svg')
     f = open(filebase + '.tex', 'w')
     f.write(caption)
@@ -154,7 +154,7 @@ for i in range(6):
     write_plot(counter, 'Allocate each data point to the nearest cluster centre.')}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='\diagramsDir/ml', 
+\displaycode{pods.notebook.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='\writeDiagramsDir/ml', 
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
 
 \newslide{Other Clustering Approaches}
@@ -178,7 +178,7 @@ import numpy as np
 import mlai}
 \plotcode{fig, ax = plt.subplots(figsize=(5,5))
 
-six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='\diagramsDir/ml')
+six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='\writeDiagramsDir/ml')
 rows = six_image.shape[0]
 col = six_image.shape[1]
       
@@ -191,7 +191,7 @@ for i in range(3):
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='\diagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
+\displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
 
 \newslide{USPS Samples}
 
@@ -215,7 +215,7 @@ for angle in angles:
     crop_image = rot_image[start[0]+np.array(range(dim_one[0])), start[1]+np.array(range(dim_one[1]))]
     Y[i, :] = crop_image.flatten()}
 
-\displaycode{pods.notebook.display_plots('dem_six_rotate{counter:0>3}.png', directory='\diagramsDir/ml', counter=(0, 3))}
+\displaycode{pods.notebook.display_plots('dem_six_rotate{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=(0, 3))}
 
 \newslide{Low Dimensional Manifolds}
 

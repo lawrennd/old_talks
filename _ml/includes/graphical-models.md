@@ -30,7 +30,7 @@ pgm.add_node(daft.Node("y_3", r"$y_3$", 2.5, 0.5, fixed=False))
 pgm.add_edge("y_1", "y_2")
 pgm.add_edge("y_2", "y_3")
 
-pgm.render().figure.savefig("\diagramsDir/ml/markov.svg", transparent=True)}
+pgm.render().figure.savefig("\writeDiagramsDir/ml/markov.svg", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/markov}{50%}}{A Markov chain is a simple form of probabilistic graphical model providing a particular decomposition of the joint density.}{markov-chain}
 

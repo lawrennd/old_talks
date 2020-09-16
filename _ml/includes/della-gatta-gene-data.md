@@ -34,7 +34,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
 mlai.write_figure(figure=fig, 
-                  filename='\diagramsDir/datasets/della-gatta-gene.svg', 
+                  filename='\writeDiagramsDir/datasets/della-gatta-gene.svg', 
 				  transparent=True, 
 				  frameon=True)}
 

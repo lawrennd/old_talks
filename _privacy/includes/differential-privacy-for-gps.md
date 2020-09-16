@@ -3,7 +3,7 @@
 
 \editme
 
-\newslide{Differential Privacy, summary}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Differential Privacy, summary}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * We want to protect a user from a linkage attack...
 
@@ -43,7 +43,7 @@ private by adding a scaled sample from a GP prior.
 
 3 pages of maths ahead!
 
-\newslide{Applied to Gaussian Processes}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Applied to Gaussian Processes}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * We applied this method to the GP posterior.
 
@@ -64,7 +64,7 @@ $\dataVector$.
 $\dataVector$.
 
 
-\newslide{Applied to Gaussian Processes}{data-background="\diagramsDir/pres_bg.png"}
+\newslide{Applied to Gaussian Processes}{data-background="\writeDiagramsDir/pres_bg.png"}
 
 * Using the representer theorem, we can write
     $$|| \mappingFunction_D(\inputVector_*) -
@@ -79,7 +79,7 @@ $\dataVector$.
 \left(\dataVector - \dataVector^\prime \right)$
 
 
-\newslide{}{data-background="\diagramsDir/pres_bg.png" }
+\newslide{}{data-background="\writeDiagramsDir/pres_bg.png" }
 
 * L2 Norm
 

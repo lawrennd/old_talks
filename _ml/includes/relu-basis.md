@@ -29,7 +29,7 @@ text =['$\phi(x) = 1$',
        '$\phi(x) = xH(x-1.0)$']
 plot.basis(mlai.relu, x_min=-2.0, x_max=2.0, 
            fig=f, ax=ax, loc=loc, text=text,
-		   diagrams='\diagramsDir/ml',
+		   diagrams='\writeDiagramsDir/ml',
 		   num_basis=5)
 }
 
@@ -55,6 +55,6 @@ $$
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('relu_basis{num_basis:0>3}.svg', 
-                            directory='\diagramsDir/ml', 
+                            directory='\writeDiagramsDir/ml', 
 			    num_basis=IntSlider(0,0,4,1))}
 \endif

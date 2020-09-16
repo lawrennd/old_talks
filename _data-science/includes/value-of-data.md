@@ -44,7 +44,7 @@ We require data-desalination before it can be consumed!
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('pomdp{samp:0>3}.svg', 
-                            directory='\diagramsDir/', samp=(1, 4))}
+                            directory='\writeDiagramsDir/', samp=(1, 4))}
 
 \slides{
 \newslide{}

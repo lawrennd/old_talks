@@ -23,7 +23,7 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
   
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.prob_diagram(diagrams='\diagramsDir/mlai')}
+\plotcode{plot.prob_diagram(diagrams='\writeDiagramsDir/mlai')}
 
 \subsection{A Pictorial Definition of Probability}
 

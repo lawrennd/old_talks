@@ -96,11 +96,11 @@ This motivates a simple `if` statement to check which situation we're in.}
 
 \loadcode{update_perceptron}{mlai}
 
-\plotcode{plots = plot.perceptron(x_plus, x_minus, diagrams='\diagramsDir/mlai')}
+\plotcode{plots = plot.perceptron(x_plus, x_minus, diagrams='\writeDiagramsDir/mlai')}
 
 \setupcode{import pods}
 
-\displaycode{pods.notebook.display_plots('perceptron{samp:0>3}.svg', directory='\diagramsDir/ml', samp=(0, plots))}
+\displaycode{pods.notebook.display_plots('perceptron{samp:0>3}.svg', directory='\writeDiagramsDir/ml', samp=(0, plots))}
 
 \slides{
 \define{width}{60%}

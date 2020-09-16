@@ -44,7 +44,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 ax.set_title('log likelihood: {ll:.3}'.format(ll=m_full.log_likelihood()), fontsize=20)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/della-gatta-gene-gp.svg', 
+                  filename='\writeDiagramsDir/gp/della-gatta-gene-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{TP53 Gene Data GP}
@@ -65,7 +65,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 ax.set_title('log likelihood: {ll:.3}'.format(ll=m_full2.log_likelihood()), fontsize=20)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/della-gatta-gene-gp2.svg', 
+                  filename='\writeDiagramsDir/gp/della-gatta-gene-gp2.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{TP53 Gene Data GP}
@@ -87,7 +87,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 ax.set_title('log likelihood: {ll:.3}'.format(ll=m_full3.log_likelihood()), fontsize=20)
 mlai.write_figure(figure=fig,
-                  filename='\diagramsDir/gp/della-gatta-gene-gp3.svg', 
+                  filename='\writeDiagramsDir/gp/della-gatta-gene-gp3.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{TP53 Gene Data GP}
@@ -97,7 +97,7 @@ mlai.write_figure(figure=fig,
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.multiple_optima(diagrams='\diagramsDir/gp')}
+\plotcode{plot.multiple_optima(diagrams='\writeDiagramsDir/gp')}
 
 \newslide{Multiple Optima}
 

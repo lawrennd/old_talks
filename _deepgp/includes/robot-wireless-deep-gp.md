@@ -24,7 +24,7 @@ plot.model_output(m, output_dim=output_dim, scale=scale, offset=offset, ax=ax,
                   xlabel='time', ylabel='signal strength', fontsize=20, portion=0.5)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/robot-wireless-deep-gp-dim-' + str(output_dim)+ '.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-deep-gp-dim-' + str(output_dim)+ '.svg', 
                   transparent=True, frameon=True)}
 				  
 \subsection{Robot WiFi Data Deep GP}
@@ -36,7 +36,7 @@ plot.model_sample(m, output_dim=output_dim, scale=scale, offset=offset, samps=10
                   xlabel='time', ylabel='signal strength', fontsize=20, portion=0.5)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/robot-wireless-deep-gp-samples-dim-' + str(output_dim)+ '.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-deep-gp-samples-dim-' + str(output_dim)+ '.svg', 
                   transparent=True, frameon=True)}
 
 \subsection{Robot WiFi Data Deep GP}
@@ -55,7 +55,7 @@ ax.plot(m.layers[-2].latent_space.mean[:, 0],
 ax.set_xlabel('latent dimension 1', fontsize=20)
 ax.set_ylabel('latent dimension 2', fontsize=20)
 
-mlai.write_figure(figure=fig, filename='\diagramsDir/deepgp/robot-wireless-latent-space.svg', 
+mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-latent-space.svg', 
             transparent=True, frameon=True)}
 			
 \figure{\includediagram{\diagramsDir/deepgp/robot-wireless-latent-space}{60%}}{Inferred two dimensional latent space of the model for the robot wireless data.}{robot-wireless-latent-space}

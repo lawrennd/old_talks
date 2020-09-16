@@ -19,7 +19,7 @@ import numpy as np}
                      formula='\formula',
 					 lengthscale=1.0)
 					 
-plot.covariance_func(kernel, diagrams='\diagramsDir/kern/')}
+plot.covariance_func(kernel, diagrams='\writeDiagramsDir/kern/')}
 
 \includecovariance{periodic}{\formula}{Periodic covariance function.}
 
