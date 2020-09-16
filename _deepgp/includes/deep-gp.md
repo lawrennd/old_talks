@@ -5,7 +5,7 @@
 
 \subsection{Bottleneck Layers in Deep Neural Networks}
 
-\setupcode{import teaching_plots as plot}
+\setupplotcode{import teaching_plots as plot}
 \plotcode{plot.deep_nn_bottleneck(diagrams='\writeDiagramsDir/deepgp')}
 
 

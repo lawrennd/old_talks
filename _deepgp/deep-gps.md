@@ -26,7 +26,11 @@ transition: None
 \downloadcode{mlai}
 \downloadcode{gp_tutorial}
 \downloadcode{deepgp_tutorial}
-
+\setupcode{import os
+for path in ['gp', 'datasets', 'deepgp']:
+    if not os.path.exists(path):
+        os.mkdir(path)}
+		
 \include{_data-science/includes/pods-install.md}
 \include{_gp/includes/gpy-install.md}
 \include{_deepgp/includes/pydeepgp-include.md}

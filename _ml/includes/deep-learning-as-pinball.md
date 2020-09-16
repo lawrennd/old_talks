@@ -21,7 +21,7 @@ An image has more than one number associated with it, so it is like playing pinb
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('pinball{sample:0>3}.svg', 
-                            '../slides/diagrams',
+                            directory='\writeDiagramsDir',
 							sample=IntSlider(1, 1, 2, 1))}
 
 \newslide{}
