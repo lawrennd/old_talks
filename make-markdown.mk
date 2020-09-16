@@ -24,7 +24,7 @@
 	${PP} $< -o $@ --format notes --to docx --code sparse --replace-notation --edit-links ${PPFLAGS} 
 
 %.notes.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to ipynb --code ipynb --replace-notation ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --write-diagrams-dir . --to ipynb --code ipynb --replace-notation ${PPFLAGS} 
 
 %.full.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to ipynb --code full --edit-links --replace-notation ${PPFLAGS} 
