@@ -70,7 +70,7 @@ Store Caption: \storeCaption
 
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" style="width:\width">}
 <!--\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}-->
-\defeval{\includeimgclip{filename}{llx}{lly}{urx}{ury}{width}}{<svg viewBox \llx \ury \eval{\urx-\llx} \eval{\lly-\ury}>
+\defeval{\includeimgclip{filename}{llx}{lly}{urx}{ury}{width}}{<svg viewBox="\llx \ury \eval{\urx-\llx} \eval{\lly-\ury}" style="width:\width">
 <defs>
   <clipPath id="clip">
   <style>

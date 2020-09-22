@@ -27,29 +27,25 @@ categories:
 
 \include{talk-macros.tex}
 
+\define{\ricardoPicture{width}}{}
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_supply-chain/includes/supply-chain.md}
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ai/includes/deploying-ai.md}
 \include{_health/includes/malaria-gp.md}
-\include{_health/includes/deep-health-model.md}
 
 
 \editme
 \section{Conclusion}
 \newslide{Conclusion}
-\slides{
-* The Cell is a Micro Supply Chain. 
-    * Analyzing cell data has a lot in common with analyzing supply chain data.
-    * In Biology you are fortunate to have many cells (destructive testing).
 
-* In Supply Chain we find it easier to deploy modificiations for the system.
-    * Downstream effects are complex and need monitoring.
-	* Life is really good at dealing with evolving environments ... our designs not so much.
-}
+* Separation between machine learning and AI
 
-\notes{I'm very often struck by the relations between supply chain systems and cellular systems. A particular point to remember, is that both systems are *evolved*, not *designed*. In Supply Chain this is because the infrastructure is built over a period of time that has a time constant longer than the timeframe over which businesses move. In life it is similar, but the infrastructure is biochemical in form and the business problem is the environment.}
+* Real world challenges such as matching supply to demand
+
+* Example of predicting disease via Gaussian processes
+
 
 \thanks
 

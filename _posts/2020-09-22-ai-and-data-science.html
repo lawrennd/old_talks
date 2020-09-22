@@ -158,13 +158,7 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 <p>This presents major new challenges for machine learning systems design. We would like an internet of <em>intelligence</em> but currently our AI systems are <em>fragile</em>. A classical systems approach to design does not handle evolving environments well.</p>
 <h2 id="example-prediction-of-malaria-incidence-in-uganda">Example: Prediction of Malaria Incidence in Uganda</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<span style="text-align:right">&lt;svg viewBox 2662 600 1110-2662 1780-600&gt; <defs> <clipPath id="clip">
-<style>
-  rect {
-      fill: black;
-         }
-  </style>
-<p><rect x="2662" y="600" width="1110-2662" height="1780-600"/> </clipPath> </defs> <image preserveAspectRatio="xMinYMin slice"  xlink:href="../slides/diagrams/people/2013_03_28_180606.JPG" clip-path="url(#clip)" /> </svg></span></p>
+<p><span style="text-align:right"></span></p>
 <p>As an example of using Gaussian process models within the full pipeline from data to decsion, we’ll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.</p>
 <p>The work is from Ricardo Andrade Pacheco’s PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi <span class="citation" data-cites="Andrade:consistent14 Mubangizi:malaria14">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span>. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.</p>
 <p>Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.</p>
@@ -293,24 +287,13 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 </div>
 </div>
 <p>These colors can now be observed directly on a spatial map of the districts to give an immediate impression of the current status of the disease across the country.</p>
-<h2 id="deep-health">Deep Health</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<div class="figure">
-<div id="deep-health-model-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deep-health.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="deep-health-model-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-health-model&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
-</div>
-<div id="deep-health-model-caption" class="caption-frame">
-<p>Figure: The deep health model uses different layers of abstraction in the deep Gaussian process to represent information about diagnostics and treatment to model interelationships between a patients different data modalities.</p>
-</div>
-</div>
-<p>From a machine learning perspective, we’d like to be able to interrelate all the different modalities that are informative about the state of the disease. For deep health, the notion is that the state of the disease is appearing at the more abstract levels, as we descend the model, we express relationships between the more abstract concept, that sits within the physician’s mind, and the data we can measure.</p>
 <h1 id="conclusion">Conclusion</h1>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/ai-and-data-science.mdtmp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/ai-and-data-science.mdtmp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>I’m very often struck by the relations between supply chain systems and cellular systems. A particular point to remember, is that both systems are <em>evolved</em>, not <em>designed</em>. In Supply Chain this is because the infrastructure is built over a period of time that has a time constant longer than the timeframe over which businesses move. In life it is similar, but the infrastructure is biochemical in form and the business problem is the environment.</p>
+<ul>
+<li><p>Separation between machine learning and AI</p></li>
+<li><p>Real world challenges such as matching supply to demand</p></li>
+<li><p>Example of predicting disease via Gaussian processes</p></li>
+</ul>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
