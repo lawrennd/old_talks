@@ -16,8 +16,8 @@ from deepgp_tutorial import visualize_pinball
 import deepgp
 deepgp.DeepGP.initialize=initialize
 deepgp.DeepGP.staged_optimize=staged_optimize
-deepgp.DeepGP.initialize=posterior_sample
-deepgp.DeepGP.staged_optimize=visualize
-deepgp.DeepGP.staged_optimize=visualize_pinball}
+deepgp.DeepGP.posterior_sample=posterior_sample
+deepgp.DeepGP.visualize=visualize
+deepgp.DeepGP.visualize_pinball=visualize_pinball}
 
 \endif
