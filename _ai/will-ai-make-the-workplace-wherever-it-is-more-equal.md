@@ -10,6 +10,7 @@ abstract: >
 
   This event is taking place in partnership with The Hay Festival
   (<www.hayfestival.com>)
+venue: Virtual Cambridge Alumni Event 
 url: https://www.alumni.cam.ac.uk/festival/events/will-ai-make-the-workplace-wherever-it-is-more-equal
 youtube: X9sx2F3AELs
 author:
