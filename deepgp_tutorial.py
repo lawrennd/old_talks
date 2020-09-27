@@ -1,5 +1,13 @@
+import os
 import numpy as np
+
+from matplotlib import pyplot as plt
+
 import GPy
+
+from gp_tutorial import gpplot
+import teaching_plots as plot
+
 
 def initialize(self, noise_factor=0.01, linear_factor=1):
     """Helper function for deep model initialization."""
@@ -55,8 +63,6 @@ def visualize(self, scale=1.0, offset=0.0, xlabel='input', ylabel='output',
               xlim=None, ylim=None, fontsize=20, portion=0.2,dataset=None, 
               diagrams='../diagrams'):
     """Visualize the layers in a deep GP with one-d input and output."""
-    import os
-    from gp_tutorial import gpplot
     depth = len(self.layers)
     if dataset is None:
         fname = 'deep-gp-layer'
@@ -110,7 +116,6 @@ def visualize(self, scale=1.0, offset=0.0, xlabel='input', ylabel='output',
 def visualize_pinball(self, ax=None, scale=1.0, offset=0.0, xlabel='input', ylabel='output', 
                   xlim=None, ylim=None, fontsize=20, portion=0.2, points=50, vertical=True):
     """Visualize the layers in a deep GP with one-d input and output."""
-    import teaching_plots as plot
     def scale_data(x, portion):     
         scale = (x.max()-x.min())/(1-2*portion)
         offset = x.min() - portion*scale
