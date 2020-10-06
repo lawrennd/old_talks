@@ -113,8 +113,21 @@ categories:
 </div>
 </div>
 <p>In computer systems the concept of <em>technical debt</em> has been surfaced by authors including <span class="citation" data-cites="Sculley:debt15">Sculley et al. (2015)</span>. It is an important concept, that I think is somewhat hidden from the academic community, because it is a phenomenon that occurs when a computer software system is deployed.</p>
+<h2 id="separation-of-concerns">Separation of Concerns</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/separation-of-concerns.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/separation-of-concerns.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>To construct such complex systems an approach known as “separation of concerns” has been developed. The idea is that you architect your system, which consists of a large-scale complex task, into a set of simpler tasks. Each of these tasks is separately implemented. This is known as the decomposition of the task.</p>
+<p>This is where Jonathan Zittrain’s beautifully named term “intellectual debt” rises to the fore. Separation of concerns enables the construction of a complex system. But who is concerned with the overall system?</p>
+<ul>
+<li><p>Technical debt is the inability to <em>maintain</em> your complex software system.</p></li>
+<li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
+</ul>
+<p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
 <h2 id="buying-system">Buying System</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>An example of a complex decision making system might be an automated buying system. In such a system, the idea is to match demand for products to supply of products.</p>
+<p>The matching of demand and supply is a repetetive theme for decision making systems. Not only does it occur in automated buying, but also in the allocation of drivers to riders in a ride sharing system. Or in the allocation of compute resource to users in a cloud system.</p>
+<p>The components of any of these system include: predictions of the demand for the product, or the drivers or the compute. Then predictions of the supply. Decisions are then made for how much material to keep in stock, or how many drivers to have on the road, or how much computer capacity to have in your data centres. These decisions have cost implications. The optimal amount of product will depend on the cost of making it available. For a buying system this is the storage costs.</p>
+<p>Decisions are made on the basis of the supply and demand to make new orders, to encourage more drivers to come into the system or to build new data centers or rent more computational power.</p>
 <div class="figure">
 <div id="buying-system-components-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/software/buying-schematic.svg" width="40%" style=" ">
@@ -128,6 +141,8 @@ categories:
 </div>
 </div>
 <h2 id="monolithic-system">Monolithic System</h2>
+<p>The classical approach to building these systems was a ‘monolithic system’. Built in a similar way to the successful applicaitons software such as Excel or Word, or large operating systems, a single code base was constructed. The complexity of such code bases run to many lines.</p>
+<p>In practice, shared dynamically linked libraries may be used for aspects such as user interface, or networking, but the software often has many millions of lines of code. For example, the Microsoft Office suite is said to contain over 30 millions of lines of code.</p>
 <div class="figure">
 <div id="ml-system-monolith-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ai/ml-system-monolith-purchasing.svg" width="60%" style=" ">
@@ -141,6 +156,8 @@ categories:
 </div>
 </div>
 <h2 id="service-oriented-architecture">Service Oriented Architecture</h2>
+<p>Such software is not only difficult to develop, it is difficult to scale when computation demands increase. Amazon’s original website software (called Obidos) was a <a href="https://en.wikipedia.org/wiki/Obidos_(software)">monolithic design</a> but by the early noughties it was becoming difficult to sustain and maintain. The software was phased out in 2006 to be replaced by a modularized software known as a ‘service oriented architecture’.</p>
+<p>In Service Oriented Architecture, or “Software as a Service” the idea is that code bases are modularized and communicate with one another using network requests. A standard approach is to use a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST API</a>. So, rather than a single monolithic code base, the code is developed with individual services that handle the different requests.</p>
 <div class="figure">
 <div id="ml-system-downstream-purchasing-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
@@ -153,8 +170,10 @@ categories:
 <p>Figure: A potential path of models in a machine learning system.</p>
 </div>
 </div>
-<h2 id="to-banking">… to Banking</h2>
+<p>This is the landscape we now find ourselves in with regard to software development. In practice, each of these services is often ‘owned’ and maintained by an individual team. The team is judged by the quality of their service provision. They work to detailed specifications on what their service should output, what its availability should be and other objectives like speed of response. This allows for conditional independence between teams and for faster development.</p>
+<h2 id="buying-to-banking">Buying to Banking</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-to-banking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-to-banking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>The same model we consider for buying, can also be considered in the case of, for example, a banking application. In a typical banking application, we receive loan requests from customres. For an individual customer, before making a loan, the bank may wish to make a forecast around their costs (expenditures on food, housing, entertainment etc) and their income (salary, rental income etc). These forecasts would inform the conditions of the loan. For example how much the bank is willing to lend, and under what interest rates and repayment conditions. These terms will be based on previous experience of loaning, but also constrained by regulatory conditions often imposed by a financial regulator.</p>
 <div class="figure">
 <div id="ml-system-downstream-banking-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-banking000.svg" width="60%" style=" ">
@@ -167,8 +186,11 @@ categories:
 <p>Figure: A potential path of models in a machine learning system.</p>
 </div>
 </div>
+<p>In many regulatory environments, the bank will be restricted in terms of what information they are allowed to use in dictating loan terms. For example, with in the EU there are prohibited characteristics such as race, gender, sexuality, religion and health status which cannot be used (even indirectly) for making the loan. Along with stipulating these characteristics, the badly-named GDPR<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> also gives particular stipulations for rights individuals have for explanation around consequential decisions, such as obtaining a loan.</p>
+<p>The challenge of Intellectual Debt means that it’s possible for a bank to produce an automated loan decision system, which even the bank itself doesn’t understand, which makes it rather hard to conform to the intent of the GDPR which requires the bank to explain to customers the reasoning behind decisions based on personal data.</p>
 <h2 id="safeboda">SafeBoda</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>The complexity of building safe, maintainable systems that are based on interacting components which include machine learning models means that smaller companies can be excluded from access to these technologies due the technical and intellectual debt incurred when maintaining such systems in a real-world environment.</p>
 <div class="figure">
 <div id="safe-boda-system-figure" class="figure-frame">
 <div class="centered" style="">
@@ -186,10 +208,7 @@ categories:
 <blockquote>
 <p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
 </blockquote>
-<h2 id="technical-consequence">Technical Consequence</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-system-decomposability.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-system-decomposability.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>Classical systems design assumes that the system is decomposable. That we can decompose the complex decision making process into distinct and independently designable parts. The composition of these parts gives us our final system.</p>
-<p>Nicolas Negroponte, the original founder of MIT’s media lab used to write a column called ‘bits and atoms’. This referred to the ability of information to effect movement of goods in the physical world. It is this interaction where machine learning technologies have the possibility to bring most benefit.</p>
+<p>A key aim of the AutoAI agenda is to reduce these technical challenges, so that such software can be maintained safely and reliably by a small team of software engineers. Without this capability it is hard to imagine how low resource environments can fully benefit from the ‘data revolution’ without heavy reliance on technical provision from high-resource environments. Such dependence would inevitably mean a skew towards the challenges that high-resource economies face, rather than the more urgent and important problems that are faced in low-resource environments.</p>
 <h2 id="fit-models-to-fit-systems">FIT Models to FIT Systems</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/fit-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/fit-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>Zittrain points out the challenge around the lack of interpretability of individual ML models as the origin of intellectual debt. In machine learning I refer to work in this area as fairness, interpretability and transparency or FIT models. To an extent I agree with Zittrain, but if we understand the context and purpose of the decision making, I believe this is readily put right by the correct monitoring and retraining regime around the model. A concept I refer to as “progression testing”. Indeed, the best teams do this at the moment, and their failure to do it feels more of a matter of technical debt rather than intellectual, because arguably it is a maintenance task rather than an explanation task. After all, we have good statistical tools for interpreting individual models and decisions when we have the context. We can linearise around the operating point, we can perform counterfactual tests on the model. We can build empirical validation sets that explore fairness or accuracy of the model.</p>
@@ -216,6 +235,16 @@ categories:
 <p>If each service has its inputs and outputs declared on a wider ecosystem, then we can programmatically determine which inputs effect which decisions. This programmatic discovery is vital because as systems are built compositionally, the actual inputs that affect a final decision may not be known to any of the software engineers who are maintaining the system.</p>
 <h2 id="milan">Milan</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/milan.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/milan.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>To answer these challenges at Amazon we began the process of constructing software for data oriented architectures. The team built a <em>data-oriented programming</em> language which is <a href="https://github.com/amzn/milan">now available through BSD license</a>. The language is called Milan. Quoting from <a href="https://tborchertblog.wordpress.com/2020/02/13/28/">Tom Borchert’s blog on Milan</a>:</p>
+<blockquote>
+<p>Milan has three components:</p>
+<ol type="1">
+<li><p>A general-purpose stream algebra that encodes relationships between data streams (the Milan Intermediate Language or Milan IL)</p></li>
+<li><p>A Scala library for building programs in that algebra.</p></li>
+<li><p>A compiler that takes programs expressed in Milan IL and produces a Flink application that executes the program.</p></li>
+</ol>
+<p>Component (2) can be extended to support interfaces in additional languages, and component (3) can be extended to support additional runtime targets. Considering just the multiple interfaces and the multiple runtimes, Milan looks a lot like the much more mature Apache Beam. The difference lies in (1), Milan’s general-purpose stream algebra.</p>
+</blockquote>
 <div class="figure">
 <div id="milan-schematic-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/software/milan-schematic.svg" width="80%" style=" ">
@@ -241,20 +270,10 @@ categories:
 <p>Figure: The Milan Software is designed for building modern AI systems. <a href="https://github.com/amzn/milan/" class="uri">https://github.com/amzn/milan/</a></p>
 </div>
 </div>
-<p>At Amazon my team built a <em>data-oriented programming</em> language which is <a href="https://github.com/amzn/milan">now available through BSD license</a>. The language is called Milan. The team was led by Tom Borchert, quoting from <a href="https://tborchertblog.wordpress.com/2020/02/13/28/">Tom’s blog on Milan</a>:</p>
-<blockquote>
-<p>Milan has three components:</p>
-<ol type="1">
-<li><p>A general-purpose stream algebra that encodes relationships between data streams (the Milan Intermediate Language or Milan IL)</p></li>
-<li><p>A Scala library for building programs in that algebra.</p></li>
-<li><p>A compiler that takes programs expressed in Milan IL and produces a Flink application that executes the program.</p></li>
-</ol>
-<p>Component (2) can be extended to support interfaces in additional languages, and component (3) can be extended to support additional runtime targets. Considering just the multiple interfaces and the multiple runtimes, Milan looks a lot like the much more mature Apache Beam. The difference lies in (1), Milan’s general-purpose stream algebra.</p>
-</blockquote>
 <p>It is through the general-purpose stream algebra that we hope to make significant inroads on the intellectual debt challenge.</p>
 <p>The stream algebra defines the relationship between different machine learning components in the wider software architecture. Composition of multiple services cannot occur without a signature existing within the stream algebra. The Milan IL becomes the key information structure that is required to reason about the wider software system.</p>
 <h2 id="context">Context</h2>
-<p>This deals with the challenges that arise through the <em>death of the programmer</em> because we can now see the context around each service. This allows us to design the relevant validation checks to ensure that accuracy and fairness are maintained. By recompiling the algebra to focus on a particular decision within the system we can also derive new statistical tests to validate performance. These are the checks that we refer to as progression testing. The loss of programmer control means that we can no longer rely on software tests written at design time, we must have the capability to deploy new (statistical) tests after deployment as the uses to which each service is placed extend to previously un-envisaged domains.</p>
+<p>This deals with the challenges that arise through the intellectual debt because we can now see the context around each service. This allows us to design the relevant validation checks to ensure that accuracy and fairness are maintained. By recompiling the algebra to focus on a particular decision within the system we can also derive new statistical tests to validate performance. These are the checks that we refer to as progression testing. The loss of programmer control means that we can no longer rely on software tests written at design time, we must have the capability to deploy new (statistical) tests after deployment as the uses to which each service is placed extend to previously un-envisaged domains.</p>
 <h2 id="stateless-services">Stateless Services</h2>
 <p>Importantly, Milan does not place onerous constraints on the builders of individual machine learning models (or other components). Standard modelling frameworks can be used. The main constraint is that any code that is not visible to the ecosystem does not maintain or store global state. This condition implies that the parameters of any machine learning model need to also be declared as an input to the model within the Milan IL.</p>
 <h2 id="meta-modelling">Meta Modelling</h2>
@@ -273,74 +292,6 @@ categories:
 </div>
 <p>Where does machine learning come in? The strategy I propose is that the Milan IL is integrated with meta-modelling approaches to assist in the explanation of the decision-making framework. At their simplest these approaches may be novelty detection algorithms on the data streams that are emerging from a given service. This is a form of <em>progression testing</em>. But we can go much further. By knowing the training data, the inputs and outputs of the individual services in the software ecosystem, we can build meta-models that test for fairness, accuracy not just of individual system components, but short or long cascades of decision making. Through the use of the Milan IL algebra all these tests could be automatically deployed. The focus of machine learning is on the models-that-model-the-models. The meta-models.</p>
 <p>In Amazon, our own focus was on the use of statistical emulators, sometimes known as surrogate models, for fulfilling this task. The work we were putting into this route is available through another software package, <a href="https://amzn.github.io/emukit/">Emukit, a framework for decision making under uncertainty</a>. With collaborators my current focus for addressing these issues is a form of fusion of Emukit and Milan (Milemukit??). But the nature of this fusion requires testing on real world problem sets. A task we hope to carry out in close collaboration with colleagues at <a href="http://www.datascienceafrica.org/">Data Science Africa</a>.</p>
-<h2 id="deep-emulation">Deep Emulation</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<div class="figure">
-<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
-</div>
-<div id="ml-system-downstream-purchasing-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
-<p>As a solution we can use of <em>emulators</em>. When constructing an ML system, software engineers, ML engineers, economists and operations researchers are explicitly defining relationships between variables of interest in the system. That implicitly defines a joint distribution, <span class="math inline">$p(\dataVector^*, \dataVector)$</span>. In a decomposable system any sub-component may be defined as <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span> where <span class="math inline">$\dataVector_\mathbf{i}$</span> and <span class="math inline">$\dataVector_\mathbf{j}$</span> represent sub-sets of the full set of variables <span class="math inline">$\left\{\dataVector^*, \dataVector \right\}$</span>. In those cases where the relationship is deterministic, the probability density would collapse to a vector-valued deterministic function, <span class="math inline">$\mappingFunctionVector_\mathbf{i}\left(\dataVector_\mathbf{j}\right)$</span>.</p>
-<p>Inter-variable relationships could be defined by, for example a neural network (machine learning), an integer program (operational research), or a simulation (supply chain). This makes probabilistic inference in this joint density for real world systems is either very hard or impossible.</p>
-<p>Emulation is a form of meta-modelling: we construct a model of the model. We can define the joint density of an emulator as <span class="math inline">$s(\dataVector*, \dataVector)$</span>, but if this probability density is to be an accurate representation of our system, it is likely to be prohibitively complex. Current practice is to design an emulator to deal with a specific question. This is done by fitting an ML model to a simulation from the the appropriate conditional distribution, <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>, which is intractable. The emulator provides an approximated answer of the form <span class="math inline">$s(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>. Critically, an emulator should incorporate its uncertainty about its approximation. So the emulator answer will be less certain than direct access to the conditional <span class="math inline">$p(\dataVector_i|\dataVector_j)$</span>, but it may be sufficiently confident to act upon. Careful design of emulators to answer a given question leads to efficient diagnostics and understanding of the system. But in a complex interacting system an exponentially increasing number of questions can be asked. This calls for a system of automated construction of emulators which selects the right structure and redeploys the emulator as necessary. Rapid redeployment of emulators could exploit pre-existing emulators through <em>transfer learning</em>.</p>
-<p>Automatically deploying these families of emulators for full system understanding is highly ambitious. It requires advances in engineering infrastructure, emulation and Bayesian optimization. However, the intermediate steps of developing this architecture also allow for automated monitoring of system accuracy and fairness. This facilitates AutoML on a component-wise basis which we can see as a simple implementation of AutoAI. The proposal is structured so that despite its technical ambition there is a smooth ramp of benefits to be derived across the programme of work.</p>
-<p>In Applied Mathematics, the field studying these techniques is known as <em>uncertainty quantification</em>. The new challenge is the automation of emulator creation on demand to answer questions of interest and facilitate the system design, i.e. AutoAI through BSO.</p>
-<p>At design stage, any particular AI task could be decomposed in multiple ways. Bayesian system optimization will assist both in determining the large-scale system design through exploring different decompositions and in refinement of the deployed system.</p>
-<p>So far, most work on emulators has focussed on emulating a single component. Automated deployment and maintenance of ML systems requires networks of emulators that can be deployed and redeployed on demand depending on the particular question of interest. Therefore, the technical innovations we require are in the mathematical composition of emulator models <span class="citation" data-cites="Damianou:deepgp13 Pedikaris:nonlinear17">(Damianou and Lawrence 2013; Perdikaris et al. 2017)</span>. Different chains of emulators will need to be rapidly composed to make predictions of downstream performance. This requires rapid retraining of emulators and <em>propagation of uncertainty</em> through the emulation pipeline a process we call <em>deep emulation</em>.</p>
-<!--Our main approach for this will be automated learning of the structure
-of deep probabilistic models, such as deep Gaussian processes
-[@Damianou:deepgp13]. The proposer is an international expert in this
-domain.-->
-<p>Recomposing the ML system requires structural learning of the network. By parameterizing covariance functions appropriately this can be done through Gaussian processes (e.g. <span class="citation" data-cites="Damianou:manifold12">(Damianou et al., n.d.)</span>), but one could also consider Bayesian neural networks and other generative models, e.g. Generative Adversarial Networks <span class="citation" data-cites="Goodfellow:gans14">(Goodfellow et al. 2014)</span>.</p>
-<!-- This structural learning allows us to associate data with the relevant -->
-<!-- layer of the model, rather than merely on the leaf nodes of the output -->
-<!-- model. When deploying the deep Gaussian process as an emulator, this -->
-<!-- allows for the possibility of learning the structure of the different -->
-<!-- component parts of the underlying system. This should aid the user in -->
-<!-- determining the ideal system decomposition. -->
-<div class="figure">
-<div id="ml-system-downstream-purchasing1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing001.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing1-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing1&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
-</div>
-<div id="ml-system-downstream-purchasing1-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
-<div class="figure">
-<div id="ml-system-downstream-purchasing2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing002.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing2-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing2&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
-</div>
-<div id="ml-system-downstream-purchasing2-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
-<div class="figure">
-<div id="ml-system-downstream-purchasing3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing003.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing3-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing3&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
-</div>
-<div id="ml-system-downstream-purchasing3-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
 <h2 id="statistical-emulation">Statistical Emulation</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <div class="figure">
@@ -424,6 +375,74 @@ domain.-->
 <p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). The Gaussian process allows us to do this analytically.</p>
 </div>
 </div>
+<h2 id="deep-emulation">Deep Emulation</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div class="figure">
+<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-purchasing-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<p>As a solution we can use of <em>emulators</em>. When constructing an ML system, software engineers, ML engineers, economists and operations researchers are explicitly defining relationships between variables of interest in the system. That implicitly defines a joint distribution, <span class="math inline">$p(\dataVector^*, \dataVector)$</span>. In a decomposable system any sub-component may be defined as <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span> where <span class="math inline">$\dataVector_\mathbf{i}$</span> and <span class="math inline">$\dataVector_\mathbf{j}$</span> represent sub-sets of the full set of variables <span class="math inline">$\left\{\dataVector^*, \dataVector \right\}$</span>. In those cases where the relationship is deterministic, the probability density would collapse to a vector-valued deterministic function, <span class="math inline">$\mappingFunctionVector_\mathbf{i}\left(\dataVector_\mathbf{j}\right)$</span>.</p>
+<p>Inter-variable relationships could be defined by, for example a neural network (machine learning), an integer program (operational research), or a simulation (supply chain). This makes probabilistic inference in this joint density for real world systems is either very hard or impossible.</p>
+<p>Emulation is a form of meta-modelling: we construct a model of the model. We can define the joint density of an emulator as <span class="math inline">$s(\dataVector*, \dataVector)$</span>, but if this probability density is to be an accurate representation of our system, it is likely to be prohibitively complex. Current practice is to design an emulator to deal with a specific question. This is done by fitting an ML model to a simulation from the the appropriate conditional distribution, <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>, which is intractable. The emulator provides an approximated answer of the form <span class="math inline">$s(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>. Critically, an emulator should incorporate its uncertainty about its approximation. So the emulator answer will be less certain than direct access to the conditional <span class="math inline">$p(\dataVector_i|\dataVector_j)$</span>, but it may be sufficiently confident to act upon. Careful design of emulators to answer a given question leads to efficient diagnostics and understanding of the system. But in a complex interacting system an exponentially increasing number of questions can be asked. This calls for a system of automated construction of emulators which selects the right structure and redeploys the emulator as necessary. Rapid redeployment of emulators could exploit pre-existing emulators through <em>transfer learning</em>.</p>
+<p>Automatically deploying these families of emulators for full system understanding is highly ambitious. It requires advances in engineering infrastructure, emulation and Bayesian optimization. However, the intermediate steps of developing this architecture also allow for automated monitoring of system accuracy and fairness. This facilitates AutoML on a component-wise basis which we can see as a simple implementation of AutoAI. The proposal is structured so that despite its technical ambition there is a smooth ramp of benefits to be derived across the programme of work.</p>
+<p>In Applied Mathematics, the field studying these techniques is known as <em>uncertainty quantification</em>. The new challenge is the automation of emulator creation on demand to answer questions of interest and facilitate the system design, i.e. AutoAI through BSO.</p>
+<p>At design stage, any particular AI task could be decomposed in multiple ways. Bayesian system optimization will assist both in determining the large-scale system design through exploring different decompositions and in refinement of the deployed system.</p>
+<p>So far, most work on emulators has focussed on emulating a single component. Automated deployment and maintenance of ML systems requires networks of emulators that can be deployed and redeployed on demand depending on the particular question of interest. Therefore, the technical innovations we require are in the mathematical composition of emulator models <span class="citation" data-cites="Damianou:deepgp13 Pedikaris:nonlinear17">(Damianou and Lawrence 2013; Perdikaris et al. 2017)</span>. Different chains of emulators will need to be rapidly composed to make predictions of downstream performance. This requires rapid retraining of emulators and <em>propagation of uncertainty</em> through the emulation pipeline a process we call <em>deep emulation</em>.</p>
+<!--Our main approach for this will be automated learning of the structure
+of deep probabilistic models, such as deep Gaussian processes
+[@Damianou:deepgp13]. The proposer is an international expert in this
+domain.-->
+<p>Recomposing the ML system requires structural learning of the network. By parameterizing covariance functions appropriately this can be done through Gaussian processes (e.g. <span class="citation" data-cites="Damianou:manifold12">(Damianou et al., n.d.)</span>), but one could also consider Bayesian neural networks and other generative models, e.g. Generative Adversarial Networks <span class="citation" data-cites="Goodfellow:gans14">(Goodfellow et al. 2014)</span>.</p>
+<!-- This structural learning allows us to associate data with the relevant -->
+<!-- layer of the model, rather than merely on the leaf nodes of the output -->
+<!-- model. When deploying the deep Gaussian process as an emulator, this -->
+<!-- allows for the possibility of learning the structure of the different -->
+<!-- component parts of the underlying system. This should aid the user in -->
+<!-- determining the ideal system decomposition. -->
+<div class="figure">
+<div id="ml-system-downstream-purchasing1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing001.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing1-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing1&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-purchasing1-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<div class="figure">
+<div id="ml-system-downstream-purchasing2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing002.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing2-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing2&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-purchasing2-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<div class="figure">
+<div id="ml-system-downstream-purchasing3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing003.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing3-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing3&#39;)">
+<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+</div>
+<div id="ml-system-downstream-purchasing3-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
 <div class="figure">
 <div id="statistical-emulation-5-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/uq/statistical-emulation004.svg" width="80%" style=" ">
@@ -437,7 +456,7 @@ domain.-->
 </div>
 </div>
 <h2 id="conclusion">Conclusion</h2>
-<p>Today’s artificial intelligence is fundamentally Machine Learning Systems design, but the systems we are building will not fulfill the promises we are making for them. We are not yet ready to deploy automation in fully uncontrolled environments. Until we modify our approaches we will not be able to deliver on the promise. Until then, monitoring and upadate of deployed systems will be key to practical and safe AI.</p>
+<p>Today’s artificial intelligence is fundamentally Machine Learning Systems design, but the systems we are building will not fulfill the promises we are making for them (The Great AI Fallacy). We are not yet ready to deploy automation in fully uncontrolled environments due to major issues around <em>intellectual debt</em>. Until we modify our approaches we will not be able to deliver on the promise. Until then, monitoring and upadate of deployed systems will be key to practical and safe AI.</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
@@ -464,4 +483,10 @@ domain.-->
 <p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
 </div>
 </div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>The GDPR is “General Data Protection Regulation” but it does not ‘protect data’ it ‘protects individuals’ with regard to decision making based on their personal data. The misnomer data-protection is unfortunate, a better way of viewing this legislation is “personal data rights” legislation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 

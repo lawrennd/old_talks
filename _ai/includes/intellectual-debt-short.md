@@ -17,4 +17,8 @@ authors including @Sculley:debt15. It is an important concept, that I
 think is somewhat hidden from the academic community, because it is a
 phenomenon that occurs when a computer software system is deployed.}
 
+\ifndef{intellectualDebt}
+\include{_software/includes/separation-of-concerns.md}
+\endif
+
 \endif

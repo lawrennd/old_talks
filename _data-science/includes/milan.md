@@ -14,7 +14,26 @@
      Flink application that executes the program.
 }
 
-\newslide{}
+\notes{To answer these challenges at Amazon we began the process of constructing software for data oriented architectures. The team built a *data-oriented programming* language which is
+[now available through BSD license](https://github.com/amzn/milan). The language is called Milan. Quoting from [Tom Borchert's blog
+on Milan](https://tborchertblog.wordpress.com/2020/02/13/28/):
+
+> Milan has three components:
+>
+> 1.  A general-purpose stream algebra that encodes relationships between
+>      data streams (the Milan Intermediate Language or Milan IL)
+>
+> 2.  A Scala library for building programs in that algebra.
+>
+> 3.  A compiler that takes programs expressed in Milan IL and produces a
+>     Flink application that executes the program.
+>
+> Component (2) can be extended to support interfaces in additional
+> languages, and component (3) can be extended to support additional
+> runtime targets. Considering just the multiple interfaces and the
+> multiple runtimes, Milan looks a lot like the much more mature Apache
+> Beam. The difference lies in (1), Milan's general-purpose stream
+> algebra.
 
 \slides{
 \newslide{}
@@ -50,29 +69,6 @@
 
 \figure{\includepng{\diagramsDir/software/milan}{80%}}{The Milan Software is designed for building modern AI systems. <https://github.com/amzn/milan/>}{milan-software-page}
 
-
-\notes{At Amazon my team built a *data-oriented programming* language which is
-[now available through BSD license](https://github.com/amzn/milan). The language is called Milan. The
-team was led by Tom Borchert, quoting from [Tom's blog
-on Milan](https://tborchertblog.wordpress.com/2020/02/13/28/):
-
-> Milan has three components:
->
-> 1.  A general-purpose stream algebra that encodes relationships between
->      data streams (the Milan Intermediate Language or Milan IL)
->
-> 2.  A Scala library for building programs in that algebra.
->
-> 3.  A compiler that takes programs expressed in Milan IL and produces a
->     Flink application that executes the program.
->
-> Component (2) can be extended to support interfaces in additional
-> languages, and component (3) can be extended to support additional
-> runtime targets. Considering just the multiple interfaces and the
-> multiple runtimes, Milan looks a lot like the much more mature Apache
-> Beam. The difference lies in (1), Milan's general-purpose stream
-> algebra.
-
 It is through the general-purpose stream algebra that we hope to make
 significant inroads on the intellectual debt challenge.
 
@@ -84,8 +80,7 @@ is required to reason about the wider software system.}
 
 \notes{\subsection{Context}}
 
-\notes{This deals with the challenges that arise through the *death of the
-programmer* because we can now see the context around each service. This
+\notes{This deals with the challenges that arise through the intellectual debt  because we can now see the context around each service. This
 allows us to design the relevant validation checks to ensure that
 accuracy and fairness are maintained. By recompiling the algebra to
 focus on a particular decision within the system we can also derive new

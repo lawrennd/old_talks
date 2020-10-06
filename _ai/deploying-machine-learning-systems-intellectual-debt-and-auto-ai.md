@@ -27,7 +27,6 @@ transition: None
 \include{_ai/includes/buying-system.md}
 \include{_ai/includes/buying-to-banking.md}
 \include{_ai/includes/safe-boda.md}
-\include{_ai/includes/ml-system-decomposability.md}
 \include{_ai/includes/fit-systems.md}
 
 \include{_ai/includes/ride-allocation-prediction.md}
@@ -35,8 +34,8 @@ transition: None
 \section{A Solution}
 \include{_data-science/includes/data-oriented-architectures-short.md}
 \include{_data-science/includes/milan.md}
-\include{_uq/includes/deep-emulation.md}
 
+\include{_ai/includes/fit-models-to-fit-systems.md}
 \include{_uq/includes/emulation.md}
 \include{_gp/includes/gp-intro-very-short.md}
 \include{_uq/includes/deep-emulation.md}
@@ -52,7 +51,7 @@ transition: None
 * We are not ready to deploy automation in uncontrolled environments.
 * Until we can monitoring and update will be key.
 }
-\notes{Today's artificial intelligence is fundamentally Machine Learning Systems design, but the systems we are building will not fulfill the promises we are making for them. We are not yet ready to deploy automation in fully uncontrolled environments. Until we modify our approaches we will not be able to deliver on the promise. Until then, monitoring and upadate of deployed systems will be key to practical and safe AI.}
+\notes{Today's artificial intelligence is fundamentally Machine Learning Systems design, but the systems we are building will not fulfill the promises we are making for them (The Great AI Fallacy). We are not yet ready to deploy automation in fully uncontrolled environments due to major issues around *intellectual debt*. Until we modify our approaches we will not be able to deliver on the promise. Until then, monitoring and upadate of deployed systems will be key to practical and safe AI.}
 
 \thanks
 
