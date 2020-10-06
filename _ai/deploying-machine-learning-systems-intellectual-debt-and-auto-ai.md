@@ -21,7 +21,7 @@ transition: None
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 
-\include{_ai/includes/artificial-vs-natural-systems.md}
+\include{_ai/includes/artificial-vs-natural-systems-short.md}
 
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/buying-system.md}
