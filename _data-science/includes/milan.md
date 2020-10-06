@@ -34,6 +34,7 @@ on Milan](https://tborchertblog.wordpress.com/2020/02/13/28/):
 > multiple runtimes, Milan looks a lot like the much more mature Apache
 > Beam. The difference lies in (1), Milan's general-purpose stream
 > algebra.
+}
 
 \slides{
 \newslide{}
@@ -69,7 +70,7 @@ on Milan](https://tborchertblog.wordpress.com/2020/02/13/28/):
 
 \figure{\includepng{\diagramsDir/software/milan}{80%}}{The Milan Software is designed for building modern AI systems. <https://github.com/amzn/milan/>}{milan-software-page}
 
-It is through the general-purpose stream algebra that we hope to make
+\notes{It is through the general-purpose stream algebra that we hope to make
 significant inroads on the intellectual debt challenge.
 
 The stream algebra defines the relationship between different machine

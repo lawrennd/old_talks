@@ -6,7 +6,7 @@
 \newslide{Buying ...}
 
 \slides{
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system for making a purchase in an automated buying system.}{ml-system-downstream-purchasing}}
 
 \notes{\subsection{Buying to Banking}
 
@@ -16,7 +16,7 @@ The same model we consider for buying, can also be considered in the case of, fo
 
 \newslide{... to Banking}
 
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-banking000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-banking}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-banking000}{60%}}{A potential path of models in a machine learning system where a decision about a loan is being made on the basis of (potentially personal) data from a customer.}{ml-system-downstream-banking}
 
 \notes{In many regulatory environments, the bank will be restricted in terms of what information they are allowed to use in dictating loan terms. For example, with in the EU there are prohibited characteristics such as race, gender, sexuality, religion and health status which cannot be used (even indirectly) for making the loan. Along with stipulating these characteristics, the badly-named GDPR[^gdpr-footnote] also gives particular stipulations for rights individuals have for explanation around consequential decisions, such as obtaining a loan.
 
