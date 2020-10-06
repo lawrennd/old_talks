@@ -25,13 +25,13 @@ date = ny.header_field('date', fields).strftime("%Y-%m-%d")
 try:
     week = int(ny.header_field('week', fields))
     weekarg = """ --metadata week={week}""".format(week=week)
-except nt.FileFormatError:
+except ny.FileFormatError:
     week = 0
     weekarg = ''
 
 try:
     layout = ny.header_field('layout', fields)
-except nt.FileFormatError:
+except ny.FileFormatError:
     layout = 'talk'
 
 if layout == 'lecture':
