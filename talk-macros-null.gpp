@@ -61,6 +61,7 @@
 \define{\includepdf{filename}{page}{width}{height}}{}
 \define{\includepdfclip{filename}{clip}{page}{width}{height}}{}
 
+\define{\jekyllinclude{filename}}{}
 
 \define{\centerdiv{contents}{class}{style}}{\contents}
 

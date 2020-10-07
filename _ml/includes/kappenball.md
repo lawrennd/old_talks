@@ -12,10 +12,10 @@
 <output id="ballCountBox"></output>
 <output id="energyBox"></output>
 
-<script src="../scripts/ballworld/constructors.js"></script>
-<script src="../scripts/ballworld/script2.js"></script>
-<script src="../scripts/ballworld/ballworld.js"></script>
-<script src="../scripts/ballworld/kappenball.js"></script>
+<script src="\scriptsDir/ballworld/constructors.js"></script>
+<script src="\scriptsDir/ballworld/script2.js"></script>
+<script src="\scriptsDir/ballworld/ballworld.js"></script>
+<script src="\scriptsDir/ballworld/kappenball.js"></script>
 </div>}{Kappen Ball}{kappen-ball}
 
 <!--\includepng{\diagramsDir/ml/kappen-ball}-->

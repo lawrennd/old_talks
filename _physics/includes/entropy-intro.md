@@ -13,7 +13,7 @@
 
 \newslide{}
 
-\figure{\include{\diagramsDir/physics/james-clerk-maxwell.png}{30%}{}{left}\includeimg{\diagramsDir/physics/boltzmann2.jpg}{30%}{}{center}\includeimg{\diagramsDir/physics/j-w-gibbs.jpg}{30%}{}{right}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
+\figure{\includepng{\diagramsDir/physics/james-clerk-maxwell}{30%}{}{left}\includejpg{\diagramsDir/physics/boltzmann2}{30%}{}{center}\includejpg{\diagramsDir/physics/j-w-gibbs}{30%}{}{right}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
 
 \newslide{}
 
@@ -40,7 +40,7 @@
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/ml/bert-kappen}}{Bert Kappen}{bert-kappen}
+\figure{\includejpg{\diagramsDir/ml/bert-kappen}{40%}}{Bert Kappen}{bert-kappen}
 <http://videolectures.net/aispds08_kappen_easop/>
 
 \include{_ml/includes/kappenball.md}

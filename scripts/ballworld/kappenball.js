@@ -49,11 +49,11 @@ var soundOn = true;
 
 var clearCanv = true;
 
-
 var bigBalls = false;
 var wallBounce = true;
 var floorBounce = false;
-var floorWrap = true;
+var floorWrap = false;
+var floorWrapCenter = true;
 var floorReset = false;
 
 var groundColor = 'rgba(56, 256, 56, 0.8)';

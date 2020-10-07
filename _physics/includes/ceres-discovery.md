@@ -5,7 +5,11 @@
 
 \notes{\subsection{Discovery of Ceres}
 
-Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian priest, born in Lombardy, but working in Palermo, where he founded the observatory. He was later to die in Naples.}
+On New Year's Eve in 1800, Giuseppe Piazzi, an Italian Priest, born in Lombardy, but installed in a new Observatory at the University viewed a faint smudge through his telescope.
+
+Piazzi was building a star catalogue. 
+
+Unbeknownst to him, Piazzi was also participating in an international search. One that he'd been volunteered for by the Hungarian astronomer Franz von Zach. But without even knowing that he'd joined the search party, Piazzi had discovered their target a new planet.}
 
 
 \slides{
@@ -39,9 +43,17 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\includegooglebook{JBw4AAAAMAAJ}{PA280}
+\notes{The planet's location was a prediction. It was a missing planet, other planets had been found through a formula, a law, that represented their distance from the sun:
+$$
+a = 0.4 + 0.3 \times 2^m
+$$
+where $m=-\infty, 0, 1, 2, \dots$.
 
-@Piazzi:monatliche1801
+When this law was published it fitted all known planets: Mercury, Venus, Earth, Mars, Jupiter and Saturn. Although there was a gap between the fourth and fifth planets (between Mars and Jupiter). In 1781 William Herschel discovered Uranus. It was located in the position predicted by the formula. One of the originators of the formula, Johann Elert Bode urged astronomers to search for the missing planet, to be situated between Mars and Jupiter. Franz Xaver von Zach formed the United Astronomical Society, also known as the Celestial Police. But before this celestial police managed to start their search, Piazzi, without even knowing he was a member completed the search. Piazzi first observed the new planet in the early hours of January 1st 1801. He continued to observe it over the next .. days. Initially he thought it may be a comet, but as he watched it he became convinced he'd found a planet. The international search was over before it started, only there was a problem. Once he'd found the planet, Piazzi promptly lost it.}
+
+\figure{\includegooglebook{JBw4AAAAMAAJ}{PA280}}{Page from the publication *Monatliche Correspondenz* that shows Piazzi's observations of the new planet @Piazzi:monatliche1801
+.}{monatliche-corresondez-piazzi}
+
 
 <!--[\includepng{\diagramsDir/ceres/ceres-beobachtung-von-piazzi}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
 

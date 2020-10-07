@@ -36,5 +36,6 @@ showDivs(\start, '\group');
 
 }
 
+\define{\jekyllinclude{filename}}{\{%-include \filename-%}
 
 \endif
