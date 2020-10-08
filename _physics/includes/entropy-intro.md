@@ -9,41 +9,37 @@
 
 \newslide{}
 
+\notes{Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.}
+
 \figure{\inputdiagram{\diagramsDir/ml/gaussian-histogram}}{James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).}{gaussian-histogram}
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/physics/james-clerk-maxwell}{30%}{}{left}\includejpg{\diagramsDir/physics/boltzmann2}{30%}{}{center}\includejpg{\diagramsDir/physics/j-w-gibbs}{30%}{}{right}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
+\figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{}{}{right}}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
+
+\notes{Many of the ideas of early statistical physicists were rejected by a cadre of physicists who didn't believe in the notion of a molecule. The stress of trying to have his ideas established caused Botlzamann to commit suicide in 1906, only two years before the same ideas became widely accepted.}
+
+\notes{The important point about the uncertainty being represented here is that it is not genuine stochasticity, it is a lack of knowledge about the system. The techniques proposed by Maxwell, Botlzmann and Gibbs allow us to exactly represent the state of the system through a set of parameters that represent the sufficient statistics of the physical system. We know these values as the volume, temperature and pressure. The challenge for us, when approximating the physical world with the techniques we will use is that we will have to sit somewhere between the deterministic and purely stochastic worlds that these different scientists described.}
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/physics/arthur-stanley-eddington}{40%}{}{left}\includepng{\diagramsDir/physics/natureofphysical00eddi_7}{40%}{}{right}}{Arthur Stanley Eddington () book on the Nature of the Physical World [@Eddington:nature29]}{eddington-book}
+\notes{One ongoing characteristic of people who study probability and uncertainty is the confidence with which they hold opinions about it. Another leader of the Cavendish laboratory expressed his support of the second law of thermodynamics (which can be proven through the work of Gibbs/Boltzmann with ean emphatic statement at the beginning of his book.}
 
-<!--\includegraphics[page=7,height=0.5\textheight]{\diagramsDir/physics/natureofphysical00eddi.pdf}-->
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/physics/natureofphysical00eddi_100}{40%}{}{left}\includepng{\diagramsDir/physics/ChandraNobel}{40%}{}{right}}{Chandrasekhar (1910-1995)}{physical-world-chandra}
-
-<!--\includegraphics[page=100,height=0.5\textheight]{\diagramsDir/physics/natureofphysical00eddi.pdf}-->
-\newslide{}
-
-\figure{\includepng{\diagramsDir/physics/natureofphysiccal00eddi_100_cropped}{60%}}{@Eddington:nature29}{deepest-humiliation-eddington-cropped}
-
-<!--\includegraphics[page=100,width=\textwidth,trim=0cm 3.5cm 0cm 10.4cm, clip=true]{\diagramsDir/physics/natureofphysical00eddi.pdf}-->
+\figure{\columns{\includejpg{\diagramsDir/physics/arthur-stanley-eddington}{}{}{left}}{\includepng{\diagramsDir/physics/natureofphysical00eddi_7}{}{}{right}}}{Eddingtonbook on the Nature of the Physical World [@Eddington:nature29]}{eddington-book}
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/ml/claude-shannon}{40%}{}{left}\includejpg{\diagramsDir/physics/e-t-jaynes}{40%}{}{right}}{Claude Shannon (died 2001) and Edwin Thompson Jaynes @Jaynes:gibbs65}{shannon-jaynes}
+\notes{The same Eddington is also unfortunately famous for dismissing the ideas of a young Chandrasekhar who had come to Cambridge to study in the Cavendish lab. Chandrasekhar demonstrated the limit at which a star would coallapse under its own weight to a singularity, but when he presented the work to Eddington, he was dismissive suggesting that there "must be some natural law that prevents this abomination from happening".}
 
-\notes{Shannon image source: http://www.gstatic.com/hostedimg/a23c741096cdf969_large}
+\figure{\columns{\includepng{\diagramsDir/physics/natureofphysical00eddi_100}{40%}{}{left}}{\includepng{\diagramsDir/physics/ChandraNobel}{}{}{right}}}{Chandrasekhar (1910-1995) derived the limit at which a star collapses in on itself. Eddington's confidence in the 2nd law may have been what drove him to dismiss Chandrasekhar's ideas, humiliating a young scientist who would later receive a Nobel prize for the work.}{physical-world-chandra}
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/ml/bert-kappen}{40%}}{Bert Kappen}{bert-kappen}
-<http://videolectures.net/aispds08_kappen_easop/>
+\figure{\includepng{\diagramsDir/physics/natureofphysical00eddi_100_cropped}{60%}}{Eddington makes his feelings about the primacy of the second law clear. This primacy is perhaps because the second law can be demonstrated mathematically, building on the work of Maxwell, Gibbs and Boltzmann. @Eddington:nature29}{deepest-humiliation-eddington-cropped}
 
-\include{_ml/includes/kappenball.md}
+\notes{Presumably he meant that the creation of a black hole seemed to transgress the second law of thermodynamics, although later Hawking was able to show that blackholes do evaporate, only the time scales at which this evaporation occurs is many orders of magnitude slower than other processes in the universe.}
+
+
 
 \endif
 

@@ -61,6 +61,8 @@ function keyDownHandler(event) {
         ballArray[ballArray.length] = new Ball(randomX(), randomY(), randomRadius());
     } else if (event.keyCode == 80) { // p
         paused = !paused;
+    } else if (event.keyCode == 32) { // space bar
+        paused = !paused;
     } else if (event.keyCode == 71) { // g
         gravityOn = !gravityOn;
         dragOn = !dragOn;

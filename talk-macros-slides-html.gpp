@@ -13,12 +13,12 @@
 \define{\fragmentdiv{contents}{number}{style}}{<div class="fragment" data-fragment-index="\number" style="\style">\contents</div>}
 
 
-
 \defeval{\figure{contents}{captionContents}{label}}{<div class="figure">
 <div class="figure-frame" id="\concat{\label}{-figure}">
 \contents
 </div>
-</div>}
+</div>
+<aside class="notes">\captionContents</aside>}
 
 \define{\startanimation{group}{start}{finish}{name}}{<script>
 showDivs(\start, '\group');
@@ -36,6 +36,5 @@ showDivs(\start, '\group');
 
 }
 
-\define{\jekyllinclude{filename}}{\{%-include \filename-%}
 
 \endif

@@ -116,6 +116,7 @@ if args.code is not None and args.code != 'none':
       arglist.append('-DPLOTCODE=1')
 
 arglist.append('-DdiagramsDir={diagrams_dir}'.format(diagrams_dir=diagrams_dir))
+arglist.append('-DscriptsDir={scripts_dir}'.format(scripts_dir=scripts_dir))
 arglist.append('-DwriteDiagramsDir={write_diagrams_dir}'.format(write_diagrams_dir=write_diagrams_dir))
 
 if args.include_path:

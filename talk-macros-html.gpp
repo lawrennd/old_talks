@@ -41,9 +41,7 @@
 <div class="figure-frame" id="\concat{\label}{-figure}">
 \contents
 </div>
-<div class="magnify" id="\concat{\label}{-magnify}" onclick="magnifyFigure('\label')">
-<img class="img-button" src="{{ "/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex">
-</div>
+<div class="magnify" id="\concat{\label}{-magnify}" onclick="magnifyFigure('\label')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
 <div class="caption-frame" id="\concat{\label}{-caption}">
 Figure: \captionContents
 </div>
@@ -105,6 +103,6 @@ Store Caption: \storeCaption
     </embed>
 </object>}
 
-\define{\jekyllinclude{filename}}{\{%-include \filename-%}
+\define{\jekyllinclude{filename}}{\{%-include \filename-%\}}
 
 \endif
