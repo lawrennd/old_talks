@@ -2,6 +2,9 @@
 \define{talkMacrosSlidesHtml}
 \define{\slidesmall{block}}{<small>\block</small>}
 
+
+\define{\includegooglebook{id}{page}}{[![](\diagramsDir/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
+
 \define{\speakernotes{text}}{<aside class="notes">
 \text
 </aside>}
