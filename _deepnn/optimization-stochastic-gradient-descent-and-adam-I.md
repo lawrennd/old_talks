@@ -23,3 +23,6 @@ time:
 ---
 
 Related publications and links will appear here.
+
+
+Survey of Optimization methods for DeepNNs: <https://arxiv.org/abs/2007.01547>
