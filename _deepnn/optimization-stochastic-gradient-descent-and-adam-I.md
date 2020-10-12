@@ -25,4 +25,5 @@ time:
 Related publications and links will appear here.
 
 
+No Free Lunch for Optimization: <https://ti.arc.nasa.gov/m/profile/dhw/papers/78.pdf>
 Survey of Optimization methods for DeepNNs: <https://arxiv.org/abs/2007.01547>
