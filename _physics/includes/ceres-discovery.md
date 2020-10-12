@@ -35,11 +35,11 @@ Unbeknownst to him, Piazzi was also participating in an international search. On
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{60%}}{}{giuseppe-piazzi}
+\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{60%}}{Giuseppe Piazzi (1746-1826) was an Italian Catholic priest and an estronomer. Jesuits had been closely involved in education, following their supression in the Kingdom of Naples and Sicily, Piazzi was recruited as part of a drive to revitalise the University of Palermo. His funding was from King Ferdinand I and enabled him to buy high quality instruments from London.}{giuseppe-piazzi}
 
-\newslide{Giuseppe Piazzi (1746-1826) was an Italian Catholic priest and an estronomer. Jesuits had been closely involved in education, following their supression in the Kingdom of Naples and Sicily, Piazzi was recruited as part of a drive to revitalise the University of Palermo. His funding was from King Ferdinand I and enabled him to buy high quality instruments from London.}
+\newslide{}
 
-\figure{\includegooglebook{XG43AQAAMAAJ}{PA88}}{Announcement of Giuseppe Piazzi's discovery in the "Monthly Magazine" (also known as the British Register). This announciement is made in August 1801, 7 months after Giuseppe Piazzi made the discovery.}{monthly-magazine-ceres-piazzi}
+\figure{\includegooglebook{XG43AQAAMAAJ}{PA88}}{Announcement of Giuseppe Piazzi's discovery in the "Monthly Magazine" (also known as the British Register). This announcement is made in August 1801, 7 months after Giuseppe Piazzi made the discovery.}{monthly-magazine-ceres-piazzi}
 
 \newslide{}
 
@@ -50,27 +50,32 @@ $$
 where $m=-\infty, 0, 1, 2, \dots$.}
 
 \setupcode{import numpy as np
-import matplotlib.pyplot as plt
-import mlai 
-import teaching_plots as plot
+import matplotlib.pyplot as plt}
 
-\code{index, m = enum([-np.inf, 0, 1, 2, 3, 4, 5, 6])
-m = np.asarray(m)
-index = np.asarray(m)
+\downloadcode{mlai}
+\downloadcode{gp_tutorial}
+\downloadcode{teaching_plots}
+
+\setupcode{import mlai 
+import teaching_plots as plot}
+
+\code{m = np.asarray([-np.inf, 0, 1, 2, 3, 4, 5, 6])
+index = np.asarray(range(len(m)))
 planets = ['Mercury', 'Venus', 'Earth', 'Mars', '*', 'Jupiter', 'Saturn', 'Uranus']
 a = 0.5 + 0.3*2**m}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
-ax.plot(index+1, a, 'rx-')
+\code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(index+1, a, 'rx-', markersize=10, linewidth=2)
 for x,y in zip(index, a):
-  ax.text(index+1, a+0.5, planets[x])
-ax.set_xlabel('Planets')
-ax.set_ylabel('Distance from Sun in Astronimical Units')
+  ax.text(x+1, y+0.5, planets[x], fontsize=18)
+ax.set_xlabel('Planets', fontsize=14)
+ax.set_ylabel('Distance from Sun in Astronimical Units', fontsize=14)
 mlai.write_figure('\diagramsDir/physics/bodes-law.svg')}
 
 
+\figure{\includediagram{\diagramsDir/physics/bodes-law.svg}}{The Titius-Bode law was a relatively obscure empirical observation about how the planets are distributed across the solar system. It became well known after the discovery of Uranus by Herschel in 1781 which was found at the location the law predicts for the 8th planet.}{titius-bode-law}
 
-\code{When this law was published it fitted all known planets: Mercury, Venus, Earth, Mars, Jupiter and Saturn. Although there was a gap between the fourth and fifth planets (between Mars and Jupiter). In 1781 William Herschel discovered Uranus. It was located in the position predicted by the formula. One of the originators of the formula, Johann Elert Bode urged astronomers to search for the missing planet, to be situated between Mars and Jupiter. Franz Xaver von Zach formed the United Astronomical Society, also known as the Celestial Police. But before this celestial police managed to start their search, Piazzi, without even knowing he was a member completed the search. Piazzi first observed the new planet in the early hours of January 1st 1801. He continued to observe it over the next .. days. Initially he thought it may be a comet, but as he watched it he became convinced he'd found a planet. The international search was over before it started.}
+\notes{When [this law](https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law) was published it fitted all known planets: Mercury, Venus, Earth, Mars, Jupiter and Saturn. Although there was a gap between the fourth and fifth planets (between Mars and Jupiter). In 1781 William Herschel discovered Uranus. It was located in the position predicted by the formula. One of the originators of the formula, Johann Elert Bode urged astronomers to search for the missing planet, to be situated between Mars and Jupiter. Franz Xaver von Zach formed the United Astronomical Society, also known as the Celestial Police. But before this celestial police managed to start their search, Piazzi, without even knowing he was a member completed the search. Piazzi first observed the new planet in the early hours of January 1st 1801. He continued to observe it over the next .. days. Initially he thought it may be a comet, but as he watched it he became convinced he'd found a planet. The international search was over before it started.}
 
 \notes{Unfortunately, there was a problem. Once he'd found the planet, Piazzi promptly lost it. Piazzi was keen not just to discover the planet, but to to be known as the determiner of its orbit. He took observations across the months of January and February, working to find the orbit. Unfortunately, he was unable to pin it down. He became ill, and by the time the dat awas revealed to the wider community through von Zach's journal, Monatlicher Correspondenz, the new planet had been lost behind the sun.}
 
@@ -83,8 +88,6 @@ mlai.write_figure('\diagramsDir/physics/bodes-law.svg')}
 \speakernotes{Image data ```wget http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png```}
 
 \installcode{pods}
-\downloadcode{mlai}
-\downloadcode{teaching_plots}
 \downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png,ceresSkyBackground.png}
 \setupcode{import matplotlib.pyplot as plt
 import pods
@@ -93,11 +96,12 @@ import teaching_plots as plots}
 
 \code{data = pods.datasets.ceres()
 right_ascension = data['data']['Gerade Aufstig in Zeit']
-declination = data['data']['Nordlich Abweich']
+declination = data['data']['Nordlich Abweich']}
 
-# A = imread('ceresSkyBackground.png');
-# image([3.5-4/15 3.5+4/15], [15.25 19.25], A)
-fig, ax = plt.subplots(figsize=plots.big_figsize)
+# 
+\code{fig, ax = plt.subplots(figsize=plots.big_figsize)
+A = plt.imread('ceres-sky-background.png')
+ax.imshow(image([3.5-4/15 3.5+4/15], [15.25 19.25], A)
 ax.plot(right_ascension, declination, 'rx')
 ax.set_xlabel('right ascension')
 ax.set_ylabel('declination')

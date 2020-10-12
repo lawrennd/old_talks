@@ -11,7 +11,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-blog: 
+youtube: 5PdHgR6zz1o
 date: 2020-10-06
 venue: Virtual Advances in Data Science Seminar, Manchester
 transition: None

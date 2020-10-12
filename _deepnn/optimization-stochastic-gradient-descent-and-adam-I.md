@@ -2,9 +2,6 @@
 layout: lecture
 title: "Optimization: Stochastic Gradient Descent and ADAM"
 week: 2
-date: 2021-02-02
-start: 14:00
-end: 15:00
 room: LT1
 author:
 - given: Neil D.
@@ -14,12 +11,10 @@ author:
 abstract: >
   This lecture will cover the Robins Munroe approach to optimizatin, differing it from classical approaches and highlighting its advantages for big data. 
 talkscam:
-venue: Computer Laboratory, William Gates Building, Room TBA
-postdir: ../../../mlatcl/deepnn/_lectures/
-slidedir: ../../../mlatcl/deepnn/slides/
-notedir: ../../../mlatcl/deepnn/_notes/
-notebookdir: ../../../mlatcl/deepnn/_notebooks/
-time:
+time: "14:00"
+start: "14:00"
+end: "15:00"
+date: 2021-01-26
 ---
 
 Related publications and links will appear here.
