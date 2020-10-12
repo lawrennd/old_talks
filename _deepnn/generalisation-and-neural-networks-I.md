@@ -25,3 +25,6 @@ time:
 ---
 
 Related publications and links will appear here.
+
+Bias variance dilemma
+https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1
