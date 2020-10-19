@@ -88,7 +88,7 @@ mlai.write_figure('\diagramsDir/physics/bodes-law.svg')}
 \speakernotes{Image data ```wget http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png```}
 
 \installcode{pods}
-\downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png,ceresSkyBackground.png}
+\downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png,ceresSkyBackground.png}{ceres-sky-background.png}
 \setupcode{import matplotlib.pyplot as plt
 import pods
 import mlai

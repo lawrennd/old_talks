@@ -36,3 +36,7 @@ Belkin on Bias/Variance
 <https://www.pnas.org/content/117/20/10625>
 
 Belkin Talk: <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4>
+
+
+the Deep Bootstrap
+https://twitter.com/PreetumNakkiran/status/1318007088321335297?s=20

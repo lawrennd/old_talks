@@ -10,13 +10,12 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2020-03-10
+date: 2020-10-20
 venue: Wellcome Human Cell Atlas Meeting
 transition: None
 ---
 
 \include{../talk-macros.tex}
-
 
 
 \include{_health/includes/rolls-royce-analogy.md}
