@@ -1,5 +1,6 @@
 ---
 week: 4
+layout: lecture
 title: "Sensitivity Analysis"
 abstract: >
   A surrogate model can be explored to understand the sensitivity of the system. This lecture will review how to perform sensitivity analysis.
