@@ -156,6 +156,10 @@ large profits through that. Because if you can control demand, that's
 way better than controlling supply or distribution. And that's the big
 shift we see for the future of work.
 
+\addguardian{The data-driven economy will help marketers exploit us}{2015/jul/23/data-driven-economy-marketing}
+
+\addguardian{Digital Oligarchies}{2015/mar/05/digital-oligarchy-algorithms-personal-data}
+
 Now, what can we do about it? Well of course, the raw material ... the
 clever bit about Marx is that the value is coming from the worker, so
 you have to do things to empower the worker. So [regardless of]

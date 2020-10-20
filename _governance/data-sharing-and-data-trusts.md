@@ -17,15 +17,78 @@ transition: None
 
 \include{../talk-macros.tex}
 
+\notes{Data is not property, at least not in the modern sense of the word. But if we look back over time we see different notions of property. In particular, associated with different resources. For example, common land is a particular type of property, which may or may not be explicitly owned, but members of a community have a particular set of rights to.
 
-The legislation behind the GDPR
+In Sheffield, where I used to live, work, run and cycle. The moorland was historically common land until the enclosures acts applied in the 1860s. Until that time, local people had the right to, for example, collect sand from the moorland for use in building their houses. After enclosure, the crime of 'sand poaching' evolved. On Houndkirk Moor, south West of Sheffield, after enclosure [sand poacheers went to collect sand at night](https://slidelegend.com/from-cairns-to-craters-conservation-heritage-moors-for-the-future_59e1b4f91723dd4240b3158c.html) for houses being build in the village of Dore.
 
-\include{_data-science/includes/privacy-loss-of-control.md}
-\include{_governance/includes/how-gdpr-may-help.md}
-\include{_governance/includes/feudal-era-data-ecosystem.md}
-\include{_governance/includes/data-governance-toolkit.md}
-\include{_health/includes/rolls-royce-analogy.md}
-\include{_governance/includes/data-trusts.md}
+These rights to a resource become particularly interesting when considering rivers. Sheffield itself emerged as the home of cutlers, knife makers. Their small mills were driven by water power flowing from Houndkirk Moor to the center of town. There the lakes they built are called dams, today they line the streams of the city's parkland, but 200 years ago they were a bustling industry of forges, grinders and polishers. 
+
+Important, regardless of who owned the river, different mills on the river had different rights to the water. If an upstream mill damns the entire flow, the downstream mill has to stop working in times of drought.
+
+The rivers of Sheffield are streams, but as they flow down into the Don and eventually the humber new rights to this water emerges. As well as power from the river, there is its use as a source of drinking water, for navigation and for irrigation. 
+
+Many of these rights are in tension. Mills working on the river may pollute the stream. If the water is damned or  used for irrigation, then it can be too low for navigation. There is complex interplay of demands on the river that creates tensions between different users.
+
+The general data protection regulation is poorly named. It doesn't protect data, what it does instead is give us some limited rights around access to and control of processing of our personal data. 
+
+Personal data has some of the characteristics of a river. My choice to share my data has effects on other individuals. If I share my genome, I am sharing information about my children's genome. If I share my address book (e.g. with Facebook or linkedin) I'm sharing information about what people know me. If I share a photo of myself with friends, I'm sharing the location of friends. 
+
+What the GDPR does is give us limited personal data rights. It outlines a limited right of deletion. It also allows us access to our personal data, which in turn confers a portability right.
+
+A pure notion of ownership, in that I own a ball, or I own a car, is that I have the absolute right to share and restrict access to my property as I choose. Personal data rights are not absolute, but nevertheless they return some control to the individual.
+
+There's been much recent talk about GDPR, but the essence of the law didn't change much over previous iterations. The critical chance was the size of the fines that the EU stipulated may be imposed for infringements. Paul Nemitz, who was closely involved with the drafting, told me that they were initially inspired by competition law, which levys fines of 10% of international revenue. The final implementation is restricted to 5%, but it's worth pointing out that Facebook's fine (imposed in the US by the FTC) was $5 billion dollars. Or approximately 7% of their international revenue at the time. 
+
+So the big change is the seriousness with which regulators are taking breaches of the intent of GDPR. And indeed, this newfound will on behalf of the EU led to an amount of panic around companies who rushed to see if they were complying with this strengthened legistlation.
+
+But is it really the big bad regulator coming down hard on the poor scientist or company, just trying to do an honest day's work? I would argue not. The stipulations of the GDPR include fairly simple things like the 'right to an explanation' for consequential decision making. Or the right to deletion, to remove personal private data from a corporate data ecosystem.
+
+\addguardian{Digital Oligarchies}{2015/mar/05/digital-oligarchy-algorithms-personal-data}
+
+
+While these are new stipulations, if you reverse the argument and ask a company "would it not be a good thing if you could explain why your automated decision making system is making decision X about customer Y" seems perfectly reasonable. Or "Would it not be a good thing if we knew that we were capable of deleting customer Z's data from our systems, rather than being concerned that it may be lieing unregistered in an S3 bucket somewhere?". 
+
+Phrased in this way, you can see that GDPR perhaps would better stand for "Good Data Practice Rules", and should really be being adopted by the scientist, the company or whoever in an effort to respect the rights of the people they aim to serve.
+
+So how do Data Trusts fit into this lanscape? Well it's appropriate that we've mentioned the commons, because a current challenge is how we manage data rights within our community. And the situation is rather akin to that which one might have found in a feudal village (in the days before Houndkirk Moor was enclosed). 
+
+\addguardian{Information Feudalism}{https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online}
+
+Data rights legislation has some unfortunate terminology, including the notion of the 'data subject' and the 'data controller'. The term 'subject' is unfortunate, but perhaps appropriate. Because while the legislation gives you rights around *consequential* processing of your data. There is a power-asymmetry between yourself and the data controller. The data controller is akin to a feudal lord, who owes a duty of care to his or her vassals. The unfortunate challenge is that by the time it has become apparent that the feudal lord has failed in this duty of care, it is too late for the data-subjects. In the medieaval village, the duty was for protection, but when the Lord underinvests, the vikings, or saracens arrive, and the village is pillaged, it's a little bit too late. 
+
+Similarly, in our feudal data ecosystem, the fines around consequential decision making come too late for the damage to have been done. And the short-termism of our data-lords means that they do not provide the protections we should demand for such personally sensitive data.
+
+Further, the GDPR only provides protection for 'consequential' decision making. If decision making is considered inconsequential, such as the posting of an advert or the ranking of a search query or a news feed entry, then it's stipulations do not apply. But the modern era is one where a chain of 'inconsequential decisions' can combined together to have a consequential effect. Consider, for example, the member of a minority group who is never shown adverts for higher paying jobs by a an algorithm that is expressing some form of bias.
+
+So how do we respond? One answer lies in collectivisation of our rights. 
+
+\figure{\includeyoutube{-8bqQ-C1PSE}}{Monty Python mocks the feudal system in Monty Python and the Holy Grail. "I'm your King! Well I didn't vote for you!". "Strange women lieing in ponds distributing swords is no basis for a system of government"}{monty-python-feudal}
+
+The feudal system was initially augmented and finally replaced by a system of direct representation through voting. Modern democracies. In the data ecosystem, the equivalent would be a data-controller who had better alignment with the interests of their data-subjects. 
+
+So how do we regulate for such an eventuality? I'm fond of a quote from Rodney Brooks that says "You can't regulate what doesn't exist". Indeed, it seems we have enough problems with regulating technologies and ideas that already exist today. But again we can be inspired by the way that regulation has evolved in the past to take into account evolving technology. In particular, in intellectual property, patents emerged from the notion of 'letters patent', which were monopolies granted by the monarch for a guild to work in a certain domain, such as weaving. They have evolved to be a mechanism for intellectual property rights.
+
+Similarly, when motorised vehicles were introduced, after some false starts (including the poorly formed Red Flag Act) a Highway Code emerged that lays out the different responsibilities of road users in sharing the highway.
+
+\addguardian{Let's learn the rules of the digital road before talking about a web Magna Carta}{2015/apr/02/rules-digital-technology-internet-bill-rights}
+
+What mechanism should we look to for forming these 'data collectives'. There are many inspirations from history including credit unions, building societies, co-operatives and land societies. Many of these have the bottom-up flavour of a collective that feels appropriate for managing data rights. 
+
+One particularly interesting mechanism also dates back to Medieval law. The Courts of Equity is a separate system of law that runs alongside Common Law. One of the domains of law it recognises are Trusts.
+
+Trusts are institutions where there is an enhanced duty of care, known as "fiducirary duty" or "undivided loyalty" over the trustees to implement the constituent terms of the trust. 
+
+Broadly speaking a Trust has three components. There are the settlors. This group is the group that starts with assets. These might be rights to the property, or in the data trust, the rights to data. Then there are the beneficiaries. This is the group that will benefit from the operation of the trust. Finally there are the Trustees. This group oversees the management of the trust and ensures that the settlors intent is being conformed to in the management of the assets.
+
+In a Data Trust [@Delacroix:trusts19] the settlors and the beneficiaries will be the same, or significantly overlapping groups. Unusually, because the value of data only comes when it accumulates, it is only once the data is within the Trust that it becomes useful. In the data trust, the Trustee takes on the role of data-controller. But they are now obliged to conform to the constitutional terms of the trust that is formed.
+
+The data trust is not a specfic solution for data sharing. It is a set of legal mechanisms that can be used to create solutions. The consitutional terms of the trust will depend on what data is being shared and for what purpose. One can imagine data trusts that are associated with special interests, like a group of patients with a particular cancer. Or data trusts that might be associated with a region (the Hackney Data Trust) for assisting with local issues like transport links etc. Or one could imagine general data trusts, that would interact with individual specialized data trusts.
+
+\addguardian{Data Trusts}{2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}
+
+Importantly, any data governance approach is going to have tensions. In particular, there is a need to represent the interests of the *individual*, the interests of *society* and those of *vulnerable people* (such as children). Any data constitutional terms should also consider issues such as *enfranchisement* of the data subjects. There is a [value based choice for how particular data should be shared](https://datatrusts.uk/blogs/selectingdatastructures).
+
+But in order to enact such choices, and ensure that the correct responsibilities are applied to the data controllers, Trust law seems a promising avenue to pursue in institutionalising data sharing.}
 
 \thanks
 
