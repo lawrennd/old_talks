@@ -50,7 +50,7 @@ layout: talk
 reveal: False
 ---
 
-What follows is a transcript of my talk, which was unscripted so
+What follows is a transcript of the section where I spoke. I refer to other Helen's talk quite a lot in mine. My talk was unscripted so
 apologies for inaccuracies and colloquialisms.
 
 Thank you Henry, and thanks to everyone that's spoken so far, I've
