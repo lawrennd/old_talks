@@ -1,7 +1,7 @@
 ---
 title: "Deploying Machine Learning: Intellectual Debt and AutoAI"
 venue: "Virtual Advances in Data Science Seminar, Manchester"
-abstract: "<p>From the dawn of cybernetics, and across the last eight decades, we’ve worked to make machine learning methods successful. But now that these methods are being widely adopted we need to deal with the consequences of success. Many of those consequences can only be understood when a holistic approach to the machine learning problem is considered: the deployment of a method within a context for a particular objective. In this circumstance, it’s easy to see that questions of interpretability, fairness and transparency are all contextual. In this talk we summarize this challenge using Jonathan Zittrain’s term of “intellectual debt”, we discuss how it pans out in reality and how this challenge could be addressed using machine learning techniques to give us “Auto AI”. This work is sponsored by an ATI Senior AI Fellowship.</p>"
+abstract: "<p>From the dawn of cybernetics, and across the last eight decades, we’ve worked to make machine learning methods successful. But now that these methods are being widely adopted we need to deal with the consequences of success. Many of those consequences can only be understood when a holistic approach to the machine learning problem is considered: the deployment of a method within a context for a particular objective. In this circumstance, it’s easy to see that questions of interpretability, fairness and transparency are all contextual. In this talk we summarize this challenge using Jonathan Zittrain’s term of 'intellectual debt', we discuss how it pans out in reality and how this challenge could be addressed using machine learning techniques to give us 'Auto AI'. This work is sponsored by an ATI Senior AI Fellowship.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -49,7 +49,7 @@ categories:
 -->
 <h1 id="the-great-ai-fallacy">The Great AI Fallacy</h1>
 <p>There is a lot of variation in the use of the term artificial intelligence. I’m sometimes asked to define it, but depending on whether you’re speaking to a member of the public, a fellow machine learning researcher, or someone from the business community, the sense of the term differs.</p>
-<p>However, underlying its use I’ve detected one disturbing trend. A trend I’m beginining to think of as “The Great AI Fallacy”.</p>
+<p>However, underlying its use I’ve detected one disturbing trend. A trend I’m beginining to think of as "The Great AI Fallacy".</p>
 <p>The fallacy is associated with an implicit promise that is embedded in many statements about Artificial Intelligence. Artificial Intelligence, as it currently exists, is merely a form of automated decision making. The implicit promise of Artificial Intelligence is that it will be the first wave of automation where the machine adapts to the human, rather than the human adapting to the machine.</p>
 <p>How else can we explain the suspension of sensible business judgment that is accompanying the hype surrounding AI?</p>
 <p>This fallacy is particularly pernicious because there are serious benefits to society in deploying this new wave of data-driven automated decision making. But the AI Fallacy is causing us to suspend our calibrated skepticism that is needed to deploy these systems safely and efficiently.</p>
@@ -61,7 +61,7 @@ categories:
 </div>
 </div>
 <div id="jeeves-springtime-magnify" class="magnify" onclick="magnifyFigure(&#39;jeeves-springtime&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="jeeves-springtime-caption" class="caption-frame">
 <p>Figure: We seem to have fallen for a perspective on AI that suggests it will adapt to our schedule, rather in the manner of a 1930s manservant.</p>
@@ -76,16 +76,16 @@ categories:
 <p>Survival of the fittest</p>
 <p><a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbet Spencer</a>, 1864</p>
 </blockquote>
-<p>Darwin himself never said “Survival of the Fittest” he talked about evolution by natural selection.</p>
+<p>Darwin himself never said "Survival of the Fittest" he talked about evolution by natural selection.</p>
 <blockquote>
 <p>Non-survival of the non-fit</p>
 </blockquote>
-<p>Evolution is better described as “non-survival of the non-fit”. You don’t have to be the fittest to survive, you just need to avoid the pitfalls of life. This is the first priority.</p>
+<p>Evolution is better described as "non-survival of the non-fit". You don’t have to be the fittest to survive, you just need to avoid the pitfalls of life. This is the first priority.</p>
 <p>So it is with natural vs artificial intelligences. Any natural intelligence that was not robust to changes in its external environment would not survive, and therefore not reproduce. In contrast the artificial intelligences we produce are designed to be efficient at one specific task: control, computation, playing chess. They are <em>fragile</em>.</p>
-<p>The first rule of a natural system is not be intelligent, it is “don’t be stupid”.</p>
+<p>The first rule of a natural system is not be intelligent, it is "don’t be stupid".</p>
 <p>A mistake we make in the design of our systems is to equate fitness with the objective function, and to assume it is known and static. In practice, a real environment would have an evolving fitness function which would be unknown at any given time.</p>
 <p>You can also read this blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural and Artificial Intelligence</a>..</p>
-<p>The first criterion of a natural intelligence is <em>don’t fail</em>, not because it has a will or intent of its own, but because if it had failed it wouldn’t have stood the test of time. It would no longer exist. In contrast, the mantra for artificial systems is to be more efficient. Our artificial systems are often given a single objective (in machine learning it is encoded in a mathematical function) and they aim to achieve that objective efficiently. These are different characteristics. Even if we wanted to incorporate <em>don’t fail</em> in some form, it is difficult to design for. To design for “don’t fail”, you have to consider every which way in which things can go wrong, if you miss one you fail. These cases are sometimes called corner cases. But in a real, uncontrolled environment, almost everything is a corner. It is difficult to imagine everything that can happen. This is why most of our automated systems operate in controlled environments, for example in a factory, or on a set of rails. Deploying automated systems in an uncontrolled environment requires a different approach to systems design. One that accounts for uncertainty in the environment and is robust to unforeseen circumstances.</p>
+<p>The first criterion of a natural intelligence is <em>don’t fail</em>, not because it has a will or intent of its own, but because if it had failed it wouldn’t have stood the test of time. It would no longer exist. In contrast, the mantra for artificial systems is to be more efficient. Our artificial systems are often given a single objective (in machine learning it is encoded in a mathematical function) and they aim to achieve that objective efficiently. These are different characteristics. Even if we wanted to incorporate <em>don’t fail</em> in some form, it is difficult to design for. To design for "don’t fail", you have to consider every which way in which things can go wrong, if you miss one you fail. These cases are sometimes called corner cases. But in a real, uncontrolled environment, almost everything is a corner. It is difficult to imagine everything that can happen. This is why most of our automated systems operate in controlled environments, for example in a factory, or on a set of rails. Deploying automated systems in an uncontrolled environment requires a different approach to systems design. One that accounts for uncertainty in the environment and is robust to unforeseen circumstances.</p>
 <h1 id="intellectual-debt">Intellectual Debt</h1>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <div class="figure">
@@ -95,7 +95,7 @@ categories:
 </div>
 </div>
 <div id="intellectual-debt-magnify" class="magnify" onclick="magnifyFigure(&#39;intellectual-debt&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="intellectual-debt-caption" class="caption-frame">
 <p>Figure: Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.</p>
@@ -104,13 +104,13 @@ categories:
 <p>In computer systems the concept of <em>technical debt</em> has been surfaced by authors including <span class="citation" data-cites="Sculley:debt15">Sculley et al. (2015)</span>. It is an important concept, that I think is somewhat hidden from the academic community, because it is a phenomenon that occurs when a computer software system is deployed.</p>
 <h2 id="separation-of-concerns">Separation of Concerns</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/separation-of-concerns.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/separation-of-concerns.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>To construct such complex systems an approach known as “separation of concerns” has been developed. The idea is that you architect your system, which consists of a large-scale complex task, into a set of simpler tasks. Each of these tasks is separately implemented. This is known as the decomposition of the task.</p>
-<p>This is where Jonathan Zittrain’s beautifully named term “intellectual debt” rises to the fore. Separation of concerns enables the construction of a complex system. But who is concerned with the overall system?</p>
+<p>To construct such complex systems an approach known as "separation of concerns" has been developed. The idea is that you architect your system, which consists of a large-scale complex task, into a set of simpler tasks. Each of these tasks is separately implemented. This is known as the decomposition of the task.</p>
+<p>This is where Jonathan Zittrain’s beautifully named term "intellectual debt" rises to the fore. Separation of concerns enables the construction of a complex system. But who is concerned with the overall system?</p>
 <ul>
 <li><p>Technical debt is the inability to <em>maintain</em> your complex software system.</p></li>
 <li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
 </ul>
-<p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
+<p>It is right there in our approach to software engineering. "Separation of concerns" means no one is concerned about the overall system itself.</p>
 <h2 id="buying-system">Buying System</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>An example of a complex decision making system might be an automated buying system. In such a system, the idea is to match demand for products to supply of products.</p>
@@ -123,7 +123,7 @@ categories:
 </object>
 </div>
 <div id="buying-system-components-magnify" class="magnify" onclick="magnifyFigure(&#39;buying-system-components&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="buying-system-components-caption" class="caption-frame">
 <p>Figure: The components of a putative automated buying system</p>
@@ -138,7 +138,7 @@ categories:
 </object>
 </div>
 <div id="ml-system-monolith-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-monolith&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-monolith-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -146,14 +146,14 @@ categories:
 </div>
 <h2 id="service-oriented-architecture">Service Oriented Architecture</h2>
 <p>Such software is not only difficult to develop, it is difficult to scale when computation demands increase. Amazon’s original website software (called Obidos) was a <a href="https://en.wikipedia.org/wiki/Obidos_(software)">monolithic design</a> but by the early noughties it was becoming difficult to sustain and maintain. The software was phased out in 2006 to be replaced by a modularized software known as a ‘service oriented architecture’.</p>
-<p>In Service Oriented Architecture, or “Software as a Service” the idea is that code bases are modularized and communicate with one another using network requests. A standard approach is to use a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST API</a>. So, rather than a single monolithic code base, the code is developed with individual services that handle the different requests.</p>
+<p>In Service Oriented Architecture, or "Software as a Service" the idea is that code bases are modularized and communicate with one another using network requests. A standard approach is to use a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST API</a>. So, rather than a single monolithic code base, the code is developed with individual services that handle the different requests.</p>
 <div class="figure">
 <div id="ml-system-downstream-purchasing-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-downstream-purchasing-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -169,7 +169,7 @@ categories:
 </object>
 </div>
 <div id="ml-system-downstream-banking-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-banking&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-downstream-banking-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system where a decision about a loan is being made on the basis of (potentially personal) data from a customer.</p>
@@ -187,7 +187,7 @@ categories:
 </div>
 </div>
 <div id="safe-boda-system-magnify" class="magnify" onclick="magnifyFigure(&#39;safe-boda-system&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="safe-boda-system-caption" class="caption-frame">
 <p>Figure: SafeBoda is a ride allocation system for Boda Boda drivers. Let’s imagine the capabilities we need for such an AI system.</p>
@@ -200,16 +200,16 @@ categories:
 <p>A key aim of the AutoAI agenda is to reduce these technical challenges, so that such software can be maintained safely and reliably by a small team of software engineers. Without this capability it is hard to imagine how low resource environments can fully benefit from the ‘data revolution’ without heavy reliance on technical provision from high-resource environments. Such dependence would inevitably mean a skew towards the challenges that high-resource economies face, rather than the more urgent and important problems that are faced in low-resource environments.</p>
 <h2 id="fit-models-to-fit-systems">FIT Models to FIT Systems</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/fit-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/fit-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>Zittrain points out the challenge around the lack of interpretability of individual ML models as the origin of intellectual debt. In machine learning I refer to work in this area as fairness, interpretability and transparency or FIT models. To an extent I agree with Zittrain, but if we understand the context and purpose of the decision making, I believe this is readily put right by the correct monitoring and retraining regime around the model. A concept I refer to as “progression testing”. Indeed, the best teams do this at the moment, and their failure to do it feels more of a matter of technical debt rather than intellectual, because arguably it is a maintenance task rather than an explanation task. After all, we have good statistical tools for interpreting individual models and decisions when we have the context. We can linearise around the operating point, we can perform counterfactual tests on the model. We can build empirical validation sets that explore fairness or accuracy of the model.</p>
+<p>Zittrain points out the challenge around the lack of interpretability of individual ML models as the origin of intellectual debt. In machine learning I refer to work in this area as fairness, interpretability and transparency or FIT models. To an extent I agree with Zittrain, but if we understand the context and purpose of the decision making, I believe this is readily put right by the correct monitoring and retraining regime around the model. A concept I refer to as "progression testing". Indeed, the best teams do this at the moment, and their failure to do it feels more of a matter of technical debt rather than intellectual, because arguably it is a maintenance task rather than an explanation task. After all, we have good statistical tools for interpreting individual models and decisions when we have the context. We can linearise around the operating point, we can perform counterfactual tests on the model. We can build empirical validation sets that explore fairness or accuracy of the model.</p>
 <p>So, this is where, my understanding of intellectual debt in ML systems departs, I believe from John Zittrain’s. The long-term challenge is <em>not</em> in the individual model. We have excellent statistical tools for validating what any individual model, the long-term challenge is the complex interaction between different components in the decomposed system, where the original intent of each component has been forgotten (except perhaps by Lancelot) and each service has been repurposed. We need to move from FIT models to FIT systems.</p>
-<p>How to address these challenges? With collaborators I’ve been working towards a solution that contains broadly two parts. The first part is what we refer to as “Data-Oriented Architectures”. The second part is “meta modelling”, machine learning techniques that help us model the models.</p>
+<p>How to address these challenges? With collaborators I’ve been working towards a solution that contains broadly two parts. The first part is what we refer to as "Data-Oriented Architectures". The second part is "meta modelling", machine learning techniques that help us model the models.</p>
 <div class="figure">
 <div id="ride-allocation-system-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ai/ride-allocation-prediction.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="ride-allocation-system-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-allocation-system&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ride-allocation-system-caption" class="caption-frame">
 <p>Figure: Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.</p>
@@ -240,7 +240,7 @@ categories:
 </object>
 </div>
 <div id="milan-schematic-magnify" class="magnify" onclick="magnifyFigure(&#39;milan-schematic&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="milan-schematic-caption" class="caption-frame">
 <p>Figure: The Milan Software has a general purpose stream algebra at its core, the Milan IL.</p>
@@ -253,7 +253,7 @@ categories:
 </div>
 </div>
 <div id="milan-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;milan-software-page&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="milan-software-page-caption" class="caption-frame">
 <p>Figure: The Milan Software is designed for building modern AI systems. <a href="https://github.com/amzn/milan/" class="uri">https://github.com/amzn/milan/</a></p>
@@ -273,7 +273,7 @@ categories:
 </div>
 </div>
 <div id="emukit-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-software-page&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="emukit-software-page-caption" class="caption-frame">
 <p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
@@ -296,7 +296,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="statistical-emulation-1-caption" class="caption-frame">
 <p>Figure: Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
@@ -309,7 +309,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-2-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-2&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="statistical-emulation-2-caption" class="caption-frame">
 <p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
@@ -322,7 +322,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="statistical-emulation-5-caption" class="caption-frame">
 <p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
@@ -334,7 +334,7 @@ categories:
 </object>
 </div>
 <div id="statistical-emulation-6-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-6&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="statistical-emulation-6-caption" class="caption-frame">
 <p>Figure: In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..</p>
@@ -365,7 +365,7 @@ categories:
 </div>
 </div>
 <div id="gp-rejection-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-rejection-samples&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="gp-rejection-samples-caption" class="caption-frame">
 <p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). The Gaussian process allows us to do this analytically.</p>
@@ -379,7 +379,7 @@ categories:
 </object>
 </div>
 <div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-downstream-purchasing-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -409,7 +409,7 @@ domain.-->
 </object>
 </div>
 <div id="ml-system-downstream-purchasing1-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing1&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-downstream-purchasing1-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -421,7 +421,7 @@ domain.-->
 </object>
 </div>
 <div id="ml-system-downstream-purchasing2-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing2&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-downstream-purchasing2-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -433,7 +433,7 @@ domain.-->
 </object>
 </div>
 <div id="ml-system-downstream-purchasing3-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing3&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="ml-system-downstream-purchasing3-caption" class="caption-frame">
 <p>Figure: A potential path of models in a machine learning system.</p>
@@ -445,7 +445,7 @@ domain.-->
 </object>
 </div>
 <div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
-<p>&lt;img class=“img-button” src=“{{”/assets/images/Magnify_Large.svg" | relative_url }}" style=“width:1.5ex”&gt;</p>
+<p>&lt;img class="img-button" src="{{"/assets/images/Magnify_Large.svg" | relative_url }}" style="width:1.5ex"&gt;</p>
 </div>
 <div id="statistical-emulation-5-caption" class="caption-frame">
 <p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
@@ -464,25 +464,25 @@ domain.-->
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-Damianou:manifold12">
-<p>Damianou, Andreas, Carl Henrik Ek, Michalis K. Titsias, and Neil D. Lawrence. n.d. “Manifold Relevance Determination.” In.</p>
+<p>Damianou, Andreas, Carl Henrik Ek, Michalis K. Titsias, and Neil D. Lawrence. n.d. "Manifold Relevance Determination." In.</p>
 </div>
 <div id="ref-Damianou:deepgp13">
-<p>Damianou, Andreas, and Neil D. Lawrence. 2013. “Deep Gaussian Processes.” In, 31:207–15.</p>
+<p>Damianou, Andreas, and Neil D. Lawrence. 2013. "Deep Gaussian Processes." In, 31:207–15.</p>
 </div>
 <div id="ref-Goodfellow:gans14">
-<p>Goodfellow, Ian, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. “Generative Adversarial Nets.” In <em>Advances in Neural Information Processing Systems 27</em>, edited by Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, and K. Q. Weinberger, 2672–80. Curran Associates, Inc.</p>
+<p>Goodfellow, Ian, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. "Generative Adversarial Nets." In <em>Advances in Neural Information Processing Systems 27</em>, edited by Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, and K. Q. Weinberger, 2672–80. Curran Associates, Inc.</p>
 </div>
 <div id="ref-Pedikaris:nonlinear17">
-<p>Perdikaris, Paris, Maziar Raissi, Andreas Damianou, Neil D. Lawrence, and George Em Karnidakis. 2017. “Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling.” <em>Proc. R. Soc. A</em> 473 (20160751). <a href="https://doi.org/10.1098/rspa.2016.0751">https://doi.org/10.1098/rspa.2016.0751</a>.</p>
+<p>Perdikaris, Paris, Maziar Raissi, Andreas Damianou, Neil D. Lawrence, and George Em Karnidakis. 2017. "Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling." <em>Proc. R. Soc. A</em> 473 (20160751). <a href="https://doi.org/10.1098/rspa.2016.0751">https://doi.org/10.1098/rspa.2016.0751</a>.</p>
 </div>
 <div id="ref-Sculley:debt15">
-<p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
+<p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. "Hidden Technical Debt in Machine Learning Systems." In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
 </div>
 </div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>The GDPR is “General Data Protection Regulation” but it does not ‘protect data’ it ‘protects individuals’ with regard to decision making based on their personal data. The misnomer data-protection is unfortunate, a better way of viewing this legislation is “personal data rights” legislation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>The GDPR is "General Data Protection Regulation" but it does not ‘protect data’ it ‘protects individuals’ with regard to decision making based on their personal data. The misnomer data-protection is unfortunate, a better way of viewing this legislation is "personal data rights" legislation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
