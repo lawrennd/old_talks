@@ -19,7 +19,7 @@ author:
   institute: Amazon Cambridge and University of Sheffield 
   twitter: lawrennd 
   gscholar: r3SJcvoAAAAJ 
-  orchid: 
+  orcid: 
 layout: slides
 date: 2019-07-17
 venue: ATI Senior Fellowship Presentation

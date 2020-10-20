@@ -18,8 +18,13 @@ transition: None
 \include{../talk-macros.tex}
 
 
-\include{_health/includes/rolls-royce-analogy.md}
+The legislation behind the GDPR
+
+\include{_data-science/includes/privacy-loss-of-control.md}
+\include{_governance/includes/how-gdpr-may-help.md}
+\include{_governance/includes/feudal-era-data-ecosystem.md}
 \include{_governance/includes/data-governance-toolkit.md}
+\include{_health/includes/rolls-royce-analogy.md}
 \include{_governance/includes/data-trusts.md}
 
 \thanks

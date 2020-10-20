@@ -45,7 +45,7 @@ date: 2018-09-05
 
 \include{_data-science/includes/privacy-loss-of-control.md}
 
-\include{ _data-science/includes/gdpr.md}
+\include{ _governance/includes/how-gdpr-may-help.md}
 \include{ _data-science/includes/the-assault-on-privacy.md}
 \include{ _governance/includes/data-trusts.md}
 

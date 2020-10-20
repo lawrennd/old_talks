@@ -3,8 +3,8 @@ layout: lecture
 title: Recurrent Neural Networks
 week: 5
 date: 2021-02-23
-start: 14:00
-end: 15:00
+start: "14:00"
+end: "15:00"
 room: LT1
 author:
 - given: Ferenc

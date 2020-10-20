@@ -70,7 +70,7 @@ transition: None
 <!--include{_data-science/includes/data-science-as-debugging.md}-->
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_business/includes/black-box-thinking.md}
-<!--include{_data-science/includes/gdpr.md}-->
+<!--include{_governance/includes/how-gdpr-may-help.md}-->
 
 <!--include{_ai/includes/government-reports.md}-->
 

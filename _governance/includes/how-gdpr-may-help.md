@@ -8,9 +8,7 @@
 \newslide{How GDPR May Help}
 \slides{
 * Reflection on data eco-systems.
-
 * GDPR: Good Data Practice Rules
-
 * When viewed as best practice rather than regulation they hightlight problems in data ecosystems.}
 
 \notes{Early reactions to the General Data Protection Regulation by companies seem to have been fairly wary, but if we view the principles outlined in the GDPR as good practice, rather than regulation, it feels like companies can only improve their internal data ecosystems by conforming to the GDPR. For this reason, I like to think of the initials as standing for "Good Data Practice Rules" rather than General Data Protection Regulation. In particular, the term "data protection" is a misnomer, and indeed the earliest [data protection directive from the EU](https://en.wikipedia.org/wiki/Convention_for_the_protection_of_individuals_with_regard_to_automatic_processing_of_personal_data) (from 1981) refers to the protection of *individuals* with regard to the automatic processing of personal data, which is a much better sense of the term. 
