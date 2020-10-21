@@ -17,9 +17,11 @@ transition: None
 
 \include{../talk-macros.tex}
 
+\notes{These notes give background to a 10 minute talk on Data Trusts given at the Human Cell Atlas Meeting. For more information on this work you can check our recently announced ["Data Trusts Initiative"]() and the [associated website](https://datatrusts.uk/).}
+
 \notes{Data is not property, at least not in the modern sense of the word. But if we look back over time, we see different notions of property. In particular, associated with different resources. For example, common land is a particular type of property, which may or may not be explicitly owned, but members of a community have a particular set of rights to.
 
-In Sheffield, where I used to live, work, run and cycle. The moorland was historically common land until the enclosures acts applied in the 1860s. Until that time, local people had the right to, for example, collect sand from the moorland for use in building their houses. After enclosure, the crime of 'sand poaching' evolved. On Houndkirk Moor, south West of Sheffield, after enclosure [sand poachers went to collect sand at night](https://slidelegend.com/from-cairns-to-craters-conservation-heritage-moors-for-the-future_59e1b4f91723dd4240b3158c.html) for houses being build in the village of Dore.}
+In Sheffield, where I used to live, work, run and cycle. The moorland was historically common land until the enclosures acts applied in the 1860s. Until that time, local people had the right to, for example, collect sand from the moorland for use in building their houses. After enclosure, the crime of 'sand poaching' evolved. On Houndkirk Moor, south West of Sheffield, after enclosure [sand poachers went to collect sand at night](https://slidelegend.com/from-cairns-to-craters-conservation-heritage-moors-for-the-future_59e1b4f91723dd4240b3158c.html) for houses being built in the village of Dore.}
 
 \newslide{}
 
