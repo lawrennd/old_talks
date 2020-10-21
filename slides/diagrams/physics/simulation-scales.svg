@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-40 3 76 24"
+   height="127mm"
+   width="254mm">
+  <style
+     id="style4186">
+    tspan {
+    text-anchor:middle;
+    text-align:center;
+    }
+    .mytext {
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    font-stretch:normal;
+    font-size:1.5px;
+    font-family:sans-serif;
+    line-height:1.25;
+    fill:#000000;
+    fill-opacity:1;
+    writing-mode:lr;
+    text-align:center;
+    dominant-baseline:middle;
+    text-anchor:middle&quot;    
+    }
+    .mypath {
+    stroke-width:0.1;
+    }
+  </style>
+  <defs
+      id="defs22" />
+  <path
+      d="M -31, 12
+    L 27, 12
+    A 1 1 0 0 1, 28,13
+    L 28, 17
+    A 1 1 0 0 1 27, 18
+    L -31, 18
+    A 1 1 0 0 1 -32, 17
+    L -32, 13
+    A 1 1 0 0 1 -31, 12"
+      id="all-models"
+      class="dpath"
+      style="fill:#ECC8AF;fill-opacity:0.5;stroke:none"/>
+  <path
+      d="M -31, 12
+	 L -31, 18
+	 M -29, 12
+	 L -29, 18
+	 M -27, 12
+	 L -27, 18
+	 M -25, 12
+	 L -25, 18
+	 M -23, 12
+	 L -23, 18
+	 M -21, 12
+	 L -21, 18
+	 M -19, 12
+	 L -19, 18
+	 M -17, 12
+	 L -17, 18
+	 M -15, 12
+	 L -15, 18
+	 M -13, 12
+	 L -13, 18
+	 M -11, 12
+	 L -11, 18
+	 M -9, 12
+	 L -9, 18
+	 M -7, 12
+	 L -7, 18
+	 M -5, 12
+	 L -5, 18
+	 M -3, 12
+	 L -3, 18
+	 M -1, 12
+	 L -1, 18
+	 M  1, 12
+	 L  1, 18
+	 M  3, 12
+	 L  3, 18
+	 M  5, 12
+	 L  5, 18
+	 M  7, 12
+	 L  7, 18
+	 M  9, 12
+	 L  9, 18
+	 M 11, 12
+	 L 11, 18
+	 M 13, 12
+	 L 13, 18
+	 M 15, 12
+	 L 15, 18
+	 M 17, 12
+	 L 17, 18
+	 M 19, 12
+	 L 19, 18
+	 M 21, 12
+	 L 21, 18
+	 M 23, 12
+	 L 23, 18
+	 M 25, 12
+	 L 25, 18
+	 M 27, 12
+	 L 27, 18"
+      id="scale-marks"
+      class="dpath"
+      style="stroke:grey;stroke-width:0.1"/>
+  <path
+      d="M 27, 18
+	 L 27, 19"
+      id="twenty-seven-mark-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="twenty-seven-mark-text"
+     class="mytext"
+     y="20"
+     x="27"
+     style="fill:black">
+    <tspan
+       id="twenty-seven-mark-tspan"
+       y="20"
+       x="27">27</tspan>
+  </text>
+  <path
+      d="M 27, 12
+	 L 27, 11"
+      id="cosmos-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="cosmos-text"
+     class="mytext"
+     y="10"
+     x="27"
+     style="fill:black">
+    <tspan
+       id="cosmos-tspan"
+       y="10"
+       x="27">Cosmos</tspan>
+  </text>
+  <path
+      d="M 20, 12
+	 L 20, 8"
+      id="galaxy-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="galaxy-text"
+     class="mytext"
+     y="7"
+     x="20"
+     style="fill:black">
+    <tspan
+       id="galaxy-tspan"
+       y="7"
+       x="20">Galaxy</tspan>
+  </text>
+  <path
+      d="M 12, 12
+	 L 12, 5"
+      id="solar-system-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="solar-system-text"
+     class="mytext"
+     y="4"
+     x="12"
+     style="fill:black">
+    <tspan
+       id="solar-system-tspan"
+       y="4"
+       x="12">Solar System</tspan>
+  </text>
+  <path
+      d="M 8, 12
+	 L 8, 8"
+      id="climate-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="climate-text"
+     class="mytext"
+     y="7"
+     x="8"
+     style="fill:black">
+    <tspan
+       id="climate-tspan"
+       y="7"
+       x="8">Climate</tspan>
+  </text>
+  <path
+      d="M 7, 18
+	 L 7, 19"
+      id="supply-chain-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="supply-chain-text"
+     class="mytext"
+     y="21"
+     x="7"
+     style="fill:black">
+    <tspan
+       id="supply-chain-tspan"
+       y="21"
+       x="7">Supply Chain</tspan>
+  </text>
+  <path
+      d="M 6, 12
+	 L 6, 11"
+      id="weather-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="weather-text"
+     class="mytext"
+     y="10"
+     x="6"
+     style="fill:black">
+    <tspan
+       id="weather-tspan"
+       y="10"
+       x="6">Weather</tspan>
+  </text>
+  <path
+      d="M 4, 12
+	 L 4, 5"
+      id="city-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="city-text"
+     class="mytext"
+     y="4"
+     x="0"
+     style="fill:black">
+    <tspan
+       id="city-tspan"
+       y="4"
+       x="4">City</tspan>
+  </text>
+  <path
+      d="M 0, 12
+	 L 0, 8"
+      id="human-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="human-text"
+     class="mytext"
+     y="7"
+     x="0"
+     style="fill:black">
+    <tspan
+       id="human-tspan"
+       y="7"
+       x="0">Human</tspan>
+  </text>
+  <path
+      d="M -1, 18
+	 L -1, 22"
+      id="brain-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="brain-text"
+     class="mytext"
+     y="23"
+     x="-1"
+     style="fill:black">
+    <tspan
+       id="brain-tspan"
+       y="23"
+       x="-1">Brain</tspan>
+  </text>
+  <path
+      d="M -5, 12
+	 L -5, 8"
+      id="human-cell-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="human-cell-text"
+     class="mytext"
+     y="7"
+     x="-5"
+     style="fill:black">
+    <tspan
+       id="human-cell-tspan"
+       y="7"
+       x="-5">Cell</tspan>
+  </text>
+  <path
+      d="M -6, 12
+	 L -6, 11"
+      id="bacterium-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="bacterium-text"
+     class="mytext"
+     y="10"
+     x="-6"
+     style="fill:black">
+    <tspan
+       id="bacterium-tspan"
+       y="10"
+       x="-6">Bacterium</tspan>
+  </text>
+  <path
+      d="M -7, 12
+	 L -7, 5"
+      id="coronavirus-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="coronavirus-text"
+     class="mytext"
+     y="4"
+     x="-7"
+     style="fill:black">
+    <tspan
+       id="coronavirus-tspan"
+       y="4"
+       x="-7">Covid19</tspan>
+  </text>
+  <path
+      d="M -8, 18
+	 L -8, 19"
+      id="atpase-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="atpase-text"
+     class="mytext"
+     y="21"
+     x="-8"
+     style="fill:black">
+    <tspan
+       id="atpase-tspan"
+       y="21"
+       x="-8">V-ATPase</tspan>
+  </text>
+  <path
+      d="M -15, 12
+	 L -15, 11"
+      id="proton-tick"
+      class="mypath"
+      style="stroke:black"/> 
+  <text
+     id="proton-text"
+     class="mytext"
+     y="10"
+     x="-15"
+     style="fill:black">
+    <tspan
+       id="proton-tspan"
+       y="10"
+       x="-15">Proton</tspan>
+  </text>
+  <path
+      d="M -20, 12
+	 L -20, 8"
+      id="electron-tick"
+      class="mypath"
+      style="stroke:black"/> 
+  <text
+     id="electron-text"
+     class="mytext"
+     y="7"
+     x="-20"
+     style="fill:black">
+    <tspan
+       id="electron-tspan"
+       y="7"
+       x="-20">Electron</tspan>
+  </text>
+ <path
+      d="M -31, 12
+	 L -31, 11"
+      id="planck-length-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="planck-length-text"
+     class="mytext"
+     y="10"
+     x="-31"
+     style="fill:black">
+    <tspan
+       id="planck-length-tspan"
+       y="10"
+       x="-31">Planck Length</tspan>
+  </text>
+  <path
+      d="M -31, 18
+	 L -31, 19"
+      id="minus-thirty-one-mark-tick"
+      class="mypath"
+      style="stroke:black"/>
+  <text
+     id="minus-thirty-one-mark-text"
+     class="mytext"
+     y="20"
+     x="-31"
+     style="fill:black">
+    <tspan
+       id="minus-thirty-one-mark-tspan"
+       y="20"
+       x="-31">-31</tspan>
+  </text>  
+</svg>

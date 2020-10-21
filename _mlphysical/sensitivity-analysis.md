@@ -14,3 +14,6 @@ transition: None
 ---
 
 Related publications and links will appear here.
+
+Emukit https://nbviewer.jupyter.org/github/amzn/emukit/blob/master/notebooks/index.ipynb
+Emukit Playground: https://amzn.github.io/emukit-playground/#!/

@@ -24,13 +24,13 @@
     A 30 30 0 0 1 30, 0"
       id="all-models"
       class="dpath"
-      style="fill:rgb(221,221,70);fill-oopacity:0.5;stroke:none"/>
+      style="fill:#ECC8AF;fill-opacity:0.5;stroke:none"/>
   <text
      id="all-models-text"
      class="dtext"
      y="20"
      x="30"
-     style="fill:rgb(78,221,78)">
+     style="fill:black">
     <tspan
        id="all-models-tspan"
        y="20"
@@ -48,13 +48,13 @@
     A 30 30 0 0 1 60, 30"
      class="dpath"
      id="all-models-we-can-sample-from"
-     style="fill:rgb(78,221,78);fill-opacity:1;stroke:none" />
+     style="fill:#B8B6B9;fill-opacity:0.5;stroke:none" />
   <text
      id="computable-models-text"
      class="dtext"
      y="50"
      x="50"
-     style="fill:rgb(221,221,78)">
+     style="fill:black">
     <tspan
        id="computable-models-tspan"
        y="50"
@@ -62,23 +62,23 @@
   </text>
   <path
       d="M 90, 60
-    L 510, 60
-    A 30 30 0 0 1, 540,90
-    L 540, 210
-    A 30 30 0 0 1 510, 240
+    L 290, 60
+    A 30 30 0 0 1, 320,90
+    L 320, 210
+    A 30 30 0 0 1 290, 240
     L 90, 240
     A 30 30 0 0 1 60, 210
     L 60, 90
     A 30 30 0 0 1 90, 60"
      class="dpath"
      id="analytic-models"
-     style="fill:rgb(78,78,221);fill-opacity:1;stroke:none" />
+     style="fill:#D9D2BF;fill-opacity:0.5;stroke:none" />
   <text
      id="analytic-models-text"
      class="dtext"
      y="50"
      x="50"
-     style="fill:rgb(221,78,78)">
+     style="fill:black">
     <tspan
        id="analytic-models-tspan"
        y="80"
@@ -86,23 +86,23 @@
   </text>
   <path
       d="M 120, 90
-    L 480, 90
-    A 30 30 0 0 1, 510,120
-    L 510, 180
-    A 30 30 0 0 1 480, 210
-    L 120, 210
-    A 30 30 0 0 1 90, 180
+    L 260, 90
+    A 30 30 0 0 1, 290,120
+    L 290, 150
+    A 30 30 0 0 1 260, 180
+    L 120, 180
+    A 30 30 0 0 1 90, 150
     L 90, 120
     A 30 30 0 0 1 120, 90"
      class="dpath"
      id="gaussian-process-models"
-     style="fill:rgb(221,78,78);fill-opacity:1;stroke:none" />
+     style="fill:#C8C5BC;fill-opacity:0.5;stroke:none" />
   <text
      id="gaussian-process-text"
      class="dtext"
      y="50"
      x="50"
-     style="fill:rgb(221,221,78)">
+     style="fill:black">
     <tspan
        id="gaussian-process-tspan"
        y="110"

@@ -12,8 +12,8 @@
 
 \define{\href{link}{label}}{[\label](\link)}
 
-\define{\includediagram{filename}{align}{class}{style}}{![](\filename.emf)}
-\define{\includediagramclass{filename}{align}{class}{style}}{![](\filename.emf)}
+\define{\includediagram{filename}{width}{class}{style}}{![](\filename.emf)}
+\define{\includediagramclass{filename}{width}{class}{style}}{![](\filename.emf)}
 
 
 \define{\colorcyan{block}}{{\color{\cyanColor} \block}}
