@@ -11,9 +11,9 @@
 
 \notes{The Game of Life is played on a grid of squares, or pixels. Each pixel is either on or off. The game has no players, but a set of simple rules that are followed at each turn the rules are.}
 
-**Survival** Every pixel surrounded by two or three other pixels survives for the next turn.
-**Death** Each pixel surrounded by four or more pixels dies from overpopulation. Likewise, every pixel next to one or no pixels at all dies from isolation.
-**Birth** Each square adjacent to exactly three pixels gives birth to a new pixel.
+* **Survival** Every pixel surrounded by two or three other pixels survives for the next turn.
+* **Death** Each pixel surrounded by four or more pixels dies from overpopulation. Likewise, every pixel next to one or no pixels at all dies from isolation.
+* **Birth** Each square adjacent to exactly three pixels gives birth to a new pixel.
 
 \notes{And that's it. Those are the simple 'physical laws' for Conway's game.}
 
@@ -23,6 +23,7 @@
 
 \figure{\includegif{\diagramsDir/simulation/Glider}{50%}}{The glider is an oscillator that moves diagonally after creation. From the simple rules of Life it's not obvious that such an object does exist, until you do the necessary computation.}{glider-gif}
 
+\newslide{}
 \notes{}
 
 \figure{\includegif{\diagramsDir/simulation/Gosperglidergun}{80%}}{The Gosper glider gun is a configuration that creates gliders. A new glider is released after every 30 turns.}{gosper-glider-gun}
@@ -33,13 +34,19 @@
 
 \notes{}
 
-\figure{\includegif{\diagramsDir/simulation/Loafer}{80%}}{The Loafer, discovered by Josh Ball in 2013 is named for its slow movement.}{the-loafer-spaceship}
+\newslide{}
+
+\figure{\includegif{\diagramsDir/simulation/Loafer}{60%}}{The Loafer, discovered by Josh Ball in 2013 is named for its slow movement.}{the-loafer-spaceship}
 
 \notes{Once these patterns are discovered, they are combined (or engineered) to create new Life patterns that do some remarkable things. For example there's a life pattern that runs a Turing machine, or more remarkably there's a Life pattern that runs Life itself.}
+
+\newslide{}
 
 \figure{\includegif{\diagramsDir/simulation/life-in-life}{80%}}{The Game of Life running in Life. The video is drawing out recursively showing pixels that are being formed by filling cells with moving spaceships. Each individual pixel in this game of life is made up of $2048 \times 2048$ pixels called an [OTCA metapixel](https://www.conwaylife.com/wiki/OTCA_metapixel).}{life-in-life}
 
 \notes{To find out more about the Game of Life you can watch this video by Alan Zucconi or read his [associated blog post](https://www.alanzucconi.com/2020/10/13/conways-game-of-life/).}
+
+\newslide{}
 
 \figure{\includeyoutube{Kk2MH9O4pXY}{800}{600}}{An introduction to the Game of Life by Alan Zucconi.}{intro-to-life}
 

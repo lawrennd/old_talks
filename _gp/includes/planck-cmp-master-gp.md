@@ -97,6 +97,8 @@ Cells[0:2] = 0}
 fig = plt.gcf()
 fig.savefig('\writeDiagramsDir/physics/mollweide-sample-cmb.png', transparent=True)}
 
+\newslide{}
+
 \figure{\includepng{\diagramsDir/physics/mollweide-sample-cmb}{50%}{vertical-align:middle}}{A simulation of the Cosmic Microwave Background obtained through sampling from the relevant Gaussian process covariance (in polar co-ordinates).}{mollweide-sample-cmb}
 
 \notes{The simulation was created by [Boris Leistedt](https://ixkael.github.io/), see the [original Jupter notebook here](https://github.com/ixkael/Prob-tools/blob/master/notebooks/The%20CMB%20as%20a%20Gaussian%20Process.ipynb).}
