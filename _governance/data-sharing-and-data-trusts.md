@@ -37,11 +37,11 @@ The rivers of Sheffield are streams, but as they flow down into the Don and even
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/supply-chain/Shepherd_Wheel_millpond_April_2017_01}{80%}}{Shepherd Wheel in Whitely Wood. In Sheffield the millpond itself is called a damn. This Wheel is [now a working museum](http://www.simt.co.uk/shepherd-wheel-workshop) on Porter Brook, but it dates originally to the 1500s. It now sits in Bingham Park, but historically the river would have had several Wheels operating from the Porter Brook}{shepherd-wheel}
+\figure{\includejpg{\diagramsDir/supply-chain/1280px-Shepherd_Wheel_millpond_April_2017_01}{80%}}{Shepherd Wheel in Whitely Wood. In Sheffield the millpond itself is called a damn. This Wheel is [now a working museum](http://www.simt.co.uk/shepherd-wheel-workshop) on Porter Brook, but it dates originally to the 1500s. It now sits in Bingham Park, but historically the river would have had several Wheels operating from the Porter Brook}{shepherd-wheel}
 
 \newslide{}
 
-\figure{\includejpg{https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Shepherd%27s_Wheel_Workshop_1.jpg/1280px-Shepherd%27s_Wheel_Workshop_1}{80%}}{Interior of Shepherd Wheel showing spinning wheel in background, and stationary wheel in foreground with the grinder's 'horse'.}{shepherd-wheel-interior}
+\figure{\includejpg{\diagramsDir/supply-chain/1280px-Shepherd's_Wheel_Workshop_1}{80%}}{Interior of Shepherd Wheel showing spinning wheel in background, and stationary wheel in foreground with the grinder's 'horse'.}{shepherd-wheel-interior}
 
 \notes{Many of these rights are in tension. Mills working on the river may pollute the stream. If the water is damned or  used for irrigation, then it can be too low for navigation. There is complex interplay of demands on the river that creates tensions between different users.
 
