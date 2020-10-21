@@ -1,4 +1,17 @@
+\ifndef{gameOfLife}
+\define{gameOfLife}
+
+\editme
+
 Inspired by <https://gist.github.com/jiffyclub/3778422#file-game_of_life-ipynb>
+
+
+\figure{\includegif{\diagramsDir/simulation/Glider}{50%}}{The glider is an oscillator that moves diagonally after creation. From the simple rules of Life it's not obvious that such an object does exist, until you do the necessary computation.}{glider-gif}
+
+
+\figure{\includegif{\diagramsDir/simulation/Gosperglidergun}{80%}}{The Gosper glider gun is a configuration that creates gliders. A new glider is released after every 30 turns.}{gosper-glider-gun}
+
+\notes{These patterns had to be discovered, in the same way that a scientist might discover a disease, or an explorer a new land. For example, the Gosper glider gun was [discovered by Bill Gosper in 1970](https://conwaylife.com/wiki/Bill_Gosper).}
 
 \setupcode{import numpy as np
 from scipy.signal import convolve}
@@ -49,3 +62,4 @@ FILTER = np.array([[1, 1, 1],
     count = convolve(current, FILTER, mode='same')
     next[(count == 3) | (count == 102) | (count == 103)] = 1}
 	
+\endif
