@@ -5,7 +5,7 @@
 
 \subsection{Modelling Herd Immunity}
 
-\notes{This example is taken from [Thomas House's blog post](https://personalpages.manchester.ac.uk/staff/thomas.house/blog/modelling-herd-immunity.html) on Herd Immunity. This model was shared at the beginning of the Covid19 pandemic when the UK lockdown hadn't yet occurred.}
+\notes{This example is taken from [Thomas House's blog post](https://personalpages.manchester.ac.uk/staff/thomas.house/blog/modelling-herd-immunity.html) on Herd Immunity. This model was shared at the beginning of the Covid19 pandemic when the first UK lockdown hadn't yet occurred.}
 
 
 
@@ -31,7 +31,7 @@ $$
 $$
 \notes{Note that the first term matches the term from the Susceptible equation. This is because it is the incoming exposed population.
 
-The exposed population move to a second compartment of exposure, $E_2$. I believe the reason for this is that if you use only one exposure compartment, then the statistics of the duration of exposure are incorrect (implicitly they are exponetially distributed in the underlying stochastic version of the model). By using two exposure departments, Thomas is making a slight correction to this which would impose a first order gamma distribution on those statistics. A similar trick is being deployed for the `infectious group'. So we gain an additional equation to help with these statistics,}
+The exposed population move to a second compartment of exposure, $E_2$. I believe the reason for this is that if you use only one exposure compartment, then the statistics of the duration of exposure are incorrect (implicitly they are exponetially distributed in the underlying stochastic version of the model). By using two exposure departments, Thomas is making a slight correction to this which would impose a first order gamma distribution on those statistics. A similar trick is being deployed for the 'infectious group'. So we gain an additional equation to help with these statistics,}\newslide{}
 $$
 \frac{\text{d}{E_2}}{\text{d}t} = \sigma E_1 - \sigma E_2.
 $$
@@ -45,7 +45,7 @@ $$
 $$
 \notes{And finally we have those that have recovered emerging from the second infections compartment. In this model there is no separate model for 'deaths', so the recovered compartment, $R$, would also include those that die,}
 $$
-\frac{\text{d}R}}{\text{d}t} = \gamma I_2.
+\frac{\text{d}R}{\text{d}t} = \gamma I_2.
 $$
 \notes{All of these equations are then represented in code as follows.}
 

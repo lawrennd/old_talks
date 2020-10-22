@@ -3,7 +3,6 @@
 
 \editme
 
-\notes{Inspired by <https://gist.github.com/jiffyclub/3778422#file-game_of_life-ipynb>}
 
 \subsection{Game of Life}
 
@@ -52,7 +51,8 @@
 
 
 
-
+<!--
+\notes{Inspired by <https://gist.github.com/jiffyclub/3778422#file-game_of_life-ipynb>}
 \setupcode{import numpy as np
 from scipy.signal import convolve}
 
@@ -101,5 +101,5 @@ FILTER = np.array([[1, 1, 1],
     next[:] = 0
     count = convolve(current, FILTER, mode='same')
     next[(count == 3) | (count == 102) | (count == 103)] = 1}
-	
+-->	
 \endif
