@@ -13,6 +13,17 @@ reveal: false
 transition: None
 ---
 
+
+\section{Emulation}
+
+\include{_uq/includes/emulation.md}
+
+\section{Emukit Playground}
+
+\include{_uq/includes/emukit-playground.md}
+
+\include{_uq/includes/deep-emulation.md}
+
 Related publications and links will appear here.
 
 Emukit https://nbviewer.jupyter.org/github/amzn/emukit/blob/master/notebooks/index.ipynb

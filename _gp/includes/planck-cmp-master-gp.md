@@ -21,8 +21,7 @@ The objective of the Planck space craft was to measure the anisotropy and statis
 
 \notes{\subsection{Simulating a CMB Map}}
 
-
-\notes{You can find a Jupyter notebook that allows you to sample from the covariance function to make different Cosmic Microwave Backgrounds [in this Jupyter notebook](https://github.com/lawrennd/Prob-tools/blob/master/notebooks/The%20CMB%20as%20a%20Gaussian%20Process.ipynb).}
+\notes{The simulation was created by [Boris Leistedt](https://ixkael.github.io/), see the [original Jupter notebook here](https://github.com/ixkael/Prob-tools/blob/master/notebooks/The%20CMB%20as%20a%20Gaussian%20Process.ipynb).}
 
 \notes{Here we use that code to simulate our own universe and sample from what it looks like.}
 
@@ -101,7 +100,6 @@ fig.savefig('\writeDiagramsDir/physics/mollweide-sample-cmb.png', transparent=Tr
 
 \figure{\includepng{\diagramsDir/physics/mollweide-sample-cmb}{50%}{vertical-align:middle}}{A simulation of the Cosmic Microwave Background obtained through sampling from the relevant Gaussian process covariance (in polar co-ordinates).}{mollweide-sample-cmb}
 
-\notes{The simulation was created by [Boris Leistedt](https://ixkael.github.io/), see the [original Jupter notebook here](https://github.com/ixkael/Prob-tools/blob/master/notebooks/The%20CMB%20as%20a%20Gaussian%20Process.ipynb).}
 
 \newslide{}
 
