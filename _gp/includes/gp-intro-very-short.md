@@ -18,6 +18,9 @@ In practice, the algorithm is often too slow to be practical, because most sampl
 
 However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density *analytically*. This is the benefit of Gaussian processes.}
 
+
+\notes{First we will load in two python functions for computing the covariance function.}
+
 \loadplotcode{Kernel}{mlai}
 \loadplotcode{eq_cov}{mlai}
 
@@ -26,11 +29,12 @@ However, in the Gaussian process case, when the likelihood also assumes Gaussian
                      shortname='eq',					 
 					 lengthscale=0.25)}
 
+\notes{Next we sample from a multivariate normal density (a multivariate Gaussian), using the covariance function as the covariance matrix.}
 
 \setupplotcode{import numpy as np
 np.random.seed(10)
 import teaching_plots as plot}
-\plotcode{plot.rejection_samples(kernel=kernel, 
+\code{plot.rejection_samples(kernel=kernel, 
     diagrams='\writeDiagramsDir/gp')}
 
 
@@ -44,24 +48,35 @@ from ipywidgets import IntSlider}
 
 \includepng{\diagramsDir/gp/gp_rejection_sample001}{100%}{negate}
 
+\speakernotes{Here we're showing 20 samples taken from the prior over functions defined by our covarariance}
+
 \newslide{}
 
 \includepng{\diagramsDir/gp/gp_rejection_sample002}{100%}{negate}
+
+\speakernotes{We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.}
+
 
 \newslide{}
 
 \includepng{\diagramsDir/gp/gp_rejection_sample003}{100%}{negate}
 
+\speakernotes{Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.}
+
 \newslide{}
 
 \includepng{\diagramsDir/gp/gp_rejection_sample004}{100%}{negate}
 
+\speakernotes{Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.}
+
 \newslide{} 
 
 \includepng{\diagramsDir/gp/gp_rejection_sample005}{100%}{negate}
+
+\speakernotes{The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.}
 }
 \notes{\figure{\includepng{\diagramsDir/gp/gp_rejection_sample003}{100%}
 \includepng{\diagramsDir/gp/gp_rejection_sample004}{100%}
-\includepng{\diagramsDir/gp/gp_rejection_sample005}{100%}}{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}{gp-rejection-samples}}
+\includepng{\diagramsDir/gp/gp_rejection_sample005}{100%}}{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). This is a rejection sampling view of Bayesian inference. The Gaussian process allows us to do this analytically by multiplying the *prior* by the *likelihood*.}{gp-rejection-samples}}
 
 \endif
