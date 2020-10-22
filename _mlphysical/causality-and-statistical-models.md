@@ -18,5 +18,7 @@ transition: None
 
 http://media.nips.cc/Conferences/2013/nips-dec2013-pearl-bareinboim-tutorial-full.pdf
 
+https://www.youtube.com/watch?v=yksduYxEusQ
+
 \references
 
