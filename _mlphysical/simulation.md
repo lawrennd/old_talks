@@ -38,7 +38,7 @@ transition: None
 
 \notes{This is an entrancing quote, that seems to work well for selling books (A Brief History of Time sold over 10 million copies), but as Laplace has already pointed out to us, the Universe doesn't work quite so simply as that. Commonly, God is thought to be omniscient, but having a grand unifying theory alone doesn't give us omniscience.}
 
-\notes{Laplace's demon still applies. Even if we had a grand unifying theory, which encoded "all the forces that set nature in motion" we have an amount of work left to do in any quest for 'omniscience'.}
+\notes{Laplace's gremlin still applies. Even if we had a grand unifying theory, which encoded "all the forces that set nature in motion" we have an amount of work left to do in any quest for 'omniscience'.}
 
 \newslide{}
 
