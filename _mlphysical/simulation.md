@@ -38,7 +38,7 @@ transition: None
 
 \notes{This is an entrancing quote, that seems to work well for selling books (A Brief History of Time sold over 10 million copies), but as Laplace has already pointed out to us, the Universe doesn't work quite so simply as that. Commonly, God is thought to be omniscient, but having a grand unifying theory alone doesn't give us omniscience.}
 
-\notes{Laplace's gremlin still applies. Even if we had a grand unifying theory, which encoded "all the forces that set nature in motion" we have an amount of work left to do in any quest for 'omniscience'.}
+\notes{Laplace's demon still applies. Even if we had a grand unifying theory, which encoded "all the forces that set nature in motion" we have an amount of work left to do in any quest for 'omniscience'.}
 
 \newslide{}
 
@@ -179,7 +179,7 @@ This broad class of physical models, or 'natural laws' is probably the closest t
 
 \subsection{Quantum Mechanics}
 
-\notes{Alternative we can drop down a few scales and consider simulation of the Schrödinger equation. A recent paper uses deep neural networks to speed up the solution of the many-electron Schrödinger equation enabling simulation of chemical bonds [@Pfau-abinitio20]. The [PR-blog post is also available](https://deepmind.com/blog/article/FermiNet) and is rather better written than the V-ATPase version. The paper uses a neural network to model the quantum state of a number of electrons.}
+\notes{Alternative we can drop down a few scales and consider simulation of the Schrödinger equation. A recent paper uses deep neural networks to speed up the solution of the many-electron Schrödinger equation enabling simulation of chemical bonds [@Pfau-abinitio20]. The [PR-blog post is also available](https://deepmind.com/blog/article/FermiNet). The paper uses a neural network to model the quantum state of a number of electrons.}
 
 \figure{\includegif{\diagramsDir/physics/many-electron-schroedinger}{40%}}{The many-electron Schroedinger equation is important in understanding how Chemical bonds are formed.}{many-electron-schroedinger}
 
