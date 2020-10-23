@@ -23,36 +23,6 @@ project? Name two languages involved in the Jupyter project other than python.}{
 \include{_ml/includes/nigerian-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 
-<!--\subsection{Assignment Questions}
-
-\notes{The questions in the above lab sheet need to be
-answered and handed in before 09:00 on 7th October 2014 (i.e. before next
-lecture). The hand should be done via file upload through
-[MOLE](http://vle.shef.ac.uk).}-->
-
-<!--\subsection{More Fun on the Python Data Farm}
-
-\notes{If you want to explore more of the things
-you can do with movies and python you might be interested in the `imdbpy` python
-library.}
-
-\notes{You can try installing it using `pip` as follows.}
-
-\installcode{IMDbPY}
-
-\notes{If this doesn't work on your machine, try following instructions on
-(http://imdbpy.sourceforge.net/)}
-
-\notes{Once you've installed `imdbpy` you can test it
-works with the following script, which should list movies with the word 'python'
-in their title. To run the code in the following box, simply click the box and
-press `SHIFT-enter` or `CTRL-enter`. Then you can try running the code below.}
-
-\code{from imdb import IMDb
-ia = IMDb()
-
-for movie in ia.search_movie('python'):
-    print(movie)}-->
 
 \figure{\includeyoutube{GX8VLYUYScM}{800}{600}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
 
