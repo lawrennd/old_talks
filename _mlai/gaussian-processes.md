@@ -1,9 +1,8 @@
 ---
-week: 12
+week: 10
 title: "Special Topics: Gaussian Processes"
 abstract: 
 youtube: B2XhFoCehy8
-date: 2015-12-15
 ---
 
 \include{talk-macros.tex}

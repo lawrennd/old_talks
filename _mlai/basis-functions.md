@@ -5,7 +5,6 @@ abstract: |
   In the last session we explored least squares for univariate and multivariate *regression*. We introduced *matrices*, *linear algebra* and *derivatives*. 
   
   In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
-date: 2015-10-20
 ---
 
 \include{talk-macros.gpp}

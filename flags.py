@@ -21,7 +21,11 @@ args = parser.parse_args()
 filename = args.base + '.md'
 
 fields = ny.header_fields(filename)
-date = ny.header_field('date', fields).strftime("%Y-%m-%d")
+
+try:
+    date = ny.header_field('date', fields).strftime("%Y-%m-%d")
+except ny.FileFormatError:
+    date = None
 try:
     week = int(ny.header_field('week', fields))
     weekarg = """ --metadata week={week}""".format(week=week)
@@ -47,7 +51,10 @@ if args.output == 'prefix':
     print(prefix)
     
 elif args.output == 'post':
-    lines = """--metadata date={date} """
+    if date is not None:
+        lines = """--metadata date={date} """
+    else:
+        lines = ""
     for ext in ['docx', 'pptx']:
         if ny.header_field(ext, fields):
             lines += """ --metadata {ext}={{out}}.{ext}""".format(ext=ext)

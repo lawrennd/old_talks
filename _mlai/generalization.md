@@ -3,7 +3,6 @@ week: 5
 title: "Generalization: Model Validation"
 abstract: "Generalization is the main objective of a machine learning algorithm. The models we design should work on data they have not seen before. Confirming whether a model generalizes well or not is the domain of *model validation*. In this lecture we introduce approaches to model validation such as hold out validation and cross validation."
 youtube: wy0J6cgqlf8
-date: 2015-10-27
 ---
 
 \include{talk-macros.tex}

@@ -3,8 +3,6 @@
 import sys
 import os
 import _python.ndltalk as nt
-import yaml
-from datetime import date
 
 field = sys.argv[1]
 filename = sys.argv[2]

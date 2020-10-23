@@ -3,11 +3,12 @@ week: 1
 title: Probability and an Introduction to Jupyter, Python and Pandas
 abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
-date: 2015-09-29
 youtube: M67rG3cZoVg
 ---
 
 \include{talk-macros.tex}
+
+\installcode{pods}
 
 \include{_mlai/includes/welcome.md}
 \include{_mlai/includes/assumed-knowledge.md}
@@ -22,12 +23,12 @@ project? Name two languages involved in the Jupyter project other than python.}{
 \include{_ml/includes/nigerian-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 
-\subsection{Assignment Questions}
+<!--\subsection{Assignment Questions}
 
 \notes{The questions in the above lab sheet need to be
 answered and handed in before 09:00 on 7th October 2014 (i.e. before next
 lecture). The hand should be done via file upload through
-[MOLE](http://vle.shef.ac.uk).}
+[MOLE](http://vle.shef.ac.uk).}-->
 
 <!--\subsection{More Fun on the Python Data Farm}
 
