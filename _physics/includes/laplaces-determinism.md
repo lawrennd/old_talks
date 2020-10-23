@@ -21,7 +21,7 @@
 
 \slides{
 \figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
-p
+
 <!--\includepdfclip{\diagramsDir/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 3.2cm}{16}{80%}{}-->}
 \notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
 
