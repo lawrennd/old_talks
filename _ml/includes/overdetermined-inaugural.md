@@ -36,7 +36,7 @@ $$2.5 = 2m + c$$
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.over_determined_system(diagrams='\writeDiagramsDir/ml')}
 
-\setupplotcode{from ipywidgets import IntSlider
+\setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
                             directory='\writeDiagramsDir/ml', 
