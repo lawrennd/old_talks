@@ -60,6 +60,10 @@ fellow researcher can you publish that data on line?}{1}{10}
 
 \thanks
 
+\reading
+
+\exercises
+
 \references
 
 

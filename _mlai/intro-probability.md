@@ -23,6 +23,7 @@ project? Name two languages involved in the Jupyter project other than python.}{
 \include{_ml/includes/nigerian-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 
+\newslide{}
 
 \figure{\includeyoutube{GX8VLYUYScM}{800}{600}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
 
@@ -50,11 +51,12 @@ project? Name two languages involved in the Jupyter project other than python.}{
 \addexercise{@Bishop:book06}{Exercise 1.8}
 \addexercise{@Bishop:book06}{Exercise 1.9}
 
+\thanks
+
 \reading
 
 \exercises
 
-\thanks
 
 \references
 

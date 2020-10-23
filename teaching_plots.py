@@ -303,7 +303,8 @@ def prob_diagram(fontsize=20, diagrams='../diagrams'):
 
     plt.text(3, -2*axis_indent, '$X$', fontsize=fontsize)
     plt.text(-2*axis_indent, 2, '$Y$', fontsize=fontsize)
-
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'prob_diagram.svg'), transparent=True)
 
 
@@ -344,6 +345,8 @@ def bernoulli_urn(ax, diagrams='../diagrams'):
             circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=ball_color)
             ax.add_artist(circle)
 
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'bernoulli-urn.svg'), transparent=True)
 
 def bayes_billiard(ax, diagrams='../diagrams'):
@@ -361,6 +364,8 @@ def bayes_billiard(ax, diagrams='../diagrams'):
     ax.set_aspect('equal')
     ax.set_xlim([0, 1])
     ax.set_ylim([0, 1])
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'bayes-billiard000.svg'), transparent=True)
 
     ball_x = np.random.uniform(size=1)[0]
@@ -552,6 +557,8 @@ def regression_contour_fit(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
     f, ax = plt.subplots(1, 2, figsize=two_figsize) # this is to create 'side by side axes'
     # first let's plot the error surface
     handle = init_regression(f, ax, x, y, m_vals, c_vals, E_grid, m_star, c_star)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'regression_contour_fit000.svg'), transparent=True)
 
     count=0
@@ -578,6 +585,8 @@ def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
     f, ax = plt.subplots(1, 2, figsize=two_figsize) # this is to create 'side by side axes'
     handle = init_regression(f, ax, x, y, m_vals, c_vals, E_grid, m_star, c_star)
     count=0
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'regression_sgd_contour_fit{count:0>3}.svg').format(count=count))
     for i in range(max_iters): # do max_iters iterations (parameter updates)
         # choose a random point
@@ -625,6 +634,8 @@ def over_determined_system(diagrams='../diagrams'):
     plt.xlabel('$x$', fontsize=30)
     plt.ylabel('$y$',fontsize=30)
     plt.text(4, 4, '$y=mx+c$',  horizontalalignment='center', verticalalignment='bottom', fontsize=30)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'over_determined_system001.svg'), transparent=True)
     ctext = ax.text(0.15, c+0.15, '$c$',  horizontalalignment='center', verticalalignment='bottom', fontsize=20)
     xl = np.array([1.5, 2.5])
@@ -691,6 +702,8 @@ def gaussian_of_height(diagrams='../diagrams'):
     ax2.set_xlim(1.4, 2.0)
     ax2.set_xlabel('$h/m$', fontsize=20)
     ax2.set_ylabel('$p(h|\mu, \sigma^2)$', fontsize = 20)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'gaussian_of_height.svg'), transparent=True)
     
 #################### Session 5 ####################
@@ -746,6 +759,8 @@ def marathon_fit(model, value, param_name, param_range,
             ax[1].set_title(title, fontsize=fontsize)
 
     filename = '{prefix}_{name}_{param_name}{value:0>3}'.format(prefix=prefix, name=model.name, param_name=param_name, value=value)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
     if png_plot:
         mlai.write_figure(os.path.join(directory, filename + '.png'), transparent=True)
@@ -991,6 +1006,8 @@ def under_determined_system(diagrams='../diagrams'):
     ax.set_xlim(xlim)
     ax.set_xlabel('$x$', fontsize=20)
     ax.set_ylabel('$y$', fontsize=20)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'under_determined_system000.svg'), transparent=True, frameon=True)
 
     xvals = np.linspace(0, 3, 2)[:, np.newaxis]
@@ -1061,6 +1078,8 @@ def bayes_update(diagrams='../diagrams'):
 
     ax.plot(f, prior_curve, color=[1, 0., 0.], linewidth=3)
     ax.text(3.5, 2, '$p(c) = \mathcal{N}(c|0, \\alpha_1)$', horizontalalignment='center', fontsize=20) 
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'dem_gaussian001.svg'), transparent=True)
 
     ax.plot(f, likelihood_curve, color=[0, 0, 1], linewidth=3)
@@ -1088,6 +1107,8 @@ def height_weight(h=None, w=None, muh=1.7, varh=0.0225,
     height(ax[0], h, ph)
 
     weight(ax[1], w, pw)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mlai.write_figure(os.path.join(diagrams, 'height_weight_gaussian.svg'), transparent=True)
 
 def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
@@ -1130,6 +1151,10 @@ def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
     height(ax[1], h, ph)
     weight(ax[2], w, pw)
     count = 0
+
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
+
     for i in range(num_samps):
         hval = np.random.normal(size=(1,1))*np.sqrt(varh) + muh
         wval = np.random.normal(size=(1,1))*np.sqrt(varw) + muw
@@ -1153,6 +1178,8 @@ def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
 def correlated_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
                              muw=75, varw=36, num_samps=20, diagrams='../diagrams'):
     "Plot correlated Gaussian distributions of height and weight."
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     if h is None:
         h = np.linspace(1.25, 2.15, 100)[:, np.newaxis]
     if w is None:
@@ -1227,6 +1254,8 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
                    fixed_size = 4, stub=None, start=0,
                    diagrams='../diagrams'):
     """Plot two dimensional predictions of the Gaussian density"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     
     subK = K[ind][:, ind]
     f = f[ind]
@@ -1274,6 +1303,8 @@ def output_augment_x(x, num_outputs):
 
 def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fontsize=20, num_basis=3, num_plots=3):
     """Plot examples of the basis vectors."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     x = np.linspace(x_min, x_max, 100)[:, None]
 
     basis = mlai.Basis(function, num_basis)
@@ -1339,6 +1370,8 @@ def computing_covariance(kernel,
                          stub,
                          prec='1.2',
                          diagrams='../slides/diagrams/kern'):
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     counter=0
     fig, ax = plt.subplots(1, 2, figsize=one_figsize)
     if len(x)>3:
@@ -1450,6 +1483,8 @@ def kern_circular_sample(K, mu=None, x=None,
                          num_theta=48, multiple=True,
                          diagrams='../diagrams', **kwargs):
     """Make an animation of a circular sample from a covariance function."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
 
     if x is None:
         if multiple:
@@ -1554,6 +1589,8 @@ def covariance_func(kernel, x=None,
                     shortname=None, longname=None, comment=None,
                     num_samps=5, diagrams='../diagrams', multiple=False):
     """Write a slide on a given covariance matrix."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
 
     if x is None:
         x = np.linspace(-1, 1, 200)[:, np.newaxis]
@@ -1593,6 +1630,8 @@ def covariance_func(kernel, x=None,
 
 def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../diagrams', **kwargs):
     """Plot samples from a GP, a small sample of data and a rejection sample."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
 
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=big_wide_figsize)
     if x is None:
@@ -1647,6 +1686,8 @@ def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../d
     
 def two_point_sample(kernel_function, diagrams='../diagrams'):
     """Make plots for the two data point sample example for explaining gaussian processes."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
 
     ind = [0, 1]    
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=two_figsize)
@@ -1772,6 +1813,8 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
 
 def poisson(diagrams='../diagrams'):
     """Make plots of the Poisson distribution"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     from scipy.stats import poisson
     fig, ax = plt.subplots(figsize=two_figsize)
     y = np.asarray(range(0, 16))
@@ -1790,6 +1833,8 @@ def poisson(diagrams='../diagrams'):
 
 def logistic(diagrams='../diagrams'):
     """Make plots of the logistic function"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(figsize=two_figsize)
     f = np.linspace(-8, 8, 100)
     g = 1/(1+np.exp(-f))
@@ -1829,6 +1874,8 @@ def weight(ax, w, pw):
 
 def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
     """Illustrate the low rank approximation used in sparse GPs."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=big_wide_figsize)
     q = 3
     k1 = 10
@@ -1866,6 +1913,8 @@ def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
     
 def kronecker_illustrate(fontsize=25, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=two_figsize)
     A = [['$a$', '$b$'],
          [ '$c$', '$d$']]
@@ -1911,6 +1960,8 @@ def blank_canvas(ax):
 
 def kronecker_illustrate(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     A = [['$a$', '$b$'],
          [ '$c$', '$d$']]
@@ -1944,6 +1995,8 @@ def kronecker_illustrate(fontsize=25, figsize=two_figsize, diagrams='../diagrams
 
 def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     my_rgb = [[1., 1., 1.],[1., 0., 0.],[ 0., 1., 0.],[ 0., 0., 1.]]
 
@@ -1992,6 +2045,8 @@ def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../d
 
 def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 1, figsize=figsize)
     my_rgb = [[1., 1., 1.],[1., 0., 0.],[ 0., 1., 0.],[ 0., 0., 1.]]
     from matplotlib.colors import ListedColormap
@@ -2047,6 +2102,8 @@ def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diag
 
 def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     A = [['$\mathbf{W}$', '$\mathbf{0}$', '$\mathbf{0}$'],['$\mathbf{0}$', '$\mathbf{W}$', '$\mathbf{0}$'],['$\mathbf{0}$', '$\mathbf{0}$', '$\mathbf{W}$']]
     B = [['$\mathbf{x}_{1,:}$'],['$\mathbf{x}_{2,:}$'],['$\mathbf{x}_{3,:}$']]
@@ -2082,6 +2139,8 @@ def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
 def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
                max_updates=30, seed=100001, diagrams='../diagrams'):
     """Fit a perceptron algorithm and record iterations of fit"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     w, b, x_select = mlai.init_perceptron(x_plus, x_minus, seed=seed)
     updates = 0
     count = 0
@@ -2149,6 +2208,8 @@ def non_linear_difficulty_plot_3(alpha=1.0,
                                  diagrams='../diagrams'):
     """Push a Gaussian density through an RBF network and plot results"""
 
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     mu = np.linspace(-4, 4, num_basis_func)[np.newaxis, :]
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
 
@@ -2313,6 +2374,8 @@ def non_linear_difficulty_plot_1(alpha=1.0,
                                  fontsize=30,
                                  diagrams='../diagrams'):
     """Plot a one dimensional Gaussian pushed through an RBF network."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     from matplotlib.patches import Polygon
     xsamp = np.random.randn(num_samples, 1)
     x = np.linspace(-6, 6, number_across)[:, np.newaxis]
@@ -2442,6 +2505,8 @@ class layer():
 
 def deep_nn(diagrams='../diagrams'):
     """Draw a deep neural network."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     model = network()
     model.add_layer(layer(width=6, label='x_{index}',
                     observed=True, text=r'given $\mathbf{x}$'))
@@ -2471,6 +2536,8 @@ def deep_nn(diagrams='../diagrams'):
     
 def deep_nn_bottleneck(diagrams='../diagrams'):
     """Draw a deep neural network with bottleneck layers."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     model = network()
     model.add_layer(layer(width=6, label='x_{index}',
                     observed=True, text=r'given $\mathbf{x}$'))
@@ -2527,6 +2594,8 @@ def stack_gp_sample(kernel=None,
                     side_length=25, lim_val=0.5, num_samps=5,figsize=(1.4, 7),
                     diagrams='../diagrams'):
     """Draw a sample from a deep Gaussian process."""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
 
     if kernel is None:
         try:
@@ -2684,6 +2753,8 @@ def shared_gplvm():
 
 def three_pillars_innovation(diagrams='./diagrams'):
     """Plot graphical model of three pillars of successful innovation"""
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
     pgm = daft.PGM(shape=[4, 2.5],
                    origin=[0, 0], 
                    grid_unit=5, 
@@ -2819,6 +2890,8 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
     regression. Gene 937 has bimodal behaviour where the noisy mode is
     higher.
     """
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
 
     if ax is None:
         fig, ax = plt.subplots(figsize=one_figsize)
@@ -2929,6 +3002,9 @@ def google_trends(terms, initials, diagrams='./diagrams'):
     mlai.write_figure(os.path.join(diagrams,
                                    initials+'-google-trends.svg'),
                       transparent=True)
+    if not os.path.exists(diagrams):
+        os.mkdir(diagrams)
+
     handles = ax.get_lines()
     for handle in handles:
         handle.set_visible(False)

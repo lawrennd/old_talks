@@ -139,8 +139,11 @@ print("P(y,x) is", p_y_and_x)}
 \subsection{The Sum Rule}
 
 \slides{Ignoring the limit in our definitions:
+
 * The marginal probability $P\left(y\right)$ is ${\lim_{N\rightarrow\infty}}\frac{n_{y}}{N}$ .
+
 * The joint distribution $P\left(x,y\right)$ is ${\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}$.
+
 * $n_{y}=\sum_{x}n_{x,y}$ so
   $$
   {\lim_{N\rightarrow\infty}}\frac{n_{y}}{N}={\lim_{N\rightarrow\infty}}\sum_{x}\frac{n_{x,y}}{N},

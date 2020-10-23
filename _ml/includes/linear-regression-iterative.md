@@ -57,9 +57,9 @@ c_star = -5.0}
 
 * Now we need to compute the gradient of the error
 function, firstly with respect to $c$,
-
-  $$\frac{\text{d}\errorFunction(m, c)}{\text{d} c} =
--2\sum_{i=1}^\numData (\dataScalar_i - m\inputScalar_i - c)$$
+    $$
+	\frac{\text{d}\errorFunction(m, c)}{\text{d} c} = -2\sum_{i=1}^\numData (\dataScalar_i - m\inputScalar_i - c)
+	$$
 
 * This is computed in python as follows
 

@@ -111,7 +111,7 @@ V = pd.DataFrame(np.random.normal(size=(len(movies.index), q))*0.001, index=movi
 
 We also will subtract the mean from the rating before we try and
 predict them predictions. Have a think about why this might be a good
-idea (hint, what will the gradients be if we don't subtract the mean).
+idea (*Hint*: what will the gradients be if we don't subtract the mean?).
 
 \code{Y['rating'] -= Y['rating'].mean()}
 

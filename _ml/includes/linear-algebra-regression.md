@@ -247,10 +247,10 @@ print(y)}
 
 You can make a plot of $\dataScalar$ vs $\inputScalar$ with the following command:}
 
-\setupplotcode{%matplotlib inline 
+\setupcode{%matplotlib inline 
 import matplotlib.pyplot as plt}
 
-\plotcode{plt.plot(x, y, 'rx')
+\code{plt.plot(x, y, 'rx')
 plt.xlabel('year')
 plt.ylabel('pace in min/km')}
 
@@ -399,8 +399,8 @@ print(m)}
 
 \notes{Now plot those test predictions with a blue line on the same plot as the data,}
 
-\setupplotcode{import matplotlib.pyplot as plt}
-\plotcode{plt.plot(x_test, f_test, 'b-')
+\setupcode{import matplotlib.pyplot as plt}
+\code{plt.plot(x_test, f_test, 'b-')
 plt.plot(x, y, 'rx')}
 
 \notes{The fit isn't very good, we need to iterate between these parameter updates in a loop to improve the fit, we have to do this several times,}
