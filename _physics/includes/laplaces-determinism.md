@@ -41,7 +41,7 @@
 
 \slides{
 \figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_18_cropped}{60%}}{}{probability-relative-in-part-cropped}
-p
+
 <!--\includepdfclip{\diagramsDir/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 5cm}{18}{80%}{}
 -->}
 
