@@ -2,6 +2,7 @@
 
 # import the time model to allow python to pause.
 import time
+import os
 import numpy as np
 
 import matplotlib.pyplot as plt
