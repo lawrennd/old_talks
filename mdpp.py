@@ -99,6 +99,7 @@ if args.code is not None and args.code != 'none':
    arglist.append('-DCODE=1')
    if args.code == 'ipynb':
       arglist.append('-DDISPLAYCODE=1')
+      arglist.append('-DPLOTCODE=1')
       arglist.append('-DHELPERCODE=1')
       arglist.append('-DMAGICCODE=1')
    elif args.code == 'diagnostic':

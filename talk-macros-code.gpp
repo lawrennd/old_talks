@@ -5,10 +5,10 @@
 \code{urllib.request.urlretrieve('\url','\filename')}
 }
 \define{\downloadcode{filename}}{\downloadfile{https://raw.githubusercontent.com/lawrennd/talks/gh-pages/\filename.py}{\filename.py}}
-\define{\installcode{library}}{\code{\ifeq{\library}{pods}%pip install --upgrade git+https://github.com/sods/ods
-\else\ifeq{\library}{PyDeepGP}%pip install --upgrade git+https://github.com/SheffieldML/PyDeepGP.git
-\else\ifeq{\library}{GPy}%pip install gpy
-\else\ifeq{\library}{EmuKit}%pip install emukit
+\define{\installcode{library}}{\code{\ifeq{\library}{pods}\ifndef{podsInstalled}\define{podsInstalled}%pip install --upgrade git+https://github.com/sods/ods\endif
+\else\ifeq{\library}{PyDeepGP}\ifndef{pydeepgpInstalled}\define{pydeepgpInstalled}%pip install --upgrade git+https://github.com/SheffieldML/PyDeepGP.git\endif
+\else\ifeq{\library}{GPy}\ifndef{gpyInstalled}\define{gpyInstalled}%pip install gpy\endif
+\else\ifeq{\library}{EmuKit}\ifndef{emukitInstalled}\define{emukitInstalled}%pip install emukit\endif
 \else%pip install \library
 \endif\endif\endif}}
 \define{\setupcode{block}}{\pythonblockstart
