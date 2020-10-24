@@ -754,7 +754,7 @@ def marathon_fit(model, value, param_name, param_range,
                       directory=diagrams,
                       transparent=True)
     if png_plot:
-        mlai.write_figure(filename + '.png'
+        mlai.write_figure(filename + '.png',
                           directory=diagrams,
                           transparent=True)
 
