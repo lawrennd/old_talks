@@ -594,7 +594,7 @@ def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
         if i<10 or ((i<100 and not i % 10) or (not i % 100)): 
             handle = update_regression(handle, f, ax, m_star, c_star, i)
             count+=1
-            mlai.write_figure('regression_sgd_contour_fit{count:0>3}.svg'.format(count=count)
+            mlai.write_figure('regression_sgd_contour_fit{count:0>3}.svg'.format(count=count),
                               directory=diagrams)
     return count
 
