@@ -360,8 +360,6 @@ def bayes_billiard(ax, diagrams='../diagrams'):
     ax.set_aspect('equal')
     ax.set_xlim([0, 1])
     ax.set_ylim([0, 1])
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     mlai.write_figure('bayes-billiard000.svg', directory=diagrams, transparent=True)
 
     ball_x = np.random.uniform(size=1)[0]
@@ -387,7 +385,7 @@ def bayes_billiard(ax, diagrams='../diagrams'):
         counter += 1
         circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=red_color)
         ax.add_artist(circle)
-        mlai.write_figure('bayes-billiard{counter:0>3}.svg'.format(counter=counter)
+        mlai.write_figure('bayes-billiard{counter:0>3}.svg'.format(counter=counter),
                           directory=diagrams,
                           transparent=True)
         circle.remove()
@@ -582,10 +580,8 @@ def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
     f, ax = plt.subplots(1, 2, figsize=two_figsize) # this is to create 'side by side axes'
     handle = init_regression(f, ax, x, y, m_vals, c_vals, E_grid, m_star, c_star)
     count=0
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-        mlai.write_figure('regression_sgd_contour_fit{count:0>3}.svg'.format(count=count),
-                          directory=diagrams)
+    mlai.write_figure('regression_sgd_contour_fit{count:0>3}.svg'.format(count=count),
+                      directory=diagrams)
     for i in range(max_iters): # do max_iters iterations (parameter updates)
         # choose a random point
         index = np.random.randint(x.shape[0]-1)
@@ -754,8 +750,6 @@ def marathon_fit(model, value, param_name, param_range,
             ax[1].set_title(title, fontsize=fontsize)
 
     filename = '{prefix}_{name}_{param_name}{value:0>3}'.format(prefix=prefix, name=model.name, param_name=param_name, value=value)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     mlai.write_figure(filename + '.svg',
                       directory=diagrams,
                       transparent=True)
@@ -1592,8 +1586,9 @@ def covariance_func(kernel, x=None,
     else:
         filename = 'covariance'
 
-    mlai.write_anim(filename + '.gif', directory=diagrams, writer='imagemagick', fps=30)
-
+    mlai.write_anim(filename + '.gif',
+                    directory=diagrams,
+                    writer='imagemagick', fps=30)
 
 
     K2 = kernel.K(x[::10, :])
@@ -1611,10 +1606,10 @@ def covariance_func(kernel, x=None,
         out = ''
     if kernel.formula is not None:
         out += '<p><center>' + kernel.formula + '</center></p>'
-    out += '<table>\n  <tr><td><img src="' + os.path.join(diagrams, filename) + '.svg"></td><td><img src="' + os.path.join(diagrams, filename) + '.gif"></td></tr>\n</table>'
+    out += '<table>\n  <tr><td><img src="' + mlai.filename_join(filename, diagrams) + '.svg"></td><td><img src="' + mlai.filename_join(filename, diagrams) + '.gif"></td></tr>\n</table>'
     if comment is not None:
         out += '<p><center>' + comment + '</center></p>'
-    fhand = open(os.path.join(diagrams, filename + '.html'), 'w')
+    fhand = open(mlai.filename_join(filename + '.html', diagrams), 'w')
     fhand.write(out)
 
 def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../diagrams', **kwargs):
@@ -1673,8 +1668,6 @@ def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../d
     
 def two_point_sample(kernel_function, diagrams='../diagrams'):
     """Make plots for the two data point sample example for explaining gaussian processes."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     ind = [0, 1]    
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=two_figsize)
@@ -1800,8 +1793,6 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
 
 def poisson(diagrams='../diagrams'):
     """Make plots of the Poisson distribution"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     from scipy.stats import poisson
     fig, ax = plt.subplots(figsize=two_figsize)
     y = np.asarray(range(0, 16))
@@ -1820,8 +1811,6 @@ def poisson(diagrams='../diagrams'):
 
 def logistic(diagrams='../diagrams'):
     """Make plots of the logistic function"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(figsize=two_figsize)
     f = np.linspace(-8, 8, 100)
     g = 1/(1+np.exp(-f))
@@ -1861,8 +1850,6 @@ def weight(ax, w, pw):
 
 def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
     """Illustrate the low rank approximation used in sparse GPs."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=big_wide_figsize)
     q = 3
     k1 = 10
@@ -1899,8 +1886,6 @@ def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
     
 def kronecker_illustrate(fontsize=25, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=two_figsize)
     A = [['$a$', '$b$'],
          [ '$c$', '$d$']]
@@ -1945,8 +1930,6 @@ def blank_canvas(ax):
 
 def kronecker_illustrate(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     A = [['$a$', '$b$'],
          [ '$c$', '$d$']]
@@ -1980,8 +1963,6 @@ def kronecker_illustrate(fontsize=25, figsize=two_figsize, diagrams='../diagrams
 
 def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     my_rgb = [[1., 1., 1.],[1., 0., 0.],[ 0., 1., 0.],[ 0., 0., 1.]]
 
@@ -2030,8 +2011,6 @@ def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../d
 
 def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 1, figsize=figsize)
     my_rgb = [[1., 1., 1.],[1., 0., 0.],[ 0., 1., 0.],[ 0., 0., 1.]]
     from matplotlib.colors import ListedColormap
@@ -2087,8 +2066,6 @@ def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diag
 
 def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     A = [['$\mathbf{W}$', '$\mathbf{0}$', '$\mathbf{0}$'],['$\mathbf{0}$', '$\mathbf{W}$', '$\mathbf{0}$'],['$\mathbf{0}$', '$\mathbf{0}$', '$\mathbf{W}$']]
     B = [['$\mathbf{x}_{1,:}$'],['$\mathbf{x}_{2,:}$'],['$\mathbf{x}_{3,:}$']]
@@ -2124,8 +2101,6 @@ def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
 def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
                max_updates=30, seed=100001, diagrams='../diagrams'):
     """Fit a perceptron algorithm and record iterations of fit"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     w, b, x_select = mlai.init_perceptron(x_plus, x_minus, seed=seed)
     updates = 0
     count = 0
@@ -2195,8 +2170,6 @@ def non_linear_difficulty_plot_3(alpha=1.0,
                                  diagrams='../diagrams'):
     """Push a Gaussian density through an RBF network and plot results"""
 
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     mu = np.linspace(-4, 4, num_basis_func)[np.newaxis, :]
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
 
@@ -2363,8 +2336,6 @@ def non_linear_difficulty_plot_1(alpha=1.0,
                                  fontsize=30,
                                  diagrams='../diagrams'):
     """Plot a one dimensional Gaussian pushed through an RBF network."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     from matplotlib.patches import Polygon
     xsamp = np.random.randn(num_samples, 1)
     x = np.linspace(-6, 6, number_across)[:, np.newaxis]
@@ -2495,8 +2466,6 @@ class layer():
 
 def deep_nn(diagrams='../diagrams'):
     """Draw a deep neural network."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     model = network()
     model.add_layer(layer(width=6, label='x_{index}',
                     observed=True, text=r'given $\mathbf{x}$'))
@@ -2528,8 +2497,6 @@ def deep_nn(diagrams='../diagrams'):
     
 def deep_nn_bottleneck(diagrams='../diagrams'):
     """Draw a deep neural network with bottleneck layers."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     model = network()
     model.add_layer(layer(width=6, label='x_{index}',
                     observed=True, text=r'given $\mathbf{x}$'))
@@ -2588,8 +2555,6 @@ def stack_gp_sample(kernel=None,
                     side_length=25, lim_val=0.5, num_samps=5,figsize=(1.4, 7),
                     diagrams='../diagrams'):
     """Draw a sample from a deep Gaussian process."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     if kernel is None:
         try:
@@ -2749,8 +2714,6 @@ def shared_gplvm():
 
 def three_pillars_innovation(diagrams='./diagrams'):
     """Plot graphical model of three pillars of successful innovation"""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
     pgm = daft.PGM(shape=[4, 2.5],
                    origin=[0, 0], 
                    grid_unit=5, 
@@ -2884,8 +2847,6 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
     regression. Gene 937 has bimodal behaviour where the noisy mode is
     higher.
     """
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     if ax is None:
         fig, ax = plt.subplots(figsize=one_figsize)
@@ -2998,8 +2959,6 @@ def google_trends(terms, initials, diagrams='./diagrams'):
     mlai.write_figure(initials+'-google-trends.svg',
                       directory=diagrams,
                       transparent=True)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     handles = ax.get_lines()
     for handle in handles:
