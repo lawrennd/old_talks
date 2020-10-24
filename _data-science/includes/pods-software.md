@@ -14,6 +14,7 @@ You can also check this} \addblog{Open Data Science}{2014/07/01/open-data-scienc
 
 \notes{The software can be installed using}
 
+\installcode{pods}
 
 \notes{from the command prompt where you can access your python installation.}
 

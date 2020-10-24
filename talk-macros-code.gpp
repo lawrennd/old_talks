@@ -10,7 +10,7 @@
 \else\ifeq{\library}{GPy}\ifndef{gpyInstalled}\define{gpyInstalled}%pip install gpy\endif
 \else\ifeq{\library}{EmuKit}\ifndef{emukitInstalled}\define{emukitInstalled}%pip install emukit\endif
 \else%pip install \library
-\endif\endif\endif}}
+\endif\endif\endif\endif}}
 \define{\setupcode{block}}{\pythonblockstart
 \block
 \pythonblockend}
