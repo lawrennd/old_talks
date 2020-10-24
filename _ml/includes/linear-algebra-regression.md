@@ -653,7 +653,7 @@ $$
 $$}
 
 \setupcode{import numpy as np}
-\code{f = X@w # The @ sign performs matrix multiplication
+\code{f = X@w # The @ sign performs matrix multiplication}
 
 \notes{Combining this result with our objective function,
 $$
