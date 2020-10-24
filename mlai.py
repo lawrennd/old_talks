@@ -3,17 +3,17 @@
 # import the time model to allow python to pause.
 import time
 import numpy as np
-import scipy as sp
+
 import matplotlib.pyplot as plt
 from IPython.display import display, clear_output, HTML
 
-from numpy import dot, sqrt, sin, cos, tanh, arcsin, arccos, sinc, min, log, exp, eye, diag, zeros, ones, linspace, pi, var, asarray, hstack, sum, max, abs, ceil, arange, clip
+from numpy import dot, sqrt, sin, cos, tanh, arcsin, arccos, sinc, min, log, exp, eye, diag, zeros, ones, linspace, pi, var, asarray, hstack, sum, max, abs, ceil, arange, clip, frombuffer
 
 from numpy.random import randint, rand, seed, uniform, poisson, normal
 
 from numpy.linalg import qr, norm, det, inv
 
-from sp.linalg import solve_triangular, cholesky
+from scipy.linalg import solve_triangular, cholesky
 
 
 def filename_join(filename, directory=None):
@@ -560,7 +560,7 @@ def load_pgm(filename, directory=None, byteorder='>'):
             b"(\d+)\s(?:\s*#.*[\r\n]\s)*)", buffer).groups()
     except AttributeError:
         raise ValueError("Not a raw PGM file: '%s'" % filename)
-    return np.frombuffer(buffer,
+    return frombuffer(buffer,
                             dtype='u1' if int(maxval) < 256 else byteorder+'u2',
                             count=int(width)*int(height),
                             offset=len(header)
