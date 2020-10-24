@@ -1317,7 +1317,7 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
     for i in range(basis.number):
         ax.plot(x, Phi[:, i], '-', color=colors[i], linewidth=3)
         ax.text(loc[i][0], loc[i][1], text[i], horizontalalignment='center', fontsize=fontsize, color=colors[i])
-        mlai.write_figure(basis.function.__name__ + '_basis{num:0>3}.svg'.format(num=i)), directory=diagrams, transparent=True)
+        mlai.write_figure(basis.function.__name__ + '_basis{num:0>3}.svg'.format(num=i), directory=diagrams, transparent=True)
 
     # Set ylim according to max standard deviation of basis
     plt.sca(ax)
