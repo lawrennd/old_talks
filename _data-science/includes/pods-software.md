@@ -12,11 +12,11 @@ and scientists to gain access to data science techniques.
 
 You can also check my} \addblog{Open Data Science}{2014/07/01/open-data-science}
 
-\notes{The software can be installed using
+\notes{The software can be installed using}
 
 \installcode{pods}
 
-from the command prompt where you can access your python installation.}
+\notes{from the command prompt where you can access your python installation.}
 
 \notes{The code is also available on github: <https://github.com/sods/ods>
 
