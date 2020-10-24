@@ -2118,8 +2118,8 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
     count += 1
     handle['plane'].set_visible(True)
     handle['arrow'].set_visible(True)
-    mlai.write_figure(figure=f2, 'perceptron{samp:0>3}.svg'.format(samp=count), directory=diagrams, transparent=True)
-    mlai.write_figure(figure=f2, 'perceptron{samp:0>3}.png'.format(samp=count), directory=diagrams, bbox_inches=extent, transparent=True)
+    mlai.write_figure(figure=f2, filename='perceptron{samp:0>3}.svg'.format(samp=count), directory=diagrams, transparent=True)
+    mlai.write_figure(figure=f2, filename='perceptron{samp:0>3}.png'.format(samp=count), directory=diagrams, bbox_inches=extent, transparent=True)
 
     while updates<max_updates and iterations<max_iters:
         iterations += 1
