@@ -896,7 +896,7 @@ y = movies[['IMDB_Rating']]}
 
 \notes{We can check the residuals to see how good our estimates are}
 
-\code{(y - np.dot(X, w)).hist()}
+\code{(y - X@w).hist()}
 
 \notes{Which shows our model *hasn't* yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.}
 

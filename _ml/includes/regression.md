@@ -53,7 +53,7 @@ mlai.write_figure(filename='regression.svg', directory='\writeDiagramsDir/ml', t
 
 \subsection{Noise Corrupted Plot}
 
-\code{noise = np.random.normal(scale=0.5, size=(1, 4)) # standard deviation of the noise is 0.5
+\code{noise = np.random.normal(scale=0.5, size=(4, 1)) # standard deviation of the noise is 0.5
 y = m_true*x + c_true + noise
 plt.plot(x, y, 'r.', markersize=10)
 plt.xlim([-3, 3])
