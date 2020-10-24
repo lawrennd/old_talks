@@ -25,7 +25,7 @@ $$\errorFunction(m, c) = \sum_{i=1}^\numData (\dataScalar_i * \mappingFunction(\
 \setupcode{import numpy as np
 import matplotlib.pyplot as plt
 import mlai}
-\code{x = np.random.normal(size=4)}
+\code{x = np.random.normal(size=(4, 1))}
 
 \slides{We now need to decide on a *true* value for $m$ and a *true* value for $c$ to use for generating the data. }
 
@@ -53,11 +53,11 @@ mlai.write_figure(filename='regression.svg', directory='\writeDiagramsDir/ml', t
 
 \subsection{Noise Corrupted Plot}
 
-\code{noise = np.random.normal(scale=0.5, size=4) # standard deviation of the noise is 0.5
+\code{noise = np.random.normal(scale=0.5, size=(1, 4)) # standard deviation of the noise is 0.5
 y = m_true*x + c_true + noise
 plt.plot(x, y, 'r.', markersize=10)
 plt.xlim([-3, 3])
-mlai.write_figure(filename="\writeDiagramsDir/ml/regression_noise.svg", transparent=True)}
+mlai.write_figure(filename='regression_noise.svg', directory='\writeDiagramsDir/ml', transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/regression_noise}{60%}}{A simple linear regression with noise.}{linear-regression-noise}
 

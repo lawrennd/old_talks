@@ -653,7 +653,7 @@ $$
 $$}
 
 \setupcode{import numpy as np}
-\code{f = np.dot(X, w) # np.dot does matrix multiplication in python}
+\code{f = X@w # The @ sign performs matrix multiplication
 
 \notes{Combining this result with our objective function,
 $$
@@ -847,7 +847,7 @@ where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/
 
 \notes{so we can obtain the solution using}
 
-\code{w = np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y))
+\code{w = np.linalg.solve(X.T@X, X.T@y)
 print(w)}
 
 \notes{We can map it back to the liner regression and plot the fit as follows}
@@ -890,7 +890,7 @@ y = movies[['IMDB_Rating']]}
 \notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
 
 \setupcode{import pandas as pd}
-\code{w = pd.DataFrame(data=np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  # solve linear regression here
+\code{w = pd.DataFrame(data=np.linalg.solve(X.T@X, X.T@y),  # solve linear regression here
                  index = X.columns,  # columns of X become rows of w
                  columns=['regression_coefficient']) # the column of X is the value of regression coefficient}
 
@@ -939,7 +939,7 @@ This is a more numerically stable solution because it removes the need to comput
 
 \setupcode{import scipy as sp}
 \code{Q, R = np.linalg.qr(X)
-w = sp.linalg.solve_triangular(R, np.dot(Q.T, y)) 
+w = sp.linalg.solve_triangular(R, Q.T@y) 
 w = pd.DataFrame(w, index=X.columns)
 w}
 
