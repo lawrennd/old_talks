@@ -45,7 +45,7 @@ $$\dataScalar_i = m\inputScalar_i + c$$ is translated to code as follows:}
 
 \plotcode{plt.plot(x, y, 'r.', markersize=10) # plot data as red dots
 plt.xlim([-3, 3])
-mlai.write_figure(filename="\writeDiagramsDir/ml/regression.svg", transparent=True)}
+mlai.write_figure(filename='regression.svg', directory='\writeDiagramsDir/ml', transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/regression}{60%}}{A simple linear regression.}{linear-regression}
 

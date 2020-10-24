@@ -20,7 +20,7 @@ from scipy.linalg import solve_triangular, cholesky
 def filename_join(filename, directory=None):
     "Join a filename to a directory and create directory if it's not there"
     if directory is not None:
-        if not os.exists(directory):
+        if not os.path.exists(directory):
             os.makedirs(directory, exist_ok=True)
         return os.path.join(directory, filename)
     return filename

@@ -22,7 +22,7 @@ youtube: 5VPr6NbHHjg
 
 *  Gold medal times for Olympic 100 m runners since 1896.
 
-\figure{\includejpg{\diagramsDir/ml/100m_final_start}{40%}}{Start of the 2012 London 100m race.*Image from Wikimedia Commons* <http://bit.ly/191adDC>}{100m-final-start}
+\figure{\includejpg{\diagramsDir/ml/100m_final_start}{40%}}{Start of the 2012 London 100m race. *Image from Wikimedia Commons* <http://bit.ly/191adDC>}{100m-final-start}
 
 \subsection{Olympic 100m Data}
 
