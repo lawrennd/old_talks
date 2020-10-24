@@ -1349,7 +1349,7 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
         for i in range(basis.number):
             t[i].set_text('$w_{ind} = {w:3.3}$'.format(ind=i, w=w[i,0]))
 
-        mlai.write_figure(basis.function.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), directory=diagrams,  transparent=True)
+        mlai.write_figure(basis.function.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j), directory=diagrams,  transparent=True)
 
 def computing_covariance(kernel, 
                          x, 
