@@ -303,9 +303,7 @@ def prob_diagram(fontsize=20, diagrams='../diagrams'):
 
     plt.text(3, -2*axis_indent, '$X$', fontsize=fontsize)
     plt.text(-2*axis_indent, 2, '$Y$', fontsize=fontsize)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'prob_diagram.svg'), transparent=True)
+    mlai.write_figure('prob_diagram.svg', directory=diagrams, transparent=True)
 
 
 def bernoulli_urn(ax, diagrams='../diagrams'):
@@ -345,9 +343,7 @@ def bernoulli_urn(ax, diagrams='../diagrams'):
             circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=ball_color)
             ax.add_artist(circle)
 
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'bernoulli-urn.svg'), transparent=True)
+    mlai.write_figure('bernoulli-urn.svg', directory=diagrams, transparent=True)
 
 def bayes_billiard(ax, diagrams='../diagrams'):
     """Plot a series of figures representing Thomas Bayes' billiard table for the Bernoulli distribution representation.
@@ -366,7 +362,7 @@ def bayes_billiard(ax, diagrams='../diagrams'):
     ax.set_ylim([0, 1])
     if not os.path.exists(diagrams):
         os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'bayes-billiard000.svg'), transparent=True)
+    mlai.write_figure('bayes-billiard000.svg', directory=diagrams, transparent=True)
 
     ball_x = np.random.uniform(size=1)[0]
     ball_y = 0.5
@@ -381,17 +377,19 @@ def bayes_billiard(ax, diagrams='../diagrams'):
     circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=black_color)
     ax.add_artist(circle)
 
-    mlai.write_figure(os.path.join(diagrams, 'bayes-billiard001.svg'), transparent=True)
+    mlai.write_figure('bayes-billiard001.svg', directory=diagrams, transparent=True)
 
     ax.plot([ball_x, ball_x], [0, 1], linestyle=':', linewidth=3, color=black_color)
 
-    mlai.write_figure(os.path.join(diagrams, 'bayes-billiard002.svg'), transparent=True)
+    mlai.write_figure('bayes-billiard002.svg', directory=diagrams, transparent=True)
     counter = 2
     for ball_x in np.random.uniform(size=7):
         counter += 1
         circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=red_color)
         ax.add_artist(circle)
-        mlai.write_figure(os.path.join(diagrams, 'bayes-billiard{counter:0>3}.svg'.format(counter=counter)), transparent=True)
+        mlai.write_figure('bayes-billiard{counter:0>3}.svg'.format(counter=counter)
+                          directory=diagrams,
+                          transparent=True)
         circle.remove()
         
 
@@ -557,9 +555,7 @@ def regression_contour_fit(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
     f, ax = plt.subplots(1, 2, figsize=two_figsize) # this is to create 'side by side axes'
     # first let's plot the error surface
     handle = init_regression(f, ax, x, y, m_vals, c_vals, E_grid, m_star, c_star)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'regression_contour_fit000.svg'), transparent=True)
+    mlai.write_figure('regression_contour_fit000.svg', directory=diagrams, transparent=True)
 
     count=0
     for i in range(max_iters): # do max_iters iterations
@@ -574,7 +570,8 @@ def regression_contour_fit(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
         if i<10 or ((i<100 and not i % 10) or (i<1000 and not i % 100)): 
             handle = update_regression(handle, f, ax, m_star, c_star, i)
             count+=1
-            mlai.write_figure(os.path.join(diagrams, 'regression_contour_fit{count:0>3}.svg').format(count=count))        
+            mlai.write_figure('regression_contour_fit{count:0>3}.svg'.format(count=count),
+                              directory=diagrams)        
     return count
 
 def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m_star = 0.0, c_star = -5.0, max_iters=4000, diagrams='../diagrams'):
@@ -587,7 +584,8 @@ def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
     count=0
     if not os.path.exists(diagrams):
         os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'regression_sgd_contour_fit{count:0>3}.svg').format(count=count))
+        mlai.write_figure('regression_sgd_contour_fit{count:0>3}.svg'.format(count=count),
+                          directory=diagrams)
     for i in range(max_iters): # do max_iters iterations (parameter updates)
         # choose a random point
         index = np.random.randint(x.shape[0]-1)
@@ -600,7 +598,8 @@ def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
         if i<10 or ((i<100 and not i % 10) or (not i % 100)): 
             handle = update_regression(handle, f, ax, m_star, c_star, i)
             count+=1
-            mlai.write_figure(os.path.join(diagrams, 'regression_sgd_contour_fit{count:0>3}.svg').format(count=count))
+            mlai.write_figure('regression_sgd_contour_fit{count:0>3}.svg'.format(count=count)
+                              directory=diagrams)
     return count
 
 #################### Session 3 ####################
@@ -634,25 +633,23 @@ def over_determined_system(diagrams='../diagrams'):
     plt.xlabel('$x$', fontsize=30)
     plt.ylabel('$y$',fontsize=30)
     plt.text(4, 4, '$y=mx+c$',  horizontalalignment='center', verticalalignment='bottom', fontsize=30)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system001.svg'), transparent=True)
+    mlai.write_figure('over_determined_system001.svg', directory=diagrams, transparent=True)
     ctext = ax.text(0.15, c+0.15, '$c$',  horizontalalignment='center', verticalalignment='bottom', fontsize=20)
     xl = np.array([1.5, 2.5])
     yl = xl*m + c
     mhand = ax.plot([xl[0], xl[1]], [yl.min(), yl.min()], color=[0, 0, 0])
     mhand2 = ax.plot([xl.min(), xl.min()], [yl[0], yl[1]], color=[0, 0, 0])
     mtext = ax.text(xl.mean(), yl.min()-0.2, '$m$',  horizontalalignment='center', verticalalignment='bottom',fontsize=20)
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system002.svg'), transparent=True)
+    mlai.write_figure('over_determined_system002.svg', directory=diagrams, transparent=True)
 
     a2 = ax.plot(x, y, '.', markersize=20, linewidth=3, color=[1, 0, 0])
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system003.svg'), transparent=True)
+    mlai.write_figure('over_determined_system003.svg', directory=diagrams, transparent=True)
 
     xs = 2
     ys = m*xs + c + 0.3
 
     ast = ax.plot(xs, ys, '.', markersize=20, linewidth=3, color=[0, 1, 0])
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system004.svg'), transparent=True)
+    mlai.write_figure('over_determined_system004.svg', directory=diagrams, transparent=True)
 
 
     m = (y[1]-ys)/(x[1]-xs)
@@ -670,7 +667,7 @@ def over_determined_system(diagrams='../diagrams'):
     a3 = ax.plot(xvals, yvals, '-', linewidth=2, color=[0, 0, 1])
     for i in ast:
         i.set_color([1, 0, 0])
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system005.svg'), transparent=True)
+    mlai.write_figure('over_determined_system005.svg', directory=diagrams, transparent=True)
 
     m = (ys-y[0])/(xs-x[0])
     c = y[0]-m*x[0]
@@ -681,12 +678,12 @@ def over_determined_system(diagrams='../diagrams'):
     a4 = ax.plot(xvals, yvals, '-', linewidth=2, color=[0, 0, 1])
     for i in ast:
         i.set_color([1, 0, 0])
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system006.svg'), transparent=True)
+    mlai.write_figure('over_determined_system006.svg', directory=diagrams, transparent=True)
     for i in a:
         i.set_visible(True)
     for i in a3:
         i.set_visible(True)
-    mlai.write_figure(os.path.join(diagrams, 'over_determined_system007.svg'), transparent=True)
+    mlai.write_figure('over_determined_system007.svg', directory=diagrams, transparent=True)
 
 def gaussian_of_height(diagrams='../diagrams'):
     "Gaussian density representing heights."
@@ -702,9 +699,7 @@ def gaussian_of_height(diagrams='../diagrams'):
     ax2.set_xlim(1.4, 2.0)
     ax2.set_xlabel('$h/m$', fontsize=20)
     ax2.set_ylabel('$p(h|\mu, \sigma^2)$', fontsize = 20)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'gaussian_of_height.svg'), transparent=True)
+    mlai.write_figure(figure=f2, filename='gaussian_of_height.svg', directory=diagrams, transparent=True)
     
 #################### Session 5 ####################
 
@@ -761,9 +756,13 @@ def marathon_fit(model, value, param_name, param_range,
     filename = '{prefix}_{name}_{param_name}{value:0>3}'.format(prefix=prefix, name=model.name, param_name=param_name, value=value)
     if not os.path.exists(diagrams):
         os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
+    mlai.write_figure(filename + '.svg',
+                      directory=diagrams,
+                      transparent=True)
     if png_plot:
-        mlai.write_figure(os.path.join(directory, filename + '.png'), transparent=True)
+        mlai.write_figure(filename + '.png'
+                          directory=diagrams,
+                          transparent=True)
 
 
 
@@ -1006,9 +1005,7 @@ def under_determined_system(diagrams='../diagrams'):
     ax.set_xlim(xlim)
     ax.set_xlabel('$x$', fontsize=20)
     ax.set_ylabel('$y$', fontsize=20)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'under_determined_system000.svg'), transparent=True, frameon=True)
+    mlai.write_figure(figure=fig, filename='under_determined_system000.svg', directory=diagrams, transparent=True, frameon=True)
 
     xvals = np.linspace(0, 3, 2)[:, np.newaxis]
     count=0
@@ -1019,7 +1016,9 @@ def under_determined_system(diagrams='../diagrams'):
         ax.plot(xvals, yvals, '-', linewidth=2, color=[0., 0., 1.])
         if i < 9 or i == 100:
             count += 1
-            mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'under_determined_system{count:0>3}.svg').format(count=count), transparent=True, frameon=True)
+            mlai.write_figure(figure=fig, filename='under_determined_system{count:0>3}.svg'.format(count=count),
+                              directory=diagrams,
+                              transparent=True, frameon=True)
 
 
 def bayes_update(diagrams='../diagrams'):
@@ -1078,18 +1077,16 @@ def bayes_update(diagrams='../diagrams'):
 
     ax.plot(f, prior_curve, color=[1, 0., 0.], linewidth=3)
     ax.text(3.5, 2, '$p(c) = \mathcal{N}(c|0, \\alpha_1)$', horizontalalignment='center', fontsize=20) 
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'dem_gaussian001.svg'), transparent=True)
+    mlai.write_figure('dem_gaussian001.svg', directory=diagrams, transparent=True)
 
     ax.plot(f, likelihood_curve, color=[0, 0, 1], linewidth=3)
     ax.text(3.5, 1.5,'$p(y|m, c, x, \\sigma^2)=\mathcal{N}(y|mx+c,\\sigma^2)$', horizontalalignment='center', fontsize=20) 
-    mlai.write_figure(os.path.join(diagrams, 'dem_gaussian002.svg'), transparent=True)
+    mlai.write_figure('dem_gaussian002.svg', directory=diagrams, transparent=True)
 
     ax.plot(f, posterior_curve, color=[1, 0, 1], linewidth=3)
     ax.text(3.5, 1, '$p(c|y, m, x, \\sigma^2)=$', horizontalalignment='center', fontsize=20) 
     plt.text(3.5, 0.65, '$\mathcal{N}\\left(c|\\frac{y-mx}{1+\\sigma^2\\alpha_1},(\\sigma^{-2}+\\alpha_1^{-1})^{-1}\\right)$', horizontalalignment='center', fontsize=20)
-    mlai.write_figure(os.path.join(diagrams, 'dem_gaussian003.svg'), transparent=True)
+    mlai.write_figure('dem_gaussian003.svg', directory=diagrams, transparent=True)
 
 def height_weight(h=None, w=None, muh=1.7, varh=0.0225,
                   muw=75, varw=36, diagrams='../diagrams'):
@@ -1107,9 +1104,7 @@ def height_weight(h=None, w=None, muh=1.7, varh=0.0225,
     height(ax[0], h, ph)
 
     weight(ax[1], w, pw)
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
-    mlai.write_figure(os.path.join(diagrams, 'height_weight_gaussian.svg'), transparent=True)
+    mlai.write_figure('height_weight_gaussian.svg', directory=diagrams, transparent=True)
 
 def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
                               muw=75, varw=36, num_samps=20,
@@ -1152,8 +1147,6 @@ def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
     weight(ax[2], w, pw)
     count = 0
 
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     for i in range(num_samps):
         hval = np.random.normal(size=(1,1))*np.sqrt(varh) + muh
@@ -1165,7 +1158,7 @@ def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
         #mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'independent_height_weight{count:0>3}.svg').format(count=count), transparent=True)
         #count+=1
         a0 = ax[0].plot(hval, wval, marker='o', linewidth=3, color=[1., 0., 0.])
-        mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'independent_height_weight{count:0>3}.svg').format(count=count), transparent=True)
+        mlai.write_figure(figure=fig, filename='independent_height_weight{count:0>3}.svg'.format(count=count), directory=diagrams, transparent=True)
         count+=1
 
         a0[0].set(color=[0.,0.,0.])
@@ -1229,7 +1222,7 @@ def correlated_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
 
         a0 = ax[0].plot(hval, wval, marker='o', linewidth=3, color=[1., 0., 0.])
         #count+=1
-        mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'correlated_height_weight{count:0>3}.svg').format(count=count), transparent=True)
+        mlai.write_figure(figure=fig, filename='correlated_height_weight{count:0>3}.svg'.format(count=count), directory=diagrams, transparent=True)
         #count+=1
 
         a0[0].set(color=[0.,0.,0.])
@@ -1266,14 +1259,14 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
 
     cont, t, cent = base_plot(K, ind, ax=ax)
     if stub is not None:
-        mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start), transparent=True)
+        mlai.write_figure('{stub}{start:0>3}.svg'.format(stub=stub, start=start), directory=diagrams, transparent=True)
 
     x_lim = ax.get_xlim()
     cont2 = plt.Line2D([x_lim[0], x_lim[1]], [f[0], f[0]], linewidth=fixed_size, linestyle=fixed_linestyle, color=fixed_linecolor)
     ax.add_line(cont2)
 
     if stub is not None:
-        mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start+1), transparent=True)
+        mlai.write_figure('{stub}{start:0>3}.svg'.format(stub=stub, start=start+1), directory=diagrams, transparent=True)
 
     # # Compute conditional mean and variance
     f2_mean = subK[0, 1]/subK[0, 0]*f[0]
@@ -1283,12 +1276,12 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
     pdf = plt.Line2D(x_val, pdf_val+f[0], linewidth=conditional_size, linestyle=conditional_linestyle, color=conditional_linecolor)
     ax.add_line(pdf)
     if stub is not None:
-        mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start+2), transparent=True)
+        mlai.write_figure('{stub}{start:0>3}.svg'.format(stub=stub, start=start+2), directory=diagrams, transparent=True)
     
     obs = plt.Line2D([f[1]], [f[0]], linewidth=10, markersize=10, color=fixed_linecolor, marker='o')
     ax.add_line(obs)
     if stub is not None:
-        mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start+3), transparent=True)
+        mlai.write_figure('{stub}{start:0>3}.svg'.format(stub=stub, start=start+3), directory=diagrams, transparent=True)
     
 
 def output_augment_x(x, num_outputs):
@@ -1330,7 +1323,7 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
     for i in range(basis.number):
         ax.plot(x, Phi[:, i], '-', color=colors[i], linewidth=3)
         ax.text(loc[i][0], loc[i][1], text[i], horizontalalignment='center', fontsize=fontsize, color=colors[i])
-        mlai.write_figure(os.path.join(diagrams, basis.function.__name__ + '_basis{num:0>3}.svg'.format(num=i)), transparent=True)
+        mlai.write_figure(basis.function.__name__ + '_basis{num:0>3}.svg'.format(num=i)), directory=diagrams, transparent=True)
 
     # Set ylim according to max standard deviation of basis
     plt.sca(ax)
@@ -1362,7 +1355,7 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
         for i in range(basis.number):
             t[i].set_text('$w_{ind} = {w:3.3}$'.format(ind=i, w=w[i,0]))
 
-        mlai.write_figure(os.path.join(diagrams, basis.function.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), transparent=True)
+        mlai.write_figure(basis.function.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), directory=diagrams,  transparent=True)
 
 def computing_covariance(kernel, 
                          x, 
@@ -1424,8 +1417,7 @@ def computing_covariance(kernel,
             #a.append(ax[0].text(0.25, 0.4, 
             #                    ['$\kernelScalar_{' num2str(i) ', ' num2str(j) '} = ' numsf2str(variance, nsf) ' \times \exp \left(-\frac{(' numsf2str(t(i), nsf) '-' numsf2str(t(j), nsf) ')^2}{2\times ' numsf2str(lengthScale, nsf) '^2}\right)$'], 'horizontalalignment', 'center')])
             file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
-            mlai.write_figure(os.path.join(diagrams, file_name), 
-                              transparent=True)
+            mlai.write_figure(file_name, directory=diagrams, transparent=True)
             counter += 1
             Kplot[i, j] = KplotFull[i, j]
 
@@ -1439,7 +1431,7 @@ def computing_covariance(kernel,
                    highlight_color=[1, 0, 1])
             
             file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
-            mlai.write_figure(os.path.join(diagrams, file_name), 
+            mlai.write_figure(file_name, directory=diagrams, 
                               transparent=True)
             counter +=1
 
@@ -1455,7 +1447,7 @@ def computing_covariance(kernel,
                        highlight_col = [i, i],
                        highlight_color=[1, 0, 1])
                 file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
-                mlai.write_figure(os.path.join(diagrams, file_name), 
+                mlai.write_figure(file_name, directory=diagrams,
                                   transparent=True)
                 counter += 1
 
@@ -1465,7 +1457,7 @@ def computing_covariance(kernel,
            type='entries')
 
     file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
-    mlai.write_figure(os.path.join(diagrams, file_name), 
+    mlai.write_figure(file_name, directory=diagrams,
                       transparent=True)
     counter += 1
 
@@ -1474,7 +1466,7 @@ def computing_covariance(kernel,
            bracket_style='square',
            type='image')
     file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
-    mlai.write_figure(os.path.join(diagrams, file_name), 
+    mlai.write_figure(file_name, directory=diagrams, 
                       transparent=True)
     counter += 1
             
@@ -1589,8 +1581,6 @@ def covariance_func(kernel, x=None,
                     shortname=None, longname=None, comment=None,
                     num_samps=5, diagrams='../diagrams', multiple=False):
     """Write a slide on a given covariance matrix."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     if x is None:
         x = np.linspace(-1, 1, 200)[:, np.newaxis]
@@ -1601,10 +1591,9 @@ def covariance_func(kernel, x=None,
         filename = kernel.shortname + '_covariance'
     else:
         filename = 'covariance'
-    anim.save(os.path.join(diagrams, filename + '.gif'),
-              writer='imagemagick', fps=30)
-    #HTML(anim.to_jshtml())##display(display_animation(anim, default_mode='loop'))
-    #HTML(anim.to_html5_video())##display(display_animation(anim, default_mode='loop'))
+
+    mlai.write_anim(filename + '.gif', directory=diagrams, writer='imagemagick', fps=30)
+
 
 
     K2 = kernel.K(x[::10, :])
@@ -1613,7 +1602,7 @@ def covariance_func(kernel, x=None,
     obj = matrix(K2, ax=ax, type='image',
                  bracket_style='boxes', colormap='gray')
 
-    mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
+    mlai.write_figure(filename + '.svg', directory=diagrams, transparent=True)
 
     if kernel.name is not None:
         out = '<h2>' + kernel.name + ' Covariance</h2>'
@@ -1630,8 +1619,6 @@ def covariance_func(kernel, x=None,
 
 def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../diagrams', **kwargs):
     """Plot samples from a GP, a small sample of data and a rejection sample."""
-    if not os.path.exists(diagrams):
-        os.mkdir(diagrams)
 
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=big_wide_figsize)
     if x is None:
@@ -1648,12 +1635,12 @@ def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../d
     ax.set_position([0., 0., 1., 1.])
     ax.set_axis_off()
     h_f = ax.plot(x, f)
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample001.png'), transparent=True)
+    mlai.write_figure('gp_rejection_sample001.png', directory=diagrams, transparent=True)
 
     fnew = np.random.multivariate_normal(np.zeros(resolution), K, size=num_many-num_few).T
     f = np.hstack((f, fnew))
     h_f += ax.plot(x, fnew)
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample002.png'), transparent=True)
+    mlai.write_figure('gp_rejection_sample002.png', directory=diagrams, transparent=True)
 
     ind = [int(resolution/5.), int(2*resolution/3.), int(4*resolution/5.)]
     K_data = K[ind][:, ind]
@@ -1661,13 +1648,13 @@ def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../d
     y_data = np.random.multivariate_normal(np.zeros(len(ind)), K_data, size=1).T
     
     h_data=ax.plot(x_data, y_data, 'o', markersize=25, linewidth=3, color=[0., 0., 0.])
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample003.png'), transparent=True)
+    mlai.write_figure('gp_rejection_sample003.png', directory=diagrams, transparent=True)
     delta = y_data - f[ind, :]
     dist = (delta*delta).sum(0)
     del_ind = np.argsort(dist)[10:]
     for i in del_ind:
         h_f[i].remove()
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample004.png'), transparent=True)
+    mlai.write_figure('gp_rejection_sample004.png', directory=diagrams, transparent=True)
 
     # This is not the numerically stable way to do this!
     Kinv = np.linalg.inv(K_data)
@@ -1681,7 +1668,7 @@ def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../d
                            mu_f-2*np.sqrt(c_f),
                            mu_f+2*np.sqrt(c_f), 
                            ax=ax)
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample005.png'), transparent=True)
+    mlai.write_figure('gp_rejection_sample005.png', directory=diagrams, transparent=True)
     
     
 def two_point_sample(kernel_function, diagrams='../diagrams'):
@@ -1698,7 +1685,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     #fig.colorbar(mappable=obj, ax=ax[1])
     #ax[1].set_axis('off')
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample000.svg'), transparent=True)
+    mlai.write_figure('two_point_sample000.svg', directory=diagrams, transparent=True)
 
     f = np.random.multivariate_normal(np.zeros(25), K, size=1)
     ax[0].plot(range(1, 26), f.flatten(), 'o', markersize=5, linewidth=3, color=[1., 0., 0.])
@@ -1710,10 +1697,10 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
     ax[0].set_xlim(xlim)
     ax[0].set_xlabel('$i$', fontsize=20)
     ax[0].set_ylabel('$f$', fontsize=20)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample001.svg'), transparent=True)
+    mlai.write_figure('two_point_sample001.svg', directory=diagrams, transparent=True)
 
     ax[0].plot(np.array(ind)+1, [f[0,ind[0]], f[0,ind[1]]], 'o', markersize=10, linewidth=5, color=hcolor)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample002.svg'), transparent=True)
+    mlai.write_figure('two_point_sample002.svg', directory=diagrams, transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
                  highlight=True, 
@@ -1723,7 +1710,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
                  colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample003.svg'), transparent=True)
+    mlai.write_figure('two_point_sample003.svg', directory=diagrams, transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
                  highlight=True, 
@@ -1737,7 +1724,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
                  colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample004.svg'), transparent=True)
+    mlai.write_figure('two_point_sample004.svg', directory=diagrams, transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
                  highlight=True, 
@@ -1751,7 +1738,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
                  colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample005.svg'), transparent=True)
+    mlai.write_figure('two_point_sample005.svg', directory=diagrams, transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
                  highlight=True, 
@@ -1765,7 +1752,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
                  colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample006.svg'), transparent=True)
+    mlai.write_figure('two_point_sample006.svg', directory=diagrams, transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
                  highlight=True, 
@@ -1779,12 +1766,12 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
                  colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample007.svg'), transparent=True)
+    mlai.write_figure('two_point_sample007.svg', directory=diagrams, transparent=True)
 
     obj = matrix(K[ind][:, ind], ax=ax[1], type='values')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample008.svg'), transparent=True)
+    mlai.write_figure('two_point_sample008.svg', directory=diagrams, transparent=True)
 
     ax[0].cla()
     two_point_pred(K, f.T, x, ax=ax[0],ind=ind, stub='two_point_sample', start=9, diagrams=diagrams)
@@ -1805,7 +1792,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams'):
     obj = matrix(K[ind][:, ind], ax=ax[1], type='values')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
-    mlai.write_figure(os.path.join(diagrams, 'two_point_sample013.svg'), transparent=True)
+    mlai.write_figure('two_point_sample013.svg', directory=diagrams, transparent=True)
 
     ax[0].cla()
     two_point_pred(K, f.T, x, ax=ax[0],ind=ind, stub='two_point_sample', start=14, diagrams=diagrams)
@@ -1829,7 +1816,7 @@ def poisson(diagrams='../diagrams'):
     ax.set_xlabel('$y_i$', fontsize=20)
     ax.set_ylabel('$p(y_i)$', fontsize=20)
     ax.legend(fontsize=20)
-    mlai.write_figure(os.path.join(diagrams, 'poisson.svg'), transparent=True)
+    mlai.write_figure('poisson.svg', directory=diagrams, transparent=True)
 
 def logistic(diagrams='../diagrams'):
     """Make plots of the logistic function"""
@@ -1843,7 +1830,7 @@ def logistic(diagrams='../diagrams'):
     ax.set_title('Logistic Function', fontsize=20)
     ax.set_xlabel('$f_i$', fontsize=20)
     ax.set_ylabel('$g_i$', fontsize=20)
-    mlai.write_figure(os.path.join(diagrams, 'logistic.svg'), transparent=True)
+    mlai.write_figure('logistic.svg', directory=diagrams, transparent=True)
 
 
 def height(ax, h, ph):
@@ -1908,8 +1895,7 @@ def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
     matrix(np.dot(U,VT), ax=ax[2], type='image')
     ax[3].set_frame_on(True)
     ax[3].axes.get_yaxis().set_visible(True)
-    mlai.write_figure(os.path.join(diagrams, 'wisuvt.svg'),
-                      transparent=True)
+    mlai.write_figure('wisuvt.svg', directory=diagrams, transparent=True)
     
 def kronecker_illustrate(fontsize=25, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
@@ -1946,8 +1932,7 @@ def kronecker_illustrate(fontsize=25, diagrams='../diagrams'):
                   fontsize=fontsize)
     ax[0].set_axis_off()
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_product.svg'),
-                      transparent=True)
+    mlai.write_figure('kronecker_product.svg', directory=diagrams, transparent=True)
 def blank_canvas(ax):
     """Turn an axis into a blank canvas"""
     ax.set_position([0, 0, 1, 1])
@@ -1991,7 +1976,7 @@ def kronecker_illustrate(fontsize=25, figsize=two_figsize, diagrams='../diagrams
     objAkB = matrix(AkroneckerB, ax=ax[3], bracket_style='square', type='entries',
                   fontsize=fontsize)
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_illustrate.svg'), transparent=True)
+    mlai.write_figure('kronecker_illustrate.svg', directory=diagrams, transparent=True)
 
 def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
@@ -2039,9 +2024,9 @@ def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../d
                     bracket_style='boxes', type='colorpatch',
                     fontsize=fontsize)
     if reverse:
-        mlai.write_figure(os.path.join(diagrams, 'kronecker_KI.svg'), transparent=True)
+        mlai.write_figure('kronecker_KI.svg', directory=diagrams, transparent=True)
     else:
-        mlai.write_figure(os.path.join(diagrams, 'kronecker_IK.svg'), transparent=True)
+        mlai.write_figure('kronecker_IK.svg', directory=diagrams, transparent=True)
 
 def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
@@ -2072,7 +2057,7 @@ def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diag
                     bracket_style='boxes', type='colorpatch',
                     fontsize=fontsize)
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_{stem}_highlighted001.svg').format(stem=stem))
+    mlai.write_figure('kronecker_{stem}_highlighted001.svg'.format(stem=stem), direcotry=diagrams)
     objAkB = matrix(IK_stack,
                     ax=ax,
                     bracket_style='boxes', type='colorpatch',
@@ -2082,7 +2067,7 @@ def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diag
                     highlight_col=[0, 2], 
                     highlight_color=hcolor,
                     highlight_width=8)
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_{stem}_highlighted002.svg').format(stem=stem))
+    mlai.write_figure('kronecker_{stem}_highlighted002.svg'.format(stem=stem), directory=diagrams)
     count = 2
     for zoom in [6, 3, 2]:
         objAkB = matrix(IK_stack,
@@ -2098,7 +2083,7 @@ def kronecker_IK_highlight(fontsize=25, figsize=two_figsize, reverse=False, diag
                         zoom_row=[0, zoom],
                         zoom_col=[0, zoom])
         count+=1
-        mlai.write_figure(os.path.join(diagrams, 'kronecker_{stem}_highlighted{count:0>3}.svg').format(stem=stem, count=count))
+        mlai.write_figure('kronecker_{stem}_highlighted{count:0>3}.svg'.format(stem=stem, count=count), directory=diagrams)
 
 def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
@@ -2133,7 +2118,7 @@ def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
                     type='entries',
                     fontsize=fontsize)
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_WX.svg'),
+    mlai.write_figure('kronecker_WX.svg', directory=diagrams,
                       transparent=True)
 
 def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
@@ -2152,14 +2137,14 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
     handle['arrow'].set_visible(False)
     handle['circle'] = plt.Circle((x_select[0], x_select[1]), 0.25, color='b', fill=False)
     ax2[0].add_artist(handle['circle'])
-    mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.svg').format(samp=count), transparent=True)
+    mlai.write_figure(figure=f2, filename='perceptron{samp:0>3}.svg'.format(samp=count), directory=diagrams, transparent=True)
     extent = ax2[0].get_window_extent().transformed(f2.dpi_scale_trans.inverted())
-    mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count), bbox_inches=extent, transparent=True)
+    mlai.write_figure(figure=f2, filename='perceptron{samp:0>3}.png'.format(samp=count), directory=diagrams, bbox_inches=extent, transparent=True)
     count += 1
     handle['plane'].set_visible(True)
     handle['arrow'].set_visible(True)
-    mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.svg').format(samp=count), transparent=True)
-    mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count), bbox_inches=extent, transparent=True)
+    mlai.write_figure(figure=f2, 'perceptron{samp:0>3}.svg'.format(samp=count), directory=diagrams, transparent=True)
+    mlai.write_figure(figure=f2, 'perceptron{samp:0>3}.png'.format(samp=count), directory=diagrams, bbox_inches=extent, transparent=True)
 
     while updates<max_updates and iterations<max_iters:
         iterations += 1
@@ -2168,15 +2153,17 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
             updates += 1
             count+=1
             handle['circle'].center = x_select[0], x_select[1]
-            mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.svg').format(samp=count), transparent=True)     
-            mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count), bbox_inches=extent, transparent=True)        
+            mlai.write_figure(figure=f2, filename='perceptron{samp:0>3}.svg'.format(samp=count), directory=diagrams, transparent=True)     
+            mlai.write_figure(figure=f2, filename='perceptron{samp:0>3}.png'.format(samp=count), bbox_inches=extent, directory=diagrams, transparent=True)        
             count+=1
             handle = update_perceptron(handle, f2, ax2, x_plus, x_minus, updates, w, b)
-            mlai.write_figure(filename=os.path.join(diagrams, 'perceptron{samp:0>3}.svg').format(samp=count),
-                              figure=f2, 
+            mlai.write_figure(filename='perceptron{samp:0>3}.svg'.format(samp=count),
+                              figure=f2,
+                              directory=diagrams,
                               transparent=True)
-            mlai.write_figure(filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count),
+            mlai.write_figure(filename='perceptron{samp:0>3}.png'.format(samp=count),
                               figure=f2, 
+                              directory=diagrams,
                               bbox_inches=extent,
                               transparent=True)
     print('Data passes:', iterations)
@@ -2303,7 +2290,8 @@ def non_linear_difficulty_plot_3(alpha=1.0,
     ax[1].text(0.5, 0.45, '$\longrightarrow$', 
                ha='center',
                fontsize=4*fontsize/3)
-    mlai.write_figure(os.path.join(diagrams, "nonlinear-mapping-3d-plot.svg"),
+    mlai.write_figure("nonlinear-mapping-3d-plot.svg",
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -2360,7 +2348,8 @@ def non_linear_difficulty_plot_2(alpha=1.0,
     ax[1].text(0.5, 0.65, '$y_1 = f_1(x)$', ha='center', fontsize=fontsize)
     ax[1].text(0.5, 0.5, '$\longrightarrow$', ha='center', fontsize=4*fontsize/3)
     ax[1].text(0.5, 0.35, '$y_2 = f_2(x)$', ha='center', fontsize=fontsize)
-    mlai.write_figure(os.path.join(diagrams, "nonlinear-mapping-2d-plot.svg"),
+    mlai.write_figure('nonlinear-mapping-2d-plot.svg',
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -2415,7 +2404,8 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     ax[1].set_axis_off()
     ax[1].text(0.5, 0.45, '$y = f(x) + \epsilon$', ha='center', fontsize=fontsize)
     ax[1].text(0.5, 0.35, '$\longrightarrow$', ha='center', fontsize=4*fontsize/3)
-    mlai.write_figure(os.path.join(diagrams,"gaussian-through-nonlinear.svg"),
+    mlai.write_figure('gaussian-through-nonlinear.svg',
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -2520,7 +2510,8 @@ def deep_nn(diagrams='../diagrams'):
                     text=r'$y=\mathbf{w}_4^\top\mathbf{h}_3$',
                     observed=True))
     fig, ax = model.draw()
-    mlai.write_figure(os.path.join(diagrams, "deep-nn2.svg"),
+    mlai.write_figure('deep-nn2.svg',
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -2528,7 +2519,8 @@ def deep_nn(diagrams='../diagrams'):
     for i, text in enumerate(new_text):
         model.layers[i].text=text
     fig, ax = model.draw()
-    mlai.write_figure(os.path.join(diagrams, "deep-nn1.svg"),
+    mlai.write_figure('deep-nn1.svg',
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -2559,7 +2551,8 @@ def deep_nn_bottleneck(diagrams='../diagrams'):
                     text=r'$y=\mathbf{w}_4^\top\mathbf{h}_3$',
                     observed=True))
     fig, ax = model.draw()
-    mlai.write_figure(os.path.join(diagrams, "deep-nn-bottleneck2.svg"),
+    mlai.write_figure('deep-nn-bottleneck2.svg',
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -2567,7 +2560,8 @@ def deep_nn_bottleneck(diagrams='../diagrams'):
                 'latent layer 2', 'hidden layer 2', 'latent layer 3', 
                 'hidden layer 3', 'output layer']
     fig, ax = model.draw()
-    mlai.write_figure(os.path.join(diagrams, "deep-nn-bottleneck1.svg"),
+    mlai.write_figure('deep-nn-bottleneck1.svg',
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
     for i, text in enumerate(new_text):
@@ -2638,7 +2632,8 @@ def stack_gp_sample(kernel=None,
             ax[j].set(aspect="equal")
             ax[j].set_axis_off()
         file_name = 'stack-gp-sample-' + kern[0].name + '-' + str(i) + '.svg'
-        mlai.write_figure(os.path.join(diagrams,file_name),
+        mlai.write_figure(file_name,
+                          directory=diagrams,
                           figure=fig,
                           transparent=True)
 
@@ -2662,7 +2657,8 @@ def stack_gp_sample(kernel=None,
                              color='b', linewidth=2)
                 ax[j].set_axis_off()
             file_name = 'stack-gp-sample-squash-' + str(i) + '.svg'
-            mlai.write_figure(os.path.join(diagrams, file_name),
+            mlai.write_figure(file_name,
+                              directory=diagrams,
                               figure=fig,
                               transparent=True)
 
@@ -2769,22 +2765,25 @@ def three_pillars_innovation(diagrams='./diagrams'):
     aspect=2
     pgm.add_node(daft.Node("innovate", "innovate", 2, 1.75, aspect=aspect))
     ax=pgm.render()
-    mlai.write_figure(os.path.join(diagrams, 'three-pillars-innovation001.svg'),
-                  figure=ax.figure,
-                  transparent=True)
+    mlai.write_figure('three-pillars-innovation001.svg',
+                      directory=diagrams,
+                      figure=ax.figure,
+                      transparent=True)
     pgm.add_node(daft.Node("resolve", "resolve", 3, 0.75, aspect=aspect))
     pgm.add_edge("resolve", "innovate", directed=False)
     ax=pgm.render()
-    mlai.write_figure(os.path.join(diagrams, 'three-pillars-innovation002.svg'),
-                  figure=ax.figure,
-                  transparent=True)
+    mlai.write_figure('three-pillars-innovation002.svg',
+                      directory=diagrams,
+                      figure=ax.figure,
+                      transparent=True)
     pgm.add_node(daft.Node("deploy", "deploy", 1, 0.75, aspect=aspect))
     pgm.add_edge("innovate", "deploy", directed=False)
     pgm.add_edge("deploy", "resolve", directed=False)
     ax=pgm.render()
-    mlai.write_figure(os.path.join(diagrams, 'three-pillars-innovation003.svg'),
-                  figure=ax.figure,
-                  transparent=True)
+    mlai.write_figure('three-pillars-innovation003.svg',
+                      directory=diagrams,
+                      figure=ax.figure,
+                      transparent=True)
     matplotlib.rc('font', size=orig_font_size)
     matplotlib.rc('font', weight=orig_font_weight)
 
@@ -2877,11 +2876,6 @@ def model_sample(model, output_dim=0, scale=1.0, offset=0.0,
         ylim = ax.get_ylim()
         ax.plot(m.Z, np.ones(m.Z.shape)*ax.get_ylim()[0], marker='^', linestyle=None, markersize=20)
 
-def save_animation(anim, diagrams, filename):
-    """Save an animation to file."""
-    f = open(os.path.join(diagrams, filename), 'w')
-    f.write(anim.to_jshtml())
-    f.close()
 
 
 def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, seed=10000, max_iters=300, optimize=True, fontsize=20, diagrams='./diagrams'):
@@ -2931,7 +2925,8 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
     ax.set_xlabel('length scale', fontsize=fontsize)
     ax.set_ylabel('$\log_{10}$ SNR', fontsize=fontsize)
 
-    mlai.write_figure(os.path.join(diagrams, 'multiple-optima000.svg'),
+    mlai.write_figure('multiple-optima000.svg',
+                      directory=diagrams,
                       figure=ax.figure,
                       transparent=True)
     
@@ -2971,7 +2966,8 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
     ax.set_xlim(xlim)
     ax.set_ylim(ylim)
 
-    mlai.write_figure(os.path.join(diagrams, 'multiple-optima001.svg'),
+    mlai.write_figure('multiple-optima001.svg',
+                      directory=diagrams,
                       figure=ax.figure,
                       transparent=True)
     
@@ -2999,8 +2995,8 @@ def google_trends(terms, initials, diagrams='./diagrams'):
     fig, ax = plt.subplots(figsize=wide_figsize)
     data['data frame'].plot(ax=ax)
     _ = ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)
-    mlai.write_figure(os.path.join(diagrams,
-                                   initials+'-google-trends.svg'),
+    mlai.write_figure(initials+'-google-trends.svg',
+                      directory=diagrams,
                       transparent=True)
     if not os.path.exists(diagrams):
         os.mkdir(diagrams)
@@ -3010,9 +3006,9 @@ def google_trends(terms, initials, diagrams='./diagrams'):
         handle.set_visible(False)
     for i, handle in enumerate(handles):
         handle.set_visible(True)
-        mlai.write_figure(os.path.join(diagrams,
-                                       '{initials}-google-trends{sample:0>3}.svg'.format(initials=initials,sample=i),
-                      transparent=True)
-                         )
+        mlai.write_figure('{initials}-google-trends{sample:0>3}.svg'.format(initials=initials,sample=i),
+                          directory=diagrams,
+                          transparent=True)
+                         
 
 
