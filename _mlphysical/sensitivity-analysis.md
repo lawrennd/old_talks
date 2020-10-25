@@ -17,6 +17,8 @@ transition: None
 
 [@Kennedy-predicting00;@Sobol-sensitivity90;@Sobol-global01;@Saltelli-sensitivity04;@Saltelli-global08;@Saltelli-variance10]
 
+This introduction is based on [Introduction to Global Sensitivity Analysis with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-sensitivity-montecarlo.ipynb) written by Mark Pullin, Javier Gonzalez, Juan Emmanuel Johnson and Andrei Paleyes.
+
 > A possible definition of sensitivity analysis is the following: The study of
 > how uncertainty in the output of a model (numerical or otherwise) can be
 > apportioned to different sources of uncertainty in the model input [@Saltelli-sensitivity04]. A related practice is ‘uncertainty analysis’, which focuses

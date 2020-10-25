@@ -7,8 +7,8 @@ layout: lecture
 time: "10:00"
 date: 2020-10-29
 venue: Virtual (Zoom)
-ipynb: false
-reveal: false
+ipynb: true
+reveal: true
 transition: None
 ---
 
@@ -23,6 +23,17 @@ transition: None
 \include{_uq/includes/emukit-playground.md}
 
 
+\downloadcode{mlai}
+\downloadcode{teaching_plots}
+\downloadcode{gp_tutorial}
+
+\installcode{GPy}
+\installcode{pyDOE}
+\installcode{EmuKit}
+
+\setupcode{import mlai
+import teaching_plots as plot}
+
 Related publications and links will appear here.
 
 Emukit https://nbviewer.jupyter.org/github/amzn/emukit/blob/master/notebooks/index.ipynb
@@ -30,45 +41,47 @@ Emukit Playground: https://amzn.github.io/emukit-playground/#!/
 
 Examle paper: @McKay-selecting79 @Kennedy-bayesian01
 
- Random Sampling. Let the input values X1, * * , XN
- be a random sample from F(x). This method of sam-
- pling is perhaps the most obvious, and an entire body
- of statistical literature may be used in making infer-
- ences regarding the distribution of Y(t).
- Stratified Sampling. Using stratified sampling, all
- areas of the sample space of X are represented by
- input values. Let the sample space S of X be parti-
- tioned into I disjoint strata St. Let pi = P(X C Si)
- represent the size of Si. Obtain a random sample XiJ,j
- = 1, * * , n from Si. Then of course the ni sum to N.
- If I = 1, we have random sampling over the entire
- sample space.
- Latin Hypercube Sampling. The same reasoning
- that led to stratified sampling, ensuring that all por-
- tions of S were sampled, could lead further. If we
- wish to ensure also that each of the input variables Xk
- has all portions of its distribution represented by
- input values, we can divide the range of each Xk into
- N strata of equal marginal probability 1/N, and
- sample once from each stratum. Let this sample be
- Xkj,j = 1, ..., N. These form the Xk component, k =
- 1, * , K, in Xi, i = 1, * , N. The components of the
- various X,A's are matched at random. This method of
- selecting input values is an extension of quota sam-
- pling [13], and can be viewed as a K-dimensional
- extension of Latin square sampling [11].
- One advantage of the Latin hypercube sample ap-
- pears when the output Y(t) is dominated by only a
- few of the components of X. This method ensures
- that each of those components is represented in a
- fully stratified manner, no matter which components
- might turn out to be important.
- We mention here that the N intervals on the range
- of each component of X combine to form NK cells
- which cover the sample space of X. These cells, which
- are labeled by coordinates corresponding to the inter-
- vals, are used when finding the properties of the
- sampling plan.
+> Random Sampling. Let the input values X1, * * , XN
+> be a random sample from F(x). This method of sam-
+> pling is perhaps the most obvious, and an entire body
+> of statistical literature may be used in making infer-
+> ences regarding the distribution of Y(t).
+> Stratified Sampling. Using stratified sampling, all
+> areas of the sample space of X are represented by
+> input values. Let the sample space S of X be parti-
+> tioned into I disjoint strata St. Let pi = P(X C Si)
+> represent the size of Si. Obtain a random sample XiJ,j
+> = 1, * * , n from Si. Then of course the ni sum to N.
+> If I = 1, we have random sampling over the entire
+> sample space.
+> Latin Hypercube Sampling. The same reasoning
+> that led to stratified sampling, ensuring that all por-
+> tions of S were sampled, could lead further. If we
+> wish to ensure also that each of the input variables Xk
+> has all portions of its distribution represented by
+> input values, we can divide the range of each Xk into
+> N strata of equal marginal probability 1/N, and
+> sample once from each stratum. Let this sample be
+> Xkj,j = 1, ..., N. These form the Xk component, k =
+> 1, * , K, in Xi, i = 1, * , N. The components of the
+> various X,A's are matched at random. This method of
+> selecting input values is an extension of quota sam-
+> pling [13], and can be viewed as a K-dimensional
+> extension of Latin square sampling [11].
+> One advantage of the Latin hypercube sample ap-
+> pears when the output Y(t) is dominated by only a
+> few of the components of X. This method ensures
+> that each of those components is represented in a
+> fully stratified manner, no matter which components
+> might turn out to be important.
+> We mention here that the N intervals on the range
+> of each component of X combine to form NK cells
+> which cover the sample space of X. These cells, which
+> are labeled by coordinates corresponding to the inter-
+> vals, are used when finding the properties of the
+> sampling plan.
+
+This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.
 
 Experimental design.
 
@@ -89,13 +102,15 @@ y_plot = target_function(x_plot)}
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x_plot, y_plot, "k", label="target Function")
 
-ax.legend(loc=2, prop={'size': LEGEND_SIZE})
-ax.set_xlabel(r"$x$")
-ax.set_ylabel(r"$f(x)$")
+ax.legend(loc=2)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
 ax.set_grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/forrester-function}{80%}}{The Forrester function [@Forrester-engineering08].}{forrester-function}
 
 \subsection{Initial Design}
 
@@ -109,12 +124,14 @@ ax.plot(X_init, Y_init, "ro", markersize=10, label="Observations")
 ax.plot(x_plot, y_plot, "k", label="Target Function")
 
 ax.legend(loc=2, prop={'size': LEGEND_SIZE})
-ax.set_xlabel(r"$x$")
-ax.set_ylabel(r"$f(x)$")
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
 ax.set_grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-initial-design.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/forrester-function-initial-design.svg}{80%}}{The initial design for the Forrester function example.}{forrester-function-initial-design}
 
 \subsection{The Model}
 
@@ -155,12 +172,14 @@ ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
 ax.legend(loc=2, prop={'size': LEGEND_SIZE})
-ax.set_xlabel(r"$x$")
-ax.set_ylabel(r"$f(x)$")
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
 ax.set_grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-entropy.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/forrester-function-entropy}{80%}}{The entropy of the fit to the Forrester function.}{forrester-function-entropy}
 
 \subsection{The Acquisition Function}
 
@@ -190,25 +209,49 @@ IVR is arguably te more principled approach, but often US is preferred over IVR 
 For both of them (stochastic) gradient base optimizers are used to retrieve $x_{n+1} \in \operatorname*{arg\:max}_{x \in \mathbb{X}} a(x)$. }
 
 
-\notes{from emukit.experimental_design.acquisitions import IntegratedVarianceReduction, ModelVariance
+\setupcode{from emukit.experimental_design.acquisitions import IntegratedVarianceReduction, ModelVariance}
 
-us_acquisition = ModelVariance(emukit_model)
+\code{us_acquisition = ModelVariance(emukit_model)
 ivr_acquisition = IntegratedVarianceReduction(emukit_model, space)
 
 us_plot = us_acquisition.evaluate(x_plot)
-ivr_plot = ivr_acquisition.evaluate(x_plot)
+ivr_plot = ivr_acquisition.evaluate(x_plot)}
 
-plt.figure(figsize=(12, 8))
-plt.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
-plt.plot(x_plot, ivr_plot / np.max(ivr_plot) , "purple", label="IVR")
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
+ax.plot(x_plot, ivr_plot / np.max(ivr_plot) , "purple", label="IVR")
 
-plt.legend(loc=1, prop={'size': LEGEND_SIZE})
-plt.xlabel(r"$x$")
-plt.ylabel(r"$f(x)$")
-plt.grid(True)
-plt.xlim(0, 1)
-plt.show()}
+ax.legend(loc=1)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
+ax.set_grid(True)
+ax.set_xlim(-0.01, 1)
 
+mlai.write_figure('experimental-design-acquisition-functions-forrester.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-functions-forrester}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-functions}
+
+\subsection{ Evaluating the objective function}
+
+\notes{To find the next point to evaluate we optimize the acquisition function using a standard gradient descent optimizer.}
+
+\setupcode{from emukit.core.optimization import GradientAcquisitionOptimizer}
+
+\code{optimizer = GradientAcquisitionOptimizer(space)
+x_new, _ = optimizer.optimize(us_acquisition)}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
+ax.axvline(x_new, color="red", label="x_next", linestyle="--")
+ax.legend(loc=1, prop={'size': LEGEND_SIZE})
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
+ax.set_grid(True)
+ax.set_xlim(-0.01, 1)
+
+mlai.write_figure('experimental-design-acquisition-next-point-forrester.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-next-point-forrester}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
 
 \notes{Afterwards we evaluate the true objective function and append it to our initial observations.}
 
@@ -235,11 +278,11 @@ ax.fill_between(x_plot[:, 0],
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
-ax.legend(loc=2, prop={'size': LEGEND_SIZE})
-ax.set_xlabel(r"$x$")
-ax.set_ylabel(r"$f(x)$")
+ax.legend(loc=2)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
 ax.set_grid(True)
-ax.set_xlim(0, 1)
+ax.set_xlim(-0.01, 1)
 
 mlai.write_figure(filename='forrester-function-multi-errorbars.svg', directory='\writeDiagramsDir/uq')}
 
@@ -260,13 +303,15 @@ x_new, _ = optimizer.optimize(us_acquisition)}
 \plotcode{plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
 ax.axvline(x_new, color="red", label="x_next", linestyle="--")
-ax.legend(loc=1, prop={'size': LEGEND_SIZE})
-ax.xlabel(r"$x$")
-ax.ylabel(r"$f(x)$")
-ax.grid(True)
-ax.xlim(-0.01, 1)
+ax.legend(loc=1)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
+ax.set_grid(True)
+ax.set_xlim(-0.01, 1)
 
-mlai.write_figure(filename='forrester-function-fit.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure(filename='forrester-function-three-sd-levels.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/forrester-function-three-sd-levels}{80%}}{The true Forrester function alongside the surrogate model fit and three separate standard deviations of error bars.}{forrester-function-three-sd-levels}
 
 \subsection{Emukit's experimental design interface}
 
@@ -286,21 +331,28 @@ ax.plot(x_plot, y_plot, "k", label="Objective Function")
 ax.plot(x_plot, mu_plot, "C0", label="Model")
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
+                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], 
+				 color="C0", alpha=0.6)
 
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
+                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], 
+				 color="C0", alpha=0.4)
 
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
-ax.legend(loc=2, prop={'size': LEGEND_SIZE})
-ax.set_xlabel(r"$x$")
-ax.set_ylabel(r"$f(x)$")
+                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], 
+				 color="C0", alpha=0.2)
+ax.legend(loc=2)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
 ax.set_grid(True)
 ax.set_xlim(0, 1)
-}
+
+mlai.write_figure(filename='forrester-function-full-fit.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/forrester-function-full-fit}{80%}}{The fit of the model to the Forrester function.}{forrester-function-full-fit}
+
 
 \thanks
 
