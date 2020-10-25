@@ -89,7 +89,9 @@ Latin hypercube
 
 Linear example
 
-\setupcode{from emukit.test_functions import forrester_function
+\setupcode{import numpy as np
+
+from emukit.test_functions import forrester_function
 from emukit.core.loop.user_function import UserFunctionWrapper
 from emukit.core import ContinuousParameter, ParameterSpace}
 
@@ -99,13 +101,15 @@ from emukit.core import ContinuousParameter, ParameterSpace}
 \code{x_plot = np.linspace(space.parameters[0].min, space.parameters[0].max, 301)[:, None]
 y_plot = target_function(x_plot)}
 
+\setupplot{import matplotlib.pyplot as plt}
+
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x_plot, y_plot, "k", label="target Function")
 
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function.svg', directory='\writeDiagramsDir/uq')}
@@ -123,10 +127,10 @@ Y_init = target_function(X_init)}
 ax.plot(X_init, Y_init, "ro", markersize=10, label="Observations")
 ax.plot(x_plot, y_plot, "k", label="Target Function")
 
-ax.legend(loc=2, prop={'size': LEGEND_SIZE})
+ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-initial-design.svg', directory='\writeDiagramsDir/uq')}
@@ -156,9 +160,14 @@ emukit_model = GPyModelWrapper(gpy_model)
 
 mu_plot, var_plot = emukit_model.predict(x_plot)}
 
-\setupplotcode{import matplotlib.pyplot as plt}
+\setupplotcode{import matplotlib.pyplot as plt
 
-\plotcode{plt.subplots(figsize=plot.big_wide_figsize)
+from matplotlib import colors as mcolors
+from matplotlib import cm
+
+colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(X_init, Y_init, "ro", markersize=10, label="Observations")
 ax.plot(x_plot, y_plot, "k", label="Objective Function")
 ax.plot(x_plot, mu_plot, "C0", label="Model")
@@ -171,10 +180,10 @@ ax.fill_between(x_plot[:, 0],
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
-ax.legend(loc=2, prop={'size': LEGEND_SIZE})
+ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-entropy.svg', directory='\writeDiagramsDir/uq')}
@@ -224,7 +233,7 @@ ax.plot(x_plot, ivr_plot / np.max(ivr_plot) , "purple", label="IVR")
 ax.legend(loc=1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(-0.01, 1)
 
 mlai.write_figure('experimental-design-acquisition-functions-forrester.svg', directory='\writeDiagramsDir/uq')}
@@ -243,10 +252,10 @@ x_new, _ = optimizer.optimize(us_acquisition)}
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
 ax.axvline(x_new, color="red", label="x_next", linestyle="--")
-ax.legend(loc=1, prop={'size': LEGEND_SIZE})
+ax.legend(loc=1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(-0.01, 1)
 
 mlai.write_figure('experimental-design-acquisition-next-point-forrester.svg', directory='\writeDiagramsDir/uq')}
@@ -281,7 +290,7 @@ ax.fill_between(x_plot[:, 0],
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(-0.01, 1)
 
 mlai.write_figure(filename='forrester-function-multi-errorbars.svg', directory='\writeDiagramsDir/uq')}
@@ -289,29 +298,6 @@ mlai.write_figure(filename='forrester-function-multi-errorbars.svg', directory='
 \figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars}
 
 Entropy of posterior
-
-
-\subsection{Evaluation the Objective Function}
-
-\note{To find the next point to evaluate we optimize the acquisition function using a standard gradient descent optimizer.}
-
-\setupcode{from emukit.core.optimization import GradientAcquisitionOptimizer}
-
-\code{optimizer = GradientAcquisitionOptimizer(space)
-x_new, _ = optimizer.optimize(us_acquisition)}
-
-\plotcode{plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
-ax.axvline(x_new, color="red", label="x_next", linestyle="--")
-ax.legend(loc=1)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
-ax.set_xlim(-0.01, 1)
-
-mlai.write_figure(filename='forrester-function-three-sd-levels.svg', directory='\writeDiagramsDir/uq')}
-
-\figure{\includediagram{\diagramsDir/uq/forrester-function-three-sd-levels}{80%}}{The true Forrester function alongside the surrogate model fit and three separate standard deviations of error bars.}{forrester-function-three-sd-levels}
 
 \subsection{Emukit's experimental design interface}
 
@@ -346,7 +332,7 @@ ax.fill_between(x_plot[:, 0],
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
-ax.set_grid(True)
+ax.grid(True)
 ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-full-fit.svg', directory='\writeDiagramsDir/uq')}
