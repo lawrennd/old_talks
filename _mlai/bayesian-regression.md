@@ -1,5 +1,5 @@
 ---
-week: 6
+week: 7
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
 youtube: 17zr5dGcUzE

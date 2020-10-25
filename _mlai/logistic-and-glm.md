@@ -1,5 +1,5 @@
 ---
-week: 9
+week: 10
 title: "Logistic Regression and GLMs"
 abstract: Naive Bayes assumptions allow us to specify class conditional densities through assuming that the data are conditionally independent given parameters. A logistic regression is an approach to classification which extends the linear basis function models we've already explored. Rather than modeling the output of the function directly the assumption is that we model the *log-odds* with the basis functions.
 youtube: e-BWWidfbT4

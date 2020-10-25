@@ -1,5 +1,5 @@
 ---
-week: 10
+week: 11
 title: "Special Topics: Gaussian Processes"
 abstract: 
 youtube: B2XhFoCehy8
