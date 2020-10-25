@@ -15,7 +15,7 @@ transition: None
 
 \include{talk-macros.tex}
 
-[@Kennedy-predicting00;@Sobol-global01;@Sobol-sensitivty90;@Saltelli-sensitivity04;@Saltelli-global08;@Saltelli-variance10]
+[@Kennedy-predicting00;@Sobol-sensitivity90;@Sobol-global01;@Saltelli-sensitivity04;@Saltelli-global08;@Saltelli-variance10]
 
 > A possible definition of sensitivity analysis is the following: The study of
 > how uncertainty in the output of a model (numerical or otherwise) can be
@@ -112,9 +112,6 @@ variable_domain = (-np.pi,np.pi)
 x_grid = np.linspace(*variable_domain,100)
 X, Y = np.meshgrid(x_grid, x_grid)}
 
-\code{f1 = ishigami.f1(x_grid)
-f2 = ishigami.f2(x_grid)
-F13 = ishigami.f13(np.array([x_grid,x_grid]).T)[:,None]}
 
 \notes{Before moving to any further analysis, we first plot the non-zero components $\mappingFunction(\inputVector)$. These components are 
 $$\begin{align*}
@@ -122,6 +119,10 @@ $$\begin{align*}
 \mappingFunction_2(\inputScalar_1) & = a \sin^2 (\inputScalar_2) \\
 \mappingFunction_{13}(\inputScalar_1,\inputScalar_3) & = b \inputScalar_3^4 \sin(\inputScalar_1) 
 \end{align*}$$}
+
+\code{f1 = ishigami.f1(x_grid)
+f2 = ishigami.f2(x_grid)
+F13 = ishigami.f13(np.array([x_grid,x_grid]).T)[:,None]}
 
 \setupplotcode{from mpl_toolkits.mplot3d import Axes3D}
 
@@ -144,6 +145,8 @@ ax.set_ylabel('$x_3$')
 ax.set_zlabel('$f_{13}$')
 
 mlai.write_figure(filename='non-zero-sobol-ishigami.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/non-zero-sobol-ishigami}{80%}}{The non-zero components of the Ishigami function.}{non-zero-sobol-ishigami}
 
 \notes{The total variance $\text{var}(\dataScalar)$ in this example is}
 
@@ -177,9 +180,10 @@ With Emukit, the first-order Sobol indexes can be easily computed. We first need
 \code{target_simulator = ishigami.fidelity1
 variable_domain = (-np.pi,np.pi)
 
-space = ParameterSpace([ContinuousParameter('x1', variable_domain[0], variable_domain[1]), 
-                        ContinuousParameter('x2', variable_domain[0], variable_domain[1]),
-                        ContinuousParameter('x3', variable_domain[0], variable_domain[1])])}
+space = ParameterSpace(
+          [ContinuousParameter('x1', variable_domain[0], variable_domain[1]), 
+           ContinuousParameter('x2', variable_domain[0], variable_domain[1]),
+           ContinuousParameter('x3', variable_domain[0], variable_domain[1])])}
 						
 \notes{Compute the indexes is as easy as doing}
 
@@ -200,9 +204,12 @@ print(main_effects)}
      'Monte Carlo': main_effects}
 
 pd.DataFrame(d).plot(kind='bar',figsize=plot.big_wide_figsize, ax=ax)
-ax.set_title('First-order Sobol indexes - Ishigami')
-ax.set_ylabel('% of explained output variance')}
+ax.set_title('First-order Sobol indices - Ishigami')
+ax.set_ylabel('% of explained output variance')
 
+mlai.write_figure(filename='first-order-sobol-indices-ishigami.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/first-order-sobol-indices-ishigami}{80%}}{The non-zero components of the Ishigami function.}{first-order-sobol-indices-ishigami}
 
 \subsection{Total Effects Using Monte Carlo}
 
@@ -222,7 +229,12 @@ Note that the sum of $S_{Ti}$ is not necessarily one in this case unless the mod
 
 pd.DataFrame(d).plot(kind='bar',figsize=(12, 5), ax=ax)
 ax.set_title('Total effects - Ishigami')
-ax.set_ylabel('Effects value')}
+ax.set_ylabel('Effects value')
+
+mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/total-effects-ishigami}{80%}}{The total effects from the Ishigami function as computed via Monte Carlo estimate alongside the true total effects for the Ishigami function.}{total-effects-ishigami}
+
 
 \subsection{Computing the sensitivity coefficients using the output of a model}
 
@@ -262,7 +274,12 @@ d = {'Sobol True': ishigami.main_effects,
 
 pd.DataFrame(d).plot(kind='bar',figsize=(12, 5))
 plt.title('First-order Sobol indexes - Ishigami')
-plt.ylabel('% of explained output variance')}
+plt.ylabel('% of explained output variance')
+
+mlai.write_figure(filename='first-order-sobol-indices-gp-ishigami.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/first-order-sobol-indices-gp-ishigami}{80%}}{First Order sobol indices as estimated by Monte Carlo and GP-emulator based Monte Carlo.}{first-order-sobol-indices-gp-ishigami}
+
 
 \plotcode{total_effects_gp = {ivar: total_effects_gp[ivar][0] for ivar in total_effects_gp}
 
@@ -276,13 +293,15 @@ pd.DataFrame(d).plot(kind='bar', ax=ax)
 ax.set_title('Total effects - Ishigami')
 ax.set_ylabel('% of explained output variance')
 
-}
+mlai.write_figure(filename='total-effects-sobol-indices-gp-ishigami.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/total-effects-sobol-indices-gp-ishigami}{80%}}{Total effects as estimated by Monte Carlo and GP based Monte Carlo.}{total-effects-sobol-indices-gp-ishigami}
 
 \notes{We observe some discrepacies with respect to the real value of the coefficient when using the Gaussian process but we get a fairly good a approximation a very reduced number of evaluations of the original target function.}
 
 \subsection{Conclusions}
 
-\notes{The Sobol indexes are an interesting tool to explain the variance of the output of a function as components of the input variables. Monte Carlo is an approach for computing these indexes if the function is cheap to evaluate. Other approaches will be needed if $f$ is expensive to compute.}
+\notes{The Sobol indexes are a tool for explaining the variance of the output of a function as components of the input variables. Monte Carlo is an approach for computing these indexes if the function is cheap to evaluate. Other approaches will be needed if $\mappingFunction(\cdot)$ is expensive to compute.}
 
 
 \thanks
