@@ -41,42 +41,40 @@ Emukit Playground: https://amzn.github.io/emukit-playground/#!/
 
 Examle paper: @McKay-selecting79 @Kennedy-bayesian01
 
-> Random Sampling. Let the input values X1, * * , XN
-> be a random sample from F(x). This method of sam-
-> pling is perhaps the most obvious, and an entire body
+> Random Sampling. Let the input values $x_1, \dots, x_\numData$
+> be a random sample from $f(x)$. This method of sampling is perhaps the most obvious, and an entire body
 > of statistical literature may be used in making infer-
-> ences regarding the distribution of Y(t).
+> ences regarding the distribution of $Y(t)$.
 > Stratified Sampling. Using stratified sampling, all
-> areas of the sample space of X are represented by
-> input values. Let the sample space S of X be parti-
-> tioned into I disjoint strata St. Let pi = P(X C Si)
-> represent the size of Si. Obtain a random sample XiJ,j
-> = 1, * * , n from Si. Then of course the ni sum to N.
-> If I = 1, we have random sampling over the entire
+> areas of the sample space of $X$ are represented by
+> input values. Let the sample space $S$ of $X$ be partitioned into $I$ disjoint strata $S_t$. Let $\pi = P(X C S_i)$
+> represent the size of $S_i$. Obtain a random sample $XiJ,j
+> = 1, \dots, n$ from $S_i$. Then of course the $n_i$ sum to $N$.
+> If $I = 1$, we have random sampling over the entire
 > sample space.
 > Latin Hypercube Sampling. The same reasoning
 > that led to stratified sampling, ensuring that all por-
-> tions of S were sampled, could lead further. If we
-> wish to ensure also that each of the input variables Xk
+> tions of $S$ were sampled, could lead further. If we
+> wish to ensure also that each of the input variables $X_k$
 > has all portions of its distribution represented by
-> input values, we can divide the range of each Xk into
-> N strata of equal marginal probability 1/N, and
+> input values, we can divide the range of each $X_k$ into
+> $N$ strata of equal marginal probability $1/N$, and
 > sample once from each stratum. Let this sample be
-> Xkj,j = 1, ..., N. These form the Xk component, k =
-> 1, * , K, in Xi, i = 1, * , N. The components of the
-> various X,A's are matched at random. This method of
+> $Xkj,j = 1, \dots, N$. These form the $X_k$ component, $k =
+> 1, * , K, in Xi, i = 1, * , N$. The components of the
+> various $X,A's$ are matched at random. This method of
 > selecting input values is an extension of quota sam-
 > pling [13], and can be viewed as a K-dimensional
 > extension of Latin square sampling [11].
 > One advantage of the Latin hypercube sample ap-
-> pears when the output Y(t) is dominated by only a
-> few of the components of X. This method ensures
+> pears when the output $Y(t)$ is dominated by only a
+> few of the components of $X$. This method ensures
 > that each of those components is represented in a
 > fully stratified manner, no matter which components
 > might turn out to be important.
-> We mention here that the N intervals on the range
-> of each component of X combine to form NK cells
-> which cover the sample space of X. These cells, which
+> We mention here that the $N$ intervals on the range
+> of each component of X combine to form $NK$ cells
+> which cover the sample space of $X$. These cells, which
 > are labeled by coordinates corresponding to the inter-
 > vals, are used when finding the properties of the
 > sampling plan.
@@ -104,7 +102,7 @@ y_plot = target_function(x_plot)}
 \setupplot{import matplotlib.pyplot as plt}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, y_plot, "k", label="target Function")
+ax.plot(x_plot, y_plot, 'k', label='target Function')
 
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
@@ -124,8 +122,8 @@ mlai.write_figure(filename='forrester-function.svg', directory='\writeDiagramsDi
 Y_init = target_function(X_init)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(X_init, Y_init, "ro", markersize=10, label="Observations")
-ax.plot(x_plot, y_plot, "k", label="Target Function")
+ax.plot(X_init, Y_init, 'ro', markersize=10, label='Observations')
+ax.plot(x_plot, y_plot, 'k', label='Target Function')
 
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
@@ -168,18 +166,18 @@ from matplotlib import cm
 colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(X_init, Y_init, "ro", markersize=10, label="Observations")
-ax.plot(x_plot, y_plot, "k", label="Objective Function")
-ax.plot(x_plot, mu_plot, "C0", label="Model")
+ax.plot(X_init, Y_init, 'ro', markersize=10, label='Observations')
+ax.plot(x_plot, y_plot, 'k', label='Objective Function')
+ax.plot(x_plot, mu_plot, 'C0', label='Model')
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
+                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
+                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.4)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
+                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.2)
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
@@ -227,8 +225,8 @@ us_plot = us_acquisition.evaluate(x_plot)
 ivr_plot = ivr_acquisition.evaluate(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
-ax.plot(x_plot, ivr_plot / np.max(ivr_plot) , "purple", label="IVR")
+ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US')
+ax.plot(x_plot, ivr_plot / np.max(ivr_plot) , 'purple', label='IVR')
 
 ax.legend(loc=1)
 ax.set_xlabel('$x$')
@@ -250,8 +248,8 @@ mlai.write_figure('experimental-design-acquisition-functions-forrester.svg', dir
 x_new, _ = optimizer.optimize(us_acquisition)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), "green", label="US")
-ax.axvline(x_new, color="red", label="x_next", linestyle="--")
+ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US')
+ax.axvline(x_new, color='red', label='x_next', linestyle='--')
 ax.legend(loc=1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
@@ -275,18 +273,18 @@ Y = np.append(Y_init, y_new, axis=0)}
 mu_plot, var_plot = emukit_model.predict(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(emukit_model.X, emukit_model.Y, "ro", markersize=10, label="Observations")
-ax.plot(x_plot, y_plot, "k", label="Target Function")
-ax.plot(x_plot, mu_plot, "C0", label="Model")
+ax.plot(emukit_model.X, emukit_model.Y, 'ro', markersize=10, label='Observations')
+ax.plot(x_plot, y_plot, 'k', label='Target Function')
+ax.plot(x_plot, mu_plot, 'C0', label='Model')
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
+                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
+                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.4)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
+                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.2)
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
@@ -312,23 +310,23 @@ ed.run_loop(target_function, 10)}
 \code{mu_plot, var_plot = ed.model.predict(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(ed.loop_state.X, ed.loop_state.Y, "ro", markersize=10, label="Observations")
-ax.plot(x_plot, y_plot, "k", label="Objective Function")
-ax.plot(x_plot, mu_plot, "C0", label="Model")
+ax.plot(ed.loop_state.X, ed.loop_state.Y, 'ro', markersize=10, label='Observations')
+ax.plot(x_plot, y_plot, 'k', label='Objective Function')
+ax.plot(x_plot, mu_plot, 'C0', label='Model')
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], 
-				 color="C0", alpha=0.6)
+				 color='C0', alpha=0.6)
 
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], 
-				 color="C0", alpha=0.4)
+				 color='C0', alpha=0.4)
 
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], 
-				 color="C0", alpha=0.2)
+				 color='C0', alpha=0.2)
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
