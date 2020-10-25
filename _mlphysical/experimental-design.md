@@ -135,7 +135,7 @@ ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-initial-design.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/forrester-function-initial-design.svg}{80%}}{The initial design for the Forrester function example.}{forrester-function-initial-design}
+\figure{\includediagram{\diagramsDir/uq/forrester-function-initial-design}{80%}}{The initial design for the Forrester function example.}{forrester-function-initial-design}
 
 \subsection{The Model}
 
