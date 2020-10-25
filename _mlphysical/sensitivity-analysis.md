@@ -8,8 +8,8 @@ layout: lecture
 time: "12:00"
 date: 2020-10-30
 venue: Virtual (Zoom)
-ipynb: false
-reveal: false
+ipynb: true
+reveal: true
 transition: None
 ---
 
