@@ -14,7 +14,7 @@ First we will load in the Nigerian NMIS health data. Our aim will be to predict 
 \code{data.head()}
 \else
 \setupcode{import urllib.request}
-\code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')
+\code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')}
 
 \setupcode{import pandas as pd}
 \code{data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')}
