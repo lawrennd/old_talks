@@ -42,18 +42,18 @@ slider.oninput = function() {
   stochasticity= this.value;
 }
 
-var paused = false;
+var paused = true;
 var gravityOn = true;
 var dragOn = true;
 var soundOn = true;
 
 var clearCanv = true;
 
-
 var bigBalls = false;
 var wallBounce = true;
 var floorBounce = false;
-var floorWrap = true;
+var floorWrap = false;
+var floorWrapCenter = true;
 var floorReset = false;
 
 var groundColor = 'rgba(56, 256, 56, 0.8)';
@@ -85,14 +85,6 @@ function ballBirth() {
 function resetGame() {
     ballBirth();
 }
-// spawn the initial small thingies.
-//for (i = 0; i<100; i++) {
-//    ballArray[ballArray.length] = new Ball(randomX(), randomY(), 2);
-//}
-
-
-// manually spawn the few large ones that
-// start with no velocity. because i'm lazy.
 
 pitArray[pitArray.length] = new Box(0, canvas.height-40, 90, 30, pinColor);
 boxArray[boxArray.length] = new Box(0, canvas.height-10, 90, 10, groundColor);
@@ -112,22 +104,6 @@ boxArray[boxArray.length] = new Box(800, canvas.height-30, 10, 20, groundColor);
 postArray[postArray.length] = new Post(805, canvas.height-5, 5, groundColor);
 pitArray[pitArray.length] = new Box(810, canvas.height-40, 750, 30, pinColor);
 boxArray[boxArray.length] = new Box(810, canvas.height-10, 90, 10, groundColor);
-
-//boxArray[boxArray.length] = new Box(0, canvas.height/2, 50, 10, groundColor);
-
-//for(i=40; i<canvas.width-40; i+=40) {
-//     for(j=40; j<canvas.height-40; j+=40) {
-// 	postArray[postArray.length] = new Post(i, j, 5, groundColor);
-//     }
-// }
-
-// for(i=160; i<canvas.width-160; i+=160) {
-//     for(j=40; j<canvas.height-160; j+=160) {
-// 	pinArray[pinArray.length] = new Post(i, j, 5, pinColor);
-//     }
-// }
-
-//boxArray[boxArray.length] = new Box(0, 900, 200);
 
 resetGame();
 

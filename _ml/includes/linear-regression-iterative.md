@@ -29,11 +29,12 @@ for i in range(100):
 
 \slides{* We can now make a contour plot.}
 
-\loadcode{regression_contour}{teaching_plots}
+\setupplotcode{import teaching_plots as plot
+import mlai}
 
 \plotcode{f, ax = plt.subplots(figsize=(5,5))
-regression_contour(f, ax, m_vals, c_vals, E_grid)
-mlai.write_figure(filename='\writeDiagramsDir/ml/regression_contour.svg')}
+plot.regression_contour(f, ax, m_vals, c_vals, E_grid)
+mlai.write_figure(filename='regression_contour.svg', directory='\writeDiagramsDir/ml')}
 
 \figure{\includediagram{\diagramsDir/ml/regression_contour}{60%}}{Contours of the objective function for linear regression by minimizing least squares.}{regression-contour}
 
@@ -57,9 +58,9 @@ c_star = -5.0}
 
 * Now we need to compute the gradient of the error
 function, firstly with respect to $c$,
-
-  $$\frac{\text{d}\errorFunction(m, c)}{\text{d} c} =
--2\sum_{i=1}^\numData (\dataScalar_i - m\inputScalar_i - c)$$
+    $$
+	\frac{\text{d}\errorFunction(m, c)}{\text{d} c} = -2\sum_{i=1}^\numData (\dataScalar_i - m\inputScalar_i - c)
+	$$
 
 * This is computed in python as follows
 
@@ -108,7 +109,7 @@ changes all the time.
 plot.regression_contour(f, ax, m_vals, c_vals, E_grid)
 ax.plot(m_star, c_star, 'g*', markersize=20)
 ax.arrow(m_star, c_star, -m_grad*0.1, -c_grad*0.1, head_width=0.2)
-mlai.write_figure(filename='\writeDiagramsDir/ml/regression_contour_step001.svg', transparent=True)}
+mlai.write_figure(filename='regression_contour_step001.svg', directory='\writeDiagramsDir/ml/', transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/regression_contour_step001}{60%}}{Single update descending the contours of the error surface for regression.}{regression-contour-step-1}
 
@@ -182,7 +183,7 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/ml/regression_contour_fit028}{60%}}{Stochastic gradient descent for linear regression}{regression-contour-fit-28}
+\notes{\figure{\includediagram{\diagramsDir/ml/regression_contour_fit028}{60%}}{Batch gradient descent for linear regression}{regression-contour-fit-28}}
 
 \subsection{Stochastic Gradient Descent}
 

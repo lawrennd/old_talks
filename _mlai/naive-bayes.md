@@ -1,8 +1,7 @@
 ---
-week: 9 
+week: 8
 title: "Probabilistic Classification: Naive Bayes"
 abstract: In the last lecture we looked at unsupervised learning. We introduced latent variables, dimensionality reduction and clustering. In this lecture we're going to look at clustering, specifically the probabilistic approach to clustering. We'll focus on a simple but often effective algorithm known as *naive Bayes*.
-date: 2015-11-24
 youtube: G7NbyCcuGmg
 ---
 

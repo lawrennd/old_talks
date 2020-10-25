@@ -61,6 +61,8 @@ function keyDownHandler(event) {
         ballArray[ballArray.length] = new Ball(randomX(), randomY(), randomRadius());
     } else if (event.keyCode == 80) { // p
         paused = !paused;
+    } else if (event.keyCode == 32) { // space bar
+        paused = !paused;
     } else if (event.keyCode == 71) { // g
         gravityOn = !gravityOn;
         dragOn = !dragOn;
@@ -171,6 +173,18 @@ function floorCollision(ball) {
 	}
 	if (ball.y - ball.radius + ball.dy < 0) {	    
 	    ball.y = canvas.height-ball.radius;
+	}
+    }
+    if(floorWrapCenter)
+    {
+	if (ball.y + ball.radius + ball.dy > canvas.height) {
+	    ball.y = ball.radius;
+	    ball.x = canvas.width/2;
+	    incrementScore();
+	}
+	if (ball.y - ball.radius + ball.dy < 0) {	    
+	    ball.y = canvas.height-ball.radius;
+	    ball.x = canvas.width/2;
 	}
     }
     if(floorReset)

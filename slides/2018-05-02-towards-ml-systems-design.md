@@ -188,7 +188,7 @@ communicate
 <li><p>How does machine learning work?</p></li>
 <li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
 </ul>
-<p><span class="math display">\[ p(\text{bought}) =  {f}\left(\boldsymbol{\beta}^\top {{\bf {x}}}\right)\]</span></p>
+<p><span class="math display">\[ p(\text{bought}) =  {f}\left(\boldsymbol{\beta}^\top \mathbf{x}\right)\]</span></p>
 <div class="fragment">
 <p>We call <span class="math inline">\({f}(\cdot)\)</span> the <em>prediction function</em></p>
 </div>
@@ -198,12 +198,12 @@ communicate
 <ul>
 <li>Use an objective function</li>
 </ul>
-<p><span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {{\bf X}})\]</span></p>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, \mathbf{X})\]</span></p>
 <div class="fragment">
 <ul>
 <li>E.g. least squares</li>
 </ul>
-<p><span class="math display">\[{E}(\boldsymbol{\beta}) = \sum_{i=1}^{n}\left({y}_i - {f}({{\bf {x}}}_i)\right)^2\]</span></p>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}) = \sum_{i=1}^{n}\left({y}_i - {f}(\mathbf{x}_i)\right)^2\]</span></p>
 </div>
 </section>
 <section id="two-components" class="slide level3 slide:" data-transition="none">
@@ -574,15 +574,15 @@ question or to be subject to a particular analysis.
 </section>
 <section id="car-dynamics" class="slide level3">
 <h3>Car Dynamics</h3>
-<p><span class="math display">\[{{\bf {x}}}_{t+1} = {f}({{\bf {x}}}_{t},\textbf{u}_{t})\]</span></p>
-<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\({{\bf {x}}}_t = (p_t, v_t)\)</span> is the vehicle state</p>
+<p><span class="math display">\[\mathbf{x}_{t+1} = {f}(\mathbf{x}_{t},\textbf{u}_{t})\]</span></p>
+<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\(\mathbf{x}_t = (p_t, v_t)\)</span> is the vehicle state</p>
 </section>
 <section id="policy" class="slide level3">
 <h3>Policy</h3>
 <ul>
 <li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
 </ul>
-<p><span class="math display">\[\pi({{\bf {x}}},\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
+<p><span class="math display">\[\pi(\mathbf{x},\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
 </section>
 <section id="emulate-the-mountain-car" class="slide level3">
 <h3>Emulate the Mountain Car</h3>
@@ -640,8 +640,8 @@ question or to be subject to a particular analysis.
 <h3>Best Controller using Emulator of Dynamics</h3>
 <iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
-<p><span class="math display">\[{f}_i\left({{\bf {x}}}\right) = \rho{f}_{i-1}\left({{\bf {x}}}\right) + \delta_i\left({{\bf {x}}}\right)\]</span></p>
-<p><span class="math display">\[{f}_i\left({{\bf {x}}}\right) = {g}_{i}\left({f}_{i-1}\left({{\bf {x}}}\right)\right) + \delta_i\left({{\bf {x}}}\right),\]</span></p>
+<p><span class="math display">\[{f}_i\left(\mathbf{x}\right) = \rho{f}_{i-1}\left(\mathbf{x}\right) + \delta_i\left(\mathbf{x}\right)\]</span></p>
+<p><span class="math display">\[{f}_i\left(\mathbf{x}\right) = {g}_{i}\left({f}_{i-1}\left(\mathbf{x}\right)\right) + \delta_i\left(\mathbf{x}\right),\]</span></p>
 </section>
 <section id="best-controller-with-multi-fidelity-emulator" class="slide level3">
 <h3>Best Controller with Multi-Fidelity Emulator</h3>

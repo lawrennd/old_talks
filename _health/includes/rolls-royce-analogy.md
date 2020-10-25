@@ -22,7 +22,7 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 \slides{
 \href{https://www.telegraph.co.uk/news/2017/05/12/nhs-hit-major-cyber-attack-hackers-demanding-ransom/}{\includepng{\diagramsDir/health/wannacry}{80%}}
 }
-\notes{For example, the recent WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the *intent* of academics and medical professionals, but actual *capability* could be at variance with the intent.} 
+\notes{For example, the WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the *intent* of academics and medical professionals, but actual *capability* could be at variance with the intent.} 
 
 \newslide{Bush Pilot Model}
 

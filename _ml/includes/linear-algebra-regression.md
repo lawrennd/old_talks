@@ -247,10 +247,10 @@ print(y)}
 
 You can make a plot of $\dataScalar$ vs $\inputScalar$ with the following command:}
 
-\setupplotcode{%matplotlib inline 
+\setupcode{%matplotlib inline 
 import matplotlib.pyplot as plt}
 
-\plotcode{plt.plot(x, y, 'rx')
+\code{plt.plot(x, y, 'rx')
 plt.xlabel('year')
 plt.ylabel('pace in min/km')}
 
@@ -399,8 +399,8 @@ print(m)}
 
 \notes{Now plot those test predictions with a blue line on the same plot as the data,}
 
-\setupplotcode{import matplotlib.pyplot as plt}
-\plotcode{plt.plot(x_test, f_test, 'b-')
+\setupcode{import matplotlib.pyplot as plt}
+\code{plt.plot(x_test, f_test, 'b-')
 plt.plot(x, y, 'rx')}
 
 \notes{The fit isn't very good, we need to iterate between these parameter updates in a loop to improve the fit, we have to do this several times,}
@@ -653,7 +653,7 @@ $$
 $$}
 
 \setupcode{import numpy as np}
-\code{f = np.dot(X, w) # np.dot does matrix multiplication in python}
+\code{f = X@w # The @ sign performs matrix multiplication}
 
 \notes{Combining this result with our objective function,
 $$
@@ -847,7 +847,7 @@ where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/
 
 \notes{so we can obtain the solution using}
 
-\code{w = np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y))
+\code{w = np.linalg.solve(X.T@X, X.T@y)
 print(w)}
 
 \notes{We can map it back to the liner regression and plot the fit as follows}
@@ -890,13 +890,13 @@ y = movies[['IMDB_Rating']]}
 \notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
 
 \setupcode{import pandas as pd}
-\code{w = pd.DataFrame(data=np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  # solve linear regression here
+\code{w = pd.DataFrame(data=np.linalg.solve(X.T@X, X.T@y),  # solve linear regression here
                  index = X.columns,  # columns of X become rows of w
                  columns=['regression_coefficient']) # the column of X is the value of regression coefficient}
 
 \notes{We can check the residuals to see how good our estimates are}
 
-\code{(y - np.dot(X, w)).hist()}
+\code{(y - X@w).hist()}
 
 \notes{Which shows our model *hasn't* yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.}
 
@@ -905,7 +905,7 @@ y = movies[['IMDB_Rating']]}
 \notes{Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.}
 
 \notes{
-\figure{\includeyoutube{ui-uNlFHoms}{800}{600}}{MLAI Lecture 15 from 2014 on Multivariate Regression.}{mlai-15-multivariate-regression}}
+\figure{\includeyoutube{ui-uNlFHoms}{800}{600}}{MLAI Lecture 15 from 2014 on Multivariate Regression.}{mlai-15-multivariate-regression}
 
 \figure{\includeyoutube{78YNphT90-k}{800}{600}}{MLAI Lecture 3 from 2012 on Maximum Likelihood}{mlai-3-maximum-likelihood}
 }
@@ -939,7 +939,7 @@ This is a more numerically stable solution because it removes the need to comput
 
 \setupcode{import scipy as sp}
 \code{Q, R = np.linalg.qr(X)
-w = sp.linalg.solve_triangular(R, np.dot(Q.T, y)) 
+w = sp.linalg.solve_triangular(R, Q.T@y) 
 w = pd.DataFrame(w, index=X.columns)
 w}
 

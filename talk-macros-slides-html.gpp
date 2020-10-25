@@ -2,6 +2,9 @@
 \define{talkMacrosSlidesHtml}
 \define{\slidesmall{block}}{<small>\block</small>}
 
+
+\define{\includegooglebook{id}{page}}{[![](\diagramsDir/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
+
 \define{\speakernotes{text}}{<aside class="notes">
 \text
 </aside>}
@@ -13,12 +16,12 @@
 \define{\fragmentdiv{contents}{number}{style}}{<div class="fragment" data-fragment-index="\number" style="\style">\contents</div>}
 
 
-
 \defeval{\figure{contents}{captionContents}{label}}{<div class="figure">
 <div class="figure-frame" id="\concat{\label}{-figure}">
 \contents
 </div>
-</div>}
+</div>
+<aside class="notes">\captionContents</aside>}
 
 \define{\startanimation{group}{start}{finish}{name}}{<script>
 showDivs(\start, '\group');

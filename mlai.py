@@ -2,25 +2,45 @@
 
 # import the time model to allow python to pause.
 import time
+import os
 import numpy as np
-import scipy as sp
+
 import matplotlib.pyplot as plt
 from IPython.display import display, clear_output, HTML
 
-from numpy import dot, sqrt, sin, cos, tanh, arcsin, sinc, min, log, exp, eye, diag, zeros, ones, linspace, pi, var
-from numpy.random import randint, rand, seed, uniform
+from numpy import dot, sqrt, sin, cos, tanh, arcsin, arccos, sinc, min, log, exp, eye, diag, zeros, ones, linspace, pi, var, asarray, hstack, sum, max, abs, ceil, arange, clip, frombuffer
 
-from numpy.linalg import qr, norm
+from numpy.random import randint, rand, seed, uniform, poisson, normal
+
+from numpy.linalg import qr, norm, det, inv
+
+from scipy.linalg import solve_triangular, cholesky
 
 
-def write_figure(filename, figure=None, **kwargs):
+def filename_join(filename, directory=None):
+    "Join a filename to a directory and create directory if it's not there"
+    if directory is not None:
+        if not os.path.exists(directory):
+            os.makedirs(directory, exist_ok=True)
+        return os.path.join(directory, filename)
+    return filename
+
+
+def write_anim(filename, directory=None, **kwargs):
+    "Write an animation to a file."
+    savename = filename_join(filename, directory)
+    anim.save(savename, **kwargs)
+
+
+def write_figure(filename, figure=None, directory=None, **kwargs):
     """Write figure in correct formating"""
+    savename = filename_join(filename, directory)
     if 'transparent' not in kwargs:
         kwargs['transparent'] = True
     if figure is None:
-        plt.savefig(filename, **kwargs)
+        plt.savefig(savename, **kwargs)
     else:
-        figure.savefig(filename, **kwargs)
+        figure.savefig(savename, **kwargs)
     
 ##########          Week 2          ##########
 def init_perceptron(x_plus, x_minus, seed=1000001):
@@ -162,17 +182,17 @@ class LM(ProbMapModel):
     def fit(self):
         """Minimize the objective function with respect to the parameters"""
         self.update_QR()
-        self.w_star = sp.linalg.solve_triangular(self.R, dot(self.Q.T, self.y))
+        self.w_star = solve_triangular(self.R, self.Q.T@self.y)
         self.update_sum_squares()
         self.sigma2=self.sum_squares/self.num_data
 
     def predict(self, X):
         """Return the result of the prediction function."""
-        return dot(self.basis.Phi(X), self.w_star), None
+        return self.basis.Phi(X)@self.w_star, None
         
     def update_f(self):
         """Update values at the prediction points."""
-        self.f = dot(self.Phi, self.w_star)
+        self.f = self.Phi@self.w_star
         
     def update_sum_squares(self):
         """Compute the sum of squares error."""
@@ -210,13 +230,13 @@ class Basis():
 
 def linear(x, **kwargs):
     "Defines the linear basis."
-    return np.hstack([ones((x.shape[0], 1)), np.asarray(x, dtype=float)])
+    return hstack([ones((x.shape[0], 1)), asarray(x, dtype=float)])
 
 def polynomial(x, num_basis=4, data_limits=[-1., 1.]):
     "Polynomial basis"
     centre = data_limits[0]/2. + data_limits[1]/2.
     span = data_limits[1] - data_limits[0]
-    z = np.asarray(x, dtype=float) - centre
+    z = asarray(x, dtype=float) - centre
     z = 2*z/span
     Phi = zeros((x.shape[0], num_basis))
     for i in range(num_basis):
@@ -230,13 +250,13 @@ def radial(x, num_basis=4, data_limits=[-1., 1.], width=None):
         if width is None:
             width = (centres[1]-centres[0])/2.
     else:
-        centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
+        centres = asarray([data_limits[0]/2. + data_limits[1]/2.])
         if width is None:
             width = (data_limits[1]-data_limits[0])/2.
     
     Phi = zeros((x.shape[0], num_basis))
     for i in range(num_basis):
-        Phi[:, i:i+1] = exp(-0.5*((np.asarray(x, dtype=float)-centres[i])/width)**2)
+        Phi[:, i:i+1] = exp(-0.5*((asarray(x, dtype=float)-centres[i])/width)**2)
     return Phi
 
 
@@ -252,9 +272,9 @@ def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency_range=None):
         else:
             frequency = frequency_range[i]
         if i % 2:
-            Phi[:, i:i+1] = sin(tau*frequency*np.asarray(x, dtype=float))
+            Phi[:, i:i+1] = sin(tau*frequency*asarray(x, dtype=float))
         else:
-            Phi[:, i:i+1] = cos(tau*frequency*np.asarray(x, dtype=float))
+            Phi[:, i:i+1] = cos(tau*frequency*asarray(x, dtype=float))
     return Phi
 
 def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
@@ -262,7 +282,7 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     if num_basis>2:
         centres=linspace(data_limits[0], data_limits[1], num_basis-1)
     elif num_basis==2:
-        centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
+        centres = asarray([data_limits[0]/2. + data_limits[1]/2.])
     else:
         centres = []
     if gain is None:
@@ -271,7 +291,7 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     # Create the bias
     Phi[:, 0] = 1.0
     for i in range(1, num_basis):
-        Phi[:, i:i+1] = (gain[i-1]*np.asarray(x, dtype=float)>centres[i-1])*(np.asarray(x, dtype=float)-centres[i-1])
+        Phi[:, i:i+1] = (gain[i-1]*asarray(x, dtype=float)>centres[i-1])*(asarray(x, dtype=float)-centres[i-1])
     return Phi
 
 def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
@@ -280,7 +300,7 @@ def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
         centres=linspace(data_limits[0], data_limits[1], num_basis-1)
         width = (centres[1]-centres[0])/2.
     elif num_basis==2:
-        centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
+        centres = asarray([data_limits[0]/2. + data_limits[1]/2.])
         width = (data_limits[1]-data_limits[0])/2.
     else:
         centres = []
@@ -291,7 +311,7 @@ def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     # Create the bias
     Phi[:, 0] = 1.0
     for i in range(1, num_basis):
-        Phi[:, i:i+1] = tanh(gain[i-1]*(np.asarray(x, dtype=float)-centres[i-1]))
+        Phi[:, i:i+1] = tanh(gain[i-1]*(asarray(x, dtype=float)-centres[i-1]))
     return Phi
 
 class Noise(ProbModel):
@@ -356,17 +376,17 @@ class SimpleNeuralNetwork(Model):
     """
     def __init__(self, nodes):
         self.nodes = nodes
-        self.w2 = np.random.normal(size=self.nodes)/self.nodes
-        self.b2 = np.random.normal(size=1)
-        self.w1 = np.random.normal(size=self.nodes)
-        self.b1 = np.random.normal(size=self.nodes)
+        self.w2 = normal(size=self.nodes)/self.nodes
+        self.b2 = normal(size=1)
+        self.w1 = normal(size=self.nodes)
+        self.b1 = normal(size=self.nodes)
         
 
     def predict(self, x):
         "Compute output given current basis functions."
         vxmb = self.w1*x + self.b1
         phi = vxmb*(vxmb>0)
-        return np.sum(self.w2*phi) + self.b2
+        return sum(self.w2*phi) + self.b2
 
 class SimpleDropoutNeuralNetwork(SimpleNeuralNetwork):
     """Simple neural network with dropout
@@ -388,7 +408,7 @@ class SimpleDropoutNeuralNetwork(SimpleNeuralNetwork):
         "Compute output given current basis functions used."
         vxmb = self.w1[self.use]*x + self.b1[self.use]
         phi = vxmb*(vxmb>0)
-        return np.sum(self.w2[self.use]*phi) + self.b2
+        return sum(self.w2[self.use]*phi) + self.b2
 
 class NonparametricDropoutNeuralNetwork(SimpleDropoutNeuralNetwork):
     """A non parametric dropout neural network
@@ -401,7 +421,7 @@ class NonparametricDropoutNeuralNetwork(SimpleDropoutNeuralNetwork):
         self.gamma = 0.5772156649
         tot = log(n) + self.gamma + 0.5/n * (1./12.)/(n*n)
         self.exp_features = alpha*beta*tot
-        self.maxk = np.max((10000,int(self.exp_features + np.ceil(4*sqrt(self.exp_features)))))
+        self.maxk = max((10000,int(self.exp_features + ceil(4*sqrt(self.exp_features)))))
         donn.__init__(self, nodes=self.maxk, drop_p=self.alpha/self.maxk)
         self.maxval = 0
         self.w2 *= self.maxk/self.alpha
@@ -412,7 +432,7 @@ class NonparametricDropoutNeuralNetwork(SimpleDropoutNeuralNetwork):
     def do_samp(self):
         "Sample the next set of basis functions to be used"
         
-        new=np.random.poisson(self.alpha*self.beta/(self.beta + self.update_num))
+        new=poisson(self.alpha*self.beta/(self.beta + self.update_num))
         use_prob = self.count[:self.maxval]/(self.update_num+self.beta)
         gen = rand(1, self.maxval)
         self.use = zeros(self.maxk, dtype=bool)
@@ -467,31 +487,31 @@ class BLM(LM):
         
     def update_QR(self):
         "Perform the QR decomposition on the basis matrix."
-        self.Q, self.R = qr(np.vstack([self.Phi, sqrt(self.sigma2/self.alpha)*eye(self.basis.number)]))
+        self.Q, self.R = qr(vstack([self.Phi, sqrt(self.sigma2/self.alpha)*eye(self.basis.number)]))
 
     def fit(self):
         """Minimize the objective function with respect to the parameters"""
         self.update_QR()
-        self.QTy = dot(self.Q[:self.y.shape[0], :].T, self.y)
-        self.mu_w = sp.linalg.solve_triangular(self.R, self.QTy)
-        self.RTinv = sp.linalg.solve_triangular(self.R, eye(self.R.shape[0]), trans='T')
-        self.C_w = dot(self.RTinv, self.RTinv.T)
+        self.QTy = self.Q[:self.y.shape[0], :].T@self.y
+        self.mu_w = solve_triangular(self.R, self.QTy)
+        self.RTinv = solve_triangular(self.R, eye(self.R.shape[0]), trans='T')
+        self.C_w = self.RTinv@self.RTinv.T
         self.update_sum_squares()
 
     def predict(self, X, full_cov=False):
         """Return the result of the prediction function."""
         Phi = self.basis.Phi(X)
         # A= R^-T Phi.T
-        A = sp.linalg.solve_triangular(self.R, Phi.T, trans='T')
-        mu = dot(A.T, self.QTy)
+        A = solve_triangular(self.R, Phi.T, trans='T')
+        mu = A.T@self.QTy
         if full_cov:
-            return mu, self.sigma2*dot(A.T, A)
+            return mu, self.sigma2*A.T@A
         else:
             return mu, self.sigma2*(A*A).sum(0)[:, None]
         
     def update_f(self):
         """Update values at the prediction points."""
-        self.f_bar = dot(self.Phi, self.mu_w)
+        self.f_bar = self.Phi@self.mu_w
         self.f_cov = (self.Q[:self.y.shape[0], :]*self.Q[:self.y.shape[0], :]).sum(1)
 
     def update_sum_squares(self):
@@ -505,7 +525,7 @@ class BLM(LM):
 
     def update_nll(self):
         """Precompute terms needed for the log likelihood."""
-        self.log_det = self.num_data*log(self.sigma2*pi*2.)-2*log(np.abs(np.linalg.det(self.Q[self.y.shape[0]:, :])))
+        self.log_det = self.num_data*log(self.sigma2*pi*2.)-2*log(abs(det(self.Q[self.y.shape[0]:, :])))
         self.quadratic = (self.y*self.y).sum()/self.sigma2 - (self.QTy*self.QTy).sum()/self.sigma2
         
     def nll_split(self):
@@ -530,10 +550,8 @@ def load_pgm(filename, directory=None, byteorder='>'):
 
     """
     import re
-    if directory is not None:
-        import os.path
-        filename=os.path.join(directory, filename)
-    with open(filename, 'rb') as f:
+    savename = filename_join(filename, directory)
+    with open(savename, 'rb') as f:
         buffer = f.read()
     try:
         header, width, height, maxval = re.search(
@@ -543,7 +561,7 @@ def load_pgm(filename, directory=None, byteorder='>'):
             b"(\d+)\s(?:\s*#.*[\r\n]\s)*)", buffer).groups()
     except AttributeError:
         raise ValueError("Not a raw PGM file: '%s'" % filename)
-    return np.frombuffer(buffer,
+    return frombuffer(buffer,
                             dtype='u1' if int(maxval) < 256 else byteorder+'u2',
                             count=int(width)*int(height),
                             offset=len(header)
@@ -573,7 +591,7 @@ class LR(ProbMapModel):
     def predict(self, X):
         "Generates the prediction function and the basis matrix."
         Phi = self.basis.Phi(X)
-        f = dot(Phi, self.w_star)
+        f = Phi@self.w_star
         return 1./(1+exp(-f)), Phi
 
     def gradient(self):
@@ -606,7 +624,7 @@ class LR(ProbMapModel):
         
     def update_g(self):
         "Computes the prediction function on training data."
-        self.f = dot(self.Phi, self.w_star)
+        self.f = self.Phi@self.w_star
         self.g, self.log_g, self.log_gminus = self.compute_g(self.f)
         
     def objective(self):
@@ -638,11 +656,11 @@ class GP(ProbMapModel):
     def update_inverse(self):
         # Pre-compute the inverse covariance and some quantities of interest
         ## NOTE: This is *not* the correct *numerical* way to compute this! It is for ease of mapping onto the maths.
-        self.Kinv = np.linalg.inv(self.K+self.sigma2*eye(self.K.shape[0]))
+        self.Kinv = inv(self.K+self.sigma2*eye(self.K.shape[0]))
         # the log determinant of the covariance matrix.
-        self.logdetK = np.linalg.det(self.K+self.sigma2*eye(self.K.shape[0]))
+        self.logdetK = det(self.K+self.sigma2*eye(self.K.shape[0]))
         # The matrix inner product of the inverse covariance
-        self.Kinvy = dot(self.Kinv, self.y)
+        self.Kinvy = self.Kinv@self.y
         self.yKinvy = (self.y*self.Kinvy).sum()
 
     def fit(self):
@@ -669,8 +687,8 @@ class GP(ProbMapModel):
     def predict(self, X_test, full_cov=False):
         "Give a mean and a variance of the prediction."
         K_star = self.kernel.K(self.X, X_test)
-        A = dot(self.Kinv, K_star)
-        mu_f = dot(A.T, self.y)
+        A = self.Kinv@K_star
+        mu_f = A.T@self.y
         k_starstar = self.kernel.diag(X_test)
         c_f = k_starstar - (A*K_star).sum(0)[:, None]
         return mu_f, c_f
@@ -678,25 +696,25 @@ class GP(ProbMapModel):
 def posterior_f(self, X_test):
     """Compute the posterior distribution for f in the GP"""
     K_star = self.kernel.K(self.X, X_test)
-    A = dot(self.Kinv, K_star)
-    mu_f = dot(A.T, self.y)
+    A = self.Kinv@K_star
+    mu_f = A.T@self.y
     K_starstar = self.kernel.K(X_test, X_test)
-    C_f = K_starstar - dot(A.T, K_star)
+    C_f = K_starstar - A.T@K_star
     return mu_f, C_f
 
 def update_inverse(self):
     """Update the inverse covariance in a numerically more stable manner"""
     # Perform Cholesky decomposition on matrix
-    self.R = sp.linalg.cholesky(self.K + self.sigma2*self.K.shape[0])
+    self.R = cholesky(self.K + self.sigma2*self.K.shape[0])
     # compute the log determinant from Cholesky decomposition
     self.logdetK = 2*log(diag(self.R)).sum()
     # compute y^\top K^{-1}y from Cholesky factor
-    self.Rinvy = sp.linalg.solve_triangular(self.R, self.y)
+    self.Rinvy = solve_triangular(self.R, self.y)
     self.yKinvy = (self.Rinvy**2).sum()
     
     # compute the inverse of the upper triangular Cholesky factor
-    self.Rinv = sp.linalg.solve_triangular(self.R, eye(self.K.shape[0]))
-    self.Kinv = dot(self.Rinv, self.Rinv.T)
+    self.Rinv = solve_triangular(self.R, eye(self.K.shape[0]))
+    self.Kinv = self.Rinv@self.Rinv.T
 
 
 class Kernel():
@@ -729,8 +747,8 @@ class Kernel():
         if X2 is None:
             X2 = X
         K = zeros((X.shape[0], X2.shape[0]))
-        for i in np.arange(X.shape[0]):
-            for j in np.arange(X2.shape[0]):
+        for i in arange(X.shape[0]):
+            for j in arange(X2.shape[0]):
                 K[i, j] = self.function(X[i, :], X2[j, :], **self.parameters)
 
         return K
@@ -761,8 +779,8 @@ def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=1.):
     """Covariance function for a MLP based neural network."""
     inner = dot(x, x_prime)*w + b
     norm = sqrt(dot(x, x)*w + b + alpha)*sqrt(dot(x_prime, x_prime)*w + b+alpha)
-    arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
-    theta = np.arccos(arg)
+    arg = clip(inner/norm, -1, 1) # clip as numerically can be > 1
+    theta = arccos(arg)
     return variance*0.5*(1. - theta/pi)      
 
 def icm_cov(x, x_prime, B, subkernel, **kwargs):
@@ -773,8 +791,8 @@ def icm_cov(x, x_prime, B, subkernel, **kwargs):
 
 def slfm_cov(x, x_prime, W, subkernel, **kwargs):
     """Semi-parametric latent factor model covariance function. First index is the output of the covariance function."""
-    W = np.asarray(W)
-    B = dot(W, W.T)
+    W = asarray(W)
+    B = W@W.T
     return icm_cov(x, x_prime, B, subkernel, **kwargs)
 
 def add_cov(x, x_prime, kernargs):
@@ -812,9 +830,9 @@ def relu_cov(x, x_prime, variance=1., scale=1., w=1., b=5., alpha=0.):
     norm = norm_1*norm_2
     s = sqrt(inner_1)/norm_1
     s_prime = sqrt(inner_2)/norm_2
-    arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
-    arg2 = np.clip(inner/sqrt(inner_1*inner_2), -1, 1) # clip as numerically can be > 1
-    theta = np.arccos(arg)
+    arg = clip(inner/norm, -1, 1) # clip as numerically can be > 1
+    arg2 = clip(inner/sqrt(inner_1*inner_2), -1, 1) # clip as numerically can be > 1
+    theta = arccos(arg)
     return variance*0.5*((1. - theta/pi)*inner + h(arg2, inner_2, s, alpha)/pi + h(arg2, inner_1, s_prime, alpha)/pi) 
 
 
@@ -906,7 +924,7 @@ def contour_data(model, data, length_scales, log_SNRs):
 
         lls.append(length_scale_lls)
 
-    return np.array(lls)
+    return asarray(lls)
 
 
 

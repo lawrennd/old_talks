@@ -52,6 +52,9 @@ parser.add_argument("-a", "--assignment", default=False, action='store_true',
 parser.add_argument("-d", "--diagrams-dir", type=str,
                     help="Directory to find the diagrams in")
 
+parser.add_argument("-s", "--scripts-dir", type=str,
+                    help="Directory to find the javascript in")
+
 parser.add_argument("-W", "--write-diagrams-dir", type=str,
                     help="Directory to write diagrams in for code")
 
@@ -67,9 +70,13 @@ parser.add_argument("-r", "--replace-notation", default=False, action='store_tru
 args = parser.parse_args()
 
 diagrams_dir = '../slides/diagrams'
+scripts_dir = '../scripts'
 write_diagrams_dir = '../slides/diagrams'
 if args.diagrams_dir:
     diagrams_dir = args.diagrams_dir
+
+if args.scripts_dir:
+    scripts_dir = args.scripts_dir
 
 if args.write_diagrams_dir:
     write_diagrams_dir = args.write_diagrams_dir
@@ -92,6 +99,7 @@ if args.code is not None and args.code != 'none':
    arglist.append('-DCODE=1')
    if args.code == 'ipynb':
       arglist.append('-DDISPLAYCODE=1')
+      arglist.append('-DPLOTCODE=1')
       arglist.append('-DHELPERCODE=1')
       arglist.append('-DMAGICCODE=1')
    elif args.code == 'diagnostic':
@@ -109,6 +117,7 @@ if args.code is not None and args.code != 'none':
       arglist.append('-DPLOTCODE=1')
 
 arglist.append('-DdiagramsDir={diagrams_dir}'.format(diagrams_dir=diagrams_dir))
+arglist.append('-DscriptsDir={scripts_dir}'.format(scripts_dir=scripts_dir))
 arglist.append('-DwriteDiagramsDir={write_diagrams_dir}'.format(write_diagrams_dir=write_diagrams_dir))
 
 if args.include_path:

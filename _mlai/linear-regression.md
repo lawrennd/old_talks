@@ -3,7 +3,6 @@ week: 3
 title: Linear Algebra and Linear Regression
 abstract: |
   In this session we combine the objective function perspective and the probabilistic perspective on *linear regression*. We motivate the importance of *linear algebra* by showing how much faster we can complete a linear regression using linear algebra.
-date: 2015-10-13
 youtube: 5VPr6NbHHjg
 ---
 
@@ -22,8 +21,8 @@ youtube: 5VPr6NbHHjg
 \subsection{Olympic 100m Data}
 
 *  Gold medal times for Olympic 100 m runners since 1896.
-\includeimg{\diagramsDir/ml/100m_final_start.jpg}
-\aligncenter{*Image from Wikimedia Commons*}<http://bit.ly/191adDC>
+
+\figure{\includejpg{\diagramsDir/ml/100m_final_start}{40%}}{Start of the 2012 London 100m race. *Image from Wikimedia Commons* <http://bit.ly/191adDC>}{100m-final-start}
 
 \subsection{Olympic 100m Data}
 
@@ -59,5 +58,9 @@ where $s_{i,j}$ is an indicator variable which is set to 1 if the rating of movi
 \include{_ml/includes/linear-algebra-regression.md}
 
 \thanks
+
+\exercises
+
+\reading
 
 \references

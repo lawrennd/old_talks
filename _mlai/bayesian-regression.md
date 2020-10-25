@@ -2,7 +2,6 @@
 week: 6
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
-date: 2015-11-03
 youtube: 17zr5dGcUzE
 ---
 

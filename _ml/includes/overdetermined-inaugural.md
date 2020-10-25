@@ -36,7 +36,7 @@ $$2.5 = 2m + c$$
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.over_determined_system(diagrams='\writeDiagramsDir/ml')}
 
-\setupplotcode{from ipywidgets import IntSlider
+\setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
                             directory='\writeDiagramsDir/ml', 
@@ -132,8 +132,8 @@ $$
 . . .
 
 Set the mean of Gaussian to be a function.
-$$p
-\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i-\mappingFunction\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).
+$$
+p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i-\mappingFunction\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).
 $$
 
 . . .

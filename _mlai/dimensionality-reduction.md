@@ -1,8 +1,7 @@
 ---
-week: 8
+week: 7
 title: "Dimensionality Reduction: Latent Variable Modelling"
 abstract: "In this lecture we turn to *unsupervised learning*. Specifically, we introduce the idea of a latent variable model. Latent variable models are a probabilistic perspective on unsupervised learning which lead to dimensionality reduction algorithms. "
-date: 2015-11-17
 youtube: 0mtK2_rc0IY
 ---
 

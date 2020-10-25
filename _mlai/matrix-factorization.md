@@ -3,7 +3,6 @@ week: 2
 title: "Objective Functions: A Simple Example with Matrix Factorisation"
 abstract: |
   In this session we introduce the notion of objective functions and show how they can be used in a simple recommender system based on *matrix factorisation*.
-date: 2015-10-06
 youtube: Gq6bjcm8AqQ
 ---
 
@@ -60,6 +59,10 @@ fellow researcher can you publish that data on line?}{1}{10}
 
 
 \thanks
+
+\reading
+
+\exercises
 
 \references
 

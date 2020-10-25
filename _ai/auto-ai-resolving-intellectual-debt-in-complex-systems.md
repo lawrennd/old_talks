@@ -13,7 +13,7 @@ author:
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
+  institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2020-03-25

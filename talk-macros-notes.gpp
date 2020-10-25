@@ -1,7 +1,7 @@
 \ifndef{talkMacrosNotes}
 \define{talkMacrosNotes}
 
-\define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
+\define{\includegooglebook{id}{page}}{[![](\diagramsDir/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
 
 \define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
 

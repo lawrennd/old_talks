@@ -2,7 +2,13 @@ import re
 import yaml
 
 class FileFormatError(Exception):
-    pass
+    def __init__(self, ind, msg=None, field=None):
+        if msg is None:
+            msg = "File format error occured with index {ind}".format(ind=ind)
+        if field is not None:
+            msg += " field: {field}".format(field=field)
+        super(FileFormatError, self).__init__(msg)
+        
 
 defaults = {}
 

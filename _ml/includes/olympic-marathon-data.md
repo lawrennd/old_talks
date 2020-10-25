@@ -45,9 +45,10 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
 mlai.write_figure(figure=fig, 
-                  filename='\writeDiagramsDir/datasets/olympic-marathon.svg', 
+                  filename='olympic-marathon.svg', 
+				  diagrams='\writeDiagramsDir/datasets',
 				  transparent=True, 
-				  frameon=True)}
+				  facecolor=(1, 1, 1, 1))}
 
 \newslide{Olympic Marathon Data}
 

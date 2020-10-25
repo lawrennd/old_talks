@@ -2,10 +2,6 @@
 layout: lecture
 title: Automatic Differentiation
 week: 3
-date: 2021-02-09
-start: 14:00
-end: 15:00
-room: LT1
 author:
 - given: Ferenc
   family: Huszár
@@ -21,14 +17,12 @@ author:
   url: http://inverseprobability.com
 abstract: >
   This lecture will cover the foundations of automatic differentiation as well as the different frameworks that exist for building models.
-talkscam:
-room: TBA
-venue: Computer Laboratory, William Gates Building
-postdir: ../../../mlatcl/deepnn/_lectures/
-slidedir: ../../../mlatcl/deepnn/slides/
-notedir: ../../../mlatcl/deepnn/_notes/
-notebookdir: ../../../mlatcl/deepnn/_notebooks/
-time:
+time: "14:00"
+start: "14:00"
+end: "15:00"
+date: 2021-02-02
 ---
 
 Related publications and links will appear here.
+
+Nice review paper from <https://jmlr.org/papers/v18/17-468.html> @Baydin-autodiff18 (See Figure 2)
