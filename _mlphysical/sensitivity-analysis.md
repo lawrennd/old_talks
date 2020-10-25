@@ -36,6 +36,10 @@ from matplotlib import cm}
 \downloadcode{teaching_plots}
 \downloadcode{gp_tutorial}
 
+\installcode{GPy}
+\installcode{pyDOE}
+\installcode{EmuKit}
+
 \setupcode{import mlai
 import teaching_plots as plot}
 
@@ -126,23 +130,28 @@ F13 = ishigami.f13(np.array([x_grid,x_grid]).T)[:,None]}
 
 \setupplotcode{from mpl_toolkits.mplot3d import Axes3D}
 
-\plotcode{fig, ax = plt.subplots(1, 2, figsize=plot.big_wide_figure)
-ax.append(fig.add_subplot(111, projection='3d'))
+\plotcode{fig, axs = plt.subplots(2, 2, figsize=plot.big_wide_figsize)
+gs = axs[1, 1].get_gridspec()
+# remove the underlying axes
+for ax in axs[1, 0:]:
+    ax.remove()
 
-ax[0].plot(x_grid, f1,'-r')
-ax[0].set_xlabel('$x_1$')
-ax[0].set_ylabel('$f_1$')
+ax2 = fig.add_subplot(gs[1, 0:], projection='3d')
 
-ax[1].plot(x_grid,f2,'-r')
-ax[1].set_xlabel('$x_2$')
-ax[1].set_ylabel('$f_2$')
+axs[0,0].plot(x_grid, f1,'-r')
+axs[0,0].set_xlabel('$x_1$')
+axs[0,0].set_ylabel('$f_1$')
+
+axs[0,1].plot(x_grid,f2,'-r')
+axs[0,1].set_xlabel('$x_2$')
+axs[0,1].set_ylabel('$f_2$')
 
 plt.suptitle('Non-zero Sobol components of the Ishigami function')
 
-surf = ax[2].plot_surface(X, Y, F13, cmap=cm.coolwarm, linewidth=0, antialiased=False)
-ax.set_xlabel('$x_1$')
-ax.set_ylabel('$x_3$')
-ax.set_zlabel('$f_{13}$')
+surf = ax2.plot_surface(X, Y, F13, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+ax2.set_xlabel('$x_1$')
+ax2.set_ylabel('$x_3$')
+ax2.set_zlabel('$f_{13}$')
 
 mlai.write_figure(filename='non-zero-sobol-ishigami.svg', directory='\writeDiagramsDir/uq')}
 
@@ -200,10 +209,12 @@ print(main_effects)}
 
 \setupplotcode{import pandas as pd}
 
-\plotcode{d = {'Sobol True': ishigami.main_effects,
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+
+d = {'Sobol True': ishigami.main_effects,
      'Monte Carlo': main_effects}
 
-pd.DataFrame(d).plot(kind='bar',figsize=plot.big_wide_figsize, ax=ax)
+pd.DataFrame(d).plot(kind='bar', ax=ax)
 ax.set_title('First-order Sobol indices - Ishigami')
 ax.set_ylabel('% of explained output variance')
 
@@ -224,10 +235,12 @@ Note that the sum of $S_{Ti}$ is not necessarily one in this case unless the mod
 
 \notes{As in the previous example, the total effects can be computed with Monte Carlo. In the next plot we show the comparison with the true total effects.}
 
-\plotcode{d = {'Sobol True': ishigami.total_effects,
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+
+d = {'Sobol True': ishigami.total_effects,
      'Monte Carlo': total_effects}
 
-pd.DataFrame(d).plot(kind='bar',figsize=(12, 5), ax=ax)
+pd.DataFrame(d).plot(kind='bar', ax=ax)
 ax.set_title('Total effects - Ishigami')
 ax.set_ylabel('Effects value')
 
@@ -266,13 +279,15 @@ model_emukit.optimize()}
 \code{senstivity_ishigami_gpbased = MonteCarloSensitivity(model = model_emukit, input_domain = space)
 main_effects_gp, total_effects_gp, _ = senstivity_ishigami_gpbased.compute_effects(num_monte_carlo_points = num_mc)}
 
-\plotcode{main_effects_gp = {ivar: main_effects_gp[ivar][0] for ivar in main_effects_gp}
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+
+main_effects_gp = {ivar: main_effects_gp[ivar][0] for ivar in main_effects_gp}
 
 d = {'Sobol True': ishigami.main_effects,
      'Monte Carlo': main_effects,
      'GP Monte Carlo':main_effects_gp}
 
-pd.DataFrame(d).plot(kind='bar',figsize=(12, 5))
+pd.DataFrame(d).plot(kind='bar', ax=ax)
 plt.title('First-order Sobol indexes - Ishigami')
 plt.ylabel('% of explained output variance')
 
@@ -281,13 +296,13 @@ mlai.write_figure(filename='first-order-sobol-indices-gp-ishigami.svg', director
 \figure{\includediagram{\diagramsDir/uq/first-order-sobol-indices-gp-ishigami}{80%}}{First Order sobol indices as estimated by Monte Carlo and GP-emulator based Monte Carlo.}{first-order-sobol-indices-gp-ishigami}
 
 
-\plotcode{total_effects_gp = {ivar: total_effects_gp[ivar][0] for ivar in total_effects_gp}
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+
+total_effects_gp = {ivar: total_effects_gp[ivar][0] for ivar in total_effects_gp}
 
 d = {'Sobol True': ishigami.total_effects,
      'Monte Carlo': total_effects,
      'GP Monte Carlo':total_effects_gp}
-
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
 pd.DataFrame(d).plot(kind='bar', ax=ax)
 ax.set_title('Total effects - Ishigami')
