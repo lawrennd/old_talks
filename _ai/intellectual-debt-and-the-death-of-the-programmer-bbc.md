@@ -37,7 +37,7 @@ transition: None
 
 \subsection{Lean Startup Methodology}
 
-\subsection{The Mythical Man-month}
+\includes{_software/includes/mythical-man-month.md}
 
 \figure{\includejpg{\diagramsDir/ai/Mythical_man-month_(book_cover)}{40%}}{The Mythical Man-month [@Brooks:mythical75] is a 1975 book focussed on the challenges of software project coordination.}{intellectual-debt}
 

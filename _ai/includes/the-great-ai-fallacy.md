@@ -1,6 +1,8 @@
 \ifndef{theGreatAiFallacy}
 \define{theGreatAiFallacy}
 
+\editme
+
 \section{The Great AI Fallacy}
 
 \notes{There is a lot of variation in the use of the term artificial intelligence. I'm sometimes asked to define it, but depending on whether you're speaking to a member of the public, a fellow machine learning researcher, or someone from the business community, the sense of the term differs.

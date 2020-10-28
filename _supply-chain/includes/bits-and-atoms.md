@@ -23,32 +23,15 @@ That notion is the most fundamental notion for how the modern information infras
 \include{_supply-chain/includes/supply-chain.md}
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 
-<!--\newslide{The Supply Chain}
-
-* Moving goods to where they need to be.
-  * Raw materials
- 
-\include{_supply-chain/includes/cromford.md}
-
-\newslide{Supply and Demand: Physical Infrastructure}
-
-* The Supply Chain is driven by Supply and Demand
-
-* Moving goods to be where they should be at any given time.
-
-\newslide{Information Infrastructure}
-
-* Recent advances in the world have focussed on *information infrastructure*.
-
-* UK developed with roads, rails and canals-->
-
 
 \newslide{Bits and Atoms: Information Meets Goods}
 
-* Examples
-    * \addguardian{Data Science Africa}(2015/aug/25/africa-benefit-data-science-information)
-    * [SafeBoda](https://safeboda.com/ug/) 
-    * [Kudu Project](https://kudu.ug) 
+\include{_data-science/includes/data-science-africa.md}
+\include{_data-science/includes/crop-monitoring.md}
+\include{_data-science/includes/biosurveillance.md}
+\include{_data-science/includes/community-radio.md}
+\include{_data-science/includes/kudu-project.md}
+\include{_data-science/includes/safe-boda.md}
 
 
 \endif

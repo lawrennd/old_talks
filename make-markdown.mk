@@ -3,7 +3,7 @@
 	${PP} $< -o $@ --to pptx --format slides --code none ${PPFLAGS} -B ../_includes/talk-notation.tex
 
 %.slides.html.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} 
+	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} -B ../_includes/talk-notation.tex
 
 %.notes.html.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to html --code sparse --edit-links ${PPFLAGS} 

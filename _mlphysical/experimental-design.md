@@ -17,11 +17,12 @@ transition: None
 \section{Emulation}
 
 \include{_uq/includes/emulation.md}
-
+\include{_supply-chain/includes/experiment-analyze-design.md}
 \section{Emukit Playground}
 
 \include{_uq/includes/emukit-playground.md}
 
+\include{_gp/includes/gpy-software.md}
 
 \downloadcode{mlai}
 \downloadcode{teaching_plots}
@@ -36,10 +37,13 @@ import teaching_plots as plot}
 
 Related publications and links will appear here.
 
-Emukit https://nbviewer.jupyter.org/github/amzn/emukit/blob/master/notebooks/index.ipynb
-Emukit Playground: https://amzn.github.io/emukit-playground/#!/
-
 Examle paper: @McKay-selecting79 @Kennedy-bayesian01
+
+The MUCM project <http://www.mucm.ac.uk/>
+
+$\newcommand{\dataStd}{\sigma_{\text{noise}}}$
+
+http://www.mucm.ac.uk/Pages/Dissemination/TechnicalReports.html
 
 > Random Sampling. Let the input values $x_1, \dots, x_\numData$
 > be a random sample from $f(x)$. This method of sampling is perhaps the most obvious, and an entire body
@@ -80,6 +84,8 @@ Examle paper: @McKay-selecting79 @Kennedy-bayesian01
 > sampling plan.
 
 This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.
+
+\include{_uq/includes/alex-forrester.md}
 
 Experimental design.
 
@@ -138,16 +144,28 @@ mlai.write_figure(filename='forrester-function-initial-design.svg', directory='\
 \subsection{The Model}
 
 \notes{Now we can start with the ExpDesign loop by first fitting a model on the collected data. 
-A popular model for ExpDesign is a Gaussian process (GP) which defines a probability distribution across classes of functions, typically smooth, such that each linear finite-dimensional restriction is multivariate Gaussian [@Rasmussen:book06](#4.-References). GPs are fully parametrized by a mean $\mu(\inputVector)$ and a covariance function $\kernelScalar(\inputVector,\inputVector')$.  Without loss of generality $\mu(\inputVector)$ is assumed to be zero. The covariance function $\kernelScalar(\inputVector,\inputVector')$ characterizes the smoothness and other properties of $\mappingFunction$. It is known that the kernel of the process has to be continuous, symmetric and positive definite. A widely used kernel is the squared exponential or RBF kernel: $$ \kernelScalar(\inputVector,\inputVector') = \theta_0 \cdot \exp{ \left(-\frac{\|\inputVector-\inputVector'\|^2}{\theta_1}\right)} $$ where $\theta_0$ and and $\theta_1$ are hyperparameters.
+A popular model for ExpDesign is a Gaussian process (GP) which defines a probability distribution across classes of functions, typically smooth, such that each linear finite-dimensional restriction is multivariate Gaussian [@Rasmussen:book06]. Gaussian processes are fully parametrized by a mean $\mu(\inputVector)$ and a covariance function $\kernelScalar(\inputVector,\inputVector^\prime)$.  Without loss of generality $\mu(\inputVector)$ is assumed to be zero. The covariance function $\kernelScalar(\inputVector,\inputVector^\prime)$ characterizes the smoothness and other properties of $\mappingFunction$. It is known that the kernel of the process has to be continuous, symmetric and positive definite. A widely used kernel is the exponentiated quadratic or RBF kernel: 
+$$ 
+\kernelScalar(\inputVector,\inputVector^\prime) = \alpha \exp{ \left(-\frac{\|\inputVector-\inputVector^\prime\|^2}{2 \ell}\right)} 
+$$ 
+where $\alpha$ and $\ell$ are hyperparameters.
+
 To denote that $\mappingFunction$ is a sample from a GP with mean $\mu$ and covariance $k$ we write
 $$
 \mappingFunction \sim \mathcal{GP}(\mu,k).
 $$ 
 
-For regression tasks, the most important feature of GPs is that process priors are conjugate to the likelihood from finitely many observations $\dataMatrix = (y_1,\dots,y_n)^T$ and $\inputMatrix =\{\inputVector_1,...,\inputVector_n\}$, $\inputVector_i\in \mathcal{X}$ of the form $y_i = \mappingFunction(\inputVector_i) + \epsilon_i$ where $\epsilon_i \sim \mathcal{N} (0,\sigma_{noise}^2)$ and we estimate $\sigma_{noise}$ by an additional hyperparameter $\theta_2$.
-We obtain the Gaussian posterior $\mappingFunction(\inputVector^*)|\inputMatrix, \dataMatrix, \theta \sim \mathcal{N}(\mu(\inputVector^*),\sigma^2(\inputVector^*))$, where $\mu(\inputVector^*)$ and $\sigma^2(\inputVector^*)$ have a close form. See @Rasmussen:book06 for more details.}
+For regression tasks, the most important feature of GPs is that process priors are conjugate to the likelihood from finitely many observations $\dataMatrix = (y_1,\dots,y_\numData)^\top$ and $\inputMatrix =\{\inputVector_1,\dots,\inputVector_\numData\}$, $\inputVector_i\in \mathcal{X}$ of the form $\dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i$ where $\noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}$ and we typically estimate $\dataStd^2$ by maximum likelihood alongside $\alpha$ and $\ell$.
 
-\notes{Note that Gaussian processes are also characterized by hyperparameters $\theta = \{\theta_0, ... \theta_k\}$ such as for instance the kernel lengthscales. For simplicitly we keep these hyperparameters fixed here. However, we usually either optimize or sample these hyperparameters using the marginal loglikelihood of the GP. Of course we could also use any other model that returns a mean $\mu(\inputVector)$ and variance $\sigma^2(\inputVector)$ on an arbitrary input points $\inputVector$ such as Bayesian neural networks or random forests.}
+We obtain the Gaussian posterior 
+$$
+\mappingFunction(\inputVector^*)|\inputMatrix, \dataMatrix, \theta \sim \gaussianSamp{\mu(\inputVector^*)}{\sigma^2(\inputVector^*)},
+$$
+where $\mu(\inputVector^*)$ and $\sigma^2(\inputVector^*)$ have a closed form solution as we've seen in the earlier lectures (see also @Rasmussen:book06).}
+
+\notes{Note that Gaussian processes are also characterized by hyperparameters, for example in the exponatiated quadratic case we have $\paramVector = \left\{ \alpha, \ell, \dataStd^2 \right\}$ for the scale of the covariance, the lengthscale and the noise variance. Here, for simplicitly we will keep these hyperparameters fixed. However, we will usually either optimize or sample these hyperparameters using the marginal loglikelihood of the GP. 
+
+In this module we've focussed on Gaussian processes, but we could also use any other model that returns a mean $\mu(\inputVector)$ and variance $\sigma^2(\inputVector)$ on an arbitrary input points $\inputVector$ such as Bayesian neural networks or random forests. In Emukit these different models can be used by defining a new `ModelWrapper`.}
 
 \setupcode{import GPy
 from emukit.model_wrappers.gpy_model_wrappers import GPyModelWrapper}
@@ -186,35 +204,37 @@ ax.set_xlim(0, 1)
 
 mlai.write_figure(filename='forrester-function-entropy.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/forrester-function-entropy}{80%}}{The entropy of the fit to the Forrester function.}{forrester-function-entropy}
+\figure{\includediagram{\diagramsDir/uq/forrester-function-entropy}{80%}}{The emulator fitted to the Forrester function with only three observations. The error bars show 1, 2 and 3 standard deviations.}{forrester-function-entropy}
 
 \subsection{The Acquisition Function}
 
-\notes{In the second step of our ExpDesign loop we use our model to compute the acquisition function. Two example of ExpDesign acquisition functions are:
+\notes{In the second step of our ExpDesign loop we use our model to compute the acquisition function. We'll review two different forms of acquisition funciton for doing this.}
 
+\subsubsection{Uncertainty Sampling}
 
-**Uncertainty Sampling (US)**: Choose the next value $x_{n+1}$ at the location where the model on $f(x)$ has the highest marginal predictive variance
-
+\notes{In uncertainty sampling (US) we hoose the next value $\inputVector_{n+1}$ at the location where the model on $\mappingFunction(\inputVector)$ has the highest marginal predictive variance}
 $$
-a_{US}(x) = \sigma^2(x)
+a_{US}(\inputVector) = \sigma^2(\inputVector).
 $$ 
+\notes{This makes sure, that we learn the function $\mappingFunction(\cdot)$ everywhere on $\mathbb{X}$ to a similar level of absolute error.}
 
-This makes sure, that we learn the function $f$ everywhere on $\mathbb{X}$ to a similar level of absolute error.
+\subsubsection{Integrated Variance Reduction}
 
-
-**Integrated variance reduction (IVR)**: Choose the next value $x_{n+1}$ such that the total variance of the model is reduced maximally [[Sacks et al. 1989]](#4.-References).
-
+\notes{In the integrated variance reduction (IVR) you choose the next value $\inputVector_{n+1}$ such that the total variance of the model is reduced maximally [@Sacks-design89],}
 $$
-a_{IVR} = \int_{\mathbb{X}}[\sigma^2(x') - \sigma^2(x'; x)]\mathrm{d}x'\approx 
-\frac{1}{\# samples}\sum_i^{\# samples}[\sigma^2(x_i) - \sigma^2(x_i; x)].
+a_{IVR} = \int_{\mathbb{X}}[\sigma^2(\inputVector') - \sigma^2(\inputVector'; \inputVector)]\text{d}\inputVector'\approx 
+\frac{1}{\# \text{samples}}\sum_i^{\# \text{samples}}[\sigma^2(\inputVector_i) - \sigma^2(\inputVector_i; \inputVector)].
+$$
+\notes{Here $\sigma^2(\inputVector'; \inputVector)$ is the predictive variance at $\inputVector'$ had $\inputVector$ been observed. Thus IVR computes the overall reduction in variance (for all points in $\mathbb{X}$) had $f$ been observed at $\inputVector$.
+
+The finite sum approximation on the right hand side of the equation is usually used because the integral over $\inputVector'$ is not analytic. In that case $\inputVector_i$ are sampled randomly. For a GP model the right hand side simplifies to}
+$$
+a_{LCB} \approx \frac{1}{\# \text{samples}}\sum_i^{\# \text{samples}}\frac{\kernelScalar^2(\inputVector_i, \inputVector)}{\sigma^2(\inputVector)}.
 $$
 
-Here $\sigma^2(x'; x)$ is the predictive variance at $x'$ had $x$ been observed. Thus IVR compute the overall reduction in variance (for all points in $\mathbb{X}$) had $f$ been observed at $x$.
-The finite sum approximation on the right hand side of the equation is usually used because the integral over $x'$ is not analytic. In that case $x_i$ are sampled randomly. For a GP model the right hand side simplifies to $a_{LCB} \approx \frac{1}{\# samples}\sum_i^{\# samples}\frac{k^2(x_i, x)}{\sigma^2(x)}$.
+\notes{IVR is arguably the more principled approach, but often US is preferred over IVR simply because it lends itself to gradient based optimization more easily, is cheaper to compute, and is exact. 
 
-IVR is arguably te more principled approach, but often US is preferred over IVR simply because it lends itself to gradient based optimization more easily, is cheaper to compute, and is exact. 
-For both of them (stochastic) gradient base optimizers are used to retrieve $x_{n+1} \in \operatorname*{arg\:max}_{x \in \mathbb{X}} a(x)$. }
-
+For both of them (stochastic) gradient base optimizers are used to retrieve $\inputVector_{n+1} \in \operatorname*{arg\:max}_{\inputVector \in \mathbb{X}} a(\inputVector)$.}
 
 \setupcode{from emukit.experimental_design.acquisitions import IntegratedVarianceReduction, ModelVariance}
 

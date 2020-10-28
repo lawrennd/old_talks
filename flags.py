@@ -26,6 +26,7 @@ try:
     date = ny.header_field('date', fields).strftime("%Y-%m-%d")
 except ny.FileFormatError:
     date = None
+
 try:
     week = int(ny.header_field('week', fields))
     weekarg = """ --metadata week={week}""".format(week=week)
@@ -34,12 +35,23 @@ except ny.FileFormatError:
     weekarg = ''
 
 try:
+    session = int(ny.header_field('session', fields))
+    sessionarg = """ --metadata session={session}""".format(session=session)
+except ny.FileFormatError:
+    session = 0
+    sessionarg = ''
+    
+try:
     layout = ny.header_field('layout', fields)
 except ny.FileFormatError:
     layout = 'talk'
 
 if layout == 'lecture':
-    prefix = '{0:02}'.format(week)
+    prefix = ''
+    if week>0:
+        prefix += '{0:02}'.format(week)
+    elif session>0:
+        prefix += '{0:02}'.format(session)
 elif layout == 'test':
     prefix = 'XXXX-XX-XX'
 elif layout == 'talk':
@@ -69,7 +81,7 @@ elif args.output == 'post':
     if ny.header_field('pdf', fields):
         lines += """ --metadata pdf={out}.pdf"""
     if args.output == 'post':
-        lines += weekarg + """ --metadata layout={layout}""".format(layout=layout)
+        lines += weekarg + sessionarg + """ --metadata layout={layout}""".format(layout=layout)
         
     print(lines.format(out=out, date=date))
 

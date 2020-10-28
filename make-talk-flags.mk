@@ -35,6 +35,7 @@ NOTEDIR=$(shell ../talkfield.py notedir $(BASE).md)
 NOTEBOOKDIR=$(shell ../talkfield.py notebookdir $(BASE).md)
 SLIDEDIR=$(shell ../talkfield.py slidedir $(BASE).md)
 WEEK=$(shell ../talkfield.py week $(BASE).md)
+SESSION=$(shell ../talkfield.py session $(BASE).md)
 
 DEPS=$(shell ../dependencies.py inputs $(BASE).md)
 DIAGDEPS=$(shell ../dependencies.py diagrams $(BASE).md)
