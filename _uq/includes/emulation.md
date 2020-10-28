@@ -8,7 +8,9 @@
 
 \figure{\includediagram{\diagramsDir/uq/statistical-emulation000}{80%}}{Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.}{statistical-emulation-1}
 
-\notes{In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. The UK Met office uses the same code for both, but operates climate simulations one at greater spatial and temporal resolutions.}
+\notes{In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. Interestingly, the UK Met office uses the same code for both, it has a ["Unified Model" approach](https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/index), but they operate climate simulations one at greater spatial and temporal resolutions.}
+
+\figure{\includediagram{\diagramsDir/simulation/met-office-unified-model}{60%}}{The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.}{met-office-unified-model}
 
 \newslide{Emulation}
 
