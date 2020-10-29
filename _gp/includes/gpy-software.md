@@ -209,6 +209,12 @@ Now we can optimize the model using the `model.optimize()` method. Here we switc
 
 \notes{By default the optimization is using a limited memory BFGS optimizer [@Byrd:lbfgsb95].
 
+Once again we can display the model, now to see how the parameters have changed.}
+
+\code{display(model)}
+
+\notes{The lengthscale is much smaller, as well as the noise level. The variance of the exponentiated quadratic has also reduced.}
+
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 model.plot(ax=ax)
 

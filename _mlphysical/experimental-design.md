@@ -20,61 +20,13 @@ transition: None
 \include{_uq/includes/emulation.md}
 
 \include{_gp/includes/gpy-software.md}
+\include{_gp/includes/gpy-emulation.md}
 
+$$\newcommand{\dataStd}{\sigma_{\text{noise}}}$$
 
-\setupcode{import mlai
-import teaching_plots as plot}
-
-Related publications and links will appear here.
-
-Examle paper: @McKay-selecting79 @Kennedy-bayesian01
-
-The MUCM project <http://www.mucm.ac.uk/>
-
-$\newcommand{\dataStd}{\sigma_{\text{noise}}}$
-
-http://www.mucm.ac.uk/Pages/Dissemination/TechnicalReports.html
-
-> Random Sampling. Let the input values $x_1, \dots, x_\numData$
-> be a random sample from $f(x)$. This method of sampling is perhaps the most obvious, and an entire body
-> of statistical literature may be used in making infer-
-> ences regarding the distribution of $Y(t)$.
-> Stratified Sampling. Using stratified sampling, all
-> areas of the sample space of $X$ are represented by
-> input values. Let the sample space $S$ of $X$ be partitioned into $I$ disjoint strata $S_t$. Let $\pi = P(X C S_i)$
-> represent the size of $S_i$. Obtain a random sample $XiJ,j
-> = 1, \dots, n$ from $S_i$. Then of course the $n_i$ sum to $N$.
-> If $I = 1$, we have random sampling over the entire
-> sample space.
-> Latin Hypercube Sampling. The same reasoning
-> that led to stratified sampling, ensuring that all por-
-> tions of $S$ were sampled, could lead further. If we
-> wish to ensure also that each of the input variables $X_k$
-> has all portions of its distribution represented by
-> input values, we can divide the range of each $X_k$ into
-> $N$ strata of equal marginal probability $1/N$, and
-> sample once from each stratum. Let this sample be
-> $Xkj,j = 1, \dots, N$. These form the $X_k$ component, $k =
-> 1, * , K, in Xi, i = 1, * , N$. The components of the
-> various $X,A's$ are matched at random. This method of
-> selecting input values is an extension of quota sam-
-> pling [13], and can be viewed as a K-dimensional
-> extension of Latin square sampling [11].
-> One advantage of the Latin hypercube sample ap-
-> pears when the output $Y(t)$ is dominated by only a
-> few of the components of $X$. This method ensures
-> that each of those components is represented in a
-> fully stratified manner, no matter which components
-> might turn out to be important.
-> We mention here that the $N$ intervals on the range
-> of each component of X combine to form $NK$ cells
-> which cover the sample space of $X$. These cells, which
-> are labeled by coordinates corresponding to the inter-
-> vals, are used when finding the properties of the
-> sampling plan.
+\include{_uq/includes/emukit-playground.md}
 
 \installcode{pyDOE}
-\include{_uq/includes/emukit-playground.md}
 \installcode{EmuKit}
 
 \notes{This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.}
