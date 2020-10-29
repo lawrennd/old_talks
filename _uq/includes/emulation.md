@@ -5,16 +5,19 @@
 
 \subsection{Statistical Emulation}
 
-\figure{\includediagram{\diagramsDir/uq/statistical-emulation000}{80%}}{Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.}{statistical-emulation-1}
+\figure{\includepng{\diagramsDir/simulation/unified_model_systems_13022018_1920}{60%}{negate}}{The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.}{met-office-unified-model}
 
 \notes{In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. Interestingly, the UK Met office uses the same code for both, it has a ["Unified Model" approach](https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/index), but they operate climate simulations one at greater spatial and temporal resolutions.}
 
-\figure{\includepng{\diagramsDir/simulation/unified_model_systems_13022018_1920}{60%}{negate}}{The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.}{met-office-unified-model}
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/uq/statistical-emulation000}{80%}}{Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.}{statistical-emulation-1}
+
 
 \newslide{Emulation}
 
 \figure{\includediagram{\diagramsDir/uq/statistical-emulation001}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model.}{statistical-emulation-2}
-§
+
 \notes{A statistical emulator is a data-driven model that learns about the underlying simulation. Importantly, learns with uncertainty, so it 'knows what it doesn't know'. In practice, we can call the emulator in place of the simulator. If the emulator 'doesn't know', it can call the simulator for the answer.}
 
 
