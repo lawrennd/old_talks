@@ -32,7 +32,7 @@ alpha = 1.0
 lengthscale = 2.0
 kern = GPy.kern.RBF(input_dim=input_dim, variance=alpha, lengthscale=lengthscale)}
 
-\slides{```
+\slides{```{.python}
 input_dim=1
 alpha = 1.0
 lengthscale = 2.0
@@ -81,10 +81,7 @@ mlai.write_figure('gpy-eq-covariance-lengthscales.svg', directory='\writeDiagram
 	* Can [define new covariances](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html)
 	}
 
-\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`,
-`rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not
-parametrized by a variance and a lengthscale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $k ( x, y) = f ( x − y)$, see for example the Brownian
-covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
+\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a lengthscale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f (\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -101,7 +98,7 @@ mlai.write_figure('gpy-brownian-covariance-lengthscales.svg', directory='\writeD
 
 \notes{In GPy you can easily combine covariance functions you have created using the sum and product operators, `+` and `*`. So, for example, if we wish to combine an exponentiated quadratic covariance with a Matern 5/2 then we can write}
 
-\slides{```
+\slides{```{.python}
 kern1 = GPy.kern.RBF(1, variance=1., lengthscale=2.)
 kern2 = GPy.kern.Matern52(1, variance=2., lengthscale=4.)
 kern = kern1 + kern2
@@ -126,7 +123,7 @@ mlai.write_figure('gpy-eq-plus-matern52-covariance.svg', directory='\writeDiagra
 
 \notes{Or if we wanted to multiply them we can write}
 
-\slides{```
+\slides{```{.python}
 kern1 = GPy.kern.RBF(1, variance=1., lengthscale=2.)
 kern2 = GPy.kern.Matern52(1, variance=2., lengthscale=4.)
 kern = kern1 * kern2
@@ -149,6 +146,8 @@ mlai.write_figure('gpy-eq-times-matern52-covariance.svg', directory='\writeDiagr
 \notes{\figure{\includediagram{\diagramsDir/kern/gpy-eq-times-matern52-covariance}{80%}}{A combination of the exponentiated quadratic covariance multiplied by the Matern $5/2$ covariance.}{gpy-eq-times-matern52-covariance}}
 
 \notes{You can learn about how to implement [new kernel objects in GPy here](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html).}
+
+\figure{\includeyoutube{-sY8zW3Om1Y}{800}{600}}{Designing the covariance function for your Gaussian process is a key place in which you introduce your understanding of the data problem. To learn more about the design of covariance functions, see this talk from GPSS in 2016.}{nicolas-durrande-on-kernel-design}
 
 \subsection{A Gaussian Process Regression Model}
 
@@ -176,7 +175,7 @@ mlai.write_figure('noisy-sine.svg', directory='\writeDiagramsDir/gp')}
 
 \notes{A GP regression model based on an exponentiated quadratic covariance function can be defined by first defining a covariance function.}
 
-\slides{```
+\slides{```{.python}
 kern = GPy.kern.RBF(input_dim=1, variance=1., lengthscale=1.)
 model = GPy.models.GPRegression(X,Y,kern)
 ```}

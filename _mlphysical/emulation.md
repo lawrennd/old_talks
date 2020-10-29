@@ -3,11 +3,12 @@ week: 4
 session: 1
 title: "Emulation"
 abstract:  >
-  This lecture will review the ideas behind using surrogate models for experimental design.
+  In this lecture we motivate the use of emulation, and introduce the GPy software as a framework for building Gaussian process emulators..
 layout: lecture
 time: "10:00"
 date: 2020-10-29
 venue: Virtual (Zoom)
+youtube: 7Ct_16JicLw
 ipynb: true
 reveal: true
 transition: None
