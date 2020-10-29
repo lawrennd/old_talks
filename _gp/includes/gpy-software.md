@@ -38,6 +38,12 @@ The software itself is available on [GitHub](https://github.com/SheffieldML/GPy)
 
 \notes{The documentation for GPy can be found [here](https://gpy.readthedocs.io/en/latest/).}
 
+\subsection{GPy Tutorial}
+
+\centerdiv{\circleHead{\diagramsDir/people/nicolas-durrande.jpg}{Nicolas Durrande}{15%}{https://sites.google.com/site/nicolasdurrandehomepage/}}
+
+\notes{This GPy tutorial is based on material we share in the Gaussian process summer school for teaching these models <https://gpss.cc>. It contains material from various members and former members of the Sheffield machine learning group, but particular mention should be made of [Nicolas Durrande](https://sites.google.com/site/nicolasdurrandehomepage/).}
+
 \installcode{GPy}
 
 \downloadcode{mlai}
