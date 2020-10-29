@@ -16,21 +16,11 @@ transition: None
 
 \section{Emulation}
 
-\include{_uq/includes/emulation.md}
 \include{_supply-chain/includes/experiment-analyze-design.md}
-\section{Emukit Playground}
-
-\include{_uq/includes/emukit-playground.md}
+\include{_uq/includes/emulation.md}
 
 \include{_gp/includes/gpy-software.md}
 
-\downloadcode{mlai}
-\downloadcode{teaching_plots}
-\downloadcode{gp_tutorial}
-
-\installcode{GPy}
-\installcode{pyDOE}
-\installcode{EmuKit}
 
 \setupcode{import mlai
 import teaching_plots as plot}
@@ -83,7 +73,11 @@ http://www.mucm.ac.uk/Pages/Dissemination/TechnicalReports.html
 > vals, are used when finding the properties of the
 > sampling plan.
 
-This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.
+\installcode{pyDOE}
+\include{_uq/includes/emukit-playground.md}
+\installcode{EmuKit}
+
+\notes{This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.}
 
 \include{_uq/includes/alex-forrester.md}
 

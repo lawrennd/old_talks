@@ -14,7 +14,7 @@
 \newslide{Emulation}
 
 \figure{\includediagram{\diagramsDir/uq/statistical-emulation001}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model.}{statistical-emulation-2}
-
+§
 \notes{A statistical emulator is a data-driven model that learns about the underlying simulation. Importantly, learns with uncertainty, so it 'knows what it doesn't know'. In practice, we can call the emulator in place of the simulator. If the emulator 'doesn't know', it can call the simulator for the answer.}
 
 
@@ -32,7 +32,7 @@
 
 \newslide{Emulation}
 
-\figure{\includediagram{\diagramsDir/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
+\slides{\figure{\includediagram{\diagramsDir/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}}
 
 \notes{As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.}
 
