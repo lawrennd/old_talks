@@ -16,7 +16,7 @@
 
 \section{Emukit Vision}
 
-\subsection{Preface about emulation}
+\notes{\subsection{Preface about emulation}}
 
 \notes{We see emulation comprising of three main parts:}
 
@@ -54,7 +54,7 @@
 
 \subsection{Tasks}
 
-\slides{* Still in development: the idea is a task is a reocurring pattern of use cases}
+\slides{* Still in development: High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.}
 
 \notes{Emukit does not contribute much to this part at the moment. However Emukit team are on lookuout for typical use cases for Emukit, and if a reoccuring pattern emerges, it may become a part of the library.}
 
@@ -111,7 +111,8 @@ while stopping condition is not met:
 
 \subsection{Stopping Condition}
 
-\notes{* How to decide when to stop our cycle of data acquisition from the target function.}
+\slides{* How to decide when to stop our cycle of data acquisition from the target function.}
+
 \notes{The `StoppingCondition` class chooses when we should stop collecting points. The most commonly used example is to stop when a set number of iterations have been reached.}
 
 \endif
