@@ -256,7 +256,9 @@ mlai.write_figure(filename='forrester-function-multi-errorbars-01.svg', director
 
 \notes{We can repeat this process to obtain more points.}
 
-\code{x_new, _ = optimizer.optimize(us_acquisition)}
+\code{us_acquisition = ModelVariance(emukit_model)
+us_plot = us_acquisition.evaluate(x_plot)
+x_new, _ = optimizer.optimize(us_acquisition)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
