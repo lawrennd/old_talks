@@ -11,6 +11,7 @@ date: 2020-10-30
 venue: Virtual (Zoom)
 ipynb: true
 reveal: true
+youtube: 0nxa8TOmWB0
 transition: None
 ---
 
