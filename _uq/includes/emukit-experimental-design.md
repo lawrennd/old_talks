@@ -187,7 +187,7 @@ mlai.write_figure('experimental-design-acquisition-forrester-00.svg', directory=
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-00}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-functions}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-00}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-forrester-00}
 
 \subsection{Evaluating the objective function}
 
@@ -212,7 +212,7 @@ x_new, _ = optimizer.optimize(us_acquisition)}
 helper_plot_next_point_acquisition()
 mlai.write_figure('experimental-design-acquisition-forrester-01.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-01}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-01}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-forrester-01}
 
 \notes{Afterwards we evaluate the true objective function and append it to our initial observations.}
 \newslide{Add the New Point}
@@ -256,7 +256,7 @@ mlai.write_figure('experimental-design-acquisition-forrester-02.svg', directory=
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-forrester-02}
 
 \notes{Once again we can asimmilate the new target function observation into the model and re-evaluate our emulation.}
 

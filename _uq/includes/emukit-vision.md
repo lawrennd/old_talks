@@ -38,7 +38,7 @@
 
 \subsection{Emukit and Emulation}
 
-\figure{\includediagram{diagramsDir/uq/emukit-vision}{60%}}{The emukit approach to the three parts of emulation.}{emukit-vision}
+\figure{\includediagram{\diagramsDir/uq/emukit-vision}{60%}}{The emukit approach to the three parts of emulation.}{emukit-vision}
 
 \subsection{Methods}
 
