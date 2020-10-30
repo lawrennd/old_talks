@@ -36,11 +36,10 @@
       }
     });
   </script>
-  <script src="figure-animate.js"></script>
+  <script src="http://inverseprobability.com/talks/assets/js/figure-animate.js"></script>
 </head>
 <body>
 \[\newcommand{\tk}[1]{}
-%\newcommand{\tk}[1]{\textbf{TK}: #1}
 \newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
@@ -111,8 +110,6 @@
 \newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
 \newcommand{\degreeScalar}{d}
 \newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
-% Already defined by latex
-%\newcommand{\det}[1]{\left|#1\right|}
 \newcommand{\diag}[1]{\text{diag}\left(#1\right)}
 \newcommand{\diagonalMatrix}{\mathbf{D}}
 \newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
@@ -322,8 +319,6 @@
 \newcommand{\vVector}{\mathbf{v}}
 \newcommand{\vMatrix}{\mathbf{V}}
 \newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
-% Already defined by latex
-%\newcommand{\vec}{#1:}
 \newcommand{\vecb}[1]{\left(#1\right):}
 \newcommand{\weightScalar}{w}
 \newcommand{\weightVector}{\mathbf{ \weightScalar}}
@@ -367,6 +362,9 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+</aside>
 <center>
 <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
 </center>
@@ -400,8 +398,24 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.
+</aside>
 </section>
 <section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="mollweide-sample-cmb-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="vertical-align:middle" src="../slides/diagrams/physics/mollweide-sample-cmb.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+A simulation of the Cosmic Microwave Background obtained through sampling from the relevant Gaussian process covariance (in polar co-ordinates).
+</aside>
+</section>
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="modern-universe-non-linear-function-figure" class="figure-frame">
@@ -410,6 +424,9 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+What we observe today is some non-linear function of the cosmic microwave background.
+</aside>
 </section>
 <section id="low-rank-gaussian-processes" class="slide level2">
 <h2>Low Rank Gaussian Processes</h2>
@@ -458,11 +475,11 @@ Figure: Image credit: Kai Arulkumaran
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">Complexity:</td>
-<td style="text-align: left;"><span class="math inline">\(\bigO(\numData^3)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(n^3)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">Storage:</td>
-<td style="text-align: left;"><span class="math inline">\(\bigO(\numData^2)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(n^2)\)</span></td>
 </tr>
 </tbody>
 </table></li>
@@ -471,15 +488,15 @@ Figure: Image credit: Kai Arulkumaran
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">Complexity:</td>
-<td style="text-align: left;"><span class="math inline">\(\bigO(\numData\numInducing^2)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(nm^2)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">Storage:</td>
-<td style="text-align: left;"><span class="math inline">\(\bigO(\numData\numInducing)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(nm)\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>where <span class="math inline">\(\numInducing\)</span> is a user chosen parameter.</p></li>
+<p>where <span class="math inline">\(m\)</span> is a user chosen parameter.</p></li>
 </ul>
 <p><small><span class="citation" data-cites="Snelson:pseudo05">Snelson and Ghahramani (n.d.)</span>,<span class="citation" data-cites="Quinonero:unifying05">Quiñonero Candela and Rasmussen (2005)</span>,<span class="citation" data-cites="Lawrence:larger07">Lawrence (n.d.)</span>,<span class="citation" data-cites="Titsias:variational09">Titsias (n.d.)</span>,<span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></small></p>
 </section>
@@ -487,7 +504,7 @@ Figure: Image credit: Kai Arulkumaran
 <h2>Variational Compression</h2>
 <ul>
 <li>Inducing variables are a compression of the real observations.</li>
-<li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mappingFunctionVector\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
+<li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mathbf{ f}\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
 </ul>
 </section>
 <section id="variational-compression-ii" class="slide level2">
@@ -503,7 +520,7 @@ Figure: Image credit: Kai Arulkumaran
 <h2>Nonparametric Gaussian Processes</h2>
 <ul>
 <li><p>We’ve seen how we go from parametric to non-parametric.</p></li>
-<li><p>The limit implies infinite dimensional <span class="math inline">\(\mappingVector\)</span>.</p></li>
+<li><p>The limit implies infinite dimensional <span class="math inline">\(\mathbf{ w}\)</span>.</p></li>
 <li><p>Gaussian processes are generally non-parametric: combine data with covariance function to get model.</p></li>
 <li><p>This representation <em>cannot</em> be summarized by a parameter vector of a fixed size.</p></li>
 </ul>
@@ -514,14 +531,14 @@ Figure: Image credit: Kai Arulkumaran
 <li><p>Parametric models have a representation that does not respond to increasing training set size.</p></li>
 <li><p>Bayesian posterior distributions over parameters contain the information about the training data.</p>
 <ul>
-<li><p>Use Bayes’ rule from training data, <span class="math inline">\(p\left(\mappingVector|\dataVector, \inputMatrix\right)\)</span>,</p></li>
-<li><p>Make predictions on test data <span class="math display">\[p\left(\dataScalar_*|\inputMatrix_*, \dataVector, \inputMatrix\right) = \int
-        p\left(\dataScalar_*|\mappingVector,\inputMatrix_*\right)p\left(\mappingVector|\dataVector,
-          \inputMatrix)\text{d}\mappingVector\right).\]</span></p></li>
+<li><p>Use Bayes’ rule from training data, <span class="math inline">\(p\left(\mathbf{ w}|\mathbf{ y}, \mathbf{X}\right)\)</span>,</p></li>
+<li><p>Make predictions on test data <span class="math display">\[p\left(y_*|\mathbf{X}_*, \mathbf{ y}, \mathbf{X}\right) = \int
+        p\left(y_*|\mathbf{ w},\mathbf{X}_*\right)p\left(\mathbf{ w}|\mathbf{ y},
+          \mathbf{X})\text{d}\mathbf{ w}\right).\]</span></p></li>
 </ul></li>
-<li><p><span class="math inline">\(\mappingVector\)</span> becomes a bottleneck for information about the training set to pass to the test set.</p></li>
-<li><p>Solution: increase <span class="math inline">\(\numBasisFunc\)</span> so that the bottleneck is so large that it no longer presents a problem.</p></li>
-<li><p>How big is big enough for <span class="math inline">\(\numBasisFunc\)</span>? Non-parametrics says <span class="math inline">\(\numBasisFunc \rightarrow \infty\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{ w}\)</span> becomes a bottleneck for information about the training set to pass to the test set.</p></li>
+<li><p>Solution: increase <span class="math inline">\(m\)</span> so that the bottleneck is so large that it no longer presents a problem.</p></li>
+<li><p>How big is big enough for <span class="math inline">\(m\)</span>? Non-parametrics says <span class="math inline">\(m\rightarrow \infty\)</span>.</p></li>
 </ul>
 </section>
 <section id="the-parametric-bottleneck-1" class="slide level2">
@@ -531,7 +548,7 @@ Figure: Image credit: Kai Arulkumaran
 </ul>
 <div class="fragment">
 <ul>
-<li>However, it <em>is</em> possible to express <em>parametric</em> as GPs: <span class="math display">\[\kernelScalar\left(\inputVector_i,\inputVector_j\right)=\basisFunction_:\left(\inputVector_i\right)^\top\basisFunction_:\left(\inputVector_j\right).\]</span></li>
+<li>However, it <em>is</em> possible to express <em>parametric</em> as GPs: <span class="math display">\[k\left(\mathbf{ x}_i,\mathbf{ x}_j\right)=\phi_:\left(\mathbf{ x}_i\right)^\top\phi_:\left(\mathbf{ x}_j\right).\]</span></li>
 </ul>
 </div>
 <div class="fragment">
@@ -541,19 +558,19 @@ Figure: Image credit: Kai Arulkumaran
 </div>
 <div class="fragment">
 <ul>
-<li>Their rank is at most <span class="math inline">\(\numBasisFunc\)</span>, non-parametric models have full rank covariance matrices.</li>
+<li>Their rank is at most <span class="math inline">\(m\)</span>, non-parametric models have full rank covariance matrices.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Most well known is the “linear kernel”, <span class="math inline">\(\kernelScalar(\inputVector_i, \inputVector_j) = \inputVector_i^\top\inputVector_j\)</span>.</li>
+<li>Most well known is the “linear kernel”, <span class="math inline">\(k(\mathbf{ x}_i, \mathbf{ x}_j) = \mathbf{ x}_i^\top\mathbf{ x}_j\)</span>.</li>
 </ul>
 </div>
 </section>
 <section id="making-predictions" class="slide level2">
 <h2>Making Predictions</h2>
 <ul>
-<li>For non-parametrics prediction at new points <span class="math inline">\(\mappingFunctionVector_*\)</span> is made by conditioning on <span class="math inline">\(\mappingFunctionVector\)</span> in the joint distribution.</li>
+<li>For non-parametrics prediction at new points <span class="math inline">\(\mathbf{ f}_*\)</span> is made by conditioning on <span class="math inline">\(\mathbf{ f}\)</span> in the joint distribution.</li>
 </ul>
 <div class="fragment">
 <ul>
@@ -579,16 +596,16 @@ Figure: Image credit: Kai Arulkumaran
 <section id="augment-variable-space" class="slide level2">
 <h2>Augment Variable Space</h2>
 <ul>
-<li>Augment variable space with inducing observations, <span class="math inline">\(\inducingVector\)</span> <span class="math display">\[
+<li>Augment variable space with inducing observations, <span class="math inline">\(\mathbf{ u}\)</span> <span class="math display">\[
 \begin{bmatrix}
-\mappingFunctionVector\\
-\inducingVector
-\end{bmatrix} \sim \gaussianSamp{\zerosVector}{\kernelMatrix}
+\mathbf{ f}\\
+\mathbf{ u}
+\end{bmatrix} \sim \mathcal{N}\left(\mathbf{0},\mathbf{K}\right)
 \]</span> with <span class="math display">\[
-\kernelMatrix =
+\mathbf{K}=
 \begin{bmatrix}
-\Kff &amp; \Kfu \\
-\Kuf &amp; \Kuu
+\mathbf{K}_{\mathbf{ f}\mathbf{ f}}&amp; \mathbf{K}_{\mathbf{ f}\mathbf{ u}}\\
+\mathbf{K}_{\mathbf{ u}\mathbf{ f}}&amp; \mathbf{K}_{\mathbf{ u}\mathbf{ u}}
 \end{bmatrix}
 \]</span></li>
 </ul>
@@ -596,58 +613,58 @@ Figure: Image credit: Kai Arulkumaran
 <section id="joint-density" class="slide level2">
 <h2>Joint Density</h2>
 <p><span class="math display">\[
-p(\mappingFunctionVector, \inducingVector) = p(\mappingFunctionVector| \inducingVector) p(\inducingVector)
+p(\mathbf{ f}, \mathbf{ u}) = p(\mathbf{ f}| \mathbf{ u}) p(\mathbf{ u})
 \]</span> to augment our model <span class="math display">\[
-\dataScalar(\inputVector) = \mappingFunction(\inputVector) + \noiseScalar,
+y(\mathbf{ x}) = f(\mathbf{ x}) + \epsilon,
 \]</span> giving <span class="math display">\[
-p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector) \text{d}\mappingFunctionVector,
-\]</span> where for the independent case we have <span class="math inline">\(p(\dataVector | \mappingFunctionVector) = \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i)\)</span>.</p>
+p(\mathbf{ y}) = \int p(\mathbf{ y}|\mathbf{ f}) p(\mathbf{ f}) \text{d}\mathbf{ f},
+\]</span> where for the independent case we have <span class="math inline">\(p(\mathbf{ y}| \mathbf{ f}) = \prod_{i=1}^np(y_i|f_i)\)</span>.</p>
 </section>
 <section id="auxilliary-variables" class="slide level2">
 <h2>Auxilliary Variables</h2>
 <p><span class="math display">\[
-p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)  p(\inducingVector)  \text{d}\inducingVector \text{d}\mappingFunctionVector.
-\]</span> Integrating over <span class="math inline">\(\mappingFunctionVector\)</span> <span class="math display">\[
-p(\dataVector) = \int p(\dataVector|\inducingVector)   p(\inducingVector)  \text{d}\inducingVector.
+p(\mathbf{ y}) = \int p(\mathbf{ y}|\mathbf{ f}) p(\mathbf{ f}|\mathbf{ u})  p(\mathbf{ u})  \text{d}\mathbf{ u}\text{d}\mathbf{ f}.
+\]</span> Integrating over <span class="math inline">\(\mathbf{ f}\)</span> <span class="math display">\[
+p(\mathbf{ y}) = \int p(\mathbf{ y}|\mathbf{ u})   p(\mathbf{ u})  \text{d}\mathbf{ u}.
 \]</span></p>
 </section>
 <section id="parametric-comparison" class="slide level2">
 <h2>Parametric Comparison</h2>
 <p><span class="math display">\[
-\dataScalar(\inputVector) = \weightVector^\top\basisVector(\inputVector) + \noiseScalar
+y(\mathbf{ x}) = \mathbf{ w}^\top\boldsymbol{ \phi}(\mathbf{ x}) + \epsilon
 \]</span></p>
 <p><span class="math display">\[
-p(\dataVector) = \int p(\dataVector|\weightVector) p(\weightVector) \text{d} \weightVector
+p(\mathbf{ y}) = \int p(\mathbf{ y}|\mathbf{ w}) p(\mathbf{ w}) \text{d} \mathbf{ w}
 \]</span></p>
 <p><span class="math display">\[
-p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\weightVector) p(\weightVector|\dataVector) \text{d} \weightVector
+p(\mathbf{ y}^*|\mathbf{ y}) = \int p(\mathbf{ y}^*|\mathbf{ w}) p(\mathbf{ w}|\mathbf{ y}) \text{d} \mathbf{ w}
 \]</span></p>
 </section>
 <section id="new-form" class="slide level2">
 <h2>New Form</h2>
 <p><span class="math display">\[
-p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducingVector|\dataVector) \text{d} \inducingVector
+p(\mathbf{ y}^*|\mathbf{ y}) = \int p(\mathbf{ y}^*|\mathbf{ u}) p(\mathbf{ u}|\mathbf{ y}) \text{d} \mathbf{ u}
 \]</span></p>
 <ul>
-<li><p>but <span class="math inline">\(\inducingVector\)</span> is not a <em>parameter</em></p></li>
-<li><p>Unfortunately computing <span class="math inline">\(p(\dataVector|\inducingVector)\)</span> is intractable</p></li>
+<li><p>but <span class="math inline">\(\mathbf{ u}\)</span> is not a <em>parameter</em></p></li>
+<li><p>Unfortunately computing <span class="math inline">\(p(\mathbf{ y}|\mathbf{ u})\)</span> is intractable</p></li>
 </ul>
 </section>
-<section id="variational-bound-on-pdatavector-inducingvector" class="slide level2">
-<h2>Variational Bound on <span class="math inline">\(p(\dataVector |\inducingVector)\)</span></h2>
+<section id="variational-bound-on-pmathbf-ymathbf-u" class="slide level2">
+<h2>Variational Bound on <span class="math inline">\(p(\mathbf{ y}|\mathbf{ u})\)</span></h2>
 <p><span class="math display">\[
 \begin{aligned}
-    \log p(\dataVector|\inducingVector) &amp; = \log \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector) \text{d}\mappingFunctionVector\\ &amp; = \int q(\mappingFunctionVector) \log \frac{p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)}{q(\mappingFunctionVector)}\text{d}\mappingFunctionVector + \KL{q(\mappingFunctionVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)}.
+    \log p(\mathbf{ y}|\mathbf{ u}) &amp; = \log \int p(\mathbf{ y}|\mathbf{ f}) p(\mathbf{ f}|\mathbf{ u}) \text{d}\mathbf{ f}\\ &amp; = \int q(\mathbf{ f}) \log \frac{p(\mathbf{ y}|\mathbf{ f}) p(\mathbf{ f}|\mathbf{ u})}{q(\mathbf{ f})}\text{d}\mathbf{ f}+ \text{KL}\left( q(\mathbf{ f})\,\|\,p(\mathbf{ f}|\mathbf{ y}, \mathbf{ u}) \right).
 \end{aligned}
 \]</span></p>
 </section>
 <section id="choose-form-for-qcdot" class="slide level2">
 <h2>Choose form for <span class="math inline">\(q(\cdot)\)</span></h2>
 <ul>
-<li>Set <span class="math inline">\(q(\mappingFunctionVector)=p(\mappingFunctionVector|\inducingVector)\)</span>, <span class="math display">\[
-\log p(\dataVector|\inducingVector) \geq \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
+<li>Set <span class="math inline">\(q(\mathbf{ f})=p(\mathbf{ f}|\mathbf{ u})\)</span>, <span class="math display">\[
+\log p(\mathbf{ y}|\mathbf{ u}) \geq \int p(\mathbf{ f}|\mathbf{ u}) \log p(\mathbf{ y}|\mathbf{ f})\text{d}\mathbf{ f}.
 \]</span> <span class="math display">\[
-p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
+p(\mathbf{ y}|\mathbf{ u}) \geq \exp \int p(\mathbf{ f}|\mathbf{ u}) \log p(\mathbf{ y}|\mathbf{ f})\text{d}\mathbf{ f}.
 \]</span> <span style="text-align:right"><span class="citation" data-cites="Titsias:variational09">(Titsias, n.d.)</span></span></li>
 </ul>
 </section>
@@ -655,11 +672,11 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <h2>Optimal Compression in Inducing Variables</h2>
 <ul>
 <li><p>Maximizing lower bound minimizes the KL divergence (information gain): <span class="math display">\[
-\KL{p(\mappingFunctionVector|\inducingVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)} = \int p(\mappingFunctionVector|\inducingVector) \log \frac{p(\mappingFunctionVector|\inducingVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)}\text{d}\inducingVector
+\text{KL}\left( p(\mathbf{ f}|\mathbf{ u})\,\|\,p(\mathbf{ f}|\mathbf{ y}, \mathbf{ u}) \right) = \int p(\mathbf{ f}|\mathbf{ u}) \log \frac{p(\mathbf{ f}|\mathbf{ u})}{p(\mathbf{ f}|\mathbf{ y}, \mathbf{ u})}\text{d}\mathbf{ u}
 \]</span></p></li>
-<li><p>This is minimized when the information stored about <span class="math inline">\(\dataVector\)</span> is stored already in <span class="math inline">\(\inducingVector\)</span>.</p></li>
+<li><p>This is minimized when the information stored about <span class="math inline">\(\mathbf{ y}\)</span> is stored already in <span class="math inline">\(\mathbf{ u}\)</span>.</p></li>
 <li><p>The bound seeks an <em>optimal compression</em> from the <em>information gain</em> perspective.</p></li>
-<li><p>If <span class="math inline">\(\inducingVector = \mappingFunctionVector\)</span> bound is exact (<span class="math inline">\(\mappingFunctionVector\)</span> <span class="math inline">\(d\)</span>-separates <span class="math inline">\(\dataVector\)</span> from <span class="math inline">\(\inducingVector\)</span>).</p></li>
+<li><p>If <span class="math inline">\(\mathbf{ u}= \mathbf{ f}\)</span> bound is exact (<span class="math inline">\(\mathbf{ f}\)</span> <span class="math inline">\(d\)</span>-separates <span class="math inline">\(\mathbf{ y}\)</span> from <span class="math inline">\(\mathbf{ u}\)</span>).</p></li>
 </ul>
 </section>
 <section id="choice-of-inducing-variables" class="slide level2">
@@ -670,14 +687,14 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </ul>
 <p><span class="math display">\[
 \begin{bmatrix}
-\mappingFunctionVector\\
-\inducingVector
-\end{bmatrix} \sim \gaussianSamp{\zerosVector}{\kernelMatrix}
+\mathbf{ f}\\
+\mathbf{ u}
+\end{bmatrix} \sim \mathcal{N}\left(\mathbf{0},\mathbf{K}\right)
 \]</span> with <span class="math display">\[
-\kernelMatrix =
+\mathbf{K}=
 \begin{bmatrix}
-\Kff &amp; \Kfu \\
-\Kuf &amp; \Kuu
+\mathbf{K}_{\mathbf{ f}\mathbf{ f}}&amp; \mathbf{K}_{\mathbf{ f}\mathbf{ u}}\\
+\mathbf{K}_{\mathbf{ u}\mathbf{ f}}&amp; \mathbf{K}_{\mathbf{ u}\mathbf{ u}}
 \end{bmatrix}
 \]</span></p>
 </section>
@@ -685,7 +702,7 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <h2>Variational Compression</h2>
 <ul>
 <li>Inducing variables are a compression of the real observations.</li>
-<li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mappingFunctionVector\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
+<li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mathbf{ f}\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
 </ul>
 </section>
 <section id="variational-compression-ii-1" class="slide level2">
@@ -706,6 +723,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+Full Gaussian process fitted to the data set.
+</aside>
 </section>
 <section id="inducing-variable-fit" class="slide level2">
 <h2>Inducing Variable Fit</h2>
@@ -715,6 +735,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.
+</aside>
 </section>
 <section id="inducing-variable-param-optimize" class="slide level2">
 <h2>Inducing Variable Param Optimize</h2>
@@ -724,6 +747,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fitted with inducing variables fixed and parameters optimized
+</aside>
 </section>
 <section id="inducing-variable-full-optimize" class="slide level2">
 <h2>Inducing Variable Full Optimize</h2>
@@ -733,6 +759,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fitted with location of inducing variables and parameters both optimized
+</aside>
 </section>
 <section id="eight-optimized-inducing-variables" class="slide level2">
 <h2>Eight Optimized Inducing Variables</h2>
@@ -751,6 +780,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.
+</aside>
 </section>
 <section id="modern-review" class="slide level2">
 <h2>Modern Review</h2>
@@ -759,7 +791,7 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
 </ul>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -783,23 +815,23 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <h2>Mathematically</h2>
 <p><span class="math display">\[
 \begin{align}
-    \hiddenVector_{1} &amp;= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
-    \hiddenVector_{2} &amp;=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
-    \hiddenVector_{3} &amp;= \basisFunction\left(\mappingMatrix_3 \hiddenVector_{2}\right)\\
-    \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
+    \mathbf{ h}_{1} &amp;= \phi\left(\mathbf{W}_1 \mathbf{ x}\right)\\
+    \mathbf{ h}_{2} &amp;=  \phi\left(\mathbf{W}_2\mathbf{ h}_{1}\right)\\
+    \mathbf{ h}_{3} &amp;= \phi\left(\mathbf{W}_3 \mathbf{ h}_{2}\right)\\
+    \mathbf{ y}&amp;= \mathbf{ w}_4 ^\top\mathbf{ h}_{3}
 \end{align}
 \]</span></p>
 </section>
 <section id="overfitting" class="slide level2">
 <h2>Overfitting</h2>
 <ul>
-<li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mappingMatrix\)</span> is also very big and there is the potential to overfit.</p></li>
+<li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mathbf{W}\)</span> is also very big and there is the potential to overfit.</p></li>
 <li><p>Proposed solution: “dropout”.</p></li>
-<li><p>Alternative solution: parameterize <span class="math inline">\(\mappingMatrix\)</span> with its SVD. <span class="math display">\[
-\mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
+<li><p>Alternative solution: parameterize <span class="math inline">\(\mathbf{W}\)</span> with its SVD. <span class="math display">\[
+\mathbf{W}= \mathbf{U}\boldsymbol{ \Lambda}\mathbf{V}^\top
 \]</span> or <span class="math display">\[
-\mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
-\]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
+\mathbf{W}= \mathbf{U}\mathbf{V}^\top
+\]</span> where if <span class="math inline">\(\mathbf{W}\in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\mathbf{U}\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\mathbf{V}\in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
 </ul>
 </section>
 <section id="low-rank-approximation" class="slide level2">
@@ -810,6 +842,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mathbf{W}\)</span>.
+</aside>
 </section>
 <section id="bottleneck-layers-in-deep-neural-networks" class="slide level2">
 <h2>Bottleneck Layers in Deep Neural Networks</h2>
@@ -825,13 +860,13 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <h2>Mathematically</h2>
 <p>The network can now be written mathematically as <span class="math display">\[
 \begin{align}
-  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
-  \hiddenVector_{1} &amp;= \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
-  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \hiddenVector_{1}\\
-  \hiddenVector_{2} &amp;= \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
-  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \hiddenVector_{2}\\
-  \hiddenVector_{3} &amp;= \basisFunction\left(\eigenvectorMatrix_3 \latentVector_{3}\right)\\
-  \dataVector &amp;= \mappingVector_4^\top\hiddenVector_{3}.
+  \mathbf{ z}_{1} &amp;= \mathbf{V}^\top_1 \mathbf{ x}\\
+  \mathbf{ h}_{1} &amp;= \phi\left(\mathbf{U}_1 \mathbf{ z}_{1}\right)\\
+  \mathbf{ z}_{2} &amp;= \mathbf{V}^\top_2 \mathbf{ h}_{1}\\
+  \mathbf{ h}_{2} &amp;= \phi\left(\mathbf{U}_2 \mathbf{ z}_{2}\right)\\
+  \mathbf{ z}_{3} &amp;= \mathbf{V}^\top_3 \mathbf{ h}_{2}\\
+  \mathbf{ h}_{3} &amp;= \phi\left(\mathbf{U}_3 \mathbf{ z}_{3}\right)\\
+  \mathbf{ y}&amp;= \mathbf{ w}_4^\top\mathbf{ h}_{3}.
 \end{align}
 \]</span></p>
 </section>
@@ -839,10 +874,10 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <h2>A Cascade of Neural Networks</h2>
 <p><span class="math display">\[
 \begin{align}
-  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
-  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
-  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
-  \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
+  \mathbf{ z}_{1} &amp;= \mathbf{V}^\top_1 \mathbf{ x}\\
+  \mathbf{ z}_{2} &amp;= \mathbf{V}^\top_2 \phi\left(\mathbf{U}_1 \mathbf{ z}_{1}\right)\\
+  \mathbf{ z}_{3} &amp;= \mathbf{V}^\top_3 \phi\left(\mathbf{U}_2 \mathbf{ z}_{2}\right)\\
+  \mathbf{ y}&amp;= \mathbf{ w}_4 ^\top \mathbf{ z}_{3}
 \end{align}
 \]</span></p>
 </section>
@@ -851,10 +886,10 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <ul>
 <li><p>Replace each neural network with a Gaussian process <span class="math display">\[
 \begin{align}
-\latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
-\latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
-\latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
-\dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
+\mathbf{ z}_{1} &amp;= \mathbf{ f}_1\left(\mathbf{ x}\right)\\
+\mathbf{ z}_{2} &amp;= \mathbf{ f}_2\left(\mathbf{ z}_{1}\right)\\
+\mathbf{ z}_{3} &amp;= \mathbf{ f}_3\left(\mathbf{ z}_{2}\right)\\
+\mathbf{ y}&amp;= \mathbf{ f}_4\left(\mathbf{ z}_{3}\right)
 \end{align}
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
@@ -875,6 +910,9 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </div>
 </div>
 </div>
+<aside class="notes">
+The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.
+</aside>
 <p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
 </section>
 <section id="deep-learning-as-pinball" class="slide level2">
@@ -886,8 +924,11 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </div>
 </div>
 </div>
+<aside class="notes">
+Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.
+</aside>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pinball-initialization-figure" class="figure-frame">
@@ -895,8 +936,11 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.
+</aside>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pinball-trained-figure" class="figure-frame">
@@ -904,13 +948,16 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 </object>
 </div>
 </div>
+<aside class="notes">
+After learning the pins are now in the right place to bring the balls to the correct decisions.
+</aside>
 </section>
 <section id="mathematically-2" class="slide level2">
 <h2>Mathematically</h2>
 <ul>
 <li><p>Composite <em>multivariate</em> function</p>
 <p><span class="math display">\[
-\mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector))))).
+\mathbf{g}(\mathbf{ x})=\mathbf{ f}_5(\mathbf{ f}_4(\mathbf{ f}_3(\mathbf{ f}_2(\mathbf{ f}_1(\mathbf{ x}))))).
 \]</span></p></li>
 </ul>
 </section>
@@ -918,7 +965,7 @@ p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducing
 <h2>Equivalent to Markov Chain</h2>
 <ul>
 <li>Composite <em>multivariate</em> function <span class="math display">\[
-p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
+p(\mathbf{ y}|\mathbf{ x})= p(\mathbf{ y}|\mathbf{ f}_5)p(\mathbf{ f}_5|\mathbf{ f}_4)p(\mathbf{ f}_4|\mathbf{ f}_3)p(\mathbf{ f}_3|\mathbf{ f}_2)p(\mathbf{ f}_2|\mathbf{ f}_1)p(\mathbf{ f}_1|\mathbf{ x})
 \]</span></li>
 </ul>
 <div class="figure">
@@ -927,8 +974,11 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </object>
 </div>
 </div>
+<aside class="notes">
+Probabilistically the deep Gaussian process can be represented as a Markov chain.
+</aside>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-markov-vertical-figure" class="figure-frame">
@@ -936,6 +986,9 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </object>
 </div>
 </div>
+<aside class="notes">
+More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.
+</aside>
 </section>
 <section id="why-deep" class="slide level2">
 <h2>Why Deep?</h2>
@@ -957,12 +1010,12 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-markov-vertical.svg" width style=" ">
 </object>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-markov-vertical-side-figure" class="figure-frame">
@@ -970,6 +1023,9 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </object>
 </div>
 </div>
+<aside class="notes">
+More generally we aren’t constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.
+</aside>
 </section>
 <section id="difficulty-for-probabilistic-approaches" class="slide level2">
 <h2>Difficulty for Probabilistic Approaches</h2>
@@ -983,6 +1039,9 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </object>
 </div>
 </div>
+<aside class="notes">
+A two dimensional grid mapped into three dimensions to form a two dimensional manifold.
+</aside>
 </section>
 <section id="difficulty-for-probabilistic-approaches-1" class="slide level2">
 <h2>Difficulty for Probabilistic Approaches</h2>
@@ -996,6 +1055,9 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </object>
 </div>
 </div>
+<aside class="notes">
+A one dimensional line mapped into two dimensions by two separate independent functions. Each point can be mapped exactly through the mappings.
+</aside>
 </section>
 <section id="difficulty-for-probabilistic-approaches-2" class="slide level2">
 <h2>Difficulty for Probabilistic Approaches</h2>
@@ -1009,34 +1071,37 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </object>
 </div>
 </div>
+<aside class="notes">
+A Gaussian density over the input of a non linear function leads to a very non Gaussian output. Here the output is multimodal.
+</aside>
 </section>
 <section id="standard-variational-approach-fails" class="slide level2">
 <h2>Standard Variational Approach Fails</h2>
 <ul>
 <li>Standard variational bound has the form: <span class="math display">\[
-\likelihoodBound = \expDist{\log p(\dataVector|\latentMatrix)}{q(\latentMatrix)} + \KL{q(\latentMatrix)}{p(\latentMatrix)}
+\mathcal{L}= \left&lt;\log p(\mathbf{ y}|\mathbf{Z})\right&gt;_{q(\mathbf{Z})} + \text{KL}\left( q(\mathbf{Z})\,\|\,p(\mathbf{Z}) \right)
 \]</span></li>
 </ul>
 </section>
 <section id="standard-variational-approach-fails-1" class="slide level2">
 <h2>Standard Variational Approach Fails</h2>
 <ul>
-<li>Requires expectation of <span class="math inline">\(\log p(\dataVector|\latentMatrix)\)</span> under <span class="math inline">\(q(\latentMatrix)\)</span>. <span class="math display">\[
+<li>Requires expectation of <span class="math inline">\(\log p(\mathbf{ y}|\mathbf{Z})\)</span> under <span class="math inline">\(q(\mathbf{Z})\)</span>. <span class="math display">\[
 \begin{align}
-\log p(\dataVector|\latentMatrix) = &amp; -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector \\ &amp; -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi
+\log p(\mathbf{ y}|\mathbf{Z}) = &amp; -\frac{1}{2}\mathbf{ y}^\top\left(\mathbf{K}_{\mathbf{ f}, \mathbf{ f}}+\sigma^2\mathbf{I}\right)^{-1}\mathbf{ y}\\ &amp; -\frac{1}{2}\log \det{\mathbf{K}_{\mathbf{ f}, \mathbf{ f}}+\sigma^2 \mathbf{I}} -\frac{n}{2}\log 2\pi
 \end{align}
-\]</span> <span class="math inline">\(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}\)</span> is dependent on <span class="math inline">\(\latentMatrix\)</span> and it appears in the inverse.</li>
+\]</span> <span class="math inline">\(\mathbf{K}_{\mathbf{ f}, \mathbf{ f}}\)</span> is dependent on <span class="math inline">\(\mathbf{Z}\)</span> and it appears in the inverse.</li>
 </ul>
 </section>
 <section id="variational-bayesian-gp-lvm" class="slide level2">
 <h2>Variational Bayesian GP-LVM</h2>
 <ul>
 <li>Consider collapsed variational bound, <span class="fragment" data-fragment-index="1"><small><span class="math display">\[
-  p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
+  p(\mathbf{ y})\geq \prod_{i=1}^nc_i \int \mathcal{N}\left(\mathbf{ y}|\left&lt;\mathbf{ f}\right&gt;,\sigma^2\mathbf{I}\right)p(\mathbf{ u}) \text{d}\mathbf{ u}
 \]</span></small></span> <span class="fragment" data-fragment-index="2"><small><span class="math display">\[
-  p(\dataVector|\latentMatrix )\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
+  p(\mathbf{ y}|\mathbf{Z})\geq \prod_{i=1}^nc_i \int \mathcal{N}\left(\mathbf{ y}|\left&lt;\mathbf{ f}\right&gt;_{p(\mathbf{ f}|\mathbf{ u}, \mathbf{Z})},\sigma^2\mathbf{I}\right)p(\mathbf{ u}) \text{d}\mathbf{ u}
 \]</span></small></span> <span class="fragment" data-fragment-index="3"><small><span class="math display">\[
-    \int p(\dataVector|\latentMatrix)p(\latentMatrix) \text{d}\latentMatrix \geq \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix p(\inducingVector) \text{d}\inducingVector
+    \int p(\mathbf{ y}|\mathbf{Z})p(\mathbf{Z}) \text{d}\mathbf{Z}\geq \int \prod_{i=1}^nc_i \mathcal{N}\left(\mathbf{ y}|\left&lt;\mathbf{ f}\right&gt;_{p(\mathbf{ f}|\mathbf{ u}, \mathbf{Z})},\sigma^2\mathbf{I}\right) p(\mathbf{Z})\text{d}\mathbf{Z}p(\mathbf{ u}) \text{d}\mathbf{ u}
 \]</span></small></span></li>
 </ul>
 </section>
@@ -1045,19 +1110,19 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <ul>
 <li>Apply variational lower bound to the inner integral. <small><span class="math display">\[
   \begin{align}
-  \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix \geq &amp; \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\ &amp; +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\&amp; + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
+  \int \prod_{i=1}^nc_i \mathcal{N}\left(\mathbf{ y}|\left&lt;\mathbf{ f}\right&gt;_{p(\mathbf{ f}|\mathbf{ u}, \mathbf{Z})},\sigma^2\mathbf{I}\right) p(\mathbf{Z})\text{d}\mathbf{Z}\geq &amp; \left&lt;\sum_{i=1}^n\log  c_i\right&gt;_{q(\mathbf{Z})}\\ &amp; +\left&lt;\log\mathcal{N}\left(\mathbf{ y}|\left&lt;\mathbf{ f}\right&gt;_{p(\mathbf{ f}|\mathbf{ u}, \mathbf{Z})},\sigma^2\mathbf{I}\right)\right&gt;_{q(\mathbf{Z})}\\&amp; + \text{KL}\left( q(\mathbf{Z})\,\|\,p(\mathbf{Z}) \right)    
   \end{align}
 \]</span></small></li>
-<li>Which is analytically tractable for Gaussian <span class="math inline">\(q(\latentMatrix)\)</span> and some covariance functions.</li>
+<li>Which is analytically tractable for Gaussian <span class="math inline">\(q(\mathbf{Z})\)</span> and some covariance functions.</li>
 </ul>
 </section>
 <section id="required-expectations" class="slide level2">
 <h2>Required Expectations</h2>
 <ul>
-<li>Need expectations under <span class="math inline">\(q(\latentMatrix)\)</span> of: <small><span class="math display">\[
-\log c_i = \frac{1}{2\dataStd^2} \left[\kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \kernelMatrix_{\inducingVector, \inducingVector}^{-1} \kernelVector_{i, \inducingVector}\right]
+<li>Need expectations under <span class="math inline">\(q(\mathbf{Z})\)</span> of: <small><span class="math display">\[
+\log c_i = \frac{1}{2\sigma^2} \left[k_{i, i} - \mathbf{ k}_{i, \mathbf{ u}}^\top \mathbf{K}_{\mathbf{ u}, \mathbf{ u}}^{-1} \mathbf{ k}_{i, \mathbf{ u}}\right]
 \]</span></small> and <small><span class="math display">\[
-\log \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector,\dataMatrix)}}{\dataStd^2\eye} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \kernelMatrix_{\mappingFunctionVector, \inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\inducingVector\right)^2
+\log \mathcal{N}\left(\mathbf{ y}|\left&lt;\mathbf{ f}\right&gt;_{p(\mathbf{ f}|\mathbf{ u},\mathbf{Y})},\sigma^2\mathbf{I}\right) = -\frac{1}{2}\log 2\pi\sigma^2 - \frac{1}{2\sigma^2}\left(y_i - \mathbf{K}_{\mathbf{ f}, \mathbf{ u}}\mathbf{K}_{\mathbf{ u},\mathbf{ u}}^{-1}\mathbf{ u}\right)^2
 \]</span></small></li>
 </ul>
 </section>
@@ -1065,9 +1130,9 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <h2>Required Expectations</h2>
 <ul>
 <li>This requires the expectations <span class="math display">\[
-\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}
+\left&lt;\mathbf{K}_{\mathbf{ f},\mathbf{ u}}\right&gt;_{q(\mathbf{Z})}
 \]</span> and <span class="math display">\[
-\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}
+\left&lt;\mathbf{K}_{\mathbf{ f},\mathbf{ u}}\mathbf{K}_{\mathbf{ u},\mathbf{ u}}^{-1}\mathbf{K}_{\mathbf{ u},\mathbf{ f}}\right&gt;_{q(\mathbf{Z})}
 \]</span> which can be computed analytically for some covariance functions <span class="citation" data-cites="Damianou:variational15">(Damianou et al., 2016)</span> or through sampling <span class="citation" data-cites="Damianou:thesis2015 Salimbeni:doubly2017">(Damianou, 2015; Salimbeni and Deisenroth, 2017)</span>.</li>
 </ul>
 </section>
@@ -1088,6 +1153,9 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 </div>
 </div>
 </div>
+<aside class="notes">
+Even the latest work on Bayesian neural networks has severe problems handling uncertainty. In this example, <span class="citation" data-cites="Izmailov:subspace19">(Izmailov et al., 2019)</span>, methods even fail to interpolate through the data correctly or provide well calibrated error bars in regions where data is observed.
+</aside>
 <p><span style="text-align:right"><span class="citation" data-cites="Izmailov:subspace19">Izmailov et al. (2019)</span></span></p>
 </section>
 <section id="deep-gaussian-processes-1" class="slide level2">
@@ -1104,35 +1172,35 @@ showDivs(0, 'stack-pca-sample');
 </script>
 <p><small></small> <input id="range-stack-pca-sample" type="range" min="0" max="4" value="0" onchange="setDivs('stack-pca-sample')" oninput="setDivs('stack-pca-sample')"> <button onclick="plusDivs(-1, 'stack-pca-sample')">❮</button> <button onclick="plusDivs(1, 'stack-pca-sample')">❯</button></p>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-0.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-1.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-2.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-3.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="stack-pca-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-4.svg" width="10%" style=" ">
@@ -1146,35 +1214,35 @@ showDivs(0, 'stack-gp-sample');
 </script>
 <p><small></small> <input id="range-stack-gp-sample" type="range" min="0" max="4" value="0" onchange="setDivs('stack-gp-sample')" oninput="setDivs('stack-gp-sample')"> <button onclick="plusDivs(-1, 'stack-gp-sample')">❮</button> <button onclick="plusDivs(1, 'stack-gp-sample')">❯</button></p>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-0.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-1.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-2.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-3.svg" width="10%" style=" ">
 </object>
 </div>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="stack-gp-sample" style="text-align:center;">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-4.svg" width="10%" style=" ">
@@ -1196,6 +1264,9 @@ showDivs(0, 'stack-gp-sample');
 </iframe>
 </div>
 </div>
+<aside class="notes">
+Visualization of mapping of a two dimensional space through a deep Gaussian process.
+</aside>
 </section>
 <section id="olympic-marathon-data" class="slide level2">
 <h2>Olympic Marathon Data</h2>
@@ -1226,6 +1297,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Olympic marathon pace times since 1892.
+</aside>
 </section>
 <section id="alan-turing" class="slide level2">
 <h2>Alan Turing</h2>
@@ -1247,6 +1321,9 @@ showDivs(0, 'stack-gp-sample');
 </table>
 </div>
 </div>
+<aside class="notes">
+Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html" target="_blank" >Alan Turing Internet Scrapbook</a>.
+</aside>
 </section>
 <section id="probability-winning-olympics" class="slide level2">
 <h2>Probability Winning Olympics?</h2>
@@ -1267,6 +1344,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.
+</aside>
 </section>
 <section id="deep-gp-fit" class="slide level2">
 <h2>Deep GP Fit</h2>
@@ -1283,6 +1363,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.
+</aside>
 </section>
 <section id="olympic-marathon-data-deep-gp-1" class="slide level2">
 <h2>Olympic Marathon Data Deep GP</h2>
@@ -1292,6 +1375,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Point samples run through the deep Gaussian process show the distribution of output locations.
+</aside>
 </section>
 <section id="olympic-marathon-data-latent-1" class="slide level2">
 <h2>Olympic Marathon Data Latent 1</h2>
@@ -1301,6 +1387,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+The mapping from input to the latent layer is broadly, with some flattening as time goes on. Variance is high across the input range.
+</aside>
 </section>
 <section id="olympic-marathon-data-latent-2" class="slide level2">
 <h2>Olympic Marathon Data Latent 2</h2>
@@ -1310,6 +1399,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+The mapping from the latent layer to the output layer.
+</aside>
 </section>
 <section id="olympic-marathon-pinball-plot" class="slide level2">
 <h2>Olympic Marathon Pinball Plot</h2>
@@ -1319,6 +1411,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+A pinball plot shows the movement of the ‘ball’ as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.
+</aside>
 </section>
 <section id="della-gatta-gene-data" class="slide level2">
 <h2>Della Gatta Gene Data</h2>
@@ -1334,6 +1429,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gene expression levels over time for a gene from data provided by <span class="citation" data-cites="DellaGatta:direct08">Della Gatta et al. (2008)</span>. We would like to understand whethere there is signal in the data, or we are only observing noise.
+</aside>
 </section>
 <section id="gene-expression-example" class="slide level2">
 <h2>Gene Expression Example</h2>
@@ -1341,7 +1439,7 @@ showDivs(0, 'stack-gp-sample');
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="a-simple-approach-to-ranking-figure" class="figure-frame">
@@ -1350,11 +1448,14 @@ showDivs(0, 'stack-gp-sample');
 </div>
 </div>
 </div>
+<aside class="notes">
+The example is taken from the paper “A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression.” <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.
+</aside>
 <center>
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
 </center>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 </section>
 <section id="tp53-gene-data-gp" class="slide level2">
@@ -1365,6 +1466,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.
+</aside>
 </section>
 <section id="tp53-gene-data-gp-1" class="slide level2">
 <h2>TP53 Gene Data GP</h2>
@@ -1374,6 +1478,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.
+</aside>
 </section>
 <section id="tp53-gene-data-gp-2" class="slide level2">
 <h2>TP53 Gene Data GP</h2>
@@ -1383,6 +1490,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.
+</aside>
 </section>
 <section id="multiple-optima" class="slide level2">
 <h2>Multiple Optima</h2>
@@ -1392,6 +1502,8 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+</aside>
 <!--
 ## Multiple Optima  {}
 
@@ -1407,6 +1519,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Deep Gaussian process fit to the Della Gatta gene expression data.
+</aside>
 </section>
 <section id="della-gatta-gene-data-deep-gp-1" class="slide level2">
 <h2>Della Gatta Gene Data Deep GP</h2>
@@ -1416,6 +1531,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Deep Gaussian process samples fitted to the Della Gatta gene expression data.
+</aside>
 </section>
 <section id="della-gatta-gene-data-latent-1" class="slide level2">
 <h2>Della Gatta Gene Data Latent 1</h2>
@@ -1425,6 +1543,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process mapping from input to latent layer for the della Gatta gene expression data.
+</aside>
 </section>
 <section id="della-gatta-gene-data-latent-2" class="slide level2">
 <h2>Della Gatta Gene Data Latent 2</h2>
@@ -1434,6 +1555,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process mapping from latent to output layer for the della Gatta gene expression data.
+</aside>
 </section>
 <section id="tp53-gene-pinball-plot" class="slide level2">
 <h2>TP53 Gene Pinball Plot</h2>
@@ -1443,6 +1567,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+A pinball plot shows the movement of the ‘ball’ as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. Pinball plot of the della Gatta gene expression data.
+</aside>
 </section>
 <section id="step-function-data" class="slide level2">
 <h2>Step Function Data</h2>
@@ -1452,6 +1579,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Simulation study of step function data artificially generated. Here there is a small overlap between the two lines.
+</aside>
 </section>
 <section id="step-function-data-gp" class="slide level2">
 <h2>Step Function Data GP</h2>
@@ -1461,6 +1591,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.
+</aside>
 </section>
 <section id="step-function-data-deep-gp" class="slide level2">
 <h2>Step Function Data Deep GP</h2>
@@ -1470,6 +1603,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Deep Gaussian process fit to the step function data.
+</aside>
 </section>
 <section id="step-function-data-deep-gp-1" class="slide level2">
 <h2>Step Function Data Deep GP</h2>
@@ -1479,6 +1615,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Samples from the deep Gaussian process model for the step function fit.
+</aside>
 </section>
 <section id="step-function-data-latent-1" class="slide level2">
 <h2>Step Function Data Latent 1</h2>
@@ -1508,6 +1647,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the ‘ball’ towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.
+</aside>
 </section>
 <section id="motorcycle-helmet-data" class="slide level2">
 <h2>Motorcycle Helmet Data</h2>
@@ -1517,6 +1659,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.
+</aside>
 </section>
 <section id="motorcycle-helmet-data-gp" class="slide level2">
 <h2>Motorcycle Helmet Data GP</h2>
@@ -1526,6 +1671,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fit to the motorcycle helmet accelerometer data.
+</aside>
 </section>
 <section id="motorcycle-helmet-data-deep-gp" class="slide level2">
 <h2>Motorcycle Helmet Data Deep GP</h2>
@@ -1535,6 +1683,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Deep Gaussian process fit to the motorcycle helmet accelerometer data.
+</aside>
 </section>
 <section id="motorcycle-helmet-data-deep-gp-1" class="slide level2">
 <h2>Motorcycle Helmet Data Deep GP</h2>
@@ -1544,6 +1695,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Samples from the deep Gaussian process as fitted to the motorcycle helmet accelerometer data.
+</aside>
 </section>
 <section id="motorcycle-helmet-data-latent-1" class="slide level2">
 <h2>Motorcycle Helmet Data Latent 1</h2>
@@ -1553,6 +1707,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Mappings from the input to the latent layer for the motorcycle helmet accelerometer data.
+</aside>
 </section>
 <section id="motorcycle-helmet-data-latent-2" class="slide level2">
 <h2>Motorcycle Helmet Data Latent 2</h2>
@@ -1562,6 +1719,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Mappings from the latent layer to the output layer for the motorcycle helmet accelerometer data.
+</aside>
 </section>
 <section id="motorcycle-helmet-pinball-plot" class="slide level2">
 <h2>Motorcycle Helmet Pinball Plot</h2>
@@ -1571,6 +1731,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Pinball plot for the mapping from input to output layer for the motorcycle helmet accelerometer data.
+</aside>
 </section>
 <section id="robot-wireless-ground-truth" class="slide level2">
 <h2>Robot Wireless Ground Truth</h2>
@@ -1580,6 +1743,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.
+</aside>
 </section>
 <section id="robot-wifi-data" class="slide level2">
 <h2>Robot WiFi Data</h2>
@@ -1589,6 +1755,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.
+</aside>
 </section>
 <section id="robot-wifi-data-gp" class="slide level2">
 <h2>Robot WiFi Data GP</h2>
@@ -1598,6 +1767,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fit to the Robot Wireless dimension 1.
+</aside>
 </section>
 <section id="robot-wifi-data-deep-gp" class="slide level2">
 <h2>Robot WiFi Data Deep GP</h2>
@@ -1607,6 +1779,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Fit of the deep Gaussian process to dimension 1 of the robot wireless data.
+</aside>
 </section>
 <section id="robot-wifi-data-deep-gp-1" class="slide level2">
 <h2>Robot WiFi Data Deep GP</h2>
@@ -1616,6 +1791,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Samples from the deep Gaussian process fit to dimension 1 of the robot wireless data.
+</aside>
 </section>
 <section id="robot-wifi-data-latent-space" class="slide level2">
 <h2>Robot WiFi Data Latent Space</h2>
@@ -1628,6 +1806,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Inferred two dimensional latent space of the model for the robot wireless data.
+</aside>
 </section>
 <section id="high-five-motion-capture-data" class="slide level2">
 <h2>‘High Five’ Motion Capture Data</h2>
@@ -1644,14 +1825,20 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Shared latent variable model structure. Here two related data sets are brought together with a set of latent variables that are partially shared and partially specific to one of the data sets.
+</aside>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-gp-high-five-figure" class="figure-frame">
 <p><img class="" src="../slides/diagrams/deep-gp-high-five2.png" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
 </div>
 </div>
+<aside class="notes">
+Latent spaces of the ‘high five’ data. The structure of the model is automatically learnt. One of the latent spaces is coordinating how the two figures walk together, the other latent spaces contain latent variables that are specific to each of the figures separately.
+</aside>
 </section>
 <section id="subsample-of-the-mnist-data" class="slide level2">
 <h2>Subsample of the MNIST Data</h2>
@@ -1660,7 +1847,7 @@ showDivs(0, 'stack-gp-sample');
 <h2>Fitting a Deep GP to a the MNIST Digits Subsample</h2>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-latent-figure" class="figure-frame">
@@ -1668,8 +1855,11 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the MNIST digits subsample.
+</aside>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1677,8 +1867,11 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
+</aside>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1686,8 +1879,11 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
+</aside>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1695,8 +1891,11 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
+</aside>
 </section>
-<section id="section-25" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1704,8 +1903,11 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
+</aside>
 </section>
-<section id="section-26" class="slide level2">
+<section id="section-27" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="digit-samples-deep-gp-figure" class="figure-frame">
@@ -1713,6 +1915,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.
+</aside>
 </section>
 <section id="deep-health" class="slide level2">
 <h2>Deep Health</h2>
@@ -1722,6 +1927,9 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<aside class="notes">
+The deep health model uses different layers of abstraction in the deep Gaussian process to represent information about diagnostics and treatment to model interelationships between a patients different data modalities.
+</aside>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
@@ -1834,7 +2042,7 @@ showDivs(0, 'stack-gp-sample');
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
