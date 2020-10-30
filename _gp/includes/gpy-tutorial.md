@@ -5,7 +5,7 @@
 
 \subsection{GPy Tutorial}
 
-\notes{This GPy tutorial is based on material we share in the Gaussian process summer school for teaching these models <https://gpss.cc>. It contains material from various members and former members of the Sheffield machine learning group, but particular mention should be made of [Nicolas Durrande](https://sites.google.com/site/nicolasdurrandehomepage/).}
+\notes{This GPy tutorial is based on material we share in the Gaussian process summer school for teaching these models <https://gpss.cc>. It contains material from various members and former members of the Sheffield machine learning group, but particular mention should be made of [Nicolas Durrande](https://sites.google.com/site/nicolasdurrandehomepage/) and [James Hensman](https://jameshensman.github.io/), see <http://gpss.cc/gpss17/labs/GPSS_Lab1_2017.ipynb>.}
 
 \installcode{GPy}
 
@@ -78,10 +78,9 @@ mlai.write_figure('gpy-eq-covariance-lengthscales.svg', directory='\writeDiagram
 \subsection{Covariance Functions in GPy}
 \slides{* Includes a range of covariance functions
     * E.g. Matern family, Brownian motion, periodic, linear etc.
-	* Can [define new covariances](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html)
-	}
+	* Can [define new covariances](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html)}
 
-\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a lengthscale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f (\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
+\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a lengthscale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f(\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 

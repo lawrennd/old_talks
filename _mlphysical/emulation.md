@@ -25,7 +25,6 @@ transition: None
 \include{_gp/includes/gpy-tutorial.md}
 \include{_gp/includes/gpy-emulation.md}
 
-$$\newcommand{\dataStd}{\sigma_{\text{noise}}}$$
 
 \include{_uq/includes/emukit-playground.md}
 
