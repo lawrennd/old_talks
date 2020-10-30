@@ -102,26 +102,30 @@ from matplotlib import cm
 
 colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(X_init, Y_init, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
-ax.plot(x_plot, y_plot, 'k', label='target function', linewidth=2)
-ax.fill_between(x_plot[:, 0],
+\helpercode{def helper_plot_emulator_errorbars():
+	"""Helper function for plotting the emulator fit."""
+    ax.plot(emukit_model.X, emukit_model.Y, 'ro', markersize=10, label='observations')
+    ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
+    ax.plot(x_plot, y_plot, 'k', label='target function', linewidth=2)
+    ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
-ax.fill_between(x_plot[:, 0],
+    ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.4)
-ax.fill_between(x_plot[:, 0],
+    ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.2)
-ax.legend(loc=2)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.set_ylim([-20, 20])
-ax.grid(True)
-ax.set_xlim(0, 1)
+    ax.legend(loc=2)
+    ax.set_xlabel('$x$')
+    ax.set_ylabel('$f(x)$')
+    ax.grid(True)
+    ax.set_xlim(-0.01, 1)
+    ax.set_ylim([-20, 20])}
 
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+helper_plot_emulator_errorbars()
 mlai.write_figure(filename='forrester-function-multi-errorbars-00.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-00}{80%}}{The emulator fitted to the Forrester function with only three observations from the inital design. The error bars show 1, 2 and 3 standard deviations.}{forrester-function-multierrobars-00}
@@ -189,20 +193,23 @@ mlai.write_figure('experimental-design-acquisition-forrester-00.svg', directory=
 
 \notes{To find the next point to evaluate we optimize the acquisition function using a standard gradient descent optimizer.}
 
+\helpercode{def helper_plot_next_point_acquisition():
+    """Helper code for plot the location of the next point acquisition."""
+    ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
+    ax.axvline(x_new, color='red', label='x_next', linestyle='--', linewidth=3)
+    ax.legend(loc=1)
+    ax.set_xlabel('$x$')
+    ax.set_ylabel('$f(x)$')
+    ax.grid(True)
+    ax.set_xlim(-0.01, 1)}
+
 \setupcode{from emukit.core.optimization import GradientAcquisitionOptimizer}
 
 \code{optimizer = GradientAcquisitionOptimizer(space)
 x_new, _ = optimizer.optimize(us_acquisition)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
-ax.axvline(x_new, color='red', label='x_next', linestyle='--', linewidth=3)
-ax.legend(loc=1)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.grid(True)
-ax.set_xlim(-0.01, 1)
-
+helper_plot_next_point_acquisition()
 mlai.write_figure('experimental-design-acquisition-forrester-01.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
@@ -228,25 +235,7 @@ Y = np.append(Y_init, y_new, axis=0)}
 mu_plot, var_plot = emukit_model.predict(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(emukit_model.X, emukit_model.Y, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
-ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.4)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.2)
-ax.legend(loc=2)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.grid(True)
-ax.set_xlim(-0.01, 1)
-ax.set_ylim([-20, 20])
-
+helper_plot_emulator_errorbars()
 
 mlai.write_figure(filename='forrester-function-multi-errorbars-01.svg', directory='\writeDiagramsDir/uq')}
 
@@ -261,13 +250,7 @@ us_plot = us_acquisition.evaluate(x_plot)
 x_new, _ = optimizer.optimize(us_acquisition)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
-ax.axvline(x_new, color='red', label='x_next', linestyle='--', linewidth=3)
-ax.legend(loc=1)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.grid(True)
-ax.set_xlim(-0.01, 1)
+helper_plot_next_point_acquisition()
 
 mlai.write_figure('experimental-design-acquisition-forrester-02.svg', directory='\writeDiagramsDir/uq')}
 
@@ -286,25 +269,7 @@ mu_plot, var_plot = emukit_model.predict(x_plot)}
 \notes{Resulting in an updated estimate of the function.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(emukit_model.X, emukit_model.Y, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
-ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.4)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.2)
-ax.legend(loc=2)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.grid(True)
-ax.set_xlim(-0.01, 1)
-ax.set_ylim([-20, 20])
-
+helper_plot_emulator_errorbars()
 
 mlai.write_figure(filename='forrester-function-multi-errorbars-02.svg', directory='\writeDiagramsDir/uq')}
 
@@ -331,30 +296,7 @@ ed.run_loop(target_function, 10)}
 \code{mu_plot, var_plot = ed.model.predict(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(ed.loop_state.X, ed.loop_state.Y, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
-ax.plot(x_plot, y_plot, 'k', label='target function', linewidth=2)
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], 
-				 color='C0', alpha=0.6)
-
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], 
-				 color='C0', alpha=0.4)
-
-ax.fill_between(x_plot[:, 0],
-                 mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], 
-				 color='C0', alpha=0.2)
-ax.legend(loc=2)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.grid(True)
-ax.set_xlim(0, 1)
-ax.set_ylim([-20, 20])
-
+helper_plot_emulator_errorbars()
 
 mlai.write_figure(filename='forrester-function-full-fit.svg', directory='\writeDiagramsDir/uq')}
 

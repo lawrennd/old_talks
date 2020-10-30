@@ -94,7 +94,7 @@ while stopping condition is not met:
 
 \subsection{Acquisition Optimizer}
 
-\slides{* The optimization routine we use to optimize the acquisition function. (often this is a non-linear optimizer like L-BFGS [@Byrd:lbfgsb95]}
+\slides{* The optimization routine we use to optimize the acquisition function. (often this is a non-linear optimizer like L-BFGS [@Byrd:lbfgsb95])}
 
 \notes{The `AcquisitionOptimizer` optimizes the acquisition function to find the point at which the acquisition is a maximum. This will use the acquisition function gradients if they are available. If gradients of the acquisition function are not available it will either estimate them numerically or use a gradient free optimizer.}
 
