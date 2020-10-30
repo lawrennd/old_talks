@@ -27,21 +27,22 @@ However, GPyOpt doesn't allow the full flexibility of surrogate modelling for do
 \newslide{Emukit}
 
 \slides{
-* Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.
+* Led by Javier Gonzalez and Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein, Henry Moss and David-Elias Künstle.
 * Available on [Github](https://github.com/EmuKit/emukit)
 * Example [sensitivity notebook](https://github.com/EmuKit/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb).
 * Documentation <https://emukit.readthedocs.io/en/latest/>
 }
 
-\notes{The software was initially built by the team in Amazon that as well as Javier Gonzalez and Andrei Paleyes included Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein}
+\notes{The software was initially built by the team in Amazon that as well as Javier Gonzalez and Andrei Paleyes included Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein, Henry Moss and David-Elias Künstle.}
 
 \newslide{Modular Design}
 
 \slides{* Introduce your own surrogate models.
-\slides{```{.python}
+
+```{.python}
 from emukit.model_wrappers import GPyModelWrapper
 ```}
-\slides{Read <https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb> and have}
+\slides{To building your own model [see this notebook](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb).}
 \slides{```{.python}
 from emukit.model_wrappers import YourModelWrapperHere
 ```}
