@@ -3,6 +3,10 @@
 
 \editme
 
+\section{Experimental Design in Emukit}
+
+\notes{We're going to introduce the experimental design acquisiton functions by looking at the Forrester function [@Forrester-engineering08]}
+
 \setupcode{import numpy as np
 
 from emukit.test_functions import forrester_function
@@ -18,7 +22,7 @@ y_plot = target_function(x_plot)}
 \setupplot{import matplotlib.pyplot as plt}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, y_plot, 'k', label='target Function')
+ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
 
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
@@ -38,8 +42,8 @@ mlai.write_figure(filename='forrester-function.svg', directory='\writeDiagramsDi
 Y_init = target_function(X_init)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(X_init, Y_init, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, y_plot, 'k', label='Target Function')
+ax.plot(X_init, Y_init, 'ro', markersize=10, label='observations')
+ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
 
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
@@ -75,10 +79,14 @@ where $\mu(\inputVector^*)$ and $\sigma^2(\inputVector^*)$ have a closed form so
 
 \notes{Note that Gaussian processes are also characterized by hyperparameters, for example in the exponentiated quadratic case we have $\paramVector = \left\{ \alpha, \ell, \dataStd^2 \right\}$ for the scale of the covariance, the lengthscale and the noise variance. Here, for simplicitly we will keep these hyperparameters fixed. However, we will usually either optimize or sample these hyperparameters using the marginal loglikelihood of the GP. 
 
-In this module we've focussed on Gaussian processes, but we could also use any other model that returns a mean $\mu(\inputVector)$ and variance $\sigma^2(\inputVector)$ on an arbitrary input points $\inputVector$ such as Bayesian neural networks or random forests. In Emukit these different models can be used by defining a new `ModelWrapper`.}
+In this module we've focussed on Gaussian processes, but we could also use any other model that returns a mean $\mu(\inputVector)$ and variance $\sigma^2(\inputVector)$ on an arbitrary input points $\inputVector$ such as Bayesian neural networks or random forests. In Emukit these different models can also be used by defining a new `ModelWrapper`.
+
+Here we're going to wrap a GPy model.}
 
 \setupcode{import GPy
 from emukit.model_wrappers.gpy_model_wrappers import GPyModelWrapper}
+
+\notes{Now we set up the covariance function for the GPy model, initialising it with a lengthscale, $\ell=0.08$, and a variance, $\alpha=20$.}
 
 \code{kern = GPy.kern.RBF(1, lengthscale=0.08, variance=20)
 gpy_model = GPy.models.GPRegression(X_init, Y_init, kern, noise_var=1e-10)
@@ -95,8 +103,8 @@ colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(X_init, Y_init, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, y_plot, 'k', label='Objective Function')
-ax.plot(x_plot, mu_plot, 'C0', label='Model')
+ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
+ax.plot(x_plot, y_plot, 'k', label='target function', linewidth=2)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
@@ -109,12 +117,13 @@ ax.fill_between(x_plot[:, 0],
 ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
+ax.set_ylim([-20, 20])
 ax.grid(True)
 ax.set_xlim(0, 1)
 
-mlai.write_figure(filename='forrester-function-entropy.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure(filename='forrester-function-multi-errorbars-00.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/forrester-function-entropy}{80%}}{The emulator fitted to the Forrester function with only three observations. The error bars show 1, 2 and 3 standard deviations.}{forrester-function-entropy}
+\figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-00}{80%}}{The emulator fitted to the Forrester function with only three observations from the inital design. The error bars show 1, 2 and 3 standard deviations.}{forrester-function-multierrobars-00}
 
 \subsection{The Acquisition Function}
 
@@ -155,8 +164,8 @@ us_plot = us_acquisition.evaluate(x_plot)
 ivr_plot = ivr_acquisition.evaluate(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US')
-ax.plot(x_plot, ivr_plot / np.max(ivr_plot) , 'purple', label='IVR')
+ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
+ax.plot(x_plot, ivr_plot / np.max(ivr_plot) , 'purple', label='IVR', linewidth=3)
 
 ax.legend(loc=1)
 ax.set_xlabel('$x$')
@@ -164,9 +173,9 @@ ax.set_ylabel('$f(x)$')
 ax.grid(True)
 ax.set_xlim(-0.01, 1)
 
-mlai.write_figure('experimental-design-acquisition-functions-forrester.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure('experimental-design-acquisition-forrester-00.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-functions-forrester}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-functions}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-00}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-functions}
 
 \subsection{ Evaluating the objective function}
 
@@ -178,17 +187,17 @@ mlai.write_figure('experimental-design-acquisition-functions-forrester.svg', dir
 x_new, _ = optimizer.optimize(us_acquisition)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US')
-ax.axvline(x_new, color='red', label='x_next', linestyle='--')
+ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
+ax.axvline(x_new, color='red', label='x_next', linestyle='--', linewidth=3)
 ax.legend(loc=1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.grid(True)
 ax.set_xlim(-0.01, 1)
 
-mlai.write_figure('experimental-design-acquisition-next-point-forrester.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure('experimental-design-acquisition-forrester-01.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-next-point-forrester}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
 
 \notes{Afterwards we evaluate the true objective function and append it to our initial observations.}
 
@@ -204,8 +213,8 @@ mu_plot, var_plot = emukit_model.predict(x_plot)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(emukit_model.X, emukit_model.Y, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, y_plot, 'k', label='Target Function')
-ax.plot(x_plot, mu_plot, 'C0', label='Model')
+ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
+ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
@@ -220,12 +229,64 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.grid(True)
 ax.set_xlim(-0.01, 1)
+ax.set_ylim([-20, 20])
 
-mlai.write_figure(filename='forrester-function-multi-errorbars.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars}
+mlai.write_figure(filename='forrester-function-multi-errorbars-01.svg', directory='\writeDiagramsDir/uq')}
 
-Entropy of posterior
+\figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-01}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars-01}
+
+\notes{We can repeat this process to obtain more points.}
+
+\code{x_new, _ = optimizer.optimize(us_acquisition)}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(x_plot, us_plot / np.max(us_plot), 'green', label='US', linewidth=3)
+ax.axvline(x_new, color='red', label='x_next', linestyle='--', linewidth=3)
+ax.legend(loc=1)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
+ax.grid(True)
+ax.set_xlim(-0.01, 1)
+
+mlai.write_figure('experimental-design-acquisition-forrester-02.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
+
+\notes{Once again we can asimmilate the new target function observation into the model and re-evaluate our emulation.}
+
+\code{y_new = target_function(x_new)
+X = np.append(X, x_new, axis=0)
+Y = np.append(Y, y_new, axis=0)
+emukit_model.set_data(X, Y)
+mu_plot, var_plot = emukit_model.predict(x_plot)}
+
+\notes{Resulting in an updated estimate of the function.}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(emukit_model.X, emukit_model.Y, 'ro', markersize=10, label='Observations')
+ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
+ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
+ax.fill_between(x_plot[:, 0],
+                 mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
+                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color='C0', alpha=0.6)
+ax.fill_between(x_plot[:, 0],
+                 mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
+                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.4)
+ax.fill_between(x_plot[:, 0],
+                 mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
+                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color='C0', alpha=0.2)
+ax.legend(loc=2)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
+ax.grid(True)
+ax.set_xlim(-0.01, 1)
+ax.set_ylim([-20, 20])
+
+
+mlai.write_figure(filename='forrester-function-multi-errorbars-02.svg', directory='\writeDiagramsDir/uq')}
+
+\figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-02}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars-02}
 
 \subsection{Emukit's experimental design interface}
 
@@ -241,8 +302,8 @@ ed.run_loop(target_function, 10)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(ed.loop_state.X, ed.loop_state.Y, 'ro', markersize=10, label='Observations')
-ax.plot(x_plot, y_plot, 'k', label='Objective Function')
-ax.plot(x_plot, mu_plot, 'C0', label='Model')
+ax.plot(x_plot, mu_plot, 'C0', label='model', linewidth=3)
+ax.plot(x_plot, y_plot, 'k', label='target function', linewidth=2)
 ax.fill_between(x_plot[:, 0],
                  mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
                  mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], 
@@ -262,6 +323,8 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.grid(True)
 ax.set_xlim(0, 1)
+ax.set_ylim([-20, 20])
+
 
 mlai.write_figure(filename='forrester-function-full-fit.svg', directory='\writeDiagramsDir/uq')}
 
