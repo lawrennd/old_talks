@@ -49,7 +49,8 @@ ax.legend(loc=2)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.grid(True)
-ax.set_xlim(0, 1)
+ax.set_xlim(-0.01, 1)
+ax.set_ylim([-20, 20])
 
 mlai.write_figure(filename='forrester-function-initial-design.svg', directory='\writeDiagramsDir/uq')}
 
@@ -141,12 +142,17 @@ $$
 
 \notes{In the integrated variance reduction (IVR) you choose the next value $\inputVector_{n+1}$ such that the total variance of the model is reduced maximally [@Sacks-design89],}
 $$
-a_{IVR} = \int_{\mathbb{X}}[\sigma^2(\inputVector') - \sigma^2(\inputVector'; \inputVector)]\text{d}\inputVector'\approx 
+\begin{align*}
+a_{IVR} & = \int_{\mathbb{X}}[\sigma^2(\inputVector') - \sigma^2(\inputVector'; \inputVector)]\text{d}\inputVector' \\
+& \approx 
 \frac{1}{\# \text{samples}}\sum_i^{\# \text{samples}}[\sigma^2(\inputVector_i) - \sigma^2(\inputVector_i; \inputVector)].
+\end{align*}
 $$
 \notes{Here $\sigma^2(\inputVector'; \inputVector)$ is the predictive variance at $\inputVector'$ had $\inputVector$ been observed. Thus IVR computes the overall reduction in variance (for all points in $\mathbb{X}$) had $f$ been observed at $\inputVector$.
 
 The finite sum approximation on the right hand side of the equation is usually used because the integral over $\inputVector'$ is not analytic. In that case $\inputVector_i$ are sampled randomly. For a GP model the right hand side simplifies to}
+\newslide{}
+
 $$
 a_{LCB} \approx \frac{1}{\# \text{samples}}\sum_i^{\# \text{samples}}\frac{\kernelScalar^2(\inputVector_i, \inputVector)}{\sigma^2(\inputVector)}.
 $$
@@ -175,9 +181,11 @@ ax.set_xlim(-0.01, 1)
 
 mlai.write_figure('experimental-design-acquisition-forrester-00.svg', directory='\writeDiagramsDir/uq')}
 
+\newslide{}
+
 \figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-00}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-functions}
 
-\subsection{ Evaluating the objective function}
+\subsection{Evaluating the objective function}
 
 \notes{To find the next point to evaluate we optimize the acquisition function using a standard gradient descent optimizer.}
 
@@ -200,6 +208,14 @@ mlai.write_figure('experimental-design-acquisition-forrester-01.svg', directory=
 \figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
 
 \notes{Afterwards we evaluate the true objective function and append it to our initial observations.}
+\newslide{Add the New Point}
+
+\slides{```{.python}
+y_new = target_function(x_new)
+X = np.append(X_init, x_new, axis=0)
+Y = np.append(Y_init, y_new, axis=0)
+emukit_model.set_data(X, Y)
+```}
 
 \code{y_new = target_function(x_new)}
 
@@ -234,6 +250,8 @@ ax.set_ylim([-20, 20])
 
 mlai.write_figure(filename='forrester-function-multi-errorbars-01.svg', directory='\writeDiagramsDir/uq')}
 
+\newslide{The Model is Updated}
+
 \figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-01}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars-01}
 
 \notes{We can repeat this process to obtain more points.}
@@ -250,6 +268,8 @@ ax.grid(True)
 ax.set_xlim(-0.01, 1)
 
 mlai.write_figure('experimental-design-acquisition-forrester-02.svg', directory='\writeDiagramsDir/uq')}
+
+\newslide{}
 
 \figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
 
@@ -286,9 +306,17 @@ ax.set_ylim([-20, 20])
 
 mlai.write_figure(filename='forrester-function-multi-errorbars-02.svg', directory='\writeDiagramsDir/uq')}
 
+\newslide{}
+
 \figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-02}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars-02}
 
 \subsection{Emukit's experimental design interface}
+
+\slides{```{.python}
+from emukit.experimental_design.experimental_design_loop import ExperimentalDesignLoop
+ed = ExperimentalDesignLoop(space=space, model=emukit_model)
+ed.run_loop(target_function, 10)
+```}
 
 \notes{Of course in practice we don't want to implement all of these steps our self. Emukit provides a convenient and flexible interface to apply experimental design. Below we can see how to run experimental design on the exact same function for 10 iterations.}
 
@@ -327,6 +355,8 @@ ax.set_ylim([-20, 20])
 
 
 mlai.write_figure(filename='forrester-function-full-fit.svg', directory='\writeDiagramsDir/uq')}
+
+\newslide{}
 
 \figure{\includediagram{\diagramsDir/uq/forrester-function-full-fit}{80%}}{The fit of the model to the Forrester function.}{forrester-function-full-fit}
 
