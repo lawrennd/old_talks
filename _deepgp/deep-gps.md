@@ -12,6 +12,7 @@ author:
   url: http://inverseprobability.com
 venue: Virtual Gaussian Process Summer School
 ipynb: true
+youtube: apq-hrzB-sM
 date: 2020-09-16
 transition: None
 ---
