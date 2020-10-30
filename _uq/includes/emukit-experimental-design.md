@@ -212,7 +212,7 @@ x_new, _ = optimizer.optimize(us_acquisition)}
 helper_plot_next_point_acquisition()
 mlai.write_figure('experimental-design-acquisition-forrester-01.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-02}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-01}{80%}}{The maxima of the acquisition function is found and this point is selected for inclusion.}{experimental-design-acquisition-functions}
 
 \notes{Afterwards we evaluate the true objective function and append it to our initial observations.}
 \newslide{Add the New Point}
@@ -277,7 +277,7 @@ mlai.write_figure(filename='forrester-function-multi-errorbars-02.svg', director
 
 \figure{\includediagram{\diagramsDir/uq/forrester-function-multi-errorbars-02}{80%}}{The target Forrester function plotted alongside the emulation model and error bars from the emulation at 1, 2 and 3 standard deviations.}{forrester-function-multi-errorbars-02}
 
-\subsection{Emukit's experimental design interface}
+\subsection{Emukit's Experimental Design Interface}
 
 \slides{```{.python}
 from emukit.experimental_design.experimental_design_loop import ExperimentalDesignLoop
