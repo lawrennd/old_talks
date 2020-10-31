@@ -471,8 +471,8 @@ import mlai}
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(y_plot_l, y_plot_h, '-', color=colors['purple'], linewidth=3)
 ax.plot(lf_mean_nonlin_mf_model, hf_mean_nonlin_mf_model, 'k--', linewidth=3)
-ax.set_ylabel('$\text{HF}(x)$')
-ax.set_xlabel('$\text{LF}(x)$')
+ax.set_ylabel('$HF(x)$')
+ax.set_xlabel('$LF(x)$')
 ax.legend(['True HF-LF Correlation', 'Learned HF-LF Correlation'], loc='lower center')
 
 mlai.write_figure('mapping-low-fidelity-to-high-fidelity.svg', directory='\writeDiagramsDir/uq')}
