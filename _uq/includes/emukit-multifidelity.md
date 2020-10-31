@@ -183,7 +183,7 @@ gpy_lin_mf_model.mixed_noise.Gaussian_noise_1.fix(0)}
 
 \notes{Wrap the model using the given `GPyMultiOutputWrapper`}
 
-\code{lin_mf_model = model = GPyMultiOutputWrapper(gpy_lin_mf_model, 2, n_optimization_restarts=5)}
+\code{lin_mf_model = GPyMultiOutputWrapper(gpy_lin_mf_model, 2, n_optimization_restarts=5)}
 
 \notes{Fit the model}
   
@@ -226,7 +226,7 @@ ax.legend(['Low Fidelity', 'High Fidelity', 'Predicted Low Fidelity', 'Predicted
 
 mlai.write_figure('linear-multi-fidelity-model.svg', diagrams='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity}{80%}}{Linear multi-fidelity model fit to low and high fidelity Forrester function}{linear-multi-fidelity-model}
+\figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model}{80%}}{Linear multi-fidelity model fit to low and high fidelity Forrester function}{linear-multi-fidelity-model}
 
 \notes{The above plot demonstrates how the multi-fidelity model learns the relationship between the low and high-fidelity observations in order to model both of the corresponding functions.}
 
