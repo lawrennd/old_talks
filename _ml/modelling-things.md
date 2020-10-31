@@ -24,10 +24,9 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+ipynb: True
 venue: IEEE RO-MAN Conference Workshop
 geometry: ['a4paper', 'margin=1in']
-date: 2020-09-04
-geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 date: 2020-08-23
 transition: None
