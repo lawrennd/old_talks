@@ -330,7 +330,7 @@ ax.legend(['Low fidelity', 'High fidelity'])
 
 mlai.write_figure('high-and-low-fidelity-functions.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-functions'}{80%}}{High and low fidelity functions}{high-and-low-fidelity-functions}
+\figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-functions}{80%}}{High and low fidelity functions}{high-and-low-fidelity-functions}
 
 \notes{In this case, the mapping between the two functions is nonlinear, as can be observed by plotting the high fidelity observations as a function of the lower fidelity observations.}
 
