@@ -41,12 +41,12 @@ The examples presented in this notebook can then be easily adapted to a variety 
 \notes{The linear multi-fidelity model proposed in [[Kennedy and O'Hagan, 2000]](#3.-References) is widely viewed as a reference point for all such models.
 In this model, the high-fidelity (true) function is modeled as a scaled sum of the low-fidelity function plus an error term:}
 $$
-\mappingFunction_{high}(x) = \mappingFunction_{err}(x) + \rho \,\mappingFunction_{low}(x)
+\mappingFunction_{\text{high}}(x) = \mappingFunction_{err}(x) + \rho \,\mappingFunction_{\text{low}}(x)
 $$
-\notes{In this equation, $\mappingFunction_{low}(x)$ is taken to be a Gaussian process modeling the outputs of the lower fidelity function, while $\rho$ is a scaling factor indicating the magnitude of the correlation to the high-fidelity data.
+\notes{In this equation, $\mappingFunction_{\text{low}}(x)$ is taken to be a Gaussian process modeling the outputs of the lower fidelity function, while $\rho$ is a scaling factor indicating the magnitude of the correlation to the high-fidelity data.
 Setting this to 0 implies that there is no correlation between observations at different fidelities.
 Meanwhile, $\mappingFunction_{err}(x)$ denotes yet another Gaussian process which models the bias term for the high-fidelity data.
-Note that $\mappingFunction_{err}(x)$ and $\mappingFunction_{low}(x)$ are assumed to be independent processes which are only related by the equation given above.}
+Note that $\mappingFunction_{err}(x)$ and $\mappingFunction_{\text{low}}(x)$ are assumed to be independent processes which are only related by the equation given above.}
 
 \notes{>**Note**: While we shall limit our explanation to the case of two fidelities, this set-up can easily be generalized to cater for $T$ fidelities as follows:
 >
@@ -55,15 +55,15 @@ Note that $\mappingFunction_{err}(x)$ and $\mappingFunction_{low}(x)$ are assume
 \notes{If the training points are sorted such that the low and high-fidelity points are grouped together:}
 $$
 \begin{pmatrix}
-X_{low} \\
-X_{high}
+X_{\text{low}} \\
+X_{\text{high}}
 \end{pmatrix}
 $$
 \notes{we can express the model as a single Gaussian process having the following prior.}
 $$
 \begin{bmatrix}
-\mappingFunction_{low}\left(h\right)\\
-\mappingFunction_{high}\left(h\right)
+\mappingFunction_{\text{low}}\left(h\right)\\
+\mappingFunction_{\text{high}}\left(h\right)
 \end{bmatrix}
 \sim
 GP
@@ -72,8 +72,8 @@ GP
 0 \\ 0
 \end{bmatrix},
 \begin{bmatrix}
-k_{low} & \rho k_{low} \\
-\rho k_{low} & \rho^2 k_{low} + k_{err}
+k_{\text{low}} & \rho k_{\text{low}} \\
+\rho k_{\text{low}} & \rho^2 k_{\text{low}} + k_{err}
 \end{bmatrix}
 \end{pmatrix}
 $$
@@ -83,8 +83,8 @@ $$
 \notes{As a first example of how the linear multi-fidelity model implemented in `Emukit` `emukit.multi_fidelity.models.GPyLinearMultiFidelityModel` can be used, we shall consider the two-fidelity Forrester function.
 This benchmark is frequently used to illustrate the capabilities of multi-fidelity models.}
 
-\setupcode{import numpy as np
-import matplotlib.pyplot as plt
+\setupcode{import numpy as np}
+\setupplotcode{import matplotlib.pyplot as plt
 from matplotlib import colors as mcolors
 colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)}
 
@@ -116,19 +116,19 @@ y_train_h = high_fidelity(x_train_h)}
 
 \notes{For example, a dataset consisting of 3 low-fidelity points and 2 high-fidelity points would be represented as follows, where the input is three-dimensional while the output is one-dimensional:}
 $$
-X = \begin{pmatrix}
-x_{low;0}^0 & x_{low;0}^1 & x_{low;0}^2 & 0\\
-x_{low;1}^0 & x_{low;1}^1 & x_{low;1}^2 & 0\\
-x_{low;2}^0 & x_{low;2}^1 & x_{low;2}^2 & 0\\
-x_{high;0}^0 & x_{high;0}^1 & x_{high;0}^2 & 1\\
-x_{high;1}^0 & x_{high;1}^1 & x_{high;1}^2 & 1
+\inputMatrix = \begin{pmatrix}
+\inputScalar_{\text{low};0}^0 & \inputScalar_{\text{low};0}^1 & \inputScalar_{\text{low};0}^2 & 0\\
+\inputScalar_{\text{low};1}^0 & \inputScalar_{\text{low};1}^1 & \inputScalar_{\text{low};1}^2 & 0\\
+\inputScalar_{\text{low};2}^0 & \inputScalar_{\text{low};2}^1 & \inputScalar_{\text{low};2}^2 & 0\\
+\inputScalar_{\text{high};0}^0 & \inputScalar_{\text{high};0}^1 & \inputScalar_{\text{high};0}^2 & 1\\
+\inputScalar_{\text{high};1}^0 & \inputScalar_{\text{high};1}^1 & \inputScalar_{\text{high};1}^2 & 1
 \end{pmatrix}\quad
-Y = \begin{pmatrix}
-y_{low;0}\\
-y_{low;1}\\
-y_{low;2}\\
-y_{high;0}\\
-y_{high;1}
+\dataMatrix = \begin{pmatrix}
+\dataScalar_{\text{low};0}\\
+\dataScalar_{\text{low};1}\\
+\dataScalar_{\text{low};2}\\
+\dataScalar_{\text{high};0}\\
+\dataScalar_{\text{high};1}
 \end{pmatrix}
 $$
 \notes{A similar procedure must be carried out for obtaining predictions at new test points, whereby the fidelity indicated in the column then indicates the fidelity at which the function must be predicted for a designated point.}
@@ -143,7 +143,7 @@ $$
 
 \notes{Plot the original functions.}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -157,7 +157,7 @@ ax.set_ylabel('$f(x)$')
 ax.set_xlabel('$x$')
 ax.legend(['Low fidelity', 'High fidelity'])
 
-mlai.write_figure(fig, 'high-and-low-fidelity-forrester.svg', diagrams='\writeDiagramsDir/uq')}
+mlai.write_figure('high-and-low-fidelity-forrester.svg', diagrams='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-forrester}{80%}}{High and low fidelity Forrester functions}{high-and-low-fidelity-forrester}
 
@@ -203,7 +203,7 @@ hf_std_lin_mf_model = np.sqrt(hf_var_lin_mf_model)}
 
 \notes{Plot the posterior mean and variance.}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -223,7 +223,7 @@ ax.set_ylabel('$f(x)$')
 ax.set_xlabel('$x$')
 ax.legend(['Low Fidelity', 'High Fidelity', 'Predicted Low Fidelity', 'Predicted High Fidelity'])
 
-mlai.write_figure(fig, 'linear-multi-fidelity-model.svg', diagrams='\writeDiagramsDir/uq')}
+mlai.write_figure('linear-multi-fidelity-model.svg', diagrams='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity}{80%}}{Linear multi-fidelity model fit to low and high fidelity Forrester function}{linear-multi-fidelity-model}
 
@@ -254,7 +254,7 @@ hf_std_hf_gp_model = np.sqrt(hf_var_high_gp_model)}
 
 \notes{Plot the posterior mean and variance for the high-fidelity GP model.}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -273,7 +273,7 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.legend(['True Function', 'Linear Multi-fidelity GP', 'High fidelity GP'])
 
-mlai.write_figure(fig, 'linear-multi-fidelity-high-fidelity-gp.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure('linear-multi-fidelity-high-fidelity-gp.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-high-fidelity-gp}{80%}}{Comparison of linear multi-fidelity model and high fidelity GP}{linear-multi-fidelity-high-fidelity-gp}
 
@@ -283,11 +283,11 @@ mlai.write_figure(fig, 'linear-multi-fidelity-high-fidelity-gp.svg', directory='
 
 \notes{Consider the following example, where the low and high fidelity functions are defined as follows:}
 $$
-\mappingFunction_{low}(x) = sin(8\pi x)
+\mappingFunction_{\text{low}}(\inputScalar) = \sin(8\pi \inputScalar)
 $$
 
 $$
-\mappingFunction_{high}(x) = (x - \sqrt{2}) \, \mappingFunction_{low}^2
+\mappingFunction_{\text{high}}(\inputScalar) = \left(\inputScalar - \sqrt{2}\right) \, \mappingFunction_{\text{low}}^2
 $$
 
 \notes{Generate data for nonlinear example.}
@@ -312,7 +312,7 @@ y_train_h = high_fidelity(x_train_h)}
 
 \code{X_train, Y_train = convert_xy_lists_to_arrays([x_train_l, x_train_h], [y_train_l, y_train_h])}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -327,13 +327,13 @@ ax.set_ylabel('$f(x)$')
 ax.set_xlim([0, 1])
 ax.legend(['Low fidelity', 'High fidelity'])
 
-mlai.write_figure(fig, 'high-and-low-fidelity-functions.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure('high-and-low-fidelity-functions.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-functions'}{80%}}{High and low fidelity functions}{high-and-low-fidelity-functions}
 
 \notes{In this case, the mapping between the two functions is nonlinear, as can be observed by plotting the high fidelity observations as a function of the lower fidelity observations.}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -343,7 +343,7 @@ ax.set_xlabel('LF(x)')
 ax.plot(y_plot_l, y_plot_h, color=colors['purple'], linewidth=3)
 ax.legend(['HF-LF Correlation'], loc='lower center')
 
-mlai.write_figure(fig, 'mapping-low-to-high-fidelity.svg', directory='\writeDiagrams/uq')}
+mlai.write_figure('mapping-low-to-high-fidelity.svg', directory='\writeDiagrams/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/mapping-low-to-high-fidelity}{80}}{Mapping from low fidelity to high fidelity.}{mapping-low-to-high-fidelity}
 
@@ -380,7 +380,7 @@ hf_std_lin_mf_model = np.sqrt(hf_var_lin_mf_model)}
 
 \notes{Compare linear and nonlinear model fits}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -394,7 +394,7 @@ ax.set_xlim(0, 1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.legend(['True Function', 'Linear multi-fidelity GP'], loc='lower right')
-mlai.write_figure(fig, 'linear-multi-fidelity-model-fit.svg', diagrams='\writeDiagramsDir/uq/')}
+mlai.write_figure('linear-multi-fidelity-model-fit.svg', diagrams='\writeDiagramsDir/uq/')}
 
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model-fit}{80%}}{Linear multi-fidelity model fit to high fidelity function}{linear-multi-fidelity-model-fit}
 
@@ -406,7 +406,7 @@ Consequently, the resulting fit of the true function is also poor.}
 \notes{In view of the deficiencies of the linear multi-fidelity model, a nonlinear multi-fidelity model is proposed in @Pedikaris:nonlinear17 in order to better capture these correlations.
 This nonlinear model is constructed as follows:}
 $$ 
-\mappingFunction_{high}(x) = \rho( \, \mappingFunction_{low}(x)) + \delta(x) 
+\mappingFunction_{\text{high}}(x) = \rho( \, \mappingFunction_{\text{low}}(x)) + \delta(x) 
 $$
 
 \notes{Replacing the linear scaling factor with a non-deterministic function results in a model which can thus capture the nonlinear relationship between the fidelities.}
@@ -437,7 +437,7 @@ lf_mean_nonlin_mf_model, lf_var_nonlin_mf_model = nonlin_mf_model.predict(X_plot
 lf_std_nonlin_mf_model = np.sqrt(lf_var_nonlin_mf_model)}
 
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -456,7 +456,7 @@ ax.set_ylabel('$f(x)$')
 ax.set_xlim(0, 1)
 ax.legend(['Low Fidelity', 'High Fidelity', 'Predicted Low Fidelity', 'Predicted High Fidelity'])
 
-mlai.write_figure(fig, 'nonlinear-multi-fidelity-model-fit.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure('nonlinear-multi-fidelity-model-fit.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/nonlinear-multi-fidelity-model-fit}{80%}}{Nonlinear multi-fidelity model fit to low and high fidelity functions.}
 
@@ -464,7 +464,7 @@ mlai.write_figure(fig, 'nonlinear-multi-fidelity-model-fit.svg', directory='\wri
 This is a vast improvement over the results obtained using the linear model.
 We can also confirm that the model is properly capturing the correlation between the low and high-fidelity observations by plotting the mapping learned by the model to the true mapping shown earlier.}
 
-\setupplotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt}
 \setupplotcode{import teaching_plots as plot
 import mlai}
 
@@ -475,7 +475,7 @@ ax.set_ylabel('$\text{HF}(x)$')
 ax.set_xlabel('$\text{LF}(x)$')
 ax.legend(['True HF-LF Correlation', 'Learned HF-LF Correlation'], loc='lower center')
 
-mlai.write_figure(fig, 'mapping-low-fidelity-to-high-fidelity.svg', directory='\writeDiagramsDir/uq')}
+mlai.write_figure('mapping-low-fidelity-to-high-fidelity.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/mapping-low-fidelity-to-high-fidelity}{80%}}{Mapping from low fidelity to high fidelity}{mapping-low-fidelity-to-high-fidelity}
 
