@@ -41,22 +41,22 @@ The examples presented in this notebook can then be easily adapted to a variety 
 \notes{The linear multi-fidelity model proposed in [[Kennedy and O'Hagan, 2000]](#3.-References) is widely viewed as a reference point for all such models.
 In this model, the high-fidelity (true) function is modeled as a scaled sum of the low-fidelity function plus an error term:}
 $$
-\mappingFunction_{\text{high}}(x) = \mappingFunction_{err}(x) + \rho \,\mappingFunction_{\text{low}}(x)
+\mappingFunction_{\text{high}}(x) = \mappingFunction_{\text{err}}(x) + \rho \,\mappingFunction_{\text{low}}(x)
 $$
 \notes{In this equation, $\mappingFunction_{\text{low}}(x)$ is taken to be a Gaussian process modeling the outputs of the lower fidelity function, while $\rho$ is a scaling factor indicating the magnitude of the correlation to the high-fidelity data.
 Setting this to 0 implies that there is no correlation between observations at different fidelities.
-Meanwhile, $\mappingFunction_{err}(x)$ denotes yet another Gaussian process which models the bias term for the high-fidelity data.
-Note that $\mappingFunction_{err}(x)$ and $\mappingFunction_{\text{low}}(x)$ are assumed to be independent processes which are only related by the equation given above.}
+Meanwhile, $\mappingFunction_{\text{err}}(x)$ denotes yet another Gaussian process which models the bias term for the high-fidelity data.
+Note that $\mappingFunction_{\text{err}}(x)$ and $\mappingFunction_{\text{low}}(x)$ are assumed to be independent processes which are only related by the equation given above.}
 
-\notes{>**Note**: While we shall limit our explanation to the case of two fidelities, this set-up can easily be generalized to cater for $T$ fidelities as follows:
->
->$$\mappingFunction_{t}(x) = \mappingFunction_{t}(x) + \rho_{t-1} \,\mappingFunction_{t-1}(x), \quad t=1,\dots, T$$}
-
+\notes{**Note**: While we shall limit our explanation to the case of two fidelities, this set-up can easily be generalized to cater for $T$ fidelities as follows:}
+$$
+\mappingFunction_{t}(x) = \mappingFunction_{t}(x) + \rho_{t-1} \,\mappingFunction_{t-1}(x), \quad t=1,\dots, T
+$$
 \notes{If the training points are sorted such that the low and high-fidelity points are grouped together:}
 $$
 \begin{pmatrix}
-X_{\text{low}} \\
-X_{\text{high}}
+\inputMatrix_{\text{low}} \\
+\inputMatrix_{\text{high}}
 \end{pmatrix}
 $$
 \notes{we can express the model as a single Gaussian process having the following prior.}
@@ -72,8 +72,8 @@ GP
 0 \\ 0
 \end{bmatrix},
 \begin{bmatrix}
-k_{\text{low}} & \rho k_{\text{low}} \\
-\rho k_{\text{low}} & \rho^2 k_{\text{low}} + k_{err}
+\kernelScalar_{\text{low}} & \rho \kernelScalar_{\text{low}} \\
+\rho \kernelScalar_{\text{low}} & \rho^2 \kernelScalar_{\text{low}} + \kernelScalar_{\text{err}}
 \end{bmatrix}
 \end{pmatrix}
 $$
@@ -139,7 +139,8 @@ $$
 
 \setupcode{from emukit.multi_fidelity.convert_lists_to_array import convert_x_list_to_array, convert_xy_lists_to_arrays}
 
-\code{X_train, Y_train = convert_xy_lists_to_arrays([x_train_l, x_train_h], [y_train_l, y_train_h])}
+\code{X_train, Y_train = convert_xy_lists_to_arrays([x_train_l, x_train_h], 
+                                                    [y_train_l, y_train_h])}
 
 \notes{Plot the original functions.}
 
@@ -159,7 +160,7 @@ ax.legend(['Low fidelity', 'High fidelity'])
 
 mlai.write_figure('high-and-low-fidelity-forrester.svg', diagrams='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-forrester}{80%}}{High and low fidelity Forrester functions}{high-and-low-fidelity-forrester}
+\figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-forrester}{80%}}{High and low fidelity Forrester functions.}{high-and-low-fidelity-forrester}
 
 
 \notes{Observe that in the example above we restrict our observations to 12 from the lower fidelity function and only 6 from the high fidelity function.
@@ -167,10 +168,10 @@ As we shall demonstrate further below, fitting a standard GP model to the few hi
 
 \notes{Below we fit a linear multi-fidelity model to the available low and high fidelity observations. Given the smoothness of the functions, we opt to use an *RBF* kernel for both the bias and correlation components of the model.}
 
-**Note**: The model implementation defaults to a `MixedNoise` noise likelihood whereby there is independent Gaussian noise for each fidelity.
+\notes{**Note**: The model implementation defaults to a `MixedNoise` noise likelihood whereby there is independent Gaussian noise for each fidelity.
 
 This can be modified upfront using the 'likelihood' parameter in the model constructor, or by updating them directly after the model has been created.
-In the example below, we choose to fix the noise to '0' for both fidelities in order to reflect that the observations are exact.
+In the example below, we choose to fix the noise to '0' for both fidelities in order to reflect that the observations are exact.}
 
 \notes{Construct a linear multi-fidelity model.}
 
