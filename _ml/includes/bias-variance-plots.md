@@ -57,7 +57,7 @@
 
 \setuphelpercode{import mlai
 import os}
-\helpercode{def decision_boundary_plot(models, X, y, axs, filename, titles, xlim, ylim):
+\helpercode{def decision_boundary_plot(models, X, y, axs, filename, directory, titles, xlim, ylim):
     """Plot a decision boundary on the given axes
     
     :param axs: the axes to plot on.
@@ -84,7 +84,8 @@ import os}
         ax.set_xticks(())
         ax.set_yticks(())
         ax.set_title(title)
-        mlai.write_figure(os.path.join(filename),
+        mlai.write_figure(filename,
+                          directory=directory,
                           figure=fig,
                           transparent=True)
     return xlim, ylim}
@@ -122,7 +123,8 @@ for samp in range(num_samps):
     models = (cl.fit(X, y) for cl in models)
     xlim, ylim = decision_boundary_plot(models, X, y, 
                            axs=ax, 
-                           filename='\writeDiagramsDir/ml/bias-variance{samp:0>3}.svg'.format(samp=samp), 
+                           filename='bias-variance{samp:0>3}.svg'.format(samp=samp), 
+						   directory='\writeDiagramsDir/ml'
                            titles=titles,
                           xlim=xlim,
                           ylim=ylim)}
