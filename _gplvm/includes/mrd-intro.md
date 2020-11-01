@@ -6,7 +6,7 @@
 
 \section{Manifold Relevance Determination}
   \begin{flushright}
-    \andreasPicture{1.5cm}\\{\scriptsize @Damianou:manifold12}
+    \andreasDamianouPicture{15%}\\{\scriptsize @Damianou:manifold12}
   \end{flushright}
   
     \def\layersep{2cm}

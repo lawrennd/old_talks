@@ -4,7 +4,7 @@
 
 \newslide{Variational Compression}
 
-\alignright{\andreasPicture{1.5cm}}\
+\alignright{\andreasDamianouPicture{15%}}\
 \alignright{@Damianou:deepgp13}\
 
 -   Augment each layer with inducing variables $\inducingVector_i$.
@@ -21,7 +21,7 @@
 
 \newslide{Nested Variational Compression}
 
-\alignright{\jamesPicture{1.5cm}}\
+\alignright{\jamesHensmanPicture{15%}}\
 \alignright{@Hensman:nested14}
 
 -   By sustaining explicity distributions over inducing variables James

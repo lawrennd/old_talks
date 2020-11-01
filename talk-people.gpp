@@ -17,6 +17,9 @@
 
 \defeval{\andreiPaleyesPicture{width}}{\circleHead{\diagramsDir/people/andrei-paleyes.jpg}{\width}{https://www.linkedin.com/in/andreipaleyes}}
 
+\defeval{\markPullinPicture{width}}{\circleHead{\diagramsDir/people/mark-pullin.jpg}{\width}{https://www.linkedin.com/in/mark-pullin-47510b50/}}
+\defeval{\marenMahsereciPicture{width}}{\circleHead{\diagramsDir/people/maren-mahsereci.png}{\width}{https://pn.is.tuebingen.mpg.de/person/mmahsereci}}
+
 \defeval{\adamHirstPicture{width}}{\circleHead{\diagramsDir/people/adam-hirst.jpg}{Adam Hirst}{\width}{https://www.linkedin.com/in/hirstadam/}}
 
 \defeval{\cliffMccollumPicture{width}}{\circleHead{\diagramsDir/people/cliff-mccollum.jpg}{\width}{https://www.linkedin.com/in/cliffmccollum/}}
@@ -53,8 +56,9 @@
 \defeval{\deepakBhatiaPicture{width}}{\circleHead{\diagramsDir/people/deepak-bhatia.png}{Deepak Bhatia}{\width}{https://www.linkedin.com/in/dbhatia/}}
 \defeval{\piyushSaraogiPicture{width}}{\circleHead{\diagramsDir/people/piyush-saraogi.png}{Piyush Saraogi}{\width}{https://www.linkedin.com/in/piyushsaraogi/}}
 \defeval{\salalHumairPicture{width}}{\circleHead{\diagramsDir/people/salal-humair.png}{Salal Humair}{\width}{https://www.linkedin.com/in/salal-humair-b45415/}}
-\defeval{\ramanIyerPicture{width}}{\circleHead{\diagramsDir/people/narayan-venkatasubramanyan.jpg}{Raman Iyer}{\width}{https://www.linkedin.com/in/ramaniyer/}}
+\defeval{\ramanIyerPicture{width}}{\circleHead{\diagramsDir/people/raman-iyer.jpg}{Raman Iyer}{\width}{https://www.linkedin.com/in/ramaniyer/}}
 \defeval{\narayanVenkatasubramanyanPicture{width}}{\circleHead{\diagramsDir/people/narayan-venkatasubramanyan.png}{Narayan Venkatasubramanyan}{\width}{https://www.linkedin.com/in/narayan3rdeye/}}
+
 
 \defeval{\charlieBellPicture{width}}{\circleHead{\diagramsDir/people/charlie-bell.png}{Charlie Bell}{\width}{https://www.linkedin.com/in/charlie-bell-05446835/}}
 \defeval{\peterVosshallPicture{width}}{\circleHead{\diagramsDir/people/peter-vosshall.png}{Peter Vosshall}{\width}{https://www.linkedin.com/in/petervosshall/}}
