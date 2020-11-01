@@ -18,8 +18,8 @@ However, `GPyOpt` doesn't allow the full flexibility of surrogate modelling for 
 
 \newslide{Emukit}
 \slides{
-\includepng{\diagramsDir/uq/emukit-software-page2}{80%}
-\center{<https://emukit.github.io/emukit/>}
+\figure{\includepng{\diagramsDir/uq/emukit-software-page2}{80%}}{The lower potion of th eemukit sofware page.}{emukit-software-page2}
+\centerdiv{<https://emukit.github.io/emukit/>}
 }
 
 \installcode{GPy}

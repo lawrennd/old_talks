@@ -36,11 +36,10 @@
       }
     });
   </script>
-  <script src="figure-animate.js"></script>
+  <script src="http://inverseprobability.com/talks/assets/js/figure-animate.js"></script>
 </head>
 <body>
 \[\newcommand{\tk}[1]{}
-%\newcommand{\tk}[1]{\textbf{TK}: #1}
 \newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
@@ -111,8 +110,6 @@
 \newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
 \newcommand{\degreeScalar}{d}
 \newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
-% Already defined by latex
-%\newcommand{\det}[1]{\left|#1\right|}
 \newcommand{\diag}[1]{\text{diag}\left(#1\right)}
 \newcommand{\diagonalMatrix}{\mathbf{D}}
 \newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
@@ -322,8 +319,6 @@
 \newcommand{\vVector}{\mathbf{v}}
 \newcommand{\vMatrix}{\mathbf{V}}
 \newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
-% Already defined by latex
-%\newcommand{\vec}{#1:}
 \newcommand{\vecb}[1]{\left(#1\right):}
 \newcommand{\weightScalar}{w}
 \newcommand{\weightVector}{\mathbf{ \weightScalar}}
@@ -447,11 +442,19 @@ Rohit Prasad
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/rohit-prasad.png" clip-path="url(#clip5)"/>
 </svg>
 </div>
+<div class="figure">
+<div id="alexa-schematic-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/software/alexa-schematic.svg" width="40%" style=" ">
 </object>
+</div>
+</div>
+<aside class="notes">
+Simple schmeatic of a intelligent agent set of components.
+</aside>
 </section>
 <section id="speech-to-text" class="slide level2">
 <h2>Speech to Text</h2>
+<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip6">
 <style>
@@ -465,6 +468,7 @@ Catherine Breslin
 </title>
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/catherine-breslin.png" clip-path="url(#clip6)"/>
 </svg>
+</div>
 </section>
 <section id="cloud-service-knowledge-base" class="slide level2">
 <h2>Cloud Service: Knowledge Base</h2>
@@ -587,16 +591,32 @@ David Moro
 <iframe width="600" height="450" src="https://www.youtube.com/embed/3HJtmx5f1Fc?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 </section>
-<section id="emulation" class="slide level2">
-<h2>Emulation</h2>
+<section id="statistical-emulation" class="slide level2">
+<h2>Statistical Emulation</h2>
+<div class="figure">
+<div id="met-office-unified-model-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.
+</aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="statistical-emulation-1-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.
+</aside>
 </section>
-<section id="emulation-1" class="slide level2">
+<section id="emulation" class="slide level2">
 <h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-2-figure" class="figure-frame">
@@ -604,8 +624,11 @@ David Moro
 </object>
 </div>
 </div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
 </section>
-<section id="emulation-2" class="slide level2">
+<section id="emulation-1" class="slide level2">
 <h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-3-figure" class="figure-frame">
@@ -613,8 +636,11 @@ David Moro
 </object>
 </div>
 </div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
 </section>
-<section id="emulation-3" class="slide level2">
+<section id="emulation-2" class="slide level2">
 <h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-4-figure" class="figure-frame">
@@ -622,8 +648,11 @@ David Moro
 </object>
 </div>
 </div>
+<aside class="notes">
+As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
 </section>
-<section id="emulation-4" class="slide level2">
+<section id="emulation-3" class="slide level2">
 <h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-5-figure" class="figure-frame">
@@ -631,8 +660,11 @@ David Moro
 </object>
 </div>
 </div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
 </section>
-<section id="emulation-5" class="slide level2">
+<section id="emulation-4" class="slide level2">
 <h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-6-figure" class="figure-frame">
@@ -640,6 +672,9 @@ David Moro
 </object>
 </div>
 </div>
+<aside class="notes">
+In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..
+</aside>
 </section>
 <section id="supply-chain-optimization" class="slide level2">
 <h2>Supply Chain Optimization</h2>
@@ -671,8 +706,15 @@ Devesh Mishra
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/devesh-mishra.png" clip-path="url(#clip16)"/>
 </svg>
 </div>
+<div class="figure">
+<div id="scot-promo-video-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+</div>
+<aside class="notes">
+Promotional video for the Amazon supply chain optimization team.
+</aside>
 </section>
 <section id="supply-chain-optimization-1" class="slide level2">
 <h2>Supply Chain Optimization</h2>
@@ -704,11 +746,19 @@ Devesh Mishra
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/devesh-mishra.png" clip-path="url(#clip18)"/>
 </svg>
 </div>
+<div class="figure">
+<div id="buying-schematic-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/software/buying-schematic.svg" width="40%" style=" ">
 </object>
+</div>
+</div>
+<aside class="notes">
+A schematic of a typical buying system for supply chain.
+</aside>
 </section>
 <section id="forecasting" class="slide level2">
 <h2>Forecasting</h2>
+<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip19">
 <style>
@@ -748,6 +798,7 @@ Dean Foster
 </title>
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/dean-foster.png" clip-path="url(#clip21)"/>
 </svg>
+</div>
 </section>
 <section id="inventory-and-buying" class="slide level2">
 <h2>Inventory and Buying</h2>
@@ -787,9 +838,9 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Salal Humair
+Raman Iyer
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/salal-humair.png" clip-path="url(#clip24)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/narayan-venkatasubramanyan.jpg" clip-path="url(#clip24)"/>
 </svg>
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip25">
@@ -800,15 +851,10 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Narayan Venkatasubramanyan
+Salal Humair
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/narayan-venkatasubramanyan.png" clip-path="url(#clip25)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/salal-humair.png" clip-path="url(#clip25)"/>
 </svg>
-</div>
-</section>
-<section id="service-oriented-architecture" class="slide level2">
-<h2>Service Oriented Architecture</h2>
-<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip26">
 <style>
@@ -818,10 +864,15 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Charlie Bell
+Narayan Venkatasubramanyan
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/charlie-bell.png" clip-path="url(#clip26)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/narayan-venkatasubramanyan.png" clip-path="url(#clip26)"/>
 </svg>
+</div>
+</section>
+<section id="service-oriented-architecture" class="slide level2">
+<h2>Service Oriented Architecture</h2>
+<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip27">
 <style>
@@ -831,21 +882,10 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Peter Vosshall
+Charlie Bell
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/peter-vosshall.png" clip-path="url(#clip27)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/charlie-bell.png" clip-path="url(#clip27)"/>
 </svg>
-</div>
-<div class="figure">
-<div id="ml-system-monolith-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-monolith-purchasing.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="service-oriented-architecture-1" class="slide level2">
-<h2>Service Oriented Architecture</h2>
-<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip28">
 <style>
@@ -855,10 +895,24 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Charlie Bell
+Peter Vosshall
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/charlie-bell.png" clip-path="url(#clip28)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/peter-vosshall.png" clip-path="url(#clip28)"/>
 </svg>
+</div>
+<div class="figure">
+<div id="ml-system-monolith-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-monolith-purchasing.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="service-oriented-architecture-1" class="slide level2">
+<h2>Service Oriented Architecture</h2>
+<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip29">
 <style>
@@ -868,25 +922,10 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Peter Vosshall
+Charlie Bell
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/peter-vosshall.png" clip-path="url(#clip29)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/charlie-bell.png" clip-path="url(#clip29)"/>
 </svg>
-</div>
-<div class="figure">
-<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-<!-- SECTION Intellectual Debt -->
-</section>
-<section id="intellectual-debt" class="slide level2">
-<h2>Intellectual Debt</h2>
-</section>
-<section id="separation-of-concerns" class="slide level2">
-<h2>Separation of Concerns</h2>
-<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip30">
 <style>
@@ -896,10 +935,28 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Dave Clark
+Peter Vosshall
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/dave-clark.png" clip-path="url(#clip30)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/peter-vosshall.png" clip-path="url(#clip30)"/>
 </svg>
+</div>
+<div class="figure">
+<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+<!-- SECTION Intellectual Debt -->
+</section>
+<section id="intellectual-debt" class="slide level2">
+<h2>Intellectual Debt</h2>
+</section>
+<section id="separation-of-concerns" class="slide level2">
+<h2>Separation of Concerns</h2>
+<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip31">
 <style>
@@ -909,19 +966,10 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Nevena Lalic
+Dave Clark
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/nevena-lalic.png" clip-path="url(#clip31)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/dave-clark.png" clip-path="url(#clip31)"/>
 </svg>
-</div>
-<!-- SECTION Data Science Africa -->
-</section>
-<section id="data-science-africa" class="slide level2">
-<h2>Data Science Africa</h2>
-</section>
-<section id="crop-monitoring" class="slide level2">
-<h2>Crop Monitoring</h2>
-<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip32">
 <style>
@@ -931,21 +979,45 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Ernest Mwebaze
+Nevena Lalic
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/ernest-mwebaze.png" clip-path="url(#clip32)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/nevena-lalic.png" clip-path="url(#clip32)"/>
 </svg>
 </div>
-<div class="figure">
-<div id="mobile-monitoring-crop-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/africa/mobile-monitoring-of-crop-disease.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
+<!-- SECTION Data Science Africa -->
 </section>
-<section id="biosurveillance" class="slide level2">
-<h2>Biosurveillance</h2>
+<section id="data-science-africa" class="slide level2">
+<h2>Data Science Africa</h2>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="data-science-africa-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/data-science-africa-logo.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Data Science Africa <a href="http://datascienceafrica.org" class="uri">http://datascienceafrica.org</a> is a ground up initiative for capacity building around data science, machine learning and artificial intelligence on the African continent.
+</aside>
+<p>Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and AI on the African continent</p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="africa-benefit-data-revolution-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/data-science/africa-benefit-data-revolution.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The lack of existing physical infrastructure on the African continent makes it a particularly interesting environment for deploying solutions based on the <em>information infrastructure</em>. The idea is explored more in this Guardian op-ed on .
+</aside>
+</section>
+<section id="crop-monitoring" class="slide level2">
+<h2>Crop Monitoring</h2>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip33">
@@ -956,21 +1028,24 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Martin Mubangizi
+Ernest Mwebaze
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/martin-mubangizi.png" clip-path="url(#clip33)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/ernest-mwebaze.png" clip-path="url(#clip33)"/>
 </svg>
 </div>
 <div class="figure">
-<div id="spatiotemporal-models-biosurveillance-figure" class="figure-frame">
+<div id="mobile-monitoring-crop-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/africa/spatiotemporal-models-for-biosurveillance.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/africa/mobile-monitoring-of-crop-disease.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+Mobile Monitoring of Crop Disease
+</aside>
 </section>
-<section id="community-radio" class="slide level2">
-<h2>Community Radio</h2>
+<section id="biosurveillance" class="slide level2">
+<h2>Biosurveillance</h2>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip34">
@@ -981,9 +1056,37 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
+Martin Mubangizi
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/martin-mubangizi.png" clip-path="url(#clip34)"/>
+</svg>
+</div>
+<div class="figure">
+<div id="spatiotemporal-models-biosurveillance-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/africa/spatiotemporal-models-for-biosurveillance.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Spatiotemporal Models for Biosurveillance
+</aside>
+</section>
+<section id="community-radio" class="slide level2">
+<h2>Community Radio</h2>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip35">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
 Morine Amutorine
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/morine-amutorine.png" clip-path="url(#clip34)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/morine-amutorine.png" clip-path="url(#clip35)"/>
 </svg>
 </div>
 <div class="figure">
@@ -993,6 +1096,9 @@ Morine Amutorine
 </div>
 </div>
 </div>
+<aside class="notes">
+Ugandan Community Radio Project
+</aside>
 </section>
 <section id="kudu-project" class="slide level2">
 <h2>Kudu Project</h2>
@@ -1003,6 +1109,9 @@ Morine Amutorine
 </div>
 </div>
 </div>
+<aside class="notes">
+Kudu Project
+</aside>
 </section>
 <section id="safe-boda" class="slide level2">
 <h2>Safe Boda</h2>
@@ -1013,6 +1122,9 @@ Morine Amutorine
 </div>
 </div>
 </div>
+<aside class="notes">
+Safe Boda
+</aside>
 <!-- SECTION AutoAI -->
 </section>
 <section id="autoai" class="slide level2">
@@ -1026,6 +1138,9 @@ Morine Amutorine
 </object>
 </div>
 </div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
 <!-- This structural learning allows us to associate data with the relevant -->
 <!-- layer of the model, rather than merely on the leaf nodes of the output -->
 <!-- model. When deploying the deep Gaussian process as an emulator, this -->
@@ -1041,6 +1156,9 @@ Morine Amutorine
 </object>
 </div>
 </div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
 </section>
 <section id="deep-emulation-2" class="slide level2">
 <h2>Deep Emulation</h2>
@@ -1050,6 +1168,9 @@ Morine Amutorine
 </object>
 </div>
 </div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
 </section>
 <section id="deep-emulation-3" class="slide level2">
 <h2>Deep Emulation</h2>
@@ -1059,188 +1180,11 @@ Morine Amutorine
 </object>
 </div>
 </div>
-<!-- 
-
-
-
-
-## Milan 
-
-
-
-1.  A general-purpose stream algebra that encodes relationships between
-      data streams (the Milan Intermediate Language or Milan IL)
-
-2.  A Scala library for building programs in that algebra.
-
-3.  A compiler that takes programs expressed in Milan IL and produces a
-     Flink application that executes the program.
-
-
-
-##   {}
-
-
-
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-schematic-figure">
-<object class="svgplot " data="../slides/diagrams/software/milan-schematic000.svg" width="80%" style=" "></object>
-</div>
-</div>
-
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-schematic-figure">
-<object class="svgplot " data="../slides/diagrams/software/milan-schematic001.svg" width="80%" style=" "></object>
-</div>
-</div>
-
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-schematic-figure">
-<object class="svgplot " data="../slides/diagrams/software/milan-schematic002.svg" width="80%" style=" "></object>
-</div>
-</div>
-
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-schematic-figure">
-<object class="svgplot " data="../slides/diagrams/software/milan-schematic003.svg" width="80%" style=" "></object>
-</div>
-</div>
-
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-schematic-figure">
-<object class="svgplot " data="../slides/diagrams/software/milan-schematic004.svg" width="80%" style=" "></object>
-</div>
-</div>
-
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-schematic-figure">
-<object class="svgplot " data="../slides/diagrams/software/milan-schematic.svg" width="80%" style=" "></object>
-</div>
-</div>
-
-
-##   {}
-
-
-
-<div class="figure">
-<div class="figure-frame" id="milan-software-page-figure">
-<div class="centered " style=""><img class="" src="../slides/diagrams/software/milan.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-## Meta Modelling 
-
-
-
-<div class="figure">
-<div class="figure-frame" id="emukit-software-page-figure">
-<div class="centered " style=""><img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-</div>
-</div>
-
-
-
-
-
- -->
-<!-- 
-
-
-
-## Emukit 
-
-
-
-<div class="figure">
-<div class="figure-frame" id="emukit-software-page-figure">
-<div class="centered " style=""><img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-</div>
-</div>
-
-
-## Emukit  {}
-
-
-
-<div class="centered " style=""><img class="" src="../slides/diagrams/uq/emukit-software-page2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-\center{<https://amzn.github.io/emukit/>}
-
-
-
-## Emukit  {}
-
-
-
-
-* Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.
-* Available on [Github](https://github.com/amzn/emukit)
-* Example [sensitivity notebook](https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb).
-
-
-
-
-## Emukit Software  {}
-
-
-
-* *Multi-fidelity emulation*: build surrogate models for multiple sources of information;
-* *Bayesian optimisation*: optimise physical experiments and tune parameters ML algorithms;
-* *Experimental design/Active learning*: design experiments and perform active learning with ML models;
-* *Sensitivity analysis*: analyse the influence of inputs on the outputs 
-* *Bayesian quadrature*: compute integrals of functions that are expensive to evaluate.
-
-
-
-
- -->
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+<!-- include{_data-science/includes/milan.md} -->
+<!-- include{_uq/includes/emukit-software.md} -->
 </section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
@@ -1254,10 +1198,11 @@ Morine Amutorine
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
 <ul>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
+<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></p></li>
+<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How African can benefit from the data revolution</a></p></li>
+<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">Data Science Africa</a></p></li>
+<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
 </ul>
 </section>
     </div>
@@ -1276,7 +1221,7 @@ Morine Amutorine
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

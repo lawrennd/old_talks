@@ -29,8 +29,7 @@ transition: None
 
 \subsection{Separation of Concerns}
 
-\centerdiv{\circleHead{\diagramsDir/people/dave-clark.png}{Dave Clark}{15%}{https://www.linkedin.com/in/dave-clark-3a82684/}\circleHead{\diagramsDir/people/nevena-lalic.png}{Nevena Lalic}{15%}{https://www.linkedin.com/in/nevena-lalic-65561b53/}}
-
+\centerdiv{\daveClarkPicture{15%}\nevenaLalicPicture{15%}}
 
 \include{_ai/includes/dsa-systems.md}
 \section{AutoAI}
@@ -40,8 +39,8 @@ transition: None
 
 
 
-<!-- \include{_data-science/includes/milan.md} -->
-<!-- \include{_uq/includes/emukit-software.md} -->
+<!-- include{_data-science/includes/milan.md} -->
+<!-- include{_uq/includes/emukit-software.md} -->
 
 \newslide{Conclusion}
 
