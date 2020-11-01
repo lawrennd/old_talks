@@ -101,6 +101,8 @@ of his career and Amazon was his last spin, and he once said to me
 I can't do ... so you have to imagine him saying this in a beautiful
 voice that almost sounds like a god.
 
+\centerdiv{\narayanVenkatasubramanyanPicture{15%}}
+
 He said: "The biggest change that occured over the 20th century is the
 switch from a push supply chain to a pull supply chain." So what does
 he mean by that? Well he went on to describe he said "Look if hyou

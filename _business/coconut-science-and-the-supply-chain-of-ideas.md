@@ -95,6 +95,8 @@ it's never going to want to have to wait longer for those ideas to be
 deployed for our customers and it's never going to want to have fewer
 ideas available."
 
+\centerdiv{\narayanVenkatasubramanyanPicture{15%}}
+
 Another friend of mine who still works for Jeff is called
 Narayan. Narayan has spent his life working in supply chain. He liked
 to tell me about a man by a river in Kerala, South India who sold
