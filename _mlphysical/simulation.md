@@ -1,5 +1,6 @@
 ---
 week: 3
+session: 1
 title: "Simulation"
 abstract:  >
   This lecture will introduce the notion of simulation and review the different types of simulation we might use to represent the physical world. 

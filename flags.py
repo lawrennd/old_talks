@@ -50,7 +50,9 @@ if layout == 'lecture':
     prefix = ''
     if week>0:
         prefix += '{0:02}'.format(week)
-    elif session>0:
+    if session>0:
+        if week>0:
+            prefix += '-'
         prefix += '{0:02}'.format(session)
 elif layout == 'test':
     prefix = 'XXXX-XX-XX'
