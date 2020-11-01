@@ -19,36 +19,30 @@ transition: None
 
 \subsection{Alexa}
 
-\centerdiv{\circleHead{\diagramsDir/people/tom-taylor.png}{Tom Taylor}{15%}{https://www.linkedin.com/in/tom-taylor-835b03/}
-\circleHead{\diagramsDir/people/joe-walowski.png}{Joe Walowski}{15%}{https://www.linkedin.com/in/joe-walowski-b2b7242/}
-\circleHead{\diagramsDir/people/rohit-prasad.png}{Rohit Prasad}{15%}{https://www.linkedin.com/in/rohit-prasad-4a46251/}}
+\centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasad{15%}}
 \includeyoutube{VQVZ2hvNVfo}{600}{450}
 
 \subsection{Alexa}
 
-\centerdiv{\circleHead{\diagramsDir/people/tom-taylor.png}{Tom Taylor}{15%}{https://www.linkedin.com/in/tom-taylor-835b03/}
-\circleHead{\diagramsDir/people/joe-walowski.png}{Joe Walowski}{15%}{https://www.linkedin.com/in/joe-walowski-b2b7242/}
-\circleHead{\diagramsDir/people/rohit-prasad.png}{Rohit Prasad}{15%}{https://www.linkedin.com/in/rohit-prasad-4a46251/}}
-\includediagram{\diagramsDir/software/alexa-schematic}{40%}
+\centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasad{15%}}
+\figure{\includediagram{\diagramsDir/software/alexa-schematic}{40%}}{Simple schmeatic of a intelligent agent set of components.}{alexa-schematic}
 
 \subsection{Speech to Text}
 
-\circleHead{\diagramsDir/people/catherine-breslin.png}{Catherine Breslin}{15%}{https://www.linkedin.com/in/catherine-breslin-0592423a?originalSubdomain=uk} 
+\centerdiv{\catherineBreslinPicture{15%}}
 
 \subsection{Cloud Service: Knowledge Base}
 
-\centerdiv{\circleHead{\diagramsDir/people/david-hardcastle.png}{David Hardcastle}{15%}{https://www.linkedin.com/in/dwhardcastle/}
-\circleHead{\diagramsDir/people/arpit-mittal.png}{Arpit Mittal}{15%}{https://www.linkedin.com/in/arpit-mittal-71a789b/}
-\circleHead{\diagramsDir/people/christos-christodoulopoulos.png}{Christos Christodoulopoulos}{15%}{https://www.linkedin.com/in/christos-christodoulopoulos-376b9831/}}
+\centerdiv{\davidHardcastlePicture{15%}\arpitMittalPicture{15%}\christosChristodoulopoulosPicture{15%}}
 
 \subsection{Text to Speech}
 
-\centerdiv{\circleHead{\diagramsDir/people/andrew-breen.png}{Andrew Breen}{15%}{https://www.linkedin.com/in/andrew-breen-b79111/}
-\circleHead{\diagramsDir/people/roberto-barra-chicote.png}{Roberto Barra Chicote}{15%}{https://www.linkedin.com/in/roberto-barra-chicote-496699b/}}
+\centerdiv{\andyBreenPicture{15%}\robertoBarraChicotePicture{15%}}
 
 \subsection{Prime Air}
 
-\centerdiv{\circleHead{\diagramsDir/people/gur-kimchi.png}{Gur Kimchi}{15%}{https://www.linkedin.com/in/gurkimchi/}\circleHead{\diagramsDir/people/paul-viola.png}{Paul Viola}{15%}{https://www.linkedin.com/in/violapaul/}\circleHead{\diagramsDir/people/david-moro.png}{David Moro}{15%}{https://www.linkedin.com/in/dmorol/}}
+\centerdiv{\gurKimchiPicture{15%}\paulViolaPicture{15%}\davidMoroPicture{15%}}
+
 \includeyoutube{3HJtmx5f1Fc}{600}{450} 
 
 \include{_uq/includes/emulation.md}
@@ -56,39 +50,34 @@ transition: None
 
 \subsection{Supply Chain Optimization}
 
-\centerdiv{\circleHead{\diagramsDir/people/llew-mason.png}{Llew Mason}{15%}{https://www.linkedin.com/in/llewmason/}\circleHead{\diagramsDir/people/devesh-mishra.png}{Devesh Mishra}{15%}{https://www.linkedin.com/in/demishra/}}
-\includeyoutube{ncwsr1Of6Cw}{600}{450}
+\centerdiv{\llewMasonPicture{15%}\deveshMishraPicture{15%}}
+
+\figure{\includeyoutube{ncwsr1Of6Cw}{600}{450}}{Promotional video for the Amazon supply chain optimization team.}{scot-promo-video}
 
 \subsection{Supply Chain Optimization}
 
-\centerdiv{\circleHead{\diagramsDir/people/llew-mason.png}{Llew Mason}{15%}{https://www.linkedin.com/in/llewmason/}\circleHead{\diagramsDir/people/devesh-mishra.png}{Devesh Mishra}{15%}{https://www.linkedin.com/in/demishra/}}
-\includediagram{\diagramsDir/software/buying-schematic}{40%}
+\centerdiv{\llewMasonPicture{15%}\deveshMishraPicture{15%}}
+
+\figure{\includediagram{\diagramsDir/software/buying-schematic}{40%}}{A schematic of a typical buying system for supply chain.}{buying-schematic}
 
 
 \subsection{Forecasting}
 
-\circleHead{\diagramsDir/people/jenny-freshwater.png}{Jenny Freshwater}{15%}{https://www.linkedin.com/in/jenny-freshwater-4710a21/}
-\circleHead{\diagramsDir/people/ping-xu.png}{Ping Xu}{15%}{https://www.linkedin.com/in/pingjosephine/} 
-\circleHead{\diagramsDir/people/dean-foster.png}{Dean Foster}{15%}{https://www.linkedin.com/in/pingjosephine/}
+\centerdiv{\jennyFreshwaterPicture{15%}\pingXuPicture{15%}\deanFosterPicture{15%}}
 
 \subsection{Inventory and Buying}
 
-\centerdiv{\circleHead{\diagramsDir/people/deepak-bhatia.png}{Deepak Bhatia}{15%}{https://www.linkedin.com/in/dbhatia/}
-\circleHead{\diagramsDir/people/piyush-saraogi.png}{Piyush Saraogi}{15%}{https://www.linkedin.com/in/piyushsaraogi/} 
-\circleHead{\diagramsDir/people/salal-humair.png}{Salal Humair}{15%}{https://www.linkedin.com/in/salal-humair-b45415/} 
-\circleHead{\diagramsDir/people/narayan-venkatasubramanyan.png}{Narayan Venkatasubramanyan}{15%}{https://www.linkedin.com/in/narayan3rdeye/}}
+\centerdiv{\deepakBhatiaPicture{15%}\piyushSaraogiPicture{15%}\ramanIyerPicture{15%}\salalHumairPicture{15%}\narayanVenkatasubramanyanPicture{15%}}
 
 \subsection{Service Oriented Architecture}
 
-\centerdiv{\circleHead{\diagramsDir/people/charlie-bell.png}{Charlie Bell}{15%}{https://www.linkedin.com/in/charlie-bell-05446835/}
-\circleHead{\diagramsDir/people/peter-vosshall.png}{Peter Vosshall}{15%}{https://www.linkedin.com/in/petervosshall/}}
+\centerdiv{\charlieBellPicture{15%}\peterVosshallPicture{15%}}
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-monolith-purchasing}{60%}}{A potential path of models in a machine learning system.}{ml-system-monolith}
 
 \subsection{Service Oriented Architecture}
 
-\centerdiv{\circleHead{\diagramsDir/people/charlie-bell.png}{Charlie Bell}{15%}{https://www.linkedin.com/in/charlie-bell-05446835/}
-\circleHead{\diagramsDir/people/peter-vosshall.png}{Peter Vosshall}{15%}{https://www.linkedin.com/in/petervosshall/}}
+\centerdiv{\charlieBellPicture{15%}\peterVosshallPicture{15%}}
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}
 
@@ -97,7 +86,7 @@ transition: None
 
 \subsection{Separation of Concerns}
 
-\centerdiv{\circleHead{\diagramsDir/people/dave-clark.png}{Dave Clark}{15%}{https://www.linkedin.com/in/dave-clark-3a82684/}\circleHead{\diagramsDir/people/nevena-lalic.png}{Nevena Lalic}{15%}{https://www.linkedin.com/in/nevena-lalic-65561b53/}}
+\centerdiv{\daveClarkPicture{15%}\nevenaLalicPicture{15%}}
 
 
 \section{Data Science Africa}

@@ -14,7 +14,7 @@ date: 2019-01-09
 
 \include{_gp/includes/gp-summer-school.md}
 \include{_gp/includes/gpy-software.md}
-\include{_gp/includes/other-software.md}
+\include{_gp/includes/other-gp-software.md}
 \include{_ml/includes/mxfusion-intro.md}
 
 \subsection{Acknowledgments}

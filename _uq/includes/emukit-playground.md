@@ -4,9 +4,10 @@
 
 \subsection{Emukit Playground}
 
-\notes{Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by [Adam Hirst](https://twitter.com/_AdamHirst), during his software engineering internship at Amazon and supervised by Cliff McCollum.}
+\adamHirstPicture{15%}\cliffMccollumPicture{15%}
+\notes{Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by [Adam Hirst](https://twitter.com/_AdamHirst), during his software engineering internship at Amazon and supervised by [Cliff McCollum](https://www.linkedin.com/in/cliffmccollum/).}
 \slides{
-* Work [Adam Hirst](https://twitter.com/_AdamHirst), Software Engineering Intern and Cliff McCollum.
+* Work [Adam Hirst](https://twitter.com/_AdamHirst), Software Engineering Intern and [Cliff McCollum](https://www.linkedin.com/in/cliffmccollum/).
 
 * Tutorial on emulation.
 }

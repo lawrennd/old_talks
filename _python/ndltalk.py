@@ -154,5 +154,3 @@ def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', '
         for diag in listdiagrams:
             full_list.append(diag)
     return full_list
-
-    

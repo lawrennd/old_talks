@@ -5,7 +5,7 @@
 
 \subsection{Crop Monitoring}
 
-\centerdiv{\circleHead{\diagramsDir/people/ernest-mwebaze.png}{Ernest Mwebaze}{15%}{https://www.linkedin.com/in/emwebaze/}}
+\centerdiv{\ernestMwebazePicture{15%}}
 \figure{\includepng{\diagramsDir/africa/mobile-monitoring-of-crop-disease}{60%}}{Mobile Monitoring of Crop Disease}{mobile-monitoring-crop}
 
 

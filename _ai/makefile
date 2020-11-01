@@ -1,3 +1,3 @@
-BASE=will-ai-make-the-workplace-wherever-it-is-more-equal
+BASE=auto-ai-talk
 include ../make-talk-flags.mk
 include ../make-talk.mk

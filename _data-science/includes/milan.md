@@ -15,8 +15,14 @@
 }
 
 \notes{To answer these challenges at Amazon we began the process of constructing software for data oriented architectures. The team built a *data-oriented programming* language which is
-[now available through BSD license](https://github.com/amzn/milan). The language is called Milan. Quoting from [Tom Borchert's blog
-on Milan](https://tborchertblog.wordpress.com/2020/02/13/28/):
+[now available through MIT license](https://github.com/amzn/milan). The language is called Milan.}
+
+\newslide{}
+
+\centerdiv{\tomBorchertPicture{15%}}
+
+\notes{The Principle Engineer behind the Milan architecture has been Tom Borchert.Quoting from [Tom Borchert's blog
+on Milan](https://tborchertblog.wordpress.com/2020/02/13/28/):}
 
 > Milan has three components:
 >

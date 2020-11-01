@@ -18,6 +18,11 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
+- family: Koyejo
+  given: Oluwasanmi
+  institute: Google and University of Illinois
+  url: https://sanmi.cs.illinois.edu/
+  gscholar: EaaOeJwAAAAJ
 date: 2018-11-14
 venue: DSA, Abuja
 transition: None

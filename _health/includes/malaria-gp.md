@@ -4,7 +4,7 @@
 
 \subsection{Example: Prediction of Malaria Incidence in Uganda}
 
-\alignright{\ricardoPicture{1.5cm}}
+\centerdiv{\circleHead{\diagramsDir/people/martin-mubangizi.png}{Martin Mubangizi}{15%}{https://www.linkedin.com/in/martin-mubangizi-24177111/}\circleHead{\diagramsDir/people/ricardo-andrade-pacheco.png}{Ricardo Andrade Pacheco}{15%}{http://ric70x7.github.io/}\circleHead{\diagramsDir/people/john-quinn.jpg}{John Quinn}{15%}{http://cit.mak.ac.ug/staff/jquinn/}}
 
 \notes{As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
 

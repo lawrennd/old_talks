@@ -5,6 +5,8 @@
 
 \subsection{GPy Tutorial}
 
+\centerdiv{\jamesHensmanPicture{15%}\nicolasDurrandePicture{15%}}
+
 \notes{This GPy tutorial is based on material we share in the Gaussian process summer school for teaching these models <https://gpss.cc>. It contains material from various members and former members of the Sheffield machine learning group, but particular mention should be made of [Nicolas Durrande](https://sites.google.com/site/nicolasdurrandehomepage/) and [James Hensman](https://jameshensman.github.io/), see <http://gpss.cc/gpss17/labs/GPSS_Lab1_2017.ipynb>.}
 
 \installcode{GPy}
