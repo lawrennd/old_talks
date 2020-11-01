@@ -1,7 +1,7 @@
 ---
+session: 2
 title: "Introduction to Machine Learning Systems"
 abstract: "This notebook introduces some of the challenges of building machine learning data systems. It will introduce you to concepts around joining of databases together. The storage and manipulation of data is at the core of machine learning systems and data science. The goal of this notebook is to introduce the reader to these concepts, not to authoritatively answer any questions about the state of Nigerian health facilities or Covid19, but it may give you ideas about how to try and do that in your own country."
-layout: talk
 author:
 - given: Eric
   family: Meissner

@@ -1,5 +1,5 @@
 ---
-layout: slides
+session: 1
 title: What is Machine Learning?
 venue: Data Science Africa Summer School, Addis Ababa, Ethiopia
 author:
@@ -15,7 +15,6 @@ abstract: >
 date: 2019-06-03
 categories:
 - notes
-layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None

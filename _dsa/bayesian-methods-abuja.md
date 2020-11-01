@@ -1,4 +1,5 @@
 ---
+session: 3
 title: "Bayesian Methods"
 subtitle: Probabilistic Machine Learning
 abstract: >
@@ -10,7 +11,6 @@ abstract: >
   In this session we review the probabilistic formulation of a
   classification model, reviewing initially maximum likelihood and
   the naive Bayes model.
-ipynb: True
 author:
 - family: Lawrence
   given: Neil D.

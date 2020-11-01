@@ -1,10 +1,18 @@
 ---
+session: 3
 title: "Probabilistic Machine Learning"
-abstract: "In this session we review the *probabilistic* approach to machine learning. We start with a review of probability, and introduce the concepts of probabilistic modelling. We then apply the approach in practice to Naive Bayesian classification. 
+abstract: >
+  In this session we review the *probabilistic* approach to machine
+  learning. We start with a review of probability, and introduce the
+  concepts of probabilistic modelling. We then apply the approach in
+  practice to Naive Bayesian classification.
 
-In this session we review the Bayesian formalism in the context of linear models, reviewing initially maximum likelihood and introducing basis functions as a way of driving non-linearity in the model."
-ipynb: 2018-08-25-probabilistic-machine-learning.ipynb
-reveal: 2018-08-25-probabilistic-machine-learning.slides.html
+  In this session we review the Bayesian formalism in the context of
+  linear models, reviewing initially maximum likelihood and
+  introducing basis functions as a way of driving non-linearity in the
+  model.
+ipynb: True
+reveal: True
 author:
 - family: Lawrence
   given: Neil D.
