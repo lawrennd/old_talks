@@ -148,7 +148,7 @@ mlai.write_figure('gpy-eq-times-matern52-covariance.svg', directory='\writeDiagr
 
 \notes{You can learn about how to implement [new kernel objects in GPy here](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html).}
 
-\figure{\includeyoutube{-sY8zW3Om1Y}{800}{600}}{Designing the covariance function for your Gaussian process is a key place in which you introduce your understanding of the data problem. To learn more about the design of covariance functions, see this talk from GPSS in 2016.}{nicolas-durrande-on-kernel-design}
+\figure{\includeyoutube{-sY8zW3Om1Y}{600}{450}}{Designing the covariance function for your Gaussian process is a key place in which you introduce your understanding of the data problem. To learn more about the design of covariance functions, see this talk from Nicolas Durrande at GPSS in 2016.}{nicolas-durrande-on-kernel-design}
 
 \subsection{A Gaussian Process Regression Model}
 
