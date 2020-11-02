@@ -22,8 +22,8 @@ $$
 $$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 $$
-\slides{If $\covarianceMatrixTwo=\dataStd^2\eye$, this is Probabilistic Principal Component Analysis [@Tipping:probpca99], because we integrated out the inputs (or *latent* variables they would be called in that case).}
-\notes{With apprioriately defined covariance, $\covarianceMatrixTwo$, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis [@Tipping:probpca99], because we integrated out the inputs (or *latent* variables they would be called in that case).}
+\slides{If $\covarianceMatrixTwo=\dataStd^2\eye$, this is Probabilistic PCA [@Tipping:probpca99].}
+\notes{With appropriately defined covariance, $\covarianceMatrixTwo$, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis [@Tipping:probpca99], because we integrated out the inputs (or *latent* variables they would be called in that case).}
 
 \newslide{Non linear on Inputs}
 

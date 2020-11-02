@@ -21,7 +21,9 @@ $$\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\sigma_i^2}$$
 
 \alignleft{And the sum is distributed as}}
 
-$$\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}$$
+$$
+\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}
+$$
 
 \notes{Since we are very familiar with the Gaussian density and its properties, it is not immediately apparent how unusual this is. Most random variables, when you add them together, change the family of density they are drawn from. For example, the Gaussian is exceptional in this regard. Indeed, other random variables, if they are independently drawn and summed together tend to a Gaussian density. That is the [*central limit theorem*](https://en.wikipedia.org/wiki/Central_limit_theorem) which is a major justification for the use of a Gaussian density.}
 \slides{. . .

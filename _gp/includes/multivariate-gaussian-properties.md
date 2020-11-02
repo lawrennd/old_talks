@@ -1,5 +1,10 @@
+\ifndef{multivariateGaussianProperties}
+\define{multivariateGaussianProperties}
+
+\editme
+
 \slides{
-### Recall Univariate Gaussian Properties
+\subsubsection{Recall Univariate Gaussian Properties}
 
 . . .
 
@@ -24,7 +29,7 @@ $$\dataScalar \sim \gaussianSamp{\mu}{\dataStd^2}$$
 $$\mappingScalar\dataScalar\sim \gaussianSamp{\mappingScalar\mu}{\mappingScalar^2 \dataStd^2}$$
 
 
-### Multivariate Consequence
+\subsubsection{Multivariate Consequence}
 
 \alignleft{If}
 
@@ -41,3 +46,5 @@ $$\dataVector= \mappingMatrix\inputVector$$
 $$\dataVector \sim \gaussianSamp{\mappingMatrix\boldsymbol{\mu}}{\mappingMatrix\boldsymbol{\Sigma}\mappingMatrix^\top}$$
 
 }
+
+\endif
