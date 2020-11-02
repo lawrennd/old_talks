@@ -40,7 +40,7 @@ y = data['Y']}
 scale = 100.
 num_data = x.shape[0]
 num_pred_data = 100 # how many points to use for plotting predictions
-x_pred = np.linspace(1880, 2030, num_pred_data)[:, None] # input locations for predictions
+x_pred = np.linspace(1880, 2030, num_pred_data)[:, np.newaxis] # input locations for predictions
 Phi_pred = polynomial(x_pred, degree=degree, loc=loc, scale=scale)
 Phi = polynomial(x, degree=degree, loc=loc, scale=scale)}
 
