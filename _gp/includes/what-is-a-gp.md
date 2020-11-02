@@ -31,6 +31,7 @@
 2. Even the parameters *within* the process can be handled, by considering a particular limit.
 
 \include{_ml/includes/multivariate-gaussian-properties.md}
+\include{_ml/includes/linear-model-overview.md}
 \include{_gp/includes/non-degenerate-gps.md}
 \include{_gp/includes/gp-intro-very-short.md}
 

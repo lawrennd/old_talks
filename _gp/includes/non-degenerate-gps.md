@@ -29,24 +29,18 @@ and a non-degenerate kernel matrix leads to $\det{\kernelMatrix} = 0$ defeating 
 
 \newslide{Roughly Speaking}
 
-\slides{
-* Instead of
-}\notes{In loose terms, what Radford considers is what happens to the elements of the covariance function,}
+\notes{In loose terms, what Radford considers is what happens to the elements of the covariance function,}\slides{* Instead of}
   $$
   \begin{align*}
   \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) & = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
   & = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
   \end{align*}
   $$
-\slides{
-* Sample infinitely many from a prior density, $p(\mappingVector^{(1)})$,
-}\notes{if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, $p(\mappingVectorTwo)$, for each one,}
+\notes{if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, $p(\mappingVectorTwo)$, for each one,}\slides{* Sample infinitely many from a prior density, $p(\mappingVector^{(1)})$,}
 $$
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \int \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}, \inputVector_j\right) p(\mappingVector^{(1)}) \text{d}\mappingVector^{(1)}
 $$
-\slides{
-* Also applies for non-Gaussian $p(\mappingVector^{(1)})$ because of the *central limit theorem*.
-}\notes{And that's not *only* for Gaussian $p(\mappingVectorTwo)$. In fact this result holds for a range of activations, and a range of prior densities because of the *central limit theorem*.}
+\notes{And that's not *only* for Gaussian $p(\mappingVectorTwo)$. In fact this result holds for a range of activations, and a range of prior densities because of the *central limit theorem*.}\slides{* Also applies for non-Gaussian $p(\mappingVector^{(1)})$ because of the *central limit theorem*.}
 
 \newslide{Simple Probabilistic Program}
 

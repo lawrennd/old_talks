@@ -1,6 +1,8 @@
 \ifndef{multivariateGaussianPropertiesSummary}
 \define{multivariateGaussianPropertiesSummary}
+
 \editme
+
 \newslide{Recall Univariate Gaussian Properties}
 \slides{
 . . .

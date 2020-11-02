@@ -21,6 +21,11 @@ transition: None
 \include{_ml/includes/multivariate-gaussian-properties.md}
 
 \include{_ml/includes/basis-functions-intro.md}
+\include{_ml/includes/relu-basis.md}
+
+\include{_ml/includes/linear-model-overview.md}
+
+\include{_ml/includes/radial-basis.md}
 
 \include{_gp/includes/gp-from-basis-functions.md}
 

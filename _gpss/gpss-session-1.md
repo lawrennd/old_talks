@@ -146,6 +146,7 @@ Gaussian processes are initially of interest because
 }
 
 \include{_ml/includes/multivariate-gaussian-properties.md}
+\include{_ml/includes/linear-model-overview.md}
 
 \newslide{Distributions over Functions}
 
