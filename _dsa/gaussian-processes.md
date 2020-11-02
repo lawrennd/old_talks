@@ -16,6 +16,9 @@ transition: None
 \include{_gp/includes/gp-book.md}
 <!--include{_gp/includes/what-is-a-gp.md}-->
 \include{_gp/includes/gp-intro-lectures.md}
+\include{_ml/includes/univariate-gaussian-properties.md}
+\include{_ml/includes/two-d-gaussian.md}
+\include{_ml/includes/multivariate-gaussian-properties.md}
 
 \include{_ml/includes/basis-functions-intro.md}
 
