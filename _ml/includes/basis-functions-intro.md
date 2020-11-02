@@ -17,9 +17,9 @@
 \notes{Remember, that a *vector-valued function* is just a vector that contains functions instead of values. Here's an example for a one dimensional input space, $x$, being projected to a *quadratic* basis. First we consider each basis function in turn, we can think of the elements of our vector as being indexed so that we have}
 $$
 \begin{align*}
-\basisFunc_1(\inputScalar) = 1, \\
-\basisFunc_2(\inputScalar) = x, \\
-\basisFunc_3(\inputScalar) = \inputScalar^2.
+\basisFunc_1(\inputScalar) & = 1, \\
+\basisFunc_2(\inputScalar) & = x, \\
+\basisFunc_3(\inputScalar) & = \inputScalar^2.
 \end{align*}
 $$
 \notes{Now we can consider them together by placing them in a vector,}
