@@ -92,3 +92,7 @@
     height: 300px;
     margin: -75px 0 0 -100px;
 }
+
+.reveal section pre code {
+    font-size: 1.5em !important;
+}

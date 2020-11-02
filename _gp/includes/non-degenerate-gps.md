@@ -71,6 +71,10 @@ has finite variance, then the result of taking the number of hidden units to inf
 
 \subsection{Further Reading}
 
+\addreading{@Neal:bayesian94}{Chapter 2}
+\addreading{@Neal:bayesian94}{Rest}
+\addreading{@MacKay:bayesian92}{All}
+
 \slides{
 * Chapter 2 of Neal's thesis [@Neal:bayesian94]
 

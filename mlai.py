@@ -28,8 +28,9 @@ def filename_join(filename, directory=None):
 
 def write_anim(filename, directory=None, **kwargs):
     "Write an animation to a file."
+    import matplotlib.animation as animation
     savename = filename_join(filename, directory)
-    anim.save(savename, **kwargs)
+    animation.save(savename, **kwargs)
 
 
 def write_figure(filename, figure=None, directory=None, **kwargs):

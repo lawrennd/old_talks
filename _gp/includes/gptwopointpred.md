@@ -77,12 +77,13 @@ import pods}
 * Multivariate conditional density is *also* Gaussian. 
   <large>
   $$
-  p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingFunctionVector_*|{\boldsymbol{{\mu}}},\boldsymbol{\Sigma}\right)}
+  p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingFunctionVector_*|\meanVector,\conditionalCovariance\right)}
   $$
   $$
-  {\boldsymbol{{\mu}}}= \kernelMatrix_{*,\mappingFunctionVector}\kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\mappingFunctionVector
+  \meanVector= \kernelMatrix_{*,\mappingFunctionVector}\kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\mappingFunctionVector
   $$
-  $$\boldsymbol{\Sigma} = \kernelMatrix_{*,*}-\kernelMatrix_{*,\mappingFunctionVector} \kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\kernelMatrix_{\mappingFunctionVector,*}
+  $$
+  \conditionalCovariance = \kernelMatrix_{*,*}-\kernelMatrix_{*,\mappingFunctionVector} \kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\kernelMatrix_{\mappingFunctionVector,*}
   $$
   </large>
 

@@ -1,7 +1,8 @@
 \ifndef{talkPeople}
 \define{talkPeople}
 
-\defeval{\jamesHensmanPicture{width}}{\circleHead{\diagramsDir/people/james-hensman.jpg}}
+\defeval{\jamesHensmanPicture{width}}{\circleHead{\diagramsDir/people/james-hensman.png}{James Hensman}{\width}{https://jameshensman.github.io/}}
+\defeval{\nicolasDurrandePicture{width}}{\circleHead{\diagramsDir/people/nicolas-Durrande2.jpg}{Nicolas Durrande}{\width}{https://sites.google.com/site/nicolasdurrandehomepage/}}
 \defeval{\ricardoAndradePachecoPicture{width}}{\circleHead{\diagramsDir/people/richardo-andrade-pacheco.png}{Ricardo Andrade Pacecho}{\width}}
 \defeval{\nicoloFusiPicture{width}}{\circleHead{\diagramsDir/people/nicolo-fusi.png}{Nicoló Fusi}{\width}}
 \defeval{\alanSaulPicture{width}}{\circleHead{\diagramsDir/people/alan-saul.png}{Alan Saul}{\width}}
@@ -13,20 +14,20 @@
 \defeval{\maxZwiesselePicture{width}}{\circleHead{\diagramsDir/people/max-zwiessele.jpg}{Max Zwiessele}{\width}}
 \defeval{\javierGonzalezPicture{width}}{\circleHead{\diagramsDir/people/javier-gonzalez.jpg}{Javier Gonzalez}{\width}{https://javiergonzalezh.github.io/}}
 \defeval{\michaelSmithPicture{width}}{\circleHead{\diagramsDir/people/michael-smith.png}{Michael T. Smith}{\width}}
-\defeval{\michalisTitsiasPicture{width}}{\circleHead{\diagramsDir/people/michalis-titsias.jpg}{\width}}
+\defeval{\michalisTitsiasPicture{width}}{\circleHead{\diagramsDir/people/michalis-titsias.jpg}{Michalis Titsias}{\width}}
 
-\defeval{\andreiPaleyesPicture{width}}{\circleHead{\diagramsDir/people/andrei-paleyes.jpg}{\width}{https://www.linkedin.com/in/andreipaleyes}}
+\defeval{\andreiPaleyesPicture{width}}{\circleHead{\diagramsDir/people/andrei-paleyes.jpg}{Andrei Paleyes}{\width}{https://www.linkedin.com/in/andreipaleyes}}
 
-\defeval{\markPullinPicture{width}}{\circleHead{\diagramsDir/people/mark-pullin.jpg}{\width}{https://www.linkedin.com/in/mark-pullin-47510b50/}}
-\defeval{\marenMahsereciPicture{width}}{\circleHead{\diagramsDir/people/maren-mahsereci.png}{\width}{https://pn.is.tuebingen.mpg.de/person/mmahsereci}}
+\defeval{\markPullinPicture{width}}{\circleHead{\diagramsDir/people/mark-pullin.jpg}{Mark Pullin}{\width}{https://www.linkedin.com/in/mark-pullin-47510b50/}}
+\defeval{\marenMahsereciPicture{width}}{\circleHead{\diagramsDir/people/maren-mahsereci.png}{Maren Mahsereci}{\width}{https://pn.is.tuebingen.mpg.de/person/mmahsereci}}
 
 \defeval{\adamHirstPicture{width}}{\circleHead{\diagramsDir/people/adam-hirst.jpg}{Adam Hirst}{\width}{https://www.linkedin.com/in/hirstadam/}}
 
 \defeval{\cliffMccollumPicture{width}}{\circleHead{\diagramsDir/people/cliff-mccollum.jpg}{\width}{https://www.linkedin.com/in/cliffmccollum/}}
-\defeval{\tomBorchertPicture{width}}{\circleHead{\diagramsDir/people/tom-borchert.jpg}{\width}{https://www.linkedin.com/in/tomborchert/}}
+\defeval{\tomBorchertPicture{width}}{\circleHead{\diagramsDir/people/tom-borchert.jpg}{Tom Borchert}{\width}{https://www.linkedin.com/in/tomborchert/}}
 
-\defeval{\radfordNealPicture{width}}{\circleHead{\diagramsDir/people/radford-neal.jpg}{\width}{https://www.cs.toronto.edu/~radford/homepage.html}}
-\defeval{\akiVehtariPicture{width}}{\circleHead{\diagramsDir/people/aki-vehtari.jpg}{\width}{https://users.aalto.fi/~ave/}}
+\defeval{\radfordNealPicture{width}}{\circleHead{\diagramsDir/people/radford-neal.jpg}{Radford Neal}{\width}{https://www.cs.toronto.edu/~radford/homepage.html}}
+\defeval{\akiVehtariPicture{width}}{\circleHead{\diagramsDir/people/aki-vehtari.jpg}{Aki Vehtari}{\width}{https://users.aalto.fi/~ave/}}
 
 
 

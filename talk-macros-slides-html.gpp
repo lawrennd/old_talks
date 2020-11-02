@@ -31,13 +31,14 @@ showDivs(\start, '\group');
 <button onclick="plusDivs(1, '\group')">❯</button>
 }
 
-\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
 
 \define{\newframe{contents}{name}{style}}{\newslide{}
 
 <div style="text-align:center;\style" class="\name">\contents</div>
 
 }
+
+\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
 
 
 \endif

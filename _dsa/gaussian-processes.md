@@ -42,6 +42,7 @@ transition: None
 \include{_gp/includes/gp-summer-school.md}
 \include{_gp/includes/other-gp-software.md}
 
+\reading
 
 \thanks
 

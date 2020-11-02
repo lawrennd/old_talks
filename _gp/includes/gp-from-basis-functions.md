@@ -90,11 +90,11 @@ $$
 \mappingFunctionVector = \begin{bmatrix} \mappingFunction_1
 \\ \vdots \mappingFunction_\numData\end{bmatrix}
 $$
-in the form
+\notes{in the form}
 $$
-\mappingFunctionVector = \basisMatrix
-\weightVector.
-$$}
+\mappingFunctionVector = \basisMatrix\weightVector.
+$$
+\newslide{}
 
 \notes{Now we can use standard properties of multivariate Gaussians to
 write down the probability density that is implied over $\mappingFunctionVector$. In particular we know that if $\weightVector$ is sampled from a multivariate normal (or multivariate Gaussian) with covariance $\alpha \eye$ and zero mean,
@@ -103,30 +103,56 @@ sampled from a probability density) then the vector $\mappingFunctionVector$ wil
 $$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha \basisMatrix\basisMatrix^\top}.
 $$
+\newslide{}
 
 \notes{The question now is, what happens if we sample $\mappingFunctionVector$ directly from this density, rather than first sampling $\weightVector$ and then multiplying by $\basisMatrix$. Let's try this. First of all we define the covariance as}
 $$
 \kernelMatrix = \alpha
 \basisMatrix\basisMatrix^\top.
 $$
-
+\slides{```{.python}
+K = alpha*Phi_pred@Phi_pred.T
+```}
 \code{K = alpha*Phi_pred@Phi_pred.T}
 
 \notes{Now we can use the `np.random.multivariate_normal` command for
 sampling from a multivariate normal with covariance given by
 $\kernelMatrix$ and zero mean,}
 
-\code{for i in np.arange(10):
+\newslide{}
+
+\slides{```{.python}
+K = alpha*Phi_pred@Phi_pred.T
+f_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
+```}
+
+\code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+for i in range(10):
     f_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
-    plt.plot(x_pred.flatten(), f_sample.flatten())}
+    ax.plot(x_pred.flatten(), f_sample.flatten(), linewidth=2)
+	
+mlai.write_figure('gp-sample-basis-function.svg', directory='\writeDiagramsDir/kern')}
+
+\figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function}{80%}}{Samples directly from the covariance function implied by the basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top$.}{gp-sample-basis-function}
+
+\newslide{}
 
 \notes{The samples appear very similar to those which we obtained indirectly. That is no surprise because they are effectively drawn from the same mutivariate normal density. However, when sampling $\mappingFunctionVector$ directly we created the covariance for $\mappingFunctionVector$. We can visualise the form of this covaraince in an image in python with a colorbar to show scale.}
 
-\code{fig, ax = plt.subplots(figsize=(8,8))
-im = ax.imshow(K, interpolation='none')
-fig.colorbar(im)}
+\setupplotcode{import teaching_plots as plot
+import mlai}
 
-\notes{This image is the covariance expressed between different points on the function. In regression we normally also add independent Gaussian noise to obtain our observations $\dataVector$,
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+im = ax.imshow(K, interpolation='none')
+fig.colorbar(im)
+
+mlai.write_figure('basis-covariance-function.svg', directory='\writeDiagramsDir/kern')}
+
+\figure{\includediagram{\diagramsDir/kern/basis-covariance-function}{60%}}{Covariance of the function implied by the basis set $\alpha\basisMatrix\basisMatrix^\top$.}{basis-covariance-function}
+
+\newslide{}
+
+\notes{This image is the covariance expressed between different points on the function. In regression we normally also add independent Gaussian noise to obtain our observations $\dataVector$,}
 $$
 \dataVector = \mappingFunctionVector + \boldsymbol{\epsilon}
 $$
@@ -145,18 +171,34 @@ $$
 \notes{Sampling directly from this density gives us the noise
 corrupted functions,}
 
+\newslide{}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)}
+
 \code{K = alpha*Phi_pred@Phi_pred.T + sigma2*np.eye(x_pred.size)
 for i in range(10):
     y_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
-    plt.plot(x_pred.flatten(), y_sample.flatten())}
+    ax.plot(x_pred.flatten(), y_sample.flatten())
+	
+mlai.write_figure('gp-sample-basis-function-plus-noise.svg', 
+                  '\writeDiagramsDir/kern')}
+
+\figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top + \dataStd^2 \eye$.}{gp-sample-basis-functions-plus-noise}
 
 \notes{where the effect of our noise term is to roughen the sampled functions, we can also increase the variance of the noise to see a different effect,}
 
 \code{sigma2 = 1.
-K = alpha*Phi_pred@Phi_pred.T + sigma2*np.eye(x_pred.size)
+K = alpha*Phi_pred@Phi_pred.T + sigma2*np.eye(x_pred.size)}
+
+\code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 for i in range(10):
     y_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
-    plt.plot(x_pred.flatten(), y_sample.flatten())}
+    plt.plot(x_pred.flatten(), y_sample.flatten())
+	
+mlai.write_figure('gp-sample-basis-function-plus-large-noise.svg', 
+                  '\writeDiagramsDir/kern')}
+
+\figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-large-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top +  \eye$.}{gp-sample-basis-functions-plus-large-noise}
 
 \exercise{**Function Space Reflection** How do you include the noise term when sampling in the weight space point of view?}
 

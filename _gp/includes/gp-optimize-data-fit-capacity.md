@@ -3,6 +3,8 @@
 
 \editme
 
+\subsection{Data Fit Term}
+
 \setupplotcode{import matplotlib.pyplot as plt
 import numpy as np
 import os}

@@ -2,7 +2,7 @@
 \define{talkMacrosAssignment}
 
 \define{\exerciseTitle}{Exercise}
-\define{\exerciseCounter}{0}
+\define{\exerciseCounter}{-1}
 
 \ifdef{ASSIGNMENT}
 \define{\questionTitle}{Question}
