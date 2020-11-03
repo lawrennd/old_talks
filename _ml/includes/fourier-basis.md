@@ -46,7 +46,7 @@ from ipywidgets import IntSlider}
 \subsection{Functions Derived from Fourier Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0}  + {\color{\magentaColor}\mappingScalar_1 \sin(\inputScalar)} + {\color{\blueColor}\mappingScalar_2 \cos(\inputScalar)} + {\color{\greenColor}\mappingScalar_3 \sin(2\inputScalar)} + {\color{\cyanColor}\mappingScalar_4 \cos(2\inputScalar)}
+\mappingFunction(\inputScalar) = {\color{\redColor}{\mappingScalar_0}}  + {\color{\magentaColor}{\mappingScalar_1 \sin(\inputScalar)}} + {\color{\blueColor}{\mappingScalar_2 \cos(\inputScalar)}} + {\color{\greenColor}{\mappingScalar_3 \sin(2\inputScalar)}} + {\color{\cyanColor}{\mappingScalar_4 \cos(2\inputScalar)}}
 $$
 
 \slides{
