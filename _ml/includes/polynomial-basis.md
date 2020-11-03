@@ -33,7 +33,7 @@ $$
 
 \slides{
 \define{width}{80%}
-\startanimation{polynomial_basis}{0}{4}
+\startanimation{polynomial_basis}{0}{5}
 \newframe{\includediagram{\diagramsDir/ml/polynomial_basis000}{\width}}{polynomial_basis}
 \newframe{\includediagram{\diagramsDir/ml/polynomial_basis001}{\width}}{polynomial_basis}
 \newframe{\includediagram{\diagramsDir/ml/polynomial_basis002}{\width}}{polynomial_basis}
