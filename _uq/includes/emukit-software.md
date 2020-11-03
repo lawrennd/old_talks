@@ -36,7 +36,7 @@ However, `GPyOpt` doesn't allow the full flexibility of surrogate modelling for 
     * Example [sensitivity notebook](https://github.com/EmuKit/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb), documentation <https://emukit.readthedocs.io/en/latest/>
 }
 
-\centerdiv{\javierGonzalez{10%}\andreiPaleyes{10%}\markPullin{10%}\marenMahsereci{10%}}
+\centerdiv{\javierGonzalezPicture{10%}\andreiPaleyesPicture{10%}\markPullinPicture{10%}\marenMahsereciPicture{10%}}
 \notes{The software was initially built by the team in Amazon. As well as Javier Gonzalez (ML side) and Andrei Paleyes (Software Engineering) included Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein, Henry Moss, David-Elias Künstle  as well as management input from Cliff McCollum and myself.}
 
 \newslide{Modular Design}
