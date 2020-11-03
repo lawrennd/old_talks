@@ -23,7 +23,7 @@
 
 \defeval{\adamHirstPicture{width}}{\circleHead{\diagramsDir/people/adam-hirst.jpg}{Adam Hirst}{\width}{https://www.linkedin.com/in/hirstadam/}}
 
-\defeval{\cliffMccollumPicture{width}}{\circleHead{\diagramsDir/people/cliff-mccollum.jpg}{\width}{https://www.linkedin.com/in/cliffmccollum/}}
+\defeval{\cliffMccollumPicture{width}}{\circleHead{\diagramsDir/people/cliff-mccollum.jpg}{Cliff McCollum}{\width}{https://www.linkedin.com/in/cliffmccollum/}}
 \defeval{\tomBorchertPicture{width}}{\circleHead{\diagramsDir/people/tom-borchert.jpg}{Tom Borchert}{\width}{https://www.linkedin.com/in/tomborchert/}}
 
 \defeval{\radfordNealPicture{width}}{\circleHead{\diagramsDir/people/radford-neal.jpg}{Radford Neal}{\width}{https://www.cs.toronto.edu/~radford/homepage.html}}
