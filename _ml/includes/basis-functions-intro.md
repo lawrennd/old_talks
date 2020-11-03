@@ -79,9 +79,9 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 \slides{
 \define{\width}{80%}
 \startanimation{\basisfunction}{0}{2}
-\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{000}{\width}}}{\basisfunction}
-\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{001}{\width}}}{\basisfunction}
-\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}{\width}}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{000}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{001}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{\width}}{\basisfunction}
 \endanimation
 }
 
