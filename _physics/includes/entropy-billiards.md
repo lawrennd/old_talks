@@ -18,7 +18,27 @@
 
 <!-- \newslide{} -->
 
-<!-- \code{ -->
+\setupcode{import numpy as np}
+
+\code{p = np.random.randn(10000, 1)
+xlim = [-4, 4]
+x = np.linspace(xlim[0], xlim[1], 200)
+y = 1/np.sqrt(2*np.pi)*np.exp(-0.5*x*x)}
+
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plt
+import mlai}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(x, y, 'r', linewidth=3)
+ax.hist(p, 100, density=True)
+ax.set_xlim(xlim)
+
+mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
+
+\figure{\includediagram{\diagramsDir/ml/gaussian-histogram}{80%}}{Histogram of velocities and a Gaussian density as derived by Maxwell for his kinetic model of gases.}{gaussian-histogram}
+
+<!-- code{ -->
 <!--     a = randn(10000, 1); -->
 <!--     [heights, centres] = hist(a, 20); -->
 <!--     a = bar(centres, heights/sum(heights)/(centres(2)-centres(1))); -->
@@ -32,6 +52,6 @@
 <!--     line(x, y, 'color', redColor, 'linewidth', 3); -->
 <!--     line([xlim(1) xlim(1)], ylim, 'color', blackColor); -->
 <!--     line(xlim, [ylim(1) ylim(1)], 'color', blackColor); -->
-<!--     printLatexPlot('gaussian-histogram', '\writeDiagramsDir/ml', 0.75*textWidth)} -->
+<!--     printLatexPlot('gaussian-histogram', '\writeDiagramsDir/ml', 0.75*textWidth) -->
 
 \endif

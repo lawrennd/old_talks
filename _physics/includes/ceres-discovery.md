@@ -41,7 +41,7 @@ Unbeknownst to him, Piazzi was also participating in an international search. On
 
 \figure{\includegooglebook{XG43AQAAMAAJ}{PA88}}{Announcement of Giuseppe Piazzi's discovery in the "Monthly Magazine" (also known as the British Register). This announcement is made in August 1801, 7 months after Giuseppe Piazzi made the discovery.}{monthly-magazine-ceres-piazzi}
 
-\newslide{}
+\newslide{Titius-Bode Law}
 
 \notes{The planet's location was a prediction. It was a missing planet, other planets had been found through a formula, a law, that represented their distance from the sun:
 $$
@@ -49,20 +49,16 @@ a = 0.4 + 0.3 \times 2^m
 $$
 where $m=-\infty, 0, 1, 2, \dots$.}
 
-\setupcode{import numpy as np
-import matplotlib.pyplot as plt}
-
-\downloadcode{mlai}
-\downloadcode{gp_tutorial}
-\downloadcode{teaching_plots}
-
-\setupcode{import mlai 
-import teaching_plots as plot}
+\setupcode{import numpy as np}
 
 \code{m = np.asarray([-np.inf, 0, 1, 2, 3, 4, 5, 6])
 index = np.asarray(range(len(m)))
 planets = ['Mercury', 'Venus', 'Earth', 'Mars', '*', 'Jupiter', 'Saturn', 'Uranus']
 a = 0.5 + 0.3*2**m}
+
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(index+1, a, 'rx-', markersize=10, linewidth=2)
@@ -73,7 +69,7 @@ ax.set_ylabel('Distance from Sun in Astronimical Units', fontsize=14)
 mlai.write_figure('bodes-law.svg', directory='\writeDiagramsDir/physics')}
 
 
-\figure{\includediagram{\diagramsDir/physics/bodes-law.svg}}{The Titius-Bode law was a relatively obscure empirical observation about how the planets are distributed across the solar system. It became well known after the discovery of Uranus by Herschel in 1781 which was found at the location the law predicts for the 8th planet.}{titius-bode-law}
+\figure{\includediagram{\diagramsDir/physics/bodes-law}{80%}}{The Titius-Bode law was a relatively obscure empirical observation about how the planets are distributed across the solar system. It became well known after the discovery of Uranus by Herschel in 1781 which was found at the location the law predicts for the 8th planet.}{titius-bode-law}
 
 \notes{When [this law](https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law) was published it fitted all known planets: Mercury, Venus, Earth, Mars, Jupiter and Saturn. Although there was a gap between the fourth and fifth planets (between Mars and Jupiter). In 1781 William Herschel discovered Uranus. It was located in the position predicted by the formula. One of the originators of the formula, Johann Elert Bode urged astronomers to search for the missing planet, to be situated between Mars and Jupiter. Franz Xaver von Zach formed the United Astronomical Society, also known as the Celestial Police. But before this celestial police managed to start their search, Piazzi, without even knowing he was a member completed the search. Piazzi first observed the new planet in the early hours of January 1st 1801. He continued to observe it over the next .. days. Initially he thought it may be a comet, but as he watched it he became convinced he'd found a planet. The international search was over before it started.}
 
