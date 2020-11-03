@@ -56,7 +56,7 @@
 
 \slides{* Still in development: High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.}
 
-\notes{Emukit does not contribute much to this part at the moment. However Emukit team are on lookuout for typical use cases for Emukit, and if a reoccuring pattern emerges, it may become a part of the library.}
+\notes{Emukit does not contribute much to this part at the moment. However Emukit team are on lookout for typical use cases for Emukit, and if a reoccuring pattern emerges, it may become a part of the library.}
 
 \newslide{Structure}
 
