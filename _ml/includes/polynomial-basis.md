@@ -28,7 +28,7 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 \subsection{Functions Derived from Polynomial Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0} + {\color{\magentaColor}\mappingScalar_1 \inputScalar} + {\color{\blueColor}\mappingScalar_2 \inputScalar^2} + {\color{\greenColor}\mappingScalar_3 \inputScalar^3} + {\color{\cyanColor}\mappingScalar_4 \inputScalar^4}
+\mappingFunction(\inputScalar) = {\color{\redColor}{mappingScalar_0}} + {\color{\magentaColor}{\mappingScalar_1 \inputScalar}} + {\color{\blueColor}{\mappingScalar_2 \inputScalar^2}} + {\color{\greenColor}{\mappingScalar_3 \inputScalar^3}} + {\color{\cyanColor}{\mappingScalar_4 \inputScalar^4}}
 $$
 
 \slides{
