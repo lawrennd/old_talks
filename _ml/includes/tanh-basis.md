@@ -35,7 +35,7 @@ plot.basis(mlai.tanh, x_min=-2.0, x_max=2.0,
 \subsection{Functions Derived from Tanh Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0}   + {\color{\magentaColor}\mappingScalar_1 \text{tanh}\left(\inputScalar+1\right)}  + {\color{\blueColor}\mappingScalar_2 \text{tanh}\left(\inputScalar+0.33\right)}  + {\color{\greenColor}\mappingScalar_3 \text{tanh}\left(\inputScalar-0.33\right)} + {\color{\cyanColor}\mappingScalar_4 \text{tanh}\left(\inputScalar-1\right)}
+\mappingFunction(\inputScalar) = {\color{\redColor}{\mappingScalar_0}}   + {\color{\magentaColor}{\mappingScalar_1 \text{tanh}\left(\inputScalar+1\right)}}  + {\color{\blueColor}{\mappingScalar_2 \text{tanh}\left(\inputScalar+0.33\right)}}  + {\color{\greenColor}{\mappingScalar_3 \text{tanh}\left(\inputScalar-0.33\right)}} + {\color{\cyanColor}{\mappingScalar_4 \text{tanh}\left(\inputScalar-1\right)}}
 $$
 
 \slides{
