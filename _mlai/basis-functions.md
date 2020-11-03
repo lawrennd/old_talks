@@ -62,7 +62,7 @@ $$
 
 \subsection{Lecture on Basis Functions from GPRS Uganda}
 
-\includeyoutube{PoNbOnUnOao}{600}{450}
+\figure{\includeyoutube{PoNbOnUnOao}{600}{450}}{Lecture on Basis functions from GPRS in Uganda in 2013.}{basis-functions-gprs-uganda}
 
 \subsection{Use of QR Decomposition for Numerical Stability}
 
@@ -74,7 +74,7 @@ $$
 
 \code{x = np.random.normal(size=(10, 1))}
 
-\code{Phi = fourier(x, 5)}
+\code{Phi = mlai.fourier(x, 5)}
 
 \code{(np.dot(Phi.T,Phi))}
 

@@ -134,6 +134,6 @@ from ipywidgets import IntSlider}
 
 \displaycode{pods.notebook.display_plots('quadratic_function{num_function:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
-							num_basis=IntSlider(0,0,2,1))}
+							num_function=IntSlider(0,0,2,1))}
 
 \endif

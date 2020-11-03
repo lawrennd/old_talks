@@ -9,13 +9,8 @@ Now we are going to consider how these basis functions can be adjusted to fit to
 a particular data set. We will return to the olympic marathon data from last
 time. First we will scale the output of the data to be zero mean and variance 1.
 
-\setupcode{import pods}
+\include{_ml/includes/olympic-marathon-data.md}
 
-\code{data = pods.datasets.olympic_marathon_men()
-y = data['Y']
-x = data['X']
-y -= y.mean()
-y /= y.std()}
 
 \writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{10}
 
@@ -27,11 +22,12 @@ y /= y.std()}
 \code{#x[:, 0] = np.linspace(1888, 2020, 1000)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
-ax.plot(x, y, 'rx')}
+ax.plot(x, yhat, 'rx')}
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
 	                                        polynomial=mlai.polynomial, 
+											tanh=mlai.tanh, 
 											fourier=mlai.fourier, 
 											relu=mlai.relu), 
                                  data_limits=(1888, 2020),

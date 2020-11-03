@@ -20,9 +20,11 @@ $$
 \notes{To aid in understanding how a basis works, we've provided you with a small interactive tool for exploring this polynomial basis. The tool can be summoned with the following command.}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_prediction(basis=mlai.polynomial, num_basis=4)}
+\displaycode{pods.notebook.display_prediction(basis=mlai.polynomial, num_basis=5)}
 
 \notes{Try moving the sliders around to change the weight of each basis function. Click the control box `display_basis` to show the underlying basis functions (in red). The prediction function is shown in a thick blue line. *Warning* the sliders aren't presented quite in the correct order. `w_0` is associated with the bias, `w_1` is the linear term, `w_2` the quadratic and here (because we have four basis functions) we have `w_3` for the *cubic* term. So the subscript of the weight parameter is always associated with the corresponding polynomial's degree.}
+
+\exercise{Try increasing the number of basis functions (thereby increasing the *degree* of the resulting polynomial). Describe what you see as you increase number of basis up to 10. Is it easy to change the function in intiutive ways?}
 
 \subsection{Different Basis}
 
@@ -36,7 +38,6 @@ $$
 \include{_ml/includes/fourier-basis.md}
 
 
-\exercise{Try increasing the number of basis functions (thereby increasing the *degree* of the resulting polynomial). Describe what you see as you increase number of basis up to 10. Is it easy to change the function in intiutive ways?}
 
 
 
