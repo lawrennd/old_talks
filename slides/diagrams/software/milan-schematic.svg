@@ -37,7 +37,7 @@
     writing-mode:lr;
     text-align:center;
     dominant-baseline:middle;
-    text-anchor:middle&quot;    
+    text-anchor:middle;    
     }
     .myrect {
     stroke:black;
@@ -52,19 +52,6 @@
     stroke-opacity:1;
     fill:#f03700;
     fill-opacity:1;
-    }
-    .mytext {
-    font-style:normal;
-    font-variant:normal;
-    font-weight:bold;
-    font-stretch:normal;
-    font-size:20.5px;
-    font-family:sans-serif;
-    line-height:1.25;
-    fill:#000000;
-    fill-opacity:1;
-    text-anchor:middle;
-    text-align:center;
     }
     .myellipse {
     fill:#0fc8ff;
