@@ -95,15 +95,16 @@ mlai.write_figure('bodes-law.svg', directory='\writeDiagramsDir/physics')}
 
 \downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png,ceresSkyBackground.png}{ceres-sky-background.png}
 
-\setupplotcode{import matplotlib.pyplot as plt
-import pods
-import mlai
-import teaching_plots as plots}
+\setupcode{import pods}
 
 \code{data = pods.datasets.ceres()
 right_ascension = data['data']['Gerade Aufstig in Zeit']
 declination = data['data']['Nordlich Abweich']}
- 
+
+\setupplotcode{import matplotlib.pyplot as plt
+import mlai
+import teaching_plots as plots}
+
 \plotcode{fig, ax = plt.subplots(figsize=plots.big_figsize)
 A = plt.imread('ceres-sky-background.png')
 ax.imshow(image([3.5-4/15 3.5+4/15], [15.25 19.25], A)
