@@ -13,6 +13,7 @@ CSS=$(shell ../talkfield.py talkcss ${BASE}.md)
 SLIDESHEADER=$(shell ../talkfield.py slidesheader ${BASE}.md)
 POSTSHEADER=$(shell ../talkfield.py postssheader ${BASE}.md)
 ASSIGNMENT=$(shell ../talkfield.py assignment ${BASE}.md)
+NOTATION=$(shell ../talkfield.py notation ${BASE}.md)
 
 PREFIX=$(shell ../flags.py prefix ${BASE})
 

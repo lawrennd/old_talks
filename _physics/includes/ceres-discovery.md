@@ -35,7 +35,7 @@ Unbeknownst to him, Piazzi was also participating in an international search. On
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{60%}}{Giuseppe Piazzi (1746-1826) was an Italian Catholic priest and an estronomer. Jesuits had been closely involved in education, following their supression in the Kingdom of Naples and Sicily, Piazzi was recruited as part of a drive to revitalise the University of Palermo. His funding was from King Ferdinand I and enabled him to buy high quality instruments from London.}{giuseppe-piazzi}
+\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{50%}}{Giuseppe Piazzi (1746-1826) was an Italian Catholic priest and an estronomer. Jesuits had been closely involved in education, following their supression in the Kingdom of Naples and Sicily, Piazzi was recruited as part of a drive to revitalise the University of Palermo. His funding was from King Ferdinand I and enabled him to buy high quality instruments from London.}{giuseppe-piazzi}
 
 \newslide{}
 
@@ -64,13 +64,13 @@ index = np.asarray(range(len(m)))
 planets = ['Mercury', 'Venus', 'Earth', 'Mars', '*', 'Jupiter', 'Saturn', 'Uranus']
 a = 0.5 + 0.3*2**m}
 
-\code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(index+1, a, 'rx-', markersize=10, linewidth=2)
 for x,y in zip(index, a):
   ax.text(x+1, y+0.5, planets[x], fontsize=18)
 ax.set_xlabel('Planets', fontsize=14)
 ax.set_ylabel('Distance from Sun in Astronimical Units', fontsize=14)
-mlai.write_figure('\diagramsDir/physics/bodes-law.svg')}
+mlai.write_figure('bodes-law.svg', directory='\writeDiagramsDir/physics')}
 
 
 \figure{\includediagram{\diagramsDir/physics/bodes-law.svg}}{The Titius-Bode law was a relatively obscure empirical observation about how the planets are distributed across the solar system. It became well known after the discovery of Uranus by Herschel in 1781 which was found at the location the law predicts for the 8th planet.}{titius-bode-law}
@@ -79,17 +79,23 @@ mlai.write_figure('\diagramsDir/physics/bodes-law.svg')}
 
 \notes{Unfortunately, there was a problem. Once he'd found the planet, Piazzi promptly lost it. Piazzi was keen not just to discover the planet, but to to be known as the determiner of its orbit. He took observations across the months of January and February, working to find the orbit. Unfortunately, he was unable to pin it down. He became ill, and by the time the dat awas revealed to the wider community through von Zach's journal, Monatlicher Correspondenz, the new planet had been lost behind the sun.}
 
+\newslide{}
+
 \figure{\includegooglebook{JBw4AAAAMAAJ}{PA280}}{Page from the publication *Monatliche Correspondenz* that shows Piazzi's observations of the new planet @Piazzi:monatliche1801
 .}{monatliche-correspondenz-piazzi}
 
 
 <!--[\includepng{\diagramsDir/ceres/ceres-beobachtung-von-piazzi}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
 
+\newslide{}
+
 \speakernotes{Image data ```wget http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png```}
 
 \installcode{pods}
+
 \downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png,ceresSkyBackground.png}{ceres-sky-background.png}
-\setupcode{import matplotlib.pyplot as plt
+
+\setupplotcode{import matplotlib.pyplot as plt
 import pods
 import mlai
 import teaching_plots as plots}
@@ -97,16 +103,15 @@ import teaching_plots as plots}
 \code{data = pods.datasets.ceres()
 right_ascension = data['data']['Gerade Aufstig in Zeit']
 declination = data['data']['Nordlich Abweich']}
-
-# 
-\code{fig, ax = plt.subplots(figsize=plots.big_figsize)
+ 
+\plotcode{fig, ax = plt.subplots(figsize=plots.big_figsize)
 A = plt.imread('ceres-sky-background.png')
 ax.imshow(image([3.5-4/15 3.5+4/15], [15.25 19.25], A)
 ax.plot(right_ascension, declination, 'rx')
 ax.set_xlabel('right ascension')
 ax.set_ylabel('declination')
 ax.set_title('Procession of Ceres through Sky')
-mlai.write_figure('\diagramsDir/ceres/ceres-data.svg')}
+mlai.write_figure('ceres-data.svg', directory='\writediagramsDir/ceres')}
 
 \notes{<!--dayPrev = -2;
     for i = 1:size(ceresData, 1)
@@ -134,7 +139,6 @@ mlai.write_figure('\diagramsDir/ceres/ceres-data.svg')}
     printLatexPlot('ceresData', '../../../ceres/tex/diagrams', 0.9*textWidth)-->
 }
 
-\newslide{}
 
 \figure{\includediagram{\diagramsDir/ceres/ceres-data}{60%}}{}{ceres-data}
 

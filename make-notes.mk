@@ -2,7 +2,7 @@
 ${BASE}.docx: ${BASE}.notes.docx.markdown ${BIBDEPS} ${DIAGDEPS}
 	pandoc  ${CITEFLAGS} \
 		--to docx \
-		-B ../_includes/talk-notation.tex \
+		-B ../_includes/${NOTATION} \
 		${DOCXFLAGS} \
 		--out ${BASE}.docx  \
 		${BASE}.notes.docx.markdown 

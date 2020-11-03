@@ -2,17 +2,13 @@
 \define{welcome}
 \editme
 
-\subsection{Course Text}
+\section{Course Texts}
 
-\figure{\includejpg{\diagramsDir/mlai/a-first-course-in-machine-learning}{40%}}{The main course text is "A First Course in Machine Learning" by @Rogers:book11.}{a-first-course-in-machine-learning}
-
-\slides{\alignright{@Rogers:book11}}
+\include{_ml/includes/first-course-book.md}
 
 \newslide{Additional Course Text}
 
-\figure{\includepng{\diagramsDir/mlai/978-0-387-31073-2}{40%}}{For additional reading we will regularly refer to "Pattern Recognition and Machine Learning" by @Bishop:book06}{pattern-recognition-and-machine-learning}
-
-\slides{\alignright{@Bishop:book06}}
+\include{_ml/includes/prml-book.md}
 
 \notes{Welcome to the Machine Learning and Adaptive Intelligence
 course. In this course we will introduce the basic concepts of machine

@@ -55,7 +55,7 @@ $$
 \subsection{Functions Derived from Quadratic Basis}
 
 $$
-\mappingFunction(\inputScalar) = \color{\redColor}{\mappingScalar_0}   + \color{\magentaColor}{\mappingScalar_1 \inputScalar} + \color{\blueColor}{\mappingScalar_2 \inputScalar^2}
+\mappingFunction(\inputScalar) = {\color{\redColor}{\mappingScalar_0}}   + {\color{\magentaColor}{\mappingScalar_1 \inputScalar}} + {\color{\blueColor}{\mappingScalar_2 \inputScalar^2}}
 $$
 
 \setupplotcode{import matplotlib.pyplot as plt
@@ -115,7 +115,9 @@ _ = ax.set_title('Quadratic Basis Functions')}
 \notes{The actual function we observe is then made up of a sum of these functions. This is the reason for the name basis. The term *basis* means 'the underlying support or foundation for an idea, argument, or process', and in this context they form the underlying support for our prediction function. Our prediction function can only be composed of a weighted linear sum of our basis functions.}
 
 \subsection{Quadratic Functions}
-
+\slides{$$
+\mappingFunction(\inputScalar) = {\color{\redColor}{\mappingScalar_0}}   + {\color{\magentaColor}{\mappingScalar_1 \inputScalar}} + {\color{\blueColor}{\mappingScalar_2 \inputScalar^2}}
+$$}
 \slides{
 \define{\width}{80%}
 \startanimation{quadratic_function}{0}{2}

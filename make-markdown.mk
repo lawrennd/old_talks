@@ -1,9 +1,9 @@
 
 %.slides.pptx.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --to pptx --format slides --code none ${PPFLAGS} -B ../_includes/talk-notation.tex
+	${PP} $< -o $@ --to pptx --format slides --code none ${PPFLAGS} -B ../_includes/${NOTATION}
 
 %.slides.html.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} -B ../_includes/talk-notation.tex
+	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} -B ../_includes/${NOTATION}
 
 %.notes.html.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to html --code sparse --edit-links ${PPFLAGS} 

@@ -15,7 +15,7 @@
 
 \newslide{}
 
-\figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{}{}{right}}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
+\figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{100%}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}{}{right}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
 
 \notes{Many of the ideas of early statistical physicists were rejected by a cadre of physicists who didn't believe in the notion of a molecule. The stress of trying to have his ideas established caused Botlzamann to commit suicide in 1906, only two years before the same ideas became widely accepted.}
 
@@ -25,13 +25,13 @@
 
 \notes{One ongoing characteristic of people who study probability and uncertainty is the confidence with which they hold opinions about it. Another leader of the Cavendish laboratory expressed his support of the second law of thermodynamics (which can be proven through the work of Gibbs/Boltzmann with ean emphatic statement at the beginning of his book.}
 
-\figure{\columns{\includejpg{\diagramsDir/physics/arthur-stanley-eddington}{}{}{left}}{\includepng{\diagramsDir/physics/natureofphysical00eddi_7}{}{}{right}}}{Eddingtonbook on the Nature of the Physical World [@Eddington:nature29]}{eddington-book}
+\figure{\columns{\includejpg{\diagramsDir/physics/arthur-stanley-eddington}{}{}{left}}{\includepng{\diagramsDir/physics/natureofphysical00eddi_7}{}{}{right}}{49%}{49%}}{Eddington's book on the Nature of the Physical World [@Eddington:nature29]}{eddington-book}
 
 \newslide{}
 
 \notes{The same Eddington is also unfortunately famous for dismissing the ideas of a young Chandrasekhar who had come to Cambridge to study in the Cavendish lab. Chandrasekhar demonstrated the limit at which a star would coallapse under its own weight to a singularity, but when he presented the work to Eddington, he was dismissive suggesting that there "must be some natural law that prevents this abomination from happening".}
 
-\figure{\columns{\includepng{\diagramsDir/physics/natureofphysical00eddi_100}{40%}{}{left}}{\includepng{\diagramsDir/physics/ChandraNobel}{}{}{right}}}{Chandrasekhar (1910-1995) derived the limit at which a star collapses in on itself. Eddington's confidence in the 2nd law may have been what drove him to dismiss Chandrasekhar's ideas, humiliating a young scientist who would later receive a Nobel prize for the work.}{physical-world-chandra}
+\figure{\columns{\includepng{\diagramsDir/physics/natureofphysical00eddi_100}{80%}{}{left}}{\includepng{\diagramsDir/physics/ChandraNobel}{100%}{}{right}}{49%}{49%}}{Chandrasekhar (1910-1995) derived the limit at which a star collapses in on itself. Eddington's confidence in the 2nd law may have been what drove him to dismiss Chandrasekhar's ideas, humiliating a young scientist who would later receive a Nobel prize for the work.}{physical-world-chandra}
 
 \newslide{}
 

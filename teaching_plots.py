@@ -1888,7 +1888,6 @@ def covariance_func(kernel, x=None,
     fhand = open(mlai.filename_join(filename + '.html', diagrams), 'w')
     fhand.write(out)
 
-def 
     
 def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../diagrams', **kwargs):
     """Plot samples from a GP, a small sample of data and a rejection sample."""
