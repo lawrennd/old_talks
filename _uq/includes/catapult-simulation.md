@@ -9,6 +9,8 @@
 
 \notes{As a worked example we're going to introduce a catapult simulation written by Nicolas Durrande, <https://durrande.shinyapps.io/catapult/>.}
 
+\figure{\includepng{\diagramsDir/uq/catapult-simulation}{80%}}{A catapult simulation for experimenting with surrogate models, kindly provided by Nicolas Durrande}{catapult-simulation}
+
 \notes{The simulator allows you to set various parameters of the catapult including the axis of rotation, `roation_axis`, the position of the arm stop, `arm_stop`, and the location of the two bindings of the catapult's spring, `spring_binding_1` and `spring_binding_2`.}
 
 
