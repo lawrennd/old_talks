@@ -74,7 +74,7 @@ movies = pd.read_csv(os.path.join('class_movie', 'movies.csv'),encoding='latin-1
 
 \writeassignment{The movies data is now in a data frame which contains
 one column for each user rating the movie. There are some entries that
-contain 'NaN'. What does the 'NaN' mean in this context?}{5}
+contain `NaN`. What does the `NaN` mean in this context?}{5}
 
 \subsection{Processing the Data}
 
