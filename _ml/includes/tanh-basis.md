@@ -7,7 +7,7 @@
 \slides{* }
 \notes{The rectified linear unit is a basis function that used to be used a lot for neural network models. It's related to the sigmoid function by a scaling.}
 $$
-\basisFunc_j(\inputScalar) = \mappingScalar_j \tanh(\mappingScalarTwo_j \inputScalar + \mappingScalar_0)
+\basisFunc_j(\inputScalar) = \tanh(\mappingScalarTwo_j \inputScalar + \mappingScalarTwo_0)
 $$
 
 \setupcode{import numpy as np}

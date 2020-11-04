@@ -67,7 +67,7 @@ $$
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/ml/radial_basis002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-function-2}}
+\notes{\figure{\includediagram{\diagramsDir/ml/radial_function002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-function-2}}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
