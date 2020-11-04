@@ -2,6 +2,8 @@
 \define{gaussianPredictIndexOneAndEight}
 \editme
 
+\subsubsection{Joint Density of $f_1$ and $f_8$}
+
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', 
@@ -10,14 +12,16 @@ from ipywidgets import IntSlider}
 							
 \notes{\figure{\includediagram{\diagramsDir/gp/two_point_sample013}{80%}}{Sample from the joint Gaussian model, points indexed by 1 and 8 highlighted.}{two-point-sample-13}}
 
-\newslide{Prediction of $\mappingFunction_{8}$ from $\mappingFunction_{1}$}
+\subsubsection{Prediction of $\mappingFunction_{8}$ from $\mappingFunction_{1}$}
+
 \slides{
+\define{width}{80%}
 \startanimation{two_point_sample3}{13}{17}
-\newframe{\includediagram{\diagramsDir/gp/two_point_sample013}}{two_point_sample3}
-\newframe{\includediagram{\diagramsDir/gp/two_point_sample014}}{two_point_sample3}
-\newframe{\includediagram{\diagramsDir/gp/two_point_sample015}}{two_point_sample3}
-\newframe{\includediagram{\diagramsDir/gp/two_point_sample016}}{two_point_sample3}
-\newframe{\includediagram{\diagramsDir/gp/two_point_sample017}}{two_point_sample3}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample013}{\width}}{two_point_sample3}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample014}{\width}}{two_point_sample3}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample015}{\width}}{two_point_sample3}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample016}{\width}}{two_point_sample3}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample017}{\width}}{two_point_sample3}
 \endanimation
 }
 \notes{\figure{\includediagram{\diagramsDir/gp/two_point_sample017}{80%}}{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_8$ along with the conditional distribution of $\mappingFunction_8$ given $\mappingFunction_1$}{two-point-sample-one-eight}}
