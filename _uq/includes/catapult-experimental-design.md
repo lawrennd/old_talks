@@ -26,16 +26,23 @@ space = ParameterSpace(
 
 \code{design = RandomDesign(space)
 x = design.get_samples(5)
-y = catapult_distance(x)[:,np.newaxis]}
+y = catapult_distance(x)}
 
 \setupcode{from GPy.models import GPRegression
 from emukit.model_wrappers import GPyModelWrapper
 from emukit.sensitivity.monte_carlo import MonteCarloSensitivity}
 
+\notes{Set up the GPy model. The variance of the RBF kernel is set to $150^2$ because that's roughly the square of the range of the catapult. We set the noise variance to a small value.}
+
 \code{model_gpy = GPRegression(x,y)
+model_gpy.kern.variance = 150**2
 model_gpy.likelihood.variance.fix(1e-5)
-model_emukit = GPyModelWrapper(model_gpy)
-model_emukit.optimize(messages=True)}
+display(model_gpy)}
+
+\notes{Wrap the model for EmuKit.}
+
+\code{model_emukit = GPyModelWrapper(model_gpy)
+model_emukit.optimize()}
 
 
 \setupcode{from emukit.experimental_design.experimental_design_loop import ExperimentalDesignLoop}

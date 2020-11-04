@@ -13,12 +13,12 @@
 
 
 \notes{These parameters are then collated in a vector,}
-$$\inputVector_i = \left[\begin{bmatrix}
-rotation_axis \\
-arm_stop \\
-spring_binding_1 \\
-spring_binding_2 
-\end{bmatrix}\right]
+$$\inputVector_i = \begin{bmatrix}
+\texttt{rotation_axis} \\
+\texttt{arm_stop} \\
+\texttt{spring_binding_1} \\
+\texttt{spring_binding_2}
+\end{bmatrix}
 $$
 
 \notes{Having set those parameters, you can run an experiment, by firing the catapult. This will show you how far it goes.}

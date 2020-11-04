@@ -46,7 +46,7 @@ import teaching_plots as plot}
 $$
 \dataScalar=\mappingFunction(\inputVector),
 $$ 
-where $\inputVector$ is a vector of $\dataDim$ simulator inputs $\inputScalar_1,\dots,\inputScalar_\dataDim$, and $\mappingFunction(\inpuVector)$ is the output of our simulator. We assume $\mappingFunction(\inputVector)$ is a square integrable function. If the inputs are statistically independent, then  and that the inputs are statistically independent and uniformly distributed within the hypercube $\inputScalar_i \in [0,1]$ for $i=1,2,\dots,\dataDim$, although the bounds can be generalized. The Sobol decomposition of $\mappingFunction(\cdot)$ allows us to write it as 
+where $\inputVector$ is a vector of $\dataDim$ simulator inputs $\inputScalar_1,\dots,\inputScalar_\dataDim$, and $\mappingFunction(\inputVector)$ is the output of our simulator. We assume $\mappingFunction(\inputVector)$ is a square integrable function. If the inputs are statistically independent, then  and that the inputs are statistically independent and uniformly distributed within the hypercube $\inputScalar_i \in [0,1]$ for $i=1,2,\dots,\dataDim$, although the bounds can be generalized. The Sobol decomposition of $\mappingFunction(\cdot)$ allows us to write it as 
 $$
 \mappingFunction(\inputVector) = \mappingFunction_0 + \sum_{i=1}^\dataDim \mappingFunction_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunction_{ij}(\inputScalar_i,\inputScalar_j) + \cdots + \mappingFunction_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
 $$
@@ -124,7 +124,7 @@ $$}
 
 \code{f1 = ishigami.f1(x_grid)
 f2 = ishigami.f2(x_grid)
-F13 = ishigami.f13(np.array([x_grid,x_grid]).T)[:,None]}
+F13 = ishigami.f13(np.array([x_grid,x_grid]).T)[:,np.newaxis]}
 
 \setupplotcode{from mpl_toolkits.mplot3d import Axes3D}
 
@@ -266,7 +266,7 @@ mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagra
 
 \code{desing = RandomDesign(space)
 x = desing.get_samples(500)
-y = ishigami.fidelity1(x)[:,None]}
+y = ishigami.fidelity1(x)[:,np.newaxis]}
 
 \notes{Now, we fit a standard Gaussian process to the samples and we wrap it as an Emukit model.}
 
