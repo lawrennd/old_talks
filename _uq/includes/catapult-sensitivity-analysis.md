@@ -26,9 +26,9 @@ import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
-main_effects_gp = {ivar: main_effects_gp[ivar][0] for ivar in main_effects_gp}
+main_effects_gp_plot = {ivar: main_effects_gp[ivar][0] for ivar in main_effects_gp}
 
-d = {'GP Monte Carlo':main_effects_gp}
+d = {'GP Monte Carlo':main_effects_gp_plot}
 
 pd.DataFrame(d).plot(kind='bar', ax=ax)
 plt.ylabel('% of explained output variance')
@@ -40,9 +40,9 @@ mlai.write_figure(filename='first-order-sobol-indices-gp-catapult.svg', director
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
-total_effects_gp = {ivar: total_effects_gp[ivar][0] for ivar in total_effects_gp}
+total_effects_gp_plot = {ivar: total_effects_gp[ivar][0] for ivar in total_effects_gp}
 
-d = {'GP Monte Carlo':total_effects_gp}
+d = {'GP Monte Carlo':total_effects_gp_plot}
 
 pd.DataFrame(d).plot(kind='bar', ax=ax)
 ax.set_ylabel('% of explained output variance')
