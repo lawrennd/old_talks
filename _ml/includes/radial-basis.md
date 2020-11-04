@@ -6,13 +6,18 @@
 
 \notes{Another type of basis is sometimes known as a 'radial basis' because the effect basis functions are constructed on 'centres' and the effect of each basis function decreases as the radial distance from each centre increases.}
 \slides{* Basis functions can be local e.g. radial (or Gaussian) basis}
-  $$\basisFunc_j(\inputScalar) = \exp\left(-\frac{(\inputScalar-\mu_j)^2}{\lengthScale^2}\right)$$
+$$
+\basisFunc_j(\inputScalar) = \exp\left(-\frac{(\inputScalar-\mu_j)^2}{\lengthScale^2}\right)
+$$
 
-\setupcode{import matplotlib.pyplot as plt
+\setucode{import numpy as np}
+\loadcode{radial}{mlai}
+
+
+\setupplotcode{import matplotlib.pyplot as plt
 import mlai
 import teaching_plots as plot}
 
-\loadcode{radial}{mlai}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -26,13 +31,26 @@ plot.basis(mlai.radial, x_min=-2, x_max=2,
            fig=f, ax=ax, loc=loc, text=text,
            diagrams='\writeDiagramsDir/ml')}
 
-\displaycode{pods.notebook.display_prediction(basis=mlai.radial, num_basis=4)}
+\define{\basisfunction}{radial_basis}
+\slides{
+\define{\width}{80%}
+\startanimation{\basisfunction}{0}{2}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{000}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{001}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{\width}}{\basisfunction}
+\endanimation
+}
 
-\setupcode{from ipywidgets import IntSlider
-import pods}
+\notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{80%}}{The set of functions which are combined to form the radial basis.}{radial-basis-2}}
+
+\setupdisplaycode{import pods
+from ipywidgets import IntSlider}
+
 \displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
+
+\displaycode{pods.notebook.display_prediction(basis=mlai.radial, num_basis=3)}
 
 \subsection{Functions Derived from Radial Basis}
 
@@ -49,11 +67,13 @@ $$
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/ml/radial_basis002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-basis-2}}
+\notes{\figure{\includediagram{\diagramsDir/ml/radial_basis002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-function-2}}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='\writeDiagramsDir/ml', func_num=IntSlider(0,0,2,1))}
+\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', 
+                            directory='\writeDiagramsDir/ml', 
+							func_num=IntSlider(0,0,2,1))}
 
 
 \endif

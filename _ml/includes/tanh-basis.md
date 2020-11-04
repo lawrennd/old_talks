@@ -4,10 +4,14 @@
 
 \subsection{Hyperbolic Tangent Basis}
 
-\code{%load -s tanh mlai.py}
+\slides{* }
+\notes{The rectified linear unit is a basis function that used to be used a lot for neural network models. It's related to the sigmoid function by a scaling.}
+$$
+\basisFunc_j(\inputScalar) = \mappingScalar_j \tanh(\mappingScalarTwo_j \inputScalar + \mappingScalar_0)
+$$
 
-\setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_prediction(basis=mlai.tanh, num_basis=4)}
+\setupcode{import numpy as np}
+\loadcode{tanh}{mlai}
 
 \notes{Sigmoid or hyperbolic tangent basis was popular in the original generation of multilayer perceptron models, or deep networks. These basis functions start flat, rise and then saturate.}
 
@@ -29,8 +33,28 @@ text =['$\phi(x) = 1$',
 plot.basis(mlai.tanh, x_min=-2.0, x_max=2.0,
            fig=f, ax=ax, loc=loc, text=text,
            diagrams='\writeDiagramsDir/ml',
-           num_basis=5)
+           num_basis=5)}
+
+\define{\basisfunction}{tanh_basis}
+\slides{
+\define{\width}{80%}
+\startanimation{\basisfunction}{0}{4}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{000}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{001}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{003}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{\width}}{\basisfunction}
+\endanimation
 }
+
+\notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a *hyberbolic tangent* basis.}{tanh-basis-2}}
+
+\setupdisplaycode{import pods
+from ipywidgets import IntSlider}
+
+\displaycode{pods.notebook.display_plots('tanh_basis{num_basis:0>3}.svg', 
+                            directory='\writeDiagramsDir/ml', 
+							num_basis=IntSlider(0,0,4,1))}
 
 \subsection{Functions Derived from Tanh Basis}
 
@@ -47,11 +71,11 @@ $$
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/ml/tanh_basis004}{80%}}{A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.}{tanh-basis-4}}
+\notes{\figure{\includediagram{\diagramsDir/ml/tanh_function002}{80%}}{A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.}{tanh-function-2}}
 
-\setupcode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('tanh_basis{num_basis:0>3}.svg', 
+\displaycode{pods.notebook.display_plots('tanh_function{func_num:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
-							num_basis=IntSlider(0,0,4,1))}
+							func_num=IntSlider(0,0,2,1))}
 \endif

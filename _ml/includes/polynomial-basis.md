@@ -4,11 +4,19 @@
 
 \subsection{Polynomial Basis}
 
-\setupcode{import matplotlib.pyplot as plt
+\slides{* }
+\notes{The polynomial basis combines higher order polynomials together to create the function. For example the fourth order polynomial has five components to its basis function.}
+$$
+\basisFunc_j(\inputScalar) = \mappingScalar_j \inputScalar^j
+$$
+
+\setupcode{import numpy as np}
+\loadcode{polynomial}{mlai}
+
+\setupplotcode{import matplotlib.pyplot as plt
 import mlai
 import teaching_plots as plot}
 
-\loadcode{polynomial}{mlai}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 f, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -25,8 +33,30 @@ text =['$\phi(x) = 1$',
 
 plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3, 
            fig=f, ax=ax, loc=loc, text=text, num_basis=5,
-		   diagrams='\writeDiagramsDir/ml')
+		   diagrams='\writeDiagramsDir/ml')}
+
+\define{\basisfunction}{polynomial_basis}
+\slides{
+\define{\width}{80%}
+\startanimation{\basisfunction}{0}{4}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{000}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{001}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{003}}{\width}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{\width}}{\basisfunction}
+\endanimation
 }
+
+\notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a *polynomial* basis.}{polynomial-basis-2}}
+
+\setupdisplaycode{import pods
+from ipywidgets import IntSlider}
+
+\displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
+                            directory='\writeDiagramsDir/ml', 
+							num_basis=IntSlider(0,0,4,1))}
+
+\displaycode{pods.notebook.display_prediction(basis=mlai.polynomial, num_basis=5)}
 
 \subsection{Functions Derived from Polynomial Basis}
 
@@ -36,20 +66,21 @@ $$
 
 \slides{
 \define{width}{80%}
-\startanimation{polynomial_basis}{0}{5}
-\newframe{\includediagram{\diagramsDir/ml/polynomial_basis000}{\width}}{polynomial_basis}
-\newframe{\includediagram{\diagramsDir/ml/polynomial_basis001}{\width}}{polynomial_basis}
-\newframe{\includediagram{\diagramsDir/ml/polynomial_basis002}{\width}}{polynomial_basis}
-\newframe{\includediagram{\diagramsDir/ml/polynomial_basis003}{\width}}{polynomial_basis}
-\newframe{\includediagram{\diagramsDir/ml/polynomial_basis004}{\width}}{polynomial_basis}
+\startanimation{polynomial_function}{0}{4}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_function000}{\width}}{polynomial_function}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_function001}{\width}}{polynomial_function}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_function002}{\width}}{polynomial_function}
 \endanimation
 }
-\notes{\figure{\includediagram{\diagramsDir/ml/polynomial_basis004}{80%}}{A polynomial basis is made up of different degrees of polynomial.}{polynomial-basis-4}}
+
+\notes{\figure{\includediagram{\diagramsDir/ml/polynomial_function002}{80%}}{A random combination of functions from the polynomial basis.}{polynomial-function-2}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
-                            directory='./ml', 
-                            num_basis=IntSlider(0,0,4,1))}
+\displaycode{pods.notebook.display_plots('polynomial_function{func_num:0>3}.svg', 
+                            directory='\writeDiagramsDir/ml', 
+                            func_num=IntSlider(0,0,2,1))}
+
+
 
 \endif
