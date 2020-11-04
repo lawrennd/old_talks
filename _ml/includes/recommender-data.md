@@ -30,7 +30,7 @@ accumulator.write_comment('Rate Movie Here (score 1-5)', row=1, column=4)
 accumulator.share(share_type='writer', send_notifications=True)
 ```
 
-\notes{In your Google docs account you should be able to find a
+\notes{In your Google drive account you should be able to find a
 spreadsheet called 'COM4509/6509 Movie Ratings: Your Name'. In the
 spreadsheet You should find a number of movies listed according to
 year. In the column titled 'rating' please place your rating using a
