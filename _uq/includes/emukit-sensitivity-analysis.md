@@ -36,6 +36,7 @@ from matplotlib import cm}
 \setupcode{import mlai
 import teaching_plots as plot}
 
+\notes{From Wikipedia description of varianced-based sensitivity analysis.}
 
 \notes{Sensitivity analysis is a statistical technique widely used to test the reliability of real systems. Imagine a simulator of taxis picking up customers in a city like the one showed in the [Emukit playground](https://github.com/amzn/emukit-playground). The profit of the taxi company depends on factors like the number of taxis on the road and the price per trip. In this example, a global sensitivity analysis of the simulator could be useful to decompose the variance of the profit in a way that can be assigned to the input variables of the simulator.}
 
@@ -45,9 +46,9 @@ import teaching_plots as plot}
 $$
 \dataScalar=\mappingFunction(\inputVector),
 $$ 
-where $\inputVector$ is a vector of $\dataDim$ uncertain model inputs $\inputScalar_1,\dots,\inputScalar_\dataDim$, and $\dataScalar$ is some univariate model output. We assume that $f$ is a square integrable function and that the inputs are statistically independent and uniformly distributed within the hypercube $\inputScalar_i \in [0,1]$ for $i=1,2,\dots,\dataDim$, although the bounds can be generalized. The Sobol decomposition of $\mappingFunction(\cdot)$ allows us to write it as 
+where $\inputVector$ is a vector of $\dataDim$ simulator inputs $\inputScalar_1,\dots,\inputScalar_\dataDim$, and $\mappingFunction(\inpuVector)$ is the output of our simulator. We assume $\mappingFunction(\inputVector)$ is a square integrable function. If the inputs are statistically independent, then  and that the inputs are statistically independent and uniformly distributed within the hypercube $\inputScalar_i \in [0,1]$ for $i=1,2,\dots,\dataDim$, although the bounds can be generalized. The Sobol decomposition of $\mappingFunction(\cdot)$ allows us to write it as 
 $$
-\dataScalar = \mappingFunction_0 + \sum_{i=1}^\dataDim \mappingFunction_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunction_{ij}(\inputScalar_i,\inputScalar_j) + \cdots + \mappingFunction_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
+\mappingFunction(\inputVector) = \mappingFunction_0 + \sum_{i=1}^\dataDim \mappingFunction_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunction_{ij}(\inputScalar_i,\inputScalar_j) + \cdots + \mappingFunction_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
 $$
 where $\mappingFunction_0$ is a constant term, $\mappingFunction_i$ is a function of $\inputScalar_i$, $\mappingFunction_{ij}$ a function of $\inputScalar_i$ and $\inputScalar_j$, etc. A condition of this decomposition is that,
 $$ 
@@ -98,24 +99,28 @@ In this notebook we will set the parameters to be $a = 5$ and $b=0.1$ . The inpu
 
 \notes{Next we create the function object and visualize its shape marginally for each one of its three inputs.}
 
+\notes{Load the Ishigami function}
+
 \setupcode{from emukit.test_functions.sensitivity import Ishigami}
 
-\code{### --- Load the Ishigami function
-ishigami = Ishigami(a=5, b=0.1)
-target_simulator = ishigami.fidelity1
+\code{ishigami = Ishigami(a=5, b=0.1)
+target_simulator = ishigami.fidelity1}
 
-### --- Define the input space in which the simulator is defined
-variable_domain = (-np.pi,np.pi)
+\notes{That gives us the target function, next we define the input space for the simulator.}
+
+\code{variable_domain = (-np.pi,np.pi)
 x_grid = np.linspace(*variable_domain,100)
 X, Y = np.meshgrid(x_grid, x_grid)}
 
 
 \notes{Before moving to any further analysis, we first plot the non-zero components $\mappingFunction(\inputVector)$. These components are 
-$$\begin{align*}
+$$
+\begin{align*}
 \mappingFunction_1(\inputScalar_1) & = \sin(\inputScalar_1) \\
 \mappingFunction_2(\inputScalar_1) & = a \sin^2 (\inputScalar_2) \\
 \mappingFunction_{13}(\inputScalar_1,\inputScalar_3) & = b \inputScalar_3^4 \sin(\inputScalar_1) 
-\end{align*}$$}
+\end{align*}
+$$}
 
 \code{f1 = ishigami.f1(x_grid)
 f2 = ishigami.f2(x_grid)
@@ -167,7 +172,7 @@ S_i = \frac{V_i}{\text{var}(\dataScalar)}.
 $$
 This value is standardized using the total variance so it is possible to account for a fractional contribution of each variable to the total variance of the output.
 
-The Sobol indexes for higher order interactions $S_{ij}$ are computed similarly. Note that the sum of all Sobol indexes equals to one.
+The Sobol indices for higher order interactions $S_{ij}$ are computed similarly. Note that the sum of all Sobol indexes equals to one.
 
 In most cases we are interested in the first order indexes. In the Ishigami function their values are:}
 
@@ -185,7 +190,12 @@ variable_domain = (-np.pi,np.pi)
 space = ParameterSpace(
           [ContinuousParameter('x1', variable_domain[0], variable_domain[1]), 
            ContinuousParameter('x2', variable_domain[0], variable_domain[1]),
-           ContinuousParameter('x3', variable_domain[0], variable_domain[1])])}
+           ContinuousParameter('x3', variable_domain[0], variable_domain[1])])
+		   
+space = ParameterSpace(
+          [ContinuousParameter('x1', *variable_domain), 
+           ContinuousParameter('x2', *variable_domain),
+           ContinuousParameter('x3', *variable_domain)])}
 						
 \notes{Compute the indexes is as easy as doing}
 
@@ -217,7 +227,9 @@ mlai.write_figure(filename='first-order-sobol-indices-ishigami.svg', directory='
 
 \subsection{Total Effects Using Monte Carlo}
 
-\notes{Computing high order sensitivity indexes can be computationally very demanding in high dimensional scenarios and measuring the total influence of each variable on the variance of the output is infeasible. To solve this issue the *total* indexes are used which account for the contribution to the output variance of $\inputScalar_i$ including all variance caused by the variable alone and all its interactions of any order. The total effect for $\inputScalar_i$ is given by:
+\notes{Computing high order sensitivity indexes can be computationally very demanding in high dimensional scenarios and measuring the total influence of each variable on the variance of the output is infeasible. To solve this issue the *total* indices are used which account for the contribution to the output variance of $\inputScalar_i$ including all variance caused by the variable alone and all its interactions of any order. 
+
+The total effect for $\inputScalar_i$ is given by:
 $$ 
 S_{Ti} = \frac{E_{\inputVector_{\sim i}} \left(\text{var}_{\inputScalar_i} (\dataScalar \mid \inputVector_{\sim i}) \right)}{\text{var}(\dataScalar)} = 1 - \frac{\text{var}_{\inputVector_{\sim i}} \left(E_{\inputScalar_i} (\dataScalar \mid \inputVector_{\sim i}) \right)}{\text{var}(\dataScalar)}
 $$
@@ -241,15 +253,14 @@ mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagra
 
 \figure{\includediagram{\diagramsDir/uq/total-effects-ishigami}{80%}}{The total effects from the Ishigami function as computed via Monte Carlo estimate alongside the true total effects for the Ishigami function.}{total-effects-ishigami}
 
-
 \subsection{Computing the sensitivity coefficients using the output of a model}
 
-\notes{In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol coefficients.
+\notes{In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol coefficients.}
 
-An alternative in these cases is to use Gaussaian process emulator of the function of interest trained on a few inputs and outputs. If the model is properly trained, its mean prediction which is cheap to evaluate, can be used to compute the Monte Carlo estimates of the Sobol coefficients. Let's see how we can do this in Emukit.
+\notes{An alternative in these cases is to use Gaussaian process emulator of the function of interest trained on a few inputs and outputs. If the model is properly trained, its mean prediction which is cheap to evaluate, can be used to compute the Monte Carlo estimates of the Sobol coefficients. Let's see how we can do this in Emukit.}
 
 
-We start by generating 100 samples in the input domain. Note that this a just 1% of the number of samples that we used to compute the Sobol coefficients using Monte Carlo.}
+\notes{We start by generating 100 samples in the input domain. Note that this a just 1% of the number of samples that we used to compute the Sobol coefficients using Monte Carlo.}
 
 \setupcode{from emukit.core.initial_designs import RandomDesign}
 
@@ -287,7 +298,6 @@ plt.ylabel('% of explained output variance')
 mlai.write_figure(filename='first-order-sobol-indices-gp-ishigami.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/first-order-sobol-indices-gp-ishigami}{80%}}{First Order sobol indices as estimated by Monte Carlo and GP-emulator based Monte Carlo.}{first-order-sobol-indices-gp-ishigami}
-
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 

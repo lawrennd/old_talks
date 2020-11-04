@@ -10,8 +10,9 @@
 \setupcode{import numpy as np
 
 from emukit.test_functions import forrester_function
-from emukit.core.loop.user_function import UserFunctionWrapper
-from emukit.core import ContinuousParameter, ParameterSpace}
+#from emukit.core.loop.user_function import UserFunctionWrapper
+#from emukit.core import ContinuousParameter, ParameterSpace
+}
 
 
 \code{target_function, space = forrester_function()}
