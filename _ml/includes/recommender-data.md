@@ -30,17 +30,17 @@ accumulator.write_comment('Rate Movie Here (score 1-5)', row=1, column=4)
 accumulator.share(share_type='writer', send_notifications=True)
 ```
 
-\notes{In your Google docs account you should be able to find a
+\notes{In your Google drive account you should be able to find a
 spreadsheet called 'COM4509/6509 Movie Ratings: Your Name'. In the
 spreadsheet You should find a number of movies listed according to
 year. In the column titled 'rating' please place your rating using a
 score of 1-5 for *any* of the movies you've seen from the list.}
 
-Once you have placed your ratings we can download the data from your
+\notes{Once you have placed your ratings we can download the data from your
 spreadsheets to a central file where the ratings of the whole class
 can be stored. We will build an algorithm on these ratings and use
 them to make predictions for the rest of the class. Firstly, here's
-the code for reading the ratings from each of the spreadsheets.
+the code for reading the ratings from each of the spreadsheets.}
 
 ```python
 import numpy as np
@@ -74,7 +74,7 @@ movies = pd.read_csv(os.path.join('class_movie', 'movies.csv'),encoding='latin-1
 
 \writeassignment{The movies data is now in a data frame which contains
 one column for each user rating the movie. There are some entries that
-contain 'NaN'. What does the 'NaN' mean in this context?}{5}
+contain `NaN`. What does the `NaN` mean in this context?}{}{5}
 
 \subsection{Processing the Data}
 
@@ -88,6 +88,6 @@ Y = pd.melt(movies.reset_index(), id_vars=['Film', 'index'],
 Y = Y.dropna(axis=0)}
 
 \subsection{What is a pivot table? What does the `pandas` command
-`pd.melt` do?}{3}{10}
+`pd.melt` do?}{}{10}
 
 \endif

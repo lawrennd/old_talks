@@ -7,7 +7,7 @@
 \slides{* }
 \notes{The polynomial basis combines higher order polynomials together to create the function. For example the fourth order polynomial has five components to its basis function.}
 $$
-\basisFunc_j(\inputScalar) = \mappingScalar_j \inputScalar^j
+\basisFunc_j(\inputScalar) = \inputScalar^j
 $$
 
 \setupcode{import numpy as np}
