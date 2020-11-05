@@ -5,39 +5,11 @@
 
 \section{Experimental Design in Emukit}
 
-\notes{We're going to introduce the experimental design acquisiton functions by looking at the Forrester function [@Forrester-engineering08]}
-
-\setupcode{import numpy as np
-
-from emukit.test_functions import forrester_function
-#from emukit.core.loop.user_function import UserFunctionWrapper
-#from emukit.core import ContinuousParameter, ParameterSpace
-}
-
-
-\code{target_function, space = forrester_function()}
-
-\code{x_plot = np.linspace(space.parameters[0].min, space.parameters[0].max, 301)[:, None]
-y_plot = target_function(x_plot)}
-
-\setupplot{import matplotlib.pyplot as plt}
-
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_plot, y_plot, 'k', label='target Function', linewidth=2)
-
-ax.legend(loc=2)
-ax.set_xlabel('$x$')
-ax.set_ylabel('$f(x)$')
-ax.grid(True)
-ax.set_xlim(0, 1)
-
-mlai.write_figure(filename='forrester-function.svg', directory='\writeDiagramsDir/uq')}
-
-\figure{\includediagram{\diagramsDir/uq/forrester-function}{80%}}{The Forrester function [@Forrester-engineering08].}{forrester-function}
+\include{_uq/includes/forrester-function.md}
 
 \subsection{Initial Design}
 
-\notes{Usually, before we start the actual ExpDesign loop we need to gather a few observations such that we can fit the model. This is called the initial design and common strategies are either a predefined grid or sampling points uniformly at random.}
+\notes{Usually, before we start the actual `ExpDesign` loop we need to gather a few observations such that we can fit the model. This is called the initial design and common strategies are either a predefined grid or sampling points uniformly at random. These strategies are known as model-free experimental design.}
 
 \code{X_init = np.array([[0.2],[0.6], [0.9]])
 Y_init = target_function(X_init)}
@@ -59,8 +31,8 @@ mlai.write_figure(filename='forrester-function-initial-design.svg', directory='\
 
 \subsection{The Model}
 
-\notes{Now we can start with the ExpDesign loop by first fitting a model on the collected data. 
-A popular model for ExpDesign is a Gaussian process (GP) which defines a probability distribution across classes of functions, typically smooth, such that each linear finite-dimensional restriction is multivariate Gaussian [@Rasmussen:book06]. Gaussian processes are fully parametrized by a mean $\mu(\inputVector)$ and a covariance function $\kernelScalar(\inputVector,\inputVector^\prime)$.  Without loss of generality $\mu(\inputVector)$ is assumed to be zero. The covariance function $\kernelScalar(\inputVector,\inputVector^\prime)$ characterizes the smoothness and other properties of $\mappingFunction$. It is known that the kernel of the process has to be continuous, symmetric and positive definite. A widely used kernel is the exponentiated quadratic or RBF kernel: 
+\notes{Now we can start with the `ExpDesign` loop by first fitting a model on the collected data. 
+A popular model for `ExpDesign` is a Gaussian process (GP) which defines a probability distribution across classes of functions, typically smooth, such that each linear finite-dimensional restriction is multivariate Gaussian [@Rasmussen:book06]. Gaussian processes are fully parametrized by a mean $\mu(\inputVector)$ and a covariance function $\kernelScalar(\inputVector,\inputVector^\prime)$.  Without loss of generality $\mu(\inputVector)$ is assumed to be zero. The covariance function $\kernelScalar(\inputVector,\inputVector^\prime)$ characterizes the smoothness and other properties of $\mappingFunction$. It is known that the kernel of the process has to be continuous, symmetric and positive definite. A widely used kernel is the exponentiated quadratic or RBF kernel: 
 $$ 
 \kernelScalar(\inputVector,\inputVector^\prime) = \alpha \exp{ \left(-\frac{\|\inputVector-\inputVector^\prime\|^2}{2 \ell}\right)} 
 $$ 
@@ -148,7 +120,7 @@ $$
 \notes{In the integrated variance reduction (IVR) you choose the next value $\inputVector_{n+1}$ such that the total variance of the model is reduced maximally [@Sacks-design89],}
 $$
 \begin{align*}
-a_{IVR} & = \int_{\mathbb{X}}[\sigma^2(\inputVector') - \sigma^2(\inputVector'; \inputVector)]\text{d}\inputVector' \\
+a_{\text{IVR}} & = \int_{\mathbb{X}}[\sigma^2(\inputVector') - \sigma^2(\inputVector'; \inputVector)]\text{d}\inputVector' \\
 & \approx 
 \frac{1}{\# \text{samples}}\sum_i^{\# \text{samples}}[\sigma^2(\inputVector_i) - \sigma^2(\inputVector_i; \inputVector)].
 \end{align*}

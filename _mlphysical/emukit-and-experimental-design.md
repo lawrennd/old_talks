@@ -33,7 +33,6 @@ plt.rcParams.update({'font.size': 22})}
 
 \notes{This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.}
 
-\include{_uq/includes/alex-forrester.md}
 \include{_uq/includes/emukit-experimental-design.md}
 
 \subsection{Conclusions}

@@ -52,5 +52,4 @@ mlai.write_figure(filename='total-effects-sobol-indices-gp-catapult.svg', direct
 \figure{\includediagram{\diagramsDir/uq/total-effects-sobol-indices-gp-catapult}{80%}}{Total effects as estimated by GP based Monte Carlo on the catapult.}{total-effects-sobol-indices-gp-catapult}
 
 
-
 \endif

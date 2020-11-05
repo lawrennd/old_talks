@@ -15,7 +15,8 @@
 
 
 \notes{These parameters are then collated in a vector,}
-$$\inputVector_i = \begin{bmatrix}
+$$
+\inputVector_i = \begin{bmatrix}
 \texttt{rotation_axis} \\
 \texttt{arm_stop} \\
 \texttt{spring_binding_1} \\
@@ -25,7 +26,7 @@ $$
 
 \notes{Having set those parameters, you can run an experiment, by firing the catapult. This will show you how far it goes.}
 
-\notes{To feed the model with the value of the catapult simulation we will use the following function.}
+\notes{Because you will need to operate the catapult yourself, we'll create a function to query you about the result of an individual firing.}
 
 \setuphelpercode{import numpy as np}
 
@@ -45,5 +46,17 @@ $$
         print('x_4 = {spring_binding_2:.2f} (spring binding 2)'.format(spring_binding_2=spring_binding_2))
         y[i, 0] = float(input('What is the distance? '))
     return y}
+
+\notes{We can also set the parameter space for the model. Each of these variables is scaled to operate $\in [0, 1]$.
+
+\setupcode{from emukit.core import ContinuousParameter, ParameterSpace}
+
+\code{variable_domain = [0,1]
+           
+space = ParameterSpace(
+          [ContinuousParameter('rotation_axis', *variable_domain), 
+           ContinuousParameter('arm_stop', *variable_domain),
+           ContinuousParameter('spring_binding_1', *variable_domain),
+           ContinuousParameter('spring_binding_2', *variable_domain)])}
 
 \endif

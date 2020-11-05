@@ -36,124 +36,103 @@ from matplotlib import cm}
 \setupcode{import mlai
 import teaching_plots as plot}
 
-\notes{From Wikipedia description of varianced-based sensitivity analysis.}
-
 \notes{Sensitivity analysis is a statistical technique widely used to test the reliability of real systems. Imagine a simulator of taxis picking up customers in a city like the one showed in the [Emukit playground](https://github.com/amzn/emukit-playground). The profit of the taxi company depends on factors like the number of taxis on the road and the price per trip. In this example, a global sensitivity analysis of the simulator could be useful to decompose the variance of the profit in a way that can be assigned to the input variables of the simulator.}
 
 \notes{There are different ways of doing a sensitivity analysis of the variables of a simulator. In this notebook we will start with an approach based on Monte Carlo sampling that is useful when evaluating the simulator is cheap. If evaluating the simulator is expensive, emulators can then be used to speed up computations. We will show this in the last part of the notebook. Next, we start with a few formal definitions and literature review so we can understand the basics of Sensitivity Analysis and how it can performed with Emukit.}
 
-\notes{Any simulator can be viewed as a function 
+
+\subsection{Local Sensitivity}
+
+\notes{Given any function, $\mappingFunctionTwo(\cdot)$, we might be interested in how sensitive that function is to variations in its input space. One route to determining this is to compute the partial derivatives of that function with respect to its inputs,
 $$
-\dataScalar=\mappingFunction(\inputVector),
-$$ 
-where $\inputVector$ is a vector of $\dataDim$ simulator inputs $\inputScalar_1,\dots,\inputScalar_\dataDim$, and $\mappingFunction(\inputVector)$ is the output of our simulator. We assume $\mappingFunction(\inputVector)$ is a square integrable function. If the inputs are statistically independent, then  and that the inputs are statistically independent and uniformly distributed within the hypercube $\inputScalar_i \in [0,1]$ for $i=1,2,\dots,\dataDim$, although the bounds can be generalized. The Sobol decomposition of $\mappingFunction(\cdot)$ allows us to write it as 
+\frac{\partial}{\partial\inputScalar_i} \mappingFunctionTwo(\inputVector).
 $$
-\mappingFunction(\inputVector) = \mappingFunction_0 + \sum_{i=1}^\dataDim \mappingFunction_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunction_{ij}(\inputScalar_i,\inputScalar_j) + \cdots + \mappingFunction_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
+\notes{The matrix of all these partial derivatives is known as the Jacobian.}
+
+\notes{These types of local sensitivity analysis can be used for determining the effect of changing an input variable around an operating point. But they don't give us an understanding of the response of the target function to variations in the input across the domain of inputs. For this, we need to look to *global sensitivity analysis*.}
+
+\subsection{Global Sensitivity Analysis}
+
+\notes{In global sensitivity analysis, rather than looking around a single operating point, we're interested in the overall sensitivity of a function to its inputs, or combinations of inputs, across its entire domain. The key tool in determining this sensitivity is known as the ANOVA decomposition, or the *Hoeffding-Sobol decomposition*.}
+
+\notes{For global sensitivity analysis, we need to make an assumption about how are inputs are going to vary to create different values of the function. The fundamental object we're interested in is the total variance of the function,}
 $$
-where $\mappingFunction_0$ is a constant term, $\mappingFunction_i$ is a function of $\inputScalar_i$, $\mappingFunction_{ij}$ a function of $\inputScalar_i$ and $\inputScalar_j$, etc. A condition of this decomposition is that,
-$$ 
-\int_0^1 \mappingFunction_{i_1 i_2 \dots i_\dataDim}(\inputScalar_{i_1},\inputScalar_{i_2},\dots,\inputScalar_{i_\dataDim}) \text{d}\inputScalar_{k}=0, \text{ for } k = i_1,...,i_\dataDim. 
+\text{var}(\mappingFunctionTwo) = \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector) - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2
 $$
-This means that all the terms in the decomposition are orthogonal, which can be written in terms of conditional expected values as
-$$\begin{align*}
-\mappingFunction_0 &= E(\dataScalar) \\
-\mappingFunction_i(\inputScalar_i) & = E(\dataScalar|\inputScalar_i) - \mappingFunction_0 \\
-\mappingFunction_{ij}(\inputScalar_i,\inputScalar_j) & = E(\dataScalar|\inputScalar_i,\inputScalar_j) - \mappingFunction_0 - \mappingFunction_i - \mappingFunction_j 
-\end{align*}$$
-with all the expectations computed over $\dataScalar$.}
-
-\notes{Each component $\mappingFunction_i$ (main effects) can be seen as the effect on $\dataScalar$ of varying $\inputScalar_i$ alone. The same interpretation follows for $\mappingFunction_{ij}$ which accounts for the (extra) variation of changing $\inputScalar_i$ and $\inputScalar_j$ simultaneously (second-order interaction). Higher-order terms have analogous definitions.
-
-The key step to decompose the variation of $\dataScalar$ is to notice that
+\notes{where}
 $$
-\text{var}(\dataScalar) = E(\dataScalar^2) - E(\dataScalar)^2 = \int_0^1 \mappingFunction^2(\inputVector) \text{d}\inputVector - \mappingFunction_0^2
+\expectationDist{h(\inputVector)} = \int_\inputVector h(\inputVector) p(\inputVector) \text{d}\inputVector
 $$
-and that this variance can be decomposed as
-$$ 
-\text{var}(\dataScalar) = \int_0^1 \sum_{i=1}^\dataDim \mappingFunction_i(\inputScalar_i) \text{d}\inputScalar_i + \int_0^1 \sum_{i<j}^{\dataDim} \mappingFunction_{ij}(\inputScalar_i,\inputScalar_j)\text{d} \inputScalar_i \text{d} \inputScalar_j + \cdots +\int_0^1 \mappingFunction_{1,2,\dots,d}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim)\text{d}\inputVector.
+\notes{is the expectation of the function $h(\inputVector)$ under the density $p(\inputVector)$, which represents the probability distribution of inputs we're interested in.}
+
+\newslide{}
+
+\notes{The total variance of the function gives us the overal variation of the function across the domain of inputs, as represented by the probability density, $p(\inputVector)$. Normally, we perform analysis by assuming that,}
 $$
-This expression leads to the decomposition of the variance of $\dataScalar$ as,
-$$ 
-\text{var}(\dataScalar) = \sum_{i=1}^\dataDim V_i + \sum_{i<j}^{\dataDim} V_{ij} + \cdots + V_{12 \dots \dataDim},
+p(\inputVector) = \prod_{i=1}^\dataDim p(\inputScalar_i)
 $$
-where
-$$ 
-V_{i} = \text{var}_{\inputScalar_i} \left( E_{\inputVector_{\sim i}} (\dataScalar \mid \inputScalar_{i}) \right),
+\notes{and that each $p(\inputScalar_i)$ is *uniformly distributed* across its input domain. Assuming we scale the input domain down to the interval $[0, 1]$, that gives us}
 $$
-$$ 
-V_{ij} = \text{var}_{\inputScalar_{ij}} \left( E_{\inputVector_{\sim ij}} \left( \dataScalar \mid \inputScalar_i, \inputScalar_j\right)\right) - \operatorname{V}_{i} - \operatorname{V}_{j}
+\inputScalar_i \sim \uniformSamp{0}{1}.
 $$
-and so on. The $\inputVector_{\sim i}$ notation is used to indicate all the set of variables but the $i^{th}$.}
 
-\notes{**Note**: The previous decomposition is important because it shows how the variance in the output $\dataScalar$ can be associated to each input or interaction separately}
+\subsection{Hoeffding-Sobol Decomposition}
 
-\subsection{Example: the Ishigami function}
-
-\notes{We illustrate the exact calculation of the Sobol indexes with the three dimensional Ishigami function of [@Ishigami-importance90]. This is a well-known example for uncertainty and sensitivity analysis methods because of its strong nonlinearity and peculiar dependence on $\inputScalar_3$. More details of this function can be found in [@Sobol-variance99].}
-
-\notes{Mathematically, the from of the Ishigami function is
+\notes{The Hoeffding-Sobol, or ANOVA, decomposition of a function allows us to write it as,}
 $$
-\mappingFunction(\textbf{x}) = \sin(\inputScalar_1) + a \sin^2(\inputScalar_2) + b \inputScalar_3^4 \sin(\inputScalar_1). 
+\mappingFunctionTwo(\inputVector) = \mappingFunctionTwo_0 + \sum_{i=1}^\dataDim \mappingFunctionTwo_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunctionTwo_{ij}(\inputScalar_i,\inputScalar_j) + \cdots + \mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
 $$
-In this notebook we will set the parameters to be $a = 5$ and $b=0.1$ . The input variables are sampled randomly $\inputScalar_i \sim \text{Uniform}(-\pi,\pi)$.}
+\notes{where}
+$$
+\mappingFunctionTwo_0 = \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)^2}
+$$
+\notes{and}
+$$
+\mappingFunctionTwo_i(\inputScalar_i) = \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector_{\sim i})} - \mappingFunctionTwo_0,
+$$
+\notes{where we're using the notation $p(\inputVector_{\sim i})$ to represent the input distribution with the $i$th variable marginalised,}
+$$
+p(\inputVector_{\sim i}) = \int p(\inputVector) \text{d}\inputScalar_i
+$$
+\notes{Higher order terms in the decomposition represent interactions between inputs,}
+$$
+\mappingFunctionTwo_{i,j}(\inputScalar_i, \inputScalar_j) = \int \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector_{\sim i,j})} - \mappingFunctionTwo_i(\inputScalar_i) - \mappingFunctionTwo_j(\inputScalar_j) - \mappingFunctionTwo_0
+$$
+\notes{and similar expressions can be written for higher order terms up to $\mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputVector)$.}
 
-\notes{Next we create the function object and visualize its shape marginally for each one of its three inputs.}
+\notes{Note that to compute each of these individual terms, you need to first compute the low order terms, and then compute the high order terms. This can be problematic when $\dataDim$ is large.}
 
-\notes{Load the Ishigami function}
+\notes{We're interested in the variance of the function $\mappingFunctionTwo$, so implicitly we're assuming that the square of this function is integrable across its domain, i.e. we're assuming that $\expectationDist{\mappingFunctionTwo(\inputVector)^2}{p(\inputVector)}$ exists and is finite.}
 
-\setupcode{from emukit.test_functions.sensitivity import Ishigami}
+\newslide{}
 
-\code{ishigami = Ishigami(a=5, b=0.1)
-target_simulator = ishigami.fidelity1}
-
-\notes{That gives us the target function, next we define the input space for the simulator.}
-
-\code{variable_domain = (-np.pi,np.pi)
-x_grid = np.linspace(*variable_domain,100)
-X, Y = np.meshgrid(x_grid, x_grid)}
-
-
-\notes{Before moving to any further analysis, we first plot the non-zero components $\mappingFunction(\inputVector)$. These components are 
+\notes{The Sobol decomposition has some important properties, in particular, it components are orthogonal, so this means that when we substitute it in to the variance, we have,}
 $$
 \begin{align*}
-\mappingFunction_1(\inputScalar_1) & = \sin(\inputScalar_1) \\
-\mappingFunction_2(\inputScalar_1) & = a \sin^2 (\inputScalar_2) \\
-\mappingFunction_{13}(\inputScalar_1,\inputScalar_3) & = b \inputScalar_3^4 \sin(\inputScalar_1) 
+\text{var}(\mappingFunctionTwo) & = \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector) - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2 \\
+& = \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector) - \mappingFunctionTwo_0^2\\
+& = \sum_{i=1}^\dataDim \text{var}\left(\mappingFunctionTwo_i(\inputScalar_i)\right) + \sum_{i<j}^{\dataDim} \text{var}\left(\mappingFunctionTwo_{ij}(\inputScalar_i,\inputScalar_j)\right) + \cdots + \text{var}\left(\mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim)\right).
 \end{align*}
-$$}
+$$
+\notes{So, this decomposition gives us a decomposition of the function in terms of variances. It's for this reason that it's sometimes known as an ANOVA decomposition. ANOVA stands a for *analysis of variance*. The ANOVA decomposition decomposes the function into additive variance parts that are each stemming from interactions between different inputs.}
 
-\code{f1 = ishigami.f1(x_grid)
-f2 = ishigami.f2(x_grid)
-F13 = ishigami.f13(np.array([x_grid,x_grid]).T)[:,np.newaxis]}
+\newslide{Sobol Indices}
 
-\setupplotcode{from mpl_toolkits.mplot3d import Axes3D}
+\notes{As is common in various analyses of variance, we can rescale the components with the *total variance* of the function. These rescaled components are known as $Sobol indicies*.}
+$$
+S_\ell = \frac{\text{var}\left(\mappingFunctionTwo(\inputVector_\ell))\right)}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)},
+$$
+\notes{where the $\ell$ represents the relevent set of indices for the different combinations of inputs.}
 
-\plotcode{fig, axs = plt.subplots(2, 2, figsize=plot.big_wide_figsize)
-gs = axs[1, 1].get_gridspec()
-# remove the underlying axes
-for ax in axs[1, 0:]:
-    ax.remove()
+\notes{In practice, For an elegant approach that exploits a particular covariance function structure to perform global sensitivity analysis see @Durrande-anova13.}
 
-ax2 = fig.add_subplot(gs[1, 0:], projection='3d')
+\section{Example: the Ishigami function}
 
-axs[0,0].plot(x_grid, f1,'-r')
-axs[0,0].set_xlabel('$x_1$')
-axs[0,0].set_ylabel('$f_1$')
+\notes{We illustrate the exact calculation of the Sobol indices with the three dimensional Ishigami function of [@Ishigami-importance90]. 
 
-axs[0,1].plot(x_grid,f2,'-r')
-axs[0,1].set_xlabel('$x_2$')
-axs[0,1].set_ylabel('$f_2$')
+\include{_uq/includes/ishigami-function.md}
 
-plt.suptitle('Non-zero Sobol components of the Ishigami function')
-
-surf = ax2.plot_surface(X, Y, F13, cmap=cm.coolwarm, linewidth=0, antialiased=False)
-ax2.set_xlabel('$x_1$')
-ax2.set_ylabel('$x_3$')
-ax2.set_zlabel('$f_{13}$')
-
-mlai.write_figure(filename='non-zero-sobol-ishigami.svg', directory='\writeDiagramsDir/uq')}
-
-\figure{\includediagram{\diagramsDir/uq/non-zero-sobol-ishigami}{80%}}{The non-zero components of the Ishigami function.}{non-zero-sobol-ishigami}
+\subsection{Total Variance}
 
 \notes{The total variance $\text{var}(\dataScalar)$ in this example is}
 
@@ -166,46 +145,29 @@ print(ishigami.variance_x1 + ishigami.variance_x2 + ishigami.variance_x13)}
 
 \subsection{First Order Sobol Indices using Monte Carlo}
 
-\notes{The first order Sobol indexes are a measure of "first order sensitivity" of each input variable. They account for the proportion of variance of $\dataScalar$ explained by changing each variable alone while marginalizing over the rest. The Sobol index of the $i$th variable is computed as
+\notes{The first order Sobol indices are a measure of "first order sensitivity" of each input variable. They account for the proportion of variance of $\dataScalar$ explained by changing each variable alone while marginalizing over the rest. Recall that the Sobol index of the $i$th variable is computed as}
 $$
-S_i = \frac{V_i}{\text{var}(\dataScalar)}.
+S_i = \frac{\text{var}\left(\mappingFunctionTwo(\inputScalar_i)\right)}{\text{var}(\dataScalar)}.
 $$
-This value is standardized using the total variance so it is possible to account for a fractional contribution of each variable to the total variance of the output.
+\notes{This value is standardized using the total variance so it is possible to account for a fractional contribution of each variable to the total variance of the output.}
 
-The Sobol indices for higher order interactions $S_{ij}$ are computed similarly. Note that the sum of all Sobol indexes equals to one.
+\notes{The Sobol indices for higher order interactions $S_{i,j}$ are computed similarly. Due to the normalization by the total variance, the the sum of all Sobol indices equals to one.}
 
-In most cases we are interested in the first order indexes. In the Ishigami function their values are:}
+\notes{In most cases we are interested in the first order indices. The Ishigami function has the benefit that these can be computed analytically. In `EmuKit` you can extract these values with the code.}
 
 \code{ishigami.main_effects}
 
-\notes{The most standard way of computing the Sobol indexes is using Monte Carlo. Details are given in [@Sobol-global01].
+\notes{But in general these indices need to be sampled using Monte Carlo or one of the quasi-Monte Carlo methods we've seen in the model-free experimental design. Details are given in [@Sobol-global01].}
 
-With Emukit, the first-order Sobol indexes can be easily computed. We first need to define the space where of target simulator is analyzed.}
-
-\setupcode{from emukit.core import ContinuousParameter, ParameterSpace}
-
-\code{target_simulator = ishigami.fidelity1
-variable_domain = (-np.pi,np.pi)
-
-space = ParameterSpace(
-          [ContinuousParameter('x1', variable_domain[0], variable_domain[1]), 
-           ContinuousParameter('x2', variable_domain[0], variable_domain[1]),
-           ContinuousParameter('x3', variable_domain[0], variable_domain[1])])
-		   
-space = ParameterSpace(
-          [ContinuousParameter('x1', *variable_domain), 
-           ContinuousParameter('x2', *variable_domain),
-           ContinuousParameter('x3', *variable_domain)])}
-						
-\notes{Compute the indexes is as easy as doing}
+\notes{With Emukit, the first-order Sobol indices can be easily computed. We first need to define the space where of target simulator is analyzed.}
 
 \setupcode{from emukit.sensitivity.monte_carlo import ModelFreeMonteCarloSensitivity}
 
 \code{np.random.seed(10)  # for reproducibility
 
-num_mc = 10000  # Number of MC samples
+num_monte_carlo_points = 10000  # Number of MC samples
 senstivity_ishigami = ModelFreeMonteCarloSensitivity(target_simulator, space)
-main_effects, total_effects, _ = senstivity_ishigami.compute_effects(num_monte_carlo_points = num_mc)
+main_effects, total_effects, _ = senstivity_ishigami.compute_effects(num_monte_carlo_points = num_monte_carlo_points)
 print(main_effects)}
 
 \notes{We compare the true effects with the Monte Carlo effects in a bar-plot. The total effects are discussed later.}
@@ -227,7 +189,7 @@ mlai.write_figure(filename='first-order-sobol-indices-ishigami.svg', directory='
 
 \subsection{Total Effects Using Monte Carlo}
 
-\notes{Computing high order sensitivity indexes can be computationally very demanding in high dimensional scenarios and measuring the total influence of each variable on the variance of the output is infeasible. To solve this issue the *total* indices are used which account for the contribution to the output variance of $\inputScalar_i$ including all variance caused by the variable alone and all its interactions of any order. 
+\notes{Computing high order sensitivity indices can be computationally very demanding in high dimensional scenarios and measuring the total influence of each variable on the variance of the output is infeasible. To solve this issue the *total* indices are used which account for the contribution to the output variance of $\inputScalar_i$ including all variance caused by the variable alone and all its interactions of any order. 
 
 The total effect for $\inputScalar_i$ is given by:
 $$ 
@@ -253,11 +215,11 @@ mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagra
 
 \figure{\includediagram{\diagramsDir/uq/total-effects-ishigami}{80%}}{The total effects from the Ishigami function as computed via Monte Carlo estimate alongside the true total effects for the Ishigami function.}{total-effects-ishigami}
 
-\subsection{Computing the sensitivity coefficients using the output of a model}
+\subsection{Computing the sensitivity indices using the output of a model}
 
-\notes{In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol coefficients.}
+\notes{In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol indices.}
 
-\notes{An alternative in these cases is to use Gaussaian process emulator of the function of interest trained on a few inputs and outputs. If the model is properly trained, its mean prediction which is cheap to evaluate, can be used to compute the Monte Carlo estimates of the Sobol coefficients. Let's see how we can do this in Emukit.}
+\notes{An alternative in these cases is to use Gaussaian process emulator of the function of interest trained on a few inputs and outputs [@Marrel-sobol09]. If the model is properly trained, its mean prediction which is cheap to evaluate, can be used to compute the Monte Carlo estimates of the Sobol indices, the variance from the GP emulator can also be used to assess our uncertainty about the Sobol indices. Let's see how we can do this in Emukit.}
 
 
 \notes{We start by generating 100 samples in the input domain. Note that this a just 1% of the number of samples that we used to compute the Sobol coefficients using Monte Carlo.}
@@ -292,7 +254,7 @@ d = {'Sobol True': ishigami.main_effects,
      'GP Monte Carlo':main_effects_gp}
 
 pd.DataFrame(d).plot(kind='bar', ax=ax)
-plt.title('First-order Sobol indexes - Ishigami')
+plt.title('First-order Sobol indices - Ishigami')
 plt.ylabel('% of explained output variance')
 
 mlai.write_figure(filename='first-order-sobol-indices-gp-ishigami.svg', directory='\writeDiagramsDir/uq')}
@@ -315,11 +277,11 @@ mlai.write_figure(filename='total-effects-sobol-indices-gp-ishigami.svg', direct
 
 \figure{\includediagram{\diagramsDir/uq/total-effects-sobol-indices-gp-ishigami}{80%}}{Total effects as estimated by Monte Carlo and GP based Monte Carlo.}{total-effects-sobol-indices-gp-ishigami}
 
-\notes{We observe some discrepacies with respect to the real value of the coefficient when using the Gaussian process but we get a fairly good a approximation a very reduced number of evaluations of the original target function.}
+\notes{We observe some discrepacies with respect to the real value of the Sobol index when using the Gaussian process but we get a fairly good a approximation a very reduced number of evaluations of the original target function.}
 
 \subsection{Conclusions}
 
-\notes{The Sobol indexes are a tool for explaining the variance of the output of a function as components of the input variables. Monte Carlo is an approach for computing these indexes if the function is cheap to evaluate. Other approaches will be needed if $\mappingFunction(\cdot)$ is expensive to compute.}
+\notes{The Sobol indices are a tool for explaining the variance of the output of a function as components of the input variables. Monte Carlo is an approach for computing these indices if the function is cheap to evaluate. Other approaches are needed when $\mappingFunctionTwo(\cdot)$ is expensive to compute.}
 
 
 \endif

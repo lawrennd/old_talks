@@ -10,19 +10,9 @@
 
 \notes{Now we will build an emulator for the catapult using the experimental design loop.}
 
+\notes{We'll start with a small model-free design, we'll use a random design for initializing our model.}
 
 \setupcode{from emukit.core.initial_designs import RandomDesign}
-
-
-\setupcode{from emukit.core import ContinuousParameter, ParameterSpace}
-
-\code{variable_domain = (0,1)
-           
-space = ParameterSpace(
-          [ContinuousParameter('rotation_axis', *variable_domain), 
-           ContinuousParameter('arm_stop', *variable_domain),
-           ContinuousParameter('spring_binding_1', *variable_domain),
-           ContinuousParameter('spring_binding_2', *variable_domain)])}
 
 \code{design = RandomDesign(space)
 x = design.get_samples(5)
@@ -44,10 +34,23 @@ display(model_gpy)}
 \code{model_emukit = GPyModelWrapper(model_gpy)
 model_emukit.optimize()}
 
+\code{display(model_gpy)}
+
+\notes{Now we set up the model loop. We'll use integrated variance reduction as the acquisition function for our model-based design loop.}
 
 \setupcode{from emukit.experimental_design.experimental_design_loop import ExperimentalDesignLoop}
 
-\code{ed = ExperimentalDesignLoop(space=space, model=model_emukit)
+\setupcode{from emukit.experimental_design.acquisitions import IntegratedVarianceReduction, ModelVariance}
+
+\code{integrated_variance = IntegratedVarianceReduction(space=space,
+                                                  model=model_emukit)
+ed = ExperimentalDesignLoop(space=space, 
+                            model=model_emukit, 
+                            acquisition = integrated_variance)
 ed.run_loop(catapult_distance, 10)}
 
-\code{display(model_gpy)}
+\writeAssignment{The experiment above was a little slow because we used the integrated variance reduction instead of uncertainty sampling. Try repeating the experiment using uncertainty sampling (make sure not to overwrite your existing model!). What happens? Why does this happen and would you expect it to lead to a better or worse result?}{}{10}
+
+
+\endif
+
