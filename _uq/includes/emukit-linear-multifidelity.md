@@ -145,7 +145,7 @@ ax.set_ylabel('$f(x)$')
 ax.set_xlabel('$x$')
 ax.legend(['Low fidelity', 'High fidelity'])
 
-mlai.write_figure('high-and-low-fidelity-forrester.svg', diagrams='\writeDiagramsDir/uq')}
+mlai.write_figure('high-and-low-fidelity-forrester.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-forrester}{80%}}{High and low fidelity Forrester functions.}{high-and-low-fidelity-forrester}
 
@@ -223,7 +223,7 @@ ax.set_ylabel('$f(x)$')
 ax.set_xlabel('$x$')
 ax.legend(['Low Fidelity', 'High Fidelity', 'Predicted Low Fidelity', 'Predicted High Fidelity'])
 
-mlai.write_figure('linear-multi-fidelity-model.svg', diagrams='\writeDiagramsDir/uq')}
+mlai.write_figure('linear-multi-fidelity-model.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model}{80%}}{Linear multi-fidelity model fit to low and high fidelity Forrester function}{linear-multi-fidelity-model}
 
