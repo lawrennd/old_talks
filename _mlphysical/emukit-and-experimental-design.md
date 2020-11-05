@@ -17,16 +17,9 @@ transition: None
 
 \include{talk-macros.tex}
 
+\include{_mlphysical/includes/mlphysical-notebook-setup.md}
+
 \include{_uq/includes/emukit-software.md}
-
-<!--setupplotcode{import seaborn as sns
-sns.set_style('darkgrid')
-sns.set_context('paper')
-sns.set_palette('colorblind')}-->
-
-\setupplotcode{import matplotlib.pyplot as plt
-plt.rcParams.update({'font.size': 22})}
-
 \include{_uq/includes/emukit-vision.md}
 \include{_uq/includes/emukit-tutorial.md}
 

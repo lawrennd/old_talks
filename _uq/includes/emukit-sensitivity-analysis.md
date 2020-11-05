@@ -228,8 +228,8 @@ mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagra
 
 \setupcode{from emukit.core.initial_designs import RandomDesign}
 
-\code{desing = RandomDesign(space)
-x = desing.get_samples(500)
+\code{design = RandomDesign(space)
+x = design.get_samples(500)
 y = ishigami.fidelity1(x)[:,np.newaxis]}
 
 \notes{Now, we fit a standard Gaussian process to the samples and we wrap it as an Emukit model.}
