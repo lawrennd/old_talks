@@ -12,7 +12,7 @@
 $$
 \mappingFunctionTwo(\textbf{x}) = \sin(\inputScalar_1) + a \sin^2(\inputScalar_2) + b \inputScalar_3^4 \sin(\inputScalar_1). 
 $$
-\notes{We will set the parameters to be $a = 5$ and $b=0.1$ . The input variables are sampled randomly $\inputScalar_i \sim \text{Uniform}(-\pi,\pi)$.}
+\notes{We will set the parameters to be $a = 5$ and $b=0.1$ . The input variables are sampled randomly $\inputScalar_i \sim \uniformDist{-\pi}{\pi}$.}
 
 \notes{Next we create the function object and visualize its shape marginally for each one of its three inputs.}
 
@@ -26,7 +26,7 @@ target_function = ishigami.fidelity1}
 \notes{That gives us the target function, next we define the input space for the simulator.}
 
 \setupcode{import numpy as np
-from emukit.core import ContinuousParameter, ParameterSpace}}
+from emukit.core import ContinuousParameter, ParameterSpace}
 
 \code{variable_domain = (-np.pi,np.pi)
 		   
@@ -67,7 +67,7 @@ axs[0,1].plot(x_grid,f2,'-r')
 axs[0,1].set_xlabel('$x_2$')
 axs[0,1].set_ylabel('$f_2$')
 
-X, Y = np.meshgrid(x_grid, x_grid)}
+X, Y = np.meshgrid(x_grid, x_grid)
 surf = ax2.plot_surface(X, Y, F13, cmap=cm.coolwarm, linewidth=0, antialiased=False)
 
 ax2.set_xlabel('$x_1$')

@@ -6,9 +6,8 @@
 
 \subsection{Emukit Sensitivity Analysis}
 
-[@Kennedy-predicting00;@Sobol-sensitivity90;@Sobol-global01;@Saltelli-sensitivity04;@Saltelli-global08;@Saltelli-variance10]
 
-\notes{This introduction is based on [Introduction to Global Sensitivity Analysis with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-sensitivity-montecarlo.ipynb) written by Mark Pullin, Javier Gonzalez, Juan Emmanuel Johnson and Andrei Paleyes.}
+\notes{This introduction is based on [Introduction to Global Sensitivity Analysis with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-sensitivity-montecarlo.ipynb) written by Mark Pullin, Javier Gonzalez, Juan Emmanuel Johnson and Andrei Paleyes. Some references include [@Kennedy-predicting00;@Sobol-sensitivity90;@Sobol-global01;@Saltelli-sensitivity04;@Saltelli-global08;@Saltelli-variance10]}
 
 > A possible definition of sensitivity analysis is the following: The study of
 > how uncertainty in the output of a model (numerical or otherwise) can be
@@ -43,7 +42,7 @@ import teaching_plots as plot}
 
 \subsection{Local Sensitivity}
 
-\notes{Given any function, $\mappingFunctionTwo(\cdot)$, we might be interested in how sensitive that function is to variations in its input space. One route to determining this is to compute the partial derivatives of that function with respect to its inputs,
+\notes{Given any function, $\mappingFunctionTwo(\cdot)$, we might be interested in how sensitive that function is to variations in its input space. One route to determining this is to compute the partial derivatives of that function with respect to its inputs,}
 $$
 \frac{\partial}{\partial\inputScalar_i} \mappingFunctionTwo(\inputVector).
 $$
@@ -57,15 +56,15 @@ $$
 
 \notes{For global sensitivity analysis, we need to make an assumption about how are inputs are going to vary to create different values of the function. The fundamental object we're interested in is the total variance of the function,}
 $$
-\text{var}(\mappingFunctionTwo) = \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector) - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2
+\text{var}\left(\mappingFunctionTwo(\inputVector)\right) = \expectationDist{\mappingFunctionTwo(\inputVector)^2}{p(\inputVector)} - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2
 $$
 \notes{where}
 $$
-\expectationDist{h(\inputVector)} = \int_\inputVector h(\inputVector) p(\inputVector) \text{d}\inputVector
+\expectationDist{h(\inputVector)}{p(\inputVector)} = \int_\inputVector h(\inputVector) p(\inputVector) \text{d}\inputVector
 $$
 \notes{is the expectation of the function $h(\inputVector)$ under the density $p(\inputVector)$, which represents the probability distribution of inputs we're interested in.}
 
-\newslide{}
+\newslide{Input Density}
 
 \notes{The total variance of the function gives us the overal variation of the function across the domain of inputs, as represented by the probability density, $p(\inputVector)$. Normally, we perform analysis by assuming that,}
 $$
@@ -80,11 +79,14 @@ $$
 
 \notes{The Hoeffding-Sobol, or ANOVA, decomposition of a function allows us to write it as,}
 $$
-\mappingFunctionTwo(\inputVector) = \mappingFunctionTwo_0 + \sum_{i=1}^\dataDim \mappingFunctionTwo_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunctionTwo_{ij}(\inputScalar_i,\inputScalar_j) + \cdots + \mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
+\begin{align*}
+\mappingFunctionTwo(\inputVector) = & \mappingFunctionTwo_0 + \sum_{i=1}^\dataDim \mappingFunctionTwo_i(\inputScalar_i) + \sum_{i<j}^{\dataDim} \mappingFunctionTwo_{ij}(\inputScalar_i,\inputScalar_j) + \cdots \\
+& + \mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim),
+\end{align*}
 $$
-\notes{where}
+\newslide{}\notes{where}
 $$
-\mappingFunctionTwo_0 = \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)^2}
+\mappingFunctionTwo_0 = \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}
 $$
 \notes{and}
 $$
@@ -96,7 +98,7 @@ p(\inputVector_{\sim i}) = \int p(\inputVector) \text{d}\inputScalar_i
 $$
 \notes{Higher order terms in the decomposition represent interactions between inputs,}
 $$
-\mappingFunctionTwo_{i,j}(\inputScalar_i, \inputScalar_j) = \int \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector_{\sim i,j})} - \mappingFunctionTwo_i(\inputScalar_i) - \mappingFunctionTwo_j(\inputScalar_j) - \mappingFunctionTwo_0
+\mappingFunctionTwo_{i,j}(\inputScalar_i, \inputScalar_j) = \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector_{\sim i,j})} - \mappingFunctionTwo_i(\inputScalar_i) - \mappingFunctionTwo_j(\inputScalar_j) - \mappingFunctionTwo_0
 $$
 \notes{and similar expressions can be written for higher order terms up to $\mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputVector)$.}
 
@@ -109,18 +111,18 @@ $$
 \notes{The Sobol decomposition has some important properties, in particular, it components are orthogonal, so this means that when we substitute it in to the variance, we have,}
 $$
 \begin{align*}
-\text{var}(\mappingFunctionTwo) & = \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector) - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2 \\
-& = \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector) - \mappingFunctionTwo_0^2\\
-& = \sum_{i=1}^\dataDim \text{var}\left(\mappingFunctionTwo_i(\inputScalar_i)\right) + \sum_{i<j}^{\dataDim} \text{var}\left(\mappingFunctionTwo_{ij}(\inputScalar_i,\inputScalar_j)\right) + \cdots + \text{var}\left(\mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim)\right).
+\text{var}(\mappingFunctionTwo) = & \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector)} - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2 \\
+ = & \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector)} - \mappingFunctionTwo_0^2\\
+ = & \sum_{i=1}^\dataDim \text{var}\left(\mappingFunctionTwo_i(\inputScalar_i)\right) + \sum_{i<j}^{\dataDim} \text{var}\left(\mappingFunctionTwo_{ij}(\inputScalar_i,\inputScalar_j)\right)  + \cdots \\ & + \text{var}\left(\mappingFunctionTwo_{1,2,\dots,\dataDim}(\inputScalar_1,\inputScalar_2,\dots,\inputScalar_\dataDim)\right).
 \end{align*}
 $$
 \notes{So, this decomposition gives us a decomposition of the function in terms of variances. It's for this reason that it's sometimes known as an ANOVA decomposition. ANOVA stands a for *analysis of variance*. The ANOVA decomposition decomposes the function into additive variance parts that are each stemming from interactions between different inputs.}
 
 \newslide{Sobol Indices}
 
-\notes{As is common in various analyses of variance, we can rescale the components with the *total variance* of the function. These rescaled components are known as $Sobol indicies*.}
+\notes{As is common in various analyses of variance, we can rescale the components with the *total variance* of the function. These rescaled components are known as *Sobol indicies*.}
 $$
-S_\ell = \frac{\text{var}\left(\mappingFunctionTwo(\inputVector_\ell))\right)}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)},
+S_\ell = \frac{\text{var}\left(\mappingFunctionTwo(\inputVector_\ell)\right)}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)},
 $$
 \notes{where the $\ell$ represents the relevent set of indices for the different combinations of inputs.}
 
@@ -128,7 +130,7 @@ $$
 
 \section{Example: the Ishigami function}
 
-\notes{We illustrate the exact calculation of the Sobol indices with the three dimensional Ishigami function of [@Ishigami-importance90]. 
+\notes{We illustrate the exact calculation of the Sobol indices with the three dimensional Ishigami function of [@Ishigami-importance90].} 
 
 \include{_uq/includes/ishigami-function.md}
 
@@ -138,7 +140,7 @@ $$
 
 \code{print(ishigami.variance_total)}
 
-\notes{which is the sum of the variance of $V_1$, $V_2$ and $V_{13}$}
+\notes{which is the sum of the variance of $\text{var}\left(\mappingFunctionTwo_1(\inputScalar_1)\right)$, $\text{var}\left(\mappingFunctionTwo_2(\inputScalar_2)\right)$ and $\text{var}\left(\mappingFunctionTwo_{1,3}(\inputScalar_{1,3})\right)$}
 
 \code{print(ishigami.variance_x1, ishigami.variance_x2, ishigami.variance_x13)
 print(ishigami.variance_x1 + ishigami.variance_x2 + ishigami.variance_x13)}
@@ -147,7 +149,7 @@ print(ishigami.variance_x1 + ishigami.variance_x2 + ishigami.variance_x13)}
 
 \notes{The first order Sobol indices are a measure of "first order sensitivity" of each input variable. They account for the proportion of variance of $\dataScalar$ explained by changing each variable alone while marginalizing over the rest. Recall that the Sobol index of the $i$th variable is computed as}
 $$
-S_i = \frac{\text{var}\left(\mappingFunctionTwo(\inputScalar_i)\right)}{\text{var}(\dataScalar)}.
+S_i = \frac{\text{var}\left(\mappingFunctionTwo_i(\inputScalar_i)\right)}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)}.
 $$
 \notes{This value is standardized using the total variance so it is possible to account for a fractional contribution of each variable to the total variance of the output.}
 
@@ -193,7 +195,7 @@ mlai.write_figure(filename='first-order-sobol-indices-ishigami.svg', directory='
 
 The total effect for $\inputScalar_i$ is given by:
 $$ 
-S_{Ti} = \frac{E_{\inputVector_{\sim i}} \left(\text{var}_{\inputScalar_i} (\dataScalar \mid \inputVector_{\sim i}) \right)}{\text{var}(\dataScalar)} = 1 - \frac{\text{var}_{\inputVector_{\sim i}} \left(E_{\inputScalar_i} (\dataScalar \mid \inputVector_{\sim i}) \right)}{\text{var}(\dataScalar)}
+S_{Ti} = \frac{\expectationDist{\text{var}_{\inputScalar_i} (\dataScalar \mid \inputVector_{\sim i})}{p(\inputVector_{\sim i})}}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)} = 1 - \frac{\text{var}_{\inputVector_{\sim i}} \expectationDist{\dataScalar \mid \inputVector_{\sim i}}{p(\inputVector_{\sim i})}}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)}
 $$
 
 Note that the sum of $S_{Ti}$ is not necessarily one in this case unless the model is additive. In the Ishigami example the value of the total effects is}
@@ -275,12 +277,14 @@ ax.set_ylabel('% of explained output variance')
 
 mlai.write_figure(filename='total-effects-sobol-indices-gp-ishigami.svg', directory='\writeDiagramsDir/uq')}
 
+\newslide{}
+
 \figure{\includediagram{\diagramsDir/uq/total-effects-sobol-indices-gp-ishigami}{80%}}{Total effects as estimated by Monte Carlo and GP based Monte Carlo.}{total-effects-sobol-indices-gp-ishigami}
 
 \notes{We observe some discrepacies with respect to the real value of the Sobol index when using the Gaussian process but we get a fairly good a approximation a very reduced number of evaluations of the original target function.}
 
 \subsection{Conclusions}
-
+\slides{* Sobol indices tool for explaining variance of output as coponents of input variables.}
 \notes{The Sobol indices are a tool for explaining the variance of the output of a function as components of the input variables. Monte Carlo is an approach for computing these indices if the function is cheap to evaluate. Other approaches are needed when $\mappingFunctionTwo(\cdot)$ is expensive to compute.}
 
 

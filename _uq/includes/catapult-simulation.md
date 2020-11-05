@@ -13,6 +13,7 @@
 
 \notes{The simulator allows you to set various parameters of the catapult including the axis of rotation, `roation_axis`, the position of the arm stop, `arm_stop`, and the location of the two bindings of the catapult's spring, `spring_binding_1` and `spring_binding_2`.}
 
+\newslide{}
 
 \notes{These parameters are then collated in a vector,}
 $$
@@ -47,7 +48,7 @@ $$
         y[i, 0] = float(input('What is the distance? '))
     return y}
 
-\notes{We can also set the parameter space for the model. Each of these variables is scaled to operate $\in [0, 1]$.
+\notes{We can also set the parameter space for the model. Each of these variables is scaled to operate $\in [0, 1]$.}
 
 \setupcode{from emukit.core import ContinuousParameter, ParameterSpace}
 

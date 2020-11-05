@@ -2,7 +2,7 @@
 \define{talkPeople}
 
 \defeval{\jamesHensmanPicture{width}}{\circleHead{\diagramsDir/people/james-hensman.png}{James Hensman}{\width}{https://jameshensman.github.io/}}
-\defeval{\nicolasDurrandePicture{width}}{\circleHead{\diagramsDir/people/nicolas-Durrande2.jpg}{Nicolas Durrande}{\width}{https://sites.google.com/site/nicolasdurrandehomepage/}}
+\defeval{\nicolasDurrandePicture{width}}{\circleHead{\diagramsDir/people/nicolas-durrande2.jpg}{Nicolas Durrande}{\width}{https://sites.google.com/site/nicolasdurrandehomepage/}}
 \defeval{\ricardoAndradePachecoPicture{width}}{\circleHead{\diagramsDir/people/richardo-andrade-pacheco.png}{Ricardo Andrade Pacecho}{\width}}
 \defeval{\nicoloFusiPicture{width}}{\circleHead{\diagramsDir/people/nicolo-fusi.png}{Nicoló Fusi}{\width}}
 \defeval{\alanSaulPicture{width}}{\circleHead{\diagramsDir/people/alan-saul.png}{Alan Saul}{\width}}

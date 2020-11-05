@@ -4,13 +4,14 @@
 
 \editme
 
-\subsection{Sensitivity Analysis of a Catapult Simulation}
 
 \include{_uq/includes/catapult-simulation.md}
 
 \notes{Before we perform sensitivity analysis, we need to build an emulator of the catapulter, which we do using our experimental design process.}
 
 \include{_uq/includes/catapult-experimental-design.md}
+
+\subsection{Sensitivity Analysis of a Catapult Simulation}
 
 \notes{The final step is to compute the coefficients using the class `ModelBasedMonteCarloSensitivity` which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the true estimates, those computed using 10000 direct evaluations of the objecte using Monte Carlo and those computed using a Gaussian process model trained on 100 evaluations.}
 
@@ -48,6 +49,8 @@ pd.DataFrame(d).plot(kind='bar', ax=ax)
 ax.set_ylabel('% of explained output variance')
 
 mlai.write_figure(filename='total-effects-sobol-indices-gp-catapult.svg', directory='\writeDiagramsDir/uq')}
+
+\newslide{}
 
 \figure{\includediagram{\diagramsDir/uq/total-effects-sobol-indices-gp-catapult}{80%}}{Total effects as estimated by GP based Monte Carlo on the catapult.}{total-effects-sobol-indices-gp-catapult}
 
