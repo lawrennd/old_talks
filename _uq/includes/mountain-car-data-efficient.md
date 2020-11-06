@@ -134,7 +134,7 @@ controller_gains = np.atleast_2d([0, .6, 1])  }
 
 \newslide{Comparison of Emulation and Simulation}
 
-\figure{\includediagram{\diagramsDir/uq/emu_sim_comparison}{80%}}{Comparison between the mountain car simulator and the emulator.}{emu-sim-comparison}
+\figure{\includediagram{\diagramsDir/uq/emu-sim-comparison}{80%}}{Comparison between the mountain car simulator and the emulator.}{emu-sim-comparison}
 
 \notes{We now make explicit use of the emulator, using it to replace
 the simulator and optimize the linear controller. Note that in this

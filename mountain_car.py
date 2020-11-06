@@ -302,8 +302,9 @@ def emu_sim_comparison(env, control_params, emulator, fidelity='single', max_ste
     fig.legend([h1,h2], ['Emulation', 'Simulation'], loc=4)
     plt.tight_layout()
     plt.show()
-    file_name = 'emu_sim_comparison.svg'
-    mlai.write_figure(os.path.join(diagrams, file_name),
+    file_name = 'emu-sim-comparison.svg'
+    mlai.write_figure(file_name,
+                      directory=diagrams,
                       figure=fig,
                       transparent=True)
 
@@ -326,4 +327,4 @@ def save_frames(frames, filename, diagrams='../diagrams', inverted=True):
     if inverted:
         frames = invert_frames(frames)
     anim=animate_frames(frames)
-    mlai.write_animation(anim, filename, diagrams)
+    mlai.write_animation_html(anim, filename, diagrams)

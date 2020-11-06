@@ -26,12 +26,17 @@ def filename_join(filename, directory=None):
         return os.path.join(directory, filename)
     return filename
 
-
 def write_animation(anim, filename, directory=None, **kwargs):
     "Write an animation to a file."
     savename = filename_join(filename, directory)
     anim.save(savename, **kwargs)
 
+def write_animation_html(anim, filename, directory=None):
+    """Save an animation to file."""
+    savename = filename_join(filename, directory)
+    f = open(savename, 'w')
+    f.write(anim.to_jshtml())
+    f.close()
 
 def write_figure(filename, figure=None, directory=None, **kwargs):
     """Write figure in correct formating"""

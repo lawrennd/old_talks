@@ -56,11 +56,13 @@ $$
 $$ 
 \slides{* Reward is computed as 100 for target, minus squared sum of actions}
 
-\notes{In this section, we directly use Bayesian optimization to solve this problem. We will use [EmuKit](https://emukit.github.io) so we first define the objective function:}
+\notes{In this section, we directly use Bayesian optimization to solve this problem. We will use [EmuKit](https://emukit.github.io) so we first define the objective function.}
 
 \downloadcode{mountain_car}
 
-\setupcode{import mountain_car as mc}
+\setupcode{import mountain_car as mc
+import numpy as np}
+
 
 \helpercode{def target_function(X):
 	"""Run the Mountain Car simulaton for each set of controller parameters in the matrix."""
@@ -107,8 +109,8 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='\writeDiagramsDir/uq', 
-				  filename='mountain-car-random.html')}
+               diagrams='\writeDiagramsDir/uq', 
+			   filename='mountain-car-random.html')}
 
 \newslide{Random Linear Controller}
 
