@@ -22,6 +22,8 @@ Note that $\mappingFunction_{\text{err}}(x)$ and $\mappingFunction_{\text{low}}(
 $$
 \mappingFunction_{t}(x) = \mappingFunction_{t}(x) + \rho_{t-1} \,\mappingFunction_{t-1}(x), \quad t=1,\dots, T
 $$
+\newslide{}
+
 \notes{If the training points are sorted such that the low and high-fidelity points are grouped together:}
 $$
 \begin{pmatrix}
@@ -29,6 +31,9 @@ $$
 \inputMatrix_{\text{high}}
 \end{pmatrix}
 $$
+
+\newslide{}
+
 \notes{we can express the model as a single Gaussian process having the following prior.}
 $$
 \begin{bmatrix}
@@ -112,6 +117,41 @@ $$
 \dataScalar_{\text{high};1}
 \end{pmatrix}
 $$
+\notes{This is a representation we first developed for the `GPy`
+software. It allows for a lot of flexibility for Gaussian processes
+that describe multiple correlated functions, like the 'multi-fidelity'
+model of @Kennedy-predicting00.}
+
+\notes{As an aside there is quite a lot of history to modelling
+Gaussian processes which represent multiple output functions. Back in
+2009, with Mauricio Alvarez, we organised a series of workshops where
+we worked across the Geostatistics, the emulation and the machine
+learning communities to build understanding. You can see
+[details of the first of these workshops (held in Manchester) here](http://gpss.cc/slim09/schedule.html). The
+second of these workshops also integrated ideas from the classical
+kernel community, and was held at NeurIPS in 2009 in collaboration
+with Lorenzo Rosasco, you can find the
+[workshop page here](http://gpss.cc/mock09/). We summarized the
+conclusions from those meetings in a
+[review paper led by Mauricio, that you can find here](https://arxiv.org/abs/1106.6251)
+[@Alvarez:vector12].}
+
+\note{Importantly, we found a lot of work in the Geostatistics
+community (much of it by Hans Wackernagel) known as co-kriging. The
+terminology used in our paper reflects that terminology, rather than
+the various more recent terminologies such as 'multi-task Gaussian
+processes' or 'multi-fidelity Gaussian processes'.}
+
+\notes{In that terminology the multifidelity model we're using here is
+known as a "intrinsic coregionalisation model" and it is one of the
+simplest types of multi-output Gaussian processes you can build.}
+
+\notes{Mauricio's thesis [@Alvarez:thesis11] focussed on particular
+multiple output covariances derived from physical information embedded
+in the system, such as differential equations. See
+e.g. @Alvarez:llfm13 or @Lawrence:transcriptionalGP06 for an
+application.}
+
 \notes{A similar procedure must be carried out for obtaining
 predictions at new test points, whereby the fidelity indicated in the
 column then indicates the fidelity at which the function must be
@@ -146,6 +186,8 @@ ax.set_xlabel('$x$')
 ax.legend(['Low fidelity', 'High fidelity'])
 
 mlai.write_figure('high-and-low-fidelity-forrester.svg', directory='\writeDiagramsDir/uq')}
+
+\newslide{}
 
 \figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-forrester}{80%}}{High and low fidelity Forrester functions.}{high-and-low-fidelity-forrester}
 
@@ -225,6 +267,8 @@ ax.legend(['Low Fidelity', 'High Fidelity', 'Predicted Low Fidelity', 'Predicted
 
 mlai.write_figure('linear-multi-fidelity-model.svg', directory='\writeDiagramsDir/uq')}
 
+\newslide{Multifidelity Fit}
+
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model}{80%}}{Linear multi-fidelity model fit to low and high fidelity Forrester function}{linear-multi-fidelity-model}
 
 \notes{The above plot demonstrates how the multi-fidelity model learns
@@ -285,6 +329,7 @@ ax.legend(['True Function', 'Linear Multi-fidelity GP', 'High fidelity GP'])
 
 mlai.write_figure('linear-multi-fidelity-high-fidelity-gp.svg', directory='\writeDiagramsDir/uq')}
 
+
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-high-fidelity-gp}{80%}}{Comparison of linear multi-fidelity model and high fidelity GP}{linear-multi-fidelity-high-fidelity-gp}
 
 \subsection{Nonlinear multi-fidelity model}
@@ -321,7 +366,7 @@ y_train_l = low_fidelity(x_train_l)
 x_train_h = x_train_l[::4, :]
 y_train_h = high_fidelity(x_train_h)}
 
-\notes{Convert lists of arrays to ND-arrays augmented with fidelity indicators}
+\notes{Convert lists of arrays to `ND-array`s augmented with fidelity indicators}
 
 \code{X_train, Y_train = convert_xy_lists_to_arrays([x_train_l, x_train_h], [y_train_l, y_train_h])}
 
@@ -342,6 +387,8 @@ ax.legend(['Low fidelity', 'High fidelity'])
 
 mlai.write_figure('high-and-low-fidelity-functions.svg', directory='\writeDiagramsDir/uq')}
 
+\newslide{}
+
 \figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-functions}{80%}}{High and low fidelity functions}{high-and-low-fidelity-functions}
 
 \notes{In this case, the mapping between the two functions is
@@ -360,7 +407,9 @@ ax.legend(['HF-LF Correlation'], loc='lower center')
 
 mlai.write_figure('mapping-low-to-high-fidelity.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/mapping-low-to-high-fidelity}{80}}{Mapping from low fidelity to high fidelity.}{mapping-low-to-high-fidelity}
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/uq/mapping-low-to-high-fidelity}{80%}}{Mapping from low fidelity to high fidelity.}{mapping-low-to-high-fidelity}
 
 \subsubsection{Failure of linear multi-fidelity model}
 
@@ -410,6 +459,7 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.legend(['True Function', 'Linear multi-fidelity GP'], loc='lower right')
 mlai.write_figure('linear-multi-fidelity-model-fit.svg', directory='\writeDiagramsDir/uq/')}
+
 
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model-fit}{80%}}{Linear multi-fidelity model fit to high fidelity function}{linear-multi-fidelity-model-fit}
 
