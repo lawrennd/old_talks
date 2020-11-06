@@ -215,17 +215,6 @@ model_dynamics_emulated_emukit.optimize()}
 bo.run_loop(target_function_emulator, 50)
 results = bo.get_results()}
 
-<!--design_space         = GPyOpt.Design_space(space=space)
-aquisition_optimizer = GPyOpt.optimization.AcquisitionOptimizer(design_space)
-
-random_design = RandomDesign(design_space)
-initial_design = random_design.get_samples(25)}-->
-
-<!--\code{acquisition          = GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer=aquisition_optimizer)
-evaluator            = GPyOpt.core.evaluators.Sequential(acquisition)}
-
-\code{bo_emulator = GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_emulator, acquisition, evaluator, initial_design)
-bo_emulator.run_optimization(max_iter=50)}-->
 
 \code{_, _, _, frames = mc.run_simulation(env, np.atleast_2d(results.minimum_location), render=True)
 anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynamics')}
