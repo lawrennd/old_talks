@@ -5,26 +5,46 @@
 
 \subsection{Multi-Fidelity Emulation}
 
-\notes{In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.
+\notes{In some scenarios we have simulators of the same environment
+that have different fidelities, that is that reflect with different
+level of accuracy the dynamics of the real world. Running simulations
+of the different fidelities also have a different cost: hight fidelity
+simulations are more expensive the cheaper ones. If we have access to
+these simulators we can combine high and low fidelity simulations
+under the same model.
 
-So let's assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that}
+So let's assume that we have two simulators of the mountain car
+dynamics, one of high fidelity (the one we have used) and another one
+of low fidelity. The traditional approach to this form of
+multi-fidelity emulation is to assume that}
+$$
+\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)
+$$
+\notes{where $\mappingFunction_{i-1}\left(\inputVector\right)$ is a low fidelity simulation of the problem of interest and $\mappingFunction_i\left(\inputVector\right)$ is a higher fidelity simulation. The function $\delta_i\left(\inputVector \right)$ represents the difference between the lower and higher fidelity simulation, which is considered additive. The additive form of this covariance means that if $\mappingFunction_{0}\left(\inputVector\right)$ and $\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m$ are all Gaussian processes, then the process over all fidelities of simuation will be a joint Gaussian process.}
 
-$$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$
+\notes{But with Deep Gaussian processes we can consider the form}
+$$
+\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),
+$$
+\notes{where the low fidelity representation is non linearly transformed by $\mappingFunctionTwo(\cdot)$ before use in the process. This is the approach taken in @Perdikaris:multifidelity17. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels, and represents different aspects. For example these correspond to the two fidelities of the mountain car simulator.}
 
-\notes{where $\mappingFunction_{i-1}\left(\inputVector\right)$ is a low fidelity simulation of the problem of interest and $\mappingFunction_i\left(\inputVector\right)$ is a higher fidelity simulation. The function $\delta_i\left(\inputVector \right)$ represents the difference between the lower and higher fidelity simulation, which is considered additive. The additive form of this covariance means that if $\mappingFunction_{0}\left(\inputVector\right)$ and $\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m$ are all Gaussian processes, then the process over all fidelities of simuation will be a joint Gaussian process.
-
-But with Deep Gaussian processes we can consider the form }
-
-$$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$
-
-\notes{where the low fidelity representation is non linearly transformed by $\mappingFunctionTwo(\cdot)$ before use in the process. This is the approach taken in @Perdikaris:multifidelity17. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels, and represents different aspects. For example these correspond to the two fidelities of the mountain car simulator.
-
-We start by sampling both of them at 250 random input locations.}
+\notes{We start by sampling both of them at 250 random input locations.}
 
 \setupcode{import gym}
 \code{env = gym.make('MountainCarContinuous-v0')}
 
-\setupcode{import GPyOpt}
+\setupcode{from emukit.core import ContinuousParameter, ParameterSpace}
+
+\code{position_dynamics_domain = [-1.2, +0.6]
+velocity_dynamics_domain = [-0.07, +0.07]
+action_dynamics_domain = [-1, +1]
+
+space_dynamics = ParameterSpace(
+          [ContinuousParameter('position_dynamics_parameter', *position_dynamics_domain), 
+           ContinuousParameter('velocity_dynamics_parameter', *velocity_dynamics_domain),
+           ContinuousParameter('action_dynamics_parameter', *action_dynamics_domain)])}
+
+<!--\setupcode{import GPyOpt}
 \code{### --- Collect points from low and high fidelity simulator --- ###
 
 space = GPyOpt.Design_space([
@@ -34,7 +54,7 @@ space = GPyOpt.Design_space([
 
 n_points = 250
 random_design = GPyOpt.experiment_design.RandomDesign(space)
-x_random = random_design.get_samples(n_points)}
+x_random = random_design.get_samples(n_points)}-->
 
 \notes{Next, we evaluate the high and low fidelity simualtors at those locations.}
 
@@ -54,12 +74,23 @@ for i in range(0, n_points):
 for i in range(0, n_points):
     d_position_lf[i], d_velocity_lf[i] = mc.low_cost_simulation(x_random[i, :])}
 	
-\notes{It is time to build the multi-fidelity model for both the position and the velocity.
+\notes{It is time to build the multi-fidelity model for both the position and the velocity.}
 
-As we did in the previous section we use the emulator to optimize the simulator. In this case we use the high fidelity output of the emulator.}
+\notes{As we did in the previous section we use the emulator to optimize the simulator. In this case we use the high fidelity output of the emulator.}
 
-\code{### --- Optimize controller parameters 
-obj_func = lambda x: mc.run_simulation(env, x)[0]
+\notes{First we optimize the controller parameters}
+
+\helpercode{def target_function(X):
+	"""Run the Mountain Car simulaton for each set of controller parameters in the matrix."""
+    simulation_function = lambda x: mc.run_simulation(env, x)[0]
+    return np.asarray([simulation_function(np.atleast_2d(x)) for x in X])[:, np.newaxis]}
+
+\helpercode{def target_function_emulator(X):
+	"""Run the Mountain Car simulation for each set of controller parameters in the matrix using the emulation."""
+    emulation_function = lambda x: mc.run_emulation([position_model_emukit, velocity_model_emukit], x, car_initial_location)[0]
+    return np.asarray([emulation_function(np.atleast_2d(x)) for x in X])[:, np.newaxis]}
+
+\code{obj_func = lambda x: mc.run_simulation(env, x)[0]
 obj_func_emulator = lambda x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[0]
 objective_multifidelity = GPyOpt.core.task.SingleObjective(obj_func)}
 

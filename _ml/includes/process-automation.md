@@ -2,6 +2,8 @@
 \define{processAutomation}
 \editme
 
+\subsection{Process Automation}
+
 \newslide{Efficiency}
 \slides{
 * Economies driven by 'production'.
@@ -44,9 +46,7 @@
 * In information processing: our flexible cognitive skills.
     * Our ability to mentally process an image or some text. 
 }
-\newslide{Worked Example: Delivery Drones}
 
-<!-- first drone delivery vNySOrI2Ny8 -->
-\figure{\includeyoutube{3HJtmx5f1Fc}{800}{600}}{Amazon's proposed drone delivery system.}{amazon-drone-delivery}
+\include{_supply-chain/includes/amazon-drone-flight.md}
 
 \endif

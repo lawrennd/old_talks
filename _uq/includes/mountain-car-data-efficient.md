@@ -151,7 +151,7 @@ the car.}
 car_initial_location = np.asarray([-0.58912799, 0])}
 
 \helpercode{def target_function_emulator(X):
-	"""Run the Mountain Car simulation for each set of controller parameters in the matrix."""
+	"""Run the Mountain Car simulation for each set of controller parameters in the matrix using the emulation."""
     emulation_function = lambda x: mc.run_emulation([position_model_emukit, velocity_model_emukit], x, car_initial_location)[0]
     return np.asarray([emulation_function(np.atleast_2d(x)) for x in X])[:, np.newaxis]}
 
@@ -235,6 +235,12 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 
 \figure{\includehtml{\diagramsDir/uq/mountain-car-emulated.html}{600}{450}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
 
-\notes{And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the dynamics simulator only 500 times. Compared to the 37,500 calls that we needed when applying Bayesian optimization directly on the simulator this is a significant improvement. Of course, in practice the car dynamics are very simple for this example.}
+\notes{And the problem is again solved, but in this case we have
+replaced the simulator of the car dynamics by a Gaussian process
+emulator that we learned by calling the dynamics simulator only 500
+times. Compared to the 37,500 calls that we needed when applying
+Bayesian optimization directly on the simulator this is a significant
+improvement. Of course, in practice the car dynamics are very simple
+for this example.}
 
 \endif
