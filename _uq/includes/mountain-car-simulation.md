@@ -119,7 +119,7 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
 \notes{As we can see the random linear controller does not manage to
 push the car to the top of the mountain. Now, let's optimize the
 regret using Bayesian optimization and the emulator for the reward. We
-try 50 new parameters chosen by the EI.}
+try 50 new parameters chosen by the expected improvement acquisition function.}
 
 \notes{First we initizialize a Gaussian process emulator.}
 
@@ -157,15 +157,15 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='\writeDiagramsDir/uq', 
-				  filename='mountain-car-simulated.html')}
+               diagrams='\writeDiagramsDir/uq', 
+			   filename='mountain-car-simulated.html')}
 
 \newslide{Best Controller after 50 Iterations of Bayesian Optimization}
 
-\figure{\includehtml{\diagramsDir/uq/mountain-car-simulated.html}{600px}{450px}{auto}}{Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.}{mountain-car-similated-bayes-opt}
+\figure{\includehtml{\diagramsDir/uq/mountain-car-simulated.html}{600}{450}{auto}}{Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.}{mountain-car-similated-bayes-opt}
 
 \notes{The car can now make it to the top of the mountain! Emulating
-the reward function and using the EI helped as to find a linear
+the reward function and using expected improvement acquisition helped us to find a linear
 controller that solves the problem.}
 
 \endif

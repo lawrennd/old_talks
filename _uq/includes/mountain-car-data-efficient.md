@@ -10,9 +10,11 @@
 * Then do Bayesian optimization of the *emulator*.}
 
 \notes{In the previous section we solved the mountain car problem by
-directly emulating the reward but no considerations about the dynamics
-$\inputVector_{t+1} =\mappingFunctionTwo(\inputVector_{t},\textbf{u}_{t})$ of the system were
-made. }
+directly emulating the reward but no considerations about the dynamics}
+$$
+\inputVector_{t+1} =\mappingFunctionTwo(\inputVector_{t},\textbf{u}_{t})
+$$ 
+\notes{of the system were made.}
 
 \notes{We ran the simulator 25 times in the initial design, and 50
 times in our Bayesian optimization loop. That required us to call the
@@ -37,7 +39,7 @@ action_dynamics_domain = [-1, +1]
 space_dynamics = ParameterSpace(
           [ContinuousParameter('position_dynamics_parameter', *position_dynamics_domain), 
            ContinuousParameter('velocity_dynamics_parameter', *velocity_dynamics_domain),
-           ContinuousParameter('action_dynamics_parameter', *action_dynmaics_domain)])}
+           ContinuousParameter('action_dynamics_parameter', *action_dynamics_domain)])}
 
 \notes{Next, we sample some input parameters and use the simulator to compute the outputs. Note that in this case we are not running the full episodes, we are just using the simulator to compute $\inputVector_{t+1}$ given $\inputVector_{t}$ and $\textbf{u}_{t}$.}
 
@@ -51,13 +53,13 @@ initial_design_dynamics = design_dynamics.get_samples(n_initial_points)}
 import mountain_car as mc}
 
 \code{### --- Simulation of the (normalized) outputs
-y = np.zeros((initial_design_dynamics.shape[0], 2))
+y_dynamics = np.zeros((initial_design_dynamics.shape[0], 2))
 for i in range(initial_design_dynamics.shape[0]):
-    y[i, :] = mc.simulation(initial_design_dynamics[i, :])}
+    y_dynamics[i, :] = mc.simulation(initial_design_dynamics[i, :])}
 
 \code{# Normalize the data from the simulation
-y_normalisation = np.std(y, axis=0)
-y_normalised = y/y_normalisation}
+y_dynamics_normalisation = np.std(y_dynamics, axis=0)
+y_dynamics_normalised = y_dynamics/y_dynamics_normalisation}
 
 \notes{The outputs are the velocity and the position. Our model will capture the change in position and velocity on time. That is, we will model}
 
@@ -78,10 +80,10 @@ $$
 \setupcode{import GPy}
 
 \code{kern_position = GPy.kern.Matern52(3)
-position_model_gpy = GPy.models.GPRegression(initial_design, y[:, 0:1], kern_position, noise_var=1e-10)}
+position_model_gpy = GPy.models.GPRegression(initial_design_dynamics, y_dynamics[:, 0:1], kern_position, noise_var=1e-10)}
 
 \code{kern_velocity = GPy.kern.Matern52(3)
-velocity_model_gpy = GPy.models.GPRegression(initial_design, y[:, 1:2], kern_velocity, noise_var=1e-10)}
+velocity_model_gpy = GPy.models.GPRegression(initial_design_dynamics, y_dynamics[:, 1:2], kern_velocity, noise_var=1e-10)}
 
 \setupcode{from emukit.model_wrappers.gpy_model_wrappers import GPyModelWrapper}
 \code{position_model_emukit = GPyModelWrapper(position_model_gpy, n_restarts=5)
@@ -149,8 +151,8 @@ the car.}
 car_initial_location = np.asarray([-0.58912799, 0])}
 
 \helpercode{def target_function_emulator(X):
-	"""Run the Mountain Car simulaton for each set of controller parameters in the matrix."""
-    emulation_function = lambda x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[0]
+	"""Run the Mountain Car simulation for each set of controller parameters in the matrix."""
+    emulation_function = lambda x: mc.run_emulation([position_model_emukit, velocity_model_emukit], x, car_initial_location)[0]
     return np.asarray([emulation_function(np.atleast_2d(x)) for x in X])[:, np.newaxis]}
 
 <!--code{### --- Reward objective function using the emulator
@@ -159,8 +161,8 @@ objective_emulator = GPyOpt.core.task.SingleObjective(obj_func_emulator)}-->
 
 \notes{And as before, we use Bayesian optimization to find the best possible linear controller.}
 
-\code{### --- Elements of the optimization that will use the multi-fidelity emulator
-model = GPyOpt.models.GPModel(optimize_restarts=5, verbose=False, exact_feval=True, ARD=True)}
+<!--\code{### --- Elements of the optimization that will use the multi-fidelity emulator
+model = GPyOpt.models.GPModel(optimize_restarts=5, verbose=False, exact_feval=True, ARD=True)}-->
 
 \notes{The design space is the three continuous variables that make up the linear controller.}
 
