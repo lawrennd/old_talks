@@ -3,9 +3,10 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
-import GPyOpt
-from GPyOpt.acquisitions import AcquisitionBase
 import GPy
+
+#import GPyOpt
+#from GPyOpt.acquisitions import AcquisitionBase
 
 from matplotlib import animation
 from IPython.display import display, HTML
@@ -62,40 +63,40 @@ def low_cost_simulation(state):
     d_position = d_velocity
     return d_position, d_velocity
 
-class AcquisitionPE(AcquisitionBase):
-    """
-    Pure Exploration acquisition function
+# class AcquisitionPE(AcquisitionBase):
+#     """
+#     Pure Exploration acquisition function
 
-    :param model: GPyOpt class of model
-    :param space: GPyOpt class of domain
-    :param optimizer: optimizer of the acquisition. Should be a GPyOpt optimizer
-    :param cost_withGradients: function
-    :param jitter: positive value to make the acquisition more explorative
+#     :param model: GPyOpt class of model
+#     :param space: GPyOpt class of domain
+#     :param optimizer: optimizer of the acquisition. Should be a GPyOpt optimizer
+#     :param cost_withGradients: function
+#     :param jitter: positive value to make the acquisition more explorative
 
-    .. Note:: does not allow to be used with cost
+#     .. Note:: does not allow to be used with cost
 
-    """
-    analytical_gradient_prediction = True
+#     """
+#     analytical_gradient_prediction = True
 
-    def __init__(self, model, space, optimizer=None, cost_withGradients=None):
-        self.optimizer = optimizer
-        super(AcquisitionPE, self).__init__(model, space, optimizer, cost_withGradients=cost_withGradients)
+#     def __init__(self, model, space, optimizer=None, cost_withGradients=None):
+#         self.optimizer = optimizer
+#         super(AcquisitionPE, self).__init__(model, space, optimizer, cost_withGradients=cost_withGradients)
 
-    def _compute_acq(self, x):
-        """
-        Computes the GP-Lower Confidence Bound 
-        """
-        _, s = self.model.predict(x)   
-        return s
+#     def _compute_acq(self, x):
+#         """
+#         Computes the GP-Lower Confidence Bound 
+#         """
+#         _, s = self.model.predict(x)   
+#         return s
 
-    def _compute_acq_withGradients(self, x):
-        """
-        Computes the GP-Lower Confidence Bound and its derivative
-        """
-        _, s, _, dsdx = self.model.predict_withGradients(x) 
-        f_acqu = s       
-        df_acqu = dsdx
-        return f_acqu, df_acqu
+#     def _compute_acq_withGradients(self, x):
+#         """
+#         Computes the GP-Lower Confidence Bound and its derivative
+#         """
+#         _, s, _, dsdx = self.model.predict_withGradients(x) 
+#         f_acqu = s       
+#         df_acqu = dsdx
+#         return f_acqu, df_acqu
 
 
 def run_simulation(env, controller_gains, render=False):
