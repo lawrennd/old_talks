@@ -326,4 +326,4 @@ def save_frames(frames, filename, diagrams='../diagrams', inverted=True):
     if inverted:
         frames = invert_frames(frames)
     anim=animate_frames(frames)
-    plot.save_animation(anim, filename, diagrams)
+    mlai.write_animation(anim, filename, diagrams)

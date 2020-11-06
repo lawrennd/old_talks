@@ -358,7 +358,7 @@ ax.set_xlabel('LF(x)')
 ax.plot(y_plot_l, y_plot_h, color=colors['purple'], linewidth=3)
 ax.legend(['HF-LF Correlation'], loc='lower center')
 
-mlai.write_figure('mapping-low-to-high-fidelity.svg', directory='\writeDiagrams/uq')}
+mlai.write_figure('mapping-low-to-high-fidelity.svg', directory='\writeDiagramsDir/uq')}
 
 \figure{\includediagram{\diagramsDir/uq/mapping-low-to-high-fidelity}{80}}{Mapping from low fidelity to high fidelity.}{mapping-low-to-high-fidelity}
 
@@ -409,7 +409,7 @@ ax.set_xlim(0, 1)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$f(x)$')
 ax.legend(['True Function', 'Linear multi-fidelity GP'], loc='lower right')
-mlai.write_figure('linear-multi-fidelity-model-fit.svg', diagrams='\writeDiagramsDir/uq/')}
+mlai.write_figure('linear-multi-fidelity-model-fit.svg', directory='\writeDiagramsDir/uq/')}
 
 \figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model-fit}{80%}}{Linear multi-fidelity model fit to high fidelity function}{linear-multi-fidelity-model-fit}
 

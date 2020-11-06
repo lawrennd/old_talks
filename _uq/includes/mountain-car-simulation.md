@@ -60,8 +60,7 @@ $$
 
 \downloadcode{mountain_car}
 
-\setupcode{import mountain_car as mc
-from emukit.core import ContinuousParameter, ParameterSpace}
+\setupcode{import mountain_car as mc}
 
 \helpercode{def target_function(X):
 	"""Run the Mountain Car simulaton for each set of controller parameters in the matrix."""
@@ -71,6 +70,8 @@ from emukit.core import ContinuousParameter, ParameterSpace}
 \notes{For each set of parameter values of the linear controller we can run an episode of the simulator (that we fix to have a horizon of $T=500$) to generate the reward. Using as input the parameters of the controller and as outputs the rewards we can build a Gaussian process emulator of the reward. 
 
 We start defining the input space, which is three-dimensional:}
+
+\setupcode{from emukit.core import ContinuousParameter, ParameterSpace}
 
 \code{position_domain = [-1.2, +1]
 velocity_domain = [-1/0.07, +1/0.07]
@@ -107,11 +108,11 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
 
 \plotcode{mc.save_frames(frames, 
                   diagrams='\writeDiagramsDir/uq', 
-				  filename='mountain_car_random.html')}
+				  filename='mountain-car-random.html')}
 
 \newslide{Random Linear Controller}
 
-\figure{\includehtml{\diagramsDir/uq/mountain_car_random.html}{600}{450}}{Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.}{mountain-car-random}
+\figure{\includehtml{\diagramsDir/uq/mountain-car-random.html}{600}{450}}{Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.}{mountain-car-random}
 
 \notes{As we can see the random linear controller does not manage to
 push the car to the top of the mountain. Now, let's optimize the
@@ -119,6 +120,7 @@ regret using Bayesian optimization and the emulator for the reward. We
 try 50 new parameters chosen by the EI.}
 
 \notes{First we initizialize a Gaussian process emulator.}
+
 \setupcode{import GPy}
 
 \code{kern = GPy.kern.RBF(3)
@@ -126,12 +128,13 @@ model_gpy = GPy.models.GPRegression(initial_design, y, kern, noise_var=1e-10)}
 
 \setupcode{from emukit.model_wrappers.gpy_model_wrappers import GPyModelWrapper}
 
-\code{model_emukit = GPyModelWrapper(model_gpy)}
+\code{model_emukit = GPyModelWrapper(model_gpy, n_restarts=5)
+model_emukit.optimize()}
 
 \notes{In Bayesian optimization an acquisition function is used to
 balance exploration and exploitation to evaluate new locations close
 to the optimum of the objective. In this notebook we select the
-expected improvement (EI). For further details have a look to the
+expected improvement (EI). For further details have a look at the
 review paper of @Shahriari-human16.}
 
 \setupcode{from emukit.bayesian_optimization.acquisitions import ExpectedImprovement}
@@ -153,11 +156,11 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
 
 \plotcode{mc.save_frames(frames, 
                   diagrams='\writeDiagramsDir/uq', 
-				  filename='mountain_car_simulated.html')}
+				  filename='mountain-car-simulated.html')}
 
 \newslide{Best Controller after 50 Iterations of Bayesian Optimization}
 
-\figure{\includehtml{\diagramsDir/uq/mountain_car_simulated.html}{600px}{450px}{auto}}{Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.}{mountain-car-similated-bayes-opt}
+\figure{\includehtml{\diagramsDir/uq/mountain-car-simulated.html}{600px}{450px}{auto}}{Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.}{mountain-car-similated-bayes-opt}
 
 \notes{The car can now make it to the top of the mountain! Emulating
 the reward function and using the EI helped as to find a linear

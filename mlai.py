@@ -8,12 +8,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from IPython.display import display, clear_output, HTML
 
-from numpy import dot, sqrt, sin, cos, tanh, arcsin, arccos, sinc, min, log, exp, eye, diag, zeros, ones, linspace, pi, var, asarray, hstack, sum, max, abs, ceil, arange, clip, frombuffer
-
+from numpy import sqrt, sin, cos, tanh, arcsin, arccos, sinc, log, exp
+from numpy import sum, max, min, abs, ceil, dot
+from numpy import eye, diag, zeros, ones, linspace
+from numpy import pi, var, asarray, hstack, arange, clip, frombuffer
 from numpy.random import randint, rand, seed, uniform, poisson, normal
 
 from numpy.linalg import qr, norm, det, inv
-
 from scipy.linalg import solve_triangular, cholesky
 
 
@@ -26,11 +27,10 @@ def filename_join(filename, directory=None):
     return filename
 
 
-def write_anim(filename, directory=None, **kwargs):
+def write_animation(anim, filename, directory=None, **kwargs):
     "Write an animation to a file."
-    import matplotlib.animation as animation
     savename = filename_join(filename, directory)
-    animation.save(savename, **kwargs)
+    anim.save(savename, **kwargs)
 
 
 def write_figure(filename, figure=None, directory=None, **kwargs):

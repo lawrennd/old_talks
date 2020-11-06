@@ -12,7 +12,7 @@
 $$
 \mappingFunctionTwo(\textbf{x}) = \sin(\inputScalar_1) + a \sin^2(\inputScalar_2) + b \inputScalar_3^4 \sin(\inputScalar_1). 
 $$
-\notes{We will set the parameters to be $a = 5$ and $b=0.1$ . The input variables are sampled randomly $\inputScalar_i \sim \uniformDist{-\pi}{\pi}$.}
+\notes{We will set the parameters to be $a = 5$ and $b=0.1$ . The input variables are sampled randomly $\inputScalar_i \sim \uniformSamp{-\pi}{\pi}$.}
 
 \notes{Next we create the function object and visualize its shape marginally for each one of its three inputs.}
 
