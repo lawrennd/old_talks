@@ -5,12 +5,19 @@
 
 \subsection{Alexa}
 
-\centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasad{15%}}
-\includeyoutube{VQVZ2hvNVfo}{600}{450}
+\centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasadPicture{15%}}
+\figure{\includeyoutube{VQVZ2hvNVfo}{600}{450}}{}{}
 
-\subsection{Alexa}
+\newslide{Alexa}
 
-\centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasad{15%}}
+\centerdiv{\rohitPrasadPicture{15%}}
+
+\figure{\includeyoutube{wa8DU-Sui8Q}{600}{450}{2520}{3345}}{Rohit Prasad talking about Alexa at the Amazon 2019 re:MARS event.}{rohit-prasad-alexa}
+
+\newslide{Alexa}
+
+\centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasadPicture{15%}}
+
 \figure{\includediagram{\diagramsDir/software/alexa-schematic}{40%}}{Simple schmeatic of a intelligent agent set of components.}{alexa-schematic}
 
 \subsection{Speech to Text}

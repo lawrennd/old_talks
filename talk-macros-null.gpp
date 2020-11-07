@@ -91,6 +91,8 @@
 
 \define{\notes{text}}{}
 
+\define{\comment{text}}{}
+
 \define{\codeblockstart}{}
 \define{\codeblockend}{}
 \define{\pythonblockstart}{}

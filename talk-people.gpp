@@ -29,11 +29,12 @@
 \defeval{\radfordNealPicture{width}}{\circleHead{\diagramsDir/people/radford-neal.jpg}{Radford Neal}{\width}{https://www.cs.toronto.edu/~radford/homepage.html}}
 \defeval{\akiVehtariPicture{width}}{\circleHead{\diagramsDir/people/aki-vehtari.jpg}{Aki Vehtari}{\width}{https://users.aalto.fi/~ave/}}
 
-
+\defeval{\dilipKumarPicture{width}}{\circleHead{\diagramsDir/people/dilip-kumar.jpg}{Dilip Kumar}{\width}{https://www.linkedin.com/in/dilipskumar}}
+\defeval{\gerardMedioniPicture{width}}{\circleHead{\diagramsDir/people/gerard-medioni.jpg}{Gerard Medioni}{\width}{https://www.linkedin.com/in/gerard-medioni-b0a33}}
 
 \defeval{\tomTaylorPicture{width}}{\circleHead{\diagramsDir/people/tom-taylor.png}{Tom Taylor}{15%}{https://www.linkedin.com/in/tom-taylor-835b03/}}
 \defeval{\joeWalowskiPicture{width}}{\circleHead{\diagramsDir/people/joe-walowski.png}{Joe Walowski}{\width}{https://www.linkedin.com/in/joe-walowski-b2b7242/}}
-\defeval{\rohitPrasad{width}}{\circleHead{\diagramsDir/people/rohit-prasad.png}{Rohit Prasad}{\width}{https://www.linkedin.com/in/rohit-prasad-4a46251/}}
+\defeval{\rohitPrasadPicture{width}}{\circleHead{\diagramsDir/people/rohit-prasad.png}{Rohit Prasad}{\width}{https://www.linkedin.com/in/rohit-prasad-4a46251/}}
 \defeval{\catherineBreslinPicture{width}}{\circleHead{\diagramsDir/people/catherine-breslin.png}{Catherine Breslin}{\width}{https://www.linkedin.com/in/catherine-breslin-0592423a}}
 
 \defeval{\davidHardcastlePicture{width}}{\circleHead{\diagramsDir/people/david-hardcastle.png}{David Hardcastle}{\width}{https://www.linkedin.com/in/dwhardcastle/}}

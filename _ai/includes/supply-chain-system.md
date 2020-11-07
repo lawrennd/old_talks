@@ -20,6 +20,9 @@
 
 \centerdiv{\jennyFreshwaterPicture{15%}\pingXuPicture{15%}\deanFosterPicture{15%}}
 
+\figure{\includeyoutube{wa8DU-Sui8Q}{600}{450}{1350}{2060}}{Jenny Freshwater speaking at the Amazon re:MARS event in June 2019.}{jenny-freshwater-remars}
+
+
 \subsection{Inventory and Buying}
 
 \centerdiv{\deepakBhatiaPicture{15%}\piyushSaraogiPicture{15%}\ramanIyerPicture{15%}\salalHumairPicture{15%}\narayanVenkatasubramanyanPicture{15%}}
