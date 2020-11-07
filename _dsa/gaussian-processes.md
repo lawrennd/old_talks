@@ -14,6 +14,7 @@ transition: None
 \include{talk-macros.tex}
 \include{_mlai/includes/mlai-notebook-setup.md}
 \include{_gp/includes/gp-book.md}
+\include{_ml/includes/first-course-book.md}
 <!--include{_gp/includes/what-is-a-gp.md}-->
 \include{_gp/includes/gp-intro-lectures.md}
 \include{_ml/includes/univariate-gaussian-properties.md}

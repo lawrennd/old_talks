@@ -1,12 +1,14 @@
 \ifndef{olympicMarathonGp}
 \define{olympicMarathonGp}
-\editme
 
 \include{_ml/includes/olympic-marathon-data.md}
 \include{_ml/includes/alan-turing-marathon.md}
 
-\notes{
-Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).}
+\editme
+
+\subsection{Gaussian Process Fit}
+
+\notes{Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).}
 
 \setupcode{import GPy}
 \code{m_full = GPy.models.GPRegression(x,yhat)
@@ -30,7 +32,8 @@ plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylab
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='\writeDiagramsDir/gp/olympic-marathon-gp.svg', 
+                  filename='olympic-marathon-gp.svg', 
+				  directory = '\writeDiagramsDir/gp',
                   transparent=True, frameon=True)}
 
 \newslide{Olympic Marathon Data GP}

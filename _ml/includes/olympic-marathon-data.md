@@ -31,11 +31,11 @@ y = data['Y']
 offset = y.mean()
 scale = np.sqrt(y.var())}
 
-\setupdisplaycode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt
 import teaching_plots as plot
 import mlai}
 
-\displaycode{
+\plotcode{
 xlim = (1875,2030)
 ylim = (2.5, 6.5)
 yhat = (y-offset)/scale
