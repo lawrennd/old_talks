@@ -7,7 +7,7 @@
 
 -   We have state vector
     $\inputMatrix = \left[\inputVector_1
-          \dots \inputVector_\latentDim\right] \in \mathbb{R}^{{T}\times \latentDim}$
+          \dots \inputVector_\latentDim\right] \in \mathbb{R}^{T \times \latentDim}$
     and if each state evolves independently we have 
 $$		
 \begin{align*}
@@ -105,7 +105,7 @@ column vector: $$\inputVector= \begin{bmatrix}
       \inputVector_{1, :}\\
       \inputVector_{2, :}\\
       \vdots\\
-      \inputVector_{{T}, :}
+      \inputVector_{T, :}
     \end{bmatrix}$$
 $$p(\inputVector) = \gaussianDist{\inputVector}{\zerosVector}{\kernelMatrix\otimes \eye}$$
 

@@ -39,10 +39,10 @@
 \subsection{Sum of Separable Covariance Functions}
 
 -   In the same spirit a more general class of kernels is given by
-    $$\kernelMatrix(\inputVector,\inputVector^\prime)=\sum_{{j}=1}^\latentDim\kernelScalar_{j}(\inputVector,\inputVector^\prime)\coregionalizationMatrix_{j}.$$
+    $$\kernelMatrix(\inputVector,\inputVector^\prime)=\sum_{j=1}^\latentDim\kernelScalar_{j}(\inputVector,\inputVector^\prime)\coregionalizationMatrix_{j}.$$
 
 -   This can also be written as
-    $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{{j}=1}^\latentDim\coregionalizationMatrix_{j}\otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix),$$
+    $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{j=1}^\latentDim\coregionalizationMatrix_{j}\otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix),$$
 
 -   This is like several Kalman filter-type models added together, but
     each one with a different set of latent functions.
@@ -70,9 +70,9 @@
     as linear combinations of independent random functions.
 
 -   In the LMC, each component $\mappingFunction_\dataIndex$ is expressed as a linear sum
-    $$\mappingFunction_\dataIndex(\inputVector) = \sum_{{j}=1}^\latentDim{w}_{\dataIndex,{j}}{u}_{{j}}(\inputVector).$$
+    $$\mappingFunction_\dataIndex(\inputVector) = \sum_{j=1}^\latentDim{w}_{\dataIndex,{j}}{u}_{j}(\inputVector).$$
     where the latent functions are independent and have covariance
-    functions $\kernelScalar_{{j}}(\inputVector,\inputVector^\prime)$.
+    functions $\kernelScalar_{j}(\inputVector,\inputVector^\prime)$.
 
 -   The processes $\{\mappingFunction_j(\inputVector)\}_{j=1}^\latentDim$ are
     independent for $\latentDim \neq {j}^\prime$.
@@ -190,7 +190,7 @@ $${\ell}_2 = 0.2$$
 
 -   Coregionalization matrices are rank 1
     @Teh:semiparametric05. rewrite equation as
-    $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{{j}=1}^\latentDim\mappingVector_{:, {j}}\mappingVector^{\top}_{:, {j}} \otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix).$$
+    $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{j=1}^\latentDim\mappingVector_{:, {j}}\mappingVector^{\top}_{:, {j}} \otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix).$$
 
 -   Like the Kalman filter, but each latent function has a
     *different* covariance.

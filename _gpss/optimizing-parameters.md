@@ -2,7 +2,7 @@
 title: Optimizing Parameters
 abstract: >
   In this session we introduce the process of optimization of the hyper parameters of the Gaussian process covariance function.
-session 4
+session: 4
 ---
 
 \include{talk-macros.gpp}
