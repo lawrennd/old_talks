@@ -50,6 +50,6 @@
         
       \end{tikzpicture}
     \end{center}}
-* Probabilistic CCA is case when dimensionality of $\mathbf{Z}$ matches $\dataMatrix^{(i)}$ (cf Inter Battery Factor Analysis {\scriptsize @Tucker:battery58}).
+* Probabilistic CCA is case when dimensionality of $\mathbf{Z}$ matches $\dataMatrix^{(i)}$ (cf Inter Battery Factor Analysis @Tucker:battery58).
 
 \endif
