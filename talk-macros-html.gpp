@@ -62,6 +62,9 @@ Store Caption: \storeCaption
 
 \define{\includeyoutube{id}{width}{height}{start}{end}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\start" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 
+\define{\includevimeo{id}{width}{height}{start}{end}}{<iframe width="\width" height="\height" src="https://player.vimeo.com/video/\id#t=\start"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>}
+
+							     
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}

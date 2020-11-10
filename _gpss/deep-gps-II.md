@@ -1,7 +1,7 @@
 ---
 title: Deep Gaussian Processes II
+session: 10
 abstract:
-session: 8
 ---
 
 \include{talk-macros.gpp}

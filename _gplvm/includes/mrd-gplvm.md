@@ -3,7 +3,9 @@
 
 \editme
 
-\include{_gplvm/includes/shared_intro.md}
+\subsection{Manifold Relevance Determination}
+
+\include{_gplvm/includes/shared-intro.md}
 \include{_gplvm/includes/mrd-intro.md}
 \include{_gplvm/includes/mrd-results.md}
 

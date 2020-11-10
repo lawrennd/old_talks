@@ -1,4 +1,9 @@
-### Non-linear $\mappingFunction(\latentVector)$
+\ifndef{ardDescription}
+\define{ardDescription}
+
+\editme
+
+\subsection{Non-linear $\mappingFunction(\latentVector)$}
 
 -   In linear case equivalence because
     $\mappingFunction(\latentVector) = \mappingVector^\top \latentVector$
@@ -18,3 +23,4 @@
     e.g. @Neal:book96; @MacKay:information03; @Rasmussen:book06].
 
 
+\endif

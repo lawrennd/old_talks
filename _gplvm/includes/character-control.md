@@ -1,12 +1,12 @@
-frame start
+\ifndef{characterControl}
+\define{characterControl}
 
-### Continuous Character Control
+\editme
 
-\small
+\subsection{Continuous Character Control}
 
-\begin{flushright}
-\citep{Levine:control12}
-\end{flushright}
+
+\alignright{@Levine:control12}
 -   Graph diffusion prior for enforcing connectivity between motions.
     $$\log p(\inputMatrix) = w_c \sum_{i,j} \log K_{ij}^d$$ with the
     graph diffusion kernel $\kernelMatrix^d$ obtain from
@@ -21,20 +21,8 @@ frame start
     $w(\inputVector_i,\inputVector_j) = || \inputVector_i -  \inputVector_j||^{-p}$
     measures similarity.
 
-frame end
+\subsection{Character Control: Results}
 
-frame start
+\figure{\includeyoutube{hr3pdDl5IAg}{800}{600}}{Character control in the latent space described the the GP-LVM @Levine:control12}{charcter-control-gplvm}
 
-### Character Control: Results
-
-\includemedia[
-  height=0.8\textheight,width=0.8\textwidth,
-  activate=pageopen,
-  flashvars={
-    modestbranding=1 % no YT logo in control bar
-   &autohide=1       % controlbar autohide
-   &showinfo=0       % no title and other info before start
-  }
-]{}{\includeyoutube{hr3pdDl5IAg}{800}{600}}
-
-frame end
+\endif

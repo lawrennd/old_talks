@@ -1,6 +1,6 @@
 ---
 title: Deep Gaussian Processes I
-session: 7
+session: 9
 abstract: 
 ---
 

@@ -9,9 +9,8 @@ abstract:
 \include{_dimred/includes/probabilistic-pca.md}
 \include{_dimred/includes/non-linear-difficulty.md}
 \include{_gplvm/includes/gplvm-tutorial.md}
-\include{_gplvm/includes/bayes-gplvm-intro.md}
-\include{_gplvm/includes/variational-bayes-gplvm-long.md}
-\include{_gplvm/includes/mrd-gplvm.md}
+\include{_gplvm/includes/latent-doodle-space.md}
+\include{_gplvm/includes/character-control.md}
 
 \thanks
 

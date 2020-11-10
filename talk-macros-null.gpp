@@ -48,7 +48,6 @@
 \defeval{\table{block}{options}}{}
 
 \define{\includegooglebook{id}{page}}{}
-\define{\includeyoutube{id}{width}{height}{time}}{}
 
 \define{\includempfour{filename}{width}{height}}{}
 \define{\includeimg{filename}{width}{class}}{}
@@ -67,9 +66,9 @@
 
 \defeval{\figure{contents}{captionContents}{label}}{}
 
-
-\define{\includegooglebook{id}{page}}{}
 \define{\includeyoutube{id}{width}{height}{time}}{}
+\define{\includevimeo{id}{width}{height}{time}}{}
+\define{\includemp4{id}{width}{height}{time}}{}
 
 \define{\includeimg{filename}{width}{class}}{}
 

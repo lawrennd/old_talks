@@ -15,7 +15,8 @@
 \define{\includediagram{filename}{width}{class}{style}}{![](\filename.emf)}
 \define{\includediagramclass{filename}{width}{class}{style}}{![](\filename.emf)}
 
-\define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id\&t=\time)}
+\define{\includeyoutube{id}{width}{height}{start}{end}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id\&t=\time)}
+\define{\includevimeo{id}{width}{height}{start}{end}}{[![](https://i.vimeocdn.com/video/\id_640x480.jpg)](https://vimeo.com/\id#t=\start)}
 
 \define{\colorcyan{block}}{{\color{\cyanColor} \block}}
 \define{\colormagenta{block}}{{\color{\magentaColor} \block}}
