@@ -16,9 +16,6 @@ date: 2020-11-10
 youtube: Zrgp4BkpMT4
 reveal: False
 author:
-- family: Masood
-  given: Ehsan
-  url: https://www.linkedin.com/in/ehsan-masood/?originalSubdomain=uk
 - family: Kenny
   given: Michael
   institute: University of Cambridge
@@ -33,6 +30,9 @@ author:
   given: Theresa M.
   url: https://www.phpc.cam.ac.uk/people/pcu-group/pcu-senior-academic-staff/theresa-marteau/
   institute: University of Cambridge
+- family: Masood
+  given: Ehsan
+  url: https://www.linkedin.com/in/ehsan-masood/?originalSubdomain=uk
 - family: Spiegelhalter
   given: David
   url: http://www.statslab.cam.ac.uk/~david/
