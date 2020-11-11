@@ -42,5 +42,6 @@ author:
   url: https://www.educ.cam.ac.uk/people/staff/vignoles/
   institute: University of Cambridge
 venue: Bennett Institute for Policy
+venue_url: https://www.bennettinstitute.cam.ac.uk/events/science-evidence-and-government/
 ---
 
