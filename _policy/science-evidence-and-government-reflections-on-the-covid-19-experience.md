@@ -13,7 +13,8 @@ abstract: >
   policy in times of crisis.
 url: https://www.bennettinstitute.cam.ac.uk/events/science-evidence-and-government/
 date: 2020-10-11
-youtube:
+youtube: Zrgp4BkpMT4
+reveal: False
 author:
 - family: Lawrence
   given: Neil D.
