@@ -12,10 +12,17 @@ abstract: >
   tells us about the relationship between science, evidence and public
   policy in times of crisis.
 url: https://www.bennettinstitute.cam.ac.uk/events/science-evidence-and-government/
-date: 2020-10-11
+date: 2020-11-10
 youtube: Zrgp4BkpMT4
 reveal: False
 author:
+- family: Masood
+  given: Ehsan
+  url: https://www.linkedin.com/in/ehsan-masood/?originalSubdomain=uk
+- family: Kenny
+  given: Michael
+  institute: University of Cambridge
+  url: https://www.polis.cam.ac.uk/Staff_and_Students/professor-micheal-kenny
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
@@ -34,12 +41,6 @@ author:
   given: Anna
   url: https://www.educ.cam.ac.uk/people/staff/vignoles/
   institute: University of Cambridge
-- family: Masood
-  given: Ehsan
-  url: https://www.linkedin.com/in/ehsan-masood/?originalSubdomain=uk
-- family: Kenny
-  given: Michael
-  institute: University of Cambridge
-  url: https://www.polis.cam.ac.uk/Staff_and_Students/professor-micheal-kenny
+venue: Bennett Institute for Policy
 ---
 
