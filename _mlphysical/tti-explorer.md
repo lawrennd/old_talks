@@ -35,6 +35,7 @@ layout: lecture
 time: "10:00"
 date: 2020-11-12
 venue: Virtual (Zoom)
+youtube: Ghcs4O_aH44
 ipynb: False
 reveal: False
 transition: None
