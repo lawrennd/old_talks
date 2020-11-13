@@ -3,14 +3,26 @@
 
 \editme
 
-
 \subsection{Marginal Likelihood}
 
-\notes{To understand the Gaussian process we're going to build on our understanding of the marginal likelihood for Bayesian regression. In the session on \refnotes{Bayesian regression}{bayesian-regression} we sampled directly from the weight vector, $\mappingVector$ and applied it to the basis matrix $\basisMatrix$ to obtain a sample from the prior and a sample from the posterior. It is often helpful to think of modeling techniques as *generative* models. To give some thought as to what the process for obtaining data from the model is. From the perspective of Gaussian processes, we want to start by thinking of basis function models, where the parameters are sampled from a prior, but move to thinking about sampling from the marginal likelihood directly.}
+\notes{To understand the Gaussian process we're going to build on our
+understanding of the marginal likelihood for Bayesian regression. In
+the session on \refnotes{Bayesian regression}{bayesian-regression} we
+sampled directly from the weight vector, $\mappingVector$ and applied
+it to the basis matrix $\basisMatrix$ to obtain a sample from the
+prior and a sample from the posterior. It is often helpful to think of
+modeling techniques as *generative* models. To give some thought as to
+what the process for obtaining data from the model is. From the
+perspective of Gaussian processes, we want to start by thinking of
+basis function models, where the parameters are sampled from a prior,
+but move to thinking about sampling from the marginal likelihood
+directly.}
 
 \subsection{Sampling from the Prior}
 
-\notes{The first thing we'll do is to set up the parameters of the model, these include the parameters of the prior, the parameters of the basis functions and the noise level.}
+\notes{The first thing we'll do is to set up the parameters of the
+model, these include the parameters of the prior, the parameters of
+the basis functions and the noise level.}
 
 \code{# set prior variance on w
 alpha = 4.
@@ -19,10 +31,12 @@ degree = 5
 # set the noise variance
 sigma2 = 0.01}
 
-\notes{Now we have the variance, we can sample from the prior distribution to see what form we are imposing on the functions *a priori*.
+\notes{Now we have the variance, we can sample from the prior
+distribution to see what form we are imposing on the functions *a
+priori*.
 
-Let's now compute a range of values to make predictions at, spanning the *new*
-space of inputs,}
+Let's now compute a range of values to make predictions at, spanning
+the *new* space of inputs,}
 
 \setupcode{import numpy as np}
 \code{def polynomial(x, degree, loc, scale):
@@ -46,7 +60,9 @@ Phi = polynomial(x, degree=degree, loc=loc, scale=scale)}
 
 \subsection{Weight Space View}
 
-\notes{To generate typical functional predictions from the model, we need a set of model parameters. We assume that the parameters are drawn independently from a Gaussian density,}
+\notes{To generate typical functional predictions from the model, we
+need a set of model parameters. We assume that the parameters are
+drawn independently from a Gaussian density,}
 $$
 \weightVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
 $$
@@ -97,15 +113,23 @@ $$
 \newslide{}
 
 \notes{Now we can use standard properties of multivariate Gaussians to
-write down the probability density that is implied over $\mappingFunctionVector$. In particular we know that if $\weightVector$ is sampled from a multivariate normal (or multivariate Gaussian) with covariance $\alpha \eye$ and zero mean,
-then assuming that $\basisMatrix$ is a deterministic matrix (i.e. it is not
-sampled from a probability density) then the vector $\mappingFunctionVector$ will also be distributed according to a zero mean multivariate normal as follows,}
+write down the probability density that is implied over
+$\mappingFunctionVector$. In particular we know that if
+$\weightVector$ is sampled from a multivariate normal (or multivariate
+Gaussian) with covariance $\alpha \eye$ and zero mean, then assuming
+that $\basisMatrix$ is a deterministic matrix (i.e. it is not sampled
+from a probability density) then the vector $\mappingFunctionVector$
+will also be distributed according to a zero mean multivariate normal
+as follows,}
 $$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha \basisMatrix\basisMatrix^\top}.
 $$
 \newslide{}
 
-\notes{The question now is, what happens if we sample $\mappingFunctionVector$ directly from this density, rather than first sampling $\weightVector$ and then multiplying by $\basisMatrix$. Let's try this. First of all we define the covariance as}
+\notes{The question now is, what happens if we sample
+$\mappingFunctionVector$ directly from this density, rather than first
+sampling $\weightVector$ and then multiplying by $\basisMatrix$. Let's
+try this. First of all we define the covariance as}
 $$
 \kernelMatrix = \alpha
 \basisMatrix\basisMatrix^\top.
@@ -137,7 +161,12 @@ mlai.write_figure('gp-sample-basis-function.svg', directory='\writeDiagramsDir/k
 
 \newslide{}
 
-\notes{The samples appear very similar to those which we obtained indirectly. That is no surprise because they are effectively drawn from the same mutivariate normal density. However, when sampling $\mappingFunctionVector$ directly we created the covariance for $\mappingFunctionVector$. We can visualise the form of this covaraince in an image in python with a colorbar to show scale.}
+\notes{The samples appear very similar to those which we obtained
+indirectly. That is no surprise because they are effectively drawn
+from the same mutivariate normal density. However, when sampling
+$\mappingFunctionVector$ directly we created the covariance for
+$\mappingFunctionVector$. We can visualise the form of this covaraince
+in an image in python with a colorbar to show scale.}
 
 \setupplotcode{import teaching_plots as plot
 import mlai}
@@ -152,7 +181,9 @@ mlai.write_figure('basis-covariance-function.svg', directory='\writeDiagramsDir/
 
 \newslide{}
 
-\notes{This image is the covariance expressed between different points on the function. In regression we normally also add independent Gaussian noise to obtain our observations $\dataVector$,}
+\notes{This image is the covariance expressed between different points
+on the function. In regression we normally also add independent
+Gaussian noise to obtain our observations $\dataVector$,}
 $$
 \dataVector = \mappingFunctionVector + \boldsymbol{\epsilon}
 $$
@@ -185,7 +216,9 @@ mlai.write_figure('gp-sample-basis-function-plus-noise.svg',
 
 \figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top + \dataStd^2 \eye$.}{gp-sample-basis-functions-plus-noise}
 
-\notes{where the effect of our noise term is to roughen the sampled functions, we can also increase the variance of the noise to see a different effect,}
+\notes{where the effect of our noise term is to roughen the sampled
+functions, we can also increase the variance of the noise to see a
+different effect,}
 
 \code{sigma2 = 1.
 K = alpha*Phi_pred@Phi_pred.T + sigma2*np.eye(x_pred.size)}
@@ -198,8 +231,8 @@ for i in range(10):
 mlai.write_figure('gp-sample-basis-function-plus-large-noise.svg', 
                   '\writeDiagramsDir/kern')}
 
-\figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-large-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top +  \eye$.}{gp-sample-basis-functions-plus-large-noise}
+\figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-large-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top + \eye$.}{gp-sample-basis-functions-plus-large-noise}
 
-\exercise{**Function Space Reflection** How do you include the noise term when sampling in the weight space point of view?}
+\writeAssignment{**Function Space Reflection** How do you include the noise term when sampling in the weight space point of view?}{}{10}
 
 \endif

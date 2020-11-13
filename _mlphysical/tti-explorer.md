@@ -37,6 +37,8 @@ date: 2020-11-12
 venue: Virtual (Zoom)
 youtube: Ghcs4O_aH44
 ipynb: False
+pptx: 06-01-tti-explorer.pptx
+pdfslides: 06-01-tti-explorer.pdf
 reveal: False
 transition: None
 ---
