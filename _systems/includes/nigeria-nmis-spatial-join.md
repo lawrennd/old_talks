@@ -52,7 +52,7 @@ hosp_gdf.crs = "EPSG:4326"}
 Now we have the data in the ```GeoPandas``` format, we can start converting into states. We will use the [```fiona```](https://pypi.org/project/Fiona/) library for reading the right layers from the files. Before we do the join, lets plot the location of health centers and states on the same map.}
 
 
-\code{world_gdf = gpd.read_file(gpd.datasets.get_path('natural_lowres'))
+\code{world_gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 world_gdf.crs = "EPSG:4326"
 nigeria_gdf = world_gdf[(world_gdf['name'] == 'Nigeria')]}
 

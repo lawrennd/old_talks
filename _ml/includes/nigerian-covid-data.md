@@ -34,7 +34,7 @@ data = pd.read_csv('line-list-nigeria.csv'))
 import teaching_plots as plot
 import mlai}
 
-\plotcode{fig, ax = plt.subplots(figsize=plt.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot()
 ax.set_xlabel()
 ax.set_ylabel()

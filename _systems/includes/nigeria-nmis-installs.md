@@ -10,10 +10,11 @@ First, we're going to download some particular python libraries for dealing with
 
 \comment{And  to get a small database set up running quickly, we're installing [```csv-to-sqlite```](https://pypi.org/project/csv-to-sqlite/) which allows us to convert CSV data to a simple database.}
 
-\notes{
 \installcode{geopandas}
 \installcode{pygeos}
 \installcode{decarteslabs[complete]}
-}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
+
 
 \endif
