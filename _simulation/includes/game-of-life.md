@@ -47,7 +47,7 @@
 
 \newslide{}
 
-\figure{\includeyoutube{Kk2MH9O4pXY}{800}{600}}{An introduction to the Game of Life by Alan Zucconi.}{intro-to-life}
+\figure{\includeyoutube{Kk2MH9O4pXY}{600}{450}}{An introduction to the Game of Life by Alan Zucconi.}{intro-to-life}
 
 
 
