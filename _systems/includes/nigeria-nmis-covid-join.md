@@ -36,7 +36,6 @@ We also want to have population data for each state in Nigeria, so that we can s
 
 \code{pop_data=data}
 
-
 \notes{When doing this for real world data, you should also make sure that the names used in the rows are the same across the different data bases. For example, has someone decided to use an abbreviation for 'Federal Capital Territory' and set it as 'FCT'. The computer won't understand these are the same states, and if you do a join with such data you can get duplicate entries or missing entries. This sort of thing happens a lot in real world data and takes a lot of time to sort out. Fortunately, in this case, the data is well curated and we don't have these problems.}
 
 \notes{\subsection{Save to database file}
@@ -53,7 +52,7 @@ The Minister of Health in Abuja may be interested in which states are most vulne
 
 To do this, we will use the ```JOIN``` operation from SQL and introduce a new operation called ```GROUPBY```.}
 
-\notes{#### Joining in Pandas
+\notes{\subsubsection{Joining in Pandas}
 
 As before, these operations can be done in pandas or GeoPandas. Before we create the SQL commands, we'll show how you can do that in pandas.
 

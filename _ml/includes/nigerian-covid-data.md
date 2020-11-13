@@ -8,8 +8,6 @@
 
 \notes{At the beginning of the COVID-19 outbreak, the Consortium for Arican COVID-19 Data formed to bring together data from across the African continent on COVID-19 cases [@Marivate-covid20]. These cases are recorded in the following github repository: <https://github.com/dsfsi/covid19africa>.}
 
-}
-
 \notes{For ease of use we've packaged this data set in the `pods` library}
 
 \include{_data-science/includes/pods-software.md}

@@ -24,7 +24,7 @@ The beautiful thing about SQLite is that it allows us to play with SQL without g
 
 \notes{\code{hosp_state_joined.to_csv('facilities.csv')}}
 
-\notes{\code{%pip install csv-to-sqlite}}
+\installcode{csv-to-sqlite}
 
 \notes{\code{!csv-to-sqlite -f facilities.csv -t full -o db.sqlite}}
 
