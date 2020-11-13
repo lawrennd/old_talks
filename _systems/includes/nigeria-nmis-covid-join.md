@@ -12,20 +12,10 @@ They provide their data in github. We can access the cases we're interested in f
 
 For convenience, we'll load the data into pandas first, but our next step will be to create a new SQLite table containing the data. Then we'll join that table to our existing tables.}
 
-\notes{
-\code{covid_data_url = 'https://raw.githubusercontent.com/dsfsi/covid19africa/master/data/line_lists/line-list-nigeria.csv'
-covid_data_csv = 'cases.csv'
-urllib.request.urlretrieve(covid_data_url, covid_data_csv)
-covid_data = pd.read_csv(covid_data_csv)
-}}
+\include{_ml/includes/nigerian-covid-data.md}
 
-\notes{As normal, we should inspect our data to check that it contains what we expect. }
-
-\notes{\code{covid_data.head()}}
-
-\notes{And we can get an idea of all the information in the data from looking at the columns.}
-
-\notes{\code{covid_data.columns}}
+\code{covid_data=data
+covid_data.to_csv('cases.csv')}
 
 \notes{Now we convert this CSV file we've downloaded into a new table in the database file. We can do this, again, with the csv-to-sqlite script.}
 
@@ -41,16 +31,11 @@ To access the number of people we can get population statistics from the [Humani
 
 We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.}
 
-\notes{\code{pop_url = 'https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_pop_adm1_2016.csv'
-_, msg = urllib.request.urlretrieve(pop_url,'nga_pop_adm1_2016.csv')
-pop_data = pd.read_csv('nga_pop_adm1_2016.csv')}}
 
-\notes{\code{pop_data.head()}}
+\include{_ml/includes/nigerian-population-data.md}
 
-\notes{To do joins with this data, we must first make sure that the columns have the right names. The name should match the same name of the column in our existing data. So we reset the column names, and the name of the index, as follows.}
+\code{pop_data=data}
 
-\notes{\code{pop_data.columns = ['admin1Name_en', 'admin1Pcode', 'admin0Name_en', 'admin0Pcode', 'population']
-pop_data = pop_data.set_index('admin1Name_en')}}
 
 \notes{When doing this for real world data, you should also make sure that the names used in the rows are the same across the different data bases. For example, has someone decided to use an abbreviation for 'Federal Capital Territory' and set it as 'FCT'. The computer won't understand these are the same states, and if you do a join with such data you can get duplicate entries or missing entries. This sort of thing happens a lot in real world data and takes a lot of time to sort out. Fortunately, in this case, the data is well curated and we don't have these problems.}
 

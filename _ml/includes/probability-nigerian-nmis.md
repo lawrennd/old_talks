@@ -1,7 +1,7 @@
 \ifndef{probabilityNigerianNmis}
 \define{probabilityNigerianNmis}
 
-\include{_ml/includes/nigerian-nmis-data.md}
+\include{_ml/includes/nigerian-nmis-data-explore.md}
 
 \editme
 

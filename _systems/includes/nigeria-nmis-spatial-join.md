@@ -16,14 +16,40 @@ This is where "geo" data becomes important. We need to download a dataset that s
 
 There are special databases for storing this type of information, the database we are using is in the ```gdb``` or GeoDataBase format. It comes in a zip file. Let's download the outline files for the Nigerian states. They have been made available by the [Humanitarian Data Exchange](https://data.humdata.org/), you can also find other states data from the same site.}
 
-\notes{
-\setupcode{import zipfile}
+\include{_ml/includes/nigerian-administrative-zones-data.md}
 
-\code{admin_zones_url = 'https://data.humdata.org/dataset/81ac1d38-f603-4a98-804d-325c658599a3/resource/0bc2f7bb-9ff6-40db-a569-1989b8ffd3bc/download/nga_admbnda_osgof_eha_itos.gdb.zip'
-_, msg = urllib.request.urlretrieve(admin_zones_url, 'nga_admbnda_osgof_eha_itos.gdb.zip')
-with zipfile.ZipFile('/content/nga_admbnda_osgof_eha_itos.gdb.zip', 'r') as zip_ref:
-    zip_ref.extractall('/content/nga_admbnda_osgof_eha_itos.gdb')}
-	}
+\code{zones_gdf = data}
+
+\notes{Next we convert the hospital data to a `geopandas` data frame.}
+
+\setupcode{import geopandas as gpd}
+
+\code{geometry=gpd.points_from_xy(hospital_data.longitude, hospital_data.latitude)
+hosp_gdf = gpd.GeoDataFrame(hospital_data, 
+                            geometry=geometry)
+hosp_gdf.crs = "EPSG:4326"}
+
+
+\code{world_gdf = gpd.read_file(gpd.datasets.get_path('natural_lowres'))
+world_gdf.crs = "EPSG:4326"
+nigeria_gdf = world_gdf[(world_gdf['name'] == 'Nigeria')]}
+
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+nigeria_gdf.plot(ax=ax, color='white', edgecolor='black', alpha=0)
+zones_gdf.plot(ax=ax, color='white', edgecolor='black')
+hosp_gdf.plot(ax=ax, color='b', alpha=0.02)
+ax.set_xlabel('longitude')
+ax.set_ylabel('latitude')
+
+mlai.write_figure('nigeria-states-and-health-facilities.svg', directory='\writeDiagramsDir/ml')}
+
+\figure{\includediagram{\diagramsDir/nigeria-states-and-health-facilities}{60%}}{The outline of the thirty six different states of nigeria with the location sof the health centers plotted on the map.}{nigeria-states-and-health-facilities}
+
+
 \notes{Now we have this data of the outlines of the different states in Nigeria. 
 
 The next thing we need to know is how these health facilities map onto different states in Nigeria. Without "binning" facilities somehow, it's difficult to effectively see how they are distributed across the country.
