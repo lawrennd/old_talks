@@ -32,13 +32,13 @@ data = gpd.read_file(states_file, layer=1)
 data.crs = "EPSG:4326"
 data = data.set_index('admin1Name_en')
 	
-```
+```}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import teaching_plots as plot
 import mlai}
 
-\plotcode{fig, ax = plt.subplots(figsize=plt.big_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 data.plot(ax=ax, color='white', edgecolor='black')
 ax.set_xlabel('longitude')
 ax.set_ylabel('latitude')

@@ -20,7 +20,23 @@ There are special databases for storing this type of information, the database w
 
 \code{zones_gdf = data}
 
-\notes{Next we convert the hospital data to a `geopandas` data frame.}
+\notes{Now we have this data of the outlines of the different states in Nigeria. 
+
+The next thing we need to know is how these health facilities map onto different states in Nigeria. Without "binning" facilities somehow, it's difficult to effectively see how they are distributed across the country.
+
+We do this by finding a "geo" dataset that contains the spatial outlay of Nigerian states by latitude/longitude coordinates. The dataset we use is of the "gdb" (GeoDataBase) type and comes as a zip file. We don't need to worry much about this datatype for this notebook, only noting that geopandas knows how to load in the dataset, and that it contains different "layers" for the same map. In this case, each layer is a  different degree of granularity of the political boundaries, with layer 0 being the whole country, 1 is by state, or 2 is by local government. We'll go with a state level view for simplicity, but as an excercise you can change it to layer 2 to view the distribution by local government. 
+
+Once we have these ```MultiPolygon``` objects that define the boundaries of different states, we can perform a spatial join (sjoin) from the coordinates of individual health facilities (which we already converted to the appropriate ```Point``` type when moving the health data to a GeoDataFrame.)}
+
+\notes{\subsection{Joining a GeoDataFrame}
+
+The first database join we're going to do is a special one, it's a 'spatial join'. We're going to join together the locations of the hospitals with their states. 
+
+This join is unusual because it requires some mathematics to get right. The outline files give us the borders of the different states in latitude and longitude, the health facilities have given locations in the country. 
+
+A spatial join involves finding out which state each health facility belongs to. Fortunately, the mathematics you need is already programmed for you in GeoPandas. That means all we need to do is convert our ```pandas``` dataframe of health facilities into a ```GeoDataFrame``` which allows us to do the spatial join. }
+
+\notes{First we convert the hospital data to a `geopandas` data frame.}
 
 \setupcode{import geopandas as gpd}
 
@@ -28,6 +44,12 @@ There are special databases for storing this type of information, the database w
 hosp_gdf = gpd.GeoDataFrame(hospital_data, 
                             geometry=geometry)
 hosp_gdf.crs = "EPSG:4326"}
+
+\notes{There are some technial details here: the  ```crs``` refers to the coordinate system in use by a particular GeoDataFrame. ```EPSG:4326``` is the standard coordinate system of latitude/longitude.}
+
+\notes{\subsection{Your First Join: Converting GPS Coordinates to States}
+
+Now we have the data in the ```GeoPandas``` format, we can start converting into states. We will use the [```fiona```](https://pypi.org/project/Fiona/) library for reading the right layers from the files. Before we do the join, lets plot the location of health centers and states on the same map.}
 
 
 \code{world_gdf = gpd.read_file(gpd.datasets.get_path('natural_lowres'))
@@ -50,69 +72,17 @@ mlai.write_figure('nigeria-states-and-health-facilities.svg', directory='\writeD
 \figure{\includediagram{\diagramsDir/nigeria-states-and-health-facilities}{60%}}{The outline of the thirty six different states of nigeria with the location sof the health centers plotted on the map.}{nigeria-states-and-health-facilities}
 
 
-\notes{Now we have this data of the outlines of the different states in Nigeria. 
-
-The next thing we need to know is how these health facilities map onto different states in Nigeria. Without "binning" facilities somehow, it's difficult to effectively see how they are distributed across the country.
-
-We do this by finding a "geo" dataset that contains the spatial outlay of Nigerian states by latitude/longitude coordinates. The dataset we use is of the "gdb" (GeoDataBase) type and comes as a zip file. We don't need to worry much about this datatype for this notebook, only noting that geopandas knows how to load in the dataset, and that it contains different "layers" for the same map. In this case, each layer is a  different degree of granularity of the political boundaries, with layer 0 being the whole country, 1 is by state, or 2 is by local government. We'll go with a state level view for simplicity, but as an excercise you can change it to layer 2 to view the distribution by local government. 
-
-Once we have these ```MultiPolygon``` objects that define the boundaries of different states, we can perform a spatial join (sjoin) from the coordinates of individual health facilities (which we already converted to the appropriate ```Point``` type when moving the health data to a GeoDataFrame.)}
-
-\notes{\subsection{Joining a GeoDataFrame}
-
-The first database join we're going to do is a special one, it's a 'spatial join'. We're going to join together the locations of the hospitals with their states. 
-
-This join is unusual because it requires some mathematics to get right. The outline files give us the borders of the different states in latitude and longitude, the health facilities have given locations in the country. 
-
-A spatial join involves finding out which state each health facility belongs to. Fortunately, the mathematics you need is already programmed for you in GeoPandas. That means all we need to do is convert our ```pandas``` dataframe of health facilities into a ```GeoDataFrame``` which allows us to do the spatial join. }
-
-\notes{
-\setupcode{import geopandas as gpd}
-\code{hosp_gdf = gpd.GeoDataFrame(
-    hospital_data, geometry=gpd.points_from_xy(hospital_data.longitude, hospital_data.latitude))
-hosp_gdf.crs = "EPSG:4326"}
-}
-
-\notes{There are some technial details here: the  ```crs``` refers to the coordinate system in use by a particular GeoDataFrame. ```EPSG:4326``` is the standard coordinate system of latitude/longitude.}
-
-\notes{\subsection{Your First Join: Converting GPS Coordinates to States}
-
-Now we have the data in the ```GeoPandas``` format, we can start converting into states. We will use the [```fiona```](https://pypi.org/project/Fiona/) library for reading the right layers from the files. Before we do the join, lets plot the location of health centers and states on the same map.}
-
-\notes{
-\setupcode{import fiona}
-
-\code{states_file = "/content/nga_admbnda_osgof_eha_itos.gdb/nga_admbnda_osgof_eha_itos.gdb/nga_admbnda_osgof_eha_itos.gdb/nga_admbnda_osgof_eha_itos.gdb/"
-
-# geopandas included map, filtered to just Nigeria
-world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
-world.crs = "EPSG:4326"
-nigeria = world[(world['name'] == 'Nigeria')]
-base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
-
-layers = fiona.listlayers(states_file)
-zones_gdf = gpd.read_file(states_file, layer=1)
-zones_gdf.crs = "EPSG:4326"
-zones_gdf = zones_gdf.set_index('admin1Name_en')
-zones_gdf.plot(ax=base, color='white', edgecolor='black')
-
-# We can now plot our ``GeoDataFrame``.
-hosp_gdf.plot(ax=base, color='b', alpha=0.02, )
-
-plt.show()}
-}
-
 \notes{\subsection{Performing the Spatial Join}
 
 We've now plotted the different health center locations across the states. You can clearly see that each of the dots falls within a different state. For helping the visualisation, we've made the dots somewhat transparent (we set the ```alpha``` in the plot). This means that we can see the regions where there are more health centers, you should be able to spot where the major cities in Nigeria are given the increased number of health centers in those regions.
 
-Of course, we can now see by eye, which of the states each of the health centers belongs to. But we want the computer to do our join for us. ```GeoPandas``` provides us with the spatial join. Here we're going to do a [```left``` or ```outer``` join](https://en.wikipedia.org/wiki/Join_(SQL)#Left_outer_join). }
+Of course, we can now see by eye, which of the states each of the health centers belongs to. But we want the computer to do our join for us. `GeoPandas` provides us with the spatial join. Here we're going to do a [`left` or `outer` join](https://en.wikipedia.org/wiki/Join_(SQL)#Left_outer_join). }
 
 \notes{
 \setupcode{from geopandas.tools import sjoin}
 }
 
-\notes{We have two GeoPandas data frames, ```hosp_gdf``` and ```zones_gdf```. Let's have a look at the columns the contain.}
+\notes{We have two GeoPandas data frames, `hosp_gdf` and `zones_gdf`. Let's have a look at the columns the contain.}
 
 \notes{
 \code{hosp_gdf.columns}
