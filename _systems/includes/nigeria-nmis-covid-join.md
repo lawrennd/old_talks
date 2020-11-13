@@ -143,16 +143,18 @@ base.set_title("Population of Nigerian States")}}
 pop_joined.plot(ax=base, column='hosp_per_capita_10k', edgecolor='black', legend=True)
 base.set_title("Hospitals Per Capita (10k) of Nigerian States")}}
 
-\notes{\subsection{Exercise}
 
-1. Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.
+\codeAssignment{Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.}{}{10}
 
-2. Add a new column for covid cases per health facility. 
+\codeAssignment{Add a new column for covid cases per health facility.}{}{10}
 
-Do this in both the SQL and the Pandas styles to get a feel for how they differ.}
+\writeAssignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}}
 
-\notes{\code{# pop_joined['cases_per_capita_10k'] = ???
-# pop_joined['cases_per_facility'] = ???}
+\notes{
+\code{
+# pop_joined['cases_per_capita_10k'] = ???
+# pop_joined['cases_per_facility'] = ???
+}}
 
 \notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='cases_per_capita_10k', edgecolor='black', legend=True)

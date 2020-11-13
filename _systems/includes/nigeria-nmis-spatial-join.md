@@ -69,7 +69,7 @@ ax.set_ylabel('latitude')
 
 mlai.write_figure('nigeria-states-and-health-facilities.svg', directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/nigeria-states-and-health-facilities}{60%}}{The outline of the thirty six different states of nigeria with the location sof the health centers plotted on the map.}{nigeria-states-and-health-facilities}
+\figure{\includediagram{\diagramsDir/ml/nigeria-states-and-health-facilities}{60%}}{The outline of the thirty six different states of nigeria with the location sof the health centers plotted on the map.}{nigeria-states-and-health-facilities}
 
 
 \notes{\subsection{Performing the Spatial Join}
