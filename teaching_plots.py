@@ -1862,9 +1862,11 @@ def covariance_func(kernel, x=None,
     else:
         filename = 'covariance'
 
-    mlai.write_animation(filename + '.gif',
+    mlai.write_animation(anim,
+                         filename + '.gif',
                          directory=diagrams,
-                         writer='imagemagick', fps=30)
+                         writer='imagemagick',
+                         fps=30)
 
 
     K2 = kernel.K(x[::10, :])
