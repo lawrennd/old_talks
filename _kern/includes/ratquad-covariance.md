@@ -27,7 +27,7 @@ $$
 $$
 where $\ell$ is the *length scale* or *time scale* of the process and $\alpha$ represents the overall process variance and $a$ represents shape parameter of the inverse Gamma used to create the scale mixture.}
 
-\includecovariance{ratquad}{\formula}{The exponentiated quadratic covariance function.}
+\includecovariance{ratquad}{\formula}{The rational quadratic covariance function.}
 
 
 \endif
