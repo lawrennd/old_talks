@@ -26,7 +26,7 @@ $$
 $$
 where $\ell$ is the *length scale* or *time scale* of the process and $\alpha$ represents the overall process variance.}
 
-\includecovariance{matern32}{\formula}{The exponentiated quadratic covariance function.}
+\includecovariance{matern32}{\formula}{The Matérn 3/2 covariance function.}
 
 
 \endif
