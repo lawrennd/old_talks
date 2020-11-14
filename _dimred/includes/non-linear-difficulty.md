@@ -40,7 +40,7 @@
 * Normalisation of distribution becomes intractable.
 }
 
-\figure{\includediagram{\diagramsDir/dimred/gaussian-through-nonlinear}{80%}}{A Gaussian density over the input of a non linear function leads to a very non Gaussian output. Here the output is multimodal.}{gaussian-through-nonlinear}
+\figure{\includediagram{\diagramsDir/dimred/gaussian-through-nonlinear}{100%}}{A Gaussian density over the input of a non linear function leads to a very non Gaussian output. Here the output is multimodal.}{gaussian-through-nonlinear}
 
 
 \endif
