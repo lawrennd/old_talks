@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Continuous Character Control}
+\subsection{Example: Continuous Character Control}
 
 
 \alignright{@Levine:control12}
