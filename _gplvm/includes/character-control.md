@@ -23,6 +23,6 @@
 
 \subsection{Character Control: Results}
 
-\figure{\includeyoutube{hr3pdDl5IAg}{800}{600}}{Character control in the latent space described the the GP-LVM @Levine:control12}{charcter-control-gplvm}
+\figure{\includeyoutube{hr3pdDl5IAg}{600}{450}}{Character control in the latent space described the the GP-LVM @Levine:control12}{charcter-control-gplvm}
 
 \endif
