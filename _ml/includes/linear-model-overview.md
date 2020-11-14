@@ -36,6 +36,11 @@ $$\dataVector = \activationMatrix\mappingVector + \noiseVector$$
 
 $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 }
+
+\slides{\undef{multivariateGaussianProperties}
+\include{_ml/includes/multivariate-gaussian-properties.md}}
+
+
 \newslide{Prior Density}
 
 \notes{If we define the prior distribution over the vector $\mappingVector$ to be Gaussian,}\slides{* Define}

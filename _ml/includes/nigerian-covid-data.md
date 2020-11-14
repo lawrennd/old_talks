@@ -12,6 +12,7 @@
 
 \include{_data-science/includes/pods-software.md}
 
+\setupcode{import pods}
 \code{data = pods.datasets.nigerian_covid()['Y']
 data.head()}
 
@@ -19,8 +20,14 @@ data.head()}
 
 ```{.python}
 import urllib.request
-urllib.request.urlretrieve('https://raw.githubusercontent.com/dsfsi/covid19africa/master/data/line_lists/line-list-nigeria.csv')
-data = pd.read_csv('line-list-nigeria.csv'))
+import pandas as pd
+
+urllib.request.urlretrieve('https://raw.githubusercontent.com/dsfsi/covid19africa/master/data/line_lists/line-list-nigeria.csv', 'line-list-nigeria.csv')
+data = pd.read_csv('line-list-nigeria.csv', parse_dates=['date', 
+                                                         'date_confirmation', 
+														 'date_admission_hospital', 
+														 'date_onset_symptoms',
+														 'death_date'])
 ```
 }
 
@@ -35,9 +42,13 @@ import teaching_plots as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+data['count_column'] = True
+fig.autofmt_xdate(rotation=45)
+ax.plot(data.date, data.count_column.cumsum())
+
 ax.plot()
-ax.set_xlabel()
-ax.set_ylabel()
+ax.set_xlabel('date')
+ax.set_ylabel('case counts')
 
 mlai.write_figure('nigerian-covid-data.svg', directory='\writeDiagramsDir/ml')}
 

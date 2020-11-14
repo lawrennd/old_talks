@@ -780,6 +780,24 @@ def eq_cov(x, x_prime, variance=1., lengthscale=1.):
     diffx = x - x_prime
     return variance*exp(-0.5*dot(diffx, diffx)/lengthscale**2)
 
+def ou_cov(x, x_prime, variance=1., lengthscale=1.):
+    """Exponential covariance function."""
+    diffx = x - x_prime
+    return variance*exp(-sqrt(dot(diffx, diffx))/lengthscale)
+
+def matern32_cov(x, x_prime, variance=1., lengthscale=1.):
+    """Matern 3/2 covariance function."""
+    diffx = x - x_prime
+    r_norm = sqrt(dot(diffx, diffx))/lengthscale
+    sqrt3r_norm = r_norm*sqrt(3)
+    return variance*(1+sqrt3r_norm)*exp(-sqrt3r_norm)
+
+def matern52_cov(x, x_prime, variance=1., lengthscale=1.):
+    """Matern 5/2 covariance function."""
+    diffx = x - x_prime
+    r_norm = sqrt(dot(diffx, diffx))/lengthscale
+    sqrt5r_norm = r_norm*sqrt(5)
+    return variance*(1+sqrt5r_norm+sqrt5r_norm*sqrt5r_norm/3)*exp(-sqrt5r_norm)
 
 def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=1.):
     """Covariance function for a MLP based neural network."""
@@ -902,6 +920,7 @@ def add_cov(x, x_prime, kerns, kern_args):
 def basis_cov(x, x_prime, basis):
     """Basis function covariance."""
     return (basis.Phi(x)*basis.Phi(x_prime)).sum()
+
 def contour_data(model, data, length_scales, log_SNRs):
     """
     Evaluate the GP objective function for a given data set for a range of

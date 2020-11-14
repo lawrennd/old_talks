@@ -13,22 +13,27 @@ transition: None
 
 \include{talk-macros.tex}
 \include{_mlai/includes/mlai-notebook-setup.md}
+
 \include{_gp/includes/gp-book.md}
 \include{_ml/includes/first-course-book.md}
 <!--include{_gp/includes/what-is-a-gp.md}-->
+
+\include{_health/includes/malaria-gp.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/overdetermined-inaugural.md}
 \include{_ml/includes/univariate-gaussian-properties.md}
-\include{_ml/includes/two-d-gaussian.md}
+
+
 \include{_ml/includes/multivariate-gaussian-properties.md}
+\notes{\include{_ml/includes/linear-regression-log-likelihood.md}
+\include{_ml/includes/olympic-data-linear-regression.md}
+\include{_ml/includes/linear-regression-direct-solution.md}}
+
+\include{_ml/includes/underdetermined-system.md}
+\include{_ml/includes/two-d-gaussian.md}
 
 \include{_ml/includes/basis-functions-nn.md}
 \include{_ml/includes/relu-basis.md}
-
-\include{_gp/includes/gp-intro-lectures.md}
-
-\ifndef{gpIntroLectures}
-\define{gpIntroLectures}
-
-\editme
 
 \subsection{Gaussian Processes}
 \slides{
@@ -48,7 +53,9 @@ $$
 $$
 \notes{where the conditioning is on the inputs $\inputMatrix$ which are used for computing the mean and covariance. For this reason they are known as mean and covariance functions.}
 
-\endif
+
+
+\include{_ml/includes/linear-model-overview.md}
 
 \include{_ml/includes/radial-basis.md}
 
@@ -64,15 +71,12 @@ $$
 
 \include{_gp/includes/gp-optimize.md}
 \include{_kern/includes/eq-covariance.md}
-\include{_health/includes/malaria-gp.md}
+\include{_gp/includes/gp-summer-school.md}
 \include{_gp/includes/gpy-software.md}
 \include{_gp/includes/gpy-tutorial.md}
-\include{_gp/includes/nigeria-covid-gp.md}
-
 
 \subsection{Review}
 
-\include{_gp/includes/gp-summer-school.md}
 \include{_gp/includes/other-gp-software.md}
 
 \reading

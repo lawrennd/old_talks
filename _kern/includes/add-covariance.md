@@ -30,6 +30,6 @@ $$
 $$
 }
 
-\includecovariance{add}{\formula}{An additive covariance function formed by combining two exponentiated quadratic covariance functions.}
+\includecovariance{add}{\formula}{An additive covariance function formed by combining a linear and an exponentiated quadratic covariance functions.}
 
 \endif
