@@ -37,19 +37,20 @@ $$
         \end{bmatrix}
 $$
 		
-\setupplotcode{import teaching_plots as plot}
-
-\plotcode{plot.kronecker_illustrate(diagrams='\writeDiagramsDir/kern')}
 
 \subsection{Kronecker Product}
 
-\includediagram{\diagramsDir/kern/kronecker_illustrate}
+\setupplotcode{import teaching_plots as plot}
+\plotcode{plot.kronecker_illustrate(diagrams='\writeDiagramsDir/kern')}
 
-\plotcode{plot.kronecker_IK(diagrams='\writeDiagramsDir/kern')}
+\figure{\includediagram{\diagramsDir/kern/kronecker_illustrate}{80%}}{Illustration of the Kronecker product.}{kronecker-illustrate}
+
 
 \newslide{Kronecker Product}
 
-\includediagram{\diagramsDir/kern/kronecker_IK}
+\plotcode{plot.kronecker_IK(diagrams='\writeDiagramsDir/kern')}
+
+\figure{\includediagram{\diagramsDir/kern/kronecker_IK}{80%}}{Kronecker product between two matrices.}{kronecker-ik}
 
 \subsection{Stacking and Kronecker Products}
 
@@ -70,11 +71,10 @@ $$
 		
 \subsection{Column Stacking}
 
-gpKalmanFilterKroneckerPlot2
+\matlabcode{gpKalmanFilterKroneckerPlot2}
 
 For this stacking the marginal distribution over *time* is given
 by the block diagonals.
-
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.kronecker_IK_highlight(diagrams='\writeDiagramsDir/kern')}
@@ -86,19 +86,20 @@ by the block diagonals.
 \newslide{}
 
 \slides{
-\startanimation
-\includediagram{\diagramsDir/kern/kronecker_IK_highlighted001}
-\includediagram{\diagramsDir/kern/kronecker_IK_highlighted002}
-\includediagram{\diagramsDir/kern/kronecker_IK_highlighted003}
-\includediagram{\diagramsDir/kern/kronecker_IK_highlighted004}
-\includediagram{\diagramsDir/kern/kronecker_IK_highlighted005}
+\define{width}{80%}
+\startanimation{kronecker-IK-highlighted}{0}{5}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted001}{\width}}{kronecker-IK-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted002}{\width}}{kronecker-IK-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted003}{\width}}{kronecker-IK-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted004}{\width}}{kronecker-IK-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted005}{\width}}{kronecker-IK-highlighted}
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted005}{60%}}{}{kronecker-ik-highlighted}}
+\notes{\figure{\includediagram{\diagramsDir/kern/kronecker_IK_highlighted005}{60%}}{The marginal distribution for the first three variables (highlighted) is givne by $\kernelMatrix$ when the form of stacking is $\eye \otimes \kernelMatrix$. This is the 'column stacking' case.}{kronecker-ik-highlighted}}
 
 
-\subsection{Two Ways of Stacking
+\subsection{Two Ways of Stacking}
 
 Can also stack each row of $\inputMatrix$ to form
 column vector: $$\inputVector= \begin{bmatrix}
@@ -109,11 +110,10 @@ column vector: $$\inputVector= \begin{bmatrix}
     \end{bmatrix}$$
 $$p(\inputVector) = \gaussianDist{\inputVector}{\zerosVector}{\kernelMatrix\otimes \eye}$$
 
-\subsection{Row Stacking
+\subsection{Row Stacking}
 
-gpKalmanFilterKroneckerPlot3
+\matlabcode{gpKalmanFilterKroneckerPlot3}
 
-\
 For this stacking the marginal distribution over the latent
 *dimensions* is given by the block diagonals.
 
@@ -125,23 +125,25 @@ For this stacking the marginal distribution over the latent
 
 \newslide{}
 
-\startanimation
-\includediagram{\diagramsDir/kern/kronecker_KI_highlighted001}
-\includediagram{\diagramsDir/kern/kronecker_KI_highlighted002}
-\includediagram{\diagramsDir/kern/kronecker_KI_highlighted003}
-\includediagram{\diagramsDir/kern/kronecker_KI_highlighted004}
-\includediagram{\diagramsDir/kern/kronecker_KI_highlighted005}
+\slides{
+\define{width}{80%}
+\startanimation{kronecker-ki-highlighted}{1}{5}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted001}{\width}}{kronecker-ki-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted002}{\width}}{kronecker-ki-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted003}{\width}}{kronecker-ki-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted004}{\width}}{kronecker-ki-highlighted}
+\newframe{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted005}{\width}}{kronecker-ki-highlighted}
 \endanimation
+}
 
-\figure{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted005}{60%}}{}{kronecker-ki-highlighted}
+\notes{\figure{\includediagram{\diagramsDir/kern/kronecker_KI_highlighted002}{60%}}{The marginal distribution for the first three variables (highlighted) is independent when the form of stacking is $\kernelMatrix \otimes \eye$. This is the 'row stacking' case.}{kronecker-ki-highlighted}}
 
 
 \subsection{Mapping from Latent Process to Observed}
 
-\includediagram{\diagramsDir/kern/kronecker_KI}
+\figure{\includediagram{\diagramsDir/kern/kronecker_KI}{60%}}{Mapping from latent process to observed}{kronecker-ki}
 
-gpKalmanFilterKroneckerPlot4
-
+\matlabcode{gpKalmanFilterKroneckerPlot4}
 
 \subsection{Observed Process}
 

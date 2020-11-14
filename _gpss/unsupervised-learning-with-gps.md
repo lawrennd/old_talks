@@ -1,6 +1,6 @@
 ---
 title: Unsupervised Learning wtih Gaussian Processes
-session: 6
+session: 7
 abstract: 
 ---
 

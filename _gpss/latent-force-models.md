@@ -1,6 +1,6 @@
 ---
 title: Latent Force Models
-session: 7
+session: 8
 abstract: 
 ---
 

@@ -136,7 +136,7 @@ $$
 
 \matlabcode{gpKalmanToMultiTaskIcm}
 
-![image](../../../multigp/tex/diagrams/icmCovarianceImage)![image](../../../multigp/tex/diagrams/icmCovarianceSample1)![image](../../../multigp/tex/diagrams/icmCovarianceSample2)![image](../../../multigp/tex/diagrams/icmCovarianceSample3)![image](../../../multigp/tex/diagrams/icmCovarianceSample4)
+<!--![image](../../../multigp/tex/diagrams/icmCovarianceImage)![image](../../../multigp/tex/diagrams/icmCovarianceSample1)![image](../../../multigp/tex/diagrams/icmCovarianceSample2)![image](../../../multigp/tex/diagrams/icmCovarianceSample3)![image](../../../multigp/tex/diagrams/icmCovarianceSample4)-->
 
 \include{_kern/includes/icm-covariance.md}
 
@@ -153,7 +153,7 @@ $$
 
 \matlabcode{gpKalmanToMultiTaskIcm2}
 
-![image](../../../multigp/tex/diagrams/icm2CovarianceImage)![image](../../../multigp/tex/diagrams/icm2CovarianceSample1)![image](../../../multigp/tex/diagrams/icm2CovarianceSample2)![image](../../../multigp/tex/diagrams/icm2CovarianceSample3)![image](../../../multigp/tex/diagrams/icm2CovarianceSample4)
+<!--![image](../../../multigp/tex/diagrams/icm2CovarianceImage)![image](../../../multigp/tex/diagrams/icm2CovarianceSample1)![image](../../../multigp/tex/diagrams/icm2CovarianceSample2)![image](../../../multigp/tex/diagrams/icm2CovarianceSample3)![image](../../../multigp/tex/diagrams/icm2CovarianceSample4)-->
 
 \subsection{LMC Samples}
 
@@ -167,7 +167,7 @@ $${\ell}_2 = 0.2$$
 
 \matlabcode{gpKalmanToMultiTaskLmc}
 
-![image](../../../multigp/tex/diagrams/lmc2CovarianceImage)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample1)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample2)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample3)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample4)
+<!--![image](../../../multigp/tex/diagrams/lmc2CovarianceImage)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample1)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample2)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample3)![image](../../../multigp/tex/diagrams/lmc2CovarianceSample4)-->
 
 \subsection{LMC in Machine Learning and Statistics}
 
@@ -215,7 +215,7 @@ $$
 
 \matlabcode{gpKalmanToMultiTaskSlfm}
 
-![image](../../../multigp/tex/diagrams/slfmCovarianceImage)![image](../../../multigp/tex/diagrams/slfmCovarianceSample1)![image](../../../multigp/tex/diagrams/slfmCovarianceSample2)![image](../../../multigp/tex/diagrams/slfmCovarianceSample3)![image](../../../multigp/tex/diagrams/slfmCovarianceSample4)
+<!--![image](../../../multigp/tex/diagrams/slfmCovarianceImage)![image](../../../multigp/tex/diagrams/slfmCovarianceSample1)![image](../../../multigp/tex/diagrams/slfmCovarianceSample2)![image](../../../multigp/tex/diagrams/slfmCovarianceSample3)![image](../../../multigp/tex/diagrams/slfmCovarianceSample4)-->
 
 \subsection{Gaussian processes for Multi-task, Multi-output and Multi-class}
 

@@ -66,9 +66,9 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
   \end{block}
 \newslide{What does the penalty term do?}
 
-![image](../../../gp/tex/diagrams/cov_approx){width="60.00000%"}
+<!--![image](../../../gp/tex/diagrams/cov_approx){width="60.00000%"}-->
 
-![image](../../../gp/tex/diagrams/cov_approx_opt){width="60.00000%"}
+<!--![image](../../../gp/tex/diagrams/cov_approx_opt){width="60.00000%"}-->
 
 \newslide{How good is the inducing approximation?}
 

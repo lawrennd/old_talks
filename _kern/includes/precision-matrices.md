@@ -1,6 +1,11 @@
-### Covariance Functions
+\ifndef{precisionMatrices}
+\define{precisionMatrices}
 
-#### Where did this covariance matrix come from?
+\include{_kern/includes/brownian-covariance.md}
+
+\editme
+
+\subsection{Where did this covariance matrix come from?}
 
 **Markov Process**
 
@@ -13,9 +18,8 @@
 
 -   In this case *Markov* structure.
 
-### Covariance Functions
 
-#### Where did this covariance matrix come from? {data-transition="none"}
+\subsection{Where did this covariance matrix come from?}
 
 **Exponentiated Quadratic**
 
@@ -29,7 +33,7 @@
 rbfprecisionSample
 }{50%}{50%}
 
-### Covariance Functions {data-transition="none"}
+\subsection{Covariance Functions}
 
 **Markov Process**
 
@@ -42,3 +46,6 @@ rbfprecisionSample
 }{
 markovprecisionPlot
 }{50%}{50%}
+
+
+\endif

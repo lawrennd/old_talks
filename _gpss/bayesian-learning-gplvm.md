@@ -1,6 +1,6 @@
 ---
 title: Bayesian Learning of GP-LVM
-session: 8
+session: 9
 abstract:
 ---
 

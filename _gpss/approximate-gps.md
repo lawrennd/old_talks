@@ -1,6 +1,6 @@
 ---
 title: Approximate Gaussian Processes
-session: 5
+session: 6
 abstract: 
 ---
 

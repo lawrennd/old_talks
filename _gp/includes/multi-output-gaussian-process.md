@@ -8,7 +8,6 @@
 
 \subsection{Modelling Multiple Outputs}
 
-
 \subsection{Running Example}
 
 \include{_ml/includes/olympic-sprint-data.md}
