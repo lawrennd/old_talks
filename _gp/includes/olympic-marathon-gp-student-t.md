@@ -19,14 +19,14 @@ incorporate this noise model.}
 
 
 \code{# make a student t likelihood with standard parameters
-t_distribution = GPy.likelihoods.StudentT(deg_free=5, sigma2=2)
+t_distribution = GPy.likelihoods.StudentT(deg_free=3, sigma2=2)
 laplace = GPy.inference.latent_function_inference.Laplace()
 
 kern = GPy.kern.RBF(1, lengthscale=5) + GPy.kern.Bias(1)
 model = GPy.core.GP(x, y, kernel=kern, inference_method=laplace, likelihood=t_distribution)
 model.constrain_positive('t_noise')
 
-model.optimize()
+model.optimize(messages=True)
 display(model)}
 
 
