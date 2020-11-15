@@ -13,6 +13,9 @@ abstract:
 \include{_gplvm/includes/gplvm-tutorial.md}
 \include{_gplvm/includes/latent-doodle-space.md}
 \include{_gplvm/includes/character-control.md}
+\include{_gplvm/includes/singlecell-gplvm.md}
+\include{_dimred/includes/singlecell-isomap.md}
+\include{_dimred/includes/singlecell-lle.md}
 
 \thanks
 
