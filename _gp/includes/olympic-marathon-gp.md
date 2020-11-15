@@ -38,7 +38,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data GP}
 
-\figure{\includediagram{\diagramsDir/gp/olympic-marathon-gp}}{Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
+\figure{\includediagram{\diagramsDir/gp/olympic-marathon-gp}{80%}}{Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
 
 
 \notes{
@@ -50,10 +50,9 @@ In the fit we see that the error bars (coming mainly from the noise variance) ar
 y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
-_ = m_clean.optimize()}
-}
+_ = m_clean.optimize()}}
 
-\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_clean, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
