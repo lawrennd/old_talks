@@ -15,6 +15,7 @@ transition: None
 \include{talk-macros.tex}
 
 \include{_gpss/includes/gpss-notebook-setup.md}
+
 \include{_gp/includes/gp-covariance-function-importance.md}
 \include{_gp/includes/gp-numerics-and-optimization.md}
 \include{_gp/includes/gp-optimize.md}

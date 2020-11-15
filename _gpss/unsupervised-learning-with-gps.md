@@ -6,6 +6,8 @@ abstract:
 
 \include{talk-macros.gpp}
 
+\include{_gpss/includes/gpss-notebook-setup.md}
+
 \include{_dimred/includes/probabilistic-pca.md}
 \include{_dimred/includes/non-linear-difficulty.md}
 \include{_gplvm/includes/gplvm-tutorial.md}
