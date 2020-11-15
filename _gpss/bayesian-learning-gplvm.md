@@ -13,6 +13,9 @@ abstract:
 \include{_gplvm/includes/mrd-gplvm.md}
 \include{_gplvm/includes/bayes-gplvm-tutorial.md}
 \include{_gplvm/includes/singlecell-gplvm.md}
+\include{_gplvm/includes/singlecell-bayes-gplvm.md}
+\include{_gplvm/includes/singlecell-isomap.md}
+\include{_gplvm/includes/singlecell-lle.md}
 
 \thanks
 
