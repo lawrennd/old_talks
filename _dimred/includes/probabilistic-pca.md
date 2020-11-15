@@ -162,7 +162,7 @@ def posterior(Y, W, sigma2):
     mu_x = 
     return mu_x, C_x}
 
-# Numerically Stable and Efficient Version
+\subsection{Numerically Stable and Efficient Version}
 
 Just as we saw for \refnotes{linear
 regression}{linear-regression} and \refnotes{regression with basis functions}{basis-functions}

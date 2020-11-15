@@ -15,7 +15,9 @@ an image is wearing glasess.}
 \notes{Here's a simple way to visualise the data. Each pixel in the
 image will become an input to the GP.}
 
-\notes{data = pods.datasets.olivetti_glasses()
+\setupcode{import pods}
+
+\code{data = pods.datasets.olivetti_glasses()
 X = data['X']
 y = data['Y']
 Xtest = data['Xtest']
@@ -23,8 +25,11 @@ ytest = data['Ytest']
 print(data['info'], data['details'], data['citation'])}
 
 
-\setupplotcode{import matplotlib.pyplot as plt}
-\plotcode{fig, ax = plt.subplots(figsize=plt.big_wide_figsize)
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.imshow(X[120].reshape(64, 64, order='F'),interpolation='nearest',cmap=pb.cm.gray)
 
 mlai.write_figure('olivetti-glasses-image.png', directory='\writeDiagramsDir/datasets')}
