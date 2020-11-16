@@ -30,22 +30,18 @@ ylim = (310, 420)
 yhat = (y-offset)/scale
 
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-_ = ax.plot(x, y, 'r.',markersize=10)
+_ = ax.plot(x, y, 'r.',markersize=2)
 ax.set_xlabel('year', fontsize=20)
 ax.set_ylabel('CO2 ppm', fontsize=20)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, 
-                  filename='mauna-loa.svg', 
-				  diagrams='\writeDiagramsDir/datasets')}
+mlai.write_figure(filename='mauna-loa.svg', 
+				  directory='\writeDiagramsDir/datasets')}
 
 \newslide{Mauna Loa Data}
 
 \figure{\includediagram{\diagramsDir/datasets/mauna-loa}{80%}}{Mauna Loa data shows carbon dioxide monthly average measurements from the Mauna Loa Observatory in Hawaii.}{mauna-loa}
 
-\notes{The data set was used as a demonstration of model selection for Gaussian processes in @Rasmussen:book06 (Chapter 5).}
-
-\addreading{@Rasmussen:book06}{Chapter 5}
 
 \endif

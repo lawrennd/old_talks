@@ -4,10 +4,7 @@
 
 \subsection{Data for Blastocyst Development in Mice: Single Cell TaqMan Arrays}
 
-
-\notes{By Max Zwiessele, Oliver Stegle and Neil D. Lawrence}
-
-\notes{Now we use the GP-LVM to analyze some single cell data from @Guo:fate10. Tey performed qPCR TaqMan array on single cells from the developing blastocyst in mouse. The data is taken from the early stages of development when the Blastocyst is forming. At the 32 cell stage the data is already separated into the trophectoderm (TE) which goes onto form the placenta and the inner cellular mass (ICM). The ICM further differentiates into the epiblast (EPI)---which gives rise to the endoderm, mesoderm and ectoderm---and the primitive endoderm (PE) which develops into the amniotic sack. @Guo:fate10 selected 48 genes for expression measurement. They labelled the resulting cells and their labels are included as an aide to visualization.}
+\notes{Now we analyze some single cell data from @Guo:fate10. Tey performed qPCR TaqMan array on single cells from the developing blastocyst in mouse. The data is taken from the early stages of development when the Blastocyst is forming. At the 32 cell stage the data is already separated into the trophectoderm (TE) which goes onto form the placenta and the inner cellular mass (ICM). The ICM further differentiates into the epiblast (EPI)---which gives rise to the endoderm, mesoderm and ectoderm---and the primitive endoderm (PE) which develops into the amniotic sack. @Guo:fate10 selected 48 genes for expression measurement. They labelled the resulting cells and their labels are included as an aide to visualization.}
 
 \notes{They first visualized their data using principal component analysis. In the first two principal components this fails to separate the domains. This is perhaps because the principal components are dominated by the variation in the 64 cell systems. This in turn may be because there are more cells from the data set in that regime, and may be because the natural variation is greater. We first recreate their visualization using principal component analysis.}
 
@@ -15,7 +12,7 @@
 \notes{In this notebook we will perform PCA on the original data, showing that the different regimes do not separate. }
 
 
-\notes{Next we load in the data. We've provided a convenience function for loading in the data with GPy. It is loaded in as a `pandas` DataFrame. This allows us to summarize it with the `describe` attribute.}
+\notes{Next we load in the data. We've provided a convenience function for loading in the data with `pods`. It is loaded in as a `pandas` DataFrame. This allows us to summarize it with the `describe` attribute.}
 
 \setupcode{import pods}
 

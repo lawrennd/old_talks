@@ -56,6 +56,8 @@ transition: None
 \include{_kern/includes/prod-covariance.md}
 
 
+\include{_gp/includes/mauna-loa-gp.md}
+
 \thanks
 
 \references

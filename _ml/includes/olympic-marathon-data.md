@@ -47,11 +47,8 @@ ax.set_ylabel('pace min/km', fontsize=20)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, 
-                  filename='olympic-marathon.svg', 
-				  diagrams='\writeDiagramsDir/datasets',
-				  transparent=True, 
-				  facecolor=(1, 1, 1, 1))}
+mlai.write_figure(filename='olympic-marathon.svg', 
+				  directory='\writeDiagramsDir/datasets')}
 
 \newslide{Olympic Marathon Data}
 

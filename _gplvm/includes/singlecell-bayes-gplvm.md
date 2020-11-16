@@ -7,8 +7,8 @@
 
 \subsection{Bayesian GP-LVM}
 
-\notes{Here we show the new code that uses the Bayesian GP-LVM to fit the data. This means we can automatically determine the dimensionality of the model whilst fitting a non-linear dimensionality reduction. The approximations we use also mean that it is faster than the original GP-LVM.}
 
+\notes{Here we show the new code that uses the Bayesian GP-LVM to fit the data. This means we can automatically determine the dimensionality of the model whilst fitting a non-linear dimensionality reduction. The approximations we use also mean that it is faster than the original GP-LVM.}
 
 \setupcode{import GPy}
 \code{kernel=GPy.kern.RBF(5,ARD=1)+GPy.kern.Bias(5)
