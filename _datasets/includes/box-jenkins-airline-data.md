@@ -5,7 +5,8 @@
 
 \subsection{Box Jenkins Airline Passenger Data}
 
-\notes{}
+\notes{This data is giving airline passenger numbers between 1948 and 1960. It was published by @Box-timeseries76.}
+
 
 \include{_data-science/includes/pods-install.md}
 
@@ -35,6 +36,9 @@ ax.set_xlabel('year', fontsize=20)
 ax.set_ylabel('Passenger numbers', fontsize=20)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
+
+ax.set_xlabel('year')
+ax.set_ylabel('thousands of passengers')
 
 mlai.write_figure(filename='box-jenkins-airline.svg', 
 				  directory='\writeDiagramsDir/datasets')}

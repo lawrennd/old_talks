@@ -55,8 +55,13 @@ transition: None
 \include{_kern/includes/add-covariance.md}
 \include{_kern/includes/prod-covariance.md}
 
-
+\comment{Examples of Deploying Kernels}
 \include{_gp/includes/mauna-loa-gp.md}
+\include{_gp/includes/box-jenkins-airline-gp.md}
+
+
+\comment{Spectral Mixture Kernel}
+\include{_kern/includes/spectral-mixture-kernel.md}
 
 \thanks
 
