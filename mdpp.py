@@ -67,6 +67,10 @@ parser.add_argument("-E", "--edit-links", default=False, action='store_true',
 parser.add_argument("-r", "--replace-notation", default=False, action='store_true',
                     help="Whether to replace the latex macros in the files, or to retain them for later processing (default is False, retain them)")
 
+parser.add_argument("-x", "--extract-material", type=str, default='all',
+                    choices=['all', 'reading', 'references', 'exercises'],
+                    help="Extract a subset of the material, e.g. reading matter, the references, etc.")
+
 args = parser.parse_args()
 
 diagrams_dir = '../slides/diagrams'
@@ -83,73 +87,76 @@ if args.write_diagrams_dir:
 
 arglist = ['+n', '-U "\\\\" "" "{" "}{" "}" "{" "}" "#" ""']
 if args.to:
-   arglist.append('-D{to}=1'.format(to=args.to.upper()))
+    arglist.append('-D{to}=1'.format(to=args.to.upper()))
 if args.format:
-   arglist.append('-D{format}=1'.format(format=args.format.upper()))
+    arglist.append('-D{format}=1'.format(format=args.format.upper()))
 if args.exercises:
-   arglist.append('-DEXERCISES=1')
+    arglist.append('-DEXERCISES=1')
 if args.assignment:
-   arglist.append('-DASSIGNMENT=1')
+    arglist.append('-DASSIGNMENT=1')
 if args.edit_links:
-   arglist.append('-DEDIT=1')
+    arglist.append('-DEDIT=1')
 if args.draft:
-   arglist.append('-DDRAFT=1')
-    
+    arglist.append('-DDRAFT=1')
+
+if args.extract_material is not None and args.code != 'all':
+    pass
+
 if args.code is not None and args.code != 'none':
-   arglist.append('-DCODE=1')
-   if args.code == 'ipynb':
-      arglist.append('-DDISPLAYCODE=1')
-      arglist.append('-DPLOTCODE=1')
-      arglist.append('-DHELPERCODE=1')
-      arglist.append('-DMAGICCODE=1')
-   elif args.code == 'diagnostic':
-      arglist.append('-DDISPLAYCODE=1')
-      arglist.append('-DHELPERCODE=1')
-      arglist.append('-DPLOTCODE=1')
-      arglist.append('-DMAGICCODE=1')
-   elif args.code == 'full':
-      arglist.append('-DDISPLAYCODE=1')
-      arglist.append('-DHELPERCODE=1')
-      arglist.append('-DPLOTCODE=1')
-      arglist.append('-DMAGICCODE=1')
-   if args.code == 'plot':
-      arglist.append('-DHELPERCODE=1')
-      arglist.append('-DPLOTCODE=1')
+    arglist.append('-DCODE=1')
+    if args.code == 'ipynb':
+        arglist.append('-DDISPLAYCODE=1')
+        arglist.append('-DPLOTCODE=1')
+        arglist.append('-DHELPERCODE=1')
+        arglist.append('-DMAGICCODE=1')
+    elif args.code == 'diagnostic':
+        arglist.append('-DDISPLAYCODE=1')
+        arglist.append('-DHELPERCODE=1')
+        arglist.append('-DPLOTCODE=1')
+        arglist.append('-DMAGICCODE=1')
+    elif args.code == 'full':
+        arglist.append('-DDISPLAYCODE=1')
+        arglist.append('-DHELPERCODE=1')
+        arglist.append('-DPLOTCODE=1')
+        arglist.append('-DMAGICCODE=1')
+    if args.code == 'plot':
+        arglist.append('-DHELPERCODE=1')
+        arglist.append('-DPLOTCODE=1')
 
 arglist.append('-DdiagramsDir={diagrams_dir}'.format(diagrams_dir=diagrams_dir))
 arglist.append('-DscriptsDir={scripts_dir}'.format(scripts_dir=scripts_dir))
 arglist.append('-DwriteDiagramsDir={write_diagrams_dir}'.format(write_diagrams_dir=write_diagrams_dir))
 
 if args.include_path:
-   arglist.append('-I{include}'.format(include=args.include_path))
+    arglist.append('-I{include}'.format(include=args.include_path))
 if args.output:
-   arglist.append('-o {}'.format(args.output))
+    arglist.append('-o {}'.format(args.output))
    
 filelist = []
 if args.include_before_body:
-   with open(args.include_before_body, 'r') as fd:
-      before_text = fd.read()
+    with open(args.include_before_body, 'r') as fd:
+        before_text = fd.read()
 else:
-   before_text = ''
+    before_text = ''
 
 if args.replace_notation:
-   before_text += '\n\n'
-   with open('../_includes/talk-notation.tex', 'r') as fd:
-      before_text += fd.read()
+    before_text += '\n\n'
+    with open('../_includes/talk-notation.tex', 'r') as fd:
+        before_text += fd.read()
 
    
 if args.include_after_body:
-   with open(args.include_after_body, 'r') as fd:
-      after_text = fd.read()
+    with open(args.include_after_body, 'r') as fd:
+        after_text = fd.read()
 else:
-   after_text = ''
+    after_text = ''
 
 if args.no_header:
-   md= open(args.filename, 'r')
-   body = md.read()
-   md.close()
+    md= open(args.filename, 'r')
+    body = md.read()
+    md.close()
 else:
-   headertxt,bodytxt = ny.extract_header_body(args.filename)
+    headertxt,bodytxt = ny.extract_header_body(args.filename)
 
 header = {}
 default_file = '_config.yml'

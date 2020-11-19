@@ -24,6 +24,7 @@ pdfslides: 07-01-causal-inference.pdf
 time: "10:00"
 date: 2020-11-19
 venue: Virtual (Zoom)
+youtube: k7AD6FkyaoA
 ipynb: False
 pptx: False
 reveal: False
