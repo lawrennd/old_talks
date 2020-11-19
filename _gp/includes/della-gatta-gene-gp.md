@@ -6,7 +6,7 @@
 
 \notes{We now consider an example in gene expression. Gene expression is the measurement of mRNA levels expressed in cells. These mRNA levels show which genes are 'switched on' and producing data. In the example we will use a Gaussian process to determine whether a given gene is active, or we are merely observing a noise response.}
 
-\include{_ml/includes/della-gatta-gene-data.md}
+\include{_datasets/includes/della-gatta-gene-data.md}
 
 \newslide{Gene Expression Example}
 
