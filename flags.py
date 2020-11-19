@@ -54,12 +54,17 @@ if layout == 'lecture':
         if week>0:
             prefix += '-'
         prefix += '{0:02}'.format(session)
+    prefix += '-'
 elif layout == 'test':
     prefix = 'XXXX-XX-XX'
+    prefix += '-'
 elif layout == 'talk':
     prefix = date
+    prefix += '-'
+elif layout == 'dataset':
+    prefix = ''
 
-out = prefix + '-' + args.base
+out = prefix + args.base
     
 if args.output == 'prefix':
     print(prefix)

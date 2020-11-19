@@ -14,12 +14,18 @@
 \setupcode{import numpy as np
 import pods}
 
-\code{data = pods.datasets.mauna_loa()
+\code{data = pods.datasets.mauna_loa()}
+
+\notes{Here, if you've downloaded the data before you have a cached version. To download a fresh version of the data I can set `refresh_data=True`.}
+
+\code{data = pods.datasets.mauna_loa(refresh_data=True)
 x = data['X']
 y = data['Y']
 
 offset = y.mean()
 scale = np.sqrt(y.var())}
+
+\notes{The data dictionary contains the standard keys 'X' and 'Y' which give a unidimensional regression problem.}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import teaching_plots as plot
@@ -31,8 +37,8 @@ yhat = (y-offset)/scale
 
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 _ = ax.plot(x, y, 'r.',markersize=2)
-ax.set_xlabel('year', fontsize=20)
-ax.set_ylabel('CO2 ppm', fontsize=20)
+ax.set_xlabel('year')
+ax.set_ylabel('CO$_2$ concentration in ppm')
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
@@ -43,5 +49,40 @@ mlai.write_figure(filename='mauna-loa.svg',
 
 \figure{\includediagram{\diagramsDir/datasets/mauna-loa}{80%}}{Mauna Loa data shows carbon dioxide monthly average measurements from the Mauna Loa Observatory in Hawaii.}{mauna-loa}
 
+
+\notes{Additionally there are keys `Xtest` and `Ytest` which provide test data. The number of points considered to be *training data* is controlled by the argument `num_train` argument, which defaults to 545. This number is chosen as it matches that used in the [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW5.pdf) book [@Rasmussen:book06, Chapter 5]. Below we plot the test and training data.}
+
+\code{xtest = data['Xtest']
+ytest = data['Ytest']
+ytesthat = (ytest-offset)/scale}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+_ = ax.plot(x, y, 'r.',markersize=2)
+_ = ax.plot(xtest, ytest, 'g.',markersize=2)
+ax.set_xlabel('year')
+ax.set_ylabel('CO$_2$ concentration in ppm')
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(filename='mauna-loa-test.svg', 
+				  directory='\writeDiagramsDir/datasets')}
+				  
+\newslide{Mauna Loa Test Data}
+
+\figure{\includediagram{\diagramsDir/datasets/mauna-loa-test}{80%}}{Mauna Loa test data shows carbon dioxide monthly average measurements from the Mauna Loa Observatory in Hawaii.}{mauna-loa-test}
+
+\notes{Of course we have included the citation information for the data.}
+
+\code{print(data['citation'])}
+
+\notes{And extra information about the data is included, as standard, under the keys `info` and `details`.}
+
+\code{print(data['info'])
+print()
+print(data['details'])}
+
+\notes{And, importantly, for reference you can also check the license for the data:}
+
+\code{print(data['license'])}
 
 \endif

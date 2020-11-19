@@ -17,6 +17,17 @@ abstract: >
 
 <!-- pathfinder projects -->
 
+Corporate Managemnet
+
+Moonshots
+
+Educating the team (rotations)
+
+Growing Companies vs Static Companies
+
+
+Culture: ML Curious expeirnece (Case study)
+
 \thanks
 
 \reading

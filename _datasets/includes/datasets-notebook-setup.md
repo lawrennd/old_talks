@@ -1,5 +1,5 @@
-\ifndef{mlaiNotebookSetup}
-\define{mlaiNotebookSetup}
+\ifndef{datasetsNotebookSetup}
+\define{datasetsNotebookSetup}
 
 \editme
 

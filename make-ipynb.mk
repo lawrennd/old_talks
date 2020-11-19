@@ -1,7 +1,6 @@
 ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown
 	pandoc  --template pandoc-jekyll-ipynb-template \
 		--atx-headers \
-		-B ../_includes/${NOTATION} \
 		--out ${BASE}.tmp.markdown  ${BASE}.notes.ipynb.markdown
 	pandoc 	${PDSFLAGS} \
 		--out $@ ${BASE}.tmp.markdown
@@ -12,7 +11,6 @@ ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown
 ${BASE}.full.ipynb: ${BASE}.full.ipynb.markdown
 	pandoc  --template pandoc-jekyll-ipynb-template \
 		--atx-headers \
-		-B ../_includes/${NOTATION} \
 		--out ${BASE}.tmp.markdown  ${BASE}.full.ipynb.markdown
 	pandoc 	${PDSFLAGS} \
 		--out $@ ${BASE}.tmp.markdown
@@ -23,7 +21,6 @@ ${BASE}.full.ipynb: ${BASE}.full.ipynb.markdown
 ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 	pandoc  --template pandoc-jekyll-ipynb-template \
 		--atx-headers \
-		-B ../_includes/${NOTATION} \
 		${CITEFLAGS} \
 		--out ${BASE}.tmp.markdown  ${BASE}.slides.ipynb.markdown
 	notedown ${BASE}.tmp.markdown > ${BASE}.slides.ipynb

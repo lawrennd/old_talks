@@ -3,15 +3,8 @@
 
 \editme
 
-\notes{\subsection{Setup}
+\include{_notebooks/includes/notebook-setup.md}
 
-First we download some libraries and files to support the notebook.}
-
-\downloadcode{mlai}
-\downloadcode{teaching_plots}
-\downloadcode{gp_tutorial}
-
-\include{_data-science/includes/pods-software.md}
 \include{_gp/includes/gpy-software.md}
 
 \endif

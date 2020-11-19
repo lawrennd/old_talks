@@ -1,7 +1,7 @@
 # Check header for which formats to create in notes and slides.
 # CReate PDF Of reveal slides with something like decktape https://github.com/astefanutti/decktape
 
-OUT=$(PREFIX)-$(BASE)
+OUT=$(PREFIX)$(BASE)
 
 all: $(ALL)
 
