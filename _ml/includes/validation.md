@@ -10,7 +10,7 @@ In machine learning, we are looking to minimise the value of our objective funct
 
 We will review the different methods of model selection on the Olympics marathon data. Firstly we import the Olympic marathon data.}
 
-\include{_ml/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 \include{_ml/includes/olympic-marathon-validation-fit.md}
 \include{_ml/includes/olympic-marathon-hold-out-validation.md}
 \include{_ml/includes/olympic-marathon-loo-validation.md}

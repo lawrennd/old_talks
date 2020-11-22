@@ -1,7 +1,7 @@
 \ifndef{olympicMarathonBayesianPolynomial}
 \define{olympicMarathonBayesianPolynomial}
 
-\include{_ml/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \editme
 

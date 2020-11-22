@@ -1,15 +1,13 @@
 \ifndef{olympicMarathonPolynomial}
 \define{olympicMarathonPolynomial}
 
-\include{_ml/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \editme
 
 \subsection{Polynomial Fits to Olympic Data}
 
 \setupcode{import numpy as np
-from matplotlib import pyplot as plt
-import mlai
 import pods}
 
 \code{basis = mlai.polynomial
@@ -23,7 +21,10 @@ xlim = [1892, 2020]
 
 basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
+
 \plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, 27), 
               model=mlai.LM, 
 			  basis=basis,
@@ -36,17 +37,10 @@ basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
                             num_basis=IntSlider(1,1,27,1))}
 
 
-\setupcode{import numpy as np
-from matplotlib import pyplot as plt
-import teaching_plots as plot
-import mlai
-import pods}
+\setupcode{import mlai}
 
-\code{basis = mlai.polynomial
 
-data = pods.datasets.olympic_marathon_men()
-
-x = data['X']
+\code{x = data['X']
 y = data['Y']
 
 xlim = [1892, 2020]
@@ -56,7 +50,11 @@ ll = np.array([np.nan]*(max_basis))
 sum_squares = np.array([np.nan]*(max_basis))
 basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
 
-\code{plot.rmse_fit(x, y, param_name='number', param_range=(1, 28), 
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
+
+\plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, 28), 
               model=mlai.LM, basis=basis, 
               xlim=xlim, objective_ylim=[0, 0.8],
               diagrams='\writeDiagramsDir/ml')}

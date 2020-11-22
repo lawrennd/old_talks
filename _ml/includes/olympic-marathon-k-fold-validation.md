@@ -1,7 +1,7 @@
 \ifndef{olympicMarathonKFoldValidation}
 \define{olympicMarathonKFoldValidation}
 
-\include{_ml/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \editme
 

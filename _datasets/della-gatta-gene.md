@@ -1,5 +1,5 @@
 ---
-title: The della Gatta Gene Expression Data
+title: The Della Gatta Gene Expression Data
 date: 2020-11-19
 ---
 
