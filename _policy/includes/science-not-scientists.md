@@ -6,19 +6,19 @@
 \subsection{*Science* not *Scientists*}
 
 \robbieSavagePicture{15%}
-
 \slides{
+* Individual scientists are subjective.
+* The process of scientific consensus takes time.
+* Just because "scientists say" it doesn't mean "science says".
+* Decisions are still needed when facing uncertainty.
+}
+
+\newslide{}
 
 > Ogni scarrafone è bello a mamma soja
 >
 > Neopolitan expression
 
-\div{
-* Individual scientists are subjective.
-* The process of scientific consensus takes time.
-* Just because "scientists say" it doesn't mean "science says".
-* Decisions are still needed when facing uncertainty.}
-}{}{font-size:0.75em}
 
 \notes{The football pundit and former Wales International Robbie Savage is passionate about grassroots football. He has managed youth teams. Robbie's son also plays at a junior level, following his Dad's footsteps at Manchester United's academy. On occasion I've heard Robbie on podcasts talking about his son's fledgling career. In Robbie's voice you can hear the hopes and concerns that every parent has for their own child as they begin to make their way in the world.}
 
