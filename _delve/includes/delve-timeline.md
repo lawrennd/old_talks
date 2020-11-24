@@ -13,6 +13,9 @@
 
 \newslide{Data at the Heart}
 
+\slides{* Use data to answer policy questions.
+* Make international comparisons for input.
+* Challenges: around getting data. Report out today!}
 
 \notes{Right from the start the, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn't available.}
 

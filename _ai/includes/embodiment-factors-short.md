@@ -9,7 +9,7 @@
  <tr>
   <td></td>
   <td align="center">\includejpg{\diagramsDir/IBM_Blue_Gene_P_supercomputer}{50%}</td>
-  <td align="center">\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{80%}{}</td>
+  <td align="center">\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{100%}{}</td>
  </tr>
  <tr>
   <td>compute</td>
@@ -27,7 +27,7 @@
  </tr>
 </table>}{The embodiment factor is the ratio of compute to communicate in the model.}{embodiment-factors}
 
-\slides{See \href{https://arxiv.org/abs/1705.07996}{"Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}}
+See \href{https://arxiv.org/abs/1705.07996}{"Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}
 
 \notes{There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to[^knowledge-representation].
 
