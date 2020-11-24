@@ -5,12 +5,10 @@
 
 \subsection{*Science* not *Scientists*}
 
-\robbieSavagePicture{15%}
+\centerdiv{\robbieSavagePicture{15%}}
 \slides{
 * Individual scientists are subjective.
 * The process of scientific consensus takes time.
-* Just because "scientists say" it doesn't mean "science says".
-* Decisions are still needed when facing uncertainty.
 }
 
 \newslide{}
@@ -19,6 +17,9 @@
 >
 > Neopolitan expression
 
+
+\slides{* Just because "scientists say" it doesn't mean "science says".
+* Decisions are still needed when facing uncertainty.}
 
 \notes{The football pundit and former Wales International Robbie Savage is passionate about grassroots football. He has managed youth teams. Robbie's son also plays at a junior level, following his Dad's footsteps at Manchester United's academy. On occasion I've heard Robbie on podcasts talking about his son's fledgling career. In Robbie's voice you can hear the hopes and concerns that every parent has for their own child as they begin to make their way in the world.}
 
@@ -34,7 +35,7 @@
 
 \notes{Science itself is also not *policy*. Policy decisions often have some urgency which means the normal processes of scientific proof do not have time to take their course. These decisions are often about balancing long term versus short term uncertainties.}
 
-See for example this \addblog{Primer on Decision Making with Uncertainty}{2020/08/25/a-primer-on-decision-making-with-uncertainty}.
+\notes{See for example this }\addblog{Primer on Decision Making with Uncertainty}{2020/08/25/a-primer-on-decision-making-with-uncertainty}\notes{.}
 
 \notes{In the moment of policy crisis such as what we've seen in Covid-19 it also has people who are used to keeping the score. Public health professionals are experienced in disease interventions. Many of them having seen how scientific ideas pan out in practice, which turn out to be successful and which sound promising but repeatedly fail to deliver.}
 

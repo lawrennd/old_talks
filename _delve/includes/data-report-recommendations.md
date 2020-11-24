@@ -4,9 +4,14 @@
 \editme
 
 
-\subsection{DELVE Data Report: Recommendations}
+\subsection{Delve Data Report: Recommendations}
 
-@Delve-data20
+\slides{* Update statutory objective of *ONS to accommodate happenstance data*.
+* ONS and ICO to collaborate on *data driving license* to standardise access processes.
+* Interdisciplinary *pathfinder* projects across *government, business and academia*
+  * Nowcasting of *economic metrics* 
+  * Movement of populations (mobile phone data).
+  }
 
 \notes{* Government should update the statutory objective of the Office for National Statistics (ONS) to accommodate trustworthy access to happenstance data to generate national and local statistics. Such statistics are required on very short time frames to facilitate fast decision-making for the nation in the rapidly evolving circumstances of a national emergency.}
 
