@@ -25,6 +25,16 @@ cognition, can be two complex to have conversations about and they can
 entrench beliefs, triggering *model induced blindness* (a variation on
 Kahneman's *theory induced blindness*).}
 
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/policy/anne-bob-model}{70%}}{Models
+can also be used to externalise cognition, but if the model is highly
+complex it's difficult for two individuals to understand each others
+models. This shuts down conversation, often "mathematical
+intimidation" is used to shut down a line of questioning. This is
+highly destructive of the necessary cognitive
+diversity.}{anne-bob-model}
+
 \notes{Bandwidth constraints on individuals mean that they tend to
 focus on their own specialism. This can be particularly problematic
 for those on the more theoretical side, because mathematical models
@@ -34,6 +44,14 @@ experience of mathematical modelling as the theoreticians, the models
 do not bring about good information coherehnce. Indeed, many
 computational models themselves are so complex now that no individual
 can understand the model whole.}
+
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/policy/anne-bob-data}{70%}}{Data
+can be queried, but the simplest query, what data do we need? Doesn't
+even require the data to exist. It seems data can be highly effective
+for convening a multidisciplinary conversation.}{anne-bob-data}
+
 
 \notes{Fritz Heider referred to happenings that are "*psychologically
 represented* in each of the participants" [@Heider:interpersonal58] as
