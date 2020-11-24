@@ -36,15 +36,16 @@ transition: None
 
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation.md}
-\include{_ml/includes/data-plus-model.md}
+
+\subsection{What is Machine Learning?}
+
+$$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 
-Embodiment factors, bandwidth constraints and data as a route to externalising cognition.
+\notes{Any policy question can be framed in a number of different ways  - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.}
 
-model blindness
-football analogy
+\include{_policy/includes/data-as-a-convener.md}
 
-Any policy question can be framed in a number of different ways  - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines. [link here to data as convenor]
 
 \include{_business/includes/the-supply-chain-of-ideas.md}
 \include{_business/includes/coconut-scientist.md}
@@ -63,9 +64,7 @@ Any policy question can be framed in a number of different ways  - what are the 
 
 
 \include{_policy/includes/storming-the-castle.md}
-
 \include{_business/includes/black-box-thinking-and-rebel-ideas.md}
-
 \include{_policy/includes/science-not-scientists.md}
 
 \include{_delve/includes/delve-information-coherence.md}

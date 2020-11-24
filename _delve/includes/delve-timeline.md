@@ -3,21 +3,20 @@
 
 \editme
 
-\subsection{DELVE Timeline}
+\subsection{Delve Timeline}
 
-Email from Demis 3rd April
-First meeting 7th April
-First working group 16th April
+* First contact *3rd April*
+* First meeting *7th April*
+* First working group *16th April*
 
-Reports
+\notes{The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.}
 
-Face Masks for the General Public 4th May
-Test, Trace, Isolate 27th May
-Hospital and Health care Acquisition of COVID-19 and its Control 6th July
-Balancing the Risks of Pupils Returning to Schools 24th July
-Economic Aspects of the COVID-19 Crisis in the UK 14th August
-SARS-CoV-2 Vaccine Development & Implementation; Scenarios, Options, Key Decisions 1st October
-Data Readiness: Lessons from an Emergency 24th November
+\newslide{Data at the Heart}
 
+\
+
+\notes{Right from the start the, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn't available.}
+
+\notes{However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report [@Delve-data20]  makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.}
 
 \endif
