@@ -59,7 +59,7 @@ a preqequisite for conversation. Data is a route to that psychological
 representation.}
 
 \notes{*Note*: my introduction to Fritz Heider was through a talk by
-Nick Chater in 2010, you can read Nick's fascinating thoughts on these
-issues in his recent book, *The Mind is Flat* [@Chater:mindisflat19].}
+Nick Chater in 2010, you can read Nick's thoughts on these
+issues in his book, *The Mind is Flat* [@Chater:mindisflat19].}
 
 \endif
