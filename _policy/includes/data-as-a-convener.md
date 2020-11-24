@@ -29,7 +29,7 @@ Kahneman's *theory induced blindness*).}
 
 \figure{\includediagram{\diagramsDir/policy/anne-bob-model}{70%}}{Models
 can also be used to externalise cognition, but if the model is highly
-complex it's difficult for two individuals to understand each others
+complex it's difficult for two individuals to understand each others'
 models. This shuts down conversation, often "mathematical
 intimidation" is used to shut down a line of questioning. This is
 highly destructive of the necessary cognitive
