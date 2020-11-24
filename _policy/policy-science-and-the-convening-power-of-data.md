@@ -46,7 +46,12 @@ transition: None
 $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 
-\notes{Any policy question can be framed in a number of different ways  - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.}
+\notes{Any policy question can be framed in a number of different
+ways - what are the health outcomes; what is the impact on NHS
+capacity; how are different groups affected; what is the economic
+impact – and each has different types of evidence associated with
+it. Complex and uncertain challenges require efforts to draw insights
+together from across disciplines.}
 
 \include{_policy/includes/data-as-a-convener.md}
 
@@ -55,7 +60,11 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \include{_business/includes/the-supply-chain-of-ideas.md}
 \include{_business/includes/coconut-scientist.md}
 
-\notes{Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to Delve’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.}
+\notes{Sustained engagement between government and academia plays an
+important role in building mutual understanding about what each can
+deliver. Core to Delve’s work was the intention that research
+questions be framed in ways that would resonate with the policy
+challenges being seen in government.}
 
 \subsection{Project Structure}
 
@@ -63,9 +72,14 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 \section{Supply Chain of Ideas}
 
-\notes{The main philosphy of the group is to follow the ["Supply Chain of Ideas"](http://inverseprobability.com/talks/notes/coconut-science-and-the-supply-chain-of-ideas.html).}
+\notes{The main philosphy of the Delve group was to follow the ["Supply Chain of Ideas"](http://inverseprobability.com/talks/notes/coconut-science-and-the-supply-chain-of-ideas.html).}
 
-\figure{\includediagram{\diagramsDir/delve/supply-chain-of-ideas}{90%}}{The supply chain of ideas avoids 'coconut science', assuming your scientific solution is the right one to answer a question that's been asked. Our science is directed towards policy questions.}{supply-chain-of-ideas}
+\figure{\includediagram{\diagramsDir/delve/supply-chain-of-ideas}{90%}}{The
+supply chain of ideas avoids 'coconut science', assuming your
+scientific solution is the right one to answer a question that's been
+asked. Our science is directed towards policy
+questions.}{supply-chain-of-ideas}
+
 
 
 \include{_policy/includes/storming-the-castle.md}
