@@ -16,7 +16,7 @@
 
 \notes{My son does not play for Manchester United (anyway, he'd prefer to play for Sheffield United) but watching him play Sunday league, I'm aware that I'm not objective about his play, and I'm aware that the parents around me are also not objective. Over my life, my son has played in four different teams with five different managers. And most of these managers also have also had a child playing in the team.}
 
-\notes{This makes watching him play different from watching another team. The parents presence means that grassroots football is subjective in a particular way. Every parent has an interest in how their child is performing. Different parents have different levels of awareness of this subjectivity, some play down their children's contribuion, others play it up.}
+\notes{This makes watching him play different from watching another team. The parents' presence means that grassroots football is subjective in a particular way. Every parent has an interest in how their child is performing. Different parents have different levels of awareness of this subjectivity, some play down their children's contribuion, others play it up.}
 
 \notes{Scientists are similar to the parents watching their children play grassroots football. Most scientists have a particular field, a particular domain and a particular pet idea. As a result, we should be skeptical about their individual claims, just as we might be more skeptical about a parent's report of their own child's performance. Parents and scientists are people, some of them are more self aware and are better at dealing with this subjectivity, but the truth remains that science isn't scientists.}
 
