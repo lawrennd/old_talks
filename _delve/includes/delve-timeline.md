@@ -13,7 +13,6 @@
 
 \newslide{Data at the Heart}
 
-\
 
 \notes{Right from the start the, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn't available.}
 

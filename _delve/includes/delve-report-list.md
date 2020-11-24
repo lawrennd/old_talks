@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{DELVE Reports}
+\subsection{Delve Reports}
 
 1. Facemasks *4th May 2020* \slidesmall{[@Delve-facemasks20]}
 2. Test, Trace, Isolate *27th May 2020* \slidesmall{[@Delve-tti20]}

@@ -75,8 +75,6 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 \include{_delve/includes/delve-explore-exploit.md}
 
-\subsection{DELVE Reports}
-
 \include{_delve/includes/delve-report-list.md}
 
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
