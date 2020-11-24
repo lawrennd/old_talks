@@ -74,6 +74,15 @@
 \defeval{\morineAmutorinePicture{width}}{\circleHead{\diagramsDir/people/morine-amutorine.png}{Morine Amutorine}{\width}{https://www.linkedin.com/in/morine-amutorine/}}
 
 
+\defeval{\robbieSavagePicture{width}}{\circleHead{\diagramsDir/people/robbie-savage.png}{Robbie Savage}{\width}{https://www.usefultalent.com/robbie-savage/}}
+
+\defeval{\jessicaMontgomeryPicture{width}}{\circleHead{\diagramsDir/people/jessica-montgomery.jpg}{Jessica Montgomery}{\width}{https://www.linkedin.com/in/jessica-montgomery-206256144/}}
+
+\defeval{\sirLancelotTheBravePicture{width}}{\circleHead{\diagramsDir/people/sir-lancelot-the-brave.jpg}{Sir Lancelot the Brave}{\width}{https://en.wikipedia.org/wiki/Monty_Python_and_the_Holy_Grail}}
+
+\defeval{\sirRobinTheNotQuiteSoBravePicture{width}}{\circleHead{\diagramsDir/people/sir-robin-the-not-quite-so-brave.jpg}{Sir Robin the Not-Quite-So-Brave}{\width}{https://en.wikipedia.org/wiki/Monty_Python_and_the_Holy_Grail}}
+
+
 \define{\circleHead{filename}{alttext}{width}{circleurl}}{
 \ifndef{urlCount}\define{urlCount}{0}\else\defeval{urlCount}{\eval{\urlCount+1}}\endif
 <svg viewBox="0 0 200 200" style="width:\width">
