@@ -50,6 +50,7 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 \include{_policy/includes/data-as-a-convener.md}
 
+\section{Supply Chain of Ideas}
 
 \include{_business/includes/the-supply-chain-of-ideas.md}
 \include{_business/includes/coconut-scientist.md}
@@ -71,9 +72,11 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \include{_business/includes/black-box-thinking-and-rebel-ideas.md}
 \include{_policy/includes/science-not-scientists.md}
 
+\section{Delve}
+
 \include{_delve/includes/delve-information-coherence.md}
 \include{_delve/includes/delve-tenets.md}
-\include{_delve/includes/delve-sci-ops.md}
+<!--include{_delve/includes/delve-sci-ops.md}-->
 \include{_delve/includes/delve-multidisciplinarity.md}
 \include{_delve/includes/delve-avatar-model.md}
 
@@ -85,13 +88,24 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \include{_delve/includes/delve-data-report.md}
 \include{_delve/includes/data-report-recommendations.md}
 
-\notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. [link here to open data science]}
+\notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{the open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 
 \include{_delve/includes/delve-action-team.md}
 \include{_delve/includes/delve-working-group.md}
 \include{_delve/includes/delve-steering-committee.md}
 \include{_delve/includes/delve-secretariat.md}
+
+\subsection{Conclusions}
+
+\slides{* Bandwidth constraints of humans
+* Data as a Convener
+* Supply Chain of Ideas
+* Recommendations from Delve Data Report}
+
+\notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
+
+\notes{Recommendations from our most recent report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
 
 \thanks
 
