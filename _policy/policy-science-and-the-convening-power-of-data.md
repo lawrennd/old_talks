@@ -50,11 +50,11 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \include{_business/includes/the-supply-chain-of-ideas.md}
 \include{_business/includes/coconut-scientist.md}
 
-\notes{Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to DELVE’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.}
+\notes{Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to Delve’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.}
 
 \subsection{Project Structure}
 
-\figure{\includediagram{\diagramsDir/delve/committee-structure}{35%}}{The structure of the DELVE team.}{committee-structure}
+\figure{\includediagram{\diagramsDir/delve/committee-structure}{35%}}{The structure of the Delve team.}{committee-structure}
 
 \section{Supply Chain of Ideas}
 
@@ -74,13 +74,11 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \include{_delve/includes/delve-avatar-model.md}
 
 \include{_delve/includes/delve-explore-exploit.md}
-
 \include{_delve/includes/delve-report-list.md}
 
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
 \include{_delve/includes/delve-data-report.md}
-
 \include{_delve/includes/data-report-recommendations.md}
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. [link here to open data science]}
