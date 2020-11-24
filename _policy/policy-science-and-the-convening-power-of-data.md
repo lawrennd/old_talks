@@ -72,32 +72,18 @@ Sustained engagement between government and academia plays an important role in 
 \include{_delve/includes/delve-information-coherence.md}
 \include{_delve/includes/delve-tenets.md}
 \include{_delve/includes/delve-sci-ops.md}
-
-\subsection{Multidisciplinarity}
-
-\notes{Our group is purposely multidisciplinary as reflected in our tenets. That is because we believe that good policy decisions can not be made without considering the range of factors. 
-
-Multidisciplinarity brings challenges and opportunities. Among the challenges are the issues with different nomenclature for related technical ideas. The use of jargon in specific fields, and assumptions around what is canoncical knowledge vs what specifics need to be elucidated.
-
-The solution for these challenges is a motto: there are no stupid questions. Each member of the Action Team has been selected for their talents, they should never feel embarassed to ask for clarification or deeper understanding from another member of the team. Naturally, a consequence of this is each member of the team should be prepared to explain their ideas to others clearly, and using different terminologies.
-
-A large bear-trap is assumption by intimidation. The idea that because someone is technically expert, that they can't make a foolish error. In fact, the opposit is often true, by being too focussed on a specific technical idea, we can all miss something that is obvious to those who don't have our individual deep technical understanding. Let's do our very best to avoid this bear-trap.}
-
-\subsection{The Avatar Model}
-
-\notes{As part of the communication bottlenecks, another challenge we face is how to bootstrap the knowledge of our Working Group and Steering Committee. The avatar model is such that each of those individuals should know, and have technical confidence in, at least one member of the Action Team. That member of the Action Team should have a good understanding of their corresponding Steering Group member, and should be able to represent their thought process in the rapid fire Action Team discussions that are resolving the multidisciplinary issues, where many of the tensions and opportunities will exist.
-
-Each member of the Action Team also knows well the mind of members of the Working Group and the Steering Committee. We will be using specific tools to facilitate the different rhythms of communication we require, ensuring we maintain information coherence both in the immediate time period, the short term weekly turn over of projects, and across the entire duration of the DELVE Initiative.}
+\include{_delve/includes/delve-multidisciplinarity.md}
+\include{_delve/includes/delve-avatar-model.md}
 
 \section{Explore <-> Exploit}
 
 \figure{\includediagram{\diagramsDir/delve/mccollum-plot}{85%}}{The McCollum Plot shows the manner in which work processes loosen as the Project develops. We use three phases to define our projects. Transition between explore and exploit is occuring at the interaction between Phase 1 and Phase 2.}{mccollum-plot}
 
-\notes{A key mathematical concept we have from areas like *reinforcement learning* is the evolution of the nature of a project from conception to realisation. At the beginning of a project, there is a need to understand the question, to do research into the issues and develop the best strategy for resolving the question. As the deadline for an answer approaches, it becomes necessary to double down on, and refine, a particular strategy. This transition, from exploration to the refinement of a strategy is known in machine learning as the *explore*-*exploit* trade off. In management science, a similar process is known as *divergence*-*convergence*. 
+\notes{A key mathematical concept we have from areas like *reinforcement learning* is the evolution of the nature of a project from conception to realisation. At the beginning of a project, there is a need to understand the question, to do research into the issues and develop the best strategy for resolving the question. As the deadline for an answer approaches, it becomes necessary to double down on, and refine, a particular strategy. This transition, from exploration to the refinement of a strategy is known in machine learning as the *explore*-*exploit* trade off. In management science, a similar process is known as *divergence*-*convergence*.}
 
-In rapid management of science cycling through the explore/exploit phases is a critical aspect of a successful project. 
+\notes{In rapid management of science cycling through the explore/exploit phases is a critical aspect of a successful project.}
 
-A critical challenge in the supply chain of ideas is ensuring we're getting input at the explore stage from all our channels. This type of input is particularly important at the start of the cycle, but new ideas being introduced during the convergence phase can be disruptive.}
+\notes{A critical challenge in the supply chain of ideas is ensuring we're getting input at the explore stage from all our channels. This type of input is particularly important at the start of the cycle, but new ideas being introduced during the convergence phase can be disruptive.}
 
 \figure{\includediagram{\diagramsDir/delve/mccollum-plot-03}{85%}}{The reality of many projects on the McCollum plot. Projects can drop back phases as part of a successful path. Projects that start in explore with tight process or in exploit with loose process will typically fail. Process needs tightening as the goal nears}{mccollum-plot-03}
 
@@ -115,14 +101,15 @@ A critical challenge in the supply chain of ideas is ensuring we're getting inpu
 
 \include{_delve/includes/delve-report-list.md}
 
-\notes{}
-
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
 \include{_delve/includes/data-report-recommendations.md}
 
-Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. [link here to open data science]
+\notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. [link here to open data science]}
 
 
-DELVE Group
+\include{_delve/includes/delve-action-team.md}
 
+\thanks
+
+\references
