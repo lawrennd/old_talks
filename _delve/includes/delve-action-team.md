@@ -59,4 +59,9 @@
 * **[Yee Whye Teh](https://rs-delve.github.io/people/yee-whye-teh.html)**
 }{threecolumn}{font-size:0.7em}
 
+\notes{The DELVE action team worked incredibly hard to understand the
+different domains and pull together recommendations on short time
+frames. The team contains individuals from a range of different
+academic backgrounds. It met together three times a week.}
+
 \endif

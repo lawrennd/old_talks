@@ -21,6 +21,10 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+- family: Montgomery
+  given: Jessica
+  institute: University of Cambridge
+  url: https://www.linkedin.com/in/jessica-montgomery-206256144
 blog: 
 date: 2020-11-24
 venue: AI and data science in the age of COVID-19
