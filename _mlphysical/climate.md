@@ -30,6 +30,7 @@ postdir: ../../../mlatcl/mlphysical/_special_topics/
 slidedir: ../../../mlatcl/mlphysical/slides/
 notedir: ../../../mlatcl/mlphysical/_notes/
 notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+youtube: LDH3xr_W1_c
 time: "10:00"
 date: 2020-11-26
 venue: Virtual (Zoom)
