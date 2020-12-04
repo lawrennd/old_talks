@@ -31,7 +31,10 @@ Yhat = (Y-Y_mean)/Y_std}
 import teaching_plots as plot
 import mlai}
 
+\setupplotcode{import numpy as np}
+
 \plotcode{ax = model.plot_latent()}
+
 
 
 \plotcode{y = model.Y[0, :]

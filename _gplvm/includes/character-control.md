@@ -6,7 +6,6 @@
 \subsection{Example: Continuous Character Control}
 
 
-\alignright{@Levine:control12}
 -   Graph diffusion prior for enforcing connectivity between motions.
     $$\log p(\inputMatrix) = w_c \sum_{i,j} \log K_{ij}^d$$ with the
     graph diffusion kernel $\kernelMatrix^d$ obtain from
@@ -21,8 +20,10 @@
     $w(\inputVector_i,\inputVector_j) = || \inputVector_i -  \inputVector_j||^{-p}$
     measures similarity.
 
+\alignright{@Levine:control12}
+
 \subsection{Character Control: Results}
 
-\figure{\includeyoutube{hr3pdDl5IAg}{600}{450}}{Character control in the latent space described the the GP-LVM @Levine:control12}{charcter-control-gplvm}
+\figure{\includeyoutube{hr3pdDl5IAg}{600}{450}}{Character control in the latent space described the the GP-LVM @Levine:control12.}{charcter-control-gplvm}
 
 \endif
