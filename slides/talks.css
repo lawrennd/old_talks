@@ -29,6 +29,11 @@
     }
 }
 
+
+.reveal blockquote {
+    font-size: 0.7em;
+}
+
 .rotateimg90 {
   -webkit-transform:rotate(90deg);
   -moz-transform: rotate(90deg);

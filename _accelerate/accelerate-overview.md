@@ -14,18 +14,21 @@ papersize: a4paper
 transition: None
 ---
 
+
+
 \include{../talk-macros.gpp}
+
 
 \subsection{Accelerate-Spark information session}
 
-\speakernotes{*Running order:*
+\speakernotes{Running order:
 
--   *Neil to welcome and introduce the Programme, then hand over to
-    Raoul;*
+Neil to welcome and introduce the Programme, then hand over to
+    Raoul;
 
--   *Raoul to brief on the content of the Spark Residency;*
+Raoul to brief on the content of the Spark Residency;
 
--   *Neil to manage Q&A from attendees.*}
+Neil to manage Q&A from attendees.}
 
 
 \subsection{Welcome}
@@ -35,7 +38,7 @@ transition: None
 	* "Raise Hand" or post in chat for questions.
 
 
-\slidenotes{Thanks, everyone, for coming to today’s session.
+\speakernotes{Thanks, everyone, for coming to today’s session.
 
 Before we get started, a few points of Zoom housekeeping:
 
