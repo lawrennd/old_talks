@@ -9,6 +9,7 @@ author:
   url: http://inverseprobability.com
 - family: Montgomery
   given: Jessica K.
+  url: http://mlatcl.github.io/people/jessica-montgomery.html
   institute: University of Cambridge
 - family: Urma
   given: Raoul-Gabriel 
