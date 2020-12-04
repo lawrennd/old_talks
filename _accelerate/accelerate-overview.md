@@ -7,6 +7,12 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+- family: Montgomery
+  given: Jessica K.
+  institute: University of Cambridge
+- family: Urma
+  given: Raoul-Gabriel 
+  institute: Cambridge Spark
 date: 2020-12-04
 venue: Virtual
 geometry: ["a4paper", "margin=2cm"]
