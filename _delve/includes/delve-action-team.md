@@ -6,6 +6,12 @@
 \subsection{The Delve Action Team}
 
 <style>
+.reveal .threecolumn ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  font-size: 0.7em;
+}
 .threecolumn ul {
   columns: 3;
   -webkit-columns: 3;
@@ -16,7 +22,7 @@
 \div{
 * [Alex Archibald](https://rs-delve.github.io/people/alex-archibald.html)
 * [Andrei Paleyes](https://rs-delve.github.io/people/andrei-paleyes.html)
-* **[Avishkar Bhoopchand](https://rs-delve.github.io/people/avishkar-bhoopchand.html)**
+* [Avishkar Bhoopchand](https://rs-delve.github.io/people/avishkar-bhoopchand.html)
 * [Axel Gandy](https://rs-delve.github.io/people/axel-gandy.html)
 * [Azhar Hussain](https://rs-delve.github.io/people/azhar-hussain.html)
 * [William Browne](https://rs-delve.github.io/people/bill-browne.html)
@@ -33,8 +39,8 @@
 * [Harpreet Sood](https://rs-delve.github.io/people/harpreet-sood.html)
 * [Helen Greatrex](https://rs-delve.github.io/people/helen-greatrex.html)
 * [Inès Hassan](https://rs-delve.github.io/people/ines-hassan.html)
-* **[Jamie Mitchell](https://rs-delve.github.io/people/jamie-mitchell.html)**
-* **[Jessica Montgomery](https://rs-delve.github.io/people/jessica-montgomery.html)**
+* [Jamie Mitchell](https://rs-delve.github.io/people/jamie-mitchell.html)
+* [Jessica K. Montgomery](https://rs-delve.github.io/people/jessica-montgomery.html)
 * [Kevin Donkers](https://rs-delve.github.io/people/kevin-donkers.html)
 * [Lois King](https://rs-delve.github.io/people/lois-king.html)
 * [Marcel Behr](https://rs-delve.github.io/people/marcel-behr.html)
@@ -52,12 +58,12 @@
 * [Sang Woo (Daniel) Park](https://rs-delve.github.io/people/sang-woo-park.html)
 * [Sarah Filippi](https://rs-delve.github.io/people/sarah-filippi.html)
 * [Sheheryar Zaidi](https://rs-delve.github.io/people/sheheryar-zaidi.html)
-* **[Stephen Hansen](https://rs-delve.github.io/people/stephen-hansen.html)**
+* [Stephen Hansen](https://rs-delve.github.io/people/stephen-hansen.html)
 * [Thiemo Fetzer](https://rs-delve.github.io/people/thiemo-fetzer.html)
-* **[Ulrich Paquet](https://rs-delve.github.io/people/ulrich-paquet.html)**
+* [Ulrich Paquet](https://rs-delve.github.io/people/ulrich-paquet.html)
 * [Vasco Carvalho](https://rs-delve.github.io/people/vasco-carvalho.html)
-* **[Yee Whye Teh](https://rs-delve.github.io/people/yee-whye-teh.html)**
-}{threecolumn}{font-size:0.7em}
+* [Yee Whye Teh](https://rs-delve.github.io/people/yee-whye-teh.html)
+}{threecolumn}{}
 
 \notes{The DELVE action team worked incredibly hard to understand the
 different domains and pull together recommendations on short time

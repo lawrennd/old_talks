@@ -8,7 +8,7 @@
 \slides{* Data allows externalisation of cognition.
 * Even when not existing, can ask: What data would we want?}
 
-\notes{To improve communication, we need to 'externalise cognition',
+\notes{To improve communication, we need to 'externalise cognition':
 have objects that are outside our brains, are persistent in the real
 world, that we can combine with our individual knowledge. Doing
 otherwise leaves us imagining the world as our personal
