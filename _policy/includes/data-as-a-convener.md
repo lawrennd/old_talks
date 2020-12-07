@@ -23,7 +23,7 @@ importance.}
 \notes{Models, while also of great potential value in externalising
 cognition, can be two complex to have conversations about and they can
 entrench beliefs, triggering *model induced blindness* (a variation on
-Kahneman's *theory induced blindness*).}
+Kahneman's *theory induced blindness* [@Kahneman:fastslow11]).}
 
 \newslide{}
 
