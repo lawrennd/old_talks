@@ -32,7 +32,7 @@ var groundColor = 'rgba(56, 256, 56, 0.8)';
 var pinColor = 'rgba(256, 56, 56, 0.8)';
 
 
-var paused = false;
+var paused = true;
 var gravityOn = false;
 var dragOn = false;
 var soundOn = false;
@@ -43,13 +43,21 @@ var clearCanv = true;
 var wallBounce = true;
 var floorBounce = true;
 var floorWrap = false;
+var floorWrapCenter = true;
 var floorReset = false;
 
+var energy = 0.0;
 var gravityAccel = 0.06;
 var arrowAccel = 0.4;
 var stochasticity = 0;
 var stochasticityScale = 0.2;
 var dragFactor = 1;
+
+function incrementEnergy() {
+}
+
+function incrementScore() {
+}
 
 function ballsBirth() {
     radius = 10;
@@ -63,7 +71,9 @@ function ballsBirth() {
     }
 }
 
+
 function resetGame() {
+    ballArray = [];
     ballsBirth();
 }
 resetGame();

@@ -49,6 +49,7 @@ var bigBalls = false;
 var wallBounce = true;
 var floorBounce = false;
 var floorWrap = true;
+var floorWrapCenter = true;
 var floorReset = false;
 
 var yesColor = 'rgba(256, 10, 10, 0.8)';

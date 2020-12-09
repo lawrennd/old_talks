@@ -58,7 +58,7 @@ Store Caption: \storeCaption
 }
 
 
-\define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=\id&pg=\page&output=embed" width="700" height="500"></iframe>}
+\define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=\id&pg=\page&output=embed" width="700" height="500"></iframe>}
 
 \define{\includeyoutube{id}{width}{height}{start}{end}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\start" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 
