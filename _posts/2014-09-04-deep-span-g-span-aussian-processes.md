@@ -1,5 +1,9 @@
 ---
-abstract: In this talk we describe how deep neural networks can be modified to produce
+layout: talk
+title: Deep Gaussian Processes
+tex_title: Deep {G}aussian Processes
+abstract: |
+  In this talk we describe how deep neural networks can be modified to produce
   deep Gaussian process models. The framework of deep Gaussian processes allow for
   unsupervised learning, transfer learning, semi-supervised learning, multi-task learning
   and principled handling of different data types (count data, binary data, heavy
@@ -18,17 +22,14 @@ author:
   url: http://inverseprobability.com
 categories:
 - Lawrence-ucl14b
-day: '4'
 errata: []
 extras: []
 key: Lawrence-ucl14b
-layout: talk
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14.pdf
-month: 9
-published: 2014-09-04
-section: pre
-title: Deep <span>G</span>aussian Processes
+publish: 2014-09-04
 venue: UCL-Duke University Workshop on Sensing and Analysis of High-Dimensional Data
 videolectures: sahd2014_lawrence_gaussian_processes
-year: '2014'
+day: 4
+month: 9
+year: 2014
 ---
