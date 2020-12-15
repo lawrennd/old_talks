@@ -29,6 +29,7 @@ author:
   url: http://inverseprobability.com
 categories:
 - Lawrence-inaugural12
+pdf: http://inverseprobability.com/papers/pdf/2012-09-06-life-the-universe-and-machine-learning.pdf
 layout: talk
 date: 2012-09-06
 venue: St George's Church Lecture Theatre, University of Sheffield

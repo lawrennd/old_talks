@@ -27,7 +27,7 @@ pgm.render().figure.savefig("\writeDiagramsDir/deepgp/deep-markov.svg", transpar
   p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
   $$
 
-\figure{\includediagram{\diagramsDir/deepgp/deep-markov}{80%}}{Probabilistically the deep Gaussian process can be represented as a Markov chain.}{deep-markov}
+\figure{\includediagram{\diagramsDir/deepgp/deep-markov}{80%}}{Probabilistically the deep Gaussian process can be represented as a Markov chain. Indeed they can even be analyzed in this way [@Dunlop:deep2017].}{deep-markov}
 
 \setupplotcode{from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'], 'size':15})
@@ -40,7 +40,7 @@ pgm.render().figure.savefig("\writeDiagramsDir/deepgp/deep-markov-vertical.svg",
 
 \figure{\includediagram{\diagramsDir/deepgp/deep-markov-vertical}{7%}}{More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.}{deep-markov-vertical}
 
-\subsection{Why Deep?}
+\subsection{Why Composition?}
 
 \slides{* Gaussian processes give priors over functions.
 
