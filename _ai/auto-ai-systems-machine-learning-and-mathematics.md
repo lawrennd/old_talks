@@ -35,12 +35,11 @@ transition: None
 
 \figure{\includejpg{\diagramsDir/people/1997-08-02-neil-newton-institute}{80%}}{The author standing outside the Newton Institute on 2nd August 1997, just after arriving for "Generalisation in Neural Networks and Machine Learning", [see page 28 of this report](http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf).}{neil-newton-institute}
 
-\notes{The first tutorial I saw on Gaussian processes was given by Chris Williams at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, Chris Bishop (now Director of MSR in Cambridge).}
+\notes{The first tutorial I saw on Gaussian processes was given by Chris Williams at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, Chris Bishop (now Director of Microsoft Research in Cambridge).}
 
 \include{_uq/includes/deep-emulation.md}
 \include{_deepgp/includes/process-composition.md}
-
-
+\include{_deepgp/includes/step-function-deep-gp.md}
 
 \thanks
 

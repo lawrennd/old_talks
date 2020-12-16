@@ -282,6 +282,51 @@ In modern machine learning system design, the emulator may also consider the out
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Here we’re showing 20 samples taken from the prior over functions defined by our covarariance
+</aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.
+</aside>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.
+</aside>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.
+</aside>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.
+</aside>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="neil-newton-institute-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -291,51 +336,6 @@ In modern machine learning system design, the emulator may also consider the out
 </div>
 <aside class="notes">
 The author standing outside the Newton Institute on 2nd August 1997, just after arriving for “Generalisation in Neural Networks and Machine Learning”, <a href="http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf">see page 28 of this report</a>.
-</aside>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-Here we’re showing 20 samples taken from the prior over functions defined by our covarariance
-</aside>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.
-</aside>
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.
-</aside>
-</section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.
-</aside>
-</section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.
 </aside>
 </section>
 <section id="deep-emulation" class="slide level2">
@@ -465,6 +465,122 @@ More usually deep probabilistic models are written vertically rather than horizo
 </div>
 <aside class="notes">
 More generally we aren’t constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.
+</aside>
+</section>
+<section id="step-function-data" class="slide level2">
+<h2>Step Function Data</h2>
+<div class="figure">
+<div id="step-function-data-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/step-function.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Simulation study of step function data artificially generated. Here there is a small overlap between the two lines.
+</aside>
+</section>
+<section id="gpy-a-gaussian-process-framework-in-python" class="slide level2">
+<h2>GPy: A Gaussian Process Framework in Python</h2>
+<div class="figure">
+<div id="gpy-software-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+</aside>
+<center>
+<a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+</center>
+</section>
+<section id="gpy-a-gaussian-process-framework-in-python-1" class="slide level2">
+<h2>GPy: A Gaussian Process Framework in Python</h2>
+<ul>
+<li>BSD Licensed software base.</li>
+<li>Wide availability of libraries, ‘modern’ scripting language.</li>
+<li>Allows us to set projects to undergraduates in Comp Sci that use GPs.</li>
+<li>Available through GitHub <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></li>
+<li>Reproducible Research with Jupyter Notebook.</li>
+</ul>
+</section>
+<section id="features" class="slide level2">
+<h2>Features</h2>
+<ul>
+<li>Probabilistic-style programming (specify the model, not the algorithm).</li>
+<li>Non-Gaussian likelihoods.</li>
+<li>Multivariate outputs.</li>
+<li>Dimensionality reduction.</li>
+<li>Approximations for large data sets.</li>
+</ul>
+</section>
+<section id="step-function-data-gp" class="slide level2">
+<h2>Step Function Data GP</h2>
+<div class="figure">
+<div id="step-function-gp-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/step-function-gp.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.
+</aside>
+</section>
+<section id="step-function-data-deep-gp" class="slide level2">
+<h2>Step Function Data Deep GP</h2>
+<div class="figure">
+<div id="step-function-deep-gp-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Deep Gaussian process fit to the step function data.
+</aside>
+</section>
+<section id="step-function-data-deep-gp-1" class="slide level2">
+<h2>Step Function Data Deep GP</h2>
+<div class="figure">
+<div id="step-function-deep-gp-samples-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Samples from the deep Gaussian process model for the step function fit.
+</aside>
+</section>
+<section id="step-function-data-latent-1" class="slide level2">
+<h2>Step Function Data Latent 1</h2>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" width style=" ">
+</object>
+</section>
+<section id="step-function-data-latent-2" class="slide level2">
+<h2>Step Function Data Latent 2</h2>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" width style=" ">
+</object>
+</section>
+<section id="step-function-data-latent-3" class="slide level2">
+<h2>Step Function Data Latent 3</h2>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" width style=" ">
+</object>
+</section>
+<section id="step-function-data-latent-4" class="slide level2">
+<h2>Step Function Data Latent 4</h2>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" width style=" ">
+</object>
+</section>
+<section id="step-function-pinball-plot" class="slide level2">
+<h2>Step Function Pinball Plot</h2>
+<div class="figure">
+<div id="step-function-deep-gp-pinball-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the ‘ball’ towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.
 </aside>
 </section>
 <section id="thanks" class="slide level2 scrollable">

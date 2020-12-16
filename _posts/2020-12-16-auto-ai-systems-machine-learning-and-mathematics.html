@@ -224,20 +224,6 @@ categories:
 <p>As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.</p>
 <p>Similarly, the emulator can adjudicate between simulations. This is known as <em>multi-fidelity emulation</em>. The emulator characterizes which emulations perform well where.</p>
 <p>If all this modelling is done with judiscious handling of the uncertainty, the <em>computational doubt</em>, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.</p>
-<div class="figure">
-<div id="neil-newton-institute-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/people/1997-08-02-neil-newton-institute.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="neil-newton-institute-magnify" class="magnify" onclick="magnifyFigure(&#39;neil-newton-institute&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="neil-newton-institute-caption" class="caption-frame">
-<p>Figure: The author standing outside the Newton Institute on 2nd August 1997, just after arriving for “Generalisation in Neural Networks and Machine Learning”, <a href="http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf">see page 28 of this report</a>.</p>
-</div>
-</div>
-<p>The first tutorial I saw on Gaussian processes was given by Chris Williams at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, Chris Bishop (now Director of MSR in Cambridge).</p>
 <h2 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
@@ -270,6 +256,20 @@ categories:
 <p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). This is a rejection sampling view of Bayesian inference. The Gaussian process allows us to do this analytically by multiplying the <em>prior</em> by the <em>likelihood</em>.</p>
 </div>
 </div>
+<div class="figure">
+<div id="neil-newton-institute-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/people/1997-08-02-neil-newton-institute.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="neil-newton-institute-magnify" class="magnify" onclick="magnifyFigure(&#39;neil-newton-institute&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="neil-newton-institute-caption" class="caption-frame">
+<p>Figure: The author standing outside the Newton Institute on 2nd August 1997, just after arriving for “Generalisation in Neural Networks and Machine Learning”, <a href="http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf">see page 28 of this report</a>.</p>
+</div>
+</div>
+<p>The first tutorial I saw on Gaussian processes was given by Chris Williams at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, Chris Bishop (now Director of Microsoft Research in Cambridge).</p>
 <h2 id="deep-emulation">Deep Emulation</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <div class="figure">
@@ -385,6 +385,171 @@ domain.-->
 </div>
 <div id="deep-markov-vertical-side-caption" class="caption-frame">
 <p>Figure: More generally we aren’t constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.</p>
+</div>
+</div>
+<h2 id="step-function">Step Function</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>Next we consider a simple step function data set.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>num_low<span class="op">=</span><span class="dv">25</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>num_high<span class="op">=</span><span class="dv">25</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>gap <span class="op">=</span> <span class="op">-</span><span class="fl">.1</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>noise<span class="op">=</span><span class="fl">0.0001</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>x <span class="op">=</span> np.vstack((np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span>gap<span class="op">/</span><span class="fl">2.0</span>, num_low)[:, np.newaxis],</span>
+<span id="cb2-6"><a href="#cb2-6"></a>              np.linspace(gap<span class="op">/</span><span class="fl">2.0</span>, <span class="dv">1</span>, num_high)[:, np.newaxis]))</span>
+<span id="cb2-7"><a href="#cb2-7"></a>y <span class="op">=</span> np.vstack((np.zeros((num_low, <span class="dv">1</span>)), np.ones((num_high,<span class="dv">1</span>))))</span>
+<span id="cb2-8"><a href="#cb2-8"></a>scale <span class="op">=</span> np.sqrt(y.var())</span>
+<span id="cb2-9"><a href="#cb2-9"></a>offset <span class="op">=</span> y.mean()</span>
+<span id="cb2-10"><a href="#cb2-10"></a>yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</span></code></pre></div>
+<h2 id="step-function-data">Step Function Data</h2>
+<div class="figure">
+<div id="step-function-data-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/step-function.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-data-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-data&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-data-caption" class="caption-frame">
+<p>Figure: Simulation study of step function data artificially generated. Here there is a small overlap between the two lines.</p>
+</div>
+</div>
+<h2 id="gpy-a-gaussian-process-framework-in-python">GPy: A Gaussian Process Framework in Python</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>Gaussian processes are a flexible tool for non-parametric analysis with uncertainty. The GPy software was started in Sheffield to provide a easy to use interface to GPs. One which allowed the user to focus on the modelling rather than the mathematics.</p>
+<div class="figure">
+<div id="gpy-software-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gpy-software-magnify" class="magnify" onclick="magnifyFigure(&#39;gpy-software&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gpy-software-caption" class="caption-frame">
+<p>Figure: GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></p>
+</div>
+</div>
+<p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
+<p>The software itself is available on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
+<p>The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
+<p>The documentation for GPy can be found <a href="https://gpy.readthedocs.io/en/latest/">here</a>.</p>
+<h2 id="step-function-data-gp">Step Function Data GP</h2>
+<p>We can fit a Gaussian process to the step function data using <code>GPy</code> as follows.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
+<p>Where <code>GPy.models.GPRegression()</code> gives us a standard GP regression model with exponentiated quadratic covariance function.</p>
+<p>The model is optimized using <code>m_full.optimize()</code> which calls an L-BGFS gradient based solver in python.</p>
+<div class="figure">
+<div id="step-function-gp-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/step-function-gp.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-gp&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-gp-caption" class="caption-frame">
+<p>Figure: Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.</p>
+</div>
+</div>
+<p>The resulting fit to the step function data shows some challenges. In particular, the over smoothing at the discontinuity. If we know how many discontinuities there are, we can parameterize them in the step function. But by doing this, we form a semi-parametric model. The parameters indicate how many discontinuities are, and where they are. They can be optimized as part of the model fit. But if new, unforeseen, discontinuities arise when the model is being deployed in practice, these won’t be accounted for in the predictions.</p>
+<p>The deep Gaussian process code we are using is research code by Andreas Damianou.</p>
+<p>To extend the research code we introduce some approaches to initialization and optimization that we’ll use in examples. These approaches can be found in the <code>deepgp_tutorial.py</code> file.</p>
+<p>Deep Gaussian process models also can require some thought in the initialization. Here we choose to start by setting the noise variance to be one percent of the data variance.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">from</span> deepgp_tutorial <span class="im">import</span> initialize</span></code></pre></div>
+<p>Secondly, we introduce a staged optimization approach.</p>
+<p>Optimization requires moving variational parameters in the hidden layer representing the mean and variance of the expected values in that layer. Since all those values can be scaled up, and this only results in a downscaling in the output of the first GP, and a downscaling of the input length scale to the second GP. It makes sense to first of all fix the scales of the covariance function in each of the GPs.</p>
+<p>Sometimes, deep Gaussian processes can find a local minima which involves increasing the noise level of one or more of the GPs. This often occurs because it allows a minimum in the KL divergence term in the lower bound on the likelihood. To avoid this minimum we habitually train with the likelihood variance (the noise on the output of the GP) fixed to some lower value for some iterations.</p>
+<p>Next an optimization of the kernel function parameters at each layer is performed, but with the variance of the likelihood fixed. Again, this is to prevent the model minimizing the Kullback-Leibler divergence between the approximate posterior and the prior <em>before</em> achieving a good data-fit.</p>
+<p>Finally, all parameters of the model are optimized together.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">from</span> deepgp_tutorial <span class="im">import</span> staged_optimize</span></code></pre></div>
+<p>The next code is for visualizing the intermediate layers of the deep model. This visualization is only appropriate for models with intermediate layers containing a single latent variable.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">from</span> deepgp_tutorial <span class="im">import</span> visualize</span></code></pre></div>
+<p>The pinball visualization is to bring the pinball-analogy to life in the model. It shows how a ball would fall through the model to end up in the right pbosition. This visualization is only appropriate for models with intermediate layers containing a single latent variable.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">from</span> deepgp_tutorial <span class="im">import</span> visualize_pinball</span></code></pre></div>
+<p>The <code>posterior_sample</code> code allows us to see the output sample locations for a given input. This is useful for visualizing the non-Gaussian nature of the output density.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">from</span> deepgp_tutorial <span class="im">import</span> posterior_sample</span></code></pre></div>
+<p>Finally, we bind these methods to the DeepGP object for ease of calling.</p>
+<h2 id="step-function-data-deep-gp">Step Function Data Deep GP</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/step-function-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/step-function-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<p>First we initialize a deep Gaussian process with three latent layers (four layers total). Within each layer we create a GP with an exponentiated quadratic covariance (<code>GPy.kern.RBF</code>).</p>
+<p>At each layer we use 20 inducing points for the variational approximation.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>,x.shape[<span class="dv">1</span>]]</span>
+<span id="cb9-2"><a href="#cb9-2"></a>inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>kernels <span class="op">=</span> []</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    </span>
+<span id="cb9-7"><a href="#cb9-7"></a>m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, </span>
+<span id="cb9-8"><a href="#cb9-8"></a>                  inits<span class="op">=</span>inits, </span>
+<span id="cb9-9"><a href="#cb9-9"></a>                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p>Once the model is constructed we initialize the parameters, and perform the staged optimization which starts by optimizing variational parameters with a low noise and proceeds to optimize the whole model.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>m.initialize()</span>
+<span id="cb10-2"><a href="#cb10-2"></a>m.staged_optimize()</span></code></pre></div>
+<p>We plot the output of the deep Gaussian process fitted to the stpe data as follows.</p>
+<p>The deep Gaussian process does a much better job of fitting the data. It handles the discontinuity easily, and error bars drop to smaller values in the regions of data.</p>
+<div class="figure">
+<div id="step-function-deep-gp-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-deep-gp-caption" class="caption-frame">
+<p>Figure: Deep Gaussian process fit to the step function data.</p>
+</div>
+</div>
+<h2 id="step-function-data-deep-gp-1">Step Function Data Deep GP</h2>
+<p>The samples of the model can be plotted with the helper function from <code>teaching_plots.py</code>, <code>model_sample</code></p>
+<p>The samples from the model show that the error bars, which are informative for Gaussian outputs, are less informative for this model. They make clear that the data points lie, in output mainly at 0 or 1, or occasionally in between.</p>
+<div class="figure">
+<div id="step-function-deep-gp-samples-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-samples&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-deep-gp-samples-caption" class="caption-frame">
+<p>Figure: Samples from the deep Gaussian process model for the step function fit.</p>
+</div>
+</div>
+<p>The visualize code allows us to inspect the intermediate layers in the deep GP model to understand how it has reconstructed the step function.</p>
+<div class="figure">
+<div id="step-function-deep-gp-mappings-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" width="60%" style=" ">
+</object>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" width="60%" style=" ">
+</object>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" width="60%" style=" ">
+</object>
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="step-function-deep-gp-mappings-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-mappings&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-deep-gp-mappings-caption" class="caption-frame">
+<p>Figure: From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.</p>
+</div>
+</div>
+<p>A pinball plot can be created for the resulting model to understand how the input is being translated to the output across the different layers.</p>
+<div class="figure">
+<div id="step-function-deep-gp-pinball-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="step-function-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-pinball&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-deep-gp-pinball-caption" class="caption-frame">
+<p>Figure: Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the ‘ball’ towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.</p>
 </div>
 </div>
 <h2 id="thanks">Thanks!</h2>
