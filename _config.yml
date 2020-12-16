@@ -8,8 +8,6 @@ baseurl: "/talks" # the subpath of your site, e.g. /blog/
 # Exclude directories for preprocessing.
 exclude:
   - slides/reveal.js/plugin/markdown/example
-#  - slides
-#  - slides/reveal.js/css/theme/
 reveal:
   width: 512
   height: 384
