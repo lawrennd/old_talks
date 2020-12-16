@@ -15,7 +15,7 @@ author:
   url: http://inverseprobability.com
 blog: 
 date: 2020-12-16
-venue: Isaac Newton Institute Virtual Dinner
+venue: Isaac Newton Institute Virtual Christmas Dinner
 transition: None
 ---
 
@@ -81,6 +81,25 @@ transition: None
 \newslide{}
 
 \figure{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-samples}{80%}}{Samples from the deep Gaussian process model for the step function fit.}{step-function-deep-gp-samples}
+
+\slides{
+\newslide{Step Function Data Latent 1}
+
+\slides{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-layer-0}}
+
+\newslide{Step Function Data Latent 2}
+
+\slides{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-layer-1}}
+
+\newslide{Step Function Data Latent 3}
+
+\slides{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-layer-2}}
+
+\newslide{Step Function Data Latent 4}
+
+\slides{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-layer-3}}}
+
+
 
 \include{_uq/includes/deep-emulation.md}
 
