@@ -1,6 +1,8 @@
 \ifndef{delveMultidisciplinarity}
 \define{delveMultidisciplinarity}
 
+\editme
+
 \subsection{Multidisciplinarity}
 
 \slides{* Multidisciplinarity requires courage.
@@ -13,7 +15,7 @@
 
 \notes{The solution for these challenges is a motto: there are no stupid questions. Each member of the Action Team has been selected for their talents, they should never feel embarassed to ask for clarification or deeper understanding from another member of the team. Naturally, a consequence of this is each member of the team should be prepared to explain their ideas to others clearly, and using different terminologies.}
 
-\notes{A bear-trap is assumption by intimidation. The idea that because someone is technically expert, that they can't make a foolish error. In fact, the opposit is often true, by being too focussed on a specific technical idea, we can all miss something that is obvious to those who don't have our individual deep technical understanding. The DELVE aim was to do our very best to avoid this bear-trap.}
+\notes{A bear-trap is assumption by intimidation. The idea that because someone is technically expert, that they can't make a foolish error. In fact, the opposite is often true, by being too focussed on a specific technical idea, we can all miss something that is obvious to those who don't have our individual deep technical understanding. The DELVE aim was to do our very best to avoid this bear-trap.}
 
 
 \endif

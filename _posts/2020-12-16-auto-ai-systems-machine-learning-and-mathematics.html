@@ -81,27 +81,6 @@ categories:
 <p>Zittrain points out the challenge around the lack of interpretability of individual ML models as the origin of intellectual debt. In machine learning I refer to work in this area as fairness, interpretability and transparency or FIT models. To an extent I agree with Zittrain, but if we understand the context and purpose of the decision making, I believe this is readily put right by the correct monitoring and retraining regime around the model. A concept I refer to as “progression testing”. Indeed, the best teams do this at the moment, and their failure to do it feels more of a matter of technical debt rather than intellectual, because arguably it is a maintenance task rather than an explanation task. After all, we have good statistical tools for interpreting individual models and decisions when we have the context. We can linearise around the operating point, we can perform counterfactual tests on the model. We can build empirical validation sets that explore fairness or accuracy of the model.</p>
 <p>So, this is where, my understanding of intellectual debt in ML systems departs, I believe from John Zittrain’s. The long-term challenge is <em>not</em> in the individual model. We have excellent statistical tools for validating what any individual model, the long-term challenge is the complex interaction between different components in the decomposed system, where the original intent of each component has been forgotten (except perhaps by Lancelot) and each service has been repurposed. We need to move from FIT models to FIT systems.</p>
 <p>How to address these challenges? With collaborators I’ve been working towards a solution that contains broadly two parts. The first part is what we refer to as “Data-Oriented Architectures”. The second part is “meta modelling”, machine learning techniques that help us model the models.</p>
-<h2 id="safeboda">SafeBoda</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>The complexity of building safe, maintainable systems that are based on interacting components which include machine learning models means that smaller companies can be excluded from access to these technologies due the technical and intellectual debt incurred when maintaining such systems in a real-world environment.</p>
-<div class="figure">
-<div id="safe-boda-system-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/ai/safe-boda.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="safe-boda-system-magnify" class="magnify" onclick="magnifyFigure(&#39;safe-boda-system&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="safe-boda-system-caption" class="caption-frame">
-<p>Figure: SafeBoda is a ride allocation system for Boda Boda drivers. Let’s imagine the capabilities we need for such an AI system.</p>
-</div>
-</div>
-<p><a href="https://safeboda.com/ug/index.php#whysafeboda">SafeBoda</a> is a Kampala based rider allocation system for Boda Boda drivers. Boda boda are motorcycle taxis which give employment to, often young men, across Kampala. Safe Boda is driven by the knowledge that road accidents are set to match HIV/AIDS as the highest cause of death in low/middle income families by 2030.</p>
-<blockquote>
-<p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
-</blockquote>
-<p>A key aim of the AutoAI agenda is to reduce these technical challenges, so that such software can be maintained safely and reliably by a small team of software engineers. Without this capability it is hard to imagine how low resource environments can fully benefit from the ‘data revolution’ without heavy reliance on technical provision from high-resource environments. Such dependence would inevitably mean a skew towards the challenges that high-resource economies face, rather than the more urgent and important problems that are faced in low-resource environments.</p>
 <h2 id="buying-system">Buying System</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/buying-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>An example of a complex decision making system might be an automated buying system. In such a system, the idea is to match demand for products to supply of products.</p>
@@ -224,6 +203,20 @@ categories:
 <p>As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.</p>
 <p>Similarly, the emulator can adjudicate between simulations. This is known as <em>multi-fidelity emulation</em>. The emulator characterizes which emulations perform well where.</p>
 <p>If all this modelling is done with judiscious handling of the uncertainty, the <em>computational doubt</em>, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.</p>
+<div class="figure">
+<div id="neil-newton-institute-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/people/1997-08-02-neil-newton-institute.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="neil-newton-institute-magnify" class="magnify" onclick="magnifyFigure(&#39;neil-newton-institute&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="neil-newton-institute-caption" class="caption-frame">
+<p>Figure: The author standing outside the Newton Institute on 2nd August 1997, just after arriving for “Generalisation in Neural Networks and Machine Learning”, <a href="http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf">see page 28 of this report</a>.</p>
+</div>
+</div>
+<p>The first tutorial I saw on Gaussian processes was given by <a href="https://homepages.inf.ed.ac.uk/ckiw/">Chris Williams</a> at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, <a href="https://www.microsoft.com/en-us/research/people/cmbishop/">Chris Bishop</a> (now Director of Microsoft Research in Cambridge).</p>
 <h2 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h2>
 <p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
@@ -254,88 +247,6 @@ categories:
 </div>
 <div id="gp-rejection-samples-caption" class="caption-frame">
 <p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). This is a rejection sampling view of Bayesian inference. The Gaussian process allows us to do this analytically by multiplying the <em>prior</em> by the <em>likelihood</em>.</p>
-</div>
-</div>
-<div class="figure">
-<div id="neil-newton-institute-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/people/1997-08-02-neil-newton-institute.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="neil-newton-institute-magnify" class="magnify" onclick="magnifyFigure(&#39;neil-newton-institute&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="neil-newton-institute-caption" class="caption-frame">
-<p>Figure: The author standing outside the Newton Institute on 2nd August 1997, just after arriving for “Generalisation in Neural Networks and Machine Learning”, <a href="http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf">see page 28 of this report</a>.</p>
-</div>
-</div>
-<p>The first tutorial I saw on Gaussian processes was given by Chris Williams at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, Chris Bishop (now Director of Microsoft Research in Cambridge).</p>
-<h2 id="deep-emulation">Deep Emulation</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<div class="figure">
-<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="ml-system-downstream-purchasing-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
-<p>As a solution we can use of <em>emulators</em>. When constructing an ML system, software engineers, ML engineers, economists and operations researchers are explicitly defining relationships between variables of interest in the system. That implicitly defines a joint distribution, <span class="math inline">$p(\dataVector^*, \dataVector)$</span>. In a decomposable system any sub-component may be defined as <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span> where <span class="math inline">$\dataVector_\mathbf{i}$</span> and <span class="math inline">$\dataVector_\mathbf{j}$</span> represent sub-sets of the full set of variables <span class="math inline">$\left\{\dataVector^*, \dataVector \right\}$</span>. In those cases where the relationship is deterministic, the probability density would collapse to a vector-valued deterministic function, <span class="math inline">$\mappingFunctionVector_\mathbf{i}\left(\dataVector_\mathbf{j}\right)$</span>.</p>
-<p>Inter-variable relationships could be defined by, for example a neural network (machine learning), an integer program (operational research), or a simulation (supply chain). This makes probabilistic inference in this joint density for real world systems is either very hard or impossible.</p>
-<p>Emulation is a form of meta-modelling: we construct a model of the model. We can define the joint density of an emulator as <span class="math inline">$s(\dataVector*, \dataVector)$</span>, but if this probability density is to be an accurate representation of our system, it is likely to be prohibitively complex. Current practice is to design an emulator to deal with a specific question. This is done by fitting an ML model to a simulation from the the appropriate conditional distribution, <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>, which is intractable. The emulator provides an approximated answer of the form <span class="math inline">$s(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>. Critically, an emulator should incorporate its uncertainty about its approximation. So the emulator answer will be less certain than direct access to the conditional <span class="math inline">$p(\dataVector_i|\dataVector_j)$</span>, but it may be sufficiently confident to act upon. Careful design of emulators to answer a given question leads to efficient diagnostics and understanding of the system. But in a complex interacting system an exponentially increasing number of questions can be asked. This calls for a system of automated construction of emulators which selects the right structure and redeploys the emulator as necessary. Rapid redeployment of emulators could exploit pre-existing emulators through <em>transfer learning</em>.</p>
-<p>Automatically deploying these families of emulators for full system understanding is highly ambitious. It requires advances in engineering infrastructure, emulation and Bayesian optimization. However, the intermediate steps of developing this architecture also allow for automated monitoring of system accuracy and fairness. This facilitates AutoML on a component-wise basis which we can see as a simple implementation of AutoAI. The proposal is structured so that despite its technical ambition there is a smooth ramp of benefits to be derived across the programme of work.</p>
-<p>In Applied Mathematics, the field studying these techniques is known as <em>uncertainty quantification</em>. The new challenge is the automation of emulator creation on demand to answer questions of interest and facilitate the system design, i.e. AutoAI through BSO.</p>
-<p>At design stage, any particular AI task could be decomposed in multiple ways. Bayesian system optimization will assist both in determining the large-scale system design through exploring different decompositions and in refinement of the deployed system.</p>
-<p>So far, most work on emulators has focussed on emulating a single component. Automated deployment and maintenance of ML systems requires networks of emulators that can be deployed and redeployed on demand depending on the particular question of interest. Therefore, the technical innovations we require are in the mathematical composition of emulator models <span class="citation" data-cites="Damianou:deepgp13 Pedikaris:nonlinear17">(Damianou and Lawrence 2013; Perdikaris et al. 2017)</span>. Different chains of emulators will need to be rapidly composed to make predictions of downstream performance. This requires rapid retraining of emulators and <em>propagation of uncertainty</em> through the emulation pipeline a process we call <em>deep emulation</em>.</p>
-<!--Our main approach for this will be automated learning of the structure
-of deep probabilistic models, such as deep Gaussian processes
-[@Damianou:deepgp13]. The proposer is an international expert in this
-domain.-->
-<p>Recomposing the ML system requires structural learning of the network. By parameterizing covariance functions appropriately this can be done through Gaussian processes (e.g. <span class="citation" data-cites="Damianou:manifold12">(Damianou et al., n.d.)</span>), but one could also consider Bayesian neural networks and other generative models, e.g. Generative Adversarial Networks <span class="citation" data-cites="Goodfellow:gans14">(Goodfellow et al. 2014)</span>.</p>
-<!-- This structural learning allows us to associate data with the relevant -->
-<!-- layer of the model, rather than merely on the leaf nodes of the output -->
-<!-- model. When deploying the deep Gaussian process as an emulator, this -->
-<!-- allows for the possibility of learning the structure of the different -->
-<!-- component parts of the underlying system. This should aid the user in -->
-<!-- determining the ideal system decomposition. -->
-<div class="figure">
-<div id="ml-system-downstream-purchasing1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing001.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing1-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing1&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="ml-system-downstream-purchasing1-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
-<div class="figure">
-<div id="ml-system-downstream-purchasing2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing002.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing2-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing2&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="ml-system-downstream-purchasing2-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
-</div>
-</div>
-<div class="figure">
-<div id="ml-system-downstream-purchasing3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing003.svg" width="75%" style=" ">
-</object>
-</div>
-<div id="ml-system-downstream-purchasing3-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing3&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="ml-system-downstream-purchasing3-caption" class="caption-frame">
-<p>Figure: A potential path of models in a machine learning system.</p>
 </div>
 </div>
 <p>Mathematically, a deep Gaussian process can be seen as a composite <em>multivariate</em> function, <br /><span class="math display">$$
@@ -385,6 +296,18 @@ domain.-->
 </div>
 <div id="deep-markov-vertical-side-caption" class="caption-frame">
 <p>Figure: More generally we aren’t constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.</p>
+</div>
+</div>
+<div class="figure">
+<div id="step-function-gp-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/step-function-gp.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-gp&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-gp-caption" class="caption-frame">
+<p>Figure: Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.</p>
 </div>
 </div>
 <h2 id="step-function">Step Function</h2>
@@ -552,6 +475,113 @@ domain.-->
 <p>Figure: Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the ‘ball’ towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.</p>
 </div>
 </div>
+<div class="figure">
+<div id="step-function-deep-gp-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-deep-gp-caption" class="caption-frame">
+<p>Figure: Deep Gaussian process fit to the step function data.</p>
+</div>
+</div>
+<div class="figure">
+<div id="step-function-deep-gp-samples-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="step-function-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-samples&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="step-function-deep-gp-samples-caption" class="caption-frame">
+<p>Figure: Samples from the deep Gaussian process model for the step function fit.</p>
+</div>
+</div>
+<h2 id="deep-emulation">Deep Emulation</h2>
+<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/deep-emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div class="figure">
+<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing000.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ml-system-downstream-purchasing-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<p>As a solution we can use of <em>emulators</em>. When constructing an ML system, software engineers, ML engineers, economists and operations researchers are explicitly defining relationships between variables of interest in the system. That implicitly defines a joint distribution, <span class="math inline">$p(\dataVector^*, \dataVector)$</span>. In a decomposable system any sub-component may be defined as <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span> where <span class="math inline">$\dataVector_\mathbf{i}$</span> and <span class="math inline">$\dataVector_\mathbf{j}$</span> represent sub-sets of the full set of variables <span class="math inline">$\left\{\dataVector^*, \dataVector \right\}$</span>. In those cases where the relationship is deterministic, the probability density would collapse to a vector-valued deterministic function, <span class="math inline">$\mappingFunctionVector_\mathbf{i}\left(\dataVector_\mathbf{j}\right)$</span>.</p>
+<p>Inter-variable relationships could be defined by, for example a neural network (machine learning), an integer program (operational research), or a simulation (supply chain). This makes probabilistic inference in this joint density for real world systems is either very hard or impossible.</p>
+<p>Emulation is a form of meta-modelling: we construct a model of the model. We can define the joint density of an emulator as <span class="math inline">$s(\dataVector*, \dataVector)$</span>, but if this probability density is to be an accurate representation of our system, it is likely to be prohibitively complex. Current practice is to design an emulator to deal with a specific question. This is done by fitting an ML model to a simulation from the the appropriate conditional distribution, <span class="math inline">$p(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>, which is intractable. The emulator provides an approximated answer of the form <span class="math inline">$s(\dataVector_\mathbf{i}|\dataVector_\mathbf{j})$</span>. Critically, an emulator should incorporate its uncertainty about its approximation. So the emulator answer will be less certain than direct access to the conditional <span class="math inline">$p(\dataVector_i|\dataVector_j)$</span>, but it may be sufficiently confident to act upon. Careful design of emulators to answer a given question leads to efficient diagnostics and understanding of the system. But in a complex interacting system an exponentially increasing number of questions can be asked. This calls for a system of automated construction of emulators which selects the right structure and redeploys the emulator as necessary. Rapid redeployment of emulators could exploit pre-existing emulators through <em>transfer learning</em>.</p>
+<p>Automatically deploying these families of emulators for full system understanding is highly ambitious. It requires advances in engineering infrastructure, emulation and Bayesian optimization. However, the intermediate steps of developing this architecture also allow for automated monitoring of system accuracy and fairness. This facilitates AutoML on a component-wise basis which we can see as a simple implementation of AutoAI. The proposal is structured so that despite its technical ambition there is a smooth ramp of benefits to be derived across the programme of work.</p>
+<p>In Applied Mathematics, the field studying these techniques is known as <em>uncertainty quantification</em>. The new challenge is the automation of emulator creation on demand to answer questions of interest and facilitate the system design, i.e. AutoAI through BSO.</p>
+<p>At design stage, any particular AI task could be decomposed in multiple ways. Bayesian system optimization will assist both in determining the large-scale system design through exploring different decompositions and in refinement of the deployed system.</p>
+<p>So far, most work on emulators has focussed on emulating a single component. Automated deployment and maintenance of ML systems requires networks of emulators that can be deployed and redeployed on demand depending on the particular question of interest. Therefore, the technical innovations we require are in the mathematical composition of emulator models <span class="citation" data-cites="Damianou:deepgp13 Pedikaris:nonlinear17">(Damianou and Lawrence 2013; Perdikaris et al. 2017)</span>. Different chains of emulators will need to be rapidly composed to make predictions of downstream performance. This requires rapid retraining of emulators and <em>propagation of uncertainty</em> through the emulation pipeline a process we call <em>deep emulation</em>.</p>
+<!--Our main approach for this will be automated learning of the structure
+of deep probabilistic models, such as deep Gaussian processes
+[@Damianou:deepgp13]. The proposer is an international expert in this
+domain.-->
+<p>Recomposing the ML system requires structural learning of the network. By parameterizing covariance functions appropriately this can be done through Gaussian processes (e.g. <span class="citation" data-cites="Damianou:manifold12">(Damianou et al., n.d.)</span>), but one could also consider Bayesian neural networks and other generative models, e.g. Generative Adversarial Networks <span class="citation" data-cites="Goodfellow:gans14">(Goodfellow et al. 2014)</span>.</p>
+<!-- This structural learning allows us to associate data with the relevant -->
+<!-- layer of the model, rather than merely on the leaf nodes of the output -->
+<!-- model. When deploying the deep Gaussian process as an emulator, this -->
+<!-- allows for the possibility of learning the structure of the different -->
+<!-- component parts of the underlying system. This should aid the user in -->
+<!-- determining the ideal system decomposition. -->
+<div class="figure">
+<div id="ml-system-downstream-purchasing1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing001.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing1-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing1&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ml-system-downstream-purchasing1-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<div class="figure">
+<div id="ml-system-downstream-purchasing2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing002.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing2-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing2&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ml-system-downstream-purchasing2-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<div class="figure">
+<div id="ml-system-downstream-purchasing3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-purchasing003.svg" width="75%" style=" ">
+</object>
+</div>
+<div id="ml-system-downstream-purchasing3-magnify" class="magnify" onclick="magnifyFigure(&#39;ml-system-downstream-purchasing3&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ml-system-downstream-purchasing3-caption" class="caption-frame">
+<p>Figure: A potential path of models in a machine learning system.</p>
+</div>
+</div>
+<ul>
+<li><p>Automate the process of <em>explaining</em> and maintaining ML Systems.</p></li>
+<li><p>Challenge is these systems are highly complex:</p>
+<ul>
+<li>Flaws need rapid addressing.</li>
+</ul></li>
+<li><p>This becomes apparent in operational science</p></li>
+<li><p>Been working with the DELVE Group</p></li>
+<li><p>One perspective on challenge facing government:</p>
+<ul>
+<li>Intellectual Debt for the whole country</li>
+<li>Ideas about <em>explaining</em> a complex system much wider applicability.</li>
+</ul></li>
+<li><p>Implications for <em>digital twins</em></p></li>
+</ul>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
