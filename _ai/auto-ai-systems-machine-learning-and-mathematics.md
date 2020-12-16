@@ -43,6 +43,7 @@ transition: None
 
 \include{_gp/includes/gp-intro-very-short.md}
 
+\include{_uq/includes/deep-emulation.md}
 
 
 
@@ -99,9 +100,6 @@ transition: None
 
 \slides{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-layer-3}}}
 
-
-
-\include{_uq/includes/deep-emulation.md}
 
 
 \newslide{Operational Science}
