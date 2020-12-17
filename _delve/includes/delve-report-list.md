@@ -11,6 +11,6 @@
 4. Schools *24th July 2020* \slidesmall{[@Delve-schools20]}
 5. Economics *14th August 2020* \slidesmall{[@Delve-economics20]}
 6. Vaccines *1st October 2020* \slidesmall{[@Delve-vaccine20]}
-7. **Data** *24th November 2020* \slidesmall{[@Delve-data20]}
+7. Data *24th November 2020* \slidesmall{[@Delve-data20]}
 
 \endif
