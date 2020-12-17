@@ -77,11 +77,11 @@ transition: None
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/deepgp/step-function-deep-gp}{80%}}{Deep Gaussian process fit to the step function data.}{step-function-deep-gp}
+\slides{\figure{\includediagram{\diagramsDir/deepgp/step-function-deep-gp}{80%}}{Deep Gaussian process fit to the step function data.}{step-function-deep-gp}}
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-samples}{80%}}{Samples from the deep Gaussian process model for the step function fit.}{step-function-deep-gp-samples}
+\slides{\figure{\includediagram{\diagramsDir/deepgp/step-function-deep-gp-samples}{80%}}{Samples from the deep Gaussian process model for the step function fit.}{step-function-deep-gp-samples}}
 
 \slides{
 \newslide{Step Function Data Latent 1}
