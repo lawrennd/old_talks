@@ -29,7 +29,9 @@ newballButton.addEventListener("click", resetGame);
 pauseButton.addEventListener("click", togglePause);
 
 function clickReporter(event) {
-    if(event.x > canvas.width/2) {
+    const rect = canvas.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    if(x > canvas.width/2) {
 	pushLeft(2.0)
     } else {
 	pushRight(2.0)
