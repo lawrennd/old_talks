@@ -24,9 +24,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-canvas.addEventListener("click", clickReporter);
-newballButton.addEventListener("click", resetGame);
-pauseButton.addEventListener("click", togglePause);
 
 function clickReporter(event) {
     const rect = canvas.getBoundingClientRect()

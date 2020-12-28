@@ -25,8 +25,14 @@
 // SOFTWARE.
 
 
-var canvas = document.getElementById("szilardCanvas");
+var canvas = document.getElementById("szilard-canvas");
 var ctx = canvas.getContext("2d");
+
+var newballButton = document.getElementById("szilard-newball");
+var pauseButton = document.getElementById("szilard-pause");
+
+newballButton.addEventListener("click", resetGame);
+pauseButton.addEventListener("click", togglePause);
 
 var membraneColor = 'rgba(56, 256, 56, 0.8)';
 var hotColor = 'rgba(256, 56, 56, 0.8)';

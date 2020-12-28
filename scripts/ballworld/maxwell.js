@@ -25,8 +25,14 @@
 // SOFTWARE.
 
 
-var canvas = document.getElementById("maxwellCanvas");
+var canvas = document.getElementById("maxwell-canvas");
 var ctx = canvas.getContext("2d");
+
+var newballButton = document.getElementById("maxwell-newball");
+var pauseButton = document.getElementById("maxwell-pause");
+
+newballButton.addEventListener("click", resetGame);
+pauseButton.addEventListener("click", togglePause);
 
 var membraneColor = 'rgba(56, 256, 56, 0.8)';
 var hotColor = 'rgba(256, 56, 56, 0.8)';

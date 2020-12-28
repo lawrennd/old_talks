@@ -25,8 +25,14 @@
 // SOFTWARE.
 
 
-var canvas = document.getElementById("billiardsCanvas");
+var canvas = document.getElementById("multiball-canvas");
 var ctx = canvas.getContext("2d");
+
+var newballButton = document.getElementById("multiball-newball");
+var pauseButton = document.getElementById("multiball-pause");
+
+newballButton.addEventListener("click", resetGame);
+pauseButton.addEventListener("click", togglePause);
 
 var groundColor = 'rgba(56, 256, 56, 0.8)';
 var pinColor = 'rgba(256, 56, 56, 0.8)';

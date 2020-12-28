@@ -24,13 +24,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-var canvas = document.getElementById("kappenballCanvas");
+var canvas = document.getElementById("kappenball-canvas");
 var ctx = canvas.getContext("2d");
 
-var slider = document.getElementById("stochasticityRange");
-var score = document.getElementById("scoreBox");
-var ballCount = document.getElementById("ballCountBox");
-var energy = document.getElementById("energyBox");
+var slider = document.getElementById("kappenball-stochasticity");
+var score = document.getElementById("kappenball-score");
+var ballCount = document.getElementById("kappenball-count");
+var energy = document.getElementById("kappenball-energy");
+
+var newballButton = document.getElementById("kappenball-newball");
+var pauseButton = document.getElementById("kappenball-pause");
+
+canvas.addEventListener("click", clickReporter);
+newballButton.addEventListener("click", resetGame);
+pauseButton.addEventListener("click", togglePause);
+
 
 score.value = 0
 ballCount.value = 0
