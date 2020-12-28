@@ -45,16 +45,17 @@
   <section>
     <div id="title"><p id="balls" style="font-size: 15pt">Kappenball</p><br/></div>
   </section>
-  <div>
-    <canvas id="kappenballCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
-    <input type="range" min="0" max="100" value="0" class="slider" id="stochasticityRange"/>
-    <output id="scoreBox"></output>
+  <div><div>
+    <canvas id="kappenballCanvas" width="900" height="500" style="border:1px solid black;display:inline;text-align:center "></canvas></div>
+    <div><input type="range" min="0" max="100" value="0" class="slider" id="stochasticityRange"/></div>
+    <div><output id="scoreBox"></output>
     <output id="ballCountBox"></output>
-    <output id="energyBox"></output>
+    <output id="energyBox"></output></div>
     
     <script src="./scripts/ballworld/constructors.js"></script>
     <script src="./scripts/ballworld/script2.js"></script>
     <script src="./scripts/ballworld/ballworld.js"></script>
+    <script src="./scripts/ballworld/ballkeys.js"></script>
     <script src="./scripts/ballworld/kappenball.js"></script>
   </div>
   <section class="footer">

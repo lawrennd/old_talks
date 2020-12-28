@@ -1,27 +1,31 @@
 ---
 layout: lecture
 title: Automatic Differentiation
-week: 3
+week: 2
+session: 1
 author:
 - given: Ferenc
   family: Huszár
-  institution: 
-  url: https://www.inference.vc/about/
-- given: Nic
-  family: Lane
-  institution: 
-  url: http://niclane.org/
-- given: Neil D.
-  family: Lawrence
   institution: University of Cambridge
-  url: http://inverseprobability.com
+  url: https://www.inference.vc/about/
 abstract: >
   This lecture will cover the foundations of automatic differentiation as well as the different frameworks that exist for building models.
+talkscam:
+room: Zoom
+venue: Computer Laboratory, William Gates Building
+reveal: false
 time: "14:00"
 start: "14:00"
 end: "15:00"
-date: 2021-02-02
+date: 2021-01-26
 ---
+
+Related publications and links will appear here.
+
+* Forward Mode
+* Reverse mode
+* Mixed mode
+* Scalar loss means reverse mode more efficient (backprop optimal)
 
 Related publications and links will appear here.
 

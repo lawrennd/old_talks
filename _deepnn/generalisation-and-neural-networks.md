@@ -2,7 +2,8 @@
 layout: lecture
 title: Generalization and Neural Networks
 week: 1
-date: 2021-01-26
+session: 2
+date: 2021-01-21
 author:
 - given: Neil D.
   family: Lawrence
@@ -13,16 +14,18 @@ abstract: >
   neural architectures. We will review classical generalization and explore what's different
   about neural network models.
 talkscam:
-date: 2021-01-19
+reveal: false
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
 
-Related publications and links will appear here.
+* Classical models of generalisation
+* Double descent
+* Generalisation as a function of the algorithm (route up table mountain)
+* Conflating algoirthm with model
 
 
-Yann LeCun and Alfredo Canziani's course on deep learning <https://atcold.github.io/pytorch-Deep-Learning/>
 
 Bias variance dilemma
 <https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1>

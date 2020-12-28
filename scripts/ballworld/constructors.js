@@ -99,6 +99,28 @@ function Box(x, y, w, h, color) {
     this.y = y;
     this.w = w;
     this.h = h;
+    this.membraneImmune = false;
+    this.color = color;
+    this.draw = function() {
+        ctx.beginPath();
+	ctx.moveTo(x, y);
+	ctx.lineTo(x+w, y);
+	ctx.lineTo(x+w, y+h);
+	ctx.lineTo(x, y+h);
+	ctx.lineTo(x, y);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
+        ctx.stroke();
+        ctx.closePath();
+    };
+}
+
+function Membrane(x, y, w, h, color) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
     this.color = color;
     this.draw = function() {
         ctx.beginPath();

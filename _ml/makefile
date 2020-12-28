@@ -1,3 +1,3 @@
-BASE=modelling-things
+BASE=celsius-lecture
 include ../make-talk-flags.mk
 include ../make-talk.mk

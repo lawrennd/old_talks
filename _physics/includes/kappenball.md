@@ -5,8 +5,8 @@
 
 \newslide{}
 
-\figure{<div>
-<canvas id="kappenballCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
+\figure{<div>\centerdiv{
+<canvas id="kappenballCanvas" width="900" height="500" style="border:1px solid black;display:inline;text-align:center "></canvas>}
 <input type="range" min="0" max="100" value="0" class="slider" id="stochasticityRange"/>
 <output id="scoreBox"></output>
 <output id="ballCountBox"></output>
@@ -18,6 +18,5 @@
 <script src="\scriptsDir/ballworld/kappenball.js"></script>
 </div>}{Kappen Ball}{kappen-ball}
 
-<!--\includepng{\diagramsDir/ml/kappen-ball}-->
 
 \endif

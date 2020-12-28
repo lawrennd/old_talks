@@ -25,12 +25,12 @@
 // SOFTWARE.
 
 
-var canvas = document.getElementById("billiardsCanvas");
+var canvas = document.getElementById("maxwellCanvas");
 var ctx = canvas.getContext("2d");
 
-var groundColor = 'rgba(56, 256, 56, 0.8)';
-var pinColor = 'rgba(256, 56, 56, 0.8)';
-var ballColor = 'rgba(200, 200, 200, 0.8)';
+var membraneColor = 'rgba(56, 256, 56, 0.8)';
+var hotColor = 'rgba(256, 56, 56, 0.8)';
+var coldColor = 'rgba(56, 56, 256, 0.8)';
 
 
 var paused = true;
@@ -40,6 +40,7 @@ var soundOn = false;
 var initialSpeed = 5;
 var clearCanv = true;
 
+var demonThreshold = 3;
 
 var wallBounce = true;
 var floorBounce = true;
@@ -68,16 +69,48 @@ function ballsBirth() {
 	var temp = new Ball(i, radius, radius);
 	temp.dx = Math.random()*1e-1;
 	temp.dy = initialSpeed;
-	temp.color = ballColor;
-	ballArray[ballArray.length] = temp;
+	if(temp.x < canvas.width/2-5-radius || temp.x > canvas.width/2+5+radius)
+	{
+	    ballArray[ballArray.length] = temp;
+	}
     }
 }
 
+
+function demonInspect() {
+    for (var obj in ballArray) {
+	var velocity = Math.sqrt(ballArray[obj].dx*ballArray[obj].dx + ballArray[obj].dy*ballArray[obj].dy);
+	if(ballArray[obj].x < canvas.width/2-5-ballArray[obj].radius)
+	{
+	    if(velocity>demonThreshold){
+		ballArray[obj].color = hotColor
+		ballArray[obj].membraneImmune = true;
+	    } else {
+		ballArray[obj].color = coldColor
+		ballArray[obj].membraneImmune = false;
+	    }
+	    
+	}
+	if(ballArray[obj].x > canvas.width/2+5+ballArray[obj].radius){
+	    if(velocity>demonThreshold){
+		ballArray[obj].color = hotColor
+		ballArray[obj].membraneImmune = false;
+	    } else {
+		ballArray[obj].color = coldColor
+		ballArray[obj].membraneImmune = true;
+	    }
+	}
+    }
+}
 
 function resetGame() {
     ballArray = [];
     ballsBirth();
 }
+
+membraneArray[membraneArray.length] = new Box(canvas.width/2-5, 0, 5, canvas.height, coldColor);
+membraneArray[membraneArray.length] = new Box(canvas.width/2, 0, 5, canvas.height, hotColor);
+
 resetGame();
 
 draw();

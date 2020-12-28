@@ -30,11 +30,10 @@ var totalKineticEnergy = 0;
 
 var ballArray = [];
 var boxArray = [];
+var membraneArray = [];
 var postArray = [];
 var pinArray = [];
 var pitArray = [];
-
-var bumped = false;
 
 var leftHeld = false;
 var upHeld = false;
@@ -49,88 +48,40 @@ beep.volume = 1
 var inelasticityFactor = 1.0;
 var dragFactor = 1.0;
 
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
-
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function keyDownHandler(event) {
-    if (event.keyCode == 67) { // c
-        ballArray[ballArray.length] = new Ball(randomX(), randomY(), randomRadius());
-    } else if (event.keyCode == 80) { // p
-        paused = !paused;
-    } else if (event.keyCode == 32) { // space bar
-        paused = !paused;
-    } else if (event.keyCode == 71) { // g
-        gravityOn = !gravityOn;
-        dragOn = !dragOn;
-    } else if (event.keyCode == 77) { // m
-        soundOn = !soundOn;
-    } else if (event.keyCode == 65) { // A
-        leftHeld = true;
-    } else if (event.keyCode == 87) { // W
-        upHeld = true;
-    } else if (event.keyCode == 68) { // D
-        rightHeld = true;
-    } else if (event.keyCode == 83) { // S
-        downHeld = true;
-    } else if (event.keyCode == 82) { // r
-        resetGame();
-    } else if (event.keyCode == 75) { // k
-        clearCanv = !clearCanv;
-    } else if (event.keyCode == 88) { // x
-        bigBalls = !bigBalls;
-    } else if (event.keyCode == 37) { //left arrow
-	leftHeld = true;
-    } else if (event.keyCode == 39) { //right arrow
-	rightHeld = true;
-    }
-}
-
-function keyUpHandler(event) {
-    if (event.keyCode == 65) { // A
-        leftHeld = false;
-    } else if (event.keyCode == 87) { // W
-        upHeld = false;
-    } else if (event.keyCode == 68) { // D
-        rightHeld = false;
-    } else if (event.keyCode == 83) { // S
-        downHeld = false;
-    }else if (event.keyCode == 37) { //left arrow
-	leftHeld = false;
-    } else if (event.keyCode == 39) { //right arrow
-	rightHeld = false;
-    }
-}
-
-function arrowControls() {
-    if (leftHeld) { // left arrow
-        for (var obj in ballArray) {
-	    incrementEnergy()
-            ballArray[obj].dx -= arrowAccel;
-        }
-    } if (upHeld) { // up arrow
-        for (var obj in ballArray) {
-	    incrementEnergy()
-            ballArray[obj].dy -= arrowAccel;
-        }
-    } if (rightHeld) { // right arrow
-        for (var obj in ballArray) {
-	    incrementEnergy()
-            ballArray[obj].dx += arrowAccel;
-        }
-    } if (downHeld) { // down arrow
-        for (var obj in ballArray) {
-	    incrementEnergy()
-            ballArray[obj].dy += arrowAccel;
-        }
-    }
-}
-
 function canvasBackground() {
     canvas.style.backgroundColor = "rgb(215, 235, 240)";
+}
+
+function pushLeft() {
+    for (var obj in ballArray) {
+	incrementEnergy()
+        ballArray[obj].dx -= arrowAccel;
+    }
+}
+
+function pushUp() {
+    for (var obj in ballArray) {
+	incrementEnergy()
+        ballArray[obj].dy -= arrowAccel;
+    }
+}
+
+function pushRight() {
+    for (var obj in ballArray) {
+	incrementEnergy()
+        ballArray[obj].dx += arrowAccel;
+    }
+}
+
+function pushDown() {
+    for (var obj in ballArray) {
+	incrementEnergy()
+	ballArray[obj].dy += arrowAccel;
+    }
 }
 
 function wallCollision(ball) {
@@ -223,6 +174,7 @@ function collides (circle, rect, collide_inside)
     return side.x*side.x + side.y*side.y  < circle.radius*circle.radius;
 }
 
+
 function bounces (circle, rect)
 {
     // From https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle
@@ -280,25 +232,26 @@ function boxCollision() {
 	}
     }
 }
-
-
-function Collision() {
+function membraneCollision() {
     for (var obj1 in ballArray) {
-	for (var obj2 in boxArray) {
-	    
-	    if(collides(ballArray[obj1], boxArray[obj2], false))
+	for (var obj2 in membraneArray) {
+	    if(!ballArray[obj1].membraneImmune)
 	    {
-		var vec = bounces(ballArray[obj1], boxArray[obj2]);
-		var d = {x: ballArray[obj1].dx,
-			 y: ballArray[obj1].dy};
-		var dn = d.x*vec.x + d.y*vec.y;
-		ballArray[obj1].dx -= 2*dn*vec.x;
-		ballArray[obj1].dy -= 2*dn*vec.y;
-		applyInelasticity(ballArray[obj1]);
+		if(collides(ballArray[obj1], membraneArray[obj2], true))
+		{
+		    var vec = bounces(ballArray[obj1], membraneArray[obj2]);
+		    var d = {x: ballArray[obj1].dx,
+			     y: ballArray[obj1].dy};
+		    var dn = d.x*vec.x + d.y*vec.y;
+		    ballArray[obj1].dx -= 2*dn*vec.x;
+		    ballArray[obj1].dy -= 2*dn*vec.y;
+		    applyInelasticity(ballArray[obj1]);
+		}
 	    }
 	}
     }
 }
+
 
 function ballCollision() {
     for (var obj1 in ballArray) {
@@ -401,6 +354,9 @@ function staticCollision() {
     }
 }
 
+function demonInspect() {
+}
+
 function applyGravity() {
     for (var obj in ballArray) {
         if (ballArray[obj].onGround() == false) {
@@ -462,6 +418,9 @@ function drawObjects() {
     for (var obj in boxArray) {
         boxArray[obj].draw();
     }
+    for (var obj in membraneArray) {
+        membraneArray[obj].draw();
+    }
     for (var obj in pitArray) {
         pitArray[obj].draw();
     }
@@ -486,11 +445,13 @@ function draw() {
         }
     }
 
+    demonInspect();
     drawObjects();
     staticCollision();
     ballCollision();
     postCollision();
     boxCollision();
+    membraneCollision();
     pinCollision();
     pitCollision();
     //logger();
