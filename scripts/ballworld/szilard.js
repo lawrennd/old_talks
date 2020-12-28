@@ -25,7 +25,7 @@
 // SOFTWARE.
 
 
-var canvas = document.getElementById("maxwellCanvas");
+var canvas = document.getElementById("szilardCanvas");
 var ctx = canvas.getContext("2d");
 
 var membraneColor = 'rgba(56, 256, 56, 0.8)';
@@ -63,17 +63,10 @@ function incrementScore() {
 
 function ballsBirth() {
     radius = 10;
-    balls = 39;
-    for (i=3*radius; i<canvas.width; i+=2*radius + 1)
-    {
-	var temp = new Ball(i, radius, radius);
-	temp.dx = Math.random()*1e-1;
-	temp.dy = initialSpeed;
-	if(temp.x < canvas.width/2-5-radius || temp.x > canvas.width/2+5+radius)
-	{
-	    ballArray[ballArray.length] = temp;
-	}
-    }
+    var temp = new Ball(i, radius, radius);
+    temp.dx = Math.random()*1e-1;
+    temp.dy = initialSpeed;
+    ballArray[ballArray.length] = temp;    
 }
 
 

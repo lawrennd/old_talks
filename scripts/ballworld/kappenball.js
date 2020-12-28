@@ -72,8 +72,8 @@ function ballDie(obj) {
 function incrementScore() {
     score.value = parseInt(score.value)+10
 }
-function incrementEnergy() {
-    energy.value = parseFloat(energy.value)+0.1;
+function incrementEnergy(accel) {
+    energy.value = parseFloat(energy.value)+accel;
 }
 function ballBirth() {
     var temp = new Ball(canvas.width/2, 10, 10);

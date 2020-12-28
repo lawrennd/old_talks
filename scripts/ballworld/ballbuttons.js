@@ -24,60 +24,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+canvas.addEventListener("click", clickReporter);
+newballButton.addEventListener("click", resetGame);
+pauseButton.addEventListener("click", togglePause);
 
-var canvas = document.getElementById("billiardsCanvas");
-var ctx = canvas.getContext("2d");
-
-var groundColor = 'rgba(56, 256, 56, 0.8)';
-var pinColor = 'rgba(256, 56, 56, 0.8)';
-var ballColor = 'rgba(200, 200, 200, 0.8)';
-
-
-var paused = true;
-var gravityOn = false;
-var dragOn = false;
-var soundOn = false;
-var initialSpeed = 5;
-var clearCanv = true;
-
-
-var wallBounce = true;
-var floorBounce = true;
-var floorWrap = false;
-var floorWrapCenter = true;
-var floorReset = false;
-
-var energy = 0.0;
-var gravityAccel = 0.06;
-var arrowAccel = 0.4;
-var stochasticity = 0;
-var stochasticityScale = 0.2;
-var dragFactor = 1;
-
-function incrementEnergy(accel) {
-}
-
-function incrementScore() {
-}
-
-function ballsBirth() {
-    radius = 10;
-    balls = 39;
-    for (i=3*radius; i<canvas.width; i+=2*radius + 1)
-    {
-	var temp = new Ball(i, radius, radius);
-	temp.dx = Math.random()*1e-1;
-	temp.dy = initialSpeed;
-	temp.color = ballColor;
-	ballArray[ballArray.length] = temp;
+function clickReporter(event) {
+    if(event.x > canvas.width/2) {
+	pushLeft(2.0)
+    } else {
+	pushRight(2.0)
     }
 }
-
-
-function resetGame() {
-    ballArray = [];
-    ballsBirth();
+function togglePause(event) {
+    paused = !paused;
 }
-resetGame();
 
-draw();
+function arrowControls() {
+    if (leftHeld) { // left arrow
+	pushLeft();
+    } if (upHeld) { // up arrow
+	pushUp();
+    } if (rightHeld) { // right arrow
+	pushRight();
+    } if (downHeld) { // down arrow
+	pushDown();
+    }
+}

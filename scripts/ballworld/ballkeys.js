@@ -78,12 +78,12 @@ function keyUpHandler(event) {
 
 function arrowControls() {
     if (leftHeld) { // left arrow
-	pushLeft();
+	pushLeft(0.1);
     } if (upHeld) { // up arrow
-	pushUp();
+	pushUp(0.1);
     } if (rightHeld) { // right arrow
-	pushRight();
+	pushRight(0.1);
     } if (downHeld) { // down arrow
-	pushDown();
+	pushDown(0.1);
     }
 }

@@ -10,7 +10,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2020-02-11
+date: 2021-02-11
 venue: Celsius Lecture, Uppsala University, Sweden
 transition: None
 ---
@@ -19,9 +19,13 @@ transition: None
 
 \include{talk-macros.gpp}
 
+\newslide{}
+
+\includegooglebook{0p8AAAAAMAAJ}{PA3}
 
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/maxwells-demon.md}
+\include{_physics/includes/szilards-engine.md}
 \include{_physics/includes/kappenball.md}
 
 Yes, something like that is a good idea. I'm going to start a small document.

@@ -5,6 +5,11 @@
 
 \newslide{}
 
+\includegooglebook{0p8AAAAAMAAJ}{PA308}
+
+\newslide{}
+
+
 \figure{\centerdiv{<canvas id="maxwellCanvas" width="900" height="500" style="border:1px solid black;display:inline;text-align:center"></canvas>
 
 <script src="\scriptsDir/ballworld/constructors.js"></script>
@@ -14,6 +19,8 @@
 
 \slides{Press `P` to pause/unpause and `R` to reset.}
 
-\notes{Maxwell's demon allows us to connect thermodynamics with information theory (see e.g. @Hosoya-demon15;@Hosoya-maxwell11;@Bub-maxwell01). The connection arises due to a fundamental connection between information erasure and energy consumption @Landauer-irreversibility61. }
+\notes{Maxwell's demon allows us to connect thermodynamics with information theory (see e.g. @Hosoya-demon15;@Hosoya-maxwell11;@Bub-maxwell01;@Brillouin-maxwell51;@Szilard-intelligenter29). The connection arises due to a fundamental connection between information erasure and energy consumption @Landauer-irreversibility61.}
+
+
 
 \endif

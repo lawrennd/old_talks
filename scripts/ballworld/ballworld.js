@@ -56,31 +56,31 @@ function canvasBackground() {
     canvas.style.backgroundColor = "rgb(215, 235, 240)";
 }
 
-function pushLeft() {
+function pushLeft(accel) {
     for (var obj in ballArray) {
-	incrementEnergy()
-        ballArray[obj].dx -= arrowAccel;
+	incrementEnergy(accel);
+        ballArray[obj].dx -= accel;
     }
 }
 
-function pushUp() {
+function pushUp(accel) {
     for (var obj in ballArray) {
-	incrementEnergy()
-        ballArray[obj].dy -= arrowAccel;
+	incrementEnergy(accel);
+        ballArray[obj].dy -= accel;
     }
 }
 
-function pushRight() {
+function pushRight(accel) {
     for (var obj in ballArray) {
-	incrementEnergy()
-        ballArray[obj].dx += arrowAccel;
+	incrementEnergy(accel);
+        ballArray[obj].dx += accel;
     }
 }
 
-function pushDown() {
+function pushDown(accel) {
     for (var obj in ballArray) {
-	incrementEnergy()
-	ballArray[obj].dy += arrowAccel;
+	incrementEnergy(accel);
+	ballArray[obj].dy += accel;
     }
 }
 
@@ -429,7 +429,9 @@ function drawObjects() {
     }
 }
 
-function draw() {
+const timer = ms => new Promise(res => setTimeout(res, ms))
+
+async function draw() {
 
     if(clearCanv) clearCanvas();
     canvasBackground();
@@ -455,6 +457,9 @@ function draw() {
     pinCollision();
     pitCollision();
     //logger();
+    // 100 millisecond delay
+    await timer(10);
+    
     requestAnimationFrame(draw);
 }
 
