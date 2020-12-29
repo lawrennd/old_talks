@@ -458,22 +458,28 @@ async function draw(game) {
     if(game.simulation.clearCanv)
 	game.clearCanvas();
     game.canvasBackground();
-
-    if (!game.simulation.paused) {
-	//game.horizontalDrag();
-        game.move();
-	game.physics();
-	// Perform global checks
-	game.demon();
-	
-	// Check for collisions
-	game.collisions()
-	game.logger()
-    }
+    
+    //game.horizontalDrag();
+    game.move();
+    game.physics();
+    
+    // Perform global checks
+    game.demon();
+    
+    // Check for collisions
+    game.collisions()
+    game.logger()
+    
     game.draw();
+
+
     // fix this to use setTimeout to set timing: http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
     // Add 100 millisecond delay
+    do {
     await timer(10);
+    }
+    while(game.simulation.paused);
+
     requestAnimationFrame(function() {
         draw(game);
     });

@@ -141,9 +141,9 @@ function clickReporter(event, game) {
     const rect = game.context.canvas.getBoundingClientRect()
     const x = event.clientX - rect.left
     if(x > game.context.canvas.width/2) {
-	game.pushLeft(2.0)
+	game.pushLeft(20.0)
     } else {
-	game.pushRight(2.0)
+	game.pushRight(20.0)
     }
 }
 
