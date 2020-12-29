@@ -24,66 +24,52 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
-
-function keyDownHandler(event) {
+function keyDownHandler(event, game) {
     if (event.keyCode == 67) { // c
-        ballArray[ballArray.length] = new Ball(randomX(), randomY(), randomRadius());
+        game.objects.balls[game.objects.balls.length] = new Ball(randomX(), randomY(), randomRadius());
     } else if (event.keyCode == 80) { // p
-        paused = !paused;
+        game.simulation.paused = !game.simulation.paused;
     } else if (event.keyCode == 32) { // space bar
-        paused = !paused;
+        game.simulation.paused = !game.simulation.paused;
     } else if (event.keyCode == 71) { // g
-        gravityOn = !gravityOn;
-        dragOn = !dragOn;
+        game.simulation.gravity = !game.simulation.gravity;
+        game.simulation.drag = !game.simulation.drag;
     } else if (event.keyCode == 77) { // m
-        soundOn = !soundOn;
+        game.simulation.sound = !game.simulation.sound;
     } else if (event.keyCode == 65) { // A
-        leftHeld = true;
+        game.context.leftHeld = true;
     } else if (event.keyCode == 87) { // W
-        upHeld = true;
+        game.context.upHeld = true;
     } else if (event.keyCode == 68) { // D
-        rightHeld = true;
+        game.context.rightHeld = true;
     } else if (event.keyCode == 83) { // S
-        downHeld = true;
+        game.context.downHeld = true;
     } else if (event.keyCode == 82) { // r
-        resetGame();
+        resetGame(game);
     } else if (event.keyCode == 75) { // k
-        clearCanv = !clearCanv;
+        game.simulation.clearCanv = !game.simulation.clearCanv;
     } else if (event.keyCode == 88) { // x
-        bigBalls = !bigBalls;
+        game.simulation.bigBalls = !game.simulation.bigBalls;
     } else if (event.keyCode == 37) { //left arrow
-	leftHeld = true;
+	game.context.leftHeld = true;
     } else if (event.keyCode == 39) { //right arrow
-	rightHeld = true;
+	game.context.rightHeld = true;
     }
 }
 
-function keyUpHandler(event) {
+function keyUpHandler(event, game) {
     if (event.keyCode == 65) { // A
-        leftHeld = false;
+        game.context.leftHeld = false;
     } else if (event.keyCode == 87) { // W
-        upHeld = false;
+        game.context.upHeld = false;
     } else if (event.keyCode == 68) { // D
-        rightHeld = false;
+        game.context.rightHeld = false;
     } else if (event.keyCode == 83) { // S
-        downHeld = false;
+        game.context.downHeld = false;
     }else if (event.keyCode == 37) { //left arrow
-	leftHeld = false;
+	game.context.leftHeld = false;
     } else if (event.keyCode == 39) { //right arrow
-	rightHeld = false;
+	game.context.rightHeld = false;
     }
 }
 
-function arrowControls() {
-    if (leftHeld) { // left arrow
-	pushLeft(0.1);
-    } if (upHeld) { // up arrow
-	pushUp(0.1);
-    } if (rightHeld) { // right arrow
-	pushRight(0.1);
-    } if (downHeld) { // down arrow
-	pushDown(0.1);
-    }
-}

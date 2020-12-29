@@ -1,4 +1,6 @@
-// This code originally written by github user miskimit and released under MIT license as below. 
+// Copyright (c) 2020 Neil D. Lawrence
+
+// Based on code originally written by github user miskimit and released under MIT license as below. 
 
 // https://github.com/miskimit/miskimit.github.io/
 
@@ -24,7 +26,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-function Ball(x, y, radius) {
+function Ball(context, x, y, radius) {
     this.radius = radius;
     this.dx = randomDx();
     this.dy = randomDy();
@@ -35,13 +37,13 @@ function Ball(x, y, radius) {
     this.y = y;
     this.color = randomColor();
     this.draw = function() {
-        ctx.beginPath();
-        ctx.arc(Math.round(this.x), Math.round(this.y), this.radius, 0, 2*Math.PI);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
-        ctx.stroke();
-        ctx.closePath();
+        context.ctx.beginPath();
+        context.ctx.arc(Math.round(this.x), Math.round(this.y), this.radius, 0, 2*Math.PI);
+        context.ctx.fillStyle = this.color;
+        context.ctx.fill();
+        context.ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
+        context.ctx.stroke();
+        context.ctx.closePath();
     };
     this.speed = function() {
         // magnitude of velocity vector
@@ -56,11 +58,11 @@ function Ball(x, y, radius) {
         return (0.5 * this.mass * this.speed() * this.speed());
     };
     this.onGround = function() {
-        return (this.y + this.radius >= canvas.height)
+        return (this.y + this.radius >= context.canvas.height)
     }
 }
 
-function Post(x, y, radius, color) {
+function Post(context, x, y, radius, color) {
     this.radius = radius;
     this.dx = 0;
     this.dy = 0;
@@ -71,13 +73,13 @@ function Post(x, y, radius, color) {
     this.y = y;
     this.color = color;
     this.draw = function() {
-        ctx.beginPath();
-        ctx.arc(Math.round(this.x), Math.round(this.y), this.radius, 0, 2*Math.PI);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
-        ctx.stroke();
-        ctx.closePath();
+        context.ctx.beginPath();
+        context.ctx.arc(Math.round(this.x), Math.round(this.y), this.radius, 0, 2*Math.PI);
+        context.ctx.fillStyle = this.color;
+        context.ctx.fill();
+        context.ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
+        context.ctx.stroke();
+        context.ctx.closePath();
     };
     this.speed = function() {
         // magnitude of velocity vector
@@ -88,13 +90,13 @@ function Post(x, y, radius, color) {
         return 0;
     };
     this.kineticEnergy = function () {
-    // only for masturbation purposes, not rly used for computation.
+    // not rly used for computation.
         return 0;
     };
 }
 
 
-function Box(x, y, w, h, color) {
+function Box(context, x, y, w, h, color) {
     this.x = x;
     this.y = y;
     this.w = w;
@@ -102,37 +104,38 @@ function Box(x, y, w, h, color) {
     this.membraneImmune = false;
     this.color = color;
     this.draw = function() {
-        ctx.beginPath();
-	ctx.moveTo(x, y);
-	ctx.lineTo(x+w, y);
-	ctx.lineTo(x+w, y+h);
-	ctx.lineTo(x, y+h);
-	ctx.lineTo(x, y);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
-        ctx.stroke();
-        ctx.closePath();
+        context.ctx.beginPath();
+	context.ctx.moveTo(x, y);
+	context.ctx.lineTo(x+w, y);
+	context.ctx.lineTo(x+w, y+h);
+	context.ctx.lineTo(x, y+h);
+	context.ctx.lineTo(x, y);
+        context.ctx.fillStyle = this.color;
+        context.ctx.fill();
+        context.ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
+        context.ctx.stroke();
+        context.ctx.closePath();
     };
 }
 
-function Membrane(x, y, w, h, color) {
+function Membrane(context, x, y, w, h, color) {
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
     this.color = color;
     this.draw = function() {
-        ctx.beginPath();
-	ctx.moveTo(x, y);
-	ctx.lineTo(x+w, y);
-	ctx.lineTo(x+w, y+h);
-	ctx.lineTo(x, y+h);
-	ctx.lineTo(x, y);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
-        ctx.stroke();
-        ctx.closePath();
+        context.ctx.beginPath();
+	context.ctx.moveTo(x, y);
+	context.ctx.lineTo(x+w, y);
+	context.ctx.lineTo(x+w, y+h);
+	context.ctx.lineTo(x, y+h);
+	context.ctx.lineTo(x, y);
+        context.ctx.fillStyle = this.color;
+        context.ctx.fill();
+        context.ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
+        context.ctx.stroke();
+        context.ctx.closePath();
     };
 }
+

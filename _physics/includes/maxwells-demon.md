@@ -19,6 +19,6 @@
 
 \notes{Maxwell's demon allows us to connect thermodynamics with information theory (see e.g. @Hosoya-demon15;@Hosoya-maxwell11;@Bub-maxwell01;@Brillouin-maxwell51;@Szilard-intelligenter29). The connection arises due to a fundamental connection between information erasure and energy consumption @Landauer-irreversibility61.}
 
-
+@Alemi-therml18
 
 \endif

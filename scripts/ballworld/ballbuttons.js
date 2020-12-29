@@ -1,4 +1,6 @@
-// This code originally written by github user miskimit and released under MIT license as below. 
+// Copyright (c) 2020 Neil D. Lawrence
+
+// Based on code originally written by github user miskimit and released under MIT license as below. 
 
 // https://github.com/miskimit/miskimit.github.io/
 
@@ -25,27 +27,58 @@
 // SOFTWARE.
 
 
-function clickReporter(event) {
-    const rect = canvas.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    if(x > canvas.width/2) {
-	pushLeft(2.0)
-    } else {
-	pushRight(2.0)
-    }
-}
-function togglePause(event) {
-    paused = !paused;
+
+function togglePause(game) {
+    game.simulation.paused = !game.simulation.paused;
 }
 
-function arrowControls() {
-    if (leftHeld) { // left arrow
-	pushLeft();
-    } if (upHeld) { // up arrow
-	pushUp();
-    } if (rightHeld) { // right arrow
-	pushRight();
-    } if (downHeld) { // down arrow
-	pushDown();
+
+
+function keyDownHandler(event, game) {
+    if (event.keyCode == 67) { // c
+        game.objects.balls[game.objects.balls.length] = new Ball(randomX(game), randomY(game), randomRadius(game));
+    } else if (event.keyCode == 80) { // p
+        game.togglePause();
+    } else if (event.keyCode == 32) { // space bar
+        game.togglePause();
+    } else if (event.keyCode == 71) { // g
+        game.simulation.gravity = !game.simulation.gravity;
+        game.simulation.drag = !game.simulation.drag;
+    } else if (event.keyCode == 77) { // m
+        game.simulation.sound = !game.simulation.sound;
+    } else if (event.keyCode == 65) { // A
+        game.context.leftHeld = true;
+    } else if (event.keyCode == 87) { // W
+        game.context.upHeld = true;
+    } else if (event.keyCode == 68) { // D
+        game.context.rightHeld = true;
+    } else if (event.keyCode == 83) { // S
+        game.context.downHeld = true;
+    } else if (event.keyCode == 82) { // r
+        game.reset();
+    } else if (event.keyCode == 75) { // k
+        game.simulation.clearCanv = !game.simulation.clearCanv;
+    } else if (event.keyCode == 88) { // x
+        game.simulation.bigBalls = !game.simulation.bigBalls;
+    } else if (event.keyCode == 37) { //left arrow
+	game.context.leftHeld = true;
+    } else if (event.keyCode == 39) { //right arrow
+	game.context.rightHeld = true;
+    }
+}
+
+function keyUpHandler(event, game) {
+    if (event.keyCode == 65) { // A
+        game.context.leftHeld = false;
+    } else if (event.keyCode == 87) { // W
+        game.context.upHeld = false;
+    } else if (event.keyCode == 68) { // D
+        game.context.rightHeld = false;
+    } else if (event.keyCode == 83) { // S
+        game.context.downHeld = false;
+    }else if (event.keyCode == 37) { //left arrow
+	game.context.leftHeld = false;
+    } else if (event.keyCode == 39) { //right arrow
+	game.context.rightHeld = false;
     }
 }

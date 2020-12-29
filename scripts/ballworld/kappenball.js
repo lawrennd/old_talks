@@ -1,118 +1,156 @@
-// This code originally written by github user miskimit and released under MIT license as below. 
+// Copyright (c) 2020 Neil D. Lawrence
 
-// https://github.com/miskimit/miskimit.github.io/
+class Kappenball extends Game {
+    constructor(objects, params, simulation, boundaries, context, colors) {
+	super(objects, params, simulation, boundaries, context, colors);
 
-// MIT License
+	
+	this.holeWidth = 100;
+	this.objects.pits[this.objects.pits.length] = new Box(this.context, 0, this.context.canvas.height-40, 90, 30, this.colors.pin);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 0, this.context.canvas.height-10, 90, 10, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 95, this.context.canvas.height-35, 5, this.colors.ground);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 90, this.context.canvas.height-30, 10, 20, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 95, this.context.canvas.height-5, 5, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 305, this.context.canvas.height-35, 5, this.colors.ground);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 300, this.context.canvas.height-30, 10, 20, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 305, this.context.canvas.height-5, 5, this.colors.ground);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 310, this.context.canvas.height-10, 280, 10, this.colors.ground);
+	this.objects.pits[this.objects.pits.length] = new Box(this.context, 310, this.context.canvas.height-40, 280, 30, this.colors.pin);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 595, this.context.canvas.height-35, 5, this.colors.ground);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 590, this.context.canvas.height-30, 10, 20, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 595, this.context.canvas.height-5, 5, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 805, this.context.canvas.height-35, 5, this.colors.ground);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 800, this.context.canvas.height-30, 10, 20, this.colors.ground);
+	this.objects.posts[this.objects.posts.length] = new Post(this.context, 805, this.context.canvas.height-5, 5, this.colors.ground);
+	this.objects.pits[this.objects.pits.length] = new Box(this.context, 810, this.context.canvas.height-40, 750, 30, this.colors.pin);
+	this.objects.boxes[this.objects.boxes.length] = new Box(this.context, 810, this.context.canvas.height-10, 90, 10, this.colors.ground);
+    }
+    incrementScore(amount) {
+	score.value = parseInt(score.value)+amount;
+    }
+    incrementEnergy(accel) {
+	energy.value = parseFloat(energy.value)+accel;
+    }
+    birth() {
+	var temp = new Ball(this.context, this.context.canvas.width/2, 10, 10);
+	temp.dx = 0;
+	temp.dy = 1;
+	this.objects.balls[this.objects.balls.length] = temp;
+    }
+    reset() {
+	this.birth();
+    }
+}
 
-// Copyright (c) 2016 miskimit
 
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
 
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
 
-var canvas = document.getElementById("kappenball-canvas");
-var ctx = canvas.getContext("2d");
 
 var slider = document.getElementById("kappenball-stochasticity");
 var score = document.getElementById("kappenball-score");
 var ballCount = document.getElementById("kappenball-count");
 var energy = document.getElementById("kappenball-energy");
 
-var newballButton = document.getElementById("kappenball-newball");
-var pauseButton = document.getElementById("kappenball-pause");
-
-canvas.addEventListener("click", clickReporter);
-newballButton.addEventListener("click", resetGame);
-pauseButton.addEventListener("click", togglePause);
-
-
 score.value = 0
 ballCount.value = 0
 energy.value = 0
 
+var newballButton = document.getElementById("kappenball-newball");
+var pauseButton = document.getElementById("kappenball-pause");
+
+newballButton.addEventListener("click", function() {
+    kappenball.reset()
+});
+pauseButton.addEventListener("click", function() {
+    kappenball.togglePause()
+});
+
+document.addEventListener("keydown", function() {
+     keyDownHandler(event, kappenball);
+});
+document.addEventListener("keyup", function() {
+    keyUpHandler(event, kappenball);
+});
+
+
+
+
 // Update the current slider value (each time you drag the slider handle)
 var stochasticity=slider.value
 slider.oninput = function() {
-  stochasticity= this.value;
+    kappenball.params.stochasticity=this.value;
 }
 
-var paused = true;
-var gravityOn = true;
-var dragOn = true;
-var soundOn = true;
+var colors = {
+    ground: 'rgba(56, 256, 56, 0.8)',
+    pin: 'rgba(256, 56, 56, 0.8)',
+    ball: 'rgba(200, 200, 200, 0.8)',
+    membrane: 'rgba(56, 256, 56, 0.8)',
+    hot: 'rgba(256, 56, 56, 0.8)',
+    cold: 'rgba(56, 56, 256, 0.8)'
+};
 
-var clearCanv = true;
 
-var bigBalls = false;
-var wallBounce = true;
-var floorBounce = false;
-var floorWrap = false;
-var floorWrapCenter = true;
-var floorReset = false;
+var simulation = {
+    paused: false,
+    gravity: true,
+    drag: true,
+    sound: false,
+    clearCanv: true,
+    bigBalls: false,
+    dt: 1
+};
 
-var groundColor = 'rgba(56, 256, 56, 0.8)';
-var pinColor = 'rgba(256, 56, 56, 0.8)';
+var boundaries = {
+    wallBounce: true,
+    floorBounce: false,
+    floorWrap: false,
+    floorWrapCenter: true,
+    floorReset: false
+};
 
-var holeWidth = 100;
-var gravityAccel = 0.06;
-var arrowAccel = 0.4;
-var stochasticityScale = 0.2;
-var dragFactor = 0.97
+var params = {
+    inelasticityFactor: 1.0,
+    demonThreshold: 3,
+    initialSpeed: 5,
+    energy: 0.0,
+    gravityAccel: 0.06,
+    arrowAccel: 0.4,
+    stochasticity: 0.0,
+    stochasticityScale: 0.2,
+    dragFactor: 0.97
+};
 
-function ballDie(obj) {
-    ballArray.splice(obj, 1);
-    ballCount.value = parseInt(ballCount.value)-1
+var objects = {
+    balls: [],
+    boxes: [],
+    pits: [],
+    posts: [],
+    membranes: []
+};
+
+var context = {
+    canvas: document.getElementById("kappenball-canvas")
+
+};
+
+kappenball = new Kappenball(objects, params, simulation, boundaries, context, colors);
+
+function clickReporter(event, game) {
+    const rect = game.context.canvas.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    if(x > game.context.canvas.width/2) {
+	game.pushLeft(2.0)
+    } else {
+	game.pushRight(2.0)
+    }
 }
-function incrementScore() {
-    score.value = parseInt(score.value)+10
-}
-function incrementEnergy(accel) {
-    energy.value = parseFloat(energy.value)+accel;
-}
-function ballBirth() {
-    var temp = new Ball(canvas.width/2, 10, 10);
-    temp.dx = 0;
-    temp.dy = 1;
-    ballArray[ballArray.length] = temp;
-}
 
-function resetGame() {
-    ballBirth();
-}
 
-pitArray[pitArray.length] = new Box(0, canvas.height-40, 90, 30, pinColor);
-boxArray[boxArray.length] = new Box(0, canvas.height-10, 90, 10, groundColor);
-postArray[postArray.length] = new Post(95, canvas.height-35, 5, groundColor);
-boxArray[boxArray.length] = new Box(90, canvas.height-30, 10, 20, groundColor);
-postArray[postArray.length] = new Post(95, canvas.height-5, 5, groundColor);
-postArray[postArray.length] = new Post(305, canvas.height-35, 5, groundColor);
-boxArray[boxArray.length] = new Box(300, canvas.height-30, 10, 20, groundColor);
-postArray[postArray.length] = new Post(305, canvas.height-5, 5, groundColor);
-boxArray[boxArray.length] = new Box(310, canvas.height-10, 280, 10, groundColor);
-pitArray[pitArray.length] = new Box(310, canvas.height-40, 280, 30, pinColor);
-postArray[postArray.length] = new Post(595, canvas.height-35, 5, groundColor);
-boxArray[boxArray.length] = new Box(590, canvas.height-30, 10, 20, groundColor);
-postArray[postArray.length] = new Post(595, canvas.height-5, 5, groundColor);
-postArray[postArray.length] = new Post(805, canvas.height-35, 5, groundColor);
-boxArray[boxArray.length] = new Box(800, canvas.height-30, 10, 20, groundColor);
-postArray[postArray.length] = new Post(805, canvas.height-5, 5, groundColor);
-pitArray[pitArray.length] = new Box(810, canvas.height-40, 750, 30, pinColor);
-boxArray[boxArray.length] = new Box(810, canvas.height-10, 90, 10, groundColor);
+kappenball.context.canvas.addEventListener("click", function(event) {
+    clickReporter(event, kappenball);
+});
 
-resetGame();
-
-draw();
+kappenball.reset();
+draw(kappenball);

@@ -1,115 +1,125 @@
-// This code originally written by github user miskimit and released under MIT license as below. 
+// Copyright (c) 2020 Neil D. Lawrence
 
-// https://github.com/miskimit/miskimit.github.io/
+class Szilard extends Game {
+    constructor(objects, params, simulation, boundaries, context, colors) {
+	super(objects, params, simulation, boundaries, context, colors);
+	this.objects.membranes[this.objects.membranes.length] = new Box(this.context, this.context.canvas.width/2-5, 0, 5, this.context.canvas.height, this.colors.cold);
+	this.objects.membranes[this.objects.membranes.length] = new Box(this.context, this.context.canvas.width/2, 0, 5, this.context.canvas.height, this.colors.hot);
+	
+    }
+    birth(game) {
+	var radius = 10;
+	var i = 1;
+	var temp = new Ball(this.context,
+			    radius, this.context.canvas.height/2,
+			    radius);
+	temp.dy = 0.0;
+	temp.dx = this.params.initialSpeed;
+	this.objects.balls[this.objects.balls.length] = temp;    
+    }
+    demon() {
+	for (var obj in this.objects.balls) {
+	    var velocity = Math.sqrt(this.objects.balls[obj].dx*this.objects.balls[obj].dx + this.objects.balls[obj].dy*this.objects.balls[obj].dy);
+	    if(this.objects.balls[obj].x < this.context.canvas.width/2-5-this.objects.balls[obj].radius)
+	    {
+		if(velocity>this.params.demonThreshold){
+		    this.objects.balls[obj].color = this.colors.hot
+		    this.objects.balls[obj].membraneImmune = true;
+		} else {
+		    this.objects.balls[obj].color = this.colors.cold
+		    this.objects.balls[obj].membraneImmune = false;
+		}
+		
+	    }
+	    if(this.objects.balls[obj].x > this.context.canvas.width/2+5+this.objects.balls[obj].radius){
+		if(velocity>this.params.demonThreshold){
+		    this.objects.balls[obj].color = this.colors.hot
+		    this.objects.balls[obj].membraneImmune = false;
+		} else {
+		    this.objects.balls[obj].color = this.colors.cold
+		    this.objects.balls[obj].membraneImmune = true;
+		}
+	    }
+	}
+    }
+    
+    reset() {
+	this.objects.balls = [];
+	this.birth();
+    }
+}
 
-// MIT License
-
-// Copyright (c) 2016 miskimit
-
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
-
-var canvas = document.getElementById("szilard-canvas");
-var ctx = canvas.getContext("2d");
 
 var newballButton = document.getElementById("szilard-newball");
 var pauseButton = document.getElementById("szilard-pause");
 
-newballButton.addEventListener("click", resetGame);
-pauseButton.addEventListener("click", togglePause);
+newballButton.addEventListener("click", function() {
+    szilard.reset();
+});
+pauseButton.addEventListener("click", function() {
+    szilard.togglePause();
+});
 
-var membraneColor = 'rgba(56, 256, 56, 0.8)';
-var hotColor = 'rgba(256, 56, 56, 0.8)';
-var coldColor = 'rgba(56, 56, 256, 0.8)';
+// document.addEventListener("keydown", function() {
+//     keyDownHandler(event, szilard);
+// });
+// document.addEventListener("keyup", function() {
+//     keyUpHandler(event, szilard);
+// });
+
+var colors = {
+    ground: 'rgba(56, 256, 56, 0.8)',
+    pin: 'rgba(256, 56, 56, 0.8)',
+    ball: 'rgba(200, 200, 200, 0.8)',
+    membrane: 'rgba(56, 256, 56, 0.8)',
+    hot: 'rgba(256, 56, 56, 0.8)',
+    cold: 'rgba(56, 56, 256, 0.8)'
+};
+
+var simulation = {
+    paused: true,
+    gravity: false,
+    drag: false,
+    sound: false,
+    clearCanv: true,
+    dt: 1    
+};
+
+var boundaries = {
+    wallBounce: true,
+    floorBounce: true,
+    floorWrap: false,
+    floorWrapCenter: true,
+    floorReset: false
+};
+
+var params = {
+    inelasticityFactor: 1.0,
+    demonThreshold: 3,
+    initialSpeed: 5,
+    energy: 0.0,
+    gravityAccel: 0.06,
+    arrowAccel: 0.4,
+    stochasticity: 0.0,
+    stochasticityScale: 0.2,
+    dragFactor: 1.0
+};
+
+var objects = {
+    balls: [],
+    boxes: [],
+    pits: [],
+    posts: [],
+    membranes: []
+};
+
+var context = {
+    canvas: document.getElementById("szilard-canvas")
+};
+
+var szilard = new Szilard(objects, params, simulation, boundaries, context, colors);
 
 
-var paused = true;
-var gravityOn = false;
-var dragOn = false;
-var soundOn = false;
-var initialSpeed = 5;
-var clearCanv = true;
+szilard.reset();
 
-var demonThreshold = 3;
-
-var wallBounce = true;
-var floorBounce = true;
-var floorWrap = false;
-var floorWrapCenter = true;
-var floorReset = false;
-
-var energy = 0.0;
-var gravityAccel = 0.06;
-var arrowAccel = 0.4;
-var stochasticity = 0;
-var stochasticityScale = 0.2;
-var dragFactor = 1;
-
-function incrementEnergy(accel) {
-}
-
-function incrementScore() {
-}
-
-function ballsBirth() {
-    radius = 10;
-    var temp = new Ball(i, radius, radius);
-    temp.dx = Math.random()*1e-1;
-    temp.dy = initialSpeed;
-    ballArray[ballArray.length] = temp;    
-}
-
-
-function demonInspect() {
-    for (var obj in ballArray) {
-	var velocity = Math.sqrt(ballArray[obj].dx*ballArray[obj].dx + ballArray[obj].dy*ballArray[obj].dy);
-	if(ballArray[obj].x < canvas.width/2-5-ballArray[obj].radius)
-	{
-	    if(velocity>demonThreshold){
-		ballArray[obj].color = hotColor
-		ballArray[obj].membraneImmune = true;
-	    } else {
-		ballArray[obj].color = coldColor
-		ballArray[obj].membraneImmune = false;
-	    }
-	    
-	}
-	if(ballArray[obj].x > canvas.width/2+5+ballArray[obj].radius){
-	    if(velocity>demonThreshold){
-		ballArray[obj].color = hotColor
-		ballArray[obj].membraneImmune = false;
-	    } else {
-		ballArray[obj].color = coldColor
-		ballArray[obj].membraneImmune = true;
-	    }
-	}
-    }
-}
-
-function resetGame() {
-    ballArray = [];
-    ballsBirth();
-}
-
-membraneArray[membraneArray.length] = new Box(canvas.width/2-5, 0, 5, canvas.height, coldColor);
-membraneArray[membraneArray.length] = new Box(canvas.width/2, 0, 5, canvas.height, hotColor);
-
-resetGame();
-
-draw();
+draw(szilard);
