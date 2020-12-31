@@ -59,24 +59,6 @@ class Multiball extends Game {
 	    }
 	}
 	if (this.simulation.time % 1000 == 0) {
-	    const normCounts = this.histogram.y.map(x => x/this.histogram.sum);
-	    let trace = {
-		type: 'bar', 
-		x: this.histogram.x,
-		y: normCounts,
-		width: this.histogram.width,
-		marker: {
-		    color: 'yellow'
-		}
-	    }
-	    let data = [trace];
-	    let layout = {
-		paper_bgcolor: "rgba(0,0,0,0)",		
-		plot_bgcolor: "rgba(0,0,0,0)",
-		xaxis: {range: [this.histogram.minSpeed, this.histogram.maxSpeed]},
-		yaxis: {range: [0, 0.13]}
-	    };
-	    Plotly.newPlot("multiball-histogram-canvas", data, layout);
 	    this.simulation.draw=true;
 	    
 	}
@@ -99,10 +81,34 @@ pauseButton.addEventListener("click", function() {
 let histButton = document.getElementById("multiball-histogram");
 
 histButton.addEventListener("click", function() {
-    multiball.toggleDraw();//histogramSpeeds(multiball.objects.balls);
+    histogramSpeeds(multiball);
 });
 
-function histogramSpeeds(balls) {
+let skipButton = document.getElementById("multiball-skip");
+
+skipButton.addEventListener("click", function() {
+    multiball.toggleDraw();
+});
+
+function histogramSpeeds(game) {
+	    const normCounts = game.histogram.y.map(x => x/game.histogram.sum);
+	    let trace = {
+		type: 'bar', 
+		x: game.histogram.x,
+		y: normCounts,
+		width: game.histogram.width,
+		marker: {
+		    color: 'grey'
+		}
+	    }
+	    let data = [trace];
+	    let layout = {
+		paper_bgcolor: "rgba(0,0,0,0)",		
+		plot_bgcolor: "rgba(0,0,0,0)",
+		xaxis: {range: [game.histogram.minSpeed, game.histogram.maxSpeed]},
+		yaxis: {range: [0, 0.13]}
+	    };
+	    Plotly.newPlot("multiball-histogram-canvas", data, layout);
 }
 
 var colors = {
