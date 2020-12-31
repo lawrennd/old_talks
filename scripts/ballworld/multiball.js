@@ -5,6 +5,24 @@ class Multiball extends Game {
     constructor(objects, params, simulation, boundaries, context, colors)
     {
 	super(objects, params, simulation, boundaries, context, colors);
+	const nbins = 40;
+	const minSpeed = -20;
+	const maxSpeed = 20;
+	const gap = (maxSpeed-minSpeed)/nbins;
+	this.histogram = {
+	    nbins: nbins,
+	    minSpeed: minSpeed,
+	    maxSpeed: maxSpeed,
+	    gap: gap,
+	    y: new Array(nbins).fill(0),
+	    x: new Array(nbins),
+	    width: new Array(nbins).fill(gap),
+	    sum: 0,
+	}
+	for(let i=0; i<nbins; i++) {
+	    this.histogram.x[i] = i*gap+minSpeed;
+	}
+	
     }
     birth() {
 	var radius = 10;
@@ -22,7 +40,48 @@ class Multiball extends Game {
 	this.objects.balls = [];
 	this.birth();
     }
+    demon() {
+    
+	for (let i = 0; i < this.objects.balls.length; i++) {
+	    let dx = this.objects.balls[i].dx-this.histogram.minSpeed;
+	    let dy = this.objects.balls[i].dy-this.histogram.minSpeed;
+	    for (let j=0; j<this.histogram.nbins; j++) {
+		if(dx > j*this.histogram.gap && dx < (j+1)*this.histogram.gap) {
+		    this.histogram.y[j]++;
+		    this.histogram.sum++;
 
+		}
+		if(dy > j*this.histogram.gap && dy < (j+1)*this.histogram.gap) {
+		    this.histogram.y[j]++;
+		    this.histogram.sum++;
+
+		}
+	    }
+	}
+	if (this.simulation.time % 1000 == 0) {
+	    const normCounts = this.histogram.y.map(x => x/this.histogram.sum);
+	    let trace = {
+		type: 'bar', 
+		x: this.histogram.x,
+		y: normCounts,
+		width: this.histogram.width,
+		marker: {
+		    color: 'yellow'
+		}
+	    }
+	    let data = [trace];
+	    let layout = {
+		paper_bgcolor: "rgba(0,0,0,0)",		
+		plot_bgcolor: "rgba(0,0,0,0)",
+		xaxis: {range: [this.histogram.minSpeed, this.histogram.maxSpeed]},
+		yaxis: {range: [0, 0.13]}
+	    };
+	    Plotly.newPlot("multiball-histogram-canvas", data, layout);
+	    this.simulation.draw=true;
+	    
+	}
+    }
+    
 }
 
 
@@ -35,6 +94,16 @@ newballButton.addEventListener("click", function() {
 pauseButton.addEventListener("click", function() {
     multiball.togglePause();
 });
+
+
+let histButton = document.getElementById("multiball-histogram");
+
+histButton.addEventListener("click", function() {
+    multiball.toggleDraw();//histogramSpeeds(multiball.objects.balls);
+});
+
+function histogramSpeeds(balls) {
+}
 
 var colors = {
     ground: 'rgba(56, 256, 56, 0.8)',

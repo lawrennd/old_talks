@@ -45,16 +45,15 @@
   <section>
     <div id="title"><p id="balls" style="font-size: 15pt">Multiball</p><br/></div>
   </section>
-  <div>
-    <canvas id="multiball-canvas" width="900" height="500" style="border:1px solid black;display:inline;text-align:center "></canvas></div>
-  <div><button id="multiball-newball" style="text-align:right">New Ball</button><button id="multiball-pause" style="text-align:right">Pause</button></div>
+  <div width="900">
+    <canvas id="multiball-canvas" width="500" height="500" style="border:1px solid black;display:inline;text-align:left "></canvas>   <div id="multiball-histogram-canvas" style="width:450px;height:350px;display:inline-block;text-align:right"></div>
+</div>
+  <div><button id="multiball-newball" style="text-align:right">New Ball</button><button id="multiball-pause" style="text-align:right">Pause</button><button id="multiball-histogram" style="text-align:right">Histogram</button></div>
 
-    
-    <script src="./scripts/ballworld/constructors.js"></script>
-    <script src="./scripts/ballworld/script2.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
     <script src="./scripts/ballworld/ballworld.js"></script>
-    <script src="./scripts/ballworld/ballbuttons.js"></script>
     <script src="./scripts/ballworld/multiball.js"></script>
+
   </div>
 </body>
 </html>

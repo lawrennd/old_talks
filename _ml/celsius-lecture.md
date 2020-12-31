@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Celsius Lecture"
 abstract: >
   Technical debt 
 reveal: True
@@ -28,7 +28,7 @@ transition: None
 \include{_physics/includes/szilards-engine.md}
 \include{_physics/includes/kappenball.md}
 
-Yes, something like that is a good idea. I'm going to start a small document.
+\notes{Yes, something like that is a good idea. I'm going to start a small document.
 
 22nd sounds sensible.
 
@@ -115,7 +115,7 @@ I have a few photos and bios of various lengths available here:
  
 http://inverseprobability.com/biog.html
  
-Neil
+Neil}
 
 
 \thanks

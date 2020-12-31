@@ -453,14 +453,11 @@ function bounces (circle, rect)
 
 const timer = ms => new Promise(res => setTimeout(res, ms))
 
-async function draw(game) {
 
-    if(game.simulation.clearCanv)
-	game.clearCanvas();
-    game.canvasBackground();
-    
+function runPhysics(game) {
     //game.horizontalDrag();
     game.move();
+    game.simulation.time += game.simulation.dt;
     game.physics();
     
     // Perform global checks
@@ -468,18 +465,28 @@ async function draw(game) {
     
     // Check for collisions
     game.collisions()
-    game.logger()
-    
+    game.logger()    
+}
+
+async function draw(game) {
+
+    if(game.simulation.clearCanv)
+	game.clearCanvas();
+    game.canvasBackground();
+    do {
+	setTimeout(runPhysics(game), 0);
+    }
+    while(!game.simulation.draw)
+
     game.draw();
-
-
+    
     // fix this to use setTimeout to set timing: http://www.javascriptkit.com/javatutors/requestanimationframe.shtml
     // Add 100 millisecond delay
     do {
-    await timer(10);
+	await timer(10);
     }
     while(game.simulation.paused);
-
+    
     requestAnimationFrame(function() {
         draw(game);
     });
@@ -499,6 +506,8 @@ class Game {
 	this.context.upHeld = false;
 	this.context.downHeld = false;
 	this.colors = colors;
+	this.simulation.time = 0;
+	this.simulation.draw = true;
     }
 
     birth() { // set up at start
@@ -507,6 +516,9 @@ class Game {
     }
     togglePause() {
 	this.simulation.paused = !this.simulation.paused;
+    }
+    toggleDraw() {
+	this.simulation.draw = !this.simulation.draw;
     }
     physics() { // apply the physics
 	this.diffusion();
