@@ -362,6 +362,7 @@ function Membrane(context, x, y, w, h, color) {
 }
 
 
+
 function distanceNextFrame(a, b) {
     return Math.sqrt((a.x + a.dx - b.x - b.dx)**2 + (a.y + a.dy - b.y - b.dy)**2) - a.radius - b.radius;
 }
@@ -450,9 +451,26 @@ function bounces (circle, rect)
     return { bounce:true, x: dx*side.x/norm, y: dy*side.y/norm };   
 }
 
-
-const timer = ms => new Promise(res => setTimeout(res, ms))
-
+function histogramSpeeds(game, canvas) {
+    const normCounts = game.histogram.y.map(x => x/game.histogram.sum);
+    let trace = {
+	type: 'bar', 
+	x: game.histogram.x,
+	y: normCounts,
+	width: game.histogram.width,
+	marker: {
+	    color: 'grey'
+	}
+    }
+    let data = [trace];
+    let layout = {
+	paper_bgcolor: "rgba(0,0,0,0)",		
+	plot_bgcolor: "rgba(0,0,0,0)",
+	xaxis: {range: [game.histogram.minSpeed, game.histogram.maxSpeed]},
+	yaxis: {range: [0, 0.13]}
+    };
+    Plotly.newPlot(canvas, data, layout, {displayModeBar: false});
+}
 
 function runPhysics(game) {
     //game.horizontalDrag();
@@ -467,6 +485,9 @@ function runPhysics(game) {
     game.collisions()
     game.logger()    
 }
+
+
+const timer = ms => new Promise(res => setTimeout(res, ms))
 
 async function draw(game) {
 
@@ -540,6 +561,8 @@ class Game {
             this.objects.balls[ball].dy *= this.params.dragFactor
 	}
     }
+    applyInelasticity() {
+    }
     horizontalDrag() {
 	for (let obj in this.objects.balls) {
             this.objects.balls[obj].dx *= this.params.dragFactor
@@ -591,10 +614,6 @@ class Game {
 	}
     }
     
-    applyInelasticity(ball) {
-	ball.dx *= this.params.inelasticityFactor;
-	ball.dy *= this.params.inelasticityFactor;
-    }
     incrementScore(amount) {
 	this.score += amount
     }
@@ -676,8 +695,6 @@ class Game {
                     ob2.dy = dy2F;
 
 		    this.staticCollision(ob1, ob2);
-		    this.applyInelasticity(ob1);
-		    this.applyInelasticity(ob2);
                     if (this.params.soundOn)
 			beep.play();
 		}            
@@ -871,4 +888,53 @@ class Game {
             this.objects.pins[obj].draw();
 	}
     }   
+}
+
+class HistogramGame extends Game {
+    constructor(objects, params, simulation, boundaries, context, colors, histogram) {
+	super(objects, params, simulation, boundaries, context, colors);
+	const step = (histogram.max-histogram.min)/histogram.nbins;
+	this.histogram = {
+	    nbins: histogram.nbins,
+	    min: histogram.min,
+	    max: histogram.max,
+	    step: step,
+	    y: new Array(histogram.nbins).fill(0),
+	    x: new Array(histogram.nbins),
+	    width: new Array(histogram.nbins).fill(step),
+	    sum: 0,
+	}
+	for(let i=0; i<histogram.nbins; i++) {
+	    this.histogram.x[i] = i*step+histogram.min;
+	}
+	
+    }
+    demon() {
+	for (let i = 0; i < this.objects.balls.length; i++) {
+	    let dx = this.objects.balls[i].dx-this.histogram.min;
+	    let dy = this.objects.balls[i].dy-this.histogram.min;
+	    for (let j=0; j<this.histogram.nbins; j++) {
+		if(dx > j*this.histogram.step && dx < (j+1)*this.histogram.step) {
+		    this.histogram.y[j]++;
+		    this.histogram.sum++;
+		    
+		}
+		if(dy > j*this.histogram.step && dy < (j+1)*this.histogram.step) {
+		    this.histogram.y[j]++;
+		    this.histogram.sum++;
+		    
+		}
+	    }
+	}
+	this.entropy = 0;
+	for(let i = 0; i < this.histogram.nbins; i++) {
+	    if(this.histogram.y[i] > 0) {
+		this.entropy -= this.histogram.y[i]/this.histogram.sum*Math.log(this.histogram.y[i]/this.histogram.sum)
+	    }
+	}
+	if (this.simulation.time % 1000 == 0) {
+	    this.simulation.draw=true;
+	    
+	}
+    }
 }

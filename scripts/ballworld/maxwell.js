@@ -1,11 +1,18 @@
 // Copyright (c) 2020 Neil D. Lawrence
 
-class Maxwell extends Game {
+let entropyMaxwell = document.getElementById("maxwell-entropy");
+entropyMaxwell.value = 0.00
+
+class Maxwell extends HistogramGame {
     constructor(objects, params, simulation, boundaries, context, colors) {
-	super(objects, params, simulation, boundaries, context, colors);
+	let histogram = {
+	    nbins: 40,
+	    min: -20,
+	    max: 20
+	};
+	super(objects, params, simulation, boundaries, context, colors, histogram);
 	this.objects.membranes[this.objects.membranes.length] = new Box(this.context, this.context.canvas.width/2-5, 0, 5, this.context.canvas.height, this.colors.cold);
 	this.objects.membranes[this.objects.membranes.length] = new Box(this.context, this.context.canvas.width/2, 0, 5, this.context.canvas.height, this.colors.hot);
-	
     }
     birth() {
 	var radius = 10;
@@ -46,6 +53,8 @@ class Maxwell extends Game {
 		}
 	    }
 	}
+	super.demon();
+	entropyMaxwell.value = this.entropy.toFixed(4);
     }
 
     reset() {
@@ -55,15 +64,24 @@ class Maxwell extends Game {
 }
 
 
+let newballMaxwellButton = document.getElementById("maxwell-newball");
+let pauseMaxwellButton = document.getElementById("maxwell-pause");
+let histMaxwellButton = document.getElementById("maxwell-histogram");
+let skipMaxwellButton = document.getElementById("maxwell-skip");
 
-var newballButton = document.getElementById("maxwell-newball");
-var pauseButton = document.getElementById("maxwell-pause");
-
-newballButton.addEventListener("click", function() {
+newballMaxwellButton.addEventListener("click", function() {
     maxwell.reset();
 });
-pauseButton.addEventListener("click", function() {
+pauseMaxwellButton.addEventListener("click", function() {
     maxwell.togglePause();
+});
+
+histMaxwellButton.addEventListener("click", function() {
+    histogramSpeeds(maxwell, "maxwell-histogram-canvas");
+});
+
+skipMaxwellButton.addEventListener("click", function() {
+    maxwell.toggleDraw();
 });
 
 // document.addEventListener("keydown", function() {

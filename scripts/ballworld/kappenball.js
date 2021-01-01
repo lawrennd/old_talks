@@ -56,13 +56,13 @@ score.value = 0
 ballCount.value = 0
 energy.value = 0
 
-var newballButton = document.getElementById("kappenball-newball");
-var pauseButton = document.getElementById("kappenball-pause");
+var newballKappenballButton = document.getElementById("kappenball-newball");
+var pauseKappenballButton = document.getElementById("kappenball-pause");
 
-newballButton.addEventListener("click", function() {
+newballKappenballButton.addEventListener("click", function() {
     kappenball.reset()
 });
-pauseButton.addEventListener("click", function() {
+pauseKappenballButton.addEventListener("click", function() {
     kappenball.togglePause()
 });
 

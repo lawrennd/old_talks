@@ -1,28 +1,17 @@
 // Copyright (c) 2020 Neil D. Lawrence
 
+let entropyMultiball = document.getElementById("multiball-entropy");
+entropyMultiball.value = 0.00
 
-class Multiball extends Game {
+class Multiball extends HistogramGame {
     constructor(objects, params, simulation, boundaries, context, colors)
     {
-	super(objects, params, simulation, boundaries, context, colors);
-	const nbins = 40;
-	const minSpeed = -20;
-	const maxSpeed = 20;
-	const gap = (maxSpeed-minSpeed)/nbins;
-	this.histogram = {
-	    nbins: nbins,
-	    minSpeed: minSpeed,
-	    maxSpeed: maxSpeed,
-	    gap: gap,
-	    y: new Array(nbins).fill(0),
-	    x: new Array(nbins),
-	    width: new Array(nbins).fill(gap),
-	    sum: 0,
-	}
-	for(let i=0; i<nbins; i++) {
-	    this.histogram.x[i] = i*gap+minSpeed;
-	}
-	
+	let histogram = {
+	    nbins: 40,
+	    min: -20,
+	    max: 20
+	};
+	super(objects, params, simulation, boundaries, context, colors, histogram);
     }
     birth() {
 	var radius = 10;
@@ -41,75 +30,35 @@ class Multiball extends Game {
 	this.birth();
     }
     demon() {
-    
-	for (let i = 0; i < this.objects.balls.length; i++) {
-	    let dx = this.objects.balls[i].dx-this.histogram.minSpeed;
-	    let dy = this.objects.balls[i].dy-this.histogram.minSpeed;
-	    for (let j=0; j<this.histogram.nbins; j++) {
-		if(dx > j*this.histogram.gap && dx < (j+1)*this.histogram.gap) {
-		    this.histogram.y[j]++;
-		    this.histogram.sum++;
-
-		}
-		if(dy > j*this.histogram.gap && dy < (j+1)*this.histogram.gap) {
-		    this.histogram.y[j]++;
-		    this.histogram.sum++;
-
-		}
-	    }
-	}
-	if (this.simulation.time % 1000 == 0) {
-	    this.simulation.draw=true;
-	    
-	}
+	super.demon();
+	entropyMultiball.value = this.entropy.toFixed(4);
     }
+	
     
 }
 
 
-var newballButton = document.getElementById("multiball-newball");
-var pauseButton = document.getElementById("multiball-pause");
+let newballMultiballButton = document.getElementById("multiball-newball");
+let pauseMultiballButton = document.getElementById("multiball-pause");
+let histMultiballButton = document.getElementById("multiball-histogram");
+let skipMultiballButton = document.getElementById("multiball-skip");
 
-newballButton.addEventListener("click", function() {
+
+newballMultiballButton.addEventListener("click", function() {
     multiball.reset();
 });
-pauseButton.addEventListener("click", function() {
+pauseMultiballButton.addEventListener("click", function() {
     multiball.togglePause();
 });
 
-
-let histButton = document.getElementById("multiball-histogram");
-
-histButton.addEventListener("click", function() {
-    histogramSpeeds(multiball);
+histMultiballButton.addEventListener("click", function() {
+    histogramSpeeds(multiball, "multiball-histogram-canvas");
 });
 
-let skipButton = document.getElementById("multiball-skip");
-
-skipButton.addEventListener("click", function() {
+skipMultiballButton.addEventListener("click", function() {
     multiball.toggleDraw();
 });
 
-function histogramSpeeds(game) {
-	    const normCounts = game.histogram.y.map(x => x/game.histogram.sum);
-	    let trace = {
-		type: 'bar', 
-		x: game.histogram.x,
-		y: normCounts,
-		width: game.histogram.width,
-		marker: {
-		    color: 'grey'
-		}
-	    }
-	    let data = [trace];
-	    let layout = {
-		paper_bgcolor: "rgba(0,0,0,0)",		
-		plot_bgcolor: "rgba(0,0,0,0)",
-		xaxis: {range: [game.histogram.minSpeed, game.histogram.maxSpeed]},
-		yaxis: {range: [0, 0.13]}
-	    };
-	    Plotly.newPlot("multiball-histogram-canvas", data, layout);
-}
 
 var colors = {
     ground: 'rgba(56, 256, 56, 0.8)',

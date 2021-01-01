@@ -50,13 +50,13 @@ class Szilard extends Game {
 }
 
 
-var newballButton = document.getElementById("szilard-newball");
-var pauseButton = document.getElementById("szilard-pause");
+var newballSzilardButton = document.getElementById("szilard-newball");
+var pauseSzilardButton = document.getElementById("szilard-pause");
 
-newballButton.addEventListener("click", function() {
+newballSzilardButton.addEventListener("click", function() {
     szilard.reset();
 });
-pauseButton.addEventListener("click", function() {
+pauseSzilardButton.addEventListener("click", function() {
     szilard.togglePause();
 });
 
