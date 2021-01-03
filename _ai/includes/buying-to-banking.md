@@ -10,7 +10,7 @@
 
 \notes{\subsection{Buying to Banking}
 
-The same model we consider for buying, can also be considered in the case of, for example, a banking application. In a typical banking application, we receive loan requests from customres. For an individual customer, before making a loan, the bank may wish to make a forecast around their costs (expenditures on food, housing, entertainment etc) and their income (salary, rental income etc). These forecasts would inform the conditions of the loan. For example how much the bank is willing to lend, and under what interest rates and repayment conditions. These terms will be based on previous experience of loaning, but also constrained by regulatory conditions often imposed by a financial regulator.}
+The same model we consider for buying, can also be considered in the case of, for example, a banking application. In a typical banking application, we receive loan requests from customers. For an individual customer, before making a loan, the bank may wish to make a forecast around their costs (expenditures on food, housing, entertainment etc) and their income (salary, rental income etc). These forecasts would inform the conditions of the loan. For example how much the bank is willing to lend, and under what interest rates and repayment conditions. These terms will be based on previous experience of loaning, but also constrained by regulatory conditions often imposed by a financial regulator.}
 
 
 
