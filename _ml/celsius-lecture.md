@@ -23,11 +23,18 @@ transition: None
 
 \includegooglebook{0p8AAAAAMAAJ}{PA3}
 
+\notes{Introduce celsius and heat.}
+
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/maxwells-demon.md}
 \include{_physics/includes/szilards-engine.md}
+\notes{Introduce Linnaeus and the hydra.}
 \include{_philosophy/includes/the-hamburg-hydra.md}
-\include{_physics/includes/kappenball.md}
+<!--\include{_physics/includes/kappenball.md}-->
+
+\notes{Next move towards Turing and Accelerate agenda.}
+
+
 
 
 
