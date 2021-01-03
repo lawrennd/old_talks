@@ -26,7 +26,10 @@ transition: None
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/maxwells-demon.md}
 \include{_physics/includes/szilards-engine.md}
+\include{_philosophy/includes/the-hamburg-hydra.md}
 \include{_physics/includes/kappenball.md}
+
+
 
 \notes{Yes, something like that is a good idea. I'm going to start a small document.
 
