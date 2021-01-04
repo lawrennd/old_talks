@@ -40,9 +40,14 @@ Model Induced blindness?
 
 \include{_physics/includes/kappenball.md}
 
+\notes{Uber ATG Accident}
+\include{_simulation/includes/game-of-life.md}
+
+\notes{HOw simple phenomena become complex}
+\notes{Connect the use of ML for physics/biology with the previous use of physics/biology for talking about ML.}
+
+\notes{Challenges for science: Causal, representation, symmetries: understanding complexity}
 \notes{Next move towards Turing and Accelerate agenda.}
-
-
 
 
 
