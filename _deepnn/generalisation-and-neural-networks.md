@@ -3,7 +3,7 @@ layout: lecture
 title: Generalization and Neural Networks
 week: 1
 session: 2
-date: 2021-01-21
+date: 2021-01-26
 author:
 - given: Neil D.
   family: Lawrence

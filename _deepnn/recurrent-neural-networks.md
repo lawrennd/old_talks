@@ -3,7 +3,7 @@ layout: lecture
 title: Recurrent Neural Networks
 week: 4
 session: 2
-date: 2021-02-11
+date: 2021-02-16
 start: "14:00"
 end: "15:00"
 author:

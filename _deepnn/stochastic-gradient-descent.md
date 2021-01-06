@@ -17,7 +17,7 @@ reveal: false
 time: "14:00"
 start: "14:00"
 end: "15:00"
-date: 2021-01-28
+date: 2021-02-02
 ---
 
 No Free Lunch for Optimization: <https://ti.arc.nasa.gov/m/profile/dhw/papers/78.pdf> <https://link.springer.com/chapter/10.1007%2F978-3-030-12767-1_5>

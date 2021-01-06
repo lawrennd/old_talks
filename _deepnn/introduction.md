@@ -13,7 +13,7 @@ abstract: >
   This lecture will give the background to what deep neural networks are, how they fit into the wider context of the field and why they are succesful.
 talkscam:
 reveal: false
-date: 2021-01-19
+date: 2021-01-21
 time: "14:00"
 start: "14:00"
 end: "15:00"

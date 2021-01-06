@@ -3,7 +3,7 @@ layout: lecture
 title: Hardware
 week: 3
 session: 1
-date: 2021-02-02
+date: 2021-02-04
 start: 14:00
 end: 15:00
 author:

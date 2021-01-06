@@ -3,7 +3,7 @@ layout: lecture
 title: Sequence to Sequence and Attention
 week: 5
 session: 1
-date: 2021-02-16
+date: 2021-02-18
 start: "14:00"
 end: "15:00"
 author:
