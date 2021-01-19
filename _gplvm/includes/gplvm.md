@@ -100,8 +100,7 @@ $$
 \eigenvectorMatrix_{\latentDim}=\dataMatrix^{\top}\eigenvectorMatrix_{\latentDim}^{\prime}\Lambda_{\latentDim}^{-\frac{1}{2}}
     $$
 
-\subsection{Gaussian Processes}
-
+\include{_gp/includes/gp-intro-very-short.md}
 
 
 \newslide{Gaussian Process (GP)}
