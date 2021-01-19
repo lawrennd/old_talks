@@ -54,7 +54,7 @@ pb.legend()}
 
 \notes{For the sake of time, the solution you see was only running for 1000 iterations, thus it might not be converged fully yet. The GP-LVM proceeds by iterative optimization of the *inputs* to the covariance. As we saw in the lecture earlier, for the linear covariance, these latent points can be optimized with an eigenvalue problem, but generally, for non-linear covariance functions, we are obliged to use gradient based optimization.}
 
-\writeAssignment{ How do your linear solutions differ between PCA and GPLVM with a linear kernel? Look at the plots and also try and consider how the linear ARD parameters compare to the eigenvalues of the principal components.}
+\writeAssignment{How do your linear solutions differ between PCA and GPLVM with a linear kernel? Look at the plots and also try and consider how the linear ARD parameters compare to the eigenvalues of the principal components.}
 
 \codeAssignment{The next step is to use a non-linear mapping between inputs $\latentMatrix$ and ouputs $\dataMatrix$ by selecting the exponentiated quadratic (`GPy.kern.rbf`) covariance function.}
 
