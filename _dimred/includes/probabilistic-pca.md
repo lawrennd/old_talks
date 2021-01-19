@@ -141,19 +141,18 @@ similar forms? What matches and what differs?}{30}
 
 \codeassignment{Use the values for $\mappingMatrix$ and $\noiseStd^2$ you
 have computed, along with the data set $\dataMatrix$ to compute the posterior
-density over $\latentMatrix$. Write a function of the form}python
-mu_x, C_x =
-posterior(Y, W, sigma2)}
+density over $\latentMatrix$. Write a function of the form
+```python
+mu_x, C_x = posterior(Y, W, sigma2)
+```
 where `mu_x` and `C_x` are the posterior mean and
 posterior covariance for the given $\dataMatrix$. 
 
 Don't forget to subtract the
 mean of the data `Y` inside your function before computing the posterior:
 remember we assumed at the beginning of our analysis that the data had been
-centred (i.e. the mean was removed).}{20}
-
-\code{# Question 4 Answer Code
-# Write code for you answer to this question in this box
+centred (i.e. the mean was removed).}{# Answer Code
+# Write code for you answer to this exercise in this box
 # Do not delete these comments, otherwise you will get zero for this answer.
 # Make sure your code has run and the answer is correct *before* submitting your notebook for marking.
 import numpy as np
@@ -163,7 +162,7 @@ def posterior(Y, W, sigma2):
     # Compute posterior over X
     C_x = 
     mu_x = 
-    return mu_x, C_x}
+    return mu_x, C_x}{20}
 
 \notes{\subsection{Numerically Stable and Efficient Version}}
 

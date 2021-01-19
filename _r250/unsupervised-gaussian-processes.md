@@ -23,6 +23,8 @@ transition: None
 
 \include{_gpss/includes/gpss-notebook-setup.md}
 \include{_dimred/includes/high-dimensional-data.md}
+\include{_ml/includes/univariate-gaussian-properties.md}
+\include{_ml/includes/multivariate-gaussian-properties.md}
 \include{_dimred/includes/latent-variables.md}
 \include{_dimred/includes/principal-component-analysis.md}
 
