@@ -7,6 +7,8 @@
 
 \subsection{GP-LVM on the Data}
 
+\centerdiv{\maxZwiesselePicture{15%}\oliverSteglePicture{15%}}
+
 \notes{Work done as a collaboration between Max Zwiessele, Oliver Stegle and Neil D. Lawrence.}
 
 \notes{Then, we follow @Buettner:resolving12 in applying the GP-LVM to the data. There is a slight pathology in the result, one which they fixed by using priors that were dependent on the developmental stage. We then show how the Bayesian GP-LVM doesn't exhibit those pathologies and gives a nice results that seems to show the lineage of the cells.}
