@@ -5,12 +5,14 @@
 
 \section{Probabilistic PCA}
 
-\notes{In 1997 [Tipping and
-Bishop](http://research.microsoft.com/pubs/67218/bishop-ppca-jrss.pdf) [@Tipping:pca97] and
-[Roweis](https://www.cs.nyu.edu/~roweis/papers/empca.pdf) [@Roweis:SPCA97] independently
-revisited Hotelling's model and considered the case where the noise variance was
-finite, but *shared* across all output dimensons. Their model can be thought of
-as a factor analysis where}
+\notes{In 1997
+[Tipping and Bishop](http://research.microsoft.com/pubs/67218/bishop-ppca-jrss.pdf)
+[@Tipping:pca97] and
+[Roweis](https://www.cs.nyu.edu/~roweis/papers/empca.pdf)
+[@Roweis:SPCA97] independently revisited Hotelling's model and
+considered the case where the noise variance was finite, but *shared*
+across all output dimensons. Their model can be thought of as a factor
+analysis where}
 $$
 \boldsymbol{\Sigma} = \noiseStd^2 \eye.
 $$
@@ -65,15 +67,18 @@ def ppca(Y, q):
     W = U[:, :q]*l[None, :]
     return W, sigma2}
 
-\notes{In practice we may not wish to compute the eigenvectors of the covariance matrix
-directly. This is because it requires us to estimate the covariance, which
-involves a sum of squares term, before estimating the eigenvectors. We can
-estimate the eigenvectors directly either through [QR
-decomposition](http://en.wikipedia.org/wiki/QR_decomposition) or [singular value
-decomposition](http://en.wikipedia.org/wiki/Singular_value_decomposition). We
-saw a similar issue arise when \refnotes{computing the weights in a regression
-problem}{linear-regression}, where we also wished to avoid computation of
-$\latentMatrix^\top\latentMatrix$ (or in the case of \refnotes{nonlinear regression with basis functions}{basis-functions} $\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).}
+\notes{In practice we may not wish to compute the eigenvectors of the
+covariance matrix directly. This is because it requires us to estimate
+the covariance, which involves a sum of squares term, before
+estimating the eigenvectors. We can estimate the eigenvectors directly
+either through
+[QR decomposition](http://en.wikipedia.org/wiki/QR_decomposition) or
+[singular value decomposition](http://en.wikipedia.org/wiki/Singular_value_decomposition). We
+saw a similar issue arise when \refnotes{computing the weights in a
+regression problem}{linear-regression}, where we also wished to avoid
+computation of $\latentMatrix^\top\latentMatrix$ (or in the case of
+\refnotes{nonlinear regression with basis functions}{basis-functions}
+$\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).}
 
 \section{Posterior for Principal Component Analysis}
 
@@ -99,10 +104,9 @@ $$
 \log p(\latentVector_{i, :} | \dataVector_{i, :}) = \log p(\dataVector_{i, :}|\mappingMatrix,
 \latentVector_{i, :}, \noiseStd^2) + \log p(\latentVector_{i, :}) + \text{const}
 $$
-\notes{where
-the constant is not dependent on $\latentVector$. As before we collect the
-quadratic terms in $\latentVector_{i, :}$ and we assemble them into a Gaussian
-density over $\latentVector$.}
+\notes{where the constant is not dependent on $\latentVector$. As
+before we collect the quadratic terms in $\latentVector_{i, :}$ and we
+assemble them into a Gaussian density over $\latentVector$.}
 $$
 \log p(\latentVector_{i, :} | \dataVector_{i, :}) =
 -\frac{1}{2\noiseStd^2} (\dataVector_{i, :} - \mappingMatrix\latentVector_{i,
@@ -130,10 +134,9 @@ Compare this to
 the posterior for the Bayesian linear regression from last week, do they have
 similar forms? What matches and what differs?}{30}
 
-\subsection{Python Implementation of the Posterior}
+\notes{\subsection{Python Implementation of the Posterior}}
 
-Now let's implement the system in
-code.
+\notes{Now let's implement the system in code.}
 
 
 \codeassignment{Use the values for $\mappingMatrix$ and $\noiseStd^2$ you
@@ -162,9 +165,9 @@ def posterior(Y, W, sigma2):
     mu_x = 
     return mu_x, C_x}
 
-\subsection{Numerically Stable and Efficient Version}
+\notes{\subsection{Numerically Stable and Efficient Version}}
 
-Just as we saw for \refnotes{linear
+\notes{Just as we saw for \refnotes{linear
 regression}{linear-regression} and \refnotes{regression with basis functions}{basis-functions}
 computation of a matrix such as $\dataMatrix^\top\dataMatrix$ (or its centred
 version) can be a bad idea in terms of loss of numerical accuracy. Fortunately,
@@ -186,11 +189,11 @@ The matrix $\mathbf{\Lambda}$ is *diagonal* and $\mathbf{V}$ is an orthogonal
 matrix so $\mathbf{V}^\top\mathbf{V} = \mathbf{V}\mathbf{V}^\top = \eye$.
 The eigenvalues of the matrix $\dataMatrix^\top\dataMatrix$ are then given by the
 singular values of the matrix $\dataMatrix^\top$ squared and the eigenvectors are
-given by $\mathbf{U}$.
+given by $\mathbf{U}$.}
 
-\subsection{Solution for $\mappingMatrix$}
+\notes{\subsection{Solution for $\mappingMatrix$}}
 
-Given the singular value
+\notes{Given the singular value
 decomposition of $\dataMatrix$ then we have
 $$
 \mappingMatrix =
@@ -223,9 +226,8 @@ $$
 $$
 \meanVector_x = \mathbf{D}\mathbf{U}^\top \dataVector_{i, :}
 $$
-where
-$\mathbf{D}$ is a diagonal matrix with diagonal elements given by $d_{i} =
-\frac{\ell_i}{\noiseStd^2 + \ell_i^2}$.
+where $\mathbf{D}$ is a diagonal matrix with diagonal elements given
+by $d_{i} = \frac{\ell_i}{\noiseStd^2 + \ell_i^2}$.}
 
 \setupcode{import scipy as sp
 import numpy as np}

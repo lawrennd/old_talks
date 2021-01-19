@@ -49,3 +49,10 @@ David Hogg's lecture
 <https://speakerdeck.com/dwhgg/linear-regression-with-huge-numbers-of-parameters>
 
 Large models and memorisation: <https://arxiv.org/abs/2012.07805>
+
+
+Aki Vehtari on Leave One Out Uncertainty: https://arxiv.org/abs/2008.10296 (check for his references).
+
+Bootstrap Predication and Bayesian Misspecified Models: https://www.jstor.org/stable/3318894#metadata_info_tab_contents
+
+Edwin Fong and Chris Holmes: On the Marginal Likelihood and Cross Validation https://arxiv.org/abs/1905.08737

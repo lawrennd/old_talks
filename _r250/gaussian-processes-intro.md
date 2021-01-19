@@ -12,6 +12,7 @@ author:
 reveal: True
 ipynb: True
 date: 2020-01-24
+week: 1
 venue: Computer Lab, University of Cambridge
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

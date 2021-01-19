@@ -5,6 +5,25 @@
 
 \section{Unsupervised Learning}
 
+\subsection{Unsupervised Learning}
+
+\notes{Supervised learning is when your data is provided with
+labels. Now we are going to turn to a different form of learning,
+commonly known as *unsupervised* learning.  In unsupervised learning
+our data isn't necessarily labelled in any form, but we want models
+that give us a better understanding of the data. We've actually seen
+an example of this already with \refnotes{*matrix factorization* for
+collaborative filtering}{matrix-factorization}, which we introduces in
+the context of *objective functions*. Now we will introduce a more
+probabilistic approach to such models, specifically we are interested
+in *latent variable* modelling.}
+
+\slides{* Supervised learning is learning where each data has a label (e.g. regression output)
+* In unsupervised learning we have no labels for the data.
+* Often thought of as structure discovery.
+  * Finding features in the data
+  * Exploratory data analysis}
+
 \newslide{Unsupervised Learning}
 \slides{
 * When you have data, $\inputVector$, but no labels $\dataVector$.
