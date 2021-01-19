@@ -1,5 +1,5 @@
 ${BASE}.posts.html: ${BASE}.notes.html.markdown
-	pandoc --template pandoc-jekyll-talk-template ${PDFLAGS} \
+	pandoc --template pandoc-jekyll-talk-template ${PDSLAGS} \
 	       --atx-headers \
 	       ${POSTFLAGS} \
                --bibliography=../lawrence.bib \

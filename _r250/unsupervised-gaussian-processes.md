@@ -12,7 +12,7 @@ author:
 reveal: True
 ipynb: True
 week: 1
-date: 2020-01-21
+date: 2021-01-21
 venue: Virtual (Zoom)
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -22,9 +22,17 @@ transition: None
 \include{talk-macros.gpp}
 
 \include{_gpss/includes/gpss-notebook-setup.md}
+\include{_dimred/includes/high-dimensional-data.md}
+\include{_dimred/includes/latent-variables.md}
+\include{_dimred/includes/principal-component-analysis.md}
 
 \include{_dimred/includes/probabilistic-pca.md}
+\include{_dimred/includes/robot-wireless-ppca.md}
+\include{_dimred/includes/ppca-interpretations.md}
+\include{_dimred/includes/pca-in-practice.md}
+\include{_dimred/includes/ppca-marginal-likelihood.md}
 \include{_dimred/includes/non-linear-difficulty.md}
+\include{_gplvm/includes/gplvm.md}
 \include{_gplvm/includes/gplvm-tutorial.md}
 \include{_gplvm/includes/latent-doodle-space.md}
 \include{_gplvm/includes/character-control.md}

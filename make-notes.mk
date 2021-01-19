@@ -9,6 +9,7 @@ ${BASE}.docx: ${BASE}.notes.docx.markdown ${BIBDEPS} ${DIAGDEPS}
 
 ${BASE}.notes.html: ${BASE}.notes.html.markdown ${BIBDEPS}
 	pandoc  ${PDSFLAGS} \
+		--mathjax \
 		-o ${BASE}.notes.html  \
 		${BASE}.notes.html.markdown 
 

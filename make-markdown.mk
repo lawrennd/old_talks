@@ -6,7 +6,7 @@
 	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} -B ../_includes/${NOTATION}
 
 %.notes.html.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to html --code sparse --edit-links ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to html --code sparse --replace-notation --edit-links ${PPFLAGS} 
 
 %.notes.tex.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to tex --code sparse --edit-links ${PPFLAGS} 
