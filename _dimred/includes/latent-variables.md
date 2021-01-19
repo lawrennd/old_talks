@@ -11,7 +11,7 @@ intelligence, machine learning and experimental design. A latent variable could
 take many forms. We might observe a man walking along a road with a large bag of
 clothes and we might *infer* that the man is walking to the laundrette. Our
 observations are a highly complex data space, the response in our eyes is
-processed through our visual cortex, the combination of the indidivuals limb
+processed through our visual cortex, the combination of the individual's limb
 movememnts and the direction they are walking in all conflate in our heads to
 cause us to infer that (perhaps) the individual is going to the laundrette. We
 don't *know* that the man is walking to the laundrette, but we have a model of
