@@ -35,6 +35,7 @@ transition: None
 \include{_dimred/includes/ppca-marginal-likelihood.md}
 \include{_dimred/includes/non-linear-difficulty.md}
 \include{_gplvm/includes/gplvm.md}
+\include{_gp/includes/gp-intro-very-short.md}
 \include{_gplvm/includes/gplvm-tutorial.md}
 \include{_gplvm/includes/latent-doodle-space.md}
 \include{_gplvm/includes/character-control.md}
