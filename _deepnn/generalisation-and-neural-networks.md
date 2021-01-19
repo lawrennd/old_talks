@@ -42,8 +42,10 @@ Belkin Talk: <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4>
 
 
 the Deep Bootstrap
-https://twitter.com/PreetumNakkiran/status/1318007088321335297?s=20
+<https://twitter.com/PreetumNakkiran/status/1318007088321335297?s=20>
 
 
 David Hogg's lecture
-https://speakerdeck.com/dwhgg/linear-regression-with-huge-numbers-of-parameters
+<https://speakerdeck.com/dwhgg/linear-regression-with-huge-numbers-of-parameters>
+
+Large models and memorisation: <https://arxiv.org/abs/2012.07805>

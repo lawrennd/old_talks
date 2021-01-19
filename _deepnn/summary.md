@@ -4,8 +4,8 @@ title: Summary of Fundamentals
 week: 3
 session: 2
 date: 2021-02-09
-start: 14:00
-end: 15:00
+start: "14:00"
+end: "15:00"
 author:
 - given: Neil D.
   family: Lawrence

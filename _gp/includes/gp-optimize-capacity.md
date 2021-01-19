@@ -143,12 +143,12 @@ import teaching_plots as plot}
 
 \slides{\define{width}{80%}
 \startanimation{gp-optimise-quadratic}{0}{2}
-\newframe{\includediagram{\diagramsDir/gp/diagrams/gp-optimise-quadratic000}{\width}}{gp-optimise-quadratic}
-\newframe{\includediagram{\diagramsDir/gp/diagrams/gp-optimise-quadratic001}{\width}}{gp-optimise-quadratic}
-\newframe{\includediagram{\diagramsDir/gp/diagrams/gp-optimise-quadratic002}{\width}}{gp-optimise-quadratic}
+\newframe{\includediagram{\diagramsDir/gp/gp-optimise-quadratic000}{\width}}{gp-optimise-quadratic}
+\newframe{\includediagram{\diagramsDir/gp/gp-optimise-quadratic001}{\width}}{gp-optimise-quadratic}
+\newframe{\includediagram{\diagramsDir/gp/gp-optimise-quadratic002}{\width}}{gp-optimise-quadratic}
 \endanimation}
 
-\figure{\includediagram{\diagramsDir/gp/diagrams/gp-optimise-quadratic002}{80%}}{The data fit term of the Gaussian process is a quadratic loss centered around zero. This has eliptical contours, the principal axes of which are given by the covariance matrix.}{gp-optimise-quadratic}
+\figure{\includediagram{\diagramsDir/gp/gp-optimise-quadratic002}{80%}}{The data fit term of the Gaussian process is a quadratic loss centered around zero. This has eliptical contours, the principal axes of which are given by the covariance matrix.}{gp-optimise-quadratic}
 
 \newslide{$$\errorFunction(\parameterVector) = \color{\blueColor}{\frac{1}{2}\log\det{\kernelMatrix}}+\color{\redColor}{\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}$$}
 

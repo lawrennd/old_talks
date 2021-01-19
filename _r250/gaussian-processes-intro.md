@@ -1,6 +1,5 @@
 ---
-layout: slides
-title: "R250: GP Intro"
+title: "R250: Gaussian Processes Introduction"
 abstract: >
   In this talk we give an introduction to Gaussian processes for students who are interested in working with GPs for the the R250 module. 
 author:
@@ -19,7 +18,7 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
+\include{talk-macros.gpp}
 \include{_physics/includes/laplace-portrait.md}
 \include{_physics/includes/laplaces-determinism.md}
 \include{_gp/includes/gp-intro-very-short.md}

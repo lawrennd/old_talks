@@ -14,6 +14,8 @@
 
 \newslide{}
 
+\centerdiv{\freddieKalaitzisPicture{15%}}
+
 \figure{\includepng{\diagramsDir/health/1471-2105-12-180_1}{80%}}{The example is taken from the paper "A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression." @Kalaitzis:simple11.}{a-simple-approach-to-ranking}
 
 \aligncenter{<http://www.biomedcentral.com/1471-2105/12/180>}
