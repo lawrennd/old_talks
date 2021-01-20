@@ -29,10 +29,10 @@ for i in range(3):
 import pods}
 \displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
 
-\figure{\includepng{\diagramsDir/ml/dem_six000.png}{30%}}{}{dem_six000}
-\figure{\includepng{\diagramsDir/ml/dem_six001.png}{30%}}{}{dem_six001}
-\figure{\includepng{\diagramsDir/ml/dem_six002.png}{30%}}{}{dem_six002}
-\figure{\includepng{\diagramsDir/ml/dem_six003.png}{30%}}{}{dem_six003}
+\figure{\includepng{\diagramsDir/ml/dem_six000}{30%}}{}{dem_six000}
+\figure{\includepng{\diagramsDir/ml/dem_six001}{30%}}{}{dem_six001}
+\figure{\includepng{\diagramsDir/ml/dem_six002}{30%}}{}{dem_six002}
+\figure{\includepng{\diagramsDir/ml/dem_six003}{30%}}{}{dem_six003}
 
 \subsection{USPS Samples}
 
@@ -58,10 +58,10 @@ for angle in angles:
 
 \displaycode{pods.notebook.display_plots('dem_six_rotate{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=(0, 3))}
 
-\figure{\includepng{\diagramsDir/ml/dem_six_rotate000.png}{30%}}{}{dem_six_rotate000}
-\figure{\includepng{\diagramsDir/ml/dem_six_rotate001.png}{30%}}{}{dem_six_rotate001}
-\figure{\includepng{\diagramsDir/ml/dem_six_rotate002.png}{30%}}{}{dem_six_rotate002}
-\figure{\includepng{\diagramsDir/ml/dem_six_rotate003.png}{30%}}{}{dem_six_rotate003}
+\figure{\includepng{\diagramsDir/ml/dem_six_rotate000}{30%}}{}{dem_six_rotate000}
+\figure{\includepng{\diagramsDir/ml/dem_six_rotate001}{30%}}{}{dem_six_rotate001}
+\figure{\includepng{\diagramsDir/ml/dem_six_rotate002}{30%}}{}{dem_six_rotate002}
+\figure{\includepng{\diagramsDir/ml/dem_six_rotate003}{30%}}{}{dem_six_rotate003}
 
 \subsection{Low Dimensional Manifolds}
 
