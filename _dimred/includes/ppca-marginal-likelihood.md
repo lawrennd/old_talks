@@ -92,6 +92,6 @@ Finally, notice that
 $\trace{\dataMatrix\dataMatrix^\top}=\trace{\dataMatrix^\top\dataMatrix}$ can
 be computed faster as the sum of all the elements of
 $\dataMatrix\circ\dataMatrix$, where $\circ$ denotes the element-wise (or
-[Hadamard](http://en.wikipedia.org/wiki/Hadamard_product_(matrices)) product.
+[Hadamard](http://en.wikipedia.org/wiki/Hadamard_product_(matrices))) product.
 
 \endif
