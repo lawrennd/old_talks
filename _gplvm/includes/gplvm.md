@@ -29,7 +29,7 @@
 * Define *linear-Gaussian relationship* between latent variables and data.
 * **Novel** Latent variable approach:
 * Define Gaussian prior over \emph{parameters}, $\mappingMatrix$.
-* Integrate out *parameters*.}{\includegraphics<1-4>[width=0.5\textwidth]{../../../gplvm/tex/diagrams/gplvmGraph}
+* Integrate out *parameters*.}{\includepng{\diagramsDir/dimred/gplvm_graph}{30%}
       {\scriptsize \only<1-4>{$$
  p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\mappingMatrix\latentVector_{i,:}}{\dataStd^{2}\eye}$$
         }\only<3-4>{$$
@@ -182,8 +182,8 @@ $$
     * **Novel** Latent variable approach:
 
         
-      * Define Gaussian prior over \emph{parameteters}, $\mappingMatrix$.
-      * Integrate out \emph{parameters}.
+      * Define Gaussian prior over *parameteters*, $\mappingMatrix$.
+      * Integrate out *parameters*.
       
     
     
@@ -215,7 +215,7 @@ $$
 
 \newslide{Non-Linear Latent Variable Model}
 
-**RBF Kernel**
+**EQ Kernel**
   
 * The RBF kernel has the form $\kernelScalar_{i,j}=\kernelScalar\left(\latentVector_{i,:},\latentVector_{j,:}\right),$
 where
@@ -228,13 +228,6 @@ $$
 
 * Instead find gradients with respect to $\latentMatrix,\alpha,\rbfWidth$
  and $\dataStd^{2}$ and optimise using gradient methods.
-
-
-
-
-
-
-
 
 
 \subsection{Oil Data}
