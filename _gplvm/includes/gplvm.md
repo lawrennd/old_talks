@@ -148,29 +148,7 @@ $$
 
 
 
-\newslide{Covariance Samples}
 
-  \texttt{demCovFuncSample}%
-  \begin{figure}
-    \includegraphics<2>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample1}
-    \includegraphics<3>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample2}
-    \includegraphics<4>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample3}
-    \includegraphics<1>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample4}
-    \includegraphics<5>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample5}
-    \includegraphics<6>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample6}
-    \includegraphics<7>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample7}
-    \includegraphics<8>[width=0.5\textwidth]{../../../gp/tex/diagrams/demCovFuncSample8}
-
-    \caption{\only<2>{RBF kernel with $\rbfWidth=0.3$, $\alpha=1$ }\only<3>{ RBF
-        kernel with $\rbfWidth=1$, $\alpha=1$ }\only<4>{ RBF kernel with $\rbfWidth=0.3$,
-        $\alpha=4$}\only<1>{linear kernel, $\kernelMatrix=\latentMatrix\latentMatrix^{\top}$}
-      \only<5>{ MLP kernel with $\alpha=8$, $w=100$ and $b=100$}\only<6>{
-        MLP kernel with $\alpha=8$, $b=0$ and $w=100$}\only<7>{bias kernel
-        with $\alpha=1$ and }\only<8>{summed combination of: RBF kernel,
-        $\alpha=1$, $\rbfWidth=0.3$; bias kernel, $\alpha=$1; and white noise kernel,
-        $\beta=100$}\label{cap:kernelSamples}}
-
-  \end{figure}
 
 
 
@@ -189,67 +167,17 @@ $$
 
 
 
-\newslide{Gaussian Process Regression}
-
-  \texttt{demRegression}%
-  \begin{figure}
-    \includegraphics<1>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression1}
-    \includegraphics<2>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression2}
-    \includegraphics<3>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression3}
-    \includegraphics<4>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression4}
-    \includegraphics<5>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression5}
-    \includegraphics<6>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression6}
-    \includegraphics<7>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression7}
-    \includegraphics<8>[width=0.5\textwidth]{../../../gp/tex/diagrams/demRegression8}
-
-    \caption{Examples include WiFi localization, C14 callibration curve.}
-
-  \end{figure}
-
-
-
-
-
-\newslide{Learning Kernel Parameters}
-
-
-  \framesubtitle{Can we determine length scales and noise levels from the data?}
-
-  \texttt{demOptimiseGp}
-
-  \includegraphics<1>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp1}
-  \includegraphics<2>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp3}
-  \includegraphics<3>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp5}
-  \includegraphics<4>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp7}
-  \includegraphics<5>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp9}
-  \includegraphics<6>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp11}
-  \includegraphics<7>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp13}
-  \includegraphics<8>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp15}
-  \includegraphics<9>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp17}\hfill
-  \includegraphics<1>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp2}
-  \includegraphics<2>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp4}
-  \includegraphics<3>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp6}
-  \includegraphics<4>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp8}
-  \includegraphics<5>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp10}
-  \includegraphics<6>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp12}
-  \includegraphics<7>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp14}
-  \includegraphics<8>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp16}
-  \includegraphics<9>[width=0.45\textwidth]{../../../gp/tex/diagrams/demOptimiseGp18}
-
-
+\include{_kern/includes/eq-covariance.md}
+\include{_gp/includes/gp-optimize.md}
 
 
 \newslide{Non-Linear Latent Variable Model}
-  \begin{columns}[c]
-
-
-    \column{5cm}
-
+  
+    \columns{
   **Dual Probabilistic PCA**
 
-    \only<1>{
       
-    * Define \emph{linear-Gaussian relationship} between latent variables
+    * Define *linear-Gaussian relationship* between latent variables
         and data.
     * **Novel** Latent variable approach:
 
@@ -258,23 +186,15 @@ $$
       * Integrate out \emph{parameters}.
       
     
-    }\only<2->{
+    
       
-    * <2->Inspection of the marginal likelihood shows ...
+    * Inspection of the marginal likelihood shows ...
 
         
-      * <3->The covariance matrix is a covariance function.
-      * <4->We recognise it as the `linear kernel'.
-      
-    
-    }
-
-
-    \column{5cm}
-
-      \includegraphics<1->[width=0.5\textwidth]{../../../gplvm/tex/diagrams/gplvmGraph}
-
-    \vspace{-1cm}
+      * The covariance matrix is a covariance function.
+      * We recognise it as the `linear kernel'.}{
+\figure{\includepng{\diagramsDir/dimred/gplvm_graph}{100%}}{Graph of the Gaussian process latent variable model. Optimise $\latentVariables$ and integrate out the mapping $\mappingMatrix$.
+   
 
 
 \fragmentdiv{$$
@@ -289,7 +209,7 @@ $$
  \kernelMatrix=\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye$$
         }\only<4>{This is a product of Gaussian processes with linear kernels.}\only<5>{$$
  \kernelMatrix=?$$
- Replace linear kernel with non-linear kernel for non-linear model.}
+ Replace linear kernel with non-linear kernel for non-linear model.}}{45%}{45%}
 
 
 
@@ -319,49 +239,7 @@ $$
 
 \subsection{Oil Data}
 
-\newslide{Oil Data Set}
-
-\figure{\includegraphics[width=0.8\textwidth]{../../../fgplvm/tex/diagrams/demOilFull}{}{}
-
-
-
-
-
-\newslide{Oil Data Set II}
-
-**Nearest Neighbour error in $\latentMatrix$**
-  
-* Nearest neighbour classification in latent space.
-
-\begin{tabular}{|c|c|c|c|c|}
-    \hline 
-    Method & PCA & LLE & GTM & GP-LVM\tabularnewline
-    \hline
-    Errors & 162 & 18 & 11 (best) & 1 \tabularnewline
-    \hline
-\end{tabular}
-
-*cf* 2 errors in data space.
-
-
-
-
-
 \subsection{Stick Man Data}
-
-`demStick1`
-
-  % 
-  \begin{figure}
-      \only<1>{\vspace{4cm}
-      }\only<2>{\includegraphics[width=0.5\textwidth]{../../../fgplvm/tex/diagrams/demStick1Connected}}
-
-    \caption{The latent space for the stick man motion capture data. \vspace{-1cm}
-    }
-    
-\end{figure}
-
-
 
 \subsection{Applications}
   
