@@ -123,6 +123,7 @@ matrix $\mappingMatrix$ that is sometimes referred to as the *factor loadings* b
 we also immediately see is related to our *multivariate linear regression*
 models from the \refnotes{previous session on linear regression}{linear-regression}. That is
 because our vector valued function is of the form}
+\newslide{Closely Related to Linear Regression}
 $$
 \mathbf{f}(\latentVector) =
 \begin{bmatrix} f_1(\latentVector) \\ f_2(\latentVector) \\ \vdots \\
@@ -159,6 +160,7 @@ $\dataMatrix$ contains the observation for one individual. To emphasize that
 $\dataVector$ is a vector derived from a row of $\dataMatrix$ we represent the
 observation of the features associated with the $i$th individual by
 $\dataVector_{i, :}$, and place each individual in our data matrix,}
+\newslide{Data Representation}
 $$
 \dataMatrix
 = \begin{bmatrix} \dataVector_{1, :}^\top \\ \dataVector_{2, :}^\top \\ \vdots \\
@@ -193,16 +195,16 @@ f_j(\latentVector_{i, :}) = \weightVector_{j, :}^\top
 \latentVector_{i, :}
 $$}{10}
 
-\subsection{Latent Variables}
+\subsection{Latent Variables vs Linear Regression}
 
-The difference between this model and a multiple output
+\notes{The difference between this model and a multiple output
 regression is that in the regression case we are provided with the covariates
 $\latentMatrix$, here they are *latent variables*. These variables are unknown.
 Just as we have done in the past for unknowns, we now treat them with a
 probability distribution. In *factor analysis* we assume that the latent
 variables have a Gaussian density which is independent across both across the
 latent variables associated with the different data points, and across those
-associated with different data features, so we have,
+associated with different data features, so we have,}
 $$
 x_{i,j} \sim
 \gaussianSamp{0}{1},
@@ -212,24 +214,24 @@ associated with a single point as,
 $$
 \latentVector_{i, :} \sim \gaussianSamp{\zerosVector}{\eye}.
 $$
-If we consider the values of the
-function for the $i$th data point as
+\notes{If we consider the values of the
+function for the $i$th data point as}
 $$
 \mathbf{f}_{i, :} =
 \mathbf{f}(\latentVector_{i, :}) = \mappingMatrix\latentVector_{i, :} 
 $$
-then we can use
-the rules for multivariate Gaussian relationships to write that
+\notes{then we can use
+the rules for multivariate Gaussian relationships to write that}
 $$
 \mathbf{f}_{i, :} \sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top}
 $$
-which implies that the distribution for $\dataVector_{i, :}$ is given by
+\notes{which implies that the distribution for $\dataVector_{i, :}$ is given by}\newslide{Data Distribution}
 $$
 \dataVector_{i, :} = \sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \boldsymbol{\Sigma}}
 $$
-where $\boldsymbol{\Sigma}$ the covariance of the noise
+\notes{where $\boldsymbol{\Sigma}$ the covariance of the noise
 variable, $\epsilon_{i, :}$ which for factor analysis is a diagonal matrix
-(because we have assumed that the noise was *independent* across the features),
+(because we have assumed that the noise was *independent* across the features),}
 $$
 \boldsymbol{\Sigma} = \begin{bmatrix}\noiseStd^2_{1} & 0 & 0 & 0\\
 0 & \noiseStd^2_{2} & 0 & 0\\
@@ -237,60 +239,61 @@ $$
 0\\
                                      0 & 0 & 0 & \noiseStd^2_p\end{bmatrix}.
 $$
-For completeness, we could also add in a *mean* for the data vector
-$\meanVector$, 
+\notes{For completeness, we could also add in a *mean* for the data vector
+$\meanVector$,}\newslide{Mean Vector}
 $$
 \dataVector_{i, :} = \mappingMatrix \latentVector_{i, :} +
 \meanVector + \noiseVector_{i, :}
 $$
-which would give our marginal
+\notes{which would give our marginal
 distribution for $\dataVector_{i, :}$ a mean $\meanVector$. However, the
 maximum likelihood solution for $\meanVector$ turns out to equal the
-empirical mean of the data,
+empirical mean of the data,}
 $$
 \meanVector = \frac{1}{\numData} \sum_{i=1}^\numData
 \dataVector_{i, :},
 $$
-*regardless* of the form of the covariance, $\covarianceMatrix =
-\mappingMatrix\mappingMatrix^\top + \boldsymbol{\Sigma}$. As a result it is very common
+\notes{*regardless* of the form of the covariance,} $\covarianceMatrix =
+\mappingMatrix\mappingMatrix^\top + \boldsymbol{\Sigma}$\notes{. As a result it is very common
 to simply preprocess the data and ensure it is zero mean. We will follow that
-convention for this session.
+convention for this session.}
 
-The prior density over latent variables is
+\notes{The prior density over latent variables is
 independent, and the likelihood is independent, that means that the marginal
 likelihood here is also independent over the data points.
 Factor analysis was developed mainly in psychology and the social sciences for
 understanding personality and intelligence. [Charles
 Spearman](http://en.wikipedia.org/wiki/Charles_Spearman) was concerned with the
 measurements of "the abilities of man" and is credited with the earliest version
-of factor analysis.
+of factor analysis.}
 
 \section{Principal Component Analysis}
 
-In 1933 [Harold
+\notes{In 1933 [Harold
 Hotelling](http://en.wikipedia.org/wiki/Harold_Hotelling) published on
 *principal component analysis* the first mention of this approach [@Hotelling:analysis33]. Hotelling's
 inspiration was to provide mathematical foundation for factor analysis methods
 that were by then widely used within psychology and the social sciences. His
 model was a factor analysis model, but he considered the noiseless 'limit' of
-the model. In other words he took $\noiseStd^2_i \rightarrow 0$ so that he had
+the model. In other words he took $\noiseStd^2_i \rightarrow 0$ so that he had}
+\slides{@Hotelling:analysis33 took $\noiseStd^2_i \rightarrow 0$ so}
 $$
 \dataVector_{i, :} \sim \lim_{\noiseStd^2 \rightarrow 0} \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye}.
 $$
-The paper had two
+\notes{The paper had two
 unfortunate effects. Firstly, the resulting model is no longer valid
 probablistically, because the covariance of this Gaussian is 'degenerate'.
 Because $\mappingMatrix\mappingMatrix^\top$ has rank of at most $q$ where $q<p$ (due to
 the dimensionality reduction) the determinant of the covariance is zero, meaning
-the inverse doesn't exist so the density,
+the inverse doesn't exist so the density,}\newslide{Degenerate Covariance}\slidesmall{
 $$
 p(\dataVector_{i, :}|\mappingMatrix) =
 \lim_{\noiseStd^2 \rightarrow 0} \frac{1}{(2\pi)^\frac{p}{2}
-|\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye|^{-1}}
+|\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye|^{\frac{1}{2}}}
 \exp\left(-\frac{1}{2}\dataVector_{i, :}\left[\mappingMatrix\mappingMatrix^\top+ \noiseStd^2
 \eye\right]^{-1}\dataVector_{i, :}\right),
-$$
-is *not* valid for $q<p$
+$$}
+\notes{is *not* valid for $q<p$
 (where $\mappingMatrix\in \Re^{p\times q}$). This mathematical consequence is a
 probability density which has no 'support' in large regions of the space for
 $\dataVector_{i, :}$. There are regions for which the probability of
@@ -306,16 +309,16 @@ was unfortunate because the factor loadings, $\mappingMatrix$ can also be seen a
 factors in the mathematical sense because the model Hotelling defined is a
 Gaussian model with covariance given by $\covarianceMatrix = \mappingMatrix\mappingMatrix^\top$
 so $\mappingMatrix$ is a *factor* of the covariance in the mathematical sense, as
-well as a factor loading. 
+well as a factor loading. }
 
-However, the paper had one great advantage over
+\notes{However, the paper had one great advantage over
 standard approaches to factor analysis. Despite the fact that the model was a
 special case that is subsumed by the more general approach of factor analysis it
 is this special case that leads to a particular algorithm, namely that the
 factor loadings (or principal components as Hotelling referred to them) are
-given by an *eigenvalue decomposition* of the empirical covariance matrix.
+given by an *eigenvalue decomposition* of the empirical covariance matrix.}
 
-\newslide{Computation of the Marginal Likelihood}
+\subsection{Computation of the Marginal Likelihood}
 
 $$
 \dataVector_{i,:}=\mappingMatrix\latentVector_{i,:}+\noiseVector_{i,:},\quad \latentVector_{i,:} \sim \gaussianSamp{\zerosVector}{\eye}, \quad \noiseVector_{i,:} \sim \gaussianSamp{\zerosVector}{\noiseStd^{2}\eye}
@@ -330,22 +333,9 @@ $$
 $$
 
 \newslide{Linear Latent Variable Model II}
-  **Probabilistic PCA Max. Likelihood Soln**
-(@Tipping:probpca99)
+  **Probabilistic PCA Max. Likelihood Soln** (@Tipping:probpca99)
 
-%\includegraphics<1>[width=0.25\textwidth]{../../../gplvm/tex/diagrams/ppcaGraph}
-\begin{tikzpicture}
-        
-      % Define nodes
-      \node[obs]
-(Y) {$\dataMatrix$};
-      \node[const, above=of Y] (W) {$\mappingMatrix$};
-\node[const, right=1cm of Y]            (sigma) {$\dataStd^2$};
-      
-      %
-Connect the nodes
-      \edge {W,sigma} {Y} ; %
-    \end{tikzpicture}
+\figure{\includepng{\diagramsDir/dimred/ppca_graph}{40%}}{Graphical model representing probabilistic PCA.}{ppca-graph}
 
 $$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i, :}}{\zerosVector}{\mappingMatrix\mappingMatrix^{\top}+\noiseStd^{2}\eye}$$
 
@@ -369,6 +359,7 @@ $$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\
 
 
 
+\notes{
 \subsection{Eigenvalue Decomposition}
 
 Eigenvalue problems are widespreads in physics and
@@ -446,5 +437,5 @@ $\mathbf{U}$ is an
 [orthogonal matrix](http://en.wikipedia.org/wiki/Orthogonal_matrix),
 $\mathbf{U}^\top\mathbf{U} = \eye$. This implies that $\mathbf{u}_{:,
 i} ^\top \mathbf{u}_{:, j}$ is equal to 0 if $i\neq j$ and 1 if $i=j$.
-
+}
 \endif

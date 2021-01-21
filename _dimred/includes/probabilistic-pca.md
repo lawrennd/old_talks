@@ -3,7 +3,7 @@
 
 \editme
 
-\section{Probabilistic PCA}
+\notes{\section{Probabilistic PCA}
 
 \notes{In 1997
 [Tipping and Bishop](http://research.microsoft.com/pubs/67218/bishop-ppca-jrss.pdf)
@@ -45,11 +45,11 @@ $$
 $$
 \notes{where $\noiseStd^2$ is the noise variance. Note that
 if $\noiseStd^2$ is larger than any particular eigenvalue, then that eigenvalue
-(along with its corresponding eigenvector) is *discarded* from the solution.}
+(along with its corresponding eigenvector) is *discarded* from the solution.}}
 
-\subsection{Python Implementation of Probabilistic PCA}
+\notes{\subsection{Python Implementation of Probabilistic PCA}
 
-We will now implement this algorithm in python.
+We will now implement this algorithm in python.}
 
 \setupcode{import numpy as np}
 \code{# probabilistic PCA algorithm
@@ -80,6 +80,7 @@ computation of $\latentMatrix^\top\latentMatrix$ (or in the case of
 \refnotes{nonlinear regression with basis functions}{basis-functions}
 $\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).}
 
+\notes{
 \section{Posterior for Principal Component Analysis}
 
 \notes{Under the latent variable model
@@ -113,7 +114,9 @@ $$
 :})^\top(\dataVector_{i, :} - \mappingMatrix\latentVector_{i, :}) - \frac{1}{2}
 \latentVector_{i, :}^\top \latentVector_{i, :} + \text{const}
 $$
+}
 
+\notes{
 \writeassignment{Multiply out the terms in the brackets. Then collect
 the quadratic term and the linear terms together. Show that the posterior has
 the form
@@ -132,13 +135,13 @@ $$
 $$
 Compare this to
 the posterior for the Bayesian linear regression from last week, do they have
-similar forms? What matches and what differs?}{30}
+similar forms? What matches and what differs?}{30}}
 
 \notes{\subsection{Python Implementation of the Posterior}}
 
 \notes{Now let's implement the system in code.}
 
-
+\notes{
 \codeassignment{Use the values for $\mappingMatrix$ and $\noiseStd^2$ you
 have computed, along with the data set $\dataMatrix$ to compute the posterior
 density over $\latentMatrix$. Write a function of the form
@@ -162,7 +165,7 @@ def posterior(Y, W, sigma2):
     # Compute posterior over X
     C_x = 
     mu_x = 
-    return mu_x, C_x}{20}
+    return mu_x, C_x}{20}}
 
 \notes{\subsection{Numerically Stable and Efficient Version}}
 

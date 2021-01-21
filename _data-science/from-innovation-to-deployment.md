@@ -78,9 +78,6 @@ Ds of ML Systems Design".}
 
 The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa](http://datascienceafrica.org).}
 
-\subsection{Inclusive Project}
-
-There is no way that the team we're building will be able to deliver on this agenda alone, so please join us in addressing these challenges! 
 
 \include{_ai/includes/ride-allocation-prediction.md}
 

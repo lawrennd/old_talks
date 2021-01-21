@@ -13,7 +13,7 @@ ipynb: true
 ---
 
 
-\include{talk-macros.tex}
+\include{talk-macros.gpp}
 
 \include{_mlphysical/includes/overview-2020.md}
 

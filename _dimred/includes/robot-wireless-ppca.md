@@ -5,23 +5,27 @@
 
 \subsection{Robot Navigation Example}
 
-In the next example we will load in data from a
+\slides{* Example involving 215 observations of 30 access points.
+* Infer location of 'robot' and accesspoints.
+* This is known as SLAM (simulataneous localization and mapping).
+}
+\notes{In the next example we will load in data from a
 robot navigation problem. The data consists of wireless access point strengths
 as recorded by a robot performing a loop around the University of Washington's
 Computer Science department in Seattle. The robot records all the wireless
-access points it can cache and stores their signal strength.
+access points it can cache and stores their signal strength.}
 
 \setupcode{import pods}
 \code{data = pods.datasets.robot_wireless()
 Y = data['Y']
 Y.shape}
 
-There are 215 observations of 30 different access points. In this case the model
+\notes{There are 215 observations of 30 different access points. In this case the model
 is suggesting that the access point signal strength should be linearly dependent
 on the location in the map. In other words we are expecting the access point
 strength for the $j$th access point at robot position $x_{i, :}$ to be
 represented by $y_{i, j} = \weightVector_{j, :}^\top \latentVector_{i, :} +
-\epsilon_{i,j}$.
+\epsilon_{i,j}$.}
 
 \setupcode{import matplotlib.pyplot as plt}
 

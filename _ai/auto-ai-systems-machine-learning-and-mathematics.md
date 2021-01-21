@@ -35,9 +35,7 @@ transition: None
 \include{_ai/includes/buying-to-banking.md}
 \include{_uq/includes/emulation.md}
 
-\newslide{}
-
-\figure{\includejpg{\diagramsDir/people/1997-08-02-neil-newton-institute}{80%}}{The author standing outside the Newton Institute on 2nd August 1997, just after arriving for "Generalisation in Neural Networks and Machine Learning", [see page 28 of this report](http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf).}{neil-newton-institute}
+\include{_ml/includes/neil-newton-institute.md}
 
 \notes{The first tutorial I saw on Gaussian processes was given by [Chris Williams](https://homepages.inf.ed.ac.uk/ckiw/) at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, [Chris Bishop](https://www.microsoft.com/en-us/research/people/cmbishop/) (now Director of Microsoft Research in Cambridge).}
 

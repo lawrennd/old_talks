@@ -1,6 +1,8 @@
 \ifndef{talkPeople}
 \define{talkPeople}
 
+\defeval{\neilLawrencePicture{width}}{\circleHead{\diagramsDir/people/neil-lawrence.png}{Neil Lawrence}{\width}{https://inverseprobability.com/}}
+
 \defeval{\jamesHensmanPicture{width}}{\circleHead{\diagramsDir/people/james-hensman.png}{James Hensman}{\width}{https://jameshensman.github.io/}}
 \defeval{\nicolasDurrandePicture{width}}{\circleHead{\diagramsDir/people/nicolas-durrande2.jpg}{Nicolas Durrande}{\width}{https://sites.google.com/site/nicolasdurrandehomepage/}}
 \defeval{\ricardoAndradePachecoPicture{width}}{\circleHead{\diagramsDir/people/ricardo-andrade-pacheco.png}{Ricardo Andrade Pacecho}{\width}{http://ric70x7.github.io/}}
@@ -70,11 +72,15 @@
 \defeval{\nevenaLalicPicture{width}}{\circleHead{\diagramsDir/people/nevena-lalic.png}{Nevena Lalic}{\width}{https://www.linkedin.com/in/nevena-lalic-65561b53/}}
 
 
-\defeval{\oliverSteglePicture{width}}{\circleHead{\diagramsDir/people/oliver-stegle.jpg}{Oliver Stegle}{\width}{http://cit.mak.ac.ug/staff/jquinn/}}
+\defeval{\oliverSteglePicture{width}}{\circleHead{\diagramsDir/people/oliver-stegle.jpg}{Oliver Stegle}{\width}{https://www.embl.de/research/units/genome_biology/stegle/}}
 \defeval{\johnQuinnPicture{width}}{\circleHead{\diagramsDir/people/john-quinn.jpg}{John Quinn}{\width}{http://cit.mak.ac.ug/staff/jquinn/}}
 \defeval{\ernestMwebazePicture{width}}{\circleHead{\diagramsDir/people/ernest-mwebaze.png}{Ernest Mwebaze}{\width}{https://www.linkedin.com/in/emwebaze/}}
 \defeval{\martinMubangiziPicture{width}}{\circleHead{\diagramsDir/people/martin-mubangizi.png}{Martin Mubangizi}{\width}{https://www.linkedin.com/in/martin-mubangizi-24177111/}}
 \defeval{\morineAmutorinePicture{width}}{\circleHead{\diagramsDir/people/morine-amutorine.png}{Morine Amutorine}{\width}{https://www.linkedin.com/in/morine-amutorine/}}
+
+\defeval{\nicLanePicture{width}}{\circleHead{\diagramsDir/people/nic-lane.jpg}{Nic Lane}{\width}{https://niclane.org}}
+\defeval{\ferencHuszarPicture{width}}{\circleHead{\diagramsDir/people/ferenc-huszar.jpg}{Ferenc Huszar}{\width}{https://www.inference.vc/about/}}
+
 
 
 \defeval{\robbieSavagePicture{width}}{\circleHead{\diagramsDir/people/robbie-savage.png}{Robbie Savage}{\width}{https://www.usefultalent.com/robbie-savage/}}

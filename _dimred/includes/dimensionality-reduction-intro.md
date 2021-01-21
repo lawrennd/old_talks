@@ -41,6 +41,6 @@ These tests are assuming that our intelligence is implicitly one-dimensional and
 
 Political belief, personality, intelligence, leadership. None of these exist as a directly measurable quantity in the real world, rather they are inferred based on measurables. Dimensionality reduction is the process of allowing the computer to automatically find such underlying dimensions. This automatically allowing us to characterize each data point according to those explanatory variables. Each of these characteristics can be scored, and individuals can then be turned into vectors. 
 
-This doesn't only apply to individuals, in recent years work on language modeling has taken a similar approach to words. The [word2vec](https://arxiv.org/abs/1301.3781) algorithm performed a dimensionality reduction on words, now you can take any word and map it to a latent space where similar words exhibit similar characteristics. A personality space for words.}
+This doesn't only apply to individuals, in recent years work on language modeling has taken a similar approach to words. The [word2vec](https://arxiv.org/abs/1301.3781) algorithm performed a dimensionality reduction on words, now you can take any word and map it to a latent space where similar words exhibit similar characteristics. A 'personality space' for words.}
 
 \endif

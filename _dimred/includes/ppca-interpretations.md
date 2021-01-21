@@ -7,6 +7,10 @@
 
 \subsection{Relationship to Matrix Factorization}
 
+\slides{* PCA is closely related to matrix factorisation.
+* Instead of $\latentMatrix$, $\mappingMatrix$
+* Define Users $\mathbf{U}$ and items $\mathbf{V}$
+}
 \notes{We can use the robot naviation example to realise that PCA (and
 factor analysis) are very reminiscient of the \refnotes{*matrix
 factorization* example}{matrix-factorization} that we used for
@@ -39,18 +43,22 @@ different foodstuffs we were able to forage is intriguing.}
 perspective, we also can now realise that matrix factorization and latent
 variable modelling are effectively the same thing. The only difference is the
 objective function and our probabilistic (or lack of probabilistic) treatment of
-the variables. But the prediction function for both systems,}
+the variables. But the prediction function for both systems,}\slides{* Matrix factorisation:}
 $$
 f_{i, j} =
 \mathbf{u}_{i, :}^\top \mathbf{v}_{j, :} 
 $$
-for matrix factorization or
+\notes{for matrix factorization or}\slides{PCA:}
 $$
 f_{i, j} = \latentVector_{i, :}^\top \weightVector_{j, :} 
 $$
 \notes{for probabilistic PCA and factor analysis are the same.}
 
 \subsection{Other Interpretations of PCA: Separating Model and Algorithm}
+
+\slides{* PCA introduced as latent variable model (a model).
+* Solution is through an eigenvalue problem (an algorithm).
+* This causes some confusion about what PCA is.}
 
 \notes{Since Hotelling first introduced his perspective on factor
 analysis as PCA there has been somewhat of a conflation of the idea of the model
@@ -96,7 +104,13 @@ another approach to determining the principal components.}
 
 \subsection{Separating Model and Algorithm}
 
-I've given a fair amount of personal thought to this situation and my
+\slides{* Separation between *model* and *algorithm* is helpful conceptually.
+* Even if in practice they conflate (e.g. deep neural networks).
+* Sometimes difficult to pull apart.
+* Helpful to revisit algorithms with modelling perspective in mind.
+  * Probabilistic numerics}
+
+\notes{I've given a fair amount of personal thought to this situation and my
 own opinion that this confusion about method arises because of a
 conflation of model and algorithm. The model of Hotelling, that which
 he termed principal component analysis, was really a variant of factor
@@ -119,9 +133,9 @@ interpretation,
 [kernel PCA](http://en.wikipedia.org/wiki/Kernel_principal_component_analysis)
 of @Scholkopf:nonlinear98 uses basis functions to form the eigenvalue
 problem in a nonlinear space, and my own work in this area
-[non-linearises the dual probabilistic PCA](http://jmlr.org/papers/volume6/lawrence05a/lawrence05a.pdf) [@Lawrence:pnpca05].
+[non-linearises the dual probabilistic PCA](http://jmlr.org/papers/volume6/lawrence05a/lawrence05a.pdf) [@Lawrence:pnpca05].}
 
-My conclusion is that when you are doing machine learning you should
+\notes{My conclusion is that when you are doing machine learning you should
 always have it clear in your mind what your *model* is and what your
 *algorithm* is. You can recognise your model because it normally
 contains a prediction function and an objective function. The
@@ -132,6 +146,6 @@ algorithms, and this is a perfectly valid pragmatist's approach, so
 conflation of model and algorithm is not always a bad thing. But for
 clarity of thinking and understanding it is necessary to maintain the
 separation and to maintain a handle on when and why we perform the
-conflation.
+conflation.}
 
 \endif

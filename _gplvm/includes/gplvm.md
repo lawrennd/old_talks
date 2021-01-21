@@ -29,28 +29,25 @@
 * Define *linear-Gaussian relationship* between latent variables and data.
 * **Novel** Latent variable approach:
 * Define Gaussian prior over \emph{parameters}, $\mappingMatrix$.
-* Integrate out *parameters*.}{\includepng{\diagramsDir/dimred/gplvm_graph}{30%}
-      {\scriptsize \only<1-4>{$$
- p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\mappingMatrix\latentVector_{i,:}}{\dataStd^{2}\eye}$$
-        }\only<3-4>{$$
+* Integrate out *parameters*.}{\includepng{\diagramsDir/dimred/gplvm_graph}{50%}
+$$
+p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\mappingMatrix\latentVector_{i,:}}{\dataStd^{2}\eye}
+$$
+$$
  p\left(\mappingMatrix\right)=\prod_{i=1}^{\dataDim}\gaussianDist{\mappingVector_{i,:}}{\zerosVector}{\eye}$$
-        }\only<4->{$$
- p\left(\dataMatrix|\latentMatrix\right)=\prod_{j=1}^{\dataDim}\gaussianDist{\dataVector_{:,j}}{\zerosVector}{\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye}$$
-        }}
-}{45%}{45%}
+$$
+ p\left(\dataMatrix|\latentMatrix\right)=\prod_{j=1}^{\dataDim}\gaussianDist{\dataVector_{:,j}}{\zerosVector}{\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye}$$}{45%}{45%}
 
-
+\notes{
 \newslide{Linear Latent Variable Model IV}
 
-\fragmentdiv{**Dual**}{1}\fragmentdiv{**Dual**}{2} Probabilistic PCA Max. Likelihood Soln \fragmentdiv{[@Lawrence:gplvm03,Lawrence:pnpca05]}{1}\fragmentdiv{[@Lawrence:gplvm03,Lawrence:pnpca05]}{2}\fragmentdiv{[@Tipping:probpca99]}{3}
-
-     \includegraphics<1>[width=0.25\textwidth]{../../../gplvm/tex/diagrams/gplvmGraph}
-  
-  \fragmentdiv{
+\fragmentdiv{**Dual**}{1} Probabilistic PCA Max. Likelihood Soln \fragmentdiv{[@Lawrence:gplvm03,@Lawrence:pnpca05]}{1}
+\includepng{\diagramsDir/dimred/gplvm_graph}{25%}
+\slidesmall{\fragmentdiv{
 $$
 p\left(\dataMatrix|\latentMatrix\right)=\prod_{j=1}^{\dataDim}\gaussianDist{\dataVector_{:,j}}{\zerosVector}{\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye}
 $$
-       }{1}\fragmentdiv{
+}{1}\fragmentdiv{
 $$
 p\left(\dataMatrix|\latentMatrix\right)=\prod_{j=1}^{\dataDim}\gaussianDist{\dataVector_{:,j}}{\zerosVector}{\kernelMatrix},\quad\quad\kernelMatrix=\latentMatrix\mathbf{\latentMatrix}^{\top}+\dataStd^{2}\eye
 $$
@@ -64,7 +61,7 @@ $$
 \latentMatrix=\mathbf{U^{\prime}}_{\latentDim}\mathbf{L}\rotationMatrix^{\top},\quad\quad\mathbf{L}=\left(\Lambda_{\latentDim}-\dataStd^{2}\eye\right)^{\frac{1}{2}}
 $$
 where $\rotationMatrix$ is an arbitrary rotation matrix.
-       }{2}\fracmentdiv{$$
+       }{2}\fragmentdiv{$$
 p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\zerosVector}{\covarianceMatrix},\quad\quad\covarianceMatrix=\mappingMatrix\mappingMatrix^{\top}+\dataStd^{2}\eye$$
 $$
 \log p\left(\dataMatrix|\mappingMatrix\right)=-\frac{\numData}{2}\log\left|\covarianceMatrix\right|-\frac{1}{2}\tr{\covarianceMatrix^{-1}\dataMatrix^{\top}\dataMatrix}+\mbox{const.}
@@ -75,8 +72,7 @@ and the corresponding eigenvalues are $\Lambda_{\latentDim}$,
 $$
 \mappingMatrix=\eigenvectorMatrix_{\latentDim}\mathbf{L}\rotationMatrix^{\top},\quad\quad\mathbf{L}=\left(\Lambda_{\latentDim}-\dataStd^{2}\eye\right)^{\frac{1}{2}}
 $$
-where $\rotationMatrix$ is an arbitrary rotation matrix.}{3}
-     
+where $\rotationMatrix$ is an arbitrary rotation matrix.}{3}}}
 
 
 
@@ -114,7 +110,9 @@ $$
   * Prior distribution over *instantiations* of the function: finite
       dimensional objects.
   * Can prove by induction that GP is 'consistent'.
-  
+ 
+\newslide{Gaussian Process (GP) II}
+
 * Mean and Covariance Functions
 * Instead of mean and covariance matrix, GP is defined by mean function
     and covariance function.
@@ -129,7 +127,7 @@ $$
 
 
 
-\newslide{Gaussian Processes II}
+\newslide{Gaussian Processes III}
 
 **Zero mean Gaussian Process**
   
@@ -173,43 +171,33 @@ $$
 
 \newslide{Non-Linear Latent Variable Model}
   
-    \columns{
-  **Dual Probabilistic PCA**
-
-      
-    * Define *linear-Gaussian relationship* between latent variables
-        and data.
-    * **Novel** Latent variable approach:
-
-        
-      * Define Gaussian prior over *parameteters*, $\mappingMatrix$.
-      * Integrate out *parameters*.
-      
-    
-    
-      
-    * Inspection of the marginal likelihood shows ...
-
-        
-      * The covariance matrix is a covariance function.
-      * We recognise it as the `linear kernel'.}{
-\figure{\includepng{\diagramsDir/dimred/gplvm_graph}{100%}}{Graph of the Gaussian process latent variable model. Optimise $\latentVariables$ and integrate out the mapping $\mappingMatrix$.
-   
-
-
-\fragmentdiv{$$
+\columns{\slidesmall{**Dual Probabilistic PCA**
+* Define *linear-Gaussian relationship* between latent variables
+and data.
+* **Novel** Latent variable approach:
+  * Define Gaussian prior over *parameteters*, $\mappingMatrix$.
+  * Integrate out *parameters*.
+  
+* Inspection of the marginal likelihood shows ...
+  * The covariance matrix is a covariance function.
+  * We recognise it as the 'linear kernel'.
+}}{\includepng{\diagramsDir/dimred/gplvm_graph}{50%}
+\slidesmall{\fragmentdiv{$$
  p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{n}N\left(\dataVector_{i,:}|\mappingMatrix\latentVector_{i,:},\dataStd^{2}\eye\right)$$
  $$
  p\left(\mappingMatrix\right)=\prod_{i=1}^{d}N\left(\mappingVector_{i,:}|\mathbf{0},\eye\right)$$
-        }{1}\only<1-2>{$$
+        }{1}
+$$
  p\left(\dataMatrix|\latentMatrix\right)=\prod_{j=1}^{d}N\left(\dataVector_{:,j}|\mathbf{0},\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye\right)$$
-        }\only<3->{$$
+ $$
  p\left(\dataMatrix|\latentMatrix\right)=\prod_{j=1}^{d}N\left(\dataVector_{:,j}|\mathbf{0},\kernelMatrix\right)$$
-        }\only<3-4>{$$
- \kernelMatrix=\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye$$
-        }\only<4>{This is a product of Gaussian processes with linear kernels.}\only<5>{$$
- \kernelMatrix=?$$
- Replace linear kernel with non-linear kernel for non-linear model.}}{45%}{45%}
+$$
+\kernelMatrix=\latentMatrix\latentMatrix^{\top}+\dataStd^{2}\eye$$
+This is a product of Gaussian processes with linear kernels.
+$$
+\kernelMatrix=?
+$$
+Replace linear kernel with non-linear kernel for non-linear model.}}{45%}{45%}
 
 
 

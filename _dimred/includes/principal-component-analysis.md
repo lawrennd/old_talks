@@ -48,29 +48,12 @@
 
 **Probabilistic PCA**
 
-* Define *linear-Gaussian relationship* between latent variables and data.
+\columns{* Define *linear-Gaussian relationship* between latent variables and data.
 * **Standard** Latent variable approach:
   * Define Gaussian prior over *latent space*, $\latentMatrix$.
-* Integrate out *latent variables*.
-
-\begin{tikzpicture}
-          
-          % Define nodes
-          \node[obs]
-(Y) {$\dataMatrix$};
-          \node[const, above=of Y, xshift=-1.2cm] (W)
-{$\mappingMatrix$};
-          \node[latent, above=of Y, xshift=1.2cm]  (X)
-{$\latentMatrix$};
-          \node[const, right=1cm of Y]            (sigma)
-{$\dataStd^2$};
-          
-          % Connect the nodes
-          \edge
-{X,W,sigma} {Y} ; %
-          
-\end{tikzpicture}
-
+* Integrate out *latent variables*.}{
+\figure{\includepng{\diagramsDir/dimred/ppca_graph}{40%}}{Graphical model representing probabilistic PCA.}{ppca-graph}
+\slidesmall{
 $$
 p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\mappingMatrix\latentVector_{i,:}}{\noiseStd^2\eye}
 $$
@@ -81,6 +64,6 @@ $$
 
 $$
 p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\zerosVector}{\mappingMatrix\mappingMatrix^{\top}+\noiseStd^{2}\eye}
-$$
+$$}}
 
 \endif

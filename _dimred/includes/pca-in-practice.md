@@ -3,7 +3,7 @@
 
 \editme
 
-\section{PCA in Practice}
+\notes{\section{PCA in Practice}
 
 Principal component analysis is so effective in practice that there
 has almost developed a mini-industry in renaming the method itself
@@ -30,6 +30,6 @@ you understanding of the structure of the underlying data and help you
 to develop your intuitions about the nature of your data. Intelligent
 plotting and interaction with your data is always a good think, and
 for high dimensional data that means that you need some way of
-visualisation, PCA is typically a good starting point.
+visualisation, PCA is typically a good starting point.}
 
 \endif
