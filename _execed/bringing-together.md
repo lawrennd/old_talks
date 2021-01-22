@@ -11,3 +11,9 @@ abstract: "In this final session we bring together the different lessons learned
 \include{_ai/includes/the-promise-of-ai.md} 
 <!-- See the great AI fallacy -->
 \include{_ai/includes/five-ai-myths.md}
+
+\reading
+
+\thanks
+
+\references
