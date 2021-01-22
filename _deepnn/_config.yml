@@ -1,0 +1,18 @@
+author:
+- given: Neil D.
+  family: Lawrence
+  institution: University of Cambridge
+  url: http://inverseprobability.com
+talkscam:
+room: LT1
+venue: Computer Laboratory, William Gates Building, 15 J. J. Thomson Avenue
+postdir: ../../../mlatcl/deepnn/_lectures/
+slidedir: ../../../mlatcl/deepnn/slides/
+notedir: ../../../mlatcl/deepnn/_notes/
+notebookdir: ../../../mlatcl/deepnn/_notebooks/
+transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _deepnn

@@ -8,13 +8,13 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 venue: Virtual (Zoom)
-postdir: ../../../mlatcl/mlphysical/_lectures/
-slidedir: ../../../mlatcl/mlphysical/slides/
-notedir: ../../../mlatcl/mlphysical/_notes/
-notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+postdir: ../../../mlatcl/r250/_lectures/
+slidedir: ../../../mlatcl/r250/slides/
+notedir: ../../../mlatcl/r250/_notes/
+notebookdir: ../../../mlatcl/r250/_notebooks/
 transition: None
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
-  directory: _mlphysical
+  directory: _r250

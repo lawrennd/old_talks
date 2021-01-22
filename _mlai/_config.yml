@@ -14,3 +14,8 @@ notedir: ../../../mlatcl/mlai/_notes/
 notebookdir: ../../../mlatcl/mlai/_notebooks/
 transition: None
 time:
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _mlai

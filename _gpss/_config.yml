@@ -15,3 +15,8 @@ notedir: ../../../mlatcl/gpss/_notes/
 notebookdir: ../../../mlatcl/gpss/_notebooks/
 transition: None
 time:
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _gpss
