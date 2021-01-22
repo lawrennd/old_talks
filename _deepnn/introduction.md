@@ -10,7 +10,7 @@ author:
   institution: University of Cambridge
   url: http://inverseprobability.com
 abstract: >
-  This lecture will give the background to what this course is about, and how it fits in to other material you can find on deep neural network models. It explains deep neural networks are, how they fit into the wider context of the field and why they are succesful.
+  This lecture will give the background to what this course is about, and how it fits in to other material you can find on deep neural network models. It explains deep neural networks are, how they fit into the wider context of the field and why they are successful.
 talkscam:
 youtube: 9pjIhoeXlnI
 reveal: True
