@@ -10,9 +10,7 @@
 
 \notes{The Game of Life is played on a grid of squares, or pixels. Each pixel is either on or off. The game has no players, but a set of simple rules that are followed at each turn the rules are.}
 
-* **Survival** Every pixel surrounded by two or three other pixels survives for the next turn.
-* **Death** Each pixel surrounded by four or more pixels dies from overpopulation. Likewise, every pixel next to one or no pixels at all dies from isolation.
-* **Birth** Each square adjacent to exactly three pixels gives birth to a new pixel.
+\include{_simulation/includes/life-rules.md}
 
 \notes{And that's it. Those are the simple 'physical laws' for Conway's game.}
 

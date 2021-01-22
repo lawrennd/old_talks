@@ -20,7 +20,7 @@
 }
 
 
-\figure{\includegooglebook{0p8AAAAAMAAJ}{PA308}
+\figure{\includegooglebook{0p8AAAAAMAAJ}{PA308}}{Maxwell's demon was designed to highlight the statistical nature of the second law of thermodynamics.}{maxwells-demon}
 
 \newslide{}
 

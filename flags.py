@@ -89,7 +89,9 @@ elif args.output == 'post':
         lines += """ --metadata pdf={out}.pdf"""
     if args.output == 'post':
         lines += weekarg + sessionarg + """ --metadata layout={layout}""".format(layout=layout)
-        
+    if ny.header_field('ghub', fields):
+        ghub = ny.header_field('ghub', fields)[0]
+        lines += """ --metadata edit_url={local_edit}""".format(local_edit="https://github.com/{ghub_organization}/{ghub_repository}/edit/{ghub_branch}/{ghub_dir}/{base}.md".format(base=args.base, ghub_organization=ghub['organization'], ghub_repository=ghub['repository'], ghub_branch=ghub['branch'], ghub_dir=ghub['directory']))    
     print(lines.format(out=out, date=date))
 
 elif args.output=='docx':

@@ -11,6 +11,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2021-02-11
+ipynb: True
 venue: Celsius Lecture, Uppsala University, Sweden
 transition: None
 ---
@@ -19,29 +20,119 @@ transition: None
 
 \include{talk-macros.gpp}
 
-\newslide{}
+GREAT AI FALLACY
 
-\includegooglebook{0p8AAAAAMAAJ}{PA3}
+UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER
 
-
-\notes{Introduce celsius and heat.}
+\section{SUPERINTELLIGENCE}
 
 \include{_physics/includes/laplaces-determinism.md}
+\include{_simulation/includes/life-glider-loafer-conway.md}
+\include{_simulation/includes/life-rules.md}
+
+
+HURRICANE DETECTOR
+
+LAPLACE'S GREMLIN
+
+THEORY of IGNORANCE
+
+EINSTEIN
+
+ENTROPY BILLIARDS
+
+\subsection{Artificial Intelligence}
+
+\notes{One of the struggles of artificial intelligence is that the term means different things to different people. Our intelligence is precious to us, and the notion that it can be easily recreated is disturbing to us. This leads to some dystopian notions of artificial intelligence, such as the singularity.}
+
+\notes{Depending on whether this powerful technology is viewed as beneficent or maleficent, it can be viewed either as a helpful assistant, in the manner of Jeeves, or a tyrannical dictator.}
+
+\include{_ai/includes/ai-as-manservant.md}
+
+\notes{The history of automation and technology is a history of us adapting to technological change. The invention of the railways, and the need for consistent national times to timetable our movements. The development of the factory system in the mills of Derbyshire required workers to operate and maintain the machines that replaced them.}
+
+\newslide{}
+
+> Day by day, however, the machines are gaining ground upon us; day by day we are becoming more subservient to them; more men are daily bound down as slaves to tend them, more men are daily devoting the energies of their whole lives to the development of mechanical life. The upshot is simply PAGE 185a question of time, but that the time will come when the machines will hold the real supremacy over the world and its inhabitants is what no person of a truly philosophic mind can for a moment question.
+>
+> Samuel Butler in *Darwin Among the Machines* a letter to the Editor of
+> *The Press*, 1863
+
+
+\notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that 
+
+\section{MEASUREMENT}
+
+\newslide{Measurement and Intelligence}
+
+\figure{\includegooglebook{0p8AAAAAMAAJ}{PA3}}{Quote from Maxwell's theory of heat on the melting and boiling point of water.}{maxwell-melting-boiling}
+
+
+\section{UNCERTAINTY}
+
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/maxwells-demon.md}
-\include{_physics/includes/szilards-engine.md}
+
+\newslide{A Theory of Ignorance}
+
+\figure{\threeColumns{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}{}{left}}{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}{}{center}}{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{100%}{}{right}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Norbert Wiener, (1894-1964), Claude Shannon (1916-2001)}{russell-wiener-russell}
+
+\notes{Stories, between humans.}
+
+\speakernotes{I have a great dislike for Russell; I cannot explain it completely, but I feel a detestation for the man. As far as any sympathy with me, or with anyone else, I believe, he is an iceberg. His mind impresses one as a keen, cold, narrow logical machine, that cuts the universe into neat little packets, that measure, as it were, just three inches each way. His type of mathematical analysis he applies as a sort of Procrustean bed to the facts, and those that contain more than his system provides for, he lops short, and those that contain less, he draws out.
+
+Norbert Wiener in a letter to his family, 1913}
+
+
+\section{HUMANS}
+
+\newslide{Locked In}
+
+\notes{\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}}
+
+\include{_philosophy/includes/the-hamburg-hydra.md}
+
+<!--include{_physics/includes/szilards-engine.md}-->
+
+
+
 \notes{Introduce Linnaeus and the hydra.}
 
+\section{GAMES}
 
-\include{_ai/includes/artificial-vs-natural-systems.md}
+\include{_ml/includes/deep-face.md}
+\include{_ml/includes/deep-learning-as-pinball.md}
+
+\include{_simulation/includes/game-of-life.md}
+
+
+\notes{Introduce Lee Seedol (seedolian voids)
+
+\notes{AlphaGo won the challenge match 4-1, the neural networks had found
+feature landscape which allowed good decisions to be made in the game,
+and another major frontier for AI was overcome. But despite the tens of
+millions of games AlphaGo had played, despite the additional work of Fan
+Hui training Alpha Go, despite the millions of dollars spent on compute
+and the hundreds of scientists working for DeepMind, Lee Sedol still
+managed to win a game. Given the effort stacked against him, it was a
+breathtaking achievement.
+
+Despite the many millions of matches that AlphaGo had played, Lee Sedol
+managed to find a board position that was distinct from anything AlphaGo
+had seen before. Within the high dimensional pinball machine that made
+up AlphaGo's decision making systems, Lee Sedol found a niche, an
+Achillean chink in AlphaGo's armour. He found a path through the neural
+network where no data had every been before. He found a location in
+feature space where there be dragons.
+}
+
+include{_ai/includes/artificial-vs-natural-systems.md}
 \include{_philosophy/includes/uncertainty-and-absolutism.md}
-\include{_philosophy/includes/the-hamburg-hydra.md}
 Model Induced blindness?
 
 \include{_physics/includes/kappenball.md}
 
 \notes{Uber ATG Accident}
-\include{_simulation/includes/game-of-life.md}
 
 \notes{HOw simple phenomena become complex}
 \notes{Connect the use of ML for physics/biology with the previous use of physics/biology for talking about ML.}
