@@ -14,3 +14,8 @@ slidedir: ../../../mlatcl/execed/slides/
 notedir: ../../../mlatcl/execed/_notes/
 notebookdir: ../../../mlatcl/execed/_notebooks/
 transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _execed
