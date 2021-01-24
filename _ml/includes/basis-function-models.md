@@ -18,7 +18,7 @@ time. First we will scale the output of the data to be zero mean and variance 1.
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
 	                                        polynomial=mlai.polynomial, 
-											tanh=mlai.tanh, 
+											tanh=mlai.hyperbolic_tangent, 
 											fourier=mlai.fourier, 
 											relu=mlai.relu), 
                                  data_limits=(1888, 2020),
