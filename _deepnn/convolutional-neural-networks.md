@@ -15,8 +15,6 @@ abstract: >
   This lecture will introduce convolutional neural networks. 
 talkscam:
 reveal: false
-room: Zoom
-venue: Computer Laboratory, William Gates Building
 time: "14:00"
 start: "14:00"
 end: "15:00"
