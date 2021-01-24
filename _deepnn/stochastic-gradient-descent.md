@@ -11,8 +11,6 @@ author:
 abstract: >
   This lecture will cover stochastic gradient descent.
 talkscam:
-room: Virtual
-venue: Computer Laboratory, William Gates Building
 reveal: false
 time: "14:00"
 start: "14:00"
