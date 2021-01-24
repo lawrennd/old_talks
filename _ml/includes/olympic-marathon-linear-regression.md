@@ -1,16 +1,13 @@
-\ifndef{olympicDataLinearRegression}
-\define{olympicDataLinearRegression}
+\ifndef{olympicMarathonLinearRegression}
+\define{olympicMarathonLinearRegression}
 
 \editme
 
-\section{Linear Algebra}
+\include{_dataset/includes/olympic-marathon-data.md}
 
-\notes{Linear algebra provides a very similar role, when we introduce [linear algebra](http://en.wikipedia.org/wiki/Linear_algebra), it is because we are faced with a large number of addition and multiplication operations. These operations need to be done together and would be very tedious to write down as a group. So the first reason we reach for linear algebra is for a more compact representation of our mathematical formulae.}
-
-\notes{
 \subsection{Running Example: Olympic Marathons}
 
-Now we will load in the Olympic marathon data. This is data of the olympic marath times for the men's marathon from the first olympics in 1896 up until the London 2012 olympics.}
+\notes{Now we will load in the Olympic marathon data. This is data of the olympic marath times for the men's marathon from the first olympics in 1896 up until the London 2012 olympics.}
 
 \setupcode{import pods}
 \code{data = pods.datasets.olympic_marathon_men()
@@ -31,21 +28,19 @@ print(y)}
 
 You can make a plot of $\dataScalar$ vs $\inputScalar$ with the following command:}
 
-\setupcode{%matplotlib inline 
-import matplotlib.pyplot as plt}
+\setupplotcode{import matplotlib.pyplot as plt}
 
 \code{plt.plot(x, y, 'rx')
 plt.xlabel('year')
 plt.ylabel('pace in min/km')}
 
-\notes{
 \subsection{Maximum Likelihood: Iterative Solution}
 
-Now we will take the maximum likelihood approach we derived in the lecture to fit a line, $\dataScalar_i=m\inputScalar_i + c$, to the data you've plotted. We are trying to minimize the error function:
+\notes{Now we will take the maximum likelihood approach we derived in the lecture to fit a line, $\dataScalar_i=m\inputScalar_i + c$, to the data you've plotted. We are trying to minimize the error function:}
 $$
 \errorFunction(m, c) =  \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i-c)^2
 $$
-with respect to $m$, $c$ and $\sigma^2$. We can start with an initial guess for $m$,}
+\notes{with respect to $m$, $c$ and $\sigma^2$. We can start with an initial guess for $m$,}
 
 \code{m = -0.4
 c = 80}

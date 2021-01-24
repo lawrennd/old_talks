@@ -52,7 +52,7 @@ mlai.write_figure(filename='olympic-marathon.svg',
 
 \newslide{Olympic Marathon Data}
 
-\figure{\includediagram{\diagramsDir/datasets/olympic-marathon}{80%}}{Olympic marathon pace times since 1892.}{olympic-marathon}
+\figure{\includediagram{\diagramsDir/datasets/olympic-marathon}{80%}}{Olympic marathon pace times since 1896.}{olympic-marathon}
 
 \notes{Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
 

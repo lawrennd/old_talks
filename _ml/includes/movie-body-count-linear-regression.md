@@ -1,0 +1,54 @@
+\ifndef{movieBodyCountLinearRegression}
+\define{movieBodyCountLinearRegression}
+
+\include{_datasets/includes/movie-body-count-data.md}
+
+\editme
+
+\subsection{Polynomial Fits to Olympic Data}
+
+\include{_datasets/include/movie-body-count-data.md}
+
+\notes{Now we will build a design matrix based on the numeric features: year, Body_Count, Length_Minutes in an effort to predict the rating. We build the design matrix as follows:}
+
+\notes{\subsection{Relation to Single Input System}
+
+Bias as an additional feature.}
+
+\code{select_features = ['Year', 'Body_Count', 'Length_Minutes']
+X = movies[select_features]
+X['Eins'] = 1 # add a column for the offset
+y = movies[['IMDB_Rating']]}
+
+\notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
+
+\setupcode{import pandas as pd}
+\code{w = pd.DataFrame(data=np.linalg.solve(X.T@X, X.T@y),  # solve linear regression here
+                 index = X.columns,  # columns of X become rows of w
+                 columns=['regression_coefficient']) # the column of X is the value of regression coefficient}
+
+\notes{We can check the residuals to see how good our estimates are. First we create a pandas data frame containing the predictions and use it to compute the residuals.}
+
+\code{ypred = pd.DataFrame(data=(X@w).values, columns=['IMDB_Rating'])
+resid = y-ypred}
+
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+resid.hist(ax=ax)
+mlai.write_figure(filename='movie-body-count-rating-residuals.svg', 
+				  directory='\writeDiagramsDir/ml')}
+
+
+\figure{\includediagram{\diagramsDir/ml/movie-body-count-rating-residuals}{80%}}{Residual values for the ratings from the prediction of the movie rating given the data from the film.}{movie-body-count-residuals}
+
+\notes{Which shows our model *hasn't* yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.}
+
+\code{w}
+
+\notes{Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.}
+
+                            
+\endif

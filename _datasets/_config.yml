@@ -12,3 +12,8 @@ reveal: False
 postdir: ../../../lawrennd/ods/_datasets/
 notebookdir: ../../../lawrennd/ods/notebooks/pods/datasets/
 transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _datasets

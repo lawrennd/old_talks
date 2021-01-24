@@ -25,25 +25,11 @@ end: "15:00"
 
 \include{_deepnn/includes/deepnn-notebook-setup.md}
 
-\include{_ml/includes/basis-functions.md}
-\include{_ml/includes/basis-function-models.md}
-
-\addreading{@Rogers:book11}{Section 1.4}
-\addreading{@Bishop:book06}{Chapter 1, pg 1-6}
-\addreading{@Bishop:book06}{Chapter 3, Section 3.1 up to pg 143}
-
-* Classical models of generalisation
-* Double descent
-* Generalisation as a function of the algorithm (route up table mountain)
-* Conflating algoirthm with model
-
-\include{_ml/includes/expected-loss.md}
-\include{_ml/includes/empirical-risk-minimization.md}
-\include{_ml/includes/validation.md}
-\addreading{@Rogers:book11}{Section 1.5}
+\include{_ml/includes/bias-variance-dilemma.md}
 
 Bias variance dilemma <https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1>
 
+bootstrap
 \include{_ml/includes/bias-variance-dilemma.md}
 
 

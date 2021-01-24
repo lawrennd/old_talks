@@ -402,44 +402,6 @@ plt.plot(x, y, 'rx')}
 
 A major advantage of the new system is that we can build a linear regression on a multivariate system. The matrix calculus didn't specify what the length of the vector $\inputVector$ should be, or equivalently the size of the design matrix. }
 
-\notes{\subsection{Movie Body Count Data}
-
-Let's consider the movie body count data.}
-
-\setupcode{import pods}
-\code{data = pods.datasets.movie_body_count()
-movies = data['Y']}
-
-\notes{Let's remind ourselves of the features we've been provided with.}
-
-\code{print(', '.join(movies.columns))}
-
-\notes{Now we will build a design matrix based on the numeric features: year, Body_Count, Length_Minutes in an effort to predict the rating. We build the design matrix as follows:}
-
-\notes{\subsection{Relation to Single Input System}
-
-Bias as an additional feature.}
-
-\code{select_features = ['Year', 'Body_Count', 'Length_Minutes']
-X = movies[select_features]
-X['Eins'] = 1 # add a column for the offset
-y = movies[['IMDB_Rating']]}
-
-\notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
-
-\setupcode{import pandas as pd}
-\code{w = pd.DataFrame(data=np.linalg.solve(X.T@X, X.T@y),  # solve linear regression here
-                 index = X.columns,  # columns of X become rows of w
-                 columns=['regression_coefficient']) # the column of X is the value of regression coefficient}
-
-\notes{We can check the residuals to see how good our estimates are}
-
-\code{(y - X@w).hist()}
-
-\notes{Which shows our model *hasn't* yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.}
-
-\code{w}
-
-\notes{Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.}
+\notes{\include{_ml/include/movie-body-count-linear-regression.md}}
 
 \endif

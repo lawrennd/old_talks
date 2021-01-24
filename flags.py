@@ -40,6 +40,13 @@ try:
 except ny.FileFormatError:
     session = 0
     sessionarg = ''
+
+try:
+    background = int(ny.header_field('background', fields))
+    backgroundarg = """ --metadata background={background}""".format(background=background)
+except ny.FileFormatError:
+    background = 0
+    backgroundarg = ''
     
 try:
     layout = ny.header_field('layout', fields)
@@ -54,6 +61,20 @@ if layout == 'lecture':
         if week>0:
             prefix += '-'
         prefix += '{0:02}'.format(session)
+    prefix += '-'
+elif layout == 'background':
+    prefix = ''
+    if week>0:
+        prefix += '{0:02}'.format(week)
+    if session>0:
+        if week>0:
+            prefix += '-'
+        prefix += '{0:02}'.format(session)
+    if background>0:
+        if session>0:
+            if week>0:
+                prefix += '-'
+            prefix += '{0:02}'.format(background)
     prefix += '-'
 elif layout == 'test':
     prefix = 'XXXX-XX-XX'
