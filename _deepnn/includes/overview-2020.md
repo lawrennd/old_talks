@@ -52,8 +52,8 @@
 \newslide{Schedule}
 
 * Week 4:
-  1. Convolutional Neural Networks: [Nic Lane](http://niclane.org/), [Ferenc Huszár](https://www.inference.vc/about/)
-  2. Recurrent Neural Networks:  [Nic Lane](http://niclane.org/), [Ferenc Huszár](https://www.inference.vc/about/)
+  1. Convolutional Neural Networks: [Nic Lane](http://niclane.org/)
+  2. Recurrent Neural Networks:  [Ferenc Huszár](https://www.inference.vc/about/)
 
 **Assignment 1 Submitted**
 
@@ -61,7 +61,7 @@
 
 * Week 5:
   1. Sequence to Sequence and Attention: [Ferenc Huszár](https://www.inference.vc/about/)
-  2. Transformers: [Ferenc Huszár](https://www.inference.vc/about/)
+  2. Transformers: [Nic Lane](http://niclane.org/) 
   
 **Set Assignment 2 (70%)**
 
