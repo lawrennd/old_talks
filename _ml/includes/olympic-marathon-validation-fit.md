@@ -69,12 +69,11 @@ Use this to compute the quadratic fit for the model, again plotting the result t
 import mlai}
 
 \plotcode{max_basis = 26
+data_limits = (1888, 2020)
 basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
-data_limits = [1892, 2020]
 num_data = x.shape[0]}
 
-\setupplotcode{import teaching_plots as plot
-%matplotlib inline}
+\setupplotcode{import teaching_plots as plot}
 
 \plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, max_basis+1), 
               model=mlai.LM, basis=basis, 

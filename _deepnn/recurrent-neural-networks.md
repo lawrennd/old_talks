@@ -7,10 +7,6 @@ date: 2021-02-16
 start: "14:00"
 end: "15:00"
 author:
-- given: Nic
-  family: Lane
-  institution: 
-  url: http://niclane.org/
 - given: Ferenc
   family: Huszár
   institution: 

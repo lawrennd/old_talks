@@ -7,10 +7,10 @@ date: 2021-02-23
 start: "14:00"
 end: "15:00"
 author:
-- given: Ferenc
-  family: Huszár
+- given: Nic
+  family: Lane
   institution: 
-  url: https://www.inference.vc/about/
+  url: http://niclane.org/
 abstract: >
   This lecture will introduce transformers.
 talkscam:

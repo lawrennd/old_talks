@@ -11,10 +11,6 @@ author:
   family: Lane
   institution: 
   url: http://niclane.org/
-- given: Ferenc
-  family: Huszár
-  institution: 
-  url: https://www.inference.vc/about/
 abstract: >
   This lecture will introduce convolutional neural networks. 
 talkscam:

@@ -14,8 +14,8 @@ abstract: >
   neural architectures. We will review classical generalization and explore what's different
   about neural network models.
 talkscam:
-reveal: True
-ipynb: True
+reveal: False
+ipynb: False
 time: "14:00"
 start: "14:00"
 end: "15:00"
@@ -26,11 +26,17 @@ end: "15:00"
 \include{_deepnn/includes/deepnn-notebook-setup.md}
 
 \include{_ml/includes/bias-variance-dilemma.md}
+\include{_ml/includes/bias-variance-dilemma.md}
+\include{_ml/includes/double-descent.md}
+
+\thanks
+
+\references
+
 
 Bias variance dilemma <https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1>
 
 bootstrap
-\include{_ml/includes/bias-variance-dilemma.md}
 
 
 Bootstrap Predication and Bayesian Misspecified Models: <https://www.jstor.org/stable/3318894#metadata_info_tab_contents>
@@ -58,9 +64,5 @@ Aki Vehtari on Leave One Out Uncertainty: <https://arxiv.org/abs/2008.10296> (ch
 
 Large models and memorisation: <https://arxiv.org/abs/2012.07805>
 
-\include{_ml/includes/double-descent.md}
 
-\thanks
-
-\references
 
