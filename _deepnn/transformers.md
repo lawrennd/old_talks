@@ -14,9 +14,10 @@ author:
 abstract: >
   This lecture will introduce transformers.
 talkscam:
-room: Zoom
 reveal: false
-venue: Computer Laboratory, William Gates Building
+time: "14:00"
+start: "14:00"
+end: "15:00"
 ---
 
 Related publications and links will appear here.
