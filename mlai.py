@@ -291,8 +291,12 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
         centres = asarray([data_limits[0]/2. + data_limits[1]/2.])
     else:
         centres = []
+    if num_basis < 3:
+        basis_gap = (data_limits[1]-data_limits[0])
+    else:
+        basis_gap = (data_limits[1]-data_limits[0])/(num_basis-2)
     if gain is None:
-        gain = ones(num_basis-1)
+        gain = ones(num_basis-1)/basis_gap
     Phi = zeros((x.shape[0], num_basis))
     # Create the bias
     Phi[:, 0] = 1.0

@@ -15,8 +15,13 @@ time. First we will scale the output of the data to be zero mean and variance 1.
 \comment{\writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{10}}
 
 
+
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+yhat = (y - offset)/scale
+
+_ = ax.plot(x, yhat, 'r.',markersize=10)
+pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
 	                                        polynomial=mlai.polynomial, 
 											tanh=mlai.hyperbolic_tangent, 
 											fourier=mlai.fourier, 
