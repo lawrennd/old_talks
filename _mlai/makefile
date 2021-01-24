@@ -1,3 +1,3 @@
-BASE=background-basis-functions
+BASE=basis-functions
 include ../make-talk-flags.mk
 include ../make-talk.mk
