@@ -25,7 +25,9 @@ talkscam:
 reveal: false
 room: Zoom
 venue: Computer Laboratory, William Gates Building
-time:
+time: "14:00"
+start: "14:00"
+end: "15:00"
 ---
 
 Related publications and links will appear here.
