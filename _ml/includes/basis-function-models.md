@@ -176,7 +176,7 @@ $$
   $$
   \left(\basisMatrix^\top \basisMatrix\right)\mappingVector = \basisMatrix^\top \dataVector
 $$
-\notes{Compare this system with *solve for $x$* in} 
+\notes{Compare this system with *solve for* $\mathbf{x}$ in} 
 $$
 \mathbf{A}\mathbf{x} = \mathbf{b}.
 $$
