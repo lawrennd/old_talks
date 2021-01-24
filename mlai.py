@@ -301,7 +301,7 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     # Create the bias
     Phi[:, 0] = 1.0
     for i in range(1, num_basis):
-        Phi[:, i:i+1] = (gain[i-1]*asarray(x, dtype=float)>centres[i-1])*(asarray(x, dtype=float)-centres[i-1])
+        Phi[:, i:i+1] = gain[i-1]*(asarray(x, dtype=float)>centres[i-1])*(asarray(x, dtype=float)-centres[i-1])
     return Phi
 
 def hyperbolic_tangent(x, num_basis=4, data_limits=[-1., 1.], gain=None):
