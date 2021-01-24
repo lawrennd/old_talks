@@ -171,14 +171,19 @@ $$
   $$
 
 \newslide{Avoid Direct Inverse}
-\notes{In practice we should avoid solving these equations through direct use of the inverse. The correct approach is to make use of the QR decomposition.}
+\notes{In practice we should avoid solving these equations through direct use of the inverse. Instead we solve for $\mappingVector$ in the following linear system.}
 \slides{* E.g. Solve for $\mappingVector$}
   $$
   \left(\basisMatrix^\top \basisMatrix\right)\mappingVector = \basisMatrix^\top \dataVector
-  $$
+$$
+\notes{Compare this system with *solve for $x$* in} 
+$$
+\mathbf{A}\mathbf{x} = \mathbf{b}.
+$$
+\notes{For example see the `numpy.linalg.solve` or `torch.linalg.solve`.}
 \slides{* See `np.linalg.solve`
 * In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).}
-
+\notes{But the correct and more stable approach is to make use of the QR decomposition.}
 \include{_ml/includes/olympic-marathon-polynomial.md}
 
 \subsection{Non-linear but Linear in the Parameters}
