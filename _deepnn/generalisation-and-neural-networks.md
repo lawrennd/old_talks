@@ -14,7 +14,8 @@ abstract: >
   neural architectures. We will review classical generalization and explore what's different
   about neural network models.
 talkscam:
-reveal: false
+reveal: True
+ipynb: True
 time: "14:00"
 start: "14:00"
 end: "15:00"
