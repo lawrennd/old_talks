@@ -50,23 +50,7 @@ ll = np.array([np.nan]*(max_basis))
 sum_squares = np.array([np.nan]*(max_basis))
 basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
 
-\setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
-import mlai}
-
-\plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, 28), 
-              model=mlai.LM, basis=basis, 
-              xlim=xlim, objective_ylim=[0, 0.8],
-              diagrams='\writeDiagramsDir/ml')}
-
-\displaysetupcode{import pods
-from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_number{num_basis:0>3}.svg',
-                            directory='\writeDiagramsDir/ml', 
-                            num_basis=IntSlider(1,1,28,1))}
                             
-
-
 
 \slides{
 \define{width}{80%}
