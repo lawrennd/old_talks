@@ -1,4 +1,4 @@
-\ifndef{doubleDescent}
+\\ifndef{doubleDescent}
 \define{doubleDescent}
 
 \editme
@@ -13,7 +13,7 @@ and their predictions are aggregated giving us the acronym,
 Bagging. By combining decision trees with bagging, we recover random
 forests [@Breiman-forests01].}
 
-\notes{Bias and variance can also be estimated through Professor Efron's
+\notes{Bias and variance can also be estimated through Efron's
 bootstrap [@Efron:bootstrap79], and the traditional view has been that there's a form of
 Goldilocks effect, where the best predictions are given by the model
 that is 'just right' for the amount of data available. Not to simple,

@@ -1,5 +1,5 @@
-\ifndef{cyberneticsRatioClub]
-\define{cyberneticsRatioClub]
+\ifndef{cyberneticsRatioClub}
+\define{cyberneticsRatioClub}
 
 \editme
 

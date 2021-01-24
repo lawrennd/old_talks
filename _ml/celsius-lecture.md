@@ -20,26 +20,136 @@ transition: None
 
 \include{talk-macros.gpp}
 
-GREAT AI FALLACY
+\notes{GREAT AI FALLACY
 
-UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER
+UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER}
 
 \section{SUPERINTELLIGENCE}
 
-\include{_physics/includes/laplaces-determinism.md}
+\newslide{}
+
+>Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it would embrace in the same formulate the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.
+>
+> *Philosophical Essay on Probabilities* @Laplace-essai14 pg 3
+
+\speakernotes{This notion is known as *Laplace's demon* or *Laplace's superman*.}
+
+<!--include{_physics/includes/laplaces-determinism.md}-->
+
+\newslide{}
+
+\centerdiv{$$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$}
+
+
 \include{_simulation/includes/life-glider-loafer-conway.md}
-\include{_simulation/includes/life-rules.md}
+
+<!--include{_simulation/includes/life-rules.md}-->
 
 
-HURRICANE DETECTOR
+<!--HURRICANE DETECTOR-->
+\speakernotes{The phenomenon of emergent behaviour also applies to real world simulations like climate and weather. E.g. Niall Robinson defining a hurricane to search for hurricane's im climate simulations.}
 
-LAPLACE'S GREMLIN
+<!--LAPLACE'S GREMLIN-->
 
-THEORY of IGNORANCE
+\newslide{Laplace's Gremlin}
 
-EINSTEIN
+> The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
+>
+> Probability is relative, in part to this ignorance, in part to our knowledge.
+>
+> *Philosophical Essay on Probabilities* @Laplace-essai14 pg 5
 
-ENTROPY BILLIARDS
+
+INTRODUCE ENTROPY TO MEASURE IGNORANCE
+
+<!--THEORY of IGNORANCE-->
+
+\newslide{A Theory of Ignorance}
+
+\figure{\threeColumns{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}{}{left}}{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{100%}{}{center}}{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}{}{right}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
+
+\speakernotes{Wiener came to Cambridge in 1913. Russell showed him Einsteins 1905 paper on brownian motion (@Einstein-brownian05)}
+
+<!--EINSTEIN-->
+
+\newslide{}
+
+
+\section{UNCERTAINTY}
+
+\newslide{}
+
+\figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{100%}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}{}{right}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
+
+<!--ENTROPY BILLIARDS-->
+
+\include{_physics/includes/entropy-billiards.md}
+<!--include{_physics/includes/maxwells-demon.md}-->
+
+\newslide{}
+
+> But if we conceive a being whose faculties are so sharpened that he can follow every molecule in its course, such a being, whose attributes are still as essentially finite as our own, would be able to do what is at present impossible to us. For we have seen that the molecules in a vessel full of air at uniform temperature are moving with velocities by no means uniform, though the mean velocity of any great number of them, arbitrarily selected, is almost exactly uniform. Now let us suppose that such a vessel is divided into two portions, A and B, by a division in which there is a small hole, and that a being, who can see the individual molecules, opens and closes this hole, so as to allow only the swifter molecules to pass from A to B, and the only the slower ones to pass from B to A. He will thus, without expenditure of work, raise the temperature of B and lower that of A, in contradiction to the second law of thermodynamics.
+>
+> *Theory of Heat* [@Maxwell-theory71] page 308
+
+
+\newslide{}
+
+\figure{
+<div>
+<div style="width:68%;float:left">
+  <canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left"></canvas>
+</div>
+<div style="width:28%;float:right;margin:auto">
+  <div style="float:right;width:100%;margin:auto">Entropy: <output id="maxwell-entropy"></output></div>
+  <div id="maxwell-histogram-canvas" style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
+  </div>
+</div>
+</div>
+<div>
+<button id="maxwell-newball" style="text-align:right">New Ball</button>
+<button id="maxwell-pause" style="text-align:right">Pause</button>
+<button id="maxwell-skip" style="text-align:right">Skip 1000s</button>
+<button id="maxwell-histogram" style="text-align:right">Histogram</button>
+</div>
+
+\include{_scripts/includes/maxwell-js.md}
+}{Maxwell's Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right, only if they are hot.}{maxwells-demon}
+
+
+\figure{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{40%}}{, Claude Shannon (1916-2001) who in 1905 published a mathematical model for Brownian motion that inspired Wiener's work on stoachastic processes.}{albert-einstein}
+
+
+\section{MEASUREMENT}
+
+\newslide{Measurement and Intelligence}
+
+> For instance, the temperature at which ice melts is found to be always the same under ordinary circumstances, though, as we shall see, it is slightly altered by change of pressure. The temperature of steam which issues from boiling water is also constant when the pressure is constant.
+>
+> These two pheomena therefore--the melting of ice and the boiling of water--indicate in a visible manner two temperatures which we may use as points of reference, the position of which depends on the properties of water and not on the conditions of our senses.
+>
+> *Theory of Heat* @Maxwell-theory71 page 3
+
+
+
+\comment{\figure{\includegooglebook{0p8AAAAAMAAJ}{PA3}}{Quote from Maxwell's theory of heat on the melting and boiling point of water.}{maxwell-melting-boiling}}
+
+\section{HUMANS}
+
+\newslide{Locked In}
+
+\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}
+
+\include{_ai/includes/conversation-tedx.md}
+
+\notes{Stories, between humans.}
+
+\speakernotes{I have a great dislike for Russell; I cannot explain it completely, but I feel a detestation for the man. As far as any sympathy with me, or with anyone else, I believe, he is an iceberg. His mind impresses one as a keen, cold, narrow logical machine, that cuts the universe into neat little packets, that measure, as it were, just three inches each way. His type of mathematical analysis he applies as a sort of Procrustean bed to the facts, and those that contain more than his system provides for, he lops short, and those that contain less, he draws out.
+
+Norbert Wiener in a letter to his family, 1913}
+
+
+\section{ARTIFICIAL}
 
 \subsection{Artificial Intelligence}
 
@@ -59,80 +169,87 @@ ENTROPY BILLIARDS
 > *The Press*, 1863
 
 
-\notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that 
-
-\section{MEASUREMENT}
-
-\newslide{Measurement and Intelligence}
-
-\figure{\includegooglebook{0p8AAAAAMAAJ}{PA3}}{Quote from Maxwell's theory of heat on the melting and boiling point of water.}{maxwell-melting-boiling}
-
-
-\section{UNCERTAINTY}
-
-\include{_physics/includes/entropy-billiards.md}
-\include{_physics/includes/maxwells-demon.md}
-
-\newslide{A Theory of Ignorance}
-
-\figure{\threeColumns{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}{}{left}}{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}{}{center}}{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{100%}{}{right}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Norbert Wiener, (1894-1964), Claude Shannon (1916-2001)}{russell-wiener-russell}
-
-\notes{Stories, between humans.}
-
-\speakernotes{I have a great dislike for Russell; I cannot explain it completely, but I feel a detestation for the man. As far as any sympathy with me, or with anyone else, I believe, he is an iceberg. His mind impresses one as a keen, cold, narrow logical machine, that cuts the universe into neat little packets, that measure, as it were, just three inches each way. His type of mathematical analysis he applies as a sort of Procrustean bed to the facts, and those that contain more than his system provides for, he lops short, and those that contain less, he draws out.
-
-Norbert Wiener in a letter to his family, 1913}
-
-
-\section{HUMANS}
-
-\newslide{Locked In}
-
-\notes{\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}}
-
-\include{_philosophy/includes/the-hamburg-hydra.md}
-
-<!--include{_physics/includes/szilards-engine.md}-->
-
+\notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that }
 
 
 \notes{Introduce Linnaeus and the hydra.}
 
-\section{GAMES}
+\include{_philosophy/includes/the-hamburg-hydra.md}
+
+\speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
+
+<!--include{_physics/includes/szilards-engine.md}-->
+
+\newslide{Natural Systems are Evolved}
+\slides{
+> Survival of the fittest
+> 
+> ?
+}
+
+
+\newslide{Natural Systems are Evolved}
+
+> Survival of the fittest
+>
+> [Herbet Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer), 1864
+
+\notes{Darwin himself never said "Survival of the Fittest" he talked about evolution by natural selection.}
+
+
+\newslide{Natural Systems are Evolved}
+
+> Non-survival of the non-fit
+> 
+> 
+
+
+
+\section{*ARTIFICIAL* INTELLIGENCE}
 
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
 
-\include{_simulation/includes/game-of-life.md}
+\newslide{Where there be dragons}
 
-
-\notes{Introduce Lee Seedol (seedolian voids)
-
-\notes{AlphaGo won the challenge match 4-1, the neural networks had found
-feature landscape which allowed good decisions to be made in the game,
-and another major frontier for AI was overcome. But despite the tens of
-millions of games AlphaGo had played, despite the additional work of Fan
-Hui training Alpha Go, despite the millions of dollars spent on compute
-and the hundreds of scientists working for DeepMind, Lee Sedol still
+\figure{\includejpg{\diagramsDir/ai/alpha-go-wins}{80%}}{Lee Sedol still
 managed to win a game. Given the effort stacked against him, it was a
-breathtaking achievement.
+breathtaking achievement.}{alpha-go-wins}
 
-Despite the many millions of matches that AlphaGo had played, Lee Sedol
+\speakernotes{Sedolian void: Despite the many millions of matches that AlphaGo had played, Lee Sedol
 managed to find a board position that was distinct from anything AlphaGo
 had seen before. Within the high dimensional pinball machine that made
 up AlphaGo's decision making systems, Lee Sedol found a niche, an
 Achillean chink in AlphaGo's armour. He found a path through the neural
 network where no data had every been before. He found a location in
-feature space where there be dragons.
-}
+feature space where there be dragons.}
 
-include{_ai/includes/artificial-vs-natural-systems.md}
-\include{_philosophy/includes/uncertainty-and-absolutism.md}
-Model Induced blindness?
 
-\include{_physics/includes/kappenball.md}
+<!--include{_physics/includes/kappenball.md}-->
 
-\notes{Uber ATG Accident}
+\newslide{}
+
+\figure{\includeyoutube{iWGhXof45zI}{800}{600}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
+
+
+\newslide{Academy of Sweden}
+
+* The academy was founded on 2 June 1739 by naturalist Carl Linnaeus, mercantilist Jonas Alströmer, mechanical engineer Mårten Triewald, civil servants Sten Carl Bielke and Carl Wilhelm Cederhielm, and statesman/author Anders Johan von Höpken.
+
+INTRODUCE THE SOLUTIONS
+
+\newslide{Four Pillar Programme}
+
+* Addressing Technical Debt (with Alan Turing Institute and ELLIS/ELISE Network)
+* Accelerate Programme (funded by Schmidt Futures)
+* Data Trusts Initiative (http://datatrusts.uk, funded by McGovern)
+* Active Policy Engagement
+
+\thanks
+
+\references
+
+\comment{\notes{Uber ATG Accident}
 
 \notes{HOw simple phenomena become complex}
 \notes{Connect the use of ML for physics/biology with the previous use of physics/biology for talking about ML.}
@@ -230,9 +347,5 @@ I have a few photos and bios of various lengths available here:
 http://inverseprobability.com/biog.html
  
 Neil}
-
-
-\thanks
-
-\references
+}
 

@@ -20,19 +20,44 @@ start: "14:00"
 end: "15:00"
 ---
 
+\include{talk-macros.gpp}
+
+\include{_deepnn/includes/deepnn-notebook-setup.md}
+
+\include{_ml/includes/basis-functions.md}
+\include{_ml/includes/basis-function-models.md}
+
+\addreading{@Rogers:book11}{Section 1.4}
+\addreading{@Bishop:book06}{Chapter 1, pg 1-6}
+\addreading{@Bishop:book06}{Chapter 3, Section 3.1 up to pg 143}
+
 * Classical models of generalisation
 * Double descent
 * Generalisation as a function of the algorithm (route up table mountain)
 * Conflating algoirthm with model
 
+\include{_ml/includes/expected-loss.md}
+\include{_ml/includes/empirical-risk-minimization.md}
+\include{_ml/includes/validation.md}
+\addreading{@Rogers:book11}{Section 1.5}
+
+Bias variance dilemma <https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1>
+
+\include{_ml/includes/bias-variance-dilemma.md}
 
 
-Bias variance dilemma
-<https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1>
+Bootstrap Predication and Bayesian Misspecified Models: <https://www.jstor.org/stable/3318894#metadata_info_tab_contents>
+
+Edwin Fong and Chris Holmes: On the Marginal Likelihood and Cross Validation <https://arxiv.org/abs/1905.08737>
+
 
 The lack of a priori distinction between learning algorithms (No free lunch)
 <https://www.mitpressjournals.org/doi/abs/10.1162/neco.1996.8.7.1341>
 <https://link.springer.com/chapter/10.1007/978-1-4471-0123-9_3>
+
+
+David Hogg's lecture <https://speakerdeck.com/dwhgg/linear-regression-with-huge-numbers-of-parameters>
+
 
 Belkin on Bias/Variance
 <https://www.pnas.org/content/116/32/15849.short>
@@ -40,19 +65,15 @@ Belkin on Bias/Variance
 
 Belkin Talk: <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4>
 
+The Deep Bootstrap <https://twitter.com/PreetumNakkiran/status/1318007088321335297?s=20>
 
-the Deep Bootstrap
-<https://twitter.com/PreetumNakkiran/status/1318007088321335297?s=20>
-
-
-David Hogg's lecture
-<https://speakerdeck.com/dwhgg/linear-regression-with-huge-numbers-of-parameters>
+Aki Vehtari on Leave One Out Uncertainty: <https://arxiv.org/abs/2008.10296> (check for his references).
 
 Large models and memorisation: <https://arxiv.org/abs/2012.07805>
 
+\include{_ml/includes/double-descent.md}
 
-Aki Vehtari on Leave One Out Uncertainty: https://arxiv.org/abs/2008.10296 (check for his references).
+\thanks
 
-Bootstrap Predication and Bayesian Misspecified Models: https://www.jstor.org/stable/3318894#metadata_info_tab_contents
+\references
 
-Edwin Fong and Chris Holmes: On the Marginal Likelihood and Cross Validation https://arxiv.org/abs/1905.08737

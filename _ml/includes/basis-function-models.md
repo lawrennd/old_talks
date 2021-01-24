@@ -9,7 +9,7 @@ Now we are going to consider how these basis functions can be adjusted to fit to
 a particular data set. We will return to the olympic marathon data from last
 time. First we will scale the output of the data to be zero mean and variance 1.
 
-\include{_ml/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 
 \writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{10}
