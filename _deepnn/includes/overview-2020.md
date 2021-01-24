@@ -15,7 +15,7 @@
 
 \newslide{}
 
-\figure{\includeyoutube{0bMe_vCZo30}{800}{600}}{Lecture from the NYU course on Deep Learning given by Yann LeCun, Alfredo Canziani and Mark Goldstein}{nyu-deep-learning}
+\figure{\includeyoutube{0bMe_vCZo30}{600}{450}}{Lecture from the NYU course on Deep Learning given by Yann LeCun, Alfredo Canziani and Mark Goldstein}{nyu-deep-learning}
 
 \notes{The full playlist is [available here](https://www.youtube.com/playlist?list=PLLHTzKZzVU9eaEyErdV26ikyolxOsz6mq).}
 
