@@ -300,7 +300,7 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
         Phi[:, i:i+1] = (gain[i-1]*asarray(x, dtype=float)>centres[i-1])*(asarray(x, dtype=float)-centres[i-1])
     return Phi
 
-def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
+def hyperbolic_tangent(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     """Hyperbolic tangents"""
     if num_basis>2:
         centres=linspace(data_limits[0], data_limits[1], num_basis-1)

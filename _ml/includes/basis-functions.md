@@ -34,7 +34,7 @@ $$
 
 \include{_ml/includes/radial-basis.md}
 \include{_ml/includes/relu-basis.md}
-\include{_ml/includes/tanh-basis.md}
+\include{_ml/includes/hyperbolic-tangent-basis.md}
 \include{_ml/includes/fourier-basis.md}
 
 

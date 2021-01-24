@@ -51,7 +51,7 @@ plot.basis(mlai.relu, x_min=-2.0, x_max=2.0,
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 
-\displaycode{pods.notebook.display_plots('fourier_basis{num_basis:0>3}.svg', 
+\displaycode{pods.notebook.display_plots('relu_basis{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,4,1))}
 
