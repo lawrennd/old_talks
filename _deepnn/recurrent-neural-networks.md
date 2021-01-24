@@ -15,8 +15,6 @@ abstract: >
   This lecture will introduce recurrent neural networks, these structures allow us to deal with sequences.
 talkscam:
 reveal: false
-room: Zoom
-venue: Computer Laboratory, William Gates Building
 time: "14:00"
 start: "14:00"
 end: "15:00"
