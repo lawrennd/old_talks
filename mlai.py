@@ -286,7 +286,7 @@ def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency_range=None):
 def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     """Rectified linear units basis"""
     if num_basis>2:
-        centres=linspace(data_limits[0], data_limits[1], num_basis-1)
+        centres=linspace(data_limits[0], data_limits[1], num_basis)[:-1]
     elif num_basis==2:
         centres = asarray([data_limits[0]/2. + data_limits[1]/2.])
     else:
