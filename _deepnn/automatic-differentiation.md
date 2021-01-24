@@ -11,8 +11,6 @@ author:
 abstract: >
   This lecture will cover the foundations of automatic differentiation as well as the different frameworks that exist for building models.
 talkscam:
-room: Zoom
-venue: Computer Laboratory, William Gates Building
 reveal: false
 time: "14:00"
 start: "14:00"
