@@ -250,7 +250,7 @@ do stochastic gradient descent for our regression data.
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('regression_sgd_contour_fit{num:0>3}.svg', 
-    directory='\writeDiagramsDir/mlai', num=IntSlider(0, 0, num_plots, 1))}
+    directory='\writeDiagramsDir/ml', num=IntSlider(0, 0, num_plots, 1))}
 
 \slides{
 \startanimation{regression_sgd_contour_fit}{0}{58}

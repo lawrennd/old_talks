@@ -38,7 +38,6 @@ import mlai}
 \plotcode{
 xlim = (1875,2030)
 ylim = (2.5, 6.5)
-yhat = (y-offset)/scale
 
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 _ = ax.plot(x, y, 'r.',markersize=10)

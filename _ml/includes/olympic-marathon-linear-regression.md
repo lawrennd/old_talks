@@ -3,36 +3,13 @@
 
 \editme
 
-\include{_dataset/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \subsection{Running Example: Olympic Marathons}
 
-\notes{Now we will load in the Olympic marathon data. This is data of the olympic marath times for the men's marathon from the first olympics in 1896 up until the London 2012 olympics.}
-
-\setupcode{import pods}
-\code{data = pods.datasets.olympic_marathon_men()
-x = data['X']
-y = data['Y']}
-
-\notes{You can see what these values are by typing:}
-
-\code{print(x)
-print(y)}
-
-\notes{Note that they are not `pandas` data frames for this example, they are just arrays of dimensionality $\numData\times 1$, where $\numData$ is the number of data.}
+\notes{Note that `x` and `y` are not `pandas` data frames for this example, they are just arrays of dimensionality $\numData\times 1$, where $\numData$ is the number of data.}
 
 \notes{The aim of this lab is to have you coding linear regression in python. We will do it in two ways, once using iterative updates (coordinate ascent) and then using linear algebra. The linear algebra approach will not only work much better, it is easy to extend to multiple input linear regression and *non-linear* regression using basis functions.}
-
-\notes{
-\subsection{Plotting the Data}
-
-You can make a plot of $\dataScalar$ vs $\inputScalar$ with the following command:}
-
-\setupplotcode{import matplotlib.pyplot as plt}
-
-\code{plt.plot(x, y, 'rx')
-plt.xlabel('year')
-plt.ylabel('pace in min/km')}
 
 \subsection{Maximum Likelihood: Iterative Solution}
 

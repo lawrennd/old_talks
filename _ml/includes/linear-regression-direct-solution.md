@@ -390,18 +390,34 @@ print(w)}
 
 \notes{We can map it back to the liner regression and plot the fit as follows}
 
-\setupplotcode{import matplotlib.pyplot as plt}
+\setupplotcode{import matplotlib.pyplot as plt
+import teaching_plots as plot
+import mlai}
+
 \plotcode{m = w[1]; c=w[0]
+xspan = x.max() - x.min()
+xmin = x.min() - 0.1*xspan
+xmax = x.max() + 0.1*xspan
+x_test = np.linspace(xmin, xmax, 2)[:, np.newaxis]
 f_test = m*x_test + c
 print(m)
 print(c)
-plt.plot(x_test, f_test, 'b-')
-plt.plot(x, y, 'rx')}
+
+fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(x_test, f_test, 'b-', linewidth=2)
+ax.plot(x, y, 'r.', markersize=10)
+ax.set_xlim([xmin, xmax])
+
+mlai.write_figure(figure=fig,
+                  filename='simple-linear-regression.svg', 
+				  directory = '\writeDiagramsDir/ml')}
+
+\figure{\includediagram{\diagramsDir/ml/simple-linear-regression}{60%}}{Simple linear regression on four data points.}{simple-linear-regression}
 
 \notes{\subsection{Multivariate Linear Regression}
 
 A major advantage of the new system is that we can build a linear regression on a multivariate system. The matrix calculus didn't specify what the length of the vector $\inputVector$ should be, or equivalently the size of the design matrix. }
 
-\notes{\include{_ml/include/movie-body-count-linear-regression.md}}
+\notes{\include{_ml/includes/movie-body-count-linear-regression.md}}
 
 \endif

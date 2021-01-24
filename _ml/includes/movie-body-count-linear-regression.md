@@ -5,15 +5,12 @@
 
 \editme
 
-\subsection{Polynomial Fits to Olympic Data}
-
-\include{_datasets/include/movie-body-count-data.md}
+\subsection{Multivariate Regression on Movie Body Count Data}
 
 \notes{Now we will build a design matrix based on the numeric features: year, Body_Count, Length_Minutes in an effort to predict the rating. We build the design matrix as follows:}
 
-\notes{\subsection{Relation to Single Input System}
-
-Bias as an additional feature.}
+\notes{Bias as an additional feature.}
+\slides{* Regress from features `Year`, `Body_Count`, `Length_Minutes` to IMDB_Rating.}
 
 \code{select_features = ['Year', 'Body_Count', 'Length_Minutes']
 X = movies[select_features]
@@ -41,6 +38,7 @@ resid.hist(ax=ax)
 mlai.write_figure(filename='movie-body-count-rating-residuals.svg', 
 				  directory='\writeDiagramsDir/ml')}
 
+\newslide{Residuals}
 
 \figure{\includediagram{\diagramsDir/ml/movie-body-count-rating-residuals}{80%}}{Residual values for the ratings from the prediction of the movie rating given the data from the film.}{movie-body-count-residuals}
 
