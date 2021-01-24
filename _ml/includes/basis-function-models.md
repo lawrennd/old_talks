@@ -90,40 +90,42 @@ Write your answers in the code box below creating a new vector of parameters (in
 
 \subsection{Log Likelihood for Basis Function Model}
 
-\slides{* The likelihood of a single data point is}
+\notes{The likelihood of a single data point given the model parameters is given by}\slides{* The likelihood of a single data point is}
   $$
   p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}\right).
   $$
-
+\notes{and making an assumption of *conditional independence* given the parameters we can write} 
 \newslide{Log Likelihood for Basis Function Model}
 \slides{
 * Leading to a log likelihood for the data set of}
   $$
   L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
   $$
+\notes{to give us the likelihood for the whole data set.}
 
 \subsection{Objective Function}
 
+\notes{Traditionally in optimization, we choose to minmize an object function (or loss function, or cost function) rather than maximizing a likelihood. For these models we *minimize the negative log likelihood*. This function takes the form,}
 \slides{* And a corresponding *objective function* of the form}
-  $$
-  \errorFunction(\mappingVector,\dataStd^2)= \frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
-  $$
+$$
+\errorFunction(\mappingVector,\dataStd^2)= \frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
+$$
 
-\subsection{Expand the Brackets}
-
+\newslide{Expand the Brackets}
+\notes{To minimize this objective, we first expand the brackets as follows,}
 $$
 \begin{align}
   \errorFunction(\mappingVector,\dataStd^2) = &\frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i\mappingVector^{\top}\basisVector_i\\ &+\frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\mappingVector^{\top}\basisVector_i\basisVector_i^{\top}\mappingVector+\text{const}.
 \end{align}
 $$
 
-\subsection{Expand the Brackets}
-
+\newslide{Expand the Brackets}
+\notes{Now we pull out the vectors, $\mappingVector$, to highlight that what we have is a multivariate quadratic form in $\mappingVector$.}
 $$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2} \mappingVector^\top\sum_{i=1}^{\numData}\basisVector_i \dataScalar_i\\ & +\frac{1}{2\dataStd^2}\mappingVector^{\top}\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector+\text{const}.\end{align}$$
 
 \subsection{Design Matrices}
 
-\notes{We like to make use of *design* matrices for our data. Design matrices, as you will recall, involve placing the data points into rows of the matrix and data features into the columns of the matrix. By convention, we are referincing a vector with a bold lower case letter, and a matrix with a bold upper case letter. The design matrix is therefore given by}\slides{* Design matrix notation}
+\notes{We like to make use of *design* matrices for our data. Design matrices involve placing the data points into rows of the matrix and data features into the columns of the matrix. By convention, we are referincing a vector with a bold lower case letter, and a matrix with a bold upper case letter. The design matrix is therefore given by}\slides{* Design matrix notation}
   $$
   \basisMatrix = \begin{bmatrix} \mathbf{1} & \inputVector & \inputVector^2\end{bmatrix}
   $$
@@ -132,8 +134,9 @@ $$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2
   \basisMatrix \in \Re^{\numData \times \dataDim}.
   $$
   
-\subsection{Multivariate Derivatives Reminder}
+\subsubsection{Multivariate Derivatives Reminder}
 
+\notes{To find the minimum of the objective function, we need to make use of multivariate calculus. The two results we need from multivariate calculus have the following form.}
 \slides{* We will need some multivariate calculus.}
   $$\frac{\text{d}\mathbf{a}^{\top}\mappingVector}{\text{d}\mappingVector}=\mathbf{a}$$
   and
@@ -143,21 +146,21 @@ $$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2
 
 \subsection{Differentiate}
 
-Differentiating with respect to the vector $\mappingVector$ we obtain
+\notes{Differentiating with respect to the vector $\mappingVector$ we obtain}\slides{Differentiate wrt $\mappingVector$}
 $$\frac{\text{d} E\left(\mappingVector,\dataStd^2 \right)}{\text{d}\mappingVector}=-\frac{1}{\dataStd^2} \sum_{i=1}^{\numData}\basisVector_i\dataScalar_i+\frac{1}{\dataStd^2} \left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector$$
 Leading to
 $$\mappingVector^{*}=\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]^{-1}\sum_{i=1}^{\numData}\basisVector_i\dataScalar_i,$$
 
-\subsection{Matrix Notation}
+\newslide{Matrix Notation}
 
-Rewrite in matrix notation:
+\notes{Rewriting this result in matrix notation we obtain:}
 $$
 \sum_{i=1}^{\numData}\basisVector_i\basisVector_i^\top = \basisMatrix^\top \basisMatrix$$
 $$\sum _{i=1}^{\numData}\basisVector_i\dataScalar_i = \basisMatrix^\top \dataVector
 $$
 
-\subsection{Update Equations}
-
+\newslide{Update Equations}
+\notes{Setting the derivative to zero we obtain update equations for the parameter vector and the noise variance.}
 \slides{* Update for $\mappingVector^{*}$}
   $$
   \mappingVector^{*} = \left(\basisMatrix^\top \basisMatrix\right)^{-1} \basisMatrix^\top \dataVector
@@ -167,10 +170,8 @@ $$
   \left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\basisVector_i\right)^{2}}{\numData}.
   $$
 
-
-
 \newslide{Avoid Direct Inverse}
-
+\notes{In practice we should avoid solving these equations through direct use of the inverse. The correct approach is to make use of the QR decomposition.}
 \slides{* E.g. Solve for $\mappingVector$}
   $$
   \left(\basisMatrix^\top \basisMatrix\right)\mappingVector = \basisMatrix^\top \dataVector
