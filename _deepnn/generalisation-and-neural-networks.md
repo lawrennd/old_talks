@@ -24,10 +24,18 @@ end: "15:00"
 \include{talk-macros.gpp}
 
 \include{_deepnn/includes/deepnn-notebook-setup.md}
+
+\subsection{Quadratic Loss and Linear System}
+
+\notes{We will consider a simplified system, to remind us of some of the linear algebra involved, and introduce some of the fundamental issues.}
+\include{_ml/includes/expected-loss.md}
 \include{_ml/includes/linear-regression-direct-solution.md}
 \include{_ml/includes/bias-variance-dilemma.md}
-\include{_ml/includes/bias-variance-dilemma.md}
+\include{_ml/includes/the-jackknife.md}
+\include{_ml/includes/the-bootstrap.md}
 \include{_ml/includes/double-descent.md}
+\include{_ml/includes/neural-tangent-kernel.md}
+\include{_ml/includes/regularization-in-optimization.md}
 
 \thanks
 
