@@ -6,7 +6,7 @@
 	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} -B ../_includes/${NOTATION}
 
 %.notes.html.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to html --code sparse --replace-notation --edit-links ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to html --code sparse --replace-notation --edit-links --exercises ${PPFLAGS} 
 
 %.notes.tex.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to tex --code sparse --edit-links ${PPFLAGS} 
@@ -24,7 +24,7 @@
 	${PP} $< -o $@ --format notes --to docx --code sparse --replace-notation --edit-links ${PPFLAGS} 
 
 %.notes.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --write-diagrams-dir . --to ipynb --code ipynb --replace-notation ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --write-diagrams-dir . --to ipynb --code ipynb --replace-notation --edit-links --exercises ${PPFLAGS} 
 
 %.full.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to ipynb --code full --edit-links --replace-notation ${PPFLAGS} 

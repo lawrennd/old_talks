@@ -4,32 +4,18 @@
 \editme
 
 
-\subsection{Log Likelihood for Multivariate Regression}
+\ifndef{designMatrix}
+\define{designMatrix}{\inputMatrix}
+\endif
+\ifndef{designVector}
+\define{designVector}{\inputVector}
+\endif
+\ifndef{designVariable}
+\define{designVariable}{X}
+\endif
 
+\subsection{Bracket Expansion}
 \slides{
-The likelihood of a single data point is
-
-. . .
-
-$$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}\right).$$
-
-. . .
-
-Leading to a log likelihood for the data set of
-
-. . . 
-
-$$L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
-}
-\newslide{Error Function}
-\slides{
-And a corresponding error function of
-$$\errorFunction(\mappingVector,\dataStd^2)=\frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
-}
-
-\newslide{Expand the Brackets}
-\slides{
-
 $$
 \begin{align*}
   \errorFunction(\mappingVector,\dataStd^2)  = &
@@ -107,9 +93,9 @@ $$}
 \section{Design Matrix}
 
 \notes{We can do this for the entire data set to form a [*design
-matrix*](http://en.wikipedia.org/wiki/Design_matrix) $\inputMatrix$,
+matrix*](http://en.wikipedia.org/wiki/Design_matrix) $\designMatrix$,
 
-$$\inputMatrix
+$$\designMatrix
 = \begin{bmatrix} 
 \inputVector_1^\top \\\ 
 \inputVector_2^\top \\\ 
@@ -129,47 +115,46 @@ $$\inputMatrix
 \code{X = np.hstack((np.ones_like(x), x))
 print(X)}
 
-\notes{
 \subsection{Writing the Objective with Linear Algebra}
 
-When we think of the objective function, we can think of it as the errors where the error is defined in a similar way to what it was in Legendre's day $\dataScalar_i - \mappingFunction(\inputVector_i)$, in statistics these errors are also sometimes called [*residuals*](http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics). So we can think as the objective and the prediction function as two separate parts, first we have,
+\notes{When we think of the objective function, we can think of it as the errors where the error is defined in a similar way to what it was in Legendre's day $\dataScalar_i - \mappingFunction(\inputVector_i)$, in statistics these errors are also sometimes called [*residuals*](http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics). So we can think as the objective and the prediction function as two separate parts, first we have,}
 $$
 \errorFunction(\mappingVector) = \sum_{i=1}^\numData (\dataScalar_i - \mappingFunction(\inputVector_i; \mappingVector))^2,
 $$
-where we've made the function $\mappingFunction(\cdot)$'s dependence on the parameters $\mappingVector$ explicit in this equation. Then we have the definition of the function itself,
+\notes{where we've made the function $\mappingFunction(\cdot)$'s dependence on the parameters $\mappingVector$ explicit in this equation. Then we have the definition of the function itself,}
 $$
 \mappingFunction(\inputVector_i; \mappingVector) = \inputVector_i^\top \mappingVector.
 $$
-Let's look again at these two equations and see if we can identify any inner products. The first equation is a sum of squares, which is promising. Any sum of squares can be represented by an inner product,
+\notes{Let's look again at these two equations and see if we can identify any inner products. The first equation is a sum of squares, which is promising. Any sum of squares can be represented by an inner product,}
 $$
 a = \sum_{i=1}^{k} b^2_i = \mathbf{b}^\top\mathbf{b},
 $$
-so if we wish to represent $\errorFunction(\mappingVector)$ in this way, all we need to do is convert the sum operator to an inner product. We can get a vector from that sum operator by placing both $\dataScalar_i$ and $\mappingFunction(\inputVector_i; \mappingVector)$ into vectors, which we do by defining 
+\notes{so if we wish to represent $\errorFunction(\mappingVector)$ in this way, all we need to do is convert the sum operator to an inner product. We can get a vector from that sum operator by placing both $\dataScalar_i$ and $\mappingFunction(\inputVector_i; \mappingVector)$ into vectors, which we do by defining}
 $$
 \dataVector = \begin{bmatrix}\dataScalar_1\\ \dataScalar_2\\ \vdots \\ \dataScalar_\numData\end{bmatrix}
 $$
-and defining
+\notes{and defining}
 $$
 \mappingFunctionVector(\inputVector_1; \mappingVector) = \begin{bmatrix}\mappingFunction(\inputVector_1; \mappingVector)\\ \mappingFunction(\inputVector_2; \mappingVector)\\ \vdots \\ \mappingFunction(\inputVector_\numData; \mappingVector)\end{bmatrix}.
 $$
-The second of these is actually a vector-valued function. This term may appear intimidating, but the idea is straightforward. A vector valued function is simply a vector whose elements are themselves defined as *functions*, i.e. it is a vector of functions, rather than a vector of scalars. The idea is so straightforward, that we are going to ignore it for the moment, and barely use it in the derivation. But it will reappear later when we introduce *basis functions*. So we will, for the moment, ignore the dependence of $\mappingFunctionVector$ on $\mappingVector$ and $\inputMatrix$ and simply summarise it by a vector of numbers
+\notes{The second of these is actually a vector-valued function. This term may appear intimidating, but the idea is straightforward. A vector valued function is simply a vector whose elements are themselves defined as *functions*, i.e. it is a vector of functions, rather than a vector of scalars. The idea is so straightforward, that we are going to ignore it for the moment, and barely use it in the derivation. But it will reappear later when we introduce *basis functions*. So we will, for the moment, ignore the dependence of $\mappingFunctionVector$ on $\mappingVector$ and $\designMatrix$ and simply summarise it by a vector of numbers}
 $$
 \mappingFunctionVector = \begin{bmatrix}\mappingFunction_1\\\mappingFunction_2\\
 \vdots \\ \mappingFunction_\numData\end{bmatrix}.
 $$
-This allows us to write our objective in the folowing, linear algebraic form,
+\notes{This allows us to write our objective in the folowing, linear algebraic form,}
 $$
 \errorFunction(\mappingVector) = (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector)
 $$
-from the rules of inner products. But what of our matrix $\inputMatrix$ of input data? At this point, we need to dust off [*matrix-vector multiplication*](http://en.wikipedia.org/wiki/Matrix_multiplication). Matrix multiplication is simply a convenient way of performing many inner products together, and it's exactly what we need to summarise the operation
+\notes{from the rules of inner products. But what of our matrix $\designMatrix$ of input data? At this point, we need to dust off [*matrix-vector multiplication*](http://en.wikipedia.org/wiki/Matrix_multiplication). Matrix multiplication is simply a convenient way of performing many inner products together, and it's exactly what we need to summarise the operation}
 $$
 f_i = \inputVector_i^\top\mappingVector.
 $$
-This operation tells us that each element of the vector $\mappingFunctionVector$ (our vector valued function) is given by an inner product between $\inputVector_i$ and $\mappingVector$. In other words it is a series of inner products. Let's look at the definition of matrix multiplication, it takes the form
+\notes{This operation tells us that each element of the vector $\mappingFunctionVector$ (our vector valued function) is given by an inner product between $\inputVector_i$ and $\mappingVector$. In other words it is a series of inner products. Let's look at the definition of matrix multiplication, it takes the form
 $$
-\mathbf{c} = \mathbf{B}\mathbf{a}
+\mathbf{c} = \mathbf{B}\mathbf{a},
 $$
-where $\mathbf{c}$ might be a $k$ dimensional vector (which we can intepret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
+{where $\mathbf{c}$ might be a $k$ dimensional vector (which we can intepret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
 
 \notes{The result of this multiplication is of the form
 $$
@@ -187,17 +172,17 @@ b_{k, 1}a_1 + b_{k, 2}a_2 + \dots + b_{k, k}a_k\end{bmatrix}
 $$
 so we see that each element of the result, $\mathbf{a}$ is simply the inner product between each *row* of $\mathbf{B}$ and the vector $\mathbf{c}$. Because we have defined each element of $\mappingFunctionVector$ to be given by the inner product between each *row* of the design matrix and the vector $\mappingVector$ we now can write the full operation in one matrix multiplication,
 $$
-\mappingFunctionVector = \inputMatrix\mappingVector.
+\mappingFunctionVector = \designMatrix\mappingVector.
 $$}
 
 \setupcode{import numpy as np}
 \code{f = X@w # The @ sign performs matrix multiplication}
 
-\notes{Combining this result with our objective function,
+\notes{Combining this result with our objective function,}
 $$
 \errorFunction(\mappingVector) = (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector)
 $$
-we find we have defined the *model* with two equations. One equation tells us the form of our predictive function and how it depends on its parameters, the other tells us the form of our objective function.}
+\notes{we find we have defined the *model* with two equations. One equation tells us the form of our predictive function and how it depends on its parameters, the other tells us the form of our objective function.}
 
 \code{resid = (y-f)
 E = np.dot(resid.T, resid) # matrix multiplication on a single vector is equivalent to a dot product.
@@ -221,12 +206,12 @@ Try writing this down in matrix and vector form. How many of the terms can you d
 
 \notes{The model linear regression model we have described is still the same as the one we fitted above with a coordinate ascent algorithm. We have only played with the notation to obtain the same model in a matrix and vector notation. However, we will now fit this model with a different algorithm, one that is much faster. It is such a widely used algorithm that from the end user's perspective it doesn't even look like an algorithm, it just appears to be a single operation (or function). However, underneath the computer calls an algorithm to find the solution. Further, the algorithm we obtain is very widely used, and because of this it turns out to be highly optimised.}
 
-\notes{Once again we are going to try and find the stationary points of our objective by finding the *stationary points*. However, the stationary points of a multivariate function, are a little bit more complext to find. Once again we need to find the point at which the derivative is zero, but now we need to use  *multivariate calculus* to find it. This involves learning a few additional rules of differentiation (that allow you to do the derivatives of a function with respect to  vector), but in the end it makes things quite a bit easier. We define vectorial derivatives as follows,
+\notes{Once again we are going to try and find the stationary points of our objective by finding the *stationary points*. However, the stationary points of a multivariate function, are a little bit more complext to find. Once again we need to find the point at which the derivative is zero, but now we need to use  *multivariate calculus* to find it. This involves learning a few additional rules of differentiation (that allow you to do the derivatives of a function with respect to  vector), but in the end it makes things quite a bit easier. We define vectorial derivatives as follows,}
 $$
 \frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingVector} =
 \begin{bmatrix}\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}\\\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_2}\end{bmatrix}.
 $$
-where $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}$ is the [partial derivative](http://en.wikipedia.org/wiki/Partial_derivative) of the error function with respect to $\mappingScalar_1$.}
+\notes{where $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}$ is the [partial derivative](http://en.wikipedia.org/wiki/Partial_derivative) of the error function with respect to $\mappingScalar_1$.}
 
 \notes{Differentiation through multiplications and additions is relatively straightforward, and since linear algebra is just multiplication and addition, then its rules of diffentiation are quite straightforward too, but slightly more complex than regular derivatives. }
 
@@ -252,12 +237,12 @@ which if we were to take the derivative with respect to $z_k$ would simply retur
 $$
 \frac{\text{d}}{\text{d}z_k} \mathbf{a}^\top \mathbf{z} = a_k
 $$
-and by our definition of multivariate derivatives we can simply stack all the partial derivatives of this form in a vector to obtain the result that
+and by our definition of multivariate derivatives we can simply stack all the partial derivatives of this form in a vector to obtain the result that}
 $$
 \frac{\text{d}}{\text{d}\mathbf{z}}
 \mathbf{a}^\top \mathbf{z} = \mathbf{a}.
 $$
-The second rule that's required is differentiation of a 'matrix quadratic'. A scalar quadratic in $z$ with coefficient $c$ has the form $cz^2$. If $\mathbf{z}$ is a $k\times 1$ vector and $\mathbf{C}$ is a $k \times k$ *matrix* of coefficients then the matrix quadratic form is written as $\mathbf{z}^\top \mathbf{C}\mathbf{z}$, which is itself a *scalar* quantity, but it is a function of a *vector*.}
+\notes{The second rule that's required is differentiation of a 'matrix quadratic'. A scalar quadratic in $z$ with coefficient $c$ has the form $cz^2$. If $\mathbf{z}$ is a $k\times 1$ vector and $\mathbf{C}$ is a $k \times k$ *matrix* of coefficients then the matrix quadratic form is written as $\mathbf{z}^\top \mathbf{C}\mathbf{z}$, which is itself a *scalar* quantity, but it is a function of a *vector*.}
 
 \notes{\subsubsection{Matching Dimensions in Matrix Multiplications}}
 
@@ -288,17 +273,17 @@ $$
 $$
 where a $(1\times 1)$ matrix is recognised as a scalar.}
 
-\notes{This implies that we should be able to differentiate this form, and indeed the rule for its differentiation is slightly more complex than the inner product, but still quite simple,
+\notes{This implies that we should be able to differentiate this form, and indeed the rule for its differentiation is slightly more complex than the inner product, but still quite simple,}
 $$
 \frac{\text{d}}{\text{d}\mathbf{z}}
 \mathbf{z}^\top\mathbf{C}\mathbf{z}= \mathbf{C}\mathbf{z} + \mathbf{C}^\top
 \mathbf{z}.
 $$
-Note that in the special case where $\mathbf{C}$ is symmetric then we have $\mathbf{C} = \mathbf{C}^\top$ and the derivative simplifies to 
+\notes{Note that in the special case where $\mathbf{C}$ is symmetric then we have $\mathbf{C} = \mathbf{C}^\top$ and the derivative simplifies to }\slides{* If $\mathbf{C} = \mathbf{C}^\top$}
 $$
 \frac{\text{d}}{\text{d}\mathbf{z}} \mathbf{z}^\top\mathbf{C}\mathbf{z}=
 2\mathbf{C}\mathbf{z}.
-$$}
+$$
 
 \subsection{Differentiate the Objective}
 
@@ -320,34 +305,34 @@ $$\slides{
 }
 Rewrite in matrix notation:
 $$
-\sum_{i=1}^{\numData}\inputVector_i\inputVector_i^\top = \inputMatrix^\top \inputMatrix
+\sum_{i=1}^{\numData}\inputVector_i\inputVector_i^\top = \designMatrix^\top \designMatrix
 $$
 $$
-\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i = \inputMatrix^\top \dataVector
+\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i = \designMatrix^\top \dataVector
 $$}
 
-\notes{First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of $\mappingVector$. Doing this we obtain
+\notes{First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of $\mappingVector$. Doing this we obtain}
 $$
-\errorFunction(\mappingVector)= (\dataVector - \inputMatrix\mappingVector)^\top (\dataVector - \inputMatrix\mappingVector).
+\errorFunction(\mappingVector)= (\dataVector - \designMatrix\mappingVector)^\top (\dataVector - \designMatrix\mappingVector).
 $$
-We now need to differentiate this *quadratic form* to find the minimum. We differentiate with respect to the *vector* $\mappingVector$. But before we do that, we'll expand the brackets in the quadratic form to obtain a series of scalar terms. The rules for bracket expansion across the vectors are similar to those for the scalar system giving,
+\notes{We now need to differentiate this *quadratic form* to find the minimum. We differentiate with respect to the *vector* $\mappingVector$. But before we do that, we'll expand the brackets in the quadratic form to obtain a series of scalar terms. The rules for bracket expansion across the vectors are similar to those for the scalar system giving,}
 $$
 (\mathbf{a} - \mathbf{b})^\top
 (\mathbf{c} - \mathbf{d}) = \mathbf{a}^\top \mathbf{c} - \mathbf{a}^\top
 \mathbf{d} - \mathbf{b}^\top \mathbf{c} + \mathbf{b}^\top \mathbf{d}
 $$
-which substituting for $\mathbf{a} = \mathbf{c} = \dataVector$ and $\mathbf{b}=\mathbf{d} = \inputMatrix\mappingVector$ gives
+\notes{which substituting for $\mathbf{a} = \mathbf{c} = \dataVector$ and $\mathbf{b}=\mathbf{d} = \designMatrix\mappingVector$ gives}
 $$
 \errorFunction(\mappingVector)=
-\dataVector^\top\dataVector - 2\dataVector^\top\inputMatrix\mappingVector +
-\mappingVector^\top\inputMatrix^\top\inputMatrix\mappingVector
+\dataVector^\top\dataVector - 2\dataVector^\top\designMatrix\mappingVector +
+\mappingVector^\top\designMatrix^\top\designMatrix\mappingVector
 $$
-where we used the fact that $\dataVector^\top\inputMatrix\mappingVector=\mappingVector^\top\inputMatrix^\top\dataVector$. Now we can use our rules of differentiation to compute the derivative of this form, which is,
+\notes{where we used the fact that $\dataVector^\top\designMatrix\mappingVector=\mappingVector^\top\designMatrix^\top\dataVector$. Now we can use our rules of differentiation to compute the derivative of this form, which is,}
 $$
-\frac{\text{d}}{\text{d}\mappingVector}\errorFunction(\mappingVector)=- 2\inputMatrix^\top \dataVector +
-2\inputMatrix^\top\inputMatrix\mappingVector,
+\frac{\text{d}}{\text{d}\mappingVector}\errorFunction(\mappingVector)=- 2\designMatrix^\top \dataVector +
+2\designMatrix^\top\designMatrix\mappingVector,
 $$
-where we have exploited the fact that $\inputMatrix^\top\inputMatrix$ is symmetric to obtain this result.}
+\notes{where we have exploited the fact that $\designMatrix^\top\designMatrix$ is symmetric to obtain this result.}
 
 \writeassignment{Use the equivalence between our vector and our matrix
 formulations of linear regression, alongside our definition of vector derivates,
@@ -360,25 +345,25 @@ to match the gradients we've computed directly for $\frac{\text{d}\errorFunction
 
 \slides{
 * Update for $\mappingVector^{*}$.
-  $$\mappingVector^{*} = \left(\inputMatrix^\top \inputMatrix\right)^{-1} \inputMatrix^\top \dataVector$$
+  $$\mappingVector^{*} = \left(\designMatrix^\top \designMatrix\right)^{-1} \designMatrix^\top \dataVector$$
 * The equation for $\left.\dataStd^2\right.^{*}$ may also be found
   $$\left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\inputVector_i\right)^{2}}{\numData}.$$}
 
 \notes{Once again, we need to find the minimum of our objective function. Using our likelihood for multiple input regression we can now minimize for our parameter vector $\mappingVector$. Firstly, just as in the single input case, we seek stationary points by find parameter vectors that solve for when the gradients are zero,
 $$
-\mathbf{0}=- 2\inputMatrix^\top
-\dataVector + 2\inputMatrix^\top\inputMatrix\mappingVector,
+\mathbf{0}=- 2\designMatrix^\top
+\dataVector + 2\designMatrix^\top\designMatrix\mappingVector,
 $$
 where $\mathbf{0}$ is a *vector* of zeros. Rearranging this equation we find the solution to be
 $$
-\mappingVector = \left[\inputMatrix^\top \inputMatrix\right]^{-1} \inputMatrix^\top
+\mappingVector = \left[\designMatrix^\top \designMatrix\right]^{-1} \designMatrix^\top
 \dataVector
 $$ 
 where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/Invertible_matrix).}
 
 \subsection{Solving the Multivariate System}
 
-\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by $$\inputMatrix^\top\inputMatrix \mappingVector = \inputMatrix^\top\dataVector$$ for $\mappingVector$. This can be done in `numpy` using the command}
+\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by $$\designMatrix^\top\designMatrix \mappingVector = \designMatrix^\top\dataVector$$ for $\mappingVector$. This can be done in `numpy` using the command}
 
 \setupcode{import numpy as np}
 \code{np.linalg.solve?}
@@ -418,6 +403,5 @@ mlai.write_figure(figure=fig,
 
 A major advantage of the new system is that we can build a linear regression on a multivariate system. The matrix calculus didn't specify what the length of the vector $\inputVector$ should be, or equivalently the size of the design matrix. }
 
-\notes{\include{_ml/includes/movie-body-count-linear-regression.md}}
 
 \endif

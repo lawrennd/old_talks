@@ -58,7 +58,21 @@ pace.
 }
 
 \include{_ml/includes/linear-regression-iterative.md}
+\include{_ml/includes/linear-regression-multivariate-log-likelihood.md}
 \include{_ml/includes/linear-regression-direct-solution.md}
+\writeassignment{The prediction for our movie recommender system had the form
+$$
+f_{i,j} = \mathbf{u}_i^\top \mathbf{v}_j
+$$
+and the objective
+function was then
+$$
+E = \sum_{i,j} s_{i,j}(\dataScalar_{i,j} - f_{i, j})^2
+$$
+Try writing this down in matrix and vector form. How many of the terms can you do? For each variable and parameter carefully think about whether it should be represented as a matrix or vector. Do as many of the terms as you can. Use $\LaTeX$ to give your answers and give the *dimensions* of any matrices you create.}{20}
+
+\include{_ml/includes/linear-regression-objective-optimisation.md}
+\include{_ml/includes/movie-body-count-linear-regression.md}
 
 \notes{
 \figure{\includeyoutube{ui-uNlFHoms}{600}{450}}{MLAI Lecture 15 from 2014 on Multivariate Regression.}{mlai-15-multivariate-regression}

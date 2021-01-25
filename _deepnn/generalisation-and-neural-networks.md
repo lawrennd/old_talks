@@ -14,8 +14,8 @@ abstract: >
   neural architectures. We will review classical generalization and explore what's different
   about neural network models.
 talkscam:
-reveal: False
-ipynb: False
+reveal: True
+ipynb: True
 time: "14:00"
 start: "14:00"
 end: "15:00"
@@ -28,14 +28,21 @@ end: "15:00"
 \subsection{Quadratic Loss and Linear System}
 
 \notes{We will consider a simplified system, to remind us of some of the linear algebra involved, and introduce some of the fundamental issues.}
+
 \include{_ml/includes/expected-loss.md}
+\define{designVector}{\basisVector}
+\define{designVariable}{Phi}
+\define{designMatrix}{\basisMatrix}
 \include{_ml/includes/linear-regression-direct-solution.md}
+\include{_ml/includes/linear-regression-objective-optimisation.md}
+\include{_ml/includes/movie-body-count-linear-regression.md}
+\include{_ml/includes/linear-regression-regularisation.md}
 \include{_ml/includes/bias-variance-dilemma.md}
 \include{_ml/includes/the-jackknife.md}
 \include{_ml/includes/the-bootstrap.md}
-\include{_ml/includes/double-descent.md}
-\include{_ml/includes/neural-tangent-kernel.md}
-\include{_ml/includes/regularization-in-optimization.md}
+\include{_deepnn/includes/double-descent.md}
+\include{_deepnn/includes/neural-tangent-kernel.md}
+\include{_deepnn/includes/regularisation-in-optimisation.md}
 
 \thanks
 

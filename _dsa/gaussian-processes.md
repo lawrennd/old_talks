@@ -27,7 +27,13 @@ transition: None
 \include{_ml/includes/multivariate-gaussian-properties.md}
 \notes{\include{_ml/includes/linear-regression-log-likelihood.md}
 \include{_ml/includes/olympic-data-linear-regression.md}
+\include{_ml/includes/linear-regression-multivariate-log-likelihood.md}
+\define{designVector}{\basisVector}
+\define{designVariable}{Phi}
+\define{designMatrix}{\basisMatrix}
 \include{_ml/includes/linear-regression-direct-solution.md}}
+\include{_ml/includes/linear-regression-objective-optimisation.md}
+\include{_ml/includes/movie-body-count-linear-regression.md}
 
 \include{_ml/includes/underdetermined-system.md}
 \include{_ml/includes/two-d-gaussian.md}

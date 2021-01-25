@@ -1,7 +1,25 @@
 ---
 title: "Celsius Lecture"
 abstract: >
-  Technical debt 
+  With breakthroughs in understanding images, translating language,
+  transcribing speech artificial intelligence promises to
+  revolutionise the technological landscape. Machine learning
+  algorithms are able to convert unstructured data into actionable
+  knowledge. With the increasing impact of these technologies,
+  society’s interest is also growing.
+
+  The word intelligence conjures notions of human-like
+  capabilities. But are we really on the cusp of creating machines
+  that match us? We associate intelligence with knowledge, but in this
+  talk I will argue that the true marvel of our intelligence is the
+  way it deals with ignorance.
+
+  Despite the large strides forward we have made, I will argue that we
+  have a long way to go to deliver on the promise of artificial
+  intelligence. And it is a journey that our societies need to take
+  together, not just as computer scientists, but together by
+  rediscovering the interdisciplinary spirit that Celsius, Linnaeus
+  and their contemporaries did so much to demonstrate.
 reveal: True
 author:
 - family: Lawrence

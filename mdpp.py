@@ -43,7 +43,7 @@ parser.add_argument("-c", "--code", type=str, default='none',
 		    choices=['none', 'sparse', 'ipynb', 'diagnostic', 'plot', 'full'],
                     help="Which parts of the code to include.")
 
-parser.add_argument("-e", "--exercises", default=True, action='store_true',
+parser.add_argument("-e", "--exercises", default=False, action='store_true',
 		   help="Whether to include exercises")
 
 parser.add_argument("-a", "--assignment", default=False, action='store_true',
