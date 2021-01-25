@@ -13,20 +13,20 @@
 \slides{* Regress from features `Year`, `Body_Count`, `Length_Minutes` to IMDB_Rating.}
 
 \code{select_features = ['Year', 'Body_Count', 'Length_Minutes']
-X = movies[select_features]
-X['Eins'] = 1 # add a column for the offset
+\designVariable = movies[select_features]
+\designVariable['Eins'] = 1 # add a column for the offset
 y = movies[['IMDB_Rating']]}
 
 \notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
 
 \setupcode{import pandas as pd}
-\code{w = pd.DataFrame(data=np.linalg.solve(X.T@X, X.T@y),  # solve linear regression here
-                 index = X.columns,  # columns of X become rows of w
-                 columns=['regression_coefficient']) # the column of X is the value of regression coefficient}
+\code{w = pd.DataFrame(data=np.linalg.solve(\designVariable.T@\designVariable, \designVariable.T@y),  # solve linear regression here
+                 index = \designVariable.columns,  # columns of \designVariable become rows of w
+                 columns=['regression_coefficient']) # the column of \designVariable is the value of regression coefficient}
 
 \notes{We can check the residuals to see how good our estimates are. First we create a pandas data frame containing the predictions and use it to compute the residuals.}
 
-\code{ypred = pd.DataFrame(data=(X@w).values, columns=['IMDB_Rating'])
+\code{ypred = pd.DataFrame(data=(\designVariable@w).values, columns=['IMDB_Rating'])
 resid = y-ypred}
 
 \setupplotcode{import matplotlib.pyplot as plt

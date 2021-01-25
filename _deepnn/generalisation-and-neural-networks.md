@@ -35,8 +35,30 @@ end: "15:00"
 \define{designMatrix}{\basisMatrix}
 \include{_ml/includes/linear-regression-direct-solution.md}
 \include{_ml/includes/linear-regression-objective-optimisation.md}
+\include{_ml/includes/linear-regression-hessian.md}
+
+\subsection{Shallow and Deep Learning}
+
+\notes{So far we have been talking about *linear models* or *shallow learning* as we might think of it. Let's pause for a moment and consider a *fully connected* deep neural network model to relate the two ideas.}
+
+\include{_deepnn/includes/deep-neural-network.md}
+
+\notes{Under our basis function perspective, we can see that our deep neural network is mathematical composition of basis function models. Each layer contains a separate basis function set, so}
+$$
+ \mappingFunction(\inputVector; \mappingMatrix)  =  \mappingVector_4 ^\top\basisFunction\left(\mappingMatrix_3 \basisFunction\left(\mappingMatrix_2\basisFunction\left(\mappingMatrix_1 \inputVector\right)\right)\right)
+$$
+
+\notes{So, in this course there are two reasons for looking at the shallow model. Firstly, it is easier to introduce the concepts of regulariation in the linear model regime. Secondly, the matrix forms we see (objects like $\basisMatrix^\top \basisMatrix$) which represents the Hessian matrix for the linear model, appear in both models.}
+
 \include{_ml/includes/movie-body-count-linear-regression.md}
+
+\subsection{Aside: Fitting with QR Decomposition}
+
+\include{_ml/includes/qr-decomposition-regression.md}
+
+
 \include{_ml/includes/linear-regression-regularisation.md}
+
 \include{_ml/includes/bias-variance-dilemma.md}
 \include{_ml/includes/the-jackknife.md}
 \include{_ml/includes/the-bootstrap.md}

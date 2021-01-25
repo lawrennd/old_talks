@@ -108,15 +108,15 @@ $$\slides{
 }
 Rewrite in matrix notation:
 $$
-\sum_{i=1}^{\numData}\inputVector_i\inputVector_i^\top = \inputMatrix^\top \inputMatrix
+\sum_{i=1}^{\numData}\inputVector_i\inputVector_i^\top = \designMatrix^\top \designMatrix
 $$
 $$
-\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i = \inputMatrix^\top \dataVector
+\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i = \designMatrix^\top \dataVector
 $$}
 
 \notes{First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of $\mappingVector$. Doing this we obtain
 $$
-\errorFunction(\mappingVector)= (\dataVector - \inputMatrix\mappingVector)^\top (\dataVector - \inputMatrix\mappingVector).
+\errorFunction(\mappingVector)= (\dataVector - \designMatrix\mappingVector)^\top (\dataVector - \designMatrix\mappingVector).
 $$
 We now need to differentiate this *quadratic form* to find the minimum. We differentiate with respect to the *vector* $\mappingVector$. But before we do that, we'll expand the brackets in the quadratic form to obtain a series of scalar terms. The rules for bracket expansion across the vectors are similar to those for the scalar system giving,
 $$
@@ -124,18 +124,20 @@ $$
 (\mathbf{c} - \mathbf{d}) = \mathbf{a}^\top \mathbf{c} - \mathbf{a}^\top
 \mathbf{d} - \mathbf{b}^\top \mathbf{c} + \mathbf{b}^\top \mathbf{d}
 $$
-which substituting for $\mathbf{a} = \mathbf{c} = \dataVector$ and $\mathbf{b}=\mathbf{d} = \inputMatrix\mappingVector$ gives
+which substituting for $\mathbf{a} = \mathbf{c} = \dataVector$ and $\mathbf{b}=\mathbf{d} = \designMatrix\mappingVector$ gives
 $$
 \errorFunction(\mappingVector)=
-\dataVector^\top\dataVector - 2\dataVector^\top\inputMatrix\mappingVector +
-\mappingVector^\top\inputMatrix^\top\inputMatrix\mappingVector
+\dataVector^\top\dataVector - 2\dataVector^\top\designMatrix\mappingVector +
+\mappingVector^\top\designMatrix^\top\designMatrix\mappingVector
 $$
-where we used the fact that $\dataVector^\top\inputMatrix\mappingVector=\mappingVector^\top\inputMatrix^\top\dataVector$. Now we can use our rules of differentiation to compute the derivative of this form, which is,
+where we used the fact that $\dataVector^\top\designMatrix\mappingVector=\mappingVector^\top\designMatrix^\top\dataVector$. 
+
+Now we can use our rules of differentiation to compute the derivative of this form, which is,
 $$
-\frac{\text{d}}{\text{d}\mappingVector}\errorFunction(\mappingVector)=- 2\inputMatrix^\top \dataVector +
-2\inputMatrix^\top\inputMatrix\mappingVector,
+\frac{\text{d}}{\text{d}\mappingVector}\errorFunction(\mappingVector)=- 2\designMatrix^\top \dataVector +
+2\designMatrix^\top\designMatrix\mappingVector,
 $$
-where we have exploited the fact that $\inputMatrix^\top\inputMatrix$ is symmetric to obtain this result.}
+where we have exploited the fact that $\designMatrix^\top\designMatrix$ is symmetric to obtain this result.}
 
 \writeassignment{Use the equivalence between our vector and our matrix
 formulations of linear regression, alongside our definition of vector derivates,
@@ -148,59 +150,25 @@ to match the gradients we've computed directly for $\frac{\text{d}\errorFunction
 
 \slides{
 * Update for $\mappingVector^{*}$.
-  $$\mappingVector^{*} = \left(\inputMatrix^\top \inputMatrix\right)^{-1} \inputMatrix^\top \dataVector$$
+  $$\mappingVector^{*} = \left(\designMatrix^\top \designMatrix\right)^{-1} \designMatrix^\top \dataVector$$
 * The equation for $\left.\dataStd^2\right.^{*}$ may also be found
   $$\left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\inputVector_i\right)^{2}}{\numData}.$$}
 
 \notes{Once again, we need to find the minimum of our objective function. Using our likelihood for multiple input regression we can now minimize for our parameter vector $\mappingVector$. Firstly, just as in the single input case, we seek stationary points by find parameter vectors that solve for when the gradients are zero,
 $$
-\mathbf{0}=- 2\inputMatrix^\top
-\dataVector + 2\inputMatrix^\top\inputMatrix\mappingVector,
+\mathbf{0}=- 2\designMatrix^\top
+\dataVector + 2\designMatrix^\top\designMatrix\mappingVector,
 $$
 where $\mathbf{0}$ is a *vector* of zeros. Rearranging this equation we find the solution to be
 $$
-\mappingVector = \left[\inputMatrix^\top \inputMatrix\right]^{-1} \inputMatrix^\top
+\mappingVector = \left[\designMatrix^\top \designMatrix\right]^{-1} \designMatrix^\top
 \dataVector
 $$ 
 where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/Invertible_matrix).}
 
 \subsection{Solving the Multivariate System}
 
-\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by $$\inputMatrix^\top\inputMatrix \mappingVector = \inputMatrix^\top\dataVector$$ for $\mappingVector$. This can be done in `numpy` using the command}
-
-\setupcode{import numpy as np}
-\code{np.linalg.solve?}
-
-\notes{so we can obtain the solution using}
-
-\code{w = np.linalg.solve(X.T@X, X.T@y)
-print(w)}
-
-\notes{We can map it back to the liner regression and plot the fit as follows}
-
-\setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
-import mlai}
-
-\plotcode{m = w[1]; c=w[0]
-xspan = x.max() - x.min()
-xmin = x.min() - 0.1*xspan
-xmax = x.max() + 0.1*xspan
-x_test = np.linspace(xmin, xmax, 2)[:, np.newaxis]
-f_test = m*x_test + c
-print(m)
-print(c)
-
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(x_test, f_test, 'b-', linewidth=2)
-ax.plot(x, y, 'r.', markersize=10)
-ax.set_xlim([xmin, xmax])
-
-mlai.write_figure(figure=fig,
-                  filename='simple-linear-regression.svg', 
-				  directory = '\writeDiagramsDir/ml')}
-
-\figure{\includediagram{\diagramsDir/ml/simple-linear-regression}{60%}}{Simple linear regression on four data points.}{simple-linear-regression}
+\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by $$\designMatrix^\top\designMatrix \mappingVector = \designMatrix^\top\dataVector$$ for $\mappingVector$.} 
 
 \notes{\subsection{Multivariate Linear Regression}
 

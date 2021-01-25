@@ -1,17 +1,7 @@
-\include{_deepgp/includes/deep-nn.md}
+\include{_deepgp/includes/deep-neural-network.md}
 
-\subsection{Mathematically 
 
-$$
-\begin{align}
-    \hiddenVector_{1} &= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
-    \hiddenVector_{2} &=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
-    \hiddenVector_{3} &= \basisFunction\left(\mappingMatrix_3 \hiddenVector_{2}\right)\\
-    \dataVector &= \mappingVector_4 ^\top\hiddenVector_{3}
-\end{align}
-$$
-
-\subsection{Overfitting 
+\subsection{Overfitting}
 
 -   Potential problem: if number of nodes in two adjacent layers is big,
     corresponding $\mappingMatrix$ is also very big and there is the
