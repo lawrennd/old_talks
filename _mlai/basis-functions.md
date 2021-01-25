@@ -19,7 +19,7 @@ abstract: |
 \addreading{@Bishop:book06}{Chapter 1, pg 1-6}
 \addreading{@Bishop:book06}{Chapter 3, Section 3.1 up to pg 143}
 
-\reading
+
 
 \subsection{Lecture on Basis Functions from GPRS Uganda}
 
@@ -40,6 +40,8 @@ abstract: |
 \code{(np.dot(Phi.T,Phi))}
 
 \code{Phi*Phi}
+
+\reading
 
 \thanks
 
