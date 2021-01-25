@@ -24,7 +24,7 @@ end: "15:00"
 \include{talk-macros.gpp}
 
 \include{_deepnn/includes/deepnn-notebook-setup.md}
-
+\include{_ml/includes/linear-regression-direct-solution.md}
 \include{_ml/includes/bias-variance-dilemma.md}
 \include{_ml/includes/bias-variance-dilemma.md}
 \include{_ml/includes/double-descent.md}
