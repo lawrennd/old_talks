@@ -32,7 +32,7 @@ number of parameters is equal to the number of data[^assuming].
 
 [^assuming]: Assuming we are ignoring parameters in the link function and the distribution function.}
 
-\notes{The bias-variance decomposition [@Geman:biasvariance92] considers the expected test error for different variations of the *training data* sampled from, $\Pr(\inputVector, \dataScalar)$}\slides{Generalisation error}
+\notes{The bias-variance decomposition [@Geman:biasvariance92] considers the expected test error for different variations of the *training data* sampled from, $\mathbb{P}(\inputVector, \dataScalar)$}\slides{Generalisation error}
 $$
 \mathbb{E}\left[ \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \right].
 $$
