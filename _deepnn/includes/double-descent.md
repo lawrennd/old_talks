@@ -1,15 +1,13 @@
-\\ifndef{doubleDescent}
+\ifndef{doubleDescent}
 \define{doubleDescent}
 
 \editme
 
 \subsection{Double Descent}
 
-Belkin on Bias/Variance
-<https://www.pnas.org/content/116/32/15849.short>
-<https://www.pnas.org/content/117/20/10625>
+  
+\figure{\includepng{\diagramsDir/ml/double-descent}{100%}}{*Left* traditional perspective on generalisation. There is a sweet spot of operation where the training error is still non-zero. Overfitting occurs when the variance increases. *Right* The double descent phenomenon, the modern models operate in an interpolation regime where they reconstruct the training data fully, but are well regularised in their interpolations for test data. Figure from @Belkin:reconciling19.}{double-descent}
 
-Belkin Talk: <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4>
 
 
 \notes{But the modern empirical finding is that when we move beyond Daddy bear,
@@ -71,6 +69,8 @@ orthogonalization of the design matrix [@Lawson:least95].}
 locations become easier to find and they provide good generalization
 properties. In machine learning this is known as the "double descent
 phenomenon" (see e.g. @Belkin:reconciling19).}
+
+\notes{See also this talk by Misha Belkin:  <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4> and these related papers <https://www.pnas.org/content/116/32/15849.short>, <https://www.pnas.org/content/117/20/10625>}
 
 
 \endif
