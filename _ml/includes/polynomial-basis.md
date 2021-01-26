@@ -66,7 +66,7 @@ $$
 
 \slides{
 \define{width}{80%}
-\startanimation{polynomial_function}{0}{4}
+\startanimation{polynomial_function}{0}{3}
 \newframe{\includediagram{\diagramsDir/ml/polynomial_function000}{\width}}{polynomial_function}
 \newframe{\includediagram{\diagramsDir/ml/polynomial_function001}{\width}}{polynomial_function}
 \newframe{\includediagram{\diagramsDir/ml/polynomial_function002}{\width}}{polynomial_function}
