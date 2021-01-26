@@ -14,8 +14,22 @@
 \define{designVariable}{X}
 \endif
 
-\subsection{Bracket Expansion}
+\newslide{Quadratic Loss}
+
 \slides{
+$$
+\errorFunction(\mappingFunction) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i))^2
+$$}
+
+\newslide{Linear Model}
+
+\slides{
+$$
+\errorFunction(\mappingFunction) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i)^2
+$$}
+
+\notes{\subsection{Bracket Expansion}}
+\notes{
 $$
 \begin{align*}
   \errorFunction(\mappingVector,\dataStd^2)  = &
