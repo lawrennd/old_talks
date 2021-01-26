@@ -28,7 +28,7 @@ $$
 $$
 \errorFunction(\mappingVector) = (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector) + \alpha\ltwoNorm{\mappingMatrix}^2
 $$
-\notes{with some weighting $\alpha >0$. This has the effect of changing the Hessian at the minimua to}\slides{* Hessian:}
+\notes{with some weighting $\alpha >0$. This has the effect of changing the Hessian at the minimum to}\slides{* Hessian:}
 $$
 \designMatrix^\top\designMatrix + \alpha \eye
 $$
