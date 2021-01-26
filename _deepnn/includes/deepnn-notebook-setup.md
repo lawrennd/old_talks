@@ -8,7 +8,7 @@
 
 First we download some libraries and files to support the notebook.}
 
-\downloadcode{ndlml}
+\downloadcode{mlai}
 \downloadcode{teaching_plots}
 \downloadcode{gp_tutorial}
 

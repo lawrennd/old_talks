@@ -180,7 +180,10 @@ $$
 \slides{* See `np.linalg.solve`
 * In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).}
 \notes{But the correct and more stable approach is to make use of the QR decomposition.}
-\include{_ml/includes/olympic-marathon-polynomial.md}
+
+\include{_ml/includes/qr-decomposition-regression.md}
+
+\include{_ml/includes/olympic-marathon-all-polynomial.md}
 
 \subsection{Non-linear but Linear in the Parameters}
 

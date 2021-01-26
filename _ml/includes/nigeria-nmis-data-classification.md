@@ -2,7 +2,7 @@
 \define{nigeriaNmisDataClassification}
 
 
-\include{_ml/includes/nigeria-nmis-data.md}
+\include{_datasets/includes/nigeria-nmis-data.md}
 
 \editme
 

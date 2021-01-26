@@ -5,34 +5,16 @@
 
 \subsection{Double Descent}
 
-\notes{One of Breiman's ideas for improving predictive performance is
-known as bagging [@Breiman:bagging96]. The idea is to train a number of models on the data
-such that they overfit (high variance). Then average the predictions
-of these models. The models are trained on different bootstrap samples [@Efron:bootstrap79]
-and their predictions are aggregated giving us the acronym,
-Bagging. By combining decision trees with bagging, we recover random
-forests [@Breiman-forests01].}
+Belkin on Bias/Variance
+<https://www.pnas.org/content/116/32/15849.short>
+<https://www.pnas.org/content/117/20/10625>
 
-\notes{Bias and variance can also be estimated through Efron's
-bootstrap [@Efron:bootstrap79], and the traditional view has been that there's a form of
-Goldilocks effect, where the best predictions are given by the model
-that is 'just right' for the amount of data available. Not to simple,
-not too complex. The idea is that bias decreases with increasing model
-complexity and variance increases with increasing model
-complexity. Typically plots begin with the Mummy bear on the left (too
-much bias) end with the Daddy bear on the right (too much variance)
-and show a dip in the middle where the Baby bear (just) right finds
-themselves.}
+Belkin Talk: <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4>
 
-\notes{The Daddy bear is typically positioned at the point where the
-model is able to exactly interpolate the data. For a generalized
-linear model [@McCullagh:gen_linear89], this is the point at which the
-number of parameters is equal to the number of data[^assuming]. But
-the modern empirical finding is that when we move beyond Daddy bear,
+
+\notes{But the modern empirical finding is that when we move beyond Daddy bear,
 into the dark forest of the massively overparameterized model we can
-achieve good generalization.
-
-[^assuming]: Assuming we are ignoring parameters in the link function and the distribution function.}
+achieve good generalization. Indeed, recent work is showing that large language models are even *memorising* data [@Carlini-extracting20] like non-parametric models do.}
 
 \notes{As @Zhang:understanding17 starkly illustrated with
 their random labels experiment, within the dark forest there are some

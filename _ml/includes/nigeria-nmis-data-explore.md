@@ -2,7 +2,7 @@
 \define{nigeriaNmisDataExplore}
 
 
-\include{_ml/includes/nigeria-nmis-data.md}
+\include{_datasets/includes/nigeria-nmis-data.md}
 
 \editme
 
@@ -46,10 +46,6 @@ plt.title('Histogram of Number of Nurses')}
 plt.title('Histogram of Number of Nurses')
 ax = plt.gca()
 ax.set_yscale('log')}
-
-\writeassignment{Read on the internet about the following python
-libraries: `numpy`, `matplotlib`, `scipy` and `pandas`. What functionality does
-each provide python?}{10}
 
 \notes{Let's try and see how the number of nurses relates to the number of doctors.}
 

@@ -1,12 +1,12 @@
-\ifndef{nigerianNmisData}
-\define{nigerianNmisData}
+\ifndef{nigeriaNmisData}
+\define{nigeriaNmisData}
 \editme
 
 \section{Nigeria NMIS Data}
 
 \newslide{Nigeria NMIS Data: Notebook}
 
-\notes{As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014>}
+\notes{As an example data set we will use Nigerian Millenium Development Goals Information System Health Facility [@Nigeria-nmis14]. It can be found here <https://energydata.info/dataset/nigeria-nmis-education-facility-data-2014>.}
 
 \notes{Taking from the information on the site, 
 
@@ -60,8 +60,8 @@ ax.plot(data.longitude, data.latitude, 'ro', alpha=0.01)
 ax.set_xlabel('longitude')
 ax.set_ylabel('latitude')
 
-mlai.write_figure('nigerian-health-facilities.svg', directory='\writeDiagramsDir/ml')}
+mlai.write_figure('nigerian-health-facilities.png', directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/nigerian-health-facilities}{60%}}{Location of the over thirty four thousand health facilities registered in the NMIS data across Nigeria. Each facility plotted according to its latitude and longitude.}{nigerian-health-facilities}
+\figure{\includepng{\diagramsDir/ml/nigerian-health-facilities}{60%}}{Location of the over thirty four thousand health facilities registered in the NMIS data across Nigeria. Each facility plotted according to its latitude and longitude.}{nigerian-health-facilities}
 
 \endif

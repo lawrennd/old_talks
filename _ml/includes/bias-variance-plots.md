@@ -1,5 +1,6 @@
 \ifndef{biasVariancePlots}
 \define{biasVariancePlots}
+
 \editme
 
 \notes{\subsection{Bias vs Variance Error Plots}}

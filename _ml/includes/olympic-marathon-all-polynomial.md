@@ -1,5 +1,5 @@
-\ifndef{olympicMarathonPolynomial}
-\define{olympicMarathonPolynomial}
+\ifndef{olympicMarathonAllPolynomial}
+\define{olympicMarathonAllPolynomial}
 
 \include{_datasets/includes/olympic-marathon-data.md}
 

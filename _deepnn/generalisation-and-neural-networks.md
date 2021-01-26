@@ -54,7 +54,7 @@ $$
 
 [^quadratic]: Apart from the last layer of parmeters in models with quadratic loss functions.}
 
-\include{_ml/includes/movie-body-count-linear-regression.md}
+\include{_ml/includes/nigeria-nmis-linear-regression.md}
 
 \section{Aside}
 
@@ -70,18 +70,26 @@ $$
 
 \notes{The predictions from this model,
 $$
-\mappingFunction(\inputScalar) = \mappingScalar_0} + \mappingScalar_1 \inputScalar} + \mappingScalar_2 \inputScalar^2 + \mappingScalar_3 \inputScalar^3} + \mappingScalar_4 \inputScalar^4
+\mappingFunction(\inputScalar) = \mappingScalar_0 + \mappingScalar_1 \inputScalar} + \mappingScalar_2 \inputScalar^2 + \mappingScalar_3 \inputScalar^3 + \mappingScalar_4 \inputScalar^4
 $$
 are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input $\inputScalar^3$. Here we are showing a polynomial basis for a 1-dimensional input, $\inputScalar$, but basis functions can also be constructed for multidimensional inputs, $\inputVector$.}
 
 \include{_ml/includes/olympic-marathon-polynomial.md}
 
+\include{_ml/includes/the-bootstrap.md}
+\include{_ml/includes/the-jackknife.md}
 
-\include{_ml/includes/linear-regression-regularisation.md}
+\include{_ml/includes/olympic-marathon-bootstrap-polynomial.md}
+
+\define{biasVariancePlots}
 
 \include{_ml/includes/bias-variance-dilemma.md}
-\include{_ml/includes/the-jackknife.md}
-\include{_ml/includes/the-bootstrap.md}
+
+\notes{Also related on generalisation error is the so called 'no free lunch theorem', which refers to our inability to decide what a better learning algorithm is without making assumptions about the data [@Wolpert:lack96] (see also @Wolpert-supervised02).}
+
+\include{_ml/includes/linear-regression-regularisation.md}
+\include{_ml/includes/training-with-noise-tikhonov-regularisation.md}
+\include{_ml/includes/bayesian-interpretation-of-regularisation.md}
 \include{_deepnn/includes/double-descent.md}
 \include{_deepnn/includes/neural-tangent-kernel.md}
 \include{_deepnn/includes/regularisation-in-optimisation.md}
@@ -91,35 +99,20 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 \references
 
 
-Bias variance dilemma <https://www.mitpressjournals.org/doi/abs/10.1162/neco.1992.4.1.1>
 
 bootstrap
 
 
-Bootstrap Predication and Bayesian Misspecified Models: <https://www.jstor.org/stable/3318894#metadata_info_tab_contents>
-
-Edwin Fong and Chris Holmes: On the Marginal Likelihood and Cross Validation <https://arxiv.org/abs/1905.08737>
-
-
-The lack of a priori distinction between learning algorithms (No free lunch)
-<https://www.mitpressjournals.org/doi/abs/10.1162/neco.1996.8.7.1341>
-<https://link.springer.com/chapter/10.1007/978-1-4471-0123-9_3>
 
 
 David Hogg's lecture <https://speakerdeck.com/dwhgg/linear-regression-with-huge-numbers-of-parameters>
 
 
-Belkin on Bias/Variance
-<https://www.pnas.org/content/116/32/15849.short>
-<https://www.pnas.org/content/117/20/10625>
-
-Belkin Talk: <http://www.ipam.ucla.edu/abstract/?tid=15552&pcode=GLWS4>
 
 The Deep Bootstrap <https://twitter.com/PreetumNakkiran/status/1318007088321335297?s=20>
 
 Aki Vehtari on Leave One Out Uncertainty: <https://arxiv.org/abs/2008.10296> (check for his references).
 
-Large models and memorisation: <https://arxiv.org/abs/2012.07805>
 
 
 
