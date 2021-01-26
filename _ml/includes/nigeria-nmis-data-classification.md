@@ -1,16 +1,14 @@
-\ifndef{nigerianNmisDataClassification}
-\define{nigerianNmisDataClassification}
+\ifndef{nigeriaNmisDataClassification}
+\define{nigeriaNmisDataClassification}
+
+
+\include{_ml/includes/nigeria-nmis-data.md}
 
 \editme
 
-\notes{
-\subsection{Nigerian NMIS Data}
+\subsection{Nigeria NMIS Data Classification}
 
-First we will load in the Nigerian NMIS health data. Our aim will be to predict whether a center has maternal health delivery services given the attributes in the data. We will predict of the number of nurses, the number of doctors, location etc.
-
- Let's first remind ourselves of the data.}
-
-\include{_ml/includes/nigerian-nmis-data.md}
+\notes{Our aim will be to predict whether a center has maternal health delivery services given the attributes in the data. We will predict of the number of nurses, the number of doctors, location etc.}
 
 \notes{Now we will convert this data into a form which we can use as inputs `X`, and labels `y`.}
 

@@ -3,7 +3,7 @@
 
 \editme
 
-\include{_ml/includes/nigerian-nmis-data.md}
+\include{_ml/includes/nigeria-nmis-data.md}
 
 \code{hospital_data = data}
 

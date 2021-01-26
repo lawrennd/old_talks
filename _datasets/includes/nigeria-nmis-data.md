@@ -2,9 +2,9 @@
 \define{nigerianNmisData}
 \editme
 
-\section{Nigerian NMIS Data}
+\section{Nigeria NMIS Data}
 
-\newslide{Nigerian NMIS Data: Notebook}
+\newslide{Nigeria NMIS Data: Notebook}
 
 \notes{As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014>}
 
@@ -25,7 +25,7 @@
 
 \include{_data-science/includes/pods-software.md}
 
-\code{data = pods.datasets.nigerian_nmis()['Y']
+\code{data = pods.datasets.nigeria_nmis()['Y']
 data.head()}
 
 \notes{Alternatively you can access the data directly with the following commands.

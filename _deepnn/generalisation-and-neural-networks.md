@@ -50,11 +50,31 @@ $$
 
 \notes{So, in this course there are two reasons for looking at the shallow model. Firstly, it is easier to introduce the concepts of regulariation in the linear model regime. Secondly, the matrix forms we see (objects like $\basisMatrix^\top \basisMatrix$) which represents the Hessian matrix for the linear model, appear in both models.}
 
+\notes{For deep learning, we can no longer optimize the parameters of the model through solving a linear system[^quadratic]. Instead, we need to turn to non-linear optimization algorithms. For deep learning, that's typically stochastic gradient descient.
+
+[^quadratic]: Apart from the last layer of parmeters in models with quadratic loss functions.}
+
 \include{_ml/includes/movie-body-count-linear-regression.md}
 
-\subsection{Aside: Fitting with QR Decomposition}
+\section{Aside}
+
+\notes{Just for informational purposes, the actual approach used in software for fitting a linear model *should* be a QR decomposition.}
 
 \include{_ml/includes/qr-decomposition-regression.md}
+
+\subsection{Basis Function Models}
+
+\notes{We are reviewing models that are *linear* in the parameters. Very often we are interested in *non-linear* predictions. We can make models that are linear in the parameters and given non-linear predictions by introducing non-linear *basis functions*. A common example is the polynomial basis.}
+
+\include{_ml/includes/polynomial-basis.md}
+
+\notes{The predictions from this model,
+$$
+\mappingFunction(\inputScalar) = \mappingScalar_0} + \mappingScalar_1 \inputScalar} + \mappingScalar_2 \inputScalar^2 + \mappingScalar_3 \inputScalar^3} + \mappingScalar_4 \inputScalar^4
+$$
+are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input $\inputScalar^3$. Here we are showing a polynomial basis for a 1-dimensional input, $\inputScalar$, but basis functions can also be constructed for multidimensional inputs, $\inputVector$.}
+
+\include{_ml/includes/olympic-marathon-polynomial.md}
 
 
 \include{_ml/includes/linear-regression-regularisation.md}

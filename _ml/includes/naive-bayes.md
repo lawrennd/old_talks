@@ -171,7 +171,7 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
   $$
 }
 
-\include{_ml/includes/nigerian-nmis-data-naive-bayes.md}
+\include{_ml/includes/nigeria-nmis-data-naive-bayes.md}
 
 \newslide{Compute Posterior for Test Point Label}
 \slides{

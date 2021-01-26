@@ -47,7 +47,7 @@ $$
 
 \include{_supply-chain/includes/supply-chain-africa.md}
 \include{_ml/includes/process-emulation.md}
-\include{_ml/includes/nigerian-nmis-data.md}
+\include{_ml/includes/nigeria-nmis-data.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
@@ -82,7 +82,7 @@ $$
 \include{_ml/includes/classification-examples.md}
 \include{_ml/includes/the-perceptron.md}
 \notes{\include{_ml/includes/logistic-regression.md}
-\include{_ml/includes/nigerian-nmis-data-logistic.md}}
+\include{_ml/includes/nigeria-nmis-data-logistic.md}}
 \include{_ml/includes/regression-intro.md}
 \include{_ml/includes/regression-examples.md}
 \include{_ml/includes/olympic-marathon-polynomial.md}

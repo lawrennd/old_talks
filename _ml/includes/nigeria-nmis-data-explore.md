@@ -1,8 +1,8 @@
-\ifndef{nigerianNmisDataExplore}
-\define{nigerianNmisDataExplore}
+\ifndef{nigeriaNmisDataExplore}
+\define{nigeriaNmisDataExplore}
 
 
-\include{_ml/includes/nigerian-nmis-data.md}
+\include{_ml/includes/nigeria-nmis-data.md}
 
 \editme
 

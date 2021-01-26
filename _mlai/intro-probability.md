@@ -20,12 +20,12 @@ project? Name two languages involved in the Jupyter project other than python.}{
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/overdetermined-inaugural.md}
-\include{_ml/includes/nigerian-nmis-data.md}
+\include{_ml/includes/nigeria-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 
 \newslide{}
 
-\figure{\includeyoutube{GX8VLYUYScM}{800}{600}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
+\figure{\includeyoutube{GX8VLYUYScM}{600}{450}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
 
 \newslide{Reading}
 

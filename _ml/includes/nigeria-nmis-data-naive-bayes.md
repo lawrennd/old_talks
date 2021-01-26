@@ -1,7 +1,7 @@
-\ifndef{nigerianNmisDataNaiveBayes}
-\define{nigerianNmisDataNaiveBayes}
+\ifndef{nigeriaNmisDataNaiveBayes}
+\define{nigeriaNmisDataNaiveBayes}
 
-\include{_ml/includes/nigerian-nmis-data-classification.md}
+\include{_ml/includes/nigeria-nmis-data-classification.md}
 
 \editme
 
