@@ -19,7 +19,8 @@ def bootstrap(X):
     "Return a bootstrap sample from a data set."
     n = X.shape[0]
     ind = np.random.choice(n, n, replace=True) # Sample randomly with replacement.
-    return X[ind, :]}
+    return X[ind, :]
+```}
 
 \setupcode{import numpy as np}
 	

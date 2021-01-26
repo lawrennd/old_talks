@@ -17,13 +17,13 @@
 \subsection{Quadratic Loss}
 
 $$
-\errorFunction(\mappingFunction) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i))^2
+R(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \mappingVector)\right)^2
 $$
 
 \newslide{Linear Model}
 
 $$
-\errorFunction(\mappingFunction) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i)^2
+R(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
 $$
 \notes{\subsection{Bracket Expansion}}
 \notes{
@@ -44,7 +44,7 @@ _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector +\text
 $$
 }
 
-\section{Multiple Input Solution with Linear Algebra}
+\notes{\section{Multiple Input Solution with Linear Algebra}}
 
 \notes{You've now seen how slow it can
 be to perform a coordinate ascent on a system. Another approach to solving the
@@ -136,19 +136,19 @@ $$
 $$
 \mappingFunction(\inputVector_i; \mappingVector) = \designVector_i^\top \mappingVector.
 $$
-\notes{Let's look again at these two equations and see if we can identify any inner products. The first equation is a sum of squares, which is promising. Any sum of squares can be represented by an inner product,}
+\notes{Let's look again at these two equations and see if we can identify any inner products. The first equation is a sum of squares, which is promising. Any sum of squares can be represented by an inner product,
 $$
 a = \sum_{i=1}^{k} b^2_i = \mathbf{b}^\top\mathbf{b},
 $$
-\notes{so if we wish to represent $\errorFunction(\mappingVector)$ in this way, all we need to do is convert the sum operator to an inner product. We can get a vector from that sum operator by placing both $\dataScalar_i$ and $\mappingFunction(\inputVector_i; \mappingVector)$ into vectors, which we do by defining}
+so if we wish to represent $\errorFunction(\mappingVector)$ in this way, all we need to do is convert the sum operator to an inner product. We can get a vector from that sum operator by placing both $\dataScalar_i$ and $\mappingFunction(\inputVector_i; \mappingVector)$ into vectors, which we do by defining
 $$
 \dataVector = \begin{bmatrix}\dataScalar_1\\ \dataScalar_2\\ \vdots \\ \dataScalar_\numData\end{bmatrix}
 $$
-\notes{and defining}
+and defining
 $$
 \mappingFunctionVector(\inputVector_1; \mappingVector) = \begin{bmatrix}\mappingFunction(\inputVector_1; \mappingVector)\\ \mappingFunction(\inputVector_2; \mappingVector)\\ \vdots \\ \mappingFunction(\inputVector_\numData; \mappingVector)\end{bmatrix}.
 $$
-\notes{The second of these is actually a vector-valued function. This term may appear intimidating, but the idea is straightforward. A vector valued function is simply a vector whose elements are themselves defined as *functions*, i.e. it is a vector of functions, rather than a vector of scalars. The idea is so straightforward, that we are going to ignore it for the moment, and barely use it in the derivation. But it will reappear later when we introduce *basis functions*. So we will, for the moment, ignore the dependence of $\mappingFunctionVector$ on $\mappingVector$ and $\designMatrix$ and simply summarise it by a vector of numbers}
+The second of these is actually a vector-valued function. This term may appear intimidating, but the idea is straightforward. A vector valued function is simply a vector whose elements are themselves defined as *functions*, i.e. it is a vector of functions, rather than a vector of scalars. The idea is so straightforward, that we are going to ignore it for the moment, and barely use it in the derivation. But it will reappear later when we introduce *basis functions*. So we will, for the moment, ignore the dependence of $\mappingFunctionVector$ on $\mappingVector$ and $\designMatrix$ and simply summarise it by a vector of numbers}\newslide{Stacking Vectors}
 $$
 \mappingFunctionVector = \begin{bmatrix}\mappingFunction_1\\\mappingFunction_2\\
 \vdots \\ \mappingFunction_\numData\end{bmatrix}.
@@ -157,15 +157,15 @@ $$
 $$
 \errorFunction(\mappingVector) = (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector)
 $$
-\notes{from the rules of inner products. But what of our matrix $\designMatrix$ of input data? At this point, we need to dust off [*matrix-vector multiplication*](http://en.wikipedia.org/wiki/Matrix_multiplication). Matrix multiplication is simply a convenient way of performing many inner products together, and it's exactly what we need to summarise the operation}
+\notes{from the rules of inner products. But what of our matrix $\designMatrix$ of input data? At this point, we need to dust off [*matrix-vector multiplication*](http://en.wikipedia.org/wiki/Matrix_multiplication). Matrix multiplication is simply a convenient way of performing many inner products together, and it's exactly what we need to summarise the operation
 $$
 f_i = \designVector_i^\top\mappingVector.
 $$
-\notes{This operation tells us that each element of the vector $\mappingFunctionVector$ (our vector valued function) is given by an inner product between $\inputVector_i$ and $\mappingVector$. In other words it is a series of inner products. Let's look at the definition of matrix multiplication, it takes the form
+This operation tells us that each element of the vector $\mappingFunctionVector$ (our vector valued function) is given by an inner product between $\inputVector_i$ and $\mappingVector$. In other words it is a series of inner products. Let's look at the definition of matrix multiplication, it takes the form
 $$
 \mathbf{c} = \mathbf{B}\mathbf{a},
 $$
-{where $\mathbf{c}$ might be a $k$ dimensional vector (which we can intepret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
+where $\mathbf{c}$ might be a $k$ dimensional vector (which we can intepret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
 
 \notes{The result of this multiplication is of the form
 $$
@@ -181,10 +181,11 @@ b_{2, 1}a_1 + b_{2, 2}a_2 + \dots + b_{2, k}a_k \\
 \vdots\\
 b_{k, 1}a_1 + b_{k, 2}a_2 + \dots + b_{k, k}a_k\end{bmatrix}
 $$
-so we see that each element of the result, $\mathbf{a}$ is simply the inner product between each *row* of $\mathbf{B}$ and the vector $\mathbf{c}$. Because we have defined each element of $\mappingFunctionVector$ to be given by the inner product between each *row* of the design matrix and the vector $\mappingVector$ we now can write the full operation in one matrix multiplication,
+so we see that each element of the result, $\mathbf{a}$ is simply the inner product between each *row* of $\mathbf{B}$ and the vector $\mathbf{c}$. Because we have defined each element of $\mappingFunctionVector$ to be given by the inner product between each *row* of the design matrix and the vector $\mappingVector$ we now can write the full operation in one matrix multiplication,}
+\newslide{}
 $$
 \mappingFunctionVector = \designMatrix\mappingVector.
-$$}
+$$
 
 \setupcode{import numpy as np}
 \code{f = \designVariable@w # The @ sign performs matrix multiplication}

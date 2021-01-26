@@ -23,6 +23,9 @@ end: "15:00"
 
 \include{talk-macros.gpp}
 
+\define{\errorFunction}{L}
+\define{\designVector}{\boldsymbol{\phi}}
+
 \include{_deepnn/includes/deepnn-notebook-setup.md}
 
 \subsection{Quadratic Loss and Linear System}
@@ -50,7 +53,7 @@ $$
  \mappingFunction(\inputVector; \mappingMatrix)  =  \mappingVector_4 ^\top\basisFunction\left(\mappingMatrix_3 \basisFunction\left(\mappingMatrix_2\basisFunction\left(\mappingMatrix_1 \inputVector\right)\right)\right)
 $$
 
-\notes{So, in this course there are two reasons for looking at the shallow model. Firstly, it is easier to introduce the concepts of regulariation in the linear model regime. Secondly, the matrix forms we see (objects like $\basisMatrix^\top \basisMatrix$) which represents the Hessian matrix for the linear model, appear in both models.}
+\notes{So, in this course there are two reasons for looking at the shallow model. Firstly, it is easier to introduce the concepts of regularisation in the linear model regime. Secondly, the matrix forms we see, e.g. expressions like $\basisMatrix^\top \basisMatrix$, appear in both models.}
 
 \notes{For deep learning, we can no longer optimize the parameters of the model through solving a linear system[^quadratic]. Instead, we need to turn to non-linear optimization algorithms. For deep learning, that's typically stochastic gradient descient.
 
@@ -66,7 +69,7 @@ $$
 
 \notes{Just for informational purposes, the actual approach used in software for fitting a linear model *should* be a QR decomposition.}
 
-\include{_ml/includes/qr-decomposition-regression.md}
+\notes{\include{_ml/includes/qr-decomposition-regression.md}}
 
 \subsection{Basis Function Models}
 
@@ -96,7 +99,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 
 \include{_ml/includes/linear-regression-regularisation.md}
 \include{_ml/includes/training-with-noise-tikhonov-regularisation.md}
-\include{_ml/includes/bayesian-interpretation-of-regularisation.md}
+<!--include{_ml/includes/bayesian-interpretation-of-regularisation.md}-->
 
 \subsection{Overparameterised Systems}
 
@@ -119,6 +122,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 
 \include{_deepnn/includes/double-descent.md}
 \include{_deepnn/includes/neural-tangent-kernel.md}
+
 \include{_deepnn/includes/regularisation-in-optimisation.md}
 
 \thanks

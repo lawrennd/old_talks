@@ -38,7 +38,10 @@ $$
 $$
 \notes{This can be decomposed into two parts,}\slides{Decompose as}
 $$
-\mathbb{E}\left[ \left(\dataScalar - \mappingFunction(\inputVector)\right)^2 \right] = \text{bias}\left[\mappingFunction^*(\inputVector)\right]^2 + \text{variance}\left[\mappingFunction^*(\inputVector)\right] +\sigma^2,
+\begin{align*}
+\mathbb{E}\left[ \left(\dataScalar - \mappingFunction(\inputVector)\right)^2 \right] = & \text{bias}\left[\mappingFunction^*(\inputVector)\right]^2 \\
+& + \text{variance}\left[\mappingFunction^*(\inputVector)\right] +\sigma^2,
+\end{align*}
 $$
 \notes{where the bias is given by}\slides{
 

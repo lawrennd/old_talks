@@ -24,7 +24,7 @@ $$
     \hiddenVector_{1} &= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
     \hiddenVector_{2} &=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
     \hiddenVector_{3} &= \basisFunction\left(\mappingMatrix_3 \hiddenVector_{2}\right)\\
-    \mappingVector &= \mappingVector_4 ^\top\hiddenVector_{3}
+    \mappingFunction &= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align*}
 $$
 

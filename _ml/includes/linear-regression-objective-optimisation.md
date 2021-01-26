@@ -168,7 +168,11 @@ where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/
 
 \subsection{Solving the Multivariate System}
 
-\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by $$\designMatrix^\top\designMatrix \mappingVector = \designMatrix^\top\dataVector$$ for $\mappingVector$.} 
+\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by 
+$$
+\designMatrix^\top\designMatrix \mappingVector = \designMatrix^\top\dataVector
+$$ 
+for $\mappingVector$.} 
 
 \notes{\subsection{Multivariate Linear Regression}
 
