@@ -60,7 +60,7 @@ $$
 
 [^quadratic]: Apart from the last layer of parmeters in models with quadratic loss functions.}
 
-\notes{While it's possible to compute the Hessian in a neural network, @Bishop-exact92, we also find that it varies across the parameter space, and will not normally be positive definite. In practice, the number of parameter is also normally so large that storing the Hessian is impossible (it has quadratic cost in the number of parameters) due to memory constraints.}
+\notes{While it's possible to compute the Hessian in a neural network, @Bishop-exact92, we also find that it varies across the parameter space, and will not normally be positive definite. In practice, the number of parameters is normally so large that storing the Hessian is impossible (it has quadratic cost in the number of weights/parameters) due to memory constraints.}
 
 \notes{This means that while the theory of minima in optimization is well understood, empirical experiments with large neural networks are hard and the lessons of small models do not all translate to the very large systems.}
 
