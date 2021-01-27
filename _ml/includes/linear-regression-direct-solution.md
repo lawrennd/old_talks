@@ -16,15 +16,19 @@
 
 \subsection{Quadratic Loss}
 
+\notes{Now we've identified the empirical risk with the loss, we'll use $\errorFunction(\mappingVector)$ to represent our objective function.}
 $$
-R(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \mappingVector)\right)^2
+\errorFunction(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \mappingVector)\right)^2
 $$
+\notes{gives us our objective.}
 
 \newslide{Linear Model}
 
+\notes{In the case of the linear prediction function we can substitute $\mappingFunction(\inputVector_i, \mappingVector) = \mappingVector^\top \inputVector_i$.}
 $$
-R(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
+\errorFunction(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
 $$
+\notes{To compute the gradient of the objective, we first of all expand the bracket.}
 
 \notes{
 \subsection{Bracket Expansion}}
@@ -46,21 +50,22 @@ _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector +\text
 $$
 }
 
-\notes{\section{Multiple Input Solution with Linear Algebra}}
+\notes{\section{Solution with Linear Algebra}}
 
-\notes{You've now seen how slow it can
-be to perform a coordinate ascent on a system. Another approach to solving the
-system (which is not always possible, particularly in *non-linear* systems) is
-to go direct to the minimum. To do this we need to introduce *linear algebra*.
-We will represent all our errors and functions in the form of linear algebra.
-As we mentioned above, linear algebra is just a shorthand for performing lots of
+\notes{The typical approach to linear regression is tto 
+
+
+\notes{In this section we're going compute the minimum of the quadratic loss with respect to the parameters. When we do this we'll also review *linear algebra*.
+We will represent all our errors and functions in the form of matrices and vectors.}
+
+\notes{Linear algebra is just a shorthand for performing lots of
 multiplications and additions simultaneously. What does it have to do with our
-system then? Well the first thing to note is that the linear function we were
-trying to fit has the following form:
+system then? Well the first thing to note is that the classic linear function we fit for a one dimensional regression
+has the  form:
 $$
 \mappingFunction(x) = mx + c
 $$
-the classical form for a straight line. From a linear algebraic perspective we are looking for multiplications and additions. We are also looking to separate our parameters from our data. The data is the *givens* remember, in French the word is données literally translated means *givens* that's great, because we don't need to change the data, what we need to change are the parameters (or variables) of the model. In this function the data comes in through $x$, and the parameters are $m$ and $c$.}
+the classical form for a straight line. From a linear algebraic perspective we are looking for multiplications and additions. We are also looking to separate our parameters from our data. The data is the *givens*. In French the word is données literally translated means *givens* that's great, because we don't need to change the data, what we need to change are the parameters (or variables) of the model. In this function the data comes in through $x$, and the parameters are $m$ and $c$.}
 
 \notes{What we'd like to create is a vector of parameters and a vector of data. Then we could represent the system with vectors that represent the data, and vectors that represent the parameters.}
 
@@ -106,9 +111,9 @@ $$}
 \section{Design Matrix}
 
 \notes{We can do this for the entire data set to form a [*design
-matrix*](http://en.wikipedia.org/wiki/Design_matrix) $\designMatrix$,
-
-$$\designMatrix
+matrix*](http://en.wikipedia.org/wiki/Design_matrix) $\designMatrix$,}
+$$
+\designMatrix
 = \begin{bmatrix} 
 \designVector_1^\top \\\ 
 \designVector_2^\top \\\ 
@@ -120,8 +125,8 @@ $$\designMatrix
 \vdots
 & \vdots \\\
 1 & \inputScalar_\numData 
-\end{bmatrix},$$}
-
+\end{bmatrix}\notes{,}
+$$
 \notes{which in `numpy` can be done with the following commands:}
 
 \setupcode{import numpy as np}
