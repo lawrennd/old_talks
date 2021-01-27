@@ -28,11 +28,12 @@ $$
 $$
 \errorFunction(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
 $$
-\notes{To compute the gradient of the objective, we first of all expand the bracket.}
+\notes{To compute the gradient of the objective, we first of all expand the brackets.}
 
 \notes{
 \subsection{Bracket Expansion}}
-\notes{
+
+\ifndef{noNoiseTerm}
 $$
 \begin{align*}
   \errorFunction(\mappingVector,\dataStd^2)  = &
@@ -48,12 +49,24 @@ _{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}
 _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector +\text{const}.
 \end{align*}
 $$
-}
 
-\notes{\section{Solution with Linear Algebra}}
-
-\notes{The typical approach to linear regression is tto 
-
+\else
+$$
+\begin{align*}
+  \errorFunction(\mappingVector,\dataStd^2)  = & \sum
+_{i=1}^{\numData}\dataScalar_i^{2}-\sum
+_{i=1}^{\numData}\dataScalar_i\mappingVector^{\top}\inputVector_i\\&+\sum
+_{i=1}^{\numData}\mappingVector^{\top}\inputVector_i\inputVector_i^{\top}\mappingVector\\
+    = & \sum
+_{i=1}^{\numData}\dataScalar_i^{2}-
+\mappingVector^\top\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i\\&+
+\mappingVector^{\top}\left[\sum
+_{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector.
+\end{align*}
+$$
+\endif
+\notes{
+\section{Solution with Linear Algebra}}
 
 \notes{In this section we're going compute the minimum of the quadratic loss with respect to the parameters. When we do this we'll also review *linear algebra*.
 We will represent all our errors and functions in the form of matrices and vectors.}
