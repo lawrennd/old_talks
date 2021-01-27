@@ -25,7 +25,9 @@ $$
 $$
 R(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
 $$
-\notes{\subsection{Bracket Expansion}}
+
+\notes{
+\subsection{Bracket Expansion}}
 \notes{
 $$
 \begin{align*}
