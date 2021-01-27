@@ -37,6 +37,7 @@ end: "15:00"
 \define{designVector}{\basisVector}
 \define{designVariable}{Phi}
 \define{designMatrix}{\basisMatrix}
+\define{noNoiseTerm}
 \include{_ml/includes/linear-regression-direct-solution.md}
 \include{_ml/includes/linear-regression-objective-optimisation.md}
 \include{_ml/includes/linear-regression-hessian.md}
