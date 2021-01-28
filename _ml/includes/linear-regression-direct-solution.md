@@ -7,9 +7,6 @@
 \ifndef{designMatrix}
 \define{designMatrix}{\inputMatrix}
 \endif
-\ifndef{designVector}
-\define{designVector}{\inputVector}
-\endif
 \ifndef{designVariable}
 \define{designVariable}{X}
 \endif
@@ -30,8 +27,7 @@ $$
 $$
 \notes{To compute the gradient of the objective, we first of all expand the brackets.}
 
-\notes{
-\subsection{Bracket Expansion}}
+\subsection{Bracket Expansion}
 
 \ifndef{noNoiseTerm}
 $$
@@ -49,17 +45,15 @@ _{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}
 _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector +\text{const}.
 \end{align*}
 $$
-
 \else
 $$
 \begin{align*}
   \errorFunction(\mappingVector,\dataStd^2)  = & \sum
-_{i=1}^{\numData}\dataScalar_i^{2}-\sum
+_{i=1}^{\numData}\dataScalar_i^{2}- 2\sum
 _{i=1}^{\numData}\dataScalar_i\mappingVector^{\top}\inputVector_i\\&+\sum
 _{i=1}^{\numData}\mappingVector^{\top}\inputVector_i\inputVector_i^{\top}\mappingVector\\
-    = & \sum
-_{i=1}^{\numData}\dataScalar_i^{2}-
-\mappingVector^\top\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i\\&+
+    = & \sum_{i=1}^{\numData}\dataScalar_i^{2}-
+2 \mappingVector^\top\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i\\&+
 \mappingVector^{\top}\left[\sum
 _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector.
 \end{align*}
@@ -89,7 +83,7 @@ c \times 1,
 $$
 in other words we've extracted the unit value, from the offset, $c$. We can think of this unit value like an extra item of data, because it is always given to us, and it is always set to 1 (unlike regular data, which is likely to vary!). We can therefore write each input data location, $\inputVector$, as a vector
 $$
-\designVector = \begin{bmatrix} 1\\ x\end{bmatrix}.
+\inputVector = \begin{bmatrix} 1\\ x\end{bmatrix}.
 $$}
 
 \notes{Now we choose to also turn our parameters into a vector. The parameter vector will be defined to contain 
@@ -98,7 +92,7 @@ $$
 $$
 because if we now take the inner product between these to vectors we recover
 $$
-\designVector\cdot\mappingVector = 1 \times c + x \times m = mx + c
+\inputVector\cdot\mappingVector = 1 \times c + x \times m = mx + c
 $$
 In `numpy` we can define this vector as follows}
 
@@ -111,11 +105,11 @@ w[1] = c}
 \notes{This gives us the equivalence between original operation and an operation in vector space. Whilst the notation here isn't a lot shorter, the beauty is that we will be able to add as many features as we like and still keep the seame
 representation. In general, we are now moving to a system where each of our predictions is given by an inner product. When we want to represent a linear product in linear algebra, we tend to do it with the transpose operation, so since we have $\mathbf{a}\cdot\mathbf{b} = \mathbf{a}^\top\mathbf{b}$ we can write
 $$
-\mappingFunction(\inputVector_i) = \designVector_i^\top\mappingVector.
+\mappingFunction(\inputVector_i) = \inputVector_i^\top\mappingVector.
 $$
-Where we've assumed that each data point, $\designVector_i$, is now written by appending a 1 onto the original vector
+Where we've assumed that each data point, $\inputVector_i$, is now written by appending a 1 onto the original vector
 $$
-\designVector_i = \begin{bmatrix} 
+\inputVector_i = \begin{bmatrix} 
 1 \\
 \inputScalar_i
 \end{bmatrix}
@@ -128,10 +122,10 @@ matrix*](http://en.wikipedia.org/wiki/Design_matrix) $\designMatrix$,}
 $$
 \designMatrix
 = \begin{bmatrix} 
-\designVector_1^\top \\\ 
-\designVector_2^\top \\\ 
+\inputVector_1^\top \\\ 
+\inputVector_2^\top \\\ 
 \vdots \\\
-\designVector_\numData^\top
+\inputVector_\numData^\top
 \end{bmatrix} = \begin{bmatrix}
 1 & \inputScalar_1 \\\
 1 & \inputScalar_2 \\\
@@ -154,7 +148,7 @@ $$
 $$
 \notes{where we've made the function $\mappingFunction(\cdot)$'s dependence on the parameters $\mappingVector$ explicit in this equation. Then we have the definition of the function itself,}
 $$
-\mappingFunction(\inputVector_i; \mappingVector) = \designVector_i^\top \mappingVector.
+\mappingFunction(\inputVector_i; \mappingVector) = \inputVector_i^\top \mappingVector.
 $$
 \notes{Let's look again at these two equations and see if we can identify any inner products. The first equation is a sum of squares, which is promising. Any sum of squares can be represented by an inner product,
 $$
@@ -179,7 +173,7 @@ $$
 $$
 \notes{from the rules of inner products. But what of our matrix $\designMatrix$ of input data? At this point, we need to dust off [*matrix-vector multiplication*](http://en.wikipedia.org/wiki/Matrix_multiplication). Matrix multiplication is simply a convenient way of performing many inner products together, and it's exactly what we need to summarise the operation
 $$
-f_i = \designVector_i^\top\mappingVector.
+f_i = \inputVector_i^\top\mappingVector.
 $$
 This operation tells us that each element of the vector $\mappingFunctionVector$ (our vector valued function) is given by an inner product between $\inputVector_i$ and $\mappingVector$. In other words it is a series of inner products. Let's look at the definition of matrix multiplication, it takes the form
 $$

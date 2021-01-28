@@ -4,7 +4,6 @@
 
 \subsection{Polynomial Basis}
 
-\slides{* }
 \notes{The polynomial basis combines higher order polynomials together to create the function. For example the fourth order polynomial has five components to its basis function.}
 $$
 \basisFunc_j(\inputScalar) = \inputScalar^j

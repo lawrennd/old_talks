@@ -29,6 +29,8 @@
 
 \subsection{Linear Fit}
 
+\slides{$$\mappingFunction(x, \mappingVector) = \mappingScalar_0 + \mappingScalar_1 \inputScalar$$}
+
 \code{poly_args = {'num_basis':2, # two basis functions (1 and x)
              'data_limits':xlim}
 Phi = polynomial(x, **poly_args)
@@ -61,6 +63,8 @@ mlai.write_figure(filename='olympic-marathon-bootstrap-polynomial-2.svg',
 
 \subsection{Cubic Fit}
 
+\slides{$$\mappingFunction(x, \mappingVector) = \mappingScalar_0 + \mappingScalar_1 \inputScalar + \mappingScalar_2 \inputScalar^2 + \mappingScalar_{3} \inputScalar^3$$}
+
 \code{poly_args = {'num_basis':4, # four basis: 1, x, x^2, x^3
              'data_limits':xlim}
 Phi = polynomial(x, **poly_args)
@@ -89,6 +93,8 @@ mlai.write_figure(filename='olympic-marathon-bootstrap-polynomial-4.svg',
 \figure{\includediagram{\diagramsDir/ml/olympic-marathon-bootstrap-polynomial-4}{80%}}{Fit of a 3 degree polynomial (a cubic model) to the olympic marathon data.}{olympic-marathon-bootstrap-polynomial-4}
 
 \subsection{9th Degree Polynomial Fit}
+
+\slides{$$\mappingFunction(x, \mappingVector) = \mappingScalar_0 + \mappingScalar_1 \inputScalar + \mappingScalar_2 \inputScalar^2 + \dots + \mappingScalar_{9} \inputScalar^{9}$$}
 
 \notes{Now we'll try a 9th degree polynomial fit to the data.}
 
@@ -121,6 +127,8 @@ mlai.write_figure(filename='olympic-marathon-bootstrap-polynomial-10.svg',
 
 
 \subsection{16th Degree Polynomial Fit}
+
+\slides{$$\mappingFunction(x, \mappingVector) = \mappingScalar_0 + \mappingScalar_1 \inputScalar + \mappingScalar_2 \inputScalar^2 + \dots + \mappingScalar_{16} \inputScalar^{16}$$}
 
 \notes{Now we'll try a 16th degree polynomial fit to the data.}
 

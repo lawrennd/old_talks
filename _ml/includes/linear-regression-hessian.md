@@ -5,7 +5,7 @@
 
 \subsection{Hessian Matrix}
 
-\notes{We can also compute the *Hessian* matrix, the curvature of the loss function. We simply take the second derivative of the loss function with respect to the parameter vector,}
+\notes{We can also compute the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix), the curvature of the loss function. To do this we take the second derivative of the loss function with respect to the parameter vector,}
 $$
 \frac{\text{d}^2}{\text{d}\mappingVector \text{d}\mappingVector^\top} \errorFunction(\mappingVector) = 2\designMatrix^\top\designMatrix.
 $$
@@ -19,12 +19,11 @@ $$
 
 \notes{From univariate calculus you might recall that the optimum is a maximum if the curvature is negative, and a minimum if the curvature is positive. A similar theorem holds for multivariate calculus, but now the curvature must be *positive definite* for the point to be a minimum. The constant curvature also shows us also that the minimum is *unique*.}
 
-
-\notes{Positive definite means that for any two vectors, $\mathbf{u}$ of unit length $\mathbf{u}^\top\mathbf{u}$ we have that,}
+\notes{Positive definite means that for any two vectors, $\mathbf{u}$ of unit length $\mathbf{u}^\top\mathbf{u}$ we have that,
 $$
 \mathbf{u}^\top\mathbf{A} \mathbf{u} > 0 \quad \forall \quad \mathbf{u} \quad \text{with}\quad \mathbf{u}^\top\mathbf{u}=1
 $$
-\notes{The matrix $\designMatrix^\top\designMatrix$ (where we've dropped the 2) will satisfy this condition as long as the columns of $\designMatrix$ are *linearly independent* and the number of basis functions is less or equal to the number of data.}
+The matrix $\designMatrix^\top\designMatrix$ (where we've dropped the 2) will satisfy this condition as long as the columns of $\designMatrix$ are *linearly independent* and the number of basis functions is less or equal to the number of data.}
 
 \subsection{Eigendecomposition of Hessian}
 

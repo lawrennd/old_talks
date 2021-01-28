@@ -42,6 +42,14 @@ end: "15:00"
 \include{_ml/includes/linear-regression-objective-optimisation.md}
 \include{_ml/includes/linear-regression-hessian.md}
 
+\include{_ml/includes/nigeria-nmis-linear-regression.md}
+
+\notes{\section{Aside}}
+
+\notes{Just for informational purposes, the actual approach used in software for fitting a linear model *should* be a QR decomposition.}
+
+\notes{\include{_ml/includes/qr-decomposition-regression.md}}
+
 \subsection{Shallow and Deep Learning}
 
 \notes{So far we have been talking about *linear models* or *shallow learning* as we might think of it. Let's pause for a moment and consider a *fully connected* deep neural network model to relate the two ideas.}
@@ -65,13 +73,7 @@ $$
 
 \notes{This means that while the theory of minima in optimization is well understood, empirical experiments with large neural networks are hard and the lessons of small models do not all translate to the very large systems.}
 
-\include{_ml/includes/nigeria-nmis-linear-regression.md}
-
-\notes{\section{Aside}}
-
-\notes{Just for informational purposes, the actual approach used in software for fitting a linear model *should* be a QR decomposition.}
-
-\notes{\include{_ml/includes/qr-decomposition-regression.md}}
+\notes{We can stay within the framework of linear models, but take a step closer to neural network models by introducing functions that are non-linear in the inputs, $\inputVector$, known as *basis functions*.}
 
 \subsection{Basis Function Models}
 

@@ -14,6 +14,8 @@ $$
 $$
 \notes{and resample from that data, rather than from the true distribution. So we have a new data set, $\hat{\dataVector}$, $\hat{\inputMatrix}$ which is sampled from the original *with* replacement.}
 
+\newslide{Resample Dataset}
+
 \slides{```python
 def bootstrap(X):
     "Return a bootstrap sample from a data set."

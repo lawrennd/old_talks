@@ -33,14 +33,17 @@ number of parameters is equal to the number of data[^assuming].
 [^assuming]: Assuming we are ignoring parameters in the link function and the distribution function.}
 
 \notes{The bias-variance decomposition [@Geman:biasvariance92] considers the expected test error for different variations of the *training data* sampled from, $\mathbb{P}(\inputVector, \dataScalar)$}\slides{Generalisation error}
-$$
-\mathbb{E}\left[ \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \right].
-$$
+$$\begin{align*}
+R(\mappingVector) = & \int \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \mathbb{P}(\dataScalar, \inputVector) \text{d}\dataScalar \text{d}\inputVector \\
+& \triangleq & \mathbb{E}\left[ \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \right].
+\end{align*}$$
+\newslide{Decompose}
+
 \notes{This can be decomposed into two parts,}\slides{Decompose as}
 $$
 \begin{align*}
-\mathbb{E}\left[ \left(\dataScalar - \mappingFunction(\inputVector)\right)^2 \right] = & \text{bias}\left[\mappingFunction^*(\inputVector)\right]^2 \\
-& + \text{variance}\left[\mappingFunction^*(\inputVector)\right] +\sigma^2,
+\mathbb{E}\left[ \left(\dataScalar - \mappingFunction(\inputVector)\right)^2 \right] = & \text{bias}\left[\mappingFunction^*(\inputVector)\right]^2 \slides{\\
+&} + \text{variance}\left[\mappingFunction^*(\inputVector)\right] \slides{\\} \slides{\\ &}+\sigma^2,
 \end{align*}
 $$
 \notes{where the bias is given by}\slides{

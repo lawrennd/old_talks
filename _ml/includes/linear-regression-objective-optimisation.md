@@ -149,26 +149,28 @@ to match the gradients we've computed directly for $\frac{\text{d}\errorFunction
 \newslide{Update Equations}
 
 \slides{
-* Update for $\mappingVector^{*}$.
-  $$\mappingVector^{*} = \left(\designMatrix^\top \designMatrix\right)^{-1} \designMatrix^\top \dataVector$$
+* Solve the matrix equation for $\mappingVector$.
+  $$\designMatrix^\top \designMatrix\mappingVector =  \designMatrix^\top \dataVector$$
+\ifndef{noNoiseTerm}
 * The equation for $\left.\dataStd^2\right.^{*}$ may also be found
-  $$\left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\inputVector_i\right)^{2}}{\numData}.$$}
+  $$\left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\inputVector_i\right)^{2}}{\numData}.$$
+\endif}
 
-\notes{Once again, we need to find the minimum of our objective function. Using our likelihood for multiple input regression we can now minimize for our parameter vector $\mappingVector$. Firstly, just as in the single input case, we seek stationary points by find parameter vectors that solve for when the gradients are zero,
+\notes{We need to find the minimum of our objective function. Using our objective function we can  minimize for our parameter vector $\mappingVector$. Firstly,  we seek stationary points by find parameter vectors that solve for when the gradients are zero,
 $$
 \mathbf{0}=- 2\designMatrix^\top
 \dataVector + 2\designMatrix^\top\designMatrix\mappingVector,
 $$
 where $\mathbf{0}$ is a *vector* of zeros. Rearranging this equation we find the solution to be
 $$
-\mappingVector = \left[\designMatrix^\top \designMatrix\right]^{-1} \designMatrix^\top
+\designMatrix^\top \designMatrix \mappingVector = \designMatrix^\top
 \dataVector
 $$ 
-where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/Invertible_matrix).}
+which is a matrix equation of the familiar form $\mathbf{A}\mathbf{x} = \mathbf{b}$.}
 
-\subsection{Solving the Multivariate System}
+\notes{\subsection{Solving the Multivariate System}}
 
-\notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by 
+\notes{The solution for $\mappingVector$ can be written matematically in terms of a matrix inverse of $\designMatrix^\top\designMatrix$, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by 
 $$
 \designMatrix^\top\designMatrix \mappingVector = \designMatrix^\top\dataVector
 $$ 
