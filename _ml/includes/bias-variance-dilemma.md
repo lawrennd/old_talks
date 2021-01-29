@@ -53,7 +53,7 @@ $$
 * Given by}
   $$
   \text{bias}\left[\mappingFunction^*(\inputVector)\right] =
-\mathbb{E}\left[\mappingFunction^*(\inputVector)\right] * \mappingFunction(\inputVector)
+\mathbb{E}\left[\mappingFunction^*(\inputVector)\right] - \mappingFunction(\inputVector)
 $$
 \notes{and it summarizes error that arises from the model's inability to represent the underlying complexity of the data. For example, if we were to model the marathon pace of the winning runner from the Olympics by computing the average pace across time, then that model would exhibit *bias* error because the reality of Olympic marathon pace is it is changing (typically getting faster).}
 
