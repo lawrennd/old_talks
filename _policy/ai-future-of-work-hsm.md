@@ -22,7 +22,7 @@ transition: None
 ---
 
 
-**The AI fallacy**
+## The AI fallacy
 
 There is a lot of variation in the use of the term artificial
 intelligence. I'm sometimes asked to define it, but depending on whether
@@ -60,7 +60,7 @@ data-driven automated decision making, but the AI Fallacy is causing us
 to suspend our calibrated skepticism that is needed to deploy these
 systems safely and efficiently.
 
-**Techno-solutionism and techno-skepticism**
+## Techno-solutionism and techno-skepticism
 
 In public discussions about AI, we've seen lots of promises that AI will
 save lives, address global challenges such as climate change, and add
@@ -98,21 +98,18 @@ have the ability to influence how AI will affect them, through
 identifying how they can adopt AI, introducing technologies in ways that
 work well for human users, and supporting their workforce.
 
-**Organisational data readiness**
+## Organisational data readiness
 
 [A recent
-report](https://rs-delve.github.io/addenda/2020/11/24/organizational-data-maturity.html#data-maturity-assessments)
+report](https://rs-delve.github.io/addenda/2020/11/24/organizational-data-maturity.html#data-maturity-assessments) [@Delve-data20]
 by the DELVE Initiative considered what action organisations needed to
 take to ensure they had the absorptive capacity to begin to make use of
 data-enabled technologies like machine learning. A first step is
 considering organisational data maturity.
 
-In that report, we noted that "*Many organisations aspire to be data
-driven in their decision making, but are held back from achieving this
-goal by issues arising from the accessibility and availability of data
-between teams or collaborators. Data maturity frameworks can provide
-practical guidance for organisations seeking to improve their data
-management practices and create value from the data they hold."*
+In that report, we noted that 
+
+> Many organisations aspire to be data driven in their decision making, but are held back from achieving this goal by issues arising from the accessibility and availability of data between teams or collaborators. Data maturity frameworks can provide practical guidance for organisations seeking to improve their data management practices and create value from the data they hold.
 
 Our proposed framework for data maturity encourages leaders to
 interrogate the extent to which businesses are able to deploy data in
@@ -153,3 +150,8 @@ of this new technology within their business skill set. Senior business
 leaders need to take time out working closely with the technology in
 their own environments to better calibrate their understanding of its
 strengths and weaknesses.
+
+
+\thanks
+
+\references
