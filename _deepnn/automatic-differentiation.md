@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: Automatic Differentiation
+title: More Generalisation and Automatic Differentiation
 week: 2
 session: 1
 author:
@@ -11,20 +11,20 @@ author:
 abstract: >
   This lecture will cover the foundations of automatic differentiation as well as the different frameworks that exist for building models.
 talkscam:
+youtube: m3KZLPed7aM
 reveal: false
+link1: https://hackmd.io/@fhuszar/H1WZ70kl_#/
+label1: Slides
 time: "14:00"
 start: "14:00"
 end: "15:00"
 date: 2021-01-28
 ---
 
-Related publications and links will appear here.
+* [Slides are here](https://hackmd.io/@fhuszar/H1WZ70kl_#/)
+* [Approximating with ReLU notes are here](https://hackmd.io/@fhuszar/S1UdOvZe_)
+* [Automatic Differentiaton notes are here](https://hackmd.io/@fhuszar/SyHTInWeu)
+* [Google Colab Is Available Here](https://colab.research.google.com/drive/1qioPLq-dxOwudPKXU3MxpHr2s4Su3dxI?usp=sharing)
 
-* Forward Mode
-* Reverse mode
-* Mixed mode
-* Scalar loss means reverse mode more efficient (backprop optimal)
 
-Related publications and links will appear here.
-
-Nice review paper from <https://jmlr.org/papers/v18/17-468.html> @Baydin-autodiff18 (See Figure 2)
+* Nice review paper from <https://jmlr.org/papers/v18/17-468.html> @Baydin-autodiff18 (See Figure 2)
