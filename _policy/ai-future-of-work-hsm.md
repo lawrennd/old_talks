@@ -1,7 +1,6 @@
 ---
 title: AI and the Future of Work
-abstract: |
-  
+abstract: 
 author:
 - family: Lawrence
   given: Neil D.
@@ -14,15 +13,15 @@ author:
   institute: University of Cambridge
   url: https://www.linkedin.com/in/jessica-montgomery-206256144
 reveal: False
-youtube: 
-blog: 
 date: 2021-12-03
 venue: HSM
 transition: None
 ---
 
+\include{talk-macros.gpp}
 
-## The AI fallacy
+
+The AI Fallacy
 
 There is a lot of variation in the use of the term artificial
 intelligence. I'm sometimes asked to define it, but depending on whether
@@ -70,8 +69,7 @@ job losses and the machines rising up. These portrayals play into a long
 history we have of hopes and fears around intelligent machines and our
 place in the world. Neither outcome is inevitable.
 
-*Quote from [JM Royal Society
-blog](https://royalsociety.org/blog/2018/09/the-impact-of-ai-on-work/):
+* Quote from [JM Royal Society blog](https://royalsociety.org/blog/2018/09/the-impact-of-ai-on-work/):
 While much of the public and policy debate about AI and work has tended
 to oscillate between fears of the 'end of work' and reassurances that
 little will change in terms of overall employment, evidence suggests
@@ -100,8 +98,7 @@ work well for human users, and supporting their workforce.
 
 ## Organisational data readiness
 
-[A recent
-report](https://rs-delve.github.io/addenda/2020/11/24/organizational-data-maturity.html#data-maturity-assessments) [@Delve-data20]
+[A recent report](https://rs-delve.github.io/addenda/2020/11/24/organizational-data-maturity.html#data-maturity-assessments) [@Delve-data20]
 by the DELVE Initiative considered what action organisations needed to
 take to ensure they had the absorptive capacity to begin to make use of
 data-enabled technologies like machine learning. A first step is
