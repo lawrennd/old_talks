@@ -26,7 +26,7 @@ PPFLAGS=$(shell ../flags.py pp $(BASE))
 
 BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib 
 
-CITEFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
+CITEFLAGS=--citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
 SFLAGS=--slide-level 2
