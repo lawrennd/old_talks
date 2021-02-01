@@ -11,7 +11,7 @@ end: "15:00"
 ---
 
 
-This week's lecture will be on Bayesian Manifold Relevance Determination.
+This week's lecture will be on the Bayesian Gaussian Process Latent variable Model.
 
 The paper details are [available here](http://proceedings.mlr.press/v9/titsias10a.html).
 
