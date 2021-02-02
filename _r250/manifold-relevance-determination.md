@@ -1,5 +1,5 @@
 ---
-title: "R250: Manifold Relevance Determination"
+title: "R250: Manifold Relevance Determination and Nonlinear Matrix Factorization"
 reveal: 
 ipynb:
 week: 3
@@ -11,7 +11,7 @@ end: "15:00"
 ---
 
 
-This week's lecture will be on Manifold Relevance Determination.
+This week's lectures will be on Manifold Relevance Determination and Nonlinear Matrix Factorization.
 
-The paper details are [available here](https://dl.acm.org/doi/10.5555/3042573.3042644).
+The paper details are [available here](https://dl.acm.org/doi/10.5555/3042573.3042644) and [here](https://dl.acm.org/doi/10.1145/1553374.1553452).
 
