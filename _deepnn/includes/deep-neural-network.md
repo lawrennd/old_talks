@@ -5,6 +5,12 @@
 
 \subsection{Deep Neural Network}
 
+\installcode{daft}
+
+\setupplotcode{import matplotlib
+matplotlib.rc('text', usetex=True)
+matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]}
+
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.deep_nn(diagrams='\writeDiagramsDir/deepgp/')}
 
