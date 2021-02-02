@@ -133,7 +133,7 @@ mlai.write_figure('house-model-zoom.svg', directory='\writeDiagramsDir/simulatio
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/simulation/house-model-zoom}{80%}}{A zoomed in version of Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-zoom}
+\figure{\includepng{\diagramsDir/simulation/house-model-zoom}{80%}}{A zoomed in version of Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-zoom}
 
 \plotcode{fig, ax = plt.subplots(1, 2, figsize=plot.big_wide_size)
 for tt in range(0,len(t0ran)):
@@ -155,7 +155,7 @@ mlai.write_figure('house-model-full.svg', directory='\writeDiagramsDir/simulatio
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/simulation/house-model-full}{80%}}{The full progress of the disease in Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-full}
+\figure{\includepng{\diagramsDir/simulation/house-model-full}{80%}}{The full progress of the disease in Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-full}
 
 \notes{In practice, immunity for Covid19 may only last around 6 months. As an exercise, try to extend Thomas's model for the case where immunity is temporary. You'll need to account for deaths as well in your new model.}
 
