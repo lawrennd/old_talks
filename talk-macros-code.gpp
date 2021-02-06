@@ -22,6 +22,10 @@ from \filename import \object\endif
 \block
 \pythonblockend}
 
+\define{\showcode{block}}{\pythonblockstart
+\block
+\pythonblockend}
+
 \ifdef{HELPERCODE}
 \define{\setuphelpercode{block}}{\setupcode{\block}}
 \define{\loadhelpercode{object}{filename}}{\loadcode{\object}{\filename}}

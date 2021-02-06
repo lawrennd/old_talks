@@ -11,6 +11,7 @@ author:
 abstract: >
   This lecture will cover stochastic gradient descent.
 talkscam:
+youtube: GDyD8KwSfvk
 reveal: false
 time: "14:00"
 start: "14:00"

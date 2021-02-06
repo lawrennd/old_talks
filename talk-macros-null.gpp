@@ -116,6 +116,8 @@
 \define{\loadcode{object}{filename}}{}
 \define{\code{block}}{}
 
+\define{\showcode{block}}{}
+
 \define{\setuphelpercode{block}}{}
 \define{\loadhelpercode{block}}{}
 \define{\helpercode{block}}{}
