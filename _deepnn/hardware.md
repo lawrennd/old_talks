@@ -689,9 +689,6 @@ profile_ops(lenet, shape=(1,1,28,28))}
     295,700 FLOPs or approx. 0.00 GFLOPs
 :::
 
-::: {.output .display_data}
-![](fa2e484acf0b3be23b09b17472a1346d6489ca12.png)
-:::
 
 \subsection{Deep Learning working set}
 
@@ -711,9 +708,6 @@ profile_layer_mem(lenet)}
     working set profiling
 :::
 
-::: {.output .display_data}
-![](af6e0bd6b0755f5ccb33f3a4845521ef02a83120.png)
-:::
 
 \subsection{Working Set requirement exceeding RAM}
 
@@ -739,9 +733,6 @@ estimate_training_for(LeNet, 1000)}
     Using 6144 hidden nodes took 13.21 seconds,        training for 1000 epochs would take ~13207.558155059814s
 :::
 
-::: {.output .display_data}
-![](7e50f30ae5d9101c770d18fd37f3f335e9107616.png)
-:::
 
 \subsection{Working Set requirement exceeding RAM + Swap}
 
@@ -851,9 +842,6 @@ profile_layer_alexnet(anet)}
     per-layer profiling of AlexNet - connects to the preceding slide
 :::
 
-::: {.output .display_data}
-![](2371c2a192ef69113ac6e04527cd20ce276e13af.png)
-:::
 
 \subsection{The actual AlexNet architecture}
 
@@ -916,7 +904,3 @@ the 3GB limit per unit in its two GPUs.
 
 profile_mem(lenet)}
 
-::: {.output .display_data}
-![](11d23715eb81c04c09c465d3757cb818e4d44bfd.png)
-:::
-:::
