@@ -51,7 +51,7 @@ except ny.FileFormatError:
 try:
     revealjs_url = ny.header_field('revealjs_url', fields)
 except ny.FileFormatError:
-    revealjs_url = 'https://unpkg.com/reveal.js@3.9.2/'
+    revealjs_url = 'https://unpkg.com/reveal.js@3.9.2'
 revealjs_urlarg = """ --variable revealjs-url={revealjs_url}""".format(revealjs_url=revealjs_url)
 
 try:

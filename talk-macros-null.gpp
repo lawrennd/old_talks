@@ -41,6 +41,8 @@
 \define{\tk}{}
 \define{\TK}{}
 
+\define{\credit{name}{url}}{}
+
 \define{\caption{block}}{}
 
 \defeval{\figure{contents}{captionContents}{label}}{}

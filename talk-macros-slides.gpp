@@ -115,4 +115,7 @@
 \endif}
 
 
+\define{\credit{name}{url}}{\small{\alignright{*Credit*: [\name](\url)}}
+
+
 \endif

@@ -45,7 +45,8 @@ end: "15:00"
 
 <tr>
 <td> \aligncenter{ <h2> New York Times (1958) </h2> } </td>
-<td> \aligncenter{ <h2> Eniac, 1950s SoTA Hardware </h2> } </td></tr>
+<td> \aligncenter{ <h2> Eniac, 1950s SoTA Hardware </h2> } </td>
+</tr>
 
 <tr>
 <td> \includepng{\diagramsDir/hardware/NYT_core}{40%}</td>
@@ -57,12 +58,11 @@ end: "15:00"
 \subsection{How did we get here? Deep Learning requires *peta* FLOPS}
 
 \aligncenter{0.01 PFLOP (left) = $10^{13}$ FLOPS (right)}
-\includepng{\diagramsDir/hardware/provisional_MACs}{40%}
-\includepng{\diagramsDir/hardware/FLOPS}
+\columns{\includepng{\diagramsDir/hardware/provisional_MACs}{100%}}{
+\includepng{\diagramsDir/hardware/FLOPS}{100%}}{45%}{45%}
 
 
-Credits: Our World in Data
-(<https://ourworldindata.org/technological-progress>)
+\credit{Our World in Data}{https://ourworldindata.org/technological-progress}
 
 
 \subsection{Plan for the Day}
@@ -79,11 +79,7 @@ Credits: Our World in Data
 
 \subsection{Internal Organisation of Processors}
 
-<table>
-<tr>
-<td>\aligncenter{\includejpg{\diagramsDir/hardware/AMDprocessor}{40%}}</td><td>\aligncenter{\includejpg{\diagramsDir/hardware/GPU}{90%}}</td><td>\aligncenter{\includepng{\diagramsDir/hardware/TPU_out}{40%}}</td>
-</tr>
-</table>
+\threeColumns{\aligncenter{\includejpg{\diagramsDir/hardware/AMDprocessor}{100%}}}{\aligncenter{\includejpg{\diagramsDir/hardware/GPU}{100%}}}{\aligncenter{\includepng{\diagramsDir/hardware/TPU_out}{100%}}}{30%}{40%}{30%}
 
 \subsection{Central Processing Unit (CPU)}
 
@@ -248,8 +244,7 @@ inversion.</pp>
 
 \aligncenter{\includepng{\diagramsDir/hardware/Moores_Law}{60%}}
 
-Credits: Our World in Data
-(<https://ourworldindata.org/technological-progress>)
+\credit{Our World in Data}{https://ourworldindata.org/technological-progress}
 
 
 \subsection{Plan for the Day}
@@ -269,8 +264,7 @@ Credits: Our World in Data
 
 \aligncenter{\includepng{\diagramsDir/hardware/Moores_Law2}{65%}}
 
-Credits: Karl Rupp
-(<https://github.com/karlrupp/microprocessor-trend-data>)
+\credit{Karl Rupp}{https://github.com/karlrupp/microprocessor-trend-data}
 
 \subsection{Processor comparison based on parallelism}
 

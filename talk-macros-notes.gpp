@@ -103,4 +103,7 @@ For more information on these subjects and more you might want to check the foll
 
 \endif}
 
+\define{\credit{name}{url}}{*Credit*: [\name](\url)}
+
+
 \endif
