@@ -8,25 +8,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="./reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/reveal.css">
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="./reveal.js/css/theme/black.css" id="theme">
-  <link rel="stylesheet" href="./talks.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/css/talks.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? './reveal.js/css/print/pdf.css' : './reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2//css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2//css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2//lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
@@ -132,6 +132,7 @@ The phenomenon of emergent behaviour also applies to real world simulations like
 <p>Probability is relative, in part to this ignorance, in part to our knowledge.</p>
 <p><em>Philosophical Essay on Probabilities</em> <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 5</p>
 </blockquote>
+<p>INTRODUCE ENTROPY TO MEASURE IGNORANCE</p>
 <!--THEORY of IGNORANCE-->
 </section>
 <section id="a-theory-of-ignorance" class="slide level2">
@@ -298,6 +299,7 @@ Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) a
 <div class="figure">
 <div id="albert-einstein-figure" class="figure-frame">
 <div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
@@ -872,8 +874,8 @@ Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. <span>DeepFace</span>: Closi
     </div>
   </div>
 
-  <script src="./reveal.js/lib/js/head.min.js"></script>
-  <script src="./reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2//lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2//js/reveal.js"></script>
 
   <script>
 
@@ -903,10 +905,10 @@ Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. <span>DeepFace</span>: Closi
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: './reveal.js/plugin/math/math.js', async: true },
-          { src: './reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://unpkg.com/reveal.js@3.9.2//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/notes/notes.js', async: true }
         ]
       });
     </script>
