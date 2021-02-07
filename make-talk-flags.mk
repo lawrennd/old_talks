@@ -6,6 +6,7 @@ DATE=$(shell ../talkfield.py date ${BASE}.md)
 CATEGORIES=$(shell ../talkfield.py categories ${BASE}.md)
 
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
+REVEALJS="https://inverseprobability.com/talks/slides/reveal.js/"
 
 # Extract the CSS style file for the talk
 CSS=$(shell ../talkfield.py talkcss ${BASE}.md)
@@ -29,7 +30,6 @@ BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliograp
 CITEFLAGS=--citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
-SFLAGS=--slide-level 2
 
 POSTDIR=$(shell ../talkfield.py postdir $(BASE).md)
 NOTEDIR=$(shell ../talkfield.py notedir $(BASE).md)
@@ -38,6 +38,8 @@ SLIDEDIR=$(shell ../talkfield.py slidedir $(BASE).md)
 WEEK=$(shell ../talkfield.py week $(BASE).md)
 SESSION=$(shell ../talkfield.py session $(BASE).md)
 
+
+
 DEPS=$(shell ../dependencies.py inputs $(BASE).md)
 DIAGDEPS=$(shell ../dependencies.py diagrams $(BASE).md)
 BIBDEPS=$(shell ../dependencies.py bibinputs $(BASE).md)
@@ -45,5 +47,7 @@ BIBDEPS=$(shell ../dependencies.py bibinputs $(BASE).md)
 POSTFLAGS=$(shell ../flags.py post $(BASE))
 PPTXFLAGS=$(shell ../flags.py pptx $(BASE))
 DOCXFLAGS=$(shell ../flags.py docx $(BASE))
+SFLAGS=$(shell ../flags.py reveal $(BASE))
+
 
 ALL=$(shell ../dependencies.py all $(BASE).md)

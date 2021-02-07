@@ -18,6 +18,7 @@ room: Zoom
 reveal: true
 ipynb: true
 youtube: -IXnGgDbE-M
+revealjs_theme: white
 venue: Computer Laboratory, William Gates Building
 time: "14:00"
 start: "14:00"
@@ -98,9 +99,6 @@ Credits: Our World in Data
     * L2 cache:&emsp;&emsp;&ensp;&emsp; **8 MB**
     * L3 cache:&emsp;&emsp;&ensp;&emsp; **64 MB**
 
-:::
-
-::: {.cell .code scrolled="false" slideshow="{\"slide_type\":\"-\"}"}
 \showcode{from custom_imports import *
 
 our_custom_net = BasicFCModel()
@@ -109,9 +107,8 @@ our_custom_net.cpu()
 device = torch.device('cpu')
 our_custom_net.to(device)}
 
+
 \subsection{Graphics Processing Unit}
-
-
 
 \includepng{\diagramsDir/hardware/provisional_GPU}{35%}
 
@@ -125,11 +122,6 @@ our_custom_net.to(device)}
     * Clock speed:&emsp;&emsp; **1.4GHz**, boost up to **1.7GHz**
     * L2 cache:&emsp;&emsp;&ensp;&emsp; **24 GB**
 
-
-
-:::
-
-::: {.cell .code scrolled="false" slideshow="{\"slide_type\":\"-\"}"}
 \showcode{if torch.cuda.is_available():
     our_custom_net.cuda()
     # OR
@@ -146,21 +138,28 @@ our_custom_net.to(device)}
 
  * Register (per thread)
 * An automatic variable in kernel
-function * Low
+function
+* Low
 latency, high bandwidth * Local
-Memory (per thread) * Variable in
+Memory (per thread)
+* Variable in
 a kernel but can not be fitted in register
 * Shared Memory (between thread blocks)
 * All threads faster than local and global
-memory * Use for
+memory
+* Use for
 inter-thread communication
 * physically shared with L1
-cache * Constant
-memory * Per Device Read-only
-memory * Texture
-Memory * Per SM, read-only cache,
+cache
+* Constant
+memory
+* Per Device Read-only
+memory
+* Texture
+Memory
+* Per SM, read-only cache,
 optimized for 2D spatial locality
-* Global Memory <p>
+* Global Memory 
 
 
 \subsection{A typical organisation of a DL system}
@@ -199,7 +198,6 @@ chunks\
 * Auxiliary hardware
 * Mouse, keyboard,
 display\
-<p>
 
 
 \subsection{Data Movement & Parallelism}
@@ -231,16 +229,17 @@ display\
 * CPU has faster I/O bus than GPU, but it has
 lower bandwidth than GPU. <pp>CPU
 can fetch small pieces of data very fast, GPU fetches them slower but in
-bulk.</pp> * GPU has more lower-level
+bulk.</pp>
+* GPU has more lower-level
 memory than CPU. <pp>Even though
 each individual thread and thread block have less memory than
 the</pp> <pp>CPU threads
 and cores do, there are just so much more threads in the GPU
-that</pp>\
+that</pp>
 <pp>**taken as a whole** they
 have much more lower-level memory.</pp>
 <pp>This is memory
-inversion.</pp> <p>
+inversion.</pp> 
 
 
 \subsection{The case for parallelism - Moore\'s law is slowing down}
@@ -274,9 +273,7 @@ Credits: Karl Rupp
 (<https://github.com/karlrupp/microprocessor-trend-data>)
 
 \subsection{Processor comparison based on parallelism}
-:::
 
-::: {.cell .code execution_count="3" scrolled="false"}
 \showcode{print("CPU matrix multiplication")
 a, b = [torch.rand(2**10, 2**10) for _ in range(2)]
 start = time()

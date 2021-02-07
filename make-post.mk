@@ -6,5 +6,6 @@ ${BASE}.posts.html: ${BASE}.post.html.markdown
 	       --atx-headers \
 	       ${POSTFLAGS} \
                --to html \
-               --out ${BASE}.posts.html  ${BASE}.notes.html.markdown 
+               --out ${BASE}.posts.html  ${BASE}.post.html.markdown 
 	cp ${BASE}.posts.html ${POSTDIR}/${OUT}.html
+

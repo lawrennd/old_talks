@@ -9,7 +9,7 @@ import _python.ndlyaml as ny
 parser = argparse.ArgumentParser()
 parser.add_argument("output",
                     type=str,
-                    choices=['pp', 'post', 'docx', 'pptx', 'prefix'],
+                    choices=['pp', 'post', 'docx', 'pptx', 'prefix', 'reveal'],
                     help="The type of output file (post is for a jekyll post, docx for word, pptx for powerpoint)")
 parser.add_argument("base",
                     type=str,
@@ -47,7 +47,19 @@ try:
 except ny.FileFormatError:
     background = 0
     backgroundarg = ''
-    
+
+try:
+    revealjs_url = ny.header_field('revealjs_url', fields)
+except ny.FileFormatError:
+    revealjs_url = 'https://unpkg.com/reveal.js@3.9.2/'
+revealjs_urlarg = """ --variable revealjs-url={revealjs_url}""".format(revealjs_url=revealjs_url)
+
+try:
+    revealjs_theme = ny.header_field('revealjs_theme', fields)
+except ny.FileFormatError:
+    revealjs_theme = 'black'
+revealjs_themearg = """ --variable theme={revealjs_theme}""".format(revealjs_theme=revealjs_theme)
+
 try:
     layout = ny.header_field('layout', fields)
 except ny.FileFormatError:
@@ -123,6 +135,12 @@ elif args.output=='pptx':
     lines = '--reference-doc ' + ny.header_field('potx', fields)
     print(lines)
 
+elif args.output=='reveal':
+    lines = '--slide-level 2 ' + revealjs_urlarg + revealjs_themearg
+    print(lines)
+
+
+    
 elif args.output=='pp':
     lines = '--include-path ./..'
     # Flags for the preprocessor.

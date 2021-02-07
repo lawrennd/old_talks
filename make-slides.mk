@@ -6,7 +6,7 @@
 
 
 ${BASE}.slides.html: ${BASE}.slides.html.markdown ${BIBDEPS}
-	pandoc --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=../_includes/${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.html.markdown 
+	pandoc --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=../_includes/${SLIDESHEADER} -t revealjs ${BIBFLAGS} -o ${BASE}.slides.html  ${BASE}.slides.html.markdown 
 	cp ${BASE}.slides.html ${SLIDEDIR}/${OUT}.slides.html
 	../copy_web_diagrams.sh ${BASE}.md
 
