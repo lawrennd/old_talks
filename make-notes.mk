@@ -1,3 +1,5 @@
+%.notes.docx.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to docx --code sparse --replace-notation --edit-links ${PPFLAGS} 
 
 ${BASE}.docx: ${BASE}.notes.docx.markdown ${BIBDEPS} ${DIAGDEPS}
 	pandoc  ${CITEFLAGS} \

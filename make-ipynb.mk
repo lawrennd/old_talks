@@ -1,3 +1,13 @@
+%.notes.ipynb.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --write-diagrams-dir . --to ipynb --code ipynb --replace-notation --edit-links --exercises ${PPFLAGS} 
+
+%.full.ipynb.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to ipynb --code full --edit-links --replace-notation ${PPFLAGS} 
+
+%.slides.ipynb.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format slides --to ipynb ${PPFLAGS} 
+
+
 ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown
 	pandoc  --template pandoc-jekyll-ipynb-template \
 		--atx-headers \

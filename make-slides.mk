@@ -1,3 +1,10 @@
+%.slides.pptx.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --to pptx --format slides --code none ${PPFLAGS} -B ../_includes/${NOTATION}
+
+%.slides.html.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} -B ../_includes/${NOTATION}
+
+
 ${BASE}.slides.html: ${BASE}.slides.html.markdown ${BIBDEPS}
 	pandoc --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=../_includes/${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.html.markdown 
 	cp ${BASE}.slides.html ${SLIDEDIR}/${OUT}.slides.html
