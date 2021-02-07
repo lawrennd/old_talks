@@ -114,7 +114,7 @@ their work and to consider what action needs to be taken to support data
 science projects.
 
 <table>
-<th><td>**Maturity Level**</td><td>**Data Sharing** <td></th>
+<tr><th>**Maturity Level**</th><th>**Data Sharing** </th></tr>
 <tr><td>**1** Reactive</td><td>Data sharing is not possible or ad-hoc at best.</td></tr>
 <tr><td>**2** Repeatable</td><td>Some limited data service provision is possible and expected, in particular between neighboring teams. Some limited data provision to distinct teams may also be possible</td></tr>
 <tr><td>  **3** Managed and Integrated   Data is available through published APIs; corrections to requested data are monitored and API service quality is discussed within the team. Data security protocols are partially automated ensuring electronic access for the data is possible.</td></tr>
