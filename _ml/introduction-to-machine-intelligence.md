@@ -26,6 +26,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2021-02-02
+youtube: HG9p8DeeR6k
 ipynb: True
 venue: Accelerate Science Winter School
 transition: None
