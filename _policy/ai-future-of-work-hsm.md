@@ -21,7 +21,7 @@ transition: None
 \include{talk-macros.gpp}
 
 
-The AI Fallacy
+\subsection{The AI Fallacy}
 
 There is a lot of variation in the use of the term artificial
 intelligence. I'm sometimes asked to define it, but depending on whether
@@ -59,7 +59,7 @@ data-driven automated decision making, but the AI Fallacy is causing us
 to suspend our calibrated skepticism that is needed to deploy these
 systems safely and efficiently.
 
-## Techno-solutionism and techno-skepticism
+\subsection{Techno-solutionism and techno-skepticism}
 
 In public discussions about AI, we've seen lots of promises that AI will
 save lives, address global challenges such as climate change, and add
@@ -96,7 +96,7 @@ have the ability to influence how AI will affect them, through
 identifying how they can adopt AI, introducing technologies in ways that
 work well for human users, and supporting their workforce.
 
-## Organisational data readiness
+\subsection{Organisational data readiness}
 
 [A recent report](https://rs-delve.github.io/addenda/2020/11/24/organizational-data-maturity.html#data-maturity-assessments) [@Delve-data20]
 by the DELVE Initiative considered what action organisations needed to
@@ -113,13 +113,14 @@ interrogate the extent to which businesses are able to deploy data in
 their work and to consider what action needs to be taken to support data
 science projects.
 
-  **Maturity Level**             **Data Sharing**
-  ------------------------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **1** Reactive                 Data sharing is not possible or ad-hoc at best.
-  **2**Repeatable                Some limited data service provision is possible and expected, in particular between neighboring teams. Some limited data provision to distinct teams may also be possible
-  **3** Managed and Integrated   Data is available through published APIs; corrections to requested data are monitored and API service quality is discussed within the team. Data security protocols are partially automated ensuring electronic access for the data is possible.
-  **4**Optimized                 Teams provide reliable data services to other teams. The security and privacy implications of data sharing are automatically handled through privacy and security aware ecosystems.
-  **5**Transparent               Internal organizational data is available to external organizations with appropriate privacy and security policies. Decision making across the organisation is data-enabled, with transparent metrics that could be audited through organisational data logs. If appropriate governance frameworks are agreed, data dependent services (including AI systems) could be rapidly and securely redeployed on company data in the service of national emergencies.
+<table>
+<th><td>**Maturity Level**</td><td>**Data Sharing** <td></th>
+<tr><td>**1** Reactive</td><td>Data sharing is not possible or ad-hoc at best.</td></tr>
+<tr><td>**2** Repeatable</td><td>Some limited data service provision is possible and expected, in particular between neighboring teams. Some limited data provision to distinct teams may also be possible</td></tr>
+<tr><td>  **3** Managed and Integrated   Data is available through published APIs; corrections to requested data are monitored and API service quality is discussed within the team. Data security protocols are partially automated ensuring electronic access for the data is possible.</td></tr>
+<tr><td>  **4** Optimized</td><td>Teams provide reliable data services to other teams. The security and privacy implications of data sharing are automatically handled through privacy and security aware ecosystems.</td></tr>
+<tr><td>  **5** Transparent</td><td>Internal organizational data is available to external organizations with appropriate privacy and security policies. Decision making across the organisation is data-enabled, with transparent metrics that could be audited through organisational data logs. If appropriate governance frameworks are agreed, data dependent services (including AI systems) could be rapidly and securely redeployed on company data in the service of national emergencies.</td></tr>
+</table>
 
 Failure to understand the importance of data quality leads to
 unrealistic projects staffed by people with the wrong skill sets.

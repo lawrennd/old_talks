@@ -574,12 +574,7 @@ examples one might do a combination of multiple options.
 
 \subsection{Parallelism summary: model and data parallelism}
 
-<table>
-<tr>
-<td> \includepng{\diagramsDir/hardware/dataParallelism}{35%} </td>
-<td> \includepng{\diagramsDir/hardware/modelParallelism}{35%} </td>
-</tr>
-</table>
+\columns{\includepng{\diagramsDir/hardware/dataParallelism}{100%}}{\includepng{\diagramsDir/hardware/modelParallelism}{100%}}{49%}{49%}
 
 \subsection{Parallelism bottlenecks: Synchronization & Communication}
 
@@ -753,15 +748,9 @@ print(f'GPU took {time()-start:.2f} seconds')}
 
 \subsection{Mapping Deep Models to hardware: Systolic Arrays}
 
-<table><tr>
-<td> \aligncenter{ <h2> Core principle </h2> }</td>
-<td> \aligncenter{ <h2> Systolic system matrix multiplication </h2> }</td>
-</tr>
-<tr>
-<td>\aligncenter{\includepng{\diagramsDir/hardware/basic_systolic_system}{45%}}</td>
-<td>\aligncenter{\includempfour{\diagramsDir/hardware/systolic_array.mp4}{45%}}</td>
-</tr>
-</table>
+\columns{\aligncenter{**Core principle**}
+\aligncenter{\includepng{\diagramsDir/hardware/basic_systolic_system}{100%}}}{
+\aligncenter{Systolic system matrix multiplication}\aligncenter{\includempfour{\diagramsDir/hardware/systolic_array.mp4}{100%}}}{49%}{49%}
 
 \subsection{Mapping Deep Models to hardware: weight, input, and output stationarity}
 
