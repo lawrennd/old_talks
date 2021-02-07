@@ -176,7 +176,8 @@ in mind\
 * <u>**Memory
 hierarchy**</u>
 * Caches - smallest and
-fastest * Random
+fastest
+* Random
 Access Memory (RAM) - largest and slowest
 * Disk / SSD -
 storage\
@@ -750,21 +751,21 @@ print(f'GPU took {time()-start:.2f} seconds')}
 
 \columns{\aligncenter{**Core principle**}
 \aligncenter{\includepng{\diagramsDir/hardware/basic_systolic_system}{100%}}}{
-\aligncenter{Systolic system matrix multiplication}\aligncenter{\includempfour{\diagramsDir/hardware/systolic_array.mp4}{100%}}}{49%}{49%}
+\aligncenter{**Systolic system matrix multiplication**}\aligncenter{\includempfour{\diagramsDir/hardware/systolic_array.mp4}{100%}}}{49%}{49%}
 
 \subsection{Mapping Deep Models to hardware: weight, input, and output stationarity}
 
 \subsubsection{Weight stationary design}
 
-\aligncenter{\includepng{\diagramsDir/hardware/weight_stationary}{45%}}
+\aligncenter{\includepng{\diagramsDir/hardware/weight_stationary}{70%}}
 
 \subsubsection{Input stationary design}
 
-\aligncenter{\includepng{\diagramsDir/hardware/input_stationary}{45%}}
+\aligncenter{\includepng{\diagramsDir/hardware/input_stationary}{70%}}
 
 \subsubsection{Output stationary design}
 
-\aligncenter{\includepng{\diagramsDir/hardware/output_stationary}{45%}}
+\aligncenter{\includepng{\diagramsDir/hardware/output_stationary}{70%}}
 
 \subsection{Systolic array example: weight stationary Google Tensor Processing Unit (TPU)}
 
@@ -828,7 +829,7 @@ profile_layer_alexnet(anet)}
 AlexNet\'s architecture had to be split down the middle to accommodate
 the 3GB limit per unit in its two GPUs.
 
-\aligncenter{\includepng{\diagramsDir/hardware/AlexNet}{90%}}
+\aligncenter{\includepng{\diagramsDir/hardware/AlexNet}{70%}}
 
 \subsection{Beyond hardware methods}
 
