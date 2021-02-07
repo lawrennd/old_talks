@@ -69,13 +69,14 @@ job losses and the machines rising up. These portrayals play into a long
 history we have of hopes and fears around intelligent machines and our
 place in the world. Neither outcome is inevitable.
 
-* Quote from [JM Royal Society blog](https://royalsociety.org/blog/2018/09/the-impact-of-ai-on-work/):
-While much of the public and policy debate about AI and work has tended
+> While much of the public and policy debate about AI and work has tended
 to oscillate between fears of the 'end of work' and reassurances that
 little will change in terms of overall employment, evidence suggests
 that neither of these extremes is likely. However, there is consensus
 that AI will have a disruptive effect on work, with some jobs being
-lost, others being created, and others changing.*
+lost, others being created, and others changing.
+>
+> From [Royal Society blog](https://royalsociety.org/blog/2018/09/the-impact-of-ai-on-work/)
 
 We can look to history for insights into how AI technologies might
 affect our work in the decades to come. Studies from the industrial
@@ -117,7 +118,7 @@ science projects.
 <tr><th>**Maturity Level**</th><th>**Data Sharing** </th></tr>
 <tr><td>**1** Reactive</td><td>Data sharing is not possible or ad-hoc at best.</td></tr>
 <tr><td>**2** Repeatable</td><td>Some limited data service provision is possible and expected, in particular between neighboring teams. Some limited data provision to distinct teams may also be possible</td></tr>
-<tr><td>  **3** Managed and Integrated   Data is available through published APIs; corrections to requested data are monitored and API service quality is discussed within the team. Data security protocols are partially automated ensuring electronic access for the data is possible.</td></tr>
+<tr><td>  **3** Managed and Integrated</td><td>Data is available through published APIs; corrections to requested data are monitored and API service quality is discussed within the team. Data security protocols are partially automated ensuring electronic access for the data is possible.</td></tr>
 <tr><td>  **4** Optimized</td><td>Teams provide reliable data services to other teams. The security and privacy implications of data sharing are automatically handled through privacy and security aware ecosystems.</td></tr>
 <tr><td>  **5** Transparent</td><td>Internal organizational data is available to external organizations with appropriate privacy and security policies. Decision making across the organisation is data-enabled, with transparent metrics that could be audited through organisational data logs. If appropriate governance frameworks are agreed, data dependent services (including AI systems) could be rapidly and securely redeployed on company data in the service of national emergencies.</td></tr>
 </table>
