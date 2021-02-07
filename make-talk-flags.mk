@@ -8,9 +8,6 @@ CATEGORIES=$(shell ../talkfield.py categories ${BASE}.md)
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
 REVEALJS="https://inverseprobability.com/talks/slides/reveal.js/"
 
-# Extract the CSS style file for the talk
-CSS=$(shell ../talkfield.py talkcss ${BASE}.md)
-
 SLIDESHEADER=$(shell ../talkfield.py slidesheader ${BASE}.md)
 POSTSHEADER=$(shell ../talkfield.py postssheader ${BASE}.md)
 ASSIGNMENT=$(shell ../talkfield.py assignment ${BASE}.md)

@@ -18,7 +18,8 @@ room: Zoom
 reveal: true
 ipynb: true
 youtube: -IXnGgDbE-M
-revealjs_theme: white
+talktheme: white
+talkcss: ../assets/css/talks-small.css
 venue: Computer Laboratory, William Gates Building
 time: "14:00"
 start: "14:00"
@@ -83,9 +84,7 @@ end: "15:00"
 
 \subsection{Central Processing Unit (CPU)}
 
-\includepng{\diagramsDir/hardware/provisional_CPU}{40%}
-
-* General-purpose processor (in use since mid-1950s)
+\columns{* General-purpose processor (in use since mid-1950s)
 * CPU is composed of cores, each of which consists of several threads.
 * Example high-end performance:
     * AMD Ryzen 9 5950X
@@ -94,6 +93,8 @@ end: "15:00"
     * Clock speed:&emsp;&emsp; **3.4GHz**, boost up to **4.9GHz**
     * L2 cache:&emsp;&emsp;&ensp;&emsp; **8 MB**
     * L3 cache:&emsp;&emsp;&ensp;&emsp; **64 MB**
+}{\includepng{\diagramsDir/hardware/provisional_CPU}{100%}}{60%}{40%}
+
 
 \showcode{from custom_imports import *
 
@@ -106,17 +107,14 @@ our_custom_net.to(device)}
 
 \subsection{Graphics Processing Unit}
 
-\includepng{\diagramsDir/hardware/provisional_GPU}{35%}
-
-
-* Parallelism-exploiting Accelerator
+\columns{* Parallelism-exploiting Accelerator
 * Originally used for graphics processing (in use since 1970s)
 * GPU is composed of a large number of threads organised into blocks (cores)
 * Example high-end performance:
     * NVIDIA GEFORCE RTX 3090
     * No. Threads:&emsp;&emsp; **10496**
     * Clock speed:&emsp;&emsp; **1.4GHz**, boost up to **1.7GHz**
-    * L2 cache:&emsp;&emsp;&ensp;&emsp; **24 GB**
+    * L2 cache:&emsp;&emsp;&ensp;&emsp; **24 GB**}{\includepng{\diagramsDir/hardware/provisional_GPU}{100%}}{60%}{40%}
 
 \showcode{if torch.cuda.is_available():
     our_custom_net.cuda()
@@ -129,72 +127,45 @@ our_custom_net.to(device)}
 \subsection{Graphics Processing Unit}
 
 
-
-\includepng{\diagramsDir/hardware/provisional_GPU}{35%}
-
- * Register (per thread)
-* An automatic variable in kernel
+\columns{* Register (per thread)
+  * An automatic variable in kernel
 function
-* Low
-latency, high bandwidth * Local
-Memory (per thread)
-* Variable in
-a kernel but can not be fitted in register
+  * Low latency, high bandwidth
+
+* Local Memory (per thread)
+  * Variable in a kernel but can not be fitted in register
 * Shared Memory (between thread blocks)
-* All threads faster than local and global
-memory
-* Use for
-inter-thread communication
-* physically shared with L1
-cache
-* Constant
-memory
-* Per Device Read-only
-memory
-* Texture
-Memory
-* Per SM, read-only cache,
-optimized for 2D spatial locality
-* Global Memory 
+  * All threads faster than local and global memory
+  * Use for inter-thread communication
+  * physically shared with L1 cache
+* Constant memory
+  * Per Device Read-only memory
+* Texture Memory
+  * Per SM, read-only cache, optimized for 2D spatial locality
+* Global Memory}{\includepng{\diagramsDir/hardware/provisional_GPU}{100%}}{60%}{40%}
 
 
 \subsection{A typical organisation of a DL system}
 
+\columns{* Processors
+  * CPU sits at the centre of the system
+* <u>**Accelerators**</u>
+  * GPUs, TPUs, Eyeriss, other specialised
+  * Specialised hardware can be designed with exploiting <u>**parallelism**</u> in mind
+* <u>**Memory hierarchy**</u>
+  * Caches - smallest and fastest
+  * Random Access Memory (RAM) - largest and slowest
+  * Disk / SSD - storage
+    * Stores the dataset; in crisis it supplements RAM up to Swap 
+    * <u>**Bandwidth**</u> can be serious a bottleneck
+  * System, memory, and I/O buses
+    * Closer to processor - faster
+    * Designed to transport fixed-size data chunks
+    * Word size is a key system parameter 4 bytes (32 bit) or 8 bytes (64 bit) </pp>
+  * Auxiliary hardware
+    * Mouse, keyboard, display
+}{\includepng{\diagramsDir/hardware/provisional_hardwareOrg}{100%}}{60%}{40%}
 
-
-\includepng{\diagramsDir/hardware/provisional_hardwareOrg}{52.5%}
-
- * Processors
-* CPU sits at the centre of the
-system
-* <u>**Accelerators**</u>\
-* GPUs, TPUs, Eyeriss, other
-specialised
-* Specialised hardware can be designed with
-exploiting <u>**parallelism**</u>
-in mind\
-* <u>**Memory
-hierarchy**</u>
-* Caches - smallest and
-fastest
-* Random
-Access Memory (RAM) - largest and slowest
-* Disk / SSD -
-storage\
- * Stores the dataset; in crisis it
-supplements RAM up to Swap 
-* <u>**Bandwidth**</u>
-can be serious a bottleneck
-* System, memory, and I/O buses
-* Closer to processor -
-faster\
-* Designed to transport fixed-size data
-chunks\
-* Word size is a key system parameter 4 bytes
-(32 bit) or 8 bytes (64 bit) </pp>\
-* Auxiliary hardware
-* Mouse, keyboard,
-display\
 
 
 \subsection{Data Movement & Parallelism}
@@ -224,19 +195,16 @@ display\
 \includepng{\diagramsDir/hardware/provisional_memoryInversion}{45%}
 
 * CPU has faster I/O bus than GPU, but it has
-lower bandwidth than GPU. <pp>CPU
-can fetch small pieces of data very fast, GPU fetches them slower but in
-bulk.</pp>
-* GPU has more lower-level
-memory than CPU. <pp>Even though
-each individual thread and thread block have less memory than
-the</pp> <pp>CPU threads
-and cores do, there are just so much more threads in the GPU
+lower bandwidth than GPU.
+  <pp>CPU can fetch small pieces of data very fast, GPU fetches them slower but in bulk.</pp>
+* GPU has more lower-level memory than CPU.
+  <pp>Even though each individual thread and thread block have less memory than
+the</pp>
+  <pp>CPU threads and cores do, there are just so much more threads in the GPU
 that</pp>
-<pp>**taken as a whole** they
-have much more lower-level memory.</pp>
-<pp>This is memory
-inversion.</pp> 
+  <pp></pp>
+  <pp>**taken as a whole** they have much more lower-level memory.</pp>
+  <pp>This is memory inversion.</pp> 
 
 
 \subsection{The case for parallelism - Moore\'s law is slowing down}
@@ -479,30 +447,7 @@ print(f'GPU took {time()-start:.2f} seconds')}
 
 \subsection{GPU parallelism: matrix multiplication example}
 
-<table><tr>
-<td> \aligncenter{ <h2> GPU </h2> }</td>
-<td> \aligncenter{ <h2> Naive implementation </h2> }</td>
-<td> \aligncenter{ <h2> Shared memory implementation </h2> }</td>
-</tr>
-    
-<tr>
-<td>\aligncenter{\includepng{\diagramsDir/hardware/provisional_GPU}{45%}}</td>
-<td>\aligncenter{\includepng{\diagramsDir/hardware/provisional_matmulVOsharedMemory}{45%}}</td>
-<td>\aligncenter{\includepng{\diagramsDir/hardware/provisional_matmul}{45%}}</td>
-</tr>
-    
-<tr>
-<td>
-    \aligncenter{<pp><h6> 12 thread blocks, each with 16 threads. </h6></pp>}
-</td>
-<td>
-    \aligncenter{<pp><h6>Each **thread** reads one row of A, one <br>column of B and returns one element of C.</h6></pp>}
-</td>
-<td>  
-    \aligncenter{<pp><h6>Each **thread <u>block</u>** is computing <br>one square sub-matrix.</h6> </pp>}
-</td>
-</tr>
-</table>
+\threeColumns{\aligncenter{GPU}\aligncenter{\includepng{\diagramsDir/hardware/provisional_GPU}{100%}}\aligncenter{*12 thread blocks, each with 16 threads.*}}{\aligncenter{Naive implementation}\aligncenter{\includepng{\diagramsDir/hardware/provisional_matmulVOsharedMemory}{100%}}\aligncenter{*Each **thread** reads one row of A, one <br>column of B and returns one element of C.*}}{\aligncenter{Shared memory implementation}\aligncenter{\includepng{\diagramsDir/hardware/provisional_matmul}{100%}}\aligncenter{*Each **thread <u>block</u>** is computing <br>one square sub-matrix.*}}
 
 \subsection{GPU parallelism: matrix multiplication example}
 
@@ -583,13 +528,14 @@ examples one might do a combination of multiple options.
 
 * DL-training hardware needs to synchronize and
 communicate very frequently
-* Model nodes are heavily interconnected at each model layer.
-* Data nodes are interconnected by batch-norm-style layers
-* Data nodes are interconnected at gradient computation
+  * Model nodes are heavily interconnected at each model layer.
+  * Data nodes are interconnected by batch-norm-style layers
+  * Data nodes are interconnected at gradient computation
 * This communication occurs between
-* Threads in a core (CPU and GPU)
-* Cores within a chip
-* Pieces of hardware *example: SLI bridge is a connector and a protocol for such a communication*
+  * Threads in a core (CPU and GPU)
+  * Cores within a chip
+  * Pieces of hardware
+    *example: SLI bridge is a connector and a protocol for such a communication*
 
 \subsection{Bottlenecks beyond parallelism}
 
@@ -755,15 +701,15 @@ print(f'GPU took {time()-start:.2f} seconds')}
 
 \subsection{Mapping Deep Models to hardware: weight, input, and output stationarity}
 
-\subsubsection{Weight stationary design}
+**Weight stationary design**
 
 \aligncenter{\includepng{\diagramsDir/hardware/weight_stationary}{70%}}
 
-\subsubsection{Input stationary design}
+**Input stationary design**
 
 \aligncenter{\includepng{\diagramsDir/hardware/input_stationary}{70%}}
 
-\subsubsection{Output stationary design}
+**Output stationary design**
 
 \aligncenter{\includepng{\diagramsDir/hardware/output_stationary}{70%}}
 
@@ -850,21 +796,9 @@ the 3GB limit per unit in its two GPUs.
 
 
   
-\aligncenter{**<i>The software and hardware lottery describes the success of a software or a piece of hardware  resulting not from its universal superiority, but, rather, from its fit to the broader hardware and software ecosystem.</i>**}
+\aligncenter{**The software and hardware lottery describes the success of a software or a piece of hardware  resulting not from its universal superiority, but, rather, from its fit to the broader hardware and software ecosystem.**}
 
-
-<table>
-
-<tr>
-<td> \aligncenter{ <h2> Eniac (1950s) </h2> } </td>
-<td> \aligncenter{ <h2> All-optical NN (2019) </h2> } </td></tr>
-
-<tr>
-<td> \includejpg{\diagramsDir/hardware/Eniac}{40%} </td>
-<td> \includepng{\diagramsDir/hardware/futureDL}{40%} </td>
-</tr>
-
-</table>
+\columns{\aligncenter{Eniac (1950s)}\aligncenter{\includejpg{\diagramsDir/hardware/Eniac}{100%}}{\aligncenter{All-optical NN (2019)}\aligncenter{\includepng{\diagramsDir/hardware/futureDL}{100%}}{49%}{49%}
 
 
 \subsection{Summary of the Day}

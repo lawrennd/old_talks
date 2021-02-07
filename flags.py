@@ -55,10 +55,18 @@ except ny.FileFormatError:
 revealjs_urlarg = """ --variable revealjs-url={revealjs_url}""".format(revealjs_url=revealjs_url)
 
 try:
-    revealjs_theme = ny.header_field('revealjs_theme', fields)
+    talktheme = ny.header_field('talktheme', fields)
 except ny.FileFormatError:
-    revealjs_theme = 'black'
-revealjs_themearg = """ --variable theme={revealjs_theme}""".format(revealjs_theme=revealjs_theme)
+    talktheme = 'black'
+talkthemearg = """ --variable theme={talktheme}""".format(talktheme=talktheme)
+
+try:
+    talkcss = ny.header_field('talkcss', fields)
+except ny.FileFormatError:
+    talkcss = '../assets/css/talks.css'
+talkcssarg = """ --css {talkcss}""".format(talkcss=talkcss)
+
+
 
 try:
     layout = ny.header_field('layout', fields)
@@ -136,7 +144,7 @@ elif args.output=='pptx':
     print(lines)
 
 elif args.output=='reveal':
-    lines = '--slide-level 2 ' + revealjs_urlarg + revealjs_themearg
+    lines = '--slide-level 2 ' + revealjs_urlarg + talkthemearg + talkcssarg
     print(lines)
 
 
