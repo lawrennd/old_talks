@@ -7,7 +7,7 @@
 
 \subsection{Fitting a Deep GP to a the MNIST Digits Subsample}
 
-\credit{Zhenwen Dai and Neil D. Lawrence}
+\thanksto{Zhenwen Dai and Neil D. Lawrence}
 
 \notes{We now look at the deep Gaussian processes' capacity to perform unsupervised learning.}
 

@@ -798,7 +798,7 @@ the 3GB limit per unit in its two GPUs.
   
 \aligncenter{**The software and hardware lottery describes the success of a software or a piece of hardware  resulting not from its universal superiority, but, rather, from its fit to the broader hardware and software ecosystem.**}
 
-\columns{\aligncenter{Eniac (1950s)}\aligncenter{\includejpg{\diagramsDir/hardware/Eniac}{100%}}{\aligncenter{All-optical NN (2019)}\aligncenter{\includepng{\diagramsDir/hardware/futureDL}{100%}}{49%}{49%}
+\columns{\aligncenter{Eniac (1950s)}\aligncenter{\includejpg{\diagramsDir/hardware/Eniac}{100%}}}{\aligncenter{All-optical NN (2019)}\aligncenter{\includepng{\diagramsDir/hardware/futureDL}{100%}}}{49%}{49%}
 
 
 \subsection{Summary of the Day}
