@@ -39,7 +39,7 @@ date: 2021-01-28
 ## Approximation
 
 
-### Basic Multilayer Perceptron
+\subsubsection{Basic Multilayer Perceptron}
 
 \begin{align}
 f_l(x) &= \phi(W_l f_{l-1}(x) + b_l)\\
@@ -47,7 +47,7 @@ f_0(x) &= x
 \end{align}
 
 
-### Basic Multilayer Perceptron
+\subsubsection{Basic Multilayer Perceptron}
 
 $$
 \small
@@ -55,7 +55,7 @@ f_L(x) = \phi\left(b_L + W_L \phi\left(b_{L-1} + W_{L-1} \phi\left( \cdots \phi\
 $$
 
 
-### Rectified Linear Unit
+\subsubsection{Rectified Linear Unit}
 
 $$
 \phi(x) = \left\{\matrix{0&\text{when }x\leq 0\\x&\text{when }x>0}\right.
@@ -65,7 +65,7 @@ $$
 
 
 
-### What can these networks represent?
+\subsubsection{What can these networks represent?}
 
 
 $$
@@ -75,7 +75,7 @@ $$
 ![](https://i.imgur.com/rN5wRVJ.png)
 
 
-### What can these networks represent?
+\subsubsection{What can these networks represent?}
 
 $$
 f(x) = \mathbf{w}^T_2 \operatorname{ReLU}(\mathbf{w}_1x - \mathbf{b}_1)
@@ -84,12 +84,12 @@ $$
 ![](https://i.imgur.com/kX3nuYg.png)
 
 
-### Single hidden layer
+\subsubsection{Single hidden layer}
 
 number of kinks $\approx O($ width of network $)$
 
 
-### Example: "sawtooth" network
+\subsubsection{Example: "sawtooth" network}
 
 
 \begin{align}
@@ -99,7 +99,7 @@ f_0(x) &= x
 
 
 
-### Sawtooth network
+\subsubsection{Sawtooth network}
 
 \begin{align}
 f_l(x) &= 2 \operatorname{ReLU}(f_{l-1}(x)) + 2 \operatorname{ReLU}(-f_{l-1}(x)) - 2\\
@@ -107,53 +107,53 @@ f_0(x) &= x
 \end{align}
 
 
-### $0$-layer network
+\subsubsection{$0$-layer network}
 
 ![](https://i.imgur.com/bRUYJD7.png)
 
 
-### $1$-layer network
+\subsubsection{$1$-layer network}
 
 ![](https://i.imgur.com/bQpM1dg.png)
 
 
-### $2$-layer network
+\subsubsection{$2$-layer network}
 
 ![](https://i.imgur.com/NxNj7VG.png)
 
 
-### $3$-layer network
+\subsubsection{$3$-layer network}
 
 ![](https://i.imgur.com/xlcpyP7.png)
 
 
 
-### $4$-layer network
+\subsubsection{$4$-layer network}
 
 ![](https://i.imgur.com/9GF52j7.png)
 
 
-### $5$-layer network
+\subsubsection{$5$-layer network}
 
 ![](https://i.imgur.com/Ku8aamk.png)
 
 
-### Deep ReLU networks
+\subsubsection{Deep ReLU networks}
 
 number of kinks $\approx O(2^\text{depth of network})$
 
 
-### In higher dimensions
+\subsubsection{In higher dimensions}
 
 ![](https://i.imgur.com/0NVHFEN.png)
 
 
-### In higher dimensions
+\subsubsection{In higher dimensions}
 
 ![](https://i.imgur.com/DJtv5Yj.jpg)
 
 
-### Approximation: summary
+\subsubsection{Approximation: summary}
 
 * depth increases model complexity more than width
 * model clas defined by deep networks is VERY LARGE
@@ -216,7 +216,7 @@ $$
 $$
 
 
-### Basic Multilayer Perceptron
+\subsubsection{Basic Multilayer Perceptron}
 
 $$
 \small
@@ -278,7 +278,7 @@ $$
 
 ## Automatic differentiation
 
-### Forward-mode
+\subsubsection{Forward-mode}
 
 $$
 \small
@@ -294,7 +294,7 @@ $$
 
 ## Automatic differentiation
 
-### Reverse-mode 
+\subsubsection{Reverse-mode}
 
 $$
 \small
