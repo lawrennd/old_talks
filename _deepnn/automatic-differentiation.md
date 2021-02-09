@@ -13,8 +13,9 @@ abstract: >
 talkscam:
 youtube: m3KZLPed7aM
 reveal: false
-link1: https://hackmd.io/@fhuszar/H1WZ70kl_#/
-label1: Slides
+hackmdslides: fhuszar/H1WZ70kl_#/
+hackmdnotes: fhuszar/SyHTInWeu
+hackmdworksheet: fhuszar/S1UdOvZe_
 time: "14:00"
 start: "14:00"
 end: "15:00"
