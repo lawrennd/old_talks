@@ -667,7 +667,8 @@ class Game {
 	if (distance(ob1, ob2) < ob1.radius + ob2.radius) {
             // we don't want to be stuck in an infinite emergency.
             // so if we have already run one emergency round; just ignore the problem.
-            if (!emergency) this.staticCollision(ob1, ob2, true)
+	    // comment in an attempt to avoid the jittery problem by Neil pre Celsius
+            //if (!emergency) this.staticCollision(ob1, ob2, true)
 	}
     }
     ballCollision() {
