@@ -12,7 +12,7 @@ abstract: >
   This lecture will cover the foundations of automatic differentiation as well as the different frameworks that exist for building models.
 talkscam:
 youtube: m3KZLPed7aM
-hackmdslides: fhuszar/H1WZ70kl_#/
+hackmdslides: fhuszar/H1WZ70kl_#
 hackmdnotes: fhuszar/SyHTInWeu
 hackmdworksheet: fhuszar/S1UdOvZe_
 time: "14:00"
@@ -23,7 +23,7 @@ date: 2021-01-28
 
 \include{talk-macros.gpp}
 
-\notes{* [Slides are here](https://hackmd.io/@fhuszar/H1WZ70kl_#/)
+\notes{* [Slides are here](https://hackmd.io/@fhuszar/H1WZ70kl_#)
 * [Approximating with ReLU notes are here](https://hackmd.io/@fhuszar/S1UdOvZe_)
 * [Automatic Differentiaton notes are here](https://hackmd.io/@fhuszar/SyHTInWeu)
 * [Google Colab Is Available Here](https://colab.research.google.com/drive/1qioPLq-dxOwudPKXU3MxpHr2s4Su3dxI?usp=sharing)
