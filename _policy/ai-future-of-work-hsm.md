@@ -14,7 +14,7 @@ author:
   url: https://www.linkedin.com/in/jessica-montgomery-206256144
 reveal: False
 date: 2021-02-03
-venue: HSM
+venue: Hot Spots Movement AI and Future of Work Event
 transition: None
 ---
 
