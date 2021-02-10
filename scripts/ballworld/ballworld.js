@@ -658,17 +658,15 @@ class Game {
 	// is likely being jammed against a corner, so we must now move the OTHER one instead.
 	// in other words: this line basically swaps the "little guy" role, because
 	// the actual little guy can't be moved away due to being blocked by the wall.
-	// Neil commenting this because of jittery behaviour before Celsius lecture
-	//if (emergency) [smallerObject, biggerObject] = [biggerObject, smallerObject]
+	if (emergency) [smallerObject, biggerObject] = [biggerObject, smallerObject]
 	let theta = Math.atan2((biggerObject.y - smallerObject.y), (biggerObject.x - smallerObject.x));
 	smallerObject.x -= overlap * Math.cos(theta);
 	smallerObject.y -= overlap * Math.sin(theta); 
 	
-	if (distance(ob1, ob2) < ob1.radius + ob2.radius) {
+	if (overlap > 0) {
             // we don't want to be stuck in an infinite emergency.
             // so if we have already run one emergency round; just ignore the problem.
-	    // comment in an attempt to avoid the jittery problem by Neil pre Celsius
-            //if (!emergency) this.staticCollision(ob1, ob2, true)
+            if (!emergency) this.staticCollision(ob1, ob2, true)
 	}
     }
     ballCollision() {
