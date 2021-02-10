@@ -9,10 +9,16 @@
 \editText\undef{editText}\endif
 
 }
-\define{\subsection{text}}{## \text \ifdef{editText}
+\define{\subsection{text}}{\ifdef{noSlideTitle}
+
+## {}
+
+\else
+## \text \ifdef{editText}
 
 \editText\undef{editText}\endif
 
+\endif
 }
 \define{\subsubsection{text}}{## \text \ifdef{editText}
 

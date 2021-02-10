@@ -3,10 +3,15 @@
 
 \editme
 
-\subsection{Life}
+\notes{\subsection{Life}}
 
-\figure{\threeColumns{\includegif{\diagramsDir/simulation/Glider}{100%}{}{left}}{\includegif{\diagramsDir/simulation/Loafer}{100%}{}{center}}{\includejpg{\diagramsDir/maths/John-Conway}{100%}{}{right}}{30%}{30%}{30%}}{*Left* A Glider pattern (discoverd 1969). *Middle* A Loafer pattern (discovered 2013) *Right*. John Horton Conway, creator of *Life* (1937-2020).}{glider-loafer-conway}
+\newslide{}
 
-\speakernotes{Despite widespread interest in Life, since its invention in 1969  (glider was found by Richard K. Guy in 1969)  some of its patterns were only very recently discovered like the Loafer, discovered in 2013 by Josh Ball.}
+\figure{\columns{\aligncenter{*Glider (1969)*}\aligncenter{\includegif{\diagramsDir/simulation/Glider}{80%}{}{left}}}{\includejpg{\diagramsDir/maths/John-Conway}{80%}{}{right}}{45%}{45%}}{*Left* A Glider pattern discovered 1969 by Richard K. Guy. *Right*. John Horton Conway, creator of *Life* (1937-2020).}{glider-loafer-conway}
+
+\newslide{}
+
+
+\figure{\columns{\aligncenter{*Loafer (2013)*}\aligncenter{\includegif{\diagramsDir/simulation/Glider}{80%}{}{left}}}{\includejpg{\diagramsDir/maths/John-Conway}{80%}{}{right}}{45%}{45%}}{*Left* A Loafer pattern discovered by Josh Ball in 2013. *Right*. John Horton Conway, creator of *Life* (1937-2020).}{glider-loafer-conway}
 
 \endif

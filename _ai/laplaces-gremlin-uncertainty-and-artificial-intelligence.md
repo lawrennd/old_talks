@@ -42,18 +42,18 @@ transition: None
 
 UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER}
 
-\section{SUPERINTELLIGENCE}
 
 \newslide{}
 
->Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it would embrace in the same formulate the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.
->
+\includegooglebook{1YQPAAAAQAAJ}{PR17-IA2}
+
 > *Philosophical Essay on Probabilities* @Laplace-essai14 pg 3
 
 \speakernotes{This notion is known as *Laplace's demon* or *Laplace's superman*.}
 
 <!--include{_physics/includes/laplaces-determinism.md}-->
 
+\newslide{}
 
 \aligncenter{
 $$
@@ -69,9 +69,38 @@ $$
 
 \speakernotes{The phenomenon of emergent behaviour also applies to real world simulations like climate and weather. E.g. Niall Robinson defining a hurricane to search for hurricane's im climate simulations.}
 
+
 <!--LAPLACE'S GREMLIN-->
 
+
+
 \newslide{Laplace's Gremlin}
+
+
+\figure{\includepng{\diagramsDir/physics/laplacesDeterminismEnglish}{60%}}{Laplace's determinsim in English translation.}{laplaces-determinism-english}
+
+\newslide{}
+
+\slides{
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
+
+<!--\includepdfclip{\diagramsDir/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 3.2cm}{16}{80%}{}-->}
+
+\subsection{Laplace's Gremlin}
+
+\notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
+
+> The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
+>
+> Probability is relative, in part to this ignorance, in part to our knowledge.}
+
+\newslide{}
+
+\includegooglebook{1YQPAAAAQAAJ}{PR17-IA4}
+
+\newslide{}
+
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
 
 > The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
 >
@@ -80,11 +109,13 @@ $$
 > *Philosophical Essay on Probabilities* @Laplace-essai14 pg 5
 
 
-INTRODUCE ENTROPY TO MEASURE IGNORANCE
+\newslide{}
+
+\figure{\columns{\aligncenter{\includejpg{\diagramsDir/physics/lap-engine}{100%}}\aligncenter{*Lap Engine (1788)*}}{\aligncenter{total energy <br> = <br> available energy <br> + <br> temperature <br> $\times$ <br>entropy}}{60%}{40%}}{James Watt's Lap Engine which incorporates many of his innovations to the steam engine, making it more efficient.}{lap-engine-boulton-watt}
 
 <!--THEORY of IGNORANCE-->
 
-\newslide{A Theory of Ignorance}
+\newslide{}
 
 \figure{\threeColumns{\aligncenter{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}}\slides{\aligncenter{*Betrand Russell*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{50%}}\slides{\aligncenter{*Albert Einstein*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}\slides{\aligncenter{*Norbert Wiener*}}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
 
@@ -94,30 +125,20 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 \figure{\includegif{\diagramsDir/physics/brownian-motion}{40%}}{Brownian motion of a large particle in a group of smaller particles. The movement is known as a *Wiener process* after Norbert Wiener.}{brownian-motion}
 
-<!--EINSTEIN-->
 
 \newslide{}
 
-
-\section{UNCERTAINTY}
+\figure{\threeColumns{\aligncenter{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}}\aligncenter{*James Clerk Maxwell*}}{\aligncenter{\includejpg{\diagramsDir/physics/boltzmann2}{100%}}\aligncenter{*Ludwig Boltzmann*}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}\aligncenter{*Josiah Willard Gibbs*}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
 
 \newslide{}
 
 \include{_physics/includes/entropy-billiards.md}
 
-\newslide{}
-
-\figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{100%}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}{}{right}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
-
-<!--ENTROPY BILLIARDS-->
-
-<!--include{_physics/includes/maxwells-demon.md}-->
 
 \newslide{}
 
-> But if we conceive a being whose faculties are so sharpened that he can follow every molecule in its course, such a being, whose attributes are still as essentially finite as our own, would be able to do what is at present impossible to us. For we have seen that the molecules in a vessel full of air at uniform temperature are moving with velocities by no means uniform, though the mean velocity of any great number of them, arbitrarily selected, is almost exactly uniform. Now let us suppose that such a vessel is divided into two portions, A and B, by a division in which there is a small hole, and that a being, who can see the individual molecules, opens and closes this hole, so as to allow only the swifter molecules to pass from A to B, and the only the slower ones to pass from B to A. He will thus, without expenditure of work, raise the temperature of B and lower that of A, in contradiction to the second law of thermodynamics.
->
-> *Theory of Heat* [@Maxwell-theory71] page 308
+\figure{\includediagramclass{\diagramsDir/physics/maxwells-demon}{100%}}{Maxwell's demon opens and closes a door which allows fast particles to pass from left to right and slow particles to pass from right to left. This makes the left hand side colder than the right.}{maxwells-demon}
+
 
 
 \newslide{}
@@ -146,10 +167,9 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{40%}}{Claude Shannon (1916-2001)}{claude-shannon}
+\figure{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{40%}}\aligncenter{*Claude Shannon*}}{Claude Shannon (1916-2001)}{claude-shannon}
 
-
-\section{MEASUREMENT}
+\speakernotes{Just as we measure temperature. Just as Celsius gave us the scale for temperature, so entropy measures ignorance. Formalised most famously by Claude Shannon}
 
 \newslide{Measurement and Intelligence}
 
@@ -160,10 +180,9 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 > *Theory of Heat* @Maxwell-theory71 page 3
 
 
-
 \comment{\figure{\includegooglebook{0p8AAAAAMAAJ}{PA3}}{Quote from Maxwell's theory of heat on the melting and boiling point of water.}{maxwell-melting-boiling}}
 
-\newslide{Locked In}
+\newslide{}
 
 \figure{\include{_ai/includes/embodiment-factors-computer-human-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years.}{embodiment-factors-table}
 
@@ -176,20 +195,16 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 Norbert Wiener in a letter to his family, 1913}
 
+\newslide{}
 
-\include{_ai/includes/heider-simmel.md}
+\figure{\includeyoutube{8FIEZXMUM2I}{600}{450}{7}}{Fritz Heider and Marianne Simmel's video of shapes from @Heider:experimental44.}{heider-simmel-shapes}
 
 \include{_ai/includes/conversation-computer.md}
 
 
 \newslide{}
 
-
-
-
-\section{ARTIFICIAL}
-
-\subsection{Artificial Intelligence}
+\notes{\subsection{Artificial Intelligence}}
 
 \notes{One of the struggles of artificial intelligence is that the term means different things to different people. Our intelligence is precious to us, and the notion that it can be easily recreated is disturbing to us. This leads to some dystopian notions of artificial intelligence, such as the singularity.}
 
@@ -213,7 +228,6 @@ Norbert Wiener in a letter to his family, 1913}
 
 \figure{\includepng{\diagramsDir/ai/lenox-globe}{50%}}{[The Lenox globe](http://www.myoldmaps.com/renaissance-maps-1490-1800/314-the-lenox-globe/314-lenox.pdf), which dates from early 16th century, one of the earliest known globes.}{lenox-globe}
 
-\slidesmall{\credit{New York Public Library Rare Books Collection}{https://digitalcollections.nypl.org/collections/hunt-lenox-globe#/?tab=about}}
 
 
 
@@ -225,11 +239,12 @@ Norbert Wiener in a letter to his family, 1913}
 
 \figure{\includepng{\diagramsDir/ai/lenox-globe-hic-sunt-dracones}{60%}}{Detail from the Lenox globe located in the region of China, "hic sunt dracones"}{lenox-globe-hic-sunt-dracones}
 
-
-\section{*ARTIFICIAL* INTELLIGENCE}
+\define{noSlideTitle}
 
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
+
+\undef{noSlideTitle}
 
 \newslide{}
 
