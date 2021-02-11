@@ -1,0 +1,67 @@
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200mm"
+   height="200mm"
+   viewBox="0 0 200 200"
+   id="svg3336"
+   version="1.1">
+  <defs
+    id="defs3338"
+    <style>
+      .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:black;}
+      .myrect { fill-opacity:0;stroke-width:3;stroke:white;}
+      .myarrow { stroke:white;stroke-width:2;marker-end:url(#markerArrow);}
+      .mythickarrow { stroke:white;stroke-width:20;marker-end:url(#markerThickArrow);}
+      .myline { stroke:black;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:white}
+      .mythickline { stroke:white;stroke-width:30;}
+      .mytext { fill:white;font-size:2em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
+      .mysmallinverttext { fill:black;font-size:1.5em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
+    </style>
+
+    </defs>
+  <g id="layer1">
+    <path
+      class="myline"
+      d="m 0,0 0,200 200,0 0,-200 -200,0"
+      id="gridbox"/>
+    <path
+      class="myline"
+      d="m 0,40 0,200"
+      id="vline1"/>
+    <path
+      class="myline"
+      d="m 0,80 0,200"
+      id="vline2"/>
+    <path
+      class="myline"
+      d="m 0,120 0,200"
+      id="vline3"/>
+    <path
+      class="myline"
+      d="m 0,160 0,200"
+      id="vline4"/>
+    <path
+      class="myline"
+      d="m 40,0 200,0"
+      id="hline1"/>
+    <path
+      class="myline"
+      d="m 80,0 200,0"
+      id="hline2"/>
+    <path
+      class="myline"
+      d="m 120,0 200,0"
+      id="hline3"/>
+    <path
+      class="myline"
+      d="m 160,0 200,0"
+      id="hline4"/>
+  </g>
+</svg>
