@@ -274,6 +274,10 @@ feature space where there be dragons.}
 
 \newslide{}
 
+\figure{\includediagram{\diagramsDir/ai/human-computers-interacting}{80%}}{Humans and computers interacting should be a major focus of our research and engineering efforts.}{human-computers-interacting}
+
+\newslide{}
+
 > One thing is I can live with doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing that to have an answer that might be wrong. 
 >
 > Richard P. Feynmann in the *The Pleasure of Finding Things Out* 1981.
