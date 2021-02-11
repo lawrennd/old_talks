@@ -270,7 +270,7 @@ feature space where there be dragons.}
 
 \newslide{What is Artificial Intelligence?}
 
-A chance for us to acknowledge our ignorance and to rediscover interdisplinary science. 
+\aligncenter{A chance for us to acknowledge our ignorance and to rediscover interdisplinary science.}
 
 \newslide{}
 
