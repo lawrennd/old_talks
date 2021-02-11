@@ -16,7 +16,7 @@
 
 \newslide{}
 
-\figure{\columns{\threeColumns{\aligncenter{\includediagramclass{\diagramsDir/simulation/life-rules-3-0}{100%}}}{\aligncenter{\includediagram{\diagramsDir/util/right-arrow}{60%}}}{\aligncenter{\includediagramclass{\diagramsDir/simulation/life-rules-3-1}{100%}}}{30%}{39%}{30%}}{\aligncenter{\includejpg{\diagramsDir/maths/John-Conway}{100%}{}{right}}}{70%}{30%}}{Birth in Conway's life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.}{life-rules-crowding}
+\figure{\columns{\threeColumns{\aligncenter{\includediagramclass{\diagramsDir/simulation/life-rules-3-0}{100%}}}{\aligncenter{*birth*}\aligncenter{\includediagram{\diagramsDir/util/right-arrow}{60%}}}{\aligncenter{\includediagramclass{\diagramsDir/simulation/life-rules-3-1}{100%}}}{30%}{39%}{30%}}{\aligncenter{\includejpg{\diagramsDir/maths/John-Conway}{100%}{}{right}}}{70%}{30%}}{Birth in Conway's life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.}{life-rules-crowding}
 
 \notes{Conway's game of life has three simple rules.
 
