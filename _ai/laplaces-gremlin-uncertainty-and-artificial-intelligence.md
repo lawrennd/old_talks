@@ -217,7 +217,7 @@ Norbert Wiener in a letter to his family, 1913}
 
 \newslide{}
 
-\includeyoutube{WXuK6gekU1Y}{600}{450}
+\figure{\includeyoutube{WXuK6gekU1Y}{600}{450}}{The AlphaGo documentary tells the story of the tournament between Lee Se-dol and AlphaGo.}{alpha-go-documentary}
 
 \newslide{}
 
@@ -277,7 +277,7 @@ feature space where there be dragons.}
 
 \newslide{}
 
-> One thing is I can live with doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing that to have an answer that might be wrong. 
+> One thing is I can live with is doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing than to have an answer that might be wrong. 
 >
 > Richard P. Feynmann in the *The Pleasure of Finding Things Out* 1981.
 

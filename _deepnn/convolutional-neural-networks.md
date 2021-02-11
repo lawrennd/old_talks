@@ -13,6 +13,7 @@ author:
   url: http://niclane.org/
 abstract: >
   This lecture will introduce convolutional neural networks. 
+youtube: Ed-bk1p6Gzo
 talkscam:
 reveal: false
 time: "14:00"
