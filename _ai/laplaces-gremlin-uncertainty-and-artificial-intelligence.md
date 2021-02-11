@@ -38,9 +38,6 @@ transition: None
 
 \include{talk-macros.gpp}
 
-\notes{GREAT AI FALLACY
-
-UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER}
 
 
 \newslide{}
@@ -89,6 +86,10 @@ $$
 >
 > *Philosophical Essay on Probabilities* @Laplace-essai14 pg 5
 
+
+\newslide{}
+
+\figure{\includejpg{\diagramsDir/ai/gremlins-think-its-fun-to-hurt-you}{40%}}{Gremlins are seen as the cause of a number of challenges in this World War II poster.}{germlins-think-its-fun-to-hurt-you}
 
 \newslide{}
 
@@ -262,7 +263,7 @@ feature space where there be dragons.}
 ) is a five year project in Uppsala strengthening machine learning and AI but through close interaction with other disciplines (medicine, genetics, digital media, astronomy, political science, mathematics).}{ai-for-research}
 
 
-\newslide{Four Pillar Programme}
+\newslide{Cambridge}
 
 
 \columns{\aligncenter{\circleText{policy}{45%}}}{\aligncenter{\circleText{<tspan x="100" y="90">data</tspan><tspan x="100" y="130">governance</tspan>}{45%}}}{50%}{50%}
