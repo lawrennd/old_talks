@@ -47,17 +47,27 @@ UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER}
 
 \includegooglebook{1YQPAAAAQAAJ}{PR17-IA2}
 
-> *Philosophical Essay on Probabilities* @Laplace-essai14 pg 3
 
 \speakernotes{This notion is known as *Laplace's demon* or *Laplace's superman*.}
 
-<!--include{_physics/includes/laplaces-determinism.md}-->
+\newslide{}
+
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
+
+> *Philosophical Essay on Probabilities* @Laplace-essai14 pg 3
+
 
 \newslide{}
 
 \aligncenter{
 $$
 \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$}
+
+\newslide{}
+
+> If we do discover a theory of everything ... it would be the ultimate triumph of human reason-for then we would truly know the mind of God
+>
+> Stephen Hawking in *A Brief History of Time* 1988
 
 
 \include{_simulation/includes/life-rules.md}
@@ -73,38 +83,9 @@ $$
 <!--LAPLACE'S GREMLIN-->
 
 
-
-\newslide{Laplace's Gremlin}
-
-
-\figure{\includepng{\diagramsDir/physics/laplacesDeterminismEnglish}{60%}}{Laplace's determinsim in English translation.}{laplaces-determinism-english}
-
 \newslide{}
 
-\slides{
-\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
-
-<!--\includepdfclip{\diagramsDir/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 3.2cm}{16}{80%}{}-->}
-
-\subsection{Laplace's Gremlin}
-
-\notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
-
-> The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
->
-> Probability is relative, in part to this ignorance, in part to our knowledge.}
-
-\newslide{}
-
-\includegooglebook{1YQPAAAAQAAJ}{PR17-IA4}
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
-
-> The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
->
-> Probability is relative, in part to this ignorance, in part to our knowledge.
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_18_cropped}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
 >
 > *Philosophical Essay on Probabilities* @Laplace-essai14 pg 5
 
@@ -171,16 +152,6 @@ $$
 
 \speakernotes{Just as we measure temperature. Just as Celsius gave us the scale for temperature, so entropy measures ignorance. Formalised most famously by Claude Shannon}
 
-\newslide{Measurement and Intelligence}
-
-> For instance, the temperature at which ice melts is found to be always the same under ordinary circumstances, though, as we shall see, it is slightly altered by change of pressure. The temperature of steam which issues from boiling water is also constant when the pressure is constant.
->
-> These two pheomena therefore--the melting of ice and the boiling of water--indicate in a visible manner two temperatures which we may use as points of reference, the position of which depends on the properties of water and not on the conditions of our senses.
->
-> *Theory of Heat* @Maxwell-theory71 page 3
-
-
-\comment{\figure{\includegooglebook{0p8AAAAAMAAJ}{PA3}}{Quote from Maxwell's theory of heat on the melting and boiling point of water.}{maxwell-melting-boiling}}
 
 \newslide{}
 
@@ -218,17 +189,9 @@ Norbert Wiener in a letter to his family, 1913}
 \notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that }
 
 
-\notes{Introduce Linnaeus and the hydra.}
-
-\include{_philosophy/includes/the-hamburg-hydra.md}
-
-\speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
-
 \newslide{}
 
 \figure{\includepng{\diagramsDir/ai/lenox-globe}{50%}}{[The Lenox globe](http://www.myoldmaps.com/renaissance-maps-1490-1800/314-the-lenox-globe/314-lenox.pdf), which dates from early 16th century, one of the earliest known globes.}{lenox-globe}
-
-
 
 
 \newslide{}
@@ -238,6 +201,13 @@ Norbert Wiener in a letter to his family, 1913}
 \newslide{}
 
 \figure{\includepng{\diagramsDir/ai/lenox-globe-hic-sunt-dracones}{60%}}{Detail from the Lenox globe located in the region of China, "hic sunt dracones"}{lenox-globe-hic-sunt-dracones}
+
+\notes{Introduce Linnaeus and the hydra.}
+
+\include{_philosophy/includes/the-hamburg-hydra.md}
+
+\speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
+
 
 \define{noSlideTitle}
 
@@ -271,22 +241,26 @@ network where no data had every been before. He found a location in
 feature space where there be dragons.}
 
 
-<!--include{_physics/includes/kappenball.md}-->
-
 \newslide{}
 
 \figure{\includeyoutube{iWGhXof45zI}{600}{450}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
 
 
-\newslide{Academy of Sweden}
+\newslide{Royal Swedish Academy of Sciences}
 
-* The academy was founded on 2 June 1739 by naturalist Carl Linnaeus, mercantilist Jonas Alströmer, mechanical engineer Mårten Triewald, civil servants Sten Carl Bielke and Carl Wilhelm Cederhielm, and statesman/author Anders Johan von Höpken.
+* 2 June 1739
+  * Carl Linnaeus (naturalist)
+  * Jonas Alströmer (mercantilist)
+  * Mårten Triewald (mechanical engineer)
+  * Sten Carl Bielke (civil servants)
+  * Carl Wilhelm Cederhielm (civil servant)
+  * Anders Johan von Höpken (politician)
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/simulation/data-driven-and-mechanistic-models}{80%}}{Data driven and mechanistic models have separated since the origin of the field. Accelerate science is about bringing these two modalities back together.}{data-driven-and-mechanistic-models}
+\figure{\includejpg{\diagramsDir/ai/ai-for-research}{60%}}{[AI4Research](https://uu.se/en/research/ai4research/
+) is a five year project in Uppsala strengthening machine learning and AI but through close interaction with other disciplines (medicine, genetics, digital media, astronomy, political science, mathematics).}{ai-for-research}
 
-https://uu.se/en/research/ai4research/
 
 \newslide{Four Pillar Programme}
 
@@ -294,18 +268,21 @@ https://uu.se/en/research/ai4research/
 \columns{\aligncenter{\circleText{policy}{45%}}}{\aligncenter{\circleText{<tspan x="100" y="90">data</tspan><tspan x="100" y="130">governance</tspan>}{45%}}}{50%}{50%}
 \columns{\aligncenter{\circleText{<tspan x="100" y="90">accelerate</tspan><tspan x="100" y="130">science</tspan>}{45%}}}{\aligncenter{\circleText{AutoAI}{45%}}}{50%}{50%}
 
+\newslide{What is Artificial Intelligence?}
+
+A chance for us to acknowledge our ignorance and to rediscover interdisplinary science. 
+
 \newslide{}
 
-* Addressing Technical Debt (with Alan Turing Institute and ELLIS/ELISE Network)
-* Accelerate Programme (funded by Schmidt Futures)
-* Data Trusts Initiative (http://datatrusts.uk, funded by McGovern)
-* Active Policy Engagement
+> One thing is I can live with doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing that to have an answer that might be wrong. 
+>
+> Richard P. Feynmann in the *The Pleasure of Finding Things Out* 1981.
 
-One thing is I can live with doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing that to have an answer that might be wrong. 
 
 \thanks
 
 \references
+
 
 \comment{\notes{Uber ATG Accident}
 

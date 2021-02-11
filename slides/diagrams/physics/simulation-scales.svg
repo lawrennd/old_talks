@@ -38,20 +38,24 @@
   <defs
       id="defs22" />
   <path
-      d="M -31, 12
+      d="M -35, 12
     L 27, 12
     A 1 1 0 0 1, 28,13
     L 28, 17
     A 1 1 0 0 1 27, 18
-    L -31, 18
-    A 1 1 0 0 1 -32, 17
-    L -32, 13
-    A 1 1 0 0 1 -31, 12"
+    L -35, 18
+    A 1 1 0 0 1 -36, 17
+    L -36, 13
+    A 1 1 0 0 1 -35, 12"
       id="all-models"
       class="dpath"
       style="fill:#ECC8AF;fill-opacity:0.5;stroke:none"/>
   <path
-      d="M -31, 12
+      d="M -35, 12
+	 L -35, 18
+	 M -33, 12
+	 L -33, 18
+	 M -31, 12
 	 L -31, 18
 	 M -29, 12
 	 L -29, 18
@@ -387,8 +391,8 @@
        x="-20">Electron</tspan>
   </text>
  <path
-      d="M -31, 12
-	 L -31, 11"
+      d="M -35, 12
+	 L -35, 11"
       id="planck-length-tick"
       class="mypath"
       style="stroke:black"/>
@@ -396,16 +400,16 @@
      id="planck-length-text"
      class="mytext"
      y="10"
-     x="-31"
+     x="-35"
      style="fill:black">
     <tspan
        id="planck-length-tspan"
        y="10"
-       x="-31">Planck Length</tspan>
+       x="-35">Planck Length</tspan>
   </text>
   <path
-      d="M -31, 18
-	 L -31, 19"
+      d="M -35, 18
+	 L -35, 19"
       id="minus-thirty-one-mark-tick"
       class="mypath"
       style="stroke:black"/>
@@ -413,11 +417,11 @@
      id="minus-thirty-one-mark-text"
      class="mytext"
      y="20"
-     x="-31"
+     x="-35"
      style="fill:black">
     <tspan
        id="minus-thirty-one-mark-tspan"
        y="20"
-       x="-31">-31</tspan>
+       x="-35">-35</tspan>
   </text>  
 </svg>
