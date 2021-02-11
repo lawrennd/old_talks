@@ -69,7 +69,6 @@ $$
 
 \include{_simulation/includes/life-rules.md}
 
-
 \include{_simulation/includes/life-glider-loafer-conway.md}
 
 
@@ -266,8 +265,8 @@ feature space where there be dragons.}
 \newslide{Cambridge}
 
 
-\columns{\aligncenter{\circleText{policy}{45%}}}{\aligncenter{\circleText{<tspan x="100" y="90">data</tspan><tspan x="100" y="130">governance</tspan>}{45%}}}{50%}{50%}
-\columns{\aligncenter{\circleText{<tspan x="100" y="90">accelerate</tspan><tspan x="100" y="130">science</tspan>}{45%}}}{\aligncenter{\circleText{AutoAI}{45%}}}{50%}{50%}
+\columns{\aligncenter{\circleText{policy}{55%}}}{\aligncenter{\circleText{<tspan x="100" y="90">data</tspan><tspan x="100" y="130">governance</tspan>}{55%}}}{50%}{50%}
+\columns{\aligncenter{\circleText{<tspan x="100" y="90">accelerate</tspan><tspan x="100" y="130">science</tspan>}{55%}}}{\aligncenter{\circleText{AutoAI}{55%}}}{50%}{50%}
 
 \newslide{What is Artificial Intelligence?}
 
