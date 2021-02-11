@@ -196,7 +196,7 @@ Norbert Wiener in a letter to his family, 1913}
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/ai/lenox-globe-by-b-f-da-costa}{100%}{negate}}{Drawing of the Lenox Globe by the historian for the Magazine of American History in September 1879.}{lenox-globe-by-b-f-da-costa}
+\figure{\includepng{\diagramsDir/ai/lenox-globe-by-b-f-da-costa}{100%}}{Drawing of the Lenox Globe by the historian for the Magazine of American History in September 1879.}{lenox-globe-by-b-f-da-costa}
 
 \newslide{}
 
