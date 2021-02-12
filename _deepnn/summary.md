@@ -30,4 +30,4 @@ start: "14:00"
 end: "15:00"
 ---
 
-Related publications and links will appear here.
+In this lecture we divided into groups for feedback sessions and discussion of hte course so far.
