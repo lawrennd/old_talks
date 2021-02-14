@@ -78,11 +78,11 @@ Why do we need it?
 
 
 -   Common to all NNs
-    -   Layered feature maps</li></ul>
-        -   Nodes within a layer are assumed never to interact</li></ul></ul>
-        -   Inputs are processed on an directed acyclic graph</li></ul></ul>    
-    -   Gradient descent</li></ul>
-        -   Preference for models trainable by gradient</li></ul></ul>
+    -   Layered feature maps
+        -   Nodes within a layer are assumed never to interact
+        -   Inputs are processed on an directed acyclic graph
+    -   Gradient descent
+        -   Preference for models trainable by gradient
         -   <pp>descent given the chosen initializer</pp>
         -   <pp>Recall week 2: Optimization and Stochastic Gradient Descent</pp>
 

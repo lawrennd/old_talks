@@ -4,9 +4,9 @@ subtitle: "Resolving Intellectual Debt in Complex Systems"
 abstract: >
   Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the current revolution in “artificial intelligence” that has dominated popular press headlines and is having a significant influence on the wider tech agenda. 
   
-  Our capability to deploy complex decision making systems has improved, but our ability to explain them has reduced. This phenomenon is known as intellectual debt.
+  Our capability to deploy complex decision-making systems has improved, but our ability to explain them has reduced. This phenomenon is known as intellectual debt.
   
-  The reality of deployed systems is they are constructed from interacting components of individual models. While a lot of focus has been on the explanability and reliability of an individual model, the real challenge is explanability and reliability of the entire system. 
+  The reality of deployed systems is they are constructed from interacting components of individual models. While a lot of focus has been on the explainability and reliability of an individual model, the real challenge is explainability and reliability of the entire system. 
     
   In this talk we introduce the concept of Auto AI and give a road map to achieving fair, explainable and transparent AI systems. 
 author:
@@ -16,7 +16,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2020-03-25
+date: 2021-03-23
 venue: "The Turing Presents: AI UK"
 transition: None
 ---
