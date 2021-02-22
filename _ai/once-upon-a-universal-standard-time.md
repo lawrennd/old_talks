@@ -17,7 +17,7 @@ author:
   url: http://inverseprobability.com
   orcid: 0000-0001-9258-1030
 date: 2017-07-13
-venue: CFI Annual Conference
+venue: CFI Annual Conference, Jesus College, Cambridge
 youtube: ExTDnppYB0w
 youtube_start: 22820
 youtube_end: 23760
