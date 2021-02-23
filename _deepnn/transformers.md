@@ -44,7 +44,7 @@ end: "15:00"
     output (translation)
 
 
-\aligncenter{<img src=inputs3/encoder-decoder-example.png alt="Drawing" style="width: 1300px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/encoder-decoder-example}{1300px}}
 
 -   **Memory, and gradient stability, remain the key limitation even
     when LSTMs and GRUs are used.**
@@ -52,38 +52,31 @@ end: "15:00"
 \subsection{Neural Machine Translation by Jointly Learning to Align and Translate}
 
   \aligncenter{<table> <tr>
-<ul><img src=inputs3/encoder-decoder-example.png alt="Drawing" style="width: 1200px;"/></ul>
-<ul><img src=inputs3/LSTM.png alt="Drawing" style="width: 700px;"/></ul>
+<ul>\includepng{\diagramsdir/deepnn/encoder-decoder-example}{1200px}</ul>
+<ul>\includepng{\diagramsdir/deepnn/LSTM}{700px}</ul>
 </tr> </table>\
 }
 
 \subsection{Learning Alignment - the first Attention}
 
-<p><img src=inputs3/rnnAttention.png align="right" alt="Drawing" style="width: 600px;"/>
-<ul>
+\alignright{\includepng{\diagramsdir/deepnn/rnnAttention}{600px}
 
-<li>Fixed-length context vector was a key performance bottleneck in 2015.</li>
-<li>Bahdanau et al. (2015) propose to (soft-)search for parts of a source <br>sentence that are relevant to predicting a target word.</li>
-<li>The method, based on the Cho et al. (2014) Encoder–Decoder:</li>    
-    <ul><li><b>Encoder:</b> bi-directional RNN.</li></ul>
-    <ul><li><b>Decoder:</b> gated RNN.</li></ul> 
-    <ul><li><b>Innovation:</b> each time-step gets its own separate context vector:</li></ul> 
-        <ul><ul><pp> $\large c_t = \sum_{j=1}^{T} ( \alpha_{t,j} h_t)$ </pp></ul></ul>
-        <ul><ul><pp> <br> </pp></ul></ul>
-        <ul><ul><pp> $\large \alpha_{t,j} = \frac{exp(e_{t,j})} {\sum_{k=1}^{T}e_{t,k}}$ </pp></ul></ul>
-        <ul><ul><pp> <br> </pp></ul></ul>
-        <ul><ul><pp> $\large e_{t,j} = f(s_{t-1}, h_j)$ </pp></ul></ul>  
-</ul>
-</p>
+* Fixed-length context vector was a key performance bottleneck in 2015.
+* Bahdanau et al. (2015) propose to (soft-)search for parts of a source <br>sentence that are relevant to predicting a target word.
+* The method, based on the Cho et al. (2014) Encoder–Decoder:</li>    
+  * **Encoder:** bi-directional RNN.
+  * **Decoder:** gated RNN. 
+  * **Innovation:** each time-step gets its own separate context vector:
+  * <pp> $\large c_t = \sum_{j=1}^{T} ( \alpha_{t,j} h_t)$ </pp>
+  * <pp> $\large \alpha_{t,j} = \frac{exp(e_{t,j})} {\sum_{k=1}^{T}e_{t,k}}$ </pp>
+  * <pp> $\large e_{t,j} = f(s_{t-1}, h_j)$ </pp>
 
- <i>Function $f$ implemented as a fully connected
-layer.</i>
+*Function $f$ implemented as a fully connected
+layer.*
 
 \subsection{Attention, Attention!}
 
-
-\aligncenter{<img src=inputs3/learned_attention.png alt="Drawing" style="width: 1100px;"/>}
-
+\aligncenter{\includepng{\diagramsdir/deepnn/learned_attention}{1100px}}
 
 \subsection{Plan for the Day}
 
@@ -100,64 +93,56 @@ layer.</i>
 
 \subsection{Attention is All You Need}
 
-
-\aligncenter{<img src=inputs3/attention.jpg alt="Drawing" style="width: 1300px;"/>}
-
-
-\subsection{Attention is All You Need}
-
-<p><img align="right" src=inputs3/scaled.png alt="Drawing" style="width: 1200px;"/>
-
-<li>Scaled dot-product attention (no parameters):</li>
-
-    <ul><pp>$ attention(Q,K,V)=softmax(\frac{QK^{T}}{\sqrt{d_{K}}}) V$</pp></ul>
-
-<p>
+\aligncenter{\includejpg{\diagramsDir/deepnn/attention}{1300px}}
 
 
 \subsection{Attention is All You Need}
 
-\aligncenter{<img src=inputs3/QKV.png alt="Drawing" style="width: 1600px;"/>}
+\alignright{\includepng{\diagramsDir/deepnn/scaled}{1200px}}
+
+* Scaled dot-product attention (no parameters):
+
+$$ \text{attention}(Q,K,V)=\text{softmax}\left(\frac{QK^{T}}{\sqrt{d_{K}}}\right) V$$
+
 
 
 \subsection{Attention is All You Need}
 
-<p><img align="right" src=inputs3/multihead.png alt="Drawing" style="width: 1100px;"/>
+\aligncenter{\includepng{\diagramsdir/deepnn/QKV}{1600px}}
 
-<li>Scaled dot-product attention (no parameters):</li>
 
-    <ul><pp>$ attention(Q,K,V)=softmax(\frac{QK^{T}}{\sqrt{d_{K}}}) V$</pp></ul>
+\subsection{Attention is All You Need}
 
-<pp></pp>
-<pp></pp>
-<pp></pp> <li>Multi-head
-attention (parameters: $W_0, W_1^Q, W_1^K, W_1^V, ...$):</li>
-<ul><pp>\$
-MultiHead(Q,K,V)=concat(head\_{1},\...,head\_{h})
-W\_{0}$</pp></ul>  <ul><pp>$ head_i=attention(QW_i\^Q, KW_i\^K,
-VW_i\^V)\$</pp></ul> <p>
+\alignright{\includepng{inputs3/multihead}{1100px}}
+
+* Scaled dot-product attention (no parameters):
+
+$$ \text{attention}(Q,K,V)=\text{softmax}\left(\frac{QK^{T}}{\sqrt{d_{K}}}\right) V$$
+
+* Multi-head attention (parameters: $W_0, W_1^Q, W_1^K, W_1^V, \dots$):
+$\text{MultiHead}(Q,K,V)=\text{concat}(\text{head}_{1},\dots,\text{head}_{h})
+W_{0}$ $\text{head}_i=\text{attention}(QW_i\^Q, KW_i\^K, VW_i\^V)$
 
 \subsection{Attention is All You Need: the Transformer}
 
 \aligncenter{
-
 <table>
 <tr>
-    <ul><img src=inputs3/rnnAttention.png alt="Drawing" style="width: 575px;"/></ul>
-    <ul><img src=inputs3/transformer.png alt="Drawing" style="width: 675px;"/></ul>
-        </tr>
+<td>\includepng{\diagramsdir/deepnn/rnnAttention}{575px}</td>
+<td>\includepng{\diagramsdir/deepnn/transformer}{675px}</td>
+</tr>
 </table>
 }
 
 \subsection{Attention is All You Need}
 
-\aligncenter{<ul><pp><i>The Transformer
+\aligncenter{*The Transformer
 achieves better BLEU scores than previous state-of-the-art models on the
 English-to-German <br> and English-to-French newstest 2014
 tests at a fraction of the training
-cost.</i></pp></ul>}
+cost.*}
 
-\aligncenter{<img src=inputs3/transformer_perf.png alt="Drawing" style="width: 1500px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/transformer_perf}{1500px}}
 
 
 \subsection{Plan for the Day}
@@ -176,83 +161,79 @@ cost.</i></pp></ul>}
 \subsection{Reformers}
 
 
-\aligncenter{<img src=inputs3/reformers.jpg alt="Drawing" style="width: 1300px;"/>}
+\aligncenter{\includejpg{\diagramsDir/deepnn/reformers}{1300px}}
 
 
 \subsection{Reformers: Locality Sensitive Hashing}
 
-\aligncenter{<ul><pp><i>Rather than
+\aligncenter{*Rather than
 attending all-to-all, split the sequence up. Kitaev et al. (2020) employ
-a hashing scheme first proposed by Andoni et al.
-(2015).</i></pp></ul>}
+a hashing scheme first proposed by Andoni et al. (2015).*}
 
-\aligncenter{<img src=inputs3/reformer_mechanism.png alt="Drawing" style="width: 1500px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/reformer_mechanism}{1500px}}
 
 
 \subsection{Reformers performance}
 
 
-\aligncenter{<img src=inputs3/reformer_performance.png alt="Drawing" style="width: 1400px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/reformer_performance}{1400px}}
 
 
-\aligncenter{<ul><pp><i>Loss: log-likelyhood and perplexity expressed in bits per dimension.</i></pp></ul>}
-
-
-\subsection{Linformers}
-
-
-\aligncenter{<img src=inputs3/linformers.jpg alt="Drawing" style="width: 1300px;"/>}
-
-
-\subsection{Linformers}
-
-<li>Basic attention (no parameters):</li>
-
-    <ul><pp>$ attention(Q,K,V)=\underbrace{softmax(\frac{QK^{T}}{\sqrt{d_{K}}})}_\text{P} V$</pp></ul>
-
-<li>Wang et al. prove theoretically and check empirically that P is low rank.</li>
-
-
-\aligncenter{<img src=inputs3/linformer_eigen.png alt="Drawing" style="width: 1600px;"/>}
+\aligncenter{*Loss: log-likelyhood and perplexity expressed in bits per dimension.*}
 
 
 \subsection{Linformers}
 
 
-\aligncenter{<ul><pp><i>The idea is very simple - add a simple projection between the weighted K, Q and their joint dot product. <br>This fixes to a constant the dimension of the matrices entering the self-attention mechanism. </i></pp></ul>}
+\aligncenter{\includejpg{\diagramsDir/deepnn/linformers}{1300px}}
 
 
-\aligncenter{<img src=inputs3/linformer_arch.png alt="Drawing" style="width: 1200px;"/>}
+\subsection{Linformers}
+
+* Basic attention (no parameters):
+
+    $$ \text{attention}(Q,K,V)=\underbrace{\text{softmax}(\frac{QK^{T}}{\sqrt{d_{K}}})}_\text{P} V$$
+
+* Wang et al. prove theoretically and check empirically that P is low rank.
+
+
+\aligncenter{\includepng{\diagramsdir/deepnn/linformer_eigen}{1600px}}
+
+
+\subsection{Linformers}
+
+
+\aligncenter{*The idea is very simple - add a simple projection between the weighted K, Q and their joint dot product. <br>This fixes to a constant the dimension of the matrices entering the self-attention mechanism.*}
+
+
+\aligncenter{\includepng{\diagramsdir/deepnn/linformer_arch}{1200px}}
 
 
 \subsection{Linformers performance}
 
 
-\aligncenter{<img src=inputs3/linformer_performance.png alt="Drawing" style="width: 1400px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/linformer_performance}{1400px}}
 
 
 \subsection{Training Transformers}
 
 
-\aligncenter{<img src=inputs3/training.jpg alt="Drawing" style="width: 1300px;"/>}
+\aligncenter{\includejpg{\diagramsDir/deepnn/training}{1300px}}
 
 
 \subsection{Layer Normalization in Transformers}
 
-\aligncenter{<img src=inputs3/layerNorm.png alt="Drawing" style="width: 1400px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/layerNorm}{1400px}}
 
 \subsection{Training Transformers}
 
-
 <table>
-
 <tr>
-<td> \aligncenter{ <h2> Unbalanced Gradients </h2> } </td>
-<td> \aligncenter{ <h2> Amplification-induced Instability </h2> } </td></tr>
-
+<th> \aligncenter{Unbalanced Gradients} </th>
+<th> \aligncenter{Amplification-induced Instability} </th></tr>
 <tr>
-<td> <img src=inputs3/training_sec3.png alt="Drawing" style="width: 1200px;"/> </td>
-<td> <img src=inputs3/training_sec4.png alt="Drawing" style="width: 1050px;"/> </td>
+<td> \includepng{\diagramsdir/deepnn/training_sec3}{1200px} </td>
+<td> \includepng{\diagramsdir/deepnn/training_sec4}{1050px} </td>
 </tr>
 
 </table>
@@ -261,20 +242,20 @@ a hashing scheme first proposed by Andoni et al.
 \subsection{Switch Transformers}
 
 
-\aligncenter{<img src=inputs3/switch.jpg alt="Drawing" style="width: 1300px;"/>}
+\aligncenter{\includejpg{\diagramsDir/deepnn/switch}{1300px}}
 
 
 \subsection{Switch Transformers}
 
-\aligncenter{<img src=inputs3/switch.png alt="Drawing" style="width: 1200px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/switch}{1200px}}
 
 \subsection{Switch Transformers - speed-up}
 
-\aligncenter{<img src=inputs3/switch_speed.png alt="Drawing" style="width: 1200px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/switch_speed}{1200px}}
 
 \subsection{Switch Transformers - multi-task performance}
 
-\aligncenter{<img src=inputs3/switch_multitask.png alt="Drawing" style="width: 1900px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/switch_multitask}{1900px}}
 
 \subsection{Plan for the Day}
 
@@ -291,48 +272,46 @@ a hashing scheme first proposed by Andoni et al.
 
 \subsection{Image is Worth 16x16 Words Embedding and Architecture}
 
+\aligncenter{\includepng{\diagramsdir/deepnn/image16wordsModel}{1400px}}
 
-\aligncenter{<img src=inputs3/image16wordsModel.png alt="Drawing" style="width: 1400px;"/>}
+
+\subsection{Image is Worth 16x16 Words}
+ 
+\aligncenter{\includepng{\diagramsdir/deepnn/image16wordsViz}{2000px}}
 
 
 \subsection{Image is Worth 16x16 Words}
 
  
-\aligncenter{<img src=inputs3/image16wordsViz.png alt="Drawing" style="width: 2000px;"/>}
-
-
-\subsection{Image is Worth 16x16 Words}
-
- 
-\aligncenter{<img src=inputs3/image16wordsRes.png alt="Drawing" style="width: 1100px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/image16wordsRes}{1100px}}
 
 <ul>
-\aligncenter{<img src=inputs3/image16wordsRes2.png alt="Drawing" style="width: 800px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/image16wordsRes2}{800px}}
 </ul>
 
 <ul>
-\aligncenter{<img src=inputs3/image16wordsRes3.png alt="Drawing" style="width: 800px;"/>}
+\aligncenter{\includepng{\diagramsdir/deepnn/image16wordsRes3}{800px}}
 </ul>
 
 
 \subsection{AlphaFold - the protein folding problem}
 
 
-\aligncenter{<img src=inputs3/protein.gif alt="Drawing" style="width: 1600px;"/>}
+\aligncenter{\includegif{\diagramsDir/deepnn/protein}{1600px}}
 
 
 \subsection{Convolutional solution: AlphaFold 1}
 
  <table> <tr>
-<td>\aligncenter{<img src=inputs3/AlphaFold1a.png  alt="Drawing" style="width: 1100px;"/>}</td>
-<td>\aligncenter{<img src=inputs3/AlphaFold1.png  alt="Drawing" style="width: 1000px;"/>}</td>
+<td>\aligncenter{\includepng{\diagramsdir/deepnn/AlphaFold1a}{1100px}}</td>
+<td>\aligncenter{\includepng{\diagramsdir/deepnn/AlphaFold1}{1000px}}</td>
 </tr> </table>
 
 \subsection{Transformer-based solution: AlphaFold 2}
 
  <table> <tr>
-<td>\aligncenter{<img src=inputs3/AlphaFold.png alt="Drawing" style="width: 1800px;"/>}</td>
-<td>\aligncenter{<img src=inputs3/AlphaFold_performance.jpg  alt="Drawing" style="width: 1200px;"/>}</td>
+<td>\aligncenter{\includepng{\diagramsdir/deepnn/AlphaFold}{1800px}}</td>
+<td>\aligncenter{\includejpg{\diagramsDir/deepnn/AlphaFold_performance}{1200px}}</td>
 </tr> </table>
 
 \subsection{Summary of the Day}
@@ -347,5 +326,6 @@ a hashing scheme first proposed by Andoni et al.
 -   Going beyond NLP
     -   Image is Worth 16x16 Words
     -   AlphaFold 2
+
 
 
