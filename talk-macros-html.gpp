@@ -19,8 +19,8 @@
 
 \define{\caption{block}}{<center>*\block *</center>}
 \define{\aligncenter{block}}{<center>\block</center>}
-\define{\alignright{block}}{<span style="text-align:right">\block</span>}
-\define{\alignleft{block}}{<span style="text-align:left">\block</span>}
+\define{\alignright{block}}{<div style="text-align:right">\block</div>}
+\define{\alignleft{block}}{<div style="text-align:left">\block</div>}
 \define{\largetext{block}}{<large>\block</large>}
 \define{\smalltext{block}}{<small>\block</small>}
 
