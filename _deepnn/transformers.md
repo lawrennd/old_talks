@@ -69,8 +69,8 @@ end: "15:00"
   * **Encoder:** bi-directional RNN.
   * **Decoder:** gated RNN. 
   * **Innovation:** each time-step gets its own separate context vector:
-    $$\large c_t = \sum_{j=1}^{\top} ( \alpha_{t,j} h_t)$$
-    $$\large \alpha_{t,j} = \frac{exp(e_{t,j})} {\sum_{k=1}^{\top}e_{t,k}}$$
+    $$\large c_t = \sum_{j=1}^T ( \alpha_{t,j} h_t)$$
+    $$\large \alpha_{t,j} = \frac{\exp(e_{t,j})} {\sum_{k=1}^T\exp(e_{t,k})}$$
     $$\large e_{t,j} = f(s_{t-1}, h_j)$$
 
 *Function $f$ implemented as a fully connected
