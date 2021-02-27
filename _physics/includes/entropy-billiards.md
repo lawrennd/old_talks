@@ -3,7 +3,7 @@
 
 \editme
 
-\newslide{}
+\subsection{Entropy Billiards}
 
 \figure{
 <div>

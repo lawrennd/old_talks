@@ -38,125 +38,16 @@ transition: None
 
 \include{talk-macros.gpp}
 
+\define{noSlideTitle}
 
-
-\newslide{}
-
-\includegooglebook{1YQPAAAAQAAJ}{PR17-IA2}
-
-
-\speakernotes{This notion is known as *Laplace's demon* or *Laplace's superman*.}
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
-
-> *Philosophical Essay on Probabilities* @Laplace-essai14 pg 3
-
-
-\newslide{}
-
-\aligncenter{
-$$
-\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$}
-
-\newslide{}
-
-> If we do discover a theory of everything ... it would be the ultimate triumph of human reason-for then we would truly know the mind of God
->
-> Stephen Hawking in *A Brief History of Time* 1988
-
-
-\include{_simulation/includes/life-rules.md}
-
-\include{_simulation/includes/life-glider-loafer-conway.md}
-
-
-
-\speakernotes{The phenomenon of emergent behaviour also applies to real world simulations like climate and weather. E.g. Niall Robinson defining a hurricane to search for hurricane's im climate simulations.}
-
-
-<!--LAPLACE'S GREMLIN-->
-
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_18_cropped}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
->
-> *Philosophical Essay on Probabilities* @Laplace-essai14 pg 5
-
-
-\newslide{}
-
-\figure{\includejpg{\diagramsDir/ai/gremlins-think-its-fun-to-hurt-you}{40%}}{Gremlins are seen as the cause of a number of challenges in this World War II poster.}{germlins-think-its-fun-to-hurt-you}
-
-\newslide{}
-
-\figure{\columns{\aligncenter{\includejpg{\diagramsDir/physics/lap-engine}{100%}}\aligncenter{*Lap Engine (1788)*}}{\aligncenter{total energy <br> = <br> available energy <br> + <br> temperature <br> $\times$ <br>entropy}}{60%}{40%}}{James Watt's Lap Engine which incorporates many of his innovations to the steam engine, making it more efficient.}{lap-engine-boulton-watt}
-
-<!--THEORY of IGNORANCE-->
-
-\newslide{}
-
-\figure{\threeColumns{\aligncenter{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}}\slides{\aligncenter{*Betrand Russell*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{50%}}\slides{\aligncenter{*Albert Einstein*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}\slides{\aligncenter{*Norbert Wiener*}}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
-
-\speakernotes{Wiener came to Cambridge in 1913. Russell showed him Einstein's 1905 paper on Brownian motion (@Einstein-brownian05)}
-
-\newslide{}
-
-\figure{\includegif{\diagramsDir/physics/brownian-motion}{40%}}{Brownian motion of a large particle in a group of smaller particles. The movement is known as a *Wiener process* after Norbert Wiener.}{brownian-motion}
-
-
-\newslide{}
-
-\figure{\threeColumns{\aligncenter{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}}\aligncenter{*James Clerk Maxwell*}}{\aligncenter{\includejpg{\diagramsDir/physics/boltzmann2}{100%}}\aligncenter{*Ludwig Boltzmann*}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}\aligncenter{*Josiah Willard Gibbs*}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
-
-
+\include{_physics/includes/laplaces-demon.md}
+\include{_physics/includes/emergent-behaviour.md}
+\include{_physics/includes/laplaces-gremlin.md}
+\include{_physics/includes/lap-engine.md}
+\include{_physics/includes/theory-of-ignorance.md}
 \include{_physics/includes/entropy-billiards.md}
-
-
-\newslide{}
-
-\figure{\includediagramclass{\diagramsDir/physics/maxwells-demon}{100%}}{Maxwell's demon opens and closes a door which allows fast particles to pass from left to right and slow particles to pass from right to left. This makes the left hand side colder than the right.}{maxwells-demon}
-
-
-
-\newslide{}
-
-\figure{
-<div>
-<div style="width:68%;float:left">
-  <canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left"></canvas>
-</div>
-<div style="width:28%;float:right;margin:auto">
-  <div style="float:right;width:100%;margin:auto">Entropy: <output id="maxwell-entropy"></output></div>
-  <div id="maxwell-histogram-canvas" style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
-  </div>
-</div>
-</div>
-<div>
-<button id="maxwell-newball" style="text-align:right">New Ball</button>
-<button id="maxwell-pause" style="text-align:right">Pause</button>
-<button id="maxwell-skip" style="text-align:right">Skip 1000s</button>
-<button id="maxwell-histogram" style="text-align:right">Histogram</button>
-</div>
-
-\include{_scripts/includes/maxwell-js.md}
-}{Maxwell's Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right, only if they are hot.}{maxwells-demon}
-
-
-\newslide{}
-
-\figure{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{40%}}\aligncenter{*Claude Shannon*}}{Claude Shannon (1916-2001)}{claude-shannon}
-
-\speakernotes{Just as we measure temperature. Just as Celsius gave us the scale for temperature, so entropy measures ignorance. Formalised most famously by Claude Shannon}
-
-
-\newslide{}
-
-\figure{\include{_ai/includes/embodiment-factors-computer-human-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years.}{embodiment-factors-table}
-
-
+\include{_physics/includes/maxwells-demon-short.md}
+\include{_ai/includes/embodiment-factors-celsius.md}
 \include{_ai/includes/conversation-tedx.md}
 
 \notes{Stories, between humans.}
@@ -165,10 +56,7 @@ $$
 
 Norbert Wiener in a letter to his family, 1913}
 
-\newslide{}
-
-\figure{\includeyoutube{8FIEZXMUM2I}{600}{450}{7}}{Fritz Heider and Marianne Simmel's video of shapes from @Heider:experimental44.}{heider-simmel-shapes}
-
+\include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}
 
 
@@ -184,22 +72,9 @@ Norbert Wiener in a letter to his family, 1913}
 
 \notes{The history of automation and technology is a history of us adapting to technological change. The invention of the railways, and the need for consistent national times to timetable our movements. The development of the factory system in the mills of Derbyshire required workers to operate and maintain the machines that replaced them.}
 
-
 \notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that }
 
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/ai/lenox-globe}{50%}}{[The Lenox globe](http://www.myoldmaps.com/renaissance-maps-1490-1800/314-the-lenox-globe/314-lenox.pdf), which dates from early 16th century, one of the earliest known globes.}{lenox-globe}
-
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/ai/lenox-globe-by-b-f-da-costa}{100%}}{Drawing of the Lenox Globe by the historian for the Magazine of American History in September 1879.}{lenox-globe-by-b-f-da-costa}
-
-\newslide{}
-
-\figure{\includepng{\diagramsDir/ai/lenox-globe-hic-sunt-dracones}{60%}}{Detail from the Lenox globe located in the region of China, "hic sunt dracones"}{lenox-globe-hic-sunt-dracones}
+\include{_ai/includes/lenox-globe.md}
 
 \notes{Introduce Linnaeus and the hydra.}
 
@@ -208,42 +83,8 @@ Norbert Wiener in a letter to his family, 1913}
 \speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
 
 
-\define{noSlideTitle}
-
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
-
-\undef{noSlideTitle}
-
-\newslide{}
-
-\figure{\includeyoutube{WXuK6gekU1Y}{600}{450}}{The AlphaGo documentary tells the story of the tournament between Lee Se-dol and AlphaGo.}{alpha-go-documentary}
-
-\newslide{}
-
-\speakernotes{Sedolian void: Despite the many millions of matches that AlphaGo had played, Lee Sedol
-managed to find a board position that was distinct from anything AlphaGo
-had seen before. Within the high dimensional pinball machine that made
-up AlphaGo's decision making systems, Lee Sedol found a niche, an
-Achillean chink in AlphaGo's armour. He found a path through the neural
-network where no data had every been before. He found a location in
-feature space where there be dragons.}
-
-\figure{\columns{\includepng{\diagramsDir/ai/lee-se-dol-alpha-go-game-4-move-78}{60%}}{\includejpg{\diagramsDir/ai/lee-se-dol}{60%}}{49%}{49%}}{Move 78 of [Game 4](https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol#Game_4) was critical in allowing Lee Se-dol to win the match. Described by [Gu Li](https://en.wikipedia.org/wiki/Gu_Li_(Go_player)) as a 'divine move'.}{lee-se-dol-move-78}
-
-\speakernotes{Sedolian void: Despite the many millions of matches that AlphaGo had played, Lee Se-dol
-managed to find a board position that was distinct from anything AlphaGo
-had seen before. Within the high dimensional pinball machine that made
-up AlphaGo's decision making systems, Lee Sedol found a niche, an
-Achillean chink in AlphaGo's armour. He found a path through the neural
-network where no data had every been before. He found a location in
-feature space where there be dragons.}
-
-
-\newslide{}
-
-\figure{\includeyoutube{iWGhXof45zI}{600}{450}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
-
 
 \newslide{Royal Swedish Academy of Sciences}
 
@@ -275,12 +116,7 @@ feature space where there be dragons.}
 
 \figure{\includediagram{\diagramsDir/ai/human-computers-interacting}{80%}}{Humans and computers interacting should be a major focus of our research and engineering efforts.}{human-computers-interacting}
 
-\newslide{}
-
-> One thing is I can live with is doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing than to have an answer that might be wrong. 
->
-> Richard P. Feynmann in the *The Pleasure of Finding Things Out* 1981.
-
+\include{_physics/includes/richard-feynmann-doubt.md}
 
 \thanks
 
