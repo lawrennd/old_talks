@@ -495,7 +495,7 @@ async function draw(game) {
 	game.clearCanvas();
     game.canvasBackground();
     do {
-	setTimeout(runPhysics(game), 0);
+	setTimeout(runPhysics(game), game.simulation.dt);
     }
     while(!game.simulation.draw)
 
