@@ -14,6 +14,7 @@ abstract: >
   neural architectures. We will review classical generalization and explore what's different
   about neural network models.
 talkscam:
+hackmdslides: fhuszar/r1HxvooMd#/
 youtube: tk9qM00Bs_o
 reveal: True
 ipynb: True

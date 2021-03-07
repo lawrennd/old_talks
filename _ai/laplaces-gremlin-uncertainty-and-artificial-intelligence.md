@@ -30,6 +30,7 @@ author:
   url: http://inverseprobability.com
 date: 2021-02-11
 ipynb: false
+youtube: HJ5W5SekwO4
 venue: Celsius Lecture, Uppsala University, Sweden
 transition: None
 ---
