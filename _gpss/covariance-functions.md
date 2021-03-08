@@ -1,8 +1,8 @@
 ---
-title: Covariance Functions and Hyperparameter Optimizaton
+title: Covariance Functions and Hyperparameter Optimization
 session: 3
 abstract: >
-  In this talk we review multi-output Gaussian processes. Introducing them initially through a Kalman filter representation of a GP.
+  In this talk we review covariance functions and optimization of the GP log likelihoood.
 author: 
 - given: Neil D. 
   family: Lawrence

@@ -1,3 +1,3 @@
-BASE=unsupervised-learning-with-gps
+BASE=covariance-functions
 include ../make-talk-flags.mk
 include ../make-talk.mk
