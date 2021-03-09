@@ -1,6 +1,6 @@
 ---
 title: "Interpretable Models"
-venue: "Downing College"
+venue: "Virtual Interaction with Machine Learning Course"
 abstract: "<p>The great AI fallacy is that we are building the first generation of automation that will adapt to humans rather than humans adapting to us. The more sobering reality is that we are building complex algorithmic decision making system that we are unable to explain. A FIT model is fair, interpretable and transparent. The machine learning community has placed effort into understanding how to improve interpretability into individual models, but the real challenge is how to build FIT systems. At the heart of the development of machine learning is the notion of separation of concerns, but this can obscure the real challenge which is responding to the human.</p>"
 author:
 - given: Neil D.
@@ -63,6 +63,26 @@ categories:
 <li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
 </ul>
 <p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
+<h2 id="the-mythical-man-month">The Mythical Man-month</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/mythical-man-month.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/mythical-man-month.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ai/Mythical_man-month_(book_cover).jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="intellectual-debt-magnify" class="magnify" onclick="magnifyFigure(&#39;intellectual-debt&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="intellectual-debt-caption" class="caption-frame">
+<p>Figure: The Mythical Man-month <span class="citation" data-cites="Brooks:mythical75">(Brooks, n.d.)</span> is a 1975 book focussed on the challenges of software project coordination.</p>
+</div>
+</div>
+<p>However, when managing systems in production, you soon discover maintenance of a rapidly deployed system is not your only problem.</p>
+<p>To deploy large and complex software systems, an engineering approach known as “separation of concerns” is taken. Frederick Brooks’ book “The Mythical Man-month” <span class="citation" data-cites="Brooks:mythical75">(Brooks, n.d.)</span>, has itself gained almost mythical status in the community. It focuses on what has become known as Brooks’ law “adding manpower to a late software project makes it later.”</p>
+<p>Adding people (men or women!) to a project delays it because of the communication overhead required to get people up to speed.</p>
 <h2 id="technical-consequence">Technical Consequence</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-system-decomposability.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-system-decomposability.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -268,6 +288,25 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 </div>
 <p>The challenges of integrating different machine learning components into a whole that acts effectively as a system seem unresolved. In software engineering, separating parts of a system in this way is known as <a href="">component-based software engineering</a>. The core idea is that the different parts of the system can be independently designed according to a sub-specfication. This is sometimes known as <em>separation of concerns</em>. However, once the components are machine learning based, tighter coupling becomes a side effect of the learned nature of the system. For example if a driverless car’s detection of cyclist is dependent on its detection of the road surface, a change in the road surface detection algorithm will have downstream effects on the cyclist detection. Even if the road detection system has been improved by objective measures, the cyclist detection system may have become sensitive to the foibles of the previous version of road detection and will need to be retrained.</p>
 <p>Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.</p>
+<h2 id="question-mark-emails">Question Mark Emails</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_business/includes/bezos-question-mark-email.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_business/includes/bezos-question-mark-email.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="bezos-question-mark-email-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/business/bezos-question-mark-email.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="bezos-question-mark-email-magnify" class="magnify" onclick="magnifyFigure(&#39;bezos-question-mark-email&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="bezos-question-mark-email-caption" class="caption-frame">
+<p>Figure: Jeff Bezos sends employees at Amazon question mark emails. They require an explaination. The explaination required is different at different levels of the management hierarchy. See <a href="https://www.inc.com/business-insider/amazon-founder-ceo-jeff-bezos-customer-emails-forward-managers-fix-issues.html">this article</a>.</p>
+</div>
+</div>
+<p>One challenge at Amazon was what I call the “L4 to Q4 problem.” The issue when an graduate engineer (Level 4 in Amazon terminology) makes a change to the code base that has a detrimental effect but we only discover it when the 4th Quarter results are released (Q4).</p>
+<p>The challenge in explaining what went wrong is a challenge in intellectual debt.</p>
 <h1 id="intellectual-debt">Intellectual Debt</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/intellectual-debt-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -369,37 +408,11 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 </div>
 <p>Early reactions to the General Data Protection Regulation by companies seem to have been fairly wary, but if we view the principles outlined in the GDPR as good practice, rather than regulation, it feels like companies can only improve their internal data ecosystems by conforming to the GDPR. For this reason, I like to think of the initials as standing for “Good Data Practice Rules” rather than General Data Protection Regulation. In particular, the term “data protection” is a misnomer, and indeed the earliest <a href="https://en.wikipedia.org/wiki/Convention_for_the_protection_of_individuals_with_regard_to_automatic_processing_of_personal_data">data protection directive from the EU</a> (from 1981) refers to the protection of <em>individuals</em> with regard to the automatic processing of personal data, which is a much better sense of the term.</p>
 <p>If we think of the legislation as protecting individuals, and we note that it seeks, and instead of viewing it as regulation, we view it as “Wouldn’t it be good if …,” e.g. in respect to the <a href="https://en.wikipedia.org/wiki/Right_to_explanation">“right to an explanation”</a>, we might suggest: “Wouldn’t it be good if we could explain why our automated decision making system made a particular decison.” That seems like good practice for an organization’s automated decision making systems.</p>
-<p>Similarly, with regard to data minimization principles. Retaing the minimum amount of personal data needed to drive decisions could well lead to <em>better</em> decision making as it causes us to become intentional about which data is used rather than the sloppier thinking that “more is better” encourages. Particularly when we consider that to be truly useful data has to be cleaned and maintained.</p>
+<p>Similarly, with regard to data minimization principles. Retaining the minimum amount of personal data needed to drive decisions could well lead to <em>better</em> decision making as it causes us to become intentional about which data is used rather than the sloppier thinking that “more is better” encourages. Particularly when we consider that to be truly useful data has to be cleaned and maintained.</p>
 <p>If GDPR is truly reflecting the interests of individuals, then it is also reflecting the interests of consumers, patients, users etc, each of whom make use of these systems. For any company that is customer facing, or any service that prides itself on the quality of its delivery to those individuals, “good data practice” should become part of the DNA of the organization.</p>
-<h2 id="statistical-emulation">Statistical Emulation</h2>
+<h2 id="emulation">Emulation</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<div class="figure">
-<div id="met-office-unified-model-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="met-office-unified-model-magnify" class="magnify" onclick="magnifyFigure(&#39;met-office-unified-model&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="met-office-unified-model-caption" class="caption-frame">
-<p>Figure: The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.</p>
-</div>
-</div>
-<p>In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. Interestingly, the UK Met office uses the same code for both, it has a <a href="https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/index">“Unified Model” approach</a>, but they operate climate simulations one at greater spatial and temporal resolutions.</p>
-<div class="figure">
-<div id="statistical-emulation-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="statistical-emulation-1-caption" class="caption-frame">
-<p>Figure: Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
-</div>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/statistical-emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/statistical-emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <div class="figure">
 <div id="statistical-emulation-2-figure" class="figure-frame">
@@ -429,7 +442,6 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 <p>As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.</p>
 <p>Similarly, the emulator can adjudicate between simulations. This is known as <em>multi-fidelity emulation</em>. The emulator characterizes which emulations perform well where.</p>
 <p>If all this modelling is done with judiscious handling of the uncertainty, the <em>computational doubt</em>, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.</p>
-<p>The first tutorial I saw on Gaussian processes was given by <a href="https://homepages.inf.ed.ac.uk/ckiw/">Chris Williams</a> at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, <a href="https://www.microsoft.com/en-us/research/people/cmbishop/">Chris Bishop</a> (now Director of Microsoft Research in Cambridge).</p>
 <h2 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -534,15 +546,6 @@ domain.-->
 <p>Figure: A potential path of models in a machine learning system.</p>
 </div>
 </div>
-<h2 id="thanks">Thanks!</h2>
-<p>For more information on these subjects and more you might want to check the following resources.</p>
-<ul>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-</ul>
-<h1 id="references">References</h1>
 <div class="figure">
 <div id="statistical-emulation-5-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/uq/statistical-emulation004.svg" width="80%" style=" ">
@@ -557,7 +560,7 @@ domain.-->
 </div>
 <h2 id="conclusion">Conclusion</h2>
 <p>Today’s artificial intelligence is fundamentally Machine Learning Systems design, but the systems we are building will not fulfill the promises we are making for them. We are not yet ready to deploy automation in fully uncontrolled environments. Until we modify our approaches we will not be able to deliver on the promise. Until then, monitoring and upadate of deployed systems will be key to practical and safe AI.</p>
-<h2 id="thanks-1">Thanks!</h2>
+<h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
@@ -565,8 +568,11 @@ domain.-->
 <li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
-<h1 class="unnumbered" id="references-1">References</h1>
+<h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Brooks:mythical75" class="csl-entry" role="doc-biblioentry">
+Brooks, F., n.d. The mythical man-month. Addison-Wesley.
+</div>
 <div id="ref-Damianou:manifold12" class="csl-entry" role="doc-biblioentry">
 Damianou, A., Ek, C.H., Titsias, M.K., Lawrence, N.D., n.d. Manifold relevance determination.
 </div>

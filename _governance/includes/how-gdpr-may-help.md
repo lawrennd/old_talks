@@ -3,7 +3,12 @@
 
 \edit
 
+
 \section{How the GDPR May Help}
+
+\newslide{}
+
+\slides{\aligncenter{Convention for the Protection of *Individuals* with regard to Automatic Processing of *Personal Data* (1981/1/28)}}
 
 \newslide{How GDPR May Help}
 \slides{
@@ -15,7 +20,7 @@
 
 If we think of the legislation as protecting individuals, and we note that it seeks, and instead of viewing it as regulation, we view it as "Wouldn't it be good if ...", e.g. in respect to the ["right to an explanation"](https://en.wikipedia.org/wiki/Right_to_explanation), we might suggest: "Wouldn't it be good if we could explain why our automated decision making system made a particular decison". That seems like good practice for an organization's automated decision making systems.
 
-Similarly, with regard to data minimization principles. Retaing the minimum amount of personal data needed to drive decisions could well lead to *better* decision making as it causes us to become intentional about which data is used rather than the sloppier thinking that "more is better" encourages. Particularly when we consider that to be truly useful data has to be cleaned and maintained.
+Similarly, with regard to data minimization principles. Retaining the minimum amount of personal data needed to drive decisions could well lead to *better* decision making as it causes us to become intentional about which data is used rather than the sloppier thinking that "more is better" encourages. Particularly when we consider that to be truly useful data has to be cleaned and maintained.
 
 If GDPR is truly reflecting the interests of individuals, then it is also reflecting the interests of consumers, patients, users etc, each of whom make use of these systems. For any company that is customer facing, or any service that prides itself on the quality of its delivery to those individuals, "good data practice" should become part of the DNA of the organization.}
 
