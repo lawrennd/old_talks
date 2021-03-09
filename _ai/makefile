@@ -1,3 +1,3 @@
-BASE=laplaces-gremlin-uncertainty-and-artificial-intelligence
+BASE=interpretable-models
 include ../make-talk-flags.mk
 include ../make-talk.mk
