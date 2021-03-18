@@ -3,8 +3,8 @@
 
 \editme
 
-\include{_includes/uq/mountain-car-multi-fidelity-introduction.md}
-\include{_includes/uq/mountain-car-multi-fidelity-solution.md}
+\include{_uq/includes/mountain-car-multi-fidelity-introduction.md}
+\include{_uq/includes/mountain-car-multi-fidelity-solution.md}
 
 
 \endif
