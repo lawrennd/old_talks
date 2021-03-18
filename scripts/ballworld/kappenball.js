@@ -138,8 +138,15 @@ var context = {
 kappenball = new Kappenball(objects, params, simulation, boundaries, context, colors);
 
 function clickReporter(event, game) {
-    const rect = game.context.canvas.getBoundingClientRect()
-    const x = event.clientX - rect.left
+    const rect = game.context.canvas.getBoundingClientRect();
+    const backgroundColor = game.context.canvas.style.backgroundColor;
+    const x = event.clientX - rect.left;
+
+    game.context.canvas.style.backgroundColor = "rgb(0, 0, 0)";
+    game.draw();
+    game.context.canvas.style.backgroundColor = "rgb(255, 255, 255)";
+    game.draw();
+    game.context.canvas.style.backgroundColor = backgroundColor;
     if(x > game.context.canvas.width/2) {
 	game.pushLeft(20.0)
     } else {
