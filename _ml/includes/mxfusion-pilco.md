@@ -29,17 +29,19 @@ process:
 
 \notes{This notebook depends on MXNet, MXFusion and Open AI Gym. These packages can be installed into your Python environment by running the following commands.}
 
-```bash
-pip install mxnet mxfusion gym
-```
+\installCode{gym}
+\installCode{mxnet}
+\installCode{mxfusion}
 
-Set the global configuration.
+\notes{Set the global configuration.}
 
 \setupcode{import os
+import gym
+import mxnet
+import mxfusion
 os.environ['MXNET_ENGINE_TYPE'] = 'NaiveEngine'
 from mxfusion.common import config
-config.DEFAULT_DTYPE = 'float64'
-%matplotlib inline}
+config.DEFAULT_DTYPE = 'float64'}
 
 \newslide{Example: Pendulum}
 
@@ -66,8 +68,8 @@ encodes the angular speed of the pendulum. The action space is a 1D vector in
 
 We write a helper function for executing the environment with a given policy.}
 
-\setupcode{import numpy as np
-import matplotlib.pyplot as plt
+\setupcode{import numpy as np}
+\setupplotcode{import matplotlib.pyplot as plt
 from matplotlib import animation}
 
 \code{def run_one_episode(env, policy, initial_state=None, max_steps=200, verbose=False, render=False):
