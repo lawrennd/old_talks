@@ -15,6 +15,8 @@
 
 \newslide{MxFusion}
 
+\ericMeissner{15%}\zhenwenDai{15%}
+
 \figure{\columns{
 
 * Work by Eric Meissner and Zhenwen Dai.
