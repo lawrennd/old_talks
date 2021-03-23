@@ -29,10 +29,11 @@ transition: None
 
 \include{_ai/includes/embodiment-factors-celsius.md}
 \include{_ai/includes/conversation-tedx.md}
-\include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}
-
 \include{_ml/includes/data-science-vs-ai.md}
+
+\include{_ai/includes/buying-system.md}
+\include{_ai/includes/buying-to-banking.md}
 
 \slides{
 \newslide{Intellectual Debt}
@@ -40,10 +41,17 @@ transition: None
 \figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
 
 }
-\notes{\include{_ai/includes/intellectual-debt-short.md}}
+
+\include{_business/includes/bezos-question-mark-email.md}
+\include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/fit-systems.md}
-\include{_ai/includes/buying-system.md}
-\include{_ai/includes/buying-to-banking.md}
+
+
+\thanks
+
+\references
+
+
 
 \include{_governance/includes/how-gdpr-may-help.md}
 
@@ -55,12 +63,6 @@ transition: None
 \include{_gp/includes/gp-intro-very-short.md}
 
 \include{_uq/includes/deep-emulation.md}
-
-
-\thanks
-
-\references
-
 
 
 

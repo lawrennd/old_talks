@@ -15,10 +15,13 @@ venue: Data Centric Engineering, University of Sheffield
 transition: None
 ---
 
-\include{talk-macros.tex}
+\include{talk-macros.gpp}
+
+\include{_physics/includes/laplaces-demon.md}
+\include{_physics/includes/emergent-behaviour.md}
+\include{_physics/includes/laplaces-gremlin.md}
 
 \include{_ai/includes/centrifugal-governor.md}
-
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ml/includes/process-automation.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
