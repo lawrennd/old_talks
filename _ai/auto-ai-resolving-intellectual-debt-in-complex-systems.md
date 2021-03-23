@@ -1,6 +1,5 @@
 ---
-title: "Auto AI"
-subtitle: "Resolving Intellectual Debt in Complex Systems"
+title: "Auto AI: Resolving Intellectual Debt in Complex Systems"
 abstract: >
   Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the current revolution in “artificial intelligence” that has dominated popular press headlines and is having a significant influence on the wider tech agenda. 
   
@@ -25,7 +24,6 @@ transition: None
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 
-\include{_software/includes/separation-of-concerns.md}
 
 \include{_ai/includes/embodiment-factors-celsius.md}
 \include{_ai/includes/conversation-tedx.md}
