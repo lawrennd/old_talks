@@ -35,6 +35,8 @@ transition: None
 \include{_ai/includes/buying-system.md}
 \include{_ai/includes/buying-to-banking.md}
 
+\include{_business/includes/bezos-question-mark-email.md}
+
 \slides{
 \newslide{Intellectual Debt}
 
@@ -42,16 +44,16 @@ transition: None
 
 }
 
-\include{_business/includes/bezos-question-mark-email.md}
-\include{_ai/includes/intellectual-debt-short.md}
+\notes{\include{_ai/includes/intellectual-debt-short.md}}
 \include{_ai/includes/fit-systems.md}
 
 
 \thanks
 
-\references
 
 
+
+\subsection{Appendices}
 
 \include{_governance/includes/how-gdpr-may-help.md}
 
@@ -64,6 +66,7 @@ transition: None
 
 \include{_uq/includes/deep-emulation.md}
 
+\references
 
 
 
