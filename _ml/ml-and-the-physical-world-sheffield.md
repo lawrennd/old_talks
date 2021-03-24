@@ -1,7 +1,22 @@
 ---
 title: "Machine Learning and the Physical World"
-abstract: >
-  Machine learning is a data driven endeavour, but real world systems are physical and mechanistic. In this talk we will review approaches to integrating machine learning with real world systems. Our focus will be on emulation (otherwise known as surrogate modeling). 
+abstract: |
+  Machine learning technologies have underpinned the recent revolution
+  in artificial intelligence. But at their heart, they are simply data
+  driven decision making algorithms. While the popular press is filled
+  with the achievements of these algorithms in important domains such
+  as object detection in images, machine translation and speech
+  recognition, there are still many open questions about how these
+  technologies might be implemented in domains where we have existing
+  solutions but we are constantly looking for improvements. Roughly
+  speaking, we characterise this domain as “machine learning in the
+  physical world”. How do we design, build and deploy machine learning
+  algorithms that are part of a decision making system that interacts
+  with the physical world around us. In particular, machine learning
+  is a data driven endeavour, but real world systems are physical and
+  mechanistic. In this talk we will introduce some of the challenges
+  for this domain and and propose some ways forward in terms of
+  solutions.
 ipynb: True
 author:
 - family: Lawrence
