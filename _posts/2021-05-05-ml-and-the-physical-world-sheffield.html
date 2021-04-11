@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning and the Physical World"
 venue: "Data Centric Engineering, University of Sheffield"
-abstract: "<p>Machine learning is a data driven endeavour, but real world systems are physical and mechanistic. In this talk we will review approaches to integrating machine learning with real world systems. Our focus will be on emulation (otherwise known as surrogate modeling).</p>"
+abstract: "<p>Machine learning technologies have underpinned the recent revolution in artificial intelligence. But at their heart, they are simply data driven decision making algorithms. While the popular press is filled with the achievements of these algorithms in important domains such as object detection in images, machine translation and speech recognition, there are still many open questions about how these technologies might be implemented in domains where we have existing solutions but we are constantly looking for improvements. Roughly speaking, we characterise this domain as “machine learning in the physical world.” How do we design, build and deploy machine learning algorithms that are part of a decision making system that interacts with the physical world around us. In particular, machine learning is a data driven endeavour, but real world systems are physical and mechanistic. In this talk we will introduce some of the challenges for this domain and and propose some ways forward in terms of solutions.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -30,6 +30,289 @@ categories:
 <!--
 
 -->
+<h2 id="laplaces-demon">Laplace’s Demon</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_physics/includes/laplaces-demon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_physics/includes/laplaces-demon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2&amp;output=embed" width="700" height="500">
+</iframe>
+<div class="figure">
+<div id="laplaces-demon-cropped-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/physics/philosophicaless00lapliala_16_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="laplaces-demon-cropped-magnify" class="magnify" onclick="magnifyFigure(&#39;laplaces-demon-cropped&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="laplaces-demon-cropped-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<blockquote>
+<p><em>Philosophical Essay on Probabilities</em> <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 3</p>
+</blockquote>
+<center>
+<span class="math display">\[
+\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span>
+</center>
+<blockquote>
+<p>If we do discover a theory of everything … it would be the ultimate triumph of human reason-for then we would truly know the mind of God</p>
+<p>Stephen Hawking in <em>A Brief History of Time</em> 1988</p>
+</blockquote>
+<h2 id="emergent-behaviour">Emergent Behaviour</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_physics/includes/emergent-behaviour.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_physics/includes/emergent-behaviour.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<h2 id="life-rules">Life Rules</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-rules.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-rules.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="life-rules-loneliness-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="../slides/diagrams/simulation/life-rules-1-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>loneliness</em>
+</center>
+<center>
+<object class="svgplot " data="../slides/diagrams/util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="../slides/diagrams/simulation/life-rules-1-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+<div id="life-rules-loneliness-magnify" class="magnify" onclick="magnifyFigure(&#39;life-rules-loneliness&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-rules-loneliness-caption" class="caption-frame">
+<p>Figure: ‘Death’ through loneliness in Conway’s game of life. If a cell is surrounded by less than three cells, it ‘dies’ through loneliness.</p>
+</div>
+</div>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="../slides/diagrams/simulation/life-rules-2-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>overcrowding</em>
+</center>
+<center>
+<object class="svgplot " data="../slides/diagrams/util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="../slides/diagrams/simulation/life-rules-2-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+<div id="life-rules-crowding-magnify" class="magnify" onclick="magnifyFigure(&#39;life-rules-crowding&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-rules-crowding-caption" class="caption-frame">
+<p>Figure: ‘Death’ through overpopulation in Conway’s game of life. If a cell is surrounded by more than three cells, it ‘dies’ through loneliness.</p>
+</div>
+</div>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="../slides/diagrams/simulation/life-rules-3-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>birth</em>
+</center>
+<center>
+<object class="svgplot " data="../slides/diagrams/util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="../slides/diagrams/simulation/life-rules-3-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+<div id="life-rules-crowding-magnify" class="magnify" onclick="magnifyFigure(&#39;life-rules-crowding&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-rules-crowding-caption" class="caption-frame">
+<p>Figure: Birth in Conway’s life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.</p>
+</div>
+</div>
+<p>Conway’s game of life has three simple rules.</p>
+<ul>
+<li><strong>Survival</strong> Every cell surrounded by two or three other cells survives for the next turn.</li>
+<li><strong>Death</strong> Each cell surrounded by four or more cells dies from overpopulation. Likewise, every cell next to one or no cells at all dies from isolation.</li>
+<li><strong>Birth</strong> Each square adjacent to exactly three cells gives birth to a new cell.</li>
+</ul>
+<h2 id="loafers-and-gliders">Loafers and Gliders</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-glider-loafer-conway.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-glider-loafer-conway.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="glider-loafer-conway-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Glider (1969)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/simulation/Glider.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="glider-loafer-conway-magnify" class="magnify" onclick="magnifyFigure(&#39;glider-loafer-conway&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="glider-loafer-conway-caption" class="caption-frame">
+<p>Figure: <em>Left</em> A Glider pattern discovered 1969 by Richard K. Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).</p>
+</div>
+</div>
+<div class="figure">
+<div id="glider-loafer-conway-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Loafer (2013)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/simulation/Loafer.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="glider-loafer-conway-magnify" class="magnify" onclick="magnifyFigure(&#39;glider-loafer-conway&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="glider-loafer-conway-caption" class="caption-frame">
+<p>Figure: <em>Left</em> A Loafer pattern discovered by Josh Ball in 2013. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).</p>
+</div>
+</div>
+<h2 id="laplaces-gremlin">Laplace’s Gremlin</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_physics/includes/laplaces-gremlin.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_physics/includes/laplaces-gremlin.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="probability-relative-in-part-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/physics/philosophicaless00lapliala_18_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="probability-relative-in-part-magnify" class="magnify" onclick="magnifyFigure(&#39;probability-relative-in-part&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="probability-relative-in-part-caption" class="caption-frame">
+<p>Figure: To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.</p>
+</div>
+</div>
+<blockquote>
+<p><em>Philosophical Essay on Probabilities</em> <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 5</p>
+</blockquote>
+<div class="figure">
+<div id="germlins-think-its-fun-to-hurt-you-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ai/gremlins-think-its-fun-to-hurt-you.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="germlins-think-its-fun-to-hurt-you-magnify" class="magnify" onclick="magnifyFigure(&#39;germlins-think-its-fun-to-hurt-you&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="germlins-think-its-fun-to-hurt-you-caption" class="caption-frame">
+<p>Figure: Gremlins are seen as the cause of a number of challenges in this World War II poster.</p>
+</div>
+</div>
 <h2 id="the-centrifugal-governor">The Centrifugal Governor</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -817,13 +1100,14 @@ Maren Mahsereci
 <p>Common reinforcement learning methods suffer from data inefficiency, which can be a issue in real world applications where gathering sufficiently large amounts of data pose economic issues and may be impossible. propose a model-based policy search method known as PILCO in part to address this issue. PILCO uses a Gaussian process (GP) for learning the dynamics of the environment and optimizes a parametric policy function using the learned dynamics model.</p>
 <p>We construct an implementation of PILCO using MXFusion. This implementation follows the main idea of PILCO and has a few enhancements in addition to the published implementation. The enhancements are as follows: * <strong>Use Monte Carlo integration instead of moment estimation.</strong> We approximate the expected reward using Monte Carlo integration instead of the proposed moment estimation approach. This removes the bias in the expected reward computation and enables a wide range of choices of kernels and policy functions. In the original work, only RBF and linear kernel and only linear and RBF network policy can be used. * <strong>Use automatic differentiation.</strong> Thanks to automatic differentiation, no gradient derivation is needed. * <strong>A unified interface of Gaussian process.</strong> MXFusion provides an unified inferface of GP modules. We allows us to easily switch among plan GP, variational sparse GP and stocastic variational GP implementations.</p>
 <p>This notebook depends on MXNet, MXFusion and Open AI Gym. These packages can be installed into your Python environment by running the following commands.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install mxnet mxfusion gym</span></code></pre></div>
 <p>Set the global configuration.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">&#39;MXNET_ENGINE_TYPE&#39;</span>] <span class="op">=</span> <span class="st">&#39;NaiveEngine&#39;</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.common <span class="im">import</span> config</span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>config.DEFAULT_DTYPE <span class="op">=</span> <span class="st">&#39;float64&#39;</span></span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gym</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mxnet</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mxfusion</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">&#39;MXNET_ENGINE_TYPE&#39;</span>] <span class="op">=</span> <span class="st">&#39;NaiveEngine&#39;</span></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.common <span class="im">import</span> config</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>config.DEFAULT_DTYPE <span class="op">=</span> <span class="st">&#39;float64&#39;</span></span></code></pre></div>
 <p>We use the inverted pendulum swingup problem as an example. We use the <a href="https://gym.openai.com/envs/Pendulum-v0/">Pendulum-v0</a> environment in Open AI Gym. The task is to swing the pendulum up and balance it at the inverted position. This is a classical control problem and is known to be unsolvable with a linear controller.</p>
 <p>To solve this problem with PILCO, we need three components:</p>
 <ul>
@@ -833,62 +1117,60 @@ Maren Mahsereci
 </ul>
 <p>The overall PILCO algorithm is to iterate the above three steps until a policy that can solve the problem is found.</p>
 <h2 id="execute-the-environment">Execute the Environment</h2>
-<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gym</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> gym.make(<span class="st">&#39;Pendulum-v0&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gym</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> gym.make(<span class="st">&#39;Pendulum-v0&#39;</span>)</span></code></pre></div>
 <p>The state of the pendulum environment is a 3D vector. The first two dimensions are the 2D location of the end point of the pendulum. The third dimension encodes the angular speed of the pendulum. The action space is a 1D vector in [-2, 2].</p>
 <p>We write a helper function for executing the environment with a given policy.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> animation</span></code></pre></div>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_one_episode(env, policy, initial_state<span class="op">=</span><span class="va">None</span>, max_steps<span class="op">=</span><span class="dv">200</span>, verbose<span class="op">=</span><span class="va">False</span>, render<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Drives an episode of the OpenAI gym environment using the policy to decide next actions.</span></span>
-<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>    observation <span class="op">=</span> env.reset()</span>
-<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> initial_state <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>        env.env.state <span class="op">=</span> initial_state</span>
-<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>        observation <span class="op">=</span> env.env._get_obs()</span>
-<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>    env._max_episode_steps <span class="op">=</span> max_steps</span>
-<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a>    step_idx <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a>    done <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a>    total_reward <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a>    frames <span class="op">=</span> []</span>
-<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>    all_actions <span class="op">=</span> []</span>
-<span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a>    all_observations <span class="op">=</span> [observation]</span>
-<span id="cb75-16"><a href="#cb75-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> done:</span>
-<span id="cb75-17"><a href="#cb75-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> render:</span>
-<span id="cb75-18"><a href="#cb75-18" aria-hidden="true" tabindex="-1"></a>            frames.append(env.render(mode <span class="op">=</span> <span class="st">&#39;rgb_array&#39;</span>))</span>
-<span id="cb75-19"><a href="#cb75-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> verbose:</span>
-<span id="cb75-20"><a href="#cb75-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(observation)</span>
-<span id="cb75-21"><a href="#cb75-21" aria-hidden="true" tabindex="-1"></a>        action <span class="op">=</span> policy(observation)</span>
-<span id="cb75-22"><a href="#cb75-22" aria-hidden="true" tabindex="-1"></a>        observation, reward, done, info <span class="op">=</span> env.step(action)</span>
-<span id="cb75-23"><a href="#cb75-23" aria-hidden="true" tabindex="-1"></a>        all_observations.append(observation)</span>
-<span id="cb75-24"><a href="#cb75-24" aria-hidden="true" tabindex="-1"></a>        all_actions.append(action)</span>
-<span id="cb75-25"><a href="#cb75-25" aria-hidden="true" tabindex="-1"></a>        total_reward <span class="op">+=</span> reward</span>
-<span id="cb75-26"><a href="#cb75-26" aria-hidden="true" tabindex="-1"></a>        step_idx <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb75-27"><a href="#cb75-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> done <span class="kw">or</span> step_idx<span class="op">&gt;=</span>max_steps<span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb75-28"><a href="#cb75-28" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;Episode finished after </span><span class="sc">{}</span><span class="st"> timesteps because </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(step_idx<span class="op">+</span><span class="dv">1</span>, <span class="st">&quot;&#39;done&#39; reached&quot;</span> <span class="cf">if</span> done <span class="cf">else</span> <span class="st">&quot;Max timesteps reached&quot;</span>))</span>
-<span id="cb75-29"><a href="#cb75-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb75-30"><a href="#cb75-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> render:</span>
-<span id="cb75-31"><a href="#cb75-31" aria-hidden="true" tabindex="-1"></a>        fig <span class="op">=</span> plt.figure()</span>
-<span id="cb75-32"><a href="#cb75-32" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> fig.gca()</span>
-<span id="cb75-33"><a href="#cb75-33" aria-hidden="true" tabindex="-1"></a>        fig.tight_layout()</span>
-<span id="cb75-34"><a href="#cb75-34" aria-hidden="true" tabindex="-1"></a>        patch <span class="op">=</span> ax.imshow(frames[<span class="dv">0</span>])</span>
-<span id="cb75-35"><a href="#cb75-35" aria-hidden="true" tabindex="-1"></a>        ax.axis(<span class="st">&#39;off&#39;</span>)</span>
-<span id="cb75-36"><a href="#cb75-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> animate(i):</span>
-<span id="cb75-37"><a href="#cb75-37" aria-hidden="true" tabindex="-1"></a>            patch.set_data(frames[i])</span>
-<span id="cb75-38"><a href="#cb75-38" aria-hidden="true" tabindex="-1"></a>        anim <span class="op">=</span> animation.FuncAnimation(plt.gcf(), animate, frames <span class="op">=</span> <span class="bu">len</span>(frames), interval<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb75-39"><a href="#cb75-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total_reward, np.array(all_observations, dtype<span class="op">=</span>np.float64,), np.array(all_actions, dtype<span class="op">=</span>np.float64), anim</span>
-<span id="cb75-40"><a href="#cb75-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb75-41"><a href="#cb75-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total_reward, np.array(all_observations, dtype<span class="op">=</span>np.float64,), np.array(all_actions, dtype<span class="op">=</span>np.float64)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_one_episode(env, policy, initial_state<span class="op">=</span><span class="va">None</span>, max_steps<span class="op">=</span><span class="dv">200</span>, verbose<span class="op">=</span><span class="va">False</span>, render<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Drives an episode of the OpenAI gym environment using the policy to decide next actions.</span></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>    observation <span class="op">=</span> env.reset()</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> initial_state <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>        env.env.state <span class="op">=</span> initial_state</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>        observation <span class="op">=</span> env.env._get_obs()</span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>    env._max_episode_steps <span class="op">=</span> max_steps</span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a>    step_idx <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>    done <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a>    total_reward <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a>    frames <span class="op">=</span> []</span>
+<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a>    all_actions <span class="op">=</span> []</span>
+<span id="cb74-15"><a href="#cb74-15" aria-hidden="true" tabindex="-1"></a>    all_observations <span class="op">=</span> [observation]</span>
+<span id="cb74-16"><a href="#cb74-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> done:</span>
+<span id="cb74-17"><a href="#cb74-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> render:</span>
+<span id="cb74-18"><a href="#cb74-18" aria-hidden="true" tabindex="-1"></a>            frames.append(env.render(mode <span class="op">=</span> <span class="st">&#39;rgb_array&#39;</span>))</span>
+<span id="cb74-19"><a href="#cb74-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> verbose:</span>
+<span id="cb74-20"><a href="#cb74-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(observation)</span>
+<span id="cb74-21"><a href="#cb74-21" aria-hidden="true" tabindex="-1"></a>        action <span class="op">=</span> policy(observation)</span>
+<span id="cb74-22"><a href="#cb74-22" aria-hidden="true" tabindex="-1"></a>        observation, reward, done, info <span class="op">=</span> env.step(action)</span>
+<span id="cb74-23"><a href="#cb74-23" aria-hidden="true" tabindex="-1"></a>        all_observations.append(observation)</span>
+<span id="cb74-24"><a href="#cb74-24" aria-hidden="true" tabindex="-1"></a>        all_actions.append(action)</span>
+<span id="cb74-25"><a href="#cb74-25" aria-hidden="true" tabindex="-1"></a>        total_reward <span class="op">+=</span> reward</span>
+<span id="cb74-26"><a href="#cb74-26" aria-hidden="true" tabindex="-1"></a>        step_idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb74-27"><a href="#cb74-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> done <span class="kw">or</span> step_idx<span class="op">&gt;=</span>max_steps<span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb74-28"><a href="#cb74-28" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;Episode finished after </span><span class="sc">{}</span><span class="st"> timesteps because </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(step_idx<span class="op">+</span><span class="dv">1</span>, <span class="st">&quot;&#39;done&#39; reached&quot;</span> <span class="cf">if</span> done <span class="cf">else</span> <span class="st">&quot;Max timesteps reached&quot;</span>))</span>
+<span id="cb74-29"><a href="#cb74-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb74-30"><a href="#cb74-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> render:</span>
+<span id="cb74-31"><a href="#cb74-31" aria-hidden="true" tabindex="-1"></a>        fig <span class="op">=</span> plt.figure()</span>
+<span id="cb74-32"><a href="#cb74-32" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> fig.gca()</span>
+<span id="cb74-33"><a href="#cb74-33" aria-hidden="true" tabindex="-1"></a>        fig.tight_layout()</span>
+<span id="cb74-34"><a href="#cb74-34" aria-hidden="true" tabindex="-1"></a>        patch <span class="op">=</span> ax.imshow(frames[<span class="dv">0</span>])</span>
+<span id="cb74-35"><a href="#cb74-35" aria-hidden="true" tabindex="-1"></a>        ax.axis(<span class="st">&#39;off&#39;</span>)</span>
+<span id="cb74-36"><a href="#cb74-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> animate(i):</span>
+<span id="cb74-37"><a href="#cb74-37" aria-hidden="true" tabindex="-1"></a>            patch.set_data(frames[i])</span>
+<span id="cb74-38"><a href="#cb74-38" aria-hidden="true" tabindex="-1"></a>        anim <span class="op">=</span> animation.FuncAnimation(plt.gcf(), animate, frames <span class="op">=</span> <span class="bu">len</span>(frames), interval<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb74-39"><a href="#cb74-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total_reward, np.array(all_observations, dtype<span class="op">=</span>np.float64,), np.array(all_actions, dtype<span class="op">=</span>np.float64), anim</span>
+<span id="cb74-40"><a href="#cb74-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb74-41"><a href="#cb74-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total_reward, np.array(all_observations, dtype<span class="op">=</span>np.float64,), np.array(all_actions, dtype<span class="op">=</span>np.float64)</span></code></pre></div>
 <p>We first apply a random policy and see how the environment reacts. The random policy uniformly samples in the space of action.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> random_policy(state):</span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> env.action_space.sample()</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> random_policy(state):</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> env.action_space.sample()</span></code></pre></div>
 <p>The animation is generated with the following commands:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> run_one_episode(env, random_policy, max_steps<span class="op">=</span><span class="dv">500</span>, render<span class="op">=</span><span class="va">True</span>, verbose<span class="op">=</span><span class="va">False</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;animation_random_policy.html&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>    f.write(anim.to_jshtml())</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> run_one_episode(env, random_policy, max_steps<span class="op">=</span><span class="dv">500</span>, render<span class="op">=</span><span class="va">True</span>, verbose<span class="op">=</span><span class="va">False</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;animation_random_policy.html&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>    f.write(anim.to_jshtml())</span></code></pre></div>
 <h2 id="pendulum">Pendulum</h2>
 <div class="figure">
 <div id="pendulum-random-policy-figure" class="figure-frame">
@@ -906,102 +1188,102 @@ Maren Mahsereci
 p(y_{t+1}|y_t, a_t)
 \]</span> where <span class="math inline">\(y_t\)</span> is the state vector at the time <span class="math inline">\(t\)</span> and <span class="math inline">\(a_t\)</span> is the action taken at the time <span class="math inline">\(t\)</span>.</p>
 <p>PILCO uses a Gaussian process to model the above dynamics.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prepare_data(state_list, action_list, win_in):</span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Prepares a list of states and a list of actions as inputs to the Gaussian Process for training.</span></span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>    X_list <span class="op">=</span> []</span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>    Y_list <span class="op">=</span> []</span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> state_array, action_array <span class="kw">in</span> <span class="bu">zip</span>(state_list, action_list):</span>
-<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the state and action array shape should be aligned.</span></span>
-<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> state_array.shape[<span class="dv">0</span>]<span class="op">-</span><span class="dv">1</span> <span class="op">==</span> action_array.shape[<span class="dv">0</span>]</span>
-<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(state_array.shape[<span class="dv">0</span>]<span class="op">-</span>win_in):</span>
-<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>            Y_list.append(state_array[i<span class="op">+</span>win_in:i<span class="op">+</span>win_in<span class="op">+</span><span class="dv">1</span>])</span>
-<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a>            X_list.append(np.hstack([state_array[i:i<span class="op">+</span>win_in].flatten(), action_array[i:i<span class="op">+</span>win_in].flatten()]))</span>
-<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.vstack(X_list)</span>
-<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> np.vstack(Y_list)</span>
-<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X, Y</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prepare_data(state_list, action_list, win_in):</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Prepares a list of states and a list of actions as inputs to the Gaussian Process for training.</span></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>    X_list <span class="op">=</span> []</span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>    Y_list <span class="op">=</span> []</span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> state_array, action_array <span class="kw">in</span> <span class="bu">zip</span>(state_list, action_list):</span>
+<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the state and action array shape should be aligned.</span></span>
+<span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> state_array.shape[<span class="dv">0</span>]<span class="op">-</span><span class="dv">1</span> <span class="op">==</span> action_array.shape[<span class="dv">0</span>]</span>
+<span id="cb77-12"><a href="#cb77-12" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb77-13"><a href="#cb77-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(state_array.shape[<span class="dv">0</span>]<span class="op">-</span>win_in):</span>
+<span id="cb77-14"><a href="#cb77-14" aria-hidden="true" tabindex="-1"></a>            Y_list.append(state_array[i<span class="op">+</span>win_in:i<span class="op">+</span>win_in<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb77-15"><a href="#cb77-15" aria-hidden="true" tabindex="-1"></a>            X_list.append(np.hstack([state_array[i:i<span class="op">+</span>win_in].flatten(), action_array[i:i<span class="op">+</span>win_in].flatten()]))</span>
+<span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.vstack(X_list)</span>
+<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> np.vstack(Y_list)</span>
+<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X, Y</span></code></pre></div>
 <p>In this example, we do a maximum likelihood estimate for the model hyper- parameters. In <code>MXFusion</code>, Gaussian process regression model is available as a module, which includes a dediated inference algorithm.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mxnet <span class="im">as</span> mx</span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion <span class="im">import</span> Model, Variable</span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.components.variables <span class="im">import</span> PositiveTransformation</span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.components.distributions.gp.kernels <span class="im">import</span> RBF</span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.modules.gp_modules <span class="im">import</span> GPRegression</span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.inference <span class="im">import</span> GradBasedInference, MAP</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mxnet <span class="im">as</span> mx</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion <span class="im">import</span> Model, Variable</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.components.variables <span class="im">import</span> PositiveTransformation</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.components.distributions.gp.kernels <span class="im">import</span> RBF</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.modules.gp_modules <span class="im">import</span> GPRegression</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.inference <span class="im">import</span> GradBasedInference, MAP</span></code></pre></div>
 <h2 id="define-and-fit-the-model">Define and fit the model</h2>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fit_model(state_list, action_list, win_in, verbose<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Fits a Gaussian Process model to the state / action pairs passed in. </span></span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co">    This creates a model of the environment which is used during</span></span>
-<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="co">    policy optimization instead of querying the environment directly.</span></span>
-<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="co">    See mxfusion.gp_modules for additional types of GP models to fit,</span></span>
-<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a><span class="co">    including Sparse GP and Stochastic Varitional Inference Sparse GP.</span></span>
-<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>    X, Y <span class="op">=</span> prepare_data(state_list, action_list, win_in)</span>
-<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> Model()</span>
-<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a>    m.N <span class="op">=</span> Variable()</span>
-<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>    m.X <span class="op">=</span> Variable(shape<span class="op">=</span>(m.N, X.shape[<span class="op">-</span><span class="dv">1</span>]))</span>
-<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>    m.noise_var <span class="op">=</span> Variable(shape<span class="op">=</span>(<span class="dv">1</span>,), transformation<span class="op">=</span>PositiveTransformation(),</span>
-<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>                           initial_value<span class="op">=</span><span class="fl">0.01</span>)</span>
-<span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a>    m.kernel <span class="op">=</span> RBF(input_dim<span class="op">=</span>X.shape[<span class="op">-</span><span class="dv">1</span>], variance<span class="op">=</span><span class="dv">1</span>, lengthscale<span class="op">=</span><span class="dv">1</span>, ARD<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a>    m.Y <span class="op">=</span> GPRegression.define_variable(</span>
-<span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a>        X<span class="op">=</span>m.X, kernel<span class="op">=</span>m.kernel, noise_var<span class="op">=</span>m.noise_var,</span>
-<span id="cb80-20"><a href="#cb80-20" aria-hidden="true" tabindex="-1"></a>        shape<span class="op">=</span>(m.N, Y.shape[<span class="op">-</span><span class="dv">1</span>]))</span>
-<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a>    m.Y.factor.gp_log_pdf.jitter <span class="op">=</span> <span class="fl">1e-6</span></span>
-<span id="cb80-22"><a href="#cb80-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-23"><a href="#cb80-23" aria-hidden="true" tabindex="-1"></a>    infr <span class="op">=</span> GradBasedInference(</span>
-<span id="cb80-24"><a href="#cb80-24" aria-hidden="true" tabindex="-1"></a>        inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.X, m.Y]))</span>
-<span id="cb80-25"><a href="#cb80-25" aria-hidden="true" tabindex="-1"></a>    infr.run(X<span class="op">=</span>mx.nd.array(X, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
-<span id="cb80-26"><a href="#cb80-26" aria-hidden="true" tabindex="-1"></a>             Y<span class="op">=</span>mx.nd.array(Y, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
-<span id="cb80-27"><a href="#cb80-27" aria-hidden="true" tabindex="-1"></a>             max_iter<span class="op">=</span><span class="dv">1000</span>, learning_rate<span class="op">=</span><span class="fl">0.1</span>, verbose<span class="op">=</span>verbose)</span>
-<span id="cb80-28"><a href="#cb80-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> m, infr, X, Y</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fit_model(state_list, action_list, win_in, verbose<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Fits a Gaussian Process model to the state / action pairs passed in. </span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="co">    This creates a model of the environment which is used during</span></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="co">    policy optimization instead of querying the environment directly.</span></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a><span class="co">    See mxfusion.gp_modules for additional types of GP models to fit,</span></span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="co">    including Sparse GP and Stochastic Varitional Inference Sparse GP.</span></span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>    X, Y <span class="op">=</span> prepare_data(state_list, action_list, win_in)</span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> Model()</span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>    m.N <span class="op">=</span> Variable()</span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>    m.X <span class="op">=</span> Variable(shape<span class="op">=</span>(m.N, X.shape[<span class="op">-</span><span class="dv">1</span>]))</span>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a>    m.noise_var <span class="op">=</span> Variable(shape<span class="op">=</span>(<span class="dv">1</span>,), transformation<span class="op">=</span>PositiveTransformation(),</span>
+<span id="cb79-16"><a href="#cb79-16" aria-hidden="true" tabindex="-1"></a>                           initial_value<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb79-17"><a href="#cb79-17" aria-hidden="true" tabindex="-1"></a>    m.kernel <span class="op">=</span> RBF(input_dim<span class="op">=</span>X.shape[<span class="op">-</span><span class="dv">1</span>], variance<span class="op">=</span><span class="dv">1</span>, lengthscale<span class="op">=</span><span class="dv">1</span>, ARD<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb79-18"><a href="#cb79-18" aria-hidden="true" tabindex="-1"></a>    m.Y <span class="op">=</span> GPRegression.define_variable(</span>
+<span id="cb79-19"><a href="#cb79-19" aria-hidden="true" tabindex="-1"></a>        X<span class="op">=</span>m.X, kernel<span class="op">=</span>m.kernel, noise_var<span class="op">=</span>m.noise_var,</span>
+<span id="cb79-20"><a href="#cb79-20" aria-hidden="true" tabindex="-1"></a>        shape<span class="op">=</span>(m.N, Y.shape[<span class="op">-</span><span class="dv">1</span>]))</span>
+<span id="cb79-21"><a href="#cb79-21" aria-hidden="true" tabindex="-1"></a>    m.Y.factor.gp_log_pdf.jitter <span class="op">=</span> <span class="fl">1e-6</span></span>
+<span id="cb79-22"><a href="#cb79-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-23"><a href="#cb79-23" aria-hidden="true" tabindex="-1"></a>    infr <span class="op">=</span> GradBasedInference(</span>
+<span id="cb79-24"><a href="#cb79-24" aria-hidden="true" tabindex="-1"></a>        inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.X, m.Y]))</span>
+<span id="cb79-25"><a href="#cb79-25" aria-hidden="true" tabindex="-1"></a>    infr.run(X<span class="op">=</span>mx.nd.array(X, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
+<span id="cb79-26"><a href="#cb79-26" aria-hidden="true" tabindex="-1"></a>             Y<span class="op">=</span>mx.nd.array(Y, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
+<span id="cb79-27"><a href="#cb79-27" aria-hidden="true" tabindex="-1"></a>             max_iter<span class="op">=</span><span class="dv">1000</span>, learning_rate<span class="op">=</span><span class="fl">0.1</span>, verbose<span class="op">=</span>verbose)</span>
+<span id="cb79-28"><a href="#cb79-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> m, infr, X, Y</span></code></pre></div>
 <h2 id="policy">Policy</h2>
 <p>PILCO computes the expected reward of a policy given the dynamics model. First, we need to define the parametric form of the policy. In this example, we use a neural network with one hidden layer. As the action space is [-2, 2], we apply a <code>tanh</code> transformation and multiply the come with two. This enforces the returned actions stay within the range.</p>
 <p>We define a neural network with one hidden layer and and output constrained between [-2,2] for the policy.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxnet.gluon <span class="im">import</span> HybridBlock</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxnet.gluon.nn <span class="im">import</span> Dense</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> NNController(HybridBlock):</span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Define a neural network policy network.&quot;&quot;&quot;</span></span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, prefix<span class="op">=</span><span class="va">None</span>, params<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(NNController, <span class="va">self</span>).<span class="fu">__init__</span>(prefix<span class="op">=</span>prefix, params<span class="op">=</span>params)</span>
-<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.dense1 <span class="op">=</span> Dense(<span class="dv">100</span>, in_units<span class="op">=</span><span class="bu">len</span>(env.observation_space.high), dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)</span>
-<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.dense2 <span class="op">=</span> Dense(<span class="dv">1</span>, in_units<span class="op">=</span><span class="dv">100</span>, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>, activation<span class="op">=</span><span class="st">&#39;tanh&#39;</span>)</span>
-<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hybrid_forward(<span class="va">self</span>, F, x):</span>
-<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">self</span>.dense2(<span class="va">self</span>.dense1(x))<span class="op">*</span><span class="dv">2</span> <span class="co"># Scale up the output</span></span>
-<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> out </span>
-<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a>policy <span class="op">=</span> NNController()</span>
-<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>policy.collect_params().initialize(mx.initializer.Xavier(magnitude<span class="op">=</span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxnet.gluon <span class="im">import</span> HybridBlock</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxnet.gluon.nn <span class="im">import</span> Dense</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> NNController(HybridBlock):</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Define a neural network policy network.&quot;&quot;&quot;</span></span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, prefix<span class="op">=</span><span class="va">None</span>, params<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(NNController, <span class="va">self</span>).<span class="fu">__init__</span>(prefix<span class="op">=</span>prefix, params<span class="op">=</span>params)</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.dense1 <span class="op">=</span> Dense(<span class="dv">100</span>, in_units<span class="op">=</span><span class="bu">len</span>(env.observation_space.high), dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)</span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.dense2 <span class="op">=</span> Dense(<span class="dv">1</span>, in_units<span class="op">=</span><span class="dv">100</span>, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>, activation<span class="op">=</span><span class="st">&#39;tanh&#39;</span>)</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hybrid_forward(<span class="va">self</span>, F, x):</span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">self</span>.dense2(<span class="va">self</span>.dense1(x))<span class="op">*</span><span class="dv">2</span> <span class="co"># Scale up the output</span></span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> out </span>
+<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>policy <span class="op">=</span> NNController()</span>
+<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>policy.collect_params().initialize(mx.initializer.Xavier(magnitude<span class="op">=</span><span class="dv">1</span>))</span></code></pre></div>
 <p>To compute the expected reward, we also need to define a reward function. This reward function is defined by us according to the task. The main component is the height of the pendulum. We also penalize the force and the angular momentum.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CostFunction(mx.gluon.HybridBlock):</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="co">    The goal is to get the pendulum upright and stable as quickly as possible.</span></span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Taken from the code for Pendulum.</span></span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hybrid_forward(<span class="va">self</span>, F, state, action):</span>
-<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a><span class="co">        :param state: [np.cos(theta), np.sin(theta), ~ momentum(theta)]</span></span>
-<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a><span class="co">        a -&gt; 0 when pendulum is upright, largest when pendulum is hanging down completely.</span></span>
-<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a><span class="co">        b -&gt; penalty for taking action</span></span>
-<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a><span class="co">        c -&gt; penalty for pendulum momentum</span></span>
-<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
-<span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a>        a_scale <span class="op">=</span> <span class="fl">2.</span></span>
-<span id="cb82-15"><a href="#cb82-15" aria-hidden="true" tabindex="-1"></a>        b_scale <span class="op">=</span> <span class="fl">.001</span></span>
-<span id="cb82-16"><a href="#cb82-16" aria-hidden="true" tabindex="-1"></a>        c_scale <span class="op">=</span> <span class="fl">.1</span></span>
-<span id="cb82-17"><a href="#cb82-17" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> F.<span class="bu">sum</span>(a_scale <span class="op">*</span> (state[:,:,<span class="dv">0</span>:<span class="dv">1</span>] <span class="op">-</span><span class="dv">1</span>) <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
-<span id="cb82-18"><a href="#cb82-18" aria-hidden="true" tabindex="-1"></a>        b <span class="op">=</span> F.<span class="bu">sum</span>(b_scale <span class="op">*</span> action <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
-<span id="cb82-19"><a href="#cb82-19" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> F.<span class="bu">sum</span>(c_scale <span class="op">*</span> state[:,:,<span class="dv">2</span>:<span class="dv">3</span>] <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
-<span id="cb82-20"><a href="#cb82-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (a <span class="op">+</span> c <span class="op">+</span> b)</span>
-<span id="cb82-21"><a href="#cb82-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb82-22"><a href="#cb82-22" aria-hidden="true" tabindex="-1"></a>cost <span class="op">=</span> CostFunction()</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CostFunction(mx.gluon.HybridBlock):</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="co">    The goal is to get the pendulum upright and stable as quickly as possible.</span></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Taken from the code for Pendulum.</span></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hybrid_forward(<span class="va">self</span>, F, state, action):</span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a><span class="co">        :param state: [np.cos(theta), np.sin(theta), ~ momentum(theta)]</span></span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a><span class="co">        a -&gt; 0 when pendulum is upright, largest when pendulum is hanging down completely.</span></span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a><span class="co">        b -&gt; penalty for taking action</span></span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a><span class="co">        c -&gt; penalty for pendulum momentum</span></span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>        a_scale <span class="op">=</span> <span class="fl">2.</span></span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a>        b_scale <span class="op">=</span> <span class="fl">.001</span></span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>        c_scale <span class="op">=</span> <span class="fl">.1</span></span>
+<span id="cb81-17"><a href="#cb81-17" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> F.<span class="bu">sum</span>(a_scale <span class="op">*</span> (state[:,:,<span class="dv">0</span>:<span class="dv">1</span>] <span class="op">-</span><span class="dv">1</span>) <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb81-18"><a href="#cb81-18" aria-hidden="true" tabindex="-1"></a>        b <span class="op">=</span> F.<span class="bu">sum</span>(b_scale <span class="op">*</span> action <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb81-19"><a href="#cb81-19" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> F.<span class="bu">sum</span>(c_scale <span class="op">*</span> state[:,:,<span class="dv">2</span>:<span class="dv">3</span>] <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb81-20"><a href="#cb81-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (a <span class="op">+</span> c <span class="op">+</span> b)</span>
+<span id="cb81-21"><a href="#cb81-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb81-22"><a href="#cb81-22" aria-hidden="true" tabindex="-1"></a>cost <span class="op">=</span> CostFunction()</span></code></pre></div>
 <p>The expected reward function can be written as <span class="math display">\[
 R = \mathbb{E}_{p(y_T, \ldots,
 y_0)}\left(\sum_{t=0}^\top r(y_t)\right)
@@ -1010,89 +1292,89 @@ p(y_T, \ldots, y_0) = p(y_0) \prod_{t=1}^\top p(y_t|y_{t-1}, a_{t-1}),
 \]</span> where <span class="math inline">\(a_{t-1} = \pi(y_{t-1})\)</span> is the action taken at the time <span class="math inline">\(t-1\)</span>, which is the outcome of the policy <span class="math inline">\(\pi(\cdot)\)</span>.</p>
 <p>The expected reward function is implemented as follows.</p>
 <h2 id="obtaining-the-policy-gradients">Obtaining the policy gradients</h2>
-<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.inference.inference_alg <span class="im">import</span> SamplingAlgorithm</span></code></pre></div>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PolicyUpdateGPParametricApprox(SamplingAlgorithm):</span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Class for the policy update for PILCO.&quot;&quot;&quot;</span></span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> compute(<span class="va">self</span>, F, variables):</span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>        s_0 <span class="op">=</span> <span class="va">self</span>.initial_state_generator(<span class="va">self</span>.num_samples)</span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>        a_0 <span class="op">=</span> <span class="va">self</span>.policy(s_0)</span>
-<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>        a_t_plus_1 <span class="op">=</span> a_0</span>
-<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>        x_t <span class="op">=</span> F.expand_dims(F.concat(s_0, a_0, dim<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>        gp <span class="op">=</span> <span class="va">self</span>.model.Y.factor</span>
-<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>        sample_func <span class="op">=</span> gp.draw_parametric_samples(F, variables, <span class="va">self</span>.num_samples, <span class="va">self</span>.approx_samples)</span>
-<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>        cost <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb84-13"><a href="#cb84-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.n_time_steps):</span>
-<span id="cb84-14"><a href="#cb84-14" aria-hidden="true" tabindex="-1"></a>            s_t_plus_1 <span class="op">=</span> sample_func(F, x_t)</span>
-<span id="cb84-15"><a href="#cb84-15" aria-hidden="true" tabindex="-1"></a>            cost <span class="op">=</span> cost <span class="op">+</span> <span class="va">self</span>.cost_function(s_t_plus_1, a_t_plus_1)</span>
-<span id="cb84-16"><a href="#cb84-16" aria-hidden="true" tabindex="-1"></a>            a_t_plus_1 <span class="op">=</span> mx.nd.expand_dims(<span class="va">self</span>.policy(s_t_plus_1), axis<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb84-17"><a href="#cb84-17" aria-hidden="true" tabindex="-1"></a>            x_t <span class="op">=</span> mx.nd.concat(s_t_plus_1, a_t_plus_1, dim<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb84-18"><a href="#cb84-18" aria-hidden="true" tabindex="-1"></a>        total_cost <span class="op">=</span> F.mean(cost)</span>
-<span id="cb84-19"><a href="#cb84-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total_cost, total_cost</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.inference.inference_alg <span class="im">import</span> SamplingAlgorithm</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PolicyUpdateGPParametricApprox(SamplingAlgorithm):</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Class for the policy update for PILCO.&quot;&quot;&quot;</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> compute(<span class="va">self</span>, F, variables):</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>        s_0 <span class="op">=</span> <span class="va">self</span>.initial_state_generator(<span class="va">self</span>.num_samples)</span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>        a_0 <span class="op">=</span> <span class="va">self</span>.policy(s_0)</span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>        a_t_plus_1 <span class="op">=</span> a_0</span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a>        x_t <span class="op">=</span> F.expand_dims(F.concat(s_0, a_0, dim<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>        gp <span class="op">=</span> <span class="va">self</span>.model.Y.factor</span>
+<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a>        sample_func <span class="op">=</span> gp.draw_parametric_samples(F, variables, <span class="va">self</span>.num_samples, <span class="va">self</span>.approx_samples)</span>
+<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>        cost <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.n_time_steps):</span>
+<span id="cb83-14"><a href="#cb83-14" aria-hidden="true" tabindex="-1"></a>            s_t_plus_1 <span class="op">=</span> sample_func(F, x_t)</span>
+<span id="cb83-15"><a href="#cb83-15" aria-hidden="true" tabindex="-1"></a>            cost <span class="op">=</span> cost <span class="op">+</span> <span class="va">self</span>.cost_function(s_t_plus_1, a_t_plus_1)</span>
+<span id="cb83-16"><a href="#cb83-16" aria-hidden="true" tabindex="-1"></a>            a_t_plus_1 <span class="op">=</span> mx.nd.expand_dims(<span class="va">self</span>.policy(s_t_plus_1), axis<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb83-17"><a href="#cb83-17" aria-hidden="true" tabindex="-1"></a>            x_t <span class="op">=</span> mx.nd.concat(s_t_plus_1, a_t_plus_1, dim<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb83-18"><a href="#cb83-18" aria-hidden="true" tabindex="-1"></a>        total_cost <span class="op">=</span> F.mean(cost)</span>
+<span id="cb83-19"><a href="#cb83-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> total_cost, total_cost</span></code></pre></div>
 <p>We optimize the policy with respect to the expected reward by using a gradient optimizer.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.inference <span class="im">import</span> GradTransferInference</span></code></pre></div>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> optimize_policy(policy, cost_func, model, infr, model_data_X, model_data_Y,</span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>                    initial_state_generator, num_grad_steps,</span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>                    learning_rate<span class="op">=</span><span class="fl">1e-2</span>, num_time_steps<span class="op">=</span><span class="dv">100</span>, </span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>                    num_samples<span class="op">=</span><span class="dv">10</span>, verbose<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Takes as primary inputs a policy, cost function, and trained model.</span></span>
-<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Optimizes the policy for num_grad_steps number of iterations.</span></span>
-<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb86-9"><a href="#cb86-9" aria-hidden="true" tabindex="-1"></a>    mb_alg <span class="op">=</span> PolicyUpdateGPParametricApprox(</span>
-<span id="cb86-10"><a href="#cb86-10" aria-hidden="true" tabindex="-1"></a>        model<span class="op">=</span>model, observed<span class="op">=</span>[model.X, model.Y], cost_function<span class="op">=</span>cost_func,</span>
-<span id="cb86-11"><a href="#cb86-11" aria-hidden="true" tabindex="-1"></a>        policy<span class="op">=</span>policy, n_time_steps<span class="op">=</span>num_time_steps,</span>
-<span id="cb86-12"><a href="#cb86-12" aria-hidden="true" tabindex="-1"></a>        initial_state_generator<span class="op">=</span>initial_state_generator,</span>
-<span id="cb86-13"><a href="#cb86-13" aria-hidden="true" tabindex="-1"></a>        num_samples<span class="op">=</span>num_samples)</span>
-<span id="cb86-14"><a href="#cb86-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-15"><a href="#cb86-15" aria-hidden="true" tabindex="-1"></a>    infr_pred <span class="op">=</span> GradTransferInference(</span>
-<span id="cb86-16"><a href="#cb86-16" aria-hidden="true" tabindex="-1"></a>        mb_alg, infr_params<span class="op">=</span>infr.params, train_params<span class="op">=</span>policy.collect_params())</span>
-<span id="cb86-17"><a href="#cb86-17" aria-hidden="true" tabindex="-1"></a>    infr_pred.run(</span>
-<span id="cb86-18"><a href="#cb86-18" aria-hidden="true" tabindex="-1"></a>        max_iter<span class="op">=</span>num_grad_steps,</span>
-<span id="cb86-19"><a href="#cb86-19" aria-hidden="true" tabindex="-1"></a>        X<span class="op">=</span>mx.nd.array(model_data_X, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
-<span id="cb86-20"><a href="#cb86-20" aria-hidden="true" tabindex="-1"></a>        Y<span class="op">=</span>mx.nd.array(model_data_Y, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
-<span id="cb86-21"><a href="#cb86-21" aria-hidden="true" tabindex="-1"></a>        verbose<span class="op">=</span>verbose, learning_rate<span class="op">=</span>learning_rate)</span>
-<span id="cb86-22"><a href="#cb86-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> policy</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mxfusion.inference <span class="im">import</span> GradTransferInference</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> optimize_policy(policy, cost_func, model, infr, model_data_X, model_data_Y,</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>                    initial_state_generator, num_grad_steps,</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>                    learning_rate<span class="op">=</span><span class="fl">1e-2</span>, num_time_steps<span class="op">=</span><span class="dv">100</span>, </span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>                    num_samples<span class="op">=</span><span class="dv">10</span>, verbose<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Takes as primary inputs a policy, cost function, and trained model.</span></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Optimizes the policy for num_grad_steps number of iterations.</span></span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>    mb_alg <span class="op">=</span> PolicyUpdateGPParametricApprox(</span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>        model<span class="op">=</span>model, observed<span class="op">=</span>[model.X, model.Y], cost_function<span class="op">=</span>cost_func,</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>        policy<span class="op">=</span>policy, n_time_steps<span class="op">=</span>num_time_steps,</span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>        initial_state_generator<span class="op">=</span>initial_state_generator,</span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>        num_samples<span class="op">=</span>num_samples)</span>
+<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a>    infr_pred <span class="op">=</span> GradTransferInference(</span>
+<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a>        mb_alg, infr_params<span class="op">=</span>infr.params, train_params<span class="op">=</span>policy.collect_params())</span>
+<span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a>    infr_pred.run(</span>
+<span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a>        max_iter<span class="op">=</span>num_grad_steps,</span>
+<span id="cb85-19"><a href="#cb85-19" aria-hidden="true" tabindex="-1"></a>        X<span class="op">=</span>mx.nd.array(model_data_X, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
+<span id="cb85-20"><a href="#cb85-20" aria-hidden="true" tabindex="-1"></a>        Y<span class="op">=</span>mx.nd.array(model_data_Y, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),</span>
+<span id="cb85-21"><a href="#cb85-21" aria-hidden="true" tabindex="-1"></a>        verbose<span class="op">=</span>verbose, learning_rate<span class="op">=</span>learning_rate)</span>
+<span id="cb85-22"><a href="#cb85-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> policy</span></code></pre></div>
 <h2 id="the-loop">The Loop</h2>
 <p>We need to define a function that provides random initial states.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> initial_state_generator(num_initial_states):</span>
-<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Starts from valid states by drawing theta and momentum</span></span>
-<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="co">    then computing np.cos(theta) and np.sin(theta) for state[0:2].s</span></span>
-<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mx.nd.array(</span>
-<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>        [env.observation_space.sample() <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_initial_states)],</span>
-<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>        dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>num_episode <span class="op">=</span> <span class="dv">20</span> <span class="co"># how many model fit + policy optimization episodes to run</span></span>
-<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>num_samples <span class="op">=</span> <span class="dv">100</span> <span class="co"># how many sample trajectories the policy optimization loop uses</span></span>
-<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>num_grad_steps <span class="op">=</span> <span class="dv">1000</span> <span class="co"># how many gradient steps the optimizer takes per episode</span></span>
-<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>num_time_steps <span class="op">=</span> <span class="dv">100</span> <span class="co"># how far to roll out each sample trajectory</span></span>
-<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="fl">1e-3</span> <span class="co"># learning rate for the policy optimization</span></span>
-<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>all_states <span class="op">=</span> []</span>
-<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>all_actions <span class="op">=</span> []</span></code></pre></div>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i_ep <span class="kw">in</span> <span class="bu">range</span>(num_episode):</span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run an episode and collect data.</span></span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i_ep <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>        policy_func <span class="op">=</span> <span class="kw">lambda</span> x: env.action_space.sample()</span>
-<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>        policy_func <span class="op">=</span> <span class="kw">lambda</span> x: policy(mx.nd.expand_dims(mx.nd.array(x, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>), axis<span class="op">=</span><span class="dv">0</span>)).asnumpy()[<span class="dv">0</span>]</span>
-<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>    total_reward, states, actions <span class="op">=</span> run_one_episode(</span>
-<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a>        env, policy_func, max_steps<span class="op">=</span>num_time_steps)</span>
-<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a>    all_states.append(states)</span>
-<span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a>    all_actions.append(actions)</span>
-<span id="cb89-11"><a href="#cb89-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-12"><a href="#cb89-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit a model.</span></span>
-<span id="cb89-13"><a href="#cb89-13" aria-hidden="true" tabindex="-1"></a>    model, infr, model_data_X, model_data_Y <span class="op">=</span> fit_model(</span>
-<span id="cb89-14"><a href="#cb89-14" aria-hidden="true" tabindex="-1"></a>        all_states, all_actions, win_in<span class="op">=</span><span class="dv">1</span>, verbose<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb89-15"><a href="#cb89-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-16"><a href="#cb89-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optimize the policy.</span></span>
-<span id="cb89-17"><a href="#cb89-17" aria-hidden="true" tabindex="-1"></a>    policy <span class="op">=</span> optimize_policy(</span>
-<span id="cb89-18"><a href="#cb89-18" aria-hidden="true" tabindex="-1"></a>        policy, cost, model, infr, model_data_X, model_data_Y,</span>
-<span id="cb89-19"><a href="#cb89-19" aria-hidden="true" tabindex="-1"></a>        initial_state_generator, num_grad_steps<span class="op">=</span>num_grad_steps,</span>
-<span id="cb89-20"><a href="#cb89-20" aria-hidden="true" tabindex="-1"></a>        num_samples<span class="op">=</span>num_samples, learning_rate<span class="op">=</span>learning_rate,</span>
-<span id="cb89-21"><a href="#cb89-21" aria-hidden="true" tabindex="-1"></a>        num_time_steps<span class="op">=</span>num_time_steps)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> initial_state_generator(num_initial_states):</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Starts from valid states by drawing theta and momentum</span></span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="co">    then computing np.cos(theta) and np.sin(theta) for state[0:2].s</span></span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mx.nd.array(</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>        [env.observation_space.sample() <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_initial_states)],</span>
+<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>        dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>num_episode <span class="op">=</span> <span class="dv">20</span> <span class="co"># how many model fit + policy optimization episodes to run</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>num_samples <span class="op">=</span> <span class="dv">100</span> <span class="co"># how many sample trajectories the policy optimization loop uses</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>num_grad_steps <span class="op">=</span> <span class="dv">1000</span> <span class="co"># how many gradient steps the optimizer takes per episode</span></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>num_time_steps <span class="op">=</span> <span class="dv">100</span> <span class="co"># how far to roll out each sample trajectory</span></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="fl">1e-3</span> <span class="co"># learning rate for the policy optimization</span></span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>all_states <span class="op">=</span> []</span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>all_actions <span class="op">=</span> []</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i_ep <span class="kw">in</span> <span class="bu">range</span>(num_episode):</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run an episode and collect data.</span></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i_ep <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>        policy_func <span class="op">=</span> <span class="kw">lambda</span> x: env.action_space.sample()</span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>        policy_func <span class="op">=</span> <span class="kw">lambda</span> x: policy(mx.nd.expand_dims(mx.nd.array(x, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>), axis<span class="op">=</span><span class="dv">0</span>)).asnumpy()[<span class="dv">0</span>]</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>    total_reward, states, actions <span class="op">=</span> run_one_episode(</span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>        env, policy_func, max_steps<span class="op">=</span>num_time_steps)</span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>    all_states.append(states)</span>
+<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a>    all_actions.append(actions)</span>
+<span id="cb88-11"><a href="#cb88-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-12"><a href="#cb88-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit a model.</span></span>
+<span id="cb88-13"><a href="#cb88-13" aria-hidden="true" tabindex="-1"></a>    model, infr, model_data_X, model_data_Y <span class="op">=</span> fit_model(</span>
+<span id="cb88-14"><a href="#cb88-14" aria-hidden="true" tabindex="-1"></a>        all_states, all_actions, win_in<span class="op">=</span><span class="dv">1</span>, verbose<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb88-15"><a href="#cb88-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-16"><a href="#cb88-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optimize the policy.</span></span>
+<span id="cb88-17"><a href="#cb88-17" aria-hidden="true" tabindex="-1"></a>    policy <span class="op">=</span> optimize_policy(</span>
+<span id="cb88-18"><a href="#cb88-18" aria-hidden="true" tabindex="-1"></a>        policy, cost, model, infr, model_data_X, model_data_Y,</span>
+<span id="cb88-19"><a href="#cb88-19" aria-hidden="true" tabindex="-1"></a>        initial_state_generator, num_grad_steps<span class="op">=</span>num_grad_steps,</span>
+<span id="cb88-20"><a href="#cb88-20" aria-hidden="true" tabindex="-1"></a>        num_samples<span class="op">=</span>num_samples, learning_rate<span class="op">=</span>learning_rate,</span>
+<span id="cb88-21"><a href="#cb88-21" aria-hidden="true" tabindex="-1"></a>        num_time_steps<span class="op">=</span>num_time_steps)</span></code></pre></div>
 <p>Policy after the first episode (random exploration):</p>
 <div class="figure">
 <div id="pilco-pendulum-policy-iter-0-figure" class="figure-frame">
@@ -1144,6 +1426,9 @@ p(y_T, \ldots, y_0) = p(y_0) \prod_{t=1}^\top p(y_t|y_{t-1}, a_{t-1}),
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Cooper:transformation91" class="csl-entry" role="doc-biblioentry">
 Cooper, B., 1991. Transformation of a valley: Derbyshire derwent. Scarthin Books.
+</div>
+<div id="ref-Laplace-essai14" class="csl-entry" role="doc-biblioentry">
+Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.
 </div>
 <div id="ref-Maxwell:governors1867" class="csl-entry" role="doc-biblioentry">
 Maxwell, J.C., 1867. On governors. Proceedings of the Royal Society of London 16, 270–283.

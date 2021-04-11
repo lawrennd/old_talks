@@ -30,6 +30,8 @@ transition: None
 \include{_neurips/includes/neurips-calibration.md}
 
 
+Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>
+
 
 \comment{Conversation with Ani Nenkova via twitter}
 

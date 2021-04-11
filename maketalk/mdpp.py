@@ -5,8 +5,8 @@
 import os
 import argparse
 import yaml
-import _python.ndltalk as nt
-import _python.ndlyaml as ny
+import ndlpy.ndltalk as nt
+import ndlpy.ndlyaml as ny
 
 parser = argparse.ArgumentParser()
 

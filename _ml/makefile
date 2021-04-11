@@ -1,3 +1,3 @@
-BASE=machine-learning-and-the-physical-world
+BASE=ml-and-the-physical-world-sheffield
 include ../make-talk-flags.mk
 include ../make-talk.mk
