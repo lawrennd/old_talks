@@ -2,12 +2,12 @@
 
 Talks from Neil Lawrence
 
-To create talks from these files you need to access the python package `maketalk`.
+To create talks from these files you need to access the python package `makemd`.
 
 You can install that with
 
 ```
-pip install git+git://github.com/lawrennd/maketalk.git
+pip install git+git://github.com/lawrennd/makemd.git
 ```
 
 The talks folder is organized as follows.
