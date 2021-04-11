@@ -1,3 +1,3 @@
-BASE=ml-and-the-physical-world-sheffield
+BASE=two-challenges-for-deep-learning
 include ../make-talk-flags.mk
 include ../make-talk.mk
