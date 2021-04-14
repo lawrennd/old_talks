@@ -7,14 +7,6 @@
 \define{\concat{argone}{argtwo}}{\argone\argtwo}
 \define{\githubdir}{}
 
-\ifdef{draft}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-\define{\tk{text}}{\colorRed{TK: \text}}
-\else
-\define{\todo{text}}{}
-\define{\tk{text}}{}
-\endif
-
 \define{\addDownload{name}}{\ifndef{downloadList}\defeval{\downloadList}{\name}\else\defeval{\downloadList}{\downloadList,\name}\endif}
 
 \endif

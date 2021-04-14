@@ -1,17 +1,17 @@
 # This file checks the header of the base file for information about how to produce the talk and stores it in relevant files.
 
 # Extract the date and the prefix of the produced files.
-DATE=$(shell talkfield date ${BASE}.md)
+DATE=$(shell mdfield date ${BASE}.md)
 
-CATEGORIES=$(shell talkfield categories ${BASE}.md)
+CATEGORIES=$(shell mdfield categories ${BASE}.md)
 
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
 REVEALJS="https://inverseprobability.com/talks/slides/reveal.js/"
 
-SLIDESHEADER=$(shell talkfield slidesheader ${BASE}.md)
-POSTSHEADER=$(shell talkfield postssheader ${BASE}.md)
-ASSIGNMENT=$(shell talkfield assignment ${BASE}.md)
-NOTATION=$(shell talkfield notation ${BASE}.md)
+SLIDESHEADER=$(shell mdfield slidesheader ${BASE}.md)
+POSTSHEADER=$(shell mdfield postssheader ${BASE}.md)
+ASSIGNMENT=$(shell mdfield assignment ${BASE}.md)
+NOTATION=$(shell mdfield notation ${BASE}.md)
 
 PREFIX=$(shell flags prefix ${BASE})
 
@@ -28,12 +28,12 @@ CITEFLAGS=--citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
 
-POSTDIR=$(shell talkfield postdir $(BASE).md)
-NOTEDIR=$(shell talkfield notedir $(BASE).md)
-NOTEBOOKDIR=$(shell talkfield notebookdir $(BASE).md)
-SLIDEDIR=$(shell talkfield slidedir $(BASE).md)
-WEEK=$(shell talkfield week $(BASE).md)
-SESSION=$(shell talkfield session $(BASE).md)
+POSTDIR=$(shell mdfield postdir $(BASE).md)
+NOTEDIR=$(shell mdfield notedir $(BASE).md)
+NOTEBOOKDIR=$(shell mdfield notebookdir $(BASE).md)
+SLIDEDIR=$(shell mdfield slidedir $(BASE).md)
+WEEK=$(shell mdfield week $(BASE).md)
+SESSION=$(shell mdfield session $(BASE).md)
 
 
 

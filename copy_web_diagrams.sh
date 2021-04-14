@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-SLIDEDIR=$(talkfield slidedir $1)
+SLIDEDIR=$(mdfield slidedir $1)
 echo Slides Directory: $SLIDEDIR
 for file in $(dependencies slidediagrams $1)
 do

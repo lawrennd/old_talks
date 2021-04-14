@@ -2,7 +2,7 @@
 title: Two Challenges for Deep Learning
 venue: Deep Probabilistic Models Workshop, Cambridge
 author: Neil D. Lawrence
-abstract: >
+abstract: |
   In this talk we consider two challenges for the field of deep learning. 
 date: 2017-09-15
 transition: None
@@ -19,7 +19,7 @@ transition: None
 incremental: True
 ---
 
-\include{../talk-macros.tex}
+\include{talk-macros.gpp}
 
 \section{Introduction}
 
@@ -32,7 +32,7 @@ incremental: True
 
 \subsection{Challenges for Deep Learning}
 
-1. Massively Missing Data: Dealing with Unknown Uknowns
+1. Massively Missing Data: Dealing with Unknown Unknowns
 
 2. Assimilation of Data at Different Levels of Abstraction
 
