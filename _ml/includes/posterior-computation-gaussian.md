@@ -26,7 +26,7 @@ We've looked at the samples for our function $\mappingFunctionVector = \basisMat
 
 This video talks about Bayesian inference across the single parameter, the offset $c$, illustrating how the prior and the likelihood combine in one dimension to form a posterior.
 
-\figure{\includeyoutube{AvlnFnvFw_0}{800}{600}{15}}{Univariate Bayesian inference. Lecture 10 from 2012 MLAI Course.}{univariate-bayesian-inference-video}
+\figure{\includeyoutube{AvlnFnvFw_0}{600}{450}{15}}{Univariate Bayesian inference. Lecture 10 from 2012 MLAI Course.}{univariate-bayesian-inference-video}
 
 \subsection{Multivariate Bayesian Inference}
 

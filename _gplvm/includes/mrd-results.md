@@ -19,7 +19,7 @@
 
 \newslide{Manifold Relevance Determination}
 
-\figure{\includeyoutube{UvLI8o8z4IU}{800}{600}}{A short video description of the Manifold Relevance Determination method as published at ICML 2012}{manifold-relevance-determination}
+\figure{\includeyoutube{UvLI8o8z4IU}{600}{450}}{A short video description of the Manifold Relevance Determination method as published at ICML 2012}{manifold-relevance-determination}
 
 \endif
 

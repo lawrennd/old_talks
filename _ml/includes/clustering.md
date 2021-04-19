@@ -249,7 +249,7 @@ $$
 
 \newslide{$k$-Means Clustering}
 
-\figure{\includeyoutube{mfqmoUN-Cuw}{800}{600}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
+\figure{\includeyoutube{mfqmoUN-Cuw}{600}{450}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
 
 \slides{*$k$-means clustering by Alex Ihler*}
 
@@ -261,7 +261,7 @@ $$
 }
 \notes{Other approaches to clustering involve forming taxonomies of the cluster centers, like humans apply to animals, to form trees. You can learn more about agglomerative clustering in this video from Alex Ihler.}
 
-\figure{\includeyoutube{OcoE7JlbXvY}{800}{600}}{Hierarchical Clustering by Alex Ihler.}{alex-ihler-hierarchical-clustering}
+\figure{\includeyoutube{OcoE7JlbXvY}{600}{450}}{Hierarchical Clustering by Alex Ihler.}{alex-ihler-hierarchical-clustering}
 
 \subsubsection{Phylogenetic Trees}
 \slides{

@@ -8,7 +8,6 @@
 \include{_physics/includes/entropy-billiards.md}
 
 
-
 \newslide{}
 
 \setupcode{import numpy as np}
@@ -37,7 +36,12 @@ mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
 
 \figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{100%}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}{}{right}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
 
-\notes{Many of the ideas of early statistical physicists were rejected by a cadre of physicists who didn't believe in the notion of a molecule. The stress of trying to have his ideas established caused Botlzamann to commit suicide in 1906, only two years before the same ideas became widely accepted.}
+\notes{Many of the ideas of early statistical physicists were rejected by a cadre of physicists who didn't believe in the notion of a molecule. The stress of trying to have his ideas established caused Boltzmann to commit suicide in 1906, only two years before the same ideas became widely accepted.}
+
+\newslide{}
+
+\figure{\includeyoutube{MWXNAAAAMAAJ}{600}{450}{PA373}}{Boltzmann's paper @Boltzmann-warmetheorie77 which introduced the relationship between entropy and probability. A translation with notes is available in @Kim-translation15.}{boltzmann-warmetheorie}
+
 
 \notes{The important point about the uncertainty being represented here is that it is not genuine stochasticity, it is a lack of knowledge about the system. The techniques proposed by Maxwell, Botlzmann and Gibbs allow us to exactly represent the state of the system through a set of parameters that represent the sufficient statistics of the physical system. We know these values as the volume, temperature and pressure. The challenge for us, when approximating the physical world with the techniques we will use is that we will have to sit somewhere between the deterministic and purely stochastic worlds that these different scientists described.}
 

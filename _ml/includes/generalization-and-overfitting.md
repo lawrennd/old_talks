@@ -28,7 +28,7 @@ An important distinction in machine learning is the separation between training 
 
 \subsection{Overfitting}
 
-\figure{\includeyoutube{py8QrZPT48s}{800}{600}{4m0s}}{Alex Ihler discusses polynomials and overfitting.}{alex-ihler-overfitting}
+\figure{\includeyoutube{py8QrZPT48s}{600}{450}{4m0s}}{Alex Ihler discusses polynomials and overfitting.}{alex-ihler-overfitting}
 
 \slides{*Alex Ihler on Polynomials and Overfitting*}
 

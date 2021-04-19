@@ -9,7 +9,7 @@ abstract: >
   understood or deployed. In this talk we will focus on two particular
   components of data science solutions: the preparation of data and
   the deployment of machine learning systems.
-published: 2018-03-27
+date: 2018-03-27
 venue: LSE Workshop on Data Science Theory and Practice
 reveal: 2018-03-27-data-science-time-for-professionalisation.slides.html
 blog: 2017-01-12-data-readiness-levels.md
