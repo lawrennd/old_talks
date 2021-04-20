@@ -1,3 +1,3 @@
-BASE=auto-ai-resolving-intellectual-debt-in-complex-systems
+BASE=ai-faith-panel-discussion
 include ../make-talk-flags.mk
 include ../make-talk.mk

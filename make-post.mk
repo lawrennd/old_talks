@@ -3,7 +3,7 @@
 
 ${BASE}.posts.html: ${BASE}.posts.html.markdown
 	pandoc --template pandoc-jekyll-talk-template ${PDSFLAGS} \
-	       --atx-headers \
+	       --markdown-headings=atx \
 	       ${POSTFLAGS} \
                --to html \
                --out ${BASE}.posts.html  ${BASE}.posts.html.markdown 
