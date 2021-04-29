@@ -15,8 +15,20 @@ venue: Cambridge Senior Management Programme, Judge Business School, University 
 
 \include{talk-macros.gpp}
 
+\include{_data-science/includes/evolved-relationship.md}
+
 <!-- From the Google Cloud Data Talk -->
 \include{_ml/includes/what-is-ml.md}
+
+
+\subsection{Example: Supply Chain}
+
+\include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
+
+
+Session 2
+
 
 <!-- Embodiment Factors-->
 
@@ -24,53 +36,46 @@ venue: Cambridge Senior Management Programme, Judge Business School, University 
 
 <!-- Data Science (why it's happening) -->
 
-\include{_data-science/includes/evolved-relationship.md}
-
 \include{_data-science/includes/lies-damned-lies.md}
 
 \subsection{Post Digital Transformation}
 
 \include{_ai/includes/ai-vs-data-science-2.md}
 
-\subsection{Example: Supply Chain}
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\subsection{A Hypothesis is a Liability}
 
-<!--Duke of York Effect -->
+https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02133-w
 
-\include{_data-science/includes/value-of-data.md}
-\include{_data-science/includes/data-readiness-levels.md}
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
+\subsection{A Hypothesis *can* be a Liability}
 
-<!-- END OF COUD DAY -->
+https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02276-4
 
+\subsection{Explore vs Exploit}
 
-
-\include{_ai/includes/the-great-ai-fallacy.md}
-
-\include{_ai/includes/artificial-vs-natural-systems.md}
+(Convergence vs Divergence)
 
 
+\subsection{Data and Uncertainty}
+
+Your new use of data is generating uncertainties.
 
 
-\include{_software/includes/mythical-man-month.md}
-\include{_ai/includes/ml-system-decomposability.md}
+\subsection{What we did Amazon}
 
-<!-- LIKELY TOO TECHNICAL -->
-\include{_ai/includes/ride-allocation-prediction.md}
-
-\include{_ai/includes/ml-systems-design-short.md}
-
-\include{_ml/includes/ml-paradigm-shift.md}
-\include{_ai/includes/peppercorn.md}
+Break: What could you do in your company
 
 
-\include{_supply-chain/includes/experiment-analyze-design.md}
+\subsection{What we did in DELVE}
 
-\include{_data-science/includes/data-oriented-architectures.md}
 
-\include{_ai/includes/five-ai-myths.md}
+
+\subsection{Conclusion}
+
+See the Gorilla don't be the gorilla. 
+
+(our inner chimp) (Rebel Ideas)
+
 
 \reading
 
