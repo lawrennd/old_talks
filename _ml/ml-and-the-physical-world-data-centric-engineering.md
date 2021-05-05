@@ -26,7 +26,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2021-05-05
-venue: Data Centric Engineering, University of Sheffield
+venue: Data Centric Engineering
 transition: None
 ---
 
@@ -47,26 +47,22 @@ transition: None
 * The mapping of the virtual onto the physical world.
 * E.g. Causal understanding. 
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-<!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
+\include{_ai/includes/prime-air-system.md}
 
-\section{UNCERTAINTY QUANTIFICATION}
 
-\include{_ml/includes/process-emulation.md}
-\include{_uq/includes/emukit-playground.md}
-\include{_uq/includes/uncertainty-quantification.md}
-\include{_uq/includes/emukit-software.md}
-\include{_ml/includes/mxfusion-software.md}
-\include{_ml/includes/mxfusion-pilco.md}
+\include{_ai/includes/buying-system.md}
 
-\subsection{Long term Aim}
+\include{_ai/includes/intellectual-debt-short.md}
 
-* Simulate/Emulate the components of the system.
-    * Validate with real world using multifidelity.
-	* Interpret system using e.g. sensitivity analysis.
-* Perform end to end learning to optimize.
-    * Maintain interpretability.
+\include{_uq/includes/emulation.md}
+
+\include{_ai/includes/auto-ai-overview.md}
+
+\include{_uq/includes/deep-emulation.md}
+
+\include{_accelerate/includes/accelerate-programme.md}
+\include{_ml/includes/ml-and-the-physical-world-course.md}
+
 
 
 \thanks

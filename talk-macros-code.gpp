@@ -5,7 +5,7 @@
 \code{urllib.request.urlretrieve('\url','\filename')}
 }
 \define{\downloadcode{filename}}{\downloadfile{https://raw.githubusercontent.com/lawrennd/talks/gh-pages/\filename.py}{\filename.py}}
-\define{\installcode{library}}{\code{\ifeq{\library}{pods}\ifndef{podsInstalled}\define{podsInstalled}%pip install --upgrade git+https://github.com/sods/ods\endif
+\define{\installcode{library}}{\code{\ifeq{\library}{pods}\ifndef{podsInstalled}\define{podsInstalled}%pip install --upgrade git+https://github.com/lawrennd/ods\endif
 \else\ifeq{\library}{PyDeepGP}\ifndef{pydeepgpInstalled}\define{pydeepgpInstalled}%pip install --upgrade git+https://github.com/SheffieldML/PyDeepGP.git\endif
 \else\ifeq{\library}{GPy}\ifndef{gpyInstalled}\define{gpyInstalled}%pip install gpy\endif
 \else\ifeq{\library}{EmuKit}\ifndef{emukitInstalled}\define{emukitInstalled}%pip install emukit\endif

@@ -5,7 +5,7 @@
 
 \subsection{Prime Air}
 
-\notes{One project where a number of components of machine learning and the physical world come together is Amazon's Prime Air drone delivery system.]
+\notes{One project where a number of components of machine learning and the physical world come together is Amazon's Prime Air drone delivery system.}
 
 \notes{Automating the process of moving physical goods through autonomous vehicles completes the loop between the 'bits' and the 'atoms'. In other words, the information and the 'stuff'. The idea of the drone is to complete a component of package delivery, the notion of last mile movement of goods, but in a fully autonomous way.}
 
@@ -60,6 +60,8 @@ the technology is ready, but still needs operationalisation including e.g. regul
 > It’s fully shrouded for safety. The shrouds are also the wings,
 > which makes it efficient in flight.
 }
+
+\newslide{}
 
 \figure{\includejpg{\diagramsDir/ai/amazon-prime-air-remars-june-2019}{80%}}{Picture of the drone from Amazon Re-MARS event in 2019.}{amazon-prime-air-remars}
 

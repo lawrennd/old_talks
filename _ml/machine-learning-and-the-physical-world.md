@@ -23,6 +23,7 @@ transition: None
 
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ml/includes/process-automation.md}
+\include{_supply-chain/includes/amazon-drone-flight.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 
 \newslide{The Gap}

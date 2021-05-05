@@ -47,6 +47,5 @@
     * Our ability to mentally process an image or some text. 
 }
 
-\include{_supply-chain/includes/amazon-drone-flight.md}
 
 \endif

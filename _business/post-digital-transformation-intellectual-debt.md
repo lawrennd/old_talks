@@ -13,6 +13,15 @@ author:
 venue: Cambridge Senior Management Programme, Judge Business School, University of Cambridge
 ---
 
+1:23:13 From Laura Grillenzoni to Everyone : A very vague timeline: 
+
+Intro: 9 - 9.10
+1 exercise – 15 minutes: 9:15 - 9.30
+Main message – 45 mins / 1 hour: 9.30 - 10:30
+Break – 15 minutes: 10.30 - 10:45
+2nd exercise: 10.45 - 11:15 
+3rd exercise to bring context to their work: 11.15 -  12:30
+
 \include{talk-macros.gpp}
 
 \include{_data-science/includes/evolved-relationship.md}
