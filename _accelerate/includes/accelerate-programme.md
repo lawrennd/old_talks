@@ -53,8 +53,5 @@ their research. Over the coming years, we’ll be running a
 variety of events and activities in support of this, and would
 welcome your ideas about what might be most useful.}
 
-\newslide{}
-
-\figure{\includepng{\diagramsDir/accelerate/j-j-thomson-avenue}{60%}}{The Computer Lab is located on J. J. Thomson Avenue, right next to the Cavendish laboratory.}{j-j-thomson}
 
 \endif
