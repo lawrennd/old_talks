@@ -5,7 +5,7 @@
 
 \subsection{The Accelerate Programme}
 
-\figure{\href{http://acceleratescience.github.io}{\includepng{\diagramsDir/accelerate/accelerate-website}{70%}}}{The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <http://acceleratescience.github.io>}{accelerate-website}
+\figure{\includepng{\diagramsDir/accelerate/accelerate-website}{70%}}{The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <http://acceleratescience.github.io>}{accelerate-website}
 
 \newslide{}
 
