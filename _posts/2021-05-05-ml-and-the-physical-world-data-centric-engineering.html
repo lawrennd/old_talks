@@ -82,6 +82,7 @@ $$
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-rules.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-rules.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>John Conway’s game of life is a cellular automata where the cells obey three very simple rules. The cells live on a rectangular grid, so that each cell has 8 possible neighbours.</p>
 <div class="figure">
 <div id="life-rules-loneliness-figure" class="figure-frame">
 <table>
@@ -130,6 +131,7 @@ $$
 <p>Figure: ‘Death’ through loneliness in Conway’s game of life. If a cell is surrounded by less than three cells, it ‘dies’ through loneliness.</p>
 </div>
 </div>
+<p>The game proceeds in turns, and at each location in the grid is either alive or dead. Each turn, a cell counts its neighbours. If there are two or fewer neighbours, the cell ‘dies’ of ‘loneliness.’</p>
 <div class="figure">
 <div id="life-rules-crowding-figure" class="figure-frame">
 <table>
@@ -178,6 +180,7 @@ $$
 <p>Figure: ‘Death’ through overpopulation in Conway’s game of life. If a cell is surrounded by more than three cells, it ‘dies’ through loneliness.</p>
 </div>
 </div>
+<p>If there are four or more neigbours, the cell ‘dies’ from ‘overcrowding.’ If there are three neigbours, the cell persists, or if it is currently dead, a new cell is born.</p>
 <div class="figure">
 <div id="life-rules-crowding-figure" class="figure-frame">
 <table>
@@ -226,12 +229,6 @@ $$
 <p>Figure: Birth in Conway’s life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.</p>
 </div>
 </div>
-<p>Conway’s game of life has three simple rules.</p>
-<ul>
-<li><strong>Survival</strong> Every cell surrounded by two or three other cells survives for the next turn.</li>
-<li><strong>Death</strong> Each cell surrounded by four or more cells dies from overpopulation. Likewise, every cell next to one or no cells at all dies from isolation.</li>
-<li><strong>Birth</strong> Each square adjacent to exactly three cells gives birth to a new cell.</li>
-</ul>
 <h2 id="loafers-and-gliders">Loafers and Gliders</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-glider-loafer-conway.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_simulation/includes/life-glider-loafer-conway.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

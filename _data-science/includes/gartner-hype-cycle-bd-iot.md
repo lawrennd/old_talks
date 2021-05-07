@@ -3,13 +3,12 @@
 
 \editme
 
-\notes{\subsection{Gartner Hype Cycle for IoT and Big Data}}
-\newslide{}
+\include{_data-science/includes/gartner-hype-cycle.md}
 
-\slides{\figure{\includediagram{\diagramsDir/bd-iot-google-trends-000}{80%}}{Google trends data for 'big data'.}{bd-iot-google-trends-0}}
+\define{\terms}{'big data', 'internet of things'}
+\define{\initials}{bd-iot}
 
-\newslide{}
+\include{_data-science/includes/gartner-hype-cycle-base.md}
 
-\notes{\figure{\includediagram{\diagramsDir/bd-iot-google-trends-001}{80%}}{Google trends data for 'big data' and 'internet of things'.}{bd-iot-google-trends-1}}
 
 \endif

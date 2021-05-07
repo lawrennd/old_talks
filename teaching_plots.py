@@ -3230,11 +3230,11 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
 
 def google_trends(terms, initials, diagrams='./diagrams'):
     """Plot google trends data for a number of different terms."""
+    import pods
     data = pods.datasets.google_trends(terms)
     data['data frame'].set_index('Date', inplace=True)
     fig, ax = plt.subplots(figsize=wide_figsize)
-    data['data frame'].plot(ax=ax)
-    _ = ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)
+    data['data frame'].plot(ax=ax, rot=45)
     mlai.write_figure(initials+'-google-trends.svg',
                       directory=diagrams,
                       transparent=True)

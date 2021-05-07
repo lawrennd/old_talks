@@ -2,10 +2,10 @@
 	${PP} $< -o $@ --format slides --to svg ${PPFLAGS} --include-before-body ../svgi-includes.gpp  --no-header
 
 %.pdf: %.svg
-	${INKSCAPE} $< --export-pdf=$@ --without-gui
+	${INKSCAPE} $< --export-filename=$@ 
 
 %.png: %.svg
-	${INKSCAPE} $< --export-png=$@ --without-gui
+	${INKSCAPE} $< --export-filename=$@ 
 
 %.emf: %.svg
-	${INKSCAPE} $< --export-emf=$@ --without-gui
+	${INKSCAPE} $< --export-filename=$@ 

@@ -1,27 +1,13 @@
-### Gartner Hype Cycle
+\ifndef{gartnerHypeCycleAiBdDl}
+\define{gartnerHypeCycleAiBdDl}
 
-\includeimg{\diagramsDir/Gartner_Hype_Cycle.png}{70%}{negate}
+\include{_data-science/includes/gartner-hype-cycle.md}
 
-### {.slide: data-transition="none"}
+\define{\terms}{'artificial intelligence', 'big data', 'deep learning'}
+\define{\initials}{ai-bd-dl}
 
-\includediagram{\diagramsDir/ai-bd-dm-dl-ml-google-trends000}
+\include{_data-science/includes/gartner-hype-cycle-base.md}
 
-### {.slide: data-transition="none"}
 
-\includediagram{\diagramsDir/ai-bd-dm-dl-ml-google-trends001}
+\endif
 
-### {.slide: data-transition="none"}
-
-\includediagram{\diagramsDir/ai-bd-dm-dl-ml-google-trends002}
-
-### {.slide: data-transition="none"}
-
-\includediagram{\diagramsDir/ai-bd-dm-dl-ml-google-trends003}
-
-### {.slide: data-transition="none"}
-
-\includediagram{\diagramsDir/ai-bd-dm-dl-ml-google-trends004}
-
-### {.slide: data-transition="none"}
-
-\includediagram{\diagramsDir/ai-bd-dm-dl-ml-google-trends005}

@@ -16,7 +16,7 @@ NOTATION=$(shell mdfield notation ${BASE}.md)
 PREFIX=$(shell flags prefix ${BASE})
 
 # Local calls for the preprocessor and inkscape
-INKSCAPE=inkscape #/Applications/Inkscape.app/Contents/Resources/bin/inkscape
+INKSCAPE=/Applications/Inkscape.app/Contents/MacOS/inkscape
 PP=mdpp
 
 PPFLAGS=-T 

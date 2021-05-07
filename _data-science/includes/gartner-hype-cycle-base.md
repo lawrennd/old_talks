@@ -1,5 +1,6 @@
 \ifndef{gartnerHypeCycleBase}
 \define{gartnerHypeCycleBase}
+
 \editme
 
 \setupplotcode{import teaching_plots as plot}
@@ -10,7 +11,7 @@
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('\initials-google-trends{sample:0>3}.svg', 
-                            '\writeDiagramsDir/data-science/', sample=IntSlider(0, 1, 4, 1))}
+                            '\writeDiagramsDir/data-science/', sample=IntSlider(0, 0, 4, 1))}
 
 \newslide{Gartner Hype Cycle}
 

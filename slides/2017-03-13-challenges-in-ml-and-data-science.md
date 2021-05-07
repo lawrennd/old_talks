@@ -23,22 +23,22 @@ affiliation: Amazon and University of Sheffield
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-000.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/ai-bd-dl-google-trends-000.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-001.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/ai-bd-dl-google-trends-001.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-002.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/ai-bd-dl-google-trends-002.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-003.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/ai-bd-dl-google-trends-003.svg">
 </object>
 
 ## What about IoT?
@@ -47,12 +47,12 @@ affiliation: Amazon and University of Sheffield
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-000.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/bd-iot-google-trends-000.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-001.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/bd-iot-google-trends-001.svg">
 </object>
 
 
@@ -89,7 +89,7 @@ affiliation: Amazon and University of Sheffield
 
 ## Evolved Relationship 
 
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+<object type="image/svg+xml" data="./diagrams/data-science/data-science-information-flow_neg003.svg">
 </object>
 
 
