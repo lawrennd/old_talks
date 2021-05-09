@@ -70,7 +70,12 @@ Break – 15 minutes: 10.30 - 10:45
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}
 
+\include{_data-science/includes/big-data-paradox.md}
 
+\include{_data-science/includes/data-inattention-bias.md}
+
+
+\include{_policy/includes/face-masks-case-study.md}
 
 \subsection{A Hypothesis as a Liability}
 

@@ -1,14 +1,11 @@
-\newslide{Wood or Tree}
+\ifndef{paradoxesOfTheDataSociety}
+\define{paradoxesOfTheDataSociety}
 
-* Can either see a wood or a tree. 
+\editme
 
-\includejpg{\diagramsDir/Grib_skov}{50%}
+\include{_data-science/includes/big-data-paradox.md}
+\include{_data-science/includes/big-data-paradox-examples.md}
 
-\newslide{Examples}
-
-* Election polls (UK 2015 elections, EU referendum, US 2016 elections)
-
-* Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media
 
 
 \newslide{Breadth vs Depth}
@@ -30,3 +27,5 @@
     * Like the 'paperless office'
 
 * A better characterization of human 
+
+\endif
