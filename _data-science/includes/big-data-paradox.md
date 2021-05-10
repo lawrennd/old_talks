@@ -23,7 +23,7 @@
 
 \notes{The phenomenon is all the more dangerous, because our perception is that we are characterising the wider scenario with ever increasing accuracy. Whereas in reality, we are just becoming distracted by detail that may or may not be pertinent to the wider situation.}
 
-\notes{This is related to our limited bandwidth as humans, and the ease with which we are distracted by detail. The data-inattention-cognitive-bias.
+\notes{This is related to our limited bandwidth as humans, and the ease with which we are distracted by detail. The data-inattention-cognitive-bias.}
 
 
 \endif

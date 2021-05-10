@@ -23,6 +23,13 @@ transition: None
 \include{talk-macros.gpp}
 
 \section{Introduction}
+
+\subsection{Meet today's team!}
+
+\threeColumn{\neilPicture{100%}
+Neil Lawrence
+Professor of Machine Learning}{}{}{30%}{30%}{30%}
+
 \timing{10}
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
@@ -68,22 +75,19 @@ Break – 15 minutes: 10.30 - 10:45
 
 
 \include{_ai/includes/heider-simmel.md}
+
+
+
 \include{_ai/includes/conversation-computer.md}
 
 \include{_data-science/includes/big-data-paradox.md}
 
 \include{_data-science/includes/data-inattention-bias.md}
 
+\include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
 
 \include{_policy/includes/face-masks-case-study.md}
 
-\subsection{A Hypothesis as a Liability}
-
-https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02133-w
-
-\subsection{A Hypothesis *can* be a Liability}
-
-https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02276-4
 
 \subsection{Explore vs Exploit}
 

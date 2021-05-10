@@ -5,7 +5,15 @@
 
 \subsection{DELVE Overview}
 
-\figure{\includepng{../slides/diagrams/delve/rs-delve-announcement}{70%}}{The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/>.}{delve-announcement}
+\figure{\includepng{\diagramsDir/delve/rs-delve-announcement}{70%}}{The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/>.}{delve-announcement}
+
+\newslide{}
+
+> DELVE will contribute data driven analysis to complement the evidence base informing the UK’s strategic response, by:
+>
+> * Analysing national and international data to determine the effect of different measures and strategies on a range of public health, social and economic outcomes
+> * Using emerging sources of data as new evidence from the unfolding pandemic comes to light
+> * Ensuring that the work of this group is coordinated with others and communicated as necessary both nationally and internationally
 
 \include{_delve/includes/delve-timeline.md}
 
