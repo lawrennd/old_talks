@@ -62,6 +62,8 @@ Store Caption: \storeCaption
 
 \define{\includeyoutube{id}{width}{height}{start}{end}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\start" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 
+\define{\includebbcvideo{id}{width}{height}{start}{end}}{<iframe width="\width" height="\height" src="https://www.bbc.co.uk/programmes/\id?start=\start" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
+
 \define{\includevimeo{id}{width}{height}{start}{end}}{<iframe width="\width" height="\height" src="https://player.vimeo.com/video/\id#t=\start"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>}
 
 							     

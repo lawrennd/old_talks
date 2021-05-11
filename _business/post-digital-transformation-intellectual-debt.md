@@ -6,7 +6,7 @@ pptx: True
 potx: ../_includes/judge-reference.potx
 docx: False
 pdfnotes: False
-ipynb: False
+ipynb: True
 author:
 - given: Neil D.
   family: Lawrence
@@ -23,6 +23,13 @@ transition: None
 \include{talk-macros.gpp}
 
 \section{Introduction}
+
+\subsection{Meet today's team!}
+
+\threeColumns{\neilLawrencePicture{100%}
+Neil Lawrence
+Professor of Machine Learning}{}{}{30%}{30%}{30%}
+
 \timing{10}
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
@@ -50,6 +57,8 @@ Session 2
 
 Main message – 45 mins / 1 hour: 9.30 - 10:30
 Break – 15 minutes: 10.30 - 10:45
+2nd exercise: 10.45 - 11:15 
+3rd exercise to bring context to their work: 11.15 -  12:30
 
 
 
@@ -66,11 +75,18 @@ Break – 15 minutes: 10.30 - 10:45
 
 
 \include{_ai/includes/heider-simmel.md}
+
+
+
 \include{_ai/includes/conversation-computer.md}
 
 \include{_data-science/includes/big-data-paradox.md}
 
 \include{_data-science/includes/data-inattention-bias.md}
+
+\include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
+
+\include{_policy/includes/face-masks-case-study.md}
 
 
 \subsection{Explore vs Exploit}
@@ -82,10 +98,6 @@ Break – 15 minutes: 10.30 - 10:45
 
 Your new use of data is generating uncertainties.
 
-2nd exercise: 10.45 - 11:15 
-
-\include{_policy/includes/face-masks-case-study.md}
-
 
 \subsection{What we did Amazon}
 
@@ -94,9 +106,6 @@ Break: What could you do in your company
 
 \subsection{What we did in DELVE}
 
-\include{_business/includes/data-maturity-assessment.md}
-
-3rd exercise to bring context to their work: 11.15 -  12:30
 
 
 \subsection{Conclusion}
