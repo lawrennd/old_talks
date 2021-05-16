@@ -1,6 +1,12 @@
 \ifndef{talkPeople}
 \define{talkPeople}
 
+
+\defeval{\dianeCoylePicture{width}}{\circleHead{\diagramsDir/people/diane-coyle.png}{Diane Coyle}{\width}{https://www.polis.cam.ac.uk/Staff_and_Students/professor-diane-coyle}}
+
+\defeval{\davidSpiegelhalterPicture{width}}{\circleHead{\diagramsDir/people/david-spiegelhalter.png}{David Spiegelhalter}{\width}{http://www.statslab.cam.ac.uk/~david/}}
+
+
 \defeval{\neilLawrencePicture{width}}{\circleHead{\diagramsDir/people/neil-lawrence.png}{Neil Lawrence}{\width}{https://inverseprobability.com/}}
 
 \defeval{\jamesHensmanPicture{width}}{\circleHead{\diagramsDir/people/james-hensman.png}{James Hensman}{\width}{https://jameshensman.github.io/}}

@@ -19,6 +19,6 @@
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/policy/longrich-sheppard-mask-adoption}{80%}}{Western countries (US, Canada, Australia, UK, western Europe) with late mask adoption or no use of masks, versus countries and territories with early use of masks as part of official government or in practice policy (China, South Korea, Japan, Taiwan, Vietnam, Thailand, Kuwait, Slovakia, Czech Republic, in blues and greens). Countries with early mask usage tend to have flatter curves even without the use of lockdows. (Figure and caption taken from @Longrich-masks20.}{longrich-sheppard}
+\figure{\includepng{\diagramsDir/policy/longrich-sheppard-mask-adoption}{80%}}{Western countries (US, Canada, Australia, UK, western Europe) with late mask adoption or no use of masks, versus countries and territories with early use of masks as part of official government or in practice policy (China, South Korea, Japan, Taiwan, Vietnam, Thailand, Kuwait, Slovakia, Czech Republic, in blues and greens). Countries with early mask usage tend to have flatter curves even without the use of lockdows. (Figure and caption taken from @Longrich-masks20).}{longrich-sheppard}
 
 \endif

@@ -31,9 +31,9 @@ incremental: True
 \include{_ai/includes/caleb-mcduff.md}
 \include{_ai/includes/embodiment-and-narrative.md}
 \include{_ai/includes/conversation-computer.md}
-\include{_cognitive-science/includes/why-red-doesnt-sound-like-a-bell.md}
-\include{_cognitive-science/includes/the-mind-is-flat.md}
-\include{_business/includes/rebel-ideas.md}
+\include{_books/includes/why-red-doesnt-sound-like-a-bell.md}
+\include{_books/includes/the-mind-is-flat.md}
+\include{_books/includes/rebel-ideas.md}
 
 \subsection{Conclusions}
 

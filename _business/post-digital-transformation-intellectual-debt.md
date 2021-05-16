@@ -89,9 +89,14 @@ Break – 15 minutes: 10.30 - 10:45
 \include{_policy/includes/face-masks-case-study.md}
 
 
+
+
 \subsection{Explore vs Exploit}
 
 (Convergence vs Divergence)
+
+Kappenball
+
 
 
 \subsection{Data and Uncertainty}
@@ -100,6 +105,10 @@ Your new use of data is generating uncertainties.
 
 
 \subsection{What we did Amazon}
+
+Right a lot, dive deep
+
+finance case study
 
 Break: What could you do in your company
 
@@ -113,6 +122,10 @@ Break: What could you do in your company
 See the Gorilla don't be the gorilla. 
 
 (our inner chimp) (Rebel Ideas)
+
+\include{_books/includes/the-art-of-statistics.md}
+
+
 
 
 \reading
