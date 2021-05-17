@@ -26,6 +26,6 @@ The combination of data and model through the prediction function and the object
 A useful reference for state of the art in machine learning is the UK Royal Society Report, [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf).
 }
 
-\notes{You can also check my post }\addblog{What is Machine Learning?}{2017/07/17/what-is-machine-learning}\notes{.}
+\notes{You can also check my post }\addblog{What is Machine Learning?}{2017/07/17/what-is-machine-learning}
 
 \endif
