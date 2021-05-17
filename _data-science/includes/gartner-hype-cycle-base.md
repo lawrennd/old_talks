@@ -3,6 +3,11 @@
 
 \editme
 
+\ifndef{pytrendsInstalled}
+\define{pytrendsInstalled}
+\installcode{pytrends}
+\endif
+
 \setupplotcode{import mlai.plot as plot}
 \plotcode{plot.google_trends(terms=[\terms], 
                   initials='\initials', 
