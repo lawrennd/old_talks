@@ -32,12 +32,9 @@
 * Responses: <https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/>
 
 
-\notes{For further reading on how some felt that decisions should be made, you can see 
-\newslide{}
+\notes{For further reading on how some felt that decisions should be made, you can see @Diggle-decision20.}
 
 
-
-<https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463>
 
 
 \endif

@@ -50,6 +50,9 @@ Professor of Machine Learning}
 
 
 
+\section{Intellectual Debt}
+
+\figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
 
 <!-- Embodiment Factors-->
 
@@ -61,15 +64,26 @@ Professor of Machine Learning}
 <!-- Data Science (why it's happening) -->
 
 \include{_data-science/includes/lies-damned-lies.md}
-
-
 \include{_ai/includes/heider-simmel.md}
-
-
 
 \include{_ai/includes/conversation-computer.md}
 
 \include{_data-science/includes/big-data-paradox.md}
+\subsection{Big Model Paradox}
+
+\notes{The big data paradox has a sister: the big model paradox. As we build more and more complex models we start believing that we have a higher fidelity representation of reality. But the complexity of reality is way beyond our feeble imaginings. So we end up with a highly complex model, but one that falls well short in terms of reflecting reality. Unfortunately, the complexity of the model means that it moves beyond our understanding. }
+
+\slides{* Add complexity to the model to make it realistic.
+* Move model "beyond human intuition"
+* But model still falls well short of mark in terms of representing reality}
+
+
+\newslide{Complexity in Action}
+
+\figure{\includeyoutube{_oGAzq5wM_Q}{600}{450}{80}}{Daniel Simon's famous illusion "monkey business". Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.}{monkey-business}
+
+\notes{When we combine the complexity of the world with our relatively low bandwidth for information, problems can arise. Our focus on what we perceive to be the most important problem can cause us to miss other (potentially vital) contextual information.}
+
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
 
@@ -121,6 +135,8 @@ together from across disciplines.}
 
 \include{_policy/includes/data-as-a-convener.md}
 
+\notes{For more on the experience of giving advice to government during a pandemic see [this talk](http://inverseprobability.com/talks/notes/science-evidence-and-government-reflections-on-the-covid-19-experience.html).}
+
 \newslide{Breakout: What would *you* do in *your* company?}
 
 * Finish 12:30
@@ -131,7 +147,9 @@ together from across disciplines.}
 
 \subsection{Conclusion}
 
-See the Gorilla don't be the gorilla. 
+See the Gorilla *don't* be the Gorilla. 
+\figure{\includejpg{\diagramsDir/business/gorilla-punch-mouth}{50%}}{A famous quote from Mike Tyson before his fight with Evander Holyfield: "Everyone has a plan untill they get punched in the mouth". Don't let the gorilla punch you in the mouth. See the gorilla, but don't be the gorilla. Photo credit: <https://www.catersnews.com/stories/animals/go-ape-unlucky-photographer-gets-punched-by-lairy-gorilla-drunk-from-eating-bamboo-shoots/>}{gorilla-punch-mouth}
+
 
 
 \reading

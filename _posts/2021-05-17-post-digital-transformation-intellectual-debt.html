@@ -137,6 +137,20 @@ sns.set_palette('colorblind')}-->
 <p>Machine learning has been deployed in Speech Recognition (e.g. Alexa, deep neural networks, convolutional neural networks for speech recognition), in computer vision (e.g. Amazon Go, convolutional neural networks for person recognition and pose detection).</p>
 <p>The field of data science is related to AI, but philosophically different. It arises because we are increasingly creating large amounts of data through <em>happenstance</em> rather than active collection. In the modern era data is laid down by almost all our activities. The objective of data science is to extract insights from this data.</p>
 <p>Classically, in the field of statistics, data analysis proceeds by assuming that the question (or scientific hypothesis) comes before the data is created. E.g., if I want to determine the effectiveness of a particular drug, I perform a <em>design</em> for my data collection. I use foundational approaches such as randomization to account for confounders. This made a lot of sense in an era where data had to be actively collected. The reduction in cost of data collection and storage now means that many data sets are available which weren’t collected with a particular question in mind. This is a challenge because bias in the way data was acquired can corrupt the insights we derive. We can perform randomized control trials (or A/B tests) to verify our conclusions, but the opportunity is to use data science techniques to better guide our question selection or even answer a question without the expense of a full randomized control trial (referred to as A/B testing in modern internet parlance).</p>
+<h1 id="intellectual-debt">Intellectual Debt</h1>
+<div class="figure">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ai/2020-02-12-intellectual-debt.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="intellectual-debt-magnify" class="magnify" onclick="magnifyFigure(&#39;intellectual-debt&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="intellectual-debt-caption" class="caption-frame">
+<p>Figure: Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.</p>
+</div>
+</div>
 <!-- Embodiment Factors-->
 <h2 id="information-and-embodiment">Information and Embodiment</h2>
 <div style="text-align:right">
@@ -400,6 +414,21 @@ embodiment
 <p>However, this happenstance data often allows us to characterise a particular individual to a high degree of accuracy. Classical statistics was all about the forest, but big data can often become about the individual tree. As a result we are misled about the situation.</p>
 <p>The phenomenon is all the more dangerous, because our perception is that we are characterising the wider scenario with ever increasing accuracy. Whereas in reality, we are just becoming distracted by detail that may or may not be pertinent to the wider situation.</p>
 <p>This is related to our limited bandwidth as humans, and the ease with which we are distracted by detail. The data-inattention-cognitive-bias.</p>
+<h2 id="big-model-paradox">Big Model Paradox</h2>
+<p>The big data paradox has a sister: the big model paradox. As we build more and more complex models we start believing that we have a higher fidelity representation of reality. But the complexity of reality is way beyond our feeble imaginings. So we end up with a highly complex model, but one that falls well short in terms of reflecting reality. Unfortunately, the complexity of the model means that it moves beyond our understanding.</p>
+<div class="figure">
+<div id="monkey-business-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/_oGAzq5wM_Q?start=80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="monkey-business-magnify" class="magnify" onclick="magnifyFigure(&#39;monkey-business&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="monkey-business-caption" class="caption-frame">
+<p>Figure: Daniel Simon’s famous illusion “monkey business.” Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.</p>
+</div>
+</div>
+<p>When we combine the complexity of the world with our relatively low bandwidth for information, problems can arise. Our focus on what we perceive to be the most important problem can cause us to miss other (potentially vital) contextual information.</p>
 <h2 id="data-inattention-bias">Data Inattention Bias</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-inattention-bias.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-inattention-bias.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -493,7 +522,7 @@ embodiment
 <p>Data Theatre exploits data inattention bias to present a particular view on events that may misrepresents through selective presentation. Statisticians are one of the few groups that are trained with a sufficient degree of data skepticism. But it can also be combatted through ensuring there are domain experts present, and that they can speak freely.</p>
 <div class="figure">
 <div id="data-theatre-001-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/data-theatre-001.svg" width="60%" style=" ">
+<object class="svgplot " data="../slides/diagrams/business/data-theatre001.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="data-theatre-001-magnify" class="magnify" onclick="magnifyFigure(&#39;data-theatre-001&#39;)">
@@ -643,8 +672,7 @@ Diane Coyle
 <li>Report: <a href="https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html" class="uri">https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html</a></li>
 <li>Responses: <a href="https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/" class="uri">https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/</a></li>
 </ul>
-<p>{For further reading on how some felt that decisions should be made, you can see</p>
-<p><a href="https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463" class="uri">https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463</a></p>
+<p>For further reading on how some felt that decisions should be made, you can see <span class="citation" data-cites="Diggle-decision20">Diggle et al. (2020)</span>.</p>
 <h1 id="bringing-it-back">Bringing it Back</h1>
 <h2 id="what-we-did-amazon">What we did Amazon</h2>
 <p>Corporate culture turns out to be an important component of how you can react to digital transformation. Amazon is a company that likes to take a data driven approach. It has a corporate culture that is set up around data-driven decision making. In particular <em>customer obsession</em> and other <em>leadership principles</em> help build a cohesive approach to how data is assimilated.</p>
@@ -697,11 +725,25 @@ Diane Coyle
 </div>
 <p>Fritz Heider referred to happenings that are “<em>psychologically represented</em> in each of the participants” <span class="citation" data-cites="Heider:interpersonal58">(Heider, 1958)</span> as a preqequisite for conversation. Data is a route to that psychological representation.</p>
 <p><em>Note</em>: my introduction to Fritz Heider was through a talk by Nick Chater in 2010, you can read Nick’s thoughts on these issues in his book, <em>The Mind is Flat</em> <span class="citation" data-cites="Chater:mindisflat19">(Chater, 2019)</span>.</p>
+<p>For more on the experience of giving advice to government during a pandemic see <a href="http://inverseprobability.com/talks/notes/science-evidence-and-government-reflections-on-the-covid-19-experience.html">this talk</a>.</p>
 <ul>
 <li>Finish 12:30</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>See the Gorilla don’t be the gorilla.</p>
+See the Gorilla <em>don’t</em> be the Gorilla.
+<div class="figure">
+<div id="gorilla-punch-mouth-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/business/gorilla-punch-mouth.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gorilla-punch-mouth-magnify" class="magnify" onclick="magnifyFigure(&#39;gorilla-punch-mouth&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gorilla-punch-mouth-caption" class="caption-frame">
+<p>Figure: A famous quote from Mike Tyson before his fight with Evander Holyfield: “Everyone has a plan untill they get punched in the mouth.” Don’t let the gorilla punch you in the mouth. See the gorilla, but don’t be the gorilla. Photo credit: <a href="https://www.catersnews.com/stories/animals/go-ape-unlucky-photographer-gets-punched-by-lairy-gorilla-drunk-from-eating-bamboo-shoots/" class="uri">https://www.catersnews.com/stories/animals/go-ape-unlucky-photographer-gets-punched-by-lairy-gorilla-drunk-from-eating-bamboo-shoots/</a></p>
+</div>
+</div>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
@@ -713,6 +755,9 @@ Diane Coyle
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Chater:mindisflat19" class="csl-entry" role="doc-biblioentry">
 Chater, N., 2019. The mind is flat. Penguin.
+</div>
+<div id="ref-Diggle-decision20" class="csl-entry" role="doc-biblioentry">
+Diggle, P.J., Gowers, T., Kelly, F., Lawrence, N., 2020. Decision-making with uncertainty. Significance 17, 12–12. <a href="https://doi.org/10.1111/1740-9713.01463">https://doi.org/10.1111/1740-9713.01463</a>
 </div>
 <div id="ref-Felin-data20" class="csl-entry" role="doc-biblioentry">
 Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R., 2021. The data-hypothesis relationship. Genome Biology 22. <a href="https://doi.org/10.1186/s13059-021-02276-4">https://doi.org/10.1186/s13059-021-02276-4</a>

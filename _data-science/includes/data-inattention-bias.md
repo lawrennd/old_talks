@@ -42,12 +42,12 @@
 
 \notes{Data Theatre exploits data inattention bias to present a particular view on events that may misrepresents through selective presentation. Statisticians are one of the few groups that are trained with a sufficient degree of data skepticism. But it can also be combatted through ensuring there are domain experts present, and that they can speak freely.}
 
-\slides{\figure{\includediagram{\diagramsDir/data-science/data-theatre-000}{60%}}{The pheonomenon of number theatre or *data theatre* was described by David Spiegelhalter and is nicely sumamrized by Martin Robbins in this sub-stack article <https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards>.}{data-theatre-000}}
+\slides{\figure{\includediagram{\diagramsDir/business/data-theatre000}{60%}}{The pheonomenon of number theatre or *data theatre* was described by David Spiegelhalter and is nicely sumamrized by Martin Robbins in this sub-stack article <https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards>.}{data-theatre-000}}
 
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/data-science/data-theatre-001}{60%}}{The pheonomenon of number theatre or *data theatre* was described by David Spiegelhalter and is nicely sumamrized by Martin Robbins in this sub-stack article <https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards>.}{data-theatre-001}
+\figure{\includediagram{\diagramsDir/business/data-theatre001}{60%}}{The pheonomenon of number theatre or *data theatre* was described by David Spiegelhalter and is nicely sumamrized by Martin Robbins in this sub-stack article <https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards>.}{data-theatre-001}
 
 \notes{The best book I have found for teaching the skeptical sense of data that underlies the statisticians craft is David Spiegelhalter's *Art of Statistics*.}
 
