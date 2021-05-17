@@ -24,11 +24,9 @@ transition: None
 
 \section{Introduction}
 
-\subsection{Meet today's team!}
-
-\aligncenter{{\neilLawrencePicture{20%}
-Neil Lawrence
-Professor of Machine Learning}
+\slides{\aligncenter{\neilLawrencePicture{20%}}
+\aligncenter{Neil Lawrence}
+\aligncenter{Professor of Machine Learning}}
 
 \include{_notebooks/includes/notebook-setup.md}
 
@@ -80,7 +78,7 @@ Professor of Machine Learning}
 
 \newslide{Complexity in Action}
 
-\figure{\includeyoutube{_oGAzq5wM_Q}{600}{450}{80}}{Daniel Simon's famous illusion "monkey business". Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.}{monkey-business}
+\figure{\includeyoutube{_oGAzq5wM_Q}{600}{450}{80}{105}}{Daniel Simon's famous illusion "monkey business". Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.}{monkey-business}
 
 \notes{When we combine the complexity of the world with our relatively low bandwidth for information, problems can arise. Our focus on what we perceive to be the most important problem can cause us to miss other (potentially vital) contextual information.}
 

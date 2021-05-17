@@ -1,7 +1,7 @@
 \ifndef{notebookSetup}
 \define{notebookSetup}
 
-\notes{\subsection{Setup}
+\notes{\subsection{Setup}}
 
 
 \include{_notebooks/includes/plot-setup.md}
