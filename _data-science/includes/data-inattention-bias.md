@@ -34,9 +34,9 @@
 
 \notes{Not only can we be misled by data before a decision is made, but sometimes we can be misled by data to justify the making of a decision. David Spiegelhalter refers to the phenomenon of "Number Theatre" in a conversation with Andrew Marr from May 2020 on the presentation of data.}
 
-\figure{\includebbcvideo{p08csg28}{600}{450}}{Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.}{david-andrew-marr}
+\figure{\includeyoutube{9388XmWIHXg}{600}{450}}{Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.}{david-andrew-marr}
 
-<!--includeyoutube{9388XmWIHXg}{600}{450}-->
+<!--includebbcvideo{p08csg28}-->
 
 \subsection{Data Theatre}
 
