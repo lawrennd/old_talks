@@ -18,7 +18,7 @@ Better mediation of this flow actually requires a better understanding of human-
 
 For further thoughts see \addguardian{marketing in the internet era}{2015/jul/23/data-driven-economy-marketing} from 2015.}
 
-\notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}\notes{.}
+\notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}
 
 \include{_data-science/includes/new-flow-of-information.md}
 
