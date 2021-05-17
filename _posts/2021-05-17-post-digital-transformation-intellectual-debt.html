@@ -32,10 +32,10 @@ categories:
 -->
 <h1 id="introduction">Introduction</h1>
 <h2 id="meet-todays-team">Meet today’s team!</h2>
-<table>
-<tr>
-<td width="30%">
-<svg viewBox="0 0 200 200" style="width:100%">
+<center>
+</center>
+<p>{{</p>
+<svg viewBox="0 0 200 200" style="width:20%">
 <defs> <clipPath id="clip0">
 <style>
 circle {
@@ -48,14 +48,35 @@ Neil Lawrence
 </title>
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/neil-lawrence.png" clip-path="url(#clip0)"/>
 </svg>
-Neil Lawrence Professor of Machine Learning
-</td>
-<td width="30%">
-</td>
-<td width="30%">
-</td>
-</tr>
-</table>
+<p>Neil Lawrence Professor of Machine Learning}</p>
+<p>{## Setup</p>
+<!--setupplotcode{import seaborn as sns
+sns.set_style('darkgrid')
+sns.set_context('paper')
+sns.set_palette('colorblind')}-->
+<h2 id="pods">pods</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/pods-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/pods-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In Sheffield we created a suite of software tools for ‘Open Data Science.’ Open data science is an approach to sharing code, models and data that should make it easier for companies, health professionals and scientists to gain access to data science techniques.</p>
+<p>You can also check this blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">Open Data Science</a>.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install <span class="op">--</span>upgrade git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>lawrennd<span class="op">/</span>ods</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on github: <a href="https://github.com/lawrennd/ods" class="uri">https://github.com/lawrennd/ods</a></p>
+<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<h2 id="mlai">mlai</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/mlai-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/mlai-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The <code>mlai</code> software is a suite of helper functions for teaching and demonstrating machine learning algorithms. It was first used in the Machine Learning and Adaptive Intelligence course in Sheffield in 2013.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install <span class="op">--</span>upgrade git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>lawrennd<span class="op">/</span>mlai.git</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on github: <a href="https://github.com/lawrennd/mlai" class="uri">https://github.com/lawrennd/mlai</a></p>
+<p>Once <code>mlai</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span></code></pre></div>
 <h2 id="the-gartner-hype-cycle">The Gartner Hype Cycle</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/gartner-hype-cycle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/gartner-hype-cycle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -115,147 +136,6 @@ Neil Lawrence Professor of Machine Learning
 <p>Machine learning has been deployed in Speech Recognition (e.g. Alexa, deep neural networks, convolutional neural networks for speech recognition), in computer vision (e.g. Amazon Go, convolutional neural networks for person recognition and pose detection).</p>
 <p>The field of data science is related to AI, but philosophically different. It arises because we are increasingly creating large amounts of data through <em>happenstance</em> rather than active collection. In the modern era data is laid down by almost all our activities. The objective of data science is to extract insights from this data.</p>
 <p>Classically, in the field of statistics, data analysis proceeds by assuming that the question (or scientific hypothesis) comes before the data is created. E.g., if I want to determine the effectiveness of a particular drug, I perform a <em>design</em> for my data collection. I use foundational approaches such as randomization to account for confounders. This made a lot of sense in an era where data had to be actively collected. The reduction in cost of data collection and storage now means that many data sets are available which weren’t collected with a particular question in mind. This is a challenge because bias in the way data was acquired can corrupt the insights we derive. We can perform randomized control trials (or A/B tests) to verify our conclusions, but the opportunity is to use data science techniques to better guide our question selection or even answer a question without the expense of a full randomized control trial (referred to as A/B testing in modern internet parlance).</p>
-<p>Intro: 9 - 9.10 1 exercise – 15 minutes: 9:15 - 9.30</p>
-<!-- From the Google Cloud Data Talk -->
-<!--## Example: Supply Chain
-
-
-
-
-
-
-
-
-
-
-## Supply Chain
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/supply-chain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/supply-chain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-<div class="figure">
-<div class="figure-frame" id="packhorse-bridge-burbage-brook-figure">
-<div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/packhorse-bridge-burbage-brook.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-</div>
-<div class="magnify" id="packhorse-bridge-burbage-brook-magnify" onclick="magnifyFigure('packhorse-bridge-burbage-brook')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="packhorse-bridge-burbage-brook-caption">
-Figure: Packhorse Bridge under Burbage Edge. This packhorse route climbs steeply out of Hathersage and heads towards Sheffield. Packhorses were the main route for transporting goods across the Peak District. The high cost of transport is one driver of the 'smith' model, where there is a local skilled person responsible for assembling or creating goods (e.g. a blacksmith). 
-</div>
-</div>
-
-On Sunday mornings in Sheffield, I often used to run across Packhorse Bridge in Burbage valley. The bridge is part of an ancient network of trails crossing the Pennines that, before Turnpike roads arrived in the 18th century, was the main way in which goods were moved. Given that the moors around Sheffield were home to sand quarries, tin mines, lead mines and the villages in the Derwent valley were known for nail and pin manufacture, this wasn't simply movement of agricultural goods, but it was the infrastructure for industrial transport.
-
-The profession of leading the horses was known as a Jagger and leading out of the village of Hathersage is Jagger's Lane, a trail that headed underneath Stanage Edge and into Sheffield. 
-
-The movement of goods from regions of supply to areas of demand is fundamental to our society. The physical infrastructure of supply chain has evolved a great deal over the last 300 years.
-
-
-
-
-
-
-## Cromford
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/cromford.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/cromford.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-<div class="figure">
-<div class="figure-frame" id="cromford-mill-figure">
-<div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/cromford-mill.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-</div>
-<div class="magnify" id="cromford-mill-magnify" onclick="magnifyFigure('cromford-mill')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="cromford-mill-caption">
-Figure: Richard Arkwright is regarded of the founder of the modern factory system. Factories exploit distribution networks to centralize production of goods. Arkwright located his factory in Cromford due to proximity to Nottingham Weavers (his market) and availability of water power from the tributaries of the Derwent river. When he first arrived there was almost no transportation network. Over the following 200 years The Cromford Canal (1790s), a Turnpike (now the A6, 1816-18) and the High Peak Railway (now closed, 1820s) were all constructed to improve transportation access as the factory blossomed.
-</div>
-</div>
-
-Richard Arkwright is known as the father of the modern factory system. In 1771 he set up a [Mill](https://en.wikipedia.org/wiki/Cromford_Mill) for spinning cotton yarn in the village of Cromford, in the Derwent Valley. The Derwent valley is relatively inaccessible. Raw cotton arrived in Liverpool from the US and India. It needed to be transported on packhorse across the bridleways of the Pennines. But Cromford was a good location due to proximity to Nottingham, where weavers where consuming the finished thread, and  the availability of water power from small tributaries of the Derwent river for Arkwright's [water frames](https://en.wikipedia.org/wiki/Spinning_jenny) which automated the production of yarn from raw cotton.
-
-By 1794 the [Cromford Canal](https://en.wikipedia.org/wiki/Cromford_Canal) was opened to bring coal in to Cromford and give better transport to Nottingham. The construction of the canals was driven by the need to improve the transport infrastructure, facilitating the movement of goods across the UK. Canals, roads and railways were initially constructed by the economic need for moving goods. To improve supply chain.
-
-The A6 now does pass through Cromford, but at the time he moved there there was merely a track. The High Peak Railway was opened in 1832, it is now converted to the High Peak Trail, but it remains the highest railway built in Britain.
-
-@Cooper:transformation91
-
-
-
-
-
-
-
-
-
-## Containerization
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/containerisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/containerisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="container-2539942_1920-figure">
-<div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-</div>
-<div class="magnify" id="container-2539942_1920-magnify" onclick="magnifyFigure('container-2539942_1920')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="container-2539942_1920-caption">
-Figure: The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.
-</div>
-</div>
-
-Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain. 
-
-
-
-
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="wild-alaskan-cod-figure">
-<table><tr><td width="45%"><div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div></td><td width="45%"><div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div></td></tr></table>
-</div>
-<div class="magnify" id="wild-alaskan-cod-magnify" onclick="magnifyFigure('wild-alaskan-cod')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="wild-alaskan-cod-caption">
-Figure: Wild Alaskan Cod, being solid in the Pacific Northwest, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.
-</div>
-</div>
-
-
-For example, you can buy Wild Alaskan Cod fished from Alaska, processed in China, sold in North America. This is driven by the low cost of transport for frozen cod vs the higher relative cost of cod processing in the US versus China. Similarly, <a href="https://www.telegraph.co.uk/news/uknews/1534286/12000-mile-trip-to-have-seafood-shelled.html" target="_blank" >Scottish prawns are also processed in China for sale in the UK.</a>
-
-This effect on cost of transport vs cost of processing is the main driver of the topology of the modern supply chain and the associated effect of globalization. If transport is much cheaper than processing, then processing will tend to agglomerate in places where processing costs can be minimized.
-
-Large scale global economic change has principally been driven by changes in the technology that drives supply chain.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Supply chain is a large-scale automated decision making network. Our aim is to make decisions not only based on our models of customer behavior (as observed through data), but also by accounting for the structure of our fulfilment center, and delivery network.
-
-Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in  Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or *mechanistic* understanding of the supply chain network. For this reason, the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.
-
-In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.
-
-This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.
-
-
--->
-<p>Session 2</p>
-<p>Main message – 45 mins / 1 hour: 9.30 - 10:30 Break – 15 minutes: 10.30 - 10:45 2nd exercise: 10.45 - 11:15 3rd exercise to bring context to their work: 11.15 - 12:30</p>
 <!-- Embodiment Factors-->
 <h2 id="information-and-embodiment">Information and Embodiment</h2>
 <div style="text-align:right">
@@ -529,47 +409,47 @@ embodiment
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>The BMI Steps example is taken from <span class="citation" data-cites="Yanai-hypothesis20">Yanai and Lercher (2020)</span>. We are given a data set of body-mass index measurements against step counts. For convenience we have packaged the data so that it can be easily downloaded.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.bmi_steps()</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>] </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.bmi_steps()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>] </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span></code></pre></div>
 <p>It is good practice to give our variables interpretable names so that the analysis may be clearly understood by others. Here the <code>steps</code> count is the first dimension of the covariate, the <code>bmi</code> is the second dimension and the <code>gender</code> is stored in <code>y</code> with <code>1</code> for female and <code>0</code> for male.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> X[:, <span class="dv">0</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> X[:, <span class="dv">1</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> y[:, <span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> X[:, <span class="dv">0</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> X[:, <span class="dv">1</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> y[:, <span class="dv">0</span>]</span></code></pre></div>
 <p>We can check the mean steps and the mean of the BMI.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>steps.mean()))</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>bmi.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>bmi.mean()))</span></code></pre></div>
 <h2 id="bmi-steps-data-analysis">BMI Steps Data Analysis</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>We can also separate out the means from the male and female populations. In python this can be done by setting male and female indices as follows.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>male_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">0</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>female_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>male_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">0</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>female_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">1</span>)</span></code></pre></div>
 <p>And now we can extract the variables for the two populations.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>male_steps <span class="op">=</span> steps[male_ind]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>male_bmi <span class="op">=</span> bmi[male_ind]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>male_steps <span class="op">=</span> steps[male_ind]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>male_bmi <span class="op">=</span> bmi[male_ind]</span></code></pre></div>
 <p>And as before we compute the mean.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_steps.mean()))</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_bmi.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_bmi.mean()))</span></code></pre></div>
 <p>Similarly we can get the same result for the female portion of the populaton.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>female_steps <span class="op">=</span> steps[female_ind]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>female_bmi <span class="op">=</span> bmi[female_ind]</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_steps.mean()))</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_bmi.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>female_steps <span class="op">=</span> steps[female_ind]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>female_bmi <span class="op">=</span> bmi[female_ind]</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_bmi.mean()))</span></code></pre></div>
 <p>Interesting, the female BMI average is slightly higher than the male BMI average. The number of steps in the male group is higher than that in the female group. Perhaps the steps and the BMI are anti-correlated. The more steps, the lower the BMI.</p>
 <p>Python provides a statistics package. We’ll import this in <code>python</code> so that we can try and understand the correlation between the <code>steps</code> and the <code>BMI</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>corr, _ <span class="op">=</span> pearsonr(steps, bmi)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s overall correlation: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>corr))</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>male_corr, _ <span class="op">=</span> pearsonr(male_steps, male_bmi)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for males: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>male_corr))</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>female_corr, _ <span class="op">=</span> pearsonr(female_steps, female_bmi)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for females: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>female_corr))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>corr, _ <span class="op">=</span> pearsonr(steps, bmi)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s overall correlation: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>corr))</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>male_corr, _ <span class="op">=</span> pearsonr(male_steps, male_bmi)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for males: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>male_corr))</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>female_corr, _ <span class="op">=</span> pearsonr(female_steps, female_bmi)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for females: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>female_corr))</span></code></pre></div>
 <h2 id="a-hypothesis-as-a-liability">A Hypothesis as a Liability</h2>
 <p>This analysis is from an article titled “A Hypothesis as a Liability” <span class="citation" data-cites="Yanai-hypothesis20">(Yanai and Lercher, 2020)</span>, they start their article with the following quite from Herman Hesse.</p>
 <blockquote>
@@ -596,15 +476,15 @@ embodiment
 <p>Unfortunately, we don’t always have time to wait for this process to converge to an answer we can all rely on before a decision is required.</p>
 <p>Not only can we be misled by data before a decision is made, but sometimes we can be misled by data to justify the making of a decision. David Spiegelhalter refers to the phenomenon of “Number Theatre” in a conversation with Andrew Marr from May 2020 on the presentation of data.</p>
 <div class="figure">
-<div id="Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.-figure" class="figure-frame">
+<div id="david-andrew-marr-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.bbc.co.uk/programmes/p08csg28?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 </div>
-<div id="Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.-magnify" class="magnify" onclick="magnifyFigure(&#39;Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.&#39;)">
+<div id="david-andrew-marr-magnify" class="magnify" onclick="magnifyFigure(&#39;david-andrew-marr&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.-caption" class="caption-frame">
-<p>Figure: 70%</p>
+<div id="david-andrew-marr-caption" class="caption-frame">
+<p>Figure: Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.</p>
 </div>
 </div>
 <!--includeyoutube{9388XmWIHXg}{600}{450}-->
@@ -764,15 +644,22 @@ Diane Coyle
 </ul>
 <p>{For further reading on how some felt that decisions should be made, you can see</p>
 <p><a href="https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463" class="uri">https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463</a></p>
-<h2 id="explore-vs-exploit">Explore vs Exploit</h2>
-<p>(Convergence vs Divergence)</p>
-<p>Kappenball</p>
-<h2 id="data-and-uncertainty">Data and Uncertainty</h2>
-<p>Your new use of data is generating uncertainties.</p>
+<h1 id="bringing-it-back">Bringing it Back</h1>
 <h2 id="what-we-did-amazon">What we did Amazon</h2>
-<p>Right a lot, dive deep</p>
-<p>finance case study</p>
-<p>Break: What could you do in your company</p>
+<p>Corporate culture turns out to be an important component of how you can react to digital transformation. Amazon is a company that likes to take a data driven approach. It has a corporate culture that is set up around data-driven decision making. In particular <em>customer obsession</em> and other <em>leadership principles</em> help build a cohesive approach to how data is assimilated.</p>
+<p>Amazon has <a href="https://www.amazon.jobs/en/principles">14 leadership principles</a> in total, but two I found to be particularly useful are called <em>right a lot</em> and <em>dive deep</em>.</p>
+<h3 id="are-right-a-lot">Are Right a Lot</h3>
+<blockquote>
+<p>Leaders are right a lot. They have strong judgment and good instincts. They seek diverse perspectives and work to disconfirm their beliefs.</p>
+</blockquote>
+<p>I chose “right a lot” because of the the final sentence. Many people find this leadership princple odd because how can you be ‘right a lot.’ Well, I think it’s less about being right, but more about how you interact with those around you. Seeking <em>diverse perspectives</em> and working to <em>disconfirm your beliefs</em>. One of my favourite aspects of Amazon was how new ideas are presented. They are presented in the form of a document that is discussed. There is a particular writing style where claims in the document need to be backed up with evidence, often in the form of data. Importantly, when these documents are produced, they are read in silence at the beginning of the meeting. When everyone has finished reading, the <em>most junior person</em> speaks first. Senior leaders speak last. This is one approach to ensuring that a diverse range of perspectives are heard. It is this sort of respect that needs to be brought to complex decisions around data.</p>
+<h3 id="dive-deep">Dive Deep</h3>
+<blockquote>
+<p>Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdote differ. No task is beneath them.</p>
+</blockquote>
+<p>I chose “dive deep” because of the last phrase of the second sentence. Amazon is suggesting that leaders “are skeptical when metrics and anecdote differ.” This phrase is vitally important, data inattention bias means that there’s a tendency to ‘miss the gorilla.’ The gorilla is often your own business instinct and/or domain expertise <em>or</em> that of others. If the data you are seeing contradicts the anecdotes you are hearing, this is a clue that something may be wrong. Your data skepticism should be on <em>high alert</em>. This leadership principle is teaching us how to mediate between ‘seeing the forest’ and ‘seeing the tree.’ It warns us to look for inconsistencies between what we’re hearing about the individual tree and teh wider forest.</p>
+<p>Understanding your own corporate culture, and what levers you have at your disposal, is a key component of bringing the right approach to data driven decision making.</p>
+<p>These challenges can be particularly difficult if your organisation is dominated by <em>operational concerns</em>. If rapid decision making is required, the Gorilla may be missed. And this may be mostly OK, for example, in Amazon’s supply chain there are weekly business reviews that are looking at the international state of the supply chain. If there are problems, they often need quick actions to rectify them. When quick actions are required, ‘command and control’ tends to predominate over more collaorative decision making that we hope allows us to see the Gorilla. Unfortunately, it can be hard, even as senior leaders, to switch between this type of operational decision making, and the more inclusive decision making we need around complex data scenarios. One possibility is to reserve a day for meetings that are dealing with the more complex decision making. In Amazon later in the week was more appropriate for this type of meeting. So making, e.g. Thursday into a more thoughtful day (Thoughtsday if you will?) you can potentially switch modes of thinking and take a longer term view on a given day in the week.</p>
 <h2 id="what-we-did-in-delve">What we did in DELVE</h2>
 <p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
 <h2 id="data-as-a-convener">Data as a Convener</h2>
@@ -809,9 +696,11 @@ Diane Coyle
 </div>
 <p>Fritz Heider referred to happenings that are “<em>psychologically represented</em> in each of the participants” <span class="citation" data-cites="Heider:interpersonal58">(Heider, 1958)</span> as a preqequisite for conversation. Data is a route to that psychological representation.</p>
 <p><em>Note</em>: my introduction to Fritz Heider was through a talk by Nick Chater in 2010, you can read Nick’s thoughts on these issues in his book, <em>The Mind is Flat</em> <span class="citation" data-cites="Chater:mindisflat19">(Chater, 2019)</span>.</p>
+<ul>
+<li>Finish 12:30</li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>See the Gorilla don’t be the gorilla.</p>
-<p>(our inner chimp) (Rebel Ideas)</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>

@@ -3,7 +3,7 @@
 
 \editme
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.google_trends(terms=[\terms], 
                   initials='\initials', 
 				  diagrams='\writeDiagramsDir/data-science')}
