@@ -15,7 +15,7 @@
 
 \slides{* Use data to answer policy questions.
 * Make international comparisons for input.
-* Challenges: around getting data. Report out today!}
+* Challenges: around getting data.}
 
 \notes{Right from the start, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn't available.}
 
