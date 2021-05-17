@@ -18,7 +18,7 @@ You can also check this} \addblog{Open Data Science}{2014/07/01/open-data-scienc
 
 \notes{from the command prompt where you can access your python installation.}
 
-\notes{The code is also available on github: <https://github.com/sods/ods>
+\notes{The code is also available on github: <https://github.com/lawrennd/ods>
 
 Once ``pods`` is installed, it can be imported in the usual manner.}
 

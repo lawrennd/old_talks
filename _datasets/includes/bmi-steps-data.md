@@ -4,44 +4,25 @@
 
 \subsection{BMI Steps Data}
 
+\notes{The BMI Steps example is taken from @Yanai-hypothesis20. We are given a data set of body-mass index measurements against step counts. For convenience we have packaged the data so that it can be easily downloaded.}
+
 \setupcode{import pods}
 
 \code{data = pods.datasets.bmi_steps()
 X = data['X'] 
 y = data['Y']}
 
-\setupcode{from scipy.stats import pearsonr}
+\notes{It is good practice to give our variables interpretable names so that the analysis may be clearly understood by others. Here the `steps` count is the first dimension of the covariate, the `bmi` is the second dimension and the `gender` is stored in `y` with `1` for female and `0` for male.}
 
-\code{corr, _ = pearsonr(X[:, 0], X[:, 1])
-print("Pearson's overall correlation: {corr}".format(corr=corr))}
+\code{steps = X[:, 0]
+bmi = X[:, 1]
+gender = y[:, 0]}
 
+\notes{We can check the mean steps and the mean of the BMI.}
 
-\code{male_ind = np.where(y.flatten()==0)
-male_corr, _ = pearsonr(X[male_ind, 0].flatten(), X[male_ind, 1].flatten())
-print("Pearson's correlation for males: {corr}".format(corr=male_corr))}
+\code{print('Steps mean is {mean}.'.format(mean=steps.mean()))}
 
-\code{female_ind = np.where(y.flatten()==1)
-female_corr, _ = pearsonr(X[female_ind, 0].flatten(), X[female_ind, 1].flatten())
-print("Pearson's correlation for females: {corr}".format(corr=female_corr))}
+\code{print('BMI mean is {mean}.'.format(mean=bmi.mean()))}
 
-\newslide{}
-
-\setupdisplaycode{import mlai.teaching_plots as plot
-import matplotlib.pyplot as plt}
-
-\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-_ = ax.plot(X[np.where(y==0), 0], X[np.where(y==0), 1], 'r.',markersize=10)
-_ = ax.plot(X[np.where(y==1), 0], X[np.where(y==1), 1], 'r.',markersize=10)
-_ = ax.set_xlabel('time', fontsize=20)
-_ = ax.set_ylabel('acceleration', fontsize=20)
-xlim = (0, 15000)
-ylim = (15, 32.5)
-ax.set_xlim(xlim)
-ax.set_ylim(ylim)
-mlai.write_figure(filename='\writeDiagramsDir/datasets/bmi-steps.svg', 
-            transparent=True, frameon=True)}
-
-
-\figure{\includediagram{\diagramsDir/datasets/bmi-steps}{80%}}{BMI/ steps data. The data consists of step readings for different subjects plotted against their BMI}{bmi-step-data}
 
 \endif

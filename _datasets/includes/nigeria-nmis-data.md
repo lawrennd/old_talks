@@ -23,7 +23,7 @@
 
 \notes{For ease of use we've packaged this data set in the `pods` library}
 
-\include{_data-science/includes/pods-software.md}
+\include{_software/includes/pods-software.md}
 
 \code{data = pods.datasets.nigeria_nmis()['Y']
 data.head()}

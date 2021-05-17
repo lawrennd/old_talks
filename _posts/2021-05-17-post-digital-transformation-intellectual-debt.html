@@ -15,7 +15,6 @@ published: 2021-05-17
 week: 0
 reveal: 2021-05-17-post-digital-transformation-intellectual-debt.slides.html
 ipynb: 2021-05-17-post-digital-transformation-intellectual-debt.ipynb
-pptx: 2021-05-17-post-digital-transformation-intellectual-debt.pptx
 layout: talk
 categories:
 - notes
@@ -520,13 +519,145 @@ embodiment
 <p>However, this happenstance data often allows us to characterise a particular individual to a high degree of accuracy. Classical statistics was all about the forest, but big data can often become about the individual tree. As a result we are misled about the situation.</p>
 <p>The phenomenon is all the more dangerous, because our perception is that we are characterising the wider scenario with ever increasing accuracy. Whereas in reality, we are just becoming distracted by detail that may or may not be pertinent to the wider situation.</p>
 <p>This is related to our limited bandwidth as humans, and the ease with which we are distracted by detail. The data-inattention-cognitive-bias.</p>
-<h2 id="a-hypothesis-as-a-liability">A Hypothesis as a Liability</h2>
+<h2 id="data-inattention-bias">Data Inattention Bias</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-inattention-bias.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-inattention-bias.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02133-w</p>
-<h2 id="a-hypothesis-can-be-a-liability">A Hypothesis <em>can</em> be a Liability</h2>
-<p>https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02276-4</p>
+<p>We are going to see how inattention biases can play out in data analysis by going through a simple example. The analysis involves body mass index and activity information.</p>
+<h2 id="bmi-steps-data">BMI Steps Data</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The BMI Steps example is taken from <span class="citation" data-cites="Yanai-hypothesis20">Yanai and Lercher (2020)</span>. We are given a data set of body-mass index measurements against step counts. For convenience we have packaged the data so that it can be easily downloaded.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.bmi_steps()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>] </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span></code></pre></div>
+<p>It is good practice to give our variables interpretable names so that the analysis may be clearly understood by others. Here the <code>steps</code> count is the first dimension of the covariate, the <code>bmi</code> is the second dimension and the <code>gender</code> is stored in <code>y</code> with <code>1</code> for female and <code>0</code> for male.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> X[:, <span class="dv">0</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> X[:, <span class="dv">1</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> y[:, <span class="dv">0</span>]</span></code></pre></div>
+<p>We can check the mean steps and the mean of the BMI.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>bmi.mean()))</span></code></pre></div>
+<h2 id="bmi-steps-data-analysis">BMI Steps Data Analysis</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>We can also separate out the means from the male and female populations. In python this can be done by setting male and female indices as follows.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>male_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">0</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>female_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">1</span>)</span></code></pre></div>
+<p>And now we can extract the variables for the two populations.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>male_steps <span class="op">=</span> steps[male_ind]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>male_bmi <span class="op">=</span> bmi[male_ind]</span></code></pre></div>
+<p>And as before we compute the mean.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_bmi.mean()))</span></code></pre></div>
+<p>Similarly we can get the same result for the female portion of the populaton.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>female_steps <span class="op">=</span> steps[female_ind]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>female_bmi <span class="op">=</span> bmi[female_ind]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_bmi.mean()))</span></code></pre></div>
+<p>Interesting, the female BMI average is slightly higher than the male BMI average. The number of steps in the male group is higher than that in the female group. Perhaps the steps and the BMI are anti-correlated. The more steps, the lower the BMI.</p>
+<p>Python provides a statistics package. We’ll import this in <code>python</code> so that we can try and understand the correlation between the <code>steps</code> and the <code>BMI</code>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>corr, _ <span class="op">=</span> pearsonr(steps, bmi)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s overall correlation: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>corr))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>male_corr, _ <span class="op">=</span> pearsonr(male_steps, male_bmi)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for males: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>male_corr))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>female_corr, _ <span class="op">=</span> pearsonr(female_steps, female_bmi)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for females: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>female_corr))</span></code></pre></div>
+<h2 id="a-hypothesis-as-a-liability">A Hypothesis as a Liability</h2>
+<p>This analysis is from an article titled “A Hypothesis as a Liability” <span class="citation" data-cites="Yanai-hypothesis20">(Yanai and Lercher, 2020)</span>, they start their article with the following quite from Herman Hesse.</p>
+<blockquote>
+<p>“ ‘When someone seeks,’ said Siddhartha, ‘then it easily happens that his eyes see only the thing that he seeks, and he is able to find nothing, to take in nothing. […] Seeking means: having a goal. But finding means: being free, being open, having no goal.’ ”</p>
+<p>Hermann Hesse</p>
+</blockquote>
+<p>Their idea is that having a hypothesis can constrain our thinking. However, in answer to their paper <span class="citation" data-cites="Felin-data20">Felin et al. (2021)</span> argue that some form of hypothesis is always necessary, suggesting that a hypothesis <em>can</em> be a liability</p>
+<p>My view is captured in the introductory chapter to an edited volume on computational systems biology that I worked on with Mark Girolami, Magnus Rattray and Guido Sanguinetti.</p>
+<div class="figure">
+<div id="licsb-popper-quote-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/data-science/licsb-popper-quote.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="licsb-popper-quote-magnify" class="magnify" onclick="magnifyFigure(&#39;licsb-popper-quote&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="licsb-popper-quote-caption" class="caption-frame">
+<p>Figure: Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2010)</span> highlighting the importance of interaction between data and hypothesis.</p>
+</div>
+</div>
+<p>Popper nicely captures the interaction between hypothesis and data by relating it to the chicken and the egg. The important thing is that these two co-evolve.</p>
+<h2 id="number-theatre">Number Theatre</h2>
+<p>Unfortunately, we don’t always have time to wait for this process to converge to an answer we can all rely on before a decision is required.</p>
+<p>Not only can we be misled by data before a decision is made, but sometimes we can be misled by data to justify the making of a decision. David Spiegelhalter refers to the phenomenon of “Number Theatre” in a conversation with Andrew Marr from May 2020 on the presentation of data.</p>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<iframe width="600" height src="https://www.bbc.co.uk/programmes/p08csg28?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>[450</p>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>}{70%}{Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.}{david-andrew-marr}</p>
+<!--includeyoutube{9388XmWIHXg}{600}{450}-->
+<h2 id="data-theatre">Data Theatre</h2>
+<p>Data Theatre exploits data inattention bias to present a particular view on events that may misrepresents through selective presentation. Statisticians are one of the few groups that are trained with a sufficient degree of data skepticism. But it can also be combatted through ensuring there are domain experts present, and that they can speak freely.</p>
+<div class="figure">
+<div id="data-theatre-001-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/data-theatre-001.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="data-theatre-001-magnify" class="magnify" onclick="magnifyFigure(&#39;data-theatre-001&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="data-theatre-001-caption" class="caption-frame">
+<p>Figure: The pheonomenon of number theatre or <em>data theatre</em> was described by David Spiegelhalter and is nicely sumamrized by Martin Robbins in this sub-stack article <a href="https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards" class="uri">https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards</a>.</p>
+</div>
+</div>
+<p>The best book I have found for teaching the skeptical sense of data that underlies the statisticians craft is David Spiegelhalter’s <em>Art of Statistics</em>.</p>
+<h1 id="the-art-of-statistics">The Art of Statistics</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_books/includes/the-art-of-statistics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_books/includes/the-art-of-statistics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<center>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip1">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+David Spiegelhalter
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/david-spiegelhalter.png" clip-path="url(#clip1)"/>
+</svg>
+</center>
+<div class="figure">
+<div id="art-of-statistics-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/books/the-art-of-statistics.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="art-of-statistics-magnify" class="magnify" onclick="magnifyFigure(&#39;art-of-statistics&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="art-of-statistics-caption" class="caption-frame">
+<p>Figure: <a href="https://www.amazon.co.uk/Art-Statistics-Learning-Pelican-Books-ebook/dp/B07HQDJD99">The Art of Statistics by David Spiegelhalter</a> is an excellent read on the pitfalls of data interpretation.</p>
+</div>
+</div>
+<p>David’s <span class="citation" data-cites="Spiegelhalter-art19">(Spiegelhalter, 2019)</span> book brings important examples from statistics to life in an intelligent and entertaining way. It is highly readable and gives an opportunity to fast-track towards the important skill of data-skepticism that is the mark of a professional statistician.</p>
 <h2 id="increasing-need-for-human-judgment">Increasing Need for Human Judgment</h2>
 <div class="figure">
 <div id="-figure" class="figure-frame">
@@ -540,6 +671,21 @@ embodiment
 <p>Figure: Diane Coyle’s Fitzwilliam Lecture where she emphasises as data increases, human judgment is <em>more</em> needed.</p>
 </div>
 </div>
+<center>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Diane Coyle
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/diane-coyle.png" clip-path="url(#clip2)"/>
+</svg>
+</center>
 <blockquote>
 <p>The domain of human judgment is increasing.</p>
 <p>How these firms use knowledge. How do they generate ideas?</p>
@@ -552,6 +698,7 @@ embodiment
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>The DELVE Initiative was convened by the Royal Society early in the pandemic in response for a perceived need to increase provide policy advice for the U’s response to covide, with an initial focus on exit strategy from the first lock down.</p>
 <div class="figure">
 <div id="delve-announcement-figure" class="figure-frame">
 <div class="centered" style="">
@@ -584,12 +731,11 @@ embodiment
 </ul>
 <p>The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.</p>
 <p>Right from the start, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn’t available.</p>
-<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
+<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
 <p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
-<p>Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to Delve’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.</p>
-<p><a href="https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/" class="uri">https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/</a></p>
+<p>Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to DELVE’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.</p>
+<p>I was involved in the convening of the group. Experience from previous projects suggested that data expertise that was independent of domain knowledge often leads to misdirected efforts. We therefore convened a group that consisted of domain experts (public health, epidemiology, immunology, economics, behavioral economics, statistics, machine learning, education).</p>
 <p>Early on in the pandemic, it was noticeable that countries with experience of respitory diseases were making extensive use of face coverings in combating the disease.</p>
-<p><a href="https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463" class="uri">https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463</a></p>
 <div class="figure">
 <div id="longrich-sheppard-figure" class="figure-frame">
 <div class="centered" style="">
@@ -600,16 +746,71 @@ embodiment
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="longrich-sheppard-caption" class="caption-frame">
-<p>Figure: Western countries (US, Canada, Australia, UK, western Europe) with late mask adoption or no use of masks, versus countries and territories with early use of masks as part of official government or in practice policy (China, South Korea, Japan, Taiwan, Vietnam, Thailand, Kuwait, Slovakia, Czech Republic, in blues and greens). Countries with early mask usage tend to have flatter curves even without the use of lockdows. (Figure and caption taken from <span class="citation" data-cites="Longrich-masks20">Longrich and Sheppard (2020)</span>.</p>
+<p>Figure: Western countries (US, Canada, Australia, UK, western Europe) with late mask adoption or no use of masks, versus countries and territories with early use of masks as part of official government or in practice policy (China, South Korea, Japan, Taiwan, Vietnam, Thailand, Kuwait, Slovakia, Czech Republic, in blues and greens). Countries with early mask usage tend to have flatter curves even without the use of lockdows. (Figure and caption taken from <span class="citation" data-cites="Longrich-masks20">Longrich and Sheppard (2020)</span>).</p>
 </div>
 </div>
+<p>The DELVE group produced a report that assimilated various forms of evidence <span class="citation" data-cites="Delve-facemasks20">(The DELVE Initiative, 2020b)</span>.</p>
+<h3 id="breakout">Breakout</h3>
+<ul>
+<li>As pre-read material, you were provided with a report summary and links to the full report and responses collated by the Science Media Centre.
+<ul>
+<li>In your groups, discuss the summary and these responses.</li>
+</ul></li>
+<li>For both the comments and the responses put yourself in the position of a government minister.
+<ul>
+<li>What would you do and why?</li>
+<li>Which comments and recommendations were helpful and which weren’t?}</li>
+</ul></li>
+<li>Report: <a href="https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html" class="uri">https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html</a></li>
+<li>Responses: <a href="https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/" class="uri">https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/</a></li>
+</ul>
+<p>{For further reading on how some felt that decisions should be made, you can see</p>
+<p><a href="https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463" class="uri">https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463</a></p>
 <h2 id="explore-vs-exploit">Explore vs Exploit</h2>
 <p>(Convergence vs Divergence)</p>
+<p>Kappenball</p>
 <h2 id="data-and-uncertainty">Data and Uncertainty</h2>
 <p>Your new use of data is generating uncertainties.</p>
 <h2 id="what-we-did-amazon">What we did Amazon</h2>
+<p>Right a lot, dive deep</p>
+<p>finance case study</p>
 <p>Break: What could you do in your company</p>
 <h2 id="what-we-did-in-delve">What we did in DELVE</h2>
+<p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
+<h2 id="data-as-a-convener">Data as a Convener</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_policy/includes/data-as-a-convener.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_policy/includes/data-as-a-convener.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To improve communication, we need to ‘externalise cognition’: have objects that are outside our brains, are persistent in the real world, that we can combine with our individual knowledge. Doing otherwise leaves us imagining the world as our personal domain-utopias, ignoring the ugly realities of the way things actual progress.</p>
+<p>Data can provide an excellent convener, because even if it doesn’t exist it allows conversations to occur about what data should or could exist and how it might allow us to address the questions of importance.</p>
+<p>Models, while also of great potential value in externalising cognition, can be two complex to have conversations about and they can entrench beliefs, triggering <em>model induced blindness</em> (a variation on Kahneman’s <em>theory induced blindness</em> <span class="citation" data-cites="Kahneman:fastslow11">(Kahneman, 2011)</span>).</p>
+<div class="figure">
+<div id="anne-bob-model-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/policy/anne-bob-model.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="anne-bob-model-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-model&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-bob-model-caption" class="caption-frame">
+<p>Figure: Models can also be used to externalise cognition, but if the model is highly complex it’s difficult for two individuals to understand each others’ models. This shuts down conversation, often “mathematical intimidation” is used to shut down a line of questioning. This is highly destructive of the necessary cognitive diversity.</p>
+</div>
+</div>
+<p>Bandwidth constraints on individuals mean that they tend to focus on their own specialism. This can be particularly problematic for those on the more theoretical side, because mathematical models are complex, and require a lot of deep thought. However, when communicating with others, unless they have the same in depth experience of mathematical modelling as the theoreticians, the models do not bring about good information coherehnce. Indeed, many computational models themselves are so complex now that no individual can understand the model whole.</p>
+<div class="figure">
+<div id="anne-bob-data-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/policy/anne-bob-data.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="anne-bob-data-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-data&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-bob-data-caption" class="caption-frame">
+<p>Figure: Data can be queried, but the simplest query, what data do we need? Doesn’t even require the data to exist. It seems data can be highly effective for convening a multidisciplinary conversation.</p>
+</div>
+</div>
+<p>Fritz Heider referred to happenings that are “<em>psychologically represented</em> in each of the participants” <span class="citation" data-cites="Heider:interpersonal58">(Heider, 1958)</span> as a preqequisite for conversation. Data is a route to that psychological representation.</p>
+<p><em>Note</em>: my introduction to Fritz Heider was through a talk by Nick Chater in 2010, you can read Nick’s thoughts on these issues in his book, <em>The Mind is Flat</em> <span class="citation" data-cites="Chater:mindisflat19">(Chater, 2019)</span>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>See the Gorilla don’t be the gorilla.</p>
 <p>(our inner chimp) (Rebel Ideas)</p>
@@ -622,20 +823,44 @@ embodiment
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Chater:mindisflat19" class="csl-entry" role="doc-biblioentry">
+Chater, N., 2019. The mind is flat. Penguin.
+</div>
+<div id="ref-Felin-data20" class="csl-entry" role="doc-biblioentry">
+Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R., 2021. The data-hypothesis relationship. Genome Biology 22. <a href="https://doi.org/10.1186/s13059-021-02276-4">https://doi.org/10.1186/s13059-021-02276-4</a>
+</div>
+<div id="ref-Heider:interpersonal58" class="csl-entry" role="doc-biblioentry">
+Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
+</div>
 <div id="ref-Heider:experimental44" class="csl-entry" role="doc-biblioentry">
 Heider, F., Simmel, M., 1944. An experimental study of apparent behavior. The American Journal of Psychology 57, 243–259. <a href="https://doi.org/10.2307/1416950">https://doi.org/10.2307/1416950</a>
 </div>
 <div id="ref-Joseph-origins21" class="csl-entry" role="doc-biblioentry">
 Henrich, J., Muthukrishna, M., 2021. The origins and psychology of human cooperation. Annual Review of Psychology 72, 207–240. <a href="https://doi.org/10.1146/annurev-psych-081920-042106">https://doi.org/10.1146/annurev-psych-081920-042106</a>
 </div>
+<div id="ref-Kahneman:fastslow11" class="csl-entry" role="doc-biblioentry">
+Kahneman, D., 2011. Thinking fast and slow.
+</div>
 <div id="ref-Krizhevsky:imagenet12" class="csl-entry" role="doc-biblioentry">
 Krizhevsky, A., Sutskever, I., Hinton, G.E., n.d. ImageNet classification with deep convolutional neural networks. pp. 1097–1105.
+</div>
+<div id="ref-Lawrence:licsbintro10" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2010. Introduction to learning and inference in computational systems biology.
 </div>
 <div id="ref-Longrich-masks20" class="csl-entry" role="doc-biblioentry">
 Longrich, N.R., Sheppard, S.K., 2020. Public use of masks to control the coronavirus pandemic, Preprints.
 </div>
+<div id="ref-Spiegelhalter-art19" class="csl-entry" role="doc-biblioentry">
+Spiegelhalter, D.J., 2019. The art of statistics. Pelican.
+</div>
 <div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
-The DELVE Initiative, 2020. Data readiness: Lessons from an emergency. The Royal Society.
+The DELVE Initiative, 2020a. Data readiness: Lessons from an emergency. The Royal Society.
+</div>
+<div id="ref-Delve-facemasks20" class="csl-entry" role="doc-biblioentry">
+The DELVE Initiative, 2020b. Face masks for the general public. The Royal Society.
+</div>
+<div id="ref-Yanai-hypothesis20" class="csl-entry" role="doc-biblioentry">
+Yanai, I., Lercher, M., 2020. A hypothesis is a liability. Genome Biology 21.
 </div>
 </div>
 <section class="footnotes" role="doc-endnotes">

@@ -2,7 +2,7 @@
 title: "Post-Digital Transformation: Intellectual Debt"
 abstract: "Digital transformation has offered the promise of moving from a manual decision-making world to a world where decisions can be rational, data-driven and automated. The first step to digital transformation is mapping the world of atoms (material, customers, logistic networks) into the world of bits. But the real challenges may start once this is complete. In this talk we introduce the notion of 'post digital transformation': the challenges of doing business in a digital world."
 date: 2021-05-17
-pptx: True
+pptx: False
 potx: ../_includes/judge-reference.potx
 docx: False
 pdfnotes: False
@@ -81,11 +81,8 @@ Break – 15 minutes: 10.30 - 10:45
 \include{_ai/includes/conversation-computer.md}
 
 \include{_data-science/includes/big-data-paradox.md}
-
 \include{_data-science/includes/data-inattention-bias.md}
-
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
-
 \include{_policy/includes/face-masks-case-study.md}
 
 

@@ -1,1 +1,1 @@
-\include{_data-science/includes/pods-software.md}
+\include{_software/includes/pods-software.md}

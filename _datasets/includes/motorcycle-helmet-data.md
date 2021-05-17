@@ -11,6 +11,10 @@ scale=np.sqrt(y.var())
 offset=y.mean()
 yhat = (y - offset)/scale}
 
+\setupdisplaycode{import mlai.plot as plot
+import mlai.mlai as ma
+import matplotlib.pyplot as plt}
+
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 _ = ax.plot(x, y, 'r.',markersize=10)
 _ = ax.set_xlabel('time', fontsize=20)
@@ -19,7 +23,7 @@ xlim = (-20, 80)
 ylim = (-175, 125)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-mlai.write_figure(filename='\writeDiagramsDir/datasets/motorcycle-helmet.svg', 
+ma.write_figure(filename='motorcycle-helmet.svg', directory='\writeDiagramsDir/datasets/',
             transparent=True, frameon=True)}
 
 \subsection{Motorcycle Helmet Data}
