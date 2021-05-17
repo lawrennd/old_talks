@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Data Inattention Bias}
+\subsection{Data Selective Aattention Bias}
 
 \notes{We are going to see how inattention biases can play out in data analysis by going through a simple example. The analysis involves body mass index and activity information.}
 

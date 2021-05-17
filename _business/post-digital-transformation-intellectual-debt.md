@@ -78,9 +78,13 @@ transition: None
 
 \newslide{Complexity in Action}
 
+\notes{As an exercise in understanding complexity, watch the following video. You will see the basket ball being bounced around, and the players moving. Your job is to count the passes of those dressed in white and ignore those of the individuals dressed in black.}
+
 \figure{\includeyoutube{_oGAzq5wM_Q}{600}{450}{80}{105}}{Daniel Simon's famous illusion "monkey business". Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.}{monkey-business}
 
 \notes{When we combine the complexity of the world with our relatively low bandwidth for information, problems can arise. Our focus on what we perceive to be the most important problem can cause us to miss other (potentially vital) contextual information.}
+
+\notes{This phenomenon is known as selective attention or 'inattentional blindness'.}
 
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
