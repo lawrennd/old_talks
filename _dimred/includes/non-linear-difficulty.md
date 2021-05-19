@@ -16,7 +16,7 @@
 * Normalisation of distribution becomes intractable.
 }
 
-\figure{\includediagram{\diagramsDir/dimred/nonlinear-mapping-3d-plot}{80%}}{A two dimensional grid mapped into three dimensions to form a two dimensional manifold.}{nonlinear-mapping-3d-plot}
+\figure{\includediagram{\diagramsDir/dimred/nonlinear-mapping-3d-plot}{60%}}{A two dimensional grid mapped into three dimensions to form a two dimensional manifold.}{nonlinear-mapping-3d-plot}
 
 \plotcode{plot.non_linear_difficulty_plot_2(diagrams='\writeDiagramsDir/dimred/')}
 
@@ -28,7 +28,7 @@
 * Normalisation of distribution becomes intractable.
 }
 
-\figure{\includediagram{\diagramsDir/dimred/nonlinear-mapping-2d-plot}{80%}}{A one dimensional line mapped into two dimensions by two separate independent functions. Each point can be mapped exactly through the mappings.}{non-linear-mapping-2d-plot}
+\figure{\includediagram{\diagramsDir/dimred/nonlinear-mapping-2d-plot}{60%}}{A one dimensional line mapped into two dimensions by two separate independent functions. Each point can be mapped exactly through the mappings.}{non-linear-mapping-2d-plot}
 
 \plotcode{plot.non_linear_difficulty_plot_1(diagrams='\writeDiagramsDir/dimred')}
 
