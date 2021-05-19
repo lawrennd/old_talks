@@ -9,6 +9,6 @@
 \installcode{pyDOE}
 \installcode{EmuKit}
 
-\include{_gp/includes/gpy-software.md}
+\include{_software/includes/gpy-software.md}
 
 \endif

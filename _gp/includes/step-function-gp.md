@@ -3,7 +3,7 @@
 \editme
 
 \include{_ml/includes/step-function-data.md}
-\include{_gp/includes/gpy-software.md}
+\include{_software/includes/gpy-software.md}
 
 \subsection{Step Function Data GP}
 

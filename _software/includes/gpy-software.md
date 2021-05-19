@@ -2,6 +2,8 @@
 \define{gpySoftware}
 \editme
 
+\include{_software/includes/gpy-install.md}
+
 \subsection{GPy: A Gaussian Process Framework in Python}
 
 \notes{Gaussian processes are a flexible tool for non-parametric analysis with uncertainty. The GPy software was started in Sheffield to provide a easy to use interface to GPs. One which allowed the user to focus on the modelling rather than the mathematics.}
