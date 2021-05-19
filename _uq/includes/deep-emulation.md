@@ -5,7 +5,11 @@
 
 \subsection{Deep Emulation}
 
-\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}
+\ifdef{buyingSystem}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing0}
+\else
+\figure{\includediagram{\diagramsDir/simulation/ml-system-downstream-simulation000}{75%}}{A potential path of models in the emulation of a simulation system.}{ml-system-downstream-simulation0}
+\endif
 
 \notes{As a solution we can use of *emulators*. When constructing an ML system, software engineers,
 ML engineers, economists and operations researchers are
@@ -94,14 +98,26 @@ domain.--> Recomposing the ML system requires structural learning of the network
 
 \newslide{Deep Emulation}
 
+\ifdef{buyingSystem}
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing1}
+\else
+\figure{\includediagram{\diagramsDir/simulation/ml-system-downstream-simulation001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-simulation1}
+\endif
 
 \newslide{Deep Emulation}
 
+\ifdef{buyingSystem}
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing002}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing2}
+\else
+\figure{\includediagram{\diagramsDir/simulation/ml-system-downstream-simulation002}{75%}}{A potential path of models in the emulation of a simulation system.}{ml-system-downstream-simulation2}
+\endif
 
 \newslide{Deep Emulation}
 
+\ifdef{buyingSystem}
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-purchasing003}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing3}
+\else
+\figure{\includediagram{\diagramsDir/simulation/ml-system-downstream-simulation003}{75%}}{A potential path of models in the emulation of a simulation system.}{ml-system-downstream-simulation3}
+\endif
 
 \endif

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="235mm"
+   viewBox="0 0 297 235"
+   id="svg25590"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ml-system-downstream-purchasing000.svg">
+  <defs
+     id="defs25592">
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="DotM"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4372"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.4,0,0,0.4,2.96,0.4)" />
+    </marker>
+  </defs>
+  <style
+     id="style34034">
+    .mycircle {
+    stroke:black;
+    stroke-width:4px;
+    stroke-opacity:1;
+    fill:#0fc8ff;
+    fill-opacity:1;
+    }
+    .mycircle2 {
+    stroke:black;
+    stroke-width:4px;
+    stroke-opacity:1;
+    fill:#f03700;
+    fill-opacity:1;
+    }
+    .myarrow {
+    stroke:black;
+    stroke-width:2px;
+    stroke-opacity:1
+    }
+    .mypath {
+    fill:none;
+    fill-rule:evenodd;
+    stroke:black;
+    stroke-width:2px;
+    stroke-opacity:1;
+    marker-end:url(#DotM)
+    }
+    .mytext {
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    font-stretch:normal;
+    font-size:12.5px;
+    font-family:sans-serif;
+    line-height:1.25;
+    fill:#000000;
+    fill-opacity:1;
+    text-anchor:middle;
+    text-align:center;
+    }
+
+  </style>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.3"
+     inkscape:cx="34.507521"
+     inkscape:cy="374.16667"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     inkscape:window-width="1332"
+     inkscape:window-height="748"
+     inkscape:window-x="100"
+     inkscape:window-y="100"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid17143" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata25595">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       class="myarrow"
+       d="M 30,30 90,100"
+       id="availability-wait-line"
+       inkscape:connector-curvature="0" />
+    <path
+       class="myarrow"
+       d="M 90,100 160,100"
+       id="wait-customer-line"
+       inkscape:connector-curvature="0" />
+    <path
+       class="myarrow"
+       d="M 160,100 220,180"
+       id="customer-total-line"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:label="Layer 2"
+     inkscape:groupmode="layer"
+     id="layer2">
+    <g
+       id="g34066">
+      <circle
+         class="mycircle"
+         id="purchase-order"
+         cx="220"
+         cy="180"
+         r="20" />
+      <text
+         class="mytext"
+         id="purchase-order-text"
+         x="220"
+         y="215">
+        <tspan
+           x="220"
+           y="215"
+           sodipodi:role="line"
+           id="tspan34070">
+	atmospheric
+	</tspan>
+        <tspan
+           x="220"
+           y="227.5"
+           sodipodi:role="line"
+           id="tspan34070_1">
+	model
+	</tspan>
+      </text>
+    </g>
+    <g
+       id="g34048">
+      <circle
+         class="mycircle"
+         id="supply-forecast"
+         cx="90"
+         cy="100"
+         r="20" />
+      <text
+         class="mytext"
+         id="supply-forecast-text"
+         x="90"
+         y="135">
+        <tspan
+           x="90"
+           y="135"
+           sodipodi:role="line"
+           id="tspan34052">
+	  ocean
+	</tspan>
+        <tspan
+           x="90"
+           y="147.5"
+           sodipodi:role="line"
+           id="tspan34054">
+	  model
+	</tspan>
+      </text>
+    </g>
+    <g
+       id="g34058">
+      <circle
+         class="mycircle"
+         id="cost-predictions"
+         cx="160"
+         cy="100"
+         r="20" />
+      <text
+         class="mytext"
+         id="cost-predictions-text"
+         x="225"
+         y="100">
+        <tspan
+           x="225"
+           y="100"
+           sodipodi:role="line"
+           id="tspan34062">
+	  land 
+	</tspan>
+        <tspan
+           x="225"
+           y="112.5"
+           sodipodi:role="line"
+           id="tspan34062_2">
+	  model
+	</tspan>
+      </text>
+    </g>
+    <g
+       id="g44671">
+      <g
+         id="g34039">
+        <circle
+           r="20"
+           cy="30"
+           cx="30"
+           id="demand-forecast"
+           class="mycircle" />
+        <text
+           sodipodi:linespacing="125%"
+           y="30"
+           x="95"
+           id="demand-forecast-text"
+           class="mytext">
+          <tspan
+             y="30"
+             x="95"
+             id="tspan34635"
+             sodipodi:role="line">human</tspan>
+          <tspan
+             y="42.5"
+             x="95"
+             id="tspan34637"
+             sodipodi:role="line">activities</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

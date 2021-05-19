@@ -67,14 +67,7 @@ transition: None
 \include{_ai/includes/conversation-computer.md}
 
 \include{_data-science/includes/big-data-paradox.md}
-\subsection{Big Model Paradox}
-
-\notes{The big data paradox has a sister: the big model paradox. As we build more and more complex models we start believing that we have a higher fidelity representation of reality. But the complexity of reality is way beyond our feeble imaginings. So we end up with a highly complex model, but one that falls well short in terms of reflecting reality. Unfortunately, the complexity of the model means that it moves beyond our understanding. }
-
-\slides{* Add complexity to the model to make it realistic.
-* Move model "beyond human intuition"
-* But model still falls well short of mark in terms of representing reality}
-
+\include{_data-science/includes/big-model-paradox.md}
 \include{_psychology/includes/selective-attention-bias.md}
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
