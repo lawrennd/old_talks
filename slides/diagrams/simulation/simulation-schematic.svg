@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="104.98666mm"
+   height="113.45333mm"
+   viewBox="-2 -2 372 402"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="alexa-schematic.svg">
+  <defs
+     id="defs4" />
+  <style
+     id="style4186">
+    tspan {
+    text-anchor:middle;
+    text-align:center;
+    }
+    .mytext {
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    font-stretch:normal;
+    font-size:16px;
+    font-family:sans-serif;
+    line-height:1.25;
+    fill:#000000;
+    fill-opacity:1;
+    writing-mode:lr;
+    text-align:center;
+    dominant-baseline:middle;
+    text-anchor:middle;    
+    }
+    .myrect {
+    fill:none;
+    stroke:#000000;
+    stroke-width:2;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1
+    }
+    .mycircle {
+    fill:none;
+    stroke:#000000;
+    stroke-width:2;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1
+    }
+    .myellipse {
+    fill:#0fc8ff;
+    fill-opacity:1;
+    stroke:#000000;
+    stroke-width:1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1
+    }
+    .myarrow {
+    fill:none;
+    stroke:#000000;
+    stroke-width:2;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    marker-end:url(#markerArrow)
+    }
+    .input-stream {
+    stroke:red;
+    stroke-width:2;
+    stroke-opacity:1;
+    }
+    .output-stream {
+    stroke:blue;
+    stroke-width:2;
+    stroke-opacity:1;
+    }
+  </style>
+  <marker
+     id="markerArrow"
+     markerWidth="10"
+     markerHeight="7"
+     refX="10"
+     refY="3.5"
+     orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" />
+  </marker>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5643175"
+     inkscape:cx="-293.00162"
+     inkscape:cy="326.27955"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     inkscape:window-width="3440"
+     inkscape:window-height="1352"
+     inkscape:window-x="526"
+     inkscape:window-y="113"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="cloud-processing">
+    <rect
+       class="myrect"
+       id="rect6904"
+       x="0"
+       y="320"
+       width="120"
+       height="80" />
+    <text
+       xml:space="preserve"
+       class="mytext"
+       x="60"
+       y="360"
+       id="text6918"><tspan
+         x="60"
+         y="350"
+         style="text-align:center;text-anchor:middle">human</tspan>
+    <tspan
+         x="60"
+         y="370"
+         style="text-align:center;text-anchor:middle">activities</tspan></text>
+  </g>
+  <g
+     id="cloud-processing">
+    <rect
+       class="myrect"
+       id="rect6904"
+       x="250"
+       y="320"
+       width="120"
+       height="80" />
+    <text
+       xml:space="preserve"
+       class="mytext"
+       x="310"
+       y="360"
+       id="text6918"><tspan
+         x="310"
+         y="350"
+         style="text-align:center;text-anchor:middle">atmospheric</tspan>
+    <tspan
+         x="310"
+         y="370"
+         style="text-align:center;text-anchor:middle">model</tspan>
+    </text>
+  </g>
+  <g
+     id="g7811">
+    <rect
+       x="0"
+       y="0"
+       height="80"
+       width="120"
+       id="stt-rect"
+       class="myrect" />
+    <text
+       id="text6922"
+       x="60"
+       y="40"
+       class="mytext"
+       xml:space="preserve"><tspan
+         x="60"
+         y="30"
+         style="text-align:center;text-anchor:middle">land</tspan>
+    <tspan
+         x="60"
+         y="50"
+         style="text-align:center;text-anchor:middle">model</tspan>
+    </text>
+  </g>
+  <g
+     id="g7806">
+    <rect
+       x="250"
+       y="0"
+       height="80"
+       width="120"
+       id="tts-rect"
+       class="myrect" />
+    <text
+       id="tts-text"
+       x="310"
+       y="40"
+       class="mytext"
+       xml:space="preserve"><tspan
+         x="310"
+         y="30"
+         style="text-align:center;text-anchor:middle">ocean</tspan>
+    <tspan
+         x="310"
+         y="50"
+         style="text-align:center;text-anchor:middle">model</tspan>
+    </text>
+  </g>
+  <g
+     id="echo">
+    <circle
+       cx="185"
+       cy="200"
+       r="50"
+       id="echo-circle"
+       class="mycircle" />
+    <circle
+       cx="185"
+       cy="200"
+       r="47"
+       id="echo-circle2"
+       class="mycircle" />
+    <text
+       id="echo-text"
+       x="185"
+       y="200"
+       class="mytext"
+       xml:space="preserve"><tspan
+         x="185"
+         y="200"
+         id="tspan5654"
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle">Stock</tspan></text>
+  </g>
+  <path
+     class="myarrow"
+     d="M 310,80 220.35,164.65"
+     id="path-tts-echo" />
+  <path
+     class="myarrow"
+     d="M 60,80 148.65,164.65"
+     id="path-stt-echo" />
+  <path
+     class="myarrow"
+     d="M 220.35,235.35 310,320 "
+     id="path-cloud-tts" />
+  <path
+     class="myarrow"
+     d="M 60,320 148.65,235.35"
+     id="path-stt-cloud" />
+</svg>

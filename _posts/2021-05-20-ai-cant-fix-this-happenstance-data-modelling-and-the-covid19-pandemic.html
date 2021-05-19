@@ -32,113 +32,6 @@ categories:
 <!--
 
 -->
-<h2 id="delve-timeline">Delve Timeline</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-timeline.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-timeline.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<ul>
-<li>First contact <em>3rd April</em></li>
-<li>First meeting <em>7th April</em></li>
-<li>First working group <em>16th April</em></li>
-</ul>
-<p>The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.</p>
-<p>Right from the start, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn’t available.</p>
-<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
-<h1 id="formal-background">Formal Background</h1>
-<h2 id="embodiment-factors">Embodiment Factors</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<table>
-<tr>
-<td>
-</td>
-<td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-<td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-<tr>
-<td>
-compute
-</td>
-<td align="center">
-<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
-</td>
-<td align="center">
-<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
-</td>
-</tr>
-<tr>
-<td>
-communicate
-</td>
-<td align="center">
-<span class="math display">\[1 \text{ gigbit/s}\]</span>
-</td>
-<td align="center">
-<span class="math display">\[100 \text{ bit/s}\]</span>
-</td>
-</tr>
-<tr>
-<td>
-(compute/communicate)
-</td>
-<td align="center">
-<span class="math display">\[10^{4}\]</span>
-</td>
-<td align="center">
-<span class="math display">\[10^{14}\]</span>
-</td>
-</tr>
-</table>
-<p>See <a href="https://arxiv.org/abs/1705.07996" target="_blank" >“Living Together: Mind and Machine Intelligence” <span class="citation" data-cites="Lawrence:embodiment17">Lawrence (2017)</span></a></p>
-<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
-<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation" data-cites="Reed-information98">(Reed and Durlach, 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
-<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
-<p>It’s difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK’s fastest computer <span class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan et al., 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world’s weather each morning, and then simulates the world’s climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
-<h2 id="human-communication">Human Communication</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
-<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are “<em>psychologically represented</em> in each of the participants” (his emphasis) <span class="citation" data-cites="Heider:interpersonal58">(Heider, 1958)</span>.</p>
-<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
-<div class="figure">
-<div id="anne-bob-conversation-civil-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="anne-bob-conversation-civil-caption" class="caption-frame">
-<p>Figure: Conversation relies on internal models of other individuals.</p>
-</div>
-</div>
-<div class="figure">
-<div id="anne-bob-conversation-argument-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="anne-bob-conversation-argument-caption" class="caption-frame">
-<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
-</div>
-</div>
-<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
-<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
-<p>Control of self is vitally important to these communications.</p>
-<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
 <h2 id="lies-and-damned-lies">Lies and Damned Lies</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/lies-damned-lies.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/lies-damned-lies.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -147,7 +40,7 @@ communicate
 <p>There are three types of lies: lies, damned lies and statistics</p>
 <p>Benjamin Disraeli 1804-1881</p>
 </blockquote>
-<p>Benjamin Disraeli said<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> that there three types of lies: lies, damned lies and statistics. Disraeli died in 1881, 30 years before the first academic department of applied statistics was founded at UCL. If Disraeli were alive today, it is likely that he’d rephrase his quote:</p>
+<p>Benjamin Disraeli said<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that there three types of lies: lies, damned lies and statistics. Disraeli died in 1881, 30 years before the first academic department of applied statistics was founded at UCL. If Disraeli were alive today, it is likely that he’d rephrase his quote:</p>
 <blockquote>
 <p>There are three types of lies, lies damned lies and <em>big data</em>.</p>
 </blockquote>
@@ -179,9 +72,48 @@ communicate
 <p>As a term ‘big data’ promises much and delivers little, to get true value from data, it needs to be curated and evaluated. The three stages of awareness, availability and analysis provide a broad framework through which organizations should be assessing the potential in the data they hold. Hand waving about big data solutions will not do, it will only lead to self-deception. The castles we build on our data landscapes must be based on firm foundations, process and scientific analysis. If we do things right, those are the foundations that will be provided by the new field of data science.</p>
 <p>Today the statement “There are three types of lies: lies, damned lies and ‘big data’” may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a “mathematical data science” is needed.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2016/11/19/lies-damned-lies-big-data">Lies, Damned Lies and Big Data</a>.</p>
+<h2 id="delve-overview">DELVE Overview</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The DELVE Initiative was convened by the Royal Society early in the pandemic in response for a perceived need to increase provide policy advice for the U’s response to covide, with an initial focus on exit strategy from the first lock down.</p>
+<div class="figure">
+<div id="delve-announcement-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/delve/rs-delve-announcement.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="delve-announcement-magnify" class="magnify" onclick="magnifyFigure(&#39;delve-announcement&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="delve-announcement-caption" class="caption-frame">
+<p>Figure: The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <a href="https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/" class="uri">https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/</a>.</p>
+</div>
+</div>
+<blockquote>
+<p>DELVE will contribute data driven analysis to complement the evidence base informing the UK’s strategic response, by:</p>
+<ul>
+<li>Analysing national and international data to determine the effect of different measures and strategies on a range of public health, social and economic outcomes</li>
+<li>Using emerging sources of data as new evidence from the unfolding pandemic comes to light</li>
+<li>Ensuring that the work of this group is coordinated with others and communicated as necessary both nationally and internationally</li>
+</ul>
+</blockquote>
+<h2 id="delve-timeline">Delve Timeline</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-timeline.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-timeline.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<ul>
+<li>First contact <em>3rd April</em></li>
+<li>First meeting <em>7th April</em></li>
+<li>First working group <em>16th April</em></li>
+</ul>
+<p>The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.</p>
+<p>Right from the start, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn’t available.</p>
+<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
+<p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
+<p>Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to DELVE’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.</p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p><span class="math display">\[ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
-<p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
 <h2 id="the-big-data-paradox">The Big Data Paradox</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/big-data-paradox.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/big-data-paradox.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -468,7 +400,8 @@ domain.-->
 </div>
 <h2 id="conclusions">Conclusions</h2>
 <p>The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we’ve given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.</p>
-<p>Recommendations from our most recent report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.</p>
+<p>Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.</p>
+<p>When we combine these difficult challenges with complex models, we need to put more effort into decomposing our models so that they may be calibrated and re-integrated at appropriate fidelities.</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
@@ -479,9 +412,6 @@ domain.-->
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Ananthanarayanan-cat09" class="csl-entry" role="doc-biblioentry">
-Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The cat is out of the bag: Cortical simulations with <span class="math inline">\(10^9\)</span> neurons, <span class="math inline">\(10^{13}\)</span> synapses, in: Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - SC ’09. <a href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>
-</div>
 <div id="ref-Chater:mindisflat19" class="csl-entry" role="doc-biblioentry">
 Chater, N., 2019. The mind is flat. Penguin.
 </div>
@@ -500,14 +430,8 @@ Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
 <div id="ref-Kahneman:fastslow11" class="csl-entry" role="doc-biblioentry">
 Kahneman, D., 2011. Thinking fast and slow.
 </div>
-<div id="ref-Lawrence:embodiment17" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.
-</div>
 <div id="ref-Pedikaris:nonlinear17" class="csl-entry" role="doc-biblioentry">
 Perdikaris, P., Raissi, M., Damianou, A., Lawrence, N.D., Karnidakis, G.E., 2017. Nonlinear information fusion algorithms for data-efficient multi-fidelity modelling. Proc. R. Soc. A 473. <a href="https://doi.org/10.1098/rspa.2016.0751">https://doi.org/10.1098/rspa.2016.0751</a>
-</div>
-<div id="ref-Reed-information98" class="csl-entry" role="doc-biblioentry">
-Reed, C., Durlach, N.I., 1998. Note on information transfer rates in human communication. Presence Teleoperators &amp; Virtual Environments 7, 509–518. <a href="https://doi.org/10.1162/105474698565893">https://doi.org/10.1162/105474698565893</a>
 </div>
 <div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
 The DELVE Initiative, 2020a. Data readiness: Lessons from an emergency. The Royal Society.
@@ -534,8 +458,7 @@ The DELVE Initiative, 2020g. SARS-CoV-2 vaccine development &amp; implementation
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">Disraeli is attributed this quote by Mark Twain</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">Disraeli is attributed this quote by Mark Twain</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

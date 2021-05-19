@@ -30,27 +30,15 @@ transition: None
 \include{../talk-macros.gpp}
 
 
-
-\include{_delve/includes/delve-timeline.md}
-
-
-\section{Formal Background}
-
-\include{_ai/includes/embodiment-factors-short.md}
-\include{_ai/includes/conversation.md}
 \include{_data-science/includes/lies-damned-lies.md}
+
+\include{_delve/includes/delve-overview.md}
 
 \subsection{What is Machine Learning?}
 
 $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 
-\notes{Any policy question can be framed in a number of different
-ways - what are the health outcomes; what is the impact on NHS
-capacity; how are different groups affected; what is the economic
-impact – and each has different types of evidence associated with
-it. Complex and uncertain challenges require efforts to draw insights
-together from across disciplines.}
 
 
 \include{_data-science/includes/big-data-paradox.md}
@@ -79,12 +67,17 @@ together from across disciplines.}
 \subsection{Conclusions}
 
 \slides{* Bandwidth constraints of humans
+* Big Data Paradox
+* Big Model Paradox
 * Data as a Convener
-* Recommendations from Delve Data Report}
+* Decomposition of Complex Models
+}
 
 \notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
 
-\notes{Recommendations from our most recent report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
+\notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
+
+\notes{When we combine these difficult challenges with complex models, we need to put more effort into decomposing our models so that they may be calibrated and re-integrated at appropriate fidelities.}
 
 \thanks
 
