@@ -29,7 +29,7 @@
     font-variant:normal;
     font-weight:bold;
     font-stretch:normal;
-    font-size:16px;
+    font-size:12px;
     font-family:sans-serif;
     line-height:1.25;
     fill:#000000;
@@ -248,7 +248,7 @@
          y="200"
          id="tspan5654"
          sodipodi:role="line"
-         style="text-align:center;text-anchor:middle">Stock</tspan></text>
+         style="text-align:center;text-anchor:middle">temperature</tspan></text>
   </g>
   <path
      class="myarrow"
