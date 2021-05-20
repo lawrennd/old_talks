@@ -7,11 +7,11 @@
 
 \notes{An example of a complex decision making system might be a climate model, in such a system there are separate models for the atmospher, the ocean and the land.
 
-The components of any of these system include: flowing of currents, chemical interactions in the upper atmospher, evaporation of water etc.
+The components of any of these system include: flowing of currents, chemical interactions in the upper atmospher, evaporation of water etc.}
 
 \figure{\includejpg{\diagramsDir/simulation/carbon_cycle}{60%}}{Representation of the Carbon Cycle from the US National Oceanic and Atmospheric Administration. While everything is interconnected in the system, we can decompose into separate models for atmosphere, ocean, land.}{carbon-cycle-noaa}
 
-The influence of human activity also needs to be incorporated and modelled so we can make judgments about how to mitigate the effects of global warming.}
+\notes{The influence of human activity also needs to be incorporated and modelled so we can make judgments about how to mitigate the effects of global warming.}
 
 \newslide{}
 
