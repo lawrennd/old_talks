@@ -63,6 +63,7 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \include{_uq/includes/statistical-emulation.md}
 \include{_uq/includes/deep-emulation.md}
 
+\newslide{}
 \slides{\figure{\includejpg{\diagramsDir/simulation/carbon_cycle}{60%}}{Representation of the Carbon Cycle from the US National Oceanic and Atmospheric Administration. While everything is interconnected in the system, we can decompose into separate models for atmosphere, ocean, land.}{carbon-cycle-noaa}}
 
 
