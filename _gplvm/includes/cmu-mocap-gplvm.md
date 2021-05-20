@@ -5,6 +5,8 @@
 
 \editme
 
+\subsection{CMU Motion Capture GP-LVM}
+
 \notes{The original data has the figure moving across the floor during the motion capture sequence. We can make the figure walk 'in place', by setting the x, y, z positions of the root node to zero. This makes it easier to visualize the result.}
 
 \code{# Make figure move in place.
@@ -33,7 +35,7 @@ import mlai.mlai as ma}
 \setupplotcode{import numpy as np}
 
 \plotcode{fig, _ = plt.subplots(figsize=plot.big_wide_figsize)
-latent_axes = fig.add_suplot(131)
+latent_axes = fig.add_subplot(131)
 sense_axes = fig.add_subplot(132)
 viz_axes = fig.add_subplot(133, projection='3d')
 
@@ -49,12 +51,8 @@ ma.write_figure(figure=fig,
                   filename='cmu-mocap-gplvm.svg', 
 				  directory = '\writeDiagramsDir/gplvm')}
 
-input('Press enter to finish')
-lvm_visualizer.close()
-data_show.close()}
 
-
-\newslide{Olympic Marathon Data GP}
+\newslide{CMU Mocap Visualisation}
 
 \figure{\includediagram{\diagramsDir/gplvm/cmu-mocap-gplvm}{80%}}{Gaussian process latent variable model visualisation of CMU motion capture data set.}{cmu-mocap-data}
 
