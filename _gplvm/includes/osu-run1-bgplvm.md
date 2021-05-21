@@ -41,17 +41,21 @@ latent_axes.set_aspect('equal')
 
 y = model.Y[:1, :].copy()
 
-data_show = GPy.plotting.matplot_dep.visualize.stick_show(y, connect=data['connect'], viz_axes)
-dim_select = GPy.plotting.matplot_dep.visualize.lvm_dimselect(model.X.mean[:1, :].copy(), model, data_show, latent_axes=latent_axes, sense_axes=sense_axes)
+data_show = GPy.plotting.matplot_dep.visualize.stick_show(y, connect=data['connect'], axes=viz_axes)
+dim_select = GPy.plotting.matplot_dep.visualize.lvm_dimselect(model.X.mean[:1, :].copy(), 
+                                                              model, 
+							      data_show, 
+							      latent_axes=latent_axes, 
+							      sense_axes=sense_axes)
 
 ma.write_figure(figure=fig,
-                  filename='osu-run1-bgplvm.svg', 
-				  directory = '\writeDiagramsDir/bgplvm')}
+                filename='osu-run1-bgplvm.svg', 
+				  directory = '\writeDiagramsDir/gplvm')}
 
 
 \newslide{OSU Run 1 Bayesian GP-LVM}
 
-\figure{\includediagram{\diagramsDir/gplvm/osu-run1-bgplvm}{80%}}{Gaussian process latent variable model visualisation of OSU motion capture data set.}{osu-run1-data}
+\figure{\includediagram{\diagramsDir/gplvm/osu-run1-bgplvm}{80%}}{Bayesian Gaussian process latent variable model visualisation of OSU motion capture data set.}{osu-run1-data}
 
 
 \endif
