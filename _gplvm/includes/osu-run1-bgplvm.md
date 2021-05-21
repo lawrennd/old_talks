@@ -18,8 +18,11 @@ model = BayesianGPLVM(data['Y'], q,
                       init="PCA",
                       num_inducing=20, kernel=kernel)
 
-model.data = data
-model.likelihood.variance = 0.001}
+model.data = data}
+
+\notes{Variational methods decompose the lower bound on the log likelihood (or ELBO) into a term which represents the expectation of the log likelihood under the approximation posterior and a KL divergence between the *prior* and the approximate posterior. A common local minimum is to ignore the log likelihood and set the approximate posterior equal to the prior. To avoid this we initialise with low Gaussian noise, which emphasises the expectation of the log likelihood under the posterior. Here it is set to a noise variance of 0.001.}
+
+\code{model.likelihood.variance = 0.001}
 
 \code{model.optimize('bfgs', messages=True, max_iters=5e3, bfgs_factor=10)}
 
