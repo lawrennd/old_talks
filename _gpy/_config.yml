@@ -1,4 +1,4 @@
-layout: software
+layout: notebook
 author:
 - family: Lawrence
   given: Neil D.
@@ -9,8 +9,8 @@ author:
   url: http://inverseprobability.com
 ipynb: True
 reveal: False
-postdir: ../../../sheffieldml/gpy_examples/_examples/
-notebookdir: ../../../sheffieldml/gpy_examples/_notebooks/
+postdir: ../../../lawrennd/gpy-gallery/_gallery/
+notebookdir: ../../../lawrennd/gpy-gallery/_notebooks/
 transition: None
 ghub:
 - organization: lawrennd

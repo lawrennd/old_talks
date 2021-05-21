@@ -2,10 +2,9 @@
 \define{robotWirelessData}
 \editme
 
-\notes{
 \subsection{Robot Wireless Data}
 
-The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.}
+\notes{The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.}
 
 \code{data=pods.datasets.robot_wireless()
 
@@ -23,7 +22,7 @@ ax.set_xlabel('x position', fontsize=20)
 ax.set_ylabel('y position', fontsize=20)
 mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/robot-wireless-ground-truth.svg', transparent=True, frameon=True)}
 
-\subsection{Robot Wireless Ground Truth}
+\notes{\subsection{Robot Wireless Ground Truth}}
 
 \figure{\includediagram{\diagramsDir/datasets/robot-wireless-ground-truth}{60%}}{Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.}{robot-wireless-ground-truth}
 

@@ -13,7 +13,7 @@ import numpy as np}
 
 
 \code{q = 6
-kernel = GPy.kern.RBF(Q, lengthscale=np.repeat(.5, q), ARD=True)
+kernel = GPy.kern.RBF(q, lengthscale=np.repeat(.5, q), ARD=True)
 model = BayesianGPLVM(data['Y'], q,
                       init="PCA",
                       num_inducing=20, kernel=kernel)

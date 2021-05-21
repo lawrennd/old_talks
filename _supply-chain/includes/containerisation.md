@@ -27,6 +27,11 @@
 
 \notes{For example, you can buy Wild Alaskan Cod fished from Alaska, processed in China, sold in North America. This is driven by the low cost of transport for frozen cod vs the higher relative cost of cod processing in the US versus China. Similarly, \href{https://www.telegraph.co.uk/news/uknews/1534286/12000-mile-trip-to-have-seafood-shelled.html}{Scottish prawns are also processed in China for sale in the UK.}}
 
+\newslide{}
+
+
+\figure{\includepng{\diagramsDir/supply-chain/environmental-impact-of-food-by-life-cycle}{70%}}{The transport cost of most foods is a very small portion of the total cost. The exception is if foods are air freighted. Source: <https://ourworldindata.org/food-choice-vs-eating-local> by Hannah Ritche CC-BY}{environmental-impact-of-food-by-life-cycle}
+
 \notes{This effect on cost of transport vs cost of processing is the main driver of the topology of the modern supply chain and the associated effect of globalization. If transport is much cheaper than processing, then processing will tend to agglomerate in places where processing costs can be minimized.}
 
 \notes{Large scale global economic change has principally been driven by changes in the technology that drives supply chain.}
