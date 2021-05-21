@@ -7,20 +7,21 @@
 
 \subsection{OSU Run 1 Motion Capture Data with Bayesian GP-LVM}
 
-\setupcode{from GPy.models import BayesianGPLVM
+\setupcode{import GPy
+from GPy.models import BayesianGPLVM
 import numpy as np}
 
 
-\code{Q = 6
-kernel = GPy.kern.RBF(Q, lengthscale=np.repeat(.5, Q), ARD=True)
-model = BayesianGPLVM(data['Y'], Q,
+\code{q = 6
+kernel = GPy.kern.RBF(Q, lengthscale=np.repeat(.5, q), ARD=True)
+model = BayesianGPLVM(data['Y'], q,
                       init="PCA",
                       num_inducing=20, kernel=kernel)
 
 model.data = data
 model.likelihood.variance = 0.001}
 
-\code{model.optimize('bfgs', messages=verbose, max_iters=5e3, bfgs_factor=10)}
+\code{model.optimize('bfgs', messages=True, max_iters=5e3, bfgs_factor=10)}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai.plot as plot
