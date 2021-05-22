@@ -29,5 +29,7 @@ model.plot_latent(ax=ax)
 ma.write_figure('robot-wireless-bgplvm.svg',
                 directory='\writeDiagramsDir/gplvm')}
 
+\figure{\includediagram{\diagramsDir/gplvm/robot-wireless-bgplvm}{60%}}{Visualisation of the latent space of the Bayesian GP-LVM model applied to the robot wirless data.}{robot-wireless-bgplvm}
+
 
 \endif
