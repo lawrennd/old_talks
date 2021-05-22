@@ -56,6 +56,8 @@ ma.write_figure(figure=fig,
 
 
 \subsection{Robot WiFi Data}
-			
+
+\notes{One challenge with the data is that the signal strength 'drops out'. This is because the device only tracks a limited number of wifi access points, when one of the access points falls outside the track, the value disappears (in the plot below it reads -0.5). The data is missing, but it is not missing at random because the implication is that the wireless access point must be weak to have dropped from the list of those that are tracked.}
+
 \figure{\includediagram{\diagramsDir/datasets/robot-wireless-dim-1}{60%}}{Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.}{robot-wireless-data-dim-1}
 \endif
