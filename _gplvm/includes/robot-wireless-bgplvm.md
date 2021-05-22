@@ -27,7 +27,7 @@ import mlai.mlai as ma}
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 model.plot_latent(ax=ax)
 ma.write_figure(robot-wireless-bgplvm.svg'
-                durectirt='\writeDiagramsDir/gplvm')}
+                directory='\writeDiagramsDir/gplvm')}
 
 
 \endif
