@@ -16,11 +16,17 @@ yhat = (y-offset)/scale}
 
 \notes{The ground truth is recorded in the data, the actual loop is given in the plot below.}
 
-\displaycode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+\setupplotcode{import matplotlib.pyplot as plt
+import mlai.plot as plot
+import mlai.mlai as ma}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 plt.plot(data['X'][:, 1], data['X'][:, 2], 'r.', markersize=5)
 ax.set_xlabel('x position', fontsize=20)
 ax.set_ylabel('y position', fontsize=20)
-mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/robot-wireless-ground-truth.svg', transparent=True, frameon=True)}
+ma.write_figure(figure=fig, 
+                  filename='robot-wireless-ground-truth.svg',
+                  directory='\writeDiagramsDir/datasets')}
 
 \notes{\subsection{Robot Wireless Ground Truth}}
 
@@ -28,10 +34,11 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/robot-wireles
 
 \notes{We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.}
 
-\displaycode{output_dim=1
+\plotcode{output_dim=1
 xlim = (-0.3, 1.3)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-_ = ax.plot(x.flatten(), y[:, output_dim], 
+_ = ax.plot(x.flatten(), 
+            y[:, output_dim], 
             'r.', markersize=5)
 
 ax.set_xlabel('time', fontsize=20)
@@ -41,8 +48,9 @@ ylim = (-0.6, 2.0)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, filename='\writeDiagramsDir/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
-            transparent=True, frameon=True)}
+ma.write_figure(figure=fig, 
+                filename='robot-wireless-dim-' + str(output_dim) + '.svg', 
+                directory='\writeDiagramsDir/datasets')}
 
 
 \subsection{Robot WiFi Data}
