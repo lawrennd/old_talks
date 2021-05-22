@@ -6,15 +6,10 @@
 
 \notes{The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop. It was published at IJCAI in 2007 [@Ferris:wifi07].}
 
-\setupcode{import pods}
+\setupcode{import pods
+import numpy as np}
 
-\code{data=pods.datasets.robot_wireless()
-
-x = np.linspace(0,1,215)[:, np.newaxis]
-y = data['Y']
-offset = y.mean()
-scale = np.sqrt(y.var())
-yhat = (y-offset)/scale}
+\code{data=pods.datasets.robot_wireless()}
 
 \notes{The ground truth is recorded in the data, the actual loop is given in the plot below.}
 
@@ -39,8 +34,8 @@ ma.write_figure(figure=fig,
 \plotcode{output_dim=1
 xlim = (-0.3, 1.3)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-_ = ax.plot(x.flatten(), 
-            y[:, output_dim], 
+_ = ax.plot(np.linspace(0,1,215),
+            data['Y'][:, output_dim], 
             'r.', markersize=5)
 
 ax.set_xlabel('time', fontsize=20)
@@ -60,4 +55,5 @@ ma.write_figure(figure=fig,
 \notes{One challenge with the data is that the signal strength 'drops out'. This is because the device only tracks a limited number of wifi access points, when one of the access points falls outside the track, the value disappears (in the plot below it reads -0.5). The data is missing, but it is not missing at random because the implication is that the wireless access point must be weak to have dropped from the list of those that are tracked.}
 
 \figure{\includediagram{\diagramsDir/datasets/robot-wireless-dim-1}{60%}}{Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.}{robot-wireless-data-dim-1}
+
 \endif
