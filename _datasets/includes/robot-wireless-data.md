@@ -4,7 +4,7 @@
 
 \subsection{Robot Wireless Data}
 
-\notes{The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.}
+\notes{The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop. It was published at IJCAI in 2007 [@Ferris:wifi07].}
 
 \setupcode{import pods}
 
