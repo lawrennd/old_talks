@@ -1,16 +1,18 @@
 \ifndef{robotWirelessBgplvm}
 \define{robotWirelessBgplvm}
 
-\editme
 
 \include{_datasets/includes/robot-wireless-data.md}
+
+\editme
 
 \subsection{Bayesian GP-LVM fit to the Robot Wireless Data}
 
 
-\setupbcode{import GPy}
 
 \notes{Set up a Bayesian GP-LVM with four latent dimensions.}
+
+\setupcode{import GPy}
 
 \code{model = GPy.models.BayesianGPLVM(data['Y'], 4, num_inducing=25)}
 
@@ -24,8 +26,8 @@ import mlai.mlai as ma}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 model.plot_latent(ax=ax)
-ma.write_figure(filename='\writeDiagramsDir/gplvm/robot-wireless-bgplvm.svg', 
-            transparent=True, frameon=True)}
+ma.write_figure(robot-wireless-bgplvm.svg'
+                durectirt='\writeDiagramsDir/gplvm')}
 
 
 \endif
