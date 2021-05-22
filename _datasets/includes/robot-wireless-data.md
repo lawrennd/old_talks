@@ -6,6 +6,8 @@
 
 \notes{The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.}
 
+\setupcode{import pods}
+
 \code{data=pods.datasets.robot_wireless()
 
 x = np.linspace(0,1,215)[:, np.newaxis]
