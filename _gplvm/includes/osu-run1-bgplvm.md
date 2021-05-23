@@ -53,7 +53,7 @@ dim_select = GPy.plotting.matplot_dep.visualize.lvm_dimselect(model.X.mean[:1, :
 
 ma.write_figure(figure=fig,
                 filename='osu-run1-bgplvm.svg', 
-				  directory = '\writeDiagramsDir/gplvm')}
+		directory = '\writeDiagramsDir/gplvm')}
 
 
 \newslide{OSU Run 1 Bayesian GP-LVM}
