@@ -11,6 +11,9 @@ ipynb: True
 reveal: False
 postdir: ../../../lawrennd/ods/_datasets/
 notebookdir: ../../../lawrennd/ods/notebooks/pods/datasets/
+slidedir: ../../../lawrennd/ods/assets/diagrams/
+diagramdir: ../assets/diagrams/
+writediagramdir: .
 transition: None
 ghub:
 - organization: lawrennd

@@ -11,6 +11,11 @@ ipynb: True
 reveal: False
 postdir: ../../../lawrennd/gpy-gallery/_gallery/
 notebookdir: ../../../lawrennd/gpy-gallery/_notebooks/
+slidedir: ../../../lawrennd/gpy-gallery/assets/diagrams/
+diagramdir: assets/diagrams/
+baseurl: "gpy-gallery/" # the subpath of your site, e.g. /blog/
+url: "https://inverseprobability.com/" # the base hostname & protocol for your site
+writediagramdir: .
 transition: None
 ghub:
 - organization: lawrennd

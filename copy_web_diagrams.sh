@@ -3,12 +3,16 @@
 
 SLIDEDIR=$(mdfield slidedir $1)
 echo Slides Directory: $SLIDEDIR
+
+diagrams_dir="../slides/diagrams"
+
 for file in $(dependencies slidediagrams $1)
 do
-    mkdir -p `dirname $SLIDEDIR/$file`
-    if ! cmp -s $file $SLIDEDIR/$file ; then
-       echo "Copying $file to $SLIDEDIR/$file"
-       cp $file $SLIDEDIR/$file
+    newfile=${file/$diagrams_dir/$SLIDEDIR}
+    mkdir -p `dirname $newfile`
+    if ! cmp -s $file $newfile ; then
+       echo "Copying $file to $newfile"
+       cp $file $newfile
     else
 	echo "Not copying $file"
     fi
