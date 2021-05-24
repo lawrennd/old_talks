@@ -13,6 +13,10 @@ postdir: ../../../mlatcl/execed/_lectures/
 slidedir: ../../../mlatcl/execed/slides/
 notedir: ../../../mlatcl/execed/_notes/
 notebookdir: ../../../mlatcl/execed/_notebooks/
+writediagramdir: .
+diagramdir: ./slides/diagrams/
+baseurl: "execed/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
 transition: None
 ghub:
 - organization: lawrennd

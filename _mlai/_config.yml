@@ -12,10 +12,14 @@ postdir: ../../../mlatcl/mlai/_lectures/
 slidedir: ../../../mlatcl/mlai/slides/
 notedir: ../../../mlatcl/mlai/_notes/
 notebookdir: ../../../mlatcl/mlai/_notebooks/
-transition: None
+writediagramdir: .
+diagramdir: ./slides/diagrams/
+baseurl: "mlai/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
 time:
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
   directory: _mlai
+transition: None

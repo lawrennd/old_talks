@@ -12,9 +12,14 @@ postdir: ../../../mlatcl/mlphysical/_lectures/
 slidedir: ../../../mlatcl/mlphysical/slides/
 notedir: ../../../mlatcl/mlphysical/_notes/
 notebookdir: ../../../mlatcl/mlphysical/_notebooks/
-transition: None
+writediagramdir: .
+diagramdir: ./slides/diagrams/
+baseurl: "mlphysical/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
   directory: _mlphysical
+transition: None
+  

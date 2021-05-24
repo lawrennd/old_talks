@@ -13,9 +13,13 @@ postdir: ../../../mlatcl/deepnn/_lectures/
 slidedir: ../../../mlatcl/deepnn/slides/
 notedir: ../../../mlatcl/deepnn/_notes/
 notebookdir: ../../../mlatcl/deepnn/_notebooks/
-transition: None
+writediagramdir: .
+diagramdir: ./slides/diagrams/
+baseurl: "deepnn/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
   directory: _deepnn
+transition: None
