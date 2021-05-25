@@ -21,36 +21,43 @@ import pods}
 
 \code{data = pods.datasets.kepler_lightcurves()}
 
+\notes{In `pods` the data is returned with the usual additional information, and also the field "stars" which includes which stars are in the data set.}
+
+\code{print(data["stars"]}
+
+\notes{We can plot the first few stars for visualization.}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai.plot as plot
 import mlai.mlai as ma}
 
-\plotcode{num_stars = 3
+\plotcode{num_stars_plot = 3
 count = 0
-for star in data["data"]["Y"][0:num_stars]:
-  for X in data["data"]["Y"][star]:
+for star in data["Y"][0:num_stars_plot]:
+  for X in data["Y"][star]:
     count += 1
     fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
     ax.plot(X["TIME"], X["SAP_FLUX"])
     ax.set_xlabel("Barycentric Julian Date (d)")
     ax.set_ylabel("SAP Flux (instrumental units)")
-    ax.set_title("Star {star}".format(star=star, dataset=dataset))
+    ax.set_title("Star {star}".format(star=star))
     ma.write_figure("kepler-lightcurve-data-{star}.svg".format(star=star), directory='./datasets')
-    if count > num_stars:
+    if count > num_stars_plot:
         break
-  if count > num_stars:
+  if count > num_stars_plot:
     break
 }
 
 \figure{\includediagram{\diagramsDir/datasets/kepler-lightcurve-data-001720554}{60%}}{Light curve from star 001720554.}{kepler-lightcurve-data-001720554}
 
 
-\code{star0 = data["data"]["Y"].keys()[0]
-star1 = data["data"]["Y"].keys()[1]
+\notes{In the notebook associated with their tutorial, Storey-Fisher and Hogg note that barycentric time is different from earth centric time, to illustrate, the plot the differences between time values for two different stars in the same data set, showing that over time, despite the Earth-centric time staying the same, the barycentric time is varying for the two different stars.}
 
-X0 = data["data"]["Y"][star0][0]
-X1 = data["data"]["Y"][star1][0]}
+\code{star0 = data["Y"].columns[0]
+star1 = data["Y"].columns[1]
+
+X0 = data["Y"][star0][0]
+X1 = data["Y"][star1][0]}
 
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -60,7 +67,7 @@ ax.set_ylabel("Time differences (d)")
 _ = ax.set_title("Barycentric time is freaky")
 ma.write_figure("barycentric-time-difference.svg", directory='./datasets')}
 
-\figure{\includediagram{\diagramsDir/datasets/barycentric-time-difference}{60%}}{Light curve from star 001720554.}{barycentric-time-difference}
+\figure{\includediagram{\diagramsDir/datasets/barycentric-time-difference}{60%}}{Difference between Barycentric time values for stars 001720554 and star.}{barycentric-time-difference}
 
 
 \endif

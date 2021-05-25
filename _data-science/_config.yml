@@ -1,0 +1,18 @@
+author:
+- given: Neil D.
+  family: Lawrence
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: https://inverseprobability.com
+talkscam:
+url: https://inverseprobability.com/
+baseurl: talks/
+diagramdir: slides/diagrams/
+writediagramdir: .
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _data-science
