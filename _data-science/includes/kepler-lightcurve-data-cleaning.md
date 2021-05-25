@@ -10,14 +10,14 @@
 
 \notes{build a rectangular, normalized data block}
 
-\code{n = len(data["Y"][scan])
-p = len(data["Y"][scan][star0])}
+\code{n = len(data["Y"][dataset])
+p = len(data["Y"][dataset][kepler_id0])}
 
 \setupcode{import numpy as np}
 
 \code{time = np.zeros((n, p))
 flux = np.zeros((n, p))
-for i, X in enumerate(data["Y"][scan]):
+for i, X in enumerate(data["Y"][dataset]):
   time[i] = X["TIME"]
   flux[i] = X["SAP_FLUX"] / np.nanmedian(X["SAP_FLUX"])
 flux.shape, time.shape}
@@ -25,11 +25,9 @@ flux.shape, time.shape}
 
 \notes{identify missing data}
 
-\code{good = np.isfinite(flux * time) # hack: They both have to be finite
-bad = np.logical_not(good) # I love this line
-reallybad = np.sum(bad, axis=0) > n / 2
-acceptable = np.logical_not(reallybad)}
+\code{bad = np.logical_not(np.isfinite(flux) & np.isfinite(time))}
 
+\code{acceptable = np.logical_not(np.sum(bad, axis=0) > n / 2)}
 
 \notes{censor really bad stuff}
 
@@ -55,17 +53,17 @@ for iter in range(4): # magic 4
 
 
 \plotcode{for i in [6, 7, 8, 9, 10]:
-  star = data["scans"][scan][i]
+  kepler_id = data["datasets"][dataset][i]
   fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-  ax.plot(data["Y"][scan][star]["TIME"], data["Y"][scan][star]["SAP_FLUX"] / np.nanmedian(data["Y"][scan][star]["SAP_FLUX"]), linewidth=2)
+  ax.plot(data["Y"][dataset][kepler_id]["TIME"], data["Y"][dataset][kepler_id]["SAP_FLUX"] / np.nanmedian(data["Y"][dataset][kepler_id]["SAP_FLUX"]), linewidth=2)
   ax.set_xlabel("Barycentric Julian Date (d)")
   ax.set_ylabel("SAP Flux (instrumental units)")
-  ax.set_title("Cleaned Star {star}".format(star=star))
+  ax.set_title("Cleaned Kepler ID {kepler_id}".format(kepler_id=kepler_id))
   
   for badt, badf in zip(time[i, bad[i]], flux[i, bad[i]]):
     ax.axvline(badt, color="r", alpha=0.3)
     ax.plot(badt, badf, "rx")
-  ma.write_figure("kepler-lightcurve-data-clean-{star}.svg".format(star=star), directory='./datasets')}
+  ma.write_figure("kepler-lightcurve-data-clean-{kepler_id}.svg".format(kepler_id=kepler_id), directory='./datasets')}
 
 
 
