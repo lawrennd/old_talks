@@ -23,7 +23,7 @@ import pods}
 
 \notes{In `pods` the data is returned with the usual additional information, and also the field "stars" which includes which stars are in the data set.}
 
-\code{print(data["stars"]}
+\code{print(data["stars"])}
 
 \notes{We can plot the first few stars for visualization.}
 

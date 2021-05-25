@@ -43,9 +43,10 @@ flux.shape, time.shape}
 
 
 
-\notes{interpolate missing data using a PCA?
-NOTE: This PCA won't scale to huge data.
-      For huge data, use the scikit-learn implementation of PCA.}
+\notes{Interpolate missing data using a PCA.
+
+*Note*: This PCA won't scale to huge data.
+For huge data, use the scikit-learn implementation of PCA.}
 
 \code{flux[bad] = 1.
 for iter in range(4): # magic 4
@@ -56,9 +57,14 @@ for iter in range(4): # magic 4
 
 
 
-\plotcode{for star in data["Y"].columns[[6, 7, 8, 9, 10]]:
+\plotcode{for i in [6, 7, 8, 9, 10]:
+  star = data["Y"].columns[i]
   fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
   ax.plot(data["Y"][star][stars[star]][0]["TIME"], data["Y"][star][stars[star]][0]["SAP_FLUX"] / np.nanmedian(data["Y"][star][stars[star]][0]["SAP_FLUX"]), linewidth=2)
+  ax.set_xlabel("Barycentric Julian Date (d)")
+  ax.set_ylabel("SAP Flux (instrumental units)")
+  ax.set_title("Cleaned Star {star}".format(star=star))
+  
   for badt, badf in zip(time[i, bad[i]], flux[i, bad[i]]):
     ax.axvline(badt, color="r", alpha=0.3)
     ax.plot(badt, badf, "rx")
