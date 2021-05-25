@@ -12,8 +12,10 @@ reveal: False
 postdir: ../../../lawrennd/ods/_datasets/
 notebookdir: ../../../lawrennd/ods/notebooks/pods/datasets/
 slidedir: ../../../lawrennd/ods/assets/diagrams/
-diagramdir: ../assets/diagrams/
+diagramdir: slides/diagrams/
 writediagramdir: .
+baseurl: "talks/" # the subpath of your site, e.g. /blog/
+url: "https://inverseprobability.com/" # the base hostname & protocol for your site
 transition: None
 ghub:
 - organization: lawrennd
