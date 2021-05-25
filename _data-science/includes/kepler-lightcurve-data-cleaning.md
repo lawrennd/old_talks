@@ -10,19 +10,16 @@
 
 \notes{build a rectangular, normalized data block}
 
-\code{stars = data["stars"]
-star0 = data["Y"].columns[0]
-n = len(data["Y"].columns)
-p = len(data["Y"][star0][stars[star0][0]])}
+\code{n = len(data["Y"][scan])
+p = len(data["Y"][scan][star0])}
 
 \setupcode{import numpy as np}
 
 \code{time = np.zeros((n, p))
 flux = np.zeros((n, p))
-for i, star in enumerate(stars):
-  dd = data["Y"][star][stars[star0][0]]
-  time[i] = dd["TIME"]
-  flux[i] = dd["SAP_FLUX"] / np.nanmedian(dd["SAP_FLUX"])
+for i, X in enumerate(data["Y"][scan]):
+  time[i] = X["TIME"]
+  flux[i] = X["SAP_FLUX"] / np.nanmedian(X["SAP_FLUX"])
 flux.shape, time.shape}
 
 
@@ -58,9 +55,9 @@ for iter in range(4): # magic 4
 
 
 \plotcode{for i in [6, 7, 8, 9, 10]:
-  star = data["Y"].columns[i]
+  star = data["scans"][scan][i]
   fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-  ax.plot(data["Y"][star][stars[star]][0]["TIME"], data["Y"][star][stars[star]][0]["SAP_FLUX"] / np.nanmedian(data["Y"][star][stars[star]][0]["SAP_FLUX"]), linewidth=2)
+  ax.plot(data["Y"][scan][star]["TIME"], data["Y"][scan][star]["SAP_FLUX"] / np.nanmedian(data["Y"][scan][star]["SAP_FLUX"]), linewidth=2)
   ax.set_xlabel("Barycentric Julian Date (d)")
   ax.set_ylabel("SAP Flux (instrumental units)")
   ax.set_title("Cleaned Star {star}".format(star=star))
