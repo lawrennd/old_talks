@@ -43,7 +43,24 @@ for star in data["data"]["Y"][0:num_stars]:
     break
 }
 
-\figure{\includediagram{\diagramsDir/datasets/kepler-lightcurve-data-001720554-2009350155506}{60%}}{Light curve from star 001720554.}{kepler-lightcurve-data-001720554}
+\figure{\includediagram{\diagramsDir/datasets/kepler-lightcurve-data-001720554}{60%}}{Light curve from star 001720554.}{kepler-lightcurve-data-001720554}
+
+
+\code{star0 = data["data"]["Y"].keys()[0]
+star1 = data["data"]["Y"].keys()[1]
+
+X0 = data["data"]["Y"][star0][0]
+X1 = data["data"]["Y"][star1][0]}
+
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+ax.plot(X0["TIME"], X1["TIME"] - X0["TIME"], linewidth=3)
+ax.set_xlabel("Barycentric Julian Date (d)")
+ax.set_ylabel("Time differences (d)")
+_ = ax.set_title("Barycentric time is freaky")
+ma.write_figure("barycentric-time-difference.svg", directory='./datasets')}
+
+\figure{\includediagram{\diagramsDir/datasets/barycentric-time-difference}{60%}}{Light curve from star 001720554.}{barycentric-time-difference}
 
 
 \endif
