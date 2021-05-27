@@ -28,8 +28,8 @@ import pods}
 \notes{We can plot the first few stars for visualization.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
-import mlai.mlai as ma}
+import mlai
+import mlai.plot as plot}
 
 \plotcode{num_stars_plot = 3
 count = 0
@@ -41,7 +41,7 @@ for kepler_id, X in data["Y"][dataset].items():
     ax.set_xlabel("Barycentric Julian Date (d)")
     ax.set_ylabel("SAP Flux (instrumental units)")
     ax.set_title("Kepler ID {kepler_id}".format(kepler_id=kepler_id))
-    ma.write_figure("kepler-lightcurve-data-{kepler_id}.svg".format(kepler_id=kepler_id), directory='./datasets')
+    mlai.write_figure("kepler-lightcurve-data-{kepler_id}.svg".format(kepler_id=kepler_id), directory='./datasets')
     if count > num_stars_plot:
         break}
 
@@ -62,7 +62,7 @@ ax.plot(X0["TIME"], X1["TIME"] - X0["TIME"], linewidth=3)
 ax.set_xlabel("Barycentric Julian Date (d)")
 ax.set_ylabel("Time differences (d)")
 _ = ax.set_title("Barycentric time is freaky")
-ma.write_figure("barycentric-time-difference.svg", directory='./datasets')}
+mlai.write_figure("barycentric-time-difference.svg", directory='./datasets')}
 
 \figure{\includediagram{\diagramsDir/datasets/barycentric-time-difference}{60%}}{Difference between Barycentric time values for Kepler ID 001720554 and Kepler ID 002696955.}{barycentric-time-difference}
 

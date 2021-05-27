@@ -27,8 +27,8 @@ model.data = data}
 \code{model.optimize('bfgs', messages=True, max_iters=5e3, bfgs_factor=10)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
-import mlai.mlai as ma}
+import mlai
+import mlai.plot as plot}
 
 \setupplotcode{%matplotlib notebook}
 
@@ -51,9 +51,9 @@ dim_select = GPy.plotting.matplot_dep.visualize.lvm_dimselect(model.X.mean[:1, :
 							      latent_axes=latent_axes, 
 							      sense_axes=sense_axes)
 
-ma.write_figure(figure=fig,
-                filename='osu-run1-bgplvm.svg', 
-		directory = '\writeDiagramsDir/gplvm')}
+mlai.write_figure(figure=fig,
+                  filename='osu-run1-bgplvm.svg', 
+	           	  directory = '\writeDiagramsDir/gplvm')}
 
 
 \newslide{OSU Run 1 Bayesian GP-LVM}

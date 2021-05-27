@@ -15,15 +15,15 @@ _ = m_full.optimize() # Optimize parameters of covariance function}
 \subsection{Robot WiFi Data GP}
 
 \setupplotcode{from matplotlib import pyplot as plt
-import mlai.plot as plot
-import mlai.mlai as ma}
+import mlai
+import mlai.plot as plot}
 
 \plotycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, output_dim=output_dim, scale=scale, offset=offset, ax=ax, 
                   xlabel='time', ylabel='signal strength', fontsize=20, portion=0.5)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-ma.write_figure(filename='robot-wireless-gp-dim-' + str(output_dim)+ '.svg',
+mlai.write_figure(filename='robot-wireless-gp-dim-' + str(output_dim)+ '.svg',
                   directory='\writeDiagramsDir/gp')}
 
 

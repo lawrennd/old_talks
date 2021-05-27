@@ -14,14 +14,14 @@ import numpy as np}
 \notes{The ground truth is recorded in the data, the actual loop is given in the plot below.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
-import mlai.mlai as ma}
+import mlai
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 plt.plot(data['X'][:, 1], data['X'][:, 2], 'r.', markersize=5)
 ax.set_xlabel('x position', fontsize=20)
 ax.set_ylabel('y position', fontsize=20)
-ma.write_figure(figure=fig, 
+mlai.write_figure(figure=fig, 
                   filename='robot-wireless-ground-truth.svg',
                   directory='\writeDiagramsDir/datasets')}
 

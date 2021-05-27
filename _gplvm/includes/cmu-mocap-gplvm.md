@@ -27,8 +27,8 @@ data['Y'][:, 0:3] = 0.0}
 \code{model.optimize(messages=True, max_f_eval=10000)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
-import mlai.mlai as ma}
+import mlai
+import mlai.plot as plot}
 
 \setupplotcode{%matplotlib notebook}
 
@@ -47,7 +47,7 @@ y = model.Y[0, :]
 data_show = GPy.plotting.matplot_dep.visualize.skeleton_show(y[None, :], data['skel'], viz_axes)
 
 lvm_visualizer = GPy.plotting.matplot_dep.visualize.lvm(model.X[0].copy(), model, data_show, latent_axes=latent_axes, sense_axes=sense_axes)
-ma.write_figure(figure=fig,
+mlai.write_figure(figure=fig,
                   filename='cmu-mocap-gplvm.svg', 
 				  directory = '\writeDiagramsDir/gplvm')}
 

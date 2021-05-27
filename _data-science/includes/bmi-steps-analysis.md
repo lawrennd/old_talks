@@ -53,7 +53,7 @@ print("Pearson's correlation for females: {corr}".format(corr=female_corr))}
 \newslide{}
 
 \setupdisplaycode{import mlai.plot as plot
-import mlai.mlai as ma
+import mlai
 import matplotlib.pyplot as plt}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -65,7 +65,7 @@ xlim = (0, 15000)
 ylim = (15, 32.5)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-ma.write_figure(filename='bmi-steps.svg',
+mlai.write_figure(filename='bmi-steps.svg',
                 directory='\writeDiagramsDir/datasets',
                 transparent=True)}
 
