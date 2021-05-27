@@ -59,7 +59,7 @@ resulting fit.}
 \downloadcode{gp_tutorial}
 
 \setuphelpercode{import matplotlib.pyplot as plt
-from gp_tutorial import ax_default, meanplot, gpplot}
+from mlai.gp_tutorial import ax_default, meanplot, gpplot}
 
 \helpercode{def plot_model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
     if ax is None:

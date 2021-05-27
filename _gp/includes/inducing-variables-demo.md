@@ -7,8 +7,6 @@
 
 Here we set up a simple one dimensional regression problem. The input locations, $\inputMatrix$, are in two separate clusters. The response variable, $\dataVector$, is sampled from a Gaussian process with an exponentiated quadratic covariance.}
 
-\include{_gp/includes/gpy-include.md}
-
 \setupcode{import numpy as np
 import GPy}
 
@@ -31,8 +29,8 @@ _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
 import mlai
-import teaching_plots as plot 
-from gp_tutorial import gpplot}
+import mlai.plot as plot 
+from mlai.gp_tutorial import gpplot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)

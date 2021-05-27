@@ -83,7 +83,7 @@ from scipy.stats import binom}
 x = np.arange(60, 120)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.bit_wide_figsize)
@@ -197,7 +197,7 @@ print('agreed accept rate', aa.mean(), '+/-', np.sqrt(aa.var()))}
 \notes{Just to ensure that the error bars are reflective of the underlying densities we histogram the Monte Carlo results for accept precision, reject precision and agreed accept below. Shown on each histogram is a line representing the result we would get for the 'random committee'.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(1, 3, figsize=(12, 3))
