@@ -6,7 +6,7 @@ abstract: |
 youtube: M67rG3cZoVg
 ---
 
-\include{talk-macros.tex}
+\include{talk-macros.gpp}
 
 \installcode{pods}
 

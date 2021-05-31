@@ -37,8 +37,8 @@ plot.model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portio
 xlim = ax.get_xlim()
 ylim = ax.get_ylim()
 mlai.write_figure(figure=fig,
-                  filename='\writeDiagramsDir/gp/sparse-demo-full-gp.svg', 
-                  transparent=True, frameon=True)}
+                  filename='sparse-demo-full-gp.svg',
+                  directory='\writeDiagramsDir/gp/')}
 
 \newslide{Full Gaussian Process Fit}
 
@@ -58,8 +58,8 @@ display(m)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='\writeDiagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
-                  transparent=True, frameon=True)}
+                  filename='sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
+                  directory='\writeDiagramsDir/gp/')}
 
 \newslide{Inducing Variable Fit}
 
@@ -71,8 +71,8 @@ display(m)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='\writeDiagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
-                  transparent=True, frameon=True)}
+                  filename='sparse-demo-constrained-inducing-6-learned-gp.svg',
+                  directory='\writeDiagramsDir/gp/')}
 
 \newslide{Inducing Variable Param Optimize}
 
@@ -85,8 +85,8 @@ _ = m.optimize(messages=True)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2,xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='\writeDiagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
-                  transparent=True, frameon=True)}
+                  filename='sparse-demo-unconstrained-inducing-6-gp.svg', 
+                  directory='\writeDiagramsDir/gp/')}
 
 \newslide{Inducing Variable Full Optimize}
 
@@ -104,8 +104,8 @@ _ = m.optimize(messages=True)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='\writeDiagramsDir/gp/sparse-demo-sparse-inducing-8-gp.svg', 
-                  transparent=True, frameon=True)}
+                  filename='sparse-demo-sparse-inducing-8-gp.svg', 
+                  directory='\writeDiagramsDir/gp/')}
 
 \slides{
 \newslide{Eight Optimized Inducing Variables}
