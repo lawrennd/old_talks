@@ -28,6 +28,7 @@ transition: None
 
 \include{_neurips/includes/neurips-experiment.md}
 \include{_neurips/includes/neurips-calibration.md}
+\include{_neurips/includes/neurips-simulation.md}
 
 
 Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>
