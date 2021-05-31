@@ -3,9 +3,9 @@ week: 1
 title: The Data Science Process
 abstract: |
   In this session we look at some of what makes the data science process different from classical computer science.
-youtube:
 ---
 
+\include{talk-macros.gpp}
 
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/embodiment-factors.md}
@@ -24,7 +24,10 @@ youtube:
 * Assess
 * Process
 
+\subsection{Github Template}
+
 \notes{See the template repository here: https://github.com/lawrennd/analysis-template/}
+\slides{* https://github.com/lawrennd/analysis-template/}
 
 \reading
 
