@@ -14,6 +14,7 @@ abstract: >
   
   In this talk I will review the construction of the experiment, explain how the NeurIPS review process worked and talk about what I felt the implications for reviewing were, vs what the community reaction was.
 date: 2021-06-16
+ipynb: True
 categories:
 - notes
 layout: talk

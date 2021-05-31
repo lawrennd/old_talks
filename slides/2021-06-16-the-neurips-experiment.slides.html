@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2021-06-16">
+  <title>A Retrospective on the 2014 NeurIPS Experiment</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/css/talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2/css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="../assets/js/figure-animate.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">A Retrospective on the 2014 NeurIPS Experiment</h1>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2021-06-16</time></p>
+  <p class="venue" style="text-align:center">Computer Lab Seminar Series</p>
+</section>
+
+<section class="slide level2">
+
+<p>\notes{In this notebook we perform some preliminary analysis on ‘The NIPS Experiment.’ This was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as ‘duplicated papers.’}</p>
+<p>\notes{The final results of the experiment were as follows. From 170 papers 4 had to be withdrawn or were rejected without completing the review process, for the remainder, the ‘confusion matrix’ for the two committee’s decisions is below.</p>
+<table>
+<tr>
+<td colspan="2">
+</td>
+<td colspan="2">
+Committee 1
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+<td>
+Accept
+</td>
+<td>
+Reject
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+Committee 2
+</td>
+<td>
+Accept
+</td>
+<td>
+22
+</td>
+<td>
+22
+</td>
+</tr>
+<tr>
+<td>
+Reject
+</td>
+<td>
+21
+</td>
+<td>
+101
+</td>
+</tr>
+</table>
+<p>\notes{There are a few ways of summarizing the numbers in this table as percent or probabilities. First of all, the <em>inconsistency</em>, the proportion of decisions that were not the same across the two committees. The decisions were inconsistent for 43 out of 166 papers or 0.259 as a proportion. This number is perhaps a natural way of summarizing the figures if you are submitting your paper and wish to know an estimate of what the probability is that your paper would have different decisons according to the different committes. Secondly, the <em>accept precision</em>: if you are attending the conference and looking at any given paper, then you might want to know the probability that the paper would have been rejected in an independent rerunning of the conference. We can estimate this for Committee 1’s conference as 22/(22 + 22) = 0.5 (50%) and for Committee 2’s conference as 21/(22+21) = 0.49 (49%). Averaging the two estimates gives us 49.5%. Finally, the <em>reject precision</em>: if your paper was rejected from the conference, you might like an estimate of the probability that the same paper would be rejected again if the review process had been independently rerun. That estimate is 101/(22+101) = 0.82 (82%) for Committee 1 and 101/(21+101)=0.83 (83%) for Committee 2, or on average 82.5%. A final quality estimate might be the ratio of consistent accepts to consistent rejects, or the <em>agreed accept rate</em>, 22/123 = 0.18 (18%). }</p>
+<p>\notes{There seems to have been a lot of discussion of the result, both at the conference and on bulletin boards since. Such discussion is to be encouraged, and for ease of memory, it is worth pointing out that the approximate proportions of papers in each category can be nicely divided in to eigths as follows. Accept-Accept 1 in 8 papers, Accept-Reject 3 in 8 papers, Reject-Reject, 5 in 8 papers. This makes the statistics we’ve computed above: <em>inconsistency</em> 1 in 4 (25%) <em>accept precision</em> 1 in 2 (50%) <em>reject precision</em> 5 in 6 (83%) and <em>agreed accept rate</em> of 1 in 6 (20%). This compares with the accept rate of 1 in 4. }</p>
+\notes{The first context we can place around the numbers is what would have happened at the ‘Random Conference’ where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been:
+<table>
+<tr>
+<td colspan="2">
+</td>
+<td colspan="2">
+Committee 1
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+<td>
+Accept
+</td>
+<td>
+Reject
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+Committee 2
+</td>
+<td>
+Accept
+</td>
+<td>
+10.4 (1 in 16)
+</td>
+<td>
+31.1 (3 in 16)
+</td>
+</tr>
+<tr>
+<td>
+Reject
+</td>
+<td>
+31.1 (3 in 16)
+</td>
+<td>
+93.4 (9 in 16)
+</td>
+</tr>
+</table>
+<p>\notes{And for this set up we would expect <em>inconsistency</em> of 3 in 8 (37.5%) <em>accept precision</em> of 1 in 4 (25%) and a <em>reject precision</em> of 3 in 4 (75%) and a <em>agreed accept rate</em> of 1 in 10 (10%). The actual committee made improvements on these numbers, in particular the accept precision was markedly better with 50%: twice as many consistent accept decisions were made than would be expected if the process had been performed at random and only around two thirds as many inconsistent decisions were made as would have been expected if decisions were made at random. However, we should treat all these figures with some skepticism until we’ve performed some estimate of the uncertainty associated with them. }</p>
+<p>\notes{To get a handle on the uncertainty around these numbers we’ll start by making use of the (binomial distribution)[http://en.wikipedia.org/wiki/Binomial_distribution]. First, let’s explore the fact that for the overall conference the accept rate was around 23%, but for the duplication committees the accept rate was around 25%. If we assume decisions are made according to a binomial distribution, then is the accept rate for the duplicated papers too high?}</p>
+<p>\notes{Note that for all our accept probability statistics we used as a denominator the number of papers that were initially sent for review, rather than the number where a final decision was made by the program committee. These numbers are different because some papers are withdrawn before the program committee makes its decision. Most commonly this occurs after authors have seen their preliminary reviews: for NIPS 2014 we provided preliminary reviews that included paper scores. So for the official accept probability we use the 170 as denominator. The accept probabilities were therefore 43 out of 170 papers (25.3%) for Committee 1 and 44 out of 170 (25.8%) for Committee 2. This compares with the overall conference accept rate for papers outside the duplication process of 349 out of 1508 (23.1%). }</p>
+<p>\figure{\includediagram{http://inverseprobability.com/talks../slides/diagrams//neurips/accept-distribution}{80%}}{The random distribution of Number of Accepted Papers Given Underlying Accept Rate of 0.23}{accept-distribution}</p>
+<p>\figure{\includediagram{http://inverseprobability.com/talks../slides/diagrams//neurips/consistent-accept-distribution}{80%}}{The distribution of consistent accepts given underlying rate of 0.13.}{consistent-accept-distribution}</p>
+<p>\notes{For our model we are assuming for our prior that the probabilities are drawn from a Dirichlet as follows, <span class="math display">\[
+p \sim \text{Dir}(\alpha_1, \alpha_2, \alpha_3),
+\]</span> with <span class="math inline">\(\alpha_1=\alpha_2=\alpha_3=1\)</span>. The Dirichlet density is conjugate to the <a href="http://en.wikipedia.org/wiki/Multinomial_distribution">multinomial distribution</a>, and we associate three different outcomes with the multinomial. For each of the 166 papers we expect to have a consistent accept (outcome 1), an inconsistent decision (outcome 2) or a consistent reject (outcome 3). If the counts four outcome 1, 2 and 3 are represented by <span class="math inline">\(k_1\)</span>, <span class="math inline">\(k_2\)</span> and <span class="math inline">\(k_3\)</span> and the associated probabilities are given by <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span> and <span class="math inline">\(p_3\)</span> then our model is, <span class="math display">\[\begin{align*}
+\mathbf{p}|\boldsymbol{\alpha} \sim \text{Dir}(\boldsymbol{\alpha}) \\
+\mathbf{k}|\mathbf{p} \sim \text{mult}(\mathbf{p}).
+\end{align*}\]</span> \notes{Due to the conjugacy the posterior is tractable and easily computed as a Dirichlet (see e.g. <a href="http://www.stat.columbia.edu/~gelman/book/">Gelman et al</a>), where the parameters of the Dirichlet are given by the original vector from the Dirichlet prior plus the counts associated with each outcome. <span class="math display">\[
+\mathbf{p}|\mathbf{k}, \boldsymbol{\alpha} \sim \text{Dir}(\boldsymbol{\alpha} + \mathbf{k})
+\]</span> The mean probability for each outcome is then given by, <span class="math display">\[
+\bar{p}_i = \frac{\alpha_i+k_i}{\sum_{j=1}^3(\alpha_j + k_j)}.
+\]</span> \notes{and the variance is <span class="math display">\[
+\mathrm{Var}[p_i] = \frac{(\alpha_i+k_i) (\alpha_0-\alpha_i + n + k_i)}{(\alpha_0+n)^2 (\alpha_0+n+1)},
+\]</span> \notes{where <span class="math inline">\(n\)</span> is the number of trials (166 in our case) and <span class="math inline">\(\alpha_0 = \sum_{i=1}^3\alpha_i\)</span>. This allows us to compute the expected value of the probabilities and their variances under the posterior as follows.</p>
+<p>\notes{The other values we are interested in are the accept precision, reject precision and the agreed accept rate. Computing the probability density for these statistics is complex, because it involves <a href="http://en.wikipedia.org/wiki/Ratio_distribution">Ratio Distributions</a>. However, we can use Monte Carlo to estimate the expected accept precision, reject precision and agreed accept rate as well as their variances. We can use these results to give us error bars and histograms of these statistics.</p>
+<p>\figure{\includediagram{http://inverseprobability.com/talks../slides/diagrams//neurips/ratio-distributions}{80%}}{}{ratio-distributions}</p>
+<p>\notes{In the analysis above we’ve minimized the modeling choices: we made use of a Bayesian analysis to capture the uncertainty in counts that can be arising from statistical sampling error. To this end we chose an uninformative prior over these probabilities. However, one might argue that the prior should reflect something more about the underlying experimental structure: for example we <em>know</em> that if the committees made their decisions independently it is unlikely that we’d obtain an inconsistency figure much greater than 37.5% because that would require committees to explicitly collude to make inconsistent decisions: the random conference is the worst case. Due to the accept rate, we also expect a larger number of reject decisions than reject. This also isn’t captured in our prior. Such questions actually move us into the realms of modeling the process, rather then performing a sensitivity analysis. However, if we wish to model the decision process as a whole we have a lot more information available, and we should make use of it. The analysis above is intended to exploit our randomized experiment to explore how inconsistent we expect two committees to be. It focusses on that single question, it doesn’t attempt to give answers on what the reasons for that inconsistency are and how it may be reduced. The additional maths was needed only to give a sense of the uncertainty in the figures. That uncertainty arises due to the limited number of papers in the experiment.}</p>
+<p>\notes{Under the simple model we have outlined, we can be confident that there is inconsistency between two independent committees, but the level of inconsistency is much less than we would find for a random committee. If we accept that the bias introduced by the Area Chairs knowing when they were dealing with duplicates was minimal, then if we were to revisit the NIPS 2014 conference with an independent committee then we would expect between <strong>38% and 64% of the presented papers to be the same</strong>. If the conference was run at random, then we would only expect 25% of the papers to be the same.}</p>
+</section>
+<section id="reviewer-calibration" class="slide level2">
+<h2>Reviewer Calibration</h2>
+<h3 id="th-july-2014-neil-d.-lawrence">30th July 2014 Neil D. Lawrence</h3>
+<p>\notes{In this note book we deal with reviewer calibration. Our assumption is that the score from the <span class="math inline">\(j\)</span>th reviwer for the <span class="math inline">\(i\)</span>th paper is given by <span class="math display">\[
+y_{i,j} = f_i + b_j + \epsilon_{i, j}
+\]</span> \notes{where <span class="math inline">\(f_i\)</span> is the ‘objective quality’ of paper <span class="math inline">\(i\)</span> and <span class="math inline">\(b_j\)</span> is an offset associated with reviewer <span class="math inline">\(j\)</span>. <span class="math inline">\(\epsilon_{i,j}\)</span> is a subjective quality estimate which reflects how a specific reviewer’s opinion differs from other reviewers (such differences in opinion may be due to differing expertise or perspective). The underlying ‘objective quality’ of the paper is assumed to be the same for all reviewers and the reviewer offset is assumed to be the same for all papers.</p>
+<p>\notes{If we have <span class="math inline">\(n\)</span> papers and <span class="math inline">\(m\)</span> reviewers then this implies <span class="math inline">\(n\)</span> + <span class="math inline">\(m\)</span> + <span class="math inline">\(nm\)</span> values need to be estimated. Naturally this is too many, and we can start by assuming that the subjective quality is drawn from a normal density with variance <span class="math inline">\(\sigma^2\)</span> <span class="math display">\[
+\epsilon_{i, j} \sim N(0, \sigma^2 \mathbf{I})
+\]</span> which reduces us to <span class="math inline">\(n\)</span> + <span class="math inline">\(m\)</span> + 1 parameters. Further we can assume that the objective quality is also normally distributed with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\alpha_f\)</span>, <span class="math display">\[
+f_i \sim N(\mu, \alpha_f)
+\]</span> \notes{this now reduces us to <span class="math inline">\(m\)</span>+3 parameters. However, we only have approximately <span class="math inline">\(4m\)</span> observations (4 papers per reviewer) so parameters may still not be that well determined (particularly for those reviewers that have only one review). We therefore, finally, assume that reviewer offset is normally distributed with zero mean, <span class="math display">\[
+b_j \sim N(0, \alpha_b),
+\]</span> \notes{leaving us only four parameters: <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>, <span class="math inline">\(\alpha_f\)</span> and <span class="math inline">\(\alpha_b\)</span>. Combined together these three assumptions imply that <span class="math display">\[
+\mathbf{y} \sim N(\mu \mathbf{1}, \mathbf{K})
+\]</span> \notes{where <span class="math inline">\(\mathbf{y}\)</span> is a vector of stacked scores <span class="math inline">\(\mathbf{1}\)</span> is the vector of ones and the elements of the covariance function are given by <span class="math display">\[
+k(i,j; k,l) = \delta_{i,k} \alpha_f + \delta_{j,l} \alpha_b + \delta_{i, k}\delta_{j,l} \sigma^2
+\]</span> </p>
+<p>\code{%pip install gpy %pip install –upgrade git+https://github.com/sods/ods}</p>
+<p>\code{number_accepts = 420 # 440 because of the 10% replication}</p>
+<p>\notes{Given the realisation that 50% of the score seems to be ‘subjective’ and 50% of the score seems to be ‘objective,’ then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.}</p>
+<p>\slide{Conference simulation given 50% objective, 50% subjective}</p>
+<p>\figure{\includediagram{http://inverseprobability.com/talks../slides/diagrams//consistency-vs-accept-rate}{70%}}{Plot of the accept rate vs the consistency of the conference.}{consistency-vs-accept-rate}</p>
+<p>Post from Balazs Kegl: <a href="https://balazskegl.medium.com/embrace-the-random-2957d078bfb3" class="uri">https://balazskegl.medium.com/embrace-the-random-2957d078bfb3</a></p>
+<p>Experimental setup</p>
+<p>Model calibration</p>
+<p>Results</p>
+<p>Model of Results</p>
+<p>Community Reaction</p>
+<p>What happened to rejected papers?</p>
+<p>\thanks</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://unpkg.com/reveal.js@3.9.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
