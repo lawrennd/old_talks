@@ -1,5 +1,5 @@
 ---
-week: 1
+week: 0
 title: Probability and an Introduction to Jupyter, Python and Pandas
 abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
@@ -20,7 +20,7 @@ project? Name two languages involved in the Jupyter project other than python.}{
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/overdetermined-inaugural.md}
-\include{_ml/includes/nigeria-nmis-data.md}
+\include{_datasets/includes/nigeria-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 
 \newslide{}
