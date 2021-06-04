@@ -25,12 +25,11 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+youtube: q1esyhXwh-w
 date: 2021-05-05
 venue: Data Centric Engineering
 transition: None
 ---
-
-\include{talk-macros.gpp}
 
 <!--\include{_physics/includes/laplaces-demon.md}-->
 \include{_physics/includes/emergent-behaviour.md}

@@ -20,14 +20,15 @@ abstract: |
 \subsection{Putting in Practice}
 
 \notes{For our software design we can decompose the problem into three component parts}
+
 * Access
 * Assess
 * Process
 
 \subsection{Github Template}
 
-\notes{See the template repository here: https://github.com/lawrennd/analysis-template/}
-\slides{* https://github.com/lawrennd/analysis-template/}
+\notes{See the template repository here: <https://github.com/lawrennd/analysis_template/>}
+\slides{* <https://github.com/lawrennd/analysis_template/>}
 
 \reading
 
