@@ -21,6 +21,12 @@
 
 \notes{These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which *are* bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as *peppercorns*. Rapid deployment of system updates is required. For example, Apple have "fixed" the problem of Siri returning long numbers.}
 
+\notes{Here's another one from Reddit, of a Tesla Model 3 system hallucinating traffic lights.}
+
+\newslide{}
+
+\includeredditvideo{teslamotors/comments/nrs8kf/you_think_ice_cream_truck_stop_signs_are_a_problem}{600}{450}
+
 \notes{The challenge is particularly acute because of the *scale* at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.}
 
 
