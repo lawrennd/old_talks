@@ -94,14 +94,35 @@
 </section>
 <section id="notes-on-the-timeline-for-neurips" class="slide level2">
 <h2>Notes on the Timeline for NeurIPS</h2>
-<p><strong>AC recruitment (3 waves):</strong> 17/02/2014 08/03/2014 09/04/2014</p>
-<p><strong>We requested names of reviewers from ACs in two waves:</strong> 25/03/2014 11/04/2014</p>
-<p><strong>Reviewer recruitment (4 waves):</strong> 14/04/2014 28/04/2014 09/05/2014 10/06/2014 (note this is after deadline … lots of area chairs asked for reviewers after the deadline!). We invited them en-masse.</p>
-<p>06/06/2014 Submission Deadline 12/06/2014 Bidding Open For Area Chairs (this was <em>delayed</em> by CMT issues) 17/06/2014 Bidding Open For Reviewers 01/07/2014 Start Reviewing 21/07/2014 Reviewing deadline 04/08/2014 Reviews to Authors 11/08/2014 Author Rebuttal Due 25/08/2014 Teleconferences Begin 30/08/2014 Teleconferences End 1/09/2014 Preliminary Decisions Made 9/09/2014 Decisions Sent to Authors</p>
+<p><strong>AC recruitment (3 waves):</strong> * 17/02/2014 * 08/03/2014 * 09/04/2014</p>
+<p><strong>We requested names of reviewers from ACs in two waves:</strong> * 25/03/2014 * 11/04/2014</p>
+<p><strong>Reviewer recruitment (4 waves):</strong> * 14/04/2014 * 28/04/2014 * 09/05/2014 * 10/06/2014 (note this is after deadline … lots of area chairs asked for reviewers after the deadline!). We invited them en-masse.</p>
+<ul>
+<li>06/06/2014 Submission Deadline</li>
+<li>12/06/2014 Bidding Open For Area Chairs (this was <em>delayed</em> by CMT issues)</li>
+<li>17/06/2014 Bidding Open For Reviewers</li>
+<li>01/07/2014 Start Reviewing</li>
+<li>21/07/2014 Reviewing deadline</li>
+<li>04/08/2014 Reviews to Authors</li>
+<li>11/08/2014 Author Rebuttal Due</li>
+<li>25/08/2014 Teleconferences Begin</li>
+<li>30/08/2014 Teleconferences End</li>
+<li>1/09/2014 Preliminary Decisions Made</li>
+<li>9/09/2014 Decisions Sent to Authors</li>
+</ul>
 </section>
 <section id="decision-making-timeline" class="slide level2">
 <h2>Decision Making Timeline</h2>
-<p>Deadline 6th June 1. three weeks for paper <em>bidding</em> and allocation 2. three weeks for <em>review</em> 3. two weeks for discussion and <em>adding/augmenting</em> reviews/reviewers 4. one week for <em>author rebuttal</em> 5. two weeks for <em>discussion</em> 6. one week for <em>teleconferences</em> and <em>final decisons</em> 7. one week cooling off</p>
+<p>Deadline 6th June</p>
+<ol type="1">
+<li>three weeks for paper <em>bidding</em> and allocation</li>
+<li>three weeks for <em>review</em></li>
+<li>two weeks for discussion and <em>adding/augmenting</em> reviews/reviewers</li>
+<li>one week for <em>author rebuttal</em></li>
+<li>two weeks for <em>discussion</em></li>
+<li>one week for <em>teleconferences</em> and <em>final decisons</em></li>
+<li>one week cooling off</li>
+</ol>
 <p>Decisions sent 9th September</p>
 </section>
 <section id="speculation" class="slide level2">
@@ -109,6 +130,16 @@
 <ul>
 <li>To check public opinion before experiment: <a href="https://scicast.org/#!/questions/1083/comments/power">scicast question</a></li>
 </ul>
+<div class="figure">
+<div id="scicast-forecast-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//neurips/scicast-forecast.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Summary forecast from those that responded to the scicast question about how consistent the decision making was.
+</aside>
 </section>
 <section id="neurips-experiment-results" class="slide level2">
 <h2>NeurIPS Experiment Results</h2>
@@ -240,14 +271,9 @@ Reject
 </section>
 <section id="uncertainty-accept-rate" class="slide level2">
 <h2>Uncertainty: Accept Rate</h2>
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize) ax.bar(x, rv.pmf(x)) display(HTML(’
-<h3>
-Number of Accepted Papers for p = 0.23
-</h3>
-<p>‘)) ax.axvline(87,linewidth=4, color=’red’) ma.write_figure(filename=“uncertainty-accept-rate.svg,” directory=“../slides/diagrams//neurips”)}</p>
 <div class="figure">
 <div id="uncertainty-accept-rate-figure" class="figure-frame">
-<object class="svgplot " data="http://inverseprobability.com/talks../slides/diagrams//neurips/uncertainty-accept-rate.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/uncertainty-accept-rate.svg" width="70%" style=" ">
 </object>
 </div>
 </div>
@@ -262,7 +288,7 @@ Number of accepted papers for <span class="math inline">\(p=0.23\)</span>.
 </ul>
 <div class="figure">
 <div id="uncertainty-accept-precision-figure" class="figure-frame">
-<object class="svgplot " data="http://inverseprobability.com/talks../slides/diagrams//neurips/uncertainty-accept-rate.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/uncertainty-accept-rate.svg" width="70%" style=" ">
 </object>
 </div>
 </div>
@@ -281,7 +307,7 @@ Number of consistent accepts given <span class="math inline">\(p=0.13\)</span>.
 </ul>
 <div class="figure">
 <div id="random-committee-outcomes-figure" class="figure-frame">
-<object class="svgplot " data="http://inverseprobability.com/talks../slides/diagrams//neurips/random-committee-outcomes-vs-true.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/random-committee-outcomes-vs-true.svg" width="90%" style=" ">
 </object>
 </div>
 </div>
