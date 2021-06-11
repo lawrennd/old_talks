@@ -6,12 +6,15 @@ author:
   twitter: lawrennd
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
-talkscam:
 url: http://inverseprobability.com
 baseurl: /talks
-diagramsdir: /slides/diagrams
+ipynb: True
+reveal: True
+baseurl: "talks/" # the subpath of your site, e.g. /blog/
+url: "https://inverseprobability.com/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
   directory: _neurips
+
