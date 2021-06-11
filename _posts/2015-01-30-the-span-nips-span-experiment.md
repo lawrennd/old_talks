@@ -1,4 +1,5 @@
 ---
+title: The NIPS Experiment
 abstract: The peer review process can be difficult to navigate for newcomers. In this
   informal talk we will review the results of the NIPS experiment, an experiment on
   the repeatability of peer review conducted for the 2014 conference. We will try
@@ -25,8 +26,6 @@ linkipynb: staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/nips_radiant15.ipynb
 month: 1
 published: 2015-01-30
 reveal: nips_radiant15.slides.html
-section: pre
-title: The <span>NIPS</span> Experiment
 venue: RADIANT Meeting, University of Zurich, Switzerland
 year: '2015'
 ---
