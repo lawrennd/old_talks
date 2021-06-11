@@ -1,0 +1,64 @@
+---
+title: The NIPS Experiment: Examining the Repeatability of Peer Review
+venue: Computer Lab Seminar Series
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+abstract: >
+  In 2014, along with Corinna Cortes, I was Program Chair of the Neural Information Processing Systems conference. At the time, when wondering about innovations for the coference, Corinna and I decided it would be interesting to test the consistency of reviewing. With this in mind, we randomly selected 10% of submissions and had them reviewed by two independent committees. 
+  
+  In this talk I will review the construction of the experiment, explain how the NeurIPS review process worked and talk about what I felt the implications for reviewing were, vs what the community reaction was.
+date: 2015-01-30
+ipynb: True
+categories:
+- notes
+layout: talk
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
+---
+
+
+\notes{The NIPS experiment was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}
+
+\notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
+
+\include{_neurips/includes/neurips-in-numbers.md}
+
+\subsection{Speculation}
+
+* To check public opinion before experiment: [scicast question](https://scicast.org/#!/questions/1083/comments/power)
+
+\include{_neurips/includes/neurips-experiment-results.md}
+\include{_neurips/includes/neurips-experiment-reaction.md}
+\include{_neurips/includes/neurips-experiment-random-committee.md}
+
+\subsection{Conclusion}
+
+\notes{Under the simple model we have outlined, we can be confident that there is inconsistency between two independent committees, but the level of inconsistency is much less than we would find for a random committee. If we accept that the bias introduced by the Area Chairs knowing when they were dealing with duplicates was minimal, then if we were to revisit the NIPS 2014 conference with an independent committee then we would expect between **38% and 64% of the presented papers to be the same**. If the conference was run at random, then we would only expect 25% of the papers to be the same.
+
+It's apparent from comments and speculation about what these results mean, that some people might be surprised by the size of this figure. However, it only requires a little thought to see that this figure is likely to be large for any highly selective conference if there is even a small amount of inconsistency in the decision making process. This is because once the conference has chosen to be 'highly selective' then because by definition only a small percentage of papers are to be accepted. Now if we think of a type I error as accepting a paper which should be rejected, such errors are easier to make because by definition many more papers should be rejected. Type II errors (rejecting a paper that should be accepted) are less likely becaue (by setting the accept rate low) there are fewer papers that should be accepted in the first place. When there is a difference of opinion between reviewers, it does seem that many of the arugments can be distilled down to (a subjective opinion) about whether controlling for type I or type II errors is more important. Further, normally when discussing type I and type II errors we believe that the underlying system of study is genuinely binary: e.g. diseased or not diseased. However, for conferences the accept/reject boundary is not a clear separation point, there is a continuum (or spectrum) of paper quality (as there also is for some diseases). And the decision boundary often falls in a region of very high density. To better quantify these ideas we can explore our duplication experiment in more detail, by introducing the paper scores, that's a task we will perform in a fresh notebook.}
+
+\slides{* For parallel-universe NIPS we expect between 38% and 64% of the presented papers to be the same. 
+* For random-parallel-universe NIPS we only expect 25% of the papers to be the same.}
+
+\subsection{Discussion}
+
+* Error types:
+  * type I error as accepting a paper which should be rejected.
+  * type II error rejecting a paper should be accepted.
+* Controlling for error:
+  * many reviewer discussions can be summarised as *subjective* opinions about whether controlling for type I or type II is more important.
+  * with low accept rates, type I errors are *much* more common.
+* Normally in such discussions we believe there is a clear underlying boundary.
+* For conferences there is no clear separation points, there is a spectrum of paper quality.
+* Should be explored alongside *paper scores*.
+
+\thanks
+
+\references

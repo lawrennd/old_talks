@@ -23,14 +23,10 @@ papersize: a4paper
 transition: None
 ---
 
-\include{../talk-macros.tex}
-
-
-
 \include{_neurips/includes/neurips-experiment.md}
 \include{_neurips/includes/neurips-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
-
+\include{_neurips/includes/neurips-late-reviewers.md}
 
 Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>
 
