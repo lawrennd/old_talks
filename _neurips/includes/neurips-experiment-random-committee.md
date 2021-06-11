@@ -154,9 +154,9 @@ The other values we are interested in are the accept precision, reject precision
     return ap, rp, aa
 
 ap, rp, aa = sample_precisions(k, alpha, 10000)
-print ap.mean(), '+/-', 2*np.sqrt(ap.var())
-print rp.mean(), '+/-', 2*np.sqrt(rp.var())
-print aa.mean(), '+/-', 2*np.sqrt(aa.var())}
+print(ap.mean(), '+/-', 2*np.sqrt(ap.var()))
+print(rp.mean(), '+/-', 2*np.sqrt(rp.var()))
+print(aa.mean(), '+/-', 2*np.sqrt(aa.var()))}
 
 \notes{Giving an accept precision of $0.51 \pm 0.13$, a reject precision of $0.82 \pm 0.05$ and an agreed accept rate of $0.18 \pm 0.07$. Note that the 'random conference' values of 1 in 4 for accept precision and 3 in 4 for reject decisions are outside the two standard deviation error bars. If it is preferred medians and percentiles could also be computed from the samples above, but as we will see when we histogram the results the densities look broadly symmetric, so this is unlikely to have much effect.
 
@@ -167,13 +167,13 @@ Just to ensure that the error bars are reflective of the underlying densities we
 \plotcode{fig, ax = plt.subplots(1, 3, figsize=(15, 5))
 _ = ax[0].hist(ap, 20)
 _ = ax[0].set_title('Accept Precision')
-ax[0].axvline(0.25, linewidth=4)
+ax[0].axvline(0.25, linewidth=4, color="r")
 _ = ax[1].hist(rp, 20)
 _ = ax[1].set_title('Reject Precision')
-ax[1].axvline(0.75, linewidth=4)
+ax[1].axvline(0.75, linewidth=4, color="r")
 _ = ax[2].hist(aa, 20)
 _ = ax[2].set_title('Agreed Accept Rate')
-_ = ax[2].axvline(0.10, linewidth=4)
+_ = ax[2].axvline(0.10, linewidth=4, color="r")
 ma.write_figure(filename="random-committee-outcomes-vs-true.svg", directory="\writeDiagramsDir/neurips")}
 
 \figure{\includediagram{\diagramsDir/neurips/random-committee-outcomes-vs-true}{90%}}{Different statistics for the random committee oucomes versus the observed committee outcomes.}{random-committee-outcomes}
