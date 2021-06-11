@@ -51,7 +51,7 @@ import cmtutils.plot as plot
 import mlai as ma}
 
 \plotcode{rv = binom(340, 0.23)
-x = np.arange(60, 120)}
+x = np.arange(60, 120)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.bar(x, rv.pmf(x))
 display(HTML('<h3>Number of Accepted Papers for p = 0.23</h3>'))
