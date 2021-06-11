@@ -1,5 +1,5 @@
 ---
-title: The NIPS Experiment
+title: Peer Review and The NIPS Experiment
 abstract: The peer review process can be difficult to navigate for newcomers. In this
   informal talk we will review the results of the NIPS experiment, an experiment on
   the repeatability of peer review conducted for the 2014 conference. We will try
@@ -15,21 +15,20 @@ author:
   url: http://inverseprobability.com
 blog: 2014-12-16-the-nips-experiment.md
 categories:
-- Lawrence-radiant15
+- Lawrence-peer15
+day: '21'
 errata: []
-extras: []
-key: Lawrence-radiant15
+extras:
+- label: Software
+  link: https://github.com/sods/conference/
+ipynb: True
+key: Lawrence-peer15
 layout: talk
-date: 2015-01-30
-venue: RADIANT Meeting, University of Zurich, Switzerland
-year: 2015
-layout: talk
-geometry: ["a4paper", "margin=2cm"]
-papersize: a4paper
-transition: None
+month: 9
+published: 2015-09-21
+venue: MLPM Summer School, Museum of Science and Industry, Manchester, UK
+year: '2015'
 ---
-
-
 \notes{The NIPS experiment was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}
 
 \notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
