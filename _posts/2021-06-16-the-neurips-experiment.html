@@ -545,11 +545,11 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> r.join(s)</span></code></pre></div>
 <p>We can also look at a scatter plot of the review quality vs the calibrated quality.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ax.plot(r.Quality, r.CalibratedQuality, <span class="st">&#39;rx&#39;</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ax.plot(r.Quality, r.CalibratedQuality, <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">11</span>])</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;original review score&#39;</span>)</span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;calibrated review score&#39;</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, <span class="st">&quot;calibrated-review-score-vs-original-score.svg&quot;</span>)</span></code></pre></div>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, filename<span class="op">=</span><span class="st">&quot;calibrated-review-score-vs-original-score.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/calibrated-review-score-vs-original-score.svg" width="70%" style=" ">
