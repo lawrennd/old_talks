@@ -7,7 +7,7 @@
 
 \notes{Given the realisation that 50% of the score seems to be 'subjective' and 50% of the score seems to be 'objective', then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.}
 
-\slide{Conference simulation given 50% objective, 50% subjective}
+\slides{Conference simulation given 50% objective, 50% subjective}
 
 \setupcode{import numpy as np}
 

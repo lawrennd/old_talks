@@ -260,7 +260,7 @@ ma.write_figure(directory="\writeDiagramsDir/neurips", "probability-of-accept.sv
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 s.hist(bins=100, ax=ax)
 _ = ax.set_title('Calibrated Reviewer Scores')
-ma.write_figure(directory="\writeDiagramsDir/neurips", "calibrated-reviewer-scores-vs.svg")}
+ma.write_figure(directory="\writeDiagramsDir/neurips", "calibrated-reviewer-scores.svg")}
 
 \figure{\includediagram{\diagramsDir/neurips/calbirated-reviewer-scores}{70%}}{}{calibrated-reviewer-scores}
 
@@ -395,7 +395,7 @@ _ = ax.set_title('Quality Correlation: ' + str(quality_cor))
 ma.write_figure(directory="\writeDiagramsDir/neurips",
                 filename="quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/quality-correlation}}{70%}}{}{quality-correlation}
+\figure{\includediagram{\diagramsDir/neurips/quality-correlation}{70%}}{}{quality-correlation}
 
 \notes{Similarly for the calibrated quality of the papers.}
 
@@ -407,7 +407,7 @@ _ = ax.set_title('Calibrated Quality Correlation: ' + str(calibrated_quality_cor
 ma.write_figure(directory="\writeDiagramsDir/neurips",
                 filename="calibrated-quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}}{70%}}{}{calibrated-quality-correlation}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}{70%}}{}{calibrated-quality-correlation}
 
 \code{# Apply Laplace smoothing to accept probabilities before incorporating them.
 revs = r.join((prob_accept+0.0002)/1.001, on='PaperID').join(reviewer_bias, on='Email').join(papers.papers['Number Of Discussions'], on='PaperID').join(reviewer_bias_std, on='Email').sort_values(by=['AcceptProbability','PaperID', 'CalibratedQuality'], ascending=False)

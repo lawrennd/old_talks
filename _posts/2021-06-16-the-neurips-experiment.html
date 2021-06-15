@@ -337,37 +337,37 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Expected Papers Accepted:&#39;</span>, prob_accept.<span class="bu">sum</span>())</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> prob_accept.hist(bins<span class="op">=</span><span class="dv">40</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;\writeDiagramDir/neurips&quot;</span>, <span class="st">&quot;probability-of-accept.svg&quot;</span>)</span></code></pre></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;../slides/diagrams//neurips&quot;</span>, <span class="st">&quot;probability-of-accept.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="probability-of-accept-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/probability-of-accept.svg" width="70%" style=" ">
+</object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="probability-of-accept-magnify" class="magnify" onclick="magnifyFigure(&#39;probability-of-accept&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
+<div id="probability-of-accept-caption" class="caption-frame">
 <p>Figure:</p>
 </div>
 </div>
-<p>{<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/probability-of-accept.svg" width="70%" style="probability-of-accept "></object></p>
 <h2 id="some-sanity-histograms">Some Sanity Histograms</h2>
 <p>Here is the histogram of the reviewer scores after calibration.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>s.hist(bins<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>ax)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_title(<span class="st">&#39;Calibrated Reviewer Scores&#39;</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;\writeDiagramDir/neurips&quot;</span>, <span class="st">&quot;calibrated-reviewer-scores-vs.svg&quot;</span>)</span></code></pre></div>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;../slides/diagrams//neurips&quot;</span>, <span class="st">&quot;calibrated-reviewer-scores.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="calibrated-reviewer-scores-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/calbirated-reviewer-scores.svg" width="70%" style=" ">
+</object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="calibrated-reviewer-scores-magnify" class="magnify" onclick="magnifyFigure(&#39;calibrated-reviewer-scores&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
+<div id="calibrated-reviewer-scores-caption" class="caption-frame">
 <p>Figure:</p>
 </div>
 </div>
-<p>{<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/calbirated-reviewer-scores.svg" width="70%" style="calibrated-reviewer-scores "></object></p>
 <h3 id="adjustments-to-reviewer-scores">Adjustments to Reviewer Scores</h3>
 <p>We can also compute the posterior distribution for the adjustments to the reviewer scores.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute mean and covariance of review biases</span></span>
@@ -379,19 +379,19 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>reviewer_bias.hist(bins<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>ax)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_title(<span class="st">&#39;Reviewer Calibration Adjustments Histogram&#39;</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;\writeDiagramDir/neurips&quot;</span>, <span class="st">&quot;reviewer-calibration-adjustments.svg&quot;</span>)</span></code></pre></div>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;../slides/diagrams//neurips&quot;</span>, <span class="st">&quot;reviewer-calibration-adjustments.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="reviewer-calibration-adjustments-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/reviewer-calibration-adjustments.svg" width="70%" style=" ">
+</object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="reviewer-calibration-adjustments-magnify" class="magnify" onclick="magnifyFigure(&#39;reviewer-calibration-adjustments&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
+<div id="reviewer-calibration-adjustments-caption" class="caption-frame">
 <p>Figure:</p>
 </div>
 </div>
-<p>{<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/reviewer-calibration-adjustments.svg" width="70%" style="reviewer-calibration-adjustments "></object></p>
 <p>Export a version of the bias scores for use in CMT.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>bias_export <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">&#39;Quality Score - Does the paper deserves to be published?&#39;</span>:reviewer_bias, </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;Impact Score - Independently of the Quality Score above, this is your opportunity to identify papers that are very different, original, or otherwise potentially impactful for the NIPS community.&#39;</span>:pd.Series(np.zeros(<span class="bu">len</span>(reviewer_bias)), index<span class="op">=</span>reviewer_bias.index),</span>
@@ -410,19 +410,19 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Raw Score vs Log odds of accept&#39;</span>)</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;raw score&#39;</span>)</span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;log odds of accept&#39;</span>)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;\writeDiagramDir/neurips&quot;</span>, <span class="st">&quot;raw-score-vs-log-odds.svg&quot;</span>)</span></code></pre></div>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;../slides/diagrams//neurips&quot;</span>, <span class="st">&quot;raw-score-vs-log-odds.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="raw-score-vs-log-odds-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/raw-score-vs-log-odds.svg" width="70%" style=" ">
+</object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="raw-score-vs-log-odds-magnify" class="magnify" onclick="magnifyFigure(&#39;raw-score-vs-log-odds&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
+<div id="raw-score-vs-log-odds-caption" class="caption-frame">
 <p>Figure:</p>
 </div>
 </div>
-<p>{<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/raw-score-vs-log-odds.svg" width="70%" style="raw-score-vs-log-odds "></object></p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>s.name <span class="op">=</span> <span class="st">&#39;CalibratedQuality&#39;</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> r.join(s)</span></code></pre></div>
 <p>We can also look at a scatter plot of the review quality vs the calibrated quality.</p>
@@ -431,10 +431,11 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">11</span>])</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;original review score&#39;</span>)</span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;calibrated review score&#39;</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;\writeDiagramDir/neurips&quot;</span>, <span class="st">&quot;calibrated-review-score-vs-original-score.svg&quot;</span>)</span></code></pre></div>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;../slides/diagrams//neurips&quot;</span>, <span class="st">&quot;calibrated-review-score-vs-original-score.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="-figure" class="figure-frame">
-
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/calibrated-review-score-vs-original-score.svg" width="70%" style=" ">
+</object>
 </div>
 <div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
@@ -443,7 +444,6 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <p>Figure:</p>
 </div>
 </div>
-<p>{<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/calibrated-review-score-vs-original-score.svg" width="70%" style=" "></object></p>
 <h2 id="duplicate-papers">Duplicate Papers</h2>
 <p>For NIPS 2014 we experimented with duplicate papers: we pushed papers through the system twice, exposing them to different subsets of the reviewers. The first thing we’ll look at is the duplicate papers. Firstly we identify them by matching on title.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>filename <span class="op">=</span> date <span class="op">+</span> <span class="st">&#39;_paper_list.xls&#39;</span></span>
@@ -484,28 +484,28 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <h2 id="correlation-plots">Correlation Plots</h2>
 <p>To visualize the quality score correlation we plot the group 1 papers against the group 2 papers. Here we add a small amount of jitter to ensure points to help visualize points that would otherwise fall on the same position.</p>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/quality-correlation.svg" width style=" ">
+<div id="quality-correlation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/quality-correlation.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="quality-correlation-magnify" class="magnify" onclick="magnifyFigure(&#39;quality-correlation&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure: 70%</p>
+<div id="quality-correlation-caption" class="caption-frame">
+<p>Figure:</p>
 </div>
 </div>
 <p>Similarly for the calibrated quality of the papers.</p>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/calibrated-quality-correlation.svg" width style=" ">
+<div id="calibrated-quality-correlation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/calibrated-quality-correlation.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="calibrated-quality-correlation-magnify" class="magnify" onclick="magnifyFigure(&#39;calibrated-quality-correlation&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure: 70%</p>
+<div id="calibrated-quality-correlation-caption" class="caption-frame">
+<p>Figure:</p>
 </div>
 </div>
 <div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply Laplace smoothing to accept probabilities before incorporating them.</span></span>
@@ -521,7 +521,6 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-simulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-simulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Given the realisation that 50% of the score seems to be ‘subjective’ and 50% of the score seems to be ‘objective,’ then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.</p>
-<p>\slide{Conference simulation given 50% objective, 50% subjective}</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> <span class="dv">100000</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>subjectivity_portion <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
