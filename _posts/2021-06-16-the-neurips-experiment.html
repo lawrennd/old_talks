@@ -454,7 +454,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Expected Papers Accepted:&#39;</span>, prob_accept.<span class="bu">sum</span>())</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> prob_accept.hist(bins<span class="op">=</span><span class="dv">40</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, <span class="st">&quot;probability-of-accept.svg&quot;</span>)</span></code></pre></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, filename<span class="op">=</span><span class="st">&quot;probability-of-accept.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="probability-of-accept-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/probability-of-accept.svg" width="70%" style=" ">
@@ -472,7 +472,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>s.hist(bins<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>ax)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_title(<span class="st">&#39;Calibrated Reviewer Scores&#39;</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, <span class="st">&quot;calibrated-reviewer-scores.svg&quot;</span>)</span></code></pre></div>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, filename<span class="op">=</span><span class="st">&quot;calibrated-reviewer-scores.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="calibrated-reviewer-scores-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/calibrated-reviewer-scores.svg" width="70%" style=" ">
@@ -496,7 +496,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>reviewer_bias.hist(bins<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>ax)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_title(<span class="st">&#39;Reviewer Calibration Adjustments Histogram&#39;</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, <span class="st">&quot;reviewer-calibration-adjustments.svg&quot;</span>)</span></code></pre></div>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, filename<span class="op">=</span><span class="st">&quot;reviewer-calibration-adjustments.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="reviewer-calibration-adjustments-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/reviewer-calibration-adjustments.svg" width="70%" style=" ">
@@ -527,7 +527,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Raw Score vs Log odds of accept&#39;</span>)</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;raw score&#39;</span>)</span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;log odds of accept&#39;</span>)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, <span class="st">&quot;raw-score-vs-log-odds.svg&quot;</span>)</span></code></pre></div>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>ma.write_figure(directory<span class="op">=</span><span class="st">&quot;./neurips&quot;</span>, filename<span class="op">=</span><span class="st">&quot;raw-score-vs-log-odds.svg&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="raw-score-vs-log-odds-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/raw-score-vs-log-odds.svg" width="70%" style=" ">
