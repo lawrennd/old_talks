@@ -7,7 +7,7 @@
 
 \include{_neurips/includes/reviewer-calibration-model.md}
 \include{_neurips/includes/reviewer-calibration-fit-model.md}
-\include{_neurips/includes/review-quality-predicton.md}
+\include{_neurips/includes/review-quality-prediction.md}
 \include{_neurips/includes/paper-acceptance-monte-carlo.md}
 
 \subsection{Calibraton Quality Sanity Checks}

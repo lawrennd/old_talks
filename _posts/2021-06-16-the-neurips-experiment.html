@@ -320,6 +320,10 @@ p \sim \text{Dir}(\alpha_1, \alpha_2, \alpha_3),
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-reviewer-calibration.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-reviewer-calibration.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<h2 id="reviewer-calibration-model">Reviewer Calibration Model</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/reviewer-calibration-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/reviewer-calibration-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p>In this note book we deal with reviewer calibration. Our assumption is that the score from the <span class="math inline">\(j\)</span>th reviwer for the <span class="math inline">\(i\)</span>th paper is given by <span class="math display">\[
 y_{i,j} = f_i + b_j + \epsilon_{i, j}
 \]</span> where <span class="math inline">\(f_i\)</span> is the ‘objective quality’ of paper <span class="math inline">\(i\)</span> and <span class="math inline">\(b_j\)</span> is an offset associated with reviewer <span class="math inline">\(j\)</span>. <span class="math inline">\(\epsilon_{i,j}\)</span> is a subjective quality estimate which reflects how a specific reviewer’s opinion differs from other reviewers (such differences in opinion may be due to differing expertise or perspective). The underlying ‘objective quality’ of the paper is assumed to be the same for all reviewers and the reviewer offset is assumed to be the same for all papers.</p>
@@ -344,6 +348,10 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 \alpha_f = \frac{1}{|\mathbf{y}|} \mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}
 \]</span> A Bayesian analysis of this parameter is possible with gamma priors, but it would merely shows that this parameter is extremely well determined (the degrees of freedom parameter of the associated Student-<span class="math inline">\(t\)</span> marginal likelihood scales will the number of reviews, which will be around <span class="math inline">\(|\mathbf{y}| \approx 6,000\)</span> in our case.</p>
 <p>So, we propose to proceed as follows. Set the mean from the reviews (<span class="math inline">\(\mu\)</span>) and then choose a two dimensional grid of parameters for reviewer offset and diversity. For each parameter choice, optimize to find <span class="math inline">\(\alpha_f\)</span> and then evaluate the liklihood. Worst case this will require us inverting <span class="math inline">\(\hat{\mathbf{K}}\)</span>, but if the reviewer paper groups are disconnected, it can be done a lot quicker. Next stage is to load in the reviews for analysis.</p>
+<h2 id="fitting-the-model">Fitting the Model</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/reviewer-calibration-fit-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/reviewer-calibration-fit-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -413,12 +421,19 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <p>Since we have removed the data mean, the log likelihood we are interested in is the likelihood of a multivariate Gaussian with covariance <span class="math inline">\(\mathbf{K}\)</span> and mean zero. This is computed below.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ll <span class="op">=</span> <span class="fl">0.5</span><span class="op">*</span><span class="bu">len</span>(y)<span class="op">*</span>np.log(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>alpha_f) <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>logdet <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>yTKinvy<span class="op">/</span>alpha_f </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;negative log likelihood: &quot;</span>, ll)</span></code></pre></div>
+<h3 id="review-quality-prediction">Review Quality Prediction</h3>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/review-quality-prediction.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/review-quality-prediction.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p>Now we wish to predict the bias corrected scores for the papers. That involves considering a variable <span class="math inline">\(s_{i,j} = f_i + e_{i,j}\)</span> which is the score with the bias removed. That variable has a covariance matrix, <span class="math inline">\(\mathbf{K}_s=\mathbf{K}_f + \sigma^2 \mathbf{I}\)</span> and a cross covariance between <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\mathbf{s}\)</span> is also given by <span class="math inline">\(\mathbf{K}_s\)</span>. This means we can compute the posterior distribution of the scores as follows:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute mean and covariance of quality scores</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>K_s <span class="op">=</span> K_f <span class="op">+</span> np.eye(K_f.shape[<span class="dv">0</span>])<span class="op">*</span>sigma2</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series(np.dot(K_s, alpha) <span class="op">+</span> mu, index<span class="op">=</span>X1.index)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>covs <span class="op">=</span> alpha_f<span class="op">*</span>(K_s <span class="op">-</span> np.dot(K_s, np.dot(Kinv, K_s)))</span></code></pre></div>
 <h3 id="monte-carlo-simulations-for-probability-of-acceptance">Monte Carlo Simulations for Probability of Acceptance</h3>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/paper-acceptance-monte-carlo.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/paper-acceptance-monte-carlo.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p>We can now sample from this posterior distribution of bias-adjusted scores jointly, to get a set of scores for all papers. For this set of scores we can perform a ranking and accept the top 400 papers. This gives us a sampled conference. If we do that 1,000 times then we can see how many times each paper was accepted to get a probability of acceptance.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>number_accepts <span class="op">=</span> <span class="dv">420</span> <span class="co"># 440 because of the 10% replication</span></span></code></pre></div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># place this in a separate box, because sampling can take a while.</span></span>
@@ -525,6 +540,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <p>Figure:</p>
 </div>
 </div>
+<h2 id="calibraton-quality-sanity-checks">Calibraton Quality Sanity Checks</h2>
 <div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>s.name <span class="op">=</span> <span class="st">&#39;CalibratedQuality&#39;</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> r.join(s)</span></code></pre></div>
 <p>We can also look at a scatter plot of the review quality vs the calibrated quality.</p>
