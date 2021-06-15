@@ -43,7 +43,7 @@ import cmtutils.plot as plot}
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 print('Expected Papers Accepted:', prob_accept.sum())
 _ = prob_accept.hist(bins=40, ax=ax)
-ma.write_figure(directory="\writeDiagramsDir/neurips", "probability-of-accept.svg")}
+ma.write_figure(directory="\writeDiagramsDir/neurips", filename="probability-of-accept.svg")}
 
 
 \figure{\includediagram{\diagramsDir/neurips/probability-of-accept}{70%}}{}{probability-of-accept}
@@ -55,9 +55,9 @@ ma.write_figure(directory="\writeDiagramsDir/neurips", "probability-of-accept.sv
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 s.hist(bins=100, ax=ax)
 _ = ax.set_title('Calibrated Reviewer Scores')
-ma.write_figure(directory="\writeDiagramsDir/neurips", "calibrated-reviewer-scores.svg")}
+ma.write_figure(directory="\writeDiagramsDir/neurips", filename="calibrated-reviewer-scores.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/calbirated-reviewer-scores}{70%}}{}{calibrated-reviewer-scores}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-reviewer-scores}{70%}}{}{calibrated-reviewer-scores}
 
 \notes{\subsubsection{Adjustments to Reviewer Scores}
 
@@ -76,7 +76,7 @@ reviewer_bias_std = pd.Series(np.dot(np.diag(1./X2.sum(0)), np.dot(X2.T, np.sqrt
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 reviewer_bias.hist(bins=100, ax=ax)
 _ = ax.set_title('Reviewer Calibration Adjustments Histogram')
-ma.write_figure(directory="\writeDiagramsDir/neurips", "reviewer-calibration-adjustments.svg")}
+ma.write_figure(directory="\writeDiagramsDir/neurips", filename="reviewer-calibration-adjustments.svg")}
 
 \figure{\includediagram{\diagramsDir/neurips/reviewer-calibration-adjustments}{70%}}{}{reviewer-calibration-adjustments}
 
@@ -106,7 +106,7 @@ ax.plot(raw_score, np.log(prob_accept)- np.log(1-prob_accept), 'rx')
 ax.set_title('Raw Score vs Log odds of accept')
 ax.set_xlabel('raw score')
 _ = ax.set_ylabel('log odds of accept')
-ma.write_figure(directory="\writeDiagramsDir/neurips", "raw-score-vs-log-odds.svg")}
+ma.write_figure(directory="\writeDiagramsDir/neurips", filename="raw-score-vs-log-odds.svg")}
 
 \figure{\includediagram{\diagramsDir/neurips/raw-score-vs-log-odds}{70%}}{}{raw-score-vs-log-odds}
 

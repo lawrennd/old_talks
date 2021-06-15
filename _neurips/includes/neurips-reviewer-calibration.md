@@ -99,7 +99,7 @@ ma.write_figure(directory="\writeDiagramsDir/neurips",
 \newslide{Correlation Plots}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.plot(calibrated_quality[:, 0]+np.random.randn(calibrated_quality.shape[0])*0.06125, calibrated_quality[:, 1]+np.random.randn(calibrated_quality.shape[0])*0.06125, 'rx')
+ax.plot(calibrated_quality[:, 0]+np.random.randn(calibrated_quality.shape[0])*0.06125, calibrated_quality[:, 1]+np.random.randn(calibrated_quality.shape[0])*0.06125, 'r.', markersize=10)
 _ = ax.set_title('Calibrated Quality Correlation: ' + str(calibrated_quality_cor))
 ma.write_figure(directory="\writeDiagramsDir/neurips",
                 filename="calibrated-quality-correlation.svg")}
