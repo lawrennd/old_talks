@@ -22,11 +22,11 @@ calibrated quality.}
 import cmtutils.plot as plot}
 
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-ax.plot(r.Quality, r.CalibratedQuality, 'rx')
+ax.plot(r.Quality, r.CalibratedQuality, 'r.', markersize=10)
 ax.set_xlim([0, 11])
 ax.set_xlabel('original review score')
 _ = ax.set_ylabel('calibrated review score')
-ma.write_figure(directory="\writeDiagramsDir/neurips", "calibrated-review-score-vs-original-score.svg")}
+ma.write_figure(directory="\writeDiagramsDir/neurips", filename="calibrated-review-score-vs-original-score.svg")}
 
 \figure{\includediagram{\diagramsDir/neurips/calibrated-review-score-vs-original-score}{70%}}{}{}
 
