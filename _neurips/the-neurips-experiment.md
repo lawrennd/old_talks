@@ -24,8 +24,9 @@ transition: None
 ---
 
 \include{_neurips/includes/neurips-experiment.md}
-\include{_neurips/includes/neurips-calibration.md}
+\include{_neurips/includes/neurips-reviewer-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
+\include{_neurips/includes/where-do-the-rejected-papers-go.md}
 \include{_neurips/includes/neurips-late-reviewers.md}
 
 Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>

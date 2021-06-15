@@ -6,9 +6,11 @@
 \subsection{Reviewer Calibration}
 
 \notes{In this note book we deal with reviewer calibration. Our assumption is
-that the score from the $j$th reviwer for the $i$th paper is given by $$
+that the score from the $j$th reviwer for the $i$th paper is given by}
+$$
 y_{i,j} = f_i + b_j + \epsilon_{i, j}
-$$ where $f_i$ is the 'objective quality' of paper $i$ and $b_j$ is an
+$$
+\notes{where $f_i$ is the 'objective quality' of paper $i$ and $b_j$ is an
 offset associated with reviewer $j$. $\epsilon_{i,j}$ is a subjective
 quality estimate which reflects how a specific reviewer's opinion
 differs from other reviewers (such differences in opinion may be due to
@@ -117,7 +119,7 @@ X2 = pd.get_dummies(r.Email)
 X2 = X2[sorted(X2.columns, key=str.lower)]
 y = reviews.reviews.Quality - mu}
 
-\notes{### Constructing the Model in GPy
+\notes{\subsubsection{Constructing the Model in GPy}
 
 Having reduced the model to two parameters, I was hopeful I could set
 parameters broadly by hand. My initial expectation was that `alpha_b`
@@ -245,10 +247,11 @@ import cmtutils.plot as plot}
 
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 print('Expected Papers Accepted:', prob_accept.sum())
-_ = prob_accept.hist(bins=40, ax=ax)}
+_ = prob_accept.hist(bins=40, ax=ax)
+ma.write_figure(directory="\writeDiagramsDir/neurips", "probability-of-accept.svg")}
 
 
-\figure{\includediagram{\diagramsDir/neurips/ecc3d7f9819b919b278fe6a125c57e0488f5bed7}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/probability-of-accept}{70%}}{}{probability-of-accept}
 
 \subsection{Some Sanity Histograms}
 
@@ -256,11 +259,12 @@ _ = prob_accept.hist(bins=40, ax=ax)}
 
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 s.hist(bins=100, ax=ax)
-_ = ax.set_title('Calibrated Reviewer Scores')}
+_ = ax.set_title('Calibrated Reviewer Scores')
+ma.write_figure(directory="\writeDiagramsDir/neurips", "calibrated-reviewer-scores-vs.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/cfd1d93a960d9c698e6278e3ce5dd4a8aa024b4c}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/calbirated-reviewer-scores}{70%}}{}{calibrated-reviewer-scores}
 
-\notes{### Adjustments to Reviewer Scores
+\notes{\subsubsection{Adjustments to Reviewer Scores}
 
 We can also compute the posterior distribution for the adjustments to
 the reviewer scores.}
@@ -276,9 +280,10 @@ reviewer_bias_std = pd.Series(np.dot(np.diag(1./X2.sum(0)), np.dot(X2.T, np.sqrt
 
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 reviewer_bias.hist(bins=100, ax=ax)
-_ = ax.set_title('Reviewer Calibration Adjustments Histogram')}
+_ = ax.set_title('Reviewer Calibration Adjustments Histogram')
+ma.write_figure(directory="\writeDiagramsDir/neurips", "reviewer-calibration-adjustments.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/ddbce74cafa10a90f4a9b5422400886316a7eb95}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/reviewer-calibration-adjustments}{70%}}{}{reviewer-calibration-adjustments}
 
 \notes{Export a version of the bias scores for use in CMT.}
 
@@ -305,9 +310,10 @@ prob_accept[prob_accept==1] = 1-1/(10*samples)}
 ax.plot(raw_score, np.log(prob_accept)- np.log(1-prob_accept), 'rx')
 ax.set_title('Raw Score vs Log odds of accept')
 ax.set_xlabel('raw score')
-_ = ax.set_ylabel('log odds of accept')}
+_ = ax.set_ylabel('log odds of accept')
+ma.write_figure(directory="\writeDiagramsDir/neurips", "raw-score-vs-log-odds.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/25e0b82c21a4a2334c4eb9a267d95387fda14923}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/raw-score-vs-log-odds}{70%}}{}{raw-score-vs-log-odds}
 
 \code{s.name = 'CalibratedQuality'
 r = r.join(s)}
@@ -315,13 +321,17 @@ r = r.join(s)}
 \notes{We can also look at a scatter plot of the review quality vs the
 calibrated quality.}
 
+\setupplotcode{import matplotlib.plt as plt
+import cmtutils.plot as plot}
+
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(r.Quality, r.CalibratedQuality, 'rx')
 ax.set_xlim([0, 11])
 ax.set_xlabel('original review score')
-_ = ax.set_ylabel('calibrated review score')}
+_ = ax.set_ylabel('calibrated review score')
+ma.write_figure(directory="\writeDiagramsDir/neurips", "calibrated-review-score-vs-original-score.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/72960eb91a5b5ada7d5a7b66139f13fdc4adbe04}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-review-score-vs-original-score}{70%}}{}{}
 
 \subsection{Duplicate Papers}
 
@@ -380,18 +390,24 @@ ensure points to help visualize points that would otherwise fall on the
 same position.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.plot(quality[:, 0]+np.random.randn(quality.shape[0])*0.06125, quality[:, 1]+np.random.randn(quality.shape[0])*0.06125, 'rx')
-_ = ax.set_title('Quality Correlation: ' + str(quality_cor))}
+ax.plot(quality[:, 0]+np.random.randn(quality.shape[0])*0.06125, quality[:, 1]+np.random.randn(quality.shape[0])*0.06125, 'r.', markersize=10)
+_ = ax.set_title('Quality Correlation: ' + str(quality_cor))
+ma.write_figure(directory="\writeDiagramsDir/neurips",
+                filename="quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/709ea4d8d5e56adb3250e6d6ab50b939fac765be}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/quality-correlation}}{70%}}{}{quality-correlation}
 
 \notes{Similarly for the calibrated quality of the papers.}
 
+\newslide{Correlation Plots}
+
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.plot(calibrated_quality[:, 0]+np.random.randn(calibrated_quality.shape[0])*0.06125, calibrated_quality[:, 1]+np.random.randn(calibrated_quality.shape[0])*0.06125, 'rx')
-_ = ax.set_title('Calibrated Quality Correlation: ' + str(calibrated_quality_cor))}
+_ = ax.set_title('Calibrated Quality Correlation: ' + str(calibrated_quality_cor))
+ma.write_figure(directory="\writeDiagramsDir/neurips",
+                filename="calibrated-quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/9d9baaed34080a2fa35994796b4836fa0a013d3a}{70%}{}{}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}}{70%}}{}{calibrated-quality-correlation}
 
 \code{# Apply Laplace smoothing to accept probabilities before incorporating them.
 revs = r.join((prob_accept+0.0002)/1.001, on='PaperID').join(reviewer_bias, on='Email').join(papers.papers['Number Of Discussions'], on='PaperID').join(reviewer_bias_std, on='Email').sort_values(by=['AcceptProbability','PaperID', 'CalibratedQuality'], ascending=False)

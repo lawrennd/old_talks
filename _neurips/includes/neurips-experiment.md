@@ -86,7 +86,7 @@ x = np.arange(60, 120)}
 import mlai.plot as plot
 import mlai}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.bit_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.bar(x, rv.pmf(x))
 ax.axvline(87,linewidth=4, color='red') 
 
@@ -105,7 +105,7 @@ mlai.write_figure(filename='accept-distribution.svg', directory='\writeDiagramsD
 \code{rv = binom(166, 0.13)
 x = np.arange(10, 30)}
 
-\plotcode{fig, ax = plt.subplots(figsize=(5,3))
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
 ax.bar(x, rv.pmf(x))
 
@@ -163,7 +163,7 @@ alpha = np.ones((3,))
 m, v = posterior_mean_var(k, alpha)
 outcome = ['consistent accept', 'inconsistent decision', 'consistent reject']
 for i in range(3):
-    print "Probability of", outcome[i], m[i], "+/-", np.sqrt(v[i])}
+    print("Probability of", outcome[i], m[i], "+/-", np.sqrt(v[i]))}
 
 
 \notes{So we have a probability of consistent accept as $0.136 \pm 0.06$, the probability of inconsistent decision as $0.260 \pm 0.09$ and probability of consistent reject as $0.60 \pm 0.15$. Recall that if we'd selected papers at random (with accept rate of 1 in 4) then these values would have been 1 in 16 (0.0625), 3 in 8 (0.375) and 9 in 16 (0.5625). }
@@ -197,8 +197,8 @@ print('agreed accept rate', aa.mean(), '+/-', np.sqrt(aa.var()))}
 \notes{Just to ensure that the error bars are reflective of the underlying densities we histogram the Monte Carlo results for accept precision, reject precision and agreed accept below. Shown on each histogram is a line representing the result we would get for the 'random committee'.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
-import mlai}
+import cmtutils.plot as plot
+import mlai as ma}
 
 \plotcode{fig, ax = plt.subplots(1, 3, figsize=(12, 3))
 _ = ax[0].hist(ap, 20)
@@ -211,7 +211,7 @@ _ = ax[2].hist(aa, 20)
 _ = ax[2].set_title('Agreed Accept Rate')
 ax[2].axvline(0.10, linewidth=4, color='r')
 
-mlai.write_figure(filename='ratio-distributions.svg', directory='\writeDiagramsDir/neurips')}
+ma.write_figure(filename='ratio-distributions.svg', directory='\writeDiagramsDir/neurips')}
 
 \figure{\includediagram{\diagramsDir/neurips/ratio-distributions}{80%}}{}{ratio-distributions}
 
