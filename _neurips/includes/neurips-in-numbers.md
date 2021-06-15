@@ -18,12 +18,12 @@
 \newslide{NeurIPS in Numbers}
 
 \slides{* In 2014 NeurIPS had:
-1678 submissions
-414 accepted papers
-20 oral presentations
-62 spotlight presentations
-331 poster presentations
-19 papers rejected without review}
+  * 1678 submissions
+  * 414 accepted papers
+  * 20 oral presentations
+  * 62 spotlight presentations
+  * 331 poster presentations
+  * 19 papers rejected without review}
 
 
 \subsection{The NeurIPS Experiment}
@@ -41,9 +41,9 @@
 
 \slides{* We selected ~10% of NeurIPS papers to be reviewed twice, independently.
 * 170 papers were reviewed by two separate committees.
-    * Each committee was 1/2 the size of the full committee.
-    * Reviewers allocated at random
-    * Area Chairs allocated to ensure distribution of expertise}
+  * Each committee was 1/2 the size of the full committee.
+  * Reviewers allocated at random
+  * Area Chairs allocated to ensure distribution of expertise}
 
 
 \subsection{Notes on the Timeline for NeurIPS}

@@ -23,11 +23,23 @@ papersize: a4paper
 transition: None
 ---
 
-\include{_neurips/includes/neurips-experiment.md}
+\notes{The NIPS experiment was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}
+
+\notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
+
+\include{_neurips/includes/neurips-in-numbers.md}
+\include{_neurips/includes/neurips-experiment-speculation.md}
+\include{_neurips/includes/neurips-experiment-results.md}
+\include{_neurips/includes/neurips-experiment-reaction.md}
+\include{_neurips/includes/neurips-experiment-random-committee.md}
+
+<!--include{_neurips/includes/neurips-experiment.md}-->
 \include{_neurips/includes/neurips-reviewer-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
 \include{_neurips/includes/neurips-late-reviewers.md}
+
+\include{_neurips/includes/neurips-experiment-conclusion.md}
 
 Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>
 

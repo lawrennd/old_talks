@@ -8,6 +8,8 @@ author:
   url: http://inverseprobability.com
 url: http://inverseprobability.com
 baseurl: /talks
+diagramdir: slides/diagrams/
+writediagramdir: .
 ipynb: True
 reveal: True
 baseurl: "talks/" # the subpath of your site, e.g. /blog/

@@ -3,23 +3,15 @@
 
 \editme
 
-\comment{# The NIPS Experiment
-
-### Corinna Cortes and Neil D. Lawrence
-
-### 28th December 2014}
-
-
 \subsection{Introduction}
 
 \notes{In this notebook we perform some preliminary analysis on 'The NIPS Experiment'. This was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}
 
-\notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.
-}
+\notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
 
 \subsection{Results and Analysis}
 
-\notes{The final results of the experiment were as follows. From 170 papers 4 had to be withdrawn or were rejected without completing the review process, for the remainder, the 'confusion matrix' for the two committee's decisions is below.
+\notes{The final results of the experiment were as follows. From 170 papers 4 had to be withdrawn or were rejected without completing the review process, for the remainder, the 'confusion matrix' for the two committee's decisions is below.}
 
 <table>
   <tr>
@@ -50,7 +42,7 @@
 
 \subsubsection{Context: A Random Committee}
 
-\notes{The first context we can place around the numbers is what would have happened at the 'Random Conference' where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been:
+\notes{The first context we can place around the numbers is what would have happened at the 'Random Conference' where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been:}
 <table>
   <tr>
   <td colspan="2"></td><td colspan="2">Committee 1</td>
@@ -126,20 +118,20 @@ mlai.write_figure(filename='consistent-accept-distribution.svg', directory='\wri
 
 \notes{Choice of prior for the multinomial is typically straightforward, the [Dirichlet density](http://en.wikipedia.org/wiki/Dirichlet_distribution) is [conjugate](http://en.wikipedia.org/wiki/Conjugate_prior) and has the additional advantage that its parameters can be set to ensure it is *uninformative*, i.e. uniform across the domain of the prior. Combination of a multinomial likelihood and a Dirichelt prior is not new, and in this domain if we were to consider the mean the posterior density only, then the approach is known as [Laplace smoothing](http://en.wikipedia.org/wiki/Additive_smoothing). }
 
-\notes{For our model we are assuming for our prior that the probabilities are drawn from a Dirichlet as follows,
+\notes{For our model we are assuming for our prior that the probabilities are drawn from a Dirichlet as follows,}
 $$
 p \sim \text{Dir}(\alpha_1, \alpha_2, \alpha_3),
 $$
-with $\alpha_1=\alpha_2=\alpha_3=1$. The Dirichlet density is conjugate to the [multinomial distribution](http://en.wikipedia.org/wiki/Multinomial_distribution), and we associate three different outcomes with the multinomial. For each of the 166 papers we expect to have a consistent accept (outcome 1), an inconsistent decision (outcome 2) or a consistent reject (outcome 3). If the counts four outcome 1, 2 and 3 are represented by $k_1$, $k_2$ and $k_3$ and the associated probabilities are given by $p_1$, $p_2$ and $p_3$ then our model is, 
+\notes{with $\alpha_1=\alpha_2=\alpha_3=1$. The Dirichlet density is conjugate to the [multinomial distribution](http://en.wikipedia.org/wiki/Multinomial_distribution), and we associate three different outcomes with the multinomial. For each of the 166 papers we expect to have a consistent accept (outcome 1), an inconsistent decision (outcome 2) or a consistent reject (outcome 3). If the counts four outcome 1, 2 and 3 are represented by $k_1$, $k_2$ and $k_3$ and the associated probabilities are given by $p_1$, $p_2$ and $p_3$ then our model is,}
 \begin{align*}
 \mathbf{p}|\boldsymbol{\alpha} \sim \text{Dir}(\boldsymbol{\alpha}) \\
 \mathbf{k}|\mathbf{p} \sim \text{mult}(\mathbf{p}).
 \end{align*}
-\notes{Due to the conjugacy the posterior is tractable and easily computed as a Dirichlet (see e.g. [Gelman et al](http://www.stat.columbia.edu/~gelman/book/)), where the parameters of the Dirichlet are given by the original vector from the Dirichlet prior plus the counts associated with each outcome. 
+\notes{Due to the conjugacy the posterior is tractable and easily computed as a Dirichlet (see e.g. [Gelman et al](http://www.stat.columbia.edu/~gelman/book/)), where the parameters of the Dirichlet are given by the original vector from the Dirichlet prior plus the counts associated with each outcome.}
 $$
 \mathbf{p}|\mathbf{k}, \boldsymbol{\alpha} \sim \text{Dir}(\boldsymbol{\alpha} + \mathbf{k})
 $$
-The mean probability for each outcome is then given by,
+\notes{The mean probability for each outcome is then given by,}
 $$
 \bar{p}_i = \frac{\alpha_i+k_i}{\sum_{j=1}^3(\alpha_j + k_j)}.
 $$
@@ -147,7 +139,7 @@ $$
 $$
 \mathrm{Var}[p_i] = \frac{(\alpha_i+k_i) (\alpha_0-\alpha_i + n + k_i)}{(\alpha_0+n)^2 (\alpha_0+n+1)},
 $$
-\notes{where $n$ is the number of trials (166 in our case) and $\alpha_0 = \sum_{i=1}^3\alpha_i$. This allows us to compute the expected value of the probabilities and their variances under the posterior as follows.
+\notes{where $n$ is the number of trials (166 in our case) and $\alpha_0 = \sum_{i=1}^3\alpha_i$. This allows us to compute the expected value of the probabilities and their variances under the posterior as follows.}
 
 
 \helpercode{def posterior_mean_var(k, alpha):
@@ -168,7 +160,7 @@ for i in range(3):
 
 \notes{So we have a probability of consistent accept as $0.136 \pm 0.06$, the probability of inconsistent decision as $0.260 \pm 0.09$ and probability of consistent reject as $0.60 \pm 0.15$. Recall that if we'd selected papers at random (with accept rate of 1 in 4) then these values would have been 1 in 16 (0.0625), 3 in 8 (0.375) and 9 in 16 (0.5625). }
 
-\notes{The other values we are interested in are the accept precision, reject precision and the agreed accept rate. Computing the probability density for these statistics is complex, because it involves [Ratio Distributions](http://en.wikipedia.org/wiki/Ratio_distribution). However, we can use Monte Carlo to estimate the expected accept precision, reject precision and agreed accept rate as well as their variances. We can use these results to give us error bars and histograms of these statistics.
+\notes{The other values we are interested in are the accept precision, reject precision and the agreed accept rate. Computing the probability density for these statistics is complex, because it involves [Ratio Distributions](http://en.wikipedia.org/wiki/Ratio_distribution). However, we can use Monte Carlo to estimate the expected accept precision, reject precision and agreed accept rate as well as their variances. We can use these results to give us error bars and histograms of these statistics.}
 
 
 \helpercode{def sample_precisions(k, alpha, num_samps):
