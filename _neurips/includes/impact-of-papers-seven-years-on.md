@@ -82,7 +82,7 @@ ax.set_xticks([])
 ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col, col=column.replace("_", "-")),
                    directory="\writeDiagramsDir/neurips")}
 
-\newslide{}
+\newslide{All Papers}
 
 \figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-all}{70%}}{}{citations-vs-average-calibrated-quality-all}
 
@@ -103,7 +103,7 @@ plot.log_one_citations(column, joindf, filt=joindf[filter_col], ax=ax)
 ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col, col=column.replace("_", "-")),
                    directory="\writeDiagramsDir/neurips")}
 
-\newslide{}
+\newslide{Accepted Papers}
 
 \figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-accept}{70%}}{}{citations-vs-average-calibrated-quality-accept}
 
@@ -121,7 +121,7 @@ plot.log_one_citations(column, joindf, filt=joindf[filter_col], ax=ax)
 ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col, col=column.replace("_", "-")),
                    directory="\writeDiagramsDir/neurips")}
 
-\newslide{}
+\newslide{Rejected Papers}
 
 \figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-reject}{70%}}{}{citations-vs-average-calibrated-quality-reject}
 
@@ -138,7 +138,7 @@ plot.log_one_citations(column, joindf, filt=joindf[filter_col], ax=ax)
 ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col, col=column.replace("_", "-")),
                    directory="\writeDiagramsDir/neurips")}
 
-\newslide{}
+\newslide{Accepted Papers}
 
 \figure{\includediagram{\diagramsDir/neurips/citations-vs-average-impact-accept}{70%}}{}{citations-vs-average-impact-accept}
 
@@ -158,7 +158,7 @@ plot.log_one_citations(column, joindf, filt=joindf[filter_col], ax=ax)
 ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col, col=column.replace("_", "-")),
                    directory="\writeDiagramsDir/neurips")}
 
-\newslide{}
+\newslide{Accepted Papers}
 
 \figure{\includediagram{\diagramsDir/neurips/citations-vs-average-confidence-accept}{70%}}{}{citations-vs-average-confidence-accept}
 
