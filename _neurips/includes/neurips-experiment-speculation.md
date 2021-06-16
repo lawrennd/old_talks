@@ -9,7 +9,7 @@
 
 \slides{* To check public opinion before experiment: [scicast question](https://scicast.org/#!/questions/1083/comments/power)}
 
-\figure{\includepng{\diagramsDir/neurips/scicast-forecast}{30%}}{Summary forecast from those that responded to the scicast question about how consistent the decision making was.}{scicast-forecast}
+\figure{\includepng{\diagramsDir/neurips/scicast-forecast}{40%}}{Summary forecast from those that responded to a scicast question about how consistent the decision making was.}{scicast-forecast}
 
 
 \endif
