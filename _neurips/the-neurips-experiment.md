@@ -23,6 +23,12 @@ papersize: a4paper
 transition: None
 ---
 
+\ifdef{SLIDES}
+\define{DARKBACKGROUND}
+\endif
+
+\section{Introduction}
+
 \notes{The NIPS experiment was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}
 
 \notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
