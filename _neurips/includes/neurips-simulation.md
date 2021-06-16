@@ -5,9 +5,15 @@
 
 \subsection{Conference Simulation}
 
-\notes{Given the realisation that 50% of the score seems to be 'subjective' and 50% of the score seems to be 'objective', then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.}
+\notes{Given the realisation that roughly 50% of the score seems to be 'subjective' and 50% of the score seems to be 'objective', then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.}
 
-\slides{Conference simulation given 50% objective, 50% subjective}
+\slides{* Calibration model suggests score is roughly 50% subjective, 50% objective.
+* Duplicate experiment backs this up with roughly 50% correlation.}
+
+\newslide{Experiment}
+
+\slides{* Simulate conference scores which are 50% subjective/objective.
+* Study statistics of conference.}
 
 \setupcode{import numpy as np}
 
@@ -45,8 +51,8 @@ import mlai.plot as plot}
 ax.plot(accept_rates, consistent_accepts, "r.", markersize=10)
 ax.plot(accept_rates, accept_rates, "k-", linewidth=2)
 ax.set_xlabel("accept rate")
-ax.set_ylabel("consistency")
-mlai.write_figure(filename="consistency-vs-accept-rate.svg",
+ax.set_ylabel("accept precision")
+mlai.write_figure(filename="accept-precision-vs-accept-rate.svg",
                   directory="\writeDiagramsDir/neurips/")}
 
 \newslide{Consistency vs Accept Rate}
@@ -58,7 +64,7 @@ mlai.write_figure(filename="consistency-vs-accept-rate.svg",
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.plot(accept_rates, consistent_accepts-accept_rates, "k-", linewidth=2)
 ax.set_xlabel("accept rate")
-ax.set_ylabel("consistency-(accept rate)")
+ax.set_ylabel("(accept precision)-(accept rate)")
 mlai.write_figure(filename="gain-in-consistency.svg",
                   directory="\writeDiagramsDir/neurips/")}
 
