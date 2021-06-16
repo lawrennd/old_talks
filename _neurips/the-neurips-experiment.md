@@ -44,7 +44,9 @@ transition: None
 \include{_neurips/includes/neurips-reviewer-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
-\include{_neurips/includes/neurips-late-reviewers.md}
+\include{_neurips/includes/effect-of-late-reviewers.md}
+
+\include{_neurips/includes/impact-of-papers-seven-years-on.md}
 
 \include{_neurips/includes/neurips-experiment-conclusion.md}
 
