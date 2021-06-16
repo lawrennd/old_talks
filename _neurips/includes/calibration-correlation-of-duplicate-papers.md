@@ -85,7 +85,7 @@ _ = ax.set_title('Correlation: {cor:.2g}'.format(cor=calibrated_quality_cor))
 ma.write_figure(directory="\writeDiagramsDir/neurips",
                 filename="calibrated-quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}{60%}}{Correlation between *calibrated* reviewer scores in the two independent committees.}{calibrated-quality-correlation}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}{60%}}{Correlation between *calibrated* reviewer scores across the two independent committees.}{calibrated-quality-correlation}
 
 \code{# Apply Laplace smoothing to accept probabilities before incorporating them.
 revs = r.join((prob_accept+0.0002)/1.001, on='PaperID').join(reviewer_bias, on='Email').join(papers.papers['Number Of Discussions'], on='PaperID').join(reviewer_bias_std, on='Email').sort_values(by=['AcceptProbability','PaperID', 'CalibratedQuality'], ascending=False)
