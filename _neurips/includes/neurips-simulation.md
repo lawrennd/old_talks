@@ -57,7 +57,7 @@ mlai.write_figure(filename="accept-precision-vs-accept-rate.svg",
 
 \newslide{Consistency vs Accept Rate}
 
-\figure{\includediagram{\diagramsDir/consistency-vs-accept-rate}{70%}}{Plot of the accept rate vs the consistency of the conference for 50% subjectivity.}{consistency-vs-accept-rate}
+\figure{\includediagram{\diagramsDir/neurips/consistency-vs-accept-rate}{70%}}{Plot of the accept rate vs the consistency of the conference for 50% subjectivity.}{consistency-vs-accept-rate}
 
 \newslide{Gain in Consistency}
 
@@ -68,6 +68,6 @@ ax.set_ylabel("(accept precision)-(accept rate)")
 mlai.write_figure(filename="gain-in-consistency.svg",
                   directory="\writeDiagramsDir/neurips/")}
 
-\figure{\includediagram{\diagramsDir/gain-in-consistency}{70%}}{Plot of the accept rate vs gain in consistency over a random conference for 50% subjectivity.}{gain-in-consistency}
+\figure{\includediagram{\diagramsDir/neurips/gain-in-consistency}{70%}}{Plot of the accept rate vs gain in consistency over a random conference for 50% subjectivity.}{gain-in-consistency}
 
 \endif
