@@ -1033,33 +1033,135 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <p>We need to do a bit more analysis on the estimation of the correlation for the earlier submissions, but from what we see above, it looks like the correlation is being damaged by late reviews, and we never quite recover the consistency of reviews we had at the submission deadline even after the discussion phase is over.</p>
 <h2 id="late-reviewers-summary">Late Reviewers Summary</h2>
 <p>In summary we find that late reviews are on average less confident and shorter, but rate papers as higher quality and perhaps as higher impact. Each of the effects is small (around 5%) but overall a picture emerges of a different category of review from those that delay their assesment.</p>
+<h2 id="impact-of-papers-seven-years-on">Impact of Papers Seven Years On</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/impact-of-papers-seven-years-on.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/impact-of-papers-seven-years-on.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Now we look at the actual impact of the papers published using the Semantic Scholar data base for tracking citations.</p>
+<p>}</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.plot <span class="im">as</span> plot</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>papers <span class="op">=</span> cu.Papers()</span></code></pre></div>
+<p><a href="https://proceedings.neurips.cc/paper/2014" class="uri">https://proceedings.neurips.cc/paper/2014</a></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>UPDATE_IMPACTS <span class="op">=</span> <span class="va">False</span> <span class="co"># Set to True to download impacts from Semantic Scholar</span></span></code></pre></div>
+<p>The impact of the different papers is downloaded from Semantic scholar using their REST API. This can take some time, and they also throttle the calls. At the moment the code below deosn’t handle the throttling correctly. However, you it will load the cached version of of citations scores from the given date.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    date<span class="op">=</span>datetime.today().strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="st">&quot;2021-06-11&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rerun to download impacts from Semantic Scholar</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    semantic_ids <span class="op">=</span> nipsy.load_semantic_ids()</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>    citations_dict <span class="op">=</span> citations.to_dict(orient<span class="op">=</span><span class="st">&#39;index&#39;</span>)</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Need to be a bit cleverer here. Semantic scholar will throttle this call.</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>    sscholar <span class="op">=</span> nipsy.download_citation_counts(citations_dict<span class="op">=</span>citations_dict, semantic_ids<span class="op">=</span>semantic_ids)</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> pd.DataFrame.from_dict(citations_dict, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>) </span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>    citations.to_pickle(date <span class="op">+</span> <span class="st">&#39;-semantic-scholar-info.pickle&#39;</span>)</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>: </span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span></code></pre></div>
+<p>The final decision sheet provides information about what happened to all of the papers.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span></code></pre></div>
+<p>This is joined with the citation information to provide our main ability to understand the impact of these papers.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span></code></pre></div>
+<h2 id="correlation-of-quality-scores-and-citation">Correlation of Quality Scores and Citation</h2>
+<p>Our first study will be to check the correlation between quality scores of papers and how many times that the papers have been cited in practice. In the plot below, rejected papers are given as crosses, accepted papers are given as dots. We include all papers, whether published in a venue or just available through ArXiv or other preprint servers. We show the published/non-published quality scores and <span class="math inline">\(\log_{10}(1+\text{citations})\)</span> for all papers in the plot below. In the plot we are showing each point corrupted by some Laplacian noise and also removing axes. The idea is to give a sense of the distribution rather than reveal the score of a particular paper.</p>
+<div class="figure">
+<div id="citations-vs-average-calibrated-quality-all-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/citations-vs-average-calibrated-quality-all.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-calibrated-quality-all-magnify" class="magnify" onclick="magnifyFigure(&#39;citations-vs-average-calibrated-quality-all&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-calibrated-quality-all-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>The correlation seems strong, but of course, we are looking at papers which were accepted and rejected by the conference. This is dangerous, as it is quite likely that presentation at the conference may provide some form of lift to the papers’ numbers of citations. So, the right thing to do is to look at the groups separately.</p>
+<p>Looking at the accepted papers only shows a very different picture. There is very little correlation between accepted papers’ quality scores and the number of citations they receive.</p>
+<div class="figure">
+<div id="citations-vs-average-calibrated-quality-accept-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/citations-vs-average-calibrated-quality-accept.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-calibrated-quality-accept-magnify" class="magnify" onclick="magnifyFigure(&#39;citations-vs-average-calibrated-quality-accept&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-calibrated-quality-accept-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>Conversely, looking at rejected papers only, we do see a slight trend, with higher scoring papers achieving more citations on average. This, combined with the lower average number of citations in the rejected paper group, alongside their lower average scores, explains the correlation we originally observed.</p>
+<div class="figure">
+<div id="citations-vs-average-calibrated-quality-reject-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/citations-vs-average-calibrated-quality-reject.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-calibrated-quality-reject-magnify" class="magnify" onclick="magnifyFigure(&#39;citations-vs-average-calibrated-quality-reject&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-calibrated-quality-reject-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>Welling and Ghahramani introduced an “impact” score in NeurIPS 2013, we might expect the impact score to show correlation. And indeed, despite the lower range of the score (a reviewer can score either 1 or 2) we do see <em>some</em> correlation, although it is relatively weak.</p>
+<div class="figure">
+<div id="citations-vs-average-impact-accept-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/citations-vs-average-impact-accept.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-impact-accept-magnify" class="magnify" onclick="magnifyFigure(&#39;citations-vs-average-impact-accept&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-impact-accept-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>Finally, we also looked at correlation between the <em>confidence</em> score and the impact. Here correlation is somewhat stronger. Why should confidence be an indicator of higher citations? A plausible explanation is that there is confounder driving both variables. For example, it might be that papers which are easier to understand (due to elegance of the idea, or quality of exposition) inspire greater reviewer confidence and also increase the number of citations.</p>
+<div class="figure">
+<div id="citations-vs-average-confidence-accept-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/citations-vs-average-confidence-accept.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-confidence-accept-magnify" class="magnify" onclick="magnifyFigure(&#39;citations-vs-average-confidence-accept&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-confidence-accept-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <h2 id="conclusion">Conclusion</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-experiment-conclusion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-experiment-conclusion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Under the simple model we have outlined, we can be confident that there is inconsistency between two independent committees, but the level of inconsistency is much less than we would find for a random committee. If we accept that the bias introduced by the Area Chairs knowing when they were dealing with duplicates was minimal, then if we were to revisit the NIPS 2014 conference with an independent committee then we would expect between <strong>38% and 64% of the presented papers to be the same</strong>. If the conference was run at random, then we would only expect 25% of the papers to be the same.</p>
 <p>It’s apparent from comments and speculation about what these results mean, that some people might be surprised by the size of this figure. However, it only requires a little thought to see that this figure is likely to be large for any highly selective conference if there is even a small amount of inconsistency in the decision making process. This is because once the conference has chosen to be ‘highly selective’ then because by definition only a small percentage of papers are to be accepted. Now if we think of a type I error as accepting a paper which should be rejected, such errors are easier to make because by definition many more papers should be rejected. Type II errors (rejecting a paper that should be accepted) are less likely becaue (by setting the accept rate low) there are fewer papers that should be accepted in the first place. When there is a difference of opinion between reviewers, it does seem that many of the arugments can be distilled down to (a subjective opinion) about whether controlling for type I or type II errors is more important. Further, normally when discussing type I and type II errors we believe that the underlying system of study is genuinely binary: e.g. diseased or not diseased. However, for conferences the accept/reject boundary is not a clear separation point, there is a continuum (or spectrum) of paper quality (as there also is for some diseases). And the decision boundary often falls in a region of very high density. To better quantify these ideas we can explore our duplication experiment in more detail, by introducing the paper scores, that’s a task we will perform in a fresh notebook.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> <span class="dv">1000000</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>accept_rate <span class="op">=</span> <span class="fl">0.2</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>score_1 <span class="op">=</span> []</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>score_2 <span class="op">=</span> []</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(samples):</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    objective <span class="op">=</span> np.random.randn()</span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    score_1.append(objective <span class="op">+</span> np.random.randn())</span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    score_2.append(objective <span class="op">+</span> np.random.randn())</span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>score_1 <span class="op">=</span> np.asarray(score_1)</span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>score_2 <span class="op">=</span> np.asarray(score_2)</span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>accept_1 <span class="op">=</span> score_1.argsort()[:<span class="bu">int</span>(samples<span class="op">*</span>accept_rate)]</span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>accept_2 <span class="op">=</span> score_2.argsort()[:<span class="bu">int</span>(samples<span class="op">*</span>accept_rate)]</span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>consistent_accept <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(accept_1).intersection(<span class="bu">set</span>(accept_2)))</span>
-<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Percentage consistently accepted: </span><span class="sc">{prop}</span><span class="st">&#39;</span>.<span class="bu">format</span>(prop<span class="op">=</span>consistent_accept<span class="op">/</span>(samples<span class="op">*</span>accept_rate)))</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> <span class="dv">1000000</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>accept_rate <span class="op">=</span> <span class="fl">0.2</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>score_1 <span class="op">=</span> []</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>score_2 <span class="op">=</span> []</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(samples):</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>    objective <span class="op">=</span> np.random.randn()</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>    score_1.append(objective <span class="op">+</span> np.random.randn())</span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>    score_2.append(objective <span class="op">+</span> np.random.randn())</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>score_1 <span class="op">=</span> np.asarray(score_1)</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>score_2 <span class="op">=</span> np.asarray(score_2)</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>accept_1 <span class="op">=</span> score_1.argsort()[:<span class="bu">int</span>(samples<span class="op">*</span>accept_rate)]</span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>accept_2 <span class="op">=</span> score_2.argsort()[:<span class="bu">int</span>(samples<span class="op">*</span>accept_rate)]</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>consistent_accept <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(accept_1).intersection(<span class="bu">set</span>(accept_2)))</span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Percentage consistently accepted: </span><span class="sc">{prop}</span><span class="st">&#39;</span>.<span class="bu">format</span>(prop<span class="op">=</span>consistent_accept<span class="op">/</span>(samples<span class="op">*</span>accept_rate)))</span></code></pre></div>
 <h1 id="introduction-1">Introduction</h1>
 <p>Experimental setup</p>
 <p>Model calibration</p>
