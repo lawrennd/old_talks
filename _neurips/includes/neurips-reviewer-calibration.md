@@ -5,6 +5,8 @@
 
 \subsection{Reviewer Calibration}
 
+\notes{Calibration of reviewers is the process where different interpretations of the reviewing scale are addressed. The tradition of calibration goes at least as far back as John Platt's Program Chairing, and included a Bayesian model by Ge, Welling and Ghahramani at NeurIPS 2013.}
+
 \include{_neurips/includes/reviewer-calibration-model.md}
 \include{_neurips/includes/reviewer-calibration-fit-model.md}
 \include{_neurips/includes/review-quality-prediction.md}
