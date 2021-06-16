@@ -18,6 +18,8 @@ differing expertise or perspective). The underlying 'objective
 quality' of the paper is assumed to be the same for all reviewers and
 the reviewer offset is assumed to be the same for all papers.}
 
+\slides{$$f_i \sim \gaussianSamp{0}{\alpha_f}\quad b_j \sim \gaussianSamp{0}{\alpha_b}\quad \epsilon_{i,j} \sim \gaussianSamp{0}{\dataStd^2}$$}
+
 \notes{If we have $n$ papers and $m$ reviewers then this implies $n$ + $m$ +
 $nm$ values need to be estimated. Naturally this is too many, and we can
 start by assuming that the subjective quality is drawn from a normal

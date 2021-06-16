@@ -22,15 +22,55 @@
   </tr>
   </table>
 
+\newslide{NeurIPS Experiment Results}
+
+\slides{
+<table>
+  <tr>
+  <td colspan="2"></td><td colspan="2">Committee 1</td>
+  </tr>
+  <tr>
+  <td colspan="2"></td><td>Accept</td><td>Reject</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Committee 2</td><td>Accept</td><td>22</td><td>22</td>
+  </tr>
+  <tr>
+    <td>Reject</td><td>21</td><td>101</td>
+  </tr>
+</table>}
+
+
+\newslide{A Random Committee @ 25%}
+
+\slides{
+<table>
+  <tr>
+  <td colspan="2"></td><td colspan="2">Committee 1</td>
+  </tr>
+  <tr>
+  <td colspan="2"></td><td>Accept</td><td>Reject</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Committee 2</td><td>Accept</td><td>10</td><td>31</td>
+  </tr>
+  <tr>
+    <td>Reject</td><td>31</td><td>93</td>
+  </tr>
+</table>}
+
+
+
 \notes{And for this set up we would expect *inconsistency* of 3 in 8 (37.5%) *accept precision* of 1 in 4 (25%) and a *reject precision* of 3 in 4 (75%) and a *agreed accept rate* of 1 in 10 (10%). The actual committee made improvements on these numbers, in particular the accept precision was markedly better with 50%: twice as many consistent accept decisions were made than would be expected if the process had been performed at random and only around two thirds as many inconsistent decisions were made as would have been expected if decisions were made at random. However, we should treat all these figures with some skepticism until we've performed some estimate of the uncertainty associated with them.}
 
+\notes{
 \subsection{Stats for Random Committee}
 
-For random committee we expect:
-* *inconsistency* of 3 in 8 (37.5%) 
-* *accept precision* of 1 in 4 (25%) 
-* *reject precision* of 3 in 4 (75%) and a 
-* *agreed accept rate* of 1 in 10 (10%). 
+* For random committee we expect:
+  * *inconsistency* of 3 in 8 (37.5%) 
+  * *accept precision* of 1 in 4 (25%) 
+  * *reject precision* of 3 in 4 (75%) and a 
+  * *agreed accept rate* of 1 in 10 (10%). 
 
 Actual committee's accept precision markedly better with 50% accept precision.
 
@@ -182,4 +222,5 @@ ma.write_figure(filename="random-committee-outcomes-vs-true.svg", directory="\wr
 
 In the analysis above we've minimized the modeling choices: we made use of a Bayesian analysis to capture the uncertainty in counts that can be arising from statistical sampling error. To this end we chose an uninformative prior over these probabilities. However, one might argue that the prior should reflect something more about the underlying experimental structure: for example we *know* that if the committees made their decisions independently it is unlikely that we'd obtain an inconsistency figure much greater than 37.5% because that would require committees to explicitly collude to make inconsistent decisions: the random conference is the worst case. Due to the accept rate, we also expect a larger number of reject decisions than reject. This also isn't captured in our prior. Such questions actually move us into the realms of modeling the process, rather then performing a sensitivity analysis. However, if we wish to model the decision process as a whole we have a lot more information available, and we should make use of it. The analysis above is intended to exploit our randomized experiment to explore how inconsistent we expect two committees to be. It focusses on that single question, it doesn't attempt to give answers on what the reasons for that inconsistency are and how it may be reduced. The additional maths was needed only to give a sense of the uncertainty in the figures. That uncertainty arises due to the limited number of papers in the experiment.}
 
+}
 \endif

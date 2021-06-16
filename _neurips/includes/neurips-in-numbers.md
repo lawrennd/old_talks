@@ -45,7 +45,7 @@
   * Reviewers allocated at random
   * Area Chairs allocated to ensure distribution of expertise}
 
-
+\notes{
 \subsection{Notes on the Timeline for NeurIPS}
 
 **AC recruitment (3 waves):**
@@ -74,10 +74,11 @@
 * 30/08/2014 Teleconferences End
 * 1/09/2014 Preliminary Decisions Made
 * 9/09/2014 Decisions Sent to Authors
+}
 
 \subsection{Decision Making Timeline}
 
-Deadline 6th June
+* Submission eadline 6th June
 
 1. three weeks for paper *bidding* and allocation
 2. three weeks for *review*
@@ -87,6 +88,6 @@ Deadline 6th June
 6. one week for *teleconferences* and *final decisons*
 7. one week cooling off 
 
-Decisions sent 9th September
+* Decisions sent 9th September
 
 \endif

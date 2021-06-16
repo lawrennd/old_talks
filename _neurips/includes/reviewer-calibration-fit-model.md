@@ -5,6 +5,10 @@
 
 \subsection{Fitting the Model}
 
+\slides{* Sum of Gaussian random variables is Gaussian.
+* Model is a *joint Gaussian* over the data.
+* Fit by maximum likelihood three parameters, $\alpha_f$, $\alpha_b$, $\sigma_2$}
+
 \setupcode{import cmtutils as cu
 import os
 import pandas as pd
@@ -16,7 +20,7 @@ from scipy.linalg import solve_triangular }
 
 \code{date = '2014-09-06'}
 
-\subsection{Loading in the Data}
+\notes{\subsection{Loading in the Data}}
 
 \code{filename = date + '_reviews.xls'
 reviews = cu.CMT_Reviews_read(filename=filename)
@@ -29,7 +33,7 @@ the papers, this is easily computed.}
 \code{mu = reviews.reviews.Quality.mean()
 print("Mean value, mu = ", mu)}
 
-\subsection{Data Preparation}
+\notes{\subsection{Data Preparation}}
 
 \notes{We take the reviews, which are indexed by the paper number, and create a
 new data frame, that indexes by paper id and email combined. From these
@@ -90,6 +94,13 @@ print(model.log_likelihood())}
       Gaussian_noise.variance  |  1.2683656892796749  |      +ve      |        
     -10071.679092815619
 ```}
+
+\newslide{NeurIPS 2014 Parameters}
+
+\slides{
+$$ \alpha_f = 1.28$$
+$$ \alpha_b = 0.24$$
+$$ \sigma^2 = 1.27$$}
 
 \notes{\subsubsection{Construct the Model Without GPy}
 

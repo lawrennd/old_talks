@@ -34,6 +34,7 @@ transition: None
 \notes{To run the experiment we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
 
 \include{_neurips/includes/neurips-in-numbers.md}
+\include{_neurips/includes/paper-scoring.md}
 \include{_neurips/includes/neurips-experiment-speculation.md}
 \include{_neurips/includes/neurips-experiment-results.md}
 \include{_neurips/includes/neurips-experiment-reaction.md}
