@@ -44,13 +44,18 @@ transition: None
 \include{_neurips/includes/neurips-reviewer-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
-\include{_neurips/includes/effect-of-late-reviewers.md}
+
+\notes{\include{_neurips/includes/effect-of-late-reviewers.md}}
+
+\newslide{Late Reviewers}
+
+\slides{\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{}{correlation-duplicate-reviews-bootstrap}}
 
 \include{_neurips/includes/impact-of-papers-seven-years-on.md}
 
 \include{_neurips/includes/neurips-experiment-conclusion.md}
 
-Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>
+\comment{Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>}
 
 
 \comment{Conversation with Ani Nenkova via twitter}
