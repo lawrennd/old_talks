@@ -35,16 +35,17 @@
 
   I tend to vote for accepting it, but leaving it out of the program would be no great loss.
 
+\newslide{Quantitative Evaluation}
 
 * 5: Marginally below the acceptance threshold.
 
   I tend to vote for rejecting it, but having it in the program would not be that bad.
 
-\newslide{Quantitative Evaluation}
-
 * 4: An OK paper, but not good enough. A rejection.
 
   I vote for rejecting it, although would not be upset if it were accepted.
+
+\newslide{Quantitative Evaluation}
 
 * 3: A clear rejection.
 

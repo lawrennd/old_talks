@@ -78,7 +78,7 @@
 
 \subsection{Decision Making Timeline}
 
-* Submission eadline 6th June
+* Submission deadline 6th June
 
 1. three weeks for paper *bidding* and allocation
 2. three weeks for *review*
