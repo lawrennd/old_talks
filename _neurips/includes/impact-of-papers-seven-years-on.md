@@ -9,7 +9,7 @@
 the Semantic Scholar data base for tracking citations.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-plt.rcParams.update({'font.size': 22})}}
+plt.rcParams.update({'font.size': 22})}
 
 \setupcode{import cmtutils as cu
 import cmtutils.nipsy as nipsy
@@ -45,8 +45,7 @@ if UPDATE_IMPACTS:
     citations = pd.DataFrame.from_dict(citations_dict, orient="index") 
     citations.to_pickle(date + '-semantic-scholar-info.pickle')
 else: 
-    citations = nipsy.load_citation_counts(date=date)
-}
+    citations = nipsy.load_citation_counts(date=date)}
 
 \notes{The final decision sheet provides information about what happened to all
 of the papers.}
@@ -59,9 +58,9 @@ to understand the impact of these papers.}
 
 \code{joindf = nipsy.join_decisions_citations(decisions, citations)}
 
-\notes{## Correlation of Quality Scores and Citation
+\notes{\subsubsection{Correlation of Quality Scores and Citation}}
 
-Our first study will be to check the correlation between quality scores
+\notes{Our first study will be to check the correlation between quality scores
 of papers and how many times that the papers have been cited in
 practice. In the plot below, rejected papers are given as crosses,
 accepted papers are given as dots. We include all papers, whether
@@ -91,9 +90,9 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 which were accepted and rejected by the conference. This is dangerous,
 as it is quite likely that presentation at the conference may provide
 some form of lift to the papers' numbers of citations. So, the right
-thing to do is to look at the groups separately.
+thing to do is to look at the groups separately.}
 
-Looking at the accepted papers only shows a very different picture.
+\notes{Looking at the accepted papers only shows a very different picture.
 There is very little correlation between accepted papers' quality
 scores and the number of citations they receive.}
 
