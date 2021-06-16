@@ -79,14 +79,13 @@
 \subsection{Decision Making Timeline}
 
 * Submission deadline 6th June
-
-1. three weeks for paper *bidding* and allocation
-2. three weeks for *review*
-3. two weeks for discussion and *adding/augmenting* reviews/reviewers
-4. one week for *author rebuttal*
-5. two weeks for *discussion* 
-6. one week for *teleconferences* and *final decisons*
-7. one week cooling off 
+  1. three weeks for paper *bidding* and allocation
+  2. three weeks for *review*
+  3. two weeks for discussion and *adding/augmenting* reviews/reviewers
+  4. one week for *author rebuttal*
+  5. two weeks for *discussion* 
+  6. one week for *teleconferences* and *final decisons*
+  7. one week cooling off 
 
 * Decisions sent 9th September
 
