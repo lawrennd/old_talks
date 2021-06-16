@@ -5,7 +5,7 @@
 
 \subsection{NeurIPS in Numbers}
 
-\notes{In 2014 the NeurIPS conference had 1474 active reviewers (up from 1133 in 2013), 92 area chairs (up from 67) and two program chairs, myself and Corinna Cortes.}
+\notes{In 2014 the NeurIPS conference had 1474 active reviewers (up from 1133 in 2013), 92 area chairs (up from 67 in 2013) and two program chairs, myself and Corinna Cortes.}
 
 \notes{The conference received 1678 submissions and presented 414 accepted papers, of which 20 were presented as talks in the single track session, 62 were presented as spotlights and 331 papers were presented as posters. Of the 1678 submissions, 19 papers were rejected without review.}
 
