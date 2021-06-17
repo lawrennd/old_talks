@@ -63,15 +63,17 @@
 
 \notes{\subsection{Impact Score}
 
-Independently of the Quality Score above, this is your opportunity to identify papers that are very different, original, or otherwise potentially impactful for the NIPS community.
+The impact score was an innovation introduce in 2013 by Ghahramani and Welling that we retained for 2014. Quoting from the instructions to reviewers:
 
-There are two choices:
-
-2: This work is different enough from typical submissions to potentially have a major impact on a subset of the NIPS community.
-
-1: This work is incremental and unlikely to have much impact even though it may be technically correct and well executed.
-
-Examples of situations where the impact and quality scores may point in opposite directions include papers which are technically strong but unlikely to generate much follow-up research, or papers that have some flaw (e.g. not enough evaluation, not citing the right literature) but could lead to new directions of research.
+> Independently of the Quality Score above, this is your opportunity to identify papers that are very different, original, or otherwise potentially impactful for the NIPS community.
+>
+> There are two choices:
+>
+> 2: This work is different enough from typical submissions to potentially have a major impact on a subset of the NIPS community.
+>
+> 1: This work is incremental and unlikely to have much impact even though it may be technically correct and well executed.
+>
+> Examples of situations where the impact and quality scores may point in opposite directions include papers which are technically strong but unlikely to generate much follow-up research, or papers that have some flaw (e.g. not enough evaluation, not citing the right literature) but could lead to new directions of research.
 
 \subsection{Confidence Score}
 
