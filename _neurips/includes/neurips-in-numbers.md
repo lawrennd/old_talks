@@ -28,7 +28,7 @@
 
 \subsection{The NeurIPS Experiment}
 
-\notes{The objective of the NeurIPS experiment was to determine how consistent was the process of peer review? What would happen to the papers in the conference if the process was independently rerun?}
+\notes{The objective of the NeurIPS experiment was to determine how consistent the process of peer review is? What would happen to submitted papers in the conference if the process was independently rerun?}
 
 \slides{* How consistent was the process of peer review? 
 * What would happen if you independently reran it?}
@@ -45,48 +45,6 @@
   * Reviewers allocated at random
   * Area Chairs allocated to ensure distribution of expertise}
 
-\notes{
-\subsection{Notes on the Timeline for NeurIPS}
-
-**AC recruitment (3 waves):**
-* 17/02/2014
-* 08/03/2014
-* 09/04/2014
-
-**We requested names of reviewers from ACs in two waves:**
-* 25/03/2014
-* 11/04/2014
-
-**Reviewer recruitment (4 waves):**
-* 14/04/2014
-* 28/04/2014
-* 09/05/2014
-* 10/06/2014 (note this is after deadline ... lots of area chairs asked for reviewers after the deadline!). We invited them en-masse.
-
-* 06/06/2014 Submission Deadline
-* 12/06/2014 Bidding Open For Area Chairs (this was *delayed* by CMT issues)
-* 17/06/2014 Bidding Open For Reviewers
-* 01/07/2014 Start Reviewing
-* 21/07/2014 Reviewing deadline
-* 04/08/2014 Reviews to Authors
-* 11/08/2014 Author Rebuttal Due
-* 25/08/2014 Teleconferences Begin
-* 30/08/2014 Teleconferences End
-* 1/09/2014 Preliminary Decisions Made
-* 9/09/2014 Decisions Sent to Authors
-}
-
-\subsection{Decision Making Timeline}
-
-* Submission deadline 6th June
-  1. three weeks for paper *bidding* and allocation
-  2. three weeks for *review*
-  3. two weeks for discussion and *adding/augmenting* reviews/reviewers
-  4. one week for *author rebuttal*
-  5. two weeks for *discussion* 
-  6. one week for *teleconferences* and *final decisons*
-  7. one week cooling off 
-
-* Decisions sent 9th September
+\include{_neurips/includes/neurips-timeline.md}
 
 \endif
