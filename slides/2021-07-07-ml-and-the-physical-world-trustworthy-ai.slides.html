@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2021-07-07">
+  <meta name="dcterms.date" content="2021-05-05">
   <title>Machine Learning and the Physical World</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -46,58 +46,609 @@
   <h1 class="title">Machine Learning and the Physical World</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
   <p class="date" style="text-align:center"><time>2021-07-07</time></p>
-  <p class="venue" style="text-align:center">Trustworthy AI Conference, Moscow</p>
+  <p class="venue" style="text-align:center">Trustworthy AI</p>
 </section>
 
-<section class="slide level2">
+<section id="emergent-behaviour" class="slide level2">
+<h2>Emergent Behaviour</h2>
+</section>
+<section id="loneliness" class="slide level2">
+<h2>Loneliness</h2>
+<div class="figure">
+<div id="life-rules-loneliness-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-1-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>loneliness</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-1-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+‘Death’ through loneliness in Conway’s game of life. If a cell is surrounded by less than three cells, it ‘dies’ through loneliness.
+</aside>
+</section>
+<section id="crowding" class="slide level2">
+<h2>Crowding</h2>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-2-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>overcrowding</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-2-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+‘Death’ through overpopulation in Conway’s game of life. If a cell is surrounded by more than three cells, it ‘dies’ through loneliness.
+</aside>
+</section>
+<section id="birth" class="slide level2">
+<h2>Birth</h2>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-3-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>birth</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-3-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+Birth in Conway’s life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.
+</aside>
+</section>
+<section id="glider" class="slide level2">
+<h2>Glider</h2>
+<div class="figure">
+<div id="glider-loafer-conway-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Glider (1969)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//simulation/Glider.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+<em>Left</em> A Glider pattern discovered 1969 by Richard K. Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).
+</aside>
+</section>
+<section id="loafer" class="slide level2">
+<h2>Loafer</h2>
+<div class="figure">
+<div id="glider-loafer-conway-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Loafer (2013)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//simulation/Loafer.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+<em>Left</em> A Loafer pattern discovered by Josh Ball in 2013. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).
+</aside>
+<aside class="notes">
+The phenomenon of emergent behaviour also applies to real world simulations like climate and weather. E.g. Niall Robinson defining a hurricane to search for hurricane’s im climate simulations.
+</aside>
 
-<!--include{_physics/includes/laplaces-demon.md}-->
-<p>\figure{\columns{\threeColumns{\aligncenter{\includediagramclass{https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-1-0}{100%}}}{\aligncenter{\includediagram{https://inverseprobability.com/talks/slides/diagrams//util/right-arrow}{60%}}}{\aligncenter{\includediagramclass{https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-1-1}{100%}}}{30%}{39%}{30%}}{\aligncenter{\includejpg{https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway}{100%}{}{right}}}{70%}{30%}}{‘Death’ through loneliness in Conway’s game of life. If a cell is surrounded by less than three cells, it ‘dies’ through loneliness.}{life-rules-loneliness}</p>
-<p>\figure{\columns{\threeColumns{\aligncenter{\includediagramclass{https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-2-0}{100%}}}{\aligncenter{\includediagram{https://inverseprobability.com/talks/slides/diagrams//util/right-arrow}{60%}}}{\aligncenter{\includediagramclass{https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-2-1}{100%}}}{30%}{39%}{30%}}{\aligncenter{\includejpg{https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway}{100%}{}{right}}}{70%}{30%}}{‘Death’ through overpopulation in Conway’s game of life. If a cell is surrounded by more than three cells, it ‘dies’ through loneliness.}{life-rules-crowding}</p>
-<p>\figure{\columns{\threeColumns{\aligncenter{\includediagramclass{https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-3-0}{100%}}}{\aligncenter{\includediagram{https://inverseprobability.com/talks/slides/diagrams//util/right-arrow}{60%}}}{\aligncenter{\includediagramclass{https://inverseprobability.com/talks/slides/diagrams//simulation/life-rules-3-1}{100%}}}{30%}{39%}{30%}}{\aligncenter{\includejpg{https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway}{100%}{}{right}}}{70%}{30%}}{Birth in Conway’s life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.}{life-rules-crowding}</p>
-<p>\figure{\columns{\aligncenter{\includegif{https://inverseprobability.com/talks/slides/diagrams//simulation/Glider}{80%}{}{left}}}{\includejpg{https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway}{80%}{}{right}}{45%}{45%}}{<em>Left</em> A Glider pattern discovered 1969 by Richard K. Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).}{glider-loafer-conway}</p>
-<p>\figure{\columns{\aligncenter{\includegif{https://inverseprobability.com/talks/slides/diagrams//simulation/Loafer}{80%}{}{left}}}{\includejpg{https://inverseprobability.com/talks/slides/diagrams//maths/John-Conway}{80%}{}{right}}{45%}{45%}}{<em>Left</em> A Loafer pattern discovered by Josh Ball in 2013. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).}{glider-loafer-conway}</p>
-<!--include{_physics/includes/laplaces-gremlin.md}-->
-<p>\figure{\includejpg{https://inverseprobability.com/talks/slides/diagrams//science-holborn-viaduct}{50%}}{Centrifugal governor as held by “Science” on Holborn Viaduct}{science-holborn-viaduct} </p>
-<p>\figure{\includepng{https://inverseprobability.com/talks/slides/diagrams//SteamEngine_Boulton&amp;Watt_1784}{50%}{negate}}{Watt’s Steam Engine which made Steam Power Efficient and Practical.}{steam-engine-boulton-watt}</p>
-<p>\figure{\includepng{https://inverseprobability.com/talks/slides/diagrams//Centrifugal_governor}{70%}{negate}}{The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.}{centrifugal-governor}</p>
-<!--include{_ml/includes/process-automation.md}
-include{_ai/includes/ai-vs-data-science-2.md}-->
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="science-holborn-viaduct-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Centrifugal governor as held by “Science” on Holborn Viaduct
+</aside>
+<div class="caption" style="">
+Figure: Science on Holborn Viaduct, cradling the Centrifugal Governor.
+</div>
+<p><a href="http://www.maths.ed.ac.uk/~v1ranick/papers/maxwell1.pdf">On Governors</a>, James Clerk Maxwell 1868</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="steam-engine-boulton-watt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/slides/diagrams//SteamEngine_Boulton&Watt_1784.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Watt’s Steam Engine which made Steam Power Efficient and Practical.
+</aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="centrifugal-governor-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/slides/diagrams//Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.
+</aside>
+
+</section>
+<section id="the-gap" class="slide level2">
+<h2>The Gap</h2>
 <ul>
 <li>There is a gap between the world of data science and AI.</li>
 <li>The mapping of the virtual onto the physical world.</li>
 <li>E.g. Causal understanding.</li>
 </ul>
-<p>\centerdiv{\gurKimchiPicture{15%}\paulViolaPicture{15%}\davidMoroPicture{15%}}</p>
-<p>\figure{\includejpg{https://inverseprobability.com/talks/slides/diagrams//ai/amazon-prime-air-remars-june-2019}{80%}}{Picture of the drone from Amazon Re-MARS event in 2019.}{amazon-prime-air-remars}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//software/buying-schematic}{40%}}{The components of a putative automated buying system}{buying-system-components}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-monolith-purchasing}{60%}}{A potential path of models in a machine learning system.}{ml-system-monolith}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing000}{60%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing}</p>
-<p>\figure{\includepng{https://inverseprobability.com/talks/slides/diagrams//ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}</p>
+</section>
+<section id="prime-air" class="slide level2">
+<h2>Prime Air</h2>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip0">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Gur Kimchi
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/slides/diagrams//people/gur-kimchi.png" clip-path="url(#clip0)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip1">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Paul Viola
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/slides/diagrams//people/paul-viola.png" clip-path="url(#clip1)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+David Moro
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/slides/diagrams//people/david-moro.png" clip-path="url(#clip2)"/>
+</svg>
+</div>
+<div class="figure">
+<div id="amazon-drone-flight-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/3HJtmx5f1Fc?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+</div>
+<aside class="notes">
+An actual Santa’s sleigh. Amazon’s new delivery drone. Machine learning algorithms are used across various systems including sensing (computer vision for detection of wires, people, dogs etc) and piloting. The technology is necessarily a combination of old and new ideas. The transition from vertical to horizontal flight is vital for efficiency and requires sophisticated machine learning to achieve.
+</aside>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="jeff-wilke-remars-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/wa8DU-Sui8Q?start=3767" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+</div>
+<aside class="notes">
+Jeff Wilke (CEO Amazon Consumer) announcing the new drone at the Amazon 2019 re:MARS event alongside the scale of the Amazon supply chain.
+</aside>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="amazon-prime-air-remars-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//ai/amazon-prime-air-remars-june-2019.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Picture of the drone from Amazon Re-MARS event in 2019.
+</aside>
+</section>
+<section id="buying-system" class="slide level2">
+<h2>Buying System</h2>
+<div class="figure">
+<div id="buying-system-components-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//software/buying-schematic.svg" width="40%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The components of a putative automated buying system
+</aside>
+</section>
+<section id="monolithic-system" class="slide level2">
+<h2>Monolithic System</h2>
+<div class="figure">
+<div id="ml-system-monolith-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-monolith-purchasing.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="service-oriented-architecture" class="slide level2">
+<h2>Service Oriented Architecture</h2>
+<div class="figure">
+<div id="ml-system-downstream-purchasing-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing000.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+<!-- SECTION Intellectual Debt -->
+</section>
+<section id="intellectual-debt" class="slide level2">
+<h2>Intellectual Debt</h2>
+<div class="figure">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//ai/2020-02-12-intellectual-debt.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.
+</aside>
+</section>
+<section id="technical-debt" class="slide level2">
+<h2>Technical Debt</h2>
+<ul>
+<li>Compare with <em>technical debt</em>.</li>
+<li>Highlighted by <span class="citation" data-cites="Sculley:debt15">Sculley et al. (2015)</span>.</li>
+</ul>
+</section>
+<section id="separation-of-concerns" class="slide level2">
+<h2>Separation of Concerns</h2>
+</section>
+<section id="intellectual-debt-1" class="slide level2">
+<h2>Intellectual Debt</h2>
 <ul>
 <li><p>Technical debt is the inability to <em>maintain</em> your complex software system.</p></li>
 <li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
 </ul>
-<p>\figure{\includepng{https://inverseprobability.com/talks/slides/diagrams//simulation/unified_model_systems_13022018_1920}{60%}{negate}}{The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.}{met-office-unified-model}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation000}{80%}}{Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.}{statistical-emulation-1}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation001}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model.}{statistical-emulation-2}</p>
-<p>\slides{\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation002}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model.}{statistical-emulation-3}}</p>
-<p>\slides{\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation003}{80%}}{As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-4}}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation004}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-5}</p>
-<p>\slides{\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing0}</p>
-<!-- This structural learning allows us to associate data with the relevant -->
-<!-- layer of the model, rather than merely on the leaf nodes of the output -->
-<!-- model. When deploying the deep Gaussian process as an emulator, this -->
-<!-- allows for the possibility of learning the structure of the different -->
-<!-- component parts of the underlying system. This should aid the user in -->
-<!-- determining the ideal system decomposition. -->
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing1}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing002}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing2}</p>
-<p>\figure{\includediagram{https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing003}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-purchasing3}</p>
-<p>\figure{\includepng{https://inverseprobability.com/talks/slides/diagrams//accelerate/accelerate-website}{70%}}{The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <a href="http://acceleratescience.github.io" class="uri">http://acceleratescience.github.io</a>}{accelerate-website}</p>
-<p>\figure{\includepng{https://inverseprobability.com/talks/slides/diagrams//ml/ml-and-the-physical-world-course}{70%}}{Machine Learning and the Physical World is a course focussed on teaching the principles and techniques of emulation. It’s freely available on line. <a href="http://mlatcl.github.io/mlphysical/" class="uri">http://mlatcl.github.io/mlphysical/</a>}{ml-physical-world-course}</p>
-<p>\thanks</p>
+</section>
+<section id="statistical-emulation" class="slide level2">
+<h2>Statistical Emulation</h2>
+<div class="figure">
+<div id="met-office-unified-model-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/slides/diagrams//simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.
+</aside>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="statistical-emulation-1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation000.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.
+</aside>
+</section>
+<section id="emulation" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation001.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
+</section>
+<section id="emulation-1" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-3-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation002.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
+</section>
+<section id="emulation-2" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-4-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation003.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
+</section>
+<section id="emulation-3" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-5-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation004.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
+</section>
+<section id="emulation-4" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-6-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation005.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..
+</aside>
+</section>
+<section id="auto-ai" class="slide level2">
+<h2>Auto AI</h2>
+<ul>
+<li>Auto ML is great but not sufficient</li>
+<li>Interacting components in an ML system</li>
+<li>Identify problems, and automatically deploy solutions</li>
+</ul>
+</section>
+<section id="deep-emulation" class="slide level2">
+<h2>Deep Emulation</h2>
+<div class="figure">
+<div id="ml-system-downstream-purchasing0-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing000.svg" width="75%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="deep-emulation-1" class="slide level2">
+<h2>Deep Emulation</h2>
+<div class="figure">
+<div id="ml-system-downstream-purchasing1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing001.svg" width="75%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="deep-emulation-2" class="slide level2">
+<h2>Deep Emulation</h2>
+<div class="figure">
+<div id="ml-system-downstream-purchasing2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing002.svg" width="75%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="deep-emulation-3" class="slide level2">
+<h2>Deep Emulation</h2>
+<div class="figure">
+<div id="ml-system-downstream-purchasing3-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//ai/ml-system-downstream-purchasing003.svg" width="75%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="the-accelerate-programme" class="slide level2">
+<h2>The Accelerate Programme</h2>
+<div class="figure">
+<div id="accelerate-website-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//accelerate/accelerate-website.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <a href="http://acceleratescience.github.io" class="uri">http://acceleratescience.github.io</a>
+</aside>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<ul>
+<li>Research</li>
+<li>Teaching and learning
+<ul>
+<li>Ramp or Bridge model</li>
+</ul></li>
+<li>Engagement</li>
+</ul>
+</section>
+<section id="ml-and-the-physical-world-course" class="slide level2">
+<h2>ML and the Physical World Course</h2>
+<div class="figure">
+<div id="ml-physical-world-course-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/slides/diagrams//ml/ml-and-the-physical-world-course.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Machine Learning and the Physical World is a course focussed on teaching the principles and techniques of emulation. It’s freely available on line. <a href="http://mlatcl.github.io/mlphysical/" class="uri">http://mlatcl.github.io/mlphysical/</a>
+</aside>
+</section>
+<section id="thanks" class="slide level2 scrollable">
+<h2 class="scrollable">Thanks!</h2>
+<ul>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+<section id="references" class="slide level2 unnumbered scrollable">
+<h2 class="unnumbered scrollable">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Sculley:debt15" class="csl-entry" role="doc-biblioentry">
+Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., Dennison, D., 2015. Hidden technical debt in machine learning systems, in: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 28. Curran Associates, Inc., pp. 2503–2511.
+</div>
+</div>
 </section>
     </div>
   </div>
