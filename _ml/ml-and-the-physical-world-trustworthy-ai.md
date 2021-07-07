@@ -25,19 +25,19 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-youtube: 
 date: 2021-07-07
 venue: Trustworthy AI Conference, Moscow
 transition: None
 ---
 
-<!--\include{_physics/includes/laplaces-demon.md}-->
+
+<!--include{_physics/includes/laplaces-demon.md}-->
 \include{_physics/includes/emergent-behaviour.md}
-<!--\include{_physics/includes/laplaces-gremlin.md}-->
+<!--include{_physics/includes/laplaces-gremlin.md}-->
 
 \include{_ai/includes/centrifugal-governor.md}
-<!--\include{_ml/includes/process-automation.md}
-\include{_ai/includes/ai-vs-data-science-2.md}-->
+<!--include{_ml/includes/process-automation.md}
+include{_ai/includes/ai-vs-data-science-2.md}-->
 
 \newslide{The Gap}
 
