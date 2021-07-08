@@ -163,4 +163,19 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 \figure{\includediagram{\diagramsDir/neurips/citations-vs-average-confidence-accept}{70%}}{}{citations-vs-average-confidence-accept}
 
 
+\helpercode{def bootstrap_index(df):
+    n = len(df.index)
+    return df.index[np.random.randint(n, size=n)]}
+
+\code{for column in ["average_quality", "average_impact", "average_confidence"]:
+    cor = []
+    for i in range(1000):
+        ind = bootstrap_index(joindf.loc[joindf.accept])
+        cor.append(joindf.loc[ind][column].corr(np.log(1+joindf.loc[ind]['numCitedBy'])))
+    cora = np.array(cor)
+    rho = cora.mean()
+    twosd = 2*np.sqrt(cora.var())
+    print("{column}".format(column=column.replace("_", " ")))
+    print("Mean correlation is {rho} +/- {twosd}".format(rho=rho, twosd=twosd))}
+
 \endif
