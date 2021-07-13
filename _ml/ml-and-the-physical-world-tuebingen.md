@@ -17,7 +17,7 @@ abstract: |
   mechanistic. In this talk we will introduce some of the challenges
   for this domain and and propose some ways forward in terms of
   solutions.
-ipynb: True
+ipynb: False
 author:
 - family: Lawrence
   given: Neil D.
@@ -25,17 +25,16 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-youtube: q1esyhXwh-w
 date: 2021-07-13
 venue: Tuebingen ML in Science Conference
 transition: None
 ---
 
-<!--\include{_physics/includes/laplaces-demon.md}-->
 \include{_physics/includes/emergent-behaviour.md}
-<!--\include{_physics/includes/laplaces-gremlin.md}-->
-
+\include{_physics/includes/laplaces-demon.md}
+\include{_physics/includes/laplaces-gremlin.md}
 \include{_ai/includes/centrifugal-governor.md}
+\include{_physics/includes/lap-engine.md}
 <!--\include{_ml/includes/process-automation.md}
 \include{_ai/includes/ai-vs-data-science-2.md}-->
 
@@ -46,16 +45,10 @@ transition: None
 * E.g. Causal understanding. 
 
 \include{_ai/includes/prime-air-system.md}
-
-
 \include{_ai/includes/buying-system.md}
-
 \include{_ai/includes/intellectual-debt-short.md}
-
 \include{_uq/includes/emulation.md}
-
 \include{_ai/includes/auto-ai-overview.md}
-
 \include{_uq/includes/deep-emulation.md}
 
 \include{_accelerate/includes/accelerate-programme.md}
