@@ -477,6 +477,64 @@ Classically, in the field of statistics, data analysis proceeds by assuming that
 <li>The mapping of the virtual onto the physical world.</li>
 <li>E.g. Causal understanding.</li>
 </ul>
+<h2 id="statistical-emulation">Statistical Emulation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="met-office-unified-model-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/slides/diagrams//simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="met-office-unified-model-magnify" class="magnify" onclick="magnifyFigure(&#39;met-office-unified-model&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="met-office-unified-model-caption" class="caption-frame">
+<p>Figure: The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.</p>
+</div>
+</div>
+<p>In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. Interestingly, the UK Met office uses the same code for both, it has a <a href="https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/index">“Unified Model” approach</a>, but they operate climate simulations one at greater spatial and temporal resolutions.</p>
+<div class="figure">
+<div id="statistical-emulation-1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation000.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="statistical-emulation-1-caption" class="caption-frame">
+<p>Figure: Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
+</div>
+</div>
+<div class="figure">
+<div id="statistical-emulation-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation001.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-2-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-2&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="statistical-emulation-2-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
+</div>
+</div>
+<p>A statistical emulator is a data-driven model that learns about the underlying simulation. Importantly, learns with uncertainty, so it ‘knows what it doesn’t know.’ In practice, we can call the emulator in place of the simulator. If the emulator ‘doesn’t know,’ it can call the simulator for the answer.</p>
+<div class="figure">
+<div id="statistical-emulation-5-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation004.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="statistical-emulation-5-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
+</div>
+</div>
+<p>As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.</p>
+<p>Similarly, the emulator can adjudicate between simulations. This is known as <em>multi-fidelity emulation</em>. The emulator characterizes which emulations perform well where.</p>
+<p>If all this modelling is done with judiscious handling of the uncertainty, the <em>computational doubt</em>, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.</p>
 <h2 id="prime-air">Prime Air</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/prime-air-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/prime-air-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -661,64 +719,6 @@ David Moro
 <li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
 </ul>
 <p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
-<h2 id="statistical-emulation">Statistical Emulation</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<div class="figure">
-<div id="met-office-unified-model-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/talks/slides/diagrams//simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="met-office-unified-model-magnify" class="magnify" onclick="magnifyFigure(&#39;met-office-unified-model&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="met-office-unified-model-caption" class="caption-frame">
-<p>Figure: The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.</p>
-</div>
-</div>
-<p>In many real world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. Interestingly, the UK Met office uses the same code for both, it has a <a href="https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/index">“Unified Model” approach</a>, but they operate climate simulations one at greater spatial and temporal resolutions.</p>
-<div class="figure">
-<div id="statistical-emulation-1-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation000.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="statistical-emulation-1-caption" class="caption-frame">
-<p>Figure: Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
-</div>
-</div>
-<div class="figure">
-<div id="statistical-emulation-2-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation001.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="statistical-emulation-2-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-2&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="statistical-emulation-2-caption" class="caption-frame">
-<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
-</div>
-</div>
-<p>A statistical emulator is a data-driven model that learns about the underlying simulation. Importantly, learns with uncertainty, so it ‘knows what it doesn’t know.’ In practice, we can call the emulator in place of the simulator. If the emulator ‘doesn’t know,’ it can call the simulator for the answer.</p>
-<div class="figure">
-<div id="statistical-emulation-5-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//uq/statistical-emulation004.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="statistical-emulation-5-caption" class="caption-frame">
-<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
-</div>
-</div>
-<p>As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.</p>
-<p>Similarly, the emulator can adjudicate between simulations. This is known as <em>multi-fidelity emulation</em>. The emulator characterizes which emulations perform well where.</p>
-<p>If all this modelling is done with judiscious handling of the uncertainty, the <em>computational doubt</em>, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.</p>
 <h2 id="auto-ai">Auto AI</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/auto-ai-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/auto-ai-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

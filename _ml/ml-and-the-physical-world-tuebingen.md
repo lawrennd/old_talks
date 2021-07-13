@@ -44,10 +44,11 @@ transition: None
 * The mapping of the virtual onto the physical world.
 * E.g. Causal understanding. 
 
+\include{_uq/includes/emulation.md}
+
 \include{_ai/includes/prime-air-system.md}
 \include{_ai/includes/buying-system.md}
 \include{_ai/includes/intellectual-debt-short.md}
-\include{_uq/includes/emulation.md}
 \include{_ai/includes/auto-ai-overview.md}
 \include{_uq/includes/deep-emulation.md}
 
