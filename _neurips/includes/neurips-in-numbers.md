@@ -25,19 +25,16 @@
   * 331 poster presentations
   * 19 papers rejected without review}
 
-
 \subsection{The NeurIPS Experiment}
 
-\notes{The objective of the NeurIPS experiment was to determine how consistent the process of peer review is? What would happen to submitted papers in the conference if the process was independently rerun?}
+\notes{The objective of the NeurIPS experiment was to determine how consistent the process of peer review is. One way of phraising this question is to ask: what would happen to submitted papers in the conference if the process was independently rerun?}
 
 \slides{* How consistent was the process of peer review? 
 * What would happen if you independently reran it?}
 
 \newslide{The NeurIPS Experiment}
 
-\notes{To explore this question, we selected $\approx 10\%$ of submitted papers to be reviewed twice, by independent committees.}
-
-\notes{We randomly selected 170 papers from the total submitted for this treatment. For these papers the program committee was divided into two. Reviewers were placed randomly on one side of the committee or the other. For Program Chairs we also engaged in some manual selection to ensure we had expert coverage in all the conference areas on both side of the committee.}
+\notes{For the 2014 conference, to explore this question, we selected $\approx 10\%$ of submitted papers to be reviewed twice, by independent committees. This led to 170 papers being selected from the conference for dual reviewing. For these papers the program committee was divided into two. Reviewers were placed randomly on one side of the committee or the other. For Program Chairs we also engaged in some manual selection to ensure we had expert coverage in all the conference areas on both side of the committee.}
 
 \slides{* We selected ~10% of NeurIPS papers to be reviewed twice, independently.
 * 170 papers were reviewed by two separate committees.
