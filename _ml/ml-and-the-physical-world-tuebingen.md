@@ -30,8 +30,8 @@ venue: Tuebingen ML in Science Conference
 transition: None
 ---
 
-\include{_physics/includes/emergent-behaviour.md}
 \include{_physics/includes/laplaces-demon.md}
+\include{_physics/includes/emergent-behaviour.md}
 \include{_physics/includes/laplaces-gremlin.md}
 \include{_ai/includes/centrifugal-governor.md}
 \include{_physics/includes/lap-engine.md}
