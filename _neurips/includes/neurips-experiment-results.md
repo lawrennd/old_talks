@@ -7,7 +7,7 @@
 
 \notes{The final results of the experiment were as follows. From 170 papers 4 had to be withdrawn or were rejected without completing the review process, for the remainder, the 'confusion matrix' for the two committee's decisions is below.}
 
-<table>
+\html{<table>
   <tr>
   <td colspan="2"></td><td colspan="2">Committee 1</td>
   </tr>
@@ -20,7 +20,14 @@
   <tr>
     <td>Reject</td><td>21</td><td>101</td>
   </tr>
-</table>
+</table>}
+
+\tex{\begin{tabular}{lccc}
+& & \multicolumn{2}{c}{Committee 1} \\
+& & Accept & Reject
+\multirow{2}{*}{Committee 2} & Accept & 22 & 22 \\
+Reject & 21 & 101 
+\end{tabular}}
 
 4 papers rejected or withdrawn without review.
 
