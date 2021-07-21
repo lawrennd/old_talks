@@ -1,22 +1,7 @@
 ---
 title: "Machine Learning and the Physical World"
 abstract: |
-  Machine learning technologies have underpinned the recent revolution
-  in artificial intelligence. But at their heart, they are simply data
-  driven decision making algorithms. While the popular press is filled
-  with the achievements of these algorithms in important domains such
-  as object detection in images, machine translation and speech
-  recognition, there are still many open questions about how these
-  technologies might be implemented in domains where we have existing
-  solutions but we are constantly looking for improvements. Roughly
-  speaking, we characterise this domain as “machine learning in the
-  physical world”. How do we design, build and deploy machine learning
-  algorithms that are part of a decision making system that interacts
-  with the physical world around us. In particular, machine learning
-  is a data driven endeavour, but real world systems are physical and
-  mechanistic. In this talk we will introduce some of the challenges
-  for this domain and and propose some ways forward in terms of
-  solutions.
+  You can’t have trust without understanding. We must view the systems we build as our tools, because if we can’t manipulate these systems, then we are at risk of being manipulated by these systems. Inspired by the centrifugal governor, this talk describes how statistical emulation provides a possible root for giving understanding to complex AI systems at a level of abstraction that allows humans to view the system as a tool, rather than being a tool of the system.
 ipynb: True
 author:
 - family: Lawrence
