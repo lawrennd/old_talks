@@ -25,6 +25,9 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+youtube: EC87VVc4-NA
+youtube_start:  3020
+youtube_end: 5920
 date: 2021-07-07
 venue: Trustworthy AI Conference, Moscow
 transition: None
