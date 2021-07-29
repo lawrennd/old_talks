@@ -25,6 +25,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+youtube: FuJgGeKMIJM
 date: 2021-07-13
 venue: Tuebingen ML in Science Conference
 transition: None
