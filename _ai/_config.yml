@@ -7,6 +7,10 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 talkscam:
+url: https://inverseprobability.com/
+baseurl: talks/
+diagramdir: slides/diagrams/
+writediagramdir: .
 ghub:
 - organization: lawrennd
   repository: talks
