@@ -1,5 +1,5 @@
 ---
-title: "AI Can’t Fix This: Happenstance Data, Modelling, and the Covid19 PandemicPolicy, Science and the Convening Power of Data"
+title: "AI Can’t Fix This: Happenstance Data, Modelling, and the Covid19 Pandemic"
 abstract: |
   With the world watching case numbers increase and publics and
   policymakers scrutinising projections from epidemiological models,
