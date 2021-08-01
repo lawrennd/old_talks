@@ -18,6 +18,7 @@ ipynb: True
 categories:
 - notes
 layout: talk
+youtube: 4W5WVoyD86k
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
