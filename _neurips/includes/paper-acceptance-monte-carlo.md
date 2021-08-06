@@ -46,7 +46,7 @@ _ = prob_accept.hist(bins=40, ax=ax)
 ma.write_figure(directory="\writeDiagramsDir/neurips", filename="probability-of-accept.svg")}
 
 
-\figure{\includediagram{\diagramsDir/neurips/probability-of-accept}{70%}}{}{probability-of-accept}
+\figure{\includediagram{\diagramsDir/neurips/probability-of-accept}{70%}}{Histogram of the probability of accept as estimated by the Monte Carlo simulation across all papers submitted to NeurIPS 2014.}{probability-of-accept}
 
 
 \endif
