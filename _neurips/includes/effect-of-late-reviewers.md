@@ -1,6 +1,10 @@
 \ifndef{effectOfLateReviewers}
 \define{effectOfLateReviewers}
 
+\editme
+
+\subsection{Effect of Late Reviews}
+
 \notes{This notebook analyzes the reduction in reviewer confidence between
 reviewers that submit their reviews early and those that arrive late.
 The reviews are first loaded in from files Corinna and Neil saved and
@@ -41,7 +45,7 @@ review_count.plot(linewidth=3, ax=ax)
 plot.deadlines(ax)
 ma.write_figure(filename='review-count.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/review-count}{70%}}{}{review-count}
+\figure{\includediagram{\diagramsDir/neurips/review-count}{70%}}{Cumulative count of number of received reviews over time.}{review-count}
 
 \notes{We worked hard to try and ensure that all papers had three reviews
 before the start of the rebuttal. This next plot shows the numbers of
@@ -75,7 +79,7 @@ review_count.mean().plot(linewidth=3, ax=ax)
 plot.deadlines(ax)
 ma.write_figure(filename='number-of-reviews-over-time.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/number-of-reviews-over-time}{70%}}{}{number-of-reviews-over-time}
+\figure{\includediagram{\diagramsDir/neurips/number-of-reviews-over-time}{70%}}{Plot representing number of reviewers per paper over time showing maximum number of reviewers per paper, minimum, median and mean. }{number-of-reviews-over-time}
 
 \notes{But perhaps the more important measure is how many papers had less than
 3 reviewers over time. In this plot you can see that by the time
