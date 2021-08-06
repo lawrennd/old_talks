@@ -63,7 +63,7 @@ ax.set_xlabel('raw score')
 _ = ax.set_ylabel('log odds of accept')
 ma.write_figure(directory="\writeDiagramsDir/neurips", filename="raw-score-vs-log-odds.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/raw-score-vs-log-odds}{70%}}{}{raw-score-vs-log-odds}
+\figure{\includediagram{\diagramsDir/neurips/raw-score-vs-log-odds}{70%}}{Histogram of the raw paper score against the log probability of paper acceptance, as estimated by Monte Carlo simulation.}{raw-score-vs-log-odds}
 
 \subsection{Calibraton Quality Sanity Checks}
 
@@ -83,6 +83,6 @@ ax.set_xlabel('original review score')
 _ = ax.set_ylabel('calibrated review score')
 ma.write_figure(directory="\writeDiagramsDir/neurips", filename="calibrated-review-score-vs-original-score.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/calibrated-review-score-vs-original-score}{70%}}{}{}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-review-score-vs-original-score}{70%}}{Scatter plot of the calibrated review scores against the original review scores.}{calibrated-review-vs-original-score}
 
 \endif
