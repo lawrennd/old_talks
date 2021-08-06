@@ -12,7 +12,7 @@ s.hist(bins=100, ax=ax)
 _ = ax.set_title('Calibrated Reviewer Scores')
 ma.write_figure(directory="\writeDiagramsDir/neurips", filename="calibrated-reviewer-scores.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/calibrated-reviewer-scores}{70%}}{}{calibrated-reviewer-scores}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-reviewer-scores}{70%}}{Histogram of updated reviewer scores after the calibration process is applied.}{calibrated-reviewer-scores}
 
 \notes{\subsubsection{Adjustments to Reviewer Scores}
 
@@ -33,7 +33,7 @@ reviewer_bias.hist(bins=100, ax=ax)
 _ = ax.set_title('Reviewer Calibration Adjustments Histogram')
 ma.write_figure(directory="\writeDiagramsDir/neurips", filename="reviewer-calibration-adjustments.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/reviewer-calibration-adjustments}{70%}}{}{reviewer-calibration-adjustments}
+\figure{\includediagram{\diagramsDir/neurips/reviewer-calibration-adjustments}{70%}}{Histogram of individual offsets associated with the reviewers as estimated by the model.}{reviewer-calibration-adjustments}
 
 \notes{Export a version of the bias scores for use in CMT.}
 
