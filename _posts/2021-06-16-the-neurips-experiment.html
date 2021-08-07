@@ -161,7 +161,12 @@ categories:
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-experiment-results.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-experiment-results.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The final results of the experiment were as follows. From 170 papers 4 had to be withdrawn or were rejected without completing the review process, for the remainder, the ‘confusion matrix’ for the two committee’s decisions is below.</p>
+<p>The final results of the experiment were as follows. From 170 papers 4 had to be withdrawn or were rejected without completing the review process, for the remainder, the ‘confusion matrix’ for the two committee’s decisions is in Table .</p>
+<div class="table">
+<div id="table-neurips-experiment-results-caption" class="caption-frame">
+<p>Table: Table showing the results from the two committees as a confusion matrix. Four papers were rejected or withdrawn without review.</p>
+</div>
+<div id="table-neurips-experiment-results-table" class="table-frame">
 <table>
 <tr>
 <td colspan="2">
@@ -206,7 +211,11 @@ Reject
 </td>
 </tr>
 </table>
-<p>4 papers rejected or withdrawn without review.</p>
+</div>
+<div id="table-neurips-experiment-results-magnify" class="magnify" onclick="magnifyFigure(&#39;table-neurips-experiment-results&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+</div>
 <h2 id="summarizing-the-table">Summarizing the Table</h2>
 <p>There are a few ways of summarizing the numbers in this table as percent or probabilities. First of all, the inconsistency, the proportion of decisions that were not the same across the two committees. The decisions were inconsistent for 43 out of 166 papers or 0.259 as a proportion. This number is perhaps a natural way of summarizing the figures if you are submitting your paper and wish to know an estimate of what the probability is that your paper would have different decisons according to the different committes. Secondly, the accept precision: if you are attending the conference and looking at any given paper, then you might want to know the probability that the paper would have been rejected in an independent rerunning of the conference. We can estimate this for Committee 1’s conference as 22/(22 + 22) = 0.5 (50%) and for Committee 2’s conference as 21/(22+21) = 0.49 (49%). Averaging the two estimates gives us 49.5%. Finally, the reject precision: if your paper was rejected from the conference, you might like an estimate of the probability that the same paper would be rejected again if the review process had been independently rerun. That estimate is 101/(22+101) = 0.82 (82%) for Committee 1 and 101/(21+101)=0.83 (83%) for Committee 2, or on average 82.5%. A final quality estimate might be the ratio of consistent accepts to consistent rejects, or the agreed accept rate, 22/123 = 0.18 (18%).</p>
 <ul>
@@ -241,7 +250,12 @@ Reject
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-experiment-random-committee.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/neurips-experiment-random-committee.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The first context we can place around the numbers is what would have happened at the ‘Random Conference’ where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been:</p>
+<p>The first context we can place around the numbers is what would have happened at the ‘Random Conference’ where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been given as in Table .</p>
+<div class="table">
+<div id="table-random-committee-caption" class="caption-frame">
+<p>Table: Table shows the expected values for the confusion matrix if the committee was making decisions totally at random.</p>
+</div>
+<div id="table-random-committee-table" class="table-frame">
 <table>
 <tr>
 <td colspan="2">
@@ -286,6 +300,11 @@ Reject
 </td>
 </tr>
 </table>
+</div>
+<div id="table-random-committee-magnify" class="magnify" onclick="magnifyFigure(&#39;table-random-committee&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+</div>
 <p>And for this set up we would expect <em>inconsistency</em> of 3 in 8 (37.5%) <em>accept precision</em> of 1 in 4 (25%) and a <em>reject precision</em> of 3 in 4 (75%) and a <em>agreed accept rate</em> of 1 in 10 (10%). The actual committee made improvements on these numbers, in particular the accept precision was markedly better with 50%: twice as many consistent accept decisions were made than would be expected if the process had been performed at random and only around two thirds as many inconsistent decisions were made as would have been expected if decisions were made at random. However, we should treat all these figures with some skepticism until we’ve performed some estimate of the uncertainty associated with them.</p>
 <h2 id="stats-for-random-committee">Stats for Random Committee</h2>
 <ul>
@@ -430,13 +449,13 @@ b_j \sim N(0, \alpha_b),
 k(i,j; k,l) = \delta_{i,k} \alpha_f + \delta_{j,l} \alpha_b + \delta_{i, k}\delta_{j,l} \sigma^2
 \]</span> where <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are the index of first paper and reviewer and <span class="math inline">\(k\)</span> and <span class="math inline">\(l\)</span> are the index of second paper and reviewer. The mean is easily estimated by maximum likelihood, and is given as the mean of all scores.</p>
 <p>It is convenient to reparameterize slightly into an overall scale <span class="math inline">\(\alpha_f\)</span>, and normalized variance parameters, <span class="math display">\[
-k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \frac{\alpha_b}{\alpha_f} + \delta_{i, k}\delta_{j,l} \frac{\sigma^2}{\alpha_f})
+k(i,j; k,l) = \alpha_f\left(\delta_{i,k}  + \delta_{j,l} \frac{\alpha_b}{\alpha_f} + \delta_{i, k}\delta_{j,l} \frac{\sigma^2}{\alpha_f}\right)
 \]</span> which we rewrite to give two ratios: offset/signal ratio, <span class="math inline">\(\hat{\alpha}_b\)</span> and noise/signal <span class="math inline">\(\hat{\sigma}^2\)</span> ratio. <span class="math display">\[
-k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, k}\delta_{j,l} \hat{\sigma}^2)
+k(i,j; k,l) = \alpha_f\left(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, k}\delta_{j,l} \hat{\sigma}^2\right)
 \]</span> The advantage of this parameterization is it allows us to optimize <span class="math inline">\(\alpha_f\)</span> directly (with a fixed point equation) and it will be very well determined. This leaves us with two free parameters, that we can explore on the grid. It is in these parameters that we expect the remaining underdetermindness of the model. We expect <span class="math inline">\(\alpha_f\)</span> to be well determined because the negative log likelihood is now <span class="math display">\[
-\frac{|\mathbf{y}|}{2}\log\alpha_f + \frac{1}{2}\log  \left|\hat{\mathbf{K}}\right| + \frac{1}{2\alpha_f}\mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}
+\frac{|\mathbf{y}|}{2}\log\alpha_f + \frac{1}{2}\log  \left|\hat{\mathbf{K}}\right| + \frac{1}{2\alpha_f}\mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y},
 \]</span> where <span class="math inline">\(|\mathbf{y}|\)</span> is the length of <span class="math inline">\(\mathbf{y}\)</span> (i.e. the number of reviews) and <span class="math inline">\(\hat{\mathbf{K}}=\alpha_f^{-1}\mathbf{K}\)</span> is the scale normalised covariance. This negative log likelihood is easily minimized to recover <span class="math display">\[
-\alpha_f = \frac{1}{|\mathbf{y}|} \mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}
+\alpha_f = \frac{1}{|\mathbf{y}|} \mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}.
 \]</span> A Bayesian analysis of this parameter is possible with gamma priors, but it would merely shows that this parameter is extremely well determined (the degrees of freedom parameter of the associated Student-<span class="math inline">\(t\)</span> marginal likelihood scales will the number of reviews, which will be around <span class="math inline">\(|\mathbf{y}| \approx 6,000\)</span> in our case.</p>
 <p>So, we propose to proceed as follows. Set the mean from the reviews (<span class="math inline">\(\mu\)</span>) and then choose a two dimensional grid of parameters for reviewer offset and diversity. For each parameter choice, optimize to find <span class="math inline">\(\alpha_f\)</span> and then evaluate the liklihood. Worst case this will require us inverting <span class="math inline">\(\hat{\mathbf{K}}\)</span>, but if the reviewer paper groups are disconnected, it can be done a lot quicker. Next stage is to load in the reviews for analysis.</p>
 <h2 id="fitting-the-model">Fitting the Model</h2>
@@ -558,7 +577,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <p>Figure: Histogram of the probability of accept as estimated by the Monte Carlo simulation across all papers submitted to NeurIPS 2014.</p>
 </div>
 </div>
-<h2 id="some-sanity-histograms">Some Sanity Histograms</h2>
+<h2 id="some-sanity-checking-plots">Some Sanity Checking Plots</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/calibration-sanity-checks.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/calibration-sanity-checks.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
@@ -631,7 +650,7 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="raw-score-vs-log-odds-caption" class="caption-frame">
-<p>Figure: Histogram of the raw paper score against the log probability of paper acceptance, as estimated by Monte Carlo simulation.</p>
+<p>Figure: Scatter plot of the raw paper score against the log probability of paper acceptance, as estimated by Monte Carlo simulation.</p>
 </div>
 </div>
 <h2 id="calibraton-quality-sanity-checks">Calibraton Quality Sanity Checks</h2>
@@ -784,6 +803,10 @@ k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, 
 <div id="gain-in-consistency-caption" class="caption-frame">
 <p>Figure: Plot of the accept rate vs gain in consistency over a random conference for 50% subjectivity.</p>
 </div>
+</div>
+<h2 id="where-do-rejected-papers-go">Where do Rejected Papers Go?</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/where-do-the-rejected-papers-go.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_neurips/includes/where-do-the-rejected-papers-go.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span></code></pre></div>
