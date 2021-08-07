@@ -8,5 +8,5 @@ ${BASE}.posts.html: ${BASE}.posts.html.markdown
                --to html \
                --out ${BASE}.posts.html  ${BASE}.posts.html.markdown 
 	cp ${BASE}.posts.html ${POSTDIR}/${OUT}.html
-	../copy_web_diagrams.sh ${BASE}.md
+	../copy_web_diagrams.sh ${BASE}.md slidediagrams ${SLIDEDIR}
 

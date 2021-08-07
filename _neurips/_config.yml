@@ -9,6 +9,7 @@ author:
 url: http://inverseprobability.com
 baseurl: /talks
 diagramdir: slides/diagrams/
+texdir: ../../neurips2014/
 writediagramdir: .
 ipynb: True
 reveal: True

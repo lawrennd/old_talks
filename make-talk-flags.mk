@@ -32,6 +32,7 @@ POSTDIR=$(shell mdfield postdir $(BASE).md)
 NOTEDIR=$(shell mdfield notedir $(BASE).md)
 NOTEBOOKDIR=$(shell mdfield notebookdir $(BASE).md)
 SLIDEDIR=$(shell mdfield slidedir $(BASE).md)
+TEXDIR=$(shell mdfield texdir $(BASE).md)
 WEEK=$(shell mdfield week $(BASE).md)
 SESSION=$(shell mdfield session $(BASE).md)
 
