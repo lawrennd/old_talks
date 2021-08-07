@@ -1,5 +1,5 @@
 \ifndef{neuripsExperimentRandomCommittee}
-\define{neuripsExperimetnRandomCommittee}
+\define{neuripsExperimentRandomCommittee}
 
 \editme
 
