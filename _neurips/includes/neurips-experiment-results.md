@@ -20,10 +20,10 @@
   <tr>
     <td>Reject</td><td>21</td><td>101</td>
   </tr>
-</table>}\tex{\begin{tabular}{lccc}
+</table>}\tex{\begin{tabular}{lc|c|c|}
 & & \multicolumn{2}{c}{Committee 1} \\
 & & Accept & Reject \\
-\multirow{2}{*}{Committee 2} & Accept & 22 & 22 \\
+\multirow{2}{*}{Committee 2} & Accept & 22 & 22 \hline \\
 & Reject & 21 & 101 
 \end{tabular}}}{Table showing the results from the two committees as a confusion matrix. Four papers were rejected or withdrawn without review.}{table-neurips-experiment-results}
 
