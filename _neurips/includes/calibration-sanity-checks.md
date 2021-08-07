@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Some Sanity Histograms}
+\subsection{Some Sanity Checking Plots}
 
 \notes{Here is the histogram of the reviewer scores after calibration.}
 
@@ -63,7 +63,7 @@ ax.set_xlabel('raw score')
 _ = ax.set_ylabel('log odds of accept')
 ma.write_figure(directory="\writeDiagramsDir/neurips", filename="raw-score-vs-log-odds.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/raw-score-vs-log-odds}{70%}}{Histogram of the raw paper score against the log probability of paper acceptance, as estimated by Monte Carlo simulation.}{raw-score-vs-log-odds}
+\figure{\includediagram{\diagramsDir/neurips/raw-score-vs-log-odds}{70%}}{Scatter plot of the raw paper score against the log probability of paper acceptance, as estimated by Monte Carlo simulation.}{raw-score-vs-log-odds}
 
 \subsection{Calibraton Quality Sanity Checks}
 
