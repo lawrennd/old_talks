@@ -47,24 +47,32 @@ and $l$ are the index of second paper and reviewer. The mean is easily
 estimated by maximum likelihood, and is given as the mean of all scores.}
 
 \notes{It is convenient to reparameterize slightly into an overall scale
-$\alpha_f$, and normalized variance parameters, $$
-k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \frac{\alpha_b}{\alpha_f} + \delta_{i, k}\delta_{j,l} \frac{\sigma^2}{\alpha_f})
-$$ which we rewrite to give two ratios: offset/signal ratio,
-$\hat{\alpha}_b$ and noise/signal $\hat{\sigma}^2$ ratio. $$
-k(i,j; k,l) = \alpha_f(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, k}\delta_{j,l} \hat{\sigma}^2)
-$$ The advantage of this parameterization is it allows us to optimize
+$\alpha_f$, and normalized variance parameters, 
+$$
+k(i,j; k,l) = \alpha_f\left(\delta_{i,k}  + \delta_{j,l} \frac{\alpha_b}{\alpha_f} + \delta_{i, k}\delta_{j,l} \frac{\sigma^2}{\alpha_f}\right)
+$$ 
+which we rewrite to give two ratios: offset/signal ratio,
+$\hat{\alpha}_b$ and noise/signal $\hat{\sigma}^2$ ratio. 
+$$
+k(i,j; k,l) = \alpha_f\left(\delta_{i,k}  + \delta_{j,l} \hat{\alpha}_b + \delta_{i, k}\delta_{j,l} \hat{\sigma}^2\right)
+$$ 
+The advantage of this parameterization is it allows us to optimize
 $\alpha_f$ directly (with a fixed point equation) and it will be very
 well determined. This leaves us with two free parameters, that we can
 explore on the grid. It is in these parameters that we expect the
 remaining underdetermindness of the model. We expect $\alpha_f$ to be
-well determined because the negative log likelihood is now $$
-\frac{|\mathbf{y}|}{2}\log\alpha_f + \frac{1}{2}\log  \left|\hat{\mathbf{K}}\right| + \frac{1}{2\alpha_f}\mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}
-$$ where $|\mathbf{y}|$ is the length of $\mathbf{y}$ (i.e. the number
+well determined because the negative log likelihood is now 
+$$
+\frac{|\mathbf{y}|}{2}\log\alpha_f + \frac{1}{2}\log  \left|\hat{\mathbf{K}}\right| + \frac{1}{2\alpha_f}\mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y},
+$$ 
+where $|\mathbf{y}|$ is the length of $\mathbf{y}$ (i.e. the number
 of reviews) and $\hat{\mathbf{K}}=\alpha_f^{-1}\mathbf{K}$ is the scale
 normalised covariance. This negative log likelihood is easily minimized
-to recover $$
-\alpha_f = \frac{1}{|\mathbf{y}|} \mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}
-$$ A Bayesian analysis of this parameter is possible with gamma priors,
+to recover 
+$$
+\alpha_f = \frac{1}{|\mathbf{y}|} \mathbf{y}^\top \hat{\mathbf{K}}^{-1} \mathbf{y}.
+$$ 
+A Bayesian analysis of this parameter is possible with gamma priors,
 but it would merely shows that this parameter is extremely well
 determined (the degrees of freedom parameter of the associated
 Student-$t$ marginal likelihood scales will the number of reviews, which
