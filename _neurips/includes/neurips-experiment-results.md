@@ -24,7 +24,7 @@
 
 \tex{\begin{tabular}{lccc}
 & & \multicolumn{2}{c}{Committee 1} \\
-& & Accept & Reject
+& & Accept & Reject \\
 \multirow{2}{*}{Committee 2} & Accept & 22 & 22 \\
 Reject & 21 & 101 
 \end{tabular}}
