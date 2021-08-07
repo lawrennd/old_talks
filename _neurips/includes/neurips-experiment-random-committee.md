@@ -24,7 +24,7 @@
   \tex{\begin{tabular}{lc|c|c|}
   & & \multicolumn{2}{c}{Committee 1} \\
   & & Accept & Reject \\
-  \multirow{2}{*}{Committee 2} & Accept & 10.4 (1 in 16) & 31.1 (3 in 16) \\
+  \multirow{2}{*}{Committee 2} & Accept & 10.4 (1 in 16) & 31.1 (3 in 16) \hline \\
   & Reject & 31.1 (3 in 16) & 93.4 (9 in 16) 
   \end{tabular}}}{Table shows the expected values for the confusion matrix if the committee was making decisions totally at random.}{table-random-committee}
   
