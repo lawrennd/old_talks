@@ -26,7 +26,7 @@
 & & \multicolumn{2}{c}{Committee 1} \\
 & & Accept & Reject \\
 \multirow{2}{*}{Committee 2} & Accept & 22 & 22 \\
-Reject & 21 & 101 
+& Reject & 21 & 101 
 \end{tabular}}
 
 4 papers rejected or withdrawn without review.
