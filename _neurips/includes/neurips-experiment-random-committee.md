@@ -5,9 +5,9 @@
 
 \subsection{A Random Committee @ 25%}
 
-\notes{The first context we can place around the numbers is what would have happened at the 'Random Conference' where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been:}
+\notes{The first context we can place around the numbers is what would have happened at the 'Random Conference' where we simply accept a quarter of papers at random. In this NIPS the expected numbers of accepts would then have been given as in Table \ref{table-random-committee}.}
 
-<table>
+\table{\html{<table>
   <tr>
   <td colspan="2"></td><td colspan="2">Committee 1</td>
   </tr>
@@ -20,8 +20,14 @@
   <tr>
     <td>Reject</td><td>31.1 (3 in 16) </td><td>93.4 (9 in 16)</td>
   </tr>
-  </table>
-
+  </table>}
+  \tex{\begin{tabular}[lccc]
+  & & \multicolumn{2}{c}{Committee 1} \\
+  & & Accept & Reject \\
+  \multirow{2}{*}{Committee 2} & Accept & 10.4 (1 in 16) & 31.1 (3 in 16) \\
+  & Reject & 31.1 (3 in 16) & 93.4 (9 in 16) 
+  \end{tabular}}{Table shows the expected values for the confusion matrix if the committee was making decisions totally at random.}{table-random-committee}
+  
 \newslide{NeurIPS Experiment Results}
 
 \slides{
