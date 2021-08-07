@@ -21,7 +21,7 @@
     <td>Reject</td><td>31.1 (3 in 16) </td><td>93.4 (9 in 16)</td>
   </tr>
   </table>}
-  \tex{\begin{tabular}[lccc]
+  \tex{\begin{tabular}{l|c|c|c}
   & & \multicolumn{2}{c}{Committee 1} \\
   & & Accept & Reject \\
   \multirow{2}{*}{Committee 2} & Accept & 10.4 (1 in 16) & 31.1 (3 in 16) \\
