@@ -1,9 +1,9 @@
 \ifndef{whereDoRejectedPapersGo}
 \define{whereDoRejectedPapersGo}
 
-\edtme
+\editme
 
-\subsecton{Where do Rejected Papers Go?}
+\subsection{Where do Rejected Papers Go?}
 
 \setupcode{import os
 import yaml}
