@@ -91,7 +91,7 @@ fig.write_html(os.path.join(".", "\writeDiagramDir/neurips", "where-do-neurips-p
 fig.write_image(os.path.join(".", "\writeDiagramDir/neurips", "where-do-neurips-papers-go.pdf"))
 }
 
-\figure{\html{\includehtml{\diagramsDir/neurips/where-do-neurips-papers-go.html}{600}{450}}\tex{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}{Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.}{where-do-neurips-papers-go}}
+\figure{\html{\includehtml{\diagramsDir/neurips/where-do-neurips-papers-go.html}{600}{450}}\tex{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}}{Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.}{where-do-neurips-papers-go}}
 
 
 \endif
