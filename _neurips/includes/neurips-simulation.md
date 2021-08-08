@@ -5,7 +5,7 @@
 
 \subsection{Conference Simulation}
 
-\notes{Given the realisation that roughly 50% of the score seems to be 'subjective' and 50% of the score seems to be 'objective', then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.}
+\notes{Given the realization that roughly 50% of the score seems to be 'subjective' and 50% of the score seems to be 'objective', then we can simulate the conference and see what it does for the consistency of accepts for different probability of accept.}
 
 \slides{* Calibration model suggests score is roughly 50% subjective, 50% objective.
 * Duplicate experiment backs this up with roughly 50% correlation.}
