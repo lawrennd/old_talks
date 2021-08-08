@@ -297,7 +297,7 @@ even after the discussion phase is over.}
 \notes{In summary we find that late reviews are on average less confident and
 shorter, but rate papers as higher quality and perhaps as higher impact.
 Each of the effects is small (around 5%) but overall a picture emerges
-of a different category of review from those that delay their assesment.}
+of a different category of review from those that delay their assessment.}
 
 
 \endif
