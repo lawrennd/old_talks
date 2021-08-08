@@ -77,18 +77,19 @@ data=go.Sankey(arrangement = "snap",
 fig = go.Figure(data=data)
 fig.update_layout(template="plotly_dark")
 fig.show()
-fig.write_html(os.path.join(".", "neurips", "where-do-neurips-papers-go.dark.html"))
-fig = go.Figure(data=data,
+fig.write_html(os.path.join(".", "neurips", "where-do-neurips-papers-go.dark.html"))}
+
+\code{fig = go.Figure(data=data,
                 layout = go.Layout(width=600,
                 height=450))
-fig.update_layout(template="plotly", textfont=dict(
+fig.update_layout(template="plotly", font=dict(
         family="sans serif",
         size=14,
-        color="White"
+        color="Black"
     ))
 fig.show()
 fig.write_html(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.html"))
-fig.write_image(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.pdf"))
+fig.write_image(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.svg"))
 }
 
 \figure{\html{\includehtml{\diagramsDir/neurips/where-do-neurips-papers-go.html}{600}{450}}\tex{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}}{Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.}{where-do-neurips-papers-go}}

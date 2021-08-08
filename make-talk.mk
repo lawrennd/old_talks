@@ -15,6 +15,7 @@ include ../make-notes.mk
 include ../make-tex.mk
 include ../make-paper.mk
 include ../make-post.mk
+include ../make-docx.mk
 include ../make-ipynb.mk
 
 
