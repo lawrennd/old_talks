@@ -5,7 +5,7 @@
 
 \subsection{Reaction After Experiment}
 
-\notes{There seems to have been a lot of discussion of the result, both at the conference and on bulletin boards since. Such discussion is to be encouraged, and for ease of memory, it is worth pointing out that the approximate proportions of papers in each category can be nicely divided in to eigths as follows. Accept-Accept 1 in 8 papers, Accept-Reject 3 in 8 papers, Reject-Reject, 5 in 8 papers. This makes the statistics we've computed above: inconsistency 1 in 4 (25%) accept precision 1 in 2 (50%) reject precision 5 in 6 (83%) and agreed accept rate of 1 in 6 (20%). This compares with the accept rate of 1 in 4.}
+\notes{There seems to have been a lot of discussion of the result, both at the conference and on bulletin boards since. Such discussion is to be encouraged, and for ease of memory, it is worth pointing out that the approximate proportions of papers in each category can be nicely divided in to eighths as follows. Accept-Accept 1 in 8 papers, Accept-Reject 3 in 8 papers, Reject-Reject, 5 in 8 papers. This makes the statistics we've computed above: inconsistency 1 in 4 (25%) accept precision 1 in 2 (50%) reject precision 5 in 6 (83%) and agreed accept rate of 1 in 6 (20%). This compares with the accept rate of 1 in 4.}
 
 
 * Public reaction after experiment [documented here](http://inverseprobability.com/2015/01/16/blogs-on-the-nips-experiment/)
