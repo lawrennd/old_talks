@@ -32,7 +32,7 @@ By recruiting area chairs first, you can involve them in recruiting reviewers. W
 * 25/03/2014
 * 11/04/2014
 
-In 2014, this wasn't enough to obtain the requisite number of reviewers, so we used additional approaches. These included lists of previous NeurIPS authors. For each individual we were looking for at least two previous papers published or papers published at NeurIPS and other leading ML venues like ICML, AISTATS, COLT, UAI etc. We made extensive use of [DBLP](https://dblp.uni-trier.de/) for verifying potential reviewer's publication track record.
+In 2014, this wasn't enough to obtain the requisite number of reviewers, so we used additional approaches. These included lists of previous NeurIPS authors. For each individual we were looking for at least two previously-published papers from NeurIPS and other leading  leading ML venues like ICML, AISTATS, COLT, UAI etc.. We made extensive use of [DBLP](https://dblp.uni-trier.de/) for verifying each potential reviewer's publication track record.
 
 \paragraph{Reviewer recruitment}
 
@@ -44,8 +44,8 @@ In 2014, this wasn't enough to obtain the requisite number of reviewers, so we u
 \paragraph{Decision Making Timeline}
 
 * 06/06/2014 Submission Deadline
-* 12/06/2014 Bidding Open For Area Chairs (this was *delayed* by CMT issues)
-* 17/06/2014 Bidding Open For Reviewers
+* 12/06/2014 Bidding Open for Area Chairs (this was *delayed* by CMT issues)
+* 17/06/2014 Bidding Open for Reviewers
 * 01/07/2014 Start Reviewing
 * 21/07/2014 Reviewing deadline
 * 04/08/2014 Reviews to Authors
