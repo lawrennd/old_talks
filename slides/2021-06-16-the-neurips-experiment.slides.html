@@ -466,7 +466,7 @@ Histogram of the probability of accept as estimated by the Monte Carlo simulatio
 </div>
 </div>
 <aside class="notes">
-Correlation between reviewer scores across the duplicated committes (scores have jitter added to prevent too many points sitting on top of each other).
+Correlation between reviewer scores across the duplicated committees (scores have jitter added to prevent too many points sitting on top of each other).
 </aside>
 </section>
 <section id="correlation-plots-1" class="slide level2">
@@ -478,7 +478,7 @@ Correlation between reviewer scores across the duplicated committes (scores have
 </div>
 </div>
 <aside class="notes">
-Correlation between <em>calibrated</em> reviewer scores across the two independent committees.
+Correlation between calibrated reviewer scores across the two independent committees.
 </aside>
 </section>
 <section id="conference-simulation" class="slide level2">
@@ -525,12 +525,12 @@ Plot of the accept rate vs gain in consistency over a random conference for 50% 
 <div id="where-do-neurips-papers-go-figure" class="figure-frame">
 <iframe src="https://inverseprobability.com/talks/slides/diagrams//neurips/where-do-neurips-papers-go.html" width="600" height="450" allowtransparency="true" frameborder="0">
 </iframe>
+<p>\docx{<object class="svgplot " data="https://inverseprobability.com/talks/slides/diagrams//neurips/where-do-neurips-papers-go.svg" width="80%" style=" "></object>}</p>
 </div>
 </div>
 <aside class="notes">
 Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.
 </aside>
-<p>}</p>
 </section>
 <section id="late-reviewers" class="slide level2">
 <h2>Late Reviewers</h2>
@@ -555,6 +555,7 @@ Sankey diagram showing the flow of NeurIPS papers through the system from submis
 </div>
 </div>
 <aside class="notes">
+Scatter plot of <span class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the average calibrated quality score for all papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).
 </aside>
 </section>
 <section id="accepted-papers" class="slide level2">
@@ -566,6 +567,7 @@ Sankey diagram showing the flow of NeurIPS papers through the system from submis
 </div>
 </div>
 <aside class="notes">
+Scatter plot of <span class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the average calibrated quality score for accepted papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).
 </aside>
 </section>
 <section id="rejected-papers" class="slide level2">
@@ -577,6 +579,7 @@ Sankey diagram showing the flow of NeurIPS papers through the system from submis
 </div>
 </div>
 <aside class="notes">
+Scatter plot of <span class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the average calibrated quality score for rejected papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).
 </aside>
 </section>
 <section id="accepted-papers-1" class="slide level2">
@@ -588,6 +591,7 @@ Sankey diagram showing the flow of NeurIPS papers through the system from submis
 </div>
 </div>
 <aside class="notes">
+Scatter plot of <span class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the average impact score for accepted papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).
 </aside>
 </section>
 <section id="accepted-papers-2" class="slide level2">
@@ -599,6 +603,7 @@ Sankey diagram showing the flow of NeurIPS papers through the system from submis
 </div>
 </div>
 <aside class="notes">
+Scatter plot of <span class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the average confidence score for accepted papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).
 </aside>
 </section>
 <section id="conclusion" class="slide level2">
