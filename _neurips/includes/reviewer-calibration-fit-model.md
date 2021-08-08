@@ -60,7 +60,7 @@ to use our [`GPy` Software](https://github.com/SheffieldML/GPy) (see
 below) to find a maximum likelihood solution for the parameters.
 
 Model construction firstly involves constructing covariance functions
-for the model and concatanating `X1` and `X2` to a new input matrix `X`.}
+for the model and concatenating `X1` and `X2` to a new input matrix `X`.}
 
 \code{X = X1.join(X2)
 kern1 = GPy.kern.Linear(input_dim=len(X1.columns), active_dims=np.arange(len(X1.columns)))
