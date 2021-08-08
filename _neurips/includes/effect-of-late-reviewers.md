@@ -270,10 +270,8 @@ ax.set_title("Correlation of Duplicate Reviews over time")
 plot.deadlines(ax)
 ma.write_figure(filename='correlation-duplicate-reviews-bootstrap.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{}{correlation-duplicate-reviews-bootstrap}
+\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{Average correlation of duplicate papers over time. To give an estimate of the uncertainty the correlation is computed with bootstrap samples. Here to allow comparison between the trend lines similar, the bootstrap samples are set so they converge on the same point on the right of the graph.}{correlation-duplicate-reviews-bootstrap}
 
-\notes{Plot the correlation of the duplicated papers over time (do bootstrap
-samples here??)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 #
@@ -286,7 +284,7 @@ ax.set_title("Correlation of Duplicate Reviews over time")
 plot.deadlines(ax)
 ma.write_figure(filename='correlation-duplicate-reviews.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews}{70%}}{}{correlation-duplicate-reviews}
+\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews}{70%}}{Average correlation of duplicate papers over time.}{correlation-duplicate-reviews}
 
 \notes{We need to do a bit more analysis on the estimation of the correlation
 for the earlier submissions, but from what we see above, it looks like
