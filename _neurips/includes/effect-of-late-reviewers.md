@@ -26,7 +26,7 @@ import numpy as np}
 
 \subsection{Review Submission Times}
 
-\notes{All reviews are now in pandas data frame called reviews, they are ready
+\notes{All reviews are now in `pandas` data frame called reviews, they are ready
 for processing. First of all, let\'s take a look at when the reviews
 were submitted. The function `nipsy.reviews_before` gives a snapshot of
 the reviews as they stood at a particular date. So we simply create a
@@ -51,7 +51,7 @@ ma.write_figure(filename='review-count.svg', directory='\writeDiagramsDir/neurip
 before the start of the rebuttal. This next plot shows the numbers of
 papers that had less than three reviews across the review period. First
 let's look at the overall statistics of what the count of reviewers per
-paper were. Below we plot mean, maximum, median and minimum over time.}
+paper were. Below we plot mean, maximum, median, and minimum over time.}
 
 \code{lastseen = reviews.drop_duplicates(subset='ID').set_index('ID')
 lastseen = lastseen['LastSeen']
@@ -79,7 +79,7 @@ review_count.mean().plot(linewidth=3, ax=ax)
 plot.deadlines(ax)
 ma.write_figure(filename='number-of-reviews-over-time.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/number-of-reviews-over-time}{70%}}{Plot representing number of reviewers per paper over time showing maximum number of reviewers per paper, minimum, median and mean. }{number-of-reviews-over-time}
+\figure{\includediagram{\diagramsDir/neurips/number-of-reviews-over-time}{70%}}{Plot representing number of reviewers per paper over time showing maximum number of reviewers per paper, minimum, median, and mean. }{number-of-reviews-over-time}
 
 \notes{But perhaps the more important measure is how many papers had less than
 3 reviewers over time. In this plot you can see that by the time
@@ -97,12 +97,12 @@ count.plot(linewidth=3, ax=ax)
 plot.deadlines(ax)
 ma.write_figure(filename='paper-short-reviews.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/paper-short-reviews}{70%}}{}{paper-short-reviews}
+\figure{\includediagram{\diagramsDir/neurips/paper-short-reviews}{70%}}{Number of papers with less than three reviewers as a function of time.}{paper-short-reviews}
 
 \subsection{Review Confidence}
 
 \notes{Now we will check the confidence of reviews as the come in over time.
-We've written a small helper function that looks in a four day window
+We've written a small helper function that looks in a four-day window
 around each time point and summarises the associated score (in the first
 case, confidence, `Conf`) with its across the four day window and 95%
 confidence intervals computed from the standard error of the mean
@@ -116,11 +116,11 @@ plot.evolving_statistic(reviews, 'Conf', window=4, ax=ax)
 ma.write_figure(filename='review-confidence-time.svg', directory='\writeDiagramsDir/neurips')}
 
 
-\figure{\includediagram{\diagramsDir/neurips/review-confidence-time}{70%}}{}{review-confidence-time}
+\figure{\includediagram{\diagramsDir/neurips/review-confidence-time}{70%}}{Average confidence of reviews as computed across a four-day moving window, plot includes sandard error the mean estimate.}{review-confidence-time}
 
 \notes{It looks like there might be a reduction in confidence as we pass the
 review deadline on 21st July, but is the difference in confidence for
-the reviews that came in later really significant?}
+the reviews that came in later significant?}
 
 \notes{We now simplify the question by looking at the average confidence for
 reviews that arrived before 21st July (the reviewing deadline) and
@@ -136,9 +136,9 @@ plot.late_early(cat1, cat2, column=column, ylim=(3.2, 3.8), ax=ax)
 ma.write_figure(filename='review-confidence-early-late.svg', directory='\writeDiagramsDir/neurips')}
 
 
-\figure{\includediagram{\diagramsDir/neurips/review-confidence-early-late}{50%}}{}{review-confidence-early-late}
+\figure{\includediagram{\diagramsDir/neurips/review-confidence-early-late}{50%}}{Average confindence for reviews that arrived before 21st July (the reviewing deadline) and reviews that arrived after. Histogram shows mean values and confidence intervals. A $t$-test shows the difference to be significant with a $p$-value of 0.048%, although the magnitude of the difference is small (about 0.1).}{review-confidence-early-late}
 
-\notes{So it looks like there is a small but significant difference between the
+\notes{So, it looks like there is a small but significant difference between the
 average confidence of the submitted reviews before and after the
 deadline, the statistical significance is confirmed with a $t$-test with
 a $p$-value at 0.048%. The magnitude of the difference is small (about
@@ -148,16 +148,16 @@ rushed.}
 \subsubsection{Quality Score}
 
 \notes{This begs the question, is there an effect on the other scores of their
-reviews which cover \'quality\' and \'impact\'. Quality of papers is
-scored on a 10 point scale with a recommendation of 6 being accept and
-We can form a similar plot for quality as follows.}
+reviews which cover 'quality' and 'impact'. Quality of papers is
+scored on a 10-point scale with a recommendation of 6 being accept and
+We can form a similar plots for quality as shown in Figures \ref{review-quality-time} and \ref{review-quality-early-late}.}
 
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.evolving_statistic(reviews, column='Quality', window=4, ax=ax)
 ma.write_figure(filename='review-quality-time.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/review-quality-time}{70%}}{}{review-quality-time}
+\figure{\includediagram{\diagramsDir/neurips/review-quality-time}{70%}}{Plot of average review quality score as a function of time using a four day moving window. Standard error is also shown in the plot.}{review-quality-time}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 column = "Quality"
@@ -165,17 +165,17 @@ cat1, cat2 = nipsy.late_early_values(reviews, column)
 plot.late_early(cat1, cat2, column=column, ylim=(5.0, 5.6), ax=ax)
 ma.write_figure(filename='review-quality-early-late.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/review-quality-early-late}{50%}}{}{review-quality-early-late}
+\figure{\includediagram{\diagramsDir/neurips/review-quality-early-late}{50%}}{Bar plot of average quality scores for on-time reviews and late reviews, standard errors shown. Under a $t$-test the difference in values is statistically significant with a $p$-value of 0.007%.}{review-quality-early-late}
 
 \notes{There is another statistically significant difference between perceived
 quality scores after the reviewing deadline than before. On average
 reviewers tend to be more generous in their quality perceptions when the
 review is late. The $p$-value is computed as 0.007%. We can also check
 if there is a similar on the impact score. The impact score was
-introduced by Ghahramani and Welling in an effort to get reviewers not
+introduced by Ghahramani and Welling to get reviewers not
 just to think about the technical side of the paper, but whether it is
 driving the field forward. The score is binary, with 1 being for a paper
-that is unlikey to have high impact and 2 being for a paper that is
+that is unlikely to have high impact and 2 being for a paper that is
 likely to have a high impact.}
 
 
@@ -184,7 +184,7 @@ plot.evolving_statistic(reviews, 'Impact', window=4, ax=ax)
 ma.write_figure(filename='review-impact-time.svg', directory='\writeDiagramsDir/neurips')
 }
 
-\figure{\includediagram{\diagramsDir/neurips/review-impact-time}{70%}}{}{review-impact-time}
+\figure{\includediagram{\diagramsDir/neurips/review-impact-time}{70%}}{Average impact score for papers over time, again using a moving average with a window of four days and with standard error of the mean computation shown.}{review-impact-time}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 column = "Impact"
@@ -192,18 +192,18 @@ cat1, cat2 = nipsy.late_early_values(reviews, column)
 plot.late_early(cat1, cat2, column=column, ylim=(1, 1.4), ax=ax)
 ma.write_figure(filename='review-impact-early-late.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/review-impact-early-late}{50%}}{}{review-impact-early-late}
+\figure{\includediagram{\diagramsDir/neurips/review-impact-early-late}{50%}}{Bar plot showing the average impact score of reviews submitted before the deadline and after the deadline. The difference in means did not prove to be statistically significant under a $t$-test ($p$-value 5.9%).}{review-impact-early-late}
 
 \notes{We find the difference is not quite statistically significant for the
-impact score ($p$-value of 5.9%), but if anything there is a trend to
-have slightly higher impacts for later reviews.}
+impact score ($p$-value of 5.9%), but if anything, there is a trend to
+have slightly higher impacts for later reviews (see Figures \ref{review-impact-time} and \ref{review-impact-early-late}).}
 
 \subsubsection{Review Length}
 
 \notes{A final potential indicator of review quality is the length of the
 reviews, we can check if there is a difference between the combined
 length of the review summary and the main body comments for late and
-early reviews.}
+early reviews (see Figures \ref{review-length-time} and \ref{review-length-early-late}).}
 
 \plotcode{reviews['length'] = reviews['Comments'].apply(len) + reviews['Summary'].apply(len)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -211,7 +211,7 @@ plot.evolving_statistic(reviews, 'length', window=4, ax=ax)
 ma.write_figure(filename='review-length-time.svg', directory='\writeDiagramsDir/neurips')
 }
 
-\figure{\includediagram{\diagramsDir/neurips/review-length-time}{70%}}{}{review-length-time}
+\figure{\includediagram{\diagramsDir/neurips/review-length-time}{70%}}{Average length of reviews submitted plotted as a function of time with standard error of the mean computation included.}{review-length-time}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 column = "length"
@@ -219,9 +219,9 @@ cat1, cat2 = nipsy.late_early_values(reviews, column)
 plot.late_early(cat1, cat2, column=column, ylim=(2000, 2500), ax=ax)
 ma.write_figure(filename='review-length-early-late.svg', directory='\writeDiagramsDir/neurips')}
 
-\figure{\includediagram{\diagramsDir/neurips/review-length-early-late}{50%}}{}{review-length-early-late}
+\figure{\includediagram{\diagramsDir/neurips/review-length-early-late}{50%}}{Bar plot of the average length of reviews submitted before and after the deadline with standard errors included. The difference of around 100 words is statistically significant under a $t$-test ($p$-value 0.55%).}{review-length-early-late}
 
-\notes{Once again we find a small but statitically significant difference,
+\notes{Once again we find a small but statistically significant difference,
 here, as we might expect late reviews are shorter than those submitted
 on time, by about 100 words in a 2,400 word review.}
 
@@ -233,7 +233,7 @@ for date in nipsy.review_date_range:
 \code{original_pairs = pd.read_csv(os.path.join(nipsy.review_store, 'Duplicate_PaperID_Pairs.csv'), index_col='original')
 duplicate_pairs = pd.read_csv(os.path.join(nipsy.review_store, 'Duplicate_PaperID_Pairs.csv'), index_col='duplicate')}
 
-\notes{Perform an \'inner join\' on duplicate papers and their originals with
+\notes{Perform an 'inner join' on duplicate papers and their originals with
 their reviews, and set the index of the duplicated papers to match the
 original. This gives us data frames with matching indices containing
 scores over time of the duplicate and original papers.}
