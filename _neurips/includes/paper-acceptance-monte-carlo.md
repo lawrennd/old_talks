@@ -7,7 +7,7 @@
 
 \notes{We can now sample from this posterior distribution of bias-adjusted
 scores jointly, to get a set of scores for all papers. For this set of
-scores we can perform a ranking and accept the top 400 papers. This
+scores, we can perform a ranking and accept the top 400 papers. This
 gives us a sampled conference. If we do that 1,000 times then we can see
 how many times each paper was accepted to get a probability of
 acceptance.}
