@@ -5,9 +5,9 @@
 
 \subsection{NeurIPS in Numbers}
 
-\notes{In 2014 the NeurIPS conference had 1474 active reviewers (up from 1133 in 2013), 92 area chairs (up from 67 in 2013) and two program chairs, myself and Corinna Cortes.}
+\notes{In 2014 the NeurIPS conference had 1474 active reviewers (up from 1133 in 2013), 92 area chairs (up from 67 in 2013) and two program chairs, Corinna Cortes and me.}
 
-\notes{The conference received 1678 submissions and presented 414 accepted papers, of which 20 were presented as talks in the single track session, 62 were presented as spotlights and 331 papers were presented as posters. Of the 1678 submissions, 19 papers were rejected without review.}
+\notes{The conference received 1678 submissions and presented 414 accepted papers, of which 20 were presented as talks in the single-track session, 62 were presented as spotlights and 331 papers were presented as posters. Of the 1678 submissions, 19 papers were rejected without review.}
 
 \slides{* To review papers we had:
   * 1474 active reviewers (1133 in 2013)
@@ -27,7 +27,7 @@
 
 \subsection{The NeurIPS Experiment}
 
-\notes{The objective of the NeurIPS experiment was to determine how consistent the process of peer review is. One way of phraising this question is to ask: what would happen to submitted papers in the conference if the process was independently rerun?}
+\notes{The objective of the NeurIPS experiment was to determine how consistent the process of peer review is. One way of phrasing this question is to ask: what would happen to submitted papers in the conference if the process was independently rerun?}
 
 \slides{* How consistent was the process of peer review? 
 * What would happen if you independently reran it?}
