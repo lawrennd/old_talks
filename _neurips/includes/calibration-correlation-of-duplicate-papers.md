@@ -8,7 +8,7 @@
 \notes{For NeurIPS 2014 we experimented with duplicate papers: we pushed papers
 through the system twice, exposing them to different subsets of the
 reviewers. The first thing we'll look at is the duplicate papers.
-Firstly we identify them by matching on title.}
+Firstly, we identify them by matching on title.}
 
 \code{filename = date + '_paper_list.xls'
 papers = cu.CMT_Papers_read(filename=filename)
@@ -19,7 +19,7 @@ for ID, title in papers.papers.Title.iteritems():
         pair.sort(key=int)
         duplicate_list.append(pair)}
 
-\notes{Next we compute the correlation coefficients for the duplicated papers
+\notes{Next, we compute the correlation coefficients for the duplicated papers
 for the average impact and quality scores.}
 
 \code{quality = []
@@ -54,7 +54,7 @@ print("Confidence correlation: ", confidence_cor)}
 
 \subsection{Correlation Plots}
 
-\notes{To visualize the quality score correlation we plot the group 1 papers
+\notes{To visualize the quality score correlation, we plot the group 1 papers
 against the group 2 papers. Here we add a small amount of jitter to
 ensure points to help visualize points that would otherwise fall on the
 same position.}
@@ -69,7 +69,7 @@ _ = ax.set_title(Correlation: {cor:.2g}'.format(cor=quality_cor))
 ma.write_figure(directory="\writeDiagramsDir/neurips",
                 filename="quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/quality-correlation}{60%}}{Correlation between reviewer scores across the duplicated committes (scores have jitter added to prevent too many points sitting on top of each other).}{quality-correlation}
+\figure{\includediagram{\diagramsDir/neurips/quality-correlation}{60%}}{Correlation between reviewer scores across the duplicated committees (scores have jitter added to prevent too many points sitting on top of each other).}{quality-correlation}
 
 \notes{Similarly for the calibrated quality of the papers.}
 
@@ -85,7 +85,7 @@ _ = ax.set_title('Correlation: {cor:.2g}'.format(cor=calibrated_quality_cor))
 ma.write_figure(directory="\writeDiagramsDir/neurips",
                 filename="calibrated-quality-correlation.svg")}
 
-\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}{60%}}{Correlation between *calibrated* reviewer scores across the two independent committees.}{calibrated-quality-correlation}
+\figure{\includediagram{\diagramsDir/neurips/calibrated-quality-correlation}{60%}}{Correlation between calibrated reviewer scores across the two independent committees.}{calibrated-quality-correlation}
 
 \code{# Apply Laplace smoothing to accept probabilities before incorporating them.
 revs = r.join((prob_accept+0.0002)/1.001, on='PaperID').join(reviewer_bias, on='Email').join(papers.papers['Number Of Discussions'], on='PaperID').join(reviewer_bias_std, on='Email').sort_values(by=['AcceptProbability','PaperID', 'CalibratedQuality'], ascending=False)
