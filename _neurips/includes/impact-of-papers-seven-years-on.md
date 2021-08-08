@@ -84,7 +84,7 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 
 \newslide{All Papers}
 
-\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-all}{70%}}{}{citations-vs-average-calibrated-quality-all}
+\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-all}{70%}}{Scatter plot of $\log_{10}(1+\text{citations})$ against the average calibrated quality score for all papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).}{citations-vs-average-calibrated-quality-all}
 
 \notes{The correlation seems strong, but of course, we are looking at papers
 which were accepted and rejected by the conference. This is dangerous,
@@ -105,7 +105,7 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 
 \newslide{Accepted Papers}
 
-\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-accept}{70%}}{}{citations-vs-average-calibrated-quality-accept}
+\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-accept}{70%}}{Scatter plot of $\log_{10}(1+\text{citations})$ against the average calibrated quality score for accepted papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).}{citations-vs-average-calibrated-quality-accept}
 
 
 \notes{Conversely, looking at rejected papers only, we do see a slight trend,
@@ -123,7 +123,7 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 
 \newslide{Rejected Papers}
 
-\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-reject}{70%}}{}{citations-vs-average-calibrated-quality-reject}
+\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-calibrated-quality-reject}{70%}}{Scatter plot of $\log_{10}(1+\text{citations})$ against the average calibrated quality score for rejected papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).}{citations-vs-average-calibrated-quality-reject}
 
 
 \notes{Welling and Ghahramani introduced an "impact" score in NeurIPS 2013,
@@ -140,7 +140,7 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 
 \newslide{Accepted Papers}
 
-\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-impact-accept}{70%}}{}{citations-vs-average-impact-accept}
+\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-impact-accept}{70%}}{Scatter plot of $\log_{10}(1+\text{citations})$ against the average impact score for accepted papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).}{citations-vs-average-impact-accept}
 
 
 \notes{Finally, we also looked at correlation between the *confidence* score
@@ -149,7 +149,7 @@ confidence be an indicator of higher citations? A plausible explanation
 is that there is confounder driving both variables. For example, it
 might be that papers which are easier to understand (due to elegance of
 the idea, or quality of exposition) inspire greater reviewer confidence
-and also increase the number of citations.}
+and increase the number of citations.}
 
 \plotcode{column = 'average_confidence'
 filter_col = "accept"
@@ -160,7 +160,7 @@ ma.write_figure(filename="citations-vs-{col}-{filt}.svg".format(filt=filter_col,
 
 \newslide{Accepted Papers}
 
-\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-confidence-accept}{70%}}{}{citations-vs-average-confidence-accept}
+\figure{\includediagram{\diagramsDir/neurips/citations-vs-average-confidence-accept}{70%}}{Scatter plot of $\log_{10}(1+\text{citations})$ against the average confidence score for accepted papers. To prevent reidentification of individual papers quality scores and citation count, each point is corrupted by differentially private noise in the plot (correlation is computed before adding differentially private noise).}{citations-vs-average-confidence-accept}
 
 
 \helpercode{def bootstrap_index(df):
