@@ -21,48 +21,63 @@
 subjectivity_portion = 0.5}
 
 \code{accept_rates = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0]
-consistent_accepts = []
-for accept_rate in accept_rates:
-	score_1 = []
-	score_2 = []
-	for i in range(samples):
-		objective = (1-subjectivity_portion)*np.random.randn()
-		score_1.append(objective + subjectivity_portion*np.random.randn())
-		score_2.append(objective + subjectivity_portion*np.random.randn())
+all_accepts = []
+for num_reviewers in range(1,7):
+    consistent_accepts = []
+    for accept_rate in accept_rates:
+        score_1 = []
+        score_2 = []
+        for i in range(samples):
+            objective = (1-subjectivity_portion)*np.random.randn()*num_reviewers
+            score_1.append(objective + subjectivity_portion*np.random.randn(num_reviewers).sum())
+            score_2.append(objective + subjectivity_portion*np.random.randn(num_reviewers).sum())
 
-	score_1 = np.asarray(score_1)
-	score_2 = np.asarray(score_2)
+        score_1 = np.asarray(score_1)
+        score_2 = np.asarray(score_2)
 
-	accept_1 = score_1.argsort()[:int(samples*accept_rate)]
-	accept_2 = score_2.argsort()[:int(samples*accept_rate)]
 
-	consistent_accept = len(set(accept_1).intersection(set(accept_2)))
-	consistent_accepts.append(consistent_accept/(samples*accept_rate))
-	print('Percentage consistently accepted: {prop}'.format(prop=consistent_accept/(samples*accept_rate)))
+        accept_1 = score_1.argsort()[:int(samples*accept_rate)]
+        accept_2 = score_2.argsort()[:int(samples*accept_rate)]
+
+        consistent_accept = len(set(accept_1).intersection(set(accept_2)))
+        consistent_accepts.append(consistent_accept/(samples*accept_rate))
+        print('Percentage consistently accepted: {prop}'.format(prop=consistent_accept/(samples*accept_rate)))
+
+    all_accepts.append(consistent_accepts)
+all_accepts = np.array(all_accepts)
+accept_rate = np.array(accept_rate))
 
 consistent_accepts = np.array(consistent_accepts)
 accept_rate = np.array(accept_rate)}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot}
+import mlai.plot as plot
+from cycler import cycler
+monochrome = (cycler('color', ['k']) * cycler('linestyle', ['-', '--', ':', '=.']) * cycler('marker', ['^','o', 's']))}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.plot(accept_rates, consistent_accepts, "r.", markersize=10)
+ax.set_prop_cycle(monochrome)
+
 ax.plot(accept_rates, accept_rates, "k-", linewidth=2)
+ax.plot(accept_rates, all_accepts.T, markersize=7)
+ax.legend(['random', '1 reviewer', '2 reviewers', '3 reviewers', '4 reviewers', '5 reviewers', '6 reviewers'])
 ax.set_xlabel("accept rate")
 ax.set_ylabel("accept precision")
+ax.axvline(0.25)
 mlai.write_figure(filename="accept-precision-vs-accept-rate.svg",
                   directory="\writeDiagramsDir/neurips/")}
 
 \newslide{Consistency vs Accept Rate}
 
-\figure{\includediagram{\diagramsDir/neurips/consistency-vs-accept-rate}{50%}}{Plot of the accept rate vs the consistency of the conference for 50% subjectivity.}{consistency-vs-accept-rate}
+\figure{\includediagram{\diagramsDir/neurips/consistency-vs-accept-rate}{50%}}{Plot of the accept rate vs the consistency of accepts for the conference for 50% subjectivity and different numbers of reviewers.}{consistency-vs-accept-rate}
 
 \newslide{Gain in Consistency}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.plot(accept_rates, consistent_accepts-accept_rates, "k-", linewidth=2)
+ax.set_prop_cycle(monochrome)
+ax.plot(accept_rates, (all_accepts-accept_rates).T)
+ax.legend(['1 reviewer', '2 reviewers', '3 reviewers', '4 reviewers', '5 reviewers', '6 reviewers'])
 ax.set_xlabel("accept rate")
 ax.set_ylabel("(accept precision)-(accept rate)")
 mlai.write_figure(filename="gain-in-consistency.svg",
