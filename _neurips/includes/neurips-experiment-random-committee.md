@@ -114,7 +114,7 @@ ma.write_figure(filename="uncertainty-accept-rate.svg", directory="\writeDiagram
 
 \notes{For the accept precision, if we assume that accept decisions were drawn according to a binomial, then the distribution for consistent accepts is also binomial. Our best estimate of its parameter is 22/166 = 0.13 (13%). If we had a binomial distribution with these parameters, then the distribution of consistent accepts would be as follows.}
 
-* How reliable is the consistent accept score?
+\slides{* How reliable is the Accept Precision score?}
 
 \plotcode{rv = binom(166, 0.13)
 x = np.arange(10, 30)
@@ -139,7 +139,7 @@ ma.write_figure(filename="uncertainty-accept-precision.svg", directory="\writeDi
 * Uniform Dirichlet prior.
   * (doesn't account for implausability of 'active inconsistency')}
 
-\notes{### Prior Density
+\notes{\subsubsection{Prior Density}
 
 Choice of prior for the multinomial is typically straightforward, the [Dirichlet density](http://en.wikipedia.org/wiki/Dirichlet_distribution) is [conjugate](http://en.wikipedia.org/wiki/Conjugate_prior) and has the additional advantage that its parameters can be set to ensure it is *uninformative*, i.e. uniform across the domain of the prior. Combination of a multinomial likelihood and a Dirichlet prior is not new, and in this domain if we were to consider the mean the posterior density only, then the approach is known as [Laplace smoothing](http://en.wikipedia.org/wiki/Additive_smoothing). 
 
