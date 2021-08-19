@@ -41,6 +41,8 @@ SESSION=$(shell mdfield session $(BASE).md)
 DEPS=$(shell dependencies inputs $(BASE).md)
 DIAGDEPS=$(shell dependencies diagrams $(BASE).md)
 BIBDEPS=$(shell dependencies bibinputs $(BASE).md)
+DOCXDEPS=$(shell dependencies docxdiagrams $(BASE).md)
+TEXDEPS=$(shell dependencies texdiagrams $(BASE).md)
 
 POSTFLAGS=$(shell flags post $(BASE))
 PPTXFLAGS=$(shell flags pptx $(BASE))
