@@ -33,8 +33,8 @@ However, in the Gaussian process case, when the likelihood also assumes Gaussian
 
 \setupplotcode{import numpy as np
 np.random.seed(10)
-import teaching_plots as plot}
-\code{plot.rejection_samples(kernel=kernel, 
+import mlai.plot as plot}
+\plotcode{plot.rejection_samples(kernel=kernel, 
     diagrams='\writeDiagramsDir/gp')}
 
 
