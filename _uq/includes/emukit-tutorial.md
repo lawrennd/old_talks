@@ -7,10 +7,7 @@
 
 \installcode{GPy}
 \installcode{EmuKit}
-
-\downloadcode{teaching_plots}
-\downloadcode{mlai}
-\downloadcode{gp_tutorial}
+\installcode{mlai}
 
 \notes{Set up the python imports that Emukit will use.}
 
@@ -63,7 +60,7 @@ real_x = np.arange(plot_min, plot_max, 0.2)
 real_y = np.sin(real_x)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
