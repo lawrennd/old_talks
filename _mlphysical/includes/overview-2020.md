@@ -45,7 +45,7 @@
 
 \notes{The special topics will include Simulation in the Pandemic. This will be presented by the Royal Society convened DELVE team who’ve been providing policy advice to government during the pandemic. The particular focus will be on simulations that were used to inform a report on the Test, Trace, Isolate system.}
 
-\notes{Also, from British Antartic Survey, we will look at simulation and surrogate modelling in climate models.}
+\notes{Also, from British Antarctic Survey, we will look at simulation and surrogate modelling in climate models.}
 
 \notes{Finally, with Javier Gonzalez of Microsoft Research, we will consider approaches in computational biology and medicine.}
 
