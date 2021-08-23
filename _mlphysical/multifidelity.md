@@ -5,16 +5,21 @@ layout: lecture
 title: "Multifidelity Modelling"
 abstract: >
   This week we introduce multifidelity modelling. We use surrogate models to capture different qualities of information from different simulations.
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
 layout: lecture
-time: "12:00"
-date: 2020-11-06
-venue: Virtual (Zoom)
+time: "10:00"
+date: 2021-11-09
 youtube: 29rw9OnYGx0
 ipynb: True
 reveal: True
 transition: None
 ---
-\include{talk-macros.tex}
 
 \include{_mlphysical/includes/mlphysical-notebook-setup.md}
 
