@@ -33,14 +33,14 @@ $$2.5 = 2m + c$$
 
 \newslide{}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.over_determined_system(diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider
-import pods}
-\displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
-                            directory='\writeDiagramsDir/ml', 
-                            samp=IntSlider(1,1,7,1))}
+import notutils as nu}
+\displaycode{nu.display_plots('over_determined_system{samp:0>3}.svg',
+                  directory='\writeDiagramsDir/ml', 
+                  samp=IntSlider(1,1,7,1))}
 
 \slides{
 \define{\width}{40%}
