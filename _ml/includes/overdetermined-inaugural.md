@@ -143,7 +143,7 @@ This gives us a 'noisy function'.
 . . .
 
 This is known as a stochastic process.
-}\notes{However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friedrich Gauss who suggested that the *Gaussian* density (which at the time was unnamed!) should be used to represent this error.}
+}\notes{However, it was left to an admirer of Laplace to develop a practical probability density for that purpose. It was Carl Friedrich Gauss who suggested that the *Gaussian* density (which at the time was unnamed!) should be used to represent this error.}
 
 \notes{The result is a *noisy* function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.}
 
