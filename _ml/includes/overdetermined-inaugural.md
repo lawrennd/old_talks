@@ -81,7 +81,7 @@ $$2.5 = 2m + c$$}
 
 \newslide{}
 
-\notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
+\notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the way it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
 \include{_physics/includes/laplace-portrait.md}
 \include{_physics/includes/laplaces-determinism.md}
