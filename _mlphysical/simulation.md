@@ -4,18 +4,22 @@ session: 1
 title: "Simulation"
 abstract:  >
   This lecture will introduce the notion of simulation and review the different types of simulation we might use to represent the physical world. 
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
 layout: lecture
-time: "10:00"
-date: 2020-10-22
-venue: Virtual (Zoom)
+time: "12:00"
+date: 2021-10-22
 youtube: AmI5nq8s4qc
 ipynb: True
 reveal: True
 transition: None
 ---
 
-
-\include{talk-macros.tex}
 
 \notes{Last lecture Carl Henrik introduced you to some of the challenges of approximate inference. Including the problem of mathematical tractability. Before that he introduced you to a particular form of model, the Gaussian process.}
 

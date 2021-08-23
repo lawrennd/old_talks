@@ -5,6 +5,13 @@ title: "Introduction: ML and the Physical World"
 abstract:  >
   This lecture will introduce the course and provide a motivation and a historical account of machine learning and mathematical modelling. It will further detail the special challenges associated with the application of machine learning to physical systems. We will also outline the objectives of the course and how it will be structured over the term.
 layout: lecture
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
 youtube: NGP7O1B9XzM
 time: "12:00"
 date: 2021-10-08
