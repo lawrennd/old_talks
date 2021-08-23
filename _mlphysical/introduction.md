@@ -6,13 +6,13 @@ abstract:  >
   This lecture will introduce the course and provide a motivation and a historical account of machine learning and mathematical modelling. It will further detail the special challenges associated with the application of machine learning to physical systems. We will also outline the objectives of the course and how it will be structured over the term.
 layout: lecture
 youtube: NGP7O1B9XzM
-time: "10:00"
-date: 2020-10-08
+time: "12:00"
+date: 2021-10-08
 transition: None
 ipynb: true
 ---
 
-\include{_mlphysical/includes/overview-2020.md}
+\include{_mlphysical/includes/overview-2021.md}
 
 \include{_notebooks/includes/plot-setup.md}
 \include{_software/includes/notutils-software.md}
