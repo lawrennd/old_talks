@@ -108,7 +108,7 @@ ax.plot(right_ascension, declination, 'rx')
 ax.set_xlabel('right ascension')
 ax.set_ylabel('declination')
 ax.set_title('Procession of Ceres through Sky')
-mlai.write_figure('ceres-data.svg', directory='\writediagramsDir/ceres')}
+mlai.write_figure('ceres-data.svg', directory='\writeDiagramsDir/ceres')}
 
 \notes{<!--dayPrev = -2;
     for i = 1:size(ceresData, 1)
