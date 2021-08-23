@@ -43,7 +43,7 @@
 
 \notes{These guest lectures will focus on various approaches to simulating the physical world around us, and we will invite you (as part of your mini projects) to consider how important questions around these approaches can be answered as part with the techniques you’ve learnt in the module.}
 
-\notes{The special topics will include Simulation in the Pandemic. This will be presented by the Royal Society convened DELVE team who’ve been providing policy advice to government during the pandemic. The particular focus will be on simulations that were used to inform a report on the Test, Trace, Isolate system.}
+\notes{The special topics will include Simulation in the Pandemic. This will be presented by the Royal Society convened DELVE team who’ve been providing policy advice to government during the pandemic. The particular focus will be on simulations that were used to inform a report on the Test, Trace, Isolate system [@Delve-tti20].}
 
 \notes{Also, from British Antartic Survey, we will look at simulation and surrogate modelling in climate models.}
 
