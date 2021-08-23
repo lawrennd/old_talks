@@ -12,9 +12,6 @@ transition: None
 ipynb: true
 ---
 
-
-\include{talk-macros.gpp}
-
 \include{_mlphysical/includes/overview-2020.md}
 
 \include{_mlphysical/includes/mlphysical-notebook-setup.md}
