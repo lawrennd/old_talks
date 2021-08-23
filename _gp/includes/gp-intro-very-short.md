@@ -38,11 +38,11 @@ import teaching_plots as plot}
     diagrams='\writeDiagramsDir/gp')}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('gp_rejection_sample{sample:0>3}.png', 
-                            directory='\writeDiagramsDir/gp', 
-							sample=IntSlider(1,1,5,1))}
+\displaycode{nu.display_plots('gp_rejection_sample{sample:0>3}.png', 
+                 directory='\writeDiagramsDir/gp', 
+                 sample=IntSlider(1,1,5,1))}
 \slides{
 \newslide{}
 
