@@ -2,11 +2,11 @@
 \define{entropyIntro}
 
 
-\editme
 
 \include{_physics/includes/daniel-bernoulli-hydrodynamica.md}
 \include{_physics/includes/entropy-billiards.md}
 
+\editme
 
 \newslide{}
 
@@ -43,7 +43,7 @@ mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
 \figure{\includeyoutube{MWXNAAAAMAAJ}{600}{450}{PA373}}{Boltzmann's paper @Boltzmann-warmetheorie77 which introduced the relationship between entropy and probability. A translation with notes is available in @Kim-translation15.}{boltzmann-warmetheorie}
 
 
-\notes{The important point about the uncertainty being represented here is that it is not genuine stochasticity, it is a lack of knowledge about the system. The techniques proposed by Maxwell, Botlzmann and Gibbs allow us to exactly represent the state of the system through a set of parameters that represent the sufficient statistics of the physical system. We know these values as the volume, temperature and pressure. The challenge for us, when approximating the physical world with the techniques we will use is that we will have to sit somewhere between the deterministic and purely stochastic worlds that these different scientists described.}
+\notes{The important point about the uncertainty being represented here is that it is not genuine stochasticity, it is a lack of knowledge about the system. The techniques proposed by Maxwell, Boltzmann and Gibbs allow us to exactly represent the state of the system through a set of parameters that represent the sufficient statistics of the physical system. We know these values as the volume, temperature, and pressure. The challenge for us, when approximating the physical world with the techniques we will use is that we will have to sit somewhere between the deterministic and purely stochastic worlds that these different scientists described.}
 
 \newslide{}
 
@@ -53,7 +53,7 @@ mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
 
 \newslide{}
 
-\notes{The same Eddington is also unfortunately famous for dismissing the ideas of a young Chandrasekhar who had come to Cambridge to study in the Cavendish lab. Chandrasekhar demonstrated the limit at which a star would coallapse under its own weight to a singularity, but when he presented the work to Eddington, he was dismissive suggesting that there "must be some natural law that prevents this abomination from happening".}
+\notes{The same Eddington is also unfortunately famous for dismissing the ideas of a young Chandrasekhar who had come to Cambridge to study in the Cavendish lab. Chandrasekhar demonstrated the limit at which a star would collapse under its own weight to a singularity, but when he presented the work to Eddington, he was dismissive suggesting that there "must be some natural law that prevents this abomination from happening".}
 
 \figure{\columns{\includepng{\diagramsDir/physics/natureofphysical00eddi_100}{80%}{}{left}}{\includepng{\diagramsDir/physics/ChandraNobel}{100%}{}{right}}{49%}{49%}}{Chandrasekhar (1910-1995) derived the limit at which a star collapses in on itself. Eddington's confidence in the 2nd law may have been what drove him to dismiss Chandrasekhar's ideas, humiliating a young scientist who would later receive a Nobel prize for the work.}{physical-world-chandra}
 

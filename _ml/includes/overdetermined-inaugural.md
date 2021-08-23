@@ -16,7 +16,7 @@ The solution to these two simultaneous equations can be represented graphically 
 \notes{\figure{\includediagram{\diagramsDir/ml/over_determined_system003}{40%}}{The solution of two linear equations represented as the fit of a straight line through two data}{over-determined-system-3}}
 
 \notes{
-The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line. 
+The challenge comes when a third data point is observed, and it doesn't fit on the straight line. 
 
 point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 $$2.5 = 2m + c$$
