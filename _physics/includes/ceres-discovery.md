@@ -158,9 +158,9 @@ mlai.write_figure('ceres-data.svg', directory='\writediagramsDir/ceres')}
 \figure{\includepng{\diagramsDir/ceres/bendixen-carl-friedrich-gauss-1828}{40%}}{Carl Friedrich Gauss in 1828. He became internationally famous 27 years earlier for recovering the planet Ceres with a mathematical prediction.}{bendixen-carl-friedrich-gauss-1828}
 
 
-\notes{It is this vital combination of model and data that underpins machine learning, but notice that here it has also been delivered through a mechanistic understanding of the way the planets move. This understanding is derived from natural laws that are explicitly incorporated into the model. Kepler's laws derive from Newton's mathematical representation of gravity.}
+\notes{It is this vital combination of model and data that underpins machine learning but notice that here it has also been delivered through a mechanistic understanding of the way the planets move. This understanding is derived from natural laws that are explicitly incorporated into the model. Kepler's laws derive from Newton's mathematical representation of gravity.}
 
-\notes{But there was a problem. The laws down't precisely fit the data.}
+\notes{But there was a problem. The laws don't precisely fit the data.}
 \speakernotes{Named ceres because Ceres is strongly associated with Sicily}
 
 
