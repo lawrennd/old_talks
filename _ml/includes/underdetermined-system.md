@@ -29,10 +29,10 @@ $$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
 
 \subsection{Underdetermined System}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', 
-                            directory='\writeDiagramsDir/ml', samp=IntSlider(0, 0, 10, 1))}
+\displaycode{nu.display_plots('under_determined_system{samp:0>3}.svg', 
+                 directory='\writeDiagramsDir/ml', samp=IntSlider(0, 0, 10, 1))}
 
 \slides{
 \define{width}{40%}
