@@ -35,11 +35,11 @@ Unbeknownst to him, Piazzi was also participating in an international search. On
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{50%}}{Giuseppe Piazzi (1746-1826) was an Italian Catholic priest and an estronomer. Jesuits had been closely involved in education, following their supression in the Kingdom of Naples and Sicily, Piazzi was recruited as part of a drive to revitalise the University of Palermo. His funding was from King Ferdinand I and enabled him to buy high quality instruments from London.}{giuseppe-piazzi}
+\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{50%}}{Giuseppe Piazzi (1746-1826) was an Italian Catholic priest and an astronomer. Jesuits had been closely involved in education, following their surpression in the Kingdom of Naples and Sicily, Piazzi was recruited as part of a drive to revitalize the University of Palermo. His funding was from King Ferdinand I and enabled him to buy high quality instruments from London.}{giuseppe-piazzi}
 
 \newslide{}
 
-\figure{\includegooglebook{XG43AQAAMAAJ}{PA88}}{Announcement of Giuseppe Piazzi's discovery in the "Monthly Magazine" (also known as the British Register). This announcement is made in August 1801, 7 months after Giuseppe Piazzi made the discovery.}{monthly-magazine-ceres-piazzi}
+\figure{\includegooglebook{XG43AQAAMAAJ}{PA88}}{Announcement of Giuseppe Piazzi's discovery in the "Monthly Magazine" (also known as the British Register). This announcement is made in August 1801, 7 months after Giuseppe Piazzi first observed Ceres.}{monthly-magazine-ceres-piazzi}
 
 \newslide{Titius-Bode Law}
 
@@ -71,7 +71,7 @@ mlai.write_figure('bodes-law.svg', directory='\writeDiagramsDir/physics')}
 
 \figure{\includediagram{\diagramsDir/physics/bodes-law}{80%}}{The Titius-Bode law was a relatively obscure empirical observation about how the planets are distributed across the solar system. It became well known after the discovery of Uranus by Herschel in 1781 which was found at the location the law predicts for the 8th planet.}{titius-bode-law}
 
-\notes{When [this law](https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law) was published it fitted all known planets: Mercury, Venus, Earth, Mars, Jupiter and Saturn. Although there was a gap between the fourth and fifth planets (between Mars and Jupiter). In 1781 William Herschel discovered Uranus. It was located in the position predicted by the formula. One of the originators of the formula, Johann Elert Bode urged astronomers to search for the missing planet, to be situated between Mars and Jupiter. Franz Xaver von Zach formed the United Astronomical Society, also known as the Celestial Police. But before this celestial police managed to start their search, Piazzi, without even knowing he was a member completed the search. Piazzi first observed the new planet in the early hours of January 1st 1801. He continued to observe it over the next .. days. Initially he thought it may be a comet, but as he watched it he became convinced he'd found a planet. The international search was over before it started.}
+\notes{When [this law](https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law) was published it fitted all known planets: Mercury, Venus, Earth, Mars, Jupiter and Saturn. Although there was a gap between the fourth and fifth planets (between Mars and Jupiter). In 1781 William Herschel discovered Uranus. It was in the position predicted by the formula. One of the originators of the formula, Johann Elert Bode urged astronomers to search for the missing planet, to be situated between Mars and Jupiter. Franz Xaver von Zach formed the United Astronomical Society, also known as the Celestial Police. But before the celestial police managed to start their search, Piazzi, without even knowing he was a member completed the search. Piazzi first observed the new planet in the early hours of January 1st 1801. He continued to observe it over the next 42 days. Initially he thought it may be a comet, but as he watched it he became convinced he'd found a planet. The international search was over before it started.}
 
 \notes{Unfortunately, there was a problem. Once he'd found the planet, Piazzi promptly lost it. Piazzi was keen not just to discover the planet, but to to be known as the determiner of its orbit. He took observations across the months of January and February, working to find the orbit. Unfortunately, he was unable to pin it down. He became ill, and by the time the dat awas revealed to the wider community through von Zach's journal, Monatlicher Correspondenz, the new planet had been lost behind the sun.}
 
@@ -137,15 +137,15 @@ mlai.write_figure('ceres-data.svg', directory='\writediagramsDir/ceres')}
 }
 
 
-\figure{\includediagram{\diagramsDir/ceres/ceres-data}{60%}}{}{ceres-data}
+\figure{\includediagram{\diagramsDir/ceres/ceres-data}{60%}}{Plot of the declination and right ascension that Piazzi recorded as Ceres passed through the sky in 1800. Gaps are evenings where Piazzi was unable to make an observation.}{ceres-data}
 
 \newslide{}
 
 \notes{Piazzi was able to attempt to predict the orbit because of Kepler's laws of planetary motion. Johannes Kepler had outlined the way in which planets move according to elliptical shapes, and comets move according to parabolic shapes.}
 
-\figure{\includepng{\diagramsDir/ml/godfrey-kneller-isaac-newton-1689}}{}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
+\figure{\includepng{\diagramsDir/ml/godfrey-kneller-isaac-newton-1689}{40%}}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
 
-\notes{Later Isaac Newton was able to describe the underlying laws of motion that underpinned Kepler's laws. This was the enlightenment. An age of science and reason driven by reductionist approaches to the natural world. The enlightement scientists were able to read and understand each others' work through the invention of the printing press. Kepler died in 1630, 12 years before Newton was born in 1642. But Kepler's ideas were able to influence Newton and his peers, and the understanding of gravity became an objective of the nascent Royal Society.}
+\notes{Later Isaac Newton was able to describe the underlying laws of motion that underpinned Kepler's laws. This was the enlightenment. An age of science and reason driven by reductionist approaches to the natural world. The enlightenment scientists were able to read and understand each others' work through the invention of the printing press. Kepler died in 1630, 12 years before Newton was born in 1642. But Kepler's ideas were able to influence Newton and his peers, and the understanding of gravity became an objective of the nascent Royal Society.}
 
 \notes{The sharing of information in printed form had evolved by the time of Piazzi, and the collected discoveries of the astronimic world were being shared in Franz von Zach's monthly journal. It was here that Piazzi's observations were eventually published, some 7 months after the planet was lost.}
 
