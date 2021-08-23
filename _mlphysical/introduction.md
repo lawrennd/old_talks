@@ -14,7 +14,9 @@ ipynb: true
 
 \include{_mlphysical/includes/overview-2020.md}
 
-\include{_mlphysical/includes/mlphysical-notebook-setup.md}
+\include{_notebooks/includes/plot-setup.md}
+\include{_software/includes/notutils-software.md}
+\include{_software/includes/mlai-software.md}
 \include{_physics/includes/ceres-discovery.md}
 
 \notes{Let's have a look at how Gauss determined the orbit of Ceres and how (taking ideas from Pierre Simon Laplace) he used approaches that would prove to be conceptually fundamental to machine learning and statistical approaches.}

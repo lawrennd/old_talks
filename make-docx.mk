@@ -5,7 +5,7 @@
 
 ${BASE}.docx: ${BASE}.notes.docx.markdown ${DOCXDEPS}
 	pandoc  -s \
-		${BIBFLAGS} \
+		${CITEFLAGS} \
 		${DOCXFLAGS} \
 		-o ${BASE}.docx  \
 		${BASE}.notes.docx.markdown 

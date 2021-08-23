@@ -18,7 +18,7 @@ x = np.linspace(xlim[0], xlim[1], 200)
 y = 1/np.sqrt(2*np.pi)*np.exp(-0.5*x*x)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plt
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -26,7 +26,7 @@ ax.plot(x, y, 'r', linewidth=3)
 ax.hist(p, 100, density=True)
 ax.set_xlim(xlim)
 
-mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
+mlai.write_figure('gaussian-histogram.svg', directory='\writeDiagramsDir/ml')}
 
 \notes{Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.}
 
@@ -40,7 +40,7 @@ mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
 
 \newslide{}
 
-\figure{\includeyoutube{MWXNAAAAMAAJ}{600}{450}{PA373}}{Boltzmann's paper @Boltzmann-warmetheorie77 which introduced the relationship between entropy and probability. A translation with notes is available in @Kim-translation15.}{boltzmann-warmetheorie}
+\figure{\includegooglebook{Vuk5AQAAMAAJ}{PA373}}{Boltzmann's paper @Boltzmann-warmetheorie77 which introduced the relationship between entropy and probability. A translation with notes is available in @Kim-translation15.}{boltzmann-warmetheorie}
 
 
 \notes{The important point about the uncertainty being represented here is that it is not genuine stochasticity, it is a lack of knowledge about the system. The techniques proposed by Maxwell, Boltzmann and Gibbs allow us to exactly represent the state of the system through a set of parameters that represent the sufficient statistics of the physical system. We know these values as the volume, temperature, and pressure. The challenge for us, when approximating the physical world with the techniques we will use is that we will have to sit somewhere between the deterministic and purely stochastic worlds that these different scientists described.}
@@ -61,7 +61,7 @@ mlai.write_figure('gaussian-histogram.svg', directory='./ml')}
 
 \figure{\includepng{\diagramsDir/physics/natureofphysical00eddi_100_cropped}{60%}}{Eddington makes his feelings about the primacy of the second law clear. This primacy is perhaps because the second law can be demonstrated mathematically, building on the work of Maxwell, Gibbs and Boltzmann. @Eddington:nature29}{deepest-humiliation-eddington-cropped}
 
-\notes{Presumably he meant that the creation of a black hole seemed to transgress the second law of thermodynamics, although later Hawking was able to show that blackholes do evaporate, only the time scales at which this evaporation occurs is many orders of magnitude slower than other processes in the universe.}
+\notes{Presumably he meant that the creation of a black hole seemed to transgress the second law of thermodynamics, although later Hawking was able to show that blackholes do evaporate, but the time scales at which this evaporation occurs is many orders of magnitude slower than other processes in the universe.}
 
 
 \endif
