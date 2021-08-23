@@ -158,7 +158,7 @@ mlai.write_figure('ceres-data.svg', directory='\writediagramsDir/ceres')}
 \figure{\includepng{\diagramsDir/ceres/bendixen-carl-friedrich-gauss-1828}{40%}}{Carl Friedrich Gauss in 1828. He became internationally famous 27 years earlier for recovering the planet Ceres with a mathematical prediction.}{bendixen-carl-friedrich-gauss-1828}
 
 
-\notes{It is this vital combination of model and data that underpins machine learning, but notice that here it has also been delivered through a mechanistic understanding of the way the planets move. This understanding is derived from natural laws that are explicitly incorporated into the model. Kepler's laws derive from Newton's mathematical representation of gravity.}
+\notes{It is this combination of *model* and *data* that underpins machine learning, but notice that here it has also been delivered through a mechanistic understanding of the way the planets move. This understanding is derived from natural laws that are explicitly incorporated into the model. Kepler's laws derive from Newton's mathematical representation of gravity.}
 
 \notes{But there was a problem. The laws down't precisely fit the data.}
 \speakernotes{Named ceres because Ceres is strongly associated with Sicily}
@@ -170,7 +170,7 @@ mlai.write_figure('ceres-data.svg', directory='\writediagramsDir/ceres')}
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/ceres/piazzi-cerere}{40%}}{Piazzi achieved his glory after the planet was discovered. Ceres is an agricultural god (in Greek tradition Demeter). She was associated with Sicilly, where Piazzi was working when he made the discovery.}{piazzi-cerere}
+\figure{\includepng{\diagramsDir/ceres/piazzi-cerere}{40%}}{Piazzi achieved his glory after the planet was discovered. Ceres is an agricultural god (in Greek tradition Demeter). She was associated with Sicily, where Piazzi was working when he made the discovery.}{piazzi-cerere}
 
 \speakernotes{Use image of the earth to introduce the unpredictability of the weather. 
 
@@ -186,7 +186,7 @@ Ceres is 0.0764 earths wide.
 
 \newslide{}
 
-\notes{Unfortunately, the story doesn't end so well for Bode's law. In 1846 Neptune was discovered, not in the place predicted by Bodes law (it should be closer to where Pluto was eventually found). And Ceres was found to be merely the larges object in the asteroid belt. It was recategorised as a Dwarf planet.}
+\notes{Unfortunately, the story doesn't end so well for the Titsius-Bode law. In 1846 Neptune was discovered, not in the place predicted by the law (it should be closer to where Pluto was eventually found). And Ceres was found to be merely the largest object in the asteroid belt. It was recategorized as a Dwarf planet.}
 
 \figure{\threeColumns{\includepng{\diagramsDir/ceres/ceres-optimized}{7%}{}{left}}{\includepng{\diagramsDir/ceres/full-moon-2010}{27%}{}{left}}{\includepng{\diagramsDir/ceres/the-earth-seen-from-apollo-17}{100%}{}{left}}}{The surface area of Ceres is 2,850,000 square kilometers, it's a little bigger than Greenland, but quite a lot colder. The moon is about 27% of the width of the Earth. Ceres is 7% of the width of the Earth.}{ceres-moon-earth}
 
