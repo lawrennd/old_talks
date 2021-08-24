@@ -69,7 +69,7 @@ mlai.write_figure('nonlinear-multi-fidelity-model-fit.svg', directory='\writeDia
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/uq/nonlinear-multi-fidelity-model-fit}{80%}}{Nonlinear multi-fidelity model fit to low and high fidelity functions.}
+\figure{\includediagram{\diagramsDir/uq/nonlinear-multi-fidelity-model-fit}{80%}}{Nonlinear multi-fidelity model fit to low and high-fidelity functions.}
 
 \notes{Fitting the nonlinear fidelity model to the available data very
 closely fits the high-fidelity function while also fitting the
