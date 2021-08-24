@@ -8,20 +8,20 @@
 \notes{In some scenarios we have simulators of the same environment
 that have different fidelities, that is that reflect with different
 level of accuracy the dynamics of the real world. Running simulations
-of the different fidelities also have a different cost: hight fidelity
-simulations are more expensive the cheaper ones. If we have access to
-these simulators we can combine high and low fidelity simulations
+of the different fidelities also have a different cost: high-fidelity
+simulations are typically more expensive the low-fidelity. If we have access to
+these simulators, we can combine high and low-fidelity simulations
 under the same model.
 
-So let's assume that we have two simulators of the mountain car
+So, let's assume that we have two simulators of the mountain car
 dynamics, one of high fidelity (the one we have used) and another one
 of low fidelity. The traditional approach to this form of
 multi-fidelity emulation is to assume that}
 $$
-\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)
+\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right),
 $$
 \notes{where $\mappingFunction_{i-1}\left(\inputVector\right)$ is a
-low fidelity simulation of the problem of interest and
+low-fidelity simulation of the problem of interest and
 $\mappingFunction_i\left(\inputVector\right)$ is a higher fidelity
 simulation. The function $\delta_i\left(\inputVector \right)$
 represents the difference between the lower and higher fidelity
@@ -29,16 +29,16 @@ simulation, which is considered additive. The additive form of this
 covariance means that if
 $\mappingFunction_{0}\left(\inputVector\right)$ and
 $\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m$ are all
-Gaussian processes, then the process over all fidelities of simuation
+Gaussian processes, then the process over all fidelities of simulation
 will be a joint Gaussian process.}
 
 \notes{But with deep Gaussian processes we can consider the form}
 $$
 \mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),
 $$
-\notes{where the low fidelity representation is non linearly transformed by $\mappingFunctionTwo(\cdot)$ before use in the process. This is the approach taken in @Perdikaris:multifidelity17. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels, and represents different aspects. For example these correspond to the two fidelities of the mountain car simulator.}
+\notes{where the low fidelity representation is nonlinearly transformed by $\mappingFunctionTwo(\cdot)$ before use in the process. This is the approach taken in @Perdikaris:multifidelity17. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels and represents different aspects. For example, these correspond to the two fidelities of the mountain car simulator.}
 
-\notes{We start by sampling both of them at 250 random input locations.}
+\notes{We start by sampling both at 250 random input locations.}
 
 \setupcode{import gym}
 \code{env = gym.make('MountainCarContinuous-v0')}
