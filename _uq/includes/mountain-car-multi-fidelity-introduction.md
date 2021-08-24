@@ -54,7 +54,7 @@ space_dynamics = ParameterSpace(
            ContinuousParameter('velocity_dynamics_parameter', *velocity_dynamics_domain),
            ContinuousParameter('action_dynamics_parameter', *action_dynamics_domain)])}
 
-<!--\setupcode{import GPyOpt}
+\comment{\setupcode{import GPyOpt}
 \code{### --- Collect points from low and high fidelity simulator --- ###
 
 space = GPyOpt.Design_space([
@@ -64,7 +64,7 @@ space = GPyOpt.Design_space([
 
 n_points = 250
 random_design = GPyOpt.experiment_design.RandomDesign(space)
-x_random = random_design.get_samples(n_points)}-->
+x_random = random_design.get_samples(n_points)}}
 
 \notes{Next, we evaluate the high and low fidelity simualtors at those locations.}
 
