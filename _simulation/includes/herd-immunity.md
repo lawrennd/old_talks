@@ -13,9 +13,7 @@
 
 } 
 
-\setupcode{# Pull in libraries needed
-%matplotlib inline
-import numpy as np
+\setupcode{import numpy as np
 from scipy import integrate}
 
 \notes{The next piece of code sets up the dynamics of the compartmental model. He doesn't give the specific details in the blog post, but my understanding is that the four states are as follows. `x[0]` is the susceptible population, those that haven't had the disease yet. The susceptible population decreases by encounters with infections people. In Thomas's model, both `x[3]` and `x[4]` are infections. So the dynamics of the reduction of the susceptible is given by}
@@ -102,7 +100,7 @@ for tt in range(0,len(t0ran)):
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{def mylab(t):
@@ -120,7 +118,6 @@ ax[0].set_ylim([0,7e6])
 ax[0].set_xlabel('Time (days)')
 ax[0].set_ylabel('Number of infectious cases')
 ax[0].legend()
-ax[1].subplot(1,2,2)
 for tt in range(0,len(t0ran)):
     ax[1].plot(sol[tt].t,N*sol[tt].y[5].T, label=mylab(t0ran[tt]))
 ax[1].set_xlim([30,70])
@@ -133,14 +130,14 @@ mlai.write_figure('house-model-zoom.svg', directory='\writeDiagramsDir/simulatio
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/simulation/house-model-zoom}{80%}}{A zoomed in version of Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-zoom}
+\figure{\includediagram{\diagramsDir/simulation/house-model-zoom}{80%}}{A zoomed in version of Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-zoom}
 
-\plotcode{fig, ax = plt.subplots(1, 2, figsize=plot.big_wide_size)
+\plotcode{fig, ax = plt.subplots(1, 2, figsize=plot.big_wide_figsize)
 for tt in range(0,len(t0ran)):
     ax[0].plot(sol[tt].t,N*(sol[tt].y[3] + sol[tt].y[4]).T, label=mylab(t0ran[tt]))
-ax[0].xlim([0,tlast])
-ax[0].ylim([0,1.2e7])
-ax[0].xlabel('Time (days)')
+ax[0].set_xlim([0,tlast])
+ax[0].set_ylim([0,1.2e7])
+ax[0].set_xlabel('Time (days)')
 ax[0].ylabel('Number of infectious cases')
 ax[0].legend()
 for tt in range(0,len(t0ran)):
@@ -155,7 +152,7 @@ mlai.write_figure('house-model-full.svg', directory='\writeDiagramsDir/simulatio
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/simulation/house-model-full}{80%}}{The full progress of the disease in Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-full}
+\figure{\includediagram{\diagramsDir/simulation/house-model-full}{80%}}{The full progress of the disease in Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-full}
 
 \notes{In practice, immunity for Covid19 may only last around 6 months. As an exercise, try to extend Thomas's model for the case where immunity is temporary. You'll need to account for deaths as well in your new model.}
 
