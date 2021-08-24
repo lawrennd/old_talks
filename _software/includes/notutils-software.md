@@ -13,7 +13,7 @@
 
 \notes{from the command prompt where you can access your python installation.}
 
-\notes{The code is also available on github: <https://github.com/lawrennd/notutils>
+\notes{The code is also available on GitHub: <https://github.com/lawrennd/notutils>
 
 Once ``notutils`` is installed, it can be imported in the usual manner.}
 
