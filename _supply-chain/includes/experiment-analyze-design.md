@@ -7,7 +7,7 @@
 
 \notes{One thing about working in an industrial environment, is the way that short-term thinking actions become important. For example, in Formula One, the teams are working on a two-week cycle to digest information from the previous week's race and incorporate updates to the car or their strategy. 
 
-However, businesses have to also think about more medium-term horizons. For example, in Formula 1 you need to worry about next year's car. So while you're working on updating this year's car, you also need to think about what will happen for next year and prioritize these conflicting needs appropriately. 
+However, businesses must also think about more medium-term horizons. For example, in Formula 1 you need to worry about next year's car. So while you're working on updating this year's car, you also need to think about what will happen for next year and prioritize these conflicting needs appropriately. 
 
 In the Amazon supply chain, there are the equivalent demands. If we accept that an artificial intelligence is just an automated decision-making system. And if we measure in terms of money automatically spent, or goods automatically moved, then Amazon's buying system is perhaps the world's largest AI.
 
@@ -42,7 +42,7 @@ Amazon is known for being longer term thinking than many companies, and a lot of
 
 \newslide{Objective}
 
-\notes{As a result our objective became a two-order magnitude increase in number of experiments run across a five year period.}
+\notes{As a result, our objective became a two-order magnitude increase in number of experiments run across a five year period.}
 
 \slides{
 > A two order of magnitude increase in number of experiments run on supply chain three years' time.}
