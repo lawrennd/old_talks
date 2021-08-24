@@ -13,7 +13,7 @@
 \include{_simulation/includes/life-rules.md}
 \include{_simulation/includes/life-glider-loafer-conway.md}
 
-\notes{Once these patterns are discovered, they are combined (or engineered) to create new Life patterns that do some remarkable things. For example there's a life pattern that runs a Turing machine, or more remarkably there's a Life pattern that runs Life itself.}
+\notes{Once these patterns are discovered, they are combined (or engineered) to create new Life patterns that do some remarkable things. For example, there's a life pattern that runs a Turing machine, or more remarkably there's a Life pattern that runs Life itself.}
 
 \newslide{}
 
@@ -26,7 +26,7 @@
 \figure{\includeyoutube{Kk2MH9O4pXY}{600}{450}}{An introduction to the Game of Life by Alan Zucconi.}{intro-to-life}
 
 
-\notes{Contrast this with our situation where in 'real life' we don't know the simple rules of the game, the state space is larger, and emergent behaviours (hurricanes, earthquakes, volcanos, climate change) have direct consequences for our daily lives, and we understand why the process of 'understanding' the physical world is so difficult. We also see immediately how much easier we might expect the physical sciences to be than the social sciences, where the emergent behaviours are contingent on highly complex human interactions.}
+\notes{Contrast this with our situation where in 'real life' we don't know the simple rules of the game, the state space is larger, and emergent behaviors (hurricanes, earthquakes, volcanos, climate change) have direct consequences for our daily lives, and we understand why the process of 'understanding' the physical world is so difficult. We also see immediately how much easier we might expect the physical sciences to be than the social sciences, where the emergent behaviors are contingent on highly complex human interactions.}
 
 
 \comment{\notes{Inspired by <https://gist.github.com/jiffyclub/3778422#file-game_of_life-ipynb>}

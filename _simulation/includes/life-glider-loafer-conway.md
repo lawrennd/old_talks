@@ -3,7 +3,7 @@
 
 \editme
 
-\notes{The game leads to patterns emerging, some of these patterns are static, but some oscilate, with varying periods. Others oscilalate, but when they complete their cycle they've translated to a new location, in other words they move. In Life the former are known as [oscillators](https://conwaylife.com/wiki/Oscillator) and the latter as [spaceships](https://conwaylife.com/wiki/Spaceship).}
+\notes{The game leads to patterns emerging, some of these patterns are static, but some oscillate in place, with varying periods. Others oscillate, but when they complete their cycle they've translated to a new location, in other words they move. In Life the former are known as [oscillators](https://conwaylife.com/wiki/Oscillator) and the latter as [spaceships](https://conwaylife.com/wiki/Spaceship).}
 
 \notes{\subsection{Loafers and Gliders}}
 
