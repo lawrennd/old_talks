@@ -21,7 +21,7 @@ import GPy}
 \setupplotcode{from matplotlib import pyplot as plt}
 \newslide{Covariance Functions}
 
-\notes{To give a feel for the sofware we'll start by creating an exponentiated quadratic covariance function,}
+\notes{To give a feel for the software we'll start by creating an exponentiated quadratic covariance function,}
 $$
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right),
 $$
@@ -75,7 +75,7 @@ for lengthscale in lengthscales:
 ax.legend(lengthscales)
 mlai.write_figure('gpy-eq-covariance-lengthscales.svg', directory='\writeDiagramsDir/kern')}
 
-\figure{\includediagram{\diagramsDir/kern/gpy-eq-covariance-lengthscales}{80%}}{The exponentiated quadratic covariance function plotted for different lengthscales by `GPy.kern.plot` command.}{gpy-eq-covariance}
+\figure{\includediagram{\diagramsDir/kern/gpy-eq-covariance-lengthscales}{80%}}{The exponentiated quadratic covariance function plotted for different length scales by `GPy.kern.plot` command.}{gpy-eq-covariance}
 
 \subsection{Covariance Functions in GPy}
 \slides{* Includes a range of covariance functions
@@ -213,13 +213,13 @@ Ystar, Vstar = model.predict(Xstar)}
 
 \subsection{Covariance Function Parameter Estimation}
 
-\notes{As we have seen during the lectures, the parameters values can be estimated by maximizing the likelihood of the observations. Since we don’t want one of the variance to become negative during the optimization, we can constrain all parameters to be positive before running the optimisation.}
+\notes{As we have seen during the lectures, the parameters values can be estimated by maximizing the likelihood of the observations. Since we don’t want any of the variances to become negative during the optimization, we can constrain all parameters to be positive before running the optimization.}
 
 \code{model.constrain_positive()}
 
 \notes{The warnings are because the parameters are already constrained by default, the software is warning us that they are being reconstrained.
 
-Now we can optimize the model using the `model.optimize()` method. Here we switch messages on, which allows us to see the progession of the optimization.}
+Now we can optimize the model using the `model.optimize()` method. Here we switch messages on, which allows us to see the progression of the optimization.}
 
 \slides{
 ```{.python}
@@ -228,13 +228,13 @@ model.optimize(messages=True)
 
 \code{model.optimize(messages=True)}
 
-\notes{By default the optimization is using a limited memory BFGS optimizer [@Byrd:lbfgsb95].
+\notes{By default, the optimization is using a limited memory BFGS optimizer [@Byrd:lbfgsb95].
 
-Once again we can display the model, now to see how the parameters have changed.}
+Once again, we can display the model, now to see how the parameters have changed.}
 
 \code{display(model)}
 
-\notes{The lengthscale is much smaller, as well as the noise level. The variance of the exponentiated quadratic has also reduced.}
+\notes{The length scale is much smaller, as well as the noise level. The variance of the exponentiated quadratic has also reduced.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 model.plot(ax=ax)
