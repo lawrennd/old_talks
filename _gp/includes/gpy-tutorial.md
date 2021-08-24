@@ -59,7 +59,7 @@ mlai.write_figure('gpy-eq-covariance.svg', directory='\writeDiagramsDir/kern')}
 
 \notes{\figure{\includediagram{\diagramsDir/kern/gpy-eq-covariance}{80%}}{The exponentiated quadratic covariance function as plotted by the `GPy.kern.plot` command.}{gpy-eq-covariance}}
 
-\notes{You can set the lengthscale of the covariance to different values and plot the result.}
+\notes{You can set the length scale of the covariance to different values and plot the result.}
 
 \code{kern = GPy.kern.RBF(input_dim=input_dim)     # By default, the parameters are set to 1.
 lengthscales = np.asarray([0.2,0.5,1.,2.,4.])}
