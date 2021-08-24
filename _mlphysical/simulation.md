@@ -26,6 +26,10 @@ transition: None
 \include{_notebooks/includes/plot-setup.md}
 \include{_software/includes/notutils-software.md}
 \include{_software/includes/mlai-software.md}
+
+\include{_simulation/includes/game-of-life.md}
+
+
 \include{_gp/includes/gp-intro-very-short.md}
 
 \notes{So, Gaussian processes provide an example of a particular type of model. Or, scientifically, we can think of such a model as a mathematical representation of a hypothesis around data. The rejection sampling view of Bayesian inference can be seen as rejecting portions of that initial hypothesis that are inconsistent with the data. From a Popperian perspective, areas of the prior space are falsified by the data, leaving a posterior space that represents remaining plausible hypotheses.}
@@ -80,32 +84,32 @@ $$
 
 \notes{Carl Henrik described how a prior probability $p(\parameterVector)$ represents our hypothesis about the way the world might behave. This can be combined with a *likelihood* through the process of multiplication. Correctly normalized, this gives an updated hypothesis that represents our *posterior* belief about the model in the light of the data.
 
-There is a nice symmetry between this approach and how Karl Popper describes the process of scientific discovery. In conjectures and refutations, Popper describes the process of scientific discovery as involving hypothesis and experiment. In our description hypothesis maps onto the *model*. The model is an abstraction of the hypothesis, represented for example as a set of mathematical equations, a computational description or an analogous system (physical system). The data is the product of previous experiments, our readings, our observation of the world around us. We can combine these to make a prediction about what we might expect the future to hold. Popper's view on the philosophy of science was that the prediction should be falsifiable. 
+There is a nice symmetry between this approach and how Karl Popper describes the process of scientific discovery. In conjectures and refutations, Popper describes the process of scientific discovery as involving hypothesis and experiment. In our description hypothesis maps onto the *model*. The model is an abstraction of the hypothesis, represented for example as a set of mathematical equations, a computational description, or an analogous system (physical system). The data is the product of previous experiments, our readings, our observation of the world around us. We can combine these to make a prediction about what we might expect the future to hold. Popper's view on the philosophy of science was that the prediction should be falsifiable. 
 
 We can see this process as a spiral driving forward, importantly Popper relates the relationship between hypothesis (model) and experiment (predictions) as akin to the relationship between the chicken and the egg. Which comes first? The answer is that they co-evolve together.}
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/ml/experiment-analyze-design}{50%}}{Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.}{experiment-analyze-design}
+\figure{\includediagram{\diagramsDir/ml/experiment-analyze-design}{50%}}{Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data, and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.}{experiment-analyze-design}
 
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/physics/different-models}{90%}}{The sets of different models. There are all the models in the Universe we might like to work with. Then there are those models that are computable e.g. by a Turing machine. Then there are those which are analytical tractable. I.e. where the solution might be found analytically. Finally, there are Gaussian processes, where the joint distribution of the states in the model is Gaussian.}
+\figure{\includediagram{\diagramsDir/physics/different-models}{90%}}{The sets of different models. There are all the models in the Universe we might like to work with. Then there are those models that are computable e.g., by a Turing machine. Then there are those which are analytical tractable. I.e., where the solution might be found analytically. Finally, there are Gaussian processes, where the joint distribution of the states in the model is Gaussian.}
 
 
 \notes{The approach we've taken to the model so far has been severely limiting. By constraining ourselves to models for which the mathematics of probability is tractable, we severely limit what we can say about the universe.
 
-Although Bayes' rule only implies multiplication of probabilities, to acquire theposterior we also need to normalize. Very often it is this normalization step that gets in the way. The normalization step involves integration over the updated hypothesis space, to ensure the updated posterior prediction is correct.
+Although Bayes' rule only implies multiplication of probabilities, to acquire the posterior we also need to normalize. Very often it is this normalization step that gets in the way. The normalization step involves integration over the updated hypothesis space, to ensure the updated posterior prediction is correct.
 
-We can map the process of Bayesian inference onto the the $\text{model} + \text{data}$ perspective in the following way. We can see the model as the prior, the data as the likelihood and the prediction as the posterior[^mapping]. 
+We can map the process of Bayesian inference onto the $\text{model} + \text{data}$ perspective in the following way. We can see the model as the prior, the data as the likelihood and the prediction as the posterior[^mapping]. 
 
-[^mapping]: We should be careful about such mappings, this is the one I prefer to think about because I try to think of my modelling assumptions as being stored in a probabilistic model, which I see as the prior distribution over what I expect the data to look like. In many domains of parametric modelling, however, the prior will be specified over the parameters of a model. In the Gaussian process formalism we're using, this mapping is clearer though. The 'prior' is the Gaussian process prior over functions, the data is the relationship between those functions and observations we make. This mental model will also suit what follows in terms of our consideration of simulation. But it would likely confuse someone who had only come to Bayesian inference through parametric models such a neural networks. Note that even in such models, there will be a way of writing down the decomposition of the model that is akin to the above, but it might involve writing down intractable densities so it's often avoided.}
+[^mapping]: We should be careful about such mappings, this is the one I prefer to think about because I try to think of my modelling assumptions as being stored in a probabilistic model, which I see as the prior distribution over what I expect the data to look like. In many domains of parametric modelling, however, the prior will be specified over the parameters of a model. In the Gaussian process formalism we're using, this mapping is clearer though. The 'prior' is the Gaussian process prior over functions, the data is the relationship between those functions and observations we make. This mental model will also suit what follows in terms of our consideration of simulation. But it would likely confuse someone who had only come to Bayesian inference through parametric models such a neural network. Note that even in such models, there will be a way of writing down the decomposition of the model that is akin to the above, but it might involve writing down intractable densities, so it's often avoided.}
 
 \newslide{}
 
 
-\notes{So, if we think of our model as incorporating what we know about the physical problem of interest (from Newton, or Bernoulli or Laplace or Einstein or whoever) and the data as being the observations (e.g. from Piazzi's telescope or a particle accelerator) then we can make predictions about what we might expect to happen in the future by combining the two. It is *those* predictions that Popper sees as important in verifying the scientific theory (which is incorporated in the model).
+\notes{So, if we think of our model as incorporating what we know about the physical problem of interest (from Newton, or Bernoulli or Laplace or Einstein or whoever) and the data as being the observations (e.g., from Piazzi's telescope or a particle accelerator) then we can make predictions about what we might expect to happen in the future by combining the two. It is *those* predictions that Popper sees as important in verifying the scientific theory (which is incorporated in the model).
 
 But while Gaussian processes are highly flexible non-parametric function models, they are *not* going to be sufficient to capture the type of physical processes we might expect to encounter in the real world. To give a sense, let's consider a few examples of the phenomena we might want to capture, either in the scientific world, or in real world decision making.}
 
@@ -119,7 +123,7 @@ But while Gaussian processes are highly flexible non-parametric function models,
 
 \speakernotes{Precise physical laws are predictive of the future. Met office super computer uses 1 km grids cells to compute the weather.}
 
-\notes{We've already reviewed the importance of Newton's laws in forging our view of science: we mentioned the influence [Christiaan Huygens'](https://en.wikipedia.org/wiki/Christiaan_Huygens) work on collisions had on Daniel Bernoulli in forming the kinetic theory of gases. These ideas inform many of the physical models we have today around a number of natural phenomena. The MET Office super computer in Exeter spends its mornings computing the weather across the world, and in its afternoons it's used for climate modelling. It uses the same set of principles that Newton and Bernoulli explored for gases. They are encoded in the Navier-Stokes equations. The rules that govern the flow of compressible and incompressible fluids. As well as predicting our weather, these equations are used in fluid dynamics models to understand the flight of aircraft, the driving characteristics of racing cars and the efficiency of gas turbine engines.
+\notes{We've already reviewed the importance of Newton's laws in forging our view of science: we mentioned the influence [Christiaan Huygens'](https://en.wikipedia.org/wiki/Christiaan_Huygens) work on collisions had on Daniel Bernoulli in forming the kinetic theory of gases. These ideas inform many of the physical models we have today around a number of natural phenomena. The MET Office supercomputer in Exeter spends its mornings computing the weather across the world, and in its afternoons it's used for climate modelling. It uses the same set of principles that Newton and Bernoulli explored for gases. They are encoded in the Navier-Stokes equations. The rules that govern the flow of compressible and incompressible fluids. As well as predicting our weather, these equations are used in fluid dynamics models to understand the flight of aircraft, the driving characteristics of racing cars and the efficiency of gas turbine engines.
 
 This broad class of physical models, or 'natural laws' is probably the closest to what Laplace was referring to in the Demon. The search for unifying physical laws that dictate everything we observe around us has gone on. Alongside Newton we must mention James Clerk Maxwell, who unified electricity and magnetism in one set of equations that were inspired by the work and ideas of Michael Faraday. And still today we look for unifying equations that bring together in a single mathematical model the 'natural laws' we observe. One equation that for Laplace would be "all forces that set nature in motion". We can think of this as our first time of physical model, a 'precise model' of the known laws of our Universe, a model where we expect that the mapping from the mathematical abstraction to the physical reality is 'exact'.[^exact]
 
@@ -137,7 +141,7 @@ This broad class of physical models, or 'natural laws' is probably the closest t
 * When we're abstracting finer length scales we can introduce uncertainties.
     * E.g. Maxwell-Boltzmann distribution for ideal Gas.}
 
-\notes{Unfortunately, even if such an equation were to exist, we would be unlikely to know "all positions of all items of which nature is composed". A good example here is computational systems biology. In that domain we are interested in understanding the undelying function of the cell. These systems sit somewhere between the two extremes that Laplace described: "the movements of the greatest bodies of the universe and those of the smallest atom".}
+\notes{Unfortunately, even if such an equation were to exist, we would be unlikely to know "all positions of all items of which nature is composed". A good example here is computational systems biology. In that domain we are interested in understanding the underlying function of the cell. These systems sit somewhere between the two extremes that Laplace described: "the movements of the greatest bodies of the universe and those of the smallest atom".}
 
 \notes{When the smallest atom is considered, we need to introduce uncertainty. We again turn to a different work of Maxwell, building on Bernoulli's kinetic theory of gases we end up with probabilities for representing the location of the 'molecules of air'. Instead of a deterministic location for these particles we represent our belief about their location in a distribution.}
 
@@ -149,7 +153,7 @@ This broad class of physical models, or 'natural laws' is probably the closest t
 
 \speakernotes{Ideal gas is a model where interaction between molecules is relatively simple. If this interaction is more complex (e.g. through quantum interactions of their bonded electrons, more structure exists.}
 
-\notes{Computational systems biology is a world of micro-machines, built of three dimensional foldings of strings of proteins. There are spindles (stators) and rotors (e.g. [ATP Synthase](https://en.wikipedia.org/wiki/ATP_synthase)), there are small copying machines (e.g. [RNA Polymerase](https://en.wikipedia.org/wiki/RNA_polymerase)) there are sequence to sequence translators ([Ribosomes](https://en.wikipedia.org/wiki/Ribosome)). The cells store information in DNA, but have an ecosystem of structures and messages being sent and built in proteins and RNA. Unpikcing these structures has been a major preoccupation of biology. That is knowing where the atoms of these molecules are in the structure, and how the parts of the structure move when these small micro-machines are carrying out their roles.} 
+\notes{Computational systems biology is a world of micro-machines, built of three dimensional foldings of strings of proteins. There are spindles (stators) and rotors (e.g. [ATP Synthase](https://en.wikipedia.org/wiki/ATP_synthase)), there are small copying machines (e.g. [RNA Polymerase](https://en.wikipedia.org/wiki/RNA_polymerase)) there are sequence to sequence translators ([Ribosomes](https://en.wikipedia.org/wiki/Ribosome)). The cells store information in DNA, but have an ecosystem of structures and messages being sent and built in proteins and RNA. Unpicking these structures has been a major preoccupation of biology. That is knowing where the atoms of these molecules are in the structure, and how the parts of the structure move when these small micro-machines are carrying out their roles.} 
 
 \notes{We understand most (if not all) of the physical laws that drive the movements of these molecules, but we don't understand all the actions of the cell, nor can we intervene reliably to improve things. So even in the case where we have a good understanding of the physical laws, Laplace's gremlin emerges in our knowledge of "the positions of all items of which nature is composed".}
 
@@ -165,7 +169,7 @@ This broad class of physical models, or 'natural laws' is probably the closest t
 
 \notes{Alternative we can drop down a few scales and consider simulation of the Schrödinger equation. A recent paper uses deep neural networks to speed up the solution of the many-electron Schrödinger equation enabling simulation of chemical bonds [@Pfau-abinitio20]. The [PR-blog post is also available](https://deepmind.com/blog/article/FermiNet). The paper uses a neural network to model the quantum state of a number of electrons.}
 
-\figure{\includegif{\diagramsDir/physics/many-electron-schroedinger}{40%}}{The many-electron Schroedinger equation is important in understanding how Chemical bonds are formed.}{many-electron-schroedinger}
+\figure{\includegif{\diagramsDir/physics/many-electron-schroedinger}{40%}}{The many-electron Schrödinger equation is important in understanding how Chemical bonds are formed.}{many-electron-schroedinger}
 
 \notes{Each of these simulations have the same property of being based on a set of (physical) rules about how particles interact. But one of the interesting characteristics of such systems is how the properties of the system are emergent as the dynamics are allowed to continue. 
 
@@ -177,7 +181,7 @@ These properties cannot be predicted without running the physics, or the equival
 * Use ML techniques to deliver scientific advances
 * Four DECAF fellows: MPhil Projects Available!}
 
-\notes{The Computer Lab is hosting a new initiative, funded by Schmidt Futures, known as the [Accelerate Programme for Scientific Discovery](https://www.cam.ac.uk/research/news/new-programme-to-accelerate-ai-research-capability-at-cambridge). The aim is to address scientific challenges, and accelerate the progress of research, through using tools in machine learning.}
+\notes{The Computer Lab is hosting a new initiative, funded by Schmidt Futures, known as the [Accelerate Programme for Scientific Discovery](https://acceleratescience.github.io/). The aim is to address scientific challenges, and accelerate the progress of research, through using tools in machine learning.}
 
 \notes{We now have four fellows appointed, each of whom works at the interface of machine learning and scientific discovery. They are using the ideas around machine learning modelling to drive their scientific research.}
 
@@ -208,13 +212,12 @@ These properties cannot be predicted without running the physics, or the equival
 
 \subsection{Surrogate Models and Emulators}
 
-\notes{There are a number of ways we can use machine learning to accelerate scientific discovery. But one way is to have the machine learning model learn the effect of the rules. Rather than worrying about the detail of the rules through coputing each step, we can have the machine learning model look to abstract the rules and capture emergent phenomena, just as the Maxwell-Boltzmann distribution captures the essence of the behaviour of the ideal gas.}
+\notes{There are a number of ways we can use machine learning to accelerate scientific discovery. But one way is to have the machine learning model learn the effect of the rules. Rather than worrying about the detail of the rules through computing each step, we can have the machine learning model look to abstract the rules and capture emergent phenomena, just as the Maxwell-Boltzmann distribution captures the essence of the behaviour of the ideal gas.}
 
 \notes{In the papers listed above, neural networks are being used to speed up computations. In this course we've introduced Gaussian processes that will be used to speed up these computations. In both cases the ideas are similar. Rather than rerunning the simulation, we use data from the simulation to *fit* the neural network or the Gaussian process to the data.}
 
 \notes{We'll see an example of how this is done in a moment, taken from a simple ride hailing simulator, but before we look at that, we'll first consider why this might be a useful approach.}
 
-\include{_simulation/includes/game-of-life.md}
 
 
 \section{Modelling in Practice}
@@ -256,17 +259,17 @@ Over time there were a number of similar changes, each of which should have impr
 
 \section{Strategies for Simulation}
 
-\notes{Within any simulation, we can roughly split the variables of interest into the state variables and the parameters. In the Herd immunity example, the state variables were the different susceptible, exposed, infectious and recovered groups. The parameters were the reproduction number and the expected lengths of infection and the timing of lockdown. Often parameters are viewed as the inputs to the simulation, the things we can control. We might want to know how to time lock down to minimize the number of deaths. This behaviour of the simulator is what we may want to emulate with our Gaussian process model.}
+\notes{Within any simulation, we can roughly split the variables of interest into the state variables and the parameters. In the Herd immunity example, the state variables were the different susceptible, exposed, infectious and recovered groups. The parameters were the reproduction number and the expected lengths of infection and the timing of lockdown. Often parameters are viewed as the inputs to the simulation, the things we can control. We might want to know how to time lock down to minimize the number of deaths. This behavior of the simulator is what we may want to emulate with our Gaussian process model.}
 
-\notes{So far we've introduced simulation motivated by the physical laws of the universe. Those laws are sometimes encoded in differential equations, in which case we can try to solve those systems (like with Herd Immunity or Navier Stokes). An alternative approach is taken in the Game of Life. There a turn based simulation is used, at each turn, we iterate through the simulation updating the sate of the simulation. This is known as a *discrete event simulation*. In race simulation for Formula 1 a discrete event simulation is also used. There is another form of discrete event simulation, often used in Chemical models, where the events don't take place at regular intervals. Instead, the timing to the next event is computed, and the simulator advances that amount of time. For an example of this see [the Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm)}.
+\notes{So far, we've introduced simulation motivated by the physical laws of the universe. Those laws are sometimes encoded in differential equations, in which case we can try to solve those systems (like with Herd Immunity or Navier Stokes). An alternative approach is taken in the Game of Life. There a turn-based simulation is used, at each turn, we iterate through the simulation updating the state of the simulation. This is known as a *discrete event simulation*. In race simulation for Formula 1 a discrete event simulation is also used. There is another form of discrete event simulation, often used in Chemical models, where the events don't take place at regular intervals. Instead, the timing to the next event is computed, and the simulator advances that amount of time. For an example of this see [the Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm)}.
 
-\notes{There is a third type of simulation that we'd also like to introduce. That is simulation within computer software. In particular, the need to backtest software with 'what if' ideas, or to trace errors that may have occured in production. This can involve loading up entire code bases and rerunning them with simulated inputs. This is a third form of simulation where emulation can also come in useful.}
+\notes{There is a third type of simulation that we'd also like to introduce. That is simulation within computer software. In particular, the need to backtest software with 'what if' ideas, or to trace errors that may have occurred in production. This can involve loading up entire code bases and rerunning them with simulated inputs. This is a third form of simulation where emulation can also come in useful.}
 
 \subsection{Backtesting Production Code}
 
-\notes{In Amazon the team I led looked at examples of simulations and emulation as varied as Prime Air drones across to the Amazon Supply Chain. In a purchasing system, the idea is to store stock so as to balance supply and demand. The aim is to keep product in stock for quick despatch while keeping prices (and therefore costs) low. This idea is at the heart of Amazon's focus on customer experience.}
+\notes{In Amazon the team I led looked at examples of simulations and emulation as varied as Prime Air drones across to the Amazon Supply Chain. In a purchasing system, the idea is to store stock to balance supply and demand. The aim is to keep product in stock for quick dispatch while keeping prices (and therefore costs) low. This idea is at the heart of Amazon's focus on customer experience.}
 
-\notes{Modern software development uses an approach known as *service oriented architecture* to build highly complex systems. Such systems have similar emergent properties to Conway's "Game of Life". Understanding these emergent properties is vitally important when diagnosing problems in the system.}
+\notes{Modern software development uses an approach known as *service-oriented architecture* to build highly complex systems. Such systems have similar emergent properties to Conway's "Game of Life". Understanding these emergent properties is vitally important when diagnosing problems in the system.}
 
 \notes{In the context of machine learning and complex systems, Jonathan Zittrain has coined the term ["Intellectual Debt"](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c) to describe the challenge of understanding what you've created.}
 
@@ -274,7 +277,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \include{_ai/includes/buying-system.md}
 
-\notes{Unfortunately it also makes sophisticated software systems a breeding ground for intellectual debt. Particularly when they contain components which are themselves ML components. Dealing with this challenge is a major objective of my Senior AI Fellowship at the Alan Turing Institute. You can see me talking about the problems [at this recent seminar given virtually in Manchester](http://inverseprobability.com/talks/notes/deploying-machine-learning-systems-intellectual-debt-and-auto-ai.html).}
+\notes{Unfortunately, it also makes sophisticated software systems a breeding ground for intellectual debt. Particularly when they contain components which are themselves ML components. Dealing with this challenge is a major objective of my Senior AI Fellowship at the Alan Turing Institute. You can see me talking about the problems [at this recent seminar given virtually in Manchester](http://inverseprobability.com/talks/notes/deploying-machine-learning-systems-intellectual-debt-and-auto-ai.html).}
 
 <!--[Simpy](https://simpy.readthedocs.io/en/latest/examples/gas_station_refuel.html)
 
@@ -296,7 +299,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \section{Related Approaches}
 
-\notes{While this module is mainly focussing on emulation as a route to bringing machine learning closer to the physical world, I don't want to give the impression that's the only approach. In particular, it's worth bearing in mind three important domains of machine learning (and statistics) that we also could have explored.}
+\notes{While this module is mainly focusing on emulation as a route to bringing machine learning closer to the physical world, I don't want to give the impression that's the only approach. It's worth bearing in mind three important domains of machine learning (and statistics) that we also could have explored.}
 
 * Probabilistic Programming
 * Approximate Bayesian Computation
@@ -316,7 +319,7 @@ This is the objective of probabilistic programming. The idea is that you write y
 
 The ideas for probabilistic programming originate in [BUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/). The software was developed at the MRC Biostatistics Unit here in Cambridge in the early 1990s, by amoung others, David Spiegelhalter. Carl Henrik covered in last week's lecture some of the approaches for approximate inference. BUGS uses Gibbs sampling. Gibbs sampling, however, can be slow to converge when there are strong correlations in the posterior between variables. 
 
-The descendent of BUGS that is probably most similar in the spirit of its design is [Stan](https://mc-stan.org/). Stan came from researchers at Columbia University and makes use of a variant of Hamiltonian Monte Carlo called the No-U-Turn sampler. It builds on automatic differentiation for the gradients it needs. It's all written in C++ for speed, but has interfaces to Python, R, Julia, Matlab etc. Stan has been higly succesful during the Coronavirus pandemic, with a number of epidemiological simulations written in the language, for example see this [blog post](https://mc-stan.org/users/documentation/case-studies/boarding_school_case_study.html).}
+The descendent of BUGS that is probably most similar in the spirit of its design is [Stan](https://mc-stan.org/). Stan came from researchers at Columbia University and makes use of a variant of Hamiltonian Monte Carlo called the No-U-Turn sampler. It builds on automatic differentiation for the gradients it needs. It's all written in C++ for speed, but has interfaces to Python, R, Julia, MATLAB etc. Stan has been highly successful during the Coronavirus pandemic, with a number of epidemiological simulations written in the language, for example see this [blog post](https://mc-stan.org/users/documentation/case-studies/boarding_school_case_study.html).}
 
 \notes{Other probabilistic programming languages of interest include those that make use of variational approaches (such as [pyro](https://pyro.ai/)) and allow use of neural network components.}
 
@@ -335,7 +338,7 @@ The descendent of BUGS that is probably most similar in the spirit of its design
 
 \figure{\includeyoutube{yksduYxEusQ}{600}{450}}{Judea Pearl and Elias Bareinboim giving a Tutorial on Causality at NeurIPS in 2013. Again, the slides aren't synchronised, but you can find them separately [here](http://media.nips.cc/Conferences/2013/nips-dec2013-pearl-bareinboim-tutorial-full.pdf).}{judea-pearl-causality}
 
-\notes{All of these approaches offer a lot of promise for developing machine learning at the interface with science, but covering each in detail would require four separate modules. We've chosen to focus on the emulation approach, for two princpal reasons. Firstly, it's conceptual simplicity. Our aim is to replace all or part of our simulation with a machine learning model. Typically, we're going to want uncertainties as part of that representation. That explains our focus on Gaussian process models. Secondly, the emulator method is flexible. Probabilistic programming requires that the simulator has been built in a particular way, otherwise we can't compile the program. Finally, the emulation approach can be combined with any of the existing simulation approaches. For example, we might want to write our emulators as probabilistic programs. Or we might do causal analysis on our emulators, or we could speed up the simulation in ABC through emulation.} 
+\notes{All of these approaches offer a lot of promise for developing machine learning at the interface with science but covering each in detail would require four separate modules. We've chosen to focus on the emulation approach, for two principal reasons. Firstly, it's conceptual simplicity. Our aim is to replace all or part of our simulation with a machine learning model. Typically, we're going to want uncertainties as part of that representation. That explains our focus on Gaussian process models. Secondly, the emulator method is flexible. Probabilistic programming requires that the simulator has been built in a particular way, otherwise we can't compile the program. Finally, the emulation approach can be combined with any of the existing simulation approaches. For example, we might want to write our emulators as probabilistic programs. Or we might do causal analysis on our emulators, or we could speed up the simulation in ABC through emulation.} 
 
 
 \section{Conclusion}
