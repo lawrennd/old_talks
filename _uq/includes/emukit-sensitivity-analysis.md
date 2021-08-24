@@ -35,7 +35,7 @@ import mlai.plot as plot}
 
 \notes{Sensitivity analysis is a statistical technique widely used to test the reliability of real systems. Imagine a simulator of taxis picking up customers in a city like the one showed in the [Emukit playground](https://github.com/amzn/emukit-playground). The profit of the taxi company depends on factors like the number of taxis on the road and the price per trip. In this example, a global sensitivity analysis of the simulator could be useful to decompose the variance of the profit in a way that can be assigned to the input variables of the simulator.}
 
-\notes{There are different ways of doing a sensitivity analysis of the variables of a simulator. In this notebook we will start with an approach based on Monte Carlo sampling that is useful when evaluating the simulator is cheap. If evaluating the simulator is expensive, emulators can then be used to speed up computations. We will show this in the last part of the notebook. Next, we start with a few formal definitions and literature review so we can understand the basics of Sensitivity Analysis and how it can performed with Emukit.}
+\notes{There are different ways of doing a sensitivity analysis of the variables of a simulator. In this notebook we will start with an approach based on Monte Carlo sampling that is useful when evaluating the simulator is cheap. If evaluating the simulator is expensive, emulators can then be used to speed up computations. We will show this in the last part of the notebook. Next, we start with a few formal definitions and literature review so we can understand the basics of Sensitivity Analysis and how it can be performed with Emukit.}
 
 
 \subsection{Local Sensitivity}
@@ -52,9 +52,9 @@ $$
 
 \notes{In global sensitivity analysis, rather than looking around a single operating point, we're interested in the overall sensitivity of a function to its inputs, or combinations of inputs, across its entire domain. The key tool in determining this sensitivity is known as the ANOVA decomposition, or the *Hoeffding-Sobol decomposition*.}
 
-\notes{For global sensitivity analysis, we need to make an assumption about how are inputs are going to vary to create different values of the function. The fundamental object we're interested in is the total variance of the function,}
+\notes{For global sensitivity analysis, we need to make an assumption about how inputs are going to vary to create different values of the function. The fundamental object we're interested in is the total variance of the function,}
 $$
-\text{var}\left(\mappingFunctionTwo(\inputVector)\right) = \expectationDist{\mappingFunctionTwo(\inputVector)^2}{p(\inputVector)} - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2
+\text{var}\left(\mappingFunctionTwo(\inputVector)\right) = \expectationDist{\mappingFunctionTwo(\inputVector)^2}{p(\inputVector)} - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2,
 $$
 \notes{where}
 $$
@@ -64,7 +64,7 @@ $$
 
 \newslide{Input Density}
 
-\notes{The total variance of the function gives us the overal variation of the function across the domain of inputs, as represented by the probability density, $p(\inputVector)$. Normally, we perform analysis by assuming that,}
+\notes{The total variance of the function gives us the overall variation of the function across the domain of inputs, as represented by the probability density, $p(\inputVector)$. Normally, we perform analysis by assuming that,}
 $$
 p(\inputVector) = \prod_{i=1}^\dataDim p(\inputScalar_i)
 $$
@@ -102,11 +102,11 @@ $$
 
 \notes{Note that to compute each of these individual terms, you need to first compute the low order terms, and then compute the high order terms. This can be problematic when $\dataDim$ is large.}
 
-\notes{We're interested in the variance of the function $\mappingFunctionTwo$, so implicitly we're assuming that the square of this function is integrable across its domain, i.e. we're assuming that $\expectationDist{\mappingFunctionTwo(\inputVector)^2}{p(\inputVector)}$ exists and is finite.}
+\notes{We're interested in the variance of the function $\mappingFunctionTwo$, so implicitly we're assuming that the square of this function is integrable across its domain, i.e., we're assuming that $\expectationDist{\mappingFunctionTwo(\inputVector)^2}{p(\inputVector)}$ exists and is finite.}
 
 \newslide{}
 
-\notes{The Sobol decomposition has some important properties, in particular, it components are orthogonal, so this means that when we substitute it in to the variance, we have,}
+\notes{The Sobol decomposition has some important properties, in particular, its components are orthogonal, so this means that when we substitute it in to the variance, we have,}
 $$
 \begin{align*}
 \text{var}(\mappingFunctionTwo) = & \expectationDist{\mappingFunctionTwo(\inputVector)^2 }{p(\inputVector)} - \expectationDist{\mappingFunctionTwo(\inputVector)}{p(\inputVector)}^2 \\
@@ -124,11 +124,11 @@ S_\ell = \frac{\text{var}\left(\mappingFunctionTwo(\inputVector_\ell)\right)}{\t
 $$
 \notes{where the $\ell$ represents the relevent set of indices for the different combinations of inputs.}
 
-\notes{In practice, For an elegant approach that exploits a particular covariance function structure to perform global sensitivity analysis see @Durrande-anova13.}
+\notes{In practice, for an elegant approach that exploits a particular covariance function structure to perform global sensitivity analysis see @Durrande-anova13.}
 
 \section{Example: the Ishigami function}
 
-\notes{We illustrate the exact calculation of the Sobol indices with the three dimensional Ishigami function of [@Ishigami-importance90].} 
+\notes{We illustrate the exact calculation of the Sobol indices with the three-dimensional Ishigami function of [@Ishigami-importance90].} 
 
 \include{_uq/includes/ishigami-function.md}
 
@@ -149,7 +149,7 @@ print(ishigami.variance_x1 + ishigami.variance_x2 + ishigami.variance_x13)}
 $$
 S_i = \frac{\text{var}\left(\mappingFunctionTwo_i(\inputScalar_i)\right)}{\text{var}\left(\mappingFunctionTwo(\inputVector)\right)}.
 $$
-\notes{This value is standardized using the total variance so it is possible to account for a fractional contribution of each variable to the total variance of the output.}
+\notes{This value is standardized using the total variance, so it is possible to account for a fractional contribution of each variable to the total variance of the output.}
 
 \notes{The Sobol indices for higher order interactions $S_{i,j}$ are computed similarly. Due to the normalization by the total variance, the the sum of all Sobol indices equals to one.}
 
@@ -157,7 +157,7 @@ $$
 
 \code{ishigami.main_effects}
 
-\notes{But in general these indices need to be sampled using Monte Carlo or one of the quasi-Monte Carlo methods we've seen in the model-free experimental design. Details are given in [@Sobol-global01].}
+\notes{But in general, these indices need to be sampled using Monte Carlo or one of the quasi-Monte Carlo methods we've seen in the model-free experimental design. Details are given in [@Sobol-global01].}
 
 \notes{With Emukit, the first-order Sobol indices can be easily computed. We first need to define the space where of target simulator is analyzed.}
 
@@ -215,9 +215,9 @@ mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagra
 
 \figure{\includediagram{\diagramsDir/uq/total-effects-ishigami}{80%}}{The total effects from the Ishigami function as computed via Monte Carlo estimate alongside the true total effects for the Ishigami function.}{total-effects-ishigami}
 
-\subsection{Computing the sensitivity indices using the output of a model}
+\subsection{Computing the Sensitivity Indices Using the Output of a Model}
 
-\notes{In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol indices.}
+\notes{In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive, and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol indices.}
 
 \notes{An alternative in these cases is to use Gaussaian process emulator of the function of interest trained on a few inputs and outputs [@Marrel-sobol09]. If the model is properly trained, its mean prediction which is cheap to evaluate, can be used to compute the Monte Carlo estimates of the Sobol indices, the variance from the GP emulator can also be used to assess our uncertainty about the Sobol indices. Let's see how we can do this in Emukit.}
 
@@ -230,7 +230,7 @@ mlai.write_figure(filename='total-effects-ishigami.svg', directory='\writeDiagra
 x = design.get_samples(500)
 y = ishigami.fidelity1(x)[:,np.newaxis]}
 
-\notes{Now, we fit a standard Gaussian process to the samples and we wrap it as an Emukit model.}
+\notes{Now, we fit a standard Gaussian process to the samples, and we wrap it as an Emukit model.}
 
 \setupcode{from GPy.models import GPRegression
 from emukit.model_wrappers import GPyModelWrapper
@@ -240,7 +240,7 @@ from emukit.sensitivity.monte_carlo import MonteCarloSensitivity}
 model_emukit = GPyModelWrapper(model_gpy)
 model_emukit.optimize()}
 
-\notes{The final step is to compute the coefficients using the class `ModelBasedMonteCarloSensitivity` which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the true estimates, those computed using 10000 direct evaluations of the objecte using Monte Carlo and those computed using a Gaussian process model trained on 100 evaluations.}
+\notes{The final step is to compute the coefficients using the class `ModelBasedMonteCarloSensitivity` which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the true estimates, those computed using 10000 direct evaluations of the object using Monte Carlo and those computed using a Gaussian process model trained on 100 evaluations.}
 
 \code{num_mc = 10000
 senstivity_ishigami_gpbased = MonteCarloSensitivity(model = model_emukit, input_domain = space)
@@ -260,7 +260,7 @@ plt.ylabel('% of explained output variance')
 
 mlai.write_figure(filename='first-order-sobol-indices-gp-ishigami.svg', directory='\writeDiagramsDir/uq')}
 
-\figure{\includediagram{\diagramsDir/uq/first-order-sobol-indices-gp-ishigami}{80%}}{First Order sobol indices as estimated by Monte Carlo and GP-emulator based Monte Carlo.}{first-order-sobol-indices-gp-ishigami}
+\figure{\includediagram{\diagramsDir/uq/first-order-sobol-indices-gp-ishigami}{80%}}{First order Sobol indices as estimated by Monte Carlo and GP-emulator based Monte Carlo.}{first-order-sobol-indices-gp-ishigami}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -280,7 +280,7 @@ mlai.write_figure(filename='total-effects-sobol-indices-gp-ishigami.svg', direct
 
 \figure{\includediagram{\diagramsDir/uq/total-effects-sobol-indices-gp-ishigami}{80%}}{Total effects as estimated by Monte Carlo and GP based Monte Carlo.}{total-effects-sobol-indices-gp-ishigami}
 
-\notes{We observe some discrepacies with respect to the real value of the Sobol index when using the Gaussian process but we get a fairly good a approximation a very reduced number of evaluations of the original target function.}
+\notes{We observe some discrepancies with respect to the real value of the Sobol index when using the Gaussian process, but we get a fairly good approximation with a very reduced number of evaluations of the original target function.}
 
 \subsection{Conclusions}
 \slides{* Sobol indices tool for explaining variance of output as coponents of input variables.}
