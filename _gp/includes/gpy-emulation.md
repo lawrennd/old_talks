@@ -156,7 +156,7 @@ Although we're approaching this from the machine learning perspective, with a co
 > (Steinberg 1963), and can be viewed as a $K$-dimensional extension of
 > Latin square sampling (Raj 1968).
 
-\notes{The paper's rather dated refernce to "Output from a Computer Code" does carry forward through this literature, which has continued to be a focus of interest for statisticians. [Tony O'Hagan](http://www.tonyohagan.co.uk/academic/), who was a colleague in Sheffield but is also one of the pioneers of Gaussian process models was developing these methods when I first arrived there [@Kennedy-bayesian01], and continued with a large EPSRC funded project for manacing uncertainty in computaitonal models, <http://www.mucm.ac.uk/>. You can see a list of [their technical reports here](http://www.mucm.ac.uk/Pages/Dissemination/TechnicalReports.html).
+\notes{The paper's rather dated reference to "Output from a Computer Code" does carry forward through this literature, which has continued to be a focus of interest for statisticians. [Tony O'Hagan](http://www.tonyohagan.co.uk/academic/), who was a colleague in Sheffield but is also one of the pioneers of Gaussian process models was developing these methods when I first arrived there [@Kennedy-bayesian01], and continued with a large EPSRC funded project for managing uncertainty in computational models, <http://www.mucm.ac.uk/>. You can see a list of [their technical reports here](http://www.mucm.ac.uk/Pages/Dissemination/TechnicalReports.html).
 
 Another important group based in France is the "MASCOT-NUM Research Group", <https://www.gdr-mascotnum.fr/>. These researchers bring together statisticians, applied mathematicians and engineers in solving these problems.}
 
