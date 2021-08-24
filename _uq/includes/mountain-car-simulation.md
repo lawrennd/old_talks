@@ -100,6 +100,8 @@ initial_design = design.get_samples(n_initial_points)}
 
 \setupcode{import numpy as np}
 
+\notes{This won't render in `collab`, but should work in Jupyter notebook. Here's details in this stackoverflow question <https://stackoverflow.com/questions/50107530/how-to-render-openai-gym-in-google-colab>.}
+
 \code{random_controller = initial_design[0,:]
 _, _, _, frames = mc.run_simulation(env, np.atleast_2d(random_controller), render=True)
 anim=mc.animate_frames(frames, 'Random linear controller')}
