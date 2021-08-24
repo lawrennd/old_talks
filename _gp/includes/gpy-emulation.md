@@ -101,7 +101,7 @@ Note, that in this example, because we're using a test function, we could simply
 Xp = np.random.uniform(size=(int(1e5),2))
 Xp[:,0] = Xp[:,0]*15-5
 Xp[:,1] = Xp[:,1]*15
-mu, var = m.predict(Xp)
+mu, var = model.predict(Xp)
 print('The estimate of the mean of the Branin function is {mean}'.format(mean=np.mean(mu)))}
 
 \notes{\codeassignment{Now think about how to make use of the variance estimation from the Gaussian process to obtain error bars around your estimate.}
