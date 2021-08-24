@@ -35,12 +35,12 @@
 
 \newslide{Emulation}
 
-\slides{\figure{\includediagram{\diagramsDir/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}}
+\slides{\figure{\includediagram{\diagramsDir/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models.}{statistical-emulation-6}}
 
-\notes{As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterise where the simulation can be relied on, i.e. we can validate the simulator.}
+\notes{As well as reconstructing an individual simulator, the emulator can calibrate the simulation to the real world, by monitoring differences between the simulator and real data. This allows the emulator to characterize where the simulation can be relied on, i.e., we can validate the simulator.}
 
 \notes{Similarly, the emulator can adjudicate between simulations. This is known as *multi-fidelity emulation*. The emulator characterizes which emulations perform well where.
 
-If all this modelling is done with judiscious handling of the uncertainty, the *computational doubt*, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real world intervention.}
+If all this modelling is done with judicious handling of the uncertainty, the *computational doubt*, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real-world intervention.}
 
 \endif
