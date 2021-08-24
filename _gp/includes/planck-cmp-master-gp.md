@@ -8,7 +8,7 @@
 
 \figure{\includejpg{\diagramsDir/physics/Front_view_of_the_European_Space_Agency_Planck_satellite}{60%}}{Artist's impression of the Planck spacecraft which measured the Cosmic Microwave Background between 2009 and 2013.}{planck-spacecraft}
 
-The objective of the Planck space craft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.[^kyle-cranmer] Currently our best estimates show this to be the case [@Jaffe:cmb98;@Pontzen-cmb10;@Elsner-unbiased15;@Elsner-unbiased16].
+The objective of the Planck spacecraft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.[^kyle-cranmer] Currently our best estimates show this to be the case [@Jaffe:cmb98;@Pontzen-cmb10;@Elsner-unbiased15;@Elsner-unbiased16].
 
 
 [^kyle-cranmer]: Most of my understanding of this is taken from conversations with Kyle Cranmer, a physicist who makes extensive use of machine learning methods in his work. See e.g. @Mishra-Sharma-semi-parametric20 from Kyle and Siddharth Mishra-Sharma. Of course, any errors in the above text are mine and do not stem from Kyle.}
