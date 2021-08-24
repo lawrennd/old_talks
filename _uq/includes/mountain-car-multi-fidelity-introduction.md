@@ -71,7 +71,8 @@ x_random = random_design.get_samples(n_points)}}
 \setupcode{import numpy as np
 import mountain_car as mc}
 
-\code{d_position_hf = np.zeros((n_points, 1))
+\code{n_points = 250
+d_position_hf = np.zeros((n_points, 1))
 d_velocity_hf = np.zeros((n_points, 1))
 d_position_lf = np.zeros((n_points, 1))
 d_velocity_lf = np.zeros((n_points, 1))
