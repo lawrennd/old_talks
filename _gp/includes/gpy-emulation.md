@@ -91,7 +91,7 @@ mlai.write_figure('branin-gp-optimized-fit.svg', directory='\writeDiagramsDir/gp
 
 \newslide{Branin Function Fit}
 
-\figure{\includediagram{\diagramsDir/gp/branin-sine-gp-optimized-fit}{80%}}{A Gaussian process fit to the Branin test function, used to assess the mean of the function by emulation.}{branin-sine-gp-optimized-fit}
+\figure{\includediagram{\diagramsDir/gp/branin-gp-optimized-fit}{80%}}{A Gaussian process fit to the Branin test function, used to assess the mean of the function by emulation.}{branin-gp-optimized-fit}
 
 \notes{Finally we can compute the mean of the model predictions using very many Monte Carlo samples.
 
