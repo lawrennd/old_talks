@@ -120,7 +120,7 @@ print('The estimate of the mean of the Branin function is {mean}'.format(mean=np
 
 Although we're approaching this from the machine learning perspective, with a computer-scientist's approach, you won't be surprised to find out that this field is not new and there are a range of research groups interested in this domain.}
 
-\notes{This type of challenge, of where to run the simulation to get the answer you require is an old challenge. One classic paper, @McKay-selecting79, reviews three different methods for designing these inputs. They are *random sampling*, *stratified sampling* and *latin hypercube sampling*.}
+\notes{This type of challenge, of where to run the simulation to get the answer you require is an old challenge. One classic paper, @McKay-selecting79, reviews three different methods for designing these inputs. They are *random sampling*, *stratified sampling* and *Latin hypercube sampling*.}
 
 \newslide{Random Sampling}
 
