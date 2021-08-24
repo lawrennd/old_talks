@@ -30,6 +30,7 @@ $$
 \slides{where $\textbf{u}_t$ is the action force, $\inputVector_t = (p_t, v_t)$ is the vehicle state}
 \notes{where $\textbf{u}_{t}$ is the value of an action force, which in this example corresponds to push car to the left (negative value) or to the right (positive value). The actions across a full episode are represented in a policy $\textbf{u}_{t} = \pi(\inputVector_{t},\theta)$ that acts according to the current state of the car and some parameters $\theta$. In the following examples we will assume that the policy is linear which allows us to write $\pi(\inputVector_{t},\theta)$ as}
 
+\include{_uq/includes/mountain-car-setup.py}
 
 \newslide{Policy}
 
@@ -58,7 +59,6 @@ $$
 
 \notes{In this section, we directly use Bayesian optimization to solve this problem. We will use [EmuKit](https://emukit.github.io) so we first define the objective function.}
 
-\downloadcode{mountain_car}
 
 \setupcode{import mountain_car as mc
 import numpy as np}

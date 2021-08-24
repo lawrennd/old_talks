@@ -13,7 +13,7 @@
 
 \subsection{Sensitivity Analysis of a Catapult Simulation}
 
-\notes{The final step is to compute the coefficients using the class `ModelBasedMonteCarloSensitivity` which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the true estimates, those computed using 10000 direct evaluations of the objecte using Monte Carlo and those computed using a Gaussian process model trained on 100 evaluations.}
+\notes{The final step is to compute the coefficients using the class `ModelBasedMonteCarloSensitivity` which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the estimates of the Sobol indices computed using a Gaussian process model trained on the observations we've acquired.}
 
 \code{num_mc = 10000
 senstivity = MonteCarloSensitivity(model = model_emukit, input_domain = space)
