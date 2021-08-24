@@ -15,7 +15,7 @@ The components of these systems include flowing of currents, chemical interactio
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/simulation/simulation-schematic}{40%}}{The components of a simulation system for climate modelling. *Diagram from US National Oceanic and Atmospheric Administration*}{simulation-system-components}
+\figure{\includediagram{\diagramsDir/simulation/simulation-schematic}{40%}}{The components of a simulation system for climate modelling.}{simulation-system-components}
 
 \subsection{Monolithic System}
 
