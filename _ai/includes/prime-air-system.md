@@ -13,7 +13,7 @@
 
 \include{_supply-chain/includes/amazon-drone-flight.md}
 
-\notes{As Jeff Wilke (CEO of Amazon Retail)
+\notes{As Jeff Wilke (who was CEO of Amazon Retail at the time)
 [announced in June 2019](https://blog.aboutamazon.com/transportation/a-drone-program-taking-flight)
 the technology is ready, but still needs operationalization including e.g. regulatory approval.}
 
