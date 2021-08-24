@@ -6,7 +6,7 @@
 
 \subsection{Game of Life}
 
-\notes{[John Horton Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) was a mathematician who developed a game known as the Game of Life. He unfortunately died in April 2020, but since he invented the game he was in effect 'god' for this game. But as we will see, just inventing the rules doesn't give you omniscience in the game.}
+\notes{[John Horton Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) was a mathematician who developed a game known as the Game of Life. He unfortunately died in April 2020, but since he invented the game, he was in effect 'god' for this game. But as we will see, just inventing the rules doesn't give you omniscience in the game.}
 
 \notes{The Game of Life is played on a grid of squares, or pixels. Each pixel is either on or off. The game has no players, but a set of simple rules that are followed at each turn the rules are.}
 
