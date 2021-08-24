@@ -33,7 +33,7 @@ The objective of the Planck space craft was to measure the anisotropy and statis
 \installcode{camb}
 \installcode{healpy}
 
-\setupcode{%matplotlib inline
+\setupplotcode{%matplotlib inline
 %config IPython.matplotlib.backend = 'retina'
 %config InlineBackend.figure_format = 'retina'
 
@@ -50,9 +50,9 @@ matplotlib.rcParams['lines.linewidth'] = 2
 matplotlib.rcParams['patch.linewidth'] = 2
 matplotlib.rcParams['axes.prop_cycle'] =\
     cycler("color", ['k', 'c', 'm', 'y'])
-matplotlib.rcParams['axes.labelsize'] = 16
+matplotlib.rcParams['axes.labelsize'] = 16}
 
-import healpy as hp
+\setupcode{import healpy as hp
 
 import camb
 from camb import model, initialpower}
@@ -94,7 +94,8 @@ Cells[0:2] = 0}
 				 
 \plotcode{hp.mollview(cmbmap)
 fig = plt.gcf()
-fig.savefig('\writeDiagramsDir/physics/mollweide-sample-cmb.png', transparent=True)}
+mlai.write_figure('mollweide-sample-cmb.png',
+                  directory='\writeDiagramsDir/physics/')}
 
 \newslide{}
 

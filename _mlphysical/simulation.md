@@ -23,6 +23,9 @@ transition: None
 
 \notes{Last lecture Carl Henrik introduced you to some of the challenges of approximate inference. Including the problem of mathematical tractability. Before that he introduced you to a particular form of model, the Gaussian process.}
 
+\include{_notebooks/includes/plot-setup.md}
+\include{_software/includes/notutils-software.md}
+\include{_software/includes/mlai-software.md}
 \include{_gp/includes/gp-intro-very-short.md}
 
 \notes{So, Gaussian processes provide an example of a particular type of model. Or, scientifically, we can think of such a model as a mathematical representation of a hypothesis around data. The rejection sampling view of Bayesian inference can be seen as rejecting portions of that initial hypothesis that are inconsistent with the data. From a Popperian perspective, areas of the prior space are falsified by the data, leaving a posterior space that represents remaining plausible hypotheses.}
@@ -31,7 +34,7 @@ transition: None
 
 \include{_gp/includes/planck-cmp-master-gp.md}
 
-\notes{Those Cosmological simulations are based on a relatively simple set of 'rules' that stem from our understanding of natural laws. These 'rules' are mathematical abstractions of the physical world. Representations of behaviour in mathematical form that capture the interaction forces between particles. The grand aim of physics has been to unify these rules into a single unifying theory. Popular understanding of this quest developed as a result of Stephen Hawking's book, "[A Brief History of Time](https://en.wikipedia.org/wiki/A_Brief_History_of_Time)". The idea of these laws as 'ultimate causes' has given them a pseudo religious feel, see for example Paul Davies's book "[The Mind of God](https://en.wikipedia.org/wiki/The_Mind_of_God)" which comes from a quotation form Stephen Hawking. }
+\notes{Those cosmological simulations are based on a relatively simple set of 'rules' that stem from our understanding of natural laws. These 'rules' are mathematical abstractions of the physical world. Representations of behavior in mathematical form that capture the interaction forces between particles. The grand aim of physics has been to unify these rules into a single unifying theory. Popular understanding of this quest developed because of Stephen Hawking's book, "[A Brief History of Time](https://en.wikipedia.org/wiki/A_Brief_History_of_Time)". The idea of these laws as 'ultimate causes' has given them a pseudo religious feel, see for example Paul Davies's book "[The Mind of God](https://en.wikipedia.org/wiki/The_Mind_of_God)" which comes from a quotation form Stephen Hawking. }
 
 \newslide{}
 
@@ -71,30 +74,7 @@ $$
 $$
 \notes{As we pointed out, there is an irony in Laplace's demon forming the cornerstone of a movement known as 'determinism', because Laplace wrote about this idea in an essay on probabilities. The more important quote in the essay was }
 
-\newslide{}
-
-> The curve described by a simple molecule of air or vapor is regulated
-> in a manner just as certain as the planetary orbits; the only
-> difference between them is that which comes from our ignorance. 
-
-\newslide{} 
-
-> Probability is relative, in part to this ignorance, in part to our
-> knowledge. We know that of three or greater number of events a single
-> one ought to occur; but nothing induces us to believe that one of them
-> will occur rather than the others. In this state of indecision it is
-> impossible for us to announce their occurrence with certainty. It is,
-> however, probable that one of these events, chosen at will, will not
-> occur because we see several cases equally possible which exclude its
-> occurrence, while only a single one favors it.
->
-> --- Pierre-Simon Laplace [@Laplace-essai14]
-
-\speakernotes{I like to refer to this notion as "Laplace's Gremlin", because the lack of knowledge is the "gremlin of uncertainty" that inhibits the "deterministic demon"}
-
-\notes{The representation of ignorance through probability is the true message of Laplace, I refer to this message as "Laplace's gremlin", because it is the gremlin of uncertainty that interferes with the demon of determinism to mean that our predictions are not deterministic. 
-
-Our separation of the uncertainty into the data, the model and the computation gives us three domains in which our doubts can creep into our ability to predict. Over the last three lectures we've introduced some of the basic tools we can use to unpick this uncertainty. In particular, you've been introduced to, (or have yow reviewed) *Bayes' rule*. The rule, which is a simple consequence of the product rule of probability, is the foundation of how we update our beliefs in the presence of new information.}
+\include{_physics/includes/laplaces-gremlin.md}
 
 \newslide{}
 
@@ -149,14 +129,13 @@ This broad class of physical models, or 'natural laws' is probably the closest t
 
 \subsection{Abstraction and Emergent Properties}
 
-\figure{\includediagram{\diagramsDir/physics/simulation-scales}{90%}}{A scale of different simulations we might be interested in when modelling the physical world. The scale is $\log_10$ meters. The scale reflects something about the level of granularity where we might choose to know "all positions of all items of which nature is composed".}{simulation-scales} 
+\figure{\includediagram{\diagramsDir/physics/simulation-scales}{90%}}{A scale of different simulations we might be interested in when modelling the physical world. The scale is $\log_{10}$ meters. The scale reflects something about the level of granularity where we might choose to know "all positions of all items of which nature is composed".}{simulation-scales} 
 
 \newslide{Abstraction}
 
 \slides{* We often abstract smaller scales away e.g. in statistical mechanics.
 * When we're abstracting finer length scales we can introduce uncertainties.
     * E.g. Maxwell-Boltzmann distribution for ideal Gas.}
-
 
 \notes{Unfortunately, even if such an equation were to exist, we would be unlikely to know "all positions of all items of which nature is composed". A good example here is computational systems biology. In that domain we are interested in understanding the undelying function of the cell. These systems sit somewhere between the two extremes that Laplace described: "the movements of the greatest bodies of the universe and those of the smallest atom".}
 
@@ -349,12 +328,12 @@ The descendent of BUGS that is probably most similar in the spirit of its design
 
 \notes{My Sheffield colleague, Rich Wilkinson, was one of the pioneers of this approach during his PhD in the Statslab here in Cambridge. You can hear Rich talking about ABC at NeurIPS in 2013 here.}
 
-\figure{\includeyoutube{sssbLkn2JjI}{800}{600}}{Rich Wilkinson giving a Tutorial on ABC at NeurIPS in 2013. Unfortunately they've not synchronised the slides with the tutorial. You can find the slides [separately here](http://media.nips.cc/Conferences/2013/Video/Tutorial2B.pdf).}{rich-wilkinson-abc}
+\figure{\includeyoutube{sssbLkn2JjI}{600}{450}}{Rich Wilkinson giving a Tutorial on ABC at NeurIPS in 2013. Unfortunately they've not synchronised the slides with the tutorial. You can find the slides [separately here](http://media.nips.cc/Conferences/2013/Video/Tutorial2B.pdf).}{rich-wilkinson-abc}
 
 
 \subsection{Causality}
 
-\figure{\includeyoutube{yksduYxEusQ}{800}{600}}{Judea Pearl and Elias Bareinboim giving a Tutorial on Causality at NeurIPS in 2013. Again, the slides aren't synchronised, but you can find them separately [here](http://media.nips.cc/Conferences/2013/nips-dec2013-pearl-bareinboim-tutorial-full.pdf).}{judea-pearl-causality}
+\figure{\includeyoutube{yksduYxEusQ}{600}{450}}{Judea Pearl and Elias Bareinboim giving a Tutorial on Causality at NeurIPS in 2013. Again, the slides aren't synchronised, but you can find them separately [here](http://media.nips.cc/Conferences/2013/nips-dec2013-pearl-bareinboim-tutorial-full.pdf).}{judea-pearl-causality}
 
 \notes{All of these approaches offer a lot of promise for developing machine learning at the interface with science, but covering each in detail would require four separate modules. We've chosen to focus on the emulation approach, for two princpal reasons. Firstly, it's conceptual simplicity. Our aim is to replace all or part of our simulation with a machine learning model. Typically, we're going to want uncertainties as part of that representation. That explains our focus on Gaussian process models. Secondly, the emulator method is flexible. Probabilistic programming requires that the simulator has been built in a particular way, otherwise we can't compile the program. Finally, the emulation approach can be combined with any of the existing simulation approaches. For example, we might want to write our emulators as probabilistic programs. Or we might do causal analysis on our emulators, or we could speed up the simulation in ABC through emulation.} 
 
@@ -372,11 +351,11 @@ The descendent of BUGS that is probably most similar in the spirit of its design
 * Abstractions
 * Levels of fidelity}
 
-\notes{We've introduced the notion of a simulator. A body of computer code that expresses our understanding of a particular physical system. We introduced such simulators through *physical laws*, such as laws of gravitation or electro-magnetism. But we soon saw that in may simulations those laws become abstracted and the simulation becomes more phenomological.}
+\notes{We've introduced the notion of a simulator. A body of computer code that expresses our understanding of a particular physical system. We introduced such simulators through *physical laws*, such as laws of gravitation or electro-magnetism. But we soon saw that in many simulations those laws become abstracted and the simulation becomes more phenomological.}
 
 \notes{Even full knowledge of all laws does not give us access to 'the mind of God', because we are lacking information about the data, and we are missing the compute. These challenges further motivate the need for abstraction, and we've seen examples of where such abstractions are used in practice.}
 
-\notes{We also summarized the different types of simmulation into roughly three groups. Firstly, those based on physical laws in the form of differential equations. Examples include certain compartmental epidemiological models, climate models and weather models. Secondly, discrete event simulations. These simulations often run to a 'clock', where updates to the state are taken in turns. The Game of Life is an example of this type of simulation, and Formula 1 models of race strategy also use this approach. There is another type of discrete event simulation that doesn't use a turn based approach, but waits for the next event. The [Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm) is an example of such an approach but we didn't cover it here. Finally, we realised that general computer code bases are also simulations. If a company has a large body of code, and particularly if it's hosted within a streaming environment (such as Apache Kafka), it's possible to back test the code with different inputs. Such backtests can be viewed as simulations, and in the case of large bodies of code (such as the code that manages Amazon's automated buying systems) the back tests can be slow and could also benefit from emulation.}
+\notes{We also summarized the different types of simmulation into roughly three groups. Firstly, those based on physical laws in the form of differential equations. Examples include certain compartmental epidemiological models, climate models and weather models. Secondly, discrete event simulations. These simulations often run to a 'clock', where updates to the state are taken in turns. The Game of Life is an example of this type of simulation, and Formula 1 models of race strategy also use this approach. There is another type of discrete event simulation that doesn't use a turn based approach but waits for the next event. The [Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm) is an example of such an approach but we didn't cover it here. Finally, we realised that general computer code bases are also simulations. If a company has a large body of code, and particularly if it's hosted within a streaming environment (such as Apache Kafka), it's possible to back test the code with different inputs. Such backtests can be viewed as simulations, and in the case of large bodies of code (such as the code that manages Amazon's automated buying systems) the back tests can be slow and could also benefit from emulation.}
 
 
 \thanks
