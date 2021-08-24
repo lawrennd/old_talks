@@ -12,7 +12,7 @@ The problem of *uncertainty propagation* is the study of the distribution of the
 
 We're going to address this problem using emulation and GPy. We will see in this section the advantage of using a model when only a few observations of $f$ are available. 
 
-Firstly we'll make use of a test function known as the Branin test function.}
+Firstly, we'll make use of a test function known as the Branin test function.}
 $$
 \mappingFunction(\inputVector) = a(\inputScalar_2 - b\inputScalar_1^2 + c\inputScalar_1 - r)^2 + s(1-t \cos(\inputScalar_1)) + s
 $$
@@ -23,7 +23,7 @@ $$
 	    + 10*(1-1/(8*np.pi))*np.cos(X[:,0])+10)
     return(y)}
 
-\notes{We'll define a grid of twenty five observations  over [−5, 10] × [0, 15] and a set of 25 observations.}
+\notes{We'll define a grid of twenty-five observations  over [−5, 10] × [0, 15] and a set of 25 observations.}
 
 \code{# Training set defined as a 5*5 grid:
 xg1 = np.linspace(-5,10,5)
@@ -58,7 +58,7 @@ function which is 54.31.}
 Alternatively, we can fit a GP model and compute the integral of the best predictor
 by Monte Carlo sampling.
 
-\notes{First we create the covariance function. Here we're going to use an exponentiated quadratic, but we'll augment it with the 'bias' covariance function. This covariance function represents a single fixed bias that is added to the overall covariance. It allows us to deal with non-zero-mean emulations.}
+\notes{Firstly, we create the covariance function. Here we're going to use an exponentiated quadratic, but we'll augment it with the 'bias' covariance function. This covariance function represents a single fixed bias that is added to the overall covariance. It allows us to deal with non-zero-mean emulations.}
 
 \code{# Create an exponentiated quadratic plus bias covariance function
 kern_eq = GPy.kern.RBF(input_dim=2, ARD = True)
@@ -69,16 +69,16 @@ kern = kern_eq + kern_bias}
 \code{# Build a GP model
 model = GPy.models.GPRegression(X,Y,kern)}
 
-\notes{In the sinusoid example above, we learnt the variance of the process. But in this example, we are fitting an emulator to a function we know is noise-free. However, we don't fix the noise value to precisely zero, as this can lead to some numerical errors. Instead we fix the variance of the Gaussian noise to a very small value.}
+\notes{In the sinusoid example above, we learnt the variance of the process. But in this example, we are fitting an emulator to a function we know is noise-free. However, we don't fix the noise value to precisely zero, as this can lead to some numerical errors. Instead, we fix the variance of the Gaussian noise to a very small value.}
 
 \code{# fix the noise variance
 model.likelihood.variance.fix(1e-5)}
 
-\notes{Now we fit the model. Note, that the initial values for the lengthscale are not appropriate. So first set the lengthscale of the model needs to be reset.}
+\notes{Now we fit the model. Note, that the initial values for the length scale are not appropriate. So first set the length scale of the model needs to be reset.}
 
 \code{kern.rbf.lengthscale = np.asarray([3, 3])}
 
-\notes{It's a common error in Gaussian process fitting to initialise the lengthscale too small or too big. The challenge is that the error surface is normally multimodal, and the final solution can be very sensitive to this initialisation. If the lengthscale is initialized too small, the solution can converge on an place where the signal isn't extracted by the covariance function. If the lengthscale is initialized too large, then the variations of the function are often missing. Here the lengthscale is set for each dimension of inputs as 3. Now that's done, we can optimize the model.}
+\notes{It's a common error in Gaussian process fitting to initialize the length scale too small or too big. The challenge is that the error surface is normally multimodal, and the final solution can be very sensitive to this initialization. If the length scale is initialized too small, the solution can converge on an place where the signal isn't extracted by the covariance function. If the length scale is initialized too large, then the variations of the function are often missing. Here the length scale is set for each dimension of inputs as 3. Now that's done, we can optimize the model.}
 
 
 \code{# Randomize the model and optimize
@@ -93,9 +93,9 @@ mlai.write_figure('branin-gp-optimized-fit.svg', directory='\writeDiagramsDir/gp
 
 \figure{\includediagram{\diagramsDir/gp/branin-gp-optimized-fit}{80%}}{A Gaussian process fit to the Branin test function, used to assess the mean of the function by emulation.}{branin-gp-optimized-fit}
 
-\notes{Finally we can compute the mean of the model predictions using very many Monte Carlo samples.
+\notes{Finally, we can compute the mean of the model predictions using very many Monte Carlo samples.
 
-Note, that in this example, because we're using at est function, we could simply have done the Monte Carlo estimation directly on the Branin function. However, imagine inststead that we were trying to understand the results of a complex Computational Fluid Dynamics simulation, where each run of the simulation (which is equivalent to our function) took many hours. In that case the advantage of the emulator is clear.}
+Note, that in this example, because we're using a test function, we could simply have done the Monte Carlo estimation directly on the Branin function. However, imagine instead that we were trying to understand the results of a complex computational fluid dynamics simulation, where each run of the simulation (which is equivalent to our test function) took many hours. In that case the advantage of the emulator is clear.}
 
 \code{# Compute the mean of model prediction on 1e5 Monte Carlo samples
 Xp = np.random.uniform(size=(int(1e5),2))
@@ -116,9 +116,9 @@ print('The estimate of the mean of the Branin function is {mean}'.format(mean=np
     * Latin Hypercube Sampling
 * As approaches for Monte Carlo estimates
 }
-\notes{We're introducing you to the optimization and analysis of real world models through emulation, this domain is part of a broader field known as surrogate modelling. 
+\notes{We're introducing you to the optimization and analysis of real-world models through emulation, this domain is part of a broader field known as surrogate modelling. 
 
-Although we're approaching this from the machine learning perspective, with a computer-scientist's approach, you won't be suprised to find out that this field is not new and there are a range of research groups interested in this domain.}
+Although we're approaching this from the machine learning perspective, with a computer-scientist's approach, you won't be surprised to find out that this field is not new and there are a range of research groups interested in this domain.}
 
 \notes{This type of challenge, of where to run the simulation to get the answer you require is an old challenge. One classic paper, @McKay-selecting79, reviews three different methods for designing these inputs. They are *random sampling*, *stratified sampling* and *latin hypercube sampling*.}
 
