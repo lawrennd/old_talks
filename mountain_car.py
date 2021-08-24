@@ -12,8 +12,8 @@ from matplotlib import animation
 from IPython.display import display, HTML
 from pylab import cm
 
-import teaching_plots as plot
 import mlai
+import mlai.plot as plot
 
 N_STEPS_MAX = 500
 
