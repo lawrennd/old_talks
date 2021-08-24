@@ -22,7 +22,8 @@ transition: None
 
 
 \section{Emulation}
-
+\comment{Move to simulation.md?}
+\include{_simulation/includes/simulation-system.md}
 \include{_supply-chain/includes/experiment-analyze-design.md}
 \include{_uq/includes/emulation.md}
 

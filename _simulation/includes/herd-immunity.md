@@ -138,7 +138,7 @@ for tt in range(0,len(t0ran)):
 ax[0].set_xlim([0,tlast])
 ax[0].set_ylim([0,1.2e7])
 ax[0].set_xlabel('Time (days)')
-ax[0].ylabel('Number of infectious cases')
+ax[0].set_ylabel('Number of infectious cases')
 ax[0].legend()
 for tt in range(0,len(t0ran)):
     ax[1].plot(sol[tt].t,N*sol[tt].y[5].T, label=mylab(t0ran[tt]))
