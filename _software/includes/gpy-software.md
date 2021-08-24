@@ -36,7 +36,7 @@ The software itself is available on [GitHub](https://github.com/SheffieldML/GPy)
 * Approximations for large data sets.
 }
 
-\notes{The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.}
+\notes{The aim for GPy is to be a probabilistic-style programming language, i.e., you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.}
 
 \notes{The documentation for GPy can be found [here](https://gpy.readthedocs.io/en/latest/).}
 
