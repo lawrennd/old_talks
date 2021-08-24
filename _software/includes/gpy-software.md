@@ -8,7 +8,7 @@
 
 \notes{Gaussian processes are a flexible tool for non-parametric analysis with uncertainty. The GPy software was started in Sheffield to provide a easy to use interface to GPs. One which allowed the user to focus on the modelling rather than the mathematics.}
 
-\figure{\includepng{\diagramsDir/gp/gpy}{70%}}{GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <https://github.com/SheffieldML/GPy>}{gpy-software}
+\figure{\includepng{\diagramsDir/gp/gpy}{70%}}{GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the GitHub repository <https://github.com/SheffieldML/GPy>}{gpy-software}
 
 \slides{\aligncenter{<https://github.com/SheffieldML/GPy>}}
 
