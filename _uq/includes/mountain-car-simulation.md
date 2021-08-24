@@ -4,7 +4,7 @@
 
 \subsection{Mountain Car Simulator}
 
-\notes{To illustrate the above mentioned concepts we we use the
+\notes{To illustrate the above mentioned concepts we use the
 [mountain car simulator](https://github.com/openai/gym/wiki/MountainCarContinuous-v0). This
 simulator is widely used in machine learning to test reinforcement
 learning algorithms. The goal is to define a control policy on a car
@@ -41,7 +41,7 @@ $$
 \notes{For $t=1,\dots,T$ now given some initial state $\inputVector_{0}$ and some some values of each $\textbf{u}_{t}$, we can **simulate** the full dynamics of the car for a full episode using [Gym](https://gym.openai.com/envs/). The values of 
 $\textbf{u}_{t}$ are fully determined by the parameters of the linear controller.}
 
-\notes{After each episode of length $T$ is complete, a reward function $R_{T}(\theta)$ is computed. In the mountain car example the reward is computed as 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions (a real negative to push to the left and a real positive to push to the right) from start to goal.  Note that our reward depend on $\theta$ as we make it dependent on the parameters of the linear controller.}
+\notes{After each episode of length $T$ is complete, a reward function $R_{T}(\theta)$ is computed. In the mountain car example, the reward is computed as 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions (a real negative to push to the left and a real positive to push to the right) from start to goal.  Note that our reward depends on $\theta$ as we make it dependent on the parameters of the linear controller.}
 
 \subsection{Emulate the Mountain Car}
 
@@ -100,7 +100,7 @@ initial_design = design.get_samples(n_initial_points)}
 
 \setupcode{import numpy as np}
 
-\notes{This won't render in `collab`, but should work in Jupyter notebook. Here's details in this stackoverflow question <https://stackoverflow.com/questions/50107530/how-to-render-openai-gym-in-google-colab>.}
+\notes{This won't render in Google `colab`, but should work in a regular Jupyter notebook if `pyglet` is installed. Details on rendering in `colab` are given in answer to this stackoverflow question <https://stackoverflow.com/questions/50107530/how-to-render-openai-gym-in-google-colab>.}
 
 \code{random_controller = initial_design[0,:]
 _, _, _, frames = mc.run_simulation(env, np.atleast_2d(random_controller), render=True)
@@ -123,7 +123,7 @@ push the car to the top of the mountain. Now, let's optimize the
 regret using Bayesian optimization and the emulator for the reward. We
 try 50 new parameters chosen by the expected improvement acquisition function.}
 
-\notes{First we initizialize a Gaussian process emulator.}
+\notes{First, we initizialize a Gaussian process emulator.}
 
 \setupcode{import GPy}
 
