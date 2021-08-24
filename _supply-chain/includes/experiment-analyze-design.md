@@ -42,7 +42,7 @@ Amazon is known for being longer term thinking than many companies, and a lot of
 
 \newslide{Objective}
 
-\notes{As a result, our objective became a two-order magnitude increase in number of experiments run across a five year period.}
+\notes{As a result, our objective became a two-order magnitude increase in number of experiments run across a five-year period.}
 
 \slides{
 > A two order of magnitude increase in number of experiments run on supply chain three years' time.}
