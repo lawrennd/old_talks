@@ -82,7 +82,7 @@ mlai.write_figure('gpy-eq-covariance-lengthscales.svg', directory='\writeDiagram
     * E.g. Matern family, Brownian motion, periodic, linear etc.
 	* Can [define new covariances](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html)}
 
-\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a lengthscale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f(\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
+\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a length scale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f(\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
