@@ -242,7 +242,8 @@ model_emukit.optimize()}
 
 \notes{The final step is to compute the coefficients using the class `ModelBasedMonteCarloSensitivity` which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the true estimates, those computed using 10000 direct evaluations of the objecte using Monte Carlo and those computed using a Gaussian process model trained on 100 evaluations.}
 
-\code{senstivity_ishigami_gpbased = MonteCarloSensitivity(model = model_emukit, input_domain = space)
+\code{num_mc = 10000
+senstivity_ishigami_gpbased = MonteCarloSensitivity(model = model_emukit, input_domain = space)
 main_effects_gp, total_effects_gp, _ = senstivity_ishigami_gpbased.compute_effects(num_monte_carlo_points = num_mc)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
