@@ -11,9 +11,7 @@
 
 \installcode{GPy}
 
-\downloadcode{mlai}
-\downloadcode{teaching_plots}
-\downloadcode{gp_tutorial}
+\installcode{mlai}
 
 \setupcode{import numpy as np
 import GPy}
@@ -49,8 +47,8 @@ kern = GPy.kern.RBF(input_dim=input_dim,
 
 \notes{Or because it's one dimensional, you can also plot the kernel as a function of its inputs (while the other is fixed).}
 
-\setupplotcode{import teaching_plots as plot
-import mlai}
+\setupplotcode{import mlai
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 kern.plot(ax=ax)
