@@ -1,5 +1,5 @@
 ---
-week: 4
+week: 3
 session: 1
 title: "Emulation"
 abstract:  >
@@ -13,7 +13,7 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 time: "12:00"
-date: 2021-10-29
+date: 2021-10-22
 youtube: 7Ct_16JicLw
 ipynb: true
 reveal: true

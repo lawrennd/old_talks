@@ -1,6 +1,6 @@
 ---
-week: 3
-session: 1
+week: 2
+session: 2
 title: "Simulation"
 abstract:  >
   This lecture will introduce the notion of simulation and review the different types of simulation we might use to represent the physical world. 
@@ -12,8 +12,8 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 layout: lecture
-time: "12:00"
-date: 2021-10-22
+time: "10:00"
+date: 2021-10-19
 youtube: AmI5nq8s4qc
 ipynb: True
 reveal: True

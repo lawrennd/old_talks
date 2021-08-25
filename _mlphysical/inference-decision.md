@@ -1,6 +1,6 @@
 ---
-title: "Inference"
-abstract: "In this lecture we will talk about inference over latent variables. We will try to provide an intuitive explanation to how we can interpret the marginal likelihood and highlight some of the challenges with approximative inference."
+title: "Probabilistic Numerics"
+abstract: "In this lecture we will talk about probabilistic inference and decision making."
 author:
 - given: Carl Henrik
   family: Ek
@@ -9,10 +9,10 @@ author:
   twitter: 
   gscholar: 
   orcid:
-date: 2021-10-19
-time: "10:00"
-week: 2
-session: 2
+date: 2021-10-29
+time: "12:00"
+week: 4
+session: 1
 pdfslides: l48-mlpw-04.pdf
 pdfworksheet: 02_evidence.pdf
 youtube: "eHFegeSFJKc"
