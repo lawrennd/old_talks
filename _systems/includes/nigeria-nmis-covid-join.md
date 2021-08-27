@@ -56,11 +56,11 @@ To do this, we will use the `JOIN` operation from SQL and introduce a new operat
 
 As before, these operations can be done in pandas or GeoPandas. Before we create the SQL commands, we'll show how you can do that in pandas.
 
-In `pandas`, the equivalent of a database table is a dataframe. So the JOIN operation takes two dataframes and joins them based on the key. The key is that special shared column between the two tables. The place where the 'holes align' so the two databases can be joined together.
+In `pandas`, the equivalent of a database table is a dataframe. So, the JOIN operation takes two dataframes and joins them based on the key. The key is that special shared column between the two tables. The place where the 'holes align' so the two databases can be joined together.
 
 In GeoPandas we used an outer join. In an outer join you keep all rows from both tables, even if there is no match on the key. In an inner join, you only keep the rows if the two tables have a matching key.
 
-This is sometimes where problems can creep in. If in one table Abuja's state is encoded as 'FCT' or 'FCT-Abuja', and in another table it's encoded as 'Federal Capital Territory', they won't match and that data wouldn't appear in the joined table.
+This is sometimes where problems can creep in. If in one table Abuja's state is encoded as 'FCT' or 'FCT-Abuja', and in another table it's encoded as 'Federal Capital Territory', they won't match, and that data wouldn't appear in the joined table.
 
 In simple terms, a JOIN operation takes two tables (or dataframes) and combines them based on some key, in this case the index of the Pandas data frame which is the state name.}
 
@@ -78,11 +78,11 @@ A `GROUPBY` operation groups rows with the same key (in this case 'province/stat
 
 \notes{\code{covid_cases_by_state}}
 
-\notes{Now we have this new data series, it can be added to the pandas data frame as a new column.}
+\notes{Now we have this new data series, it can be added to the pandas dataframe as a new column.}
 
 \notes{\code{pop_joined['covid_cases_by_state'] = covid_cases_by_state}}
 
-\notes{The spatial join we did on the original data frame to obtain hosp_state_joined introduced a new column, index_right which contains the state of each of the hospitals. Let's have a quick look at it below.}
+\notes{The spatial join we did on the original data frame to obtain hosp_state_joined introduced a new column, `index_right` that contains the state of each of the hospitals. Let's have a quick look at it below.}
 
 \notes{\code{hosp_state_joined['index_right']}
 
@@ -101,11 +101,11 @@ pop_joined['hosp_state'] = pd.Series(counted_groups)}}
 
 \notes{\subsection{SQL-style}
 
-That's the ```pandas``` approach to doing it. But ```pandas``` itself is inspired by database language, in particular relational databases such as SQL. To do these types of joins at scale, e.g. for our ride hailing app, we need to see how to do these joins in a database.
+That's the `pandas` approach to doing it. But `pandas` itself is inspired by database languages, in particular relational databases such as SQL. To do these types of joins at scale, e.g., for a ride hailing app, we need to do these joins in a database.
 
 As before, we'll wrap the underlying SQL commands with a convenient python command. 
 
-What you see below gives the full SQL command. There is a [```SELECT``` command](https://www.w3schools.com/sql/sql_select.asp), which extracts ```FROM``` a particular table. It then completes an [```INNER JOIN```](https://www.w3schools.com/sql/sql_join_inner.asp) using particular columns (```provice/state``` and ```index_right```)}
+What you see below gives the full SQL command. There is a [`SELECT` command](https://www.w3schools.com/sql/sql_select.asp), which extracts `FROM` a particular table. It then completes an [`INNER JOIN`](https://www.w3schools.com/sql/sql_join_inner.asp) using particular columns (`provice/state` and `index_right`)}
 
 \helpercode{def join_counts(conn):
     """
