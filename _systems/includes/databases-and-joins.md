@@ -26,6 +26,6 @@ In a machine learning system, you will need to bring different data sets togethe
 
 But instead of using a welder or screws to join data, we join it using columns of the data. We can join data together using people's names. One database may contain where people live, another database may contain where they go to school. If we join these two databases, we can have a database which shows where people live and where they got to school.
 
-In the notebook, we will join together some data about where the health centers are in Nigeria and where there have been cases of Covid19. There are other challenges in the ML System Design that are not going to be covered here. They include how to update the data bases and how to control access to the data bases from different users (boda boda drivers, riders, administrators etc). }
+In the notebook, we will join some data about where the health centers are in Nigeria with data about where there have been cases of Covid19. There are other challenges in the ML System Design that are not going to be covered here. They include how to update the databases and how to control access to the databases from different users (boda boda drivers, riders, administrators etc). }
 
 \endif
