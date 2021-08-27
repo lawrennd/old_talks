@@ -20,7 +20,7 @@ What if you are even more succesful? What if everyone in Lagos wants to use your
 
 We want to build safe and reliable machine learning systems. Building them from `pandas` and python is about as safe and reliable as [taking six children to school on a boda boda](https://www.monitor.co.ug/News/National/Boda-accidents-kill-10-city-UN-report-Kampala/688334-4324032-15oru2dz/index.html).
 
-To build a reliable system, we need to turn to *databases*. In this notebook [we'll be focussing on SQL databases](https://en.wikipedia.org/wiki/Join_(SQL)) and how you bring together different streams of data in a Machine Learning System.
+To build a reliable system, we need to turn to *databases*. In this notebook [we'll be focusing on SQL databases](https://en.wikipedia.org/wiki/Join_(SQL)) and how you bring together different streams of data in a Machine Learning System.
 
 In a machine learning system, you will need to bring different data sets together. In database terminology this is known as a 'join'. You have two different data sets, and you want to join them together. Just like you can join two pieces of metal using a welder, or two pieces of wood with screws.
 
