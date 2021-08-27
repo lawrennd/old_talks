@@ -38,8 +38,8 @@ data = pd.read_csv('line-list-nigeria.csv', parse_dates=['date',
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
-import mlai}
+import mlai
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 data['count_column'] = True
