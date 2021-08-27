@@ -1,6 +1,6 @@
 ---
 week: 6
-session: 2
+session: 1
 title: "Lab Session One"
 abstract:  >
   In this lecture we introduce a data science process: access, assess and address. The process Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
