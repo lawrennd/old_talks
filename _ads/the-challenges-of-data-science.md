@@ -1,5 +1,5 @@
 ---
-week: 7
+week: 5
 session: 2
 title: "The Challenges of Data Science"
 abstract:  >
@@ -13,9 +13,9 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-25
+date: 2021-11-08
 transition: None
-ipynb: true
+ipynb: false
 ---
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
