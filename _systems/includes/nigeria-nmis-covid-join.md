@@ -36,7 +36,7 @@ We also want to have population data for each state in Nigeria, so that we can s
 
 \code{pop_data=data}
 
-\notes{When doing this for real world data, you should also make sure that the names used in the rows are the same across the different data bases. For example, has someone decided to use an abbreviation for 'Federal Capital Territory' and set it as 'FCT'. The computer won't understand these are the same states, and if you do a join with such data you can get duplicate entries or missing entries. This sort of thing happens a lot in real world data and takes a lot of time to sort out. Fortunately, in this case, the data is well curated and we don't have these problems.}
+\notes{When doing this for real world data, you should also make sure that the names used in the rows are the same across the different data bases. For example, has someone decided to use an abbreviation for 'Federal Capital Territory' and set it as 'FCT'. The computer won't understand these are the same states, and if you do a join with such data, you can get duplicate entries or missing entries. This sort of thing happens a lot in real world data and takes a lot of time to sort out. Fortunately, in this case, the data is well curated, and we don't have these problems.}
 
 \notes{\subsection{Save to database file}
 
@@ -50,13 +50,13 @@ The next step is to add this new CSV file as an additional table in our SQLite d
 
 The Minister of Health in Abuja may be interested in which states are most vulnerable to COVID19. We now have all the information in our SQL data bases to compute what our health center provision is per capita, and what the COVID19 situation is.
 
-To do this, we will use the ```JOIN``` operation from SQL and introduce a new operation called ```GROUPBY```.}
+To do this, we will use the `JOIN` operation from SQL and introduce a new operation called `GROUPBY`.}
 
 \notes{\subsubsection{Joining in Pandas}
 
 As before, these operations can be done in pandas or GeoPandas. Before we create the SQL commands, we'll show how you can do that in pandas.
 
-In pandas, the equivalent of a database table is a dataframe. So the JOIN operation takes two dataframes and joins them based on the key. The key is that special shared column between the two tables. The place where the 'holes align' so the two databases can be joined together.
+In `pandas`, the equivalent of a database table is a dataframe. So the JOIN operation takes two dataframes and joins them based on the key. The key is that special shared column between the two tables. The place where the 'holes align' so the two databases can be joined together.
 
 In GeoPandas we used an outer join. In an outer join you keep all rows from both tables, even if there is no match on the key. In an inner join, you only keep the rows if the two tables have a matching key.
 
@@ -68,9 +68,9 @@ In simple terms, a JOIN operation takes two tables (or dataframes) and combines 
 
 \notes{\subsection{GroupBy in Pandas}
 
-Our COVID19 data is in the form of individual cases. But we are interested in total case counts for each state. There is a special data base operation known as ```GROUP BY``` for collecting information about the individual states. The type of information you might want could be a sum, the maximum value, an average, the minimum value. We can use a GroupBy operation in ```pandas``` and SQL to summarize the counts of covid cases in each state. 
+Our COVID19 data is in the form of individual cases. But we are interested in total case counts for each state. There is a special data base operation known as `GROUP BY` for collecting information about the individual states. The type of information you might want could be a sum, the maximum value, an average, the minimum value. We can use a GroupBy operation in ```pandas``` and SQL to summarize the counts of covid cases in each state. 
 
-A ```GROUPBY``` operation groups rows with the same key (in this case 'province/state') into separate objects, that we can operate on further such as to count the rows in each group, or to sum or take the mean over the values in some column (imagine each case row had the age of the patient, and you were interested in the mean age of patients.)}
+A `GROUPBY` operation groups rows with the same key (in this case 'province/state') into separate objects, that we can operate on further such as to count the rows in each group, or to sum or take the mean over the values in some column (imagine each case row had the age of the patient, and you were interested in the mean age of patients.)}
 
 \notes{\code{covid_cases_by_state = covid_data.groupby(['province/state']).count()['case_id']}}
 
@@ -90,7 +90,7 @@ A ```GROUPBY``` operation groups rows with the same key (in this case 'province/
 
 \notes{\code{grouped = hosp_state_joined.groupby('index_right')}}
 
-\notes{This python operation now goes through each of the groups and counts how many hospitals there are in each state. It stores the result in a dictionary. If you're new to Python, then to understand this code you need to understand what a 'dictionary comprehension' is. In this case the dictionary comprehension is being used to create a python dictionary of states and total hospital counts. That's then being converted into a ```pandas``` Data Series and added to the ```pop_joined``` dataframe.}
+\notes{This python operation now goes through each of the groups and counts how many hospitals there are in each state. It stores the result in a dictionary. If you're new to python, then to understand this code you need to understand what a 'dictionary comprehension' is. In this case the dictionary comprehension is being used to create a python dictionary of states and total hospital counts. That's then being converted into a `pandas` Data Series and added to the `pop_joined` dataframe.}
 
 \notes{\code{counted_groups = {k: len(v) for k, v in grouped.groups.items()}
 pop_joined['hosp_state'] = pd.Series(counted_groups)}}
