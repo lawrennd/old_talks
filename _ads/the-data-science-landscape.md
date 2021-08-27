@@ -1,5 +1,5 @@
 ---
-week: 7
+week: 5
 session: 1
 title: "The Data Science Landscape"
 abstract:  >
@@ -13,7 +13,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-23
+date: 2021-11-05
 transition: None
 ipynb: true
 ---
