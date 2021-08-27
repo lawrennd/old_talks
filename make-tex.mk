@@ -26,7 +26,7 @@ ${BASE}.notes.tex: ${BASE}.notes.tex.markdown
 		-o ${BASE}.notes.tex  \
 		${BASE}.notes.tex.markdown 
 
-${BASE}.include.tex: ${BASE}.notes.tex.markdown 
+${BASE}.include.tex: ${BASE}.notes.tex.markdown ${TEXDEPS}
 	pandoc  -s \
 		--template pandoc-include-tex-template.tex \
 		--number-sections \

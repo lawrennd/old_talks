@@ -3,11 +3,11 @@
 
 
 
-${BASE}.docx: ${BASE}.notes.docx.markdown 
+${BASE}.docx: ${BASE}.notes.docx.markdown ${DOCXDEPS}
 	pandoc  -s \
 		${BIBFLAGS} \
 		${DOCXFLAGS} \
 		-B ../_includes/${NOTATION} \
-		-o ${BASE}.notes.docx  \
+		-o ${BASE}.docx  \
 		${BASE}.notes.docx.markdown 
 
