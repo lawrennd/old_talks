@@ -1,10 +1,11 @@
 ---
-week: 8
-session: 1
+week: 5
+session: 3
 title: "A Data Science Process"
 abstract:  >
   In this lecture we introduce a data science process: access, assess and address. The process Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
 layout: lecture
+venue: FW11, William Gates Building
 author:
 - family: Lawrence
   given: Neil D.
@@ -13,7 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-30
+date: 2021-11-09
 transition: None
 ipynb: true
 ---
