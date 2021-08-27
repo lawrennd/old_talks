@@ -8,7 +8,7 @@
 
 \figure{\includejpg{\diagramsDir/physics/Front_view_of_the_European_Space_Agency_Planck_satellite}{60%}}{Artist's impression of the Planck spacecraft which measured the Cosmic Microwave Background between 2009 and 2013.}{planck-spacecraft}
 
-The objective of the Planck space craft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.[^kyle-cranmer] Currently our best estimates show this to be the case [@Jaffe:cmb98;@Pontzen-cmb10;@Elsner-unbiased15;@Elsner-unbiased16].
+The objective of the Planck spacecraft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.[^kyle-cranmer] Currently our best estimates show this to be the case [@Jaffe:cmb98;@Pontzen-cmb10;@Elsner-unbiased15;@Elsner-unbiased16].
 
 
 [^kyle-cranmer]: Most of my understanding of this is taken from conversations with Kyle Cranmer, a physicist who makes extensive use of machine learning methods in his work. See e.g. @Mishra-Sharma-semi-parametric20 from Kyle and Siddharth Mishra-Sharma. Of course, any errors in the above text are mine and do not stem from Kyle.}
@@ -21,11 +21,11 @@ The objective of the Planck space craft was to measure the anisotropy and statis
 
 \notes{\subsection{Simulating a CMB Map}}
 
-\notes{The simulation was created by [Boris Leistedt](https://ixkael.github.io/), see the [original Jupter notebook here](https://github.com/ixkael/Prob-tools/blob/master/notebooks/The%20CMB%20as%20a%20Gaussian%20Process.ipynb).}
+\notes{The simulation was created by [Boris Leistedt](https://ixkael.github.io/), see the [original Jupyter notebook here](https://github.com/ixkael/Prob-tools/blob/master/notebooks/The%20CMB%20as%20a%20Gaussian%20Process.ipynb).}
 
 \notes{Here we use that code to simulate our own universe and sample from what it looks like.}
 
-\notes{First we install some specialist software as well as `matplotlib`, `scipy`, `numpy` we require
+\notes{First, we install some specialist software as well as `matplotlib`, `scipy`, `numpy` we require
 
 - `camb`: <http://camb.readthedocs.io/en/latest/>
 - `healpy`: <https://healpy.readthedocs.io/en/latest/>}
@@ -33,7 +33,7 @@ The objective of the Planck space craft was to measure the anisotropy and statis
 \installcode{camb}
 \installcode{healpy}
 
-\setupcode{%matplotlib inline
+\setupplotcode{%matplotlib inline
 %config IPython.matplotlib.backend = 'retina'
 %config InlineBackend.figure_format = 'retina'
 
@@ -50,9 +50,9 @@ matplotlib.rcParams['lines.linewidth'] = 2
 matplotlib.rcParams['patch.linewidth'] = 2
 matplotlib.rcParams['axes.prop_cycle'] =\
     cycler("color", ['k', 'c', 'm', 'y'])
-matplotlib.rcParams['axes.labelsize'] = 16
+matplotlib.rcParams['axes.labelsize'] = 16}
 
-import healpy as hp
+\setupcode{import healpy as hp
 
 import camb
 from camb import model, initialpower}
@@ -62,7 +62,7 @@ from camb import model, initialpower}
 \code{nside = 512  # Healpix parameter, giving 12*nside**2 equal-area pixels on the sphere.
 lmax = 3*nside # band-limit. Should be 2*nside < lmax < 4*nside to get information content.}
 
-\notes{Now we design our Universe. It is parameterised according to the [$\Lambda$CDM model](https://en.wikipedia.org/wiki/Lambda-CDM_model). The variables are as follows. `H0` is the Hubble parameter (in Km/s/Mpc). The `ombh2` is Physical Baryon density parameter. The `omch2` is the physical dark matter density parameter. `mnu` is the sum of the neutrino masses (in electron Volts). `omk` is the $\Omega_k$ is the curvature parameter, which is here set to 0, tiving the minimal six parameter Lambda-CDM model. `tau` is the reionization optical depth.}
+\notes{Now we design our Universe. It is parameterized according to the [$\Lambda$CDM model](https://en.wikipedia.org/wiki/Lambda-CDM_model). The variables are as follows. `H0` is the Hubble parameter (in Km/s/Mpc). The `ombh2` is Physical Baryon density parameter. The `omch2` is the physical dark matter density parameter. `mnu` is the sum of the neutrino masses (in electron Volts). `omk` is the $\Omega_k$ is the curvature parameter, which is here set to 0, giving the minimal six parameter Lambda-CDM model. `tau` is the reionization optical depth.}
 
 \notes{Then we set `ns`, the "scalar spectral index". This was estimated by Planck to be 0.96. Then there's `r`, the ratio of the tensor power spectrum to scalar power spectrum. This has been estimated by Planck to be under 0.11. Here we set it to zero. These parameters are associated [with inflation](https://en.wikipedia.org/wiki/Primordial_fluctuations). }
 
@@ -94,7 +94,8 @@ Cells[0:2] = 0}
 				 
 \plotcode{hp.mollview(cmbmap)
 fig = plt.gcf()
-fig.savefig('\writeDiagramsDir/physics/mollweide-sample-cmb.png', transparent=True)}
+mlai.write_figure('mollweide-sample-cmb.png',
+                  directory='\writeDiagramsDir/physics/')}
 
 \newslide{}
 
@@ -103,12 +104,12 @@ fig.savefig('\writeDiagramsDir/physics/mollweide-sample-cmb.png', transparent=Tr
 
 \newslide{}
 
-\notes{The world we see today, of course, is not a Gaussian process. There are many dicontinuities, for example, in the density of matter, and therefore in the temperature of the Universe.}
+\notes{The world we see today, of course, is not a Gaussian process. There are many discontinuities, for example, in the density of matter, and therefore in the temperature of the Universe.}
 
 
 \figure{\div{<img src="\diagramsDir/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$=f\Bigg($<img src="\diagramsDir/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$\Bigg)$}{}{fontsize:120px;vertical-align:middle}}{What we observe today is some non-linear function of the cosmic microwave background.}{modern-universe-non-linear-function}
 
-\notes{We can think of todays observed Universe, though, as a being a consequence of those temperature fluctuations in the CMB. Those fluctuations are only order $10^-6$ of the scale of the overal temperature of the Universe. But minor fluctations in that density is what triggered the pattern of formation of the Galaxies and how stars formed and created the elements that are the building blocks of our Earth [@Vogelsberger-cosmological20].}
+\notes{We can think of today's observed Universe, though, as a being a consequence of those temperature fluctuations in the CMB. Those fluctuations are only order $10^{-6}$ of the scale of the overall temperature of the Universe. But minor fluctuations in that density are what triggered the pattern of formation of the Galaxies. They determined how stars formed and created the elements that are the building blocks of our Earth [@Vogelsberger-cosmological20].}
 
 
 \endif

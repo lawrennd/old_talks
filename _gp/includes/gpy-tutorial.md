@@ -11,9 +11,7 @@
 
 \installcode{GPy}
 
-\downloadcode{mlai}
-\downloadcode{teaching_plots}
-\downloadcode{gp_tutorial}
+\installcode{mlai}
 
 \setupcode{import numpy as np
 import GPy}
@@ -21,7 +19,7 @@ import GPy}
 \setupplotcode{from matplotlib import pyplot as plt}
 \newslide{Covariance Functions}
 
-\notes{To give a feel for the sofware we'll start by creating an exponentiated quadratic covariance function,}
+\notes{To give a feel for the software we'll start by creating an exponentiated quadratic covariance function,}
 $$
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right),
 $$
@@ -49,8 +47,8 @@ kern = GPy.kern.RBF(input_dim=input_dim,
 
 \notes{Or because it's one dimensional, you can also plot the kernel as a function of its inputs (while the other is fixed).}
 
-\setupplotcode{import teaching_plots as plot
-import mlai}
+\setupplotcode{import mlai
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 kern.plot(ax=ax)
@@ -59,7 +57,7 @@ mlai.write_figure('gpy-eq-covariance.svg', directory='\writeDiagramsDir/kern')}
 
 \notes{\figure{\includediagram{\diagramsDir/kern/gpy-eq-covariance}{80%}}{The exponentiated quadratic covariance function as plotted by the `GPy.kern.plot` command.}{gpy-eq-covariance}}
 
-\notes{You can set the lengthscale of the covariance to different values and plot the result.}
+\notes{You can set the length scale of the covariance to different values and plot the result.}
 
 \code{kern = GPy.kern.RBF(input_dim=input_dim)     # By default, the parameters are set to 1.
 lengthscales = np.asarray([0.2,0.5,1.,2.,4.])}
@@ -75,14 +73,14 @@ for lengthscale in lengthscales:
 ax.legend(lengthscales)
 mlai.write_figure('gpy-eq-covariance-lengthscales.svg', directory='\writeDiagramsDir/kern')}
 
-\figure{\includediagram{\diagramsDir/kern/gpy-eq-covariance-lengthscales}{80%}}{The exponentiated quadratic covariance function plotted for different lengthscales by `GPy.kern.plot` command.}{gpy-eq-covariance}
+\figure{\includediagram{\diagramsDir/kern/gpy-eq-covariance-lengthscales}{80%}}{The exponentiated quadratic covariance function plotted for different length scales by `GPy.kern.plot` command.}{gpy-eq-covariance}
 
 \subsection{Covariance Functions in GPy}
 \slides{* Includes a range of covariance functions
     * E.g. Matern family, Brownian motion, periodic, linear etc.
 	* Can [define new covariances](https://gpy.readthedocs.io/en/latest/tuto_creating_new_kernels.html)}
 
-\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a lengthscale. Furthermore, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f(\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). For plotting  so it may be interesting to change the value of the fixed input.}
+\notes{Many covariance functions are already implemented in GPy. Instead of rbf, try constructing and plotting the following  covariance functions: `exponential`, `Matern32`, `Matern52`, `Brownian`, `linear`, `bias`, `rbfcos`, `periodic_Matern32`, etc. Some of these covariance functions, such as `rbfcos`, are not parametrized by a variance and a length scale. Further, not all kernels are stationary (i.e., they can’t all be written as $\kernelScalar(\inputVector, \inputVector^\prime) = f(\inputVector-\inputVector^\prime)$, see for example the Brownian covariance function). So for plotting it may be interesting to change the value of the fixed input.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -122,7 +120,7 @@ mlai.write_figure('gpy-eq-plus-matern52-covariance.svg', directory='\writeDiagra
 
 \newslide{Multiplication}
 
-\notes{Or if we wanted to multiply them we can write}
+\notes{Or if we wanted to multiply them, we can write}
 
 \slides{```{.python}
 kern1 = GPy.kern.RBF(1, variance=1., lengthscale=2.)
@@ -213,13 +211,13 @@ Ystar, Vstar = model.predict(Xstar)}
 
 \subsection{Covariance Function Parameter Estimation}
 
-\notes{As we have seen during the lectures, the parameters values can be estimated by maximizing the likelihood of the observations. Since we don’t want one of the variance to become negative during the optimization, we can constrain all parameters to be positive before running the optimisation.}
+\notes{As we have seen during the lectures, the parameters values can be estimated by maximizing the likelihood of the observations. Since we don’t want any of the variances to become negative during the optimization, we can constrain all parameters to be positive before running the optimization.}
 
 \code{model.constrain_positive()}
 
 \notes{The warnings are because the parameters are already constrained by default, the software is warning us that they are being reconstrained.
 
-Now we can optimize the model using the `model.optimize()` method. Here we switch messages on, which allows us to see the progession of the optimization.}
+Now we can optimize the model using the `model.optimize()` method. Here we switch messages on, which allows us to see the progression of the optimization.}
 
 \slides{
 ```{.python}
@@ -228,13 +226,13 @@ model.optimize(messages=True)
 
 \code{model.optimize(messages=True)}
 
-\notes{By default the optimization is using a limited memory BFGS optimizer [@Byrd:lbfgsb95].
+\notes{By default, the optimization is using a limited memory BFGS optimizer [@Byrd:lbfgsb95].
 
-Once again we can display the model, now to see how the parameters have changed.}
+Once again, we can display the model, now to see how the parameters have changed.}
 
 \code{display(model)}
 
-\notes{The lengthscale is much smaller, as well as the noise level. The variance of the exponentiated quadratic has also reduced.}
+\notes{The length scale is much smaller, as well as the noise level. The variance of the exponentiated quadratic has also reduced.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 model.plot(ax=ax)

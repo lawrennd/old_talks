@@ -16,7 +16,7 @@ The solution to these two simultaneous equations can be represented graphically 
 \notes{\figure{\includediagram{\diagramsDir/ml/over_determined_system003}{40%}}{The solution of two linear equations represented as the fit of a straight line through two data}{over-determined-system-3}}
 
 \notes{
-The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line. 
+The challenge comes when a third data point is observed, and it doesn't fit on the straight line. 
 
 point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 $$2.5 = 2m + c$$
@@ -33,14 +33,14 @@ $$2.5 = 2m + c$$
 
 \newslide{}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.over_determined_system(diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider
-import pods}
-\displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
-                            directory='\writeDiagramsDir/ml', 
-                            samp=IntSlider(1,1,7,1))}
+import notutils as nu}
+\displaycode{nu.display_plots('over_determined_system{samp:0>3}.svg',
+                  directory='\writeDiagramsDir/ml', 
+                  samp=IntSlider(1,1,7,1))}
 
 \slides{
 \define{\width}{40%}
@@ -81,7 +81,7 @@ $$2.5 = 2m + c$$}
 
 \newslide{}
 
-\notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
+\notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the way it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
 \include{_physics/includes/laplace-portrait.md}
 \include{_physics/includes/laplaces-determinism.md}
@@ -143,7 +143,7 @@ This gives us a 'noisy function'.
 . . .
 
 This is known as a stochastic process.
-}\notes{However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friederich Gauss who suggested that the *Gaussian* density (which at the time was unnamed!) should be used to represent this error.}
+}\notes{However, it was left to an admirer of Laplace to develop a practical probability density for that purpose. It was Carl Friedrich Gauss who suggested that the *Gaussian* density (which at the time was unnamed!) should be used to represent this error.}
 
 \notes{The result is a *noisy* function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.}
 

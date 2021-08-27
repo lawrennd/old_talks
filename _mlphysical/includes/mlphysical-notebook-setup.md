@@ -5,10 +5,9 @@
 
 
 \include{_notebooks/includes/notebook-setup.md}
-
+\installcode{GPy}
 \installcode{pyDOE}
 \installcode{EmuKit}
 
-\include{_software/includes/gpy-software.md}
 
 \endif

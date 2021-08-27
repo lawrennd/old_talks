@@ -6,7 +6,7 @@
 
 \newslide{Nigeria NMIS Data: Notebook}
 
-\notes{As an example data set we will use Nigerian Millenium Development Goals Information System Health Facility [@Nigeria-nmis14]. It can be found here <https://energydata.info/dataset/nigeria-nmis-education-facility-data-2014>.}
+\notes{As an example data set we will use Nigerian Millennium Development Goals Information System Health Facility [@Nigeria-nmis14]. It can be found here <https://energydata.info/dataset/nigeria-nmis-education-facility-data-2014>.}
 
 \notes{Taking from the information on the site, 
 
@@ -28,7 +28,7 @@
 \code{data = pods.datasets.nigeria_nmis()['Y']
 data.head()}
 
-\notes{Alternatively you can access the data directly with the following commands.
+\notes{Alternatively, you can access the data directly with the following commands.
 
 ```{.python}
 import urllib.request
@@ -45,15 +45,15 @@ data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')
 
 \code{data.describe()}
 
-\notes{In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by `.<Tab>` for example in the above case if we type `data.<Tab>` it show the columns available (these are attributes in pandas dataframes) such as `num_nurses_fulltime`, and also functions, such as `.describe()`.}
+\notes{In python and the Jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by `.<Tab>` for example in the above case if we type `data.<Tab>` it show the columns available (these are attributes in pandas dataframes) such as `num_nurses_fulltime`, and also functions, such as `.describe()`.}
 
 \notes{For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.}
 
 \code{data.describe?}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
-import mlai}
+import mlai
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.plot(data.longitude, data.latitude, 'ro', alpha=0.01)
@@ -62,6 +62,6 @@ ax.set_ylabel('latitude')
 
 mlai.write_figure('nigerian-health-facilities.png', directory='\writeDiagramsDir/ml')}
 
-\figure{\includepng{\diagramsDir/ml/nigerian-health-facilities}{60%}}{Location of the over thirty four thousand health facilities registered in the NMIS data across Nigeria. Each facility plotted according to its latitude and longitude.}{nigerian-health-facilities}
+\figure{\includepng{\diagramsDir/ml/nigerian-health-facilities}{60%}}{Location of the over thirty-four thousand health facilities registered in the NMIS data across Nigeria. Each facility plotted according to its latitude and longitude.}{nigerian-health-facilities}
 
 \endif

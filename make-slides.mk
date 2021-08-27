@@ -12,7 +12,6 @@ ${BASE}.slides.html: ${BASE}.slides.html.markdown ${BIBDEPS}
 ${BASE}.pptx: ${BASE}.slides.pptx.markdown 
 	pandoc  -t pptx \
 		-o $@ $< \
-		-B ../_includes/${NOTATION} \
 		${PPTXFLAGS} \
 		${CITEFLAGS} \
 		${SFLAGS}

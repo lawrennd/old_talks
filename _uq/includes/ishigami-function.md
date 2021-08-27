@@ -6,7 +6,7 @@
 \subsubsection{Ishigami Function}
 
 
-\notes{The Ishigami function [@Ishigami-importance90] is a well-known example for uncertainty and sensitivity analysis methods because of its strong nonlinearity and peculiar dependence on $\inputScalar_3$. More details of this function can be found in [@Sobol-variance99].}
+\notes{The Ishigami function [@Ishigami-importance90] is a well-known test function for uncertainty and sensitivity analysis methods because of its strong nonlinearity and peculiar dependence on $\inputScalar_3$. More details of this function can be found in [@Sobol-variance99].}
 
 \notes{Mathematically, the form of the Ishigami function is}
 $$
@@ -14,7 +14,7 @@ $$
 $$
 \notes{We will set the parameters to be $a = 5$ and $b=0.1$ . The input variables are sampled randomly $\inputScalar_i \sim \uniformSamp{-\pi}{\pi}$.}
 
-\notes{Next we create the function object and visualize its shape marginally for each one of its three inputs.}
+\notes{Next, we create the function object and visualize its shape marginally for each one of its three inputs.}
 
 \notes{Load the Ishigami function}
 

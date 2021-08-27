@@ -5,21 +5,26 @@ layout: lecture
 title: "Emukit and Experimental Design"
 abstract: >
   In this lecture we introduce Emukit, a software framework for decision programming via surrogage modelling and emulation. We'll then show an example of the use of the framework with experimental design.
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
 layout: lecture
-time: "12:00"
-date: 2020-10-30
-venue: Virtual (Zoom)
+time: "10:00"
+date: 2021-11-02
 ipynb: true
 reveal: true
 youtube: 0nxa8TOmWB0
 transition: None
 ---
 
-\include{talk-macros.tex}
 
 \include{_mlphysical/includes/mlphysical-notebook-setup.md}
 
-\include{_uq/includes/emukit-software.md}
+\include{_software/includes/emukit-software.md}
 \include{_uq/includes/emukit-vision.md}
 \include{_uq/includes/emukit-tutorial.md}
 

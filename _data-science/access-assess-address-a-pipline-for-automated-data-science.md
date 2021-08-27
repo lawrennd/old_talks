@@ -1,19 +1,7 @@
 ---
-title: "Automating Data Science: Happenstance Data, Modelling, and the Covid19 Pandemic"
+title: "Access, Assess and Address: A Pipeline for (Automated?) Data Science"
 abstract: |
-  With the world watching case numbers increase and publics and
-  policymakers scrutinising projections from epidemiological models,
-  the covid-19 pandemic brought with it increased attention on the use
-  of data to inform policy. Alongside this scrutiny came a new wave of
-  interest in the ability of data and artificial intelligence (AI) to
-  help tackle major scientific and social challenges: could our
-  increasing ability to collect, combine and interrogate large
-  datasets lead to new insights that unlock more effective policy
-  responses? Experiences from the DELVE Initiative, convened to bring
-  data science to bear on covid-19 policy, suggests achieving this aim
-  requires wider adoption of open data science methods to deploy data
-  science and AI expertise and resources to tackle real-world
-  problems.
+  Data Science is an emerging discipline that is being promoted as a universal panacea for the world’s desire to make better informed decisions based on the wealth of data that is available in our modern interconnected society. In practice data science projects often find it difficult to deliver. In this talk we will review efforts to drive data informed in real world examples, e.g., the UK’s early Covid19 pandemic response. We will introduce a framework for categorising the stages and challenges of the data science pipeline and relate it to the challenges we see when giving data driven answers to real world questions. We will speculate on where automation may be able to help but emphasise that automation in this landscape is challenging when so many issues remain for getting humans to do the job well.
 author:
 - family: Lawrence
   given: Neil D.
@@ -56,14 +44,7 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
-
-\include{_simulation/includes/simulation-system.md}
-\include{_uq/includes/statistical-emulation.md}
-\include{_uq/includes/deep-emulation.md}
-
-\newslide{}
-\slides{\figure{\includejpg{\diagramsDir/simulation/carbon_cycle}{60%}}{Representation of the Carbon Cycle from the US National Oceanic and Atmospheric Administration. While everything is interconnected in the system, we can decompose into separate models for atmosphere, ocean, land.}{carbon-cycle-noaa}}
-
+\include{_data-science/includes/access-assess-address.md}
 
 \subsection{Conclusions}
 

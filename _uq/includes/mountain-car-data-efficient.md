@@ -93,7 +93,7 @@ velocity_model_emukit = GPyModelWrapper(velocity_model_gpy, n_restarts=5)}
 
 \slides{* Used 500 randomly selected points to train emulators.
 * Can make proces smore efficient through *experimental design*.}
-\notes{In general we might use much smarter strategies to design our
+\notes{In general, we might use much smarter strategies to design our
 emulation of the simulator. For example, we could use the variance of
 the predictive distributions of the models to collect points using
 uncertainty sampling, which will give us a better coverage of the
@@ -107,9 +107,9 @@ the location and the velocity.}
 velocity_model_emukit.optimize()}
 
 \notes{We can now have a look to how the emulator and the simulator
-match. First, we show a contour plot of the car aceleration for each
+match. First, we show a contour plot of the car acceleration for each
 pair of can position and velocity. You can use the bar bellow to play
-with the values of the controler to compare the emulator and the
+with the values of the controller to compare the emulator and the
 simulator.}
 
 \setupdisplaycode{from IPython.html.widgets import interact}
@@ -123,7 +123,7 @@ captures the dynamics of the simulator.
 
 Given some input parameters of the linear controlling, how do the
 dynamics of the emulator and simulator match? In the following figure
-we show the position and velocity of the car for the 500 time steps of
+we show the position and velocity of the car for the 500 time-steps of
 an episode in which the parameters of the linear controller have been
 fixed beforehand. The value of the input control is also shown.}
 
@@ -155,14 +155,14 @@ car_initial_location = np.asarray([-0.58912799, 0])}
     emulation_function = lambda x: mc.run_emulation([position_model_emukit, velocity_model_emukit], x, car_initial_location)[0]
     return np.asarray([emulation_function(np.atleast_2d(x)) for x in X])[:, np.newaxis]}
 
-<!--code{### --- Reward objective function using the emulator
+\comment{\code{### --- Reward objective function using the emulator
 target_function_emulator = lambda x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[0]
-objective_emulator = GPyOpt.core.task.SingleObjective(obj_func_emulator)}-->
+objective_emulator = GPyOpt.core.task.SingleObjective(obj_func_emulator)}}
 
 \notes{And as before, we use Bayesian optimization to find the best possible linear controller.}
 
-<!--\code{### --- Elements of the optimization that will use the multi-fidelity emulator
-model = GPyOpt.models.GPModel(optimize_restarts=5, verbose=False, exact_feval=True, ARD=True)}-->
+\comment{\code{### --- Elements of the optimization that will use the multi-fidelity emulator
+model = GPyOpt.models.GPModel(optimize_restarts=5, verbose=False, exact_feval=True, ARD=True)}}
 
 \notes{The design space is the three continuous variables that make up the linear controller.}
 
@@ -235,7 +235,7 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 
 \figure{\includehtml{\diagramsDir/uq/mountain-car-emulated.html}{600}{450}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
 
-\notes{And the problem is again solved, but in this case we have
+\notes{And the problem is again solved, but in this case, we have
 replaced the simulator of the car dynamics by a Gaussian process
 emulator that we learned by calling the dynamics simulator only 500
 times. Compared to the 37,500 calls that we needed when applying

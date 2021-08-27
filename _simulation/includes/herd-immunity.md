@@ -13,12 +13,10 @@
 
 } 
 
-\setupcode{# Pull in libraries needed
-%matplotlib inline
-import numpy as np
+\setupcode{import numpy as np
 from scipy import integrate}
 
-\notes{The next piece of code sets up the dynamics of the compartmental model model. He doesn't give the specific details in the blog post, but my understanding is that the four states are as follows. `x[0]` is the susceptible population, those that haven'thad the disease yet. The susceptible population decreases by encounters with infections people. In Thomas's model, both `x[3]` and `x[4]` are infections. So the dynamics of the reduction of the susceptible is given by}
+\notes{The next piece of code sets up the dynamics of the compartmental model. He doesn't give the specific details in the blog post, but my understanding is that the four states are as follows. `x[0]` is the susceptible population, those that haven't had the disease yet. The susceptible population decreases by encounters with infections people. In Thomas's model, both `x[3]` and `x[4]` are infections. So the dynamics of the reduction of the susceptible is given by}
 $$
 \frac{\text{d}{S}}{\text{d}t} = - \beta S (I_1 + I_2).
 $$
@@ -30,7 +28,7 @@ $$
 $$
 \notes{Note that the first term matches the term from the Susceptible equation. This is because it is the incoming exposed population.
 
-The exposed population move to a second compartment of exposure, $E_2$. I believe the reason for this is that if you use only one exposure compartment, then the statistics of the duration of exposure are incorrect (implicitly they are exponetially distributed in the underlying stochastic version of the model). By using two exposure departments, Thomas is making a slight correction to this which would impose a first order gamma distribution on those statistics. A similar trick is being deployed for the 'infectious group'. So we gain an additional equation to help with these statistics,}\newslide{}
+The exposed population move to a second compartment of exposure, $E_2$. I believe the reason for this is that if you use only one exposure compartment, then the statistics of the duration of exposure are incorrect (implicitly they are exponentially distributed in the underlying stochastic version of the model). By using two exposure departments, Thomas is making a slight correction to this which would impose a first order gamma distribution on those statistics. A similar trick is being deployed for the 'infectious group'. So we gain an additional equation to help with these statistics,}\newslide{}
 $$
 \frac{\text{d}{E_2}}{\text{d}t} = \sigma E_1 - \sigma E_2.
 $$
@@ -38,11 +36,11 @@ $$
 $$
 \frac{\text{d}{I_1}}{\text{d}t} = \sigma E_2 - \gamma I_1,
 $$
-\notes{and similarly, Thomas is using a two compartment infectious group to fix up the duration model. So we have,}
+\notes{and similarly, Thomas is using a two-compartment infectious group to fix up the duration model. So we have,}
 $$
 \frac{\text{d}{I_2}}{\text{d}t} = \gamma I_1 - \gamma I_2.
 $$
-\notes{And finally we have those that have recovered emerging from the second infections compartment. In this model there is no separate model for 'deaths', so the recovered compartment, $R$, would also include those that die,}
+\notes{And finally, we have those that have recovered emerging from the second infections compartment. In this model there is no separate model for 'deaths', so the recovered compartment, $R$, would also include those that die,}
 $$
 \frac{\text{d}R}{\text{d}t} = \gamma I_2.
 $$
@@ -76,14 +74,14 @@ R0 = 2.5 # Basic reproduction number in the absence of interventions
 Rt = 0.75 # Reproduction number in the presence of interventions
 tend = 21.0 # Number of days of interventions}
 
-\notes{The parameters are correct for the 'discrete system', where the inectious period is a discrete time, and the numbers are discrete values. To translate into our continuous differential equation system's parameters, we need to do a couple of manipulations. Note the factor of 2 associated with `gamma` and `sigma`. This is a doubling of the rate to account for the fact that there are two compartments for each of these states (to fix-up the statistics of the duration models).}
+\notes{The parameters are correct for the 'discrete system', where the infectious period is a discrete time, and the numbers are discrete values. To translate into our continuous differential equation system's parameters, we need to do a couple of manipulations. Note the factor of 2 associated with `gamma` and `sigma`. This is a doubling of the rate to account for the fact that there are two compartments for each of these states (to fix-up the statistics of the duration models).}
 
 \code{beta0 = R0 / infectious_period
 betat = Rt / infectious_period
 sigma = 2.0 / latent_period
 gamma = 2.0 / infectious_period}
 
-\notes{Next we solve the system using `scipy`'s initial value problem solver. The solution method is "Runge-Kutta-Fehlberg method, as indicated by the `'RK45'` solver. This is a numerical method for solving differential equations. The 45 is the order of the method and the error estimator.
+\notes{Next, we solve the system using `scipy`'s initial value problem solver. The solution method is "Runge-Kutta-Fehlberg method, as indicated by the `'RK45'` solver. This is a numerical method for solving differential equations. The 45 is the order of the method and the error estimator.
 
 We can view the solver itself as somehow a piece of simulation code, but here it's being called as sub routine in the system. It returns a solution for each time step, stored in a list `sol`.}
 
@@ -102,7 +100,7 @@ for tt in range(0,len(t0ran)):
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{def mylab(t):
@@ -120,7 +118,6 @@ ax[0].set_ylim([0,7e6])
 ax[0].set_xlabel('Time (days)')
 ax[0].set_ylabel('Number of infectious cases')
 ax[0].legend()
-ax[1].subplot(1,2,2)
 for tt in range(0,len(t0ran)):
     ax[1].plot(sol[tt].t,N*sol[tt].y[5].T, label=mylab(t0ran[tt]))
 ax[1].set_xlim([30,70])
@@ -133,15 +130,15 @@ mlai.write_figure('house-model-zoom.svg', directory='\writeDiagramsDir/simulatio
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/simulation/house-model-zoom}{80%}}{A zoomed in version of Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-zoom}
+\figure{\includediagram{\diagramsDir/simulation/house-model-zoom}{80%}}{A zoomed in version of Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-zoom}
 
-\plotcode{fig, ax = plt.subplots(1, 2, figsize=plot.big_wide_size)
+\plotcode{fig, ax = plt.subplots(1, 2, figsize=plot.big_wide_figsize)
 for tt in range(0,len(t0ran)):
     ax[0].plot(sol[tt].t,N*(sol[tt].y[3] + sol[tt].y[4]).T, label=mylab(t0ran[tt]))
-ax[0].xlim([0,tlast])
-ax[0].ylim([0,1.2e7])
-ax[0].xlabel('Time (days)')
-ax[0].ylabel('Number of infectious cases')
+ax[0].set_xlim([0,tlast])
+ax[0].set_ylim([0,1.2e7])
+ax[0].set_xlabel('Time (days)')
+ax[0].set_ylabel('Number of infectious cases')
 ax[0].legend()
 for tt in range(0,len(t0ran)):
     ax[1].plot(sol[tt].t,N*sol[tt].y[5].T, label=mylab(t0ran[tt]))
@@ -155,7 +152,7 @@ mlai.write_figure('house-model-full.svg', directory='\writeDiagramsDir/simulatio
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/simulation/house-model-full}{80%}}{The full progress of the disease in Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-full}
+\figure{\includediagram{\diagramsDir/simulation/house-model-full}{80%}}{The full progress of the disease in Thomas House's variation on the SEIR model for evaluating the effect of early interventions.}{house-model-full}
 
 \notes{In practice, immunity for Covid19 may only last around 6 months. As an exercise, try to extend Thomas's model for the case where immunity is temporary. You'll need to account for deaths as well in your new model.}
 

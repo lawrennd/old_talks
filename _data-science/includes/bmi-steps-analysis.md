@@ -23,7 +23,7 @@ male_bmi = bmi[male_ind]}
 \code{print('Male steps mean is {mean}.'.format(mean=male_steps.mean()))}
 \code{print('Male BMI mean is {mean}.'.format(mean=male_bmi.mean()))}
 
-\notes{Similarly we can get the same result for the female portion of the populaton.}
+\notes{Similarly, we can get the same result for the female portion of the populaton.}
 
 \code{female_steps = steps[female_ind]
 female_bmi = bmi[female_ind]}

@@ -124,20 +124,20 @@ model of @Kennedy-predicting00.}
 
 \notes{As an aside there is quite a lot of history to modelling
 Gaussian processes which represent multiple output functions. Back in
-2009, with Mauricio Alvarez, we organised a series of workshops where
-we worked across the Geostatistics, the emulation and the machine
+2009, with Mauricio Alvarez, we organized a series of workshops where
+we worked across the geostatistics, the emulation and the machine
 learning communities to build understanding. You can see
 [details of the first of these workshops (held in Manchester) here](http://gpss.cc/slim09/schedule.html). The
 second of these workshops also integrated ideas from the classical
 kernel community, and was held at NeurIPS in 2009 in collaboration
-with Lorenzo Rosasco, you can find the
+with [Lorenzo Rosasco](https://www.dibris.unige.it/en/rosasco-lorenzo), you can find the
 [workshop page here](http://gpss.cc/mock09/). We summarized the
 conclusions from those meetings in a
 [review paper led by Mauricio, that you can find here](https://arxiv.org/abs/1106.6251)
 [@Alvarez:vector12].}
 
-\note{Importantly, we found a lot of work in the Geostatistics
-community (much of it by Hans Wackernagel) known as co-kriging. The
+\note{Importantly, we found a lot of work in the geostatistics
+community (much of it by [Hans Wackernagel](http://hans.wackernagel.free.fr/)) known as co-kriging. The
 terminology used in our paper reflects that terminology, rather than
 the various more recent terminologies such as 'multi-task Gaussian
 processes' or 'multi-fidelity Gaussian processes'.}
@@ -146,10 +146,10 @@ processes' or 'multi-fidelity Gaussian processes'.}
 known as a "intrinsic coregionalisation model" and it is one of the
 simplest types of multi-output Gaussian processes you can build.}
 
-\notes{Mauricio's thesis [@Alvarez:thesis11] focussed on particular
+\notes{Mauricio's thesis [@Alvarez:thesis11] focused on particular
 multiple output covariances derived from physical information embedded
 in the system, such as differential equations. See
-e.g. @Alvarez:llfm13 or @Lawrence:transcriptionalGP06 for an
+e.g., @Alvarez:llfm13 or @Lawrence:transcriptionalGP06 for an
 application.}
 
 \notes{A similar procedure must be carried out for obtaining
@@ -193,14 +193,13 @@ mlai.write_figure('high-and-low-fidelity-forrester.svg', directory='\writeDiagra
 
 
 \notes{Observe that in the example above we restrict our observations
-to 12 from the lower fidelity function and only 6 from the high
-fidelity function.  As we shall demonstrate further below, fitting a
-standard GP model to the few high fidelity observations is unlikely to
+to 12 from the lower-fidelity function and only 6 from the high-fidelity function.  As we shall demonstrate further below, fitting a
+standard GP model to the few high-fidelity observations is unlikely to
 result in an acceptable fit, which is why we shall instead consider
 the linear multi-fidelity model presented in this section.}
 
 \notes{Below we fit a linear multi-fidelity model to the available low
-and high fidelity observations. Given the smoothness of the functions,
+and high-fidelity observations. Given the smoothness of the functions,
 we opt to use an exponentiated quadratic kernel for both the bias and correlation
 components of the model.}
 
@@ -211,7 +210,7 @@ fidelity.}
 \notes{This can be modified upfront using the 'likelihood' parameter
 in the model constructor, or by updating them directly after the model
 has been created.  In the example below, we choose to fix the noise to
-'0' for both fidelities in order to reflect that the observations are
+'0' for both fidelities to reflect that the observations are
 exact.}
 
 \notes{Construct a linear multi-fidelity model.}
@@ -269,11 +268,10 @@ mlai.write_figure('linear-multi-fidelity-model.svg', directory='\writeDiagramsDi
 
 \newslide{Multifidelity Fit}
 
-\figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model}{80%}}{Linear multi-fidelity model fit to low and high fidelity Forrester function}{linear-multi-fidelity-model}
+\figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model}{80%}}{Linear multi-fidelity model fit to low and high-fidelity Forrester function}{linear-multi-fidelity-model}
 
 \notes{The above plot demonstrates how the multi-fidelity model learns
-the relationship between the low and high-fidelity observations in
-order to model both of the corresponding functions.}
+the relationship between the low and high-fidelity observations to model both of the corresponding functions.}
 
 \notes{In this example, the posterior mean almost fits the true
 function exactly, while the associated uncertainty returned by the
@@ -338,7 +336,7 @@ mlai.write_figure('linear-multi-fidelity-high-fidelity-gp.svg', directory='\writ
 between the low and high-fidelity functions is linear, several issues
 may be encountered when this is not the case.}
 
-\notes{Consider the following example, where the low and high fidelity
+\notes{Consider the following example, where the low and high-fidelity
 functions are defined as follows:}
 $$
 \mappingFunction_{\text{low}}(\inputScalar) = \sin(8\pi \inputScalar)
@@ -389,10 +387,10 @@ mlai.write_figure('high-and-low-fidelity-functions.svg', directory='\writeDiagra
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-functions}{80%}}{High and low fidelity functions}{high-and-low-fidelity-functions}
+\figure{\includediagram{\diagramsDir/uq/high-and-low-fidelity-functions}{80%}}{High and low-fidelity functions}{high-and-low-fidelity-functions}
 
 \notes{In this case, the mapping between the two functions is
-nonlinear, as can be observed by plotting the high fidelity
+nonlinear, as can be observed by plotting the high-fidelity
 observations as a function of the lower fidelity observations.}
 
 \setupplotcode{import matplotlib.pyplot as plt
@@ -409,7 +407,7 @@ mlai.write_figure('mapping-low-to-high-fidelity.svg', directory='\writeDiagramsD
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/uq/mapping-low-to-high-fidelity}{80%}}{Mapping from low fidelity to high fidelity.}{mapping-low-to-high-fidelity}
+\figure{\includediagram{\diagramsDir/uq/mapping-low-to-high-fidelity}{80%}}{Mapping from low-fidelity to high-fidelity.}{mapping-low-to-high-fidelity}
 
 \subsubsection{Failure of linear multi-fidelity model}
 
@@ -461,7 +459,7 @@ ax.legend(['True Function', 'Linear multi-fidelity GP'], loc='lower right')
 mlai.write_figure('linear-multi-fidelity-model-fit.svg', directory='\writeDiagramsDir/uq/')}
 
 
-\figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model-fit}{80%}}{Linear multi-fidelity model fit to high fidelity function}{linear-multi-fidelity-model-fit}
+\figure{\includediagram{\diagramsDir/uq/linear-multi-fidelity-model-fit}{80%}}{Linear multi-fidelity model fit to high-fidelity function}{linear-multi-fidelity-model-fit}
 
 \notes{As expected, the linear multi-fidelity model was unable to
 capture the nonlinear relationship between the low and high-fidelity

@@ -1,0 +1,24 @@
+author:
+- given: Neil D.
+  family: Lawrence
+  institution: University of Cambridge
+  gscholar: r3SJcvoAAAAJ
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: http://inverseprobability.com
+layout: lecture
+postdir: ../../../mlatcl/ads/_lectures/
+slidedir: ../../../mlatcl/ads/slides/
+notedir: ../../../mlatcl/ads/_notes/
+notebookdir: ../../../mlatcl/ads/_notebooks/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
+baseurl: "ads/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _ads
+transition: None
+  

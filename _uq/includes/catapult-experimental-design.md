@@ -48,6 +48,8 @@ model_emukit.optimize()}
 
 \notes{Now we set up the model loop. We'll use integrated variance reduction as the acquisition function for our model-based design loop.}
 
+\notes{*Warning*: This loop runs much slower on Google `colab` than on a local machine.}
+
 \setupcode{from emukit.experimental_design.experimental_design_loop import ExperimentalDesignLoop}
 
 \setupcode{from emukit.experimental_design.acquisitions import IntegratedVarianceReduction, ModelVariance}

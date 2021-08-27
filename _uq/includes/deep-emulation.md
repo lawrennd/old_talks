@@ -53,28 +53,28 @@ exploit pre-existing emulators through *transfer learning*.
 
 Automatically deploying these families of emulators for full system
 understanding is highly ambitious. It requires advances in engineering
-infrastructure, emulation and Bayesian optimization.  However, the
+infrastructure, emulation, and Bayesian optimization.  However, the
 intermediate steps of developing this architecture also allow for
 automated monitoring of system accuracy and fairness. This facilitates
 AutoML on a component-wise basis which we can see as a simple
 implementation of AutoAI. The proposal is structured so that despite
 its technical ambition there is a smooth ramp of benefits to be
-derived across the programme of work.
+derived across the program of work.
 
 In Applied Mathematics, the field studying these techniques is known
 as *uncertainty quantification*. The new challenge is the automation
 of emulator creation on demand to answer questions of interest and
 facilitate the system design, i.e. AutoAI through BSO.
 
-At design stage, any particular AI task could be decomposed in
+At design stage, any AI task could be decomposed in
 multiple ways. Bayesian system optimization will assist both in
 determining the large-scale system design through exploring different
 decompositions  and in refinement of the deployed system.
 
-So far, most work on emulators has focussed on emulating a single
+So far, most work on emulators has focused on emulating a single
 component. Automated deployment and maintenance of ML systems requires
 networks of emulators that can be deployed and redeployed on demand
-depending on the particular question of interest. Therefore, the
+depending on the question of interest. Therefore, the
 technical innovations we require are in the mathematical composition
 of emulator models
 [@Damianou:deepgp13;@Pedikaris:nonlinear17]. Different chains of
@@ -83,17 +83,17 @@ downstream performance. This requires rapid retraining of emulators
 and *propagation of uncertainty* through the emulation pipeline a
 process we call *deep emulation*.
 
-<!--Our main approach for this will be automated learning of the structure
+\comment{Our main approach for this will be automated learning of the structure
 of deep probabilistic models, such as deep Gaussian processes
 [@Damianou:deepgp13]. The proposer is an international expert in this
 domain.--> Recomposing the ML system requires structural learning of the network. By parameterizing covariance functions appropriately this can be done through Gaussian processes (e.g. [@Damianou:manifold12]), but one could also consider Bayesian neural networks and other generative models, e.g. Generative Adversarial Networks [@Goodfellow:gans14].}
 
-<!-- This structural learning allows us to associate data with the relevant -->
-<!-- layer of the model, rather than merely on the leaf nodes of the output -->
-<!-- model. When deploying the deep Gaussian process as an emulator, this -->
-<!-- allows for the possibility of learning the structure of the different -->
-<!-- component parts of the underlying system. This should aid the user in -->
-<!-- determining the ideal system decomposition. -->
+This structural learning allows us to associate data with the relevant 
+layer of the model, rather than merely on the leaf nodes of the output 
+model. When deploying the deep Gaussian process as an emulator, this 
+allows for the possibility of learning the structure of the different 
+component parts of the underlying system. This should aid the user in 
+determining the ideal system decomposition.}
 
 
 \newslide{Deep Emulation}
