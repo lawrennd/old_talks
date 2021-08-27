@@ -8,9 +8,9 @@
 
 A very common operation is the need to map from locations in a country to the administrative regions. If we were building a ride sharing app, we might also want to map riders to locations in the city, so that we could know how many riders we had in different city areas.
 
-Administrative regions have various names like cities, counties, districts or states. These conversions for the administrative regions are important for getting the right information to the right people.
+Administrative regions have various names like cities, counties, districts, or states. These conversions for the administrative regions are important for getting the right information to the right people.
 
-Of course, if we had a knowlegdeable Nigerian, we could ask her about what the right location for each of these health facilities is, which state is it in? But given that we have the latitude and longitude, we should be able to find out automatically what the different states are. 
+Of course, if we had a knowledgeable Nigerian, we could ask her about what the right location for each of these health facilities is, which state is it in? But given that we have the latitude and longitude, we should be able to find out automatically what the different states are. 
 
 This is where "geo" data becomes important. We need to download a dataset that stores the location of the different states in Nigeria. These files are known as 'outline' files. Because they draw the different states of different countries in outline. 
 
@@ -30,13 +30,13 @@ Once we have these ```MultiPolygon``` objects that define the boundaries of diff
 
 \notes{\subsection{Joining a GeoDataFrame}
 
-The first database join we're going to do is a special one, it's a 'spatial join'. We're going to join together the locations of the hospitals with their states. 
+The first database join we're going to do is a special one, it's a 'spatial join'. We're going to join the locations of the hospitals with their states. 
 
 This join is unusual because it requires some mathematics to get right. The outline files give us the borders of the different states in latitude and longitude, the health facilities have given locations in the country. 
 
 A spatial join involves finding out which state each health facility belongs to. Fortunately, the mathematics you need is already programmed for you in GeoPandas. That means all we need to do is convert our ```pandas``` dataframe of health facilities into a ```GeoDataFrame``` which allows us to do the spatial join. }
 
-\notes{First we convert the hospital data to a `geopandas` data frame.}
+\notes{First, we convert the hospital data to a `geopandas` data frame.}
 
 \setupcode{import geopandas as gpd}
 
@@ -45,11 +45,11 @@ hosp_gdf = gpd.GeoDataFrame(hospital_data,
                             geometry=geometry)
 hosp_gdf.crs = "EPSG:4326"}
 
-\notes{There are some technial details here: the  ```crs``` refers to the coordinate system in use by a particular GeoDataFrame. ```EPSG:4326``` is the standard coordinate system of latitude/longitude.}
+\notes{There are some technial details here: the  `crs` refers to the coordinate system in use by a particular GeoDataFrame. `EPSG:4326` is the standard coordinate system of latitude/longitude.}
 
 \notes{\subsection{Your First Join: Converting GPS Coordinates to States}
 
-Now we have the data in the ```GeoPandas``` format, we can start converting into states. We will use the [```fiona```](https://pypi.org/project/Fiona/) library for reading the right layers from the files. Before we do the join, lets plot the location of health centers and states on the same map.}
+Now we have the data in the `GeoPandas` format, we can start converting into states. We will use the [`fiona`](https://pypi.org/project/Fiona/) library for reading the right layers from the files. Before we do the join, lets plot the location of health centers and states on the same map.}
 
 
 \code{world_gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
@@ -69,12 +69,12 @@ ax.set_ylabel('latitude')
 
 mlai.write_figure('nigeria-states-and-health-facilities.svg', directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/nigeria-states-and-health-facilities}{60%}}{The outline of the thirty six different states of nigeria with the location sof the health centers plotted on the map.}{nigeria-states-and-health-facilities}
+\figure{\includediagram{\diagramsDir/ml/nigeria-states-and-health-facilities}{60%}}{The outline of the thirty-six different states of nigeria with the location sof the health centers plotted on the map.}{nigeria-states-and-health-facilities}
 
 
 \notes{\subsection{Performing the Spatial Join}
 
-We've now plotted the different health center locations across the states. You can clearly see that each of the dots falls within a different state. For helping the visualisation, we've made the dots somewhat transparent (we set the ```alpha``` in the plot). This means that we can see the regions where there are more health centers, you should be able to spot where the major cities in Nigeria are given the increased number of health centers in those regions.
+We've now plotted the different health center locations across the states. You can clearly see that each of the dots falls within a different state. For helping the visualization, we've made the dots somewhat transparent (we set the `alpha` in the plot). This means that we can see the regions where there are more health centers, you should be able to spot where the major cities in Nigeria are given the increased number of health centers in those regions.
 
 Of course, we can now see by eye, which of the states each of the health centers belongs to. But we want the computer to do our join for us. `GeoPandas` provides us with the spatial join. Here we're going to do a [`left` or `outer` join](https://en.wikipedia.org/wiki/Join_(SQL)#Left_outer_join). }
 
@@ -88,7 +88,7 @@ Of course, we can now see by eye, which of the states each of the health centers
 \code{hosp_gdf.columns}
 }
 
-\notes{We can see that this is the GeoDataFrame containing the information about the hospital. Now let's have a look at the ```zones_gdf``` data frame.}
+\notes{We can see that this is the GeoDataFrame containing the information about the hospital. Now let's have a look at the `zones_gdf` data frame.}
 
 \notes{
 \code{zones_gdf.columns}
@@ -110,7 +110,7 @@ We're having to use GeoPandas because this join is a special one based on geogra
 
 \notes{The intersection of the two data frames indicates how the two data frames will be joined (if there's no intersection, they can't be joined). It's like indicating the two holes that would need to be bolted together on two pieces of metal. If the holes don't match, the join can't be done. There has to be an intersection. 
 
-But what will the result look like? Well the join should be the 'union' of the two data frames. We can have a look at what the union should be by (again) converting the columns to sets.}
+But what will the result look like? Well, the join should be the 'union' of the two data frames. We can have a look at what the union should be by (again) converting the columns to sets.}
 
 \notes{
 \code{set(hosp_gdf.columns).union(set(zones_gdf.columns))}
@@ -118,7 +118,7 @@ But what will the result look like? Well the join should be the 'union' of the t
 
 \notes{That gives a list of all the columns (notice that 'geometry' only appears once). 
 
-Let's check that's what the join command did, by looking at the columns of our new data frame, ```hosp_state_joined```. Notice also that there's a new column: ```index_right```. The two original data bases had separate indices. The ```index_right``` column represents the index from the ```zones_gdf```, which is the Nigerian state.}
+Let's check that's what the join command did, by looking at the columns of our new data frame, `hosp_state_joined`. Notice also that there's a new column: `index_right`. The two original data bases had separate indices. The `index_right` column represents the index from the `zones_gdf`, which is the Nigerian state.}
 
 \notes{
 \code{set(hosp_state_joined.columns)}
