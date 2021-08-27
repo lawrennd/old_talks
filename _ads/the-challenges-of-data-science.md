@@ -5,6 +5,7 @@ title: "The Challenges of Data Science"
 abstract:  >
   Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
 layout: lecture
+venue: FW11, William Gates Building
 author:
 - family: Lawrence
   given: Neil D.
@@ -12,7 +13,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-time: "15:00"
+time: "10:00"
 date: 2021-11-08
 transition: None
 ipynb: false
