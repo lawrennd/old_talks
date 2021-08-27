@@ -16,7 +16,7 @@ author:
 time: "10:00"
 date: 2021-11-10
 transition: None
-ipynb: true
+ipynb: false
 ---
 
 \include{_policy/includes/data-as-a-convener.md}

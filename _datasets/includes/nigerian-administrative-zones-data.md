@@ -35,8 +35,8 @@ data = data.set_index('admin1Name_en')
 ```}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
-import mlai}
+import mlai
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 data.plot(ax=ax, color='white', edgecolor='black')
