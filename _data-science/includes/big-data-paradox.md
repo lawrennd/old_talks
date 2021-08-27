@@ -7,7 +7,7 @@
 
 \slides{* We collect more data, but we understand less.}
 
-\notes{The big data paradox is the modern phenomenon of "as we collect more data, we understand less". It is emerging in several domains, political polling, characterisation of patients for trials data, monitoring twitter for political sentiment.}
+\notes{The big data paradox is the modern phenomenon of "as we collect more data, we understand less". It is emerging in several domains, political polling, characterization of patients for trials data, monitoring twitter for political sentiment.}
 
 \notes{I like to think of the phenomenon as relating to the notion of "can't see the wood for the trees". Classical statistics, with randomized controlled trials, improved society's understanding of data. It improved our ability to monitor the forest, to consider population health, voting patterns etc. It is critically dependent on active approaches to data collection that deal with confounders. This data collection can be very expensive.}
 
