@@ -12,7 +12,7 @@ They provide their data in github. We can access the cases we're interested in f
 
 For convenience, we'll load the data into pandas first, but our next step will be to create a new SQLite table containing the data. Then we'll join that table to our existing tables.}
 
-\include{_ml/includes/nigerian-covid-data.md}
+\include{_datasets/includes/nigerian-covid-data.md}
 
 \code{covid_data=data
 covid_data.to_csv('cases.csv')}
@@ -32,7 +32,7 @@ To access the number of people we can get population statistics from the [Humani
 We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.}
 
 
-\include{_ml/includes/nigerian-population-data.md}
+\include{_datasets/includes/nigerian-population-data.md}
 
 \code{pop_data=data}
 

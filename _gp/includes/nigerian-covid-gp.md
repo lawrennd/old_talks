@@ -3,7 +3,7 @@
 
 \editme
 
-\include{_ml/includes/nigerian-covid-data.md}
+\include{_datasets/includes/nigerian-covid-data.md}
 
 \subsection{Gaussian Process on Nigerian Covid Data}
 
