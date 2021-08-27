@@ -50,8 +50,8 @@ ax.plot()
 ax.set_xlabel('date')
 ax.set_ylabel('case counts')
 
-mlai.write_figure('nigerian-covid-data.svg', directory='\writeDiagramsDir/ml')}
+mlai.write_figure('nigerian-covid-data.svg', directory='\writeDiagramsDir/datasets')}
 
-\figure{\includediagram{\diagramsDir/ml/nigerian-covid-data}{80%}}{Evolution of COVID-19 cases in Nigeria.}{nigerian-covid-data}
+\figure{\includediagram{\diagramsDir/datasets/nigerian-covid-data}{80%}}{Evolution of COVID-19 cases in Nigeria.}{nigerian-covid-data}
 
 \endif
