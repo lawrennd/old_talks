@@ -5,7 +5,7 @@
 
 \subsection{Complexity in Action}
 
-\notes{As an exercise in understanding complexity, watch the following video. You will see the basket ball being bounced around, and the players moving. Your job is to count the passes of those dressed in white and ignore those of the individuals dressed in black.}
+\notes{As an exercise in understanding complexity, watch the following video. You will see the basketball being bounced around, and the players moving. Your job is to count the passes of those dressed in white and ignore those of the individuals dressed in black.}
 
 \figure{\includeyoutube{vJG698U2Mvo}{600}{450}}{Daniel Simon's famous illusion "monkey business". Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.}{monkey-business}
 
