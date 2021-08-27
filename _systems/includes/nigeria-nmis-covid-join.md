@@ -6,9 +6,9 @@
 
 \notes{\subsection{Covid Data}
 
-Now we have the health data, we're going to combine it with [data about COVID-19 cases in Nigeria over time](https://github.com/dsfsi/covid19africa). This data is kindly provided by Africa open COVID-19 data working group, which Elaine Nsoesie has been working with. The data is taken from Twitter, and only goes up until May 2020. 
+Now we have the health data, we're going to combine it with [data about COVID-19 cases in Nigeria over time](https://github.com/dsfsi/covid19africa). This data is kindly provided by Africa open COVID-19 data working group, which [Elaine Nsoesie](https://www.bu.edu/sph/profile/elaine-nsoesie/) has been working with. The data is taken from Twitter, and only goes up until May 2020. 
 
-They provide their data in github. We can access the cases we're interested in from the following URL.
+They provide their data in GitHub. We can access the cases we're interested in from the following URL.
 
 For convenience, we'll load the data into pandas first, but our next step will be to create a new SQLite table containing the data. Then we'll join that table to our existing tables.}
 
