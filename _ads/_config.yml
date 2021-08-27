@@ -11,8 +11,8 @@ postdir: ../../../mlatcl/ads/_lectures/
 slidedir: ../../../mlatcl/ads/slides/
 notedir: ../../../mlatcl/ads/_notes/
 notebookdir: ../../../mlatcl/ads/_notebooks/
-writediagramdir: .
-diagramdir: ./slides/diagrams/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
 baseurl: "ads/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:
