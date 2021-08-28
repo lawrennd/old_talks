@@ -20,8 +20,6 @@ reveal: false
 ipynb: true
 ---
 
-\installcode{pods}
-
 \include{_mlai/includes/welcome.md}
 \include{_mlai/includes/assumed-knowledge.md}
 \include{_mlai/includes/environment-python-jupyter.md}
