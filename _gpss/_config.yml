@@ -16,7 +16,6 @@ notebooksdir: ../../../mlatcl/gpss/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
 transition: None
-time:
 ghub:
 - organization: lawrennd
   repository: talks

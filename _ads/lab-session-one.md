@@ -40,6 +40,9 @@ project? Name two languages involved in the Jupyter project other than python.}{
 
 \figure{\includeyoutube{GX8VLYUYScM}{600}{450}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
 
+\include{_psychology/includes/selective-attention-bias.md}
+\include{_data-science/includes/data-inattention-bias.md}
+
 \newslide{Reading}
 
 -   See probability review at end of slides for reminders.
@@ -63,11 +66,6 @@ project? Name two languages involved in the Jupyter project other than python.}{
 \addexercise{@Bishop:book06}{Exercise 1.7}
 \addexercise{@Bishop:book06}{Exercise 1.8}
 \addexercise{@Bishop:book06}{Exercise 1.9}
-
-\include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-inattention-bias.md}
-
-
 
 
 \thanks
