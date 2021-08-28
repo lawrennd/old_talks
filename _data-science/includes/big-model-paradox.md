@@ -12,6 +12,4 @@
 * But model still falls well short of mark in terms of representing reality}
 
 
-
-
 \endif

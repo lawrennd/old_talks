@@ -39,7 +39,6 @@ ipynb: false
 \include{_data-science/includes/societal-effects.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 \include{_data-science/includes/a-time-for-professionalisation.md}
-\include{_data-science/includes/the-data-crisis.md}
 
 
 \thanks

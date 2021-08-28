@@ -20,9 +20,6 @@ reveal: false
 ipynb: true
 ---
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-\include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/big-model-paradox.md}
 \installcode{pods}
 
 \include{_mlai/includes/welcome.md}
