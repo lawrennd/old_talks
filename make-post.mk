@@ -7,6 +7,6 @@ ${BASE}.posts.html: ${BASE}.posts.html.markdown
 	       ${POSTFLAGS} \
                --to html \
                --out ${BASE}.posts.html  ${BASE}.posts.html.markdown 
-	cp ${BASE}.posts.html ${POSTDIR}/${OUT}.html
+	cp ${BASE}.posts.html ${POSTSDIR}/${OUT}.html
 	../copy_web_diagrams.sh ${BASE}.md slidediagrams ${SLIDEDIR}
 

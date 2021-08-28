@@ -8,10 +8,10 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 venue: Virtual (Zoom)
-postdir: ../../../mlatcl/mlphysical/_lectures/
-slidedir: ../../../mlatcl/mlphysical/slides/
-notedir: ../../../mlatcl/mlphysical/_notes/
-notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+postsdir: ../../../mlatcl/mlphysical/_lectures/
+slidesdir: ../../../mlatcl/mlphysical/slides/diagrams/
+notesdir: ../../../mlatcl/mlphysical/_notes/
+notebooksdir: ../../../mlatcl/mlphysical/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
 baseurl: "mlphysical/" # the subpath of your site, e.g. /blog/

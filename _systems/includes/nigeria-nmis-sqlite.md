@@ -15,7 +15,7 @@ Many start-up companies were formed on the back of a `MySQL` server hosted on to
 
 If you were designing your own ride hailing app, or any other major commercial software you would want to investigate whether you would need to set up a central SQL server in one of these frameworks.
 
-Today though, we'll just stick to SQLite which gives you a sense of the database without the time and expense of setting it up on the cloud. As well as showing you the SQL commands (which is often what's used in a production ML system) we'll also give the equivalent ```pandas``` commands, which would often be what you would use when you're doing data analysis in `python` and `Jupyter`.}
+Today though, we'll just stick to SQLite which gives you a sense of the database without the time and expense of setting it up on the cloud. As well as showing you the SQL commands (which is often what's used in a production ML system) we'll also give the equivalent `pandas` commands, which would often be what you would use when you're doing data analysis in `python` and `Jupyter`.}
 
 \notes{\subsection{Create the SQLite Database}
 
@@ -70,9 +70,9 @@ Typically, its good software engineering practice to 'wrap' the database command
 ```
 SELECT * FROM [table_name] LIMIT : N
 ```
-in python code. This SQL command selects the first ```N``` entries from a given database called ```table_name```.
+in python code. This SQL command selects the first `N` entries from a given database called `table_name`.
 
-We can pass the ```table_name``` and number of rows, ```N``` to the python command.}
+We can pass the `table_name` and number of rows, `N` to the python command.}
 
 \notes{
 \helpercode{def select_top(conn, table,  n):

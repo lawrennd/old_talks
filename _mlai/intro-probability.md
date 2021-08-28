@@ -6,8 +6,6 @@ abstract: |
 youtube: M67rG3cZoVg
 ---
 
-\include{talk-macros.gpp}
-
 \installcode{pods}
 
 \include{_mlai/includes/welcome.md}

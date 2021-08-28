@@ -6,7 +6,7 @@
 
 ${BASE}.paper.pdf: ${BASE}.paper.aux ${BASE}.paper.bbl ${BASE}.paper.tex
 	pdflatex -shell-escape ${BASE}.paper.tex
-	cp ${BASE}.paper.pdf ${NOTEDIR}/${OUT}.paper.pdf
+	cp ${BASE}.paper.pdf ${NOTESDIR}/${OUT}.paper.pdf
 
 ${BASE}.paper.bbl: ${BASE}.paper.aux ${BIBDEPS}
 	bibtex ${BASE}.notes

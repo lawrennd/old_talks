@@ -15,7 +15,7 @@ ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown
 	pandoc 	${PDSFLAGS} \
 		--out $@ ${BASE}.tmp.markdown
 	#notedown ${BASE}.tmp.markdown > ${BASE}.ipynb
-	cp ${BASE}.ipynb ${NOTEBOOKDIR}/${OUT}.ipynb
+	cp ${BASE}.ipynb ${NOTEBOOKSDIR}/${OUT}.ipynb
 	rm ${BASE}.tmp.markdown
 
 ${BASE}.full.ipynb: ${BASE}.full.ipynb.markdown
@@ -25,7 +25,7 @@ ${BASE}.full.ipynb: ${BASE}.full.ipynb.markdown
 	pandoc 	${PDSFLAGS} \
 		--out $@ ${BASE}.tmp.markdown
 	#notedown ${BASE}.tmp.markdown > ${BASE}.ipynb
-	cp ${BASE}.full.ipynb ${NOTEBOOKDIR}/${OUT}.full.ipynb
+	cp ${BASE}.full.ipynb ${NOTEBOOKSDIR}/${OUT}.full.ipynb
 	rm ${BASE}.tmp.markdown
 
 ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
@@ -34,5 +34,5 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 		${CITEFLAGS} \
 		--out ${BASE}.tmp.markdown  ${BASE}.slides.ipynb.markdown
 	notedown ${BASE}.tmp.markdown > ${BASE}.slides.ipynb
-	cp ${BASE}.slides.ipynb ${NOTEBOOKDIR}/${OUT}.slides.ipynb
+	cp ${BASE}.slides.ipynb ${NOTEBOOKSDIR}/${OUT}.slides.ipynb
 	rm ${BASE}.tmp.markdown

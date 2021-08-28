@@ -7,7 +7,7 @@
 
 ${BASE}.notes.pdf: ${BASE}.notes.aux ${BASE}.notes.bbl ${BASE}.notes.tex
 	pdflatex -shell-escape ${BASE}.notes.tex
-	cp ${BASE}.notes.pdf ${NOTEDIR}/${OUT}.notes.pdf
+	cp ${BASE}.notes.pdf ${NOTESDIR}/${OUT}.notes.pdf
 
 ${BASE}.notes.bbl: ${BASE}.notes.aux ${BIBDEPS}
 	bibtex ${BASE}.notes
