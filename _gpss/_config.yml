@@ -9,10 +9,12 @@ author:
   url: http://inverseprobability.com
 ipynb: True
 venue: "Gaussian Process Summer School"
-postdir: ../../../mlatcl/gpss/_lectures/
-slidedir: ../../../mlatcl/gpss/slides/
-notedir: ../../../mlatcl/gpss/_notes/
-notebookdir: ../../../mlatcl/gpss/_notebooks/
+postsdir: ../../../mlatcl/gpss/_lectures/
+slidesdir: ../../../mlatcl/gpss/slides/
+notesdir: ../../../mlatcl/gpss/_notes/
+notebooksdir: ../../../mlatcl/gpss/_notebooks/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
 transition: None
 time:
 ghub:

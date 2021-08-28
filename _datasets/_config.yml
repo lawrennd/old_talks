@@ -9,11 +9,11 @@ author:
   url: http://inverseprobability.com
 ipynb: True
 reveal: False
-postdir: ../../../lawrennd/ods/_datasets/
-notebookdir: ../../../lawrennd/ods/notebooks/pods/datasets/
-slidedir: ../../../lawrennd/ods/assets/diagrams/
-diagramdir: slides/diagrams/
-writediagramdir: .
+postsdir: ../../../lawrennd/ods/_datasets/
+notebooksdir: ../../../lawrennd/ods/notebooks/pods/datasets/
+slidesdir: ../../../lawrennd/ods/assets/diagrams/
+diagramsdir: slides/diagrams/
+writediagramsdir: .
 baseurl: "talks/" # the subpath of your site, e.g. /blog/
 url: "https://inverseprobability.com/" # the base hostname & protocol for your site
 transition: None

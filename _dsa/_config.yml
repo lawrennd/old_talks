@@ -9,8 +9,16 @@ author:
 layout: lecture
 venue: Virtual (Zoom)
 ipynb: True
-postdir: ../../../mlatcl/dsa/_lectures/
-slidedir: ../../../mlatcl/dsa/slides/
-notedir: ../../../mlatcl/dsa/_notes/
-notebookdir: ../../../mlatcl/dsa/_notebooks/
+postsdir: ../../../mlatcl/dsa/_lectures/
+slidesdir: ../../../mlatcl/dsa/slides/
+notesdir: ../../../mlatcl/dsa/_notes/
+notebooksdir: ../../../mlatcl/dsa/_notebooks/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
 transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _dsa
+  

@@ -7,10 +7,10 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 layout: lecture
-postdir: ../../../mlatcl/ads/_lectures/
-slidedir: ../../../mlatcl/ads/slides/diagrams/
-notedir: ../../../mlatcl/ads/_notes/
-notebookdir: ../../../mlatcl/ads/_notebooks/
+postsdir: ../../../mlatcl/ads/_lectures/
+slidesdir: ../../../mlatcl/ads/slides/
+notesdir: ../../../mlatcl/ads/_notes/
+notebooksdir: ../../../mlatcl/ads/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
 baseurl: "ads/" # the subpath of your site, e.g. /blog/

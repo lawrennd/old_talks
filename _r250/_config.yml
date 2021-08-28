@@ -8,10 +8,12 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 venue: Virtual (Zoom)
-postdir: ../../../mlatcl/r250/_lectures/
-slidedir: ../../../mlatcl/r250/slides/
-notedir: ../../../mlatcl/r250/_notes/
-notebookdir: ../../../mlatcl/r250/_notebooks/
+postsdir: ../../../mlatcl/r250/_lectures/
+slidesdir: ../../../mlatcl/r250/slides/
+notesdir: ../../../mlatcl/r250/_notes/
+notebooksdir: ../../../mlatcl/r250/_notebooks/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
 transition: None
 ghub:
 - organization: lawrennd

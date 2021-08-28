@@ -8,9 +8,9 @@ author:
   url: http://inverseprobability.com
 url: http://inverseprobability.com
 baseurl: /talks
-diagramdir: slides/diagrams/
 texdir: ../../neurips2014/
-writediagramdir: .
+diagramsdir: slides/diagrams/
+writediagramsdir: .
 ipynb: True
 reveal: True
 baseurl: "talks/" # the subpath of your site, e.g. /blog/

@@ -9,10 +9,10 @@ author:
 layout: lecture
 pptx: True
 potx: ../_includes/judge-exec-reference.potx
-postdir: ../../../mlatcl/execed/_lectures/
-slidedir: ../../../mlatcl/execed/slides/
-notedir: ../../../mlatcl/execed/_notes/
-notebookdir: ../../../mlatcl/execed/_notebooks/
+postsdir: ../../../mlatcl/execed/_lectures/
+slidesdir: ../../../mlatcl/execed/slides/
+notesdir: ../../../mlatcl/execed/_notes/
+notebooksdir: ../../../mlatcl/execed/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
 baseurl: "execed/" # the subpath of your site, e.g. /blog/

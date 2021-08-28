@@ -9,8 +9,8 @@ author:
 talkscam:
 url: https://inverseprobability.com/
 baseurl: talks/
-diagramdir: slides/diagrams/
-writediagramdir: .
+diagramsdir: slides/diagrams/
+writediagramsdir: .
 ghub:
 - organization: lawrennd
   repository: talks

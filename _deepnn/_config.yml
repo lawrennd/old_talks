@@ -9,10 +9,10 @@ author:
 talkscam:
 room: Virtual (Zoom)
 venue: Zoom
-postdir: ../../../mlatcl/deepnn/_lectures/
-slidedir: ../../../mlatcl/deepnn/slides/
-notedir: ../../../mlatcl/deepnn/_notes/
-notebookdir: ../../../mlatcl/deepnn/_notebooks/
+postsdir: ../../../mlatcl/deepnn/_lectures/
+slidesdir: ../../../mlatcl/deepnn/slides/
+notesdir: ../../../mlatcl/deepnn/_notes/
+notebooksdir: ../../../mlatcl/deepnn/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
 baseurl: "deepnn/" # the subpath of your site, e.g. /blog/

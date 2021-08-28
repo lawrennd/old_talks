@@ -8,10 +8,10 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 ipynb: True
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
+postsdir: ../../../mlatcl/mlai/_lectures/
+slidesdir: ../../../mlatcl/mlai/slides/
+notesdir: ../../../mlatcl/mlai/_notes/
+notebooksdir: ../../../mlatcl/mlai/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
 baseurl: "mlai/" # the subpath of your site, e.g. /blog/

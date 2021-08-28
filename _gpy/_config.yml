@@ -9,13 +9,13 @@ author:
   url: http://inverseprobability.com
 ipynb: True
 reveal: False
-postdir: ../../../lawrennd/gpy-gallery/_gallery/
-notebookdir: ../../../lawrennd/gpy-gallery/_notebooks/
-slidedir: ../../../lawrennd/gpy-gallery/assets/diagrams/
-diagramdir: assets/diagrams/
+postsdir: ../../../lawrennd/gpy-gallery/_gallery/
+notebooksdir: ../../../lawrennd/gpy-gallery/_notebooks/
+slidesdir: ../../../lawrennd/gpy-gallery/assets/diagrams/
+diagramsdir: assets/diagrams/
 baseurl: "gpy-gallery/" # the subpath of your site, e.g. /blog/
 url: "https://inverseprobability.com/" # the base hostname & protocol for your site
-writediagramdir: .
+writediagramsdir: .
 transition: None
 ghub:
 - organization: lawrennd
