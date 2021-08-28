@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 -40 1052.3622 784.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="risk-framework2.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="154.40264"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2189"
+     inkscape:window-height="1237"
+     inkscape:window-x="671"
+     inkscape:window-y="67"
+     inkscape:window-maximized="0" />
+  <style
+     id="style10528">
+      .mycirc { fill-opacity:1;stroke-width:3;stroke:black;fill:white;}
+      .myrect { fill-opacity:0;stroke-width:3;stroke:black;}
+      .myarrow { stroke:black;stroke-width:2;marker-end:url(#markerArrow);}
+      .mythickarrow { stroke:black;stroke-width:20;marker-end:url(#markerThickArrow);}
+      .myline { stroke:black;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:black}
+      .mythickline { stroke:black;stroke-width:30;}
+      .mytext { fill:black;font-size:2em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;   text-align:center;
+  text-anchor:middle;
+}
+      .mysmallinverttext { fill:white;font-size:1.5em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;}
+    </style>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <rect
+       id="rect3340"
+       width="300"
+       height="150"
+       class="myrect"
+       x="400"
+       y="900" />
+    <rect
+       id="rect4336"
+       width="300"
+       height="150"
+       class="myrect"
+       x="400"
+       y="600" />
+    <rect
+       id="rect3346"
+       class="myrect"
+       width="300"
+       height="150"
+       x="100"
+       y="300" />
+    <text
+       x="250"
+       y="375"
+       class="mytext"
+       id="text3348"
+       sodipodi:linespacing="125%">
+      <tspan
+         sodipodi:role="line"
+         id="tspan3350"
+         x="250"
+         y="375">Risk Framework</tspan>
+    </text>
+    <rect
+       id="rect3352"
+       class="myrect"
+       width="300"
+       height="150"
+       x="700"
+       y="300" />
+    <text
+       x="850"
+       y="375"
+       class="mytext"
+       id="text3354"
+       sodipodi:linespacing="125%">
+      <tspan
+         sodipodi:role="line"
+         id="tspan3356"
+         x="850"
+         y="375">Policy</tspan>
+    </text>
+    <text
+       x="550"
+       y="675"
+       class="mytext"
+       id="text3342"
+       sodipodi:linespacing="125%">
+      <tspan
+         sodipodi:role="line"
+         id="tspan3344"
+         x="550"
+         y="675">Regulation</tspan>
+    </text>
+    <text
+       x="550"
+       y="975"
+       class="mytext"
+       id="text4346"
+       sodipodi:linespacing="125%">
+      <tspan
+         sodipodi:role="line"
+         id="tspan4348"
+         x="550"
+         y="975">Customer</tspan>
+    </text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 250,450 195,150 0,1"
+       id="path3436"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 650,600 195,-150 0,-1"
+       id="path3436-2"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 550,750 0,150 0,-2"
+       id="path4352"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
