@@ -15,12 +15,12 @@ Machine learning can be summarized as
 $$
 \text{model} + \text{data} \xrightarrow{\text{compute}} \text{prediction}
 $$
-and many machine learning courses focus a lot on the model part. But to build a machine learning system in practice, a lot of work has to be put into the data part. This notebook gives some pointers on that work and how to think about your machine learning systems design.}
+and many machine learning courses focus a lot on the model part. But to build a machine learning system in practice, a lot of work must be put into the data part. This notebook gives some pointers on that work and how to think about your machine learning systems design.}
 
 \notes{
 \subsection{Datasets}
 
-In this notebook , we download 4 datasets: 
+In this notebook, we download 4 datasets: 
 
 * Nigeria NMIS health facility data
 * Population data for Administrative Zone 1 (states) areas in Nigeria

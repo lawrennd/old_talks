@@ -33,6 +33,7 @@ _site
 *.bbl
 *.blg
 *.log
+*.emf
 _*/*.ipynb
 !_notebooks/*.ipynb
 _*/*.slides.html
