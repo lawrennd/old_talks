@@ -1,5 +1,5 @@
-\ifndef{nigeriaNmisSqlite}
-\define{nigeriaNmisSqlite}
+\ifndef{nigeriaNmisSql}
+\define{nigeriaNmisSql}
 
 \editme
 
@@ -30,31 +30,10 @@ Now that we have a SQL database, we can create a connection to it and query it u
 
 Start by making a connection to the database. This will often be done via remote connections, but for this example we'll connect locally to the database using the filepath directly.}
 
-\notes{
-\setuphelpercode{import sqlite3}
 
-\helpercode{def create_connection(db_file):
-    """ create a database connection to the SQLite database
-        specified by the db_file
-    :param db_file: database file
-    :return: Connection object or None
-    """
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-    except Error as e:
-        print(e)
+\notes{To access a data base, the first thing that is made is a connection. Then SQL is used to extract the information required. A typical SQL command is `SELECT`. It allows us to extract rows from a given table. It operates a bit like the `.head()` method in `pandas`, it will return the first `N` rows (by default the `.head()` command returns the first 5 rows, but you can set `N` to whatever you like. Here we've included a default value of 5 to make it match the `pandas` command.
 
-    return conn}
-
-\code{conn = create_connection("db.sqlite")}
-}
-
-\notes{Now that we have a connection, we can write a command and pass it to the database.
-
-To access a data base, the first thing that is made is a connection. Then SQL is used to extract the information required. A typical SQL command is `SELECT`. It allows us to extract rows from a given table. It operates a bit like the `.head()` method in `pandas`, it will return the first `N` rows (by default the `.head()` command returns the first 5 rows, but you can set `N` to whatever you like. Here we've included a default value of 5 to make it match the `pandas` command.
-
-The python library, `sqlite3`, allows us to access the SQL database directly from python. We do this using an `execute` command on the connection. 
+We do this using an `execute` command on the connection. 
 
 Typically, its good software engineering practice to 'wrap' the database command in some python code. This allows the commands to be maintained. Below we wrap the SQL command
 
@@ -63,7 +42,16 @@ SELECT * FROM [table_name] LIMIT : N
 ```
 in python code. This SQL command selects the first `N` entries from a given database called `table_name`.
 
-We can pass the `table_name` and number of rows, `N` to the python command.}
+We can pass the `table_name` and number of rows, `n`, to the python command.}
+
+\ifeq(databaseType}{sqlite}
+  \include{_systems/include/nigeria-nmis-wrap-sqlite.md}
+\else
+  \ifeq{databaseType}{mariadb}
+    \include{_systems/includes/nigeria-nmis-wrap-mariadb.md}
+  \endif
+\endif
+
 
 \notes{
 \helpercode{def select_top(conn, table,  n):
