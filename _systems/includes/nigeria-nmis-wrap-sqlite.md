@@ -1,5 +1,5 @@
-\ifndef{nigeriaNmisCreateSqlite}
-\define{nigeriaNmisCreateSqlite}
+\ifndef{nigeriaNmisWrapSqlite}
+\define{nigeriaNmisWrapSqlite}
 
 \editme
 

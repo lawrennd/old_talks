@@ -18,17 +18,17 @@ If you were designing your own ride hailing app, or any other major commercial s
 \ifndef{databaseType}
   \define{databaseType}{sqlite}
 \endif
-\ifeq{databaseType}{sqlite}
+\ifeq{\databaseType}{sqlite}
   \include{_systems/includes/nigeria-nmis-sqlite.md}
 \else
-  \ifeq{databaseType}{mariadb}
+  \ifeq{\databaseType}{mariadb}
     \include{_systems/includes/nigeria-nmis-mariadb.md}
   \endif
 \endif
 
 \notes{\subsection{Accessing the SQL Database}
 
-Now that we have a SQL database, we can create a connection to it and query it using SQL commands. Let's try to simply select the data we wrote to it, to make sure its the same.
+Now that we have a SQL database, we can create a connection to it and query it using SQL commands. Let's try to simply select the data we wrote to it, to make sure it's the same.
 
 Start by making a connection to the database. This will often be done via remote connections, but for this example we'll connect locally to the database using the filepath directly.}
 
@@ -46,16 +46,16 @@ in python code. This SQL command selects the first `N` entries from a given data
 
 We can pass the `table_name` and number of rows, `n`, to the python command.}
 
-\ifeq(databaseType}{sqlite}
+
+\ifeq(\databaseType}{sqlite}
   \include{_systems/includes/nigeria-nmis-wrap-sqlite.md}
 \else
-  \ifeq{databaseType}{mariadb}
+  \ifeq{\databaseType}{mariadb}
+	Hello!
     \include{_systems/includes/nigeria-nmis-wrap-mariadb.md}
   \endif
 \endif
 
-
-\notes{
 \helpercode{def select_top(conn, table,  n):
     """
     Query n first rows of the table
@@ -72,18 +72,16 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
 
 \notes{Let's have a go at calling the command to extract the first three facilities from our health center database. Let's try creating a function that does the same thing the pandas `.head()` method does so we can inspect our database.}
 
-\notes{
 \setupcode{def head(conn, table, n=5):
   rows = select_top(conn, table, n)
   for r in rows:
       print(r)}
 	  
 \code{head(conn, 'facilities')}
-}
 
-\notes{Great! We now have the data base in SQLite, and some python functions that operate on the data base by wrapping SQL commands.
+\notes{Great! We now have the database in  and some python functions that operate on the data base by wrapping SQL commands.
 
-We will return to the SQL command style after download and add the other datasets to the database using a combination of `pandas` and the `csv-to-sqlite` utility.
+We will return to the SQL command style after download and add the other datasets to the database using a combination of `pandas` and the database utilities.
 
 Our next task will be to introduce data on COVID19 so that we can join that to our other data sets.}
 

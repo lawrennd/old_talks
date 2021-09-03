@@ -1,5 +1,5 @@
-\ifndef{nigeriaNmisCreateMariadb}
-\define{nigeriaNmisCreateMariadb}
+\ifndef{nigeriaNmisWrapMariadb}
+\define{nigeriaNmisWrapMariadb}
 
 \editme
 

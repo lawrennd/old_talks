@@ -1,10 +1,12 @@
-\ifndef{awsMysqlServer}
-\define{awsMysqlServer}
+\ifndef{awsMariadbServer}
+\define{awsMariadbServer}
 
 \editme
 
 \ifndef{sqlDatabaseName}
-\define{sqlDatabaseName}{testdatabase-mariadb}
+  \define{sqlDatabaseName}{testdatabase-mariadb}
+\endif
+
 \subsection{Creating a MariaDB Server on AWS}
 
 
@@ -18,7 +20,7 @@
 
 4. `Standard Create` should be selected. In the box below, which is titled `Engine Options` you should select `MariaDB`. You can leave the `Version` as it's set,
 
-\include{\diagramsDir/cloud/aws-select-mariadb-rds}{60%}
+\includepng{\diagramsDir/cloud/aws-select-mariadb-rds}{60%}
 
 5. In the box below that, make sure you select `Free tier`.
 

@@ -13,6 +13,8 @@ The beautiful thing about SQLite is that it allows us to play with SQL without g
 
 \installcode{mariadb}
 
+\include{_cloud/includes/aws-mariadb-server.md}
+
 \notes{\code{!csv-to-sqlite -f facilities.csv -t full -o db.sqlite}}
 
 \notes{Rather than being installed on a separate server, SQLite simply stores the database locally in a file called `db.sqlite`.
