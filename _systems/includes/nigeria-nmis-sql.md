@@ -11,18 +11,20 @@ To do this, we use the command line utility that comes standard for SQLite datab
 
 A typical machine learning installation might have you running a database from a cloud service (such as AWS, Azure or Google Cloud Platform). That cloud service would host the database for you, and you would pay according to the number of queries made. 
 
-Many start-up companies were formed on the back of a `MySQL` server hosted on top of AWS. Although since MySQL was sold to Sun, and then passed on to Oracle, the open source community seems to have turned its attention to `MariaDB`, here's the [AWS instructions on how to set up `MariaDB`](https://aws.amazon.com/getting-started/hands-on/create-mariadb-db/).
+Many start-up companies were formed on the back of a `MySQL` server hosted on top of AWS. Although since MySQL was sold to Sun, and then passed on to Oracle, the open source community has turned its attention to `MariaDB`, here's the [AWS instructions on how to set up `MariaDB`](https://aws.amazon.com/getting-started/hands-on/create-mariadb-db/).
 
-If you were designing your own ride hailing app, or any other major commercial software you would want to investigate whether you would need to set up a central SQL server in one of these frameworks.
+If you were designing your own ride hailing app, or any other major commercial software you would want to investigate whether you would need to set up a central SQL server in one of these frameworks.}
 
 \ifndef{databaseType}
-\define{databaseType}{sqlite}
+  \define{databaseType}{sqlite}
 \endif
 \ifeq{databaseType}{sqlite}
-\include{_systems/includes/nigeria-nmis-sqlite.md}
-\else\ifeq{databaseType}{mariadb}
-\include{_systems/includes/nigeria-nmis-mariadb.md}
-\endif\endif
+  \include{_systems/includes/nigeria-nmis-sqlite.md}
+\else
+  \ifeq{databaseType}{mariadb}
+    \include{_systems/includes/nigeria-nmis-mariadb.md}
+  \endif
+\endif
 
 \notes{\subsection{Accessing the SQL Database}
 
@@ -45,7 +47,7 @@ in python code. This SQL command selects the first `N` entries from a given data
 We can pass the `table_name` and number of rows, `n`, to the python command.}
 
 \ifeq(databaseType}{sqlite}
-  \include{_systems/include/nigeria-nmis-wrap-sqlite.md}
+  \include{_systems/includes/nigeria-nmis-wrap-sqlite.md}
 \else
   \ifeq{databaseType}{mariadb}
     \include{_systems/includes/nigeria-nmis-wrap-mariadb.md}

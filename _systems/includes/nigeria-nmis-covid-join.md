@@ -40,11 +40,10 @@ We also want to have population data for each state in Nigeria, so that we can s
 
 \notes{\subsection{Save to database file}
 
-The next step is to add this new CSV file as an additional table in our SQLite database. This is done using the script as before.}
+The next step is to add this new CSV file as an additional table in our database.}
 
-\notes{\code{pop_data.to_csv('pop_data.csv')}}
+\include{_systems/includes/nigerian-population-data-sql.md}
 
-\notes{\code{!csv-to-sqlite -f pop_data.csv -t full -o db.sqlite}}
 
 \notes{\subsection{Computing per capita hospitals and COVID}
 

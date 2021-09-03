@@ -5,7 +5,6 @@
 
 \subsection{Population Data}
 
-
 \notes{Now we have information about COVID cases, and we have information about how many health centers and how many doctors and nurses there are in each health center. But unless we understand how many people there are in each state, then we cannot make decisions about where they may be problems with the disease.
 
 If we were running our ride hailing service, we would also need information about how many people there were in different areas, so we could understand what the demand for the boda boda rides might be.
