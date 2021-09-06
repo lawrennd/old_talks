@@ -3,7 +3,6 @@
 
 \editme
 
-\notes{
 \setuphelpercode{import mariadb}
 
 \helpercode{def create_connection(user, password, host, port=3306, database):
@@ -25,8 +24,9 @@
 	    sys.exit(1)
     return conn}
 
-\code{conn = create_connection("db.sqlite")}
-}
+\notes{TK: Need to load in connection details here.}
+
+\code{conn = create_connection("")}
 
 \notes{Now that we have a connection, we can write a command and pass it to the database.
 

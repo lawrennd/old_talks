@@ -6,7 +6,7 @@
 
 \subsection{Create the MariaDB Instance}
 
-\code{hosp_state_joined.to_csv('facilities.csv')}
+\code{hosp_state_joined.to_csv('hospitals_zones_joined.csv')}
 
 \notes{We will now set up a `MariaDB` database instance for storing our data.}
 
@@ -21,7 +21,7 @@
 
 \setupcode{%load_ext sql}
 
-\code{%sql mysql+mysqldb://admin:even+vac@ads-assessment-database.cgrre17yxw11.eu-west-2.rds.amazonaws.com:3306/adsdatabase}
+\code{%sql mysql+mysqldb://$username$:$password$@ads-assessment-database.cgrre17yxw11.eu-west-2.rds.amazonaws.com:3306/adsdatabase}
 
 \code{%%sql
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -35,10 +35,10 @@ USE `nigeria_nmis`;}
 
 \code{%%sql
 --
--- Table structure for table `facilities`
+-- Table structure for table `hospitals_zones_joined`
 --
 
-CREATE TABLE IF NOT EXISTS `facilities` (
+CREATE TABLE IF NOT EXISTS `hospitals_zones_joined` (
   `transaction_unique_identifier` tinytext COLLATE utf8_bin NOT NULL,
   `price` int(10) unsigned NOT NULL,
   `date_of_transfer` date NOT NULL,
@@ -61,24 +61,23 @@ CREATE TABLE IF NOT EXISTS `facilities` (
 
 \code{%%sql
 --
--- Indexes for table `facilities`
+-- Indexes for table `hospitals_zones_joined`
 --
-ALTER TABLE `facilities`
+ALTER TABLE `hospitals_zones_joined`
  ADD PRIMARY KEY (`db_id`);}
  
  \code{%%sql
 --
--- AUTO_INCREMENT for table `facilities`
+-- AUTO_INCREMENT for table `hospitals_zones_joined`
 --
-ALTER TABLE `facilities`
+ALTER TABLE `hospitals_zones_joined`
 MODIFY `db_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;}
 
 
 \code{%%sql
-LOAD DATA LOCAL INFILE 'facilities.csv' INTO TABLE facilities}
+LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_joined}
 
 
-In the database there can be several 'tables'. Each table can be thought of as like a separate dataframe. The table name we've just saved is 'hospitals_zones_joined'. 
-}
+\notes{In the database there can be several 'tables'. Each table can be thought of as like a separate dataframe. The table name we've just saved is `hospitals_zones_joined`.}
 
 \endif

@@ -47,11 +47,10 @@ in python code. This SQL command selects the first `N` entries from a given data
 We can pass the `table_name` and number of rows, `n`, to the python command.}
 
 
-\ifeq(\databaseType}{sqlite}
+\ifeq{\databaseType}{sqlite}
   \include{_systems/includes/nigeria-nmis-wrap-sqlite.md}
 \else
   \ifeq{\databaseType}{mariadb}
-	Hello!
     \include{_systems/includes/nigeria-nmis-wrap-mariadb.md}
   \endif
 \endif
@@ -68,7 +67,7 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
 
     rows = cur.fetchall()
     return rows}
-}
+
 
 \notes{Let's have a go at calling the command to extract the first three facilities from our health center database. Let's try creating a function that does the same thing the pandas `.head()` method does so we can inspect our database.}
 
