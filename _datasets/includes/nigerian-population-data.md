@@ -28,7 +28,9 @@ data.columns = ['admin1Name_en', 'admin1Pcode', 'admin0Name_en', 'admin0Pcode', 
 data = data.set_index('admin1Name_en')
 ```
 
-\code{data = pods.datasets.nigerian_population_2020()}
+\note{TK: This no longer works because the HDX has moved to requiring AWS keys to access the download.}
+
+\code{data = pods.datasets.nigerian_population_2016()}
 
 \code{data.head()}
 
