@@ -3,7 +3,7 @@ week: 3
 session: 1
 title: "Emulation"
 abstract:  >
-  In this lecture we motivate the use of emulation, and introduce the GPy software as a framework for building Gaussian process emulators..
+  In this lecture we motivate the use of emulation, and introduce the GPy software as a framework for building Gaussian process emulators.
 author:
 - family: Lawrence
   given: Neil D.
