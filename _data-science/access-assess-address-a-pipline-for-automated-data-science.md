@@ -25,8 +25,6 @@ transition: None
 $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 
-
-
 \include{_data-science/includes/big-data-paradox.md}
 \include{_data-science/includes/big-model-paradox.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
@@ -51,15 +49,18 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \slides{* Bandwidth constraints of humans
 * Big Data Paradox
 * Big Model Paradox
-* Data as a Convener
-* Decomposition of Complex Models
+* Access, Assess, Address
 }
+
 
 \notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
 
 \notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
 
-\notes{When we combine these difficult challenges with complex models, we need to put more effort into decomposing our models so that they may be calibrated and re-integrated at appropriate fidelities.}
+\notes{Stepping back from these recommendations, we've introduced the "Access, Assess, Address" three stage framework for the data science process. Access is about getting hold of the data, bringing it into the digital machines. Assess is about reusable work we can do on the data before we pose a question about the data. For example, data schema, characterising the missing values, looking for corrupted entries, ensuring that the number of data hasn't saturated the excel row limit or that a gene name hasn't been converted to a date. Finally, the *address* stage is about addressing the statistical question or machine learning prediction we require from the data.
+
+When it comes to the automation process, we can see three areas where we need progress. Access to data itself often requires manual intervention. Even downloading a CSV file may require a password. Building eacosystems of data exchange is vital for automating this step. For assessment we already have work from e.g. the AIDA team at the Alan Turing Institute, automated type detection, the automatic statistician @@Valera-automatic17;@Lloyd-automatic14
+then finally we have AutoML.}
 
 \thanks
 
