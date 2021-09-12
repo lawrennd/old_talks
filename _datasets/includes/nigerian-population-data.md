@@ -16,8 +16,8 @@ We also want to have population data for each state in Nigeria, so that we can s
 ```python
 import urllib
 
-pop_url = 'https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_pop_adm1_2016.csv'
-_, msg = urllib.request.urlretrieve(pop_url,'nga_pop_adm1_2016.csv')
+pop_url = 'https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_pop_adm1_2020.csv'
+_, msg = urllib.request.urlretrieve(pop_url,'nga_pop_adm1_2020.csv')
 data = pd.read_csv('nga_pop_adm1_2016.csv')
 ```
 
@@ -28,7 +28,7 @@ data.columns = ['admin1Name_en', 'admin1Pcode', 'admin0Name_en', 'admin0Pcode', 
 data = data.set_index('admin1Name_en')
 ```
 
-\code{data = pods.datasets.nigerian_population_2016()}
+\code{data = pods.datasets.nigerian_population_2020()}
 
 \code{data.head()}
 
