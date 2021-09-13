@@ -113,4 +113,3 @@ e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 \notes{The idea of the analysis is to bring this information together for sentiment and misinformation analysis in a [dashboard for Covid-19 in Uganda](https://dsa-uganda.herokuapp.com/dashboard/).}
 
 \endif
-
