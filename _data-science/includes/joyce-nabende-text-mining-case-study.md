@@ -37,7 +37,7 @@
 
 \subsection{Data Access}
 
-\notes{The social media data was collected from a set of pages (media institutions, ministry of health, media personalities, top twitter/facebook users from Uganda. All data was then filtered using keywords, 'ssenyiga' ,'kolona' ,'corona' ,'virus' ,'obulwadde' ,'corona' ,'covid' ,'abalwadde' ,'ekirwadde' ,'akawuka','staysafeug', 'stayhome', 'tonsemberera', 'tokwatakudereva','vaccine' to select with Covid-19 related tweets. Very short Facebook posts were also removed. Data was collected in two phases, from March 2020 - March 2021 and then from June 2021 - August 2021. Raw data points 15,354 posts from twitter and 430,075 from Facebook.}
+\notes{The social media data was collected from a set of pages (media institutions, ministry of health, media personalities, top twitter/facebook users from Uganda. All data was then filtered using keywords, 'ssenyiga', 'kolona', 'corona' ,'virus' ,'obulwadde', 'corona', 'covid', 'abalwadde', 'ekirwadde', 'akawuka', 'staysafeug', 'stayhome', 'tonsemberera', 'tokwatakudereva', 'vaccine' to select with Covid-19 related tweets. Very short Facebook posts were also removed. Data was collected in two phases, from March 2020 - March 2021 and then from June 2021 - August 2021. Raw data points 15,354 posts from twitter and 430,075 from Facebook.}
 
 \notes{Note that in this case, knowledge of the question has been used in accessing the data. The context of the data is Uganda and the focus is Covid-19. That focus is driven by the pandemic. However, as we see when we get to data assessment, there is still an amount of reusable work that could/should be automated.}
 
