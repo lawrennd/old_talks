@@ -13,11 +13,15 @@
 
 \notes{The aim of the project is to develop tools for automated misinformation detection. Web, mobile based social media platforms. Social media posts are invalid, inaccurate, potentially harmful. This is set within the context of the Covid-19 pandemic within Uganda.}
 
-\includepng{\diagramsDir/data-science/joyce-nabende-uganda-social-media-killing}}{Misinformation through media has been a challenge for as long as we've been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende's presentation.}{uganda-social-medial-killing}
+\newslide{}
+
+\figure{\includepng{\diagramsDir/data-science/joyce-nabende-uganda-social-media-killing}{60%}}{Misinformation through media has been a challenge for as long as we've been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende's presentation.}{uganda-social-medial-killing}
 
 \notes{In common with many applications of data science, and in line with traditional statistics, the question here comes first, at the beginning of the data collection. But the access of the data is made easier by the fact that the data exists in the digital space already. There are APIs for collecting data from Facebook and Twitter.}
 
 \notes{The focus here will be trying to understand which parts of this data collection process might be reusable for others. The aim is to separate those reusable parts from aspects that are specific to the question.}
+
+\newslide{}
 
 \figure{\includepng{\diagramsDir/data-science/napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06}{70%}}{Social media is widespread in Uganda, perhaps largely due to widespread availability of mobile phone access.}{napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06}
 
