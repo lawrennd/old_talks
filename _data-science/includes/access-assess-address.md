@@ -4,13 +4,18 @@
 
 \editme
 
-\subsection{Convening Power of Data}
 
 \includeyoutube{-QjJLgRni-M}{600}{450}
 
 \subsection{Access, Assess, Address}
 
 \notes{Inspired by the different challenges we've seen in the data science pandemic, we introduce the "Access, Assess, Address" pipeline for data science in practice.}
+
+\subsection{Access}
+
+\includeyoutube{5PdHgR6zz1o}{600}{450}
+
+AutoAI
 
 \subsection{Assess}
 

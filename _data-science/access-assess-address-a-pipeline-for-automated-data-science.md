@@ -43,6 +43,7 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 \include{_data-science/includes/access-assess-address.md}
+\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
 
 \subsection{Conclusions}
 
