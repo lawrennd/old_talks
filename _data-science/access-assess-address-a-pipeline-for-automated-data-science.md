@@ -10,7 +10,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 blog: 
-date: 2021-09-13
+date: 2021-09-17
 venue: "ECML Workshop on Automating Data Science"
 transition: None
 ---
