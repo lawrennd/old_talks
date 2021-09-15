@@ -39,11 +39,11 @@ $$
 \include{_simulation/includes/simulation-system.md}
 \include{_supply-chain/includes/experiment-analyze-design.md}
 \include{_uq/includes/emulation.md}
-\include{_gp/includes/gpy-emulation.md}
+\notes{\include{_gp/includes/gpy-emulation.md}}
 \include{_software/includes/emukit-software.md}
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/emukit-sensitivity-analysis.md}
-\include{_uq/includes/catapult-sensitivity-analysis.md}
+\notes{\include{_uq/includes/catapult-sensitivity-analysis.md}}
 
 \thanks
 
