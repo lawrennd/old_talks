@@ -18,6 +18,7 @@ notesdir: ../_notes/
 notebooksdir: ../_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
+transition: None
 layout: talk
 ---
 
