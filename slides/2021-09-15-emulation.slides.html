@@ -704,6 +704,108 @@ Maren Mahsereci
 <p>To building your own model <a href="https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb">see this notebook</a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> YourModelWrapperHere</span></code></pre></div>
 </section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li>loop</li>
+<li>model</li>
+<li>candidate point calculator</li>
+<li>acquisition</li>
+<li>acquisition optimizer</li>
+<li>user function</li>
+<li>model updater</li>
+<li>stopping condition</li>
+</ul>
+<!-- SECTION Emukit Vision -->
+</section>
+<section id="emukit-vision" class="slide level2">
+<h2>Emukit Vision</h2>
+</section>
+<section id="emukit-and-emulation" class="slide level2">
+<h2>Emukit and Emulation</h2>
+<div class="figure">
+<div id="emukit-vision-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-vision.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The emukit approach to the three parts of emulation.
+</aside>
+</section>
+<section id="methods" class="slide level2">
+<h2>Methods</h2>
+<ul>
+<li>The different methods: Bayesian optimization, experimental design.</li>
+</ul>
+</section>
+<section id="models" class="slide level2">
+<h2>Models</h2>
+<ul>
+<li>The probabilistic model that will be used to emulate. Emukit doesn’t define these, the user brings their own.</li>
+</ul>
+</section>
+<section id="tasks" class="slide level2">
+<h2>Tasks</h2>
+<ul>
+<li>Still in development: High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.</li>
+</ul>
+</section>
+<section id="structure-1" class="slide level2">
+<h2>Structure</h2>
+<pre><code>while stopping condition is not met:
+    optimize acquisition function
+    evaluate user function
+    update model with new observation</code></pre>
+</section>
+<section id="loop" class="slide level2">
+<h2>Loop</h2>
+<ul>
+<li>An abstract class where the different components come together.</li>
+</ul>
+</section>
+<section id="model" class="slide level2">
+<h2>Model</h2>
+<ul>
+<li>The surrogate model or <em>emulator</em>, often a Gaussian process.</li>
+</ul>
+</section>
+<section id="candidate-point-calculator" class="slide level2">
+<h2>Candidate Point Calculator</h2>
+<ul>
+<li>The routine that combines acquisition with optimizer to compute the next candidate point (or points).</li>
+</ul>
+</section>
+<section id="acquisition" class="slide level2">
+<h2>Acquisition</h2>
+<ul>
+<li>Our acquisition function: in Bayesian Optimization, this might be Expected Improvement.</li>
+</ul>
+</section>
+<section id="acquisition-optimizer" class="slide level2">
+<h2>Acquisition Optimizer</h2>
+<ul>
+<li>The optimization routine we use to optimize the acquisition function. (often this is a non-linear optimizer like L-BFGS <span class="citation" data-cites="Byrd:lbfgsb95">(Byrd et al., 1995)</span>)</li>
+</ul>
+</section>
+<section id="user-function" class="slide level2">
+<h2>User Function</h2>
+<ul>
+<li>The function we’re trying to reason about.</li>
+</ul>
+</section>
+<section id="model-updater" class="slide level2">
+<h2>Model Updater</h2>
+<ul>
+<li>How to update our surrogate model when we have new training data.</li>
+</ul>
+</section>
+<section id="stopping-condition" class="slide level2">
+<h2>Stopping Condition</h2>
+<ul>
+<li>How to decide when to stop our cycle of data acquisition from the target function.</li>
+</ul>
+</section>
 <section id="emukit-playground" class="slide level2">
 <h2>Emukit Playground</h2>
 <svg viewBox="0 0 200 200" style="width:15%">
@@ -762,6 +864,19 @@ Emukit playground is a tutorial for understanding the simulation/emulation relat
 <aside class="notes">
 Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization" class="uri">https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization</a>
 </aside>
+</section>
+<section id="emukit-tutorial" class="slide level2">
+<h2>Emukit Tutorial</h2>
+</section>
+<section id="emukit-overview-summary" class="slide level2">
+<h2>Emukit Overview Summary</h2>
+<ul>
+<li><em>Multi-fidelity emulation</em>: build surrogate models for multiple sources of information;</li>
+<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters ML algorithms;</li>
+<li><em>Experimental design/Active learning</em>: design experiments and perform active learning with ML models;</li>
+<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs</li>
+<li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
+</ul>
 </section>
 <section id="emukit-sensitivity-analysis" class="slide level2">
 <h2>Emukit Sensitivity Analysis</h2>
@@ -925,6 +1040,9 @@ Total effects as estimated by Monte Carlo and GP based Monte Carlo.
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Byrd:lbfgsb95" class="csl-entry" role="doc-biblioentry">
+Byrd, R.H., Lu, P., Nocedal, J., 1995. A limited memory algorithm for bound constrained optimization. SIAM Journal on Scientific and Statistical Computing 16, 1190–1208.
+</div>
 <div id="ref-Laplace-essai14" class="csl-entry" role="doc-biblioentry">
 Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.
 </div>

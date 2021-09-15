@@ -59,7 +59,9 @@ $$
 \include{_uq/includes/emulation.md}
 \notes{\include{_gp/includes/gpy-emulation.md}}
 \include{_software/includes/emukit-software.md}
+\include{_uq/includes/emukit-vision.md}
 \include{_uq/includes/emukit-playground.md}
+\include{_uq/includes/emukit-tutorial.md}
 \include{_uq/includes/emukit-sensitivity-analysis.md}
 \notes{\include{_uq/includes/catapult-sensitivity-analysis.md}}
 

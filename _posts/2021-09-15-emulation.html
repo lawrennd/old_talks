@@ -669,6 +669,63 @@ Maren Mahsereci
 </svg>
 </div>
 <p>The software was initially built by the team in Amazon. As well as Javier Gonzalez (ML side) and Andrei Paleyes (Software Engineering) included Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein, Henry Moss, David-Elias Künstle as well as management input from Cliff McCollum and myself.</p>
+<h1 id="emukit-vision">Emukit Vision</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-vision.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-vision.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<h2 id="preface-about-emulation">Preface about emulation</h2>
+<p>We see emulation comprising of three main parts:</p>
+<p><strong>Models</strong>. This is a probabilistic data-driven representation of the process/simulator that the user is working with. There is normally a modelling framework that is used to create a model. Examples: neural network, Gaussian process, random forest.</p>
+<p><strong>Methods</strong>. Relatively low-level techniques that are aimed that either understanding, quantifying or using uncertainty that the model provides. Examples: Bayesian optimization, experimental design.</p>
+<p><strong>Tasks</strong>. High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.</p>
+<p>Typical workflow that we envision for a user interested in emulation is:</p>
+<ol type="1">
+<li><p>Figure out which questions/tasks are important for them in regard to their process/simulation.</p></li>
+<li><p>Understand which emulation techniques are needed to accomplish the chosen task.</p></li>
+<li><p>Build an emulator of the process. That can be a very involved step, that may include a lot of fine tuning and validation.</p></li>
+</ol>
+<p>Feed the emulator to the chosen technique and use it to answer the question/complete the task.</p>
+<h2 id="emukit-and-emulation">Emukit and Emulation</h2>
+<div class="figure">
+<div id="emukit-vision-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-vision.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="emukit-vision-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-vision&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="emukit-vision-caption" class="caption-frame">
+<p>Figure: The emukit approach to the three parts of emulation.</p>
+</div>
+</div>
+<h2 id="methods">Methods</h2>
+<p>This is the main focus of Emukit. Emukit defines a general sctructure of a decision making method, called OuterLoop, and then offers implementations of few such methods: Bayesian optimization, experimental design. In addition to provide a framework for decision making Emukit provide other tools, like sensitivity analysis, that help to debug and interpret emulators. All methods in Emukit are model-agnostic.</p>
+<h2 id="models">Models</h2>
+<p>Generally speaking, Emukit does not provide modelling capabilities, instead expecting users to bring their own models. Because of the variety of modelling frameworks out there, Emukit does not mandate or make any assumptions about a particular modelling technique or a library. Instead it suggests to implement a subset of defined model interfaces required to use a particular method. Nevertheless, there are a few model-related functionalities in Emukit: - Example models, which give users something to play with to explore Emukit. - Model wrappers, which are designed to help adapting models in particular modelling frameworks to Emukit interfaces. - Multi-fidelity models, implemented based on GPy.</p>
+<h2 id="tasks">Tasks</h2>
+<p>Emukit does not contribute much to this part at the moment. However Emukit team are on lookout for typical use cases for Emukit, and if a reoccuring pattern emerges, it may become a part of the library.</p>
+<pre><code>while stopping condition is not met:
+    optimize acquisition function
+    evaluate user function
+    update model with new observation</code></pre>
+<p>Emukit is build in a modular way so that each component in this loop can be swapped out. This means that scientists, applied mathematicians, machine learnings, statisticians can swap out the relavant part of their method and build on the undelrying structure. You just need to pick out the part that requires implementation.</p>
+<h2 id="loop">Loop</h2>
+<p>The <code>emukit.core.loop.OuterLoop</code> class is the abstract loop where the different components come together. There are more specific loops for Bayesian optimization and experimental design that construct some of the component parts for you.</p>
+<h2 id="model">Model</h2>
+<p>All <code>Emukit</code> loops need a probabilistic model of the underlying system. Emukit does not provide functionality to build models as there are already many good modelling frameworks available in python. Instead, we provide a way of interfacing third part modelling libraries with Emukit. We already provide a wrapper for using a model created with <code>GPy</code>. For instructions on how to include your own model please <a href="https://emukit.readthedocs.io/en/latest/notebooks/Emukit-tutorial-custom-model.html">see this notebook</a>.</p>
+<p>Different models and modelling frameworks will provide different functionality. For instance a Gaussian process will usually have derivatives of the predictions available but random forests will not. These different functionalities are represented by a set of interfaces which a model implements. The basic interface that all models must implement is <code>IModel</code>, which implements functionality to make predictions and update the model but a model may implement any number of other interfaces such as <code>IDifferentiable</code> which indicates a model has prediction derivatives available.</p>
+<h2 id="candidate-point-calculator">Candidate Point Calculator</h2>
+<p>This class decides which point to evaluate next. The simplest implementation, <code>SequentialPointCalculator</code>, collects one point at a time by finding where the acquisition is a maximum by applying the acquisition optimizer to the acquisition function. More complex implementations will enable batches of points to be collected so that the user function can be evaluated in parallel.</p>
+<h2 id="acquisition">Acquisition</h2>
+<p>The acquisition is a heuristic quantification of how valuable collecting a future point might be. It is used by the candidate point calculator to decide which point(s) to collect next.</p>
+<h2 id="acquisition-optimizer">Acquisition Optimizer</h2>
+<p>The <code>AcquisitionOptimizer</code> optimizes the acquisition function to find the point at which the acquisition is a maximum. This will use the acquisition function gradients if they are available. If gradients of the acquisition function are not available it will either estimate them numerically or use a gradient free optimizer.</p>
+<h2 id="user-function">User Function</h2>
+<p>This is the function that we are trying to reason about. It can be either evaluated by the user or it can be passed into the loop and evaluated by Emukit.</p>
+<h2 id="model-updater">Model Updater</h2>
+<p>The <code>ModelUpdater</code> class updates the model with new training data after a new point is observed and optimizes any hyper-parameters of the model. It can decide whether hyper-parameters need updating based on some internal logic.</p>
+<h2 id="stopping-condition">Stopping Condition</h2>
+<p>The <code>StoppingCondition</code> class chooses when we should stop collecting points. The most commonly used example is to stop when a set number of iterations have been reached.</p>
 <h2 id="emukit-playground">Emukit Playground</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -727,6 +784,80 @@ Cliff McCollum
 </div>
 </div>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
+<h2 id="emukit-tutorial">Emukit Tutorial</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-tutorial.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-tutorial.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install mlai</span></code></pre></div>
+<p>Set up the python imports that Emukit will use.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span></code></pre></div>
+<p>Now set up Emukit to run.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.experimental_design.experimental_design_loop <span class="im">import</span> ExperimentalDesignLoop</span></code></pre></div>
+<p>Let’s check the help function for the experimental design loop. This is the outer loop that provides all the decision making parts of Emukit.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ExperimentalDesignLoop?</span></code></pre></div>
+<p>Now let’s load in the model wrapper for our probabilistic model. In this case, instead of using GPy, we’ll make use of a simple model wrapper Emukit provides for a basic form of Gaussian process.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> SimpleGaussianProcessModel</span></code></pre></div>
+<p>Let’s have a quick look at how the included GP model works.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>SimpleGaussianProcessModel?</span></code></pre></div>
+<p>Now let’s create the data.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x_min <span class="op">=</span> <span class="op">-</span><span class="fl">30.0</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>x_max <span class="op">=</span> <span class="fl">30.0</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.uniform(x_min, x_max, (<span class="dv">10</span>, <span class="dv">1</span>))</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x) <span class="op">+</span> np.random.randn(<span class="dv">10</span>, <span class="dv">1</span>) <span class="op">*</span> <span class="fl">0.05</span></span></code></pre></div>
+<p>To learn about how to include your own model in Emukit, check <a href="https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb">this notebook</a> which shows how to include a <code>sklearn</code> GP model.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>emukit_model <span class="op">=</span> SimpleGaussianProcessModel(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core <span class="im">import</span> ParameterSpace, ContinuousParameter</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core.loop <span class="im">import</span> UserFunctionWrapper</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> ContinuousParameter(<span class="st">&#39;c&#39;</span>, x_min, x_max)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>space <span class="op">=</span> ParameterSpace([p])</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>loop <span class="op">=</span> ExperimentalDesignLoop(space, emukit_model)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>loop.run_loop(np.sin, <span class="dv">30</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_min <span class="op">=</span> <span class="op">-</span><span class="fl">40.0</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>plot_max <span class="op">=</span> <span class="fl">40.0</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>real_x <span class="op">=</span> np.arange(plot_min, plot_max, <span class="fl">0.2</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>real_y <span class="op">=</span> np.sin(real_x)</span></code></pre></div>
+<div class="figure">
+<div id="emukit-sine-function-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-sine-function.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="emukit-sine-function-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-sine-function&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="emukit-sine-function-caption" class="caption-frame">
+<p>Figure: Experimental design in Emukit using the <code>ExperimentalDesignLoop</code>: learning function <span class="math inline">\(\sin(x)\)</span> with Emukit.</p>
+</div>
+</div>
+<p>Computer the predictions from the Emukit model.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>predicted_y <span class="op">=</span> []</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>predicted_std <span class="op">=</span> []</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> real_x:</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    y, var <span class="op">=</span> emukit_model.predict(np.array([[x]]))</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.sqrt(var)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    predicted_y.append(y)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    predicted_std.append(std)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>predicted_y <span class="op">=</span> np.array(predicted_y).flatten()</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>predicted_std <span class="op">=</span> np.array(predicted_std).flatten()</span></code></pre></div>
+<div class="figure">
+<div id="emukit-sine-function-fit-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-sine-function-fit.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="emukit-sine-function-fit-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-sine-function-fit&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="emukit-sine-function-fit-caption" class="caption-frame">
+<p>Figure: The fit to the sine function after runnning the Emukit <code>ExperimentalDesignLoop</code>.</p>
+</div>
+</div>
+<h3 id="exercise-4">Exercise 4</h3>
+<p>Repeat the above experiment but using the Gaussian process model from <code>sklearn</code>. You can see step by step instructions on how to do this in <a href="https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb">this notebook</a>.</p>
+<h2 id="emukit-overview-summary">Emukit Overview Summary</h2>
+<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>multi-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate. But it’s easy to extend.</p>
 <h2 id="emukit-sensitivity-analysis">Emukit Sensitivity Analysis</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-sensitivity-analysis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-sensitivity-analysis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -736,15 +867,14 @@ Cliff McCollum
 <p>A possible definition of sensitivity analysis is the following: The study of how uncertainty in the output of a model (numerical or otherwise) can be apportioned to different sources of uncertainty in the model input <span class="citation" data-cites="Saltelli-sensitivity04">(Saltelli et al., 2004)</span>. A related practice is ‘uncertainty analysis,’ which focuses rather on quantifying uncertainty in model output. Ideally, uncertainty and sensitivity analyses should be run in tandem, with uncertainty analysis preceding in current practice.</p>
 <p>In Chapter 1 of <span class="citation" data-cites="Saltelli-global08">Saltelli et al. (2008)</span></p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> colors <span class="im">as</span> mcolors</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> cm</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install mlai</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pyDOE</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai.plot <span class="im">as</span> plot</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> colors <span class="im">as</span> mcolors</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> cm</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pyDOE</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai.plot <span class="im">as</span> plot</span></code></pre></div>
 <p>Sensitivity analysis is a statistical technique widely used to test the reliability of real systems. Imagine a simulator of taxis picking up customers in a city like the one showed in the <a href="https://github.com/amzn/emukit-playground">Emukit playground</a>. The profit of the taxi company depends on factors like the number of taxis on the road and the price per trip. In this example, a global sensitivity analysis of the simulator could be useful to decompose the variance of the profit in a way that can be assigned to the input variables of the simulator.</p>
 <p>There are different ways of doing a sensitivity analysis of the variables of a simulator. In this notebook we will start with an approach based on Monte Carlo sampling that is useful when evaluating the simulator is cheap. If evaluating the simulator is expensive, emulators can then be used to speed up computations. We will show this in the last part of the notebook. Next, we start with a few formal definitions and literature review so we can understand the basics of Sensitivity Analysis and how it can be performed with Emukit.</p>
 <h2 id="local-sensitivity">Local Sensitivity</h2>
@@ -804,18 +934,18 @@ g(\textbf{x}) = \sin(x_1) + a \sin^2(x_2) + b x_3^4 \sin(x_1).
 \]</span> We will set the parameters to be <span class="math inline">\(a = 5\)</span> and <span class="math inline">\(b=0.1\)</span> . The input variables are sampled randomly <span class="math inline">\(x_i \sim \mathcal{U}\left(-\pi,\pi\right)\)</span>.</p>
 <p>Next, we create the function object and visualize its shape marginally for each one of its three inputs.</p>
 <p>Load the Ishigami function</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.test_functions.sensitivity <span class="im">import</span> Ishigami</span></code></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>ishigami <span class="op">=</span> Ishigami(a<span class="op">=</span><span class="dv">5</span>, b<span class="op">=</span><span class="fl">0.1</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>target_function <span class="op">=</span> ishigami.fidelity1</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.test_functions.sensitivity <span class="im">import</span> Ishigami</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ishigami <span class="op">=</span> Ishigami(a<span class="op">=</span><span class="dv">5</span>, b<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>target_function <span class="op">=</span> ishigami.fidelity1</span></code></pre></div>
 <p>That gives us the target function, next we define the input space for the simulator.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core <span class="im">import</span> ContinuousParameter, ParameterSpace</span></code></pre></div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>variable_domain <span class="op">=</span> (<span class="op">-</span>np.pi,np.pi)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>           </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>space <span class="op">=</span> ParameterSpace(</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>          [ContinuousParameter(<span class="st">&#39;x1&#39;</span>, <span class="op">*</span>variable_domain), </span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;x2&#39;</span>, <span class="op">*</span>variable_domain),</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;x3&#39;</span>, <span class="op">*</span>variable_domain)])</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core <span class="im">import</span> ContinuousParameter, ParameterSpace</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>variable_domain <span class="op">=</span> (<span class="op">-</span>np.pi,np.pi)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>space <span class="op">=</span> ParameterSpace(</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>          [ContinuousParameter(<span class="st">&#39;x1&#39;</span>, <span class="op">*</span>variable_domain), </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;x2&#39;</span>, <span class="op">*</span>variable_domain),</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;x3&#39;</span>, <span class="op">*</span>variable_domain)])</span></code></pre></div>
 <p>Before moving to any further analysis, we first plot the non-zero components <span class="math inline">\(g(\mathbf{ x})\)</span>. These components are <span class="math display">\[
 \begin{align*}
 g_1(x_1) &amp; = \sin(x_1) \\
@@ -823,11 +953,11 @@ g_2(x_1) &amp; = a \sin^2 (x_2) \\
 g_{13}(x_1,x_3) &amp; = b x_3^4 \sin(x_1) 
 \end{align*}
 \]</span></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x_grid <span class="op">=</span> np.linspace(<span class="op">*</span>variable_domain,<span class="dv">100</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>target_simulator <span class="op">=</span> ishigami.fidelity1</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> ishigami.f1(x_grid)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> ishigami.f2(x_grid)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>F13 <span class="op">=</span> ishigami.f13(np.array([x_grid,x_grid]).T)[:,np.newaxis]</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x_grid <span class="op">=</span> np.linspace(<span class="op">*</span>variable_domain,<span class="dv">100</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>target_simulator <span class="op">=</span> ishigami.fidelity1</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> ishigami.f1(x_grid)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> ishigami.f2(x_grid)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>F13 <span class="op">=</span> ishigami.f13(np.array([x_grid,x_grid]).T)[:,np.newaxis]</span></code></pre></div>
 <div class="figure">
 <div id="non-zero-sobol-ishigami-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/non-zero-sobol-ishigami.svg" width="80%" style=" ">
@@ -842,26 +972,26 @@ g_{13}(x_1,x_3) &amp; = b x_3^4 \sin(x_1)
 </div>
 <h2 id="total-variance">Total Variance</h2>
 <p>The total variance <span class="math inline">\(\text{var}(y)\)</span> in this example is</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ishigami.variance_total)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ishigami.variance_total)</span></code></pre></div>
 <p>which is the sum of the variance of <span class="math inline">\(\text{var}\left(g_1(x_1)\right)\)</span>, <span class="math inline">\(\text{var}\left(g_2(x_2)\right)\)</span> and <span class="math inline">\(\text{var}\left(g_{1,3}(x_{1,3})\right)\)</span></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ishigami.variance_x1, ishigami.variance_x2, ishigami.variance_x13)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ishigami.variance_x1 <span class="op">+</span> ishigami.variance_x2 <span class="op">+</span> ishigami.variance_x13)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ishigami.variance_x1, ishigami.variance_x2, ishigami.variance_x13)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ishigami.variance_x1 <span class="op">+</span> ishigami.variance_x2 <span class="op">+</span> ishigami.variance_x13)</span></code></pre></div>
 <h2 id="first-order-sobol-indices-using-monte-carlo">First Order Sobol Indices using Monte Carlo</h2>
 <p>The first order Sobol indices are a measure of “first order sensitivity” of each input variable. They account for the proportion of variance of <span class="math inline">\(y\)</span> explained by changing each variable alone while marginalizing over the rest. Recall that the Sobol index of the <span class="math inline">\(i\)</span>th variable is computed as <span class="math display">\[
 S_i = \frac{\text{var}\left(g_i(x_i)\right)}{\text{var}\left(g(\mathbf{ x})\right)}.
 \]</span> This value is standardized using the total variance, so it is possible to account for a fractional contribution of each variable to the total variance of the output.</p>
 <p>The Sobol indices for higher order interactions <span class="math inline">\(S_{i,j}\)</span> are computed similarly. Due to the normalization by the total variance, the the sum of all Sobol indices equals to one.</p>
 <p>In most cases we are interested in the first order indices. The Ishigami function has the benefit that these can be computed analytically. In <code>EmuKit</code> you can extract these values with the code.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ishigami.main_effects</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ishigami.main_effects</span></code></pre></div>
 <p>But in general, these indices need to be sampled using Monte Carlo or one of the quasi-Monte Carlo methods we’ve seen in the model-free experimental design. Details are given in <span class="citation" data-cites="Sobol-global01">(Sobol, 2001)</span>.</p>
 <p>With Emukit, the first-order Sobol indices can be easily computed. We first need to define the space where of target simulator is analyzed.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.sensitivity.monte_carlo <span class="im">import</span> ModelFreeMonteCarloSensitivity</span></code></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">10</span>)  <span class="co"># for reproducibility</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>num_monte_carlo_points <span class="op">=</span> <span class="dv">10000</span>  <span class="co"># Number of MC samples</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>senstivity_ishigami <span class="op">=</span> ModelFreeMonteCarloSensitivity(target_simulator, space)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>main_effects, total_effects, _ <span class="op">=</span> senstivity_ishigami.compute_effects(num_monte_carlo_points <span class="op">=</span> num_monte_carlo_points)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(main_effects)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.sensitivity.monte_carlo <span class="im">import</span> ModelFreeMonteCarloSensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">10</span>)  <span class="co"># for reproducibility</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>num_monte_carlo_points <span class="op">=</span> <span class="dv">10000</span>  <span class="co"># Number of MC samples</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>senstivity_ishigami <span class="op">=</span> ModelFreeMonteCarloSensitivity(target_simulator, space)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>main_effects, total_effects, _ <span class="op">=</span> senstivity_ishigami.compute_effects(num_monte_carlo_points <span class="op">=</span> num_monte_carlo_points)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(main_effects)</span></code></pre></div>
 <p>We compare the true effects with the Monte Carlo effects in a bar-plot. The total effects are discussed later.</p>
 <div class="figure">
 <div id="first-order-sobol-indices-ishigami-figure" class="figure-frame">
@@ -881,7 +1011,7 @@ S_i = \frac{\text{var}\left(g_i(x_i)\right)}{\text{var}\left(g(\mathbf{ x})\righ
 S_{Ti} = \frac{\left\langle \text{var}_{x_i} (y\mid \mathbf{ x}_{\sim i}) \right\rangle _{p(\mathbf{ x}_{\sim i})}}{\text{var}\left(g(\mathbf{ x})\right)} = 1 - \frac{\text{var}_{\mathbf{ x}_{\sim i}} \left\langle y\mid \mathbf{ x}_{\sim i} \right\rangle _{p(\mathbf{ x}_{\sim i})}}{\text{var}\left(g(\mathbf{ x})\right)}
 \]</span></p>
 <p>Note that the sum of <span class="math inline">\(S_{Ti}\)</span> is not necessarily one in this case unless the model is additive. In the Ishigami example the value of the total effects is</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ishigami.total_effects</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ishigami.total_effects</span></code></pre></div>
 <p>As in the previous example, the total effects can be computed with Monte Carlo. In the next plot we show the comparison with the true total effects.</p>
 <div class="figure">
 <div id="total-effects-ishigami-figure" class="figure-frame">
@@ -899,21 +1029,21 @@ S_{Ti} = \frac{\left\langle \text{var}_{x_i} (y\mid \mathbf{ x}_{\sim i}) \right
 <p>In the example used above the Ishigami function is very cheap to evaluate. However, in most real scenarios the functions of interest are expensive, and we need to limit ourselves to a few number of evaluations. Using Monte Carlo methods is infeasible in these scenarios as a large number of samples are typically required to provide good estimates of the Sobol indices.</p>
 <p>An alternative in these cases is to use Gaussaian process emulator of the function of interest trained on a few inputs and outputs <span class="citation" data-cites="Marrel-sobol09">(Marrel et al., 2009)</span>. If the model is properly trained, its mean prediction which is cheap to evaluate, can be used to compute the Monte Carlo estimates of the Sobol indices, the variance from the GP emulator can also be used to assess our uncertainty about the Sobol indices. Let’s see how we can do this in Emukit.</p>
 <p>We start by generating 100 samples in the input domain. Note that this a just 1% of the number of samples that we used to compute the Sobol coefficients using Monte Carlo.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core.initial_designs <span class="im">import</span> RandomDesign</span></code></pre></div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>design <span class="op">=</span> RandomDesign(space)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> design.get_samples(<span class="dv">500</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ishigami.fidelity1(x)[:,np.newaxis]</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core.initial_designs <span class="im">import</span> RandomDesign</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>design <span class="op">=</span> RandomDesign(space)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> design.get_samples(<span class="dv">500</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ishigami.fidelity1(x)[:,np.newaxis]</span></code></pre></div>
 <p>Now, we fit a standard Gaussian process to the samples, and we wrap it as an Emukit model.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> GPy.models <span class="im">import</span> GPRegression</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> GPyModelWrapper</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.sensitivity.monte_carlo <span class="im">import</span> MonteCarloSensitivity</span></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>model_gpy <span class="op">=</span> GPRegression(x,y)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>model_emukit <span class="op">=</span> GPyModelWrapper(model_gpy)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>model_emukit.optimize()</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> GPy.models <span class="im">import</span> GPRegression</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> GPyModelWrapper</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.sensitivity.monte_carlo <span class="im">import</span> MonteCarloSensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>model_gpy <span class="op">=</span> GPRegression(x,y)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>model_emukit <span class="op">=</span> GPyModelWrapper(model_gpy)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>model_emukit.optimize()</span></code></pre></div>
 <p>The final step is to compute the coefficients using the class <code>ModelBasedMonteCarloSensitivity</code> which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the true estimates, those computed using 10000 direct evaluations of the object using Monte Carlo and those computed using a Gaussian process model trained on 100 evaluations.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>num_mc <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>senstivity_ishigami_gpbased <span class="op">=</span> MonteCarloSensitivity(model <span class="op">=</span> model_emukit, input_domain <span class="op">=</span> space)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>main_effects_gp, total_effects_gp, _ <span class="op">=</span> senstivity_ishigami_gpbased.compute_effects(num_monte_carlo_points <span class="op">=</span> num_mc)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>num_mc <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>senstivity_ishigami_gpbased <span class="op">=</span> MonteCarloSensitivity(model <span class="op">=</span> model_emukit, input_domain <span class="op">=</span> space)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>main_effects_gp, total_effects_gp, _ <span class="op">=</span> senstivity_ishigami_gpbased.compute_effects(num_monte_carlo_points <span class="op">=</span> num_mc)</span></code></pre></div>
 <div class="figure">
 <div id="first-order-sobol-indices-gp-ishigami-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/first-order-sobol-indices-gp-ishigami.svg" width="80%" style=" ">
@@ -984,14 +1114,14 @@ Nicolas Durrande
 <p>Having set those parameters, you can run an experiment, by firing the catapult. This will show you how far it goes.</p>
 <p>Because you will need to operate the catapult yourself, we’ll create a function to query you about the result of an individual firing.</p>
 <p>We can also set the parameter space for the model. Each of these variables is scaled to operate <span class="math inline">\(\in [0, 1]\)</span>.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core <span class="im">import</span> ContinuousParameter, ParameterSpace</span></code></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>variable_domain <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>]</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>           </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>space <span class="op">=</span> ParameterSpace(</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>          [ContinuousParameter(<span class="st">&#39;rotation_axis&#39;</span>, <span class="op">*</span>variable_domain), </span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;arm_stop&#39;</span>, <span class="op">*</span>variable_domain),</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;spring_binding_1&#39;</span>, <span class="op">*</span>variable_domain),</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;spring_binding_2&#39;</span>, <span class="op">*</span>variable_domain)])</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core <span class="im">import</span> ContinuousParameter, ParameterSpace</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>variable_domain <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>]</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>space <span class="op">=</span> ParameterSpace(</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>          [ContinuousParameter(<span class="st">&#39;rotation_axis&#39;</span>, <span class="op">*</span>variable_domain), </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;arm_stop&#39;</span>, <span class="op">*</span>variable_domain),</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;spring_binding_1&#39;</span>, <span class="op">*</span>variable_domain),</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>           ContinuousParameter(<span class="st">&#39;spring_binding_2&#39;</span>, <span class="op">*</span>variable_domain)])</span></code></pre></div>
 <p>Before we perform sensitivity analysis, we need to build an emulator of the catapulter, which we do using our experimental design process.</p>
 <h2 id="experimental-design-for-the-catapult">Experimental Design for the Catapult</h2>
 <div style="text-align:right">
@@ -999,37 +1129,37 @@ Nicolas Durrande
 </div>
 <p>Now we will build an emulator for the catapult using the experimental design loop.</p>
 <p>We’ll start with a small model-free design, we’ll use a random design for initializing our model.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core.initial_designs <span class="im">import</span> RandomDesign</span></code></pre></div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>design <span class="op">=</span> RandomDesign(space)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> design.get_samples(<span class="dv">5</span>)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> catapult_distance(x)</span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> GPy.models <span class="im">import</span> GPRegression</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> GPyModelWrapper</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.sensitivity.monte_carlo <span class="im">import</span> MonteCarloSensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.core.initial_designs <span class="im">import</span> RandomDesign</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>design <span class="op">=</span> RandomDesign(space)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> design.get_samples(<span class="dv">5</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> catapult_distance(x)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> GPy.models <span class="im">import</span> GPRegression</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> GPyModelWrapper</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.sensitivity.monte_carlo <span class="im">import</span> MonteCarloSensitivity</span></code></pre></div>
 <p>Set up the GPy model. The variance of the RBF kernel is set to <span class="math inline">\(150^2\)</span> because that’s roughly the square of the range of the catapult. We set the noise variance to a small value.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>model_gpy <span class="op">=</span> GPRegression(x,y)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>model_gpy.kern.variance <span class="op">=</span> <span class="dv">150</span><span class="op">**</span><span class="dv">2</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>model_gpy.likelihood.variance.fix(<span class="fl">1e-5</span>)</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>display(model_gpy)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>model_gpy <span class="op">=</span> GPRegression(x,y)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>model_gpy.kern.variance <span class="op">=</span> <span class="dv">150</span><span class="op">**</span><span class="dv">2</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>model_gpy.likelihood.variance.fix(<span class="fl">1e-5</span>)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>display(model_gpy)</span></code></pre></div>
 <p>Wrap the model for EmuKit.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>model_emukit <span class="op">=</span> GPyModelWrapper(model_gpy)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>model_emukit.optimize()</span></code></pre></div>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>display(model_gpy)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>model_emukit <span class="op">=</span> GPyModelWrapper(model_gpy)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>model_emukit.optimize()</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>display(model_gpy)</span></code></pre></div>
 <p>Now we set up the model loop. We’ll use integrated variance reduction as the acquisition function for our model-based design loop.</p>
 <p><em>Warning</em>: This loop runs much slower on Google <code>colab</code> than on a local machine.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.experimental_design.experimental_design_loop <span class="im">import</span> ExperimentalDesignLoop</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.experimental_design.acquisitions <span class="im">import</span> IntegratedVarianceReduction, ModelVariance</span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>integrated_variance <span class="op">=</span> IntegratedVarianceReduction(space<span class="op">=</span>space,</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>                                                  model<span class="op">=</span>model_emukit)</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>ed <span class="op">=</span> ExperimentalDesignLoop(space<span class="op">=</span>space, </span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                            model<span class="op">=</span>model_emukit, </span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                            acquisition <span class="op">=</span> integrated_variance)</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>ed.run_loop(catapult_distance, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.experimental_design.experimental_design_loop <span class="im">import</span> ExperimentalDesignLoop</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.experimental_design.acquisitions <span class="im">import</span> IntegratedVarianceReduction, ModelVariance</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>integrated_variance <span class="op">=</span> IntegratedVarianceReduction(space<span class="op">=</span>space,</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>                                                  model<span class="op">=</span>model_emukit)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>ed <span class="op">=</span> ExperimentalDesignLoop(space<span class="op">=</span>space, </span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                            model<span class="op">=</span>model_emukit, </span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                            acquisition <span class="op">=</span> integrated_variance)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>ed.run_loop(catapult_distance, <span class="dv">10</span>)</span></code></pre></div>
 <h2 id="sensitivity-analysis-of-a-catapult-simulation">Sensitivity Analysis of a Catapult Simulation</h2>
 <p>The final step is to compute the coefficients using the class <code>ModelBasedMonteCarloSensitivity</code> which directly calls the model and uses its predictive mean to compute the Monte Carlo estimates of the Sobol indices. We plot the estimates of the Sobol indices computed using a Gaussian process model trained on the observations we’ve acquired.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>num_mc <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>senstivity <span class="op">=</span> MonteCarloSensitivity(model <span class="op">=</span> model_emukit, input_domain <span class="op">=</span> space)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>main_effects_gp, total_effects_gp, _ <span class="op">=</span> senstivity.compute_effects(num_monte_carlo_points <span class="op">=</span> num_mc)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>num_mc <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>senstivity <span class="op">=</span> MonteCarloSensitivity(model <span class="op">=</span> model_emukit, input_domain <span class="op">=</span> space)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>main_effects_gp, total_effects_gp, _ <span class="op">=</span> senstivity.compute_effects(num_monte_carlo_points <span class="op">=</span> num_mc)</span></code></pre></div>
 <div class="figure">
 <div id="first-order-sobol-indices-gp-catapult-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/first-order-sobol-indices-gp-catapult.svg" width="80%" style=" ">
