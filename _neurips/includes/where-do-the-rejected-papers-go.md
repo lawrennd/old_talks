@@ -73,13 +73,14 @@ node = dict(label=label,
             pad=12)
 data=go.Sankey(arrangement = "snap",
                  link = link,
-                 node = node)
-fig = go.Figure(data=data)
+                 node = node)}
+
+\plotcode{fig = go.Figure(data=data)
 fig.update_layout(template="plotly_dark")
 fig.show()
-fig.write_html(os.path.join(".", "neurips", "where-do-neurips-papers-go.dark.html"))}
+fig.write_html(os.path.join("\writeDiagramsDir", "neurips", "where-do-neurips-papers-go.dark.html"))}
 
-\code{fig = go.Figure(data=data,
+\plotcode{fig = go.Figure(data=data,
                 layout = go.Layout(width=600,
                 height=450))
 fig.update_layout(template="plotly", font=dict(
@@ -88,8 +89,8 @@ fig.update_layout(template="plotly", font=dict(
         color="Black"
     ))
 fig.show()
-fig.write_html(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.html"))
-fig.write_image(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.svg"))
+fig.write_html(os.path.join("\writeDiagramsDir", "neurips", "where-do-neurips-papers-go.html"))
+fig.write_image(os.path.join("\writeDiagramsDir", "neurips", "where-do-neurips-papers-go.svg"))
 }
 
 \figure{\html{\includehtml{\diagramsDir/neurips/where-do-neurips-papers-go.html}{600}{450}}\tex{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}\docx{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}}{Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.}{where-do-neurips-papers-go}
