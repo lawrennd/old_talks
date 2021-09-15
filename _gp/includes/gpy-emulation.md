@@ -20,6 +20,8 @@ $$
 $$
 \notes{where we are setting $a=1$, $b=5.1/(4\pi^2)$, $c=5/\pi$, $r=6$, $s=10$ and $t=1/(8\pi)$.}
 
+\setupcode{import numpy as np}
+
 \code{def branin(X):
     y = ((X[:,1]-5.1/(4*np.pi**2)*X[:,0]**2+5*X[:,0]/np.pi-6)**2 
 	    + 10*(1-1/(8*np.pi))*np.cos(X[:,0])+10)
@@ -62,6 +64,8 @@ by Monte Carlo sampling.
 
 \notes{Firstly, we create the covariance function. Here we're going to use an exponentiated quadratic, but we'll augment it with the 'bias' covariance function. This covariance function represents a single fixed bias that is added to the overall covariance. It allows us to deal with non-zero-mean emulations.}
 
+\setupcode{import GPy}
+
 \code{# Create an exponentiated quadratic plus bias covariance function
 kern_eq = GPy.kern.RBF(input_dim=2, ARD = True)
 kern_bias = GPy.kern.Bias(input_dim=2)
@@ -85,6 +89,8 @@ model.likelihood.variance.fix(1e-5)}
 
 \code{# Randomize the model and optimize
 model.optimize(messages=True)}
+
+\setupplotcode{import matplotlib.pyplot as plt}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 model.plot(ax=ax)
