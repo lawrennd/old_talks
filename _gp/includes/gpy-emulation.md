@@ -3,6 +3,8 @@
 
 \editme
 
+\include{_software/includes/gpy-install.md}
+
 \subsection{GPy and Emulation}
 
 
