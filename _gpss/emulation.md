@@ -2,6 +2,23 @@
 title: Emulation
 session: 13
 abstract: In this session we introduce the notion of emulation and systems modeling with Gaussian processes.
+date: 2021-09-15
+venue: Virtual GPSS
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: http://inverseprobability.com
+postsdir: ../_posts/
+slidesdir: ../slides/
+notesdir: ../_notes/
+notebooksdir: ../_notebooks/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
+layout: talk
 ---
 
 
