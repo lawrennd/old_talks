@@ -47,7 +47,7 @@ for num_reviewers in range(1,7):
 
         consistent_accept = len(set(accept_0).intersection(set(accept_1)))
         consistent_accepts.append(consistent_accept/(samples*accept_rate))
-        print('Percentage consistently accepted: {prop}'.format(prop=consistent_accept/(samples*accept_rate)))
+        print('Percentage consistently accepted: {prop}'.format(prop=consistent_accept/(num_papers*accept_rate)))
 
     all_accepts.append(consistent_accepts)
 all_accepts = np.array(all_accepts)
