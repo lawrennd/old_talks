@@ -5,12 +5,27 @@
 
 \subsection{Where do Rejected Papers Go?}
 
+\notes{One facet that we can explore is what the final fate of papers that are rejected by the conference is.}
+
+
+\notes{Of the 1,678 papers submitted to NeurIPS 2014, only 414 were presented
+at the final conference. Here we trace the fate of the rejected papers, we searched Semantic Scholar
+for evidence of all 1,264 rejected papers. We looked for papers with
+similar titles and where the NeurIPS submission's contact author was
+also in the author list. We were able to track down 680 papers.}
+
+\notes{This code analyzes those 680 papers extracting their final publication venue using the Semantic Scholar API.}
+
+\installcode{cmtutils}
+
+
+\setupcode{import cmtutils.nipsy as nipsy}
+
 \setupcode{import os
 import yaml}
 
 \code{with open(os.path.join(nipsy.review_store, nipsy.outlet_name_mapping), 'r') as f:
     mapping = yaml.load(f, Loader=yaml.FullLoader)
-
 
 date = "2021-06-11"
 
@@ -20,6 +35,26 @@ nipsy.augment_decisions(decisions)
 joindf = nipsy.join_decisions_citations(decisions, citations)
 
 joindf['short_venue'] = joindf.venue.replace(mapping)}
+
+
+\figure{\html{\includehtml{\diagramsDir/neurips/where-do-neurips-papers-go.html}{600}{450}}\tex{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}\docx{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}}{Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.}{where-do-neurips-papers-go}
+
+\notes{Of the 680 papers 177 were only found on arXiv, 76 were found as PDFs online
+without a publication venue and 427 were published in other
+venues. The outlets that received ten or more papers from this group
+were AAAI (72 papers), AISTATS (57 papers), ICML (33 papers), CVPR (17
+papers), Later NeurIPS (15 papers), JMLR (14 papers), IJCAI (14
+papers), ICLR (13 papers), UAI (11 papers).  Opinion about quality of
+these different outlets will vary from individual, but from our
+perspective all of these outlets are `top-tier' for machine learning
+and related areas. Other papers appeared at less prestigious outlets, and citation scores were also recored for papers that remained available only on ArXiv.  Note that there is likely a bias towards outlets
+that have a submission deadline shortly after NeurIPS decisions are
+public, e.g.\ submission deadline for AAAI 2015 was six days after
+NeurIPS decisions were sent to authors. AISTATS has a submission
+deadline one month after.}
+
+\notes{A Sankey diagram showing where papers
+submitted to the conference ended up is shown below.}
 
 \setupplotcode{import plotly.graph_objects as go}
 
@@ -79,7 +114,7 @@ fig.update_layout(template="plotly_dark")
 fig.show()
 fig.write_html(os.path.join(".", "neurips", "where-do-neurips-papers-go.dark.html"))}
 
-\code{fig = go.Figure(data=data,
+\plotcode{fig = go.Figure(data=data,
                 layout = go.Layout(width=600,
                 height=450))
 fig.update_layout(template="plotly", font=dict(
@@ -91,8 +126,6 @@ fig.show()
 fig.write_html(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.html"))
 fig.write_image(os.path.join(".", "\writeDiagramsDir/neurips", "where-do-neurips-papers-go.svg"))
 }
-
-\figure{\html{\includehtml{\diagramsDir/neurips/where-do-neurips-papers-go.html}{600}{450}}\tex{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}\docx{\includediagram{\diagramsDir/neurips/where-do-neurips-papers-go}{80%}}}{Sankey diagram showing the flow of NeurIPS papers through the system from submission to eventual publication.}{where-do-neurips-papers-go}
 
 
 \endif
