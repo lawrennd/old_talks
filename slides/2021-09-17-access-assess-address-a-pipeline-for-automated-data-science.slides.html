@@ -279,20 +279,60 @@ Data can be queried, but the simplest query, what data do we need? Doesn’t eve
 <aside class="notes">
 The CRISP Data Mining Process diagram.
 </aside>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.</p>
+<p>Cathy O’Neil and Rachel Strutt </p>
+</blockquote>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="data-science-process-oneil-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/dnds_0202.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </div>
 </div>
 <aside class="notes">
+Another perspective on the data science process, this one from <span class="citation" data-cites="ONeil-doing14">(<strong>ONeil-doing14?</strong>)</span>.
 </aside>
-{
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/data-science-process.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<p>}{Another perspective on the data science process, this one from @</p>
 </section>
-<section id="section-7" class="slide level2">
+<section id="experiment-analyze-design" class="slide level2">
+<h2>Experiment, Analyze, Design</h2>
+<!--These challenges are not just there for Amazon and Formula 1. In Sheffield, we worked closely with a Chesterfield based company called Fusion Group. They make joints that fuse PTFE pipes together. These pipes are used for transporting both water and gas. Their founder, Eric Bridgstock, was an engineer who introduced PTFE piping to the UK when working for DuPont. Eric set up Fusion group to manufacture the fusion fittings. Because PTFE pipes carry water or gas at high pressure, when these fittings fail significant damage can occur. When these fittings were originally installed in the early 1980s, the job was done by a specialist, but nowadays the pipe weld is compelted by the same team that digs the hole. While costs have come down, the number of PTFE weld failures went up. Eric's company focussed on new systems for auto-->
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="experiment-analyze-design-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//ml/experiment-analyze-design.svg" width="50%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.
+</aside>
+</section>
+<section id="a-vision" class="slide level2">
+<h2>A Vision</h2>
+<blockquote>
+<p>We don’t know what science we’ll want to do in five years’ time, but we won’t want slower experiments, we won’t want more expensive experiments and we won’t want a narrower selection of experiments.</p>
+</blockquote>
+</section>
+<section id="what-do-we-want" class="slide level2">
+<h2>What do we want?</h2>
+<ul>
+<li>Faster, cheaper and more diverse experiments.</li>
+<li>Better ecosystems for experimentation.</li>
+<li>Data oriented architectures.</li>
+<li>Data maturity assessments.</li>
+<li>Data readiness levels.</li>
+</ul>
+</section>
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="policy-science-convening-power-of-data-figure" class="figure-frame">
@@ -304,7 +344,43 @@ The CRISP Data Mining Process diagram.
 Data science processes do not always accommodate the real-time and evolving nature of data science advice as required, for example, for policy advice as described in this presentation.
 </aside>
 </section>
-<section id="section-8" class="slide level2">
+<section id="ride-sharing-service-oriented" class="slide level2">
+<h2>Ride Sharing: Service Oriented</h2>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/ride-share-service-soa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.
+</aside>
+</section>
+<section id="ride-sharing-data-oriented" class="slide level2">
+<h2>Ride Sharing: Data Oriented</h2>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/ride-share-service-doa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.
+</aside>
+</section>
+<section id="ride-sharing-hypothetical" class="slide level2">
+<h2>Ride Sharing: Hypothetical</h2>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.
+</aside>
+</section>
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="-figure" class="figure-frame">
@@ -318,88 +394,7 @@ The challenges of operational data science are closer to the challenges of deplo
 </section>
 <section id="access" class="slide level2">
 <h2>Access</h2>
-</section>
-<section id="crash-map-kampala" class="slide level2">
-<h2>Crash Map Kampala</h2>
-<div class="figure">
-<div id="crash-map-kampala-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Crash Map Kampala was an initiative by Michael T. Smith and Jimmy to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.
-</aside>
-</section>
-<section id="section-9" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="The location of the crash requires some local understanding of Kampala and how different locations may be referred to locally vs by the map provider.-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala-location.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-</aside>
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="crash-map-kampala-date-time-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala-date-time.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Alongside the location, the date and time of the crash gives more information that can be used to map crashes over time.
-</aside>
-</section>
-<section id="section-11" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="crash-map-kampala-severity-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala-severity.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-The severity of the crash is helpful in understanding how people are being affected by road accidents.
-</aside>
-</section>
-<section id="section-12" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="crash-map-kampala-vehicles-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala-vehicles.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Understanding which vehicles are involved in accidents could also help with interventions that may be necessary.
-</aside>
-</section>
-<section id="section-13" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="crash-map-kampala-vehicles-2-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala-vehicles-2.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-</aside>
-</section>
-<section id="assess" class="slide level2">
-<h2>Assess</h2>
-</section>
-<section id="case-study-text-mining-for-misinformation" class="slide level2">
-<h2>Case Study: Text Mining for Misinformation</h2>
+<center>
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip1">
 <style>
@@ -409,12 +404,143 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
+Bagonza Jimmy Kinyonyi
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/bagonza-jimmy-owa-kinyonyi.jpg" clip-path="url(#clip1)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Michael T. Smith
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/michael-smith.png" clip-path="url(#clip2)"/>
+</svg>
+</center>
+<div class="figure">
+<div id="crash-map-kampala-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/crash-map-kampala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Crash Map Kampala was an initiative by Michael T. Smith and Bagonza Jimmy Owa Kinyonyi to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.
+</aside>
+</section>
+<section id="access-automation" class="slide level2">
+<h2>Access Automation</h2>
+<ul>
+<li>Digital Transformation</li>
+<li>Post-Digital Transformation</li>
+</ul>
+</section>
+<section id="assess" class="slide level2">
+<h2>Assess</h2>
+<ul>
+<li>Only things you can do <em>without</em> knowing the “question.”
+<ul>
+<li>This ensures <em>assess</em> is reusable across tasks.</li>
+</ul></li>
+<li>Driven by happenstance data.</li>
+</ul>
+</section>
+<section id="case-study-text-mining-for-covid-misinformation" class="slide level2">
+<h2>Case Study: Text Mining for Covid Misinformation</h2>
+<p>\centeralign{</p>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip3">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
 Joyce Nakatumba-Nabende
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip1)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip3)"/>
+</svg>
+}
+<div class="figure">
+<div id="uganda-social-medial-killing-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-uganda-social-media-killing.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Misinformation through media has been a challenge for as long as we’ve been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende’s presentation.
+</aside>
+</section>
+<section id="automating-assess" class="slide level2">
+<h2>Automating Assess</h2>
+<ul>
+<li>Automated scheme detection</li>
+<li>Automated data type detection (<span class="citation" data-cites="Valera-automatic17">Valera and Ghahramani (2017)</span>)</li>
+<li>The automatic statistician (<span class="citation" data-cites="Lloyd-automatic14">James Robert Lloyd and Ghahramani. (2014)</span>)</li>
+<li>AI for Data Analytics (<span class="citation" data-cites="Nazabal-engineering20">Nazábal et al. (2020)</span>)</li>
+<li>Joyce’s case study gives us also POS tagging for new languages.</li>
+</ul>
+</section>
+<section id="ai-for-data-analytics" class="slide level2">
+<h2>AI for Data Analytics</h2>
+<div class="figure">
+<div id="ai-for-data-analytics-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/wFfeyGmNOAI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+</div>
+<aside class="notes">
+The AI for Data Analytics project is an attempt to automate some of the challenges of automated data assessment.
+</aside>
+<p>.</p>
+</section>
+<section id="address" class="slide level2">
+<h2>Address</h2>
+</section>
+<section id="automating-address" class="slide level2">
+<h2>Automating Address</h2>
+<ul>
+<li>Auto ML</li>
+<li>Automatic Statistician</li>
+<li>Automatic Visualization</li>
+</ul>
+</section>
+<section id="automl" class="slide level2">
+<h2>AutoML</h2>
+<div class="figure">
+<div id="frank-hutter-automl-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/5A4xbv5nd8c?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+</div>
+<aside class="notes">
+Here Frank Hutter gives a tutorial on AutoML, one of the approaches to automating address.
+</aside>
+</section>
+<section id="case-study-text-mining-for-misinformation" class="slide level2">
+<h2>Case Study: Text Mining for Misinformation</h2>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip4">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Joyce Nakatumba-Nabende
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip4)"/>
 </svg>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="uganda-social-medial-killing-figure" class="figure-frame">
@@ -427,7 +553,7 @@ Joyce Nakatumba-Nabende
 Misinformation through media has been a challenge for as long as we’ve been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende’s presentation.
 </aside>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06-figure" class="figure-frame">
@@ -440,7 +566,7 @@ Misinformation through media has been a challenge for as long as we’ve been co
 Social media is widespread in Uganda, perhaps largely due to widespread availability of mobile phone access.
 </aside>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="joyce-nabende-data-science-objective-figure" class="figure-frame">
@@ -453,7 +579,7 @@ Social media is widespread in Uganda, perhaps largely due to widespread availabi
 The objective of the project is to track misinformation and understandperceptions of Ugandan Government’s COVID-19 transmission mitigation strategies.
 </aside>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="joyce-nabende-the-luganda-language-figure" class="figure-frame">
@@ -468,14 +594,14 @@ The objective of the project is to track misinformation and understandperception
 <section id="data-access" class="slide level2">
 <h2>Data Access</h2>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 </section>
 <section id="data-assessment" class="slide level2">
 <h2>Data Assessment</h2>
 <p>Data Exploration - Used the initial data analysis phase to understand the data, uncover patterns, get insights within the data. - Generated word clouds from the raw dataset. - Performed topic modelling using Latent Dirichlet Allocation (LDA) to discover topics and similarity of the data for Covid-19 on social media.</p>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="joyce-nabende-word-cloud-twitter-figure" class="figure-frame">
@@ -488,7 +614,7 @@ The objective of the project is to track misinformation and understandperception
 Word cloud from the Twitter data collected through the filtering.
 </aside>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="joyce-nabende-word-cloud-twitter-figure" class="figure-frame">
@@ -501,7 +627,7 @@ Word cloud from the Twitter data collected through the filtering.
 Word cloud from the Facebook data collected through the filtering.
 </aside>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="joyce-nabende-lda-topics-figure" class="figure-frame">
@@ -533,7 +659,7 @@ LDA topics and topic distance maps. Interspersed with the Covid-19 topics are to
 </ul>
 <p>{Quality assurance performed by reviewing data with an independent team for ensuring annotation guidelines were followed.</p>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <div class="table">
 <div id="annotated-portion-of-data-caption" class="caption-frame">
@@ -567,7 +693,7 @@ LDA topics and topic distance maps. Interspersed with the Covid-19 topics are to
 </div>
 </div>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <p><a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Cohen’s kappa</a> inter-annotation used to measure annotator agreement.</p>
 <div class="table">
@@ -603,7 +729,7 @@ LDA topics and topic distance maps. Interspersed with the Covid-19 topics are to
 </div>
 </div>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="joyce-nabende-data-annotation-example-figure" class="figure-frame">
@@ -615,21 +741,6 @@ LDA topics and topic distance maps. Interspersed with the Covid-19 topics are to
 <aside class="notes">
 Example of data annotation for sentiment and misinformation from the data set.
 </aside>
-<p><span class="citation" data-cites="Nazabal-engineering20">Nazábal et al. (2020)</span></p>
-</section>
-<section id="schema-detection" class="slide level2">
-<h2>Schema Detection</h2>
-<p><span class="citation" data-cites="Valera-automatic17">Valera and Ghahramani (2017)</span> <span class="citation" data-cites="Lloyd-automatic14">James Robert Lloyd and Ghahramani. (2014)</span></p>
-</section>
-<section id="ai-for-data-analytics" class="slide level2">
-<h2>AI for Data Analytics</h2>
-<iframe width="600" height="450" src="https://www.youtube.com/embed/wFfeyGmNOAI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</section>
-<section id="automl" class="slide level2">
-<h2>AutoML</h2>
-<iframe width="600" height="450" src="https://www.youtube.com/embed/5A4xbv5nd8c?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
 </section>
 <section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>

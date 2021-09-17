@@ -277,22 +277,54 @@ Diane Coyle
 </div>
 <p>There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM <span class="citation" data-cites="Chapman-step00">Chapman et al. (2000)</span> process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.</p>
 <p>A more modern view from the O’Reilly book <em>Doing Data Science</em> frames the problem as shown in Figure </p>
+<blockquote>
+<p>More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.</p>
+<p>Cathy O’Neil and Rachel Strutt </p>
+</blockquote>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="data-science-process-oneil-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/dnds_0202.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+</div>
+<div id="data-science-process-oneil-magnify" class="magnify" onclick="magnifyFigure(&#39;data-science-process-oneil&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="data-science-process-oneil-caption" class="caption-frame">
+<p>Figure: Another perspective on the data science process, this one from <span class="citation" data-cites="ONeil-doing14">(<strong>ONeil-doing14?</strong>)</span>.</p>
 </div>
 </div>
-{
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/data-science-process.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<p>One thing about working in an industrial environment, is the way that short-term thinking actions become important. For example, in Formula One, the teams are working on a two-week cycle to digest information from the previous week’s race and incorporate updates to the car or their strategy.</p>
+<p>However, businesses must also think about more medium-term horizons. For example, in Formula 1 you need to worry about next year’s car. So while you’re working on updating this year’s car, you also need to think about what will happen for next year and prioritize these conflicting needs appropriately.</p>
+<p>In the Amazon supply chain, there are the equivalent demands. If we accept that an artificial intelligence is just an automated decision-making system. And if we measure in terms of money automatically spent, or goods automatically moved, then Amazon’s buying system is perhaps the world’s largest AI.</p>
+<p>Those decisions are being made on short time schedules; purchases are made by the system on weekly cycles. But just as in Formula 1, there is also a need to think about what needs to be done next month, next quarter and next year. Planning meetings are held not only on a weekly basis (known as weekly business reviews), but monthly, quarterly, and then yearly meetings for planning spends and investments.</p>
+<p>Amazon is known for being longer term thinking than many companies, and a lot of this is coming from the CEO. One quote from Jeff Bezos that stuck with me was the following.</p>
+<blockquote>
+<p>“I very frequently get the question: ‘What’s going to change in the next 10 years?’ And that is a very interesting question; it’s a very common one. I almost never get the question: ‘What’s not going to change in the next 10 years?’ And I submit to you that that second question is actually the more important of the two – because you can build a business strategy around the things that are stable in time. … [I]n our retail business, we know that customers want low prices, and I know that’s going to be true 10 years from now. They want fast delivery; they want vast selection. It’s impossible to imagine a future 10 years from now where a customer comes up and says, ‘Jeff I love Amazon; I just wish the prices were a little higher,’ [or] ‘I love Amazon; I just wish you’d deliver a little more slowly.’ Impossible. And so the effort we put into those things, spinning those things up, we know the energy we put into it today will still be paying off dividends for our customers 10 years from now. When you have something that you know is true, even over the long term, you can afford to put a lot of energy into it.”</p>
+</blockquote>
+<p>This quote is incredibly important for long term thinking. Indeed, it’s a failure of many of our simulations that they focus on what is going to happen, not what will not happen. In Amazon, this meant that there was constant focus on these three areas, keeping costs low, making delivery fast and improving selection. For example, shortly before I left Amazon moved its entire US network from two-day delivery to one-day delivery. This involves changing the way the entire buying system operates. Or, more recently, the company has had to radically change the portfolio of products it buys in the face of Covid19.</p>
+<!--These challenges are not just there for Amazon and Formula 1. In Sheffield, we worked closely with a Chesterfield based company called Fusion Group. They make joints that fuse PTFE pipes together. These pipes are used for transporting both water and gas. Their founder, Eric Bridgstock, was an engineer who introduced PTFE piping to the UK when working for DuPont. Eric set up Fusion group to manufacture the fusion fittings. Because PTFE pipes carry water or gas at high pressure, when these fittings fail significant damage can occur. When these fittings were originally installed in the early 1980s, the job was done by a specialist, but nowadays the pipe weld is compelted by the same team that digs the hole. While costs have come down, the number of PTFE weld failures went up. Eric's company focussed on new systems for auto-->
+<div class="figure">
+<div id="experiment-analyze-design-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//ml/experiment-analyze-design.svg" width="50%" style=" ">
+</object>
 </div>
-<p>}{Another perspective on the data science process, this one from @</p>
+<div id="experiment-analyze-design-magnify" class="magnify" onclick="magnifyFigure(&#39;experiment-analyze-design&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="experiment-analyze-design-caption" class="caption-frame">
+<p>Figure: Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.</p>
+</div>
+</div>
+<p>From the perspective of the team that we had in the supply chain, we looked at what we most needed to focus on. Amazon moves very quickly, but we could also take a leaf out of Jeff’s book, and instead of worrying about what was going to change, remember what wasn’t going to change.</p>
+<blockquote>
+<p>We don’t know what science we’ll want to do in five years’ time, but we won’t want slower experiments, we won’t want more expensive experiments and we won’t want a narrower selection of experiments.</p>
+</blockquote>
+<p>As a result, our focus was on how to speed up the process of experiments, increase the diversity of experiments that we can do, and keep the experiments price as low as possible.</p>
+<p>The faster the innovation flywheel can be iterated, then the quicker we can ask about different parts of the supply chain, and the better we can tailor systems to answering those questions.</p>
+<p>We need faster, cheaper and more diverse experiments which implies we need better ecosystems for experimentation. This has led us to focus on the software frameworks we’re using to develop machine learning systems including data oriented architectures (<span class="citation" data-cites="Borchert-dataoriented20">Borchert (2020)</span>;<span class="citation" data-cites="Lawrence-doa19">(<strong>Lawrence-doa19?</strong>)</span>;<span class="citation" data-cites="Vorhemus-doa17">Vorhemus and Schikuta (2017)</span>;<span class="citation" data-cites="Joshi-doa07">Joshi (2007)</span>), data maturity assessments (<span class="citation" data-cites="Lawrence-maturity20">Lawrence et al. (2020)</span>) and data readiness levels (See this blog post on <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a>. and <span class="citation" data-cites="Lawrence-drl17">Lawrence (2017)</span>;<span class="citation" data-cites="Delve-data20">The DELVE Initiative (2020a)</span>)</p>
+<p>One challenge for data science and data science processes is that they do not always accommodate the real-time and evolving nature of data science advice as required, for example in pandemic response or in managing an international supply chain.</p>
+<p>One possible starting point is to look at the <em>software architectures</em> that are used in large scale decision making systems, and understand what it is that they are bring to help solve these problems.</p>
 <div class="figure">
 <div id="policy-science-convening-power-of-data-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/-QjJLgRni-M?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -305,6 +337,66 @@ Diane Coyle
 <p>Figure: Data science processes do not always accommodate the real-time and evolving nature of data science advice as required, for example, for policy advice as described in this presentation.</p>
 </div>
 </div>
+<h2 id="ride-sharing-service-oriented-to-data-oriented">Ride Sharing: Service Oriented to Data Oriented</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/ride-sharing-soa-doa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/ride-sharing-soa-doa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/ride-share-service-soa.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="ride-share-service-soa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-soa&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ride-share-service-soa-caption" class="caption-frame">
+<p>Figure: Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.</p>
+</div>
+</div>
+<p>The modern approach to software systems design is known as a <em>service-oriented architectures</em> (SOA). The idea is that software engineers are responsible for the availability and reliability of the API that accesses the service they own. Quality of service is maintained by rigorous standards around <em>testing</em> of software systems.</p>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/ride-share-service-doa.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="ride-share-service-doa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ride-share-service-doa-caption" class="caption-frame">
+<p>Figure: Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.</p>
+</div>
+</div>
+<p>In data driven decision-making systems, the quality of decision-making is determined by the quality of the data. We need to extend the notion of <em>service</em>-oriented architecture to <em>data</em>-oriented architecture (DOA).</p>
+<p>The focus in SOA is eliminating <em>hard</em> failures. Hard failures can occur due to bugs or systems overload. This notion needs to be extended in ML systems to capture <em>soft failures</em> associated with declining data quality, incorrect modeling assumptions and inappropriate re-deployments of models. We need to focus on data quality assessments. In data-oriented architectures engineering teams are responsible for the <em>quality</em> of their output data streams in addition to the <em>availability</em> of the service they support <span class="citation" data-cites="Lawrence:drl17">(<strong>Lawrence:drl17?</strong>)</span>. Quality here is not just accuracy, but fairness and explainability. This important cultural change would be capable of addressing both the challenge of <em>technical debt</em> <span class="citation" data-cites="Sculley:debt15">(Sculley et al., 2015)</span> and the social responsibility of ML systems.</p>
+<p>Software development proceeds with a <em>test-oriented</em> culture. One where tests are written before software, and software is not incorporated in the wider system until all tests pass. We must apply the same standards of care to our ML systems, although for ML we need statistical tests for quality, fairness and consistency within the environment. Fortunately, the main burden of this testing need not fall to the engineers themselves: through leveraging <em>classical statistics</em> and <em>emulation</em> we will automate the creation and redeployment of these tests across the software ecosystem, we call this <em>ML hypervision</em> (WP5 ).</p>
+<p>Modern AI can be based on ML models with many millions of parameters, trained on very large data sets. In ML, strong emphasis is placed on <em>predictive accuracy</em> whereas sister-fields such as statistics have a strong emphasis on <em>interpretability</em>. ML models are said to be ‘black boxes’ which make decisions that are not explainable.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="ride-share-service-doa-hypothetical-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa-hypothetical&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ride-share-service-doa-hypothetical-caption" class="caption-frame">
+<p>Figure: Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.</p>
+</div>
+</div>
+<p>For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multilple times. Let’s look at the decisions we need along with some design criteria.</p>
+<ol type="1">
+<li>Driver Availability: Estimate time to arrival for Anne’s ride using Anne’s location and local available car locations. Latency 50 milliseconds</li>
+<li>Cost Estimate: Estimate cost for journey using Anne’s destination, location and local available car current destinations and availability. Latency 50 milliseconds</li>
+<li>Driver Allocation: Allocate car to minimize transport cost to destination. Latency 2 seconds.</li>
+</ol>
+<p>So we need:</p>
+<ol type="1">
+<li>a hypothetical to estimate availability. It is constrained by lacking destination information and a low latency requirement.</li>
+<li>a hypothetical to estimate cost. It is constrained by low latency requirement and</li>
+</ol>
+<p>Simultaneously, drivers in this data ecosystem have an app which notifies them about new jobs and recommends them where to go.</p>
+<p>Further advantages. Strategies for data retention (when to snapshot) can be set globally.</p>
+<p>A few decisions need to be made in this system. First of all, when the user opens the app, the estimate of the time to the nearest ride may need to be computed quickly, to avoid latency in the service.</p>
+<p>This may require a quick estimate of the ride availability.</p>
 <p>The “Access, Assess, Address” paradigm is inspired by experience in operational data science both in the Amazon supply chain and in dealing with the UK pCovid-19 pandemic.</p>
 <div class="figure">
 <div id="-figure" class="figure-frame">
@@ -325,6 +417,35 @@ Diane Coyle
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/crash-map-kampala.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/crash-map-kampala.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>The Crash Map Kampala project is a good example of a data science project where a major challenge was <em>access</em>.</p>
+<center>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip1">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Bagonza Jimmy Kinyonyi
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/bagonza-jimmy-owa-kinyonyi.jpg" clip-path="url(#clip1)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Michael T. Smith
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/michael-smith.png" clip-path="url(#clip2)"/>
+</svg>
+</center>
 <div class="figure">
 <div id="crash-map-kampala-figure" class="figure-frame">
 <div class="centered" style="">
@@ -335,9 +456,13 @@ Diane Coyle
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="crash-map-kampala-caption" class="caption-frame">
-<p>Figure: Crash Map Kampala was an initiative by Michael T. Smith and Jimmy to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.</p>
+<p>Figure: Crash Map Kampala was an initiative by Michael T. Smith and Bagonza Jimmy Owa Kinyonyi to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.</p>
 </div>
 </div>
+<p>The project is work from <a href="https://www.linkedin.com/in/bagonza-jimmy-kinyonyi-b73620125/?originalSubdomain=ug">Bagonza Jimmy Owa Kinyony</a> when he was an MSc student and <a href="https://www.sheffield.ac.uk/dcs/people/academic/michael-smith">Michael T. Smith</a> when he was based at <a href="https://air.ug/">Makerere University AI-LAB</a>.</p>
+<p>The project was inspired by the observation that road traffic accidents are a leading cause of death for the young in many contexts, but the scale of the cause is difficult to compare directly because the number of deaths and serious injuries are difficult to access.</p>
+<p>In Kampala this data is stored in log books at local police stations. Jimmy was in the Kampala police at the time, so the project focus was transcribing this information into a digital format where it could be mapped.</p>
+<p>Due to the scale of the task, the approach of crowd sourcing the work was considered. This approach was also what launched the AI revolution through the ImageNet challenge, where data was labelled through Mechanical Turk (<span class="citation" data-cites="Russakovsky-imagenet15">Russakovsky et al. (2015)</span>).</p>
 <div class="figure">
 <div id="The location of the crash requires some local understanding of Kampala and how different locations may be referred to locally vs by the map provider.-figure" class="figure-frame">
 <div class="centered" style="">
@@ -351,6 +476,7 @@ Diane Coyle
 <p>Figure:</p>
 </div>
 </div>
+<p>But there are additional challenges with this data. The log books are typically accessed only by members of Kampala’s police force, in their recording of the accidents. So, permission from the police force was important. Additionally, personal information about those involved in the accidents might have been revealed in the process of crowdsourcing the work.</p>
 <div class="figure">
 <div id="crash-map-kampala-date-time-figure" class="figure-frame">
 <div class="centered" style="">
@@ -364,6 +490,7 @@ Diane Coyle
 <p>Figure: Alongside the location, the date and time of the crash gives more information that can be used to map crashes over time.</p>
 </div>
 </div>
+<p>Much of the work here was therefore in the <em>access</em> of the data. Photographing the log books, obtaining legal permission from the Kampala police, ensuring that personal information was unlikely to be divulged.</p>
 <div class="figure">
 <div id="crash-map-kampala-severity-figure" class="figure-frame">
 <div class="centered" style="">
@@ -377,6 +504,7 @@ Diane Coyle
 <p>Figure: The severity of the crash is helpful in understanding how people are being affected by road accidents.</p>
 </div>
 </div>
+<p>As well as software design and build, the work has legal and ethical issues. An important aspect in gaining progress was that Jimmy worked for the Kampala police. Indeed, the work eventually stalled when Jimmy was moved to a differen police location.</p>
 <div class="figure">
 <div id="crash-map-kampala-vehicles-figure" class="figure-frame">
 <div class="centered" style="">
@@ -390,6 +518,7 @@ Diane Coyle
 <p>Figure: Understanding which vehicles are involved in accidents could also help with interventions that may be necessary.</p>
 </div>
 </div>
+<p>The possiblity of leaking personal information was reduced, by presenting only a portion of each log book page to users for analysis. So we can see in Figure  the interface for obtainin the location from the log book. But the the date and time (Figure ) the severity of the accident (Figure ) and the vehicles involved (Figure ) are all dealt with in separate parts of the interface.</p>
 <div class="figure">
 <div id="crash-map-kampala-vehicles-2-figure" class="figure-frame">
 <div class="centered" style="">
@@ -403,13 +532,17 @@ Diane Coyle
 <p>Figure:</p>
 </div>
 </div>
+<p>It seems a great challenge to automate all the different aspects of the process of data access, but this challenge is underway already through the process of what is commonly called <em>digital transformation</em>. The process of digital transformation takes data away from physical log books and into digital devices. But that transformation process itself comes with challenges. For example, the Kampala police force is not currently equipped to store this data in purely digital form. It would require not only devices (which many officers <em>will</em> have access to) but a system of backup and storage that is beyond the capabilities of many organisations.</p>
+<p>Legal complications around data are still a major barrier though. In the EU and the US database schema and indices are subject to copyright law. Companies making data available often require license fees. As many data sources are combined, the composite effect of the different license agreements often makes the legal challenges insurmountable. This was a common challenge in the pandemic, where academics who were capable of dealing with complex data predictions were excluded from data access due to challenges around licensing. A nice counter example was the work led by Nuria Oliver in Spain who after a call to arms in a national newspaper (<span class="citation" data-cites="Oliver-valor20">Oliver (2020)</span>) was able to bring the ecosystem together around mobility data.</p>
+<p>However, even when organisation is fully digital, and license issues are overcome, there are issues around how the data is managed stored, accessed. The discoverability of the data and the recording of its provenance are too often neglected in the process of digtial transformation. Further, once an organisation has gone through digital transformation, they begin making predictions around the data. These predictions are data themselves, and their presence in the data ecosystem needs recording. Automating this portion requires structured thinking around our data ecosystems.</p>
 <h2 id="assess">Assess</h2>
+<p>Once the data is accessible, it can be imported (via APIs or database calls or reading a CSV) into the machine and work can be done understanding the nature of the data. The important thing to say about the assess stage is that it only includes things you can do <em>without</em> the question in mind. This runs counter to many ideas about how we do data analytics. The history of statistics was that we think of the question <em>before</em> we collect data. But that was because data was expensive, and it needed to be excplicitly collected. The same mantra is true today of <em>surveillance data</em>. But the new challenge is around <em>happenstance data</em>, data that is cheaply available but may be of poor quality. The nature of the data needs to be understood before its integrated into analysis. Unfortunately, because the work is conflated with other stages, decisions are sometimes made during assessment (for example approaches to imputing missing values) which may be useful in one context, but are useless in others. So the aim in <em>assess</em> is to only do work that is repeatable, and make that work available to others who may also want to use the data.</p>
 <h2 id="case-study-text-mining-for-misinformation">Case Study: Text Mining for Misinformation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/joyce-nabende-text-mining-case-study.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/joyce-nabende-text-mining-case-study.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip1">
+<defs> <clipPath id="clip3">
 <style>
 circle {
   fill: black;
@@ -419,7 +552,7 @@ circle {
 <title>
 Joyce Nakatumba-Nabende
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip1)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip3)"/>
 </svg>
 <p>We consider a case study from Joyce Nabende, Head of the <a href="https://air.ug/">Makerere AI Lab</a>. This case study is based on a presentation given by Joyce to the DSA Research Grants, “Project Progress” session on 20th August 2021.</p>
 <p>The aim of the case study is to map some of the approaches used by Joyce onto the Access, Assess, Address paradigm.</p>
@@ -594,14 +727,48 @@ Joyce Nakatumba-Nabende
 </div>
 </div>
 <p>The idea of the analysis is to bring this information together for sentiment and misinformation analysis in a <a href="https://dsa-uganda.herokuapp.com/dashboard/">dashboard for Covid-19 in Uganda</a>.</p>
-<p><span class="citation" data-cites="Nazabal-engineering20">Nazábal et al. (2020)</span></p>
-<h2 id="schema-detection">Schema Detection</h2>
-<p><span class="citation" data-cites="Valera-automatic17">Valera and Ghahramani (2017)</span> <span class="citation" data-cites="Lloyd-automatic14">James Robert Lloyd and Ghahramani. (2014)</span> ## AI for Data Analytics</p>
+<h2 id="automating-assess">Automating Assess</h2>
+<p>There are lots of interesting projects around automating the assessment of the data, for example one can consider automation of schema and data type detection (<span class="citation" data-cites="Valera-automatic17">Valera and Ghahramani (2017)</span>) or the AI for Data Analytics Project (see <span class="citation" data-cites="Nazabal-engineering20">Nazábal et al. (2020)</span> for an overview of issues and case studies and the video in Figure  for details on the project). We may even view projects like the automatic statistician as automating of assessment (<span class="citation" data-cites="Lloyd-automatic14">James Robert Lloyd and Ghahramani. (2014)</span>), although arguably one could suggest that the choice of data set used in those projects itself is reflective of the <em>question</em> or <em>context</em>. This highlights the difficulty in separating the stages. The key quesiton to ask in any given context is whether the augmentation you are performing for the data set is going to be helpful or a hindrance to those that may wish to reuse your data.</p>
+<div class="figure">
+<div id="ai-for-data-analytics-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/wFfeyGmNOAI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
-<h2 id="automl">AutoML</h2>
+</div>
+<div id="ai-for-data-analytics-magnify" class="magnify" onclick="magnifyFigure(&#39;ai-for-data-analytics&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ai-for-data-analytics-caption" class="caption-frame">
+<p>Figure: The AI for Data Analytics project is an attempt to automate some of the challenges of automated data assessment.</p>
+</div>
+</div>
+<p>.</p>
+<h2 id="address">Address</h2>
+<ul>
+<li>Address the question.</li>
+<li>Now we bring the context in.</li>
+<li>Could require:
+<ul>
+<li>Confirmatory data analysis</li>
+<li>An ML prediction model</li>
+<li>Visualisation through a dashboard</li>
+<li>An Excel spreadsheet</li>
+</ul></li>
+</ul>
+<p>The final stage of the process is to <em>address</em> the question. We’ll spend the least time on this stage here, because it’s the one that is most widely formally taught and the one that most researchers are familiar with. In statistics, this might involve some confirmatory data analysis. In machine learning it may involve designing a predictive model. In many domains it will involve figuring out how best to visualise the data to present it to those who need to make the decisions. That could involve a dashboard, a plot or even summarisation in an Excel spreadsheet.</p>
+<h2 id="automating-address">Automating Address</h2>
+<p>Perhaps the most widespread approach to automating the address stage is known as AutoML (see video in Figure ). This is an automatic approach to creating ML prediction models. The automatic statistician we mentioned in assess also has some of these goals in mind for automating confirmatory data analysis. But there are clearly other aspects we may wish to automate, particularly around visualization.</p>
+<div class="figure">
+<div id="frank-hutter-automl-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/5A4xbv5nd8c?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="frank-hutter-automl-magnify" class="magnify" onclick="magnifyFigure(&#39;frank-hutter-automl&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="frank-hutter-automl-caption" class="caption-frame">
+<p>Figure: Here Frank Hutter gives a tutorial on AutoML, one of the approaches to automating address.</p>
+</div>
+</div>
 <h2 id="conclusions">Conclusions</h2>
 <p>The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we’ve given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.</p>
 <p>Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.</p>
@@ -620,6 +787,9 @@ Joyce Nakatumba-Nabende
 <div id="ref-Aman-dataset20" class="csl-entry" role="doc-biblioentry">
 Aman Ullah, M., Azman, N., Mohd Zaki, Z., Monirul Islam, Md., 2020. Dataset creation from multilingual data of social media: Challenges and consequences, in: 2020 IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering (WIECON-ECE). pp. 288–291. <a href="https://doi.org/10.1109/WIECON-ECE52138.2020.9398002">https://doi.org/10.1109/WIECON-ECE52138.2020.9398002</a>
 </div>
+<div id="ref-Borchert-dataoriented20" class="csl-entry" role="doc-biblioentry">
+Borchert, T., 2020. Milan: An evolution of data-oriented programming.
+</div>
 <div id="ref-Chapman-step00" class="csl-entry" role="doc-biblioentry">
 Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., Wirth, R., 2000. CRISP-DM 1.0: Step-by-step data mining guide.
 </div>
@@ -632,14 +802,32 @@ Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
 <div id="ref-Lloyd-automatic14" class="csl-entry" role="doc-biblioentry">
 James Robert Lloyd, R.G., David Duvenaud, Ghahramani., Z., 2014. Automatic construction and natural-language description of nonparametric regression models, in: AAAI.
 </div>
+<div id="ref-Joshi-doa07" class="csl-entry" role="doc-biblioentry">
+Joshi, R., 2007. A loosely-coupled real-time SOA. Real-Time Innovations Inc.
+</div>
 <div id="ref-Kahneman:fastslow11" class="csl-entry" role="doc-biblioentry">
 Kahneman, D., 2011. Thinking fast and slow.
+</div>
+<div id="ref-Lawrence-drl17" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2017. Data readiness levels. ArXiv.
+</div>
+<div id="ref-Lawrence-maturity20" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., Montgomery, J., Paquet, U., 2020. Organisational data maturity. The Royal Society.
 </div>
 <div id="ref-Magueresse-lowresource20" class="csl-entry" role="doc-biblioentry">
 Magueresse, A., Carles, V., Heetderks, E., 2020. Low-resource languages: <span>A</span> review of past work and future challenges. CoRR.
 </div>
 <div id="ref-Nazabal-engineering20" class="csl-entry" role="doc-biblioentry">
 Nazábal, A., Williams, C.K.I., Colavizza, G., Smith, C.R., Williams, A., 2020. Data engineering for data analytics: A classification of the issues, and case studies.
+</div>
+<div id="ref-Oliver-valor20" class="csl-entry" role="doc-biblioentry">
+Oliver, N., 2020. El valor de los móviles y la covid-19 (the value of mobiles and covid-19).
+</div>
+<div id="ref-Russakovsky-imagenet15" class="csl-entry" role="doc-biblioentry">
+Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A.C., Fei-Fei, L., 2015. <span>ImageNet Large Scale Visual Recognition Challenge</span>. International Journal of Computer Vision (IJCV) 115, 211–252. <a href="https://doi.org/10.1007/s11263-015-0816-y">https://doi.org/10.1007/s11263-015-0816-y</a>
+</div>
+<div id="ref-Sculley:debt15" class="csl-entry" role="doc-biblioentry">
+Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., Dennison, D., 2015. Hidden technical debt in machine learning systems, in: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 28. Curran Associates, Inc., pp. 2503–2511.
 </div>
 <div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
 The DELVE Initiative, 2020a. Data readiness: Lessons from an emergency. The Royal Society.
@@ -665,11 +853,15 @@ The DELVE Initiative, 2020g. SARS-CoV-2 vaccine development &amp; implementation
 <div id="ref-Valera-automatic17" class="csl-entry" role="doc-biblioentry">
 Valera, I., Ghahramani, Z., 2017. Automatic discovery of the statistical types of variables in a dataset, in: Precup, D., Teh, Y.W. (Eds.), Proceedings of the 34th International Conference on Machine Learning, Proceedings of Machine Learning Research. PMLR, pp. 3521–3529.
 </div>
+<div id="ref-Vorhemus-doa17" class="csl-entry" role="doc-biblioentry">
+Vorhemus, C., Schikuta, E., 2017. A data-oriented architecture for loosely coupled real-time information systems, in: Proceedings of the 19th International Conference on Information Integration and Web-Based Applications &amp; Services, iiWAS ’17. Association for Computing Machinery, New York, NY, USA, pp. 472–481. <a href="https://doi.org/10.1145/3151759.3151770">https://doi.org/10.1145/3151759.3151770</a>
+</div>
 </div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">Disraeli is attributed this quote by Mark Twain</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>See for example <a href="https://www.technologyreview.com/s/604087/the-dark-secret-at-the-heart-of-ai/">“The Dark Secret at the Heart of AI” in Technology Review</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
