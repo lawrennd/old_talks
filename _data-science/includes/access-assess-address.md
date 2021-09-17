@@ -4,7 +4,7 @@
 
 \editme
 
-\subsection{The Four Esses Framework}
+\subsection{The Three Esses Framework}
 
 \slides{* Access
 * Assess
@@ -27,7 +27,7 @@
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/data-science/dnds_0202}}{Another perspective on the data science process, this one from @ONeil-doing14.}{data-science-process-oneil}
+\figure{\includepng{\diagramsDir/data-science/dnds_0202}}{Another perspective on the data science process, this one from @ONeil-doing13.}{data-science-process-oneil}
 
 
 \include{_data-science/includes/experiment-analyze-design.md}
