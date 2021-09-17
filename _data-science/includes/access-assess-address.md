@@ -82,7 +82,7 @@
 
 \newslide{Case Study: Text Mining for Covid Misinformation}
 
-\slides{\centeralign{\joyceNabendePicture{15%}}
+\slides{\joyceNabendePicture{15%}
 \figure{\includepng{\diagramsDir/data-science/joyce-nabende-uganda-social-media-killing}{60%}}{Misinformation through media has been a challenge for as long as we've been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende's presentation.}{uganda-social-medial-killing}}
 
 \notes{\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}}
@@ -99,11 +99,11 @@
 
 \newslide{AI for Data Analytics}
 
-\figure{\includeyoutube{wFfeyGmNOAI}{600}{450}}{The AI for Data Analytics project is an attempt to automate some of the challenges of automated data assessment.}{ai-for-data-analytics}. 
+\figure{\includeyoutube{wFfeyGmNOAI}{600}{450}}{The AI for Data Analytics project is an attempt to automate some of the challenges of automated data assessment.}{ai-for-data-analytics}
 
 \subsection{Address}
 
-\notes{* Address the question.
+\slides{* Address the question.
 * Now we bring the context in.
 * Could require:
   * Confirmatory data analysis
