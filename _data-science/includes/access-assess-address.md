@@ -4,15 +4,22 @@
 
 \editme
 
-\subsection{Access, Assess, Address}
+\subsection{The Four Esses Framework}
 
-\notes{Here we present the philosophy behind Access, Assess, Address. Rather than a formal process, these three words are meant to highlight three distinct types of data science activity that occur within a data science project.}
+\slides{* Access
+* Assess
+* Address}
+\notes{Here we present a framework for thinking about data science that has three words that are meant to highlight three distinct types of data science activity that occur within a data science project: we call them access, assess and address.}
 
 \newslide{CRISP-DM}
 
-\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram.}
+\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram.}{crisp-dm-diagram}
 
 \notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
+
+\notes{A more modern view from the O'Reilly book *Doing Data Science* frames the problem as shown in Figure \ref{Oneil-doing14}}
+
+\figure{\includepng{\diagramsDir/data-science/data-science-process}}{Another perspective on the data science process, this one from @
 
 \newslide{}
 
@@ -35,6 +42,7 @@
 
 \subsection{Assess}
 
+\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
 
 @Nazabal-engineering20
 

@@ -72,6 +72,19 @@ categories:
 <p>As a term ‘big data’ promises much and delivers little, to get true value from data, it needs to be curated and evaluated. The three stages of awareness, availability and analysis provide a broad framework through which organizations should be assessing the potential in the data they hold. Hand waving about big data solutions will not do, it will only lead to self-deception. The castles we build on our data landscapes must be based on firm foundations, process and scientific analysis. If we do things right, those are the foundations that will be provided by the new field of data science.</p>
 <p>Today the statement “There are three types of lies: lies, damned lies and ‘big data’” may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a “mathematical data science” is needed.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2016/11/19/lies-damned-lies-big-data">Lies, Damned Lies and Big Data</a>.</p>
+<div class="figure">
+<div id="delve-announcement-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//delve/rs-delve-announcement.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="delve-announcement-magnify" class="magnify" onclick="magnifyFigure(&#39;delve-announcement&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="delve-announcement-caption" class="caption-frame">
+<p>Figure: The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <a href="https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/" class="uri">https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/</a>.</p>
+</div>
+</div>
 <h2 id="delve-overview">DELVE Overview</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -244,25 +257,42 @@ Diane Coyle
 </ul></li>
 </ul>
 <p>Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">open data science</a>. to facilitate communication and understanding.</p>
-<h2 id="access-assess-address">Access, Assess, Address</h2>
+<h2 id="the-four-esses-framework">The Four Esses Framework</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/access-assess-address.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/access-assess-address.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Here we present the philosophy behind Access, Assess, Address. Rather than a formal process, these three words are meant to highlight three distinct types of data science activity that occur within a data science project.</p>
+<p>Here we present a framework for thinking about data science that has three words that are meant to highlight three distinct types of data science activity that occur within a data science project: we call them access, assess and address.</p>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="crisp-dm-diagram-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/1022px-CRISP-DM_Process_Diagram.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+<div id="crisp-dm-diagram-magnify" class="magnify" onclick="magnifyFigure(&#39;crisp-dm-diagram&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="crisp-dm-diagram-caption" class="caption-frame">
+<p>Figure: The CRISP Data Mining Process diagram.</p>
+</div>
+</div>
+<p>There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM <span class="citation" data-cites="Chapman-step00">Chapman et al. (2000)</span> process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.</p>
+<p>A more modern view from the O’Reilly book <em>Doing Data Science</em> frames the problem as shown in Figure </p>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+
 </div>
 <div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="-caption" class="caption-frame">
-<p>Figure: The CRISP Data Mining Process diagram.</p>
+<p>Figure:</p>
 </div>
 </div>
-<p>There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM <span class="citation" data-cites="Chapman-step00">Chapman et al. (2000)</span> process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.</p>
+{
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/data-science-process.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>}{Another perspective on the data science process, this one from @</p>
 <div class="figure">
 <div id="policy-science-convening-power-of-data-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/-QjJLgRni-M?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -374,14 +404,6 @@ Diane Coyle
 </div>
 </div>
 <h2 id="assess">Assess</h2>
-<p><span class="citation" data-cites="Nazabal-engineering20">Nazábal et al. (2020)</span></p>
-<h2 id="schema-detection">Schema Detection</h2>
-<p><span class="citation" data-cites="Valera-automatic17">Valera and Ghahramani (2017)</span> <span class="citation" data-cites="Lloyd-automatic14">James Robert Lloyd and Ghahramani. (2014)</span> ## AI for Data Analytics</p>
-<iframe width="600" height="450" src="https://www.youtube.com/embed/wFfeyGmNOAI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-<h2 id="automl">AutoML</h2>
-<iframe width="600" height="450" src="https://www.youtube.com/embed/5A4xbv5nd8c?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
 <h2 id="case-study-text-mining-for-misinformation">Case Study: Text Mining for Misinformation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/joyce-nabende-text-mining-case-study.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/joyce-nabende-text-mining-case-study.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -572,6 +594,14 @@ Joyce Nakatumba-Nabende
 </div>
 </div>
 <p>The idea of the analysis is to bring this information together for sentiment and misinformation analysis in a <a href="https://dsa-uganda.herokuapp.com/dashboard/">dashboard for Covid-19 in Uganda</a>.</p>
+<p><span class="citation" data-cites="Nazabal-engineering20">Nazábal et al. (2020)</span></p>
+<h2 id="schema-detection">Schema Detection</h2>
+<p><span class="citation" data-cites="Valera-automatic17">Valera and Ghahramani (2017)</span> <span class="citation" data-cites="Lloyd-automatic14">James Robert Lloyd and Ghahramani. (2014)</span> ## AI for Data Analytics</p>
+<iframe width="600" height="450" src="https://www.youtube.com/embed/wFfeyGmNOAI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<h2 id="automl">AutoML</h2>
+<iframe width="600" height="450" src="https://www.youtube.com/embed/5A4xbv5nd8c?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 <h2 id="conclusions">Conclusions</h2>
 <p>The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we’ve given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.</p>
 <p>Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.</p>

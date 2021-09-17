@@ -55,7 +55,7 @@ $$
 \include{_physics/includes/laplaces-gremlin.md}
 
 \include{_simulation/includes/simulation-system.md}
-\include{_supply-chain/includes/experiment-analyze-design.md}
+\include{_data-science/includes/experiment-analyze-design.md}
 \include{_uq/includes/emulation.md}
 \notes{\include{_gp/includes/gpy-emulation.md}}
 \include{_software/includes/emukit-software.md}

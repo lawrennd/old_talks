@@ -8726,6 +8726,117 @@ Year
   pages =	 {457--464}
 }
 
+@Misc{Borchert-dataoriented20,
+  OPTkey = 	 {},
+  author =	 {Tom Borchert},
+  title =	 {Milan: An Evolution of Data-oriented Programming},
+  url = {https://tborchertblog.wordpress.com/2020/02/13/28/},
+  OPTmonth = 	 {},
+  year = 	 {2020},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+
+
+@TechReport{Joshi-doa07,
+  author = 	 {Rajive Joshi},
+  title = 	 {A Loosely-Coupled Real-Time SOA},
+  institution =  {Real-Time Innovations Inc},
+  year = 	 {2007},
+  url = {http://community.rti.com/sites/default/files/archive/Data-Oriented_Architecture.pdf},
+  OPTtype = 	 {As more devices and systems get woven into the fabric of our networked
+world, the scale and the complexity of integration is growing at a rapid
+pace. Our existing methodologies and training for system software design,
+rooted in principles of object-oriented design, that worked superbly for
+small scale systems begin to break down as we discover operational limits
+which requires frequent and unintended redesigns in programs year over
+year. Fundamentally, object-oriented thinking leads us to think in terms of
+tightly-coupled interactions that include strong state assumptions. Large
+scale distributed systems are often a mix of subsystems created by
+independent parties, often using different middleware technologies, with
+misaligned interfaces. Integrating such sub-systems using object-oriented
+thinking poses some fundamental challenges:
+
+(1) it is brittle to incremental and independent development, where
+interfaces can change without notice;
+(2) there is often an "impedance mis-match" between sub-systems
+in the quantity and the quality of information that must be
+exchanged between the two sides;
+(3) there is a real need to dynamically adapt in real-time to network
+topology reconfigurations and failures;
+(4) scalability, performance, and up-time cannot always be
+compromised in this dynamic environment .
+A different paradigm is needed in order to address these new challenges
+in a systematic manner.
+
+As the scale of the integration and complexity grows, the only unifying
+common denominators between disparate sub-systems (generally
+numbering more than two) are:
+(1) the data they produce and consume;
+(2) the services they use and offer.
+
+In order to scale, system software architecture must be organized around
+a common "shared information model" that spans multiple systems. This 
+leads us to the principle of "data-oriented" design: expose the data and
+hide the code.
+
+In this paper, we will discuss the principles of data-oriented thinking, and
+discuss why it offers an appropriate paradigm to address large scale
+system integration.
+
+We discuss the critical role played by the middleware infrastructure in
+applying data-oriented design, and describe a generic data-oriented
+integration architecture based on the data distribution service (DDS)
+middleware standard. We analyze popular architectural styles including
+data flow architecture, event driven architecture, and service oriented
+architecture from this perspective and establish that they can be viewed
+as specializations of the generic data-oriented architecture.
+Finally we illustrate how the data-oriented integration architecture was
+used to rapidly develop a working demonstration of a real-time package
+tracking system-of-systems, in a short time frame. The information model
+is described once. The tool-chain is used to transform and manipulate the
+shared data model across disparate implementation technologies. },
+  OPTnumber = 	 {},
+  OPTaddress = 	 {},
+  OPTmonth = 	 {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@inproceedings{Vorhemus-doa17,
+author = {Vorhemus, Christian and Schikuta, Erich},
+title = {A Data-Oriented Architecture for Loosely Coupled Real-Time Information Systems},
+year = {2017},
+isbn = {9781450352994},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3151759.3151770},
+doi = {10.1145/3151759.3151770},
+abstract = {In this paper, we present an architectural pattern called Data Oriented Architecture
+(DOA). Motivation is the fact that on the one hand we face a shift to the usage of
+more and more mobile devices but on the other hand most services in the Internet still
+use a classic client-server-approach. Data is mainly produced at private devices today
+and put on centralized servers afterwards. This situation reflects the actual reality
+better: data is shared directly among users without the need of centralized sources.Three
+key facts distinguish DOA from existing approaches: First, DOA does not bind data
+to a specific location. Data is defined by the application which produced it and not
+an address of a location where it is currently stored. Second, DOA is a holistic approach
+that comprises a suitable data structure, data access methods and a message exchange
+protocol. Thus, DOA can be easily implemented and used right away. Third, in DOA,
+users can decide which data they want to keep private and which data they want to
+share. Shared data becomes a "public good" that is not owned by a specific entity
+but belongs to the community.},
+booktitle = {Proceedings of the 19th International Conference on Information Integration and Web-Based Applications & Services},
+pages = {472–481},
+numpages = {10},
+keywords = {software architecture, internet of things, data-oriented architecture, architectural style},
+location = {Salzburg, Austria},
+series = {iiWAS '17}
+}
+
+
+
 @ARTICLE{Geva:p53,
   author =	 {Naama Geva-Zatorsky and Nitzan Rosenfeld and Shalev
                   Itzkovitz and Ron Milo and Alex Sigal and Erez Dekel
@@ -14142,33 +14253,6 @@ Year
   pages =	 {375--376}
 }
 
-@TechReport{Lawrence-maturity20,
-  title =	 {Organisational Data Maturity},
-  author =	 {Lawrence, Neil D. and Montgomery, Jessica and
-                  Paquet, Ulrich},
-  year =	 2020,
-  publisher =	 {The Royal Society},
-  url =
-                  {https://rs-delve.github.io/addenda/2020/11/24/organizational-data-maturity.html},
-  abstract =	 {Advances in machine learning over the last 5-10
-                  years have generated interest across the private,
-                  public and third sector in the potential of advanced
-                  data analytics to enhance productivity and improve
-                  decision-making. Many organisations aspire to be
-                  data driven in their decision making, but are held
-                  back from achieving this goal by issues arising from
-                  the accessibility and availability of data between
-                  teams or collaborators. Data maturity frameworks can
-                  provide practical guidance for organisations seeking
-                  to improve their data management practices and
-                  create value from the data they hold. This document
-                  proposes a data maturity model with five levels, (i)
-                  reactive, (ii) repeatable, (iii) managed/integrated,
-                  (iv) optimized, and (v) transparent, alongside a set
-                  of indicators for organisations to analyse their
-                  current maturity level and ways of improving this.
-                  }
-}
 
 @Article{Lazaro:spectrum10,
   author =	 {Miguel L\'azaro-Gredilla and Joaquin
@@ -24648,6 +24732,8 @@ Year
   pages =	 {5860--5865},
   group =	 {gene networks}
 }
+
+
 
 @INPROCEEDINGS{Wang:stopping95,
   author =	 {C. Wang and S. S. Venkatesh and J. S. Judd},
