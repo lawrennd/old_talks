@@ -18,7 +18,10 @@ transition: None
 
 \include{_data-science/includes/lies-damned-lies.md}
 
+\newslide{DELVE}
+
 \figure{\includepng{\diagramsDir/delve/rs-delve-announcement}{70%}}{The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/>.}{delve-announcement}
+
 
 \notes{\include{_delve/includes/delve-overview.md}}
 
@@ -46,7 +49,6 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 \include{_data-science/includes/access-assess-address.md}
-\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
 
 \subsection{Conclusions}
 
