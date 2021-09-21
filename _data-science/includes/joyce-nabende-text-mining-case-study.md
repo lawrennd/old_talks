@@ -91,10 +91,12 @@ e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 \newslide{}
 
 \table{
+
 |  | Twitter Data | Facebook Data |
 | :--- | :--- | :--- |
 | Initial dataset | 15,354 | 430,075 |
 | Dataset after Annotation | 3,527 | 4,479 |
+
 }{Portion of data that was annoted.}{annotated-portion-of-data}
 
 \newslide{}
@@ -102,11 +104,13 @@ e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 [Cohen's kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa) inter-annotation used to measure annotator agreement.
 
 \table{
+
 | Language | 0.89 |
 | :--- | :--- |
 | Aspect | 0.69 |
 | Sentiment | 0.73 |
 | Misinformation | 0.74 |
+
 }{Cohen's kappa agreement scores for the data.}{cohen-kappa-agreement}
 
 
