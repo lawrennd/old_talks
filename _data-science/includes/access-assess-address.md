@@ -17,7 +17,7 @@
 
 \notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
 
-\notes{A more modern view from the O'Reilly book *Doing Data Science* frames the problem as shown in Figure \ref{Oneil-doing13}}
+\notes{A more modern view from the O'Reilly book *Doing Data Science* frames the problem as shown in Figure \ref{data-science-process-oneil}.}
 
 \newslide{}
 
@@ -42,7 +42,7 @@
 
 \include{_data-science/includes/ride-sharing-soa-doa.md}
 
-\notes{The "Access, Assess, Address" paradigm is inspired by experience in operational data science both in the Amazon supply chain and in dealing with the UK pCovid-19 pandemic.}
+\notes{The "Access, Assess, Address" paradigm is inspired by experience in operational data science both in the Amazon supply chain and in the UK Covid-19 pandemic response.}
 
 \newslide{}
 
