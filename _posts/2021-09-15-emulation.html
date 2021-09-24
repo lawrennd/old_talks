@@ -399,10 +399,6 @@ categories:
 </div>
 <p>This is the landscape we now find ourselves in for software development. In practice, each of these services is often ‘owned’ and maintained by an individual team. The team is judged by the quality of their service provision. They work to detailed specifications on what their service should output, what its availability should be and other objectives like speed of response. This allows for conditional independence between teams and for faster development.</p>
 <p>One question is to what extent is the same approach possible/desirable for scientific models? The components we listed above are already separated and often run independently. But those components themselves are made up of other sub-components that could also be exposed in a similar manner to software-as-a-service, giving us the notion of “simulation as a service.”</p>
-<h2 id="experiment-analyze-design">Experiment, Analyze, Design</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/experiment-analyze-design.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/experiment-analyze-design.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <p>One thing about working in an industrial environment, is the way that short-term thinking actions become important. For example, in Formula One, the teams are working on a two-week cycle to digest information from the previous week’s race and incorporate updates to the car or their strategy.</p>
 <p>However, businesses must also think about more medium-term horizons. For example, in Formula 1 you need to worry about next year’s car. So while you’re working on updating this year’s car, you also need to think about what will happen for next year and prioritize these conflicting needs appropriately.</p>
 <p>In the Amazon supply chain, there are the equivalent demands. If we accept that an artificial intelligence is just an automated decision-making system. And if we measure in terms of money automatically spent, or goods automatically moved, then Amazon’s buying system is perhaps the world’s largest AI.</p>
@@ -422,7 +418,7 @@ categories:
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="experiment-analyze-design-caption" class="caption-frame">
-<p>Figure: The experiment, analyze, design flywheel for scientific innovation.</p>
+<p>Figure: Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.</p>
 </div>
 </div>
 <p>From the perspective of the team that we had in the supply chain, we looked at what we most needed to focus on. Amazon moves very quickly, but we could also take a leaf out of Jeff’s book, and instead of worrying about what was going to change, remember what wasn’t going to change.</p>
@@ -431,7 +427,7 @@ categories:
 </blockquote>
 <p>As a result, our focus was on how to speed up the process of experiments, increase the diversity of experiments that we can do, and keep the experiments price as low as possible.</p>
 <p>The faster the innovation flywheel can be iterated, then the quicker we can ask about different parts of the supply chain, and the better we can tailor systems to answering those questions.</p>
-<p>As a result, our objective became a two-order magnitude increase in number of experiments run across a five-year period.</p>
+<p>We need faster, cheaper and more diverse experiments which implies we need better ecosystems for experimentation. This has led us to focus on the software frameworks we’re using to develop machine learning systems including data oriented architectures (<span class="citation" data-cites="Borchert-dataoriented20">Borchert (2020)</span>;<span class="citation" data-cites="Lawrence-doa19">(<strong>Lawrence-doa19?</strong>)</span>;<span class="citation" data-cites="Vorhemus-doa17">Vorhemus and Schikuta (2017)</span>;<span class="citation" data-cites="Joshi-doa07">Joshi (2007)</span>), data maturity assessments (<span class="citation" data-cites="Lawrence-maturity20">Lawrence et al. (2020)</span>) and data readiness levels (See this blog post on <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a>. and <span class="citation" data-cites="Lawrence-drl17">Lawrence (2017)</span>;<span class="citation" data-cites="Delve-data20">The DELVE Initiative (2020)</span>)</p>
 <h2 id="statistical-emulation">Statistical Emulation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -739,9 +735,9 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Adam Hirst
+Leah Hirst
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/adam-hirst.jpg" clip-path="url(#clip5)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/person-placeholder.jpg" clip-path="url(#clip5)"/>
 </svg>
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip6">
@@ -756,7 +752,7 @@ Cliff McCollum
 </title>
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/cliff-mccollum.jpg" clip-path="url(#clip6)"/>
 </svg>
-<p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, during his software engineering internship at Amazon and supervised by <a href="https://www.linkedin.com/in/cliffmccollum/">Cliff McCollum</a>.</p>
+<p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://www.linkedin.com/in/leahhirst/">Leah Hirst</a>, during her software engineering internship at Amazon and supervised by <a href="https://www.linkedin.com/in/cliffmccollum/">Cliff McCollum</a>.</p>
 <div class="figure">
 <div id="emukit-playground-figure" class="figure-frame">
 <div class="centered" style="">
@@ -1194,11 +1190,17 @@ Nicolas Durrande
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Borchert-dataoriented20" class="csl-entry" role="doc-biblioentry">
+Borchert, T., 2020. Milan: An evolution of data-oriented programming.
+</div>
 <div id="ref-Durrande-anova13" class="csl-entry" role="doc-biblioentry">
 Durrande, N., Ginsbourger, D., Olivier, Carraro, L., 2013. <span>ANOVA</span> kernels and <span>RKHS</span> of zero mean functions for model-based sensitivity analysis. Journal of Multivariate Analysis 115, 57–67. https://doi.org/<a href="https://doi.org/10.1016/j.jmva.2012.08.016">https://doi.org/10.1016/j.jmva.2012.08.016</a>
 </div>
 <div id="ref-Ishigami-importance90" class="csl-entry" role="doc-biblioentry">
 Ishigami, T., Homma, T., 1989. An importance quantification technique in uncertainty analysis for computer models. [1990] Proceedings. First International Symposium on Uncertainty Modeling and Analysis 398–403.
+</div>
+<div id="ref-Joshi-doa07" class="csl-entry" role="doc-biblioentry">
+Joshi, R., 2007. A loosely-coupled real-time SOA. Real-Time Innovations Inc.
 </div>
 <div id="ref-Kennedy-bayesian01" class="csl-entry" role="doc-biblioentry">
 Kennedy, M.C., O’Hagan, A., 2001. Bayesian calibration of computer models. Journal of the Royal Statistical Society: Series B (Statistical Methodology) 63, 425–464. <a href="https://doi.org/10.1111/1467-9868.00294">https://doi.org/10.1111/1467-9868.00294</a>
@@ -1208,6 +1210,12 @@ Kennedy, M.C., O’Hagan, A., 2000. Predicting the output from a complex compute
 </div>
 <div id="ref-Laplace-essai14" class="csl-entry" role="doc-biblioentry">
 Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.
+</div>
+<div id="ref-Lawrence-drl17" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2017. Data readiness levels. ArXiv.
+</div>
+<div id="ref-Lawrence-maturity20" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., Montgomery, J., Paquet, U., 2020. Organisational data maturity. The Royal Society.
 </div>
 <div id="ref-Marrel-sobol09" class="csl-entry" role="doc-biblioentry">
 Marrel, A., Iooss, B., Laurent, B., Roustant, O., 2009. Calculations of <span>S</span>obol indices for the <span>G</span>aussian process metamodel. Reliability Engineering &amp; System Safety 94, 742–751. https://doi.org/<a href="https://doi.org/10.1016/j.ress.2008.07.008">https://doi.org/10.1016/j.ress.2008.07.008</a>
@@ -1232,6 +1240,12 @@ Sobol, I.M., 1990. On sensitivity estimation for nonlinear mathematical models. 
 </div>
 <div id="ref-Sobol-variance99" class="csl-entry" role="doc-biblioentry">
 Sobol, I.M., Levitan, Y.L., 1999. On the use of variance reducing multipliers in <span>M</span>onte <span>C</span>arlo computations of a global sensitivity index. Computer Physics Communications 117, 52–61. <a href="https://doi.org/10.1016/S0010-4655(98)00156-8">https://doi.org/10.1016/S0010-4655(98)00156-8</a>
+</div>
+<div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
+The DELVE Initiative, 2020. Data readiness: Lessons from an emergency. The Royal Society.
+</div>
+<div id="ref-Vorhemus-doa17" class="csl-entry" role="doc-biblioentry">
+Vorhemus, C., Schikuta, E., 2017. A data-oriented architecture for loosely coupled real-time information systems, in: Proceedings of the 19th International Conference on Information Integration and Web-Based Applications &amp; Services, iiWAS ’17. Association for Computing Machinery, New York, NY, USA, pp. 472–481. <a href="https://doi.org/10.1145/3151759.3151770">https://doi.org/10.1145/3151759.3151770</a>
 </div>
 </div>
 

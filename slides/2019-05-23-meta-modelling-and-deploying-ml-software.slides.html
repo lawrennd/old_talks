@@ -8,25 +8,90 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/reveal.css">
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-  <link rel="stylesheet" href="talks.css"/>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2/css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
@@ -36,304 +101,9 @@
       }
     });
   </script>
-  <script src="figure-animate.js"></script>
+  <script src="../assets/js/figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\tk}[1]{}
-%\newcommand{\tk}[1]{\textbf{TK}: #1}
-\newcommand{\Amatrix}{\mathbf{A}}
-\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
-\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
-\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
-\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
-\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
-\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
-\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
-\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
-\newcommand{\Kuui}{\Kuu^{-1}}
-\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
-\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
-\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
-\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
-\newcommand{\aMatrix}{\mathbf{A}}
-\newcommand{\aScalar}{a}
-\newcommand{\aVector}{\mathbf{a}}
-\newcommand{\acceleration}{a}
-\newcommand{\bMatrix}{\mathbf{B}}
-\newcommand{\bScalar}{b}
-\newcommand{\bVector}{\mathbf{b}}
-\newcommand{\basisFunc}{\phi}
-\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
-\newcommand{\basisFunction}{\phi}
-\newcommand{\basisLocation}{\mu}
-\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
-\newcommand{\basisScalar}{\basisFunction}
-\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
-\newcommand{\activationFunction}{\phi}
-\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
-\newcommand{\activationScalar}{\basisFunction}
-\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
-\newcommand{\bigO}{\mathcal{O}}
-\newcommand{\binomProb}{\pi}
-\newcommand{\cMatrix}{\mathbf{C}}
-\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
-\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
-\newcommand{\cdataScalar}{\hat{\dataScalar}}
-\newcommand{\cdataVector}{\hat{\dataVector}}
-\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
-\newcommand{\centeredKernelScalar}{b}
-\newcommand{\centeredKernelVector}{\centeredKernelScalar}
-\newcommand{\centeringMatrix}{\mathbf{H}}
-\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
-\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
-\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
-\newcommand{\coregionalizationMatrix}{\mathbf{B}}
-\newcommand{\coregionalizationScalar}{b}
-\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
-\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
-\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
-\newcommand{\covarianceScalar}{c}
-\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
-\newcommand{\covarianceMatrix}{\mathbf{C}}
-\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
-\newcommand{\croupierScalar}{s}
-\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
-\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
-\newcommand{\dataDim}{p}
-\newcommand{\dataIndex}{i}
-\newcommand{\dataIndexTwo}{j}
-\newcommand{\dataMatrix}{\mathbf{Y}}
-\newcommand{\dataScalar}{y}
-\newcommand{\dataSet}{\mathcal{D}}
-\newcommand{\dataStd}{\sigma}
-\newcommand{\dataVector}{\mathbf{ \dataScalar}}
-\newcommand{\decayRate}{d}
-\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
-\newcommand{\degreeScalar}{d}
-\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
-% Already defined by latex
-%\newcommand{\det}[1]{\left|#1\right|}
-\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
-\newcommand{\diagonalMatrix}{\mathbf{D}}
-\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
-\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
-\newcommand{\displacement}{x}
-\newcommand{\displacementVector}{\textbf{\displacement}}
-\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
-\newcommand{\distanceScalar}{d}
-\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
-\newcommand{\eigenvaltwo}{\ell}
-\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
-\newcommand{\eigenvaltwoVector}{\mathbf{l}}
-\newcommand{\eigenvalue}{\lambda}
-\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
-\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
-\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
-\newcommand{\eigenvectorMatrix}{\mathbf{U}}
-\newcommand{\eigenvectorScalar}{u}
-\newcommand{\eigenvectwo}{\mathbf{v}}
-\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
-\newcommand{\eigenvectwoScalar}{v}
-\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
-\newcommand{\errorFunction}{E}
-\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
-\newcommand{\expSamp}[1]{\left<#1\right>}
-\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
-\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
-\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
-\newcommand{\eye}{\mathbf{I}}
-\newcommand{\fantasyDim}{r}
-\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
-\newcommand{\fantasyScalar}{z}
-\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
-\newcommand{\featureStd}{\varsigma}
-\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
-\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
-\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
-\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
-\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
-\newcommand{\given}{|}
-\newcommand{\half}{\frac{1}{2}}
-\newcommand{\heaviside}{H}
-\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
-\newcommand{\hiddenScalar}{h}
-\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
-\newcommand{\identityMatrix}{\eye}
-\newcommand{\inducingInputScalar}{z}
-\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
-\newcommand{\inducingInputMatrix}{\mathbf{Z}}
-\newcommand{\inducingScalar}{u}
-\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
-\newcommand{\inducingMatrix}{\mathbf{U}}
-\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
-\newcommand{\inputDim}{q}
-\newcommand{\inputMatrix}{\mathbf{X}}
-\newcommand{\inputScalar}{x}
-\newcommand{\inputSpace}{\mathcal{X}}
-\newcommand{\inputVals}{\inputVector}
-\newcommand{\inputVector}{\mathbf{ \inputScalar}}
-\newcommand{\iterNum}{k}
-\newcommand{\kernel}{\kernelScalar}
-\newcommand{\kernelMatrix}{\mathbf{K}}
-\newcommand{\kernelScalar}{k}
-\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
-\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
-\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
-\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
-\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
-\newcommand{\lagrangeMultiplier}{\lambda}
-\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
-\newcommand{\lagrangian}{L}
-\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
-\newcommand{\laplacianFactorScalar}{m}
-\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
-\newcommand{\laplacianMatrix}{\mathbf{L}}
-\newcommand{\laplacianScalar}{\ell}
-\newcommand{\laplacianVector}{\mathbf{ \ell}}
-\newcommand{\latentDim}{q}
-\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
-\newcommand{\latentDistanceScalar}{\delta}
-\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
-\newcommand{\latentForce}{f}
-\newcommand{\latentFunction}{u}
-\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
-\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
-\newcommand{\latentIndex}{j}
-\newcommand{\latentScalar}{z}
-\newcommand{\latentVector}{\mathbf{ \latentScalar}}
-\newcommand{\latentMatrix}{\mathbf{Z}}
-\newcommand{\learnRate}{\eta}
-\newcommand{\lengthScale}{\ell}
-\newcommand{\rbfWidth}{\ell}
-\newcommand{\likelihoodBound}{\mathcal{L}}
-\newcommand{\likelihoodFunction}{L}
-\newcommand{\locationScalar}{\mu}
-\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
-\newcommand{\locationMatrix}{\mathbf{M}}
-\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
-\newcommand{\mappingFunction}{f}
-\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
-\newcommand{\mappingFunctionTwo}{g}
-\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
-\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
-\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
-\newcommand{\scaleScalar}{s}
-\newcommand{\mappingScalar}{w}
-\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
-\newcommand{\mappingMatrix}{\mathbf{W}}
-\newcommand{\mappingScalarTwo}{v}
-\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
-\newcommand{\mappingMatrixTwo}{\mathbf{V}}
-\newcommand{\maxIters}{K}
-\newcommand{\meanMatrix}{\mathbf{M}}
-\newcommand{\meanScalar}{\mu}
-\newcommand{\meanTwoMatrix}{\mathbf{M}}
-\newcommand{\meanTwoScalar}{m}
-\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
-\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
-\newcommand{\mrnaConcentration}{m}
-\newcommand{\naturalFrequency}{\omega}
-\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
-\newcommand{\neilurl}{http://inverseprobability.com/}
-\newcommand{\noiseMatrix}{\boldsymbol{ E}}
-\newcommand{\noiseScalar}{\epsilon}
-\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
-\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
-\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
-\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
-\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
-\newcommand{\numActive}{m}
-\newcommand{\numBasisFunc}{m}
-\newcommand{\numComponents}{m}
-\newcommand{\numComps}{K}
-\newcommand{\numData}{n}
-\newcommand{\numFeatures}{K}
-\newcommand{\numHidden}{h}
-\newcommand{\numInducing}{m}
-\newcommand{\numLayers}{\ell}
-\newcommand{\numNeighbors}{K}
-\newcommand{\numSequences}{s}
-\newcommand{\numSuccess}{s}
-\newcommand{\numTasks}{m}
-\newcommand{\numTime}{T}
-\newcommand{\numTrials}{S}
-\newcommand{\outputIndex}{j}
-\newcommand{\paramVector}{\boldsymbol{ \theta}}
-\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
-\newcommand{\parameterScalar}{\theta}
-\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
-\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
-\newcommand{\precisionScalar}{j}
-\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
-\newcommand{\precisionMatrix}{\mathbf{J}}
-\newcommand{\pseudotargetScalar}{\widetilde{y}}
-\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
-\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
-\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
-\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
-\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
-\newcommand{\responsibility}{r}
-\newcommand{\rotationScalar}{r}
-\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
-\newcommand{\rotationMatrix}{\mathbf{R}}
-\newcommand{\sampleCovScalar}{s}
-\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
-\newcommand{\sampleCovMatrix}{\mathbf{s}}
-\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
-\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
-\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
-\newcommand{\singularvalue}{\ell}
-\newcommand{\singularvalueMatrix}{\mathbf{L}}
-\newcommand{\singularvalueVector}{\mathbf{l}}
-\newcommand{\sorth}{\mathbf{u}}
-\newcommand{\spar}{\lambda}
-\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
-\newcommand{\BasalRate}{B}
-\newcommand{\DampingCoefficient}{C}
-\newcommand{\DecayRate}{D}
-\newcommand{\Displacement}{X}
-\newcommand{\LatentForce}{F}
-\newcommand{\Mass}{M}
-\newcommand{\Sensitivity}{S}
-\newcommand{\basalRate}{b}
-\newcommand{\dampingCoefficient}{c}
-\newcommand{\mass}{m}
-\newcommand{\sensitivity}{s}
-\newcommand{\springScalar}{\kappa}
-\newcommand{\springVector}{\boldsymbol{ \kappa}}
-\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
-\newcommand{\tfConcentration}{p}
-\newcommand{\tfDecayRate}{\delta}
-\newcommand{\tfMrnaConcentration}{f}
-\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
-\newcommand{\velocity}{v}
-\newcommand{\sufficientStatsScalar}{g}
-\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
-\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
-\newcommand{\switchScalar}{s}
-\newcommand{\switchVector}{\mathbf{ \switchScalar}}
-\newcommand{\switchMatrix}{\mathbf{S}}
-\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
-\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
-\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
-\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
-\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
-\newcommand{\vScalar}{v}
-\newcommand{\vVector}{\mathbf{v}}
-\newcommand{\vMatrix}{\mathbf{V}}
-\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
-% Already defined by latex
-%\newcommand{\vec}{#1:}
-\newcommand{\vecb}[1]{\left(#1\right):}
-\newcommand{\weightScalar}{w}
-\newcommand{\weightVector}{\mathbf{ \weightScalar}}
-\newcommand{\weightMatrix}{\mathbf{W}}
-\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
-\newcommand{\weightedAdjacencyScalar}{a}
-\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
-\newcommand{\onesVector}{\mathbf{1}}
-\newcommand{\zerosVector}{\mathbf{0}}
-\]
   <div class="reveal">
     <div class="slides">
 
@@ -344,198 +114,275 @@
   <p class="venue" style="text-align:center">The Mathematics of Deep Learning and Data Science</p>
 </section>
 
-<section class="slide level3">
+<section class="slide level2">
 
-<!-- Front matter -->
-<!-- Front matter -->
-<!-- Do not edit this file locally. -->
-<!-- Do not edit this file locally. -->
 <!-- Do not edit this file locally. -->
 <!---->
-<!-- Do not edit this file locally. -->
-<!--Back matter-->
 <!-- Do not edit this file locally. -->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <!-- SECTION Introduction -->
 </section>
-<section id="an-intelligent-system" class="slide level3">
-<h3>An Intelligent System</h3>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+</section>
+<section id="an-intelligent-system" class="slide level2">
+<h2>An Intelligent System</h2>
 <div class="figure">
 <div class="figure-frame" id="paolo-save-figure">
 <video width="80%" height="" controls preload="none">
-<source src="../slides/diagrams/personal/paolo-save.mp4" type="video/mp4"/>
+<source src="https://inverseprobability.com/talks/./slides/diagrams//personal/paolo-save.mp4" type="video/mp4"/>
 </video>
 </div>
 </div>
-<p><span style="text-align:right"><small>Joint work with M. Milo</small></span></p>
+<aside class="notes">
+An advanced adaptable machine learning system.
+</aside>
+<div style="text-align:right">
+<small>Joint work with M. Milo</small>
+</div>
 </section>
-<section id="an-intelligent-system-1" class="slide level3">
-<h3>An Intelligent System</h3>
+<section id="an-intelligent-system-1" class="slide level2">
+<h2>An Intelligent System</h2>
 <div class="figure">
 <div class="figure-frame" id="paolo-peppercorn-figure">
 <video width="40%" height="" controls preload="none">
-<source src="../slides/diagrams/personal/paolo-peppercorn.mp4" type="video/mp4"/>
+<source src="https://inverseprobability.com/talks/./slides/diagrams//personal/paolo-peppercorn.mp4" type="video/mp4"/>
 </video>
 </div>
 </div>
-<p><span style="text-align:right"><small>Joint work with M. Milo</small></span></p>
+<aside class="notes">
+A peppercorn is a system failure that’s the result of designed behavior.
+</aside>
+<div style="text-align:right">
+<small>Joint work with M. Milo</small>
+</div>
 <!-- SECTION Deep Learning -->
+</section>
+<section id="deep-learning" class="slide level2">
+<h2>Deep Learning</h2>
 <!-- No slide titles in this context -->
 </section>
-<section id="deepface" class="slide level3">
-<h3>DeepFace</h3>
+<section id="section" class="slide level2">
+<h2></h2>
 <p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
 <div class="figure">
 <div id="deep-face-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
-<p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+<aside class="notes">
+The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.
+</aside>
+<div style="text-align:right">
+<small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small>
+</div>
 </section>
-<section id="deep-learning-as-pinball" class="slide level3">
-<h3>Deep Learning as Pinball</h3>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="early-pinball-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.
+</aside>
 </section>
-<section id="section" class="slide level3">
-<h3></h3>
+<section id="section-2" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="pinball-initialization-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/pinball001.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pinball001.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.
+</aside>
 </section>
-<section id="section-1" class="slide level3">
-<h3></h3>
+<section id="section-3" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="pinball-trained-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/pinball002.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pinball002.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+After learning the pins are now in the right place to bring the balls to the correct decisions.
+</aside>
 </section>
-<section id="section-2" class="slide level3">
-<h3></h3>
+<section id="section-4" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="container-2539942_1920-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.
+</aside>
 </section>
-<section id="deep-freeze" class="slide level3">
-<h3>Deep Freeze</h3>
+<section id="deep-freeze" class="slide level2">
+<h2>Deep Freeze</h2>
 <div class="figure">
 <div id="wild-alaskan-cod-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//supply-chain/wild-alaskan-cod.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+Wild Alaskan Cod, being solid in the Pacific Northwest.
+</aside>
 </section>
-<section id="deep-freeze-1" class="slide level3">
-<h3>Deep Freeze</h3>
+<section id="deep-freeze-1" class="slide level2">
+<h2>Deep Freeze</h2>
 <div class="figure">
 <div id="wild-alaskan-cod-made-in-china-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//supply-chain/wild-alaskan-cod-made-in-china.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+Wild Alaskan Cod that is a product of China. It is cheaper to ship the deep-frozen fish thousands of kilometers for processing than to process locally.
+</aside>
 </section>
-<section id="motto" class="slide level3">
-<h3>Motto</h3>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="environmental-impact-of-food-by-life-cycle-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//supply-chain/environmental-impact-of-food-by-life-cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The transport cost of most foods is a very small portion of the total cost. The exception is if foods are air freighted. Source: <a href="https://ourworldindata.org/food-choice-vs-eating-local" class="uri">https://ourworldindata.org/food-choice-vs-eating-local</a> by Hannah Ritche CC-BY
+</aside>
+</section>
+<section id="motto" class="slide level2">
+<h2>Motto</h2>
 <blockquote>
 <p>Solve Supply Chain, then solve everything else.</p>
 </blockquote>
 </section>
-<section id="emulation" class="slide level3">
-<h3>Emulation</h3>
+<section id="statistical-emulation" class="slide level2">
+<h2>Statistical Emulation</h2>
+<div class="figure">
+<div id="met-office-unified-model-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.
+</aside>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="statistical-emulation-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation000.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.
+</aside>
 </section>
-<section id="emulation-1" class="slide level3">
-<h3>Emulation</h3>
+<section id="emulation" class="slide level2">
+<h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation001.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation001.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
 </section>
-<section id="emulation-2" class="slide level3">
-<h3>Emulation</h3>
+<section id="emulation-1" class="slide level2">
+<h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation002.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation002.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
 </section>
-<section id="emulation-3" class="slide level3">
-<h3>Emulation</h3>
+<section id="emulation-2" class="slide level2">
+<h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation003.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation003.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
 </section>
-<section id="emulation-4" class="slide level3">
-<h3>Emulation</h3>
+<section id="emulation-3" class="slide level2">
+<h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-5-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation004.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation004.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
 </section>
-<section id="emulation-5" class="slide level3">
-<h3>Emulation</h3>
+<section id="emulation-4" class="slide level2">
+<h2>Emulation</h2>
 <div class="figure">
 <div id="statistical-emulation-6-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation005.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation005.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models.
+</aside>
 </section>
-<section id="uncertainty-quantification" class="slide level3">
-<h3>Uncertainty Quantification</h3>
+<section id="uncertainty-quantification" class="slide level2">
+<h2>Uncertainty Quantification</h2>
 <ul>
 <li>Deep nets are powerful approach to images, speech, language.</li>
 <li>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</li>
 </ul>
 </section>
-<section id="uncertainty-quantification-1" class="slide level3">
-<h3>Uncertainty Quantification</h3>
+<section id="uncertainty-quantification-1" class="slide level2">
+<h2>Uncertainty Quantification</h2>
 <ul>
 <li>Probabilistic numerics, surrogate modelling, emulation, and UQ.</li>
 <li>Not a fan of AI as a term.</li>
 <li>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</li>
 </ul>
 </section>
-<section id="ml-and-decision-making" class="slide level3">
-<h3>ML and Decision Making</h3>
+<section id="ml-and-decision-making" class="slide level2">
+<h2>ML and Decision Making</h2>
 <ul>
 <li>When trading off decisions: compute or acquire data?</li>
 <li>There is a critical need for uncertainty.</li>
 </ul>
 </section>
-<section id="uncertainty-quantification-2" class="slide level3">
-<h3>Uncertainty Quantification</h3>
+<section id="uncertainty-quantification-2" class="slide level2">
+<h2>Uncertainty Quantification</h2>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
 </blockquote>
@@ -543,244 +390,406 @@
 <li>Interaction between physical and virtual worlds of major interest.</li>
 </ul>
 </section>
-<section id="contrast" class="slide level3">
-<h3>Contrast</h3>
+<section id="contrast" class="slide level2">
+<h2>Contrast</h2>
 <ul>
 <li>Simulation in <em>reinforcement learning</em>.</li>
 <li>Known as <em>data augmentation</em>.</li>
 <li>Newer, similar in spirit, but typically ignores uncertainty.</li>
 </ul>
 </section>
-<section id="example-formula-one-racing" class="slide level3">
-<h3>Example: Formula One Racing</h3>
+<section id="example-formula-one-racing" class="slide level2">
+<h2>Example: Formula One Racing</h2>
 <ul>
 <li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
 <li><p>How to combine them?</p></li>
 </ul>
 </section>
-<section id="mountain-car-simulator" class="slide level3">
-<h3>Mountain Car Simulator</h3>
+<section id="mountain-car-simulator" class="slide level2">
+<h2>Mountain Car Simulator</h2>
 <div class="figure">
 <div id="mountain-car-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//uq/mountaincar.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+The mountain car simulation from the Open AI gym.
+</aside>
 </section>
-<section id="car-dynamics" class="slide level3">
-<h3>Car Dynamics</h3>
-<p><span class="math display">\[\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\]</span></p>
-<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\(\inputVector_t = (p_t, v_t)\)</span> is the vehicle state</p>
+<section id="car-dynamics" class="slide level2">
+<h2>Car Dynamics</h2>
+<p><span class="math display">\[
+\mathbf{ x}_{t+1} = f(\mathbf{ x}_{t},\textbf{u}_{t})
+\]</span> where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\(\mathbf{ x}_t = (p_t, v_t)\)</span> is the vehicle state</p>
 </section>
-<section id="policy" class="slide level3">
-<h3>Policy</h3>
+<section id="policy" class="slide level2">
+<h2>Policy</h2>
 <ul>
-<li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
+<li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> <span class="math display">\[
+\pi(\mathbf{ x},\theta)= \theta_0 + \theta_p p + \theta_vv.
+\]</span></li>
 </ul>
-<p><span class="math display">\[\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
 </section>
-<section id="emulate-the-mountain-car" class="slide level3">
-<h3>Emulate the Mountain Car</h3>
+<section id="emulate-the-mountain-car" class="slide level2">
+<h2>Emulate the Mountain Car</h2>
 <ul>
-<li>Goal is find <span class="math inline">\(\theta\)</span> such that</li>
-</ul>
-<p><span class="math display">\[\theta^* = arg \max_{\theta} R_T(\theta).\]</span></p>
-<ul>
+<li>Goal is find <span class="math inline">\(\theta\)</span> such that <span class="math display">\[
+\theta^* = arg \max_{\theta} R_T(\theta).
+\]</span></li>
 <li>Reward is computed as 100 for target, minus squared sum of actions</li>
 </ul>
 </section>
-<section id="random-linear-controller" class="slide level3">
-<h3>Random Linear Controller</h3>
+<section id="random-linear-controller" class="slide level2">
+<h2>Random Linear Controller</h2>
 <div class="figure">
 <div id="mountain-car-random-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
+<iframe src="https://inverseprobability.com/talks/./slides/diagrams//uq/mountain-car-random.html" width="600" height="450" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 </div>
+<aside class="notes">
+Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.
+</aside>
 </section>
-<section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level3">
-<h3>Best Controller after 50 Iterations of Bayesian Optimization</h3>
+<section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level2">
+<h2>Best Controller after 50 Iterations of Bayesian Optimization</h2>
 <div class="figure">
 <div id="mountain-car-similated-bayes-opt-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
+<iframe src="https://inverseprobability.com/talks/./slides/diagrams//uq/mountain-car-simulated.html" width="600" height="450" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 </div>
+<aside class="notes">
+Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.
+</aside>
 </section>
-<section id="data-efficient-emulation" class="slide level3">
-<h3>Data Efficient Emulation</h3>
+<section id="data-efficient-emulation" class="slide level2">
+<h2>Data Efficient Emulation</h2>
 <ul>
-<li><p>For standard Bayesian Optimization ignored <em>dynamics</em> of the car.</p></li>
-<li><p>For more data efficiency, first <em>emulate</em> the dynamics.</p></li>
-<li><p>Then do Bayesian optimization of the <em>emulator</em>.</p></li>
-<li><p>Use a Gaussian process to model <span class="math display">\[\Delta v_{t+1} = v_{t+1} - v_{t}\]</span> and <span class="math display">\[\Delta x_{t+1} = p_{t+1} - p_{t}\]</span></p></li>
-<li><p>Two processes, one with mean <span class="math inline">\(v_{t}\)</span> one with mean <span class="math inline">\(p_{t}\)</span></p></li>
+<li>For standard Bayesian Optimization ignored <em>dynamics</em> of the car.</li>
+<li>For more data efficiency, first <em>emulate</em> the dynamics.</li>
+<li>Then do Bayesian optimization of the <em>emulator</em>.</li>
+</ul>
+<p><span class="math display">\[
+\mathbf{ x}_{t+1} =g(\mathbf{ x}_{t},\textbf{u}_{t})
+\]</span></p>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<ul>
+<li>Use a Gaussian process to model <span class="math display">\[
+\Delta v_{t+1} = v_{t+1} - v_{t}
+\]</span> and <span class="math display">\[
+\Delta x_{t+1} = p_{t+1} - p_{t}
+\]</span></li>
+<li>Two processes, one with mean <span class="math inline">\(v_{t}\)</span> one with mean <span class="math inline">\(p_{t}\)</span></li>
 </ul>
 </section>
-<section id="emulator-training" class="slide level3">
-<h3>Emulator Training</h3>
+<section id="emulator-training" class="slide level2">
+<h2>Emulator Training</h2>
 <ul>
-<li><p>Used 500 randomly selected points to train emulators.</p></li>
-<li><p>Can make proces smore efficient through <em>experimental design</em>.</p></li>
+<li>Used 500 randomly selected points to train emulators.</li>
+<li>Can make proces smore efficient through <em>experimental design</em>.</li>
 </ul>
 </section>
-<section id="comparison-of-emulation-and-simulation" class="slide level3">
-<h3>Comparison of Emulation and Simulation</h3>
+<section id="comparison-of-emulation-and-simulation" class="slide level2">
+<h2>Comparison of Emulation and Simulation</h2>
 <div class="figure">
 <div id="emu-sim-comparison-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/emu-sim-comparison.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Comparison between the mountain car simulator and the emulator.
+</aside>
+<!--{space= [{'name':'linear_1', 'type':'continuous', 'domain':(-1/1.2, +1)},
+        {'name':'linear_2', 'type':'continuous', 'domain':(-1/0.07, +1/0.07)},
+        {'name':'constant', 'type':'continuous', 'domain':(-1, +1)}]-->
 </section>
-<section id="data-efficiency" class="slide level3">
-<h3>Data Efficiency</h3>
+<section id="data-efficiency" class="slide level2">
+<h2>Data Efficiency</h2>
 <ul>
-<li><p>Our emulator used only 500 calls to the simulator.</p></li>
-<li><p>Optimizing the simulator directly required 37,500 calls to the simulator.</p></li>
+<li>Our emulator used only 500 calls to the simulator.</li>
+<li>Optimizing the simulator directly required 37,500 calls to the simulator.</li>
 </ul>
 </section>
-<section id="best-controller-using-emulator-of-dynamics" class="slide level3">
-<h3>Best Controller using Emulator of Dynamics</h3>
+<section id="best-controller-using-emulator-of-dynamics" class="slide level2">
+<h2>Best Controller using Emulator of Dynamics</h2>
 <div class="figure">
 <div id="mountain-car-emulated-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
+<iframe src="https://inverseprobability.com/talks/./slides/diagrams//uq/mountain-car-emulated.html" width="600" height="450" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 </div>
-<p>500 calls to the simulator vs 37,500 calls to the simulator</p>
+<aside class="notes">
+Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.
+</aside>
 </section>
-<section id="multi-fidelity-emulation" class="slide level3">
-<h3>Multi-Fidelity Emulation</h3>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),\]</span></p>
+<section id="mountain-car-multi-fidelity-emulation" class="slide level2">
+<h2>Mountain Car: Multi-Fidelity Emulation</h2>
+<p><span class="math display">\[
+f_i\left(\mathbf{ x}\right) = \rho f_{i-1}\left(\mathbf{ x}\right) + \delta_i\left(\mathbf{ x}\right),
+\]</span></p>
+<p><span class="math display">\[
+f_i\left(\mathbf{ x}\right) = g_{i}\left(f_{i-1}\left(\mathbf{ x}\right)\right) + \delta_i\left(\mathbf{ x}\right),
+\]</span></p>
 </section>
-<section id="best-controller-with-multi-fidelity-emulator" class="slide level3">
-<h3>Best Controller with Multi-Fidelity Emulator</h3>
+<section id="building-the-multifidelity-emulation" class="slide level2">
+<h2>Building the Multifidelity Emulation</h2>
+<!--code{obj_func = lambda x: mc.run_simulation(env, x)[0]
+obj_func_emulator = lambda x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[0]
+objective_multifidelity = GPyOpt.core.task.SingleObjective(obj_func)}-->
+<p>n_initial_points = 25 random_design = RandomDesign(design_space) initial_design = random_design.get_samples(n_initial_points) acquisition = GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer=aquisition_optimizer) evaluator = GPyOpt.core.evaluators.Sequential(acquisition)}</p>
+</section>
+<section id="best-controller-with-multi-fidelity-emulator" class="slide level2">
+<h2>Best Controller with Multi-Fidelity Emulator</h2>
 <div class="figure">
 <div id="mountain-car-multi-fidelity-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
+<iframe src="https://inverseprobability.com/talks/./slides/diagrams//uq/mountain-car-multi-fidelity.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 </div>
+<aside class="notes">
+Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.
+</aside>
 <p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
 </section>
-<section id="emukit-playground" class="slide level3">
-<h3>Emukit Playground</h3>
+<section id="emukit-playground" class="slide level2">
+<h2>Emukit Playground</h2>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip0">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Leah Hirst
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/person-placeholder.jpg" clip-path="url(#clip0)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip1">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Cliff McCollum
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/cliff-mccollum.jpg" clip-path="url(#clip1)"/>
+</svg>
 <ul>
-<li><p>Work <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, Software Engineering Intern and Cliff McCollum.</p></li>
+<li><p>Work <a href="https://www.linkedin.com/in/leahhirst/">Leah Hirst</a>, Software Engineering Intern and <a href="https://www.linkedin.com/in/cliffmccollum/">Cliff McCollum</a>.</p></li>
 <li><p>Tutorial on emulation.</p></li>
 </ul>
 </section>
-<section id="emukit-playground-1" class="slide level3">
-<h3>Emukit Playground</h3>
+<section id="emukit-playground-1" class="slide level2">
+<h2>Emukit Playground</h2>
 <div class="figure">
 <div id="emukit-playground-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+Emukit playground is a tutorial for understanding the simulation/emulation relationship. <a href="https://amzn.github.io/emukit-playground/" class="uri">https://amzn.github.io/emukit-playground/</a>
+</aside>
 </section>
-<section id="emukit-playground-2" class="slide level3">
-<h3>Emukit Playground</h3>
+<section id="emukit-playground-2" class="slide level2">
+<h2>Emukit Playground</h2>
 <div class="figure">
 <div id="emukit-playground-bayes-opt-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization" class="uri">https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization</a>
+</aside>
+<!-- SECTION Emukit -->
 </section>
-<section id="emukit" class="slide level3">
-<h3>Emukit</h3>
+<section id="emukit" class="slide level2">
+<h2>Emukit</h2>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Javier Gonzalez
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/javier-gonzalez.png" clip-path="url(#clip2)"/>
+</svg>
 <div class="figure">
 <div id="emukit-software-page-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://emukit.github.io/emukit/" class="uri">https://emukit.github.io/emukit/</a>
+</aside>
 </section>
-<section id="emukit-1" class="slide level3">
-<h3>Emukit</h3>
+<section id="emukit-1" class="slide level2">
+<h2>Emukit</h2>
+<div class="figure">
+<div id="emukit-software-page2-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/uq/emukit-software-page2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-software-page2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-
+</div>
+</div>
+<aside class="notes">
+The lower potion of th eemukit sofware page.
+</aside>
+<div class="centered" style="">
+<a href="https://emukit.github.io/emukit/" class="uri">https://emukit.github.io/emukit/</a>
+</div>
 </section>
-<section id="emukit-2" class="slide level3">
-<h3>Emukit</h3>
+<section id="emukit-2" class="slide level2">
+<h2>Emukit</h2>
 <ul>
-<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.</li>
-<li>Available on <a href="https://github.com/amzn/emukit">Github</a></li>
-<li>Example <a href="https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>.</li>
+<li>Led by: Javier Gonzalez and Andrei Paleyes
+<ul>
+<li>Team: Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein, Henry Moss and David-Elias Künstle.</li>
+<li>Management: Cliff McCollum &amp; Neil</li>
+</ul></li>
+<li>Available on <a href="https://github.com/EmuKit/emukit">Github</a>
+<ul>
+<li>Example <a href="https://github.com/EmuKit/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>, documentation <a href="https://emukit.readthedocs.io/en/latest/" class="uri">https://emukit.readthedocs.io/en/latest/</a></li>
+</ul></li>
 </ul>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip3">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Javier Gonzalez
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/javier-gonzalez.png" clip-path="url(#clip3)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip4">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Andrei Paleyes
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/andrei-paleyes.jpg" clip-path="url(#clip4)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip5">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Mark Pullin
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/mark-pullin.jpg" clip-path="url(#clip5)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip6">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Maren Mahsereci
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/maren-mahsereci.png" clip-path="url(#clip6)"/>
+</svg>
+</div>
 </section>
-<section id="emukit-software" class="slide level3">
-<h3>Emukit Software</h3>
-<ul>
-<li><em>Multi-fidelity emulation</em>: build surrogate models for multiple sources of information;</li>
-<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters ML algorithms;</li>
-<li><em>Experimental design/Active learning</em>: design experiments and perform active learning with ML models;</li>
-<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs</li>
-<li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
-</ul>
+<section id="modular-design" class="slide level2">
+<h2>Modular Design</h2>
+<p>Introduce your own surrogate models.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> GPyModelWrapper</span></code></pre></div>
+<p>To building your own model <a href="https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb">see this notebook</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> YourModelWrapperHere</span></code></pre></div>
 <p>{For monitoring systems in production, emulation needn’t just be about simulator models. What we envisage, is that even data driven models could be emulated. This is important for understanding system behaviour, how the different components are interconnected. This drives the notion of the <em>information dynamics</em> of the machine learning system. What is the effect of one particular intervention in the wider system? One way of answering this is through emulation. But it requires that our machine learning models (and our simulators) are deployed in an environment where emulation can be automatically deployed. The resulting system would allow us to monitor the downstream effects of indivdiual decision making on the wider system.</p>
 <!-- SECTION Deep Gaussian Processes -->
 </section>
-<section id="bottleneck-layers-in-deep-neural-networks" class="slide level3">
-<h3>Bottleneck Layers in Deep Neural Networks</h3>
-<object class="svgplot " data="../slides/diagrams/deepgp/deep-nn-bottleneck1.svg" width="60%" style=" ">
+<section id="deep-gaussian-processes" class="slide level2">
+<h2>Deep Gaussian Processes</h2>
+</section>
+<section id="bottleneck-layers-in-deep-neural-networks" class="slide level2">
+<h2>Bottleneck Layers in Deep Neural Networks</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-bottleneck1.svg" width="60%" style=" ">
 </object>
 </section>
-<section id="deep-neural-network" class="slide level3">
-<h3>Deep Neural Network</h3>
-<object class="svgplot " data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" width="60%" style=" ">
+<section id="deep-neural-network" class="slide level2">
+<h2>Deep Neural Network</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-bottleneck2.svg" width="60%" style=" ">
 </object>
 </section>
-<section id="mathematically" class="slide level3">
-<h3>Mathematically</h3>
+<section id="mathematically" class="slide level2">
+<h2>Mathematically</h2>
 <p>The network can now be written mathematically as <span class="math display">\[
 \begin{align}
-  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
-  \hiddenVector_{1} &amp;= \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
-  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \hiddenVector_{1}\\
-  \hiddenVector_{2} &amp;= \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
-  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \hiddenVector_{2}\\
-  \hiddenVector_{3} &amp;= \basisFunction\left(\eigenvectorMatrix_3 \latentVector_{3}\right)\\
-  \dataVector &amp;= \mappingVector_4^\top\hiddenVector_{3}.
+  \mathbf{ z}_{1} &amp;= \mathbf{V}^\top_1 \mathbf{ x}\\
+  \mathbf{ h}_{1} &amp;= \phi\left(\mathbf{U}_1 \mathbf{ z}_{1}\right)\\
+  \mathbf{ z}_{2} &amp;= \mathbf{V}^\top_2 \mathbf{ h}_{1}\\
+  \mathbf{ h}_{2} &amp;= \phi\left(\mathbf{U}_2 \mathbf{ z}_{2}\right)\\
+  \mathbf{ z}_{3} &amp;= \mathbf{V}^\top_3 \mathbf{ h}_{2}\\
+  \mathbf{ h}_{3} &amp;= \phi\left(\mathbf{U}_3 \mathbf{ z}_{3}\right)\\
+  \mathbf{ y}&amp;= \mathbf{ w}_4^\top\mathbf{ h}_{3}.
 \end{align}
 \]</span></p>
 </section>
-<section id="a-cascade-of-neural-networks" class="slide level3">
-<h3>A Cascade of Neural Networks</h3>
+<section id="a-cascade-of-neural-networks" class="slide level2">
+<h2>A Cascade of Neural Networks</h2>
 <p><span class="math display">\[
 \begin{align}
-  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
-  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
-  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
-  \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
+  \mathbf{ z}_{1} &amp;= \mathbf{V}^\top_1 \mathbf{ x}\\
+  \mathbf{ z}_{2} &amp;= \mathbf{V}^\top_2 \phi\left(\mathbf{U}_1 \mathbf{ z}_{1}\right)\\
+  \mathbf{ z}_{3} &amp;= \mathbf{V}^\top_3 \phi\left(\mathbf{U}_2 \mathbf{ z}_{2}\right)\\
+  \mathbf{ y}&amp;= \mathbf{ w}_4 ^\top \mathbf{ z}_{3}
 \end{align}
 \]</span></p>
 </section>
-<section id="cascade-of-gaussian-processes" class="slide level3">
-<h3>Cascade of Gaussian Processes</h3>
+<section id="cascade-of-gaussian-processes" class="slide level2">
+<h2>Cascade of Gaussian Processes</h2>
 <ul>
 <li><p>Replace each neural network with a Gaussian process <span class="math display">\[
 \begin{align}
-\latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
-\latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
-\latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
-\dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
+\mathbf{ z}_{1} &amp;= \mathbf{ f}_1\left(\mathbf{ x}\right)\\
+\mathbf{ z}_{2} &amp;= \mathbf{ f}_2\left(\mathbf{ z}_{1}\right)\\
+\mathbf{ z}_{3} &amp;= \mathbf{ f}_3\left(\mathbf{ z}_{2}\right)\\
+\mathbf{ y}&amp;= \mathbf{ f}_4\left(\mathbf{ z}_{3}\right)
 \end{align}
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
 </ul>
 </section>
-<section id="olympic-marathon-data" class="slide level3">
-<h3>Olympic Marathon Data</h3>
+<section id="olympic-marathon-data" class="slide level2">
+<h2>Olympic Marathon Data</h2>
 <table>
 <tr>
 <td width="70%">
@@ -793,45 +802,51 @@
 </td>
 <td width="30%">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
 </section>
-<section id="olympic-marathon-data-1" class="slide level3">
-<h3>Olympic Marathon Data</h3>
+<section id="olympic-marathon-data-1" class="slide level2">
+<h2>Olympic Marathon Data</h2>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//datasets/olympic-marathon.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Olympic marathon pace times since 1896.
+</aside>
 </section>
-<section id="alan-turing" class="slide level3">
-<h3>Alan Turing</h3>
+<section id="alan-turing" class="slide level2">
+<h2>Alan Turing</h2>
 <div class="figure">
 <div id="turing-run-times-figure" class="figure-frame">
 <table>
 <tr>
 <td width="50%">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/turing-times.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//turing-times.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 <td width="50%">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/turing-run.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//turing-run.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
 </table>
 </div>
 </div>
+<aside class="notes">
+Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html" target="_blank">Alan Turing Internet Scrapbook</a>.
+</aside>
 </section>
-<section id="probability-winning-olympics" class="slide level3">
-<h3>Probability Winning Olympics?</h3>
+<section id="probability-winning-olympics" class="slide level2">
+<h2>Probability Winning Olympics?</h2>
 <ul>
 <li>He was a formidable Marathon runner.</li>
 <li>In 1946 he ran a time 2 hours 46 minutes.
@@ -841,82 +856,107 @@
 <li>What is the probability he would have won an Olympics if one had been held in 1946?</li>
 </ul>
 </section>
-<section id="olympic-marathon-data-gp" class="slide level3">
-<h3>Olympic Marathon Data GP</h3>
+<section id="gaussian-process-fit" class="slide level2">
+<h2>Gaussian Process Fit</h2>
+</section>
+<section id="olympic-marathon-data-gp" class="slide level2">
+<h2>Olympic Marathon Data GP</h2>
 <div class="figure">
 <div id="olympic-marathon-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/olympic-marathon-gp.svg" width style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//gp/olympic-marathon-gp.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.
+</aside>
 </section>
-<section id="deep-gp-fit" class="slide level3">
-<h3>Deep GP Fit</h3>
+<section id="deep-gp-fit" class="slide level2">
+<h2>Deep GP Fit</h2>
 <ul>
 <li><p>Can a Deep Gaussian process help?</p></li>
 <li><p>Deep GP is one GP feeding into another.</p></li>
 </ul>
 </section>
-<section id="olympic-marathon-data-deep-gp" class="slide level3">
-<h3>Olympic Marathon Data Deep GP</h3>
+<section id="olympic-marathon-data-deep-gp" class="slide level2">
+<h2>Olympic Marathon Data Deep GP</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" width="100%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/olympic-marathon-deep-gp.svg" width="100%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.
+</aside>
 </section>
-<section id="olympic-marathon-data-deep-gp-1" class="slide level3">
-<h3>Olympic Marathon Data Deep GP</h3>
+<section id="olympic-marathon-data-deep-gp-1" class="slide level2">
+<h2>Olympic Marathon Data Deep GP</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-samples-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" width style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/olympic-marathon-deep-gp-samples.svg" width style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+Point samples run through the deep Gaussian process show the distribution of output locations.
+</aside>
 </section>
-<section id="olympic-marathon-data-latent-1" class="slide level3">
-<h3>Olympic Marathon Data Latent 1</h3>
+<section id="olympic-marathon-data-latent-1" class="slide level2">
+<h2>Olympic Marathon Data Latent 1</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-layer-0-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" width style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/olympic-marathon-deep-gp-layer-0.svg" width style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+The mapping from input to the latent layer is broadly, with some flattening as time goes on. Variance is high across the input range.
+</aside>
 </section>
-<section id="olympic-marathon-data-latent-2" class="slide level3">
-<h3>Olympic Marathon Data Latent 2</h3>
+<section id="olympic-marathon-data-latent-2" class="slide level2">
+<h2>Olympic Marathon Data Latent 2</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-layer-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" width style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/olympic-marathon-deep-gp-layer-1.svg" width style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+The mapping from the latent layer to the output layer.
+</aside>
 </section>
-<section id="olympic-marathon-pinball-plot" class="slide level3">
-<h3>Olympic Marathon Pinball Plot</h3>
+<section id="olympic-marathon-pinball-plot" class="slide level2">
+<h2>Olympic Marathon Pinball Plot</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-pinball-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/olympic-marathon-deep-gp-pinball.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
+<aside class="notes">
+A pinball plot shows the movement of the ‘ball’ as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.
+</aside>
 </section>
-<section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
-<h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>
+<section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level2">
+<h2>MXFusion: Modular Probabilistic Programming on MXNet</h2>
 <div class="figure">
 <div id="mxfusion-software-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
+<aside class="notes">
+MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>.
+</aside>
 <center>
 <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
 </center>
 </section>
-<section id="mxfusion" class="slide level3">
-<h3>MxFusion</h3>
+<section id="mxfusion" class="slide level2">
+<h2>MxFusion</h2>
+<p>\ericMeissner{15%}\zhenwenDai{15%}</p>
 <div class="figure">
 <div id="mxfusion-software-logo-figure" class="figure-frame">
 <table>
@@ -930,16 +970,19 @@
 </td>
 <td width="30%">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/mxfusion-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//mxfusion-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
 </table>
 </div>
 </div>
+<aside class="notes">
+The MXFusion software.
+</aside>
 </section>
-<section id="conclusion" class="slide level3">
-<h3>Conclusion</h3>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
 <ul>
 <li>ML deployed in interacting systems.</li>
 <li>Meta modelling fits statistical models to existing <em>mechanistic</em> models.</li>
@@ -947,28 +990,29 @@
 <li>Deep GPs are a flexible approach to meta-modelling.</li>
 </ul>
 </section>
-<section id="thanks" class="slide level3">
-<h3>Thanks!</h3>
+<section id="thanks" class="slide level2 scrollable">
+<h2 class="scrollable">Thanks!</h2>
 <ul>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
-<li>Blog post on <a href="http://inverseprobability.com/2016/11/29/new-directions-in-kernels-and-gaussian-processes">New Directions in Kernels and Gaussian Processes</a></li>
+<li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
+<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></p></li>
+<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
+<li><p>blog posts:</p>
+<p><a href="http://inverseprobability.com/2016/11/29/new-directions-in-kernels-and-gaussian-processes">New Directions in Kernels and Gaussian Processes</a></p></li>
 </ul>
 </section>
-<section id="references" class="slide level3 unnumbered">
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Taigman:deepface14">
-<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+<section id="references" class="slide level2 unnumbered scrollable">
+<h2 class="unnumbered scrollable">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Taigman:deepface14" class="csl-entry" role="doc-biblioentry">
+Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. <span>DeepFace</span>: Closing the gap to human-level performance in face verification, in: Proceedings of the <span>IEEE</span> Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220">https://doi.org/10.1109/CVPR.2014.220</a>
 </div>
 </div>
 </section>
     </div>
   </div>
 
-  <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/js/reveal.js"></script>
 
   <script>
 
@@ -980,7 +1024,7 @@
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -998,10 +1042,10 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/math/math.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://unpkg.com/reveal.js@3.9.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
