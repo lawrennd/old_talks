@@ -13,10 +13,6 @@ To access the number of people we can get population statistics from the [Humani
 
 We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.}
 
-\notes{To acquire this data you need to go to the Humanitarian Data Exchange site for Nigeria - Subnational Population Statistics. To do this 
-
-1. Click on [this link](https://data.humdata.org/dataset/nigeria-2016-population-data)
-2. Scroll down to find the file labelled `nga_admpop
 
 ```python
 import urllib
@@ -37,8 +33,8 @@ data.rename(columns = {'ADM0_NAME':'admin0Name_en',
                        'ADM1_PCODE' : 'admin1Pcode', 
                        'T_TL' :'population'},
             inplace=True)
-data["admin0Name_en"] = data["admin0Name_en"].str.capitalize()
-data["admin1Name_en"] = data["admin1Name_en"].str.capitalize()
+data["admin0Name_en"] = data["admin0Name_en"].str.title()
+data["admin1Name_en"] = data["admin1Name_en"].str.title()
     
 data = data.set_index('admin1Name_en')
 ```
