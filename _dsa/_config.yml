@@ -9,12 +9,15 @@ author:
 layout: lecture
 venue: Virtual (Zoom)
 ipynb: True
+talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/dsa/_lectures/
 slidesdir: ../../../mlatcl/dsa/slides/
 notesdir: ../../../mlatcl/dsa/_notes/
 notebooksdir: ../../../mlatcl/dsa/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
+baseurl: "dsa/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 transition: None
 ghub:
 - organization: lawrennd
