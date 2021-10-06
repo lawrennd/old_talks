@@ -140,11 +140,11 @@ What you see below gives the full SQL command. There is a [`SELECT` command](htt
     print("State {} \t\t Covid Cases {} \t\t Health Facilities {}".format(row[0], row[1], row[2]))}
 	
 
-\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='population', edgecolor='black', legend=True)
 base.set_title("Population of Nigerian States")}
 
-\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='hosp_per_capita_10k', edgecolor='black', legend=True)
 base.set_title("Hospitals Per Capita (10k) of Nigerian States")}
 
@@ -160,15 +160,15 @@ base.set_title("Hospitals Per Capita (10k) of Nigerian States")}
 # pop_joined['cases_per_facility'] = ???
 }
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\notes{\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='cases_per_capita_10k', edgecolor='black', legend=True)
 base.set_title("Covid Cases Per Capita (10k) of Nigerian States")}}
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\notes{\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='covid_cases_by_state', edgecolor='black', legend=True)
 base.set_title("Covid Cases by State")}}
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\notes{\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='cases_per_facility', edgecolor='black', legend=True)
 base.set_title("Covid Cases per Health Facility")}}
 
