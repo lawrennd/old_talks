@@ -65,7 +65,8 @@ This is sometimes where problems can creep in. If in one table Abuja's state is 
 
 In simple terms, a JOIN operation takes two tables (or dataframes) and combines them based on some key, in this case the index of the Pandas data frame which is the state name.}
 
-\code{pop_joined = zones_gdf.join(pop_data['population'], how='inner')}
+\code{zones_gdf.set_index("admin1Name_en", inplace=True)
+pop_joined = zones_gdf.join(pop_data['population'], how='inner')}
 
 \notes{\subsection{GroupBy in Pandas}
 
