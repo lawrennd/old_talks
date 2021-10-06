@@ -29,12 +29,17 @@ data = pd.read_csv('nga_admpop_adm1_2020.csv')
 \notes{To do joins with this data, we must first make sure that the columns have the right names. The name should match the same name of the column in our existing data. So we reset the column names, and the name of the index, as follows.}
 
 ```python
+data.dropna(axis=0, how='all', inplace=True)
+data.dropna(axis=1, how='all', inplace=True)
 data.rename(columns = {'ADM0_NAME':'admin0Name_en', 
                        'ADM0_PCODE' : 'admin0Pcode', 
                        'ADM1_NAME' : 'admin1Name_en', 
                        'ADM1_PCODE' : 'admin1Pcode', 
                        'T_TL' :'population'},
             inplace=True)
+data["admin0Name_en"] = data["admin0Name_en"].str.capitalize()
+data["admin1Name_en"] = data["admin1Name_en"].str.capitalize()
+    
 data = data.set_index('admin1Name_en')
 ```
 
