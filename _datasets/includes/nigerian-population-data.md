@@ -40,7 +40,7 @@ data = data.set_index('admin1Name_en')
 
 \note{Or you can download directly with pods.}
 
-\code{data = pods.datasets.nigerian_population()}
+\code{data = pods.datasets.nigerian_population()['Y']}
 
 \code{data.head()}
 
