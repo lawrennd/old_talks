@@ -13,24 +13,34 @@ To access the number of people we can get population statistics from the [Humani
 
 We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.}
 
+\notes{To acquire this data you need to go to the Humanitarian Data Exchange site for Nigeria - Subnational Population Statistics. To do this 
+
+1. Click on [this link](https://data.humdata.org/dataset/nigeria-2016-population-data)
+2. Scroll down to find the file labelled `nga_admpop
+
 ```python
 import urllib
 
-pop_url = 'https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_pop_adm1_2020.csv'
-_, msg = urllib.request.urlretrieve(pop_url,'nga_pop_adm1_2020.csv')
-data = pd.read_csv('nga_pop_adm1_2016.csv')
+pop_url = 'https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_admpop_adm1_2020.csv'
+_, msg = urllib.request.urlretrieve(pop_url,'nga_admpop_adm1_2020.csv')
+data = pd.read_csv('nga_admpop_adm1_2020.csv')
 ```
 
 \notes{To do joins with this data, we must first make sure that the columns have the right names. The name should match the same name of the column in our existing data. So we reset the column names, and the name of the index, as follows.}
 
 ```python
-data.columns = ['admin1Name_en', 'admin1Pcode', 'admin0Name_en', 'admin0Pcode', 'population']
+data.rename(columns = {'ADM0_NAME':'admin0Name_en', 
+                       'ADM0_PCODE' : 'admin0Pcode', 
+                       'ADM1_NAME' : 'admin1Name_en', 
+                       'ADM1_PCODE' : 'admin1Pcode', 
+                       'T_TL' :'population'},
+            inplace=True)
 data = data.set_index('admin1Name_en')
 ```
 
-\note{TK: This no longer works because the HDX has moved to requiring AWS keys to access the download.}
+\note{Or you can download directly with pods.}
 
-\code{data = pods.datasets.nigerian_population_2016()}
+\code{data = pods.datasets.nigerian_population()}
 
 \code{data.head()}
 
