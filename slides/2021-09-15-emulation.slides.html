@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2021-09-15">
+  <title>Emulation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2/css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="../assets/js/figure-animate.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Emulation</h1>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2021-09-15</time></p>
+  <p class="venue" style="text-align:center">Virtual GPSS</p>
+</section>
+
+<section class="slide level2">
+
+<!-- Do not edit this file locally. -->
+<!---->
+<!-- Do not edit this file locally. -->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>We may regard the present state of the universe as the effect of its past and the cause of its future. An intellect which at a certain moment would know all forces that set nature in motion, and all positions of all items of which nature is composed, …</p>
+</blockquote>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>… if this intellect were also vast enough to submit these data to analysis, it would embrace in a single formula the movements of the greatest bodies of the universe and those of the tiniest atom; for such an intellect nothing would be uncertain and the future just like the past would be present before its eyes.</p>
+<p>— Pierre Simon Laplace <span class="citation" data-cites="Laplace-essai14">(Laplace, 1814)</span></p>
+</blockquote>
+</section>
+<section id="game-of-life" class="slide level2">
+<h2>Game of Life</h2>
+</section>
+<section id="loneliness" class="slide level2">
+<h2>Loneliness</h2>
+<div class="figure">
+<div id="life-rules-loneliness-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-rules-1-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>loneliness</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-rules-1-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+‘Death’ through loneliness in Conway’s game of life. If a cell is surrounded by less than three cells, it ‘dies’ through loneliness.
+</aside>
+</section>
+<section id="crowding" class="slide level2">
+<h2>Crowding</h2>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-rules-2-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>overcrowding</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-rules-2-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+‘Death’ through overpopulation in Conway’s game of life. If a cell is surrounded by more than three cells, it ‘dies’ through loneliness.
+</aside>
+</section>
+<section id="birth" class="slide level2">
+<h2>Birth</h2>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-rules-3-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>birth</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-rules-3-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+Birth in Conway’s life. Any position surounded by precisely three live cells will give birth to a new cell at the next turn.
+</aside>
+</section>
+<section id="glider" class="slide level2">
+<h2>Glider</h2>
+<div class="figure">
+<div id="glider-loafer-conway-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Glider (1969)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/Glider.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+<em>Left</em> A Glider pattern discovered 1969 by Richard K. Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020). The glider is an oscillator that moves diagonally after creation. From the simple rules of Life it’s not obvious that such an object does exist, until you do the necessary computation.
+</aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="gosper-glider-gun-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/Gosperglidergun.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The Gosper glider gun is a configuration that creates gliders. A new glider is released after every 30 turns.
+</aside>
+</section>
+<section id="loafer" class="slide level2">
+<h2>Loafer</h2>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="the-loafer-spaceship-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Loafer (2013)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/Loafer.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<aside class="notes">
+<em>Left</em> A Loafer pattern discovered by Josh Ball in 2013. <em>Right</em>. John Horton Conway, creator of <em>Life</em> (1937-2020).
+</aside>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="life-in-life-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/life-in-life.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The Game of Life running in Life. The video is drawing out recursively showing pixels that are being formed by filling cells with moving spaceships. Each individual pixel in this game of life is made up of <span class="math inline">\(2048 \times 2048\)</span> pixels called an <a href="https://www.conwaylife.com/wiki/OTCA_metapixel">OTCA metapixel</a>.
+</aside>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="intro-to-life-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/Kk2MH9O4pXY?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+</div>
+<aside class="notes">
+An introduction to the Game of Life by Alan Zucconi.
+</aside>
+<aside class="notes">
+Laplace’s demon requires us to also know positions of all items and to submit the data to analysis.
+</aside>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><span class="math display">\[
+\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}
+\]</span></p>
+</section>
+<section id="laplaces-gremlin" class="slide level2">
+<h2>Laplace’s Gremlin</h2>
+<div class="figure">
+<div id="probability-relative-in-part-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//physics/philosophicaless00lapliala_18_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.
+</aside>
+<blockquote>
+<p><em>Philosophical Essay on Probabilities</em> <span class="citation" data-cites="Laplace-essai14">Laplace (1814)</span> pg 5</p>
+</blockquote>
+<aside class="notes">
+I like to refer to this notion as “Laplace’s Gremlin,” because the lack of knowledge is the “gremlin of uncertainty” that inhibits the “deterministic demon”
+</aside>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="germlins-think-its-fun-to-hurt-you-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/gremlins-think-its-fun-to-hurt-you.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Gremlins are seen as the cause of a number of challenges in this World War II poster.
+</aside>
+</section>
+<section id="simulation-system" class="slide level2">
+<h2>Simulation System</h2>
+<div class="figure">
+<div id="carbon-cycle-noaa-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/carbon_cycle.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Representation of the Carbon Cycle from the US National Oceanic and Atmospheric Administration. While everything is interconnected in the system, we can decompose into separate models for atmosphere, ocean, land.
+</aside>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="simulation-system-components-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//simulation/simulation-schematic.svg" width="40%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The components of a simulation system for climate modelling.
+</aside>
+</section>
+<section id="monolithic-system" class="slide level2">
+<h2>Monolithic System</h2>
+<div class="figure">
+<div id="ml-system-monolith-simulation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//simulation/ml-system-monolith-simulation.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="service-oriented-architecture" class="slide level2">
+<h2>Service Oriented Architecture</h2>
+<div class="figure">
+<div id="ml-system-downstream-simulation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//simulation/ml-system-downstream-simulation000.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A potential path of models in a machine learning system.
+</aside>
+</section>
+<section id="experiment-analyze-design" class="slide level2">
+<h2>Experiment, Analyze, Design</h2>
+<!--These challenges are not just there for Amazon and Formula 1. In Sheffield, we worked closely with a Chesterfield based company called Fusion Group. They make joints that fuse PTFE pipes together. These pipes are used for transporting both water and gas. Their founder, Eric Bridgstock, was an engineer who introduced PTFE piping to the UK when working for DuPont. Eric set up Fusion group to manufacture the fusion fittings. Because PTFE pipes carry water or gas at high pressure, when these fittings fail significant damage can occur. When these fittings were originally installed in the early 1980s, the job was done by a specialist, but nowadays the pipe weld is compelted by the same team that digs the hole. While costs have come down, the number of PTFE weld failures went up. Eric's company focussed on new systems for auto-->
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="experiment-analyze-design-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//ml/experiment-analyze-design.svg" width="50%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.
+</aside>
+</section>
+<section id="a-vision" class="slide level2">
+<h2>A Vision</h2>
+<blockquote>
+<p>We don’t know what science we’ll want to do in five years’ time, but we won’t want slower experiments, we won’t want more expensive experiments and we won’t want a narrower selection of experiments.</p>
+</blockquote>
+</section>
+<section id="what-do-we-want" class="slide level2">
+<h2>What do we want?</h2>
+<ul>
+<li>Faster, cheaper and more diverse experiments.</li>
+<li>Better ecosystems for experimentation.</li>
+<li>Data oriented architectures.</li>
+<li>Data maturity assessments.</li>
+<li>Data readiness levels.</li>
+</ul>
+</section>
+<section id="statistical-emulation" class="slide level2">
+<h2>Statistical Emulation</h2>
+<div class="figure">
+<div id="met-office-unified-model-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//simulation/unified_model_systems_13022018_1920.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.
+</aside>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="statistical-emulation-1-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation000.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+Real world systems consist of simulators that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.
+</aside>
+</section>
+<section id="emulation" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-2-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation001.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
+</section>
+<section id="emulation-1" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-3-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation002.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model.
+</aside>
+</section>
+<section id="emulation-2" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-4-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation003.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
+</section>
+<section id="emulation-3" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-5-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation004.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.
+</aside>
+</section>
+<section id="emulation-4" class="slide level2">
+<h2>Emulation</h2>
+<div class="figure">
+<div id="statistical-emulation-6-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/statistical-emulation005.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models.
+</aside>
+<!-- SECTION Emukit -->
+</section>
+<section id="emukit" class="slide level2">
+<h2>Emukit</h2>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip0">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Javier Gonzalez
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/javier-gonzalez.png" clip-path="url(#clip0)"/>
+</svg>
+<div class="figure">
+<div id="emukit-software-page-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://emukit.github.io/emukit/" class="uri">https://emukit.github.io/emukit/</a>
+</aside>
+</section>
+<section id="emukit-1" class="slide level2">
+<h2>Emukit</h2>
+<div class="figure">
+<div id="emukit-software-page2-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-software-page2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The lower potion of th eemukit sofware page.
+</aside>
+<div class="centered" style="">
+<a href="https://emukit.github.io/emukit/" class="uri">https://emukit.github.io/emukit/</a>
+</div>
+</section>
+<section id="emukit-2" class="slide level2">
+<h2>Emukit</h2>
+<ul>
+<li>Led by: Javier Gonzalez and Andrei Paleyes
+<ul>
+<li>Team: Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein, Henry Moss and David-Elias Künstle.</li>
+<li>Management: Cliff McCollum &amp; Neil</li>
+</ul></li>
+<li>Available on <a href="https://github.com/EmuKit/emukit">Github</a>
+<ul>
+<li>Example <a href="https://github.com/EmuKit/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>, documentation <a href="https://emukit.readthedocs.io/en/latest/" class="uri">https://emukit.readthedocs.io/en/latest/</a></li>
+</ul></li>
+</ul>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip1">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Javier Gonzalez
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/javier-gonzalez.png" clip-path="url(#clip1)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Andrei Paleyes
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/andrei-paleyes.jpg" clip-path="url(#clip2)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip3">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Mark Pullin
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/mark-pullin.jpg" clip-path="url(#clip3)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:10%">
+<defs> <clipPath id="clip4">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Maren Mahsereci
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/maren-mahsereci.png" clip-path="url(#clip4)"/>
+</svg>
+</div>
+</section>
+<section id="modular-design" class="slide level2">
+<h2>Modular Design</h2>
+<p>Introduce your own surrogate models.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> GPyModelWrapper</span></code></pre></div>
+<p>To building your own model <a href="https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-custom-model.ipynb">see this notebook</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emukit.model_wrappers <span class="im">import</span> YourModelWrapperHere</span></code></pre></div>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li>loop</li>
+<li>model</li>
+<li>candidate point calculator</li>
+<li>acquisition</li>
+<li>acquisition optimizer</li>
+<li>user function</li>
+<li>model updater</li>
+<li>stopping condition</li>
+</ul>
+<!-- SECTION Emukit Vision -->
+</section>
+<section id="emukit-vision" class="slide level2">
+<h2>Emukit Vision</h2>
+</section>
+<section id="emukit-and-emulation" class="slide level2">
+<h2>Emukit and Emulation</h2>
+<div class="figure">
+<div id="emukit-vision-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-vision.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The emukit approach to the three parts of emulation.
+</aside>
+</section>
+<section id="methods" class="slide level2">
+<h2>Methods</h2>
+<ul>
+<li>The different methods: Bayesian optimization, experimental design.</li>
+</ul>
+</section>
+<section id="models" class="slide level2">
+<h2>Models</h2>
+<ul>
+<li>The probabilistic model that will be used to emulate. Emukit doesn’t define these, the user brings their own.</li>
+</ul>
+</section>
+<section id="tasks" class="slide level2">
+<h2>Tasks</h2>
+<ul>
+<li>Still in development: High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.</li>
+</ul>
+</section>
+<section id="structure-1" class="slide level2">
+<h2>Structure</h2>
+<pre><code>while stopping condition is not met:
+    optimize acquisition function
+    evaluate user function
+    update model with new observation</code></pre>
+</section>
+<section id="loop" class="slide level2">
+<h2>Loop</h2>
+<ul>
+<li>An abstract class where the different components come together.</li>
+</ul>
+</section>
+<section id="model" class="slide level2">
+<h2>Model</h2>
+<ul>
+<li>The surrogate model or <em>emulator</em>, often a Gaussian process.</li>
+</ul>
+</section>
+<section id="candidate-point-calculator" class="slide level2">
+<h2>Candidate Point Calculator</h2>
+<ul>
+<li>The routine that combines acquisition with optimizer to compute the next candidate point (or points).</li>
+</ul>
+</section>
+<section id="acquisition" class="slide level2">
+<h2>Acquisition</h2>
+<ul>
+<li>Our acquisition function: in Bayesian Optimization, this might be Expected Improvement.</li>
+</ul>
+</section>
+<section id="acquisition-optimizer" class="slide level2">
+<h2>Acquisition Optimizer</h2>
+<ul>
+<li>The optimization routine we use to optimize the acquisition function. (often this is a non-linear optimizer like L-BFGS <span class="citation" data-cites="Byrd:lbfgsb95">(Byrd et al., 1995)</span>)</li>
+</ul>
+</section>
+<section id="user-function" class="slide level2">
+<h2>User Function</h2>
+<ul>
+<li>The function we’re trying to reason about.</li>
+</ul>
+</section>
+<section id="model-updater" class="slide level2">
+<h2>Model Updater</h2>
+<ul>
+<li>How to update our surrogate model when we have new training data.</li>
+</ul>
+</section>
+<section id="stopping-condition" class="slide level2">
+<h2>Stopping Condition</h2>
+<ul>
+<li>How to decide when to stop our cycle of data acquisition from the target function.</li>
+</ul>
+</section>
+<section id="emukit-playground" class="slide level2">
+<h2>Emukit Playground</h2>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip5">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Leah Hirst
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/person-placeholder.jpg" clip-path="url(#clip5)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip6">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Cliff McCollum
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/cliff-mccollum.jpg" clip-path="url(#clip6)"/>
+</svg>
+<ul>
+<li><p>Work <a href="https://www.linkedin.com/in/leahhirst/">Leah Hirst</a>, Software Engineering Intern and <a href="https://www.linkedin.com/in/cliffmccollum/">Cliff McCollum</a>.</p></li>
+<li><p>Tutorial on emulation.</p></li>
+</ul>
+</section>
+<section id="emukit-playground-1" class="slide level2">
+<h2>Emukit Playground</h2>
+<div class="figure">
+<div id="emukit-playground-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Emukit playground is a tutorial for understanding the simulation/emulation relationship. <a href="https://amzn.github.io/emukit-playground/" class="uri">https://amzn.github.io/emukit-playground/</a>
+</aside>
+</section>
+<section id="emukit-playground-2" class="slide level2">
+<h2>Emukit Playground</h2>
+<div class="figure">
+<div id="emukit-playground-bayes-opt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization" class="uri">https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization</a>
+</aside>
+</section>
+<section id="thanks" class="slide level2 scrollable">
+<h2 class="scrollable">Thanks!</h2>
+<ul>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+<section id="references" class="slide level2 unnumbered scrollable">
+<h2 class="unnumbered scrollable">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Byrd:lbfgsb95" class="csl-entry" role="doc-biblioentry">
+Byrd, R.H., Lu, P., Nocedal, J., 1995. A limited memory algorithm for bound constrained optimization. SIAM Journal on Scientific and Statistical Computing 16, 1190–1208.
+</div>
+<div id="ref-Laplace-essai14" class="csl-entry" role="doc-biblioentry">
+Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://unpkg.com/reveal.js@3.9.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

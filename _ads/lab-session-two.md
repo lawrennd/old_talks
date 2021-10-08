@@ -25,7 +25,8 @@ ipynb: true
 \include{_systems/includes/databases-and-joins.md}
 \include{_systems/includes/nigeria-nmis-data-systems.md}
 \include{_systems/includes/nigeria-nmis-spatial-join.md}
-\include{_systems/includes/nigeria-nmis-sqlite.md}
+\define{databaseType}{mariadb}
+\include{_systems/includes/nigeria-nmis-sql.md}
 \include{_systems/includes/nigeria-nmis-covid-join.md}
 
 

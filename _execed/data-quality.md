@@ -25,7 +25,7 @@ $$
 \include{_data-science/includes/why-didnt-electricity.md}
 
 \include{_supply-chain/includes/bits-and-atoms.md}
-\include{_supply-chain/includes/experiment-analyze-design.md}
+\include{_supply-chain/includes/experiment-analyze-design-supply-chain.md}
 \include{_supply-chain/includes/supply-chain.md}
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 

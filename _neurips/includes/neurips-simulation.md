@@ -46,8 +46,8 @@ for num_reviewers in range(1,7):
         accept_1 = score_1.argsort()[:int(num_papers*accept_rate)]
 
         consistent_accept = len(set(accept_0).intersection(set(accept_1)))
-        consistent_accepts.append(consistent_accept/(samples*accept_rate))
-        print('Percentage consistently accepted: {prop}'.format(prop=consistent_accept/(samples*accept_rate)))
+        consistent_accepts.append(consistent_accept/(num_papers*accept_rate))
+        print('Percentage consistently accepted: {prop}'.format(prop=consistent_accept/(num_papers*accept_rate)))
 
     all_accepts.append(consistent_accepts)
 all_accepts = np.array(all_accepts)
@@ -58,7 +58,7 @@ accept_rate = np.array(accept_rate)}
 import mlai
 import mlai.plot as plot
 from cycler import cycler
-monochrome = (cycler('color', ['k']) * cycler('linestyle', ['-', '--', ':', '=.']) * cycler('marker', ['^','o', 's']))}
+monochrome = (cycler('color', ['k']) * cycler('linestyle', ['-', '--', ':']) * cycler('marker', ['^','o', 's']))}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.set_prop_cycle(monochrome)
@@ -68,13 +68,14 @@ ax.plot(accept_rates, all_accepts.T, markersize=7)
 ax.legend(['random', '1 reviewer', '2 reviewers', '3 reviewers', '4 reviewers', '5 reviewers', '6 reviewers'])
 ax.set_xlabel("accept rate")
 ax.set_ylabel("accept precision")
-ax.axvline(0.25)
+ax.axvline(0.23)
+ax.grid(True)
 mlai.write_figure(filename="accept-precision-vs-accept-rate.svg",
                   directory="\writeDiagramsDir/neurips/")}
 
 \newslide{Consistency vs Accept Rate}
 
-\figure{\includediagram{\diagramsDir/neurips/accept-precision-vs-accept-rate}{50%}}{Plot of the accept rate vs the accept precision for the conference for 50% subjectivity and different numbers of reviewers.}{accept-precision-vs-accept-rate}
+\figure{\includediagram{\diagramsDir/neurips/accept-precision-vs-accept-rate}{50%}}{Plot of the accept rate vs the accept precision for the conference for 50% subjectivity and different numbers of reviewers. The grey line gives the NeurIPS accept rate for 2014 of 23%.}{accept-precision-vs-accept-rate}
 
 \notes{In Figure \ref{accept-precision-vs-accept-rate} we see the change in accept precision as we vary accept rate and number of reviewers for a conference where reviewers are 50% subjective.}
 

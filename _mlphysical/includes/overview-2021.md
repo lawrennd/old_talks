@@ -37,21 +37,22 @@
 \notes{For weeks 6-8 we will have a series of guest lectures, followed by discussions that will relate the material you have learnt to applications in the real world.}
 
 \slides{* Weeks 6-8 will involve three special topics.
-* Simulation in the Covid-19 Pandemic (Andrei Paleyes, Cambridge and DELVE)
-* Climate Modelling (Scott Hoskins, BAS)
-* Simulation and Personalized Medicine (Javier Gonzalez, Microsoft Research)}
+* In 2020 we had:
+    * Simulation in the Covid-19 Pandemic (Andrei Paleyes, Cambridge and DELVE)
+    * Climate Modelling (Scott Hoskins, BAS)
+    * Simulation and Personalized Medicine (Javier Gonzalez, Microsoft Research)}
 
-\notes{These guest lectures will focus on various approaches to simulating the physical world around us, and we will invite you (as part of your mini projects) to consider how important questions around these approaches can be answered as part with the techniques you’ve learnt in the module.}
+\notes{These guest lectures focus on various approaches to simulating the physical world around us, and we will invite you (as part of your mini projects) to consider how important questions around these approaches can be answered as part with the techniques you’ve learnt in the module.}
 
-\notes{The special topics will include Simulation in the Pandemic. This will be presented by the Royal Society convened DELVE team who’ve been providing policy advice to government during the pandemic. The particular focus will be on simulations that were used to inform a report on the Test, Trace, Isolate system [@Delve-tti20].}
+\notes{In 2020 the special topics included Simulation in the Pandemic. This will be presented by the Royal Society convened DELVE team who’ve been providing policy advice to government during the pandemic. The particular focus will be on simulations that were used to inform a report on the Test, Trace, Isolate system [@Delve-tti20].}
 
-\notes{Also, from British Antarctic Survey, we will look at simulation and surrogate modelling in climate models.}
+\notes{Also in 2020, we looked at simulation and surrogate modelling in climate models with the British Antarctic Survey.}
 
-\notes{Finally, with Javier Gonzalez of Microsoft Research, we will consider approaches in computational biology and medicine.}
+\notes{Finally, with Javier Gonzalez of Microsoft Research, we considered approaches in computational biology and medicine.}
 
 \subsection{Assessment}
 
-\notes{We will use our examples to define a set of mini projects for you to work on in small groups. The aim will be to produce a report on the different challenges, detailing what questions you asked and how you answered them using the techniques we’ll teach.}
+\notes{We will use the examples we present this year to help inspire a set of mini projects for you to work on in small groups. The aim will be to produce a report on the different challenges, detailing what questions you asked and how you answered them using the techniques we’ll teach.}
 
 \slides{* Mini projects starting in Week 6 in small groups deploying lessons you’ve learnt}
 

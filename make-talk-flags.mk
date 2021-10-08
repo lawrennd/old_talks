@@ -49,7 +49,7 @@ TEXDEPS=$(shell dependencies texdiagrams $(BASE).md)
 POSTFLAGS=$(shell flags post $(BASE))
 PPTXFLAGS=$(shell flags pptx $(BASE))
 DOCXFLAGS=$(shell flags docx $(BASE))
-SFLAGS=$(shell flags reveal $(BASE))
+SLIDEFLAGS=$(shell flags reveal $(BASE))
 
 
 ALL=$(shell dependencies all $(BASE).md)

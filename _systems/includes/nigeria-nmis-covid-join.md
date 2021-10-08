@@ -19,7 +19,9 @@ covid_data.to_csv('cases.csv')}
 
 \notes{Now we convert this CSV file we've downloaded into a new table in the database file. We can do this, again, with the csv-to-sqlite script.}
 
-\notes{\code{!csv-to-sqlite -f cases.csv -t full -o db.sqlite}}
+\notes{TK: include mariadb version}
+
+\code{!csv-to-sqlite -f cases.csv -t full -o db.sqlite}
 
 \notes{\subsection{Population Data}
 
@@ -40,11 +42,10 @@ We also want to have population data for each state in Nigeria, so that we can s
 
 \notes{\subsection{Save to database file}
 
-The next step is to add this new CSV file as an additional table in our SQLite database. This is done using the script as before.}
+The next step is to add this new CSV file as an additional table in our database.}
 
-\notes{\code{pop_data.to_csv('pop_data.csv')}}
+\include{_systems/includes/nigerian-population-data-sql.md}
 
-\notes{\code{!csv-to-sqlite -f pop_data.csv -t full -o db.sqlite}}
 
 \notes{\subsection{Computing per capita hospitals and COVID}
 
@@ -64,7 +65,8 @@ This is sometimes where problems can creep in. If in one table Abuja's state is 
 
 In simple terms, a JOIN operation takes two tables (or dataframes) and combines them based on some key, in this case the index of the Pandas data frame which is the state name.}
 
-\notes{\code{pop_joined = zones_gdf.join(pop_data['population'], how='inner')}}
+\code{zones_gdf.set_index("admin1Name_en", inplace=True)
+pop_joined = zones_gdf.join(pop_data['population'], how='inner')}
 
 \notes{\subsection{GroupBy in Pandas}
 
@@ -72,32 +74,34 @@ Our COVID19 data is in the form of individual cases. But we are interested in to
 
 A `GROUPBY` operation groups rows with the same key (in this case 'province/state') into separate objects, that we can operate on further such as to count the rows in each group, or to sum or take the mean over the values in some column (imagine each case row had the age of the patient, and you were interested in the mean age of patients.)}
 
-\notes{\code{covid_cases_by_state = covid_data.groupby(['province/state']).count()['case_id']}}
+\code{covid_cases_by_state = covid_data.groupby(['province/state']).count()['case_id']}
 
 \notes{The ```.groupby()``` method on the dataframe has now given us a new data series that contains the total number of covid cases in each state. We can examine it to check we have something sensible.}
 
-\notes{\code{covid_cases_by_state}}
+\code{covid_cases_by_state}
 
 \notes{Now we have this new data series, it can be added to the pandas dataframe as a new column.}
 
-\notes{\code{pop_joined['covid_cases_by_state'] = covid_cases_by_state}}
+\code{pop_joined['covid_cases_by_state'] = covid_cases_by_state}
 
 \notes{The spatial join we did on the original data frame to obtain hosp_state_joined introduced a new column, `index_right` that contains the state of each of the hospitals. Let's have a quick look at it below.}
 
-\notes{\code{hosp_state_joined['index_right']}
+\code{hosp_state_joined['index_right']}
 
 \notes{To count the hospitals in each of the states, we first create a grouped series where we've grouped on these states.}
 
-\notes{\code{grouped = hosp_state_joined.groupby('index_right')}}
+\code{grouped = hosp_state_joined.groupby('index_right')}
 
 \notes{This python operation now goes through each of the groups and counts how many hospitals there are in each state. It stores the result in a dictionary. If you're new to python, then to understand this code you need to understand what a 'dictionary comprehension' is. In this case the dictionary comprehension is being used to create a python dictionary of states and total hospital counts. That's then being converted into a `pandas` Data Series and added to the `pop_joined` dataframe.}
 
-\notes{\code{counted_groups = {k: len(v) for k, v in grouped.groups.items()}
-pop_joined['hosp_state'] = pd.Series(counted_groups)}}
+\setupcode{import pandas as pd}
+
+\code{counted_groups = {k: len(v) for k, v in grouped.groups.items()}
+pop_joined['hosp_state'] = pd.Series(counted_groups)}
 
 \notes{For convenience, we can now add a new data series to the data frame that contains the per capita information about hospitals. that makes it easy to retrieve later.}
 
-\notes{\code{pop_joined['hosp_per_capita_10k'] = (pop_joined['hosp_state'] * 10000 )/ pop_joined['population']}}
+\code{pop_joined['hosp_per_capita_10k'] = (pop_joined['hosp_state'] * 10000 )/ pop_joined['population']}
 
 \notes{\subsection{SQL-style}
 
@@ -123,48 +127,49 @@ What you see below gives the full SQL command. There is a [`SELECT` command](htt
                 """)
 
     rows = cur.fetchall()
-    return rows}}
+    return rows}
 
 \notes{Now we've created our python wrapper, we can connect to the data base and run our SQL command on the database using the wrapper.}
 
-\notes{\code{conn = create_connection("db.sqlite")}}
+\notes{TK: Fix this to be a connection to the mariadb also.}
 
-\notes{\code{state_cases_hosps = join_counts(conn)}}
+\code{conn = create_connection("db.sqlite")}
 
-\notes{\code{for row in state_cases_hosps:
-    print("State {} \t\t Covid Cases {} \t\t Health Facilities {}".format(row[0], row[1], row[2]))}}
+\code{state_cases_hosps = join_counts(conn)}
+
+\code{for row in state_cases_hosps:
+    print("State {} \t\t Covid Cases {} \t\t Health Facilities {}".format(row[0], row[1], row[2]))}
 	
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='population', edgecolor='black', legend=True)
-base.set_title("Population of Nigerian States")}}
+base.set_title("Population of Nigerian States")}
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='hosp_per_capita_10k', edgecolor='black', legend=True)
-base.set_title("Hospitals Per Capita (10k) of Nigerian States")}}
+base.set_title("Hospitals Per Capita (10k) of Nigerian States")}
 
 
 \codeAssignment{Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.}{}{10}
 
 \codeAssignment{Add a new column for covid cases per health facility.}{}{10}
 
-\writeAssignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}}
+\writeAssignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}
 
-\notes{
 \code{
 # pop_joined['cases_per_capita_10k'] = ???
 # pop_joined['cases_per_facility'] = ???
-}}
+}
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\notes{\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='cases_per_capita_10k', edgecolor='black', legend=True)
 base.set_title("Covid Cases Per Capita (10k) of Nigerian States")}}
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\notes{\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='covid_cases_by_state', edgecolor='black', legend=True)
 base.set_title("Covid Cases by State")}}
 
-\notes{\code{base = nigeria.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
+\notes{\code{base = nigeria_gdf.plot(color='white', edgecolor='black', alpha=0, figsize=(11, 11))
 pop_joined.plot(ax=base, column='cases_per_facility', edgecolor='black', legend=True)
 base.set_title("Covid Cases per Health Facility")}}
 

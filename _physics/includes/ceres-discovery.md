@@ -27,7 +27,7 @@ Unbeknownst to him, Piazzi was also participating in an international search. On
 
 \newslide{}
 
-\figure{}{\includepng{\diagramsDir/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
+\figure{\includepng{\diagramsDir/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
 
 \newslide{}
 }
@@ -89,7 +89,7 @@ mlai.write_figure('bodes-law.svg', directory='\writeDiagramsDir/physics')}
 
 \installcode{pods}
 
-\downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png,ceresSkyBackground.png}{ceres-sky-background.png}
+\downloadfile{http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png}{ceres-sky-background.png}
 
 \setupcode{import pods}
 
@@ -102,8 +102,8 @@ import mlai
 import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-A = plt.imread('ceres-sky-background.png')
-ax.imshow(image([3.5-4/15 3.5+4/15], [15.25 19.25], A)
+A = plt.imread('ceres-sky-background.png', format="png")
+ax.imshow(A, extent=[3.5-4/15, 3.5+4/15, 15.25, 19.25], aspect=1/15)
 ax.plot(right_ascension, declination, 'rx')
 ax.set_xlabel('right ascension')
 ax.set_ylabel('declination')

@@ -17,8 +17,6 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
-
 \include{_ai/includes/centrifugal-governor.md}
 
 \include{_ml/includes/what-is-ml-2.md}
@@ -41,7 +39,7 @@ transition: None
 \include{_ml/includes/process-emulation.md}
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/uncertainty-quantification.md}
-\include{_uq/includes/emukit-software.md}
+\include{_software/includes/emukit-software.md}
 \include{_ml/includes/mxfusion-software.md}
 \include{_ml/includes/mxfusion-pilco.md}
 

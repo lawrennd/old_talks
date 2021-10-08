@@ -1,3 +1,3 @@
-BASE=covariance-functions
+BASE=emulation
 include ../make-talk-flags.mk
 include ../make-talk.mk

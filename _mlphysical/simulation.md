@@ -88,10 +88,7 @@ There is a nice symmetry between this approach and how Karl Popper describes the
 
 We can see this process as a spiral driving forward, importantly Popper relates the relationship between hypothesis (model) and experiment (predictions) as akin to the relationship between the chicken and the egg. Which comes first? The answer is that they co-evolve together.}
 
-\newslide{}
-
-\figure{\includediagram{\diagramsDir/ml/experiment-analyze-design}{50%}}{Experiment, analyze and design is a flywheel of knowledge that is the dual of the model, data, and compute. By running through this spiral, we refine our hypothesis/model and develop new experiments which can be analyzed to further refine our hypothesis.}{experiment-analyze-design}
-
+\include{_data-science/includes/experiment-analyze-design-diagram.md}
 
 \newslide{}
 

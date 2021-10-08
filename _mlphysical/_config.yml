@@ -8,11 +8,13 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 venue: Virtual (Zoom)
+talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/mlphysical/_lectures/
-slidesdir: ../../../mlatcl/mlphysical/slides/diagrams/
+slidesdir: ../../../mlatcl/mlphysical/slides/
 notesdir: ../../../mlatcl/mlphysical/_notes/
 notebooksdir: ../../../mlatcl/mlphysical/_notebooks/
 writediagramsdir: .
+scriptsdir: ./scripts/
 diagramsdir: ./slides/diagrams/
 baseurl: "mlphysical/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site

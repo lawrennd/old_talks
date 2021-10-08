@@ -11,7 +11,6 @@ date: 2019-01-11
 transition: None
 ---
 <!--define{draft}-->
-\include{talk-macros.tex}
 
 \editme
 
@@ -61,7 +60,7 @@ transition: None
 \include{_ml/includes/process-emulation.md}
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/uncertainty-quantification.md}
-\include{_uq/includes/emukit-software.md}
+\include{_software/includes/emukit-software.md}
 \include{_ml/includes/mxfusion-software.md}
 
 \subsection{Long term Aim}
