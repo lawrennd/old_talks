@@ -23,11 +23,12 @@ author:
   url: http://inverseprobability.com
 blog: 
 date: 2021-05-20
-camvideo: 3536156
+youtube: AL3RVf8AvrY
 venue: "The Flip Side of the Pandemic: Recent Advances in the Mathematics of Information"
 transition: None
 ---
 
+<!--camvideo: 3536156-->
 
 \include{_data-science/includes/lies-damned-lies.md}
 

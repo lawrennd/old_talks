@@ -38,6 +38,8 @@ project? Name two languages involved in the Jupyter project other than python.}{
 \include{_psychology/includes/selective-attention-bias.md}
 \include{_data-science/includes/data-inattention-bias.md}
 
+\include{_data-science/includes/covid-vaccination-and-simpsons-paradox.md}
+
 \newslide{Reading}
 
 -   See probability review at end of slides for reminders.

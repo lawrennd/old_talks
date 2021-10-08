@@ -1,5 +1,5 @@
 %.notes.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --write-diagrams-dir . --to ipynb --code ipynb --replace-notation --edit-links --exercises ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --write-diagrams-dir ${WRITEDIAGRAMSDIR} --to ipynb --code ipynb --replace-notation --edit-links --exercises ${PPFLAGS} 
 
 %.full.ipynb.markdown: %.md ${DEPS}
 	${PP} $< -o $@ --format notes --to ipynb --code full --edit-links --replace-notation ${PPFLAGS} 
