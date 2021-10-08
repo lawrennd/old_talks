@@ -27,7 +27,7 @@ Unbeknownst to him, Piazzi was also participating in an international search. On
 
 \newslide{}
 
-\figure{}{\includepng{\diagramsDir/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
+\figure{\includepng{\diagramsDir/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
 
 \newslide{}
 }
