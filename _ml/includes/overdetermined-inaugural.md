@@ -7,9 +7,13 @@
 \notes{The challenge with a linear model is that it has two unknowns, $m$, and $c$. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, $\inputScalar_1 = 1$ and the output value, $\dataScalar_1 =3$ and a second data point, $\inputScalar = 3$, $\dataScalar=1$, then we can write two simultaneous linear equations of the form. 
 
 point 1: $\inputScalar = 1$, $\dataScalar=3$
-$$3 = m + c$$
+\[
+3 = m + c
+\]
 point 2: $\inputScalar = 3$, $\dataScalar=1$
-$$1 = 3m + c$$
+\[
+1 = 3m + c
+\]
 
 The solution to these two simultaneous equations can be represented graphically as}
 
@@ -19,7 +23,9 @@ The solution to these two simultaneous equations can be represented graphically 
 The challenge comes when a third data point is observed, and it doesn't fit on the straight line. 
 
 point 3: $\inputScalar = 2$, $\dataScalar=2.5$
-$$2.5 = 2m + c$$
+\[
+2.5 = 2m + c
+\]
 }
 
 \notes{\figure{\includediagram{\diagramsDir/ml/over_determined_system004}{40%}}{A third observation of data is inconsistent with the solution dictated by the first two observations}{over-determined-system-4}}
