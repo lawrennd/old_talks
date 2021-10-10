@@ -18,7 +18,7 @@
 \notes{Norbert Wiener was a child prodigy, whose father had schooled him in Philosophy. Keen to have his son work with the leading philosophers of the age, at the age of 18 Wiener arrived in Cambridge (already with a PhD). He was to study with Bertrand Russell. But he and Russell didn’t get along, Wiener wasn’t persuaded by Russell’s ideas for theories of knowledge around logic. He was more aligned with Laplace and his desire for a theory of ignorance. In is autobiography he relates it as the first thing he could see his father was proud of (at around the age of 10 or 11) [@Wiener-exprodigy64].}
 
 
-\figure{\threeColumns{\aligncenter{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}}\slides{\aligncenter{*Betrand Russell*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{50%}}\slides{\aligncenter{*Albert Einstein*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}\slides{\aligncenter{*Norbert Wiener*}}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
+\figure{\threeColumns{\aligncenter{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}}\slides{\aligncenter{*Betrand Russell*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{100%}}\slides{\aligncenter{*Albert Einstein*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}\slides{\aligncenter{*Norbert Wiener*}}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
 
 \speakernotes{Wiener came to Cambridge in 1913. Russell showed him Einstein's 1905 paper on Brownian motion (@Einstein-brownian05)}
 
@@ -31,7 +31,7 @@
 
 \newslide{Stochasticity and Control}
 
-\figure{\twoColumns{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}}{\aligncenter{\includepng{\diagramsDir/books/wiener-yellow-peril}{100%}}}{45%}{45%}}{Norbert Wiener (1894 - 1964). Founder of cybernetics and the information era. He used Gibbs’s ideas to develop a “theory of ignorance” that he deployed in early communication. On the right is Wiener's wartime report that used stochastic processes in forecasting with applications in radar control (image from @Coales-yellow14).}{norbert-wiener-yellow-peril}
+\figure{\columns{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}}{\aligncenter{\includepng{\diagramsDir/books/wiener-yellow-peril}{100%}}}{45%}{45%}}{Norbert Wiener (1894 - 1964). Founder of cybernetics and the information era. He used Gibbs’s ideas to develop a “theory of ignorance” that he deployed in early communication. On the right is Wiener's wartime report that used stochastic processes in forecasting with applications in radar control (image from @Coales-yellow14).}{norbert-wiener-yellow-peril}
 
 \notes{Wiener himself used the processes in his work. He was focused on mathematical theories of communication. Between the world wars he was based at Massachusetts Institute of Technology where the burgeoning theory of electrical engineering was emerging, with a particular focus on communication lines. Winer developed theories of communication that used Gibbs’s entropy to encode information. He also used the ideas behind the Wiener process for developing tracking methods for radar systems in the second world war. These processes are what we know of now as Gaussian processes (@Wiener:yellow49).}
 
