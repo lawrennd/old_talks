@@ -73,6 +73,125 @@ categories:
 <p>As a term ‘big data’ promises much and delivers little, to get true value from data, it needs to be curated and evaluated. The three stages of awareness, availability and analysis provide a broad framework through which organizations should be assessing the potential in the data they hold. Hand waving about big data solutions will not do, it will only lead to self-deception. The castles we build on our data landscapes must be based on firm foundations, process and scientific analysis. If we do things right, those are the foundations that will be provided by the new field of data science.</p>
 <p>Today the statement “There are three types of lies: lies, damned lies and ‘big data’” may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a “mathematical data science” is needed.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2016/11/19/lies-damned-lies-big-data">Lies, Damned Lies and Big Data</a>.</p>
+<h2 id="new-flow-of-information">New Flow of Information</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/new-flow-of-information.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/new-flow-of-information.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="trinity-human-data-computer-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/new-flow-of-information002.svg" width="50%" style=" ">
+</object>
+</div>
+<div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="trinity-human-data-computer-caption" class="caption-frame">
+<p>Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</p>
+</div>
+</div>
+<h2 id="embodiment-factors">Embodiment Factors</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="table">
+<div id="embodiment-factors-caption" class="caption-frame">
+<p>Table: The embodiment factor is the ratio of compute to communicate in the model.</p>
+</div>
+<div id="embodiment-factors-table" class="table-frame">
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+<span class="math display">\[1 \text{ gigbit/s}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[100 \text{ bit/s}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+(compute/communicate)
+</td>
+<td align="center">
+<span class="math display">\[10^{4}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[10^{14}\]</span>
+</td>
+</tr>
+</table>
+</div>
+<div id="embodiment-factors-magnify" class="magnify" onclick="magnifyFigure(&#39;embodiment-factors&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+</div>
+<p>See <a href="https://arxiv.org/abs/1705.07996" target="_blank">“Living Together: Mind and Machine Intelligence” <span class="citation" data-cites="Lawrence:embodiment17">Lawrence (2017)</span></a></p>
+<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
+<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation" data-cites="Reed-information98">(Reed and Durlach, 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
+<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
+<p>It’s difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK’s fastest computer <span class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan et al., 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world’s weather each morning, and then simulates the world’s climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/anne-bob-talk.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/anne-bob-talk.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="anne-bob-conversation-civil-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//anne-bob-conversation006.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-bob-conversation-civil-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anne-bob-conversation-argument-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//anne-bob-conversation007.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-bob-conversation-argument-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+</div>
+</div>
+<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
+<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
+<p>Control of self is vitally important to these communications.</p>
+<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
+<p>The consequences between this mismatch of power and delivery are to be seen all around us. Because, just as driving an F1 car with bicycle wheels would be a fine art, so is the process of communication between humans.</p>
+<p>If I have a thought and I wish to communicate it, I first of all need to have a model of what you think. I should think before I speak. When I speak, you may react. You have a model of who I am and what I was trying to say, and why I chose to say what I said. Now we begin this dance, where we are each trying to better understand each other and what we are saying. When it works, it is beautiful, but when misdeployed, just like a badly driven F1 car, there is a horrible crash, an argument.</p>
 <h2 id="delve-overview">DELVE Overview</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_delve/includes/delve-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -144,6 +263,44 @@ categories:
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/big-model-paradox.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/big-model-paradox.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>The big data paradox has a sister: the big model paradox. As we build more and more complex models, we start believing that we have a high-fidelity representation of reality. But the complexity of reality is way beyond our feeble imaginings. So we end up with a highly complex model, but one that falls well short in terms of reflecting reality. The complexity of the model means that it moves beyond our understanding.</p>
+<h2 id="computer-conversations">Computer Conversations</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation-computer.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation-computer.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="anne-computer-conversation-6-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//anne-computer-conversation006.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="anne-computer-conversation-6-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-computer-conversation-6&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-computer-conversation-6-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anne-computer-conversation-8-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//anne-computer-conversation007.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="anne-computer-conversation-8-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-computer-conversation-8&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-computer-conversation-8-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+</div>
+</div>
+<p>Similarly, we find it difficult to comprehend how computers are making decisions. Because they do so with more data than we can possibly imagine.</p>
+<p>In many respects, this is not a problem, it’s a good thing. Computers and us are good at different things. But when we interact with a computer, when it acts in a different way to us, we need to remember why.</p>
+<p>Just as the first step to getting along with other humans is understanding other humans, so it needs to be with getting along with our computers.</p>
+<p>Embodiment factors explain why, at the same time, computers are so impressive in simulating our weather, but so poor at predicting our moods. Our complexity is greater than that of our weather, and each of us is tuned to read and respond to one another.</p>
+<p>Their intelligence is different. It is based on very large quantities of data that we cannot absorb. Our computers don’t have a complex internal model of who we are. They don’t understand the human condition. They are not tuned to respond to us as we are to each other.</p>
+<p>Embodiment factors encapsulate a profound thing about the nature of humans. Our locked in intelligence means that we are striving to communicate, so we put a lot of thought into what we’re communicating with. And if we’re communicating with something complex, we naturally anthropomorphize them.</p>
+<p>We give our dogs, our cats and our cars human motivations. We do the same with our computers. We anthropomorphize them. We assume that they have the same objectives as us and the same constraints. They don’t.</p>
+<p>This means, that when we worry about artificial intelligence, we worry about the wrong things. We fear computers that behave like more powerful versions of ourselves that will struggle to outcompete us.</p>
+<p>In reality, the challenge is that our computers cannot be human enough. They cannot understand us with the depth we understand one another. They drop below our cognitive radar and operate outside our mental models.</p>
+<p>The real danger is that computers don’t anthropomorphize. They’ll make decisions in isolation from us without our supervision, because they can’t communicate truly and deeply with us.</p>
 <h2 id="increasing-need-for-human-judgment">Increasing Need for Human Judgment</h2>
 <div class="figure">
 <div id="-figure" class="figure-frame">
@@ -416,6 +573,9 @@ Diane Coyle
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Ananthanarayanan-cat09" class="csl-entry" role="doc-biblioentry">
+Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The cat is out of the bag: Cortical simulations with <span class="math inline">\(10^9\)</span> neurons, <span class="math inline">\(10^{13}\)</span> synapses, in: Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - SC ’09. <a href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>
+</div>
 <div id="ref-Chater:mindisflat19" class="csl-entry" role="doc-biblioentry">
 Chater, N., 2019. The mind is flat. Penguin.
 </div>
@@ -428,8 +588,14 @@ Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
 <div id="ref-Kahneman:fastslow11" class="csl-entry" role="doc-biblioentry">
 Kahneman, D., 2011. Thinking fast and slow.
 </div>
+<div id="ref-Lawrence:embodiment17" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.
+</div>
 <div id="ref-Pedikaris:nonlinear17" class="csl-entry" role="doc-biblioentry">
 Perdikaris, P., Raissi, M., Damianou, A., Lawrence, N.D., Karnidakis, G.E., 2017. Nonlinear information fusion algorithms for data-efficient multi-fidelity modelling. Proc. R. Soc. A 473. <a href="https://doi.org/10.1098/rspa.2016.0751">https://doi.org/10.1098/rspa.2016.0751</a>
+</div>
+<div id="ref-Reed-information98" class="csl-entry" role="doc-biblioentry">
+Reed, C., Durlach, N.I., 1998. Note on information transfer rates in human communication. Presence Teleoperators &amp; Virtual Environments 7, 509–518. <a href="https://doi.org/10.1162/105474698565893">https://doi.org/10.1162/105474698565893</a>
 </div>
 <div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
 The DELVE Initiative, 2020a. Data readiness: Lessons from an emergency. The Royal Society.
@@ -457,6 +623,7 @@ The DELVE Initiative, 2020g. SARS-CoV-2 vaccine development &amp; implementation
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">Disraeli is attributed this quote by Mark Twain</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

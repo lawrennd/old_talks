@@ -27,6 +27,12 @@ transition: None
 
 \include{_data-science/includes/lies-damned-lies.md}
 
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_ai/includes/embodiment-factors-short.md}
+
+
+\include{_ai/includes/conversation-tedx.md}
+
 \include{_delve/includes/delve-overview.md}
 
 \subsection{What is Machine Learning?}
@@ -38,6 +44,10 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 \include{_data-science/includes/big-data-paradox.md}
 \include{_data-science/includes/big-model-paradox.md}
+
+\include{_ai/includes/conversation-computer.md}
+
+
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
 
 \include{_policy/includes/data-as-a-convener.md}
