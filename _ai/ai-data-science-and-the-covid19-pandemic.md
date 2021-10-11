@@ -64,21 +64,13 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 
-\include{_simulation/includes/simulation-system.md}
-\include{_uq/includes/statistical-emulation.md}
-\include{_uq/includes/deep-emulation.md}
-
-\newslide{}
-\slides{\figure{\includejpg{\diagramsDir/simulation/carbon_cycle}{60%}}{Representation of the Carbon Cycle from the US National Oceanic and Atmospheric Administration. While everything is interconnected in the system, we can decompose into separate models for atmosphere, ocean, land.}{carbon-cycle-noaa}}
-
 
 \subsection{Conclusions}
 
 \slides{* Bandwidth constraints of humans
 * Big Data Paradox
 * Big Model Paradox
-* Data as a Convener
-* Decomposition of Complex Models
+* DELVE Data Report Recommendations
 }
 
 \notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
