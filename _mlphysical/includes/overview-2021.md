@@ -15,22 +15,23 @@
   2. Quantification of Beliefs. Lecturer: Carl Henrik Ek
 * Week 2:
   1. Gaussian processes. Lecturer: Carl Henrik Ek
-  2. Inference. Lecturer: Carl Henrik Ek
+  2. Simulation. Lecturer: Neil D. Lawrence
 
 \newslide{Course Overview}
 
 * Week 3:
-  1. Sequential Decision Making Under Uncertainty: Bayesian Optimization. Lecturer: Carl Henrik Ek
-  2. Causality and Statistical Models. Lecturer: Neil D. Lawrence
+  1. Emulation. Lecturer: Neil D. Lawrence
+  2. Sequential Decision Making Under Uncertainty: Bayesian Inference. Lecturer: Carl Henrik Ek
+
 * Week 4:
-  1. Sensitivity Analysis. Lecturer: Neil D. Lawrence
-  2. Sensitivity Analysis. Lecturer: Neil D. Lawrence
+  1. Probabilistic Numerics. Lecturer: Carl Henrik Ek
+  2. Emukit and Experimental Design. Lecturer: Neil D. Lawrence
 
 \newslide{Course Overview}
 
 * Week 5:
-  1. Experimental Design. Lecturer: Neil D. Lawrence
-  2. Summary and Outlook. Lecturer: Neil D. Lawrence
+  1. Sensitivity Analysis. Lecturer: Neil D. Lawrence
+  2. Multifidelity Modelling. Lecturer: Neil D. Lawrence
 
 \subsection{Special Topics}
 
