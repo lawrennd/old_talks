@@ -7,11 +7,14 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 layout: lecture
+venue: 
+talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/ads/_lectures/
 slidesdir: ../../../mlatcl/ads/slides/
 notesdir: ../../../mlatcl/ads/_notes/
 notebooksdir: ../../../mlatcl/ads/_notebooks/
 writediagramsdir: .
+scriptsdir: ./scripts/
 diagramsdir: ./slides/diagrams/
 baseurl: "ads/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
