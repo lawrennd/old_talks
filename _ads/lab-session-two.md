@@ -4,7 +4,7 @@ session: 3
 title: "Lab Session Two"
 abstract:  >
   In this lecture we introduce a data science process: access, assess and address. The process Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
-layout: lecture
+layout: notebook
 venue: FW11, William Gates Building
 author:
 - family: Lawrence
