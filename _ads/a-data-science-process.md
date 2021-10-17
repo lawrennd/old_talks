@@ -32,6 +32,7 @@ ipynb: false
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
+\include{_data-science/includes/access-assess-address.md}
 \include{_data-science/includes/data-readiness-levels.md}
 \include{_data-science/includes/data-joel-tests.md}
 
