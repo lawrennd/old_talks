@@ -81,7 +81,7 @@ betat = Rt / infectious_period
 sigma = 2.0 / latent_period
 gamma = 2.0 / infectious_period}
 
-\notes{Next, we solve the system using `scipy`'s initial value problem solver. The solution method is "Runge-Kutta-Fehlberg method, as indicated by the `'RK45'` solver. This is a numerical method for solving differential equations. The 45 is the order of the method and the error estimator.
+\notes{Next, we solve the system using `scipy`'s initial value problem solver. The solution method is Runge-Kutta-Fehlberg method, as indicated by the `'RK45'` solver. This is a numerical method for solving differential equations. The 45 is the order of the method and the error estimator.
 
 We can view the solver itself as somehow a piece of simulation code, but here it's being called as sub routine in the system. It returns a solution for each time step, stored in a list `sol`.}
 
