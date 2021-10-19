@@ -20,7 +20,7 @@ from scipy import integrate}
 $$
 \frac{\text{d}{S}}{\text{d}t} = - \beta S (I_1 + I_2).
 $$
-\notes{Here, I've used $I_1$ and $I_2$ to represent what appears to be two separate infectious compartments in Thomas's model. We'll speculate about why there are two in a moment.
+\notes{Here, we've used $I_1$ and $I_2$ to represent what appears to be two separate infectious compartments in Thomas's model. We'll speculate about why there are two in a moment.
 
 The model appears to be an SEIR model, so rather than becoming infectious directly you next move to an 'exposed', where you have the disease, but you are not yet infectious. There are again *two* exposed states, we'll return to that in a moment. We denote the first, `x[1]` by $E_1$. We have}
 $$
