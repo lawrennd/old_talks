@@ -84,7 +84,7 @@ $$
 
 \notes{Carl Henrik described how a prior probability $p(\parameterVector)$ represents our hypothesis about the way the world might behave. This can be combined with a *likelihood* through the process of multiplication. Correctly normalized, this gives an updated hypothesis that represents our *posterior* belief about the model in the light of the data.
 
-There is a nice symmetry between this approach and how Karl Popper describes the process of scientific discovery. In conjectures and refutations, Popper describes the process of scientific discovery as involving hypothesis and experiment. In our description hypothesis maps onto the *model*. The model is an abstraction of the hypothesis, represented for example as a set of mathematical equations, a computational description, or an analogous system (physical system). The data is the product of previous experiments, our readings, our observation of the world around us. We can combine these to make a prediction about what we might expect the future to hold. Popper's view on the philosophy of science was that the prediction should be falsifiable. 
+There is a nice symmetry between this approach and how Karl Popper describes the process of scientific discovery. In *Conjectures and Refutations* (@Popper:conjectures63), Popper describes the process of scientific discovery as involving hypothesis and experiment. In our description hypothesis maps onto the *model*. The model is an abstraction of the hypothesis, represented for example as a set of mathematical equations, a computational description, or an analogous system (physical system). The data is the product of previous experiments, our readings, our observation of the world around us. We can combine these to make a prediction about what we might expect the future to hold. Popper's view on the philosophy of science was that the prediction should be falsifiable. 
 
 We can see this process as a spiral driving forward, importantly Popper relates the relationship between hypothesis (model) and experiment (predictions) as akin to the relationship between the chicken and the egg. Which comes first? The answer is that they co-evolve together.}
 
@@ -105,7 +105,6 @@ We can map the process of Bayesian inference onto the $\text{model} + \text{data
 
 \newslide{}
 
-
 \notes{So, if we think of our model as incorporating what we know about the physical problem of interest (from Newton, or Bernoulli or Laplace or Einstein or whoever) and the data as being the observations (e.g., from Piazzi's telescope or a particle accelerator) then we can make predictions about what we might expect to happen in the future by combining the two. It is *those* predictions that Popper sees as important in verifying the scientific theory (which is incorporated in the model).
 
 But while Gaussian processes are highly flexible non-parametric function models, they are *not* going to be sufficient to capture the type of physical processes we might expect to encounter in the real world. To give a sense, let's consider a few examples of the phenomena we might want to capture, either in the scientific world, or in real world decision making.}
@@ -120,11 +119,11 @@ But while Gaussian processes are highly flexible non-parametric function models,
 
 \speakernotes{Precise physical laws are predictive of the future. Met office super computer uses 1 km grids cells to compute the weather.}
 
-\notes{We've already reviewed the importance of Newton's laws in forging our view of science: we mentioned the influence [Christiaan Huygens'](https://en.wikipedia.org/wiki/Christiaan_Huygens) work on collisions had on Daniel Bernoulli in forming the kinetic theory of gases. These ideas inform many of the physical models we have today around a number of natural phenomena. The MET Office supercomputer in Exeter spends its mornings computing the weather across the world, and in its afternoons it's used for climate modelling. It uses the same set of principles that Newton and Bernoulli explored for gases. They are encoded in the Navier-Stokes equations. The rules that govern the flow of compressible and incompressible fluids. As well as predicting our weather, these equations are used in fluid dynamics models to understand the flight of aircraft, the driving characteristics of racing cars and the efficiency of gas turbine engines.
+\notes{We've already reviewed the importance of Newton's laws in forging our view of science: we mentioned the influence [Christiaan Huygens'](https://en.wikipedia.org/wiki/Christiaan_Huygens) work on collisions had on Daniel Bernoulli in forming the kinetic theory of gases. These ideas inform many of the physical models we have today around a number of natural phenomena. The MET Office supercomputer in Exeter spends its mornings computing the weather across the world, and in its afternoons it's used for climate modelling. It uses the same set of principles that Newton described and Bernoulli explored for gases. They are encoded in the Navier-Stokes equations. Differential equations that govern the flow of compressible and incompressible fluids. As well as predicting our weather, these equations are used in fluid dynamics models to understand the flight of aircraft, the driving characteristics of racing cars and the efficiency of gas turbine engines.
 
-This broad class of physical models, or 'natural laws' is probably the closest to what Laplace was referring to in the Demon. The search for unifying physical laws that dictate everything we observe around us has gone on. Alongside Newton we must mention James Clerk Maxwell, who unified electricity and magnetism in one set of equations that were inspired by the work and ideas of Michael Faraday. And still today we look for unifying equations that bring together in a single mathematical model the 'natural laws' we observe. One equation that for Laplace would be "all forces that set nature in motion". We can think of this as our first time of physical model, a 'precise model' of the known laws of our Universe, a model where we expect that the mapping from the mathematical abstraction to the physical reality is 'exact'.[^exact]
+This broad class of physical models, or 'natural laws' is probably the closest to what Laplace was referring to in the demon. The search for unifying physical laws that dictate everything we observe around us has gone on. Alongside Newton we must mention James Clerk Maxwell, who unified electricity and magnetism in one set of equations that were inspired by the work and ideas of Michael Faraday. And still today we look for unifying equations that bring together in a single mathematical model the 'natural laws' we observe. One equation that for Laplace would be "all forces that set nature in motion". We can think of this as our first time of physical model, a 'precise model' of the known laws of our Universe, a model where we expect that the mapping from the mathematical abstraction to the physical reality is 'exact'.[^exact]
 
-[^exact]: Unfortunately, I have to use the term 'exact' loosely here! For example, most of these laws treat space/time as a continuum. But in reality, it is quantised. The smallest length we can define is Planck length ($1.61 \times 10^{-35}$), and the the smallest time is Planck time. So even in this exact world of Maxwell and Newton there is an abstraction or a discretisation.}
+[^exact]: Unfortunately, I have to use the term 'exact' loosely here! For example, most of these laws treat space/time as a continuum. But in reality, it is quantised. The smallest length we can define is Planck length ($1.61 \times 10^{-35}$), and the the smallest time is Planck time. So even in this exact world of Maxwell and Newton there is an abstraction.}
 
 \newslide{}
 
@@ -182,7 +181,7 @@ These properties cannot be predicted without running the physics, or the equival
 
 \notes{We now have four fellows appointed, each of whom works at the interface of machine learning and scientific discovery. They are using the ideas around machine learning modelling to drive their scientific research.}
 
-\notes{For example, [Bingqing Cheng](https://sites.google.com/site/tonicbq/), one of the Department's new DECAF Fellows  has used neural network accelerated molecular dynamics simulations to understand a new form of metallic hydrogen, likely to occur at the heart of stars [@Cheng-evidence20]. The University's [press release is here](https://www.cam.ac.uk/research/news/ai-shows-how-hydrogen-becomes-a-metal-inside-giant-planets).}
+\notes{For example, [Bingqing Cheng](https://sites.google.com/site/tonicbq/), one of the Department's DECAF Fellows has used neural network accelerated molecular dynamics simulations to understand a new form of metallic hydrogen, likely to occur at the heart of stars [@Cheng-evidence20]. The University's [press release is here](https://www.cam.ac.uk/research/news/ai-shows-how-hydrogen-becomes-a-metal-inside-giant-planets).}
 
 \notes{On her website Bingqing quotes Paul Dirac.}
 
@@ -196,12 +195,11 @@ These properties cannot be predicted without running the physics, or the equival
 >
 >--- Paul Dirac (6 April 1929)
 
-\notes{As well as Bingqing, we have appointed [Challenger Mishra](https://oatml.cs.ox.ac.uk/members/challenger_mishra/), a physicist interested in string theoryand quantising gravity. [Sarah Morgan](https://www.neuroscience.cam.ac.uk/directory/profile.php?SarahMorgan) from the Brain Mapping Unit, who is focussed on predicting psychosis trajectories and [Bianca Dumitrascu](https://b2du.github.io/) who focusses on the interface of machine learning and biology.}
+\notes{Bingqing has now taken a position at IST Austria, our other DECAF fellows are [Challenger Mishra](https://oatml.cs.ox.ac.uk/members/challenger_mishra/), a physicist interested in string theory and quantising gravity. [Sarah Morgan](https://www.neuroscience.cam.ac.uk/directory/profile.php?SarahMorgan) from the Brain Mapping Unit, who is focussed on predicting psychosis trajectories and [Bianca Dumitrascu](https://b2du.github.io/) who focusses on the interface of machine learning and biology with particular interests in emergent behaviour in complex systems.}
 
 \newslide{Accelerate Fellows}
 
-\slides{* Bingqing Cheng
-* Bianca Dumitrascu
+\slides{* Bianca Dumitrascu
 * Challenger Mishra
 * Sarah Morgan}
 
@@ -215,8 +213,6 @@ These properties cannot be predicted without running the physics, or the equival
 
 \notes{We'll see an example of how this is done in a moment, taken from a simple ride hailing simulator, but before we look at that, we'll first consider why this might be a useful approach.}
 
-
-
 \section{Modelling in Practice}
 
 \notes{As we've seen from the very simple rules in the Game of Life, emergent phenomena we might be interested in take computation power to discover, just as Laplace's and Dirac's quotes suggest. The objective in surrogate modelling is to harness machine learning models to learn those physical characteristics.}
@@ -229,7 +225,7 @@ For example, in Formula 1 races, the cars have tyres that wear at different rate
 
 \notes{Formula 1 teams determine their strategy through simulating the race. Each team knows how fast other teams are around the track, and what their top speeds are. So the teams simulate many thousands or millions of races with different strategies for their rivals, and they choose the strategy for which they maximize their number of expected points.}
 
-\notes{When many simulations are done, the results take time to come. During the actual race, the simulations are too slow to provide the real time information teams would need. In this case F1 teams can use emulators, models that have learnt the effect of the simulations, to give real time updates}
+\notes{When many simulations are done, the results take time to come. During the actual race, the simulations are too slow to provide the real time information teams would need. In this case F1 teams can use emulators, models that have learnt the effect of the simulations, to give real time updates.}
 
 \notes{Formula 1 race simulations contain assumptions that derive from physics but don't directly encode the physical laws. For example, if one car is stuck behind another, in any given lap, it might overtake. A typical race simulation will look at the lap speed of each car and the top speed of each car (as measured in 'speed traps' that are placed on the straight). It will assume a probability of overtake for each lap that is a function of these values. Of course, underlying that function is the physics of how cars overtake each other, but that can be abstracted away into a simpler function that the Race Strategy Engineer defines from their knowledge and previous experience.}
 
