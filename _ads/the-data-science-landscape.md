@@ -5,7 +5,7 @@ title: "The Data Science Landscape"
 abstract:  >
   Having been introduced to a set of data science tools, this lecture will provide some context on what the new challenges we face through data science are. It will consider whether we are approaching an era when data science requires profesionalization, and what the role of a professional data scientist might be.
 layout: lecture
-venue: FW11, William Gates Building
+venue: LT2, William Gates Building
 author:
 - family: Lawrence
   given: Neil D.

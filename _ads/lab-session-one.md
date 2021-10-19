@@ -1,11 +1,11 @@
 ---
-week: 6
-session: 1
+week: 5
+session: 3
 title: "Lab Session One"
 abstract:  >
-  In this lecture we introduce a data science process: access, assess and address. The process Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
+  In this notebook we review the use of the notebook, and refresh our understanding of probability.
 layout: notebook
-venue: FW11, William Gates Building
+venue: Intel Lab, William Gates Building
 author:
 - family: Lawrence
   given: Neil D.
@@ -19,14 +19,6 @@ transition: None
 reveal: false
 ipynb: true
 ---
-
-\include{_mlai/includes/welcome.md}
-\include{_mlai/includes/assumed-knowledge.md}
-\include{_mlai/includes/environment-python-jupyter.md}
-
-\writeassignment{What is Jupyter and why was it invented? Give some
-examples of functionality it gives over standard python. What is the jupyter
-project? Name two languages involved in the Jupyter project other than python.}{10}
 
 \include{_datasets/includes/nigeria-nmis-data.md}
 \include{_ml/includes/probability-intro.md}

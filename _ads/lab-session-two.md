@@ -1,11 +1,11 @@
 ---
 week: 6
-session: 3
+session: 1
 title: "Lab Session Two"
 abstract:  >
-  In this lecture we introduce a data science process: access, assess and address. The process Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
+  In this lab session we look at setting up a SQL server and making joins between different data sets.
 layout: notebook
-venue: FW11, William Gates Building
+venue: Intel Lab, William Gates Building
 author:
 - family: Lawrence
   given: Neil D.

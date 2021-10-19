@@ -5,7 +5,7 @@ title: "The Challenges of Data Science"
 abstract:  >
   Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
 layout: lecture
-venue: FW11, William Gates Building
+venue: LT2, William Gates Building
 author:
 - family: Lawrence
   given: Neil D.
