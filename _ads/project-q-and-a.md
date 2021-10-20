@@ -4,7 +4,7 @@ session: 2
 title: "Project Q&A"
 abstract:  >
 layout: notebook
-venue: FW11, William Gates Building
+venue: Intel Lab, William Gates Building
 author:
 - family: Ek
   given: Carl Henrik
@@ -21,10 +21,7 @@ time: "15:00"
 date: 2021-11-23
 transition: None
 reveal: false
-ipynb: true
+ipynb: false
 ---
  
 
-\thanks
-
-\references
