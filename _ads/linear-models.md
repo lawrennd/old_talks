@@ -4,7 +4,7 @@ session: 4
 title: "Linear Models"
 abstract:  >
 layout: lecture
-venue: FW11, William Gates Building
+venue: LT2, William Gates Building
 author:
 - family: Ek
   given: Carl Henrik
@@ -14,11 +14,6 @@ author:
 time: "10:00"
 date: 2021-11-17
 transition: None
+reveal: false
 ipynb: false
 ---
-
-
-
-\thanks
-
-\references
