@@ -1,7 +1,7 @@
 ---
 week: 7
 session: 2
-title: "Project Q&A"
+title: "Project Q and A"
 abstract:  >
 layout: notebook
 venue: Intel Lab, William Gates Building
