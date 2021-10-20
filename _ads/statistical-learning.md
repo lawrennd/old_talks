@@ -14,11 +14,7 @@ author:
 time: "10:00"
 date: 2021-11-15
 transition: None
+reveal: false
 ipynb: false
 ---
 
-
-
-\thanks
-
-\references
