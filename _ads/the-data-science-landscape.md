@@ -25,20 +25,27 @@ ipynb: false
 \aligncenter{Neil Lawrence}
 \aligncenter{Professor of Machine Learning}}
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_ai/includes/embodiment-factors-celsius.md}
+\include{_data-science/includes/lies-damned-lies.md}
 
 \newslide{Evolved Relationship}
 
 \figure{\includediagram{\diagramsDir/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
 \include{_data-science/includes/evolved-relationship.md}
+\newslide{Background: Big Data}
+\slides{
+* Data is Pervasive phenomenon that affects all aspects of our activities
+
+* Data diffusiveness is both a challenge and an opportunity
+}
+\include{_ai/includes/embodiment-factors-celsius.md}
 \include{_ai/includes/conversation-tedx.md}
-
-
-\include{_data-science/includes/societal-effects.md}
+\include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
-\include{_data-science/includes/a-time-for-professionalisation.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_data-science/includes/societal-effects.md}
 
 
 \thanks

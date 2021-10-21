@@ -19,6 +19,7 @@ transition: None
 ipynb: false
 ---
 
+\include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_policy/includes/data-as-a-convener.md}
 
 \section{Delve}
