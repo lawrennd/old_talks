@@ -23,7 +23,6 @@ transition: None
 
 \section{Emulation}
 
-\subsection{Surrogate Models and Emulators}
 
 \notes{There are a number of ways we can use machine learning to accelerate scientific discovery. But one way is to have the machine learning model learn the effect of the rules. Rather than worrying about the detail of the rules through computing each step, we can have the machine learning model look to abstract the rules and capture emergent phenomena, just as the Maxwell-Boltzmann distribution captures the essence of the behavior of the ideal gas.}
 
@@ -31,11 +30,20 @@ transition: None
 
 \notes{We'll see an example of how this is done in a moment, taken from a simple ride hailing simulator, but before we look at that, we'll first consider why this might be a useful approach.}
 
-\section{Modelling in Practice}
+\section{Surrogate Modelling in Practice}
 
+\slides{* Emergent phenomena require computational power.
+* In surrogate modelling we use statistical/ML models to learn regularities in those emergent phenomena.}
 \notes{As we've seen from the very simple rules in the Game of Life, emergent phenomena we might be interested in take computation power to discover, just as Laplace's and Dirac's quotes suggest. The objective in surrogate modelling is to harness machine learning models to learn those physical characteristics.}
 
 \subsection{Types of Simulations}
+
+\slides{* Simulation can be differential equation models
+  * Either abstracted (like epidemilogical models).
+  * Or fine-grained (like climate/weather).
+* Discrete event simulations
+  * Either turn based (e.g. Game of Life or F1 Strategy Simulations)
+  * Or Event based (e.g. Gillespie algorithm for chemical models}
 
 \notes{We've introduced simulations from the perspective of laws of physics. In practice, many simulations may not directly encode for the laws of physics, but they might encode expert intuitions about a problem. 
 
@@ -83,14 +91,6 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{Within any simulation, we can roughly split the variables of interest into the state variables and the parameters. In the Herd immunity example, the state variables were the different susceptible, exposed, infectious and recovered groups. The parameters were the reproduction number and the expected lengths of infection and the timing of lockdown. Often parameters are viewed as the inputs to the simulation, the things we can control. We might want to know how to time lock down to minimize the number of deaths. This behavior of the simulator is what we may want to emulate with our Gaussian process model.}
 
-\newslide{Types of Simulation}
-
-\slides{* Simulation can be physical models
-  * Either abstracted (like herd immunity).
-  * Or fine-grained (like climate/weather).
-* Discrete event simulations
-  * Either turn based (e.g. Game of Life or F1 Strategy Simulations)
-  * Or Event based (e.g. Gillespie algorithm for chemical models}
 \notes{So far, we've introduced simulation motivated by the physical laws of the universe. Those laws are sometimes encoded in differential equations, in which case we can try to solve those systems (like with Herd Immunity or Navier Stokes). An alternative approach is taken in the Game of Life. There a turn-based simulation is used, at each turn, we iterate through the simulation updating the state of the simulation. This is known as a *discrete event simulation*. In race simulation for Formula 1 a discrete event simulation is also used. There is another form of discrete event simulation, often used in chemical models, where the events don't take place at regular intervals. Instead, the timing to the next event is computed, and the simulator advances that amount of time. For an example of this see [the Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm)}.
 
 \notes{There is a third type of simulation that we'd also like to introduce. That is simulation within computer software. In particular, the need to backtest software with 'what if' ideas, or to trace errors that may have occurred in production. This can involve loading up entire code bases and rerunning them with simulated inputs. This is a third form of simulation where emulation can also come in useful.}
