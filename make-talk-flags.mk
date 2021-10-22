@@ -29,7 +29,7 @@ CITEFLAGS=--citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
 
 DIAGRAMSDIR=$(shell mdfield diagramsdir $(BASE).md)
-WRITEDIAGRAMSDIR=$(shell mdfield diagramsdir $(BASE).md)
+WRITEDIAGRAMSDIR=$(shell mdfield writediagramsdir $(BASE).md)
 POSTSDIR=$(shell mdfield postsdir $(BASE).md)
 NOTESDIR=$(shell mdfield notesdir $(BASE).md)
 NOTEBOOKSDIR=$(shell mdfield notebooksdir $(BASE).md)
