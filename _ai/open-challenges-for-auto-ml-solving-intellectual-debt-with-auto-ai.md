@@ -14,7 +14,6 @@ venue: ICML Workshop on Automated Machine Learning
 transition: None
 ---
 
-\include{../talk-macros.gpp}
 
 \slides{\section{AI via ML Systems}
 

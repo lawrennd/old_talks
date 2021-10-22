@@ -6,7 +6,7 @@
 \subsection{Alexa}
 
 \centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasadPicture{15%}}
-\figure{\includeyoutube{VQVZ2hvNVfo}{600}{450}}{}{}
+\figure{\includeyoutube{VQVZ2hvNVfo}{600}{450}}{Alexa Architecture overview taken from the Alexa Skills programme.}{alexa-architecture-overview}
 
 \newslide{Alexa}
 
