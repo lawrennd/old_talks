@@ -70,23 +70,45 @@ Over time there were a number of similar changes, each of which should have impr
 
 \section{Strategies for Simulation}
 
+\slides{* Split variables into *state variables*, *parameters* and *results*.
+* In herd immunity
+  * State variables: susceptible, exposed, infectious, recovered.
+  * Parameters: reproduction number, expected lengths of infection, lockdown timings.
+  * Results: e.g. total number of deaths}
+
+\newslide{Strategies for Simulation}
+
+\slides{* Use emulator to map from e.g. parameters to total number of deaths.
+* Treat parameters and results of simulator as inputs and outputs for emulator.}
+
 \notes{Within any simulation, we can roughly split the variables of interest into the state variables and the parameters. In the Herd immunity example, the state variables were the different susceptible, exposed, infectious and recovered groups. The parameters were the reproduction number and the expected lengths of infection and the timing of lockdown. Often parameters are viewed as the inputs to the simulation, the things we can control. We might want to know how to time lock down to minimize the number of deaths. This behavior of the simulator is what we may want to emulate with our Gaussian process model.}
 
-\notes{So far, we've introduced simulation motivated by the physical laws of the universe. Those laws are sometimes encoded in differential equations, in which case we can try to solve those systems (like with Herd Immunity or Navier Stokes). An alternative approach is taken in the Game of Life. There a turn-based simulation is used, at each turn, we iterate through the simulation updating the state of the simulation. This is known as a *discrete event simulation*. In race simulation for Formula 1 a discrete event simulation is also used. There is another form of discrete event simulation, often used in Chemical models, where the events don't take place at regular intervals. Instead, the timing to the next event is computed, and the simulator advances that amount of time. For an example of this see [the Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm)}.
+\newslide{Types of Simulation}
+
+\slides{* Simulation can be physical models
+  * Either abstracted (like herd immunity).
+  * Or fine-grained (like climate/weather).
+* Discrete event simulations
+  * Either turn based (e.g. Game of Life or F1 Strategy Simulations)
+  * Or Event based (e.g. Gillespie algorithm for chemical models}
+\notes{So far, we've introduced simulation motivated by the physical laws of the universe. Those laws are sometimes encoded in differential equations, in which case we can try to solve those systems (like with Herd Immunity or Navier Stokes). An alternative approach is taken in the Game of Life. There a turn-based simulation is used, at each turn, we iterate through the simulation updating the state of the simulation. This is known as a *discrete event simulation*. In race simulation for Formula 1 a discrete event simulation is also used. There is another form of discrete event simulation, often used in chemical models, where the events don't take place at regular intervals. Instead, the timing to the next event is computed, and the simulator advances that amount of time. For an example of this see [the Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm)}.
 
 \notes{There is a third type of simulation that we'd also like to introduce. That is simulation within computer software. In particular, the need to backtest software with 'what if' ideas, or to trace errors that may have occurred in production. This can involve loading up entire code bases and rerunning them with simulated inputs. This is a third form of simulation where emulation can also come in useful.}
 
 \subsection{Backtesting Production Code}
 
+\slides{* Third type of simulation.
+* Counterfactual running of system code.}
+
 \notes{In Amazon the team I led looked at examples of simulations and emulation as varied as Prime Air drones across to the Amazon Supply Chain. In a purchasing system, the idea is to store stock to balance supply and demand. The aim is to keep product in stock for quick dispatch while keeping prices (and therefore costs) low. This idea is at the heart of Amazon's focus on customer experience.}
 
-\notes{Modern software development uses an approach known as *service-oriented architecture* to build highly complex systems. Such systems have similar emergent properties to Conway's "Game of Life". Understanding these emergent properties is vitally important when diagnosing problems in the system.}
-
-\notes{In the context of machine learning and complex systems, Jonathan Zittrain has coined the term ["Intellectual Debt"](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c) to describe the challenge of understanding what you've created.}
+<!--\include{_ai/includes/alexa-system.md}-->
+<!--\include{_ai/includes/prime-air-system.md}-->
+\include{_ai/includes/supply-chain-system.md}
+\include{_ai/includes/buying-system.md}
 
 \notes{Clearly Conway's Game of Life exhibits an enormous amount of intellectual debt, indeed that was the idea. Build something simple that exhibits great complexity. That's what makes it so popular. But in deployed system software, intellectual debt is a major headache and emulation presents one way of dealing with it.}
 
-\include{_ai/includes/buying-system.md}
 
 \notes{Unfortunately, it also makes sophisticated software systems a breeding ground for intellectual debt. Particularly when they contain components which are themselves ML components. Dealing with this challenge is a major objective of my Senior AI Fellowship at the Alan Turing Institute. You can see me talking about the problems [at this recent seminar given virtually in Manchester](http://inverseprobability.com/talks/notes/deploying-machine-learning-systems-intellectual-debt-and-auto-ai.html).}
 
@@ -108,48 +130,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 -->
 
-\section{Related Approaches}
 
-\notes{While this module is mainly focusing on emulation as a route to bringing machine learning closer to the physical world, I don't want to give the impression that's the only approach. It's worth bearing in mind three important domains of machine learning (and statistics) that we also could have explored.}
-
-* Probabilistic Programming
-* Approximate Bayesian Computation
-* Causal inference
-
-\notes{Each of these domains also brings a lot to the table in terms of understanding the physical world.}
-
-\subsection{Probabilistic Programming}
-\slides{* Dates back to BUGS
-* Modern descendent (same spirit) is Stan
-* Also languages like pyro (based on PyTorch)
-}
-
-\notes{Probabilistic programming is an idea that, from our perspective, can be summarized as follows. What if, when constructing your simulator, or your model, you used a programming language that was aware of the state variables and the probability distributions. What if this language could 'compile' the program into code that would automatically compute the Bayesian posterior for you?
-
-This is the objective of probabilistic programming. The idea is that you write your model in a language, and that language is automatically converted into the different modelling codes you need to perform Bayesian inference.
-
-The ideas for probabilistic programming originate in [BUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/). The software was developed at the MRC Biostatistics Unit here in Cambridge in the early 1990s, by among others, David Spiegelhalter. Carl Henrik covered in last week's lecture some of the approaches for approximate inference. BUGS uses Gibbs sampling. Gibbs sampling, however, can be slow to converge when there are strong correlations in the posterior between variables. 
-
-The descendent of BUGS that is probably most similar in the spirit of its design is [Stan](https://mc-stan.org/). Stan came from researchers at Columbia University and makes use of a variant of Hamiltonian Monte Carlo called the No-U-Turn sampler. It builds on automatic differentiation for the gradients it needs. It's all written in C++ for speed, but has interfaces to Python, R, Julia, MATLAB etc. Stan has been highly successful during the Coronavirus pandemic, with a number of epidemiological simulations written in the language, for example see this [blog post](https://mc-stan.org/users/documentation/case-studies/boarding_school_case_study.html).}
-
-\notes{Other probabilistic programming languages of interest include those that make use of variational approaches (such as [pyro](https://pyro.ai/)) and allow use of neural network components.}
-
-\subsection{Approximate Bayesian Computation}
-
-\notes{We reintroduced Gaussian processes at the start of this lecture by sampling from the Gaussian process and matching the samples to data, discarding those that were distant from our observations. This approach to Bayesian inference is the starting point for *approximate Bayesian computation* or ABC.}
-
-\notes{The idea is straightforward, if we can measure 'closeness' in some relevant fashion, then we can sample from our simulation, compare our samples to real world data through 'closeness measure' and eliminate samples that are distant from our data. Through appropriate choice of closeness measure, our samples can be viewed as coming from an approximate posterior.}
-
-\notes{My Sheffield colleague, Rich Wilkinson, was one of the pioneers of this approach during his PhD in the Statslab here in Cambridge. You can hear Rich talking about ABC at NeurIPS in 2013 here.}
-
-\figure{\includeyoutube{sssbLkn2JjI}{600}{450}}{Rich Wilkinson giving a Tutorial on ABC at NeurIPS in 2013. Unfortunately they've not synchronised the slides with the tutorial. You can find the slides [separately here](http://media.nips.cc/Conferences/2013/Video/Tutorial2B.pdf).}{rich-wilkinson-abc}
-
-
-\subsection{Causality}
-
-\figure{\includeyoutube{yksduYxEusQ}{600}{450}}{Judea Pearl and Elias Bareinboim giving a Tutorial on Causality at NeurIPS in 2013. Again, the slides aren't synchronised, but you can find them separately [here](http://media.nips.cc/Conferences/2013/nips-dec2013-pearl-bareinboim-tutorial-full.pdf).}{judea-pearl-causality}
-
-\notes{All these approaches offer a lot of promise for developing machine learning at the interface with science but covering each in detail would require four separate modules. We've chosen to focus on the emulation approach, for two principal reasons. Firstly, it's conceptual simplicity. Our aim is to replace all or part of our simulation with a machine learning model. Typically, we're going to want uncertainties as part of that representation. That explains our focus on Gaussian process models. Secondly, the emulator method is flexible. Probabilistic programming requires that the simulator has been built in a particular way, otherwise we can't compile the program. Finally, the emulation approach can be combined with any of the existing simulation approaches. For example, we might want to write our emulators as probabilistic programs. Or we might do causal analysis on our emulators, or we could speed up the simulation in ABC through emulation.} 
 \include{_simulation/includes/simulation-system.md}
 \include{_data-science/includes/experiment-analyze-design.md}
 \include{_uq/includes/emulation.md}
