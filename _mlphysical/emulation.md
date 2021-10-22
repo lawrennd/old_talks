@@ -142,6 +142,8 @@ Over time there were a number of similar changes, each of which should have impr
 
 \include{_uq/includes/emukit-playground.md}
 
+\notes{\codeassignment{You now know enough to build a simple emulation. To test your knowledge have a go at cobmining GPy with Thomas House's herd immunity simulation. Can you build a Gaussian process emulator of the simulation? Don't spent do long on this exercise. The idea is just to consolidate things like what the inputs and outputs should be.}}
+
 \subsection{Conclusions}
 
 \notes{We summarized the different types of simmulation into roughly three groups. Firstly, those based on physical laws in the form of differential equations. Examples include certain compartmental epidemiological models, climate models and weather models. Secondly, discrete event simulations. These simulations often run to a 'clock', where updates to the state are taken in turns. The Game of Life is an example of this type of simulation, and Formula 1 models of race strategy also use this approach. There is another type of discrete event simulation that doesn't use a turn-based approach but waits for the next event. The [Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm) is an example of such an approach but we didn't cover it here. Finally, we realised that general computer code bases are also simulations. If a company has a large body of code, and particularly if it's hosted within a streaming environment (such as Apache Kafka), it's possible to back test the code with different inputs. Such backtests can be viewed as simulations, and in the case of large bodies of code (such as the code that manages Amazon's automated buying systems) the back tests can be slow and could also benefit from emulation.}
