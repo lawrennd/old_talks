@@ -12,21 +12,13 @@
 
 \notes{In this section we'll go through the set up required to create a MariaDB server on AWS.}
 
-\notes{Before you start, you're going to need a username and password for accessing the database. You will need to tell the MariaDB server what that username and password is, and you'll also need to make use of it when your client connects to the database. It's good practice to never expose passwords in your code directly. So to protect your passowrd, we're going to create a `credentials.yaml` file locally that will store your username and password so that the client can access the server without ever showing your password in the notebook. We'll use the following code for this.}
+\notes{Before you start, you're going to need a username and password for accessing the database. You will need to tell the MariaDB server what that username and password is, and you'll also need to make use of it when your client connects to the database. It's good practice to never expose passwords in your code directly. So to protect your passowrd, we're going to create a `credentials.yaml` file locally that will store your username and password so that the client can access the server without ever showing your password in the notebook.}
 
-\setupcode{import yaml
-from ipywidgets import interact_manual, Text, Password}
+\notes{We suggest you set the `username` as `admin` and make secure choice of password for your password.} 
 
-\helpercode{@interact_manual(username=Text(description="Username:"), 
-                 password=Password(description="Password:"))
-def write_credentials(username, password):
-    with open("credentials.yaml", "w") as file:
-        credentials_dict = {'username': username, 
-                            'password': password}
-        yaml.dump(credentials_dict, file)}
-        
-\notes{If you click `Run Interact` then the credentials you've selected will be saved in the `yaml` file. Remember them, as you'll need them when you set up the database server below.}
+\notes{We'll use the following code for recording the username and password for the SQL client.}
 
+\include{_software/includes/save-credentials-file.md}
 \include{_cloud/includes/aws-sign-up.md}
 
 \notes{1. Log in to your AWS account and go to the AWS RDS console [here](https://console.aws.amazon.com/rds/home).
