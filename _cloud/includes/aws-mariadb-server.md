@@ -39,8 +39,9 @@
 
 7. Set a master password for accessing the data base as admin.
 
-
 \figure{\includepng{\diagramsDir/cloud/aws-mariadb-settings}{60%}}{Set the password and username for the database access.}{aws-mariadb-settings}
+
+8. Leave the `DB instance class` as it is.
 
 8. Leave the `DB instance size` at the default setting. Leave the storage type and allocated storage at the default settings of `General Purpose` (SSD) and `20`.
 
