@@ -14,13 +14,16 @@
 
 \include{_cloud/includes/aws-mariadb-server.md}
 
-\installcode{PyMySQL}
 \installcode{ipython-sql}
-\installcode{mysqlclient}
+\installcode{PyMySQL}
 
 \setupcode{%load_ext sql}
 
-\code{%sql mysql+mysqldb://$credentials['username']:$credentials['password']@$database_details['url']:$database_details['port']/\adsdatabase}
+\code{username = credentials["username"]
+password = credentials["password"]
+url = database_details["url"]}
+
+\code{%sql mariadb+pymysql://$username:$password@$url?local_infile=1}
 
 \code{%%sql
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
