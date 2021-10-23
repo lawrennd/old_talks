@@ -19,7 +19,9 @@
 
 \setupcode{%load_ext sql}
 
-\code{username = credentials["username"]
+\code{with open("credentials.yaml") as file:
+  credentials = yaml.safe_load(file)
+username = credentials["username"]
 password = credentials["password"]
 url = database_details["url"]}
 
