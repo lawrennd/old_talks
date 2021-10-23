@@ -27,7 +27,7 @@ def write_credentials(username, password):
         
 \notes{If you click `Run Interact` then the credentials you've selected will be saved in the `yaml` file. Remember them, as you'll need them when you set up the database server below.}
 
-\include{_cloud/includes/aws-login.md}
+\include{_cloud/includes/aws-sign-up.md}
 
 \notes{1. Log in to your AWS account and go to the AWS RDS console [here](https://console.aws.amazon.com/rds/home).
 
