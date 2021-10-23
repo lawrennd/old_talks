@@ -17,11 +17,54 @@ For convenience, we'll load the data into pandas first, but our next step will b
 \code{covid_data=data
 covid_data.to_csv('cases.csv')}
 
-\notes{Now we convert this CSV file we've downloaded into a new table in the database file. We can do this, again, with the csv-to-sqlite script.}
-
-\notes{TK: include mariadb version}
+\notes{Now we convert this CSV file we've downloaded into a new table in the database file.}
+\ifeq{\databaseType}{sqlite}
+\notes{We can do this, again, with the csv-to-sqlite script.}
 
 \code{!csv-to-sqlite -f cases.csv -t full -o db.sqlite}
+\else
+  \ifeq{\databaseType}{mariadb}
+\notes{Once again we have to construct a schema for the data.}
+\code{%%sql
+--
+-- Table structure for table `cases`
+--
+
+CREATE TABLE IF NOT EXISTS `cases` (
+  `transaction_unique_identifier` tinytext COLLATE utf8_bin NOT NULL,
+  `price` int(10) unsigned NOT NULL,
+  `date_of_transfer` date NOT NULL,
+  `postcode` varchar(8) COLLATE utf8_bin NOT NULL,
+  `property_type` varchar(1) COLLATE utf8_bin NOT NULL,
+  `new_build_flag` varchar(1) COLLATE utf8_bin NOT NULL,
+  `tenure_type` varchar(1) COLLATE utf8_bin NOT NULL,
+  `primary_addressable_object_name` tinytext COLLATE utf8_bin NOT NULL,
+  `secondary_addressable_object_name` tinytext COLLATE utf8_bin NOT NULL,
+  `street` tinytext COLLATE utf8_bin NOT NULL,
+  `locality` tinytext COLLATE utf8_bin NOT NULL,
+  `town_city` tinytext COLLATE utf8_bin NOT NULL,
+  `district` tinytext COLLATE utf8_bin NOT NULL,
+  `county` tinytext COLLATE utf8_bin NOT NULL,
+  `ppd_category_type` varchar(2) COLLATE utf8_bin NOT NULL,
+  `record_status` varchar(2) COLLATE utf8_bin NOT NULL,
+  `db_id` bigint(20) unsigned NOT NULL
+) DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;}
+
+\notes{And now we can load the data into the table.}
+
+\code{%sql LOAD DATA LOCAL INFILE 'cases.csv' INTO TABLE cases}
+
+\notes{Once gain we need to set the index.}
+
+\code{%%sql
+--
+-- Indexes for table `cases`
+--
+ALTER TABLE `cases`
+ ADD PRIMARY KEY (`db_id`);}
+ 
+  \endif
+\endif
 
 \notes{\subsection{Population Data}
 
@@ -117,13 +160,13 @@ What you see below gives the full SQL command. There is a [`SELECT` command](htt
     """
     cur = conn.cursor()
     cur.execute("""
-                SELECT ct.[province/state] as [state], ct.[case_count], ft.[facility_count]
+                SELECT ct."province/state" as "state", ct."case_count", ft."facility_count"
                 FROM
-                    (SELECT [province/state], COUNT(*) as [case_count] FROM [cases] GROUP BY [province/state]) ct
+                    (SELECT "province/state", COUNT(*) as "case_count" FROM "cases" GROUP BY "province/state") ct
                 INNER JOIN 
-                    (SELECT [index_right], COUNT(*) as [facility_count] FROM [facilities] GROUP BY [index_right]) ft
+                    (SELECT "index_right", COUNT(*) as "facility_count" FROM "facilities" GROUP BY "index_right") ft
                 ON
-                    ct.[province/state] = ft.[index_right]
+                    ct."province/state" = ft."index_right"
                 """)
 
     rows = cur.fetchall()
@@ -131,10 +174,16 @@ What you see below gives the full SQL command. There is a [`SELECT` command](htt
 
 \notes{Now we've created our python wrapper, we can connect to the data base and run our SQL command on the database using the wrapper.}
 
-\notes{TK: Fix this to be a connection to the mariadb also.}
-
+\ifeq{\databaseType}{sqlite}
 \code{conn = create_connection("db.sqlite")}
-
+\else
+  \ifeq{\databaseType}{mariadb}
+\code{conn = create_connection(user=credentials["username"], 
+                         password=credentials["password"],
+			 host=database_details["url"],
+			 database="nigeria_nmis")}
+  \endif
+\endif
 \code{state_cases_hosps = join_counts(conn)}
 
 \code{for row in state_cases_hosps:
