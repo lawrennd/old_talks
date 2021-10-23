@@ -67,8 +67,8 @@ A wrong inbound rule can cause you fail connecting to the database from this not
 
 \notes{Once the database is up and running you should be able to find its url on [this page](https://eu-west-2.console.aws.amazon.com/rds/home?region=eu-west-2#databases:). You can add that to the credentials file using the following code.}
 
-\code{database_details{"url": "" # Insert your database url here,
-                "port": 3306}
+\code{database_details = {"url": "" # Insert your database url here,
+                   "port": 3306}}
 
 
 \endif
