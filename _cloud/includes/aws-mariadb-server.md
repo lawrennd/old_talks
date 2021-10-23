@@ -65,5 +65,13 @@ A wrong inbound rule can cause you fail connecting to the database from this not
 
 \notes{*Note:* by setting the inbound rule to `0.0.0.0/0` we have opened up access to *any* IP address. If this were production code you wouldn't do this, you would specify a range of addresses or the specific address of the compute server that needed to access the system. Because we're using Google colab or another notebook client to access, and we can't control the IP address of that access, for simplicity we've set it up so that any IP address can access the database, but that is *not good practice* for production systems.}
 
+\notes{Once the database is up and running you should be able to find its url on [this page](https://eu-west-2.console.aws.amazon.com/rds/home?region=eu-west-2#databases:). You can add that to the credentials file using the following code.
+
+\code{with open("credentials.yaml") as file:
+    credentials = yaml.load(file)
+credentials["database_url"] = # Insert your database url here
+
+with open("credentials.yaml", "w") as file:
+    yaml.dump(credentials, file)}
 
 \endif
