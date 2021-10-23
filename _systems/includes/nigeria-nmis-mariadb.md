@@ -11,17 +11,16 @@
 \notes{We will now set up a `MariaDB` database instance for storing our data.}
 
 
-\installcode{mariadb}
 
 \include{_cloud/includes/aws-mariadb-server.md}
 
-
-\installCode{ipython-sql}
-\installCode{mysqlclient}
+\installcode{PyMySQL}
+\installcode{ipython-sql}
+\installcode{mysqlclient}
 
 \setupcode{%load_ext sql}
 
-\code{%sql mysql+mysqldb://$username$:$password$@ads-assessment-database.cgrre17yxw11.eu-west-2.rds.amazonaws.com:3306/adsdatabase}
+\code{%sql mysql+mysqldb://$credentials['username']:$credentials['password']@$database_details['url']:$database_details['port']/\adsdatabase}
 
 \code{%%sql
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -32,6 +31,7 @@ CREATE DATABASE IF NOT EXISTS `nigeria_nmis` DEFAULT CHARACTER SET utf8 COLLATE 
 \code{%%sql
 USE `nigeria_nmis`;}
 
+\notes{For the data to be loaded in to the table, we need to describe the *schema*. The schema tells the database server what to expect in the columns of the table.}
 
 \code{%%sql
 --
@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `hospitals_zones_joined` (
   `db_id` bigint(20) unsigned NOT NULL
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;}
 
+\notes{We also need to tell the server what the index of the data base is. Here we're adding `db_id` as the primary key in the index.}
 
 \code{%%sql
 --
@@ -73,9 +74,9 @@ ALTER TABLE `hospitals_zones_joined`
 ALTER TABLE `hospitals_zones_joined`
 MODIFY `db_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;}
 
+\notes{Now we're ready to load the data into the table. This can be done with [the SQL command `LOAD DATA`](https://mariadb.com/kb/en/load-data-infile/).}
 
-\code{%%sql
-LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_joined}
+\code{%sql LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_joined}
 
 
 \notes{In the database there can be several 'tables'. Each table can be thought of as like a separate dataframe. The table name we've just saved is `hospitals_zones_joined`.}
