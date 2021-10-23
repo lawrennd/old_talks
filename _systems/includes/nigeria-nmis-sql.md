@@ -63,7 +63,7 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
     :param n: Number of rows to query
     """
     cur = conn.cursor()
-    cur.execute(f"SELECT * FROM {table} LIMIT {n}")
+    cur.execute(f"SELECT * FROM "{table}" LIMIT {n}")
 
     rows = cur.fetchall()
     return rows}
