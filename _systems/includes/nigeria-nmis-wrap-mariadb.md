@@ -6,9 +6,12 @@
 \setuphelpercode{import pymysql}
 
 \helpercode{def create_connection(user, password, host, port=3306):
-    """ create a database connection to the SQLite database
+    """ create a database connection to the MariaDB database
         specified by the db_file
-    :param db_file: database file
+    :param user: username
+    :param password: password
+    :param host: host url
+    :param port: port number
     :return: Connection object or None
     """
     conn = None
