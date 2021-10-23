@@ -56,4 +56,14 @@
 
 \notes{Your database will take a few minutes to launch.}
 
+\notes{While it's launching you can check the access rules for the database [here](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#SecurityGroups:). 
+
+1. Select the `Default` security group.
+2. The source of the active inbound rule must be set to `0.0.0.0/0`. It means you can connect from any source using IPv4.
+
+A wrong inbound rule can cause you fail connecting to the database from this notebook.}
+
+\notes{*Note:* by setting the inbound rule to `0.0.0.0/0` we have opened up access to *any* IP address. If this were production code you wouldn't do this, you would specify a range of addresses or the specific address of the compute server that needed to access the system. Because we're using Google colab or another notebook client to access, and we can't control the IP address of that access, for simplicity we've set it up so that any IP address can access the database, but that is *not good practice* for production systems.}
+
+
 \endif
