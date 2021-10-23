@@ -40,7 +40,7 @@ We do this using an `execute` command on the connection.
 Typically, its good software engineering practice to 'wrap' the database command in some python code. This allows the commands to be maintained. Below we wrap the SQL command
 
 ```
-SELECT * FROM [table_name] LIMIT : N
+SELECT * FROM [table_name] LIMIT\ifeq{\databaseType}{sqlite} :\endif N
 ```
 in python code. This SQL command selects the first `N` entries from a given database called `table_name`.
 
@@ -63,7 +63,7 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
     :param n: Number of rows to query
     """
     cur = conn.cursor()
-    cur.execute(f"SELECT * FROM [{table}] LIMIT :limitNum", {"limitNum": n})
+    cur.execute(f"SELECT * FROM [{table}] LIMIT \ifeq{\databaseType}{sqlite} :\endif limitNum", {"limitNum": n})
 
     rows = cur.fetchall()
     return rows}
