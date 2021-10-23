@@ -25,7 +25,11 @@ username = credentials["username"]
 password = credentials["password"]
 url = database_details["url"]}
 
+\notes{Connect to the database, enabling the uploading of local files as part of the connection.}
+
 \code{%sql mariadb+pymysql://$username:$password@$url?local_infile=1}
+
+\notes{Now that we have the database connection, we're going to create a new database called `nigeria_nmis` for doing our work in.}
 
 \code{%%sql
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -79,7 +83,7 @@ ALTER TABLE `hospitals_zones_joined`
 ALTER TABLE `hospitals_zones_joined`
 MODIFY `db_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;}
 
-\notes{Now we're ready to load the data into the table. This can be done with [the SQL command `LOAD DATA`](https://mariadb.com/kb/en/load-data-infile/).}
+\notes{Now we're ready to load the data into the table. This can be done with [the SQL command `LOAD DATA`](https://mariadb.com/kb/en/load-data-infile/). When connecting to the database we used the flag `local_infile=1` to ensure we could load local files into the database.}
 
 \code{%sql LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_joined}
 
