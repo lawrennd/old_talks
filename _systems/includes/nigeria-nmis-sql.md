@@ -63,7 +63,7 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
     :param n: Number of rows to query
     """
     cur = conn.cursor()
-    \ifeq{\databaseType}{sqlite}cur.execute(f"SELECT * FROM [{table}] LIMIT : limitNum", {"limitNum": n})\else\ifeq{\databaseType}{mariadb}cur.execute(f"SELECT * FROM {table} LIMIT limitNum", {"limitNum": n})\endif\endif
+    \ifeq{\databaseType}{sqlite}cur.execute(f"SELECT * FROM [{table}] LIMIT : {n}")\else\ifeq{\databaseType}{mariadb}cur.execute(f"SELECT * FROM {table} LIMIT {n}")\endif\endif
 
     rows = cur.fetchall()
     return rows}
