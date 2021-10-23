@@ -50,6 +50,7 @@
 10. In the connectivity leave VPC selection as `Default VPC` and *enable* `Publicly accessible` so that you'll have an IP address for your database.}
 
 11. In `VPC security group` select `Create new` to create a new security group for the instance.
+12. Write `ADSMariaDB` as the group name for the VPC security group.
  
 12. Select `Create database` at the bottom to launch the database.} 
 
