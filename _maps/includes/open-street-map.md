@@ -99,4 +99,6 @@ mlai.write_figure(directory="\writeDiagramsDir/maps", filename="lagos-tourist-si
 
 \figure{\includediagram{\diagramsDir/maps/lagos-tourist-sites}{40%}}{Tourist sites identified as Points of Interest in Open Street Map from Lagos.}{lagos-tourist-sites}
 
+\notes{TK: Plot health centers from the NMIS data}
+
 \endif
