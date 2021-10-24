@@ -19,7 +19,12 @@ transition: None
 reveal: false
 ipynb: true
 ---
- 
+
+\subsection{Revert Matplotlib Version}
+
+\notes{Revert `matplotlib` version due to bug mentioned [here](https://github.com/facebook/prophet/issues/1691).}
+\code{%pip uninstall matplotlib}
+\code{%pip install matplotlib==3.1.3}
 \include{_systems/includes/nigeria-health-intro.md}
 \include{_systems/includes/nigeria-nmis-installs.md}
 \include{_systems/includes/databases-and-joins.md}
@@ -28,7 +33,7 @@ ipynb: true
 \define{databaseType}{mariadb}
 \include{_systems/includes/nigeria-nmis-sql.md}
 \include{_systems/includes/nigeria-nmis-covid-join.md}
-
+\include{_maps/includes/open-street-map.md}
 
 
 \thanks
