@@ -42,11 +42,7 @@ It feels important to have a diversity of approaches, and yet it feels important
 }
 \notes{See Guardian articles on }\addguardian{Digital Oligarchies}{https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data}\notes{ and }\addguardian{Information Feudalism}{https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online}\notes{.}
 
-\subsection{Website}
 
-\notes{To help clarify some of the issues around data sharing we've produced a new website focussing on data trusts, explaining what they do and what they don't do.}
-
-\figure{\includepng{\diagramsDir/governance/data-trusts-uk-website}{60%}}{The \href{https://datatrusts.uk/}{http://datatrusts.uk} website provides a new information source for what data trusts are and how they can be used in data sharing.}{data-trusts-uk-website}
 
 \newslide{Legal Mechanism of Trusts}
 \slides{
@@ -57,5 +53,6 @@ It feels important to have a diversity of approaches, and yet it feels important
 * Power of data accumulation wielded on the beneficiaries behalf
 * See @Edwards:privacy04, @Delacroix:trusts19 and @Lawrence:trusts16
 }
+\include{_governance/includes/data-trusts-initiative.md}
 
 \endif
