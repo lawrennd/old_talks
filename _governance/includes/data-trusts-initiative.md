@@ -3,10 +3,10 @@
 
 \editme
 
-\subsection{Website}
+\subsection{Data Trusts Initiative}
 
-\notes{To help clarify some of the issues around data sharing we've produced a new website focussing on data trusts, explaining what they do and what they don't do.}
+\notes{To help clarify some of the issues around data sharing, with the support of the Patrick J. McGovern Foundation we launched the Data Trusts Initiative to build understanding of data trusts, support research projects and pilot projects.}
 
-\figure{\includepng{\diagramsDir/governance/data-trusts-uk-website}{60%}}{The \href{https://datatrusts.uk/}{http://datatrusts.uk} website provides a new information source for what data trusts are and how they can be used in data sharing.}{data-trusts-uk-website}
+\figure{\includepng{\diagramsDir/governance/data-trusts-uk-website}{60%}}{The Data Trusts Initiative (\href{https://datatrusts.uk/}{http://datatrusts.uk}) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.}{data-trusts-uk-website}
 
 \endif
