@@ -13,7 +13,8 @@ pgm.render().figure.savefig("\writeDiagramsDir/deepgp/deep-markov-vertical.svg",
 
 \newslide{} 
 \slides{
-\alignleft{@Damianou:deepgp13} \alignright{\andreasDamianouPicture{15%}}
+\centerdiv{\andreasDamianouPicture{15%}}
+\alignright{@Damianou:deepgp13} 
 
 \includepng{\diagramsDir/deepgp/damianou13a.pdf}
 <http://jmlr.org/proceedings/papers/v31/damianou13a.pdf>

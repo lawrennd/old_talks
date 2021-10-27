@@ -4,7 +4,7 @@
 
 \section{Emukit}
 
-\javierGonzalezPicture{15%}
+\centerdiv{\javierGonzalezPicture{10%}\andreiPaleyesPicture{10%}\markPullinPicture{10%}\marenMahsereciPicture{10%}}
 
 \notes{The Emukit software we will be using across the next part of this module is a python software library that facilitates emulation of systems. The software's origins go back to work done by [Javier Gonzalez](https://javiergonzalezh.github.io/) as part of his post-doctoral project at the University of Sheffield. Javier led the design and build of a Bayesian optimization software. The package `GPyOpt` worked with the SheffieldML software GPy for performing Bayesian optimization. 
 

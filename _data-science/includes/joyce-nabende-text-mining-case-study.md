@@ -5,7 +5,7 @@
 
 \subsection{Case Study: Text Mining for Misinformation}
 
-\aligncenter{\joyceNabendePicture{15%}}
+\centerdiv{\joyceNabendePicture{15%}}
 
 \notes{We consider a case study from Joyce Nabende, Head of the [Makerere AI Lab](https://air.ug/). This case study is based on a presentation given by Joyce to the DSA Research Grants, "Project Progress" session on 20th August 2021.}
 

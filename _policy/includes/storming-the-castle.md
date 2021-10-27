@@ -7,7 +7,7 @@
 
 \subsection{Storming the Castle}
 
-\sirLancelotTheBravePicture{15%}
+\centerdiv{\sirLancelotTheBravePicture{15%}}
 
 \slides{* Policy is complex and uncertain.
 * Requires a multi-disciplinary response.

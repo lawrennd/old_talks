@@ -7,7 +7,7 @@
 
 \notes{The Crash Map Kampala project is a good example of a data science project where a major challenge was *access*.}
 
-\aligncenter{\jimmyKinyonyiPicture{15%}\michaelSmithPicture{15%}}
+\centerdiv{\jimmyKinyonyiPicture{15%}\michaelSmithPicture{15%}}
 
 \figure{\includepng{\diagramsDir/data-science/crash-map-kampala}{60%}}{Crash Map Kampala was an initiative by Michael T. Smith and Bagonza Jimmy Owa Kinyonyi to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.}{crash-map-kampala}
 

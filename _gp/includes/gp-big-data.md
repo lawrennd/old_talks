@@ -22,7 +22,7 @@
 
 \newslide{}
 \catdoc
-\jamesHensmanPicture{10%}
+\centerdiv{\jamesHensmanPicture{15%}}
 \columns{\alignleft{[@Hensman:bigdata13]}}{\alignright{\jamesHensmanPicture{15%}}}
 
 \figure{\includepng{\diagramsDir/health/244_1_clip}{90%}}{We can now take advantage of modern variational scaling techniques such as stochastic variational inference to fit Gaussian processes to very large data sets. <http://auai.org/uai2013/prints/papers/244.pdf>}{gps-for-big-data}
