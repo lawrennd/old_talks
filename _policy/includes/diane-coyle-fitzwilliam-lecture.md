@@ -10,7 +10,7 @@
 
 \newslide{}
 
-\aligncenter{\dianeCoylePicture{15%}}
+\centerdiv{\dianeCoylePicture{15%}}
 
 > The domain of human judgment is increasing.
 >

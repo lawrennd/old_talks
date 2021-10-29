@@ -17,9 +17,10 @@ transition: None
 ipynb: false
 ---
 
-
-\include{_data-science/includes/lies-damned-lies.md}
-
+\include{_ai/includes/embodiment-factors-celsius.md}
+\include{_ai/includes/conversation-tedx.md}
+\include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/conversation-computer.md}
 \newslide{Evolved Relationship}
 
 \figure{\includediagram{\diagramsDir/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
@@ -30,10 +31,10 @@ ipynb: false
 
 * Data diffusiveness is both a challenge and an opportunity
 }
-\include{_ai/includes/embodiment-factors-celsius.md}
-\include{_ai/includes/conversation-tedx.md}
-\include{_ai/includes/heider-simmel.md}
-\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/lies-damned-lies.md}
+
+
+
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
 \include{_data-science/includes/three-data-science-challenges.md}

@@ -56,7 +56,7 @@
 
 
 \slides{
-\aligncenter{\jimmyKinyonyiPicture{15%}\michaelSmithPicture{15%}}
+\centerdiv{\jimmyKinyonyiPicture{15%}\michaelSmithPicture{15%}}
 \figure{\includepng{\diagramsDir/data-science/crash-map-kampala}{60%}}{Crash Map Kampala was an initiative by Michael T. Smith and Bagonza Jimmy Owa Kinyonyi to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.}{crash-map-kampala}}
 
 \notes{\include{_data-science/includes/crash-map-kampala.md}}
@@ -82,7 +82,7 @@
 
 \newslide{Case Study: Text Mining for Covid Misinformation}
 
-\slides{\joyceNabendePicture{15%}
+\slides{\centerdiv{\joyceNabendePicture{15%}}
 \figure{\includepng{\diagramsDir/data-science/joyce-nabende-uganda-social-media-killing}{60%}}{Misinformation through media has been a challenge for as long as we've been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende's presentation.}{uganda-social-medial-killing}}
 
 \notes{\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}}
