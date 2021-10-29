@@ -1,5 +1,8 @@
 ---
-abstract: 'The widespread success of deep learning in a variety of domains is being
+layout: talk
+title: "The Data Delusion: Challenges for Democratising Deep Learning"
+abstract: >
+  The widespread success of deep learning in a variety of domains is being
   hailed as a new revolution in artificial intelligence. It has taken 20 years to
   go from defeating Kasparov at Chess to Lee Sedol at Go. But what have the real advances
   been across this time? The fundamental change has been in terms of data availability
@@ -16,7 +19,7 @@ abstract: 'The widespread success of deep learning in a variety of domains is be
   and has proposed Gaussian process variants of many of the succesful deep learning
   architectures. He is highly active in the machine learning community, most recently
   Program Chairing the NIPS conference in 2014 and General Chairing (alongside Corinna
-  Cortes) in 2015.'
+  Cortes) in 2015.
 author:
 - family: Lawrence
   given: Neil D.
@@ -31,13 +34,11 @@ day: '7'
 errata: []
 extras: []
 key: Lawrence-deepSummit16
-layout: talk
 month: 4
 pdf: 2016-04-07-deepLearningSummit.pdf
 ppt: 2016-04-07-deepLearningSummit.pptx
 published: 2016-04-07
 section: pre
-title: 'The Data Delusion: Challenges for Democratising Deep Learning'
 venue: Deep Learning Summit, London, UK
 year: '2016'
 ---
