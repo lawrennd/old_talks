@@ -5,7 +5,7 @@
 
 \subsection{New Flow of Information}
 
-\notes{Classically the field of statistics focussed on mediating the relationship between the machine and the human. Our limited bandwidth of communication means we tend to over-interpret the limited information that we are given, in the extreme we assign motives and desires to inanimate objects (a process known as anthropomorphasising). Much of mathematical statistics was developed to help temper this tendency and understand when we are valid in drawing conclusions from data.}
+\notes{Classically the field of statistics focussed on mediating the relationship between the machine and the human. Our limited bandwidth of communication means we tend to over-interpret the limited information that we are given, in the extreme we assign motives and desires to inanimate objects (a process known as  anthropomorphizing). Much of mathematical statistics was developed to help temper this tendency and understand when we are valid in drawing conclusions from data.}
 
 \slides{\figure{\includediagram{\diagramsDir/data-science/new-flow-of-information001}{70%}}{}{new-flow-of-information-1}}
 
