@@ -1,7 +1,9 @@
 \ifndef{correlationCoefficients}
 \define{correlationCoefficients}
 
-\editme{Correlation Coefficients}
+\editme
+
+\subsection{Correlation Coefficients}
 
 \notes{When considering multivariate data, a very useful notion is the *correlation coefficient*. It gives us the relationship between two variables. The most widely used correlation coefficient is due to Karl Pearson, it's defined in the following way.}
 
@@ -65,7 +67,11 @@ mlai.write_figure(filename="nigeria-nmis-correlation-matrix.svg", directory="\wr
 
 \figure{\includediagram{\diagramsDir/data-science/nigeria-nmis-correlation-matrix}{80%}}{Correlation matrix for the number of community health workers, nurses, midwives and doctors in the Nigerian NMIS health centre data.}{nigeria-nmis-correlation-matrix}
 
+\notes{From plotting this matrix of correlations, we can immediately see that there are good correlations between the numbers of doctors, nurses and midwives, but less correlation with the number of community health workers.}
+
 \notes{There are also specialised libraries for plotting correlation matrices, see for example `corrplot` from `biokit.viz`.}
+
+\notes{Before we proceed, let's just dive deeper into some of these correlations using scatter plots.}
 
 \subsection{Plotting Variables}
 
