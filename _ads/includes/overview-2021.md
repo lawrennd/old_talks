@@ -10,6 +10,13 @@
 
 \notes{Welcome to this course!}
 
+\section{Introduction}
+
+\centerdiv{\neilLawrencePicture{20%}\carlHenrikEkPicture{20%}}
+
+\notes{The course is lectured by Carl Henrik Ek and Neil D. Lawrence}
+
+
 \subsection{Week 5}
 
   1. The Data Science Landscape. Lecturer: Neil D. Lawrence

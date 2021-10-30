@@ -19,17 +19,11 @@ transition: None
 ipynb: false
 ---
 
-\section{Introduction}
 
-\slides{\centerdiv{\neilLawrencePicture{20%}}
-\aligncenter{Neil Lawrence}
-\aligncenter{Professor of Machine Learning}}
 
 \include{_ads/includes/overview-2021.md}
-
 \include{_data-science/includes/lies-damned-lies.md}
 \include{_ai/includes/embodiment-factors-celsius.md}
-
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}
