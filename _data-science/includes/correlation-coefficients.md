@@ -100,7 +100,7 @@ ax.set_ylabel("Number of Full Time Nurses")
 mlai.write_figure(filename="nigeria-nmis-nurse-zoom-in.svg", directory="\writeDiagramsDir/data-science")}
 
 
-\figure{\includediagram{\diagramsDir/data-science/nigeria-nmis-nurse-zoom-in.svg}{40%}}{Zoom in on the scatter plot of the number of nurses in the health centres. There's an odd "cliff" in the data density between 1.2 and 1.3.}
+\figure{\includediagram{\diagramsDir/data-science/nigeria-nmis-nurse-zoom-in}{40%}}{Zoom in on the scatter plot of the number of nurses in the health centres. There's an odd "cliff" in the data density between 1.2 and 1.3.}
 
 \notes{From the zoom in we can see that the cliff is occurring somewhere below 1.3 on the plot, let's find what the value of this cliff is.}
 
