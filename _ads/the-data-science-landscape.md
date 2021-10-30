@@ -25,7 +25,7 @@ ipynb: false
 \aligncenter{Neil Lawrence}
 \aligncenter{Professor of Machine Learning}}
 
-\include{_ads/includes/course-overview-2021.md}
+\include{_ads/includes/overview-2021.md}
 
 \include{_data-science/includes/lies-damned-lies.md}
 \include{_ai/includes/embodiment-factors-celsius.md}
