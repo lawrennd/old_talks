@@ -23,7 +23,7 @@ ipynb: false
 
 \include{_ads/includes/overview-2021.md}
 \include{_data-science/includes/lies-damned-lies.md}
-\include{_ai/includes/embodiment-factors-celsius.md}
+\include{_ai/includes/embodiment-factors.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}

@@ -20,6 +20,9 @@ ipynb: false
 ---
 
 
+\include{_psychology/includes/selective-attention-bias.md}
+\define{bmiStepsAnalysis}
+\include{_data-science/includes/data-inattention-bias.md}
 \include{_data-science/includes/data-science-challenges.md}
 \include{_data-science/includes/big-data-paradox.md}
 \include{_data-science/includes/big-model-paradox.md}
