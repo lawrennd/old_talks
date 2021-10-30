@@ -21,7 +21,7 @@ ipynb: true
 ---
 
 
-\include{_systems/includes/nigeria-nmis-installs.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 <!--\include{_systems/includes/nigeria-health-intro.md}-->
 \include{_systems/includes/nigeria-nmis-data-systems.md}
@@ -34,15 +34,14 @@ ipynb: true
 \include{_data-science/includes/correlation-coefficients.md}
 
 \section{A First Analysis}
-\include{_data-science/includes/bmi-steps-analysis.md}
+\include{_datasets/includes/bmi-steps-data.md}
+
+\subsection{BMI Steps Analysis}
+
+\codeassignment{The hypothesis is that the number of steps taken may have an effect on the BMI. Using what you've learnt about correlation and probability explore this hypothesis using the box below.}{}{15}
 
 
 \include{_data-science/includes/covid-vaccination-and-simpsons-paradox.md}
-\include{_systems/includes/databases-and-joins.md}
-\include{_systems/includes/nigeria-nmis-spatial-join.md}
-\define{databaseType}{mariadb}
-\include{_systems/includes/nigeria-nmis-sql.md}
-\include{_systems/includes/nigeria-nmis-covid-join.md}
 
 
 

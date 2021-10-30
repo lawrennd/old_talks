@@ -45,13 +45,21 @@ Computing the correlation between two values is a way to determine if the values
 
 \notes{We can compute the correlation of the columns using `.corr()` on the `pandas` data frame.}
 
+\setupcode{import numpy as np
+import pandas as pd}
+
+\setupplotcode{import matplotlib.pyplot as plt
+import mlai
+import mlai.plot as plot}
+
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.matshow(hospital_workers_data.corr())
-#ax.set_xticks(range(df.select_dtypes(['number']).shape[1]), df.select_dtypes(['number']).columns, fontsize=14, rotation=45)
-#plt.yticks(range(df.select_dtypes(['number']).shape[1]), df.select_dtypes(['number']).columns, fontsize=14)
-cb = plt.colorbar()
-cb.ax.tick_params(labelsize=14)
-plt.title('Correlation Matrix', fontsize=16)
+im = ax.matshow(hospital_workers_data.corr())
+ax.set_xticks([0.5, 1.5, 2.5, 3.5])
+ax.set_xticklabels(hospital_workers_data.columns, fontsize=14, rotation=45)
+ax.set_yticks([0, 1, 2, 3])
+ax.set_yticklabels(hospital_workers_data.columns, fontsize=14)
+
+fig.colorbar(im, ax=ax)
 
 mlai.write_figure(filename="nigeria-nmis-correlation-matrix.svg", directory="\writeDiagramsDir/data-science")}
 
@@ -63,30 +71,22 @@ mlai.write_figure(filename="nigeria-nmis-correlation-matrix.svg", directory="\wr
 
 \notes{When exploring a data set it's often useful to create a scatter plot of the different variables. In `pandas` this can be done using `pandas.tools.plotting.scatter_matrix`.}
 
-\setupcode{import numpy as np
-import pandas as pd}
+\plotcode{axs = pd.plotting.scatter_matrix(hospital_workers_data, alpha=0.2, figsize=(15, 15))
+mlai.write_figure(filename="nigeria-nmis-scatter-matrix.png", directory="\writeDiagramsDir/data-science")}
 
-
-\setupplotcode{import matplotlib.pyplot as plt
-import mlai
-import mlai.plot as plot}
-
-\plotcode{axs = pd.plotting.scatter_matrix(hospital_workers_data, alpha=0.2, figsize=plot.big_figsize)
-mlai.write_figure(filename="nigeria-nmis-scatter-matrix.svg", directory="\writeDiagramsDir/data-science")}
-
-\figure{\includediagram{\diagramsDir/data-science/nigeria-nmis-scatter-matrix}{70%}}{Scatter matrix of the numbers of commuity health extension workers, nurses, doctors and midwives in the Nigerian health facilities data. Numbers are hard to see because they range from small numbers to larger numbers.}{nigeria-nmis-scatter-matrix}
+\figure{\includepng{\diagramsDir/data-science/nigeria-nmis-scatter-matrix}{70%}}{Scatter matrix of the numbers of commuity health extension workers, nurses, doctors and midwives in the Nigerian health facilities data. Numbers are hard to see because they range from small numbers to larger numbers.}{nigeria-nmis-scatter-matrix}
 
 \notes{Immediately we note that the values are difficult to see in the scatter plot. They are ranging from zero for some health facilities but to hundreds for others. To get a better view, we can look at the logarithm of the data. Some counts are zero, so instead of plotting the logarithm directly, we plot $\log_{10}(\cdot + 1)$ as follows.}
 
-\plotcode{axs = pd.plotting.scatter_matrix(np.log10(hospital_workers_data+1), alpha=0.2, figsize=plot.big_figsize)
-mlai.write_figure(filename="nigeria-nmis-log-plus-one-scatter-matrix.svg", directory="\writeDiagramsDir/data-science")}
+\plotcode{axs = pd.plotting.scatter_matrix(np.log10(hospital_workers_data+1), alpha=0.2, figsize=(15, 15))
+mlai.write_figure(filename="nigeria-nmis-log-plus-one-scatter-matrix.png", directory="\writeDiagramsDir/data-science")}
 
-\figure{\includediagram{\diagramsDir/data-science/nigeria-nmis-log-plus-one-scatter-matrix}{70%}}{Scatter matrix of the $\log_{10}(\cdot + 1)$ of numbers of commuity health extension workers, nurses, doctors and midwives in the Nigerian health facilities data.}{nigeria-nmis-scatter-matrix}
+\figure{\includepng{\diagramsDir/data-science/nigeria-nmis-log-plus-one-scatter-matrix}{70%}}{Scatter matrix of the $\log_{10}(\cdot + 1)$ of numbers of commuity health extension workers, nurses, doctors and midwives in the Nigerian health facilities data.}{nigeria-nmis-scatter-matrix}
 
 \notes{There are a few odd things in the plots that might be worth investigating. For example, the nurse numbers seem to drop very abruptly after some point. Let's investigate by zooming in on a region of the relevant plot.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.plot(np.log10(data.num_chews_fulltime+1), np.log10(data.num_nurses_fulltime+1), 'bo', alpha=0.2)
+ax.plot(np.log10(hospital_data["num_chews_fulltime"]+1), np.log10(hospital_data["num_nurses_fulltime"]+1), 'bo', alpha=0.2)
 ax.set_ylim([1.0, 1.5])
 ax.set_xlabel("Number of Community Health Workers")
 ax.set_ylabel("Number of Full Time Nurses")
@@ -98,15 +98,20 @@ mlai.write_figure(filename="nigeria-nmis-nurse-zoom-in.svg", directory="\writeDi
 
 \notes{From the zoom in we can see that the cliff is occurring somewhere below 1.3 on the plot, let's find what the value of this cliff is.}
 
-\code{data.num_nurses_fulltime[np.log10(data.num_nurses_fulltime+1)<1.3].max()}
+\code{hospital_data["num_nurses_fulltime"][np.log10(hospital_data["num_nurses_fulltime"]+1)<1.3].max()}
 
 \notes{Giving us the value of 16. This is slightly odd, and suggests the values may have been censored in some way. We can see this if we bar chart them.}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-data['num_nurses_fulltime'].value_counts().sort_index().plot.bar(ax=ax)
+hospital_data["num_nurses_fulltime"].value_counts().sort_index().plot.bar(ax=ax)
 ax.set_ylim([0, 200])
 ax.set_xlabel("full time nurse count")
-ax.set_ylabel("number of health centres")}
+ax.set_ylabel("number of health centres")
+
+mlai.write_figure(filename="nigerian-nmis-number-nurses-health-centre.svg",
+                  directory="\writeDiagramsDir/data-science")}
+
+\figure{\includediagram{\diagramsDir/data-science/nigerian-nmis-number-nurses-health-centre}{50%}}{Number of nurses in each health centre. Note the over-representation of centres with 10 nurses, as well as the underrepresentation of centres with over 16 nurses.}{nigerian-nmis-number-nurses-health-centre}
 
 \notes{Not only do we see the cliff after 16 nurses, but there are a few other interesting effects. The number of health centres with 10 nurses is many more than those with either 9 or 11 nurses. This is likely an example of a rounding effect. When people report numbers by hand, they tend to round them. This may well explain the overepresentation of 10. This should give some cause for concern about the data.}
 
