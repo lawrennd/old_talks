@@ -45,7 +45,7 @@
 * After each lab session is complete, progress in assessment.
 * Revisit your questions to "refactor" your code before submission.}
 
-\notes{Your assessment is available in Moodle. The assessment is tightly integrated with the course lecturing, it is staged so that you should be able to make a start on the first question as soon as you've finished Lab Session One. Your assessment should progress alongside the course with different questions becoming easier to answer as you complete each of the labs.}
+\notes{Your assessment is [available in Moodle](https://www.vle.cam.ac.uk/). The assessment is tightly integrated with the course lecturing, it is staged so that you should be able to make a start on the first question as soon as you've finished Lab Session One. Your assessment should progress alongside the course with different questions becoming easier to answer as you complete each of the labs.}
 
 
 \endif
