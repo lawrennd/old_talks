@@ -57,7 +57,10 @@ CREATE TABLE IF NOT EXISTS `cases` (
 
 \notes{And now we can load the data into the table.}
 
-\code{%sql LOAD DATA LOCAL INFILE 'cases.csv' INTO TABLE cases}
+\code{%%sql
+LOAD DATA LOCAL INFILE 'cases.csv' INTO TABLE cases
+FIELDS TERMINATED BY ','
+LINES STARTING BY '' TERMINATED BY '\n';}
 
 \notes{Once gain we need to set the index.}
 

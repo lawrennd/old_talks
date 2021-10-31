@@ -15,7 +15,6 @@ There's a sea of data, but most of it is undrinkable.
 
 We require data-desalination before it can be consumed!
 
-
 \notes{I spoke about the challenges in data science at the NIPS 2016 Workshop on Machine Learning for Health. NIPS mainly focuses on machine learning methodologies, and many of the speakers were doing so. But before my talk, I listened to some of the other speakers talk about the challenges they had with data preparation.} 
 
 \newslide{Data}
@@ -31,6 +30,7 @@ We require data-desalination before it can be consumed!
 
 \notes{This type of work is somewhat thankless, with the exception of the clinicians' control of the data, which probably takes things too far, those that collate and correct data sets gain little credit. In the domain of *reinforcement learning* the aim is to take a series of actions to achieve a stated goal and gain a reward. The *credit assignment problem* is the challenge in the learning algorithm of distributing credit to each of the actions which brought about the reward. We also experience this problem in society, we use proxies such as monetary reward to incentivise intermediate steps in our economy. Modern society functions because we agree to make basic expenditure on infrastructure, such as roads, which we all make use of. Our data-society is not sufficiently mature to be correctly crediting and rewarding those that undertake this work.}
 
+\notes{This situation is no better in industry than in academia. Many companies have been persuaded to accumulate all their data centrally in a so-called "data lake". This attractive idea is problematic, because data is added to the "lake" without thought to its quality. As a result, a better name for these resources would be data swamps. Because the quality of data in them is often dubious. Data scientists when working with these sources often need to develop their own processes for checking the quality of the data before it is used. Unfortunately, the quality improvements they make are rarely fed back into the ecosystem, meaning the same purification work needs to be done repeatedly.}
 
 \newslide{Value}
 \slides{

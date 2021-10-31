@@ -20,17 +20,31 @@ reveal: false
 ipynb: true
 ---
 
-\include{_datasets/includes/nigeria-nmis-data.md}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
+
+\include{_systems/includes/nigeria-nmis-data-systems.md}
 \include{_ml/includes/probability-intro.md}
 
 \newslide{}
 
 \figure{\includeyoutube{GX8VLYUYScM}{600}{450}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
 
-\include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-inattention-bias.md}
+\include{_data-science/includes/correlation-coefficients.md}
+
+\section{A First Analysis}
+\include{_datasets/includes/bmi-steps-data.md}
+
+\subsection{BMI Steps Analysis}
+
+\codeassignment{The hypothesis is that the number of steps taken may have an effect on the BMI. Using what you've learnt about correlation and probability explore this hypothesis using the box below.}{}{15}
+
+
+\section{A Second Analysis}
 
 \include{_data-science/includes/covid-vaccination-and-simpsons-paradox.md}
+
+
 
 \newslide{Reading}
 

@@ -85,7 +85,10 @@ MODIFY `db_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;}
 
 \notes{Now we're ready to load the data into the table. This can be done with [the SQL command `LOAD DATA`](https://mariadb.com/kb/en/load-data-infile/). When connecting to the database we used the flag `local_infile=1` to ensure we could load local files into the database.}
 
-\code{%sql LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_joined}
+\code{%%sql
+LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_joined
+FIELDS TERMINATED BY ','
+LINES STARTING BY '' TERMINATED BY '\n';}
 
 
 \notes{In the database there can be several 'tables'. Each table can be thought of as like a separate dataframe. The table name we've just saved is `hospitals_zones_joined`.}
