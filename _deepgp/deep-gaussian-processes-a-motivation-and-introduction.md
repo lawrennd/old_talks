@@ -10,7 +10,7 @@ abstract: >
   this talk we look at deep learning from the perspective of Gaussian
   processes. Deep Gaussian processes extend the notion of deep
   learning to propagate uncertainty alongside function values. We’ll
-  explain why this is important and show som simple examples.
+  explain why this is important and show some simple examples.
 author:
 - family: Lawrence
   given: Neil D.
@@ -27,9 +27,24 @@ transition: None
 
 https://twitter.com/demishassabis/status/1453794436056502274?s=20
 
+
+\section{Introduction}
+
+\include{_ai/includes/the-fourth-industrial-revolution.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/deep-face.md}
+\include{_ml/includes/deep-learning-as-pinball.md}
+\include{_deepgp/includes/deep-nn.md}
+\include{_ml/includes/why-uncertainty.md}
+\include{_gp/includes/gp-intro-very-short.md}
+
+\include{_deepgp/includes/overfitting-low-rank.md}
+\include{_deepgp/includes/deep-gp.md}
+\include{_deepgp/includes/stochastic-process-composition.md}
+
 \section{Deep Gaussian Processes}
 
-\setupcode{# Download some utilty files}
+\notes{\setupcode{# Download some utilty files}
 \downloadcode{teaching_plots}
 \downloadcode{mlai}
 \downloadcode{gp_tutorial}
@@ -43,10 +58,10 @@ for path in ['gp', 'datasets', 'deepgp']:
 \include{_gp/includes/gpy-install.md}
 \include{_deepgp/includes/pydeepgp-include.md}
 
-
+}
 \include{_gp/includes/planck-cmp-master-gp.md}
 
-\include{_gp/includes/approximate-gps-short.md}
+
 
 \subsection{Modern Review}
 
