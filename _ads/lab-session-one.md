@@ -23,7 +23,6 @@ ipynb: true
 
 \include{_mlai/includes/mlai-notebook-setup.md}
 
-<!--\include{_systems/includes/nigeria-health-intro.md}-->
 \include{_systems/includes/nigeria-nmis-data-systems.md}
 \include{_ml/includes/probability-intro.md}
 
@@ -40,6 +39,8 @@ ipynb: true
 
 \codeassignment{The hypothesis is that the number of steps taken may have an effect on the BMI. Using what you've learnt about correlation and probability explore this hypothesis using the box below.}{}{15}
 
+
+\section{A Second Analysis}
 
 \include{_data-science/includes/covid-vaccination-and-simpsons-paradox.md}
 
