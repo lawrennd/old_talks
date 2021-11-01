@@ -7,6 +7,8 @@
 
 \figure{\includepng{\diagramsDir/governance/decision-tree-for-data-sharing}{50%}}{Decision tree for data sharing. The root node splits agreements into those where the data has and hasn’t been collected. The scope and nature of rights pertaining to the data is the next branch.}{decision-tree-for-data-sharing}
 
+\newslide{}
+
 \figure{\includediagramclass{\diagramsDir/governance/color-wheel}{100%}}{Governance considerations can be grouped in four parts, individuals, society, enfranchisement and vulnerabilities.}{data-governance-color-wheel}
 
 \notes{With Sylvie Delacroix and Jessica Montgomery we've been working towards a data governance toolkit. Trying to understand the different approaches to data sharing and access we may need for different types of data. Some of the }
