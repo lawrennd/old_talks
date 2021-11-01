@@ -26,17 +26,6 @@ ipynb: false
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/evolved-relationship.md}
 
-\newslide{Evolved Relationship}
-
-\figure{\includediagram{\diagramsDir/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
-\include{_data-science/includes/evolved-relationship.md}
-\newslide{Background: Big Data}
-\slides{
-* Data is Pervasive phenomenon that affects all aspects of our activities
-
-* Data diffusiveness is both a challenge and an opportunity
-}
-\include{_data-science/includes/lies-damned-lies.md}
 
 
 
