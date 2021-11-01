@@ -76,66 +76,63 @@ categories:
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div class="table">
-<div id="embodiment-factors-caption" class="caption-frame">
-<p>Table: The embodiment factor is the ratio of compute to communicate in the model.</p>
-</div>
-<div id="embodiment-factors-table" class="table-frame">
+<div class="figure">
+<div id="embodiment-factors-table-figure" class="figure-frame">
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//computer.svg" width="60%" style=" ">
+</object>
 </td>
 <td align="center">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//human.svg" width="60%" style=" ">
+</object>
 </td>
 </tr>
 <tr>
 <td>
-compute
+bits/min
 </td>
 <td align="center">
-<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
+billions
 </td>
 <td align="center">
-<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
+2,000
 </td>
 </tr>
 <tr>
 <td>
-communicate
+billion<br>calculations/s
 </td>
 <td align="center">
-<span class="math display">\[1 \text{ gigbit/s}\]</span>
+~100
 </td>
 <td align="center">
-<span class="math display">\[100 \text{ bit/s}\]</span>
+a billion
 </td>
 </tr>
 <tr>
 <td>
-(compute/communicate)
+embodiment
 </td>
 <td align="center">
-<span class="math display">\[10^{4}\]</span>
+20 minutes
 </td>
 <td align="center">
-<span class="math display">\[10^{14}\]</span>
+5 billion years
 </td>
 </tr>
 </table>
 </div>
-<div id="embodiment-factors-magnify" class="magnify" onclick="magnifyFigure(&#39;embodiment-factors&#39;)">
+<div id="embodiment-factors-table-magnify" class="magnify" onclick="magnifyFigure(&#39;embodiment-factors-table&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
+<div id="embodiment-factors-table-caption" class="caption-frame">
+<p>Figure: Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second’s worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years. See also “Living Together: Mind and Machine Intelligence” <span class="citation" data-cites="Lawrence:embodiment17">Lawrence (2017)</span></p>
 </div>
-<p>See <a href="https://arxiv.org/abs/1705.07996" target="_blank">“Living Together: Mind and Machine Intelligence” <span class="citation" data-cites="Lawrence:embodiment17">Lawrence (2017)</span></a></p>
+</div>
 <p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
 <p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation" data-cites="Reed-information98">(Reed and Durlach, 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
