@@ -27,7 +27,7 @@
 
 \figure{\includepng{\diagramsDir/governance/morine-slides-areas-for-action}{90%}}{Areas for action arising from  Morine Amutorine's survey work on Africa's data driven Covid-19 response.}{morine-slides-areas-for-action}
 
-\subsection{Morine's Areas for Action}
+\notes{\subsection{Morine's Areas for Action}}
 
 \notes{Building capacity of organisations in the public and private sector to reuse and act on data through investments in training, education, and reskilling of relevant authorities;
 

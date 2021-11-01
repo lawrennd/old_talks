@@ -17,10 +17,15 @@ transition: None
 ipynb: false
 ---
 
-\include{_ai/includes/embodiment-factors-celsius.md}
+
+\include{_data-science/includes/lies-damned-lies.md}
+\include{_ai/includes/embodiment-factors.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/evolved-relationship.md}
+
 \newslide{Evolved Relationship}
 
 \figure{\includediagram{\diagramsDir/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
