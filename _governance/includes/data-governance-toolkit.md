@@ -13,9 +13,9 @@
 
 \notes{One major challenge to data sharing is that it means different things to different people and different institutions. The objectives of data sharing can differ amoung different sharing parties. This leads to a great deal of confusion when discussing mechanisms for data sharing.}
 
-\notes{For example, in 2016, inspired by conversations with Jonathan Price, I proposed the idea of Data Trusts. This was a data sharing idea specifically targeted at protecting indviduals from the vulnerabilities they are exposed to when sharing personal data. 
+\notes{For example, in 2016, inspired by conversations with Jonathan Price, I proposed the idea of Data Trusts. This was a data sharing idea specifically targeted at protecting indviduals from the vulnerabilities they are exposed to when sharing personal data.}
 
-Unfortunately, the idea has since been promoted as a universal panacea for data sharing. As a result, the original concept is inevitably misunderstood, watered down or derided. It seems clear that we need a better understanding of the data sharing landscape, and with Martin Tisne, under a remit given by the AI council we've begun to do that.}
+\notes{Unfortunately, the idea has since been promoted as a universal panacea for data sharing. As a result, the original concept is inevitably misunderstood, watered down or derided. It seems clear that we need a better understanding of the data sharing landscape. Some steps have been taken to outlining the legal implications of different data sharing structures in a report ["Exploring legal mechanisms for data stewardship"](https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/) from the Ada Lovelace Institute in collaboration with the UK's AI Council.}
 
 \notes{The framework we're using comes from discussions with Sylvie Delacroix and Jess Montgomery on how to characterise the data governenance process. We've developed the color wheel shown above. See our [blog post here](https://datatrusts.uk/blogs/selectingdatastructures).}
 
