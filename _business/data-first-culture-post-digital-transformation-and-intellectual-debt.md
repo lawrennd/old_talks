@@ -1,7 +1,18 @@
 ---
-title: "Post-Digital Transformation: Intellectual Debt"
-abstract: "Digital transformation has offered the promise of moving from a manual decision-making world to a world where decisions can be rational, data-driven and automated. The first step to digital transformation is mapping the world of atoms (material, customers, logistic networks) into the world of bits. But the real challenges may start once this is complete. In this talk we introduce the notion of 'post digital transformation': the challenges of doing business in a digital world."
-date: 2021-05-17
+layout: talk
+title: Data First Culture
+subtitle: Post-Digital Transformation and Intellectual Debt
+abstract: >
+  Digital transformation has offered the promise of moving from a
+  manual decision-making world to a world where decisions can be
+  rational, data-driven and automated. The first step to digital
+  transformation is mapping the world of atoms (material, customers,
+  logistic networks) into the world of bits. But the real challenges
+  may start once this is complete. In this talk we introduce the
+  notion of 'post digital transformation': the challenges of doing
+  business in a digital world.
+date: 2021-11-11
+time: "9:00"
 pptx: False
 potx: ../_includes/judge-reference.potx
 docx: False
@@ -15,7 +26,7 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orcid: 
-venue: Cambridge Senior Management Programme, Judge Business School, University of Cambridge
+venue: Advanced Leadership Programme, Jesus College, Cambridge
 transition: None
 ---
 
