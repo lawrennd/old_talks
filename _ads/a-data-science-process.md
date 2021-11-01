@@ -19,6 +19,9 @@ transition: None
 ipynb: false
 ---
 
+\include{_psychology/includes/selective-attention-bias.md}
+\define{bmiStepsAnalysis}
+\include{_data-science/includes/data-inattention-bias.md}
 \subsection{The Three Ds of Machine Learning Systems Design}
 
 \slides{
@@ -27,16 +30,6 @@ ipynb: false
 2. Data 
 3. Deployment
 }
-
-\newslide{The Three Ds of Machine Learning Systems Design}
-
-\slides{
-* Three primary challenges of Machine Learning Systems Design.
-1. <s>Decomposition</s>
-2. Data 
-3. <s>Deployment</s>
-}
-
 
 \notes{We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.}
 
