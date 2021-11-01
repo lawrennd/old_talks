@@ -13,7 +13,7 @@ extras:
 - link: https://arxiv.org/abs/1705.07996
   label: Paper on Mind and Machine Intelligence
 month: 10
-date: 2021-11-15
+date: 2021-11-11
 time: 16:30
 venue: Comenius Program, Harley Mason Room, Corpus Christi College
 ---
