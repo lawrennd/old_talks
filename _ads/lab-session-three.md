@@ -1,6 +1,6 @@
 ---
 week: 6
-session: 3
+session: 1
 title: "Lab Session Three"
 abstract:  >
 layout: notebook
