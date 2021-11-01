@@ -2,7 +2,8 @@
 \define{embodimentFactorsShort}
 \editme
 
-\notes{\subsection{Embodiment Factors}}
+\subsection{Embodiment Factors}
+
 
 \figure{\include{_ai/includes/embodiment-factors-computer-human-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years. See also "Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}{embodiment-factors-table}
 
