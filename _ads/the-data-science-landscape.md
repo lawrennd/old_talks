@@ -26,6 +26,7 @@ ipynb: false
 \include{_ai/includes/embodiment-factors.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/evolved-relationship.md}
 \newslide{Background: Big Data}

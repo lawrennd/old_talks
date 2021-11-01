@@ -1,3 +1,3 @@
-BASE=ai-data-science-and-the-covid19-pandemic
+BASE=mind-and-machine-intelligence-comenius
 include ../make-talk-flags.mk
 include ../make-talk.mk
