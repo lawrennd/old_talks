@@ -52,9 +52,11 @@ ipynb: false
 \notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 
 \include{_governance/includes/feudal-era-data-ecosystem.md}
-\include{_governance/includes/data-trusts.md}
-\include{_governance/includes/increasing-data-sharing-from-africas-covid19-response.md}
+\include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
 \include{_governance/includes/data-governance-toolkit.md}
+\include{_governance/includes/data-trusts.md}
+
+
 
 \references
 
