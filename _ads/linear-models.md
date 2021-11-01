@@ -1,6 +1,6 @@
 ---
 week: 6
-session: 4
+session: 3
 title: "Linear Models"
 abstract:  >
 layout: lecture
