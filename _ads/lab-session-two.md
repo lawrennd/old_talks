@@ -7,6 +7,14 @@ abstract:  >
 layout: notebook
 venue: Intel Lab, William Gates Building
 author:
+- family: Cabrera
+  given: Christian
+  institute: University of Cambridge
+  url: https://www.cst.cam.ac.uk/people/chc79
+- family: Meissner
+  given: Eric
+  institute: University of Cambridge
+  url: https://www.cst.cam.ac.uk/people/erm70
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
@@ -20,11 +28,6 @@ reveal: false
 ipynb: true
 ---
 
-\subsection{Revert Matplotlib Version}
-
-\notes{Revert `matplotlib` version due to bug mentioned [here](https://github.com/facebook/prophet/issues/1691).}
-\code{%pip uninstall --yes matplotlib}
-\code{%pip install matplotlib==3.1.3}
 
 \include{_systems/includes/nigeria-nmis-installs.md}
 
@@ -36,7 +39,6 @@ ipynb: true
 \include{_systems/includes/nigeria-nmis-sql.md}
 \include{_systems/includes/nigeria-nmis-covid-join.md}
 
-\include{_maps/includes/open-street-map.md}
 
 
 \thanks

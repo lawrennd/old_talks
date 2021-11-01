@@ -19,7 +19,13 @@ reveal: false
 ipynb: true
 ---
  
+\subsection{Revert Matplotlib Version}
 
+\notes{Revert `matplotlib` version due to bug mentioned [here](https://github.com/facebook/prophet/issues/1691).}
+\code{%pip uninstall --yes matplotlib}
+\code{%pip install matplotlib==3.1.3}
+
+\include{_maps/includes/open-street-map.md}
 
 
 \thanks
