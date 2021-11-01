@@ -4,18 +4,29 @@
 
 \editme
 
-\subsection{The Three Esses Framework}
+\subsection{The Fynesse Framework}
 
 \slides{* Access
 * Assess
 * Address}
-\notes{Here we present a framework for thinking about data science that has three words that are meant to highlight three distinct types of data science activity that occur within a data science project: we call them access, assess and address.}
+\notes{Here we present a new framework for thinking about data science. The Fynesse framework splits the activities of the data scientist into three aspects, each aspect is repressented by a one of three words that highlight different activities that occur within a data science project: we call them access, assess and address.}
+
+\notes{Before going deeper into the framework, we will contextualise by looking at some other formalisations of the data analysis pipeline.}
 
 \newslide{CRISP-DM}
 
 \figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram.}{crisp-dm-diagram}
 
 \notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
+
+\define{\terms}{'data mining', 'data science'}
+\define{\initials}{dm-ds}
+
+\include{_data-science/includes/gartner-hype-cycle-base.md}
+
+\notes{We note that the term *data mining* is falling somewhat out of favour, and the CRISP-DM data mining process also feels somewhat dated. In particular software engineering has moved on a great deal since it was defined, with modern software engineering more focussed on service oriented architectures. Software design has a pervasive effect on our ability to do data science.}
+
+\notes{When thinking about the data science process it is important to consider the *software architectures* that are used in large scale decision making systems, and understand what it is that they are bring to help solve these problems.}
 
 \notes{A more modern view from the O'Reilly book *Doing Data Science* frames the problem as shown in Figure \ref{data-science-process-oneil}.}
 
@@ -34,15 +45,13 @@
 
 \notes{One challenge for data science and data science processes is that they do not always accommodate the real-time and evolving nature of data science advice as required, for example in pandemic response or in managing an international supply chain.}
 
-\notes{One possible starting point is to look at the *software architectures* that are used in large scale decision making systems, and understand what it is that they are bring to help solve these problems.}
-
 \newslide{}
 
 \figure{\includeyoutube{-QjJLgRni-M}{600}{450}}{Data science processes do not always accommodate the real-time and evolving nature of data science advice as required, for example, for policy advice as described in this presentation.}{policy-science-convening-power-of-data}
 
 \include{_data-science/includes/ride-sharing-soa-doa.md}
 
-\notes{The "Access, Assess, Address" paradigm is inspired by experience in operational data science both in the Amazon supply chain and in the UK Covid-19 pandemic response.}
+\notes{The Fynesse paradigm is inspired by experience in operational data science both in the Amazon supply chain and in the UK Covid-19 pandemic response.}
 
 \newslide{}
 
@@ -52,7 +61,7 @@
 
 \subsection{Access}
 
-\notes{In the Access, Assess, Address paradigm, the first challenge is accessing the data. Depending on domain, the skills needed to address this challenge will vary greatly. For example, [Michael T. Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith) was leading a project in collaboration with the Kampala police force to collate accident data.}
+\notes{The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address. The first aspect we'll consider is *accessing* the data. Depending on domain, the skills needed to address this challenge will vary greatly. For example, [Michael T. Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith) was leading a project in collaboration with the Kampala police force to collate accident data.}
 
 
 \slides{
@@ -78,7 +87,7 @@
     * This ensures *assess* is reusable across tasks.
 * Driven by happenstance data.}
 
-\notes{Once the data is accessible, it can be imported (via APIs or database calls or reading a CSV) into the machine and work can be done understanding the nature of the data. The important thing to say about the assess stage is that it only includes things you can do *without* the question in mind. This runs counter to many ideas about how we do data analytics. The history of statistics was that we think of the question *before* we collect data. But that was because data was expensive, and it needed to be excplicitly collected. The same mantra is true today of *surveillance data*. But the new challenge is around *happenstance data*, data that is cheaply available but may be of poor quality. The nature of the data needs to be understood before its integrated into analysis. Unfortunately, because the work is conflated with other stages, decisions are sometimes made during assessment (for example approaches to imputing missing values) which may be useful in one context, but are useless in others. So the aim in *assess* is to only do work that is repeatable, and make that work available to others who may also want to use the data.}
+\notes{Data that is accessible can be imported (via APIs or database calls or reading a CSV) into the machine and work can be done understanding the nature of the data. The important thing to say about the assess aspect is that it only includes things you can do *without* the question in mind. This runs counter to many ideas about how we do data analytics. The history of statistics was that we think of the question *before* we collect data. But that was because data was expensive, and it needed to be excplicitly collected. The same mantra is true today of *surveillance data*. But the new challenge is around *happenstance data*, data that is cheaply available but may be of poor quality. The nature of the data needs to be understood before its integrated into analysis. Unfortunately, because the work is conflated with other aspects, decisions are sometimes made during assessment (for example approaches to imputing missing values) which may be useful in one context, but are useless in others. So the aim in *assess* is to only do work that is repeatable, and make that work available to others who may also want to use the data.}
 
 \newslide{Case Study: Text Mining for Covid Misinformation}
 
@@ -95,7 +104,7 @@
 * AI for Data Analytics (@Nazabal-engineering20)
 * Joyce's case study gives us also POS tagging for new languages.}
 
-\notes{There are lots of interesting projects around automating the assessment of the data, for example one can consider automation of schema and data type detection (@Valera-automatic17) or the AI for Data Analytics Project (see @Nazabal-engineering20 for an overview of issues and case studies and the video in Figure \ref{ai-for-data-analytics} for details on the project). We may even view projects like the automatic statistician as automating of assessment (@Lloyd-automatic14), although arguably one could suggest that the choice of data set used in those projects itself is reflective of the *question* or *context*. This highlights the difficulty in separating the stages. The key quesiton to ask in any given context is whether the augmentation you are performing for the data set is going to be helpful or a hindrance to those that may wish to reuse your data.}
+\notes{There are lots of interesting projects around automating the assessment of the data, for example one can consider automation of schema and data type detection (@Valera-automatic17) or the AI for Data Analytics Project (see @Nazabal-engineering20 for an overview of issues and case studies and the video in Figure \ref{ai-for-data-analytics} for details on the project). We may even view projects like the automatic statistician as automating of assessment (@Lloyd-automatic14), although arguably one could suggest that the choice of data set used in those projects itself is reflective of the *question* or *context*. This highlights the difficulty in separating the aspects. The key quesiton to ask in any given context is whether the augmentation you are performing for the data set is going to be helpful or a hindrance to those that may wish to reuse your data.}
 
 \newslide{AI for Data Analytics}
 
@@ -111,7 +120,7 @@
   * Visualisation through a dashboard
   * An Excel spreadsheet}
 
-\notes{The final stage of the process is to *address* the question. We'll spend the least time on this stage here, because it's the one that is most widely formally taught and the one that most researchers are familiar with. In statistics, this might involve some confirmatory data analysis. In machine learning it may involve designing a predictive model. In many domains it will involve figuring out how best to visualise the data to present it to those who need to make the decisions. That could involve a dashboard, a plot or even summarisation in an Excel spreadsheet.}
+\notes{The final aspect of the process is to *address* the question. We'll spend the least time on this aspect here, because it's the one that is most widely formally taught and the one that most researchers are familiar with. In statistics, this might involve some confirmatory data analysis. In machine learning it may involve designing a predictive model. In many domains it will involve figuring out how best to visualise the data to present it to those who need to make the decisions. That could involve a dashboard, a plot or even summarisation in an Excel spreadsheet.}
 
 \subsection{Automating Address}
 
@@ -119,7 +128,7 @@
 * Automatic Statistician
 * Automatic Visualization}
 
-\notes{Perhaps the most widespread approach to automating the address stage is known as AutoML (see video in Figure \ref{frank-hutter-automl}). This is an automatic approach to creating ML prediction models. The automatic statistician we mentioned in assess also has some of these goals in mind for automating confirmatory data analysis. But there are clearly other aspects we may wish to automate, particularly around visualization.}
+\notes{Perhaps the most widespread approach to automating the address aspect is known as AutoML (see video in Figure \ref{frank-hutter-automl}). This is an automatic approach to creating ML prediction models. The automatic statistician we mentioned in assess also has some of these goals in mind for automating confirmatory data analysis. But there are clearly other aspects we may wish to automate, particularly around visualization.}
 
 \newslide{AutoML}
 

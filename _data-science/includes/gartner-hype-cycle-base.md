@@ -3,6 +3,8 @@
 
 \editme
 
+\subsection{Google Trends}
+
 \ifndef{pytrendsInstalled}
 \define{pytrendsInstalled}
 \installcode{pytrends}
@@ -18,7 +20,6 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('\initials-google-trends{sample:0>3}.svg', 
                             '\writeDiagramsDir/data-science/', sample=IntSlider(0, 0, 4, 1))}
 
-\newslide{Gartner Hype Cycle}
 
 \define{\divstyle}{max-width:100vw; max-height:100vh}
 \slides{
@@ -31,9 +32,9 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/data-science/\initials-google-trends}{80%}}{Google trends for \terms as different technological terms on the hype cycle.}{\initials-gartner-hype-cycle-google-trends}}
+\notes{\figure{\includediagram{\diagramsDir/data-science/\initials-google-trends}{80%}}{Google trends for \terms as different technological terms gives us insight into their popularity over time.}{\initials-gartner-hype-cycle-google-trends}}
 
 
-\notes{Google trends gives us insight into how far along various technological terms are on the hype cycle.}
+\notes{Google trends gives us insight into the interest for different terms over time.}
 
 \endif
