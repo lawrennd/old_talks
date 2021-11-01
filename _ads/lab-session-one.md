@@ -24,6 +24,8 @@ ipynb: true
 
 \notes{Welcome to the first lab session. This is due to be submitted for the tick session on 9th of November. Within the material you will find exercises. If you are confident with probability you can likely ignore the reading and exercises which are listed from @Rogers:book11 and @Bishop:book06. There should be *no need* to purchase these books for this course. The suggestions of sections are there just as a reminder.}
 
+\notes{We suggest you run these labs in *Google colab*, there's a link to doing that on the main lab page at the top. We also suggest that the first thing you do is click `View`->`Expand sections` to make all parts of the lab visibile.}
+
 \notes{For the "tick" for this lab you need to complete Exercise 1-9.}
 
 \include{_ads/includes/ads-notebook-setup.md}
