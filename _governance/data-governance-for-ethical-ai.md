@@ -27,6 +27,9 @@ ipynb: false
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 \include{_data-science/includes/three-data-science-challenges.md}
+
+\notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
+
 \newslide{Challenges}
 
 \slides{
@@ -37,12 +40,15 @@ ipynb: false
 3. Privacy, loss of control, marginalization
 }
 
-\include{_data-science/includes/privacy-loss-of-control.md}
+\include{_data-science/includes/privacy-intro.md}
+\include{_data-science/includes/digital-revolution-and-inequality.md}
+\include{_data-science/includes/data-science-africa.md}
+\include{_health/includes/malaria-gp.md}
 
-\notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 
 \include{_governance/includes/feudal-era-data-ecosystem.md}
 \include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
+\include{_data-science/includes/privacy-amelioration.md}
 \include{_governance/includes/data-governance-toolkit.md}
 \include{_governance/includes/data-trusts.md}
 
