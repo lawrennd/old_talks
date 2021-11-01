@@ -17,7 +17,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \notes{Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.}
 
-\figure{\includepng{\diagramsDir/health/uganda-districts-2006}{50%}}{Ugandan districs. Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>.}{uganda-districts-2006}
+\figure{\includepng{\diagramsDir/health/uganda-districts-2006}{50%}}{Ugandan districts. Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>.}{uganda-districts-2006}
 
 \alignright{[@Andrade:consistent14;@Mubangizi:malaria14]}
 
