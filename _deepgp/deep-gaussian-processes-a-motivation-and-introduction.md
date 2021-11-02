@@ -32,10 +32,8 @@ transition: None
 
 \include{_ai/includes/the-fourth-industrial-revolution-intro.md}
 \include{_ml/includes/what-is-ml.md}
-\include{_deepgp/includes/deep-gaussian-processes.md}
+\include{_gp/includes/mackay-bathwater.md}
 \include{_ml/includes/deep-learning-overview.md}
-\include{_ml/includes/deep-face.md}
-\include{_ml/includes/deep-learning-as-pinball.md}
 \include{_deepnn/includes/deep-neural-network.md}
 \include{_ml/includes/why-uncertainty.md}
 \include{_gp/includes/gp-intro-very-short.md}
@@ -43,13 +41,13 @@ transition: None
 \include{_deepgp/includes/overfitting-low-rank.md}
 \include{_deepgp/includes/deep-gp.md}
 \include{_deepgp/includes/stochastic-process-composition.md}
+\include{_deepgp/includes/process-composition.md}
 
 \section{Deep Gaussian Processes}
 
 \notes{\setupcode{# Download some utilty files}
-\downloadcode{teaching_plots}
-\downloadcode{mlai}
-\downloadcode{gp_tutorial}
+\installcode{mlai}
+<!--\downloadcode{gp_tutorial}-->
 \downloadcode{deepgp_tutorial}
 \setupcode{import os
 for path in ['gp', 'datasets', 'deepgp']:
@@ -73,7 +71,6 @@ for path in ['gp', 'datasets', 'deepgp']:
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-\include{_deepgp/includes/process-composition.md}
 \include{_deepgp/includes/deep-results.md}
 \include{_health/includes/deep-health-model.md}
 
