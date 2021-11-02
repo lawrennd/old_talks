@@ -31,6 +31,7 @@ transition: None
 \section{Introduction}
 
 \include{_ai/includes/the-fourth-industrial-revolution-intro.md}
+\installcode{mlai}
 \include{_ml/includes/what-is-ml.md}
 \include{_gp/includes/mackay-bathwater.md}
 \include{_ml/includes/deep-learning-overview.md}
@@ -45,7 +46,7 @@ transition: None
 
 \section{Deep Gaussian Processes}
 \centerdiv{\andreasDamianouPicture{15%}}
-    @Damianou:thesis2015
+  @Damianou:thesis2015
 
 \installcode{mlai}
 \include{_gp/includes/planck-cmp-master-gp.md}
@@ -53,10 +54,10 @@ transition: None
 \subsection{Modern Review}
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
-    @Thang:unifying17
+  @Thang:unifying17
 
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
-    @Damianou:thesis2015
+  @Damianou:thesis2015
 
 \include{_deepgp/includes/deep-gp-setup-code.md}
 \include{_deepgp/includes/olympic-marathon-deep-gp.md}
