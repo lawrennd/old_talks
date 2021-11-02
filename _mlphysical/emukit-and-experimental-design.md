@@ -4,7 +4,7 @@ session: 2
 layout: lecture
 title: "Emukit and Experimental Design"
 abstract: >
-  In this lecture we introduce Emukit, a software framework for decision programming via surrogage modelling and emulation. We'll then show an example of the use of the framework with experimental design.
+  We have introduced you to the sequential process by which we decide to evaluation points in a simulation through Bayesian optimization. In this lecture we introduce Emukit. Emukit is a software framework for decision programming via surrogage modelling and emulation. It formalizes the process of selecting a point via an acquisition function and provides a general framework for incorporating surrogate models and the acquisition function of your choice.
 author:
 - family: Lawrence
   given: Neil D.
@@ -23,9 +23,7 @@ transition: None
 
 
 \include{_mlphysical/includes/mlphysical-notebook-setup.md}
-
 \include{_uq/includes/uq-sampling-history-doe.md}
-
 \include{_software/includes/emukit-software.md}
 \include{_uq/includes/emukit-vision.md}
 \include{_uq/includes/emukit-tutorial.md}
