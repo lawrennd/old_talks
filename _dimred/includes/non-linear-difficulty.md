@@ -5,7 +5,7 @@
 
 \subsection{Difficulty for Probabilistic Approaches}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 
 \plotcode{plot.non_linear_difficulty_plot_3(diagrams='\writeDiagramsDir/dimred/')}
 

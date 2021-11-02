@@ -24,7 +24,7 @@ m.staged_optimize()}
 plot.model_output(m, scale=scale, offset=offset, ax=ax, fontsize=20, portion=0.5)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(filename='\writeDiagramsDir/deepgp/della-gatta-gene-deep-gp.svg', 
+mlai.write_figure(filename="\writeDiagramsDir/deepgp/della-gatta-gene-deep-gp.svg", 
             transparent=True, frameon=True)}
 
 \subsection{Della Gatta Gene Data Deep GP}
@@ -44,8 +44,8 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/della-gatta-gen
 				
 
 \displaycode{m.visualize(offset=offset, scale=scale, xlim=xlim, ylim=ylim,
-            dataset='della-gatta-gene',
-            diagrams='\writeDiagramsDir/deepgp')}
+            dataset="della-gatta-gene",
+            diagrams="\writeDiagramsDir/deepgp")}
 			
 \subsection{Della Gatta Gene Data Latent 1}
 
@@ -57,7 +57,7 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/della-gatta-gen
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(offset=offset, ax=ax, scale=scale, xlim=xlim, ylim=ylim, portion=0.1, points=50)
-mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/della-gatta-gene-deep-gp-pinball.svg', 
+mlai.write_figure(figure=fig, filename="\writeDiagramsDir/deepgp/della-gatta-gene-deep-gp-pinball.svg", 
                   transparent=True, frameon=True, ax=ax)}
 				  
 \subsection{TP53 Gene Pinball Plot}

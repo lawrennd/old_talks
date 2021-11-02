@@ -22,7 +22,60 @@ However, in the Gaussian process case, when the likelihood also assumes Gaussian
 \notes{First, we will load in two python functions for computing the covariance function.}
 
 \loadplotcode{Kernel}{mlai}
+\plotcode{# %load -n mlai.Kernel
+class Kernel():
+    """Covariance function
+    :param function: covariance function
+    :type function: function
+    :param name: name of covariance function
+    :type name: string
+    :param shortname: abbreviated name of covariance function
+    :type shortname: string
+    :param formula: latex formula of covariance function
+    :type formula: string
+    :param function: covariance function
+    :type function: function
+    :param \**kwargs:
+        See below
+
+    :Keyword Arguments:
+        * """
+
+    def __init__(self, function, name=None, shortname=None, formula=None, **kwargs):        
+        self.function=function
+        self.formula = formula
+        self.name = name
+        self.shortname = shortname
+        self.parameters=kwargs
+        
+    def K(self, X, X2=None):
+        """Compute the full covariance function given a kernel function for two data points."""
+        if X2 is None:
+            X2 = X
+        K = np.zeros((X.shape[0], X2.shape[0]))
+        for i in np.arange(X.shape[0]):
+            for j in np.arange(X2.shape[0]):
+                K[i, j] = self.function(X[i, :], X2[j, :], **self.parameters)
+
+        return K
+
+    def diag(self, X):
+        """Compute the diagonal of the covariance function"""
+        diagK = np.zeros((X.shape[0], 1))
+        for i in range(X.shape[0]):            
+            diagK[i] = self.function(X[i, :], X[i, :], **self.parameters)
+        return diagK
+
+    def _repr_html_(self):
+        raise NotImplementedError}
+
 \loadplotcode{eq_cov}{mlai}
+
+\plotcode{# %load -n mlai.eq_cov
+def eq_cov(x, x_prime, variance=1., lengthscale=1.):
+    """Exponentiated quadratic covariance function."""
+    diffx = x - x_prime
+    return variance*np.exp(-0.5*np.dot(diffx, diffx)/lengthscale**2)}
 
 \plotcode{kernel = Kernel(function=eq_cov,
                      name='Exponentiated Quadratic',

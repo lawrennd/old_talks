@@ -29,10 +29,11 @@ x = data['X']
 y = data['Y']
 
 offset = y.mean()
-scale = np.sqrt(y.var())}
+scale = np.sqrt(y.var())
+yhat = (y - offset)/scale}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{

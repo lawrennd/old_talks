@@ -15,7 +15,10 @@ week: 4
 session: 1
 pdfslides: l48-mlpw-04.pdf
 pdfworksheet: 02_evidence.pdf
-youtube: "eHFegeSFJKc"
+youtube: 2C4OK6zNOOU
+oldyoutube: 
+- code: eHFegeSFJKc
+  year: 2020
 layout: lecture
 categories:
 - notes

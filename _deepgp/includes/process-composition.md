@@ -65,6 +65,8 @@ A one off discontinuity is easy to model with a Gaussian process, or even multip
 
 \slides{\includediagram{\diagramsDir/deepgp/deep-markov-vertical}}
 
+\setupplotcode{import daft}
+
 \plotcode{pgm = plot.vertical_chain(depth=5, shape=[2, 7])
 pgm.add_node(daft.Node('y_2', r'$\mathbf{y}_2$', 1.5, 3.5, observed=True))
 pgm.add_edge('f_2', 'y_2')

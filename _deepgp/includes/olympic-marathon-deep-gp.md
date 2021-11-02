@@ -26,9 +26,6 @@ m = deepgp.DeepGP([y.shape[1],hidden,x.shape[1]],Y=yhat, X=x, inits=['PCA','PCA'
                            GPy.kern.RBF(x.shape[1],ARD=True)], # the kernels for each layer
                   num_inducing=50, back_constraint=False)}
 				  
-\notes{}
-
-\setupcode{import deepgp}
 
 \code{# Call the initalization
 m.initialize()}
@@ -44,7 +41,10 @@ m.optimize(messages=True,max_iters=10000)}
 \code{m.staged_optimize(messages=(True,True,True))}
 
 
-\setupplotcode{import matplotlib.pyplot as plt}
+\setupplotcode{import matplotlib.pyplot as plt
+import mlai.plot as plot
+import mlai}
+
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', 
           fontsize=20, portion=0.2)
@@ -82,8 +82,8 @@ Now we explore the GPs the model has used to fit each layer. First of all, we lo
             diagrams='\writeDiagramsDir/deepgp')}
 
 
-\setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
                             '\writeDiagramsDir/deepgp', sample=(0,1))}
 
 \newslide{Olympic Marathon Data Latent 1}

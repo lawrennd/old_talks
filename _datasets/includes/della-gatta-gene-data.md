@@ -18,7 +18,7 @@ offset = y.mean()
 scale = np.sqrt(y.var())}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \displaycode{
@@ -42,7 +42,6 @@ mlai.write_figure(figure=fig,
 
 \figure{\includediagram{\diagramsDir/datasets/della-gatta-gene}{80%}}{Gene expression levels over time for a gene from data provided by @DellaGatta:direct08. We would like to understand whether there is signal in the data, or we are only observing noise.}{della-gatta-gene-data}
 
-\notes{}
 
 
 \endif

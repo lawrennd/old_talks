@@ -5,13 +5,13 @@
 
 \include{_deepgp/includes/pydeepgp-include.md}
 
-\downloadcode{deepgp_tutorial}
+\installcode{mlai}
 \setupcode{# Late bind setup methods to DeepGP object
-from deepgp_tutorial import initialize
-from deepgp_tutorial import staged_optimize
-from deepgp_tutorial import posterior_sample
-from deepgp_tutorial import visualize
-from deepgp_tutorial import visualize_pinball
+from mlai.deepgp_tutorial import initialize
+from mlai.deepgp_tutorial import staged_optimize
+from mlai.deepgp_tutorial import posterior_sample
+from mlai.deepgp_tutorial import visualize
+from mlai.deepgp_tutorial import visualize_pinball
 
 import deepgp
 deepgp.DeepGP.initialize=initialize

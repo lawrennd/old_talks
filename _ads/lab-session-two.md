@@ -1,7 +1,7 @@
 ---
 week: 6
 session: 1
-title: "Lab Session Two"
+title: "Lab Session Two **Tick**"
 abstract:  >
   In this lab session we look at setting up a SQL server and making joins between different data sets.
 layout: notebook

@@ -33,8 +33,7 @@ The objective of the Planck spacecraft was to measure the anisotropy and statist
 \installcode{camb}
 \installcode{healpy}
 
-\setupplotcode{%matplotlib inline
-%config IPython.matplotlib.backend = 'retina'
+\setupplotcode{%config IPython.matplotlib.backend = 'retina'
 %config InlineBackend.figure_format = 'retina'
 
 import matplotlib
