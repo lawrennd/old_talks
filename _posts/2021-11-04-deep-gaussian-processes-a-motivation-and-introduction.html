@@ -935,7 +935,7 @@ Andreas Damianou
 </div>
 <h2 id="subsample-of-the-mnist-data">Subsample of the MNIST Data</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mnist-digits-subsample-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mnist-digits-subsample-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/mnist-digits-subsample-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/mnist-digits-subsample-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
 <p>First load in the MNIST data set from scikit learn. This can take a little while because it’s large to download.</p>
@@ -949,12 +949,12 @@ Andreas Damianou
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> []</span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> []</span>
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> digits:</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span>d]</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    Y.append(imgs[np.random.permutation(imgs.shape[<span class="dv">0</span>])][:N_per_digit])</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span><span class="bu">str</span>(d)]</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    Y.append(imgs.loc[np.random.permutation(imgs.index)[:N_per_digit]])</span>
 <span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    labels.append(np.ones(N_per_digit)<span class="op">*</span>d)</span>
 <span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.vstack(Y).astype(np.float64)</span>
 <span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> np.hstack(labels)</span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>Y <span class="op">/=</span> <span class="fl">255.</span></span></code></pre></div>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>Y <span class="op">/=</span> <span class="dv">255</span></span></code></pre></div>
 <h2 id="fitting-a-deep-gp-to-a-the-mnist-digits-subsample">Fitting a Deep GP to a the MNIST Digits Subsample</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/mnist-digits-subsample-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/mnist-digits-subsample-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

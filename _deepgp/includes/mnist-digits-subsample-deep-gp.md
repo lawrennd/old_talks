@@ -1,7 +1,7 @@
 \ifndef{mnistDigitsSubsampleDeepGp}
 \define{mnistDigitsSubsampleDeepGp}
 
-\include{_ml/includes/mnist-digits-subsample-data.md}
+\include{_datasets/includes/mnist-digits-subsample-data.md}
 
 \editme
 
