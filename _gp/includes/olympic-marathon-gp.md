@@ -25,7 +25,9 @@ yt_sd=np.sqrt(yt_var)}
 
 \notes{Now we plot the results using the helper function in `mlai.plot`.}
 
-\setupdisplaycode{import mlai.plot as plot}
+\setupdisplaycode{import matplotlib.pyplot as plt
+import mlai.plot as plot
+import mlai}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel="year", ylabel="pace min/km", fontsize=20, portion=0.2)
@@ -33,7 +35,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
                   filename="olympic-marathon-gp.svg", 
-		  directory = "\writeDiagramsDir/gp",
+                  directory = "\writeDiagramsDir/gp",
                   transparent=True, frameon=True)}
 
 \newslide{Olympic Marathon Data GP}
@@ -51,6 +53,10 @@ y_clean=np.vstack((yhat[0:2, :], yhat[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()}}
+
+\setupplotcode{import matplotlib.pyplot as plt
+import mlai.plot as plot
+import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_clean, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
