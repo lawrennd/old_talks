@@ -16,7 +16,7 @@
 
 \section{Emukit Vision}
 
-\notes{\subsection{Preface about emulation}}
+\notes{\subsection{Emulation in Emukit}}
 
 \notes{We see emulation comprising of three main parts:}
 
