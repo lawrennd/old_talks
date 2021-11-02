@@ -32,6 +32,8 @@ transition: None
 
 \include{_ai/includes/the-fourth-industrial-revolution-intro.md}
 \include{_ml/includes/what-is-ml.md}
+\include{_deepgp/includes/deep-gaussian-processes.md}
+\include{_ml/includes/deep-learning-overview.md}
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
 \include{_deepnn/includes/deep-neural-network.md}
@@ -67,11 +69,13 @@ for path in ['gp', 'datasets', 'deepgp']:
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
-
+\centerdiv{\andreasDamianouPicture{15%}}
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-\include{_deepgp/includes/deep-gaussian-processes.md}
+\include{_deepgp/includes/process-composition.md}
+\include{_deepgp/includes/deep-results.md}
+\include{_health/includes/deep-health-model.md}
 
 \thanks
 

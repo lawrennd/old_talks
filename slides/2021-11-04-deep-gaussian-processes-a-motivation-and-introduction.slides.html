@@ -106,59 +106,15 @@
 <li class="fragment"><strong>an objective function</strong> <span class="math inline">\(E(\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
 </section>
-<section id="deepface" class="slide level2">
-<h2>DeepFace</h2>
-<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
-<div class="figure">
-<div id="deep-face-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.
-</aside>
-<div style="text-align:right">
-<small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small>
-</div>
-</section>
-<section id="deep-learning-as-pinball" class="slide level2">
-<h2>Deep Learning as Pinball</h2>
-<div class="figure">
-<div id="early-pinball-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.
-</aside>
-</section>
 <section id="section" class="slide level2">
 <h2></h2>
-<div class="figure">
-<div id="pinball-initialization-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pinball001.svg" width="80%" style=" ">
-</object>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</div>
-<aside class="notes">
-At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.
-</aside>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="pinball-trained-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pinball002.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-After learning the pins are now in the right place to bring the balls to the correct decisions.
-</aside>
+<section id="structure-of-priors" class="slide level2">
+<h2>Structure of Priors</h2>
+<p>MacKay: NeurIPS Tutorial 1997 “Have we thrown out the baby with the bathwater?” <span class="citation" data-cites="MacKay:gpintroduction98">(Published as MacKay, n.d.)</span></p>
 </section>
 <section id="deep-neural-network" class="slide level2">
 <h2>Deep Neural Network</h2>
@@ -180,60 +136,6 @@ After learning the pins are now in the right place to bring the balls to the cor
     f&amp;= \mathbf{ w}_4 ^\top\mathbf{ h}_{3}
 \end{align*}
 \]</span></p>
-</section>
-<section id="uncertainty" class="slide level2">
-<h2>Uncertainty</h2>
-<ul>
-<li>Uncertainty in prediction arises from:</li>
-<li>scarcity of training data and</li>
-<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
-<li>Also uncertainties in objective, leave those for another day.</li>
-</ul>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-Here we’re showing 20 samples taken from the prior over functions defined by our covarariance
-</aside>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.
-</aside>
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.
-</aside>
-</section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.
-</aside>
-</section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<aside class="notes">
-The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.
-</aside>
 </section>
 <section id="overfitting" class="slide level2">
 <h2>Overfitting</h2>
@@ -307,75 +209,65 @@ Pictorial representation of the low rank form of the matrix <span class="math in
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
 </ul>
-</section>
-<section id="stochastic-process-composition" class="slide level2">
-<h2>Stochastic Process Composition</h2>
-<p><span class="math display">\[\mathbf{ y}= \mathbf{ f}_4\left(\mathbf{ f}_3\left(\mathbf{ f}_2\left(\mathbf{ f}_1\left(\mathbf{ x}\right)\right)\right)\right)\]</span></p>
-<!-- SECTION Deep Gaussian Processes -->
-</section>
-<section id="deep-gaussian-processes" class="slide level2">
-<h2>Deep Gaussian Processes</h2>
-</section>
-<section id="section-7" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="cosmic-microwave-background-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="vertical-align:middle" src="https://inverseprobability.com/talks/./slides/diagrams//Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.
-</aside>
-</section>
-<section id="section-8" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="mollweide-sample-cmb-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="vertical-align:middle" src="https://inverseprobability.com/talks/./slides/diagrams//physics/mollweide-sample-cmb.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-A simulation of the Cosmic Microwave Background obtained through sampling from the relevant Gaussian process covariance (in polar co-ordinates).
-</aside>
-</section>
-<section id="section-9" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="modern-universe-non-linear-function-figure" class="figure-frame">
-<div style="fontsize:120px;vertical-align:middle">
-<img src="https://inverseprobability.com/talks/./slides/diagrams//earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span><img src="https://inverseprobability.com/talks/./slides/diagrams//Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
-</div>
-</div>
-</div>
-<aside class="notes">
-What we observe today is some non-linear function of the cosmic microwave background.
-</aside>
-</section>
-<section id="modern-review" class="slide level2">
-<h2>Modern Review</h2>
-<ul>
-<li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></p></li>
-<li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
-</ul>
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</section>
-<section id="structure-of-priors" class="slide level2">
-<h2>Structure of Priors</h2>
-<p>MacKay: NeurIPS Tutorial 1997 “Have we thrown out the baby with the bathwater?” <span class="citation" data-cites="MacKay:gpintroduction98">(Published as MacKay, n.d.)</span></p>
 <!-- SECTION Deep Learning -->
 </section>
 <section id="deep-learning" class="slide level2">
 <h2>Deep Learning</h2>
 <!-- No slide titles in this context -->
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<div class="figure">
+<div id="deep-face-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.
+</aside>
+<div style="text-align:right">
+<small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="early-pinball-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.
+</aside>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="pinball-initialization-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pinball001.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.
+</aside>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="pinball-trained-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pinball002.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+After learning the pins are now in the right place to bring the balls to the correct decisions.
+</aside>
 </section>
 <section id="mathematically-2" class="slide level2">
 <h2>Mathematically</h2>
@@ -403,7 +295,7 @@ p(\mathbf{ y}|\mathbf{ x})= p(\mathbf{ y}|\mathbf{ f}_5)p(\mathbf{ f}_5|\mathbf{
 Probabilistically the deep Gaussian process can be represented as a Markov chain. Indeed they can even be analyzed in this way <span class="citation" data-cites="Dunlop:deep2017">(Dunlop et al., n.d.)</span>.
 </aside>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-markov-vertical-figure" class="figure-frame">
@@ -428,19 +320,19 @@ More usually deep probabilistic models are written vertically rather than horizo
 <li><p>E.g. a priori they don’t believe in function ‘jumps.’</p></li>
 </ul>
 </section>
-<section id="stochastic-process-composition-1" class="slide level2">
+<section id="stochastic-process-composition" class="slide level2">
 <h2>Stochastic Process Composition</h2>
 <ul>
 <li><p>From a process perspective: <em>process composition</em>.</p></li>
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-markov-vertical.svg" width style=" ">
 </object>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-markov-vertical-side-figure" class="figure-frame">
@@ -585,7 +477,7 @@ Even the latest work on Bayesian neural networks has severe problems handling un
 <span class="citation" data-cites="Izmailov:subspace19">Izmailov et al. (2019)</span>
 </div>
 </section>
-<section id="deep-gaussian-processes-1" class="slide level2">
+<section id="deep-gaussian-processes" class="slide level2">
 <h2>Deep Gaussian Processes</h2>
 <ul>
 <li>Deep architectures allow abstraction of features <span class="citation" data-cites="Bengio:deep09 Hinton:fast06 Salakhutdinov:quantitative08">(Bengio, 2009; Hinton and Osindero, 2006; Salakhutdinov and Murray, n.d.)</span></li>
@@ -875,7 +767,7 @@ Gene expression levels over time for a gene from data provided by <span class="c
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
@@ -906,7 +798,7 @@ The example is taken from the paper “A Simple Approach to Ranking Differential
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
 </center>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 </section>
 <section id="tp53-gene-data-gp" class="slide level2">
@@ -1286,7 +1178,7 @@ Inferred two dimensional latent space of the model for the robot wireless data.
 Shared latent variable model structure. Here two related data sets are brought together with a set of latent variables that are partially shared and partially specific to one of the data sets.
 </aside>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="deep-gp-high-five-figure" class="figure-frame">
@@ -1303,7 +1195,6 @@ Latent spaces of the ‘high five’ data. The structure of the model is automat
 <section id="fitting-a-deep-gp-to-a-the-mnist-digits-subsample" class="slide level2">
 <h2>Fitting a Deep GP to a the MNIST Digits Subsample</h2>
 <div class="centered" style="">
-<p><img class="15%" src="https://inverseprobability.com/talks/./slides/diagrams//people/zhenwen-dai.jpg" width="Zhenwen Dai" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip1">
 <style>
@@ -1313,13 +1204,26 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
+Zhenwen Dai
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/zhenwen-dai.jpg" clip-path="url(#clip1)"/>
+</svg>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip2">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
 Andreas Damianou
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/andreas-damianou.png" clip-path="url(#clip1)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/andreas-damianou.png" clip-path="url(#clip2)"/>
 </svg>
 </div>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-latent-figure" class="figure-frame">
@@ -1331,7 +1235,7 @@ Andreas Damianou
 Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the MNIST digits subsample.
 </aside>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1343,7 +1247,7 @@ Latent space for the deep Gaussian process learned through unsupervised learning
 Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 </aside>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1355,7 +1259,7 @@ Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 </aside>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1367,7 +1271,7 @@ Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 </aside>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
@@ -1379,7 +1283,7 @@ Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 </aside>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="digit-samples-deep-gp-figure" class="figure-frame">
@@ -1402,6 +1306,132 @@ These digits are produced by taking a tour of the two dimensional latent space (
 <aside class="notes">
 The deep health model uses different layers of abstraction in the deep Gaussian process to represent information about diagnostics and treatment to model interelationships between a patients different data modalities.
 </aside>
+</section>
+<section id="uncertainty" class="slide level2">
+<h2>Uncertainty</h2>
+<ul>
+<li>Uncertainty in prediction arises from:</li>
+<li>scarcity of training data and</li>
+<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
+<li>Also uncertainties in objective, leave those for another day.</li>
+</ul>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Here we’re showing 20 samples taken from the prior over functions defined by our covarariance
+</aside>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.
+</aside>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.
+</aside>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.
+</aside>
+</section>
+<section id="section-21" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.
+</aside>
+</section>
+<section id="stochastic-process-composition-1" class="slide level2">
+<h2>Stochastic Process Composition</h2>
+<p><span class="math display">\[\mathbf{ y}= \mathbf{ f}_4\left(\mathbf{ f}_3\left(\mathbf{ f}_2\left(\mathbf{ f}_1\left(\mathbf{ x}\right)\right)\right)\right)\]</span></p>
+<!-- SECTION Deep Gaussian Processes -->
+</section>
+<section id="deep-gaussian-processes-1" class="slide level2">
+<h2>Deep Gaussian Processes</h2>
+</section>
+<section id="section-22" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="cosmic-microwave-background-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="vertical-align:middle" src="https://inverseprobability.com/talks/./slides/diagrams//Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.
+</aside>
+</section>
+<section id="section-23" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="mollweide-sample-cmb-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="vertical-align:middle" src="https://inverseprobability.com/talks/./slides/diagrams//physics/mollweide-sample-cmb.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+A simulation of the Cosmic Microwave Background obtained through sampling from the relevant Gaussian process covariance (in polar co-ordinates).
+</aside>
+</section>
+<section id="section-24" class="slide level2">
+<h2></h2>
+<div class="figure">
+<div id="modern-universe-non-linear-function-figure" class="figure-frame">
+<div style="fontsize:120px;vertical-align:middle">
+<img src="https://inverseprobability.com/talks/./slides/diagrams//earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span><img src="https://inverseprobability.com/talks/./slides/diagrams//Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
+</div>
+</div>
+<aside class="notes">
+What we observe today is some non-linear function of the cosmic microwave background.
+</aside>
+</section>
+<section id="modern-review" class="slide level2">
+<h2>Modern Review</h2>
+<ul>
+<li><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span>
+<div class="centered " style="">
+</li>
+</ul>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip3">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Andreas Damianou
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/andreas-damianou.png" clip-path="url(#clip3)"/>
+</svg>
+</div>
+<ul>
+<li><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></li>
+</ul>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
