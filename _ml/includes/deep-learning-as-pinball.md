@@ -16,11 +16,11 @@ In a pinball machine, when the ball gets to the bottom it might fall into a hole
 
 An image has more than one number associated with it, so it is like playing pinball in a *hyper-space*.}
 
-\include{_data-science/includes/pods-install.md}
+\include{_software/includes/notutils-software.md}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('pinball{sample:0>3}.svg', 
+\displaycode{nu.display_plots('pinball{sample:0>3}.svg', 
                             directory='\writeDiagramsDir',
 							sample=IntSlider(1, 1, 2, 1))}
 
