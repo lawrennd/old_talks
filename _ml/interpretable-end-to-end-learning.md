@@ -48,7 +48,7 @@ incremental: True
 \include{_ml/includes/deep-face.md}
 <!--\include{_ml/includes/deep-learning-as-pinball.md}-->
 
-\include{_deepgp/includes/deep-nn.md}
+\include{_deepnn/includes/deep-neural-networks.md}
 \include{_deepgp/includes/overfitting-low-rank.md}
 \include{_deepgp/includes/deep-gp.md}
 \include{_deepgp/includes/stochastic-process-composition.md}

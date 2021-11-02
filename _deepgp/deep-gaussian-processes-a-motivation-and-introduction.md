@@ -34,7 +34,7 @@ https://twitter.com/demishassabis/status/1453794436056502274?s=20
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
-\include{_deepgp/includes/deep-nn.md}
+\include{_deepnn/includes/deep-neural-network.md}
 \include{_ml/includes/why-uncertainty.md}
 \include{_gp/includes/gp-intro-very-short.md}
 
@@ -55,7 +55,7 @@ for path in ['gp', 'datasets', 'deepgp']:
         os.mkdir(path)}
 		
 \include{_data-science/includes/pods-install.md}
-\include{_gp/includes/gpy-install.md}
+\include{_software/includes/gpy-install.md}
 \include{_deepgp/includes/pydeepgp-include.md}
 
 }
