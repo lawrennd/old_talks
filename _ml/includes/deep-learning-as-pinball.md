@@ -16,7 +16,7 @@ In a pinball machine, when the ball gets to the bottom it might fall into a hole
 
 An image has more than one number associated with it, so it is like playing pinball in a *hyper-space*.}
 
-\include{_software/includes/notutils-software.md}
+\include{_software/includes/notutils-install.md}
 
 \setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
