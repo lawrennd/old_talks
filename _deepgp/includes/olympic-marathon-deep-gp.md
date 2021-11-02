@@ -82,8 +82,8 @@ Now we explore the GPs the model has used to fit each layer. First of all, we lo
             diagrams='\writeDiagramsDir/deepgp')}
 
 
-\setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
                             '\writeDiagramsDir/deepgp', sample=(0,1))}
 
 \newslide{Olympic Marathon Data Latent 1}
