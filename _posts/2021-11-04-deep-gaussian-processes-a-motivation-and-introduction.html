@@ -1486,11 +1486,22 @@ Freddie Kalaitzis
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/mnist-digits-subsample-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/mnist-digits-subsample-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<small>
-<div style="text-align:right">
-Thanks to: Zhenwen Dai and Neil D. Lawrence
+<div class="centered" style="">
+<p><img class="15%" src="https://inverseprobability.com/talks/./slides/diagrams//people/zhenwen-dai.jpg" width="Zhenwen Dai" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip1">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Andreas Damianou
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/andreas-damianou.png" clip-path="url(#clip1)"/>
+</svg>
 </div>
-<p></small></p>
 <p>We now look at the deep Gaussian processes’ capacity to perform unsupervised learning.</p>
 <h2 id="fit-a-deep-gp">Fit a Deep GP</h2>
 <p>We’re going to fit a Deep Gaussian process model to the MNIST data with two hidden layers. Each of the two Gaussian processes (one from the first hidden layer to the second, one from the second hidden layer to the data) has an exponentiated quadratic covariance.</p>
@@ -1524,7 +1535,7 @@ Thanks to: Zhenwen Dai and Neil D. Lawrence
 <p>Now the model is trained, let’s plot the mean of the posterior distributions in the top latent layer of the model.</p>
 <div class="figure">
 <div id="mnist-digits-subsample-latent-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//mnist-digits-subsample-latent.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/mnist-digits-subsample-latent.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="mnist-digits-subsample-latent-magnify" class="magnify" onclick="magnifyFigure(&#39;mnist-digits-subsample-latent&#39;)">
@@ -1539,7 +1550,7 @@ Thanks to: Zhenwen Dai and Neil D. Lawrence
 <div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>m.obslayer.kern.lengthscale</span></code></pre></div>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//mnist-digits-subsample-hidden-1-0.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/mnist-digits-subsample-hidden-1-0.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="mnist-digits-subsample-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;mnist-digits-subsample-hidden-1-0&#39;)">
@@ -1551,7 +1562,7 @@ Thanks to: Zhenwen Dai and Neil D. Lawrence
 </div>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//mnist-digits-subsample-hidden-2-0.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/mnist-digits-subsample-hidden-2-0.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="mnist-digits-subsample-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;mnist-digits-subsample-hidden-1-0&#39;)">
@@ -1563,7 +1574,7 @@ Thanks to: Zhenwen Dai and Neil D. Lawrence
 </div>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//mnist-digits-subsample-hidden-3-0.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/mnist-digits-subsample-hidden-3-0.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="mnist-digits-subsample-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;mnist-digits-subsample-hidden-1-0&#39;)">
@@ -1575,7 +1586,7 @@ Thanks to: Zhenwen Dai and Neil D. Lawrence
 </div>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//mnist-digits-subsample-hidden-4-0.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/mnist-digits-subsample-hidden-4-0.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="mnist-digits-subsample-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;mnist-digits-subsample-hidden-1-0&#39;)">
@@ -1596,7 +1607,7 @@ Thanks to: Zhenwen Dai and Neil D. Lawrence
 <span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</span></code></pre></div>
 <div class="figure">
 <div id="digit-samples-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//digit-samples-deep-gp.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/digit-samples-deep-gp.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="digit-samples-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;digit-samples-deep-gp&#39;)">
