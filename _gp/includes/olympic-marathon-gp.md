@@ -23,9 +23,9 @@ optimizes the parameters of the covariance function and the noise level of the m
 yt_mean, yt_var = m_full.predict(xt)
 yt_sd=np.sqrt(yt_var)}
 
-\notes{Now we plot the results using the helper function in ```teaching_plots```.}
+\notes{Now we plot the results using the helper function in ```mlai.plot```.}
 
-\setupdisplaycode{import teaching_plots as plot}
+\setupdisplaycode{import mlai.plot as plot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
