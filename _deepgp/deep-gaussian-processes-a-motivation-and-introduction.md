@@ -25,12 +25,12 @@ transition: None
 ---
 
 
-https://twitter.com/demishassabis/status/1453794436056502274?s=20
+<!--https://twitter.com/demishassabis/status/1453794436056502274?s=20 -->
 
 
 \section{Introduction}
 
-\include{_ai/includes/the-fourth-industrial-revolution.md}
+\include{_ai/includes/the-fourth-industrial-revolution-intro.md}
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
