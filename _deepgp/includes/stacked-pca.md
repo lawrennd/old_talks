@@ -2,7 +2,9 @@
 \define{stackedPca}
 \editme
 
-\setupplotcode{import teaching_plots as plot}
+\subsection{Stacked PCA}
+
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.Linear,
                      diagrams="\writeDiagramsDir/deepgp")}
 
@@ -10,7 +12,7 @@
 \displaycode{pods.notebook.display_plots('stack-gp-sample-Linear-{sample:0>1}.svg', 
                             directory='\writeDiagramsDir/deepgp', sample=(0,4))}
 
-\subsection{Stacked PCA}
+
 \slides{
 \define{\width}{10%}
 \startanimation{stack-pca-sample}{0}{4}
