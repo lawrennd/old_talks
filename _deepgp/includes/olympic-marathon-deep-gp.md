@@ -26,9 +26,6 @@ m = deepgp.DeepGP([y.shape[1],hidden,x.shape[1]],Y=yhat, X=x, inits=['PCA','PCA'
                            GPy.kern.RBF(x.shape[1],ARD=True)], # the kernels for each layer
                   num_inducing=50, back_constraint=False)}
 				  
-\notes{}
-
-\setupcode{import deepgp}
 
 \code{# Call the initalization
 m.initialize()}
