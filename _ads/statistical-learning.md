@@ -1,7 +1,7 @@
 ---
 week: 6
 session: 2
-title: "Statistical Learning"
+title: "Fyness Process Tidy Up"
 abstract:  >
 layout: lecture
 venue: LT2, William Gates Building
