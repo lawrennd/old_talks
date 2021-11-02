@@ -159,7 +159,7 @@ $$
 
 \notes{But in general, these indices need to be sampled using Monte Carlo or one of the quasi-Monte Carlo methods we've seen in the model-free experimental design. Details are given in [@Sobol-global01].}
 
-\notes{With Emukit, the first-order Sobol indices can be easily computed. We first need to define the space where of target simulator is analyzed.}
+\notes{With Emukit, the first-order Sobol indices can be easily computed. We first need to define the space where the target simulator is analyzed.}
 
 \setupcode{from emukit.sensitivity.monte_carlo import ModelFreeMonteCarloSensitivity}
 
