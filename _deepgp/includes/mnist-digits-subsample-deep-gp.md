@@ -7,7 +7,7 @@
 
 \subsection{Fitting a Deep GP to a the MNIST Digits Subsample}
 
-\thanksto{Zhenwen Dai and Neil D. Lawrence}
+\centerdiv{\zhenwenDaiPicture{15%}\andreasDamianouPicture{15%}}
 
 \notes{We now look at the deep Gaussian processes' capacity to perform unsupervised learning.}
 
@@ -75,7 +75,7 @@ mlai.write_figure(figure=fig, filename="\writeDiagramsDir/deepgp/mnist-digits-su
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/mnist-digits-subsample-latent}{60%}}{Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the MNIST digits subsample.}{mnist-digits-subsample-latent}
+\figure{\includediagram{\diagramsDir/deepgp/mnist-digits-subsample-latent}{60%}}{Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the MNIST digits subsample.}{mnist-digits-subsample-latent}
 
 \notes{
 \subsection{Visualize the latent space of the intermediate layer}
@@ -103,19 +103,19 @@ for i in range(5):
 		
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-1-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
+\figure{\includediagram{\diagramsDir/deepgp/mnist-digits-subsample-hidden-1-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-2-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
+\figure{\includediagram{\diagramsDir/deepgp/mnist-digits-subsample-hidden-2-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-3-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
+\figure{\includediagram{\diagramsDir/deepgp/mnist-digits-subsample-hidden-3-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-4-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
+\figure{\includediagram{\diagramsDir/deepgp/mnist-digits-subsample-hidden-4-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \notes{
 \subsection{Generate From Model}
@@ -148,6 +148,6 @@ mlai.write_figure(figure=fig, filename="\writeDiagramsDir/deepgp/digit-samples-d
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/digit-samples-deep-gp}{80%}}{These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.}{digit-samples-deep-gp}
+\figure{\includediagram{\diagramsDir/deepgp/digit-samples-deep-gp}{80%}}{These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.}{digit-samples-deep-gp}
 
 \endif
