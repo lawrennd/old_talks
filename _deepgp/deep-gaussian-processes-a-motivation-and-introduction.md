@@ -45,23 +45,8 @@ transition: None
 
 \section{Deep Gaussian Processes}
 
-\notes{\setupcode{# Download some utilty files}
 \installcode{mlai}
-<!--\downloadcode{gp_tutorial}-->
-\downloadcode{deepgp_tutorial}
-\setupcode{import os
-for path in ['gp', 'datasets', 'deepgp']:
-    if not os.path.exists(path):
-        os.mkdir(path)}
-		
-\include{_data-science/includes/pods-install.md}
-\include{_software/includes/gpy-install.md}
-\include{_deepgp/includes/pydeepgp-include.md}
-
-}
 \include{_gp/includes/planck-cmp-master-gp.md}
-
-
 
 \subsection{Modern Review}
 
@@ -71,7 +56,12 @@ for path in ['gp', 'datasets', 'deepgp']:
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-\include{_deepgp/includes/deep-results.md}
+\include{_deepgp/includes/deep-gp-setup-code.md}
+\include{_deepgp/includes/olympic-marathon-deep-gp.md}
+\include{_deepgp/includes/step-function-deep-gp.md}
+\include{_deepgp/includes/motorcycle-helmet-deep-gp.md}
+
+\include{_deepgp/includes/mnist-digits-subsample-deep-gp.md}
 \include{_health/includes/deep-health-model.md}
 
 \thanks
