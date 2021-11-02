@@ -131,7 +131,7 @@
      r="12" />
   <circle
      class="ball"
-     style="fill:#905224;fill-opacity:1"
+     style="fill:#f03700;fill-opacity:1"
      id="yescircle"
      cx="595"
      cy="45"
@@ -151,7 +151,7 @@
      cx="595"
      cy="45"
      r="40"
-     style="fill:#905224;fill-opacity:1" />
+     style="fill:#f03700;fill-opacity:1" />
   <animateMotion
       xlink:href="#yescircle2"
       dur="2s"
@@ -166,7 +166,7 @@
      id="nocircle"
      cx="595"
      cy="45"
-     style="fill:#7c48a1;fill-opacity:1"
+     style="fill:#0fc8ff;fill-opacity:1"
      r="40" />
   <animateMotion
       xlink:href="#nocircle"
@@ -179,7 +179,7 @@
       path="M0,0 -270,0 -270,0 -270,0 -270,0 -270,0 -270,0 -260,74 -280,74 -270,90 -285,180 -325,168 -350,194 -330,202 -345,310 -365,440" />
   <rect
      class="decisionbox"
-     style="fill:#905224;fill-opacity:1"
+     style="fill:#f03700;fill-opacity:1"
      id="yesbox"
      width="125"
      height="35"
@@ -193,7 +193,7 @@
   
   <rect
      class="decisionbox"
-     style="fill:#7c48a1;fill-opacity:1"
+     style="fill:#0fc8ff;fill-opacity:1"
      id="nobox"
      width="125"
      height="35"
