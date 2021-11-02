@@ -1,5 +1,5 @@
 ---
-title: "Deep Gaussian Processes"
+title: "Deep Gaussian Processes: A Motivation and Introduction"
 venue: "LG Distinguished Talk"
 abstract: "<p>Modern machine learning methods have driven significant advances in artificial intelligence, with notable examples coming from Deep Learning, enabling super-human performance in the game of Go and highly accurate prediction of protein folding e.g. AlphaFold. In this talk we look at deep learning from the perspective of Gaussian processes. Deep Gaussian processes extend the notion of deep learning to propagate uncertainty alongside function values. We’ll explain why this is important and show some simple examples.</p>"
 author:
@@ -940,7 +940,7 @@ Andreas Damianou
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
 <p>First load in the MNIST data set from scikit learn. This can take a little while because it’s large to download.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_openml</span></code></pre></div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mnist <span class="op">=</span> fetch_mldata(<span class="st">&#39;MNIST original&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mnist <span class="op">=</span> fetch_openml(<span class="st">&#39;mnist_784&#39;</span>)</span></code></pre></div>
 <p>Sub-sample the dataset to make the training faster.</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
