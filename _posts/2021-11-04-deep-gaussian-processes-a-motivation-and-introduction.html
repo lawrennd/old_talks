@@ -1,5 +1,5 @@
 ---
-title: "Deep GPs"
+title: "Deep Gaussian Processes: A Motivation and Introduction"
 venue: "LG Distinguished Talk"
 abstract: "<p>Modern machine learning methods have driven significant advances in artificial intelligence, with notable examples coming from Deep Learning, enabling super-human performance in the game of Go and highly accurate prediction of protein folding e.g. AlphaFold. In this talk we look at deep learning from the perspective of Gaussian processes. Deep Gaussian processes extend the notion of deep learning to propagate uncertainty alongside function values. We’ll explain why this is important and show some simple examples.</p>"
 author:
@@ -579,7 +579,7 @@ categories:
 <div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>yt_sd<span class="op">=</span>np.sqrt(yt_var)</span></code></pre></div>
-<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<p>Now we plot the results using the helper function in <code>mlai.plot</code>.</p>
 <div class="figure">
 <div id="olympic-marathon-gp-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//gp/olympic-marathon-gp.svg" width="80%" style=" ">
@@ -762,7 +762,7 @@ Freddie Kalaitzis
 <div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>xt <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">20</span>,<span class="dv">260</span>,<span class="dv">200</span>)[:,np.newaxis]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>yt_sd<span class="op">=</span>np.sqrt(yt_var)</span></code></pre></div>
-<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<p>Now we plot the results using the helper function in <code>mlai.plot</code>.</p>
 <div class="figure">
 <div id="della-gatta-gene-gp-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//gp/della-gatta-gene-gp.svg" width="80%" style=" ">
@@ -968,7 +968,7 @@ Freddie Kalaitzis
 <p>Once the model is constructed we initialize the parameters, and perform the staged optimization which starts by optimizing variational parameters with a low noise and proceeds to optimize the whole model.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>m.initialize()</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>m.staged_optimize()</span></code></pre></div>
-<p>We plot the output of the deep Gaussian process fitted to the stpe data as follows.</p>
+<p>We plot the output of the deep Gaussian process fitted to the step data as follows.</p>
 <p>The deep Gaussian process does a much better job of fitting the data. It handles the discontinuity easily, and error bars drop to smaller values in the regions of data.</p>
 <div class="figure">
 <div id="step-function-deep-gp-figure" class="figure-frame">
@@ -983,7 +983,7 @@ Freddie Kalaitzis
 </div>
 </div>
 <h2 id="step-function-data-deep-gp-1">Step Function Data Deep GP</h2>
-<p>The samples of the model can be plotted with the helper function from <code>teaching_plots.py</code>, <code>model_sample</code></p>
+<p>The samples of the model can be plotted with the helper function from <code>mlai.plot</code>, <code>model_sample</code></p>
 <p>The samples from the model show that the error bars, which are informative for Gaussian outputs, are less informative for this model. They make clear that the data points lie, in output mainly at 0 or 1, or occasionally in between.</p>
 <div class="figure">
 <div id="step-function-deep-gp-samples-figure" class="figure-frame">
@@ -1070,6 +1070,10 @@ Freddie Kalaitzis
 <p>Figure: Gaussian process fit to the motorcycle helmet accelerometer data.</p>
 </div>
 </div>
+<h2 id="motorcycle-helmet-data-deep-gp">Motorcycle Helmet Data Deep GP</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/motorcycle-helmet-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/motorcycle-helmet-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span></code></pre></div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, x.shape[<span class="dv">1</span>]]</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</span>
@@ -1085,10 +1089,6 @@ Freddie Kalaitzis
 <span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>m.initialize()</span></code></pre></div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>m.staged_optimize(iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>))</span></code></pre></div>
-<h2 id="motorcycle-helmet-data-deep-gp">Motorcycle Helmet Data Deep GP</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/motorcycle-helmet-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/motorcycle-helmet-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <div class="figure">
 <div id="motorcycle-helmet-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/motorcycle-helmet-deep-gp.svg" width="80%" style=" ">

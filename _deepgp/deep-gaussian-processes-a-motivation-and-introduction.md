@@ -1,7 +1,7 @@
 ---
 layout: talk
-title: "Deep Gaussian Processes: A Motivation and Introduction"
-title: "Deep GPs"
+title: "Deep Gaussian Processes"
+subtitle: "A Motivation and Introduction"
 abstract: >
   Modern machine learning methods have driven significant advances in
   artificial intelligence, with notable examples coming from Deep
