@@ -44,6 +44,8 @@ transition: None
 \include{_deepgp/includes/process-composition.md}
 
 \section{Deep Gaussian Processes}
+\centerdiv{\andreasDamianouPicture{15%}}
+    @Damianou:thesis2015
 
 \installcode{mlai}
 \include{_gp/includes/planck-cmp-master-gp.md}
@@ -52,7 +54,7 @@ transition: None
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
-\centerdiv{\andreasDamianouPicture{15%}}
+
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
