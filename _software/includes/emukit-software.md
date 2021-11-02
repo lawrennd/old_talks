@@ -12,7 +12,7 @@
 
 However, `GPyOpt` doesn't allow the full flexibility of surrogate modelling for domains like experimental design, sensitivity analysis etc.}
 
-\notes{Emukit was designed and built for a more general approach. The software is MIT licensed and its design and implementation was led by Javier Gonzalez and [Andrei Paleyes](https://www.linkedin.com/in/andreipaleyes) at Amazon. Building on the experience of `GPyOpt`, the aim with Emukit was to use the modularisation ideas embedded in `GPyOpt`, but to extend them beyond the modularisation of the surrogate models to modularisation of the acquisition function.}
+\notes{Emukit [@Paleyes-emulation19] was designed and built for a more general approach. The software is MIT licensed and its design and implementation was led by Javier Gonzalez and [Andrei Paleyes](https://www.linkedin.com/in/andreipaleyes) at Amazon. Building on the experience of `GPyOpt`, the aim with Emukit was to use the modularisation ideas embedded in `GPyOpt`, but to extend them beyond the modularisation of the surrogate models to modularisation of the acquisition function.}
 
 \figure{\includepng{\diagramsDir/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. <https://emukit.github.io/emukit/>}{emukit-software-page}
 
