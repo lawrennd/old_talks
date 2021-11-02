@@ -46,7 +46,7 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-
 
 \subsection{Robot WiFi Data Latent Space}
 
-\figure{\includediagram{\diagramsDir/deepgp/robot-wireless-ground-truth}{60%}}{Actual ground truth of motion in the building.}{robot-wireless-ground-truth}
+\slides{\includediagram{\diagramsDir/deepgp/robot-wireless-ground-truth}{60%}}
 
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_figsize)
@@ -59,7 +59,9 @@ ax.set_ylabel('latent dimension 2', fontsize=20)
 
 mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-latent-space.svg', 
             transparent=True, frameon=True)}
-			
+
+\newslide{Robot WiFi Data Latent Space}
+
 \figure{\includediagram{\diagramsDir/deepgp/robot-wireless-latent-space}{60%}}{Inferred two dimensional latent space of the model for the robot wireless data.}{robot-wireless-latent-space}
 
 
