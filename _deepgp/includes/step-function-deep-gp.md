@@ -28,7 +28,7 @@ m = deepgp.DeepGP(layers,Y=yhat, X=x,
 \code{m.initialize()
 m.staged_optimize()}
 
-\displaynotes{We plot the output of the deep Gaussian process fitted to the stpe data as follows.}
+\displaynotes{We plot the output of the deep Gaussian process fitted to the step data as follows.}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, scale=scale, offset=offset, ax=ax, fontsize=20, portion=0.5)
@@ -43,7 +43,9 @@ mlai.write_figure(filename='\writeDiagramsDir/deepgp/step-function-deep-gp.svg',
 
 \subsection{Step Function Data Deep GP}
 
-\displaynotes{The samples of the model can be plotted with the helper function from ```teaching_plots.py```, ```model_sample```}
+\displaynotes{The samples of the model can be plotted with the helper function from `mlai.plot`, `model_sample`}
+
+\setupdisplaycode{import mlai.plot as plot}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -88,6 +90,10 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/step-function-d
 \newslide{Step Function Pinball Plot}
 
 \displaynotes{A pinball plot can be created for the resulting model to understand how the input is being translated to the output across the different layers.}
+
+\setupdisplaycode{import matplotlib.pyplot as plt
+import mlai.plot as plot
+import mlai}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(offset=offset, ax=ax, scale=scale, xlim=xlim, ylim=ylim, portion=0.1, points=50)
