@@ -9,13 +9,13 @@
 
 \notes{The software can be installed using}
 
-\installcode{notutils}
+\include{_software/includes/notutils-install.md}
 
 \notes{from the command prompt where you can access your python installation.}
 
 \notes{The code is also available on GitHub: <https://github.com/lawrennd/notutils>
 
-Once ``notutils`` is installed, it can be imported in the usual manner.}
+Once `notutils` is installed, it can be imported in the usual manner.}
 
 \setupcode{import notutils}
 
