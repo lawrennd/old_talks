@@ -24,6 +24,8 @@ transition: None
 
 \include{_mlphysical/includes/mlphysical-notebook-setup.md}
 
+\include{_uq/includes/uq-sampling-history-doe.md}
+
 \include{_software/includes/emukit-software.md}
 \include{_uq/includes/emukit-vision.md}
 \include{_uq/includes/emukit-tutorial.md}
