@@ -11,7 +11,7 @@
 \notes{Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).}
 
 \setupcode{import GPy}
-\code{m_full = GPy.models.GPRegression(x,y)
+\code{m_full = GPy.models.GPRegression(x,yhat)
 _ = m_full.optimize() # Optimize parameters of covariance function}
 
 \notes{The first command sets up the model, then `m_full.optimize()`
