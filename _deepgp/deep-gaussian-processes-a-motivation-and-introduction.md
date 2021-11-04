@@ -31,6 +31,7 @@ transition: None
 
 \include{_ai/includes/the-fourth-industrial-revolution-intro.md}
 \installcode{mlai}
+\installcode{notutils}
 \include{_ml/includes/what-is-ml.md}
 \include{_gp/includes/mackay-bathwater.md}
 \include{_ml/includes/deep-learning-overview.md}
@@ -64,6 +65,8 @@ transition: None
 \include{_deepgp/includes/motorcycle-helmet-deep-gp.md}
 
 \include{_deepgp/includes/mnist-digits-subsample-deep-gp.md}
+
+\include{_deepgp/includes/deep-neural-networks-as-point-estimates.md}
 \include{_health/includes/deep-health-model.md}
 
 \thanks
