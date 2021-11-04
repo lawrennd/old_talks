@@ -41,6 +41,7 @@ categories:
 <p>The fourth industrial revolution bears the particular hallmark of being the first revolution that has been named before it has happened. This is particularly unfortunate, because it is not in fact an industrial revolution at all. Nor is it necessarily a distinct phenomenon. It is part of a revolution in information, one that goes back to digitisation and the invention of the silicon chip.</p>
 <p>Or to put it more precisely, it is a revolution in how information can affect the physical world. The interchange between information and the physical world.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install mlai</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install notutils</span></code></pre></div>
 <h1 id="what-is-machine-learning">What is Machine Learning?</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -140,7 +141,7 @@ categories:
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepnn/includes/deep-neural-network.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepnn/includes/deep-neural-network.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install daft</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install daft</span></code></pre></div>
 <div class="figure">
 <div id="deep-neural-network-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn2.svg" width="70%" style=" ">
@@ -399,7 +400,7 @@ Andreas Damianou
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/planck-cmp-master-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/planck-cmp-master-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The <a href="https://en.wikipedia.org/wiki/Planck_(spacecraft)">Planck space craft</a> was a European Space Agency space telescope that mapped the cosmic microwave background (CMB) from 2009 to 2013. The <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background">Cosmic Microwave Background</a> is the first observable echo we have of the big bang. It dates to approximately 400,000 years after the big bang, at the time the universe was approximately <span class="math inline">\(10^8\)</span> times smaller and the temperature of the Univers was high, around <span class="math inline">\(3 \times 10^8\)</span> degrees Kelvin. The Universe was in the form of a hydrogen plasma. The echo we observe is the moment when the Universe was cool enough for Protons and electrons to combine to form hydrogen atoms. At this moment, the Universe became transparent for the first time, and photons could travel through space.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Planck_(spacecraft)">Planck space craft</a> was a European Space Agency space telescope that mapped the cosmic microwave background (CMB) from 2009 to 2013. The <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background">Cosmic Microwave Background</a> is the first observable echo we have of the big bang. It dates to approximately 400,000 years after the big bang, at the time the Universe was approximately <span class="math inline">\(10^8\)</span> times smaller and the temperature of the Universe was high, around <span class="math inline">\(3 \times 10^8\)</span> degrees Kelvin. The Universe was in the form of a hydrogen plasma. The echo we observe is the moment when the Universe was cool enough for Protons and electrons to combine to form hydrogen atoms. At this moment, the Universe became transparent for the first time, and photons could travel through space.</p>
 <div class="figure">
 <div id="planck-spacecraft-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -436,36 +437,36 @@ Andreas Damianou
 <li><code>camb</code>: <a href="http://camb.readthedocs.io/en/latest/" class="uri">http://camb.readthedocs.io/en/latest/</a></li>
 <li><code>healpy</code>: <a href="https://healpy.readthedocs.io/en/latest/" class="uri">https://healpy.readthedocs.io/en/latest/</a></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install camb</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install healpy</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> healpy <span class="im">as</span> hp</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> camb</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> camb <span class="im">import</span> model, initialpower</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install camb</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install healpy</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> healpy <span class="im">as</span> hp</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> camb</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> camb <span class="im">import</span> model, initialpower</span></code></pre></div>
 <p>Now we use the theoretical power spectrum to design the covariance function.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nside <span class="op">=</span> <span class="dv">512</span>  <span class="co"># Healpix parameter, giving 12*nside**2 equal-area pixels on the sphere.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lmax <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>nside <span class="co"># band-limit. Should be 2*nside &lt; lmax &lt; 4*nside to get information content.</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nside <span class="op">=</span> <span class="dv">512</span>  <span class="co"># Healpix parameter, giving 12*nside**2 equal-area pixels on the sphere.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lmax <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>nside <span class="co"># band-limit. Should be 2*nside &lt; lmax &lt; 4*nside to get information content.</span></span></code></pre></div>
 <p>Now we design our Universe. It is parameterized according to the <a href="https://en.wikipedia.org/wiki/Lambda-CDM_model"><span class="math inline">\(\Lambda\)</span>CDM model</a>. The variables are as follows. <code>H0</code> is the Hubble parameter (in Km/s/Mpc). The <code>ombh2</code> is Physical Baryon density parameter. The <code>omch2</code> is the physical dark matter density parameter. <code>mnu</code> is the sum of the neutrino masses (in electron Volts). <code>omk</code> is the <span class="math inline">\(\Omega_k\)</span> is the curvature parameter, which is here set to 0, giving the minimal six parameter Lambda-CDM model. <code>tau</code> is the reionization optical depth.</p>
 <p>Then we set <code>ns</code>, the “scalar spectral index.” This was estimated by Planck to be 0.96. Then there’s <code>r</code>, the ratio of the tensor power spectrum to scalar power spectrum. This has been estimated by Planck to be under 0.11. Here we set it to zero. These parameters are associated <a href="https://en.wikipedia.org/wiki/Primordial_fluctuations">with inflation</a>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostly following http://camb.readthedocs.io/en/latest/CAMBdemo.html with parameters from https://en.wikipedia.org/wiki/Lambda-CDM_model</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>pars <span class="op">=</span> camb.CAMBparams()</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>pars.set_cosmology(H0<span class="op">=</span><span class="fl">67.74</span>, ombh2<span class="op">=</span><span class="fl">0.0223</span>, omch2<span class="op">=</span><span class="fl">0.1188</span>, mnu<span class="op">=</span><span class="fl">0.06</span>, omk<span class="op">=</span><span class="dv">0</span>, tau<span class="op">=</span><span class="fl">0.066</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>pars.InitPower.set_params(ns<span class="op">=</span><span class="fl">0.96</span>, r<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostly following http://camb.readthedocs.io/en/latest/CAMBdemo.html with parameters from https://en.wikipedia.org/wiki/Lambda-CDM_model</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>pars <span class="op">=</span> camb.CAMBparams()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>pars.set_cosmology(H0<span class="op">=</span><span class="fl">67.74</span>, ombh2<span class="op">=</span><span class="fl">0.0223</span>, omch2<span class="op">=</span><span class="fl">0.1188</span>, mnu<span class="op">=</span><span class="fl">0.06</span>, omk<span class="op">=</span><span class="dv">0</span>, tau<span class="op">=</span><span class="fl">0.066</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>pars.InitPower.set_params(ns<span class="op">=</span><span class="fl">0.96</span>, r<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
 <p>Having set the parameters, we now use the python software “Code for Anisotropies in the Microwave Background” to get the results.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pars.set_for_lmax(lmax, lens_potential_accuracy<span class="op">=</span><span class="dv">0</span>)<span class="op">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> camb.get_results(pars)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>powers <span class="op">=</span> results.get_cmb_power_spectra(pars)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>totCL <span class="op">=</span> powers[<span class="st">&#39;total&#39;</span>]</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>unlensedCL <span class="op">=</span> powers[<span class="st">&#39;unlensed_scalar&#39;</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>ells <span class="op">=</span> np.arange(totCL.shape[<span class="dv">0</span>])</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>Dells <span class="op">=</span> totCL[:, <span class="dv">0</span>]</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>Cells <span class="op">=</span> Dells <span class="op">*</span> <span class="dv">2</span><span class="op">*</span>np.pi <span class="op">/</span> ells <span class="op">/</span> (ells <span class="op">+</span> <span class="dv">1</span>)  <span class="co"># change of convention to get C_ell</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>Cells[<span class="dv">0</span>:<span class="dv">2</span>] <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cmbmap <span class="op">=</span> hp.synfast(Cells, nside, </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                 lmax<span class="op">=</span>lmax, mmax<span class="op">=</span><span class="va">None</span>, alm<span class="op">=</span><span class="va">False</span>, pol<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                 pixwin<span class="op">=</span><span class="va">False</span>, fwhm<span class="op">=</span><span class="fl">0.0</span>, sigma<span class="op">=</span><span class="va">None</span>, new<span class="op">=</span><span class="va">False</span>, verbose<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pars.set_for_lmax(lmax, lens_potential_accuracy<span class="op">=</span><span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> camb.get_results(pars)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>powers <span class="op">=</span> results.get_cmb_power_spectra(pars)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>totCL <span class="op">=</span> powers[<span class="st">&#39;total&#39;</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>unlensedCL <span class="op">=</span> powers[<span class="st">&#39;unlensed_scalar&#39;</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>ells <span class="op">=</span> np.arange(totCL.shape[<span class="dv">0</span>])</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>Dells <span class="op">=</span> totCL[:, <span class="dv">0</span>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>Cells <span class="op">=</span> Dells <span class="op">*</span> <span class="dv">2</span><span class="op">*</span>np.pi <span class="op">/</span> ells <span class="op">/</span> (ells <span class="op">+</span> <span class="dv">1</span>)  <span class="co"># change of convention to get C_ell</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>Cells[<span class="dv">0</span>:<span class="dv">2</span>] <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cmbmap <span class="op">=</span> hp.synfast(Cells, nside, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                 lmax<span class="op">=</span>lmax, mmax<span class="op">=</span><span class="va">None</span>, alm<span class="op">=</span><span class="va">False</span>, pol<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                 pixwin<span class="op">=</span><span class="va">False</span>, fwhm<span class="op">=</span><span class="fl">0.0</span>, sigma<span class="op">=</span><span class="va">None</span>, new<span class="op">=</span><span class="va">False</span>, verbose<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <div class="figure">
 <div id="mollweide-sample-cmb-figure" class="figure-frame">
 <div class="centered" style="">
@@ -499,7 +500,7 @@ Andreas Damianou
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></p></li>
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install gpy</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install gpy</span></code></pre></div>
 <h2 id="gpy-a-gaussian-process-framework-in-python">GPy: A Gaussian Process Framework in Python</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_software/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -523,20 +524,20 @@ Andreas Damianou
 <p>The aim for GPy is to be a probabilistic-style programming language, i.e., you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
 <p>The documentation for GPy can be found <a href="https://gpy.readthedocs.io/en/latest/">here</a>.</p>
 <p>This notebook depends on PyDeepGP. This library can be installed via pip.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install <span class="op">--</span>upgrade git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>SheffieldML<span class="op">/</span>PyDeepGP.git</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Late bind setup methods to DeepGP object</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> initialize</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> staged_optimize</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> posterior_sample</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> visualize</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> visualize_pinball</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.initialize<span class="op">=</span>initialize</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.staged_optimize<span class="op">=</span>staged_optimize</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.posterior_sample<span class="op">=</span>posterior_sample</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.visualize<span class="op">=</span>visualize</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install <span class="op">--</span>upgrade git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>SheffieldML<span class="op">/</span>PyDeepGP.git</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Late bind setup methods to DeepGP object</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> initialize</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> staged_optimize</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> posterior_sample</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> visualize</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai.deepgp_tutorial <span class="im">import</span> visualize_pinball</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.initialize<span class="op">=</span>initialize</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.staged_optimize<span class="op">=</span>staged_optimize</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.posterior_sample<span class="op">=</span>posterior_sample</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.visualize<span class="op">=</span>visualize</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</span></code></pre></div>
 <h2 id="olympic-marathon-data">Olympic Marathon Data</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -560,16 +561,16 @@ Andreas Damianou
 </tr>
 </table>
 <p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pods</span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.olympic_marathon_men()</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>offset <span class="op">=</span> y.mean()</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> np.sqrt(y.var())</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>yhat <span class="op">=</span> (y <span class="op">-</span> offset)<span class="op">/</span>scale</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pods</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.olympic_marathon_men()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>offset <span class="op">=</span> y.mean()</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> np.sqrt(y.var())</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>yhat <span class="op">=</span> (y <span class="op">-</span> offset)<span class="op">/</span>scale</span></code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//datasets/olympic-marathon.svg" width="80%" style=" ">
@@ -621,13 +622,13 @@ Andreas Damianou
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/olympic-marathon-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/olympic-marathon-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Our first objective will be to perform a Gaussian process fit to the data, we’ll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
 <p>The first command sets up the model, then <code>m_full.optimize()</code> optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we’ll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using <code>y_mean, y_var = m_full.predict(xt)</code></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>yt_sd<span class="op">=</span>np.sqrt(yt_var)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>yt_sd<span class="op">=</span>np.sqrt(yt_var)</span></code></pre></div>
 <p>Now we plot the results using the helper function in <code>mlai.plot</code>.</p>
 <div class="figure">
 <div id="olympic-marathon-gp-figure" class="figure-frame">
@@ -643,31 +644,31 @@ Andreas Damianou
 </div>
 <h2 id="fit-quality">Fit Quality</h2>
 <p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this make a version of the model, <code>m_clean</code>, where that point is removed.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x_clean<span class="op">=</span>np.vstack((x[<span class="dv">0</span>:<span class="dv">2</span>, :], x[<span class="dv">3</span>:, :]))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>y_clean<span class="op">=</span>np.vstack((yhat[<span class="dv">0</span>:<span class="dv">2</span>, :], yhat[<span class="dv">3</span>:, :]))</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>m_clean <span class="op">=</span> GPy.models.GPRegression(x_clean,y_clean)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_clean.optimize()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x_clean<span class="op">=</span>np.vstack((x[<span class="dv">0</span>:<span class="dv">2</span>, :], x[<span class="dv">3</span>:, :]))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>y_clean<span class="op">=</span>np.vstack((yhat[<span class="dv">0</span>:<span class="dv">2</span>, :], yhat[<span class="dv">3</span>:, :]))</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>m_clean <span class="op">=</span> GPy.models.GPRegression(x_clean,y_clean)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_clean.optimize()</span></code></pre></div>
 <h2 id="deep-gp-fit">Deep GP Fit</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/olympic-marathon-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/olympic-marathon-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Let’s see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
 <p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span></code></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hidden <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP([y.shape[<span class="dv">1</span>],hidden,x.shape[<span class="dv">1</span>]],Y<span class="op">=</span>yhat, X<span class="op">=</span>x, inits<span class="op">=</span>[<span class="st">&#39;PCA&#39;</span>,<span class="st">&#39;PCA&#39;</span>], </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>[GPy.kern.RBF(hidden,ARD<span class="op">=</span><span class="va">True</span>),</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                           GPy.kern.RBF(x.shape[<span class="dv">1</span>],ARD<span class="op">=</span><span class="va">True</span>)], <span class="co"># the kernels for each layer</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the initalization</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>m.initialize()</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>hidden <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP([y.shape[<span class="dv">1</span>],hidden,x.shape[<span class="dv">1</span>]],Y<span class="op">=</span>yhat, X<span class="op">=</span>x, inits<span class="op">=</span>[<span class="st">&#39;PCA&#39;</span>,<span class="st">&#39;PCA&#39;</span>], </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>[GPy.kern.RBF(hidden,ARD<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                           GPy.kern.RBF(x.shape[<span class="dv">1</span>],ARD<span class="op">=</span><span class="va">True</span>)], <span class="co"># the kernels for each layer</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the initalization</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>m.initialize()</span></code></pre></div>
 <p>Now optimize the model.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</span></code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-figure" class="figure-frame">
@@ -739,16 +740,16 @@ Andreas Damianou
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Next we consider a simple step function data set.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>num_low<span class="op">=</span><span class="dv">25</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>num_high<span class="op">=</span><span class="dv">25</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>gap <span class="op">=</span> <span class="op">-</span><span class="fl">.1</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>noise<span class="op">=</span><span class="fl">0.0001</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.vstack((np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span>gap<span class="op">/</span><span class="fl">2.0</span>, num_low)[:, np.newaxis],</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>              np.linspace(gap<span class="op">/</span><span class="fl">2.0</span>, <span class="dv">1</span>, num_high)[:, np.newaxis]))</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.vstack((np.zeros((num_low, <span class="dv">1</span>)), np.ones((num_high,<span class="dv">1</span>))))</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> np.sqrt(y.var())</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>offset <span class="op">=</span> y.mean()</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>num_low<span class="op">=</span><span class="dv">25</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>num_high<span class="op">=</span><span class="dv">25</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>gap <span class="op">=</span> <span class="op">-</span><span class="fl">.1</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>noise<span class="op">=</span><span class="fl">0.0001</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.vstack((np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span>gap<span class="op">/</span><span class="fl">2.0</span>, num_low)[:, np.newaxis],</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>              np.linspace(gap<span class="op">/</span><span class="fl">2.0</span>, <span class="dv">1</span>, num_high)[:, np.newaxis]))</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.vstack((np.zeros((num_low, <span class="dv">1</span>)), np.ones((num_high,<span class="dv">1</span>))))</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> np.sqrt(y.var())</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>offset <span class="op">=</span> y.mean()</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</span></code></pre></div>
 <h2 id="step-function-data">Step Function Data</h2>
 <div class="figure">
 <div id="step-function-data-figure" class="figure-frame">
@@ -764,8 +765,8 @@ Andreas Damianou
 </div>
 <h2 id="step-function-data-gp">Step Function Data GP</h2>
 <p>We can fit a Gaussian process to the step function data using <code>GPy</code> as follows.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
 <p>Where <code>GPy.models.GPRegression()</code> gives us a standard GP regression model with exponentiated quadratic covariance function.</p>
 <p>The model is optimized using <code>m_full.optimize()</code> which calls an L-BGFS gradient based solver in python.</p>
 <div class="figure">
@@ -787,19 +788,19 @@ Andreas Damianou
 </div>
 <p>First we initialize a deep Gaussian process with three latent layers (four layers total). Within each layer we create a GP with an exponentiated quadratic covariance (<code>GPy.kern.RBF</code>).</p>
 <p>At each layer we use 20 inducing points for the variational approximation.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>,x.shape[<span class="dv">1</span>]]</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>kernels <span class="op">=</span> []</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, </span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                  inits<span class="op">=</span>inits, </span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>,x.shape[<span class="dv">1</span>]]</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>kernels <span class="op">=</span> []</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                  inits<span class="op">=</span>inits, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 <p>Once the model is constructed we initialize the parameters, and perform the staged optimization which starts by optimizing variational parameters with a low noise and proceeds to optimize the whole model.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>m.initialize()</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>m.staged_optimize()</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>m.initialize()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>m.staged_optimize()</span></code></pre></div>
 <p>We plot the output of the deep Gaussian process fitted to the step data as follows.</p>
 <p>The deep Gaussian process does a much better job of fitting the data. It handles the discontinuity easily, and error bars drop to smaller values in the regions of data.</p>
 <div class="figure">
@@ -861,13 +862,13 @@ Andreas Damianou
 <p>Figure: Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the ‘ball’ towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.mcycle()</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>scale<span class="op">=</span>np.sqrt(y.var())</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>offset<span class="op">=</span>y.mean()</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>yhat <span class="op">=</span> (y <span class="op">-</span> offset)<span class="op">/</span>scale</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.mcycle()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>scale<span class="op">=</span>np.sqrt(y.var())</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>offset<span class="op">=</span>y.mean()</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>yhat <span class="op">=</span> (y <span class="op">-</span> offset)<span class="op">/</span>scale</span></code></pre></div>
 <h2 id="motorcycle-helmet-data">Motorcycle Helmet Data</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/motorcycle-helmet-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/motorcycle-helmet-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -884,8 +885,8 @@ Andreas Damianou
 <p>Figure: Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></span></code></pre></div>
 <h2 id="motorcycle-helmet-data-gp">Motorcycle Helmet Data GP</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/motorcycle-helmet-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/motorcycle-helmet-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -906,21 +907,21 @@ Andreas Damianou
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/motorcycle-helmet-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/motorcycle-helmet-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, x.shape[<span class="dv">1</span>]]</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>kernels <span class="op">=</span> []</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, </span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                  inits<span class="op">=</span>inits, </span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>m.initialize()</span></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>m.staged_optimize(iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, x.shape[<span class="dv">1</span>]]</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>kernels <span class="op">=</span> []</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, </span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>                  inits<span class="op">=</span>inits, </span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>m.initialize()</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>m.staged_optimize(iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>))</span></code></pre></div>
 <div class="figure">
 <div id="motorcycle-helmet-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/motorcycle-helmet-deep-gp.svg" width="80%" style=" ">
@@ -991,22 +992,22 @@ Andreas Damianou
 </div>
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
 <p>First load in the MNIST data set from scikit learn. This can take a little while because it’s large to download.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_openml</span></code></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mnist <span class="op">=</span> fetch_openml(<span class="st">&#39;mnist_784&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_openml</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mnist <span class="op">=</span> fetch_openml(<span class="st">&#39;mnist_784&#39;</span>)</span></code></pre></div>
 <p>Sub-sample the dataset to make the training faster.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>digits <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>N_per_digit <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> []</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> []</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> digits:</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span><span class="bu">str</span>(d)]</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    Y.append(imgs.loc[np.random.permutation(imgs.index)[:N_per_digit]])</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    labels.append(np.ones(N_per_digit)<span class="op">*</span>d)</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.vstack(Y).astype(np.float64)</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> np.hstack(labels)</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>Y <span class="op">/=</span> <span class="dv">255</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>digits <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>N_per_digit <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> []</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> []</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> digits:</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span><span class="bu">str</span>(d)]</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    Y.append(imgs.loc[np.random.permutation(imgs.index)[:N_per_digit]])</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    labels.append(np.ones(N_per_digit)<span class="op">*</span>d)</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.vstack(Y).astype(np.float64)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> np.hstack(labels)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>Y <span class="op">/=</span> <span class="dv">255</span></span></code></pre></div>
 <h2 id="fitting-a-deep-gp-to-a-the-mnist-digits-subsample">Fitting a Deep GP to a the MNIST Digits Subsample</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/mnist-digits-subsample-deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/mnist-digits-subsample-deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1042,32 +1043,32 @@ Andreas Damianou
 <p>We now look at the deep Gaussian processes’ capacity to perform unsupervised learning.</p>
 <h2 id="fit-a-deep-gp">Fit a Deep GP</h2>
 <p>We’re going to fit a Deep Gaussian process model to the MNIST data with two hidden layers. Each of the two Gaussian processes (one from the first hidden layer to the second, one from the second hidden layer to the data) has an exponentiated quadratic covariance.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span></code></pre></div>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>num_latent <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>num_hidden_2 <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP([Y.shape[<span class="dv">1</span>],num_hidden_2,num_latent],</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                  Y,</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>[GPy.kern.RBF(num_hidden_2,ARD<span class="op">=</span><span class="va">True</span>), </span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>                           GPy.kern.RBF(num_latent,ARD<span class="op">=</span><span class="va">False</span>)], </span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                  encoder_dims<span class="op">=</span>[[<span class="dv">200</span>],[<span class="dv">200</span>]])</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> deepgp</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>num_latent <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>num_hidden_2 <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> deepgp.DeepGP([Y.shape[<span class="dv">1</span>],num_hidden_2,num_latent],</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>                  Y,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>                  kernels<span class="op">=</span>[GPy.kern.RBF(num_hidden_2,ARD<span class="op">=</span><span class="va">True</span>), </span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>                           GPy.kern.RBF(num_latent,ARD<span class="op">=</span><span class="va">False</span>)], </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>                  encoder_dims<span class="op">=</span>[[<span class="dv">200</span>],[<span class="dv">200</span>]])</span></code></pre></div>
 <h2 id="initialization">Initialization</h2>
 <p>Just like deep neural networks, there are some tricks to intitializing these models. The tricks we use here include some early training of the model with model parameters constrained. This gives the variational inducing parameters some scope to tighten the bound for the case where the noise variance is small and the variances of the Gaussian processes are around 1.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>m.obslayer.likelihood.variance[:] <span class="op">=</span> Y.var()<span class="op">*</span><span class="fl">0.01</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>m.obslayer.likelihood.variance[:] <span class="op">=</span> Y.var()<span class="op">*</span><span class="fl">0.01</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 <p>We now we optimize for a hundred iterations with the constrained model.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div>
 <p>Now we remove the fixed constraint on the kernel variance parameters, but keep the noise output constrained, and run for a further 100 iterations.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div>
-<p>Finally we unconstrain the layer likelihoods and allow the full model to be trained for 1000 iterations.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div>
+<p>Finally we unconstrain the layer likelihoods and allow the full model to be trained for 1000 iterations.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
 <h2 id="visualize-the-latent-space-of-the-top-layer">Visualize the latent space of the top layer</h2>
 <p>Now the model is trained, let’s plot the mean of the posterior distributions in the top latent layer of the model.</p>
 <div class="figure">
@@ -1084,7 +1085,7 @@ Andreas Damianou
 </div>
 <h2 id="visualize-the-latent-space-of-the-intermediate-layer">Visualize the latent space of the intermediate layer</h2>
 <p>We can also visualize dimensions of the intermediate layer. First the lengthscale of those dimensions is given by</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>m.obslayer.kern.lengthscale</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>m.obslayer.kern.lengthscale</span></code></pre></div>
 <div class="figure">
 <div id="mnist-digits-subsample-hidden-1-0-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/mnist-digits-subsample-hidden-1-0.svg" width="60%" style=" ">
@@ -1135,13 +1136,13 @@ Andreas Damianou
 </div>
 <h2 id="generate-from-model">Generate From Model</h2>
 <p>Now we can take a look at a sample from the model, by drawing a Gaussian random sample in the latent space and propagating it through the model.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, rows<span class="op">*</span>cols)[:, <span class="va">None</span>]</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>,lengthscale<span class="op">=</span><span class="fl">0.05</span>)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>cov <span class="op">=</span> kern.K(t, t)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, rows<span class="op">*</span>cols)[:, <span class="va">None</span>]</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>,lengthscale<span class="op">=</span><span class="fl">0.05</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>cov <span class="op">=</span> kern.K(t, t)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</span></code></pre></div>
 <div class="figure">
 <div id="digit-samples-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/digit-samples-deep-gp.svg" width="80%" style=" ">
@@ -1152,6 +1153,115 @@ Andreas Damianou
 </div>
 <div id="digit-samples-deep-gp-caption" class="caption-frame">
 <p>Figure: These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.</p>
+</div>
+</div>
+<h2 id="deep-nns-as-point-estimates-for-deep-gps">Deep NNs as Point Estimates for Deep GPs</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-neural-networks-as-point-estimates.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-neural-networks-as-point-estimates.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip3">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Vincent Dutordoir
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/vincent-dutordoir.png" clip-path="url(#clip3)"/>
+</svg>
+</div>
+<span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>
+<div class="figure">
+<div id="deep-nns-as-point-estimates-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nns-as-point-estimates.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="deep-nns-as-point-estimates-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nns-as-point-estimates&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="deep-nns-as-point-estimates-caption" class="caption-frame">
+<p>Figure: Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="dutordoir-deepnns21">(<strong>dutordoir-deepnns21?</strong>)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.</p>
+</div>
+</div>
+<h2 id="relu-as-a-spherical-basis">ReLU as a Spherical Basis</h2>
+<div class="figure">
+<div id="relu-mapping-spherical-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/relu-mapping-spherical.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="relu-mapping-spherical-magnify" class="magnify" onclick="magnifyFigure(&#39;relu-mapping-spherical&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="relu-mapping-spherical-caption" class="caption-frame">
+<p>Figure: The rectified linear unit can be seen as a basis function that lives on a spherical domain being projected onto the real line.</p>
+</div>
+</div>
+<div class="figure">
+<div id="soft-plus-mapping-spherical-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/soft-plus-mapping-spherical.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="soft-plus-mapping-spherical-magnify" class="magnify" onclick="magnifyFigure(&#39;soft-plus-mapping-spherical&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="soft-plus-mapping-spherical-caption" class="caption-frame">
+<p>Figure: The soft ReLU can also be seen as a basis function that lives on a spherical domain being projected onto the real line.</p>
+</div>
+</div>
+<h2 id="spherical-harmonics">Spherical Harmonics</h2>
+<div class="figure">
+<div id="spherical-harmonics-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepgp/spherical-harmonics.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="spherical-harmonics-magnify" class="magnify" onclick="magnifyFigure(&#39;spherical-harmonics&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="spherical-harmonics-caption" class="caption-frame">
+<p>Figure: The method exploits interdomain inducing variables, reinterpreting the ReLU covariance function as a stationary covariance on the spherical domain that has been projected to the real line.</p>
+</div>
+</div>
+<h2 id="predictions-on-bannana-data">Predictions on Bannana Data</h2>
+<div class="figure">
+<div id="deep-nn-point-bannana-data-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="deep-nn-point-bannana-data-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-data&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="deep-nn-point-bannana-data-caption" class="caption-frame">
+<p>Figure: The bannana data is an artificially sampled data set with two classes (from <span class="citation" data-cites="Raetsch:soft01">Rätsch et al. (2001)</span>).</p>
+</div>
+</div>
+<div class="figure">
+<div id="deep-nn-point-bannana-deep-nn-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="deep-nn-point-bannana-deep-nn-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-deep-nn&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="deep-nn-point-bannana-deep-nn-caption" class="caption-frame">
+<p>Figure: One layer deep GP fit showing the neural network point estimate (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).</p>
+</div>
+</div>
+<div class="figure">
+<div id="deep-nn-point-bannana-deep-gp-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="deep-nn-point-bannana-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-deep-gp&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="deep-nn-point-bannana-deep-gp-caption" class="caption-frame">
+<p>Figure: One layer deep GP fit showing the activated deep Gaussian process fit (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).</p>
 </div>
 </div>
 <h2 id="deep-health">Deep Health</h2>
@@ -1190,6 +1300,9 @@ Damianou, A., 2015. Deep <span>G</span>aussian processes and variational propaga
 <div id="ref-Dunlop:deep2017" class="csl-entry" role="doc-biblioentry">
 Dunlop, M.M., Girolami, M.A., Stuart, A.M., Teckentrup, A.L., n.d. How deep are deep <span>G</span>aussian processes? Journal of Machine Learning Research 19, 1–46.
 </div>
+<div id="ref-Dutordoir-deepnns21" class="csl-entry" role="doc-biblioentry">
+Dutordoir, V., Hensman, J., Wilk, M. van der, Ek, C.H., Ghahramani, Z., Durrande, N., 2021. Deep neural networks as point estimates for deep <span>G</span>aussian processes, in: Advances in Neural Information Processing Systems.
+</div>
 <div id="ref-Elsner-unbiased16" class="csl-entry" role="doc-biblioentry">
 Elsner, F., Leistedt, B., Peiris, H.V., 2016. Unbiased pseudo-<span class="math inline">\(C_\ell\)</span> power spectrum estimation with mode projection. Monthly Notices of the Royal Astronomical Society 465, 1847–1855. <a href="https://doi.org/10.1093/mnras/stw2752">https://doi.org/10.1093/mnras/stw2752</a>
 </div>
@@ -1207,6 +1320,9 @@ Mishra-Sharma, S., Cranmer, K., 2020. Semi-parametric <span class="math inline">
 </div>
 <div id="ref-Pontzen-cmb10" class="csl-entry" role="doc-biblioentry">
 Pontzen, A., Peiris, H.V., 2010. The cut-sky cosmic microwave background is not anomalous. Phys. Rev. D 81, 103008. <a href="https://doi.org/10.1103/PhysRevD.81.103008">https://doi.org/10.1103/PhysRevD.81.103008</a>
+</div>
+<div id="ref-Raetsch:soft01" class="csl-entry" role="doc-biblioentry">
+Rätsch, G., Onoda, T., Müller, K.-R., 2001. Soft margins for AdaBoost. Machine Learning 42, 287–320.
 </div>
 <div id="ref-Taigman:deepface14" class="csl-entry" role="doc-biblioentry">
 Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. <span>DeepFace</span>: Closing the gap to human-level performance in face verification, in: Proceedings of the <span>IEEE</span> Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220">https://doi.org/10.1109/CVPR.2014.220</a>

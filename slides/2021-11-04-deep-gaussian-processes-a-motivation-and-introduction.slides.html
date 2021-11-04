@@ -978,6 +978,108 @@ Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.
 These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.
 </aside>
 </section>
+<section id="deep-nns-as-point-estimates-for-deep-gps" class="slide level2">
+<h2>Deep NNs as Point Estimates for Deep GPs</h2>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip3">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Vincent Dutordoir
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/vincent-dutordoir.png" clip-path="url(#clip3)"/>
+</svg>
+</div>
+<span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>
+<div class="figure">
+<div id="deep-nns-as-point-estimates-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nns-as-point-estimates.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="dutordoir-deepnns21">(<strong>dutordoir-deepnns21?</strong>)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.
+</aside>
+</section>
+<section id="relu-as-a-spherical-basis" class="slide level2">
+<h2>ReLU as a Spherical Basis</h2>
+<div class="figure">
+<div id="relu-mapping-spherical-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/relu-mapping-spherical.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The rectified linear unit can be seen as a basis function that lives on a spherical domain being projected onto the real line.
+</aside>
+</section>
+<section id="soft-plus-as-a-stationary-spherical" class="slide level2">
+<h2>Soft Plus as a Stationary Spherical</h2>
+<div class="figure">
+<div id="soft-plus-mapping-spherical-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/soft-plus-mapping-spherical.svg" width="70%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The soft ReLU can also be seen as a basis function that lives on a spherical domain being projected onto the real line.
+</aside>
+</section>
+<section id="spherical-harmonics" class="slide level2">
+<h2>Spherical Harmonics</h2>
+<div class="figure">
+<div id="spherical-harmonics-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//deepgp/spherical-harmonics.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<aside class="notes">
+The method exploits interdomain inducing variables, reinterpreting the ReLU covariance function as a stationary covariance on the spherical domain that has been projected to the real line.
+</aside>
+</section>
+<section id="predictions-on-bannana-data" class="slide level2">
+<h2>Predictions on Bannana Data</h2>
+<div class="figure">
+<div id="deep-nn-point-bannana-data-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+The bannana data is an artificially sampled data set with two classes (from <span class="citation" data-cites="Raetsch:soft01">Rätsch et al. (2001)</span>).
+</aside>
+</section>
+<section id="predictions-on-bannana-data-1" class="slide level2">
+<h2>Predictions on Bannana Data</h2>
+<div class="figure">
+<div id="deep-nn-point-bannana-deep-nn-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+One layer deep GP fit showing the neural network point estimate (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).
+</aside>
+</section>
+<section id="predictions-on-bannana-data-2" class="slide level2">
+<h2>Predictions on Bannana Data</h2>
+<div class="figure">
+<div id="deep-nn-point-bannana-deep-gp-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="90%" style=" ">
+</object>
+</div>
+</div>
+<aside class="notes">
+One layer deep GP fit showing the activated deep Gaussian process fit (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).
+</aside>
+</section>
 <section id="deep-health" class="slide level2">
 <h2>Deep Health</h2>
 <div class="figure">
@@ -1012,8 +1114,14 @@ Damianou, A., 2015. Deep <span>G</span>aussian processes and variational propaga
 <div id="ref-Dunlop:deep2017" class="csl-entry" role="doc-biblioentry">
 Dunlop, M.M., Girolami, M.A., Stuart, A.M., Teckentrup, A.L., n.d. How deep are deep <span>G</span>aussian processes? Journal of Machine Learning Research 19, 1–46.
 </div>
+<div id="ref-Dutordoir-deepnns21" class="csl-entry" role="doc-biblioentry">
+Dutordoir, V., Hensman, J., Wilk, M. van der, Ek, C.H., Ghahramani, Z., Durrande, N., 2021. Deep neural networks as point estimates for deep <span>G</span>aussian processes, in: Advances in Neural Information Processing Systems.
+</div>
 <div id="ref-MacKay:gpintroduction98" class="csl-entry" role="doc-biblioentry">
 MacKay, D.J.C., n.d. Introduction to <span>G</span>aussian processes. pp. 133–166.
+</div>
+<div id="ref-Raetsch:soft01" class="csl-entry" role="doc-biblioentry">
+Rätsch, G., Onoda, T., Müller, K.-R., 2001. Soft margins for AdaBoost. Machine Learning 42, 287–320.
 </div>
 <div id="ref-Taigman:deepface14" class="csl-entry" role="doc-biblioentry">
 Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. <span>DeepFace</span>: Closing the gap to human-level performance in face verification, in: Proceedings of the <span>IEEE</span> Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220">https://doi.org/10.1109/CVPR.2014.220</a>
