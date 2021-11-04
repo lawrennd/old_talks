@@ -32,7 +32,11 @@ feature space "where there be dragons". A space where the model had not seen dat
 
 \subsection{Uber ATG}
 
-\notes{Unfortunately, such Sedolian voids are not constrained to game playing machines. On March 18th 2018, just two years after AlphaGo's victory, the Uber ATG self-driving vehicle killed a pedestrian in Tuscson Arizona. The neural networks that were trained on pedestrian detection did not detect Elaine because she was pushing a bicycle, laden with her bags, across the highway. This situation represented a Sedolian void for the neural network, and it failed to stop the car.}
+\notes{Unfortunately, such Sedolian voids are not constrained to game playing machines. On March 18th 2018, just two years after AlphaGo's victory, the Uber ATG self-driving vehicle killed a pedestrian in Tuscson Arizona. The neural networks that were trained on pedestrian detection did not detect Elaine because she was pushing a bicycle, laden with her bags, across the highway.[^uber-atg-crash] This situation represented a Sedolian void for the neural network, and it failed to stop the car.
+
+[^uber-atg-crash]: The NTSB Report on the accident can be found online here: <https://www.ntsb.gov/investigations/Pages/HWY18FH010.aspx>.}
+
+
 
 \figure{\includeyoutube{iWGhXof45zI}{600}{450}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
 
