@@ -211,7 +211,10 @@ base.set_title("Hospitals Per Capita (10k) of Nigerian States")}
 
 \codeassignment{Add a new column for covid cases per health facility.}{}{10}
 
-\writeassignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}
+\codeassignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}
+
+\codeassignment{Perform an inner join using SQL on your databases and convert the result into a `pandas` DataFrame.}{}{10}
+
 
 \code{
 # pop_joined['cases_per_capita_10k'] = ???
