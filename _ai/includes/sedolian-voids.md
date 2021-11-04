@@ -4,7 +4,7 @@
 \editme
 
 \subsection{AlphaGo}
-\notes{In January 2016, the UK company DeepMind's machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Se-Deol.
+\notes{In January 2016, the UK company DeepMind's machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Se-Deol.}
 
 
 \figure{\includejpg{\diagramsDir/ai/nature-go}{50%}}{AlphaGo's win made the front cover of the journal Nature.}{nature-go}
@@ -13,7 +13,7 @@
 
 \figure{\includeyoutube{WXuK6gekU1Y}{600}{450}}{The AlphaGo documentary tells the story of the tournament between Lee Se-dol and AlphaGo.}{alpha-go-documentary}
 
-\notes{While exhaustive search was beyond the reach of computer systems, they combined stochastic search of the game tree with neural networks. But when training those neural networks vast quantities of data and game play were used. I wrote more about this at the time in the Guardian article "\addguardian{Google AI versus the Go grandmaster}{2016/jan/28/google-ai-go-grandmaster-real-winner-deepmind}".
+\notes{While exhaustive search was beyond the reach of computer systems, they combined stochastic search of the game tree with neural networks. But when training those neural networks vast quantities of data and game play were used. I wrote more about this at the time in the Guardian article "\addguardian{Google AI versus the Go grandmaster}{2016/jan/28/google-ai-go-grandmaster-real-winner-deepmind}".}
 
 \newslide{Sedolian Void}
 
