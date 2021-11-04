@@ -28,4 +28,6 @@ One proposed solution is known as *dropout* where only a sub-set of the neural n
 
 \figure{\includediagram{\diagramsDir/wisuvt}{80%}}{Pictorial representation of the low rank form of the matrix $\mappingMatrix$.}{low-rank-mapping}
 
+\notes{In practice there is evidence that deep models seek these low rank solutions where we expect better generalisation. See e.g. @Arora-convergence19;@Jacot-deeplinear21.}
+
 \endif
