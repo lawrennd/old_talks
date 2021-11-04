@@ -36,6 +36,7 @@ transition: None
 \include{_gp/includes/mackay-bathwater.md}
 \include{_ml/includes/deep-learning-overview.md}
 \include{_deepnn/includes/deep-neural-network.md}
+\include{_ai/includes/sedolian-voids.md}
 \include{_ml/includes/why-uncertainty.md}
 \include{_gp/includes/gp-intro-very-short.md}
 
