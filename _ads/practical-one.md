@@ -1,7 +1,6 @@
 ---
-week: 6
-session: 1
-title: "Lab Session Two **Tick**"
+week: 5
+title: "Practical 1"
 abstract:  >
   In this lab session we look at setting up a SQL server and making joins between different data sets.
 layout: notebook
@@ -22,12 +21,14 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-11
+date: 2021-11-04
 transition: None
 reveal: false
 ipynb: true
 ---
 
+
+\notes{Tick Session for this Practical is 11th November 2021}
 
 \include{_systems/includes/nigeria-nmis-installs.md}
 

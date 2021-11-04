@@ -1,9 +1,7 @@
 ---
-week: 5
-session: 3
-title: "Lab Session One"
+title: "Review and Refresher"
 abstract:  >
-  In this first lab session we mix some review work with some of the concepts we'd like you to develop and understand as you progress through the course. The review work focuses on the use of probability, correlation, pandas and the jupyter notebook. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
+  In this review and refresher notebook we mix some review work with some of the concepts we'd like you to develop and understand as you progress through the course. The review work focuses on the use of probability, correlation, pandas and the jupyter notebook. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
 layout: notebook
 venue: Intel Lab, William Gates Building
 author:
@@ -14,7 +12,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-09
+date: 2021-11-04
 transition: None
 reveal: false
 ipynb: true
