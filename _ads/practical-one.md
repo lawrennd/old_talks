@@ -21,7 +21,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-04
+date: 2021-11-05
 transition: None
 reveal: false
 ipynb: true
