@@ -1191,7 +1191,6 @@ Vincent Dutordoir
 <image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/vincent-dutordoir.png" clip-path="url(#clip3)"/>
 </svg>
 </div>
-<span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>
 <div class="figure">
 <div id="deep-nns-as-point-estimates-figure" class="figure-frame">
 <div class="centered" style="">
@@ -1205,6 +1204,7 @@ Vincent Dutordoir
 <p>Figure: Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.</p>
 </div>
 </div>
+<p>A very promising idea was recently presented by <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>. They note that the ReLU activiation functions we use in the neural network can be seen as the consequence of a basis function defined on a circle (or a hypersphere in higher dimensions) being projected onto the real line (or hyperplane) as show in Figure . This allows them to construct a covariance function on the hypersphere that is <em>stationary</em>.</p>
 <h2 id="relu-as-a-spherical-basis">ReLU as a Spherical Basis</h2>
 <div class="figure">
 <div id="relu-mapping-spherical-figure" class="figure-frame">
@@ -1244,6 +1244,7 @@ Vincent Dutordoir
 <p>Figure: The method exploits interdomain inducing variables, reinterpreting the ReLU covariance function as a stationary covariance on the spherical domain that has been projected to the real line.</p>
 </div>
 </div>
+<p>Applying variational inference techniques to the resulting model (see e.g. <span class="citation" data-cites="Hensman:bigdata13">Hensman et al. (n.d.)</span>,<span class="citation" data-cites="Hensman:nested14">Hensman and Lawrence (2014)</span>) and making use of interdomain variational approximations (<span class="citation" data-cites="Lazaro:spectrum10">Lázaro-Gredilla et al. (2010)</span>,<span class="citation" data-cites="Alvarez:efficient10">Álvarez et al. (2010)</span>,Hensman-variational18) causes the <em>mean function</em> approximation of the Gaussian process to have the same form as a fully connected deep neural network. This inspires the idea to use a trained neural network to initialise the deep Gaussian process.</p>
 <h2 id="predictions-on-bannana-data">Predictions on Bannana Data</h2>
 <div class="figure">
 <div id="deep-nn-point-bannana-data-figure" class="figure-frame">
@@ -1281,6 +1282,7 @@ Vincent Dutordoir
 <p>Figure: One layer deep GP fit showing the activated deep Gaussian process fit (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).</p>
 </div>
 </div>
+<p>The results of doing this on the banana data (Figure  <span class="citation" data-cites="Raetsch:soft01">Rätsch et al. (2001)</span>) can be seen with the neural network solution in Figure  and the neural network activated deep GP solution given in Figure .</p>
 <h2 id="deep-health">Deep Health</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1308,6 +1310,9 @@ Vincent Dutordoir
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Alvarez:efficient10" class="csl-entry" role="doc-biblioentry">
+Álvarez, M.A., Luengo, D., Titsias, M.K., Lawrence, N.D., 2010. Efficient multioutput <span>G</span>aussian processes through variational inducing kernels. pp. 25–32.
+</div>
 <div id="ref-Thang:unifying17" class="csl-entry" role="doc-biblioentry">
 Bui, T.D., Yan, J., Turner, R.E., 2017. A unifying framework for <span>G</span>aussian process pseudo-point approximations using power expectation propagation. Journal of Machine Learning Research 18, 1–72.
 </div>
@@ -1326,8 +1331,17 @@ Elsner, F., Leistedt, B., Peiris, H.V., 2016. Unbiased pseudo-<span class="math 
 <div id="ref-Elsner-unbiased15" class="csl-entry" role="doc-biblioentry">
 Elsner, F., Leistedt, B., Peiris, H.V., 2015. Unbiased methods for removing systematics from galaxy clustering measurements. Monthly Notices of the Royal Astronomical Society 456, 2095–2104. <a href="https://doi.org/10.1093/mnras/stv2777">https://doi.org/10.1093/mnras/stv2777</a>
 </div>
+<div id="ref-Hensman:bigdata13" class="csl-entry" role="doc-biblioentry">
+Hensman, J., Fusi, N., Lawrence, N.D., n.d. <span>G</span>aussian processes for big data.
+</div>
+<div id="ref-Hensman:nested14" class="csl-entry" role="doc-biblioentry">
+Hensman, J., Lawrence, N.D., 2014. Nested variational compression in deep <span>G</span>aussian processes. University of Sheffield.
+</div>
 <div id="ref-Jaffe:cmb98" class="csl-entry" role="doc-biblioentry">
 Jaffe, A.H., Bond, J.R., Ferreira, P.G., Knox, L.E., 1998. CMB likelihood functions for beginners and experts, in: AIP Conf. Proc. <a href="https://doi.org/10.1063/1.59329">https://doi.org/10.1063/1.59329</a>
+</div>
+<div id="ref-Lazaro:spectrum10" class="csl-entry" role="doc-biblioentry">
+Lázaro-Gredilla, M., Quiñonero-Candela, J., Rasmussen, C.E., 2010. Sparse spectrum gaussian processes. Journal of Machine Learning Research 11, 1865–1881.
 </div>
 <div id="ref-MacKay:gpintroduction98" class="csl-entry" role="doc-biblioentry">
 MacKay, D.J.C., n.d. Introduction to <span>G</span>aussian processes. pp. 133–166.
