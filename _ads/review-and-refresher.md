@@ -25,7 +25,7 @@ ipynb: true
 
 \notes{We suggest you run these labs in *Google colab*, there's a link to doing that on the main lab page at the top. We also suggest that the first thing you do is click `View`->`Expand sections` to make all parts of the lab visibile.}
 
-\notes{We suggest you complete Exercises 1-9.}
+\notes{We suggest you complete at least Exercises 4-9.}
 
 \include{_ads/includes/ads-notebook-setup.md}
 
