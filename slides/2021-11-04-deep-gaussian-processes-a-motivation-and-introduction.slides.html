@@ -106,22 +106,90 @@
 <li class="fragment"><strong>an objective function</strong> <span class="math inline">\(E(\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="what-does-machine-learning-do" class="slide level2">
+<h2>What does Machine Learning do?</h2>
+<ul>
+<li>Automation scales by codifying processes and automating them.</li>
+<li>Need:
+<ul>
+<li>Interconnected components</li>
+<li>Compatible components</li>
+</ul></li>
+<li>Early examples:
+<ul>
+<li>cf Colt 45, Ford Model T</li>
+</ul></li>
+</ul>
 </section>
-<section id="structure-of-priors" class="slide level2">
-<h2>Structure of Priors</h2>
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<section id="codify-through-mathematical-functions" class="slide level2">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level2">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  \sigma\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right).\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level2">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  \sigma\left(\boldsymbol{\beta}^\top \mathbf{ x}\right).\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-3" class="slide level2">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ y=  f\left(\mathbf{ x}, \boldsymbol{\beta}\right).\]</span></p>
+<div class="fragment">
+<p>We call <span class="math inline">\(f(\cdot)\)</span> the <em>prediction function</em>.</p>
 </div>
-<p>MacKay: NeurIPS Tutorial 1997 “Have we thrown out the baby with the bathwater?” <span class="citation" data-cites="MacKay:gpintroduction98">(Published as MacKay, n.d.)</span></p>
+</section>
+<section id="fit-to-data" class="slide level2">
+<h2>Fit to Data</h2>
+<ul>
+<li>Use an objective function</li>
+</ul>
+<p><span class="math display">\[E(\boldsymbol{\beta}, \mathbf{Y}, \mathbf{X})\]</span></p>
+<div class="fragment">
+<ul>
+<li>E.g. least squares <span class="math display">\[E(\boldsymbol{\beta}, \mathbf{Y}, \mathbf{X}) = \sum_{i=1}^n\left(y_i - f(\mathbf{ x}_i, \boldsymbol{\beta})\right)^2.\]</span></li>
+</ul>
+</div>
+</section>
+<section id="two-components" class="slide level2">
+<h2>Two Components</h2>
+<ul>
+<li>Prediction function, <span class="math inline">\(f(\cdot)\)</span></li>
+<li>Objective function, <span class="math inline">\(E(\cdot)\)</span></li>
+</ul>
 <!-- SECTION Deep Learning -->
 </section>
 <section id="deep-learning" class="slide level2">
 <h2>Deep Learning</h2>
+</section>
+<section id="deep-learning-1" class="slide level2">
+<h2>Deep Learning</h2>
+<ul>
+<li><p>These are interpretable models: vital for disease modeling etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition</p></li>
+</ul>
 <!-- No slide titles in this context -->
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
 <div class="figure">
@@ -138,7 +206,7 @@ The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14"
 <small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="early-pinball-figure" class="figure-frame">
@@ -151,7 +219,7 @@ The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14"
 Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.
 </aside>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pinball-initialization-figure" class="figure-frame">
@@ -163,7 +231,7 @@ Deep learning models are composition of simple functions. We can think of a pinb
 At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.
 </aside>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="figure">
 <div id="pinball-trained-figure" class="figure-frame">
@@ -259,7 +327,7 @@ A vehicle operated by Uber ATG was involved in a fatal crash when it killed pede
 <li>Also uncertainties in objective, leave those for another day.</li>
 </ul>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -268,7 +336,7 @@ A vehicle operated by Uber ATG was involved in a fatal crash when it killed pede
 Here we’re showing 20 samples taken from the prior over functions defined by our covarariance
 </aside>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -277,7 +345,7 @@ Here we’re showing 20 samples taken from the prior over functions defined by o
 We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.
 </aside>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -286,7 +354,7 @@ We can sample many such functions, in this slide there are now 1000 in total. Th
 Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.
 </aside>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -295,7 +363,7 @@ Now we observe data. Here there are three data points. Conceptually in Bayesian 
 Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.
 </aside>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="centered" style="">
 <img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -303,6 +371,21 @@ Throwing away such samples we are left with our posterior. This is the collectio
 <aside class="notes">
 The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.
 </aside>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+</section>
+<section id="structure-of-priors" class="slide level2">
+<h2>Structure of Priors</h2>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>MacKay: NeurIPS Tutorial 1997 “Have we thrown out the baby with the bathwater?” <span class="citation" data-cites="MacKay:gpintroduction98">(Published as MacKay, n.d.)</span></p>
+</section>
+<section id="deep-neural-network-2" class="slide level2">
+<h2>Deep Neural Network</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn2.svg" width="50%" style=" ">
+</object>
 </section>
 <section id="overfitting" class="slide level2">
 <h2>Overfitting</h2>
@@ -333,7 +416,7 @@ Pictorial representation of the low rank form of the matrix <span class="math in
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-bottleneck1.svg" width="60%" style=" ">
 </object>
 </section>
-<section id="deep-neural-network-2" class="slide level2">
+<section id="deep-neural-network-3" class="slide level2">
 <h2>Deep Neural Network</h2>
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-bottleneck2.svg" width="60%" style=" ">
 </object>
@@ -1004,7 +1087,7 @@ Vincent Dutordoir
 </div>
 </div>
 <aside class="notes">
-Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="dutordoir-deepnns21">(<strong>dutordoir-deepnns21?</strong>)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.
+Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.
 </aside>
 </section>
 <section id="relu-as-a-spherical-basis" class="slide level2">
@@ -1048,7 +1131,7 @@ The method exploits interdomain inducing variables, reinterpreting the ReLU cova
 <h2>Predictions on Bannana Data</h2>
 <div class="figure">
 <div id="deep-nn-point-bannana-data-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="60%" style=" ">
 </object>
 </div>
 </div>
@@ -1060,7 +1143,7 @@ The bannana data is an artificially sampled data set with two classes (from <spa
 <h2>Predictions on Bannana Data</h2>
 <div class="figure">
 <div id="deep-nn-point-bannana-deep-nn-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="60%" style=" ">
 </object>
 </div>
 </div>
@@ -1072,7 +1155,7 @@ One layer deep GP fit showing the neural network point estimate (from <span clas
 <h2>Predictions on Bannana Data</h2>
 <div class="figure">
 <div id="deep-nn-point-bannana-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="60%" style=" ">
 </object>
 </div>
 </div>

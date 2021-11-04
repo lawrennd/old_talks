@@ -7,7 +7,7 @@
 
 \centerdiv{\vincentDutordoirPicture{15%}}
 @Dutordoir-deepnns21
-\figure{\includepng{\diagramsDir/deepgp/deep-nns-as-point-estimates}{60%}}{Deep Neural Networks as Point Estimates for Deep Gaussian Processes by @dutordoir-deepnns21 shows how deep neural networks can represent the mean function of an approximate deep GP.}{deep-nns-as-point-estimates}
+\figure{\includepng{\diagramsDir/deepgp/deep-nns-as-point-estimates}{60%}}{Deep Neural Networks as Point Estimates for Deep Gaussian Processes by @Dutordoir-deepnns21 shows how deep neural networks can represent the mean function of an approximate deep GP.}{deep-nns-as-point-estimates}
 
 
 \subsection{ReLU as a Spherical Basis}
@@ -26,15 +26,15 @@
 
 \subsection{Predictions on Bannana Data}
 
-\figure{\includediagram{\diagramsDir/deepgp/deep-nn-point-bannana-data}{90%}}{The bannana data is an artificially sampled data set with two classes (from @Raetsch:soft01).}{deep-nn-point-bannana-data}
+\figure{\includediagram{\diagramsDir/deepgp/deep-nn-point-bannana-data}{60%}}{The bannana data is an artificially sampled data set with two classes (from @Raetsch:soft01).}{deep-nn-point-bannana-data}
 
 \newslide{Predictions on Bannana Data}
 
-\figure{\includediagram{\diagramsDir/deepgp/deep-nn-point-bannana-deep-nn}{90%}}{One layer deep GP fit showing the neural network point estimate (from @Dutordoir-deepnns21).}{deep-nn-point-bannana-deep-nn}
+\figure{\includediagram{\diagramsDir/deepgp/deep-nn-point-bannana-deep-nn}{60%}}{One layer deep GP fit showing the neural network point estimate (from @Dutordoir-deepnns21).}{deep-nn-point-bannana-deep-nn}
 
 \newslide{Predictions on Bannana Data}
 
-\figure{\includediagram{\diagramsDir/deepgp/deep-nn-point-bannana-deep-gp}{90%}}{One layer deep GP fit showing the activated deep Gaussian process fit (from @Dutordoir-deepnns21).}{deep-nn-point-bannana-deep-gp}
+\figure{\includediagram{\diagramsDir/deepgp/deep-nn-point-bannana-deep-gp}{60%}}{One layer deep GP fit showing the activated deep Gaussian process fit (from @Dutordoir-deepnns21).}{deep-nn-point-bannana-deep-gp}
 
 
 

@@ -33,13 +33,17 @@ transition: None
 \installcode{mlai}
 \installcode{notutils}
 \include{_ml/includes/what-is-ml.md}
-\include{_gp/includes/mackay-bathwater.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
 \include{_ml/includes/deep-learning-overview.md}
 \include{_deepnn/includes/deep-neural-network.md}
 \include{_ai/includes/sedolian-voids.md}
 \include{_ml/includes/why-uncertainty.md}
 \include{_gp/includes/gp-intro-very-short.md}
+\include{_gp/includes/mackay-bathwater.md}
 
+\newslide{Deep Neural Network}
+
+\slides{\includediagram{\diagramsDir/deepgp/deep-nn2}{50%}}
 \include{_deepgp/includes/overfitting-low-rank.md}
 \include{_deepgp/includes/deep-gp.md}
 \include{_deepgp/includes/stochastic-process-composition.md}

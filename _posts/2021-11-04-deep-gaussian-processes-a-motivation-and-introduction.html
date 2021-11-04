@@ -55,19 +55,27 @@ categories:
 <p>The combination of data and model through the prediction function and the objective function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my post blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a>.</p>
-<h2 id="structure-of-priors">Structure of Priors</h2>
+<h2 id="what-does-machine-learning-do">What does Machine Learning do?</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/mackay-bathwater.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/mackay-bathwater.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Even in the early days of Gaussian processes in machine learning, it was understood that we were throwing something fundamental away. This is perhaps captured best by David MacKay in his 1997 NeurIPS tutorial on Gaussian processes, where he asked “Have we thrown out the baby with the bathwater?” The quote below is from his summarization paper.</p>
-<blockquote>
-<p>According to the hype of 1987, neural networks were meant to be intelligent models which discovered features and patterns in data. Gaussian processes in contrast are simply smoothing devices. How can Gaussian processes possibly replace neural networks? What is going on?</p>
-<p><span class="citation" data-cites="MacKay:gpintroduction98">MacKay (n.d.)</span></p>
-</blockquote>
+<p>Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.</p>
+<p>Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.</p>
+<p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.\]</span> Here <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are the parameters of the model. If <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter <span class="math inline">\(\beta_0\)</span> is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.</p>
+<p>This is called a generalized linear model, we can also think of it as estimating the <em>probability</em> of a purchase as a nonlinear function of the features (age, lattitude) and the parameters (the <span class="math inline">\(\beta\)</span> values). The function is known as the <em>sigmoid</em> or <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic function</a>, thus the name <em>logistic</em> regression.</p>
+<p><span class="math display">\[ p(\text{bought}) =  \sigma\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right).\]</span> In the case where we have <em>features</em> to help us predict, we sometimes denote such features as a vector, <span class="math inline">\(\mathbf{ x}\)</span>, and we then use an inner product between the features and the parameters, <span class="math inline">\(\boldsymbol{\beta}^\top \mathbf{ x}= \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 ...\)</span>, to represent the argument of the sigmoid.</p>
+<p><span class="math display">\[ p(\text{bought}) =  \sigma\left(\boldsymbol{\beta}^\top \mathbf{ x}\right).\]</span> More generally, we aim to predict some aspect of our data, <span class="math inline">\(y\)</span>, by relating it through a mathematical function, <span class="math inline">\(f(\cdot)\)</span>, to the parameters, <span class="math inline">\(\boldsymbol{\beta}\)</span> and the data, <span class="math inline">\(\mathbf{ x}\)</span>.</p>
+<p><span class="math display">\[ y=  f\left(\mathbf{ x}, \boldsymbol{\beta}\right).\]</span> We call <span class="math inline">\(f(\cdot)\)</span> the <em>prediction function</em>.</p>
+<p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
+<p><span class="math display">\[E(\boldsymbol{\beta}, \mathbf{Y}, \mathbf{X})\]</span> A commonly used examples (for example in a regression problem) is least squares, <span class="math display">\[E(\boldsymbol{\beta}, \mathbf{Y}, \mathbf{X}) = \sum_{i=1}^n\left(y_i - f(\mathbf{ x}_i, \boldsymbol{\beta})\right)^2.\]</span></p>
+<p>If a linear prediction function is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline">\(\mathbf{w}\)</span> instead of <span class="math inline">\(\boldsymbol{\beta}\)</span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
 <h1 id="deep-learning">Deep Learning</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>Classical statistical models and simple machine learning models have a great deal in common. The main difference between the fields is philosophical. Machine learning practitioners are typically more concerned with the quality of prediciton (e.g. measured by ROC curve) while statisticians tend to focus more on the interpretability of the model and the validity of any decisions drawn from that interpretation. For example, a statistical model may be used to validate whether a large scale intervention (such as the mass provision of mosquito nets) has had a long term effect on disease (such as malaria). In this case one of the covariates is likely to be the provision level of nets in a particular region. The response variable would be the rate of malaria disease in the region. The parmaeter, <span class="math inline">\(\beta_1\)</span> associated with that covariate will demonstrate a positive or negative effect which would be validated in answering the question. The focus in statistics would be less on the accuracy of the response variable and more on the validity of the interpretation of the effect variable, <span class="math inline">\(\beta_1\)</span>.</p>
+<p>A machine learning practitioner on the other hand would typically denote the parameter <span class="math inline">\(w_1\)</span>, instead of <span class="math inline">\(\beta_1\)</span> and would only be interested in the output of the prediction function, <span class="math inline">\(f(\cdot)\)</span> rather than the parameter itself. The general formalism of the prediction function allows for <em>non-linear</em> models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used. The parameters, <span class="math inline">\(\mathbf{w}\)</span>, are a means to an end (good prediction) rather than an end in themselves (interpretable).</p>
 <!-- No slide titles in this context -->
 <h2 id="deepface">DeepFace</h2>
 <div style="text-align:right">
@@ -253,6 +261,15 @@ categories:
 <p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). This is a rejection sampling view of Bayesian inference. The Gaussian process allows us to do this analytically by multiplying the <em>prior</em> by the <em>likelihood</em>.</p>
 </div>
 </div>
+<h2 id="structure-of-priors">Structure of Priors</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/mackay-bathwater.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/mackay-bathwater.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Even in the early days of Gaussian processes in machine learning, it was understood that we were throwing something fundamental away. This is perhaps captured best by David MacKay in his 1997 NeurIPS tutorial on Gaussian processes, where he asked “Have we thrown out the baby with the bathwater?” The quote below is from his summarization paper.</p>
+<blockquote>
+<p>According to the hype of 1987, neural networks were meant to be intelligent models which discovered features and patterns in data. Gaussian processes in contrast are simply smoothing devices. How can Gaussian processes possibly replace neural networks? What is going on?</p>
+<p><span class="citation" data-cites="MacKay:gpintroduction98">MacKay (n.d.)</span></p>
+</blockquote>
 <h2 id="overfitting">Overfitting</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/overfitting-low-rank.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/overfitting-low-rank.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -414,7 +431,7 @@ Andreas Damianou
 <p>Figure: Artist’s impression of the Planck spacecraft which measured the Cosmic Microwave Background between 2009 and 2013.</p>
 </div>
 </div>
-<p>The objective of the Planck spacecraft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Currently our best estimates show this to be the case <span class="citation" data-cites="Jaffe:cmb98 Pontzen-cmb10 Elsner-unbiased15 Elsner-unbiased16">(Elsner et al., 2016, 2015; Jaffe et al., 1998; Pontzen and Peiris, 2010)</span>.</p>
+<p>The objective of the Planck spacecraft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Currently our best estimates show this to be the case <span class="citation" data-cites="Jaffe:cmb98 Pontzen-cmb10 Elsner-unbiased15 Elsner-unbiased16">(Elsner et al., 2016, 2015; Jaffe et al., 1998; Pontzen and Peiris, 2010)</span>.</p>
 <p>To the high degree of precision that we could measure with the Planck space telescope, the CMB appears to be a Gaussian process. The parameters of its covariance function are given by the fundamental parameters of the universe, for example the amount of dark matter and matter in the universe</p>
 <div class="figure">
 <div id="cosmic-microwave-background-figure" class="figure-frame">
@@ -1185,7 +1202,7 @@ Vincent Dutordoir
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="deep-nns-as-point-estimates-caption" class="caption-frame">
-<p>Figure: Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="dutordoir-deepnns21">(<strong>dutordoir-deepnns21?</strong>)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.</p>
+<p>Figure: Deep Neural Networks as Point Estimates for Deep Gaussian Processes by <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span> shows how deep neural networks can represent the mean function of an approximate deep GP.</p>
 </div>
 </div>
 <h2 id="relu-as-a-spherical-basis">ReLU as a Spherical Basis</h2>
@@ -1230,7 +1247,7 @@ Vincent Dutordoir
 <h2 id="predictions-on-bannana-data">Predictions on Bannana Data</h2>
 <div class="figure">
 <div id="deep-nn-point-bannana-data-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="deep-nn-point-bannana-data-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-data&#39;)">
@@ -1242,7 +1259,7 @@ Vincent Dutordoir
 </div>
 <div class="figure">
 <div id="deep-nn-point-bannana-deep-nn-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="deep-nn-point-bannana-deep-nn-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-deep-nn&#39;)">
@@ -1254,7 +1271,7 @@ Vincent Dutordoir
 </div>
 <div class="figure">
 <div id="deep-nn-point-bannana-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="deep-nn-point-bannana-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-deep-gp&#39;)">
@@ -1334,7 +1351,8 @@ Vogelsberger, M., Marinacci, F., Torrey, P., Puchwei, E., 2020. Cosmological sim
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Most of my understanding of this is taken from conversations with Kyle Cranmer, a physicist who makes extensive use of machine learning methods in his work. See e.g. <span class="citation" data-cites="Mishra-Sharma-semi-parametric20">Mishra-Sharma and Cranmer (2020)</span> from Kyle and Siddharth Mishra-Sharma. Of course, any errors in the above text are mine and do not stem from Kyle.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Most of my understanding of this is taken from conversations with Kyle Cranmer, a physicist who makes extensive use of machine learning methods in his work. See e.g. <span class="citation" data-cites="Mishra-Sharma-semi-parametric20">Mishra-Sharma and Cranmer (2020)</span> from Kyle and Siddharth Mishra-Sharma. Of course, any errors in the above text are mine and do not stem from Kyle.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
