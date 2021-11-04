@@ -207,11 +207,11 @@ pop_joined.plot(ax=base, column='hosp_per_capita_10k', edgecolor='black', legend
 base.set_title("Hospitals Per Capita (10k) of Nigerian States")}
 
 
-\codeAssignment{Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.}{}{10}
+\codeassignment{Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.}{}{10}
 
-\codeAssignment{Add a new column for covid cases per health facility.}{}{10}
+\codeassignment{Add a new column for covid cases per health facility.}{}{10}
 
-\writeAssignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}
+\writeassignment{Do this in both the SQL and the Pandas styles to get a feel for how they differ.}{}{10}
 
 \code{
 # pop_joined['cases_per_capita_10k'] = ???
