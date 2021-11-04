@@ -23,7 +23,7 @@
 
 \figure{\includepng{\diagramsDir/deepgp/spherical-harmonics}{60%}}{The method exploits interdomain inducing variables, reinterpreting the ReLU covariance function as a stationary covariance on the spherical domain that has been projected to the real line.}{spherical-harmonics}
 
-\notes{Applying variational inference techniques to the resulting model (see e.g. @Hensman:bigdata13,@Hensman:nested14) and making use of interdomain variational approximations (@Lazaro:spectrum10,@Alvarez:efficient10,Hensman-variational18) causes the *mean function* approximation of the Gaussian process to have the same form as a fully connected deep neural network. This inspires the idea to use a trained neural network to initialise the deep Gaussian process.}
+\notes{Applying variational inference techniques to the resulting model (see e.g. @Hensman:bigdata13,@Hensman:nested14) and making use of interdomain variational approximations (@Lazaro:spectrum10,@Alvarez:efficient10,@Hensman-variational18) causes the *mean function* approximation of the Gaussian process to have the same form as a fully connected deep neural network. This inspires the idea to use a trained neural network to initialise the deep Gaussian process.}
 
 
 \subsection{Predictions on Bannana Data}
