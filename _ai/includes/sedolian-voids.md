@@ -9,7 +9,7 @@
 
 \figure{\includejpg{\diagramsDir/ai/nature-go}{50%}}{AlphaGo's win made the front cover of the journal Nature.}{nature-go}
 
-\notes{Go is a board game that is known to be over XX years old. It is considered challenging for computer systems becaue of its branching factor: the number of possible moves that can be made at a given board postion. The branching factor of Chess is around 35. The branching factor of Go is around 250. This makes Go less susceptible to exhaustive search techniques which were a foundation of DeepBlue, the chess machine that was able to win against Gary Kasparov in 1997. As a result, many commentators predicted that Go was out of the reach of contemporary AI systems, with some predicting that beating the world champion wouldn't occur until 2025.}
+\notes{Go is a board game that is known to be over 2,500 years old. It is considered challenging for computer systems becaue of its branching factor: the number of possible moves that can be made at a given board postion. The branching factor of Chess is around 35. The branching factor of Go is around 250. This makes Go less susceptible to exhaustive search techniques which were a foundation of DeepBlue, the chess machine that was able to win against Gary Kasparov in 1997. As a result, many commentators predicted that Go was out of the reach of contemporary AI systems, with some predicting that beating the world champion wouldn't occur until 2025.}
 
 \figure{\includeyoutube{WXuK6gekU1Y}{600}{450}}{The AlphaGo documentary tells the story of the tournament between Lee Se-dol and AlphaGo.}{alpha-go-documentary}
 
