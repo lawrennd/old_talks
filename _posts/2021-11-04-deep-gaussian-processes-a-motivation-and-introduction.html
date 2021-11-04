@@ -174,6 +174,21 @@ categories:
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/sedolian-voids.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/sedolian-voids.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>{In January 2016, the UK company DeepMind’s machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Se-Deol.</p>
+<div class="figure">
+<div id="nature-go-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/nature-go.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="nature-go-magnify" class="magnify" onclick="magnifyFigure(&#39;nature-go&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="nature-go-caption" class="caption-frame">
+<p>Figure: AlphaGo’s win made the front cover of the journal Nature.</p>
+</div>
+</div>
+<p>Go is a board game that is known to be over XX years old. It is considered challenging for computer systems becaue of its branching factor: the number of possible moves that can be made at a given board postion. The branching factor of Chess is around 35. The branching factor of Go is around 250. This makes Go less susceptible to exhaustive search techniques which were a foundation of DeepBlue, the chess machine that was able to win against Gary Kasparov in 1997. As a result, many commentators predicted that Go was out of the reach of contemporary AI systems, with some predicting that beating the world champion wouldn’t occur until 2025.</p>
 <div class="figure">
 <div id="alpha-go-documentary-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/WXuK6gekU1Y?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -186,6 +201,8 @@ categories:
 <p>Figure: The AlphaGo documentary tells the story of the tournament between Lee Se-dol and AlphaGo.</p>
 </div>
 </div>
+<p>{While exhaustive search was beyond the reach of computer systems, they combined stochastic search of the game tree with neural networks. But when training those neural networks vast quantities of data and game play were used. I wrote more about this at the time in the Guardian article “Guardian article on <a href="https://www.theguardian.com/media-network/2016/jan/28/google-ai-go-grandmaster-real-winner-deepmind">Google AI versus the Go grandmaster</a>.”</p>
+<p>However, despite the many millions of matches that AlphaGo had played, Lee Sedol managed to find a board position that was distinct from anything AlphaGo had seen before. Within the high dimensional pinball machine that made up AlphaGo’s decision making systems, Lee Sedol found a niche, an Achillean chink in AlphaGo’s armour. He found a path through the neural network where no data had every been before. He found a location in feature space “where there be dragons.” A space where the model had not seen data before and one where it became confused.</p>
 <div class="figure">
 <div id="lee-se-dol-move-78-figure" class="figure-frame">
 <table>
@@ -210,7 +227,9 @@ categories:
 <p>Figure: Move 78 of <a href="https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol#Game_4">Game 4</a> was critical in allowing Lee Se-dol to win the match. Described by <a href="https://en.wikipedia.org/wiki/Gu_Li_(Go_player)">Gu Li</a> as a ‘divine move.’</p>
 </div>
 </div>
+<p>This is a remarkable achievement, a human, with far less experience than the machine of the game, was able to outplay by placing the machine in an unfamiliar situation. In honour of this achievements, I like to call these voids in the machines understanding “Sedolian voids.”</p>
 <h2 id="uber-atg">Uber ATG</h2>
+<p>Unfortunately, such Sedolian voids are not constrained to game playing machines. On March 18th 2018, just two years after AlphaGo’s victory, the Uber ATG self-driving vehicle killed a pedestrian in Tuscson Arizona. The neural networks that were trained on pedestrian detection did not detect Elaine because she was pushing a bicycle, laden with her bags, across the highway.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> This situation represented a Sedolian void for the neural network, and it failed to stop the car.</p>
 <div class="figure">
 <div id="uber-atg-elaine-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/iWGhXof45zI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -223,6 +242,7 @@ categories:
 <p>Figure: A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.</p>
 </div>
 </div>
+<p>Characterising the regions where this is happening for these models remains an outstanding challenge.</p>
 <p>In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from</p>
 <ol type="1">
 <li>scarcity of training data and</li>
@@ -292,6 +312,7 @@ categories:
 <p>Figure: Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mathbf{W}\)</span>.</p>
 </div>
 </div>
+<p>In practice there is evidence that deep models seek these low rank solutions where we expect better generalisation. See e.g. <span class="citation" data-cites="Arora-convergence19">Arora et al. (2019)</span>;<span class="citation" data-cites="Jacot-deeplinear21">Jacot et al. (2021)</span>.</p>
 <h2 id="bottleneck-layers-in-deep-neural-networks">Bottleneck Layers in Deep Neural Networks</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -431,7 +452,7 @@ Andreas Damianou
 <p>Figure: Artist’s impression of the Planck spacecraft which measured the Cosmic Microwave Background between 2009 and 2013.</p>
 </div>
 </div>
-<p>The objective of the Planck spacecraft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Currently our best estimates show this to be the case <span class="citation" data-cites="Jaffe:cmb98 Pontzen-cmb10 Elsner-unbiased15 Elsner-unbiased16">(Elsner et al., 2016, 2015; Jaffe et al., 1998; Pontzen and Peiris, 2010)</span>.</p>
+<p>The objective of the Planck spacecraft was to measure the anisotropy and statistics of the Cosmic Microwave Background. This was important, because if the standard model of the Universe is correct the variations around the very high temperature of the Universe of the CMB should be distributed according to a Gaussian process.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Currently our best estimates show this to be the case <span class="citation" data-cites="Jaffe:cmb98 Pontzen-cmb10 Elsner-unbiased15 Elsner-unbiased16">(Elsner et al., 2016, 2015; Jaffe et al., 1998; Pontzen and Peiris, 2010)</span>.</p>
 <p>To the high degree of precision that we could measure with the Planck space telescope, the CMB appears to be a Gaussian process. The parameters of its covariance function are given by the fundamental parameters of the universe, for example the amount of dark matter and matter in the universe</p>
 <div class="figure">
 <div id="cosmic-microwave-background-figure" class="figure-frame">
@@ -1245,40 +1266,40 @@ Vincent Dutordoir
 </div>
 </div>
 <p>Applying variational inference techniques to the resulting model (see e.g. <span class="citation" data-cites="Hensman:bigdata13">Hensman et al. (n.d.)</span>,<span class="citation" data-cites="Hensman:nested14">Hensman and Lawrence (2014)</span>) and making use of interdomain variational approximations (<span class="citation" data-cites="Lazaro:spectrum10">Lázaro-Gredilla et al. (2010)</span>,<span class="citation" data-cites="Alvarez:efficient10">Álvarez et al. (2010)</span>,<span class="citation" data-cites="Hensman-variational18">Hensman et al. (2018)</span>) causes the <em>mean function</em> approximation of the Gaussian process to have the same form as a fully connected deep neural network. This inspires the idea to use a trained neural network to initialise the deep Gaussian process.</p>
-<h2 id="predictions-on-bannana-data">Predictions on Bannana Data</h2>
+<h2 id="predictions-on-banana-data">Predictions on Banana Data</h2>
 <div class="figure">
-<div id="deep-nn-point-bannana-data-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-data.svg" width="60%" style=" ">
+<div id="deep-nn-point-banana-data-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-banana-data.svg" width="60%" style=" ">
 </object>
 </div>
-<div id="deep-nn-point-bannana-data-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-data&#39;)">
+<div id="deep-nn-point-banana-data-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-banana-data&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="deep-nn-point-bannana-data-caption" class="caption-frame">
-<p>Figure: The bannana data is an artificially sampled data set with two classes (from <span class="citation" data-cites="Raetsch:soft01">Rätsch et al. (2001)</span>).</p>
+<div id="deep-nn-point-banana-data-caption" class="caption-frame">
+<p>Figure: The banana data is an artificially sampled data set with two classes (from <span class="citation" data-cites="Raetsch:soft01">Rätsch et al. (2001)</span>).</p>
 </div>
 </div>
 <div class="figure">
-<div id="deep-nn-point-bannana-deep-nn-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-nn.svg" width="60%" style=" ">
+<div id="deep-nn-point-banana-deep-nn-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-banana-deep-nn.svg" width="60%" style=" ">
 </object>
 </div>
-<div id="deep-nn-point-bannana-deep-nn-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-deep-nn&#39;)">
+<div id="deep-nn-point-banana-deep-nn-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-banana-deep-nn&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="deep-nn-point-bannana-deep-nn-caption" class="caption-frame">
+<div id="deep-nn-point-banana-deep-nn-caption" class="caption-frame">
 <p>Figure: One layer deep GP fit showing the neural network point estimate (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).</p>
 </div>
 </div>
 <div class="figure">
-<div id="deep-nn-point-bannana-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-bannana-deep-gp.svg" width="60%" style=" ">
+<div id="deep-nn-point-banana-deep-gp-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//deepgp/deep-nn-point-banana-deep-gp.svg" width="60%" style=" ">
 </object>
 </div>
-<div id="deep-nn-point-bannana-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-bannana-deep-gp&#39;)">
+<div id="deep-nn-point-banana-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-point-banana-deep-gp&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="deep-nn-point-bannana-deep-gp-caption" class="caption-frame">
+<div id="deep-nn-point-banana-deep-gp-caption" class="caption-frame">
 <p>Figure: One layer deep GP fit showing the activated deep Gaussian process fit (from <span class="citation" data-cites="Dutordoir-deepnns21">Dutordoir et al. (2021)</span>).</p>
 </div>
 </div>
@@ -1310,6 +1331,9 @@ Vincent Dutordoir
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Arora-convergence19" class="csl-entry" role="doc-biblioentry">
+Arora, S., Cohen, N., Golowich, N., Hu, W., 2019. A convergence analysis of gradient descent for deep linear neural networks, in: International Conference on Learning Representations.
+</div>
 <div id="ref-Alvarez:efficient10" class="csl-entry" role="doc-biblioentry">
 Álvarez, M.A., Luengo, D., Titsias, M.K., Lawrence, N.D., 2010. Efficient multioutput <span>G</span>aussian processes through variational inducing kernels. pp. 25–32.
 </div>
@@ -1340,6 +1364,9 @@ Hensman, J., Fusi, N., Lawrence, N.D., n.d. <span>G</span>aussian processes for 
 <div id="ref-Hensman:nested14" class="csl-entry" role="doc-biblioentry">
 Hensman, J., Lawrence, N.D., 2014. Nested variational compression in deep <span>G</span>aussian processes. University of Sheffield.
 </div>
+<div id="ref-Jacot-deeplinear21" class="csl-entry" role="doc-biblioentry">
+Jacot, A., Ged, F., Gabriel, F., Şimşek, B., Hongler, C., 2021. Deep linear networks dynamics: Low-rank biases induced by initialization scale and L2 regularization.
+</div>
 <div id="ref-Jaffe:cmb98" class="csl-entry" role="doc-biblioentry">
 Jaffe, A.H., Bond, J.R., Ferreira, P.G., Knox, L.E., 1998. CMB likelihood functions for beginners and experts, in: AIP Conf. Proc. <a href="https://doi.org/10.1063/1.59329">https://doi.org/10.1063/1.59329</a>
 </div>
@@ -1369,7 +1396,8 @@ Vogelsberger, M., Marinacci, F., Torrey, P., Puchwei, E., 2020. Cosmological sim
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p>The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Most of my understanding of this is taken from conversations with Kyle Cranmer, a physicist who makes extensive use of machine learning methods in his work. See e.g. <span class="citation" data-cites="Mishra-Sharma-semi-parametric20">Mishra-Sharma and Cranmer (2020)</span> from Kyle and Siddharth Mishra-Sharma. Of course, any errors in the above text are mine and do not stem from Kyle.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The NTSB Report on the accident can be found online here: <a href="https://www.ntsb.gov/investigations/Pages/HWY18FH010.aspx" class="uri">https://www.ntsb.gov/investigations/Pages/HWY18FH010.aspx</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Most of my understanding of this is taken from conversations with Kyle Cranmer, a physicist who makes extensive use of machine learning methods in his work. See e.g. <span class="citation" data-cites="Mishra-Sharma-semi-parametric20">Mishra-Sharma and Cranmer (2020)</span> from Kyle and Siddharth Mishra-Sharma. Of course, any errors in the above text are mine and do not stem from Kyle.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
