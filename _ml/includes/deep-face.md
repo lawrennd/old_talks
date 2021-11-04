@@ -10,7 +10,6 @@
 
 \slides{\alignright{\smalltext{Source: DeepFace [@Taigman:deepface14]}}}
 
-\notes{The DeepFace architecture [@Taigman:deepface14] consists of layers that deal  with *translation* invariances, known as convolutional layers. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.}
-
+\notes{The DeepFace architecture [@Taigman:deepface14] consists of layers that deal with *translation* invariances, known as convolutional layers. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.}
 
 \endif
