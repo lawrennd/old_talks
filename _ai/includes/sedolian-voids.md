@@ -5,7 +5,14 @@
 
 \subsection{AlphaGo}
 
+\includejpg{\diagramsDir/ai/nature-go}{50%}
+
+\addguardian{Google AI versus the Go grandmaster}{2016/jan/28/google-ai-go-grandmaster-real-winner-deepmind}
+
+\notes{One of the most impressive achievements of machine learning in recent years was the AlphaGo model which competed with Lee Se-dol at the game of Go. Go is an ancient game which has a high branching factor.}
 \figure{\includeyoutube{WXuK6gekU1Y}{600}{450}}{The AlphaGo documentary tells the story of the tournament between Lee Se-dol and AlphaGo.}{alpha-go-documentary}
+
+
 
 \newslide{Sedolian Void}
 
