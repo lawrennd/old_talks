@@ -36,6 +36,6 @@
 * This change of dynamics gives us the modern and emerging domain of data science
 }
 
-\notes{The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistcs, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*, where the interactions between human and data are mediated by the machine.}
+\notes{The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistics, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*, where the interactions between human and data are mediated by the machine.}
 
 \endif
