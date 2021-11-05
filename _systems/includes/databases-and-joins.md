@@ -6,11 +6,11 @@
 \notes{
 \subsection{Databases and Joins}
 
-The main idea we will be working with today is called the 'join'.  A join does exactly what it sounds like, it combines two database tables.
+The main idea we will be working with in this practical is the 'join'.  A join does exactly what it sounds like, it combines two database tables.
 
 You may have already started to look at data structures and learning about `pandas` which is a great way of storing and structuring your data set to make it easier to plot and manipulate your data.
 
-Pandas is great for the data scientist to analyze data because it makes many operations easier. But it is not so good for building the machine learning system. In a machine learning system, you may have to handle a lot of data. Even if you start with building a system where you only have a few customers, perhaps you build an online taxi system (like SafeBoda) for Kampala. Maybe you will have 50 customers. Then maybe your system can be handled with some python scripts and `pandas`.
+Pandas is great for the data scientist to analyze data because it makes many operations easier. But it is not so good for building the machine learning system. In a machine learning system, you may have to handle a lot of data. Even if you start with building a system where you only have a few customers, perhaps you build an online taxi system (like [SafeBoda](https://safeboda.com/ug/)) for Kampala. Maybe you will have 50 customers. Then maybe your system can be handled with some python scripts and `pandas`.
 
 \subsection{Scaling ML Systems}
 
