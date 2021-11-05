@@ -15,7 +15,7 @@
 
 \newslide{Wood or Tree}
 
-\figure{\includejpg{\diagramsDir/Grib_skov}{50%}}{New beech leaves growing in the Gribskov Forest in the northern part of Sealand, Denmark. Photo from wikimedia commons by Malene Thyssen, <http://commons.wikimedia.org/wiki/User:Malene>.}{gribskov-forest}
+\include{_data-science/includes/wood-or-trees-picture.md}
 
 \notes{The new phenomenon is *happenstance data*. Data that is not actively collected with a question in mind. As a result, it can mislead us. For example, if we assume the politics of active users of twitter is reflective of the wider population's politics, then we may be misled.}
 
