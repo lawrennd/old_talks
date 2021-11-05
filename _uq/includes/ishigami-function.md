@@ -39,7 +39,7 @@ space = ParameterSpace(
 $$
 \begin{align*}
 \mappingFunctionTwo_1(\inputScalar_1) & = \sin(\inputScalar_1) \\
-\mappingFunctionTwo_2(\inputScalar_1) & = a \sin^2 (\inputScalar_2) \\
+\mappingFunctionTwo_2(\inputScalar_2) & = a \sin^2 (\inputScalar_2) \\
 \mappingFunctionTwo_{13}(\inputScalar_1,\inputScalar_3) & = b \inputScalar_3^4 \sin(\inputScalar_1) 
 \end{align*}
 $$}
