@@ -21,14 +21,15 @@
 
   1. The Data Science Landscape. Lecturer: Neil D. Lawrence
   2. The Challenges of Data Science. Lecturer: Neil D. Lawrence
-  3. Lab Session One Tick
+  3. Lab Session One (Review and Refresher, Practical 1)
   4. A Data Science Process. Lecturer: Neil D. Lawrence
 
 \subsection{Week 6}
 
-  1. Lab Session Two Tick
+  1. Lab Session Two (Hand in Practical 1 & Tick)
   2. Statistical Learning. Lecturer: Carl Henrik Ek 
-  3. Lab Session Three Tick
+  
+ <!-- 3. Lab Session Three Tick
   4. Linear Models Lecturer: Carl Henrik Ek 
   
 \subsection{Week 7}
@@ -43,7 +44,7 @@
   2. Inference III Lecturer: Carl Henrik Ek
   3. Summary Lecturer: Carl Henrik Ek and Neil D. Lawrence
   4. Project Results Tick
-  5. Course Q&A Lecturer: Carl Henrik Ek and Neil D. Lawrence
+  5. Course Q&A Lecturer: Carl Henrik Ek and Neil D. Lawrence-->
 
 \subsection{Assessment}
 
