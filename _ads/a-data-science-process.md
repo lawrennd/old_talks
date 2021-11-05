@@ -19,10 +19,11 @@ transition: None
 ipynb: false
 ---
 
-\include{_psychology/includes/selective-attention-bias.md}
-\define{bmiStepsAnalysis}
-\include{_data-science/includes/data-inattention-bias.md}
+\include{_ai/includes/deploying-ai.md}
+\include{_ai/includes/ml-systems-design-long.md}
+
 \subsection{The Three Ds of Machine Learning Systems Design}
+
 
 \slides{
 * Three primary challenges of Machine Learning Systems Design.
@@ -35,10 +36,6 @@ ipynb: false
 
 \notes{The first two components *decomposition* and *data* are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
 
-\include{_ml/includes/ml-data-challenge.md}
-\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
-\include{_ml/includes/ml-outlook.md}
-
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_policy/includes/data-as-a-convener.md}
 
@@ -49,25 +46,25 @@ ipynb: false
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
 \include{_delve/includes/delve-data-report.md}
-\include{_delve/includes/data-report-recommendations.md}
+
+\notes{\include{_delve/includes/data-report-recommendations.md}}
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 \include{_data-science/includes/access-assess-address.md}
-\include{_data-science/includes/data-readiness-levels.md}
-\include{_data-science/includes/data-joel-tests.md}
 
+\subsection{Conclusions}
 
-\newslide{Conclusion}
-\slides{
-* Data science offers a great deal of promise
-* There are challenges and pitfalls
-* It is incumbent on us to avoid them
-
-**Many solutions rely on education and awareness**
+\slides{* Bandwidth constraints of humans
+* Big Data Paradox
+* Big Model Paradox
+* Access, Assess, Address
 }
-\include{_ai/includes/deploying-ai.md}
-\include{_ai/includes/ml-systems-design-long.md}
+
+
+\notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
+
+\notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
 
 
 \thanks
