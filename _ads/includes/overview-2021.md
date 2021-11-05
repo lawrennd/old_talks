@@ -16,6 +16,20 @@
 
 \notes{The course is lectured by Carl Henrik Ek and Neil D. Lawrence}
 
+\subsection{An Emerging Field}
+
+\slides{* I've never seen data science done well, but I've seen places where it's done better.
+* Reddit 
+  https://www.reddit.com/r/CST_ADS/}
+
+
+\notes{Data science is an emerging field, in this unit we'll introduce you to the phenomena that are triggering it, and the challenges we face. It is not an activity that is currently done *well*. In some places it is done better than others, but there's a particular onus on us as educators, and you as students, to realise that our understanding of the challenge is evolving. That evolving understanding requires us to adapt to the problems as they develop and maintain a wider contextual understanding of the effects we are having on society.}
+
+\notes{For that reason, the unit is not purely technical, it is at times philsophical and ethical. That is not to say we have a unique access to the philosophies and ethics that are required to undertake the challenges of data science, but to trigger your thinking because you are in the generation of computer scientists on whom the burden of responsibility is falling to address these challenges.}
+
+\notes{Your assessments are designed to develop these skills alongside your technical understanding. They are ambitious in their scope, but unless you see the entire data science pipeline you won't be prepared to assimilate the challenges we're facing. Our aim is to guide you through the challenges of the assessment through the lab sessions and practicals and to ensure that you develop your understanding of these challenges with our help.}
+
+\notes{The teaching is based not only on technical experience of the machine learning community, but real world experience of deploying and/or assisting with deployments of data science solutions at Amazon, for pandemic policy advice and in the African context (particularly Uganda and Kenya).}
 
 \subsection{Week 5}
 

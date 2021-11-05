@@ -25,6 +25,9 @@ ipynb: false
 
 \notes{In this lecture we will first continue our theme of how our limitations as humans mean that our analysis of data can be effected, and I will introduce an analogy that should help you understand *how* data science differs significantly from traditional software engineering. We'll then contextualize some of the challenges the domain into three different groups.}
 
+\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_data-science/includes/societal-effects.md}
 \include{_psychology/includes/selective-attention-bias.md}
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}

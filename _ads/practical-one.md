@@ -30,13 +30,13 @@ ipynb: true
 
 \notes{Tick Session for this Practical is 11th November 2021}
 
+\define{databaseType}{mariadb}
 \include{_systems/includes/nigeria-nmis-installs.md}
 
 \include{_systems/includes/nigeria-health-intro.md}
 \include{_systems/includes/nigeria-nmis-data-systems.md}
 \include{_systems/includes/databases-and-joins.md}
 \include{_systems/includes/nigeria-nmis-spatial-join.md}
-\define{databaseType}{mariadb}
 \include{_systems/includes/nigeria-nmis-sql.md}
 \include{_systems/includes/nigeria-nmis-covid-join.md}
 

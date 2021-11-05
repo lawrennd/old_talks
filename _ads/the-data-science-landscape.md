@@ -14,6 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "10:00"
+youtube: j1MjFd_2U80
 date: 2021-11-05
 transition: None
 ipynb: false
@@ -37,9 +38,6 @@ ipynb: false
 }
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 \include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_data-science/includes/societal-effects.md}
 
 \subsection{Classical Statistical Analysis}
 
