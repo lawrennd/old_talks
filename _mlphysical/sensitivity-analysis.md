@@ -17,7 +17,10 @@ time: "12:00"
 date: 2021-11-05
 ipynb: True
 reveal: True
-youtube: I5ZlCLR89AU
+youtube: PtE_EFyUkkE
+oldyoutube: 
+- code: I5ZlCLR89AU
+  year: 2020
 transition: None
 ---
 
