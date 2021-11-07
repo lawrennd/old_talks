@@ -3,7 +3,7 @@
 
 \edtime
 
-\notes{\subsection{Nigerian Health Facility Distribution}
+\notes{\subsection{Nigerian Health Facility Distribution}}
 
 \notes{In this notebook, we explore the question of health facility distribution in Nigeria, spatially, and in relation to population density.}
 
