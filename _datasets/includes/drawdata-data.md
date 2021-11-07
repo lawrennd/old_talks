@@ -9,11 +9,13 @@
 
 \installcode{drawdata}
 
-\setupcode{from drawdata import draw_scatter()}
+\setupcode{from drawdata import draw_scatter}
 
-\notes{Now you can draw scatter data to your heart's content. You can select one of th egroups and draw a region which will be filled roughly with random dots. You can then copy to the clipboard and convert to a `DataFrame` as follows.}
+\notes{Now you can draw scatter data to your heart's content. You can select one of the groups and draw a region which will be filled roughly with random dots.}
 
 \code{draw_scatter()}
+
+\notes{You can then copy to the clipboard and convert to a `DataFrame` as follows.}
 
 \setupcode{import pandas as pd}
 
