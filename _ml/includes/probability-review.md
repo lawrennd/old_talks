@@ -126,7 +126,7 @@ values for $x=1$.}
 
 \code{num_doctors=1
 num_nurses=2
-p_x = float((data.num_doctors_fulltime==num_doctors).sum())/float(data.num_nurses_fulltime.count())
+p_x = float((data.num_doctors_fulltime==num_doctors).sum())/float(data.num_doctors_fulltime.count())
 p_y_given_x = float((data.num_nurses_fulltime[data.num_doctors_fulltime==num_doctors]>num_nurses).sum())/float((data.num_doctors_fulltime==num_doctors).sum())
 p_y_and_x = float((data.num_nurses_fulltime[data.num_doctors_fulltime==num_doctors]>num_nurses).sum())/float(data.num_nurses_fulltime.count())
 
