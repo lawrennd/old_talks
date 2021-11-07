@@ -15,7 +15,7 @@
 
 \code{draw_scatter()}
 
-\notes{You can then copy to the clipboard and convert to a `DataFrame` as follows.}
+\notes{You can then copy to the clipboard by pressing `copy csv` and convert to a `DataFrame` as follows.}
 
 \setupcode{import pandas as pd}
 
