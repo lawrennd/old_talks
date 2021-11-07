@@ -17,7 +17,7 @@
 >
 > If I were to produce a 5 hour chunk of learning material that was little more three or four pages of text, defining various bits of playful activity, I suspect that questions would be asked on the basis that 5 hours of teaching should include lots more words… I also suspect that the majority of students would not know how to play consructively within the prescribed bounds for that length of time.
 >
-> Tony Hirst @Hirst-supporting21}
+> Tony Hirst [@Hirst-supporting21]}
 
 
 \notes{OK, we'll try and keep this session below five hours, but Tony's instinct is quite correct here. You will learn more from playing with data than in any formal session. So let's give it a try in the way Tony suggests.}
