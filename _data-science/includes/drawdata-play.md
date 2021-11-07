@@ -22,12 +22,11 @@
 
 \notes{OK, we'll try and keep this session below five hours, but Tony's instinct is quite correct here. You will learn more from playing with data than in any formal session. So let's give it a try in the way Tony suggests.}
 
-\include{_datasets/include/drawdata-data.md}
+\include{_datasets/includes/drawdata-data.md}
 
 \code{drawdata_data = data}
 
 \notes{We introduced Simposon's paradox briefly in the "Review and Refresh" lab session.}
-
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
@@ -47,9 +46,9 @@ mlai.write_figure(filename="drawdata-correlation-matrix.svg", directory="\writeD
 \figure{\includediagram{\diagramsDir/data-science/drawdata-correlation-matrix}{50%}}{Correlation matrix derived from drawing a data set with `drawdata`.}
 
 
-\codassignment{Use `drawdata` to construct a data set that exhibits Simpson's paradox.}{}{10}
+\codeassignment{Use `drawdata` to construct a data set that exhibits Simpson's paradox.}{}{10}
 
-\notes{If you want to play some more, why not try and create your own drawing of a Gorilla that gives plausible correlation values for a BMI dataset? But don't spend five hours on this ;-)!}
+\notes{If you want to play some more, why not try and create your own drawing of a Gorilla that gives plausible correlation values for a BMI dataset? But don't spend five hours on this!}
 
 
 \endif
