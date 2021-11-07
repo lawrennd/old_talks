@@ -15,8 +15,8 @@ $$
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai
-import teaching_plots as plot}
+import mlai.plot as plot
+import mlai}
 
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -43,14 +43,14 @@ plot.basis(mlai.radial, x_min=-2, x_max=2,
 
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{80%}}{The set of functions which are combined to form the radial basis.}{radial-basis-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 
-\displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', 
+\displaycode{nu.display_plots('radial_basis{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
-\displaycode{pods.notebook.display_prediction(basis=mlai.radial, num_basis=3)}
+\displaycode{nu.display_prediction(basis=mlai.radial, num_basis=3)}
 
 \subsection{Functions Derived from Radial Basis}
 
@@ -69,9 +69,9 @@ $$
 
 \notes{\figure{\includediagram{\diagramsDir/ml/radial_function002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-function-2}}
 
-\setupdisplaycode{from ipywidgets import IntSlider
-import pods}
-\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', 
+\setupdisplaycode{import notutils as nu
+from ipywidgets import IntSlider}
+\displaycode{nu.display_plots('radial_function{func_num:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							func_num=IntSlider(0,0,2,1))}
 
