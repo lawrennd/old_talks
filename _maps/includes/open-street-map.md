@@ -22,8 +22,8 @@ longitude = 32.582520 # Kampala langitude}
 
 \notes{We'll create a bounding box which is 0.2 degrees wide, 1 degree is around 111km ([circumference of the Earth is around 40,000 km](https://en.wikipedia.org/wiki/Metre) and 40,000/360=111km).}
 
-\code{box_width = 0.2 # About 22 km
-box_height = 0.2
+\code{box_width = 0.02 # About 2.2 km
+box_height = 0.02
 north = latitude + box_height/2
 south = latitude - box_width/2
 west = longitude - box_width/2
@@ -39,13 +39,13 @@ tags = {"amenity": True,
 		"shop": True, 
 		"tourism": True}}
 
-\notes{Now we can use `osmx` to download all such points of interest within a given bounding baox.}
+\notes{Now we can use `osmx` to download all such points of interest within a given bounding box.}
 
 \code{pois = ox.geometries_from_bbox(north, south, east, west, tags)}
 
 \notes{That operation can take some time, particularly as the bounding box grows larger. Once it is complete we can check how many points of interest we have found.}
 
-\code{print("There are {number} points of interest surrounding {placename} latitude: {latitude}, longitude: {longitude}".format(number=len(pois), placename=place_name, latitude=latitude, longitude=longitude))
+\code{print("There are {number} points of interest surrounding {placename} latitude: {latitude}, longitude: {longitude}".format(number=len(pois), placename=place_name, latitude=latitude, longitude=longitude))}
 
 \notes{And then we can examine their contents in more detail.}
 
