@@ -15,4 +15,4 @@
 
 [^roof-measure]: For example this [UN Global Pulse](https://www.unglobalpulse.org/project/measuring-poverty-with-machine-roof-counting/) project which measures roof material as a proxy for poverty levels.}
 
-\enditf
+\endif

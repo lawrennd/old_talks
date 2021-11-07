@@ -45,7 +45,7 @@ Computing the correlation between two values is a way to determine if the values
 
 \code{hospital_workers_data = hospital_data[["num_chews_fulltime", "num_nurses_fulltime", "num_nursemidwives_fulltime", "num_doctors_fulltime"]]} 
 
-\notes{We can compute the correlation of the columns using `.corr()` on the `pandas` data frame.}
+\notes{We can compute the correlation of the columns using `.corr()` on the `pandas.DataFrame`.}
 
 \setupcode{import numpy as np
 import pandas as pd}
