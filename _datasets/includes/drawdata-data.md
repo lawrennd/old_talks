@@ -15,11 +15,23 @@
 
 \code{draw_scatter()}
 
-\notes{You can then copy to the clipboard by pressing `copy csv` and convert to a `DataFrame` as follows.}
+\subsubsection{On a Local Machine}
+
+\notes{If you are running this on a local machine then copy the data to the clipboard by pressing `copy csv` and convert to a `DataFrame` as follows.}
 
 \setupcode{import pandas as pd}
 
 \code{data = pd.read_clipboard(sep=",")}
+
+\subsubsection{On Google Colab}
+
+\notes{Otherwise, on Google Colab you can download the file to your local machine, it will save as `data.csv`. Then you can upload that data into Colab as follows.}
+
+\setupcode{import io
+from google.colab import files}
+
+\code{uploaded = files.upload()
+data = pd.read_csv(io.StringIO(uploaded["data.csv"].decode("utf-8")))}
 
 \endif
 

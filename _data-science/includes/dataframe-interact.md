@@ -46,7 +46,7 @@ items = ["all"] + sorted(data_interact[column].unique().tolist())}
 
 \note{The `interact` function will try and infer the right sort of interface widget give the data you pass. But you can also be explicit about it, for example to force the "Select" element you can use}
 
-\code{items = widgets.Select(options=["all"] + sorted(data_interact[column].unique().tolist()))}
+\code{item_select = widgets.Select(options=["all"] + sorted(data_interact[column].unique().tolist()))}
 
 \notes{You can [read more about the available widgets in the documentation](https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20List.html).}
 

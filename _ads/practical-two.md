@@ -25,6 +25,7 @@ ipynb: true
 
 \notes{Revert `matplotlib` version on Google Colab due to bug mentioned [here](https://github.com/facebook/prophet/issues/1691).}
 
+\installcode{osmx}
 \code{%pip uninstall --yes matplotlib}
 \code{%pip install matplotlib==3.1.3}
 
