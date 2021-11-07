@@ -26,29 +26,27 @@
 
 \code{drawdata_data = data}
 
-\notes{We introduced Simposon's paradox briefly in the "Review and Refresh" lab session.}
+\subsection{Simpson's Paradox}
 
-\setupplotcode{import matplotlib.pyplot as plt
-import mlai
-import mlai.plot as plot}
-
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-im = ax.matshow(drawdata_data.corr())
-ax.set_xticks([0.5, 1.5, 2.5, 3.5])
-ax.set_xticklabels(drawdata_data.columns, fontsize=14, rotation=45)
-ax.set_yticks([0, 1, 2, 3])
-ax.set_yticklabels(drawdata_data.columns, fontsize=14)
-
-fig.colorbar(im, ax=ax)
-
-mlai.write_figure(filename="drawdata-correlation-matrix.svg", directory="\writeDiagramsDir/data-science")}
-
-\figure{\includediagram{\diagramsDir/data-science/drawdata-correlation-matrix}{50%}}{Correlation matrix derived from drawing a data set with `drawdata`.}
+\notes{We introduced [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox) briefly in the "Review and Refresh" lab session.}
 
 
-\codeassignment{Use `drawdata` to construct a data set that exhibits Simpson's paradox.}{}{10}
+\codeassignment{Use `drawdata` to construct a data set that exhibits Simpson's paradox.
 
-\notes{If you want to play some more, why not try and create your own drawing of a Gorilla that gives plausible correlation values for a BMI dataset? But don't spend five hours on this!}
+Here's some pandas functionality you might find useful, 
+
+```
+pd.DataFrame.corr?
+```
+
+and
+
+```
+pd.DataFrame.groupby?
+```
+}{}{10}
+
+\notes{If you want to play some more, why not try and create your own drawing of a Gorilla that gives plausible correlation values for a BMI dataset? But don't spend five hours on this! If you want to draw the data with lines, you can use `draw_line` from `drawdata` instead of `draw_scatter`.}
 
 
 \endif
