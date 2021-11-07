@@ -45,19 +45,8 @@ ipynb: true
 \include{_maps/includes/mapping-intro.md}
 \include{_maps/includes/open-street-map.md}
 
-\include{_ml/includes/radial-basis.md}
 
-\notes{Next we convert the geodataframe of tourist places we've downloaded to a DataFrame}
-
-\addreading{@Rogers:book11}{Section 1.4}
-\addreading{@Bishop:book06}{Chapter 1, pg 1-6}
-\addreading{@Bishop:book06}{Chapter 3, Section 3.1 up to pg 143}
-
-\subsection{Lecture on Basis Functions from GPRS Uganda}
-
-\figure{\includeyoutube{PoNbOnUnOao}{600}{450}}{Lecture on Basis functions from GPRS in Uganda in 2013.}{basis-functions-gprs-uganda}
-
-\notes{Then we create basis functions of different widths on the map, and look at tourist hotspots.}
+\include{_data-science/includes/open-street-map-nigeria-nmis-exercise.md}
 
 
 

@@ -11,13 +11,7 @@
 \setupcode{import osmnx as ox
 import matplotlib.pyplot as plt}
 
-\notes{We will center out download on the city of Lagos, which has the following latitude and longitude.}
-
-
-\code{place_name = "Lagos, Nigeria"
-
-latitude = 6.5244 # Lagos latitude
-longitude = 3.3792 # Lagos longitude}
+\notes{We will center out download on the city of Kamplala, Uganda, which has the following latitude and longitude.}
 
 \code{place_name = "Kampala, Uganda"
 
@@ -127,10 +121,10 @@ edges.plot(ax=ax, linewidth=1, edgecolor="dimgray")
 # Plot buildings
 #buildings.plot(ax=ax, facecolor="silver", alpha=0.7)
 
-# Plot all POIs in Lagos
+# Plot all POIs 
 pois.plot(ax=ax, color="blue", alpha=0.7, markersize=10)
 plt.tight_layout()
-mlai.write_figure(directory="\writeDiagramsDir/maps", filename=placestub+"-pois.png")}
+mlai.write_figure(directory="\writeDiagramsDir/maps", filename="kampala-uganda-pois.png")}
 
 \figure{\includepng{\diagramsDir/maps/kampala-uganda-pois}{40%}}{Points of Interest as identified in Open Street Map.}{kampala-uganda-pois}
 
@@ -150,15 +144,12 @@ edges.plot(ax=ax, linewidth=1, edgecolor="dimgray")
 # Plot tourist places 
 tourist_places.plot(ax=ax, color="blue", alpha=1, markersize=50)
 plt.tight_layout()
-mlai.write_figure(directory="\writeDiagramsDir/maps", filename=placestub + "-tourist-sites.png")}
+mlai.write_figure(directory="\writeDiagramsDir/maps", filename="kamplala-uganda-tourist-sites.png")}
 
-\figure{\includepng{\diagramsDir/maps/lagos-tourist-sites}{40%}}{Tourist sites identified as Points of Interest in Open Street Map.}{lagos-tourist-sites}
+\figure{\includepng{\diagramsDir/maps/kampala-uganda-tourist-sites}{40%}}{Tourist sites identified as Points of Interest in Open Street Map.}{kampala-uganda-tourist-sites}
 
 
 \notes{We have the POIs that are associated with tourist places in a geodataframe. To work with them in a machine learning algorithm, it will be easier to conveert them to a `pandas` DataFrame. This means dealing with the geometry. If we examine the POIs.}
-
-
-\notes{TK: Plot health centers from the NMIS data}
 
 \code{tourist_places.loc["node"]}
 
