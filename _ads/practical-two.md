@@ -37,6 +37,9 @@ ipynb: true
 \notes{Before we start, we'll introduce a few other ideas to inspire how you think about the data you collage. In particular, a tool for creating "play data" and we'll introduce you to the interactive funcitonality of the notebook.}
 
 \include{_data-science/includes/drawdata-play.md}
+
+\code{data_interact = drawdata_data}
+
 \include{_data-science/includes/dataframe-interact.md}
 
 \include{_maps/includes/mapping-intro.md}
@@ -46,8 +49,6 @@ ipynb: true
 
 \notes{Next we convert the geodataframe of tourist places we've downloaded to a DataFrame}
 
-\include{_ml/includes/basis-functions.md}
-
 \addreading{@Rogers:book11}{Section 1.4}
 \addreading{@Bishop:book06}{Chapter 1, pg 1-6}
 \addreading{@Bishop:book06}{Chapter 3, Section 3.1 up to pg 143}
@@ -55,7 +56,6 @@ ipynb: true
 \subsection{Lecture on Basis Functions from GPRS Uganda}
 
 \figure{\includeyoutube{PoNbOnUnOao}{600}{450}}{Lecture on Basis functions from GPRS in Uganda in 2013.}{basis-functions-gprs-uganda}
-
 
 \notes{Then we create basis functions of different widths on the map, and look at tourist hotspots.}
 
