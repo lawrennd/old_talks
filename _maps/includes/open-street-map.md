@@ -20,7 +20,7 @@ longitude = 32.582520 # Kampala longitude}
 
 \code{placestub = place_name.lower().replace(' ', '-').replace(',','')}
 
-\notes{We'll create a bounding box which is 0.2 degrees wide, 1 degree is around 111km ([circumference of the Earth is around 40,000 km](https://en.wikipedia.org/wiki/Metre) and 40,000/360=111km).}
+\notes{We'll create a bounding box which is 0.02 degrees wide, 1 degree is around 111km ([circumference of the Earth is around 40,000 km](https://en.wikipedia.org/wiki/Metre) and 40,000/360=111km).}
 
 \code{box_width = 0.02 # About 2.2 km
 box_height = 0.02
@@ -55,9 +55,7 @@ tags = {"amenity": True,
 
 1. Points of interest do not have a consistent OpenStreetMap `element_type`, some are `node`, others are `relation` and we also have `way`. You can find out more about elements in OpenStreetMap on [this wiki page](https://wiki.openstreetmap.org/wiki/Elements). This will become important when tidying up the data for next stage processing.
 
-2. Many of the values are missing. In SQL we would express a missing value as `NULL`. But in `pandas` a missing value is expressed as not-a-number, `NaN`. This is quite a common standard, but it is not the only standard. Sometimes data is collected and coded with an "unreasonable" value for a missing value. For example, someone might set missing values for heights to -999. The concept is that this is an obviously void "height" and would trigger a human user to check whether it's a missing value. Of course, this is obvious to humans, but not necessarily to a computer!
-
-3. }
+2. Many of the values are missing. In SQL we would express a missing value as `NULL`. But in `pandas` a missing value is expressed as not-a-number, `NaN`. This is quite a common standard, but it is not the only standard. Sometimes data is collected and coded with an "unreasonable" value for a missing value. For example, someone might set missing values for heights to -999. The concept is that this is an obviously void "height" and would trigger a human user to check whether it's a missing value. Of course, this is obvious to humans, but not necessarily to a computer!}
 
 \notes{Nodes, ways and relations in OpenStreetMap all have different *keys* associated with them. The data is not structured in standard database columns. Different points of interest might have different keys present or absent. The `gdf` we recover places these keys in its columns, but if }
 
@@ -72,7 +70,7 @@ tags = {"amenity": True,
         "building:colour",
         "building:material",
         "historic",
-		"memorial",
+	"memorial",
         "religion",
         "tourism",
         "emergency",
