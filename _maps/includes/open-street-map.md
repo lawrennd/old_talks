@@ -124,9 +124,9 @@ ax.set_ylabel("latitude")
 # Plot all POIs 
 pois.plot(ax=ax, color="blue", alpha=0.7, markersize=10)
 plt.tight_layout()
-mlai.write_figure(directory="\writeDiagramsDir/maps", filename="kampala-uganda-pois.png")}
+mlai.write_figure(directory="\writeDiagramsDir/maps", filename="kampala-uganda-pois.svg")}
 
-\figure{\includepng{\diagramsDir/maps/kampala-uganda-pois}{40%}}{Points of Interest as identified in Open Street Map.}{kampala-uganda-pois}
+\figure{\includediagram{\diagramsDir/maps/kampala-uganda-pois}{70%}}{Points of Interest as identified in Open Street Map.}{kampala-uganda-pois}
 
 
 \code{tourist_places = pois[pois.tourism.notnull()]}
@@ -149,9 +149,9 @@ ax.set_ylabel("latitude")
 # Plot tourist places 
 tourist_places.plot(ax=ax, color="blue", alpha=1, markersize=50)
 plt.tight_layout()
-mlai.write_figure(directory="\writeDiagramsDir/maps", filename="kamplala-uganda-tourist-sites.png")}
+mlai.write_figure(directory="\writeDiagramsDir/maps", filename="kampala-uganda-tourist-sites.svg")}
 
-\figure{\includepng{\diagramsDir/maps/kampala-uganda-tourist-sites}{40%}}{Tourist sites identified as Points of Interest in Open Street Map.}{kampala-uganda-tourist-sites}
+\figure{\includediagram{\diagramsDir/maps/kampala-uganda-tourist-sites}{70%}}{Tourist sites identified as Points of Interest in Open Street Map.}{kampala-uganda-tourist-sites}
 
 
 \notes{We have the POIs that are associated with tourist places in a geodataframe. To work with them in a machine learning algorithm, it will be easier to conveert them to a `pandas` DataFrame. This means dealing with the geometry. If we examine the POIs.}
