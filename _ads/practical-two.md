@@ -18,7 +18,9 @@ transition: None
 reveal: false
 ipynb: true
 ---
- 
+
+\notes{Tick Session for this Practical is 16th November 2021}
+
 \subsection{Revert Matplotlib Version}
 
 \notes{Revert `matplotlib` version on Google Colab due to bug mentioned [here](https://github.com/facebook/prophet/issues/1691).}
