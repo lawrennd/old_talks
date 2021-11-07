@@ -61,7 +61,10 @@
 
 \subsection{Access}
 
-\notes{The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address. The first aspect we'll consider is *accessing* the data. Depending on domain, the skills needed to address this challenge will vary greatly. For example, [Michael T. Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith) was leading a project in collaboration with the Kampala police force to collate accident data.}
+\notes{The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address. In this way it builds on many two stage processes that consider *data collection* and *data wrangling* to be two separate stages. There are two key differences to the Fynesse process. Firstly, the attempt to separate data wrangling tasks into (a) those that can be done *without* knowing the downstream task (Assess) and (b) those that can only be done *with* knowing the downstream task (Address). Naturally, this won't turn out to be a clean separation. But the ethos is to ensure that any reusable tasks that is done in the process of data wrgangling is labelled as such and pushed back into the data ecosystem.}
+
+
+\notes{The first aspect we'll consider is *accessing* the data. Depending on domain, the skills needed to address this challenge will vary greatly. For example, [Michael T. Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith) was leading a project in collaboration with the Kampala police force to collate accident data.}
 
 
 \slides{
