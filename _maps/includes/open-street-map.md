@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt}
 \code{place_name = "Kampala, Uganda"
 
 latitude = 0.347596 # Kampala latitude
-longitude = 32.582520 # Kampala langitude}
+longitude = 32.582520 # Kampala longitude}
 
 \code{placestub = place_name.lower().replace(' ', '-').replace(',','')}
 
@@ -104,8 +104,6 @@ area = ox.geocode_to_gdf(place_name)}
 
 \notes{Which we can then render as follows.}
 
-\notes{<https://towardsdatascience.com/4-must-have-jupyterlab-extensions-for-geospatial-data-science-f3cf7822de4b>}
-
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
 import mlai.plot as plot}
@@ -118,8 +116,10 @@ area.plot(ax=ax, facecolor="white")
 # Plot street edges
 edges.plot(ax=ax, linewidth=1, edgecolor="dimgray")
 
-# Plot buildings
-#buildings.plot(ax=ax, facecolor="silver", alpha=0.7)
+ax.set_xlim([west, east])
+ax.set_ylim([south, north])
+ax.set_xlabel("longitude")
+ax.set_ylabel("latitude")
 
 # Plot all POIs 
 pois.plot(ax=ax, color="blue", alpha=0.7, markersize=10)
@@ -140,6 +140,11 @@ area.plot(ax=ax, facecolor="white")
 
 # Plot street edges
 edges.plot(ax=ax, linewidth=1, edgecolor="dimgray")
+
+ax.set_xlim([west, east])
+ax.set_ylim([south, north])
+ax.set_xlabel("longitude")
+ax.set_ylabel("latitude")
 
 # Plot tourist places 
 tourist_places.plot(ax=ax, color="blue", alpha=1, markersize=50)
