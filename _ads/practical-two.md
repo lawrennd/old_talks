@@ -1,6 +1,6 @@
 ---
 week: 6
-title: "Practical Two"
+title: "Practical 2"
 abstract:  >
   In this practical session we look at the second aspect of the Fynesse data science process, *assess*. In particular, we are going to download data from OpenStreetMap and verify its quality and utility.
 layout: notebook
