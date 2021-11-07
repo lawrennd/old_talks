@@ -24,6 +24,8 @@
 
 \include{_datasets/includes/drawdata-data.md}
 
+\subsubsection{Name the Drawdata Dataframe}
+
 \code{drawdata_data = data}
 
 \subsection{Simpson's Paradox}
