@@ -78,6 +78,36 @@ without bugs in the first place.}
 * Many companies employ ML Engineers focussing on *models* not *data*.
 }
 
+\subsubsection{Lessons}
+
+\slides{1. When you begin an analysis behave as a debugger
+* Write test code as you go. 
+  * document tests ... maket them accessible.
+* Be constantly skeptical.
+* Develop deep understanding of best tools.
+* Share your experience of challenges, have others review work}
+
+\newslide{Lessons}
+
+\slides{2. When managing a data science process.
+  * Don't deploy standard agile development. Explore modifications e.g. Kanban
+  * Don't leave data scientist alone to wade through mess.
+  * Integrate the data analysis with other team activities
+    * Have software engineers and domain experts work closely with data scientists}
+
+\notes{1. When you begin an analysis, behave as a debugger.
+  * Write test code as you go. Document those tests and ensure they are accessible by others.
+  * Understand the landscape of your data. Be prepared to try several different approaches to the data set.
+  * Be constantly skeptical.
+  * Use the best tools available, develop a deep understand how they work.
+  * Share your experience of what challenges you’re facing. Have others (software engineers, fellow data analysts, your manager) review your work.
+  * Never go straight for the goal: you’d never try and write the API call straight away on the discarded hard drive, so why are you launching your classification algorithm before visualising the data?
+  * Ensure your analysis is documented and accessible. If your code does go wrong in production you’ll need to be able to retrace to where the error crept in.
+2. When managing the data science process, don’t treat it as standard code development.
+  * Don’t deploy a traditional agile development pipeline and expect it to work the same way it does for standard code development. Think about how you handle bugs, think about how you would handle very many bugs.
+  * Don’t leave the data scientist alone to wade through the mess.
+  * Integrate the data analysis with your other team activities. Have the software engineers and domain experts work closely with the data scientists. This is vital for providing the data scientists with the technical support they need, but also managing the expectations of the engineers in terms of when and how the data will be able to deliver.}
+
 \recommendation{Anecdotally, resolving a machine learning challenge
 requires 80% of the resource to be focused on the data and perhaps 20%
 to be focused on the model. But many companies are too keen to employ
@@ -85,5 +115,6 @@ machine learning engineers who focus on the models, not the data. We
 should change our hiring priorities and training. Universities cannot
 provide the understanding of how to data-wrangle.  Companies must fill
 this gap.}
+
 
 \endif
