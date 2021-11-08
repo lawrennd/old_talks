@@ -82,7 +82,7 @@ without bugs in the first place.}
 
 \slides{1. When you begin an analysis behave as a debugger
 * Write test code as you go. 
-  * document tests ... maket them accessible.
+  * document tests ... make them accessible.
 * Be constantly skeptical.
 * Develop deep understanding of best tools.
 * Share your experience of challenges, have others review work}
