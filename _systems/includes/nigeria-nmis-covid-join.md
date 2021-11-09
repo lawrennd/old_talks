@@ -168,13 +168,13 @@ What you see below gives the full SQL command. There is a [`SELECT` command](htt
     """
     cur = conn.cursor()
     cur.execute("""
-                SELECT ct."province/state" as "state", ct."case_count", ft."facility_count"
+                SELECT ct."province/state" as state, ct.case_count, ft.facility_count
                 FROM
-                    (SELECT "province/state", COUNT(*) as "case_count" FROM "cases" GROUP BY "province/state") ct
+                    (SELECT "province/state", COUNT(*) as case_count FROM cases GROUP BY "province/state") ct
                 INNER JOIN 
-                    (SELECT "index_right", COUNT(*) as "facility_count" FROM "facilities" GROUP BY "index_right") ft
+                    (SELECT index_right, COUNT(*) as facility_count FROM hospitals_zones_joined GROUP BY index_right) ft
                 ON
-                    ct."province/state" = ft."index_right"
+                    ct."province/state" = ft.index_right
                 """)
 
     rows = cur.fetchall()
