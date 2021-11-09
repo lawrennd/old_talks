@@ -10,7 +10,7 @@
 The beautiful thing about SQLite is that it allows us to play with SQL without going to the work of setting up a proper SQL server. Creating a data base in SQLite is as simple as writing a new file. To create the database, we'll first write our joined data to a CSV file, then we'll use a little utility to convert our hospital database into a SQLite database.
 }
 
-\notes{\code{hosp_state_joined.to_csv("hospitals_zones_joines.csv")}}
+\notes{\code{hosp_state_joined.to_csv("hospitals_zones_joined.csv")}}
 
 \installcode{csv-to-sqlite}
 
