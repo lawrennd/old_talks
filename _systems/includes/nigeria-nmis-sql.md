@@ -76,7 +76,7 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
   for r in rows:
       print(r)}
 	  
-\code{head(conn, "facilities")}
+\code{head(conn, "hospitals_zones_joined")}
 
 \notes{Great! We now have the database in  and some python functions that operate on the data base by wrapping SQL commands.
 
