@@ -160,7 +160,7 @@ That's the `pandas` approach to doing it. But `pandas` itself is inspired by dat
 
 As before, we'll wrap the underlying SQL commands with a convenient python command. 
 
-What you see below gives the full SQL command. There is a [`SELECT` command](https://www.w3schools.com/sql/sql_select.asp), which extracts `FROM` a particular table. It then completes an [`INNER JOIN`](https://www.w3schools.com/sql/sql_join_inner.asp) using particular columns (`provice/state` and `index_right`)}
+What you see below gives the full SQL command. There is a [`SELECT` command](https://www.w3schools.com/sql/sql_select.asp), which extracts `FROM` a particular table. It then completes an [`INNER JOIN`](https://www.w3schools.com/sql/sql_join_inner.asp) using particular columns (`province/state` and `index_right`)}
 
 \helpercode{def join_counts(conn):
     """
