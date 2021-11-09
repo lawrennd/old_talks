@@ -141,7 +141,7 @@ A `GROUPBY` operation groups rows with the same key (in this case 'province/stat
 
 \notes{To count the hospitals in each of the states, we first create a grouped series where we've grouped on these states.}
 
-\code{grouped = hosp_state_joined.groupby('index_right')}
+\code{grouped = hosp_state_joined.groupby('admin1Name_en')}
 
 \notes{This python operation now goes through each of the groups and counts how many hospitals there are in each state. It stores the result in a dictionary. If you're new to python, then to understand this code you need to understand what a 'dictionary comprehension' is. In this case the dictionary comprehension is being used to create a python dictionary of states and total hospital counts. That's then being converted into a `pandas` Data Series and added to the `pop_joined` dataframe.}
 
