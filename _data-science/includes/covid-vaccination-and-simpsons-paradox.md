@@ -29,7 +29,7 @@ Why is this a more informative comparison for estimating disease efficacy than t
 
 \notes{The [relative risk](https://en.wikipedia.org/wiki/Relative_risk) of severe disease associated with vaccination is defined as
 $$
-RR =\frac{p(\text{unvax}|\text{severe})}{p(\text{vax}|\text{severe})}.
+RR =\frac{p(\text{severe}|\text{unvax})}{p(\text{severe}|\text{vax})}.
 $$
 If this is less than 1 then vaccination is protective, if it is greater than 1 then vaccination is a "risk factor".}
 
