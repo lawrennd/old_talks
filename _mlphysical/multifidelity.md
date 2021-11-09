@@ -85,6 +85,10 @@ presented in this notebook can then be easily adapted to a variety of
 problem settings.}
 
 \include{_uq/includes/emukit-multifidelity.md}
+\include{_deepgp/includes/stochastic-process-composition.md}
+\include{_deepgp/includes/process-composition.md}
+\include{_deepgp/includes/deep-gp-setup-code.md}
+\include{_deepgp/includes/olympic-marathon-deep-gp.md}
 \include{_uq/includes/deep-emulation.md}
 
 \subsection{Brief Reflection}
