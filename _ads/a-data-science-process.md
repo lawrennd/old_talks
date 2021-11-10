@@ -36,6 +36,8 @@ ipynb: false
 
 \notes{We separated the challenges we face into three groups: (1) paradoxes of the odern data society, (2) quantifying the value of data and (3) privacy loss of control and marginalization. We've noted the origins of the paradoxes, speculating that it is based in a form of data (or modelling) inattention bias demonstrated through the Gorilla. We've drawn parallels between challenges of rewarding the addition of value and the credit assignment problem in reinforecement learning and we've looked at approaches to introduce the voice of marginalized societies and people into the conversation.}
 
+\newslide{Data Context}
+
 \slides{* Must not forget *context* of data.
 * Three challenges:
   1. Paradoxes of Data Society
