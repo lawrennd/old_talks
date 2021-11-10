@@ -20,7 +20,11 @@ In OpenStreetMap the key for a health center is `key:healthcare`. Download the P
 
 You may use the distance between the centroid for the match, but you should also consider any additional checks you might wish to perform. 
 
-Ensure your code is reusable, making it easy to integrate any necessary human feedback as required. Demonstrate the reuse by performing the same analysis for Abuja.
+Ensure your code is reusable, making it easy to integrate any necessary human feedback as required. 
+
+You may need to vary the size of the bounding box to get matches. Use your reusable code to ensure that you obtain at least five matches between the data set (by increasing bounding box size).
+
+Now further demonstrate the reuse by performing the same analysis for Abuja.
 
 ```
 place_name = "Abuja, Nigeria"
