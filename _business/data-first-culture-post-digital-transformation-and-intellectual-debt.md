@@ -44,16 +44,13 @@ transition: None
 
 \include{_ai/includes/ai-vs-data-science-2.md}
 
-\newslide{Exercise: Score Yourself (in chat)}
+\newslide{Exercise: Score Yourself}
 
 \slides{* I am a data science: 
 1. follower (no visibility/influence)
 2. some visibilty/influence
 3. visibility and some influence
 4. leader (lead on data and AI developments)}
-
-\slides{\aligncenter{Discussion: to 9:30}}
-
 
 
 \section{Intellectual Debt}
@@ -80,11 +77,6 @@ transition: None
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
 
-\newslide{Case Study: 10:30}
-
-\newslide{15 Minute Break!}
-
-\include{_policy/includes/face-masks-case-study.md}
 
 \section{Bringing it Back}
 
@@ -115,27 +107,10 @@ transition: None
 
 \notes{These challenges can be particularly difficult if your organisation is dominated by *operational concerns*. If rapid decision making is required, the Gorilla may be missed. And this may be mostly OK, for example, in Amazon's supply chain there are weekly business reviews that are looking at the international state of the supply chain. If there are problems, they often need quick actions to rectify them. When quick actions are required, 'command and control' tends to predominate over more collaorative decision making that we hope allows us to see the Gorilla. Unfortunately, it can be hard, even as senior leaders, to switch between this type of operational decision making, and the more inclusive decision making we need around complex data scenarios. One possibility is to reserve a day for meetings that are dealing with the more complex decision making. In Amazon later in the week was more appropriate for this type of meeting. So making, e.g. Thursday into a more thoughtful day (Thoughtsday if you will?) you can potentially switch modes of thinking and take a longer term view on a given day in the week.}
 
-\subsection{What we did in DELVE}
 
-\include{_delve/includes/delve-timeline.md}
+\newslide{What would *you* do in *your* company?}
 
-\notes{Any policy question can be framed in a number of different
-ways - what are the health outcomes; what is the impact on NHS
-capacity; how are different groups affected; what is the economic
-impact – and each has different types of evidence associated with
-it. Complex and uncertain challenges require efforts to draw insights
-together from across disciplines.}
-
-\include{_policy/includes/data-as-a-convener.md}
-
-\notes{For more on the experience of giving advice to government during a pandemic see [this talk](http://inverseprobability.com/talks/notes/science-evidence-and-government-reflections-on-the-covid-19-experience.html).}
-
-\newslide{Breakout: What would *you* do in *your* company?}
-
-* Finish 12:30
-
-
-
+* Finish 10:30
 
 
 \subsection{Conclusion}
