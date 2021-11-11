@@ -25,7 +25,7 @@ longitude = 32.582520 # Kampala longitude}
 \code{box_width = 0.02 # About 2.2 km
 box_height = 0.02
 north = latitude + box_height/2
-south = latitude - box_width/2
+south = latitude - box_height/2
 west = longitude - box_width/2
 east = longitude + box_width/2}
 
