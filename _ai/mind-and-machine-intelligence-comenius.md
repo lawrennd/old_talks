@@ -31,26 +31,9 @@ venue: Comenius Program, Harley Mason Room, Corpus Christi College
 \include{_ai/includes/centrifugal-governor.md}
 \include{_ml/includes/what-is-ml-2.md}
 \include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/big-model-paradox.md}
 \include{_psychology/includes/selective-attention-bias.md}
 \include{_data-science/includes/data-inattention-bias.md}
-\include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
-\include{_policy/includes/data-as-a-convener.md}
-
-\section{Delve}
-
-\include{_delve/includes/delve-report-list.md}
-
-\notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
-
-\include{_delve/includes/delve-data-report.md}
-\include{_delve/includes/data-report-recommendations.md}
-
-\notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
-
-\subsection{Conclusions}
-
-\include{_business/includes/solow-paradox.md}
+\include{_business/includes/gorilla-conclusion.md}
 
 \thanks
 
