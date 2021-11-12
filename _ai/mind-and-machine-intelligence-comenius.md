@@ -15,6 +15,7 @@ extras:
 month: 10
 date: 2021-11-11
 time: 16:30
+transition: None
 venue: Comenius Program, Harley Mason Room, Corpus Christi College
 ---
 
