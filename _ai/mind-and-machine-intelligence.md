@@ -22,8 +22,6 @@ transition: None
 ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 ---
 
-\include{talk-macros.tex}
-
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/formula-one-engine.md}
