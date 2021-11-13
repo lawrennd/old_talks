@@ -15,7 +15,10 @@ author:
 layout: lecture
 time: "10:00"
 date: 2021-11-09
-youtube: 29rw9OnYGx0
+youtube: 0aBhHkBaBdE
+oldyoutube: 
+- code: 29rw9OnYGx0
+  year: 2020
 ipynb: True
 reveal: True
 transition: None
