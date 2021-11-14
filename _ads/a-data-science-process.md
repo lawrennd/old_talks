@@ -33,6 +33,7 @@ ipynb: false
 
 
 \include{_ai/includes/deploying-ai.md}
+\include{_data-science/includes/access-assess-address.md}
 \include{_ai/includes/ml-systems-design-long.md}
 
 \subsection{The Three Ds of Machine Learning Systems Design}
@@ -64,7 +65,7 @@ ipynb: false
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
-\include{_data-science/includes/access-assess-address.md}
+
 
 \subsection{Conclusions}
 
