@@ -61,13 +61,6 @@ CREATE TABLE IF NOT EXISTS `cases` (
   `Unnamed: 19` text COLLATE utf8_bin
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;}
 
-\notes{And now we can load the data into the table.}
-
-\code{%%sql
-LOAD DATA LOCAL INFILE 'cases.csv' INTO TABLE cases
-FIELDS TERMINATED BY ','
-LINES STARTING BY '' TERMINATED BY '\n';}
-
 \notes{Once gain we need to set the index.}
 
 \code{%%sql
@@ -77,6 +70,13 @@ LINES STARTING BY '' TERMINATED BY '\n';}
 ALTER TABLE `cases`
  ADD PRIMARY KEY (`index`);}
  
+\notes{And now we can load the data into the table.}
+
+\code{%%sql
+LOAD DATA LOCAL INFILE 'cases.csv' INTO TABLE cases
+FIELDS TERMINATED BY ','
+LINES STARTING BY '' TERMINATED BY '\n';}
+
   \endif
 \endif
 
@@ -178,9 +178,9 @@ What you see below gives the full SQL command. There is a [`SELECT` command](htt
                 FROM
                     (SELECT `province/state`, COUNT(*) as case_count FROM cases GROUP BY `province/state`) ct
                 INNER JOIN 
-                    (SELECT index_right, COUNT(*) as facility_count FROM hospitals_zones_joined GROUP BY index_right) ft
+                    (SELECT admin1Name_en, COUNT(*) as facility_count FROM hospitals_zones_joined GROUP BY admin1Name_en) ft
                 ON
-                    ct.`province/state` = ft.index_right
+                    ct.`province/state` = ft.admin1Name_en
                 """)
 
     rows = cur.fetchall()
