@@ -23,9 +23,6 @@ transition: None
 ---
 
 
-\include{talk-macros.tex}
-
-
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ai/includes/embodiment-factors.md}
