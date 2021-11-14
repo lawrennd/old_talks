@@ -121,7 +121,7 @@ pop_joined = zones_gdf.join(pop_data['population'], how='inner')}
 
 \notes{\subsection{GroupBy in Pandas}
 
-Our COVID19 data is in the form of individual cases. But we are interested in total case counts for each state. There is a special data base operation known as `GROUP BY` for collecting information about the individual states. The type of information you might want could be a sum, the maximum value, an average, the minimum value. We can use a GroupBy operation in ```pandas``` and SQL to summarize the counts of covid cases in each state. 
+Our COVID19 data is in the form of individual cases. But we are interested in total case counts for each state. There is a special data base operation known as `GROUP BY` for collecting information about the individual states. The type of information you might want could be a sum, the maximum value, an average, the minimum value. We can use a GroupBy operation in `pandas` and SQL to summarize the counts of covid cases in each state. 
 
 A `GROUPBY` operation groups rows with the same key (in this case 'province/state') into separate objects, that we can operate on further such as to count the rows in each group, or to sum or take the mean over the values in some column (imagine each case row had the age of the patient, and you were interested in the mean age of patients.)}
 
@@ -160,7 +160,7 @@ That's the `pandas` approach to doing it. But `pandas` itself is inspired by dat
 
 As before, we'll wrap the underlying SQL commands with a convenient python command. 
 
-What you see below gives the full SQL command. There is a [`SELECT` command](https://www.w3schools.com/sql/sql_select.asp), which extracts `FROM` a particular table. It then completes an [`INNER JOIN`](https://www.w3schools.com/sql/sql_join_inner.asp) using particular columns (`province/state` and `index_right`)}
+What you see below gives the full SQL command. There is a [`SELECT` command](https://www.w3schools.com/sql/sql_select.asp), which extracts `FROM` a particular table. It then completes an [`INNER JOIN`](https://www.w3schools.com/sql/sql_join_inner.asp) using particular columns (`province/state` and `admin1Name_en`)}
 
 \helpercode{def join_counts(conn):
     """
