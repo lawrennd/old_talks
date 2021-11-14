@@ -6,7 +6,8 @@
 
 \subsection{Create the MariaDB Instance}
 
-\code{hosp_state_joined.to_csv('hospitals_zones_joined.csv')}
+
+\code{hosp_state_joined.to_csv('hospitals_zones_joined.csv', header=None)}
 
 \notes{We will now set up a `MariaDB` database instance for storing our data.}
 
