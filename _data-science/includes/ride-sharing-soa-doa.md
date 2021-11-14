@@ -32,7 +32,7 @@ inappropriate re-deployments of models. We need to focus on data
 quality assessments. In data-oriented architectures engineering teams
 are responsible for the *quality* of their output data streams in
 addition to the *availability* of the service they support
-[@Lawrence:drl17]. Quality here is not just accuracy, but fairness and
+[@Lawrence-drl17]. Quality here is not just accuracy, but fairness and
 explainability. This important cultural change would be capable of
 addressing both the challenge of *technical debt* [@Sculley:debt15]
 and the social responsibility of ML systems.}
