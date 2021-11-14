@@ -59,6 +59,7 @@ ipynb: False
 
 \notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
 
+\newslide{Q&A}
 
 \thanks
 
