@@ -10,6 +10,7 @@
 \include{_software/includes/pods-software.md}
 
 \code{data = pods.datasets.nigerian_administrative_zones()['Y']
+data.set_index("admin1Name_en", inplace=True)
 data.head()}
 
 \notes{Alternatively you can access the data directly with the following commands.
