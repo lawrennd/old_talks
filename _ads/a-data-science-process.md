@@ -16,7 +16,7 @@ author:
 time: "10:00"
 date: 2021-11-15
 transition: None
-ipynb: false
+ipynb: False
 ---
 
 
@@ -35,7 +35,16 @@ ipynb: false
 \include{_ai/includes/deploying-ai.md}
 \include{_data-science/includes/access-assess-address.md}
 
+\include{_data-science/includes/fynesse-template.md}
 
+\newslide{Assignment}
+
+\slide{* Base on Fynesse template.}
+
+\notes{For your assignment in this unit, we'd like you to base your submission around the Fynesse framework[^other]. You can do this by forking the Fynesse template, or simply creating a python library which reflects that organisational structure.}
+
+
+[^other]: If you find another approach to data science that also takes into account these aspects please feel to use that apparoach. We've designed this framework to help you think through the data science process and ensure that your aretefacts are more reusable.}
 
 \subsection{Conclusions}
 
