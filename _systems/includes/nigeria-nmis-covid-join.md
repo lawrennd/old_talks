@@ -14,8 +14,15 @@ For convenience, we'll load the data into pandas first, but our next step will b
 
 \include{_datasets/includes/nigerian-covid-data.md}
 
+\ifeq{\databaseType}{sqlite}
 \code{covid_data=data
 covid_data.to_csv('cases.csv')}
+\else
+ \ifeq{\databaseType}{mariadb}
+\code{covid_data=data
+covid_data.to_csv('cases.csv', header=None)}
+  \endif
+\endif
 
 \notes{Now we convert this CSV file we've downloaded into a new table in the database file.}
 \ifeq{\databaseType}{sqlite}
@@ -29,7 +36,7 @@ covid_data.to_csv('cases.csv')}
 --
 -- Table structure for table `cases`
 --
-
+DROP TABLE IF EXISTS `cases`;
 CREATE TABLE IF NOT EXISTS `cases` (
   `index` int(10) unsigned NOT NULL,
   `case_id` int(10) unsigned NOT NULL,
@@ -51,8 +58,7 @@ CREATE TABLE IF NOT EXISTS `cases` (
   `travel_history_location` text COLLATE utf8_bin,
   `death_date` date,
   `notes_for_discussion` text COLLATE utf8_bin,
-  `Unnamed: 19` text COLLATE utf8_bin,
-  `db_id` bigint(20) unsigned NOT NULL
+  `Unnamed: 19` text COLLATE utf8_bin
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;}
 
 \notes{And now we can load the data into the table.}
@@ -69,7 +75,7 @@ LINES STARTING BY '' TERMINATED BY '\n';}
 -- Indexes for table `cases`
 --
 ALTER TABLE `cases`
- ADD PRIMARY KEY (`db_id`);}
+ ADD PRIMARY KEY (`index`);}
  
   \endif
 \endif
