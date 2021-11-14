@@ -118,6 +118,7 @@ LOAD DATA LOCAL INFILE 'hospitals_zones_joined.csv' INTO TABLE hospitals_zones_j
 FIELDS TERMINATED BY ','
 LINES STARTING BY '' TERMINATED BY '\n';}
 
+\code{%sql SELECT * FROM hospitals_zones_joined LIMIT 10}
 
 \notes{In the database there can be several 'tables'. Each table can be thought of as like a separate dataframe. The table name we've just saved is `hospitals_zones_joined`.}
 
