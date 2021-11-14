@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cases` (
   `Unnamed: 19` text COLLATE utf8_bin
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;}
 
-\notes{Once gain we need to set the index.}
+\notes{Once again we need to set the index.}
 
 \code{%%sql
 --
