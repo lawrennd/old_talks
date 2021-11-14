@@ -34,6 +34,27 @@ ipynb: false
 
 \include{_ai/includes/deploying-ai.md}
 \include{_data-science/includes/access-assess-address.md}
+
+
+
+\subsection{Conclusions}
+
+\slides{* Bandwidth constraints of humans
+* Big Data Paradox
+* Big Model Paradox
+* Access, Assess, Address
+}
+
+
+\notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
+
+\notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
+
+
+\thanks
+
+\references
+
 \include{_ai/includes/ml-systems-design-long.md}
 
 \subsection{The Three Ds of Machine Learning Systems Design}
@@ -65,22 +86,3 @@ ipynb: false
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
-
-
-\subsection{Conclusions}
-
-\slides{* Bandwidth constraints of humans
-* Big Data Paradox
-* Big Model Paradox
-* Access, Assess, Address
-}
-
-
-\notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
-
-\notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
-
-
-\thanks
-
-\references
