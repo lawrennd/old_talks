@@ -15,7 +15,7 @@
 
 \newslide{CRISP-DM}
 
-\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram.}{crisp-dm-diagram}
+\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram: it stands for cross industry standard process for data mining. The process was defined in 2000 (@Chapman-step00), well before the modern service oriented architecture approach to software engineering emerged.}{crisp-dm-diagram}
 
 \notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
 
@@ -32,14 +32,13 @@
 
 \newslide{}
 
->More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.
+>More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills--—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.
 >
-> Cathy O'Neil and Rachel Strutt \ref{Oneil-doing13}
+> Cathy O'Neil and Rachel Strutt from @Oneil-doing13
 
 \newslide{}
 
 \figure{\includepng{\diagramsDir/data-science/dnds_0202}{70%}}{Another perspective on the data science process, this one from @ONeil-doing13.}{data-science-process-oneil}
-
 
 \include{_data-science/includes/experiment-analyze-design.md}
 
@@ -51,7 +50,7 @@
 
 \include{_data-science/includes/ride-sharing-soa-doa.md}
 
-\notes{The Fynesse paradigm is inspired by experience in operational data science both in the Amazon supply chain and in the UK Covid-19 pandemic response.}
+\notes{The Fynesse paradigm is inspired by experience in operational data science working with [Data Science Africa](http://www.datascienceafrica.org), deploying in the Amazon supply chain and in the UK Covid-19 pandemic response.}
 
 \newslide{}
 
@@ -61,7 +60,7 @@
 
 \subsection{Access}
 
-\notes{The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address. In this way it builds on many two stage processes that consider *data collection* and *data wrangling* to be two separate stages. There are two key differences to the Fynesse process. Firstly, the attempt to separate data wrangling tasks into (a) those that can be done *without* knowing the downstream task (Assess) and (b) those that can only be done *with* knowing the downstream task (Address). Naturally, this won't turn out to be a clean separation. But the ethos is to ensure that any reusable tasks that is done in the process of data wrgangling is labelled as such and pushed back into the data ecosystem.}
+\notes{The Fynesse paradigm considers three *aspects* to data analysis: Access, Assess, Address. In this way it builds on many two stage processes that consider *data collection* and *data wrangling* to be two separate stages. There are two key differences to the Fynesse process. Firstly, the attempt to separate data wrangling tasks into (a) those that can be done *without* knowing the downstream task (Assess) and (b) those that can only be done *with* knowing the downstream task (Address). Naturally, this won't turn out to be a clean separation. But the ethos is to ensure that any reusable tasks that is done in the process of data wrgangling is labelled as such and pushed back into the data ecosystem. Secondly, our use of the term *aspects* instead of stages acknowledges the fact that although there is a natural ordering to the aspects, we find that in practice the data scientist is often moving quicly across the different aspects, so that the mind set of "stages" can be unhelpful}
 
 
 \notes{The first aspect we'll consider is *accessing* the data. Depending on domain, the skills needed to address this challenge will vary greatly. For example, [Michael T. Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith) was leading a project in collaboration with the Kampala police force to collate accident data.}
