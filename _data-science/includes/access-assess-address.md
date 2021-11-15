@@ -15,7 +15,7 @@
 
 \newslide{CRISP-DM}
 
-\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram.}{crisp-dm-diagram}
+\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram: it stands for cross industry standard process for data mining. The process was defined in 2000 (@Chapman-step00), well before the modern service oriented architecture approach to software engineering emerged.}{crisp-dm-diagram}
 
 \notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
 
@@ -34,12 +34,11 @@
 
 >More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.
 >
-> Cathy O'Neil and Rachel Strutt \ref{Oneil-doing13}
+> Cathy O'Neil and Rachel Strutt from @Oneil-doing13
 
 \newslide{}
 
 \figure{\includepng{\diagramsDir/data-science/dnds_0202}{70%}}{Another perspective on the data science process, this one from @ONeil-doing13.}{data-science-process-oneil}
-
 
 \include{_data-science/includes/experiment-analyze-design.md}
 
