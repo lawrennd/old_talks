@@ -34,7 +34,7 @@
 
 >More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills--—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.
 >
-> Cathy O'Neil and Rachel Strutt from @Oneil-doing13
+> Cathy O'Neil and Rachel Strutt from @ONeil-doing13
 
 \newslide{}
 
@@ -50,6 +50,13 @@
 
 \include{_data-science/includes/ride-sharing-soa-doa.md}
 
+\newslide{Inspiration}
+
+\slides{* Operational data science with:
+  * Data Science Africa
+  * Amazon (particularly in supply chain)
+  * The Royal Society DELVE Group (pandemic advice)}
+  
 \notes{The Fynesse paradigm is inspired by experience in operational data science working with [Data Science Africa](http://www.datascienceafrica.org), deploying in the Amazon supply chain and in the UK Covid-19 pandemic response.}
 
 \newslide{}
@@ -58,13 +65,29 @@
 
 \notes{Arguably the challenges for automated data science and deploying complex machine learning solutions are similar. The AutoAI project at Cambridge is focussed on maintaining and explaining machine learning systems. The assumption is that such systems are generally made up of interacting components that make decisions in a composite manner. They have interfaces to the real world where that data is collected, but they also generate data within themselelves. The challenge of collecting data is sometimes less the challenge of pacing the streets and more the challenge of extracting it from existing systems.}
 
-\subsection{Access}
+\subsection{The Fynesse Framework}
+
+\slides{* Three *aspects*
+  * Access - before data is available electronically
+  * Assess - work that can be done *without* the question
+  * Address - giving answers to question at hand}
 
 \notes{The Fynesse paradigm considers three *aspects* to data analysis: Access, Assess, Address. In this way it builds on many two stage processes that consider *data collection* and *data wrangling* to be two separate stages. There are two key differences to the Fynesse process. Firstly, the attempt to separate data wrangling tasks into (a) those that can be done *without* knowing the downstream task (Assess) and (b) those that can only be done *with* knowing the downstream task (Address). Naturally, this won't turn out to be a clean separation. But the ethos is to ensure that any reusable tasks that is done in the process of data wrgangling is labelled as such and pushed back into the data ecosystem. Secondly, our use of the term *aspects* instead of stages acknowledges the fact that although there is a natural ordering to the aspects, we find that in practice the data scientist is often moving quicly across the different aspects, so that the mind set of "stages" can be unhelpful}
 
 
+\subsection{Access}
+\slides{* Work to make data electronically accessible.
+* Legal work
+* Ethical work
+* Extraction of data form where it's held
+  * mobile phones, within software ecosystem, physical log books
+* Associated with data readiness level C.}
+
 \notes{The first aspect we'll consider is *accessing* the data. Depending on domain, the skills needed to address this challenge will vary greatly. For example, [Michael T. Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith) was leading a project in collaboration with the Kampala police force to collate accident data.}
 
+\notes{The *access* aspect is associated with data readiness level C (@Lawrence-drl17).}
+
+\newslide{Access Case Study: Crash Map Kampala}
 
 \slides{
 \centerdiv{\jimmyKinyonyiPicture{15%}\michaelSmithPicture{15%}}
@@ -86,10 +109,15 @@
 \subsection{Assess}
 
 \slides{* Only things you can do *without* knowing the "question".
-    * This ensures *assess* is reusable across tasks.
-* Driven by happenstance data.}
+  * This ensures *assess* is reusable across tasks.
+* Driven by happenstance data.
+* Associated with data readiness level B}
 
 \notes{Data that is accessible can be imported (via APIs or database calls or reading a CSV) into the machine and work can be done understanding the nature of the data. The important thing to say about the assess aspect is that it only includes things you can do *without* the question in mind. This runs counter to many ideas about how we do data analytics. The history of statistics was that we think of the question *before* we collect data. But that was because data was expensive, and it needed to be excplicitly collected. The same mantra is true today of *surveillance data*. But the new challenge is around *happenstance data*, data that is cheaply available but may be of poor quality. The nature of the data needs to be understood before its integrated into analysis. Unfortunately, because the work is conflated with other aspects, decisions are sometimes made during assessment (for example approaches to imputing missing values) which may be useful in one context, but are useless in others. So the aim in *assess* is to only do work that is repeatable, and make that work available to others who may also want to use the data.}
+
+\notes{The assess aspect renders the Fynesse framework quite different form other data science frameworks that split the process into data *wrangling* and data *modelling*. It acknowledges that there is a component to both wrangling and modelling that is specific to the task (this occurs in the *address* aspect) and a component that is useful across tasks (the *assess* aspect). This is important in the wider system because any reusable work can be shared. By keeping this uppermost in the mind through the *assess* aspect, then the wider data ecosystem benefits.}
+
+\notes{The *assess* aspect is associated with data readiness level B (@Lawrence-drl17).}
 
 \newslide{Case Study: Text Mining for Covid Misinformation}
 
@@ -120,9 +148,13 @@
   * Confirmatory data analysis
   * An ML prediction model
   * Visualisation through a dashboard
-  * An Excel spreadsheet}
+  * An Excel spreadsheet
+* Associated with data readiness level A.}
 
 \notes{The final aspect of the process is to *address* the question. We'll spend the least time on this aspect here, because it's the one that is most widely formally taught and the one that most researchers are familiar with. In statistics, this might involve some confirmatory data analysis. In machine learning it may involve designing a predictive model. In many domains it will involve figuring out how best to visualise the data to present it to those who need to make the decisions. That could involve a dashboard, a plot or even summarisation in an Excel spreadsheet.}
+
+\notes{The *address* aspect is associated with data readiness level A (@Lawrence-drl17).}
+
 
 \subsection{Automating Address}
 
