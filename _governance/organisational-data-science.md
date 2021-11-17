@@ -33,6 +33,10 @@ Levers:
 Levers:
   reverse mentoring
 
+Diverse groups (uncomfortable at the beginning ... not the end)
+
+Explore/Exploit plot (McCollum plot)
+
 "Create a University?" (like AMazon)
 
 
