@@ -1,7 +1,7 @@
 ---
 title: "Organisational Data Science"
 abstract:  >
-  In this talk we review the challenges in making an organisation data-driven in its decision making. Building on experience working within Amazon and providing advice through the Royal Society convened DELVE group we review challenges and solutions for improving the data capabilities of an institution. This talk is targeted at data-aware leaders working in an institution, i.e. those with some cross departmental influence. For talks that cover the challenges for other senior leaders see 
+  In this talk we review the challenges in making an organisation data-driven in its decision making. Building on experience working within Amazon and providing advice through the Royal Society convened DELVE group we review challenges and solutions for improving the data capabilities of an institution. This talk is targeted at data-aware leaders working in an institution.
 layout: talk
 venue: 10ds Show and Social
 author:

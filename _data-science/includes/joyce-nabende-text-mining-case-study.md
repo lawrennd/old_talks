@@ -75,13 +75,15 @@
 \newslide{Data Annotation Process}
 
 \slides{- Carried out by 7 annotators who could read/comprehend English and Luganda
-- Used the [Doccano Tool](https://github.com/doccano/doccano) - an open source text annotation tool.
+- Used the [Doccano Tool](https://github.com/doccano/doccano) - an open source text annotation tool.}
+
+\newslide{Data Annotation Process}
 - Annotation attributes:
-a. Data source [Facebook, Twitter]
-b. Language [English, Luganda, and codemixed]
-c. Aspect [truck drivers, hospitals, vaccine, cases, SOPs, NPIs, Testing, Border, Covid19_Impact, Presidential address, death, elections and Covid19]
-d. Sentiment [positive, negative and neutral]
-e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
+  a. Data source [Facebook, Twitter]
+  b. Language [English, Luganda, and codemixed]
+  c. Aspect [truck drivers, hospitals, vaccine, cases, SOPs, NPIs, Testing, Border, Covid19_Impact, Presidential address, death, elections and Covid19]
+  d. Sentiment [positive, negative and neutral]
+  e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 - As part of quality assurance, the data was reviewed by an independent team to ensure that the annotation guidelines were followed.}
 
 \notes{Annotation carried out by seven annotators who could understand both English and Luganda. The data was labeled with the [Doccano](https://github.com/doccano/doccano) text annotation tool. Annotations included the data source, the language, the label, the sentiment and the misinformation status.}
@@ -93,11 +95,10 @@ e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 \table{
 
 |  | Twitter Data | Facebook Data |
-| :--- | :--- | :--- |
 | Initial dataset | 15,354 | 430,075 |
 | Dataset after Annotation | 3,527 | 4,479 |
 
-}{Portion of data that was annoted.}{annotated-portion-of-data}
+}{Portion of data that was annotated.}{annotated-portion-of-data}
 
 \newslide{}
 
@@ -106,7 +107,6 @@ e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 \table{
 
 | Language | 0.89 |
-| :--- | :--- |
 | Aspect | 0.69 |
 | Sentiment | 0.73 |
 | Misinformation | 0.74 |
