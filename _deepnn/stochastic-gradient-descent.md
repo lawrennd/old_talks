@@ -11,6 +11,7 @@ author:
 abstract: >
   This lecture will cover stochastic gradient descent.
 talkscam:
+venue: LT1, William Gates Building
 hackmdnotes: fhuszar/rJWAWC7gO
 hackmdslides: fhuszar/Hy69Wvrg_
 youtube: GDyD8KwSfvk
@@ -18,11 +19,9 @@ reveal: true
 time: "14:00"
 start: "14:00"
 end: "15:00"
-date: 2021-02-02
+date: 2022-02-01
 ---
 
-
-\include{talk-macros.gpp}
 
 \notes{You can find the [slides here](https://hackmd.io/@fhuszar/Hy69Wvrg_) and the [notes here](https://hackmd.io/@fhuszar/rJWAWC7gO).}
 

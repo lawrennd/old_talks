@@ -3,7 +3,7 @@ layout: lecture
 title: Hardware Ecosystem
 week: 3
 session: 1
-date: 2021-02-04
+date: 2022-02-02
 start: "14:00"
 end: "15:00"
 author:
@@ -14,20 +14,15 @@ author:
 abstract: >
   This lecture will look at the changes in hardware that enabled neural networks to be efficient and how neural network models are deployed on hardware.
 talkscam:
-room: Zoom
 reveal: true
 ipynb: true
 youtube: -IXnGgDbE-M
 talktheme: white
-talkcss: ../assets/css/talks-small.css
-venue: Computer Laboratory, William Gates Building
+talkcss: https://inverseprobability.com/assets/css/talks-small.css
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-\include{talk-macros.gpp}
-
 
 \subsection{DeepNN}
 

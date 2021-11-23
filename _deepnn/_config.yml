@@ -6,14 +6,16 @@ author:
   twitter: lawrennd
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
-talkscam:
-room: Virtual (Zoom)
-venue: Zoom
+layout: lecture
+room: LT1
+venue: William Gates Building
+talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/deepnn/_lectures/
 slidesdir: ../../../mlatcl/deepnn/slides/
 notesdir: ../../../mlatcl/deepnn/_notes/
 notebooksdir: ../../../mlatcl/deepnn/_notebooks/
 writediagramsdir: .
+scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
 baseurl: "deepnn/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.com/" # the base hostname & protocol for your site

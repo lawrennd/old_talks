@@ -3,7 +3,7 @@ layout: lecture
 title: Representation and Transfer Learning
 week: 6
 session: 2
-date: 2021-03-02
+date: 2022-03-01
 start: "14:00"
 end: "15:00"
 author:
@@ -15,14 +15,10 @@ abstract: >
   In this lecture Ferenc will introduce us to the notions behind representation and transfer learning. 
 hackmdslides: fhuszar/r1HxvooMd#/
 youtube: OTcrDGQQcZY
-talkscam:
-room: Zoom
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-\include{talk-macros.gpp}
 
 \subsection{Unsupervised learning}
 

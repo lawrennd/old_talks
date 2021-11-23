@@ -16,7 +16,6 @@ abstract: >
 youtube: lf1F1XTyxRE
 talkscam:
 reveal: false
-room: Zoom
 time: "14:00"
 start: "14:00"
 end: "15:00"

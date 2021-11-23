@@ -3,13 +3,13 @@ layout: lecture
 title: Recurrent Neural Networks
 week: 4
 session: 2
-date: 2021-02-16
+date: 2022-02-15
 start: "14:00"
 end: "15:00"
 author:
 - given: Ferenc
   family: Huszár
-  institution: 
+  institution: University of Cambridge
   url: https://www.inference.vc/about/
 abstract: >
   This lecture will introduce recurrent neural networks, these structures allow us to deal with sequences.
@@ -20,9 +20,6 @@ time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-
-\include{talk-macros.gpp}
 
 ## Different from what we had before:
 

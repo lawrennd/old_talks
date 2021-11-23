@@ -3,7 +3,7 @@ layout: lecture
 title: Sequence to Sequence
 week: 5
 session: 1
-date: 2021-02-18
+date: 2022-02-17
 start: "14:00"
 end: "15:00"
 author:
@@ -13,14 +13,11 @@ author:
   url: https://www.inference.vc/about/
 abstract: >
   This lecture will continue on RNNs and their evolution as methods for performing sequence to sequence.
-talkscam:
 youtube: KgrerFfLv1k
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-\include{talk-macros.gpp}
 
 \subsubsection{RNN: Recap}
 

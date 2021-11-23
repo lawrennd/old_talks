@@ -3,7 +3,7 @@ layout: lecture
 title: Transformers
 week: 5
 session: 2
-date: 2021-02-23
+date: 2022-02-22
 start: "14:00"
 end: "15:00"
 author:
@@ -22,8 +22,6 @@ time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-\include{talk-macros.gpp}
 
 \subsection{Plan for the Day}
 

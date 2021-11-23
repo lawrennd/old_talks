@@ -3,7 +3,7 @@ layout: lecture
 title: Convolutional Neural Networks
 week: 4
 session: 1
-date: 2021-02-11
+date: 2022-02-10
 start: "14:00"
 end: "15:00"
 author:
@@ -16,15 +16,11 @@ abstract: >
 youtube: Ed-bk1p6Gzo
 talktheme: white
 ipynb: true
-talkcss: ../assets/css/talks-small.css
-talkscam:
+talkcss: https://inverseprobability.com/assets/css/talks-small.css
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-\include{../talk-macros.gpp}
-
 
 
 \setupcode{from conv_imports import *

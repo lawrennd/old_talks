@@ -3,7 +3,7 @@ layout: lecture
 title: Generalization and Neural Networks
 week: 1
 session: 2
-date: 2021-01-26
+date: 2022-01-25
 author:
 - given: Neil D.
   family: Lawrence
@@ -14,6 +14,7 @@ abstract: >
   neural architectures. We will review classical generalization and explore what's different
   about neural network models.
 talkscam:
+venue: LT1, William Gates Building
 hackmdslides: fhuszar/r1HxvooMd#/
 youtube: tk9qM00Bs_o
 reveal: True
@@ -22,8 +23,6 @@ time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
-
-\include{talk-macros.gpp}
 
 \define{\errorFunction}{L}
 \define{\designVector}{\boldsymbol{\phi}}

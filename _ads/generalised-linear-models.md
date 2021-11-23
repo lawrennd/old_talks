@@ -1,6 +1,6 @@
 ---
-week: 6
-session: 3
+week: 7
+session: 1
 title: "Generalised Linear Models"
 abstract:  >
 layout: lecture
@@ -13,7 +13,8 @@ author:
   url: http://carlhenrik.com/
 time: "10:00"
 date: 2021-11-22
-advanced-datascience-glm.pdf
+youtube: VQvYg3jin-k
+pdfslides: advanced-datascience-glm.pdf
 transition: None
 reveal: false
 ipynb: false

@@ -11,6 +11,7 @@ author:
 abstract: >
   This lecture will cover the foundations of automatic differentiation as well as the different frameworks that exist for building models.
 talkscam:
+venue: LT1, William Gates Building
 youtube: m3KZLPed7aM
 hackmdslides: fhuszar/H1WZ70kl_#
 hackmdnotes: fhuszar/SyHTInWeu
@@ -18,10 +19,8 @@ hackmdworksheet: fhuszar/S1UdOvZe_
 time: "14:00"
 start: "14:00"
 end: "15:00"
-date: 2021-01-28
+date: 2022-01-27
 ---
-
-\include{talk-macros.gpp}
 
 \notes{* [Slides are here](https://hackmd.io/@fhuszar/H1WZ70kl_#)
 * [Approximating with ReLU notes are here](https://hackmd.io/@fhuszar/S1UdOvZe_)

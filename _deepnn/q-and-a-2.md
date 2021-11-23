@@ -3,7 +3,7 @@ layout: lecture
 title: Q and A Session
 week: 6
 session: 1
-date: 2021-02-25
+date: 2022-02-24
 start: "14:00"
 end: "15:00"
 author:
@@ -24,7 +24,6 @@ abstract: >
 youtube: xl0lMpo6d9U
 talkscam:
 reveal: false
-room: Zoom
 time: "14:00"
 start: "14:00"
 end: "15:00"

@@ -3,7 +3,6 @@ layout: lecture
 title: Introduction
 week: 1
 session: 1
-date: 2021-01-19
 author:
 - given: Neil D.
   family: Lawrence
@@ -12,18 +11,17 @@ author:
 abstract: >
   This lecture will give the background to what this course is about, and how it fits in to other material you can find on deep neural network models. It explains deep neural networks are, how they fit into the wider context of the field and why they are successful.
 talkscam:
+venue: LT1, William Gates Building
 youtube: 9pjIhoeXlnI
 reveal: True
 ipynb: True
-date: 2021-01-21
+date: 2022-01-20
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
 
-\include{talk-macros.gpp}
-
-\include{_deepnn/includes/overview-2020.md}
+\include{_deepnn/includes/overview-2021.md}
 \include{_ml/includes/what-is-ml.md}
 
 \subsection{Ingredients}
