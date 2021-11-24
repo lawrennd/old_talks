@@ -18,7 +18,7 @@ writediagramsdir: .
 scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
 baseurl: "deepnn/" # the subpath of your site, e.g. /blog/
-url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
+url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks

@@ -3,7 +3,7 @@ layout: lecture
 title: Hardware Ecosystem
 week: 3
 session: 1
-date: 2022-02-02
+date: 2022-02-03
 start: "14:00"
 end: "15:00"
 author:
