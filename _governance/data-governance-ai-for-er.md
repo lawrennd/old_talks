@@ -1,7 +1,7 @@
 ---
-title: "Data Governance: AI4ER Lecture"
+title: "AI4ER Lecture: Projects and Data Governance"
 abstract:  >
-  In this session we look at the challenges around ethical artificial intelligence from a perspective of data governance. We'll give some background to how these challenges have emerged and then consider some solutions including the mechanism of data trusts and some pointers to work around data sharing in Africa for the Covid19 pandemic.
+  In this session we look at some projects from data science africa and review challenges around ethical artificial intelligence from a perspective of data governance. We'll give some background to how these challenges have emerged and then consider some solutions including the mechanism of data trusts and some pointers to work around data sharing in Africa for the Covid19 pandemic.
 layout: talk
 venue: Wolfson Lecture Theatre, Madingley Rise Site
 author:
@@ -45,6 +45,13 @@ ipynb: false
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
 \include{_data-science/includes/crop-monitoring.md}
+
+\subsection{Ernest's Talk}
+
+You can see more details on Ernest's work [in this talk](https://mlatcl.github.io/deepnn/special_topics/07-01-data-science-africa.html) from the 2021 DNN lectures.
+
+\figure{\includeyoutube{lf1F1XTyxRE}{640}{480}}{Lecture from Ernest Mwebaze on Deep Learning for Developmental Challenges}{ernest-deep-learning}
+
 \include{_data-science/includes/biosurveillance.md}
 \include{_data-science/includes/community-radio.md}
 \include{_data-science/includes/kudu-project.md}
