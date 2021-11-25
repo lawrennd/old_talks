@@ -1,5 +1,5 @@
 ---
-title: "AI4ER Lecture: Projects and Data Governance"
+title: "AI4ER Lecture: Projects"
 abstract:  >
   In this session we look at some projects from data science africa and review challenges around ethical artificial intelligence from a perspective of data governance. We'll give some background to how these challenges have emerged and then consider some solutions including the mechanism of data trusts and some pointers to work around data sharing in Africa for the Covid19 pandemic.
 layout: talk
@@ -13,6 +13,7 @@ author:
   url: http://inverseprobability.com
 time: "13:00"
 date: 2021-11-25
+youtube: txtLeY18ZUk
 transition: None
 ipynb: false
 ---
@@ -60,9 +61,6 @@ You can see more details on Ernest's work [in this talk](https://mlatcl.github.i
 
 \include{_governance/includes/feudal-era-data-ecosystem.md}
 \include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
-\include{_data-science/includes/privacy-amelioration.md}
-\include{_governance/includes/data-governance-toolkit.md}
-\include{_governance/includes/data-trusts.md}
 
 
 
