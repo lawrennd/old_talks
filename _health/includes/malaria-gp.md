@@ -10,7 +10,7 @@
 
 The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14;@Mubangizi:malaria14]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala. You can see the work summarized on the UN Global Pulse [disease outbreaks project site here](https://diseaseoutbreaks.unglobalpulse.net/uganda/).}
 
-\slides{* Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubaganzi (Makerere University, Uganda)
+\slides{* Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubangizi (Makerere University, Uganda)
 * See [AI-DEV Group](http://air.ug/research.html).}
 * See [UN Global Pulse Disease Outbreaks Site](https://diseaseoutbreaks.unglobalpulse.net/uganda/)
 \newslide{Malaria Prediction in Uganda}
