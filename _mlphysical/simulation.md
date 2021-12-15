@@ -31,6 +31,7 @@ transition: None
 \include{_software/includes/mlai-software.md}
 
 \include{_simulation/includes/game-of-life.md}
+\include{_simulation/includes/packing-problems.md}
 
 
 \include{_gp/includes/gp-intro-very-short.md}
