@@ -14,3 +14,7 @@ date: 2022-06-14
 venue: "Four Seasons, Park Lane, London"
 transition: None
 ---
+
+The AI Fallacy ... followed by material on how to fix it.
+
+Likely to be informed by ideas that arise in AI@Cam
