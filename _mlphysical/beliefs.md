@@ -1,6 +1,12 @@
 ---
 layout: lecture
 title: Quantification of Beliefs
+abstract: >
+  This lecture will provide the background in probability theory that
+  we will make use of during the coming weeks. For many of you this
+  will be things that you have seen before but we will try to provide
+  a slightly different semantic to the purely mathematical concepts
+  that we will use throughout the course.
 week: 1
 session: 2
 author:
@@ -8,8 +14,6 @@ author:
   family: Ek
   institution: University of Cambridge
   url: http://carlhenrik.com
-abstract: >
-  This lecture will provide the background in probability theory that we will make use of during the coming weeks. For many of you this will be things that you have seen before but we will try to provide a slightly different semantic to the purely mathematical concepts that we will use throughout the course.
 talkscam:
 reveal: False
 ipynb: False
