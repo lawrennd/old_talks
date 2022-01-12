@@ -18,11 +18,17 @@ ipynb: false
 ---
 
 
+\section{The Challenge}
 
 \include{_business/includes/institutional-character.md}
 \include{_policy/includes/amazon-to-policy.md}
 
-With that in mind we'll now look at challenges to delivering such a change in culture.
+
+
+\notes{With the Amazon and F1 examples in mind, I'd like to suggest that no-one is (yet) doing data-science well at *scale*. And that is largely to do with how recently we've gained these capabilities. But with that in mind we'll I'd like to look at some solutions for integrating the necessary change in culture.}
+
+\section{Solutions}
+
 \include{_business/includes/executive-awareness.md}
 \include{_business/includes/data-maturity-assessment.md}
 \include{_business/includes/executive-sponsorship.md}
@@ -31,7 +37,9 @@ With that in mind we'll now look at challenges to delivering such a change in cu
 \include{_policy/includes/greenfield-vs-brownfield.md}
 \include{_business/includes/bridging-datascience-education.md}
 
-\subsection{Conclusions}
+\section{Conclusions}
+
+\newslide{Overview}
 
 \slides{* Challenge
   * institutional character and information infrastructure are interlinked.
