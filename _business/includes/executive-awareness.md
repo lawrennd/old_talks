@@ -5,7 +5,7 @@
 
 \subsection{Executive Awareness}
 
-\notes{The first challenge is the Executive Awareness.}
+The first challenge is *Executive Awareness*.
 
 \notes{In most organisations decision making capability sits with a
 fairly restricted cadre. For this group to be empowered in decision
