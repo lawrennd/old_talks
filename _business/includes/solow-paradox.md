@@ -7,7 +7,7 @@
 
 > You can see the computer age everywhere but in the productivity statistics.
 >
-> Robert Solow in @Solow-computer87
+> Robert Solow in @Solow-computers87
 
 \notes{Artificial intelligence promises automated decision making that will alleviate and revolutionise the nature of work. In practice, we know from previous technological solutions, new technologies often take time to percolate through to productivity. Robert Solow’s paradox saw “the computer age everywhere but in the productivity statistics”. Solow was reviewing @Cohen-manufacturing87 and he quotes them
 

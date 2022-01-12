@@ -5,6 +5,9 @@
 
 \subsection{Institutional Character}
 
+\notes{Before we start, I'd like to highlight one idea that will be key for contextualisation of everything else. There is a strong interaction between the structure of an organisation and the structure of its software.}
+
+\include{_business/includes/the-api-mandate-bezos.md}
 
 \notes{Amazon prides itself on agility, I spent three years there and I can confirm things move very quickly. I used to joke that just as a dog year is seven normal years, an Amazon year is four normal years in any other company.}
 

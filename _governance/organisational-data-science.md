@@ -17,9 +17,8 @@ transition: None
 ipynb: false
 ---
 
-\notes{Before we start, I'd like to highlight one idea that will be key for contextualisation of everything else. There is a strong interaction between the structure of an organisation and the structure of its software.}
 
-\include{_business/includes/the-api-mandate-bezos.md}
+
 \include{_business/includes/institutional-character.md}
 \include{_policy/includes/amazon-to-policy.md}
 
@@ -30,6 +29,35 @@ With that in mind we'll now look at challenges to delivering such a change in cu
 \include{_business/includes/data-science-champions.md}
 \include{_policy/includes/departmental-planning.md}
 \include{_policy/includes/greenfield-vs-brownfield.md}
+\include{_business/includes/bridging-datascience-education.md}
+
+\subsection{Conclusions}
+
+\slides{* Challenge
+  * institutional character and information infrastructure are interlinked.
+  * transplantation of a data-science culture from outside can lead to rejection.
+* Solution
+  * Information infrastructure and institutional character need to co-evolve.}
+
+\notes{In this talk I've put forward the idea that an institution's character and its information infrastructure are interlinked. This implies that by reforming the information infrastructure, through wider provision of data-driven decision making capabilities, we are also interacting with the institutional character.}
+
+\notes{Many approaches to integrating data science ignore this and suffer from a phenomenon we can think of as organisational rejection. Despite the intent of the executive, the new capability is isolated from the wider institution and rendered ineffective.}
+
+\notes{The solution is to co-evolve the information infrastructure and the organisational culture. I've introduced five specific actions for doing this.}
+
+\newslide{Actions}
+
+1. Institution wide data maturity assessments.
+2. Executive sponsorship of the data science core.
+3. Pathfinder projects that are intersectional.
+4. Data science champions who come from the domains of deployment.
+5. Bridging courses that integrate institutional questions of important within data science education.
+
+\newslide{Key Theme}
+
+\slides{* These are actions that deliver a short term benefit while encouraging longer term cultural change.}
+
+\notes{The key design criterion for these actions is that each of these ideas brings short term benefits as well as effecting long term cultural change. Any idea that delivers on these two fronts is also likely to be suitable for integration in an institutional data-science programme.}
 
 \thanks
 
