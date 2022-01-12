@@ -29,25 +29,25 @@ ipynb: false
 
 \section{Solutions}
 
-\include{Executive Awareness}
+\section{1. Executive Awareness}
 
 \include{_business/includes/executive-awareness.md}
 \include{_business/includes/data-maturity-assessment.md}
 
-\section{Executive Sponsorship}
+\section{2. Executive Sponsorship}
 
 \include{_business/includes/executive-sponsorship.md}
 
-\section{Devolved Capability}
+\section{3. Devolved Capability}
 
 \include{_business/includes/data-science-champions.md}
 
-\section{Intersectional Projects}
+\section{4. Intersectional Projects}
 
 \include{_policy/includes/departmental-planning.md}
 \include{_policy/includes/greenfield-vs-brownfield.md}
 
-\section{Relevant Education}
+\section{5. Relevant Education}
 
 \include{_business/includes/bridging-datascience-education.md}
 
