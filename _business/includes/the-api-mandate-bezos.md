@@ -3,6 +3,8 @@
 
 \editme
 
+\newslide{Bezos memo to Amazon in 2002}
+
 \subsection{The API Mandate}
 
 \notes{The API Mandate was a memo issued by Jeff Bezos in 2002. Internet folklore has the memo making five statements:}
