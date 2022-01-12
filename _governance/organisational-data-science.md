@@ -29,12 +29,26 @@ ipynb: false
 
 \section{Solutions}
 
+\include{Executive Awareness}
+
 \include{_business/includes/executive-awareness.md}
 \include{_business/includes/data-maturity-assessment.md}
+
+\section{Executive Sponsorship}
+
 \include{_business/includes/executive-sponsorship.md}
+
+\section{Devolved Capability}
+
 \include{_business/includes/data-science-champions.md}
+
+\section{Intersectional Projects}
+
 \include{_policy/includes/departmental-planning.md}
 \include{_policy/includes/greenfield-vs-brownfield.md}
+
+\section{Relevant Education}
+
 \include{_business/includes/bridging-datascience-education.md}
 
 \section{Conclusions}

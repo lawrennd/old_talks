@@ -7,7 +7,8 @@
 
 \slides{* Direct sponsorship from the most senior executive.
   * This has a cultural effect as well as a direct effect.
-* Also develop understanding of capabilities of data science in exec team.}
+* Bring about through *involvement*
+  * develops understanding of capabilities of data science in exec team.}
 
 \notes{Another lever that can be deployed is that of *executive sponsorship*. My feeling is that organisational change is most likely if the executive is seen to be behind it. This feeds the corporate culture. While it may be a *necessary* condition, or at least it is helpful, it is not a *sufficient* condition. It does not solve the challenge of the institutional antibodies that will obstruct long term change. Here by executive sponsorship I mean that of the CEO of the organisation. That might be equivalent to the Prime Minister or the Cabinet Secretary.}
 
