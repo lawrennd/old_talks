@@ -21,8 +21,8 @@ organisation.}
 
 \subsubsection{1. Reactive}
 
-\smalltext{
-*Data sharing is not possible or ad-hoc at best.*
+
+\notes{*Data sharing is not possible or ad-hoc at best.*
 
 a.  It is difficult to identify relevant data sets and their owners.
 
@@ -33,12 +33,11 @@ c.  Data is most commonly shared via ad hoc means, like attaching it to
     an email.
 
 d.  The quality of data available means that it is often incorrect or
-    incomplete.
-}
+    incomplete.}
+
 \subsubsection{2. Repeatable}
 
-\smalltext{
-*Some limited data service provision is possible and expected, in
+\notes{*Some limited data service provision is possible and expected, in
 particular between neighboring teams. Some limited data provision to
 distinct teams may also be possible.*
 
@@ -51,12 +50,11 @@ b.  There are standards for documentation that ensure that data is
 c.  The time and effort involved in data preparation are commonly
     understood.
 
-d.  Data is used to inform decision-making, though not always routinely.
-}
+d.  Data is used to inform decision-making, though not always routinely.}
 
 \subsubsection{3. Managed and Integrated}
 
-\smalltext{
+\notes{
 *Data is available through published APIs; corrections to requested data
 are monitored and API service quality is discussed within the team. Data
 security protocols are partially automated ensuring electronic access
@@ -74,7 +72,7 @@ c.  Procedures for data access are documented for other teams, and there
 
 \subsubsection{4. Optimized}
 
-\smalltext{
+\notes{
 *Teams provide reliable data services to other teams. The security and
 privacy implications of data sharing are automatically handled through
 privacy and security aware ecosystems.*
@@ -91,7 +89,7 @@ c.  Data API access is streamlined by an approval process for joining digital se
 
 \subsubsection{5. Transparent}
 
-\smalltext{
+\notes{
 *Internal organizational data is available to external organizations
 with appropriate privacy and security policies. Decision making across
 the organisation is data-enabled, with transparent metrics that could be
