@@ -23,8 +23,6 @@ ipynb: false
 \include{_business/includes/institutional-character.md}
 \include{_policy/includes/amazon-to-policy.md}
 
-
-
 \notes{With the Amazon and F1 examples in mind, I'd like to suggest that no-one is (yet) doing data-science well at *scale*. And that is largely to do with how recently we've gained these capabilities. But with that in mind we'll I'd like to look at some solutions for integrating the necessary change in culture.}
 
 \section{Solutions}
@@ -32,7 +30,13 @@ ipynb: false
 \section{1. Executive Awareness}
 
 \include{_business/includes/executive-awareness.md}
-\include{_business/includes/data-maturity-assessment.md}
+
+\slides{\section{Data Maturity Assessment}
+
+\slides{* Emerging from the DELIVE Initiatives Data Work [@Delve-data20]
+* Recommendation for Data Maturity Assessments [@Lawrence-maturity20]}}
+
+\notes{\include{_business/includes/data-maturity-assessment.md}}
 
 \section{2. Executive Sponsorship}
 
