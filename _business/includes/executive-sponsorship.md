@@ -13,6 +13,6 @@
 
 \notes{The inclusion of the CFO is critical for two purposes. Firstly, financial data is one of the few sources of data that tends to be of high quality and availability in any organisation. This is because it is one of the few forms of data that is regularly audited. This means that such a project will have a good chance of success. Secondly, if the CFO is bought in to these technologies, and capable of understanding their strengths and weaknesses, then that will facilitate the funding of future projects.}
 
-\notes{In the DELVE data report, we translated this recommendation into that of "pathfinder projects". Projects that cut across departments, and involve treasury. Although I appreciate the nuances of the relationship between Treasury and No 10 do not map precisely onto that of CEO and CFO in a normal business. However, the importance of cross cutting exemplar projects that have the close attention of the executive remains.}
+\notes{In the DELVE data report [@Delve-data20], we translated this recommendation into that of "pathfinder projects". Projects that cut across departments, and involve treasury. Although I appreciate the nuances of the relationship between Treasury and No 10 do not map precisely onto that of CEO and CFO in a normal business. However, the importance of cross cutting exemplar projects that have the close attention of the executive remains.}
 
 \endif
