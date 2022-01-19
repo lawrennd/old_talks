@@ -6,7 +6,7 @@
 \subsection{Cybernetics, Neural Networks and the Ratio Club}
 
 
-\notes{This is certainly not the first wave of excitment in neural networks. This history of neural networks predates the history of the computer, and papers on neural networks predate papers on the digital computer.}
+\notes{This is certainly not the first wave of excitement in neural networks. This history of neural networks predates the history of the computer, and papers on neural networks predate papers on the digital computer.}
 
 \newslide{Logic, McCulloch and Pitts}
 
@@ -14,15 +14,15 @@
 
 \notes{Specifically, one of the first papers on neural networks was written by two collaborators from logic and psychology in 1943. [Walter Pitts](https://en.wikipedia.org/wiki/Walter_Pitts) was a child prodigy who read Russell and Whitehead's *Principia Mathematica*. He felt he'd spotted some errors in the text and wrote to Russell in Cambridge, who replied inviting him for a visit. Pitts did not take up the offer because he was only 12 years old. But, three years later, when Russell took a sabbatical at the University of Chicago, Pitts left his home in Detroit and headed to Chicago to hear Russell speak. When Russell left Pitts stayed on studying logic. He never formally took a degree but just worked with whoever was available.}
 
-\notes{[Warren McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) was a psychologist who moved to the University of Chicago in 1941. Overlapping interests meant that he met Pitts, who was still living an intinerant lifestyle around the campus of the University. McCulloch invited Pitts to live with his family and they began collaborating on a simple model of the neuron and how neurons might interact. The dominant 'theory of knowledge' at the time was *logic* and their paper attempted to show how networks of neurons (or ir paper attempted to bridge the logical foundation. Their paper, *A Logical Calculus of the Ideas Immanent in Nervous Activity* [@McCulloch:neuron43] was published in the middle of the Second World War. It modelled the neuron as a linear threshold, and described how networks of such neurons could create logical functions. The inspiration in the paper is clear, they make use of Rudolf Carmap's Language II [@Carnap-logical37] to represent their theorem and cite the second edition of Russell and Whitehead [@Russell-principia25]. }
+\notes{[Warren McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) was a psychologist who moved to the University of Chicago in 1941. Overlapping interests meant that he met Pitts, who was still living an itinerant lifestyle around the campus of the University. McCulloch invited Pitts to live with his family and they began collaborating on a simple model of the neuron and how neurons might interact. The dominant 'theory of knowledge' at the time was *logic* and their paper attempted to show how networks of neurons. Their paper, *A Logical Calculus of the Ideas Immanent in Nervous Activity* [@McCulloch:neuron43], was published in the middle of the Second World War. It modelled the neuron as a linear threshold and described how networks of such neurons could create logical functions. The inspiration in the paper is clear, they make use of Rudolf Carnap's Language II [@Carnap-logical37] to represent their theorem and cite the second edition of Russell and Whitehead [@Russell-principia25]. }
 
 \subsection{Cybernetics}
 
 \figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}{left}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}{}{center}}{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}{}{right}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Josiah Willard Gibbs (1839-1903), Norbert Wiener (1894-1964)}{maxwell-gibbs-wiener}
 
-\notes{After the war, this work, along with McCulloch and Pitts, was at the heart of a movement known as *Cybernetics*. A term coined by [Norbert Wiener](https://en.wikipedia.org/wiki/Norbert_Wiener) [@Wiener:cybernetics48] to reflect the wealth of work on sensing and computing. Wiener chose the term as an alternative rendering of the word *governor*. Governor comes to us form latin, but is a corruption of the Greek κυβερνήτης meaning helmsman. Wiener's choice of the term was a nod to the importance of James Clerk Maxwell's work on understanding surging in James Watt's steam engine governor [@Maxwell:governors1867]. It reflected the importance that Wiener placed on *feedback* in these systems. From this strand of work came the field of *control theory*.}
+\notes{After the war, this work, along with McCulloch and Pitts, was at the heart of a movement known as *Cybernetics*. A term coined by [Norbert Wiener](https://en.wikipedia.org/wiki/Norbert_Wiener) [@Wiener:cybernetics48] to reflect the wealth of work on sensing and computing. Wiener chose the term as an alternative rendering of the word *governor*. Governor comes to us from Latin, but is a corruption of the Greek κυβερνήτης meaning helmsman. Wiener's choice of the term was a nod to the importance of James Clerk Maxwell's work on understanding surging in James Watt's steam engine governor [@Maxwell:governors1867]. It reflected the importance that Wiener placed on *feedback* in these systems. From this strand of work came the field of *control theory*.}
 
-\notes{Many of the constituent ideas of Cybernetics came from  the war itself. Norbert Wiener, was a Professor of Applied Mathematics at MIT. He was another child prodigy who visited Russell in Cambridge having completed his PhD at Harvard by the age of 19. But Wiener was less keen on logic than McCulloch and Pitts, he looked to stochastic processes and probability theory as the key to intelligent decision making. He rejected the need for a 'theory of knowledge' and preferred to think of a 'theory of ignorance' which was inspired by statistical mechanics, Maxwell was also a originator of the field, but Wiener wrote of Josiah Willard Gibbs as being his inspiration.}
+\notes{Many of the constituent ideas of Cybernetics came from  the war itself. Norbert Wiener was a Professor of Applied Mathematics at MIT. He was another child prodigy who visited Russell in Cambridge having completed his PhD at Harvard by the age of 19. But Wiener was less keen on logic than McCulloch and Pitts, he looked to stochastic processes and probability theory as the key to intelligent decision making. He rejected the need for a 'theory of knowledge' and preferred to think of a 'theory of ignorance' which was inspired by statistical mechanics, Maxwell was also an originator of the field, but Wiener wrote of Josiah Willard Gibbs as being his inspiration.}
 
 \notes{This nascent community was mainly based on those who were involved in war work. Wiener worked on radar systems for tracking aircraft (leading to the Wiener filter [@Wiener:yellow49]). In the UK researchers such as Jack Good, Alan Turing, Donald MacKay, Ross Ashby formed the *Ratio Club*. A group of scientists interested in how the brain works and how it might be modelled. Many of these scientists also worked on radar systems or code breaking. }
 
@@ -56,19 +56,19 @@ his interest in the brain.
 > human brain is? That was the beginning of my slippery slope into brain
 > research.
 >
-> *Behind the Eye* pg 40. Edited version of The 1986 Gifford Lectures given by Donald M. MacKay and edited by Valerie MacKay
+> *Behind the Eye* pg 40. Edited version of the 1986 Gifford Lectures given by Donald M. MacKay and edited by Valerie MacKay
 }
 
 \notes{Importantly, MacKay distinguishes between the *analogue*
 computer and the *digital* computer. As he mentions, his experience
 was with analogue machines. An analogue machine is *literally* an
 analogue. The radar systems that Wiener and MacKay both worked on were
-made up of electronic components such as resistors, capacitors and
+made up of electronic components such as resistors, capacitors, and
 inductors, that together represented a physical system, such as an
 anti-aircraft gun and a plane. The design of the analogue computer
 required the engineer to simulate the real world in analogue
 electronics, using dualities that exist between e.g. mechanical
-circuits (mass, spring, damper) and electroni circuits (inductor,
+circuits (mass, spring, damper) and electronic circuits (inductor,
 resistor, capacitor). The analogy between mass and a damper, between
 spring and a resistor and between capacitor and a damper works because
 the underlying mathematics is approximated with the same linear
@@ -86,7 +86,7 @@ considering were neurons, they could only map onto the logical world
 because their analogy for the neuron was so simple. An 'on' or 'off'
 linear threshold unit. Where the synapses of the neuron were compared
 to a threshold in the neuron. Firing occurs when the sum of input
-neurons cross a threshold in the receiving neuron. These networks can
+neurons crosses a threshold in the receiving neuron. These networks can
 then be built together in cascades.}
 
 \notes{In the late 1940s and early 1950s, Cyberneticists were also
@@ -114,15 +114,15 @@ Ashby (1903-1972), John von Neumann (1903-1957), Frank Rosenblatt
 (1928-1971). *Photograph of W. Ross Ashby is Copyright W. Ross
 Ashby*.}{ashby-neumann-rosenblatt}
 
-\notes{So the early story of Cybernetics starts with the success of analogue control, and in the domain of neural networks, analogues built. Inspired by F. Ross Ashby's [@Ashby-design52] ideas that suggested *random connections* and von Neumann [@Neumann-probabilistic56], who wrote about *probabilistic logics*, Frank Rosenblatt constructed the Perceptron [@Rosenblatt-perceptron58]. This was a deep neural network that recognised images from TV cameras.}
+\notes{The early story of Cybernetics starts with the success of analogue control, and in the domain of neural networks, analogues machines were built. Inspired by F. Ross Ashby's [@Ashby-design52] ideas that suggested *random connections* and von Neumann [@Neumann-probabilistic56], who wrote about *probabilistic logics*, Frank Rosenblatt constructed the Perceptron [@Rosenblatt-perceptron58]. This was a deep neural network that recognised images from TV cameras.}
 
-\notes{The perceptron created a great deal of interest, but it was rapidly eclipsed by the emerging *digital computer*. Perhaps as a marker as the increasing importance of the digital computer, the Apollo program (1961-1972) had a guidance computer that was a 16 bit digital machine for navigating to the moon. It implemented Kalman filters for guidance. In signal processing there's a shift from the 1950s to the 1960s of reseachers moving from analogue designs to designs that are suitable for implementation of digital machines.}
+\notes{The perceptron created a great deal of interest, but it was rapidly eclipsed by the emerging *digital computer*. Perhaps as a marker as the increasing importance of the digital computer, the Apollo program (1961-1972) had a guidance computer that was a 16-bit digital machine for navigating to the moon. It implemented Kalman filters for guidance. In signal processing there's a shift from the 1950s to the 1960s of researchers moving from analogue designs to designs that are suitable for implementation of digital machines.}
 
-\notes{That same shift was imposed on the Cybernetics community. Artificial Inteligence is often traced to the 'summer research project' proposed by John McCarthy at Dartmouth. But the proposal is not just notable for the introduction of the term, it is notable for the extent to which it marks a break with the Cybernetics community. Wiener's name isn't even mentioned in the proposal. And Cyberneticists either weren't invited to, or couldn't make, the event (with the notable exception of Warren McCulloch). Turing had died, and von Neumann was seriously ill with cancer. W. Ross Ashby was even in the US, but from his diaries there's no trace of him attending. Donald MacKay was on the initial proposal, but didn't make the event (perhaps because that summer his son, [Robert](https://warwick.ac.uk/fac/sci/maths/people/staff/robert_mackay/),  was born).}
+\notes{That same shift was imposed on the Cybernetics community. Artificial Intelligence is often traced to the 'summer research project' proposed by John McCarthy at Dartmouth. But the proposal is not just notable for the introduction of the term, it is notable for the extent to which it marks a break with the Cybernetics community. Wiener's name isn't even mentioned in the proposal. And Cyberneticists either weren't invited to, or couldn't make, the event (with the notable exception of Warren McCulloch). Turing had died, and von Neumann was seriously ill with cancer. W. Ross Ashby was even in the US, but from his diaries there's no trace of him attending. Donald MacKay was on the initial proposal, but didn't make the event (perhaps because that summer his son, [Robert](https://warwick.ac.uk/fac/sci/maths/people/staff/robert_mackay/),  was born).}
 
 \notes{One of the great ironies of modern artificial intelligence is that it is almost wholly reliant on deep neural network methodologies for the recent breakthroughs. But the dawn of the term artificial intelligence is associated with a period of around three decades when those methods (and the community that originated them) was actively marginalised.}
 
-\notes{There were many reasons for this, including personal enimities between Wiener and McCulloch, the untimely death of Frank Rosenblatt in a sailing accident. But regardless of these personal tragedies and tales of academic politics, the principal reason that neural networks were eclipsed was the dominance of the digital computer. From 1956 to 1986 we saw the rise of the computer from a tool for science and big business to a personal machine, available to individual researchers.}
+\notes{There were many reasons for this, including personal enmities between Wiener and McCulloch, the untimely death of Frank Rosenblatt in a sailing accident. But regardless of these personal tragedies and tales of academic politics, the principal reason that neural networks were eclipsed was the dominance of the digital computer. From 1956 to 1986 we saw the rise of the computer from a tool for science and big business to a personal machine, available to individual researchers.}
 
 
 \endif
