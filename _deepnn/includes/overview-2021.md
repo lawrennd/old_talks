@@ -5,11 +5,11 @@
 
 \subsection{Course Overview}
 
-\notes{Deep Neural Networks is an eight we course that introduces you to the fundamental concepts behind deep learning with neural networks. Over the last decade, deep neural network models have been behind some of the most impressive feats in machine learning. From the [convolutional neural networks](https://en.wikipedia.org/wiki/AlexNet) that made breakthrough progess on the [ImageNet challenge](https://en.wikipedia.org/wiki/ImageNet), object detection and the image net challenge, and most recently with the [CASP14 Protein Folding result from DeepMind](https://predictioncenter.org/casp14/doc/CASP14_press_release.html).}
+\notes{Deep Neural Networks is an eight we course that introduces you to the fundamental concepts behind deep learning with neural networks. Over the last decade, deep neural network models have been behind some of the most impressive feats in machine learning. From the [convolutional neural networks](https://en.wikipedia.org/wiki/AlexNet) that made breakthrough progress on the [ImageNet challenge](https://en.wikipedia.org/wiki/ImageNet), object detection and the image net challenge, and most recently with the [CASP14 Protein Folding result from DeepMind](https://predictioncenter.org/casp14/doc/CASP14_press_release.html).}
 
 \notes{Welcome to this course, which is designed to introduce you to the principles and ideas behind deep neural network models.}
 
-\notes{Due to widespread international interest in neural networks there is now a great deal of material to help you train and deploy these models. It is not our aim to substitute this material but to augment it with deeper understanding of the reasons why deep learning is successful and the context in which that success has occurred.}
+\notes{Due to widespread international interest in neural networks, there is now a great deal of material to help you train and deploy these models. It is not our aim to substitute this material but to augment it with deeper understanding of the reasons why deep learning is successful and the context in which that success has occurred.}
 
 \notes{You are strongly encouraged to explore that material. For example, you can find [Yann LeCun's neural networks course from NYU here](https://atcold.github.io/pytorch-Deep-Learning/). For example, [here is their introductory session](https://atcold.github.io/pytorch-Deep-Learning/) with Yann giving the first lecture available here.}
 
@@ -35,7 +35,7 @@
 
 * Week 1:
   1. Introduction and Data. Lecturer: [Neil D. Lawrence](http://inverseprobability.com/)
-  2. Generalisation and Neural Networks. Lectuer: [Neil D. Lawrence](http://inverseprobability.com/)
+  2. Generalisation and Neural Networks. Lecturer: [Neil D. Lawrence](http://inverseprobability.com/)
   
 * Week 2:
   1. Automatic Differentiation. Lecturer: [Ferenc Huszár](https://www.inference.vc/about/)
@@ -74,6 +74,6 @@
 
 \notes{Weeks 6-8 will involve a series of guest lectures and discussion sessions to relate the fundamental material you've learnt about to how people are deploying these models in the real world and how they are innovating with these models to extend their capabilities.}
 
-\notes{The two assignments will make up the entire mark of the module. They should be submitted via Moodle.}
+\notes{The two assignments will make up the entire mark of the module. They should be submitted via [Moodle](https://vle.cam.ac.uk).}
 
 \endif
