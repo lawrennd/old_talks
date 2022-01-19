@@ -26,9 +26,9 @@ end: "15:00"
 
 \subsection{Ingredients}
 
-\notes{So the three key ingredients of machine learning are a model, data and compute. Note, that this necessarily implies that an *algorithm* exists to combine the model with the data and that algorithm is what consumes the compute.}
+\notes{The three key ingredients of machine learning are a model, data and compute. Note, that this necessarily implies that an *algorithm* exists to combine the model with the data and that algorithm is what consumes the compute.}
 
-\notes{So how do these ingredients pan out in our recipe for deep learning? To better understand this, we're going to add more historical context and go back go 1997 when, here in Cambridge, there was a six month programme at the Isaac Newton Institute run on Machine Learning, Neural Networks and Generalisation.}
+\notes{So how do these ingredients pan out in our recipe for deep learning? To better understand this, we're going to add more historical context and go back go 1997 when, here in Cambridge, there was a six-month programme at the Isaac Newton Institute run on Machine Learning, Neural Networks and Generalisation.}
 
 \include{_ml/includes/cybernetics-ratio-club.md}
 \include{_ml/includes/connectionist-revival.md}
