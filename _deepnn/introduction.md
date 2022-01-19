@@ -49,7 +49,7 @@ end: "15:00"
 
 \figure{\includegif{\diagramsDir/ml/le-net-scale}{60%}}{Gif animation of LeNet-5 in action, here the scale invariance of the network is being tested.}{le-net-5}
 
-\notes{But at the same meeting Vladmir Vapnik was there as was Bernhard Scholkopf. Corinna Cortes, Bernard Boser, Isabelle Guyon and Vladmir Vapnik were all instrumental in developing the Support Vector Machine.}
+\notes{At the same meeting Vladmir Vapnik was present, as was Bernhard Schölkopf. Corinna Cortes, Bernard Boser, Isabelle Guyon and Vladmir Vapnik were all instrumental in developing the Support Vector Machine.}
 
 \newslide{}
 
@@ -100,7 +100,7 @@ end: "15:00"
   * Optimization
   * Implementation (hardware)
 
-* Differen NN Architectures
+* Different NN Architectures
 
 
 \reading
