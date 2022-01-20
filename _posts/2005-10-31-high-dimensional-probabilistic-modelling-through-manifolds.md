@@ -1,4 +1,7 @@
 ---
+title: High Dimensional Probabilistic Modelling through Manifolds
+venue: School of Computer and Communication Sciences, Swiss Federal Institute of Technology
+  (EPFL), Lausanne, Switzerland
 abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
@@ -28,9 +31,5 @@ layout: talk
 linkpptgz: https://inverseprobability.com/publications/files/gplvm_epfl.ppt.gz
 month: 10
 published: 2005-10-31
-section: pre
-title: High Dimensional Probabilistic Modelling through Manifolds
-venue: School of Computer and Communication Sciences, Swiss Federal Institute of Technology
-  (EPFL), Lausanne, Switzerland
 year: '2005'
 ---
