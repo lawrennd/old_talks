@@ -12,7 +12,10 @@ abstract: >
   This lecture will give the background to what this course is about, and how it fits in to other material you can find on deep neural network models. It explains deep neural networks are, how they fit into the wider context of the field and why they are successful.
 talkscam:
 venue: LT1, William Gates Building
-youtube: 9pjIhoeXlnI
+youtube: qZiW76V6EnE
+oldyoutube: 
+- code: 9pjIhoeXlnI
+  year: 2021
 reveal: True
 ipynb: True
 date: 2022-01-20
