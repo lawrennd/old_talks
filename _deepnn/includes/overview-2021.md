@@ -69,8 +69,7 @@
 
 \slides{* Weeks 6-8
   * Guest lectures from Ferenc, Nic and Neil 
-  * Guest lectures from external speakers 
-    * (e.g. Raia Hadsell on 11th March). }
+  * Guest lectures from external speakers }
 
 \notes{Weeks 6-8 will involve a series of guest lectures and discussion sessions to relate the fundamental material you've learnt about to how people are deploying these models in the real world and how they are innovating with these models to extend their capabilities.}
 
