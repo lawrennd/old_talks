@@ -18,10 +18,11 @@ author:
 categories:
 - Lawrence-oxford06
 day: '27'
+pdf: http://inverseprobability.com/publications/files/gplvmTutorial.pdf
 errata: []
 extras:
-- label: PDF Slides
-  link: http://inverseprobability.com/publications/files/gplvmTutorialSlides.pdf
+- label: Tech Report
+  link: http://inverseprobability.com/publications/the-gaussian-process-latent-variable-model.html
 - label: PDF Notes
   link: http://inverseprobability.com/publications/files/gplvmTutorial.pdf
 - label: Demos Software
