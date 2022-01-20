@@ -25,7 +25,7 @@ extras: []
 group: gplvm
 key: Lawrence-epfl05
 layout: talk
-linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_epfl.ppt.gz
+linkpptgz: https://inverseprobability.com/publications/files/gplvm_epfl.ppt.gz
 month: 10
 published: 2005-10-31
 section: pre
