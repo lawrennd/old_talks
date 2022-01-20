@@ -31,7 +31,7 @@ key: Lawrence-uc3mgplvm07
 layout: talk
 linkpdf: https://apt.cs.manchester.ac.uk/ftp/pub/ai/neill/gplvm_07_07.pdf
 month: 7
-published: 2007-07-04
+published: 2007-07-07
 section: pre
 title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
