@@ -29,11 +29,11 @@ extras:
 group: gplvm
 key: Lawrence-uc3mgplvm07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_07.pdf
+linkpdf: https://apt.cs.manchester.ac.uk/ftp/pub/ai/neill/gplvm_07_07.pdf
 month: 7
 published: 2007-07-04
 section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
