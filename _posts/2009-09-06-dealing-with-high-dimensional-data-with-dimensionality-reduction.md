@@ -16,7 +16,7 @@ errata: []
 extras: []
 key: Lawrence-interspeech09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/interspeech09.pdf
+linkpdf: https://apt.cs.manchester.ac.uk/ftp/pub/ai/neill/interspeech09.pdf
 month: 9
 published: 2009-09-06
 section: pre

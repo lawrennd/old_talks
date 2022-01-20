@@ -1,4 +1,8 @@
 ---
+title: Computer Vision Reading Group: The Gaussian Process Latent Variable
+  Model
+venue: Computer Vision Reading Group, Visual Geometry Group, Department of Engineering
+  Science, University of Oxford, U.K.
 abstract: The Gaussian process latent variable model (GP-LVM) is a recently proposed
   probabilistic approach to obtaining a reduced dimension representation of a data
   set. In this tutorial we motivate and describe the GP-LVM, giving a review of the
@@ -16,9 +20,9 @@ day: '27'
 errata: []
 extras:
 - label: PDF Slides
-  link: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvmTutorialSlides.pdf
+  link: http://inverseprobability.com/publications/files/gplvmTutorialSlides.pdf
 - label: PDF Notes
-  link: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvmTutorial.pdf
+  link: http://inverseprobability.com/publications/files/gplvmTutorial.pdf
 - label: Demos Software
   link: http://inverseprobability.com/oxford/
 - label: Main Software
@@ -29,9 +33,5 @@ layout: talk
 month: 1
 published: 2006-01-27
 section: pre
-title: 'Computer Vision Reading Group: The <span>G</span>aussian Process Latent Variable
-  Model'
-venue: Computer Vision Reading Group, Visual Geometry Group, Department of Engineering
-  Science, University of Oxford, U.K.
 year: '2006'
 ---
