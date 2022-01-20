@@ -1,4 +1,7 @@
 ---
+title: Probabilistic Dimensional Reduction with the Gaussian Process
+  Latent Variable Model
+venue: Information Engineering, University of Cambridge, U.K.
 abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
@@ -29,12 +32,8 @@ extras:
 group: gplvm
 key: Lawrence-cued06
 layout: talk
-linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_06_03.ppt.gz
+linkpptgz: https://inverseprobability.com/publications/file/gplvm_06_03.ppt.gz
 month: 3
 published: 2006-03-07
-section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
-  Latent Variable Model
-venue: Information Engineering, University of Cambridge, U.K.
 year: '2006'
 ---
