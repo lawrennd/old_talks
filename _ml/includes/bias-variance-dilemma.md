@@ -35,7 +35,7 @@ number of parameters is equal to the number of data[^assuming].
 \notes{The bias-variance decomposition [@Geman:biasvariance92] considers the expected test error for different variations of the *training data* sampled from, $\mathbb{P}(\inputVector, \dataScalar)$}\slides{Generalisation error}
 $$\begin{align*}
 R(\mappingVector) = & \int \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \mathbb{P}(\dataScalar, \inputVector) \text{d}\dataScalar \text{d}\inputVector \\
-& \triangleq & \mathbb{E}\left[ \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \right].
+& \triangleq \mathbb{E}\left[ \left(\dataScalar - \mappingFunction^*(\inputVector)\right)^2 \right].
 \end{align*}$$
 \newslide{Decompose}
 
