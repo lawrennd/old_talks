@@ -25,7 +25,7 @@ $$
 $$
 \errorFunction(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
 $$
-\notes{To compute the gradient of the objective, we first of all expand the brackets.}
+\notes{To compute the gradient of the objective, we first expand the brackets.}
 
 \subsection{Bracket Expansion}
 
