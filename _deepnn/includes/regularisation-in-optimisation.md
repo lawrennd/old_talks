@@ -16,7 +16,7 @@
 
 \notes{Gradient flow replaces this discrete update with a differential equation, where the step at any point is an exact gradient update. As a result, the path of the optimization can be studied as a *differential equation*.}
 
-\notes{By making assumptions about the initialization, the optima that gradient flow will find can be characterised. For a highly overparameterized linear model, @Gunasekar-implicit2017 show in matrix factorization, that for particular initializations, the optima will be a *global* optimum of the objective that minimizes the L2-norm.}
+\notes{By making assumptions about the initialization, the optimum that gradient flow will find can be characterised. For a highly overparameterized linear model, @Gunasekar-implicit2017 show in matrix factorization, that for particular initializations, the optimum will be a *global* optimum of the objective that minimizes the L2-norm.}
 
 \notes{By reparameterizing the linear model so that each $\mappingScalar_i = u_i^2 - v_i^2$ and optimising in the space defined by $\mathbf{u}$ and $\mathbf{v}$ @Woodworth-kernel20 show that the L1 norm is found.}
 
