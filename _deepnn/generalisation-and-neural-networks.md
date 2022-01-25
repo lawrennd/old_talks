@@ -16,7 +16,10 @@ abstract: >
 talkscam:
 venue: LT1, William Gates Building
 hackmdslides: fhuszar/r1HxvooMd#/
-youtube: tk9qM00Bs_o
+youtube: WaauyjcSNhc
+oldyoutube: 
+- code: tk9qM00Bs_o
+  year: 2021
 reveal: True
 ipynb: True
 time: "14:00"
