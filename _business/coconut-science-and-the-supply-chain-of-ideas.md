@@ -220,7 +220,7 @@ is that there is a wide diversity of ideas available, the ideas are
 delivered cheaply and they can be made available quickly. Disruptive
 innovation needs the dabbawalas of ideas. }
 
-\slides{\undefine{theDabbaWalas}}
+\slides{\undef{theDabbaWalas}}
 \include{_business/includes/the-dabbawalas.md}
 
 \section{Epilogue}
