@@ -104,6 +104,10 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 
 \notes{Also related on generalisation error is the so called 'no free lunch theorem', which refers to our inability to decide what a better learning algorithm is without making assumptions about the data [@Wolpert:lack96] (see also @Wolpert-supervised02).}
 
+\define{designVector}{\basisVector}
+\define{designVariable}{Phi}
+\define{designMatrix}{\basisMatrix}
+
 \include{_ml/includes/linear-regression-regularisation.md}
 \include{_ml/includes/training-with-noise-tikhonov-regularisation.md}
 <!--include{_ml/includes/bayesian-interpretation-of-regularisation.md}-->
