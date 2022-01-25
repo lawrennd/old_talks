@@ -91,6 +91,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 
 \notes{In the neural network models, the "RELU function" is normally used as a basis function, but for illustration we will continue with the polynomial basis for these linear models.}
 
+\undefine{olympicMarathonData}
 \include{_ml/includes/olympic-marathon-polynomial.md}
 
 \include{_ml/includes/the-bootstrap.md}
