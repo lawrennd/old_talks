@@ -8,8 +8,9 @@
 \installcode{daft}
 
 \setupplotcode{import matplotlib
-matplotlib.rc('text', usetex=True)
-matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]}
+# Comment for google colab (no latex available)
+#matplotlib.rc('text', usetex=True)
+#matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]}
 
 \setupplotcode{import mlai.plot as plot}
 \plotcode{plot.deep_nn(diagrams='\writeDiagramsDir/deepgp/')}
