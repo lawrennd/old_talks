@@ -124,7 +124,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
   * Implies parmeters are *badly determined*}
   
 
-\notes{If we could examine the Hessian of a neural network at its minimum, we can speculate about what we would find. In particular, we would find that it would have very many low (or negative) eigenvalues in many directions. This is indicative of the parameters being *badly determined* as a result of the neural network model being heavily *overparameterised*. So how does it generalise?}
+\notes{If we could examine the Hessian of a neural network at its minimum, we can speculate about what we would find. In particular, we would find that it would have very many low (or negative) eigenvalues in many directions. This is indicative of the parameters being *badly determined* because of the neural network model being heavily *overparameterized*. So how does it generalize?}
 
 \newslide{Whence Generalisation?}
 
@@ -133,7 +133,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 * The ability of these models to generalise *must* be coming somehow from the algorithm*
 * How to explain it and control it is perhaps the most interesting theoretical question for neural networks.}
 
-\notes{Simply put, there is not enough regularisation encoded in the objective function of the neural network models we are using to explain the generalisation performance. There must be something in the algorithms we are using that causes these highly overparameterised models to generalise well.}
+\notes{Simply put, there is not enough regularization encoded in the objective function of the neural network models we are using to explain the generalization performance. There must be something in the algorithms we are using that causes these highly overparameterized models to generalise well.}
 
 \include{_deepnn/includes/double-descent.md}
 \include{_deepnn/includes/neural-tangent-kernel.md}
