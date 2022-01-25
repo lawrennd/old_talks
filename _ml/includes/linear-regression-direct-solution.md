@@ -67,7 +67,7 @@ We will represent all our errors and functions in the form of matrices and vecto
 
 \notes{Linear algebra is just a shorthand for performing lots of
 multiplications and additions simultaneously. What does it have to do with our
-system then? Well, the first thing to note is that the classic linear function we fit for a one dimensional regression
+system then? Well, the first thing to note is that the classic linear function we fit for a one-dimensional regression
 has the  form:
 $$
 \mappingFunction(x) = mx + c
@@ -179,7 +179,7 @@ This operation tells us that each element of the vector $\mappingFunctionVector$
 $$
 \mathbf{c} = \mathbf{B}\mathbf{a},
 $$
-where $\mathbf{c}$ might be a $k$ dimensional vector (which we can intepret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
+where $\mathbf{c}$ might be a $k$ dimensional vector (which we can interpret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
 
 \notes{The result of this multiplication is of the form
 $$
