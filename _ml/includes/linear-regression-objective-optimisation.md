@@ -3,7 +3,7 @@
 
 \editme
 
-\section{Objective Optimisation}
+\section{Objective Optimization}
 
 \notes{Our *model* has now been defined with two equations: the prediction function and the objective function. Now we will use multivariate calculus to define an *algorithm* to fit the model. The separation between model and algorithm is important and is often overlooked. Our model contains a function that shows how it will be used for prediction, and a function that describes the objective function we need to optimise to obtain a good set of parameters.}
 
