@@ -117,6 +117,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 \notes{If we could examine the Hessian of a neural network at its minimum, we can speculate about what we would find. In particular, we would find that it would have very many low (or negative) eigenvalues in many directions. This is indicative of the parameters being *badly determined* as a result of the neural network model being heavily *overparameterised*. So how does it generalise?}
 
 \newslide{Whence Generalisation?}
+
 \slides{* Not enough regularisation in our objective functions to explain.
 * Neural network models are *not* using traditional generalisation approaches.
 * The ability of these models to generalise *must* be coming somehow from the algorithm*
