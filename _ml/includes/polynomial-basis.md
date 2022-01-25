@@ -13,8 +13,8 @@ $$
 \loadcode{polynomial}{mlai}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai
-import teaching_plots as plot}
+import mlai.plot as plot
+import mlai}
 
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -75,8 +75,10 @@ $$
 \notes{\figure{\includediagram{\diagramsDir/ml/polynomial_function002}{80%}}{A random combination of functions from the polynomial basis.}{polynomial-function-2}}
 
 \displaycode{import pods
-from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('polynomial_function{func_num:0>3}.svg', 
+from ipywidgets import IntSlider
+import notutils as nu}
+
+\displaycode{nu.display_plots('polynomial_function{func_num:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
                             func_num=IntSlider(0,0,2,1))}
 
