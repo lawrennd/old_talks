@@ -25,7 +25,7 @@
 $$
 \mappingFunction(\inputVector; \mappingMatrix) = \mappingMatrix_4 \mappingMatrix_3 \mappingMatrix_2 \mappingMatrix_1 \inputVector.
 $$
-\notes{In these models, a gradient flow analysis shows that the model finds solutions where the linear mapping,
+\notes{In these models, a gradient flow analysis shows that the model finds solutions where the linear mapping,}
 $$
 \mappingMatrix = \mappingMatrix_4 \mappingMatrix_3 \mappingMatrix_2 \mappingMatrix_1 
 $$
