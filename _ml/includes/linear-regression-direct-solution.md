@@ -21,7 +21,7 @@ $$
 
 \newslide{Linear Model}
 
-\notes{In the case of the linear prediction function we can substitute $\mappingFunction(\inputVector_i, \mappingVector) = \mappingVector^\top \inputVector_i$.}
+\notes{In the case of the linear prediction function, we can substitute $\mappingFunction(\inputVector_i, \mappingVector) = \mappingVector^\top \inputVector_i$.}
 $$
 \errorFunction(\mappingVector) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingVector^\top \inputVector_i\right)^2
 $$
