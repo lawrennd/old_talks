@@ -75,8 +75,10 @@ $$
 \notes{\figure{\includediagram{\diagramsDir/ml/polynomial_function002}{80%}}{A random combination of functions from the polynomial basis.}{polynomial-function-2}}
 
 \displaycode{import pods
-from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('polynomial_function{func_num:0>3}.svg', 
+from ipywidgets import IntSlider
+import notutils as nu}
+
+\displaycode{nu.display_plots('polynomial_function{func_num:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
                             func_num=IntSlider(0,0,2,1))}
 
