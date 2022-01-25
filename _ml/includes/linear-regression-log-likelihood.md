@@ -25,7 +25,7 @@ This is known as a stochastic process.}
 
 \subsection{Height as a Function of Weight}
 
-In the standard Gaussian, parametized by mean and variance, make the mean a linear function of an *input*.
+In the standard Gaussian, parameterized by mean and variance, make the mean a linear function of an *input*.
 
 This leads to a regression model. 
 $$
