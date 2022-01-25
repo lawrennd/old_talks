@@ -26,7 +26,7 @@ transition: None
 
 \include{_ml/includes/multivariate-gaussian-properties.md}
 \notes{\include{_ml/includes/linear-regression-log-likelihood.md}
-\include{_ml/includes/olympic-data-linear-regression.md}
+\include{_ml/includes/olympic-marathon-linear-regression.md}
 \include{_ml/includes/linear-regression-multivariate-log-likelihood.md}
 \define{designVector}{\basisVector}
 \define{designVariable}{Phi}

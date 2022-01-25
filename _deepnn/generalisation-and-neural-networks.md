@@ -34,6 +34,8 @@ end: "15:00"
 \notes{We will consider a simplified system, to remind us of some of the linear algebra involved, and introduce some of the fundamental issues.}
 
 \include{_ml/includes/expected-loss.md}
+\notes{\include{_ml/includes/linear-regression-log-likelihood.md}
+\include{_ml/includes/olympic-marathon-linear-regression.md}
 \define{designVector}{\basisVector}
 \define{designVariable}{Phi}
 \define{designMatrix}{\basisMatrix}
