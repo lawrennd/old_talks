@@ -7,9 +7,9 @@
 
 \columns{
 * Gold medal times for Olympic Marathon since 1896.
-* Marathons before 1924 didn’t have a standardised distance.
+* Marathons before 1924 didn’t have a standardized distance.
 * Present results using pace per km.
-* In 1904 Marathon was badly organised leading to very slow times.
+* In 1904 Marathon was badly organized leading to very slow times.
 }{
 \includejpg{\diagramsDir/Stephen_Kiprotich}{100%}
 \smalltext{Image from Wikimedia Commons <http://bit.ly/16kMKHQ>}
