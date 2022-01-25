@@ -5,7 +5,7 @@
 
 \subsection{Solution with QR Decomposition}
 
-\notes{Performing a solve instead of a matrix inverse is the more numerically stable approach, but we can do even better. A [QR-decomposition](http://en.wikipedia.org/wiki/QR_decomposition) of a matrix factorises it into a matrix which is an orthogonal matrix $\mathbf{Q}$, so that $\mathbf{Q}^\top \mathbf{Q} = \eye$. And a matrix which is upper triangular, $\mathbf{R}$.}
+\notes{Performing a solve instead of a matrix inverse is the more numerically stable approach, but we can do even better. A [QR-decomposition](http://en.wikipedia.org/wiki/QR_decomposition) of a matrix factorizes it into a matrix which is an orthogonal matrix $\mathbf{Q}$, so that $\mathbf{Q}^\top \mathbf{Q} = \eye$. And a matrix which is upper triangular, $\mathbf{R}$.}
 $$
 \designMatrix^\top \designMatrix \boldsymbol{\beta} =
 \designMatrix^\top \dataVector
@@ -33,7 +33,7 @@ $$
 * Avoids the intermediate computation of $\designMatrix^\top\designMatrix$.}
 
 
-\notes{This can be more particularly seen when we begin to work with *basis functions* in the next session. Some systems that can be resolved with the QR decomposition can not be resolved by using solve directly.}
+\notes{This can be more particularly seen when we begin to work with *basis functions* in the next session. Some systems that can be resolved with the QR decomposition cannot be resolved by using solve directly.}
 
 \setupcode{import scipy as sp}
 \code{Q, R = np.linalg.qr(\designVariable)
