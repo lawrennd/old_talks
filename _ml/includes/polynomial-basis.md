@@ -13,8 +13,8 @@ $$
 \loadcode{polynomial}{mlai}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai
-import teaching_plots as plot}
+import mlai.plot as plot
+import mlai}
 
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
