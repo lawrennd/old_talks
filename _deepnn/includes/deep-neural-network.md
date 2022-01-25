@@ -13,7 +13,7 @@
 #matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]}
 
 \setupplotcode{import mlai.plot as plot}
-\plotcode{plot.deep_nn(diagrams='\writeDiagramsDir/deepgp/')}
+\plotcode{#plot.deep_nn(diagrams='\writeDiagramsDir/deepgp/')}
 
 \slides{\includediagram{\diagramsDir/deepgp/deep-nn1}{50%}}
 
