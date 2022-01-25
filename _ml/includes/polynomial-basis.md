@@ -49,13 +49,14 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a *polynomial* basis.}{polynomial-basis-2}}
 
 \setupdisplaycode{import pods
-from ipywidgets import IntSlider}
+from ipywidgets import IntSlider
+import notutils as nu}
 
-\displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
+\displaycode{nu.display_plots('polynomial_basis{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,4,1))}
 
-\displaycode{pods.notebook.display_prediction(basis=mlai.polynomial, num_basis=5)}
+\displaycode{nu.display_prediction(basis=mlai.polynomial, num_basis=5)}
 
 \subsection{Functions Derived from Polynomial Basis}
 
