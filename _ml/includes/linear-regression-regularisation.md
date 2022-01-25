@@ -36,7 +36,7 @@ $$
 
 \notes{\subsection{Lasso}}
 
-\notes{Other techniques for regularisation based on a norm of the parameters include the Lasso @Tibshirani-lasso96, which is an L1 norm of the parameters}
+\notes{Other techniques for regularisation based on a norm of the parameters include the Lasso [@Tibshirani-lasso96], which is an L1 norm of the parameters}
 
 
 
