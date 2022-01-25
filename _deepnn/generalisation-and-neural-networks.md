@@ -105,7 +105,7 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 
 \include{_ml/includes/bias-variance-dilemma.md}
 
-\notes{Also related on generalisation error is the so called 'no free lunch theorem', which refers to our inability to decide what a better learning algorithm is without making assumptions about the data [@Wolpert:lack96] (see also @Wolpert-supervised02).}
+\notes{Also related on generalization error is the so called 'no free lunch theorem', which refers to our inability to decide what a better learning algorithm is without making assumptions about the data [@Wolpert:lack96] (see also @Wolpert-supervised02).}
 
 \define{designVector}{\basisVector}
 \define{designVariable}{Phi}
