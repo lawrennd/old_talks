@@ -11,9 +11,9 @@ R(\mappingVector) = \int L(\dataScalar, \inputScalar, \mappingVector) \mathbb{P}
 $$
 \notes{Of course, in practice, this value can't be computed *but* it serves as a reminder of what it is we are aiming to minimize and under certain circumstances it can be approximated.}
 
-\subsection{Sample Based Approximations}
+\subsection{Sample-Based Approximations}
 
-\notes{A sample based approximation to an expectation involves replacing the true expectation with a sum over samples from the distribution.}\slides{* Sample based approximation: replace true expectation with sum over samples.}
+\notes{A sample-based approximation to an expectation involves replacing the true expectation with a sum over samples from the distribution.}\slides{* Sample based approximation: replace true expectation with sum over samples.}
 $$
 \int \mappingFunction(z) p(z) \text{d}z\approx \frac{1}{s}\sum_{i=1}^s \mappingFunction(z_i).
 $$
