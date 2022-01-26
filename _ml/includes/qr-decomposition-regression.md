@@ -10,6 +10,7 @@ $$
 \designMatrix^\top \designMatrix \boldsymbol{\beta} =
 \designMatrix^\top \dataVector
 $$
+\notes{and we }substitute $\designMatrix = \mathbf{Q}{\mathbf{R}$ \notes{so we have}
 $$
 (\mathbf{Q}\mathbf{R})^\top
 (\mathbf{Q}\mathbf{R})\boldsymbol{\beta} = (\mathbf{Q}\mathbf{R})^\top
@@ -27,6 +28,7 @@ $$
 $$
 \mathbf{R} \boldsymbol{\beta} = \mathbf{Q}^\top \dataVector
 $$
+\notes{which leaves us with a lower triangular system to solve.}
 \newslide{}
 
 \notes{This is a more numerically stable solution because it removes the need to compute $\designMatrix^\top\designMatrix$ as an intermediate. Computing $\designMatrix^\top\designMatrix$ is a bad idea because it involves squaring all the elements of $\designMatrix$ and thereby potentially reducing the numerical precision with which we can represent the solution. Operating on $\designMatrix$ directly preserves the numerical precision of the model.}\slides{* More nummerically stable.
