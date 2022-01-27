@@ -47,6 +47,7 @@ end: "15:00"
 \include{_ml/includes/nigeria-nmis-linear-regression.md}
 
 \notes{\section{Aside}}
+\define{designMatrix}{\basisMatrix}
 
 \notes{Just for informational purposes, the actual approach used in software for fitting a linear model *should* be a QR decomposition.}
 
