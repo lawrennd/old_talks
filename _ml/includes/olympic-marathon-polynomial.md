@@ -66,7 +66,7 @@ _ = ax.plot(x_pred, f_pred, 'b-', linewidth=2)
 mlai.write_figure(filename='olympic-marathon-polynomial-2.svg', 
 				  directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-2}{80%}}{Fit of a 1 degree polynomial (a linear model) to the olympic marathon data.}{olympic-marathon-polynomial-2}
+\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-2}{80%}}{Fit of a 1-degree polynomial (a linear model) to the Olympic marathon data.}{olympic-marathon-polynomial-2}
 
 
 \subsection{Cubic Fit}
@@ -98,7 +98,7 @@ _ = ax.plot(x_pred, f_pred, 'b-', linewidth=2)
 mlai.write_figure(filename='olympic-marathon-polynomial-4.svg', 
 				  directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-4}{80%}}{Fit of a 3 degree polynomial (a cubic model) to the olympic marathon data.}{olympic-marathon-polynomial-4}
+\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-4}{80%}}{Fit of a 3-degree polynomial (a cubic model) to the Olympic marathon data.}{olympic-marathon-polynomial-4}
 
 \subsection{9th Degree Polynomial Fit}
 
@@ -131,7 +131,7 @@ _ = ax.plot(x_pred, f_pred, 'b-', linewidth=2)
 mlai.write_figure(filename='olympic-marathon-polynomial-10.svg', 
 				  directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-10}{80%}}{Fit of a 9 degree polynomial to the olympic marathon data.}{olympic-marathon-polynomial-10}
+\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-10}{80%}}{Fit of a 9-degree polynomial to the Olympic marathon data.}{olympic-marathon-polynomial-10}
 \subsection{16th Degree Polynomial Fit}
 
 \slides{$$\mappingFunction(x, \mappingVector) = \mappingScalar_0 + \mappingScalar_1 \inputScalar + \mappingScalar_2 \inputScalar^2 + \dots + \mappingScalar_{16} \inputScalar^{16}$$}
@@ -163,7 +163,7 @@ _ = ax.plot(x_pred, f_pred, 'b-', linewidth=2)
 mlai.write_figure(filename='olympic-marathon-polynomial-17.svg', 
 				  directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-17}{80%}}{Fit of a 16 degree polynomial to the olympic marathon data.}{olympic-marathon-polynomial-17}
+\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-17}{80%}}{Fit of a 16-degree polynomial to the Olympic marathon data.}{olympic-marathon-polynomial-17}
 
 \subsection{26th Degree Polynomial Fit}
 
@@ -196,7 +196,7 @@ _ = ax.plot(x_pred, f_pred, 'b-', linewidth=2)
 mlai.write_figure(filename='olympic-marathon-polynomial-27.svg', 
 				  directory='\writeDiagramsDir/ml')}
 
-\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-27}{80%}}{Fit of a 26 degree polynomial to the olympic marathon data.}{olympic-marathon-polynomial-27}
+\figure{\includediagram{\diagramsDir/ml/olympic-marathon-polynomial-27}{80%}}{Fit of a 26-degree polynomial to the Olympic marathon data.}{olympic-marathon-polynomial-27}
 
 
 

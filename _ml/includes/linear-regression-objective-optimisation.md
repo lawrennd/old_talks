@@ -3,20 +3,20 @@
 
 \editme
 
-\section{Objective Optimisation}
+\section{Objective Optimization}
 
-\notes{Our *model* has now been defined with two equations, the prediction function and the objective function. Next we will use multivariate calculus to define an *algorithm* to fit the model. The separation between model and algorithm is important and is often overlooked. Our model contains a function that shows how it will be used for prediction, and a function that describes the objective function we need to optimise to obtain a good set of parameters.}
+\notes{Our *model* has now been defined with two equations: the prediction function and the objective function. Now we will use multivariate calculus to define an *algorithm* to fit the model. The separation between model and algorithm is important and is often overlooked. Our model contains a function that shows how it will be used for prediction, and a function that describes the objective function we need to optimize to obtain a good set of parameters.}
 
-\notes{The model linear regression model we have described is still the same as the one we fitted above with a coordinate ascent algorithm. We have only played with the notation to obtain the same model in a matrix and vector notation. However, we will now fit this model with a different algorithm, one that is much faster. It is such a widely used algorithm that from the end user's perspective it doesn't even look like an algorithm, it just appears to be a single operation (or function). However, underneath the computer calls an algorithm to find the solution. Further, the algorithm we obtain is very widely used, and because of this it turns out to be highly optimised.}
+\notes{The model linear regression model we have described is still the same as the one we fitted above with a coordinate ascent algorithm. We have only played with the notation to obtain the same model in a matrix and vector notation. However, we will now fit this model with a different algorithm, one that is much faster. It is such a widely used algorithm that from the end user's perspective it doesn't even look like an algorithm, it just appears to be a single operation (or function). However, underneath the computer calls an algorithm to find the solution. Further, the algorithm we obtain is very widely used, and because of this it turns out to be highly optimized.}
 
-\notes{Once again we are going to try and find the stationary points of our objective by finding the *stationary points*. However, the stationary points of a multivariate function, are a little bit more complext to find. Once again we need to find the point at which the derivative is zero, but now we need to use  *multivariate calculus* to find it. This involves learning a few additional rules of differentiation (that allow you to do the derivatives of a function with respect to  vector), but in the end it makes things quite a bit easier. We define vectorial derivatives as follows,
+\notes{Once again, we are going to try and find the stationary points of our objective by finding the *stationary points*. However, the stationary points of a multivariate function, are a little bit more complex to find. As before we need to find the point at which the gradient is zero, but now we need to use  *multivariate calculus* to find it. This involves learning a few additional rules of differentiation (that allow you to do the derivatives of a function with respect to vector), but in the end it makes things quite a bit easier. We define vectorial derivatives as follows,
 $$
 \frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingVector} =
 \begin{bmatrix}\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}\\\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_2}\end{bmatrix}.
 $$
 where $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}$ is the [partial derivative](http://en.wikipedia.org/wiki/Partial_derivative) of the error function with respect to $\mappingScalar_1$.}
 
-\notes{Differentiation through multiplications and additions is relatively straightforward, and since linear algebra is just multiplication and addition, then its rules of diffentiation are quite straightforward too, but slightly more complex than regular derivatives. }
+\notes{Differentiation through multiplications and additions is relatively straightforward, and since linear algebra is just multiplication and addition, then its rules of differentiation are quite straightforward too, but slightly more complex than regular derivatives.}
 
 
 \subsection{Multivariate Derivatives}
@@ -30,17 +30,17 @@ where $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}$ 
     $\mathbf{A}=\mathbf{A}^{\top}$)
   $$\frac{\text{d}\mappingVector^{\top}\mathbf{A}\mappingVector}{\text{d}\mappingVector}=2\mathbf{A}\mappingVector.$$}
 
-\notes{We will need two rules of multivariate or *matrix* differentiation. The first is diffentiation of an inner product. By remembering that the inner product is made up of multiplication and addition, we can hope that its derivative is quite straightforward, and so it proves to be. We can start by thinking about the
+\notes{We will need two rules of multivariate or *matrix* differentiation. The first is differentiation of an inner product. By remembering that the inner product is made up of multiplication and addition, we can hope that its derivative is quite straightforward, and so it proves to be. We can start by thinking about the
 definition of the inner product,
 $$
 \mathbf{a}^\top\mathbf{z} = \sum_{i} a_i
 z_i,
 $$
-which if we were to take the derivative with respect to $z_k$ would simply return the gradient of the one term in the sum for which the derivative was non zero, that of $a_k$, so we know that 
+which if we were to take the derivative with respect to $z_k$ would simply return the gradient of the one term in the sum for which the derivative was non-zero, that of $a_k$, so we know that 
 $$
 \frac{\text{d}}{\text{d}z_k} \mathbf{a}^\top \mathbf{z} = a_k
 $$
-and by our definition of multivariate derivatives we can simply stack all the partial derivatives of this form in a vector to obtain the result that
+and by our definition for multivariate derivatives, we can simply stack all the partial derivatives of this form in a vector to obtain the result that
 $$
 \frac{\text{d}}{\text{d}\mathbf{z}}
 \mathbf{a}^\top \mathbf{z} = \mathbf{a}.
@@ -49,7 +49,7 @@ The second rule that's required is differentiation of a 'matrix quadratic'. A sc
 
 \notes{\subsubsection{Matching Dimensions in Matrix Multiplications}}
 
-\notes{There's a trick for telling that it's a scalar result. When you are doing maths with matrices, it's always worth pausing to perform a quick sanity check on the dimensions. Matrix multplication only works when the dimensions match. To be precise, the 'inner' dimension of the matrix must match. What is the inner dimension. If we multiply two matrices $\mathbf{A}$ and $\mathbf{B}$, the first of which has $k$ rows and $\ell$ columns and the second of which has $p$ rows and $q$ columns, then we can check whether the multiplication works by writing the dimensionalities next to each other,
+\notes{There's a trick for telling a multiplication leads to a scalar result. When you are doing mathematics with matrices, it's always worth pausing to perform a quick sanity check on the dimensions. Matrix multplication only works when the dimensions match. To be precise, the 'inner' dimension of the matrix must match. What is the inner dimension? If we multiply two matrices $\mathbf{A}$ and $\mathbf{B}$, the first of which has $k$ rows and $\ell$ columns and the second of which has $p$ rows and $q$ columns, then we can check whether the multiplication works by writing the dimensionalities next to each other,
 $$
 \mathbf{A} \mathbf{B} \rightarrow (k \times
 \underbrace{\ell)(p}_\text{inner dimensions} \times q) \rightarrow (k\times q).
@@ -58,10 +58,10 @@ The inner dimensions are the two inside dimensions, $\ell$ and $p$. The multipli
 $$
 \mathbf{B} \mathbf{A} \rightarrow (\ell \times \underbrace{k)(q}_\text{inner dimensions} \times p) \rightarrow (\ell \times p).
 $$
-firstly it may no longer even work, because now the condition is that $k=q$, and secondly the result could be of a different dimensionality. An exception is if the matrices are square matrices (e.g. same number of rows as columns) and they are both *symmetric*. A symmetric matrix is one for which $\mathbf{A}=\mathbf{A}^\top$, or equivalently, $a_{i,j} = a_{j,i}$
+Firstly, it may no longer even work, because now the condition is that $k=q$, and secondly the result could be of a different dimensionality. An exception is if the matrices are square matrices (e.g., same number of rows as columns) and they are both *symmetric*. A symmetric matrix is one for which $\mathbf{A}=\mathbf{A}^\top$, or equivalently, $a_{i,j} = a_{j,i}$
 for all $i$ and $j$.}
 
-\notes{You will need to get used to working with matrices and vectors applying and developing new machine learning techniques. You should have come across them before, but you may not have used them as extensively as we will now do in this course. You should get used to using this trick to check your work and ensure you know what the dimension of an output matrix should be. For our matrix quadratic form, it turns out that we can see it as a special type of inner product.
+\notes{For applying and developing machine learning algorithms you should get familiar with working with matrices and vectors. You should have come across them before, but you may not have used them as extensively as we are doing now. It's worth getting used to using this trick to check your work and ensure you know what the dimension of an output matrix should be. For our matrix quadratic form, it turns out that we can see it as a special type of inner product.
 $$
 \mathbf{z}^\top\mathbf{C}\mathbf{z} \rightarrow (1\times
 \underbrace{k) (k}_\text{inner dimensions}\times k) (k\times 1) \rightarrow
@@ -156,12 +156,12 @@ to match the gradients we've computed directly for $\frac{\text{d}\errorFunction
   $$\left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\inputVector_i\right)^{2}}{\numData}.$$
 \endif}
 
-\notes{We need to find the minimum of our objective function. Using our objective function we can  minimize for our parameter vector $\mappingVector$. Firstly,  we seek stationary points by find parameter vectors that solve for when the gradients are zero,
+\notes{We need to find the minimum of our objective function. Using our objective function, we can  minimize for our parameter vector $\mappingVector$. Firstly,  we seek stationary points by find parameter vectors that solve for when the gradients are zero,
 $$
 \mathbf{0}=- 2\designMatrix^\top
 \dataVector + 2\designMatrix^\top\designMatrix\mappingVector,
 $$
-where $\mathbf{0}$ is a *vector* of zeros. Rearranging this equation we find the solution to be
+where $\mathbf{0}$ is a *vector* of zeros. Rearranging this equation, we find the solution to be
 $$
 \designMatrix^\top \designMatrix \mappingVector = \designMatrix^\top
 \dataVector
@@ -170,7 +170,7 @@ which is a matrix equation of the familiar form $\mathbf{A}\mathbf{x} = \mathbf{
 
 \notes{\subsection{Solving the Multivariate System}}
 
-\notes{The solution for $\mappingVector$ can be written matematically in terms of a matrix inverse of $\designMatrix^\top\designMatrix$, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by 
+\notes{The solution for $\mappingVector$ can be written mathematically in terms of a matrix inverse of $\designMatrix^\top\designMatrix$, but computation of a matrix inverse requires an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by 
 $$
 \designMatrix^\top\designMatrix \mappingVector = \designMatrix^\top\dataVector
 $$ 

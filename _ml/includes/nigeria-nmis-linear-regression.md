@@ -7,12 +7,12 @@
 
 \subsection{Multivariate Regression on Nigeria NMIS Data}
 
-\notes{Now we will build a design matrix based on the numeric features that include the number of nurses, and the number of midwives, the latitude and longitude. These are our *covariates*. The response variable will be thenumber of doctors.  We build the design matrix as follows:}
+\notes{Now we will build a design matrix based on the numeric features that include the number of nurses, and the number of midwives, the latitude and longitude. These are our *covariates*. The response variable will be the number of doctors.  We build the design matrix as follows:}
 
 \notes{Bias as an additional feature.}
 \slides{* Regress from features `num_nurses_fulltime`, `num_nursemidwives_fulltime`, `latitude` and `longitude` to `num_doctors_fulltime`.}
 
-\notes{First of all we select the covariates and response variables and drop any rows where there are missing values using the `pandas` `dropna` method.}
+\notes{First we select the covariates and response variables and drop any rows where there are missing values using the `pandas` `dropna` method.}
 
 \code{covariates = ['num_nurses_fulltime', 'num_nursemidwives_fulltime', 'latitude', 'longitude']
 response = ['num_doctors_fulltime']
@@ -22,11 +22,11 @@ data_without_missing = data[covariates + response].dropna()}
 
 \code{print(len(data) - len(data_without_missing))}
 
-\notes{So we see that 2,735 of the entries had missing values in one of our variables of interest.}
+\notes{We see that 2,735 of the entries had missing values in one of our variables of interest.}
 
-\notes{You may also want to use `describe` or other functions to exlore the new data frame.}
+\notes{You may also want to use `describe` or other functions to explore the new data frame.}
 
-\notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
+\notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualize easily.}
 
 \code{Phi = data_without_missing[covariates]
 Phi['Eins'] = 1 # add a column for the offset
@@ -42,7 +42,7 @@ y = data_without_missing[response]}
 \code{ypred = pd.DataFrame(data=(\designVariable@w).values, columns=['num_doctors_fulltime'])
 resid = y-ypred}
 
-\notes{Let's take a look at the residuals. We can use `describe` to get a summary.}
+\notes{Let's look at the residuals. We can use `describe` to get a summary.}
 
 \code{resid.describe()}
 

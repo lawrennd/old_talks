@@ -4,8 +4,6 @@
 
 \subsection{Bias Variance Decomposition}
 
-
-
 \notes{One of Breiman's ideas for improving predictive performance is known
 as bagging [@Breiman:bagging96]. The idea is to train a number of
 models on the data such that they overfit (high variance). Then
@@ -26,7 +24,7 @@ much variance) and show a dip in the middle where the Baby bear (just)
 right finds themselves.}
 
 \notes{The Daddy bear is typically positioned at the point where the
-model is able to exactly interpolate the data. For a generalized
+model can exactly interpolate the data. For a generalized
 linear model [@McCullagh:gen_linear89], this is the point at which the
 number of parameters is equal to the number of data[^assuming].
 
@@ -65,7 +63,7 @@ $$
   $$
   \text{variance}\left[\mappingFunction^*(\inputVector)\right] = \mathbb{E}\left[\left(\mappingFunction^*(\inputVector) - \mathbb{E}\left[\mappingFunction^*(\inputVector)\right]\right)^2\right].
   $$
-\notes{The variance term is often described as arising from a model that is too complex, but we have to be careful with this idea. Is the model really too complex relative to the real world that generates the data? The real world is a complex place, and it is rare that we are constructing mathematical models that are more complex than the world around us. Rather, the 'too complex' refers to ability to estimate the parameters of the model given the data we have. Slight variations in the training set cause changes in prediction.}\slides{
+\notes{The variance term is often described as arising from a model that is too complex, but we must be careful with this idea. Is the model really too complex relative to the real world that generates the data? The real world is a complex place, and it is rare that we are constructing mathematical models that are more complex than the world around us. Rather, the 'too complex' refers to ability to estimate the parameters of the model given the data we have. Slight variations in the training set cause changes in prediction.}\slides{
 * Slight variations in the training set cause changes in the prediction. Error due to variance is error in the model due to an overly complex model.}
 
 \notes{Models that exhibit high variance are sometimes said to 'overfit' the data whereas models that exhibit high bias are sometimes described as 'underfitting' the data.}

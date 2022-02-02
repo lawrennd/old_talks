@@ -9,7 +9,7 @@
 $$
 \frac{\text{d}^2}{\text{d}\mappingVector \text{d}\mappingVector^\top} \errorFunction(\mappingVector) = 2\designMatrix^\top\designMatrix.
 $$
-\notes{So we see that the curvature is given by the design matrix.}
+\notes{So, we see that the curvature is only dependent on the design matrix.}
 
 \notes{Note that for this linear model the curvature is *not* dependent on the values of the parameter vector, $\mappingVector$, or indeed on the *response* variables, $\dataVector$. This is unusual, in general the curvature will depend on the parameters and the response variables. The linear model with quadratic loss is a special case because the overall loss function has a *quadratic form* which is the unique form with constant curvature across the whole space.}
 
@@ -23,7 +23,7 @@ $$
 $$
 \mathbf{u}^\top\mathbf{A} \mathbf{u} > 0 \quad \forall \quad \mathbf{u} \quad \text{with}\quad \mathbf{u}^\top\mathbf{u}=1
 $$
-The matrix $\designMatrix^\top\designMatrix$ (where we've dropped the 2) will satisfy this condition as long as the columns of $\designMatrix$ are *linearly independent* and the number of basis functions is less or equal to the number of data.}
+The matrix $\designMatrix^\top\designMatrix$ (where we've dropped the 2) will satisfy this condition as long as the columns of $\designMatrix$ are *linearly independent* and the number of basis functions is less or equal to the number of data points.}
 
 \subsection{Eigendecomposition of Hessian}
 
@@ -35,9 +35,9 @@ $$
 $$
 \notes{If we allow $\mathbf{u}_i$ to be an *eigenvector* of $\designMatrix^\top\designMatrix\mappingVector$ then the curvature in that direction is given by the corresponding eigenvalue, $\lambda_i$.}
 $$
-\designMatrix^\top\designMatrix\mathbf{u}_i = \lambda_i \mathbf{u}_i
+\designMatrix^\top\designMatrix\mathbf{u}_i = \lambda_i \mathbf{u}_i.
 $$
 
-\notes{So the eigendecomposition of the Hessian is a convenient representation of the nature of these minima. The principal eigenvector (the one associated with the largest eigenvalue), $\mathbf{u}_1$ is associated with the direction of *highest curvature*. While the minor eigenvector shows us the flattest direction, where the  curvature is smallest.}
+\notes{The eigendecomposition of the Hessian is a convenient representation of the nature of these minima. The principal eigenvector (the one associated with the largest eigenvalue), $\mathbf{u}_1$ is associated with the direction of *highest curvature*. While the minor eigenvector shows us the flattest direction, where the  curvature is smallest.}
 
 \endif

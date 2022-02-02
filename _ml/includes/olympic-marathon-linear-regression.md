@@ -9,7 +9,7 @@
 
 \notes{Note that `x` and `y` are not `pandas` data frames for this example, they are just arrays of dimensionality $\numData\times 1$, where $\numData$ is the number of data.}
 
-\notes{The aim of this lab is to have you coding linear regression in python. We will do it in two ways, once using iterative updates (coordinate ascent) and then using linear algebra. The linear algebra approach will not only work much better, it is easy to extend to multiple input linear regression and *non-linear* regression using basis functions.}
+\notes{The aim of this lab is to have you coding linear regression in python. We will do it in two ways, once using iterative updates (coordinate ascent) and then using linear algebra. The linear algebra approach will not only work much better, it is also easy to extend to multiple input linear regression and *non-linear* regression using basis functions.}
 
 \subsection{Maximum Likelihood: Iterative Solution}
 

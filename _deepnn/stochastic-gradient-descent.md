@@ -14,7 +14,10 @@ talkscam:
 venue: LT1, William Gates Building
 hackmdnotes: fhuszar/rJWAWC7gO
 hackmdslides: fhuszar/Hy69Wvrg_
-youtube: GDyD8KwSfvk
+youtube: nIvu1s1xQUg
+oldyoutube:
+- code: GDyD8KwSfvk
+  year: 2021
 reveal: true
 time: "14:00"
 start: "14:00"
