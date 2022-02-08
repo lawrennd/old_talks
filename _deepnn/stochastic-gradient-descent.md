@@ -342,6 +342,7 @@ I wrote before that SGD may have a tendency to find minima with lower gradient n
 An intuitive argument can be made that minima with lower minibatch noise may be preferrable from the perspective of generalisation. Regions where the loss function is not very sensitive to the particular minibatch we pick will also probably be less sensitive to whether we evaluate the loss on training or on test data. One can use the variance of minibatch losses as a rough proxy for the difference between training and test loss, which is generalisation.
 
 So what we intuitively think is going on:
+
 1. SGD has a built-in preference for minima that have lower gradient noise across minibatches
 2. minima with lower gradient noise may generalise better
 3. Adam "improves" SGD so that it can now more easily converge to local minima with higher gradient noise. 
