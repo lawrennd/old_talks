@@ -24,6 +24,7 @@ extras:
 - label: Profiling Data Movement Colab
   link: https://colab.research.google.com/drive/1tenJ6Sw3IhI7uJ35gfFGW01LXSkOLX4b#scrollTo=lGKP7K_M9W2l
 ipynb: False
+reveal: False
 youtube: FzPNB1b7DBk
 oldyoutube: 
 - code: -IXnGgDbE-M
@@ -34,6 +35,8 @@ time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
+
+\subsection{Slides}
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQk6lwRhpp2kePmo1NUBhNljhQaobJcvZ48mHhSL1CGl7tILeSg9p9lGrrXgcVPUL_1ygW5pZ82hdAz/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
