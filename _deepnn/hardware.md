@@ -16,7 +16,10 @@ abstract: >
 talkscam:
 reveal: true
 ipynb: true
-youtube: -IXnGgDbE-M
+youtube: FzPNB1b7DBk
+oldyoutube: 
+- code: -IXnGgDbE-M
+  year: 2021
 talktheme: white
 talkcss: https://inverseprobability.com/assets/css/talks-small.css
 time: "14:00"
