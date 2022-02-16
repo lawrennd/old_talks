@@ -22,7 +22,7 @@ categories:
 - notes
 ---
 
-\include{talk-macros.tex}
+
 
 \section{My Background}
 
@@ -124,7 +124,7 @@ How have we achieved this?}
 
 \notes{In particular, while there is much to be gained by involving commercial companies in the care of patients, if the process by which they are drawing inference about patient condition is hidden (for example, due to commercial confidentiality), this may prevent us from understanding errors in diagnosis or treatment. This would be a retrograde step. It may be that health device certification needs modification or reform for data-driven automated decision making, but we need a spirit of transparency around how these systems are deriving their inferences to ensure best practice.}
 
-\include{_business/includes/rebel-ideas.md}
+\include{_books/includes/rebel-ideas.md}
 
 
 \thanks
