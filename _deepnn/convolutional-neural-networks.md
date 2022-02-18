@@ -22,7 +22,8 @@ oldyoutube:
 - code: Ed-bk1p6Gzo
   year: 2021
 talktheme: white
-ipynb: true
+ipynb: false
+reveal: false
 talkcss: https://inverseprobability.com/assets/css/talks-small.css
 time: "14:00"
 start: "14:00"
