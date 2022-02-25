@@ -47,14 +47,14 @@ print(data['X'][:, 1])}
 import mlai
 import mlai.plot as plot}
 
-\plotcode{plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 markers = ['bo', 'ro', 'bx', 'rx', 'bs', 'rs']
 for i in range(6):
     # extract the event 
     x_event = X[np.nonzero(X[:, 1]==i), 0]
     y_event = y[np.nonzero(X[:, 1]==i), 0]
     ax.plot(x_event, y_event, markers[i])
-ax.title('Olympic Sprint Times')
+ax.set_title('Olympic Sprint Times')
 ax.set_xlabel('year')
 ax.set_ylabel('time/s')
 
