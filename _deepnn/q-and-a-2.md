@@ -1,9 +1,9 @@
 ---
 layout: lecture
 title: Q and A Session
-week: 6
-session: 1
-date: 2022-02-24
+week: 5
+session: 2
+date: 2022-02-22
 start: "14:00"
 end: "15:00"
 author:
