@@ -7,9 +7,9 @@
 
 \define{formula}{\kernelScalar(i, j, \inputVector, \inputVector^\prime) = w_i w_j \kernelScalar(\inputVector, \inputVector^\prime)}
 
-\helpercode{%load -s icm_cov mlai.py}
-\helpercode{%load -s slfm_cov mlai.py}
-\setupcode{import teaching_plots as plot
+\loadcode{icm_cov}{mlai}
+\loadcode{slfm_cov}{mlai}
+\setupcode{import mlai.plot as plot
 import mlai
 import numpy as np}
 
