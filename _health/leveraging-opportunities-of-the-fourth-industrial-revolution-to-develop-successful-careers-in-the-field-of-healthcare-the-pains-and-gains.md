@@ -8,7 +8,7 @@ author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Cambridge
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 0000-0001-9258-1030
