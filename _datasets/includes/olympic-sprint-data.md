@@ -45,8 +45,8 @@ print(data['X'][:, 1])}
 \notes{Now let's plot the data}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
-import mlai}
+import mlai
+import mlai.plot as plot}
 
 \plotcode{plt.subplots(figsize=plot.big_wide_figsize)
 markers = ['bo', 'ro', 'bx', 'rx', 'bs', 'rs']

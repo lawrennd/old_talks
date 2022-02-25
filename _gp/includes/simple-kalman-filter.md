@@ -40,7 +40,7 @@ $$
 
 \subsection{Kronecker Product}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.kronecker_illustrate(diagrams='\writeDiagramsDir/kern')}
 
 \figure{\includediagram{\diagramsDir/kern/kronecker_illustrate}{80%}}{Illustration of the Kronecker product.}{kronecker-illustrate}
@@ -76,12 +76,12 @@ $$
 For this stacking the marginal distribution over *time* is given
 by the block diagonals.
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.kronecker_IK_highlight(diagrams='\writeDiagramsDir/kern')}
 
-\setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('kronecker_IK_highlighted{count:0>3}.svg', 
-                            diagrams='\writeDiagramsDir/kern', count=(1,5))}
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('kronecker_IK_highlighted{count:0>3}.svg', 
+                 directory='\writeDiagramsDir/kern', count=(1,5))}
 
 \newslide{}
 
@@ -118,8 +118,9 @@ For this stacking the marginal distribution over the latent
 *dimensions* is given by the block diagonals.
 
 \plotcode{plot.kronecker_IK_highlight(reverse=True, diagrams='\writeDiagramsDir/kern')}
+\setupdisplaycode{import notutils as nu}
 
-\displaycode{pods.notebook.display_plots('kronecker_KI_highlighted{count:0>3}.svg', '\writeDiagramsDir/kern', count=(1,5))}
+\displaycode{nu.display_plots('kronecker_KI_highlighted{count:0>3}.svg', directory='\writeDiagramsDir/kern', count=(1,5))}
 
 \plotcode{plot.kronecker_IK(reverse=True, diagrams='\writeDiagramsDir/kern')}
 
@@ -158,7 +159,7 @@ $$
 
 \newslide{}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.kronecker_WX(diagrams='\writeDiagramsDir/kern')}
 
 \figure{\includediagram{\diagramsDir/kern/kronecker_WX}{60%}}{}{kronecker-wx}
