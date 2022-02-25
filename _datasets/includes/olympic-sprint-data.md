@@ -21,8 +21,7 @@
 \setupcode{import pods
 import numpy as np}
 
-\code{pods.datasets.authorize_download = lambda x: True # prevents requesting authorization for download.
-data = pods.datasets.olympic_sprints()
+\code{data = pods.datasets.olympic_sprints()
 X = data['X']
 y = data['Y']
 print(data['info'], data['details'])}
