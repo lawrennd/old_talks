@@ -8,7 +8,7 @@
 
 \loadcode{brownian_cov}{mlai}
 
-\setupplotcode{import mlai.plot
+\setupplotcode{import mlai.plot as plot
 import mlai
 import numpy as np}
 

@@ -8,7 +8,7 @@
 \loadplotcode{polynomial_cov}{mlai}
 \define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d}
 
-\setupplotcode{import mlai.plot
+\setupplotcode{import mlai.plot as plot
 import mlai
 import numpy as np}
 

@@ -26,7 +26,7 @@ m.initialize()}
 \code{m.staged_optimize(iters=(1000,1000,10000), messages=(True, True, True))}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='time', ylabel='acceleration/$g$', fontsize=20, portion=0.5)
@@ -38,7 +38,7 @@ mlai.write_figure(filename='\writeDiagramsDir/deepgp/motorcycle-helmet-deep-gp.s
 
 \figure{\includediagram{\diagramsDir/deepgp/motorcycle-helmet-deep-gp}{80%}}{Deep Gaussian process fit to the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp}
 
-\setupdisplaycode{import mlai.plot
+\setupdisplaycode{import mlai.plot as plot
 import mlai}
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, xlabel='time', ylabel='acceleration/$g$', portion = 0.5)

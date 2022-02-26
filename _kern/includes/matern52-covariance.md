@@ -15,7 +15,7 @@
                      formula='\formula',
 					 lengthscale=0.2)}
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.covariance_func(kernel=kernel, diagrams='\writeDiagramsDir/kern/')}
 
 \notes{The Matérn 5/2 [@Stein:interpolation99] covariance is which is once differentiable, it arises from applying a Student-$t$ based filter in Fourier space with five degrees of freedom. 

@@ -52,7 +52,7 @@ import pandas as pd}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 im = ax.matshow(hospital_workers_data.corr())

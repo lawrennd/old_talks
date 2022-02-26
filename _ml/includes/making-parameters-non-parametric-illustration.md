@@ -89,7 +89,7 @@ m_full.optimize() # Optimize parameters of covariance function}
 \downloadcode{mlai.plot}
 \downloadcode{mlai}
 
-\setupplotcode{import mlai.plot
+\setupplotcode{import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

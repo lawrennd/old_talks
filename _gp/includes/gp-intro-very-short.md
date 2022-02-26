@@ -86,7 +86,7 @@ def eq_cov(x, x_prime, variance=1., lengthscale=1.):
 
 \setupplotcode{import numpy as np
 np.random.seed(10)
-import mlai.plot}
+import mlai.plot as plot}
 \plotcode{plot.rejection_samples(kernel=kernel, 
     diagrams='\writeDiagramsDir/gp')}
 

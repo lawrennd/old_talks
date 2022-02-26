@@ -14,7 +14,7 @@ import GPy
 import pods
 
 import mlai
-import mlai.plot
+import mlai.plot as plot
 
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'],'size':10})
 rc("text", usetex=True)

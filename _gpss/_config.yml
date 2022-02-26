@@ -7,18 +7,23 @@ author:
   twitter: lawrennd
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
-ipynb: True
-venue: "Gaussian Process Summer School"
+layout: lecture
+venue: Gaussian Process Summer School
 talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/gpss/_lectures/
 slidesdir: ../../../mlatcl/gpss/slides/
 notesdir: ../../../mlatcl/gpss/_notes/
 notebooksdir: ../../../mlatcl/gpss/_notebooks/
 writediagramsdir: .
+scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
-transition: None
+potx: ../_includes/custom-reference.potx 
+dotx: ../_includes/custom-reference.dotx
+baseurl: "gpss/" # the subpath of your site, e.g. /blog/
+url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
   directory: _gpss
+transition: None

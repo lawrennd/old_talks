@@ -3,15 +3,20 @@ title: Uncertainty and Modelling
 session: 1
 abstract: >
   In this talk we motivate the representation of uncertainty through probability distributions we review Laplace's approach to understanding uncertainty and how uncertainty in functions can be represented through a multivariate Gaussian density.
+author: 
+- given: Neil D. 
+  family: Lawrence
+affiliation: University of Cambridge
+transition: None
 ---
 
-
-\include{talk-macros.gpp}
 
 \include{_gp/includes/gp-book.md}
 \include{_ml/includes/what-is-ml.md}
 
-\include{_ml/includes/olympic-marathon-data.md}
+\include{_gpss/includes/gpss-notebook-setup.md}
+
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \include{_ml/includes/overdetermined-inaugural.md}
 

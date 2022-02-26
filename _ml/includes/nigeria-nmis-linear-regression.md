@@ -50,7 +50,7 @@ resid = y-ypred}
 \notes{We can see that while the standard deviation of our residuals is around 3, (this is equivalent to a root mean square error). The smallest and largest residual sow there are some significant outliers that our regression isn't picking up.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

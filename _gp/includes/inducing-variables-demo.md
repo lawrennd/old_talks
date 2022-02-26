@@ -29,7 +29,7 @@ _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot 
+import mlai.plot as plot 
 from mlai.gp_tutorial import gpplot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

@@ -28,7 +28,7 @@
 
 \newslide{Bayes Update}
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.bayes_update(diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider

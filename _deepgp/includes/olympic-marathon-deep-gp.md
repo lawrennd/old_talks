@@ -42,7 +42,7 @@ m.optimize(messages=True,max_iters=10000)}
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

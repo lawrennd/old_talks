@@ -12,7 +12,7 @@
 * Poisson distributions can be used for disease count data. E.g. number of incidence of malaria in a district.
 }
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 
 \plotcode{plot.poisson('\writeDiagramsDir/ml/')}
 

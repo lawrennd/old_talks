@@ -57,7 +57,7 @@ planets = ['Mercury', 'Venus', 'Earth', 'Mars', '*', 'Jupiter', 'Saturn', 'Uranu
 a = 0.5 + 0.3*2**m}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -99,7 +99,7 @@ declination = data['data']['Nordlich Abweich']}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 A = plt.imread('ceres-sky-background.png', format="png")

@@ -19,7 +19,7 @@
 data.describe()}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax =plt.subplots(figsize=plt.big_figsize)

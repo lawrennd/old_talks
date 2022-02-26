@@ -21,7 +21,7 @@ One proposed solution is known as *dropout* where only a sub-set of the neural n
   $$
   where if $\mappingMatrix \in \Re^{k_1\times k_2}$ then $\eigenvectorMatrix\in \Re^{k_1\times q}$ and $\eigenvectwoMatrix \in \Re^{k_2\times q}$, i.e. we have a low rank matrix factorization for the weights.
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.low_rank_approximation(diagrams='\writeDiagramsDir')}
 
 \newslide{Low Rank Approximation}

@@ -28,7 +28,7 @@ data['Y'][:, 0:3] = 0.0}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \setupplotcode{%matplotlib notebook}
 

@@ -20,7 +20,7 @@ senstivity = MonteCarloSensitivity(model = model_emukit, input_domain = space)
 main_effects_gp, total_effects_gp, _ = senstivity.compute_effects(num_monte_carlo_points = num_mc)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \setupplotcode{import pandas as pd}

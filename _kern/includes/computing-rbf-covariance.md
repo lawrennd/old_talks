@@ -19,7 +19,7 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 
 \setupplotcode{import numpy as np
 from mlai import exponentiated_quadratic, Kernel
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{formula = r"$k(x_i, x_j)=\alpha\exp\left(-\frac{\left|\left|x_i-x_j\right|\right|^{2}}{2\ell^{2}}\right)$"
 kernel = Kernel(exponentiated_quadratic, lengthscale=2.0, variance=1.0)
@@ -65,7 +65,7 @@ from ipywidgets import IntSlider}
 
 \setupplotcode{import numpy as np
 from mlai import exponentiated_quadratic, Kernel
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{formula = r"$k(x_i, x_j)=\alpha\exp\left(-\frac{\left|\left|x_i-x_j\right|\right|^{2}}{2\ell^{2}}\right)$"
 kernel = Kernel(exponentiated_quadratic, lengthscale=2.0, variance=1.0)
@@ -121,7 +121,7 @@ from ipywidgets import IntSlider}
 
 \setupplotcode{import numpy as np
 from mlai import exponentiated_quadratic, Kernel
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{formula = r"$k(x_i, x_j)=\alpha\exp\left(-\frac{\left|\left|x_i-x_j\right|\right|^{2}}{2\ell^{2}}\right)$"
 kernel = Kernel(exponentiated_quadratic, lengthscale=5.0, variance=2.0)

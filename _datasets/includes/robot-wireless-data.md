@@ -15,7 +15,7 @@ import numpy as np}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 plt.plot(data['X'][:, 1], data['X'][:, 2], 'r.', markersize=5)

@@ -12,7 +12,6 @@ transition: None
 
 <!-- To compile -->
 
-\include{talk-macros.tex}
 
 \include{_gpss/includes/gpss-notebook-setup.md}
 

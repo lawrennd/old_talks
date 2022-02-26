@@ -16,7 +16,7 @@ $$
 \notes{Sigmoid or hyperbolic tangent basis was popular in the original generation of multilayer perceptron models, or deep networks. These basis functions start flat, rise and then saturate.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)

@@ -38,7 +38,7 @@ yt_sd=np.sqrt(yt_var)}
 
 \notes{Now we plot the results using the helper function in `mlai.plot`.}
 
-\setupdisplaycode{import mlai.plot}
+\setupdisplaycode{import mlai.plot as plot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='time/min', ylabel='expression', fontsize=20, portion=0.2)
@@ -59,7 +59,7 @@ mlai.write_figure(figure=fig,
 m_full2.kern.lengthscale=2000
 _ = m_full2.optimize() # Optimize parameters of covariance function}
 
-\setupdisplaycode{import mlai.plot}
+\setupdisplaycode{import mlai.plot as plot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full2, scale=scale, offset=offset, ax=ax, xlabel='time/min', ylabel='expression', fontsize=20, portion=0.2)
@@ -81,7 +81,7 @@ m_full3.kern.lengthscale=20
 m_full3.likelihood.variance=0.001
 _ = m_full3.optimize() # Optimize parameters of covariance function}
 
-\setupdisplaycode{import mlai.plot}
+\setupdisplaycode{import mlai.plot as plot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full3, scale=scale, offset=offset, ax=ax, xlabel='time/min', ylabel='expression', fontsize=20, portion=0.2)
@@ -97,7 +97,7 @@ mlai.write_figure(figure=fig,
 \figure{\includediagram{\diagramsDir/gp/della-gatta-gene-gp3}{80%}}{Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.}{della-gatta-gene-gp3}
 
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 
 \plotcode{plot.multiple_optima(diagrams='\writeDiagramsDir/gp')}
 

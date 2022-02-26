@@ -21,7 +21,7 @@
                      kerns=[linear_cov, eq_cov], 
                      kern_args=[{'variance': 25}, {'lengthscale' : 0.2}])}
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.covariance_func(kernel=kernel, diagrams='\writeDiagramsDir/kern/')}
 
 \notes{An additive covariance function is derived from considering the result of summing two Gaussian processes together. If the first Gaussian process is $g(\cdot)$, governed by covariance $\kernelScalar_g(\cdot, \cdot)$ and the second process is $h(\cdot)$, governed by covariance $\kernelScalar_h(\cdot, \cdot)$ then the combined process $f(\cdot) = g(\cdot) + h(\cdot)$ is govererned by a covariance function,

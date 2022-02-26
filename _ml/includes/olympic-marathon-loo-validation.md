@@ -25,7 +25,7 @@ import pods}
 basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
 max_basis = 11}
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{# The leave one out cross validation can be slow to run, so here it's commented.
 #plot.loo_fit(x, y, param_name='number', param_range=(1, max_basis+1),  
 #             model=mlai.LM, basis=basis, 

@@ -73,7 +73,7 @@ data_limits = (1888, 2020)
 basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
 num_data = x.shape[0]}
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 
 \plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, max_basis+1), 
               model=mlai.LM, basis=basis, 

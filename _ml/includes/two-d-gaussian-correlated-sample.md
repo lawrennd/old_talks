@@ -4,7 +4,7 @@
 
 \subsection{Sampling Two Dimensional Variables}
 
-\setupplotcode{import mlai.plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.correlated_height_weight(num_samps=8, 
                               diagrams='\writeDiagramsDir/ml')}
 

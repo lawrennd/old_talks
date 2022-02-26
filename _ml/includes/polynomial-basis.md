@@ -13,7 +13,7 @@ $$
 \loadcode{polynomial}{mlai}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 

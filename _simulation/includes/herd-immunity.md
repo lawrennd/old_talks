@@ -100,7 +100,7 @@ for tt in range(0,len(t0ran)):
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{def mylab(t):

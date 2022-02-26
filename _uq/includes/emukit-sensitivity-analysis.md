@@ -31,7 +31,7 @@ from matplotlib import cm}
 \installcode{EmuKit}
 
 \setupcode{import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \notes{Sensitivity analysis is a statistical technique widely used to test the reliability of real systems. Imagine a simulator of taxis picking up customers in a city like the one showed in the [Emukit playground](https://github.com/amzn/emukit-playground). The profit of the taxi company depends on factors like the number of taxis on the road and the price per trip. In this example, a global sensitivity analysis of the simulator could be useful to decompose the variance of the profit in a way that can be assigned to the input variables of the simulator.}
 

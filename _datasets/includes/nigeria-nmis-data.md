@@ -53,7 +53,7 @@ data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.plot(data.longitude, data.latitude, 'ro', alpha=0.01)

@@ -23,7 +23,7 @@ meaning that the vector of observations from the function is jointly distributed
 \loadcode{basis_cov}{mlai}
 \loadcode{radial}{mlai}
 
-\setupplotcode{import mlai.plot
+\setupplotcode{import mlai.plot as plot
 import mlai
 import numpy as np}
 

@@ -4,8 +4,6 @@ session: 8
 abstract: 
 ---
 
-\include{talk-macros.gpp}
-
 \include{_gpss/includes/gpss-notebook-setup.md}
 
 \include{_dimred/includes/probabilistic-pca.md}

@@ -16,7 +16,7 @@ _ = m_full.optimize() # Optimize parameters of covariance function}
 
 \setupplotcode{from matplotlib import pyplot as plt
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 \plotycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, output_dim=output_dim, scale=scale, offset=offset, ax=ax, 

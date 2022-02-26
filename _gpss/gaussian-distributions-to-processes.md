@@ -5,7 +5,7 @@ abstract: >
 session: 2
 ---
 
-\include{talk-macros.gpp}
+\include{_gpss/includes/gpss-notebook-setup.md}
 
 \newslide{Two Dimensional Gaussian Distribution}
 

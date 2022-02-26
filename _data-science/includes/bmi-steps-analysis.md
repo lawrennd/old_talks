@@ -52,7 +52,7 @@ print("Pearson's correlation for females: {corr}".format(corr=female_corr))}
 
 \newslide{}
 
-\setupdisplaycode{import mlai.plot
+\setupdisplaycode{import mlai.plot as plot
 import mlai
 import matplotlib.pyplot as plt}
 

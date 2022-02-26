@@ -53,7 +53,7 @@ $\rotationMatrix$ gives rotation.}{50%}{50%}
 \setupplotcode{import matplotlib.pyplot as plt
 import numpy as np
 import mlai
-import mlai.plot}
+import mlai.plot as plot}
 
 
 \code{diagrams = './gp/'}

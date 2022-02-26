@@ -47,7 +47,7 @@ lf_std_nonlin_mf_model = np.sqrt(lf_var_nonlin_mf_model)}
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -80,7 +80,7 @@ high-fidelity observations by plotting the mapping learned by the
 model to the true mapping shown earlier.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

@@ -60,7 +60,7 @@ real_x = np.arange(plot_min, plot_max, 0.2)
 real_y = np.sin(real_x)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

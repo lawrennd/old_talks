@@ -3,6 +3,8 @@
 
 \editme
 
-\include{_gpy/includes/gpy-notebook-setup.md}
+
+\include{_software/includes/gpy-software.md}
 
 \endif
+	

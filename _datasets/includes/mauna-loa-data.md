@@ -28,7 +28,7 @@ scale = np.sqrt(y.var())}
 \notes{The data dictionary contains the standard keys 'X' and 'Y' which give a unidimensional regression problem.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{xlim = (1950,2020)

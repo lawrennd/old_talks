@@ -26,13 +26,16 @@ print(data['info'], data['details'], data['citation'])}
 
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
-ax.imshow(X[120].reshape(64, 64, order='F'),interpolation='nearest',cmap=pb.cm.gray)
+ax.imshow(X[0].reshape(64, 64, order='F'),
+          interpolation='nearest',
+		  cmap=plt.cm.gray)
 
-mlai.write_figure('olivetti-glasses-image.png', directory='\writeDiagramsDir/datasets')}
+mlai.write_figure("olivetti-glasses-image.png", 
+                  directory="\writeDiagramsDir/datasets")}
 
 \newslide{}
 
