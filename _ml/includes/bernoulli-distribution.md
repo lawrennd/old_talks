@@ -99,7 +99,7 @@ plot.bayes_billiard(ax, diagrams='\writeDiagramsDir/ml/')}
 
 \notes{\figure{\includediagram{\diagramsDir/ml/bayes-billiard009}{40%}}{Thomas Bayes described the Bernoulli distribution independently of Jacob Bernoulli. He used the analogy of a billiard table. Any ball on the table is given a uniformly random position between the left and right side of the table. The first ball (\colorBlack in the figure) gives the parameter of the Bernoulli distribution. The second ball (\colorRed in the figure) gives the outcome as either left or right (relative to the first ball). This is the origin of the term Bayesian because the parameter of the distribution is drawn from a probsbility.}{bayes-billiard-9}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('bayes-billiard{counter:0>3}.svg', 

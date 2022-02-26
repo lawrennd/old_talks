@@ -49,7 +49,7 @@ plot.basis(mlai.hyperbolic_tangent, x_min=-2.0, x_max=2.0,
 
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a *hyberbolic tangent* basis.}{hyperbolic_tangent-basis-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 
 \setupdisplaycode{import notutils as nu}
@@ -74,7 +74,7 @@ $$
 
 \notes{\figure{\includediagram{\diagramsDir/ml/hyperbolic_tangent_function002}{80%}}{A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.}{hyperbolic_tangent-function-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('hyperbolic_tangent_function{func_num:0>3}.svg', 

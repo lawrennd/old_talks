@@ -8,7 +8,7 @@
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.Linear,
                      diagrams="\writeDiagramsDir/deepgp")}
 
-\setupdisplaycode{import pods}
+\setupdisplaycode{import notutils as nu}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('stack-gp-sample-Linear-{sample:0>1}.svg', 
                             directory='\writeDiagramsDir/deepgp', sample=(0,4))}

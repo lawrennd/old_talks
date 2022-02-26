@@ -27,7 +27,7 @@ max_basis = 11}
                  xlim=data_limits, prefix='olympic_val_extra', 
                  diagrams='\writeDiagramsDir/ml')}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('olympic_val_extra_LM_polynomial_number{num_basis:0>3}.svg', 
@@ -79,7 +79,7 @@ from ipywidgets import IntSlider}
 				 objective_ylim=[0.1, 0.6], permute=True,
    			     diagrams='\writeDiagramsDir/ml')}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('olympic_val_inter_LM_polynomial_number{num_basis:0>3}.svg', 

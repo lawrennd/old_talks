@@ -29,7 +29,7 @@ max_basis = y.shape[0]}
 			  diagrams='\writeDiagramsDir/ml')}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('olympic_BLM_polynomial_number{num_basis:0>3}.svg', 
@@ -87,7 +87,7 @@ from ipywidgets import IntSlider}
               objective_ylim=[0.1,0.6], 
               permute=False)}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('olympic_val_BLM_polynomial_number{num_basis:0>3}.svg', 
@@ -142,7 +142,7 @@ plot.cv_fit(x, y, param_name='number', param_range=(1, 27),
             objective_ylim=[0.2,0.6], 
             num_parts=num_parts)}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('olympic_5cv{part:0>2}_BLM_polynomial_number{num_basis:0>3}.svg', 

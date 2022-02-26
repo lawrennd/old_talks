@@ -28,7 +28,7 @@ plot.computing_covariance(kernel=kernel, x=np.asarray([[-3.],[1.2], [1.4]]),
 						  stub='eq_three')}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('computing_eq_three_covariance{sample:0>3}.svg', 
@@ -74,7 +74,7 @@ plot.computing_covariance(kernel=kernel, x=np.asarray([[-3.],[1.2], [1.4], [2.0]
 						  stub='eq_four')}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('computing_eq_four_covariance{sample:0>3}.svg', 
@@ -130,7 +130,7 @@ plot.computing_covariance(kernel=kernel, x=np.asarray([[-3.],[1.2], [1.4]]),
 						  stub='eq_three_2')}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('computing_eq_three_2_covariance{sample:0>3}.svg', 

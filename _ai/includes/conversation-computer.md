@@ -5,7 +5,7 @@
 
 \notes{\subsection{Computer Conversations}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 
 

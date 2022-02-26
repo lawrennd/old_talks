@@ -2,7 +2,7 @@
 \define{dataInfrasrtucture}
 \editme
 
-\setupdisplaycode{import pods}
+\setupdisplaycode{import notutils as nu}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('uk_tin_coal_railways{sample:0>3}.svg', 
                             '\writeDiagramsDir/data-science', sample=(1,5))}

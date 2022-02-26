@@ -1,6 +1,6 @@
 \notes{\subsubsection{Bandwidth Constrained Conversations}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 
 

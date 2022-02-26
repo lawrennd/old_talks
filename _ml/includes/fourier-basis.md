@@ -49,7 +49,7 @@ plot.basis(mlai.fourier, x_min=0, x_max=2,
 
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a *Fourier* basis.}{fourier-basis-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 
 \setupdisplaycode{import notutils as nu}
@@ -79,7 +79,7 @@ $$
 
 \notes{\figure{\includediagram{\diagramsDir/ml/fourier_function002}{80%}}{A random combination of functions from the Fourier basis. Fourier basis is made up of sine and cosine functions with different frequencies.}{fourier-function-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('fourier_function{func_num:0>3}.svg', 

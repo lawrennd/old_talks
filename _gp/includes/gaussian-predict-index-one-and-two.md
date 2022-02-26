@@ -4,7 +4,7 @@
 
 \subsubsection{Sampling a Function from a Gaussian}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('two_point_sample{sample:0>3}.svg', 
@@ -31,7 +31,7 @@ from ipywidgets import IntSlider}
 
 \subsubsection{Joint Density of $f_1$ and $f_2$}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('two_point_sample{sample:0>3}.svg', 

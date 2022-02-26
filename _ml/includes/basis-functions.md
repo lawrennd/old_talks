@@ -19,7 +19,7 @@ $$
 
 \notes{To aid in understanding how a basis works, we've provided you with a small interactive tool for exploring this polynomial basis. The tool can be summoned with the following command.}
 
-\setupdisplaycode{import pods}
+\setupdisplaycode{import notutils as nu}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_prediction(basis=mlai.polynomial, num_basis=5)}
 

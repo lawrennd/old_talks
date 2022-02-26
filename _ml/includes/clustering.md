@@ -101,7 +101,7 @@ for i in range(6):
     mlai.write_figure(\diagramsDir/ml/kmeans_clustering_{counter:0>3}.svg'.format(counter=counter))
     write_plot(counter, 'Allocate each data point to the nearest cluster centre.')}
 
-\setupdisplaycode{import pods}
+\setupdisplaycode{import notutils as nu}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='\writeDiagramsDir/ml', 
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
@@ -137,7 +137,7 @@ for i in range(num_centres):
     ax.plot(centres[i, 0] + el[:, 0], centres[i, 1] + el[:, 1], linewidth=2, color=[0,0,0])
 mlai.write_figure(\writeDiagramsDir/ml/cluster_data01.svg')}
 
-\setupdisplaycode{import pods}
+\setupdisplaycode{import notutils as nu}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('cluster_data{counter:0>2}.svg', directory='\writeDiagramsDir/ml', counter=(0, 1))}
 

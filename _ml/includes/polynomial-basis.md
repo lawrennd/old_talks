@@ -48,7 +48,7 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a *polynomial* basis.}{polynomial-basis-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider
 import notutils as nu}
 
@@ -75,7 +75,7 @@ $$
 
 \notes{\figure{\includediagram{\diagramsDir/ml/polynomial_function002}{80%}}{A random combination of functions from the polynomial basis.}{polynomial-function-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider
 import notutils as nu}
 

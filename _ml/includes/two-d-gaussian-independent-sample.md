@@ -9,7 +9,7 @@
                                diagrams='\writeDiagramsDir/ml')}
 							   
 							
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('independent_height_weight{fig:0>3}.svg', 

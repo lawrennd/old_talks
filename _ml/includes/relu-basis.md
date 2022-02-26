@@ -48,7 +48,7 @@ plot.basis(mlai.relu, x_min=-2.0, x_max=2.0,
 
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{004}}{80%}}{The set of functions which are combined to form a rectified linear unit basis.}{relu-basis-2}}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 
 \setupdisplaycode{import notutils as nu}
@@ -77,7 +77,7 @@ $$
 \notes{\figure{\includediagram{\diagramsDir/ml/relu_function002}{80%}}{A rectified linear unit basis is made up of different rectified linear unit functions centered at different points.}{relu-function-2}}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('relu_function{func_num:0>3}.svg', 

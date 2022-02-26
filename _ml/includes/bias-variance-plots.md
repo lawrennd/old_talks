@@ -133,7 +133,7 @@ for samp in range(num_samps):
 \include{_data-science/includes/pods-install.md}
 
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('bias-variance{samp:0>3}.svg', 
