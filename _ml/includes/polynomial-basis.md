@@ -75,7 +75,7 @@ $$
 
 \notes{\figure{\includediagram{\diagramsDir/ml/polynomial_function002}{80%}}{A random combination of functions from the polynomial basis.}{polynomial-function-2}}
 
-\displaycode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider
 import notutils as nu}
 

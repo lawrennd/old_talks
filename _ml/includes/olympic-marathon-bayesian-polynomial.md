@@ -29,7 +29,7 @@ max_basis = y.shape[0]}
 			  diagrams='\writeDiagramsDir/ml')}
 
 
-\displaycode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \setupdisplaycode{import notutils as nu}
 \displaycode{nu.display_plots('olympic_BLM_polynomial_number{num_basis:0>3}.svg', 

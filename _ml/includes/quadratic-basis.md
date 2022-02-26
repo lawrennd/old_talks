@@ -48,7 +48,7 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 
 \notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}}{80%}}{The set of functions which are combined to form a *quadratic* basis.}{quadratic-basis-2}}
 
-\displaycode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 
 \setupdisplaycode{import notutils as nu}
