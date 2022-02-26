@@ -5,7 +5,7 @@
 
 \subsubsection{Sigmoid Function}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 
 \plotcode{plot.logistic('\writeDiagramsDir/ml/logistic.svg')}
 

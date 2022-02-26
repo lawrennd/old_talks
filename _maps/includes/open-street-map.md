@@ -104,7 +104,7 @@ area = ox.geocode_to_gdf(place_name)}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot}
+import mlai.plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 

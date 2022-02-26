@@ -17,7 +17,7 @@ model = sklearn.manifold.Isomap(n_neighbors=n_neighbors, n_components=2)
 X = model.fit_transform(Y)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)

@@ -31,7 +31,7 @@ scale = np.sqrt(y.var())
 yhat = (y - offset)/scale}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{

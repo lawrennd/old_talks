@@ -16,7 +16,7 @@
 
 
 \newslide{Height and Weight Models}
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.height_weight(diagrams='\writeDiagramsDir/ml')}
 
 \figure{\includediagram{\diagramsDir/ml/height_weight_gaussian}{70%}}{Gaussian distributions for height and weight.}{height-weight-gaussian}

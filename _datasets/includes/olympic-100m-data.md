@@ -30,7 +30,7 @@ offset = y.mean()
 scale = np.sqrt(y.var())}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \setupplotcode{import pods

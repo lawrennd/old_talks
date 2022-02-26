@@ -28,7 +28,7 @@ model.data = data}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot}
+import mlai.plot}
 
 \setupplotcode{%matplotlib notebook}
 

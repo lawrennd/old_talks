@@ -16,7 +16,7 @@
 \define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \text{sinc}\left(\pi w r\right)}
 \loadcode{sinc_cov}{mlai}
 
-\setupplotcode{import mlai.plot as plot
+\setupplotcode{import mlai.plot
 import mlai
 import numpy as np}
 

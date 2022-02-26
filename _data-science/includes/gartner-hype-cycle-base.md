@@ -10,7 +10,7 @@
 \installcode{pytrends}
 \endif
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.google_trends(terms=[\terms], 
                   initials='\initials', 
 				  diagrams='\writeDiagramsDir/data-science')}

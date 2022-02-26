@@ -40,7 +40,7 @@ $$
 
 \newslide{}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.over_determined_system(diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider

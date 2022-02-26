@@ -26,7 +26,7 @@ yt_sd=np.sqrt(yt_var)}
 \notes{Now we plot the results using the helper function in `mlai.plot`.}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -55,7 +55,7 @@ m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()}}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

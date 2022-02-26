@@ -7,7 +7,7 @@ import pods
 import numpy as np
 import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot
+import mlai.plot
 
 %matplotlib inline
 ```

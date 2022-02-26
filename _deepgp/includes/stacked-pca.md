@@ -4,7 +4,7 @@
 
 \subsection{Stacked PCA}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.Linear,
                      diagrams="\writeDiagramsDir/deepgp")}
 

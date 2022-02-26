@@ -28,7 +28,7 @@ real = prices.copy()
 real['21/5/2019':] = np.NaN}
 
 \setupplotcode{import mlai
-import mlai.plot as plot
+import mlai.plot
 import matplotlib.pyplot as plt}
 
 \plotcode{fontsize=16}

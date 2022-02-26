@@ -56,7 +56,7 @@ accept_rate = np.array(accept_rate)}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot
+import mlai.plot
 from cycler import cycler
 monochrome = (cycler('color', ['k']) * cycler('linestyle', ['-', '--', ':']) * cycler('marker', ['^','o', 's']))}
 

@@ -13,7 +13,7 @@
 * How will the model perform on previously unseen data?
 * Let's consider predicting the future.}
 
-\setupplotcode{import mlai.plot as plot
+\setupplotcode{import mlai.plot
 import mlai}
 
 \plotcode{data_limits=xlim
@@ -71,7 +71,7 @@ from ipywidgets import IntSlider}
 * If we want a model for *interpolation* how can we test it?
 * One trick is to sample the validation set from throughout the data set.}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.holdout_fit(x, y, param_name='number', param_range=(1, max_basis+1), 
                  model=mlai.LM, basis=basis, 
                  xlim=data_limits, prefix='olympic_val_inter', 

@@ -99,7 +99,7 @@ changes all the time.
 
 ### Move in Direction of Gradient
 
-\setupcode{import mlai.plot as plot}
+\setupcode{import mlai.plot}
 \plotcode{f, ax = plt.subplots(figsize=plot.big_figsize)
 plot.regression_contour(f, ax, m_vals, c_vals, E_grid)
 ax.plot(m_star, c_star, 'g*', markersize=20)

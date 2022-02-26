@@ -15,7 +15,7 @@
                      formula='\formula',
 					 lengthscale=0.2)}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.covariance_func(kernel=kernel, diagrams='\writeDiagramsDir/kern/')}
 
 \notes{The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in *Fourier space* or as the composition as a series of linear filters applied to a base function.

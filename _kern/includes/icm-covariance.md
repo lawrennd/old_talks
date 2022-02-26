@@ -7,7 +7,7 @@
 \define{formula}{\kernelScalar(i, j, \inputVector, \inputVector^\prime) = b_{i,j} \kernelScalar(\inputVector, \inputVector^\prime)}
 
 \loadcode{icm_cov}{mlai}
-\setupplotcode{import mlai.plot as plot
+\setupplotcode{import mlai.plot
 import mlai
 import numpy as np}
 

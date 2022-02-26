@@ -22,7 +22,7 @@ xlim = [1892, 2020]
 basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, 27), 

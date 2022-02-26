@@ -221,7 +221,7 @@ Probabilistic methods explore more of the space by considering a range of possib
 
 ```{.python}
 import numpy as np
-import mlai.plot as plot
+import mlai.plot
 ```
 
 ```{.python}
@@ -329,7 +329,7 @@ yt_sd=np.sqrt(yt_var)
 Now we plot the results using the helper function in ```mlai.plot```.
 
 ```{.python}
-import mlai.plot as plot
+import mlai.plot
 ```
 
 ```{.python}

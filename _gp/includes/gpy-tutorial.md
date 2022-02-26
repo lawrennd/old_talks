@@ -48,7 +48,7 @@ kern = GPy.kern.RBF(input_dim=input_dim,
 \notes{Or because it's one dimensional, you can also plot the kernel as a function of its inputs (while the other is fixed).}
 
 \setupplotcode{import mlai
-import mlai.plot as plot}
+import mlai.plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 kern.plot(ax=ax)

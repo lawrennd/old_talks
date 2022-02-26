@@ -18,7 +18,7 @@ x = np.linspace(xlim[0], xlim[1], 200)
 y = 1/np.sqrt(2*np.pi)*np.exp(-0.5*x*x)}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

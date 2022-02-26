@@ -13,7 +13,7 @@ import string}
 
 
 \setupplotcode{from matplotlib import pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \setupplotcode{colors = ["#3FCC94", "#DD4F23", "#C6D63B", "#D44271", 

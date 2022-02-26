@@ -9,7 +9,7 @@
 
 \loadplotcode{periodic_cov}{mlai}
 
-\setupplotcode{import mlai.plot as plot
+\setupplotcode{import mlai.plot
 import mlai
 import numpy as np}
 

@@ -172,7 +172,7 @@ found in `emukit.multi_fidelity.convert_lists_to_array`.}
 \notes{Plot the original functions.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -245,7 +245,7 @@ hf_std_lin_mf_model = np.sqrt(hf_var_lin_mf_model)}
 \notes{Plot the posterior mean and variance.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -307,7 +307,7 @@ hf_std_hf_gp_model = np.sqrt(hf_var_high_gp_model)}
 model.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -369,7 +369,7 @@ y_train_h = high_fidelity(x_train_h)}
 \code{X_train, Y_train = convert_xy_lists_to_arrays([x_train_l, x_train_h], [y_train_l, y_train_h])}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -394,7 +394,7 @@ nonlinear, as can be observed by plotting the high-fidelity
 observations as a function of the lower fidelity observations.}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -443,7 +443,7 @@ hf_std_lin_mf_model = np.sqrt(hf_var_lin_mf_model)}
 \notes{Compare linear and nonlinear model fits}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

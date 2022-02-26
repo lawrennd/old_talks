@@ -9,7 +9,7 @@
 
 \loadcode{icm_cov}{mlai}
 \loadcode{slfm_cov}{mlai}
-\setupcode{import mlai.plot as plot
+\setupcode{import mlai.plot
 import mlai
 import numpy as np}
 

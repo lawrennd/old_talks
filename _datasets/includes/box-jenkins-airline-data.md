@@ -23,7 +23,7 @@ offset = y.mean()
 scale = np.sqrt(y.var())}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{xlim = (1948,1958)

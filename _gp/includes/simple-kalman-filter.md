@@ -40,7 +40,7 @@ $$
 
 \subsection{Kronecker Product}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.kronecker_illustrate(diagrams='\writeDiagramsDir/kern')}
 
 \figure{\includediagram{\diagramsDir/kern/kronecker_illustrate}{80%}}{Illustration of the Kronecker product.}{kronecker-illustrate}
@@ -76,7 +76,7 @@ $$
 For this stacking the marginal distribution over *time* is given
 by the block diagonals.
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.kronecker_IK_highlight(diagrams='\writeDiagramsDir/kern')}
 
 \setupdisplaycode{import notutils as nu}
@@ -159,7 +159,7 @@ $$
 
 \newslide{}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.kronecker_WX(diagrams='\writeDiagramsDir/kern')}
 
 \figure{\includediagram{\diagramsDir/kern/kronecker_WX}{60%}}{}{kronecker-wx}

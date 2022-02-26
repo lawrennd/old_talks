@@ -17,7 +17,7 @@ $$
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot}
+import mlai.plot}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 loc =[[0., 0.4,],

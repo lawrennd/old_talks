@@ -83,7 +83,7 @@ $$
 * [Logistic](http://en.wikipedia.org/wiki/Logistic_function) (or sigmoid) squashes
 real line to between 0   & 1. Sometimes also called a 'squashing function'.
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{plot.logistic(diagrams='\writeDiagramsDir/ml')}
 
 \includediagram{\diagramsDir/ml/logistic}

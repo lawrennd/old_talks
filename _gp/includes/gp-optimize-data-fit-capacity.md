@@ -10,7 +10,7 @@ import numpy as np
 import os}
 
 \setupplotcode{import GPy
-import mlai.plot as plot
+import mlai.plot
 import mlai
 import gp_tutorial}
 

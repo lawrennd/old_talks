@@ -29,7 +29,7 @@ import pods}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot}
+import mlai.plot}
 
 \plotcode{num_stars_plot = 3
 count = 0

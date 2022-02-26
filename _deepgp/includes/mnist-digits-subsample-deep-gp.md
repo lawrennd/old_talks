@@ -63,7 +63,7 @@ m.optimize(messages=True,max_iters=10000)}
 Now the model is trained, let's plot the mean of the posterior distributions in the top latent layer of the model. }
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \setupdisplaycode{from matplotlib import rc}
@@ -87,7 +87,7 @@ We can also visualize dimensions of the intermediate layer. First the lengthscal
 \code{m.obslayer.kern.lengthscale}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_figsize)
@@ -135,7 +135,7 @@ x = np.random.multivariate_normal(np.zeros(rows*cols), cov, num_latent).T
 }
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \displaycode{yt = m.predict(x)

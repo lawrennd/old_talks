@@ -57,7 +57,7 @@ world_gdf.crs = "EPSG:4326"
 nigeria_gdf = world_gdf[(world_gdf['name'] == 'Nigeria')]}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)

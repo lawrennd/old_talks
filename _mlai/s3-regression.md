@@ -5,7 +5,7 @@
 ```{.python .input}
 import pods
 from matplotlib import pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 %matplotlib inline
 ```
 

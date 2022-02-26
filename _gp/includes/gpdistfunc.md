@@ -20,7 +20,7 @@ $$
 \loadcode{polynomial_cov}{mlai}
 \loadcode{exponentiated_quadratic}{mlai}
 
-\setupplotcode{import mlai.plot as plot
+\setupplotcode{import mlai.plot
 from mlai import Kernel, exponentiated_quadratic}
 \plotcode{kernel=Kernel(function=exponentiated_quadratic, lengthscale=0.5)
 plot.two_point_sample(kernel.K, diagrams='\writeDiagramsDir/gp')}

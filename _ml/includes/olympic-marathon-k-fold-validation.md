@@ -20,7 +20,7 @@ max_basis = 11}
 
 \newslide{$k$-fold Cross Validation}
 
-\setupplotcode{import mlai.plot as plot}
+\setupplotcode{import mlai.plot}
 \plotcode{num_parts=5 # set k
 plot.cv_fit(x, y, param_name='number', 
             param_range=(1, max_basis+1),

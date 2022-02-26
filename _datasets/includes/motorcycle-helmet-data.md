@@ -13,7 +13,7 @@ yhat = (y - offset)/scale}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
 import mlai
-import mlai.plot as plot}
+import mlai.plot}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 _ = ax.plot(x, y, 'r.',markersize=10)

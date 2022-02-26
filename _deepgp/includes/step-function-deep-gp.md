@@ -45,7 +45,7 @@ mlai.write_figure(filename='\writeDiagramsDir/deepgp/step-function-deep-gp.svg',
 
 \displaynotes{The samples of the model can be plotted with the helper function from `mlai.plot`, `model_sample`}
 
-\setupdisplaycode{import mlai.plot as plot}
+\setupdisplaycode{import mlai.plot}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -92,7 +92,7 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/step-function-d
 \displaynotes{A pinball plot can be created for the resulting model to understand how the input is being translated to the output across the different layers.}
 
 \setupdisplaycode{import matplotlib.pyplot as plt
-import mlai.plot as plot
+import mlai.plot
 import mlai}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
