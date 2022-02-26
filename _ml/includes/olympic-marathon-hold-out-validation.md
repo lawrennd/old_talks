@@ -29,7 +29,8 @@ max_basis = 11}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_val_extra_LM_polynomial_number{num_basis:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('olympic_val_extra_LM_polynomial_number{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
@@ -80,7 +81,8 @@ from ipywidgets import IntSlider}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_val_inter_LM_polynomial_number{num_basis:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('olympic_val_inter_LM_polynomial_number{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 

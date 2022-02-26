@@ -33,7 +33,8 @@ plot.cv_fit(x, y, param_name='number',
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('olympic_{num_parts}'.format(num_parts=num_parts) + 'cv{part:0>2}_LM_polynomial_number{number:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('olympic_{num_parts}'.format(num_parts=num_parts) + 'cv{part:0>2}_LM_polynomial_number{number:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
                             part=IntSlider(0,0,5,1),
                             number=IntSlider(1, 1, max_basis, 1))}

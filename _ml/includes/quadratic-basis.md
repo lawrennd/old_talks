@@ -51,7 +51,8 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 \displaycode{import pods
 from ipywidgets import IntSlider}
 
-\displaycode{pods.notebook.display_plots('\basisfunction{num_basis:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('\basisfunction{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
@@ -93,7 +94,8 @@ $$}
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 
-\displaycode{pods.notebook.display_plots('quadratic_function{num_function:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('quadratic_function{num_function:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_function=IntSlider(0,0,2,1))}
 

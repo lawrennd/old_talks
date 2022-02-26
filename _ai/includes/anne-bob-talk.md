@@ -4,7 +4,8 @@
 from ipywidgets import IntSlider}
 
 
-\displaycode{pods.notebook.display_plots('\stubname{sample:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('\stubname{sample:0>3}.svg', 
                             '\diagramsDir',  sample=IntSlider(0, 0, 7, 1))}
 
 \define{\divoptions}{maxwidth:100vw; max-height:100vh}

@@ -43,7 +43,8 @@ We require data-desalination before it can be consumed!
 \notes{We need to properly incetivize the sharing and production of clean data sets, we need to correctly quantify the value in the contribution of each actor, otherwise there won't be enough clean data to satiate the thirst of our decision making processes.}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('pomdp{samp:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('pomdp{samp:0>3}.svg', 
                             directory='\writeDiagramsDir/', samp=(1, 4))}
 
 \slides{

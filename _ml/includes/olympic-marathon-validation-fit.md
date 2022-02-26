@@ -81,7 +81,8 @@ num_data = x.shape[0]}
 			  diagrams='\writeDiagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_number{num_basis:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('olympic_LM_polynomial_number{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 

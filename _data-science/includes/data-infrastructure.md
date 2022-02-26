@@ -3,7 +3,8 @@
 \editme
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('uk_tin_coal_railways{sample:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('uk_tin_coal_railways{sample:0>3}.svg', 
                             '\writeDiagramsDir/data-science', sample=(1,5))}
 
 \notes{\figure{\columns{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways004}{100%}}{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways005}{100%}}{50%}{50%}}}{The evolution of the UK railway network in relation to tin and coal mines.}{uk-tin-coal-railways}

@@ -141,7 +141,8 @@ print("New m is", m_star, "and new c is", c_star)}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('regression_contour_fit{num:0>3}.svg', directory='\writeDiagramsDir/ml', num=IntSlider(0, 0, num_plots, 1))}
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('regression_contour_fit{num:0>3}.svg', directory='\writeDiagramsDir/ml', num=IntSlider(0, 0, num_plots, 1))}
 
 \slides{
 \startslides{regression_contour_fit}{1}{28}
@@ -243,7 +244,8 @@ do stochastic gradient descent for our regression data.
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('regression_sgd_contour_fit{num:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('regression_sgd_contour_fit{num:0>3}.svg', 
     directory='\writeDiagramsDir/mlai', num=IntSlider(0, 0, num_plots, 1))}
 
 \slides{

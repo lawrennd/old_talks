@@ -6,7 +6,8 @@
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('two_point_sample{sample:0>3}.svg', 
                             '\writeDiagramsDir/gp', 
 							sample=IntSlider(13, 13, 17, 1))}
 							

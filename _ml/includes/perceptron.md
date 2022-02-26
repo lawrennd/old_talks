@@ -100,7 +100,8 @@ This motivates a simple `if` statement to check which situation we're in.}
 
 \setupcode{import pods}
 
-\displaycode{pods.notebook.display_plots('perceptron{samp:0>3}.svg', directory='\writeDiagramsDir/ml', samp=(0, plots))}
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('perceptron{samp:0>3}.svg', directory='\writeDiagramsDir/ml', samp=(0, plots))}
 
 \slides{
 \define{width}{60%}

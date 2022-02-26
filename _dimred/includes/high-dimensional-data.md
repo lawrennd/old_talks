@@ -37,7 +37,8 @@ for i in range(3):
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('dem_six{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
 
 
 \slides{\define{width}{40%}
@@ -77,7 +78,8 @@ for angle in angles:
     crop_image = rot_image[start[0]+np.array(range(dim_one[0])), :][:, start[1]+np.array(range(dim_one[1]))]
     Y[i, :] = crop_image.flatten()}
 
-\displaycode{pods.notebook.display_plots('\diagramsDir/dimred/dem_six_rotate{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=(0, 6))}
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('\diagramsDir/dimred/dem_six_rotate{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=(0, 6))}
 
 \slides{\define{width}{40%}
 \startanimation{dem-six-rotate}{1}{6}

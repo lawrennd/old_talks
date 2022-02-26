@@ -101,7 +101,8 @@ plot.bayes_billiard(ax, diagrams='\writeDiagramsDir/ml/')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('bayes-billiard{counter:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							counter=IntSlider(0,0,9,1))}
 \endif

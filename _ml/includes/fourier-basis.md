@@ -52,13 +52,15 @@ plot.basis(mlai.fourier, x_min=0, x_max=2,
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 
-\displaycode{pods.notebook.display_plots('fourier_basis{num_basis:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('fourier_basis{num_basis:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							num_basis=IntSlider(0,0,4,1))}
 
 \notes{In this code, basis functions with an *odd* index are sine and basis functions with an *even* index are cosine. The first basis function (index 0, so cosine) has a frequency of 0 and then frequencies increase every time a sine and cosine are included.}
 
-\displaycode{pods.notebook.display_prediction(basis=mlai.fourier, num_basis=5)}
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_prediction(basis=mlai.fourier, num_basis=5)}
 
 \subsection{Functions Derived from Fourier Basis}
 
@@ -79,7 +81,8 @@ $$
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('fourier_function{func_num:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('fourier_function{func_num:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							func_num=IntSlider(0,0,2,1))}
 

@@ -11,7 +11,8 @@
 							
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('independent_height_weight{fig:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('independent_height_weight{fig:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							fig=IntSlider(0, 0, 7, 1))}
 

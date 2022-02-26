@@ -9,7 +9,8 @@
                      diagrams="\writeDiagramsDir/deepgp")}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('stack-gp-sample-Linear-{sample:0>1}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('stack-gp-sample-Linear-{sample:0>1}.svg', 
                             directory='\writeDiagramsDir/deepgp', sample=(0,4))}
 
 

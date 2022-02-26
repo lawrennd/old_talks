@@ -135,7 +135,8 @@ for samp in range(num_samps):
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('bias-variance{samp:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('bias-variance{samp:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 						    samp=IntSlider(0,0,10,1))}
 							

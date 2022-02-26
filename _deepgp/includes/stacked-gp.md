@@ -7,7 +7,8 @@
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.RBF,
                      diagrams="\writeDiagramsDir/deepgp")}
 				
-\displaycode{pods.notebook.display_plots('stack-gp-sample-RBF-{sample:0>1}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('stack-gp-sample-RBF-{sample:0>1}.svg', 
                             directory='\writeDiagramsDir/deepgp', sample=(0,4))}
 
 \slides{
