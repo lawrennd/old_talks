@@ -6,8 +6,8 @@
 
 \notesfigure{\includediagram{\diagramsDir/ai/three_pillars_innovation003}}
 
-\displaycode{import pods
-pods.notebook.display_plots('three-pillars-innovation{sample:0>3}.svg', 
+\setupdisplaycode{import notutils as nu}
+\displaycode{nu.display_plots('three-pillars-innovation{sample:0>3}.svg', 
                             '\writeDiagramsDir/ai', sample=(1,3))}
 
 \slides{

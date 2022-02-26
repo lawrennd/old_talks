@@ -8,10 +8,9 @@
 \plotcode{plot.correlated_height_weight(num_samps=8, 
                               diagrams='\writeDiagramsDir/ml')}
 
-\setupdisplaycode{import pods
+\setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
-\displaycode{
-pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg', 
+\displaycode{nu.display_plots('correlated_height_weight{fig:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							fig=IntSlider(0, 0, 7, 1))}
 

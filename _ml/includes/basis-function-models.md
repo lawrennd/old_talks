@@ -16,12 +16,13 @@ time. First we will scale the output of the data to be zero mean and variance 1.
 
 
 
-\setupdisplaycode{import pods}
+\setupdisplaycode{import matplotlib.pyplot as plt
+import notutils as nu}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 yhat = (y - offset)/scale
 
 _ = ax.plot(x, yhat, 'r.',markersize=10)
-pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
+nu.display_prediction(basis=dict(radial=mlai.radial, 
 	                                        polynomial=mlai.polynomial, 
 											tanh=mlai.hyperbolic_tangent, 
 											fourier=mlai.fourier, 
