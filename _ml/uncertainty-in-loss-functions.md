@@ -234,7 +234,7 @@ model2.fit()}
 f_test, f_var = model.predict(x_test)
 f2_test, f2_var = model2.predict(x_test)}
 
-\code{import teaching_plots as plot
+\code{import mlai.plot as plot
 from matplotlib import rc, rcParams
 rcParams.update({'font.size': 22})
 rc('text', usetex=True)}

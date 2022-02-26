@@ -49,7 +49,7 @@ def bernoulli(y_i, pi):
 \includegooglebook{CF4UAAAAQAAJ}{PA87}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot}
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
 plot.bernoulli_urn(ax, diagrams='\writeDiagramsDir/ml/')}
@@ -77,7 +77,7 @@ For this reason in Bayes's distribution there is considered to be *aleatoric* un
 \newslide{Thomas Bayes' Bernoulli}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot}
+import mlai.plot as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
 plot.bayes_billiard(ax, diagrams='\writeDiagramsDir/ml/')}

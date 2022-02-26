@@ -86,10 +86,10 @@ from mlai.gp_tutorial import ax_default, meanplot, gpplot}
 \code{m_full = GPy.models.GPRegression(X,y)
 m_full.optimize() # Optimize parameters of covariance function}
 
-\downloadcode{teaching_plots}
+\downloadcode{mlai.plot}
 \downloadcode{mlai}
 
-\setupplotcode{import teaching_plots as plot
+\setupplotcode{import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)

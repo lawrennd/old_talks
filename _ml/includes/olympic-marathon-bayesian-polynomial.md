@@ -17,7 +17,7 @@ basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
 
 max_basis = y.shape[0]}
 
-\plotcode{import teaching_plots as plot}
+\plotcode{import mlai.plot as plot}
 \plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, max_basis+1),
               model=mlai.BLM, 
 			  basis=basis, 
@@ -75,7 +75,7 @@ from ipywidgets import IntSlider}
 
 \notes{For the polynomial fit, we will now look at *hold out* validation, where we are holding out some of the most recent points. This tests the abilit of our model to *extrapolate*.}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.holdout_fit(x, y, param_name='number', param_range=(1, 27),
               diagrams='\writeDiagramsDir/ml',
               model=mlai.BLM, 

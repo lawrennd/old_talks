@@ -7,7 +7,7 @@ import mlai
 from matplotlib import pyplot as plt
 import numpy as np
 import scipy as sp
-import teaching_plots as plot
+import mlai.plot as plot
 %matplotlib inline}
 
 ### Review

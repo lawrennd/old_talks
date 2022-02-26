@@ -23,7 +23,7 @@ transition: None
 \section{Deep Gaussian Processes}
 
 \setupcode{# Download some utilty files}
-\downloadcode{teaching_plots}
+\downloadcode{mlai.plot}
 \downloadcode{mlai}
 \downloadcode{gp_tutorial}
 \downloadcode{deepgp_tutorial}

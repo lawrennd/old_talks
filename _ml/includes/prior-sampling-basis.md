@@ -106,7 +106,7 @@ To get an idea of the overall shape of the resulting distribution, let's do the 
 \displaycode{%matplotlib inline}
 
 \plotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot}
+import mlai.plot as plot}
 
 
 \plotcode{# First the standard normal

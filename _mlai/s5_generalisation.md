@@ -17,7 +17,7 @@ import numpy as np
 import scipy as sp
 import mlai
 from matplotlib import pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 %matplotlib inline
 ```
 

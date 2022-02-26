@@ -7,7 +7,7 @@ import pods
 import numpy as np
 import matplotlib.pyplot as plt
 import mlai
-import teaching_plots as plot
+import mlai.plot as plot
 
 %matplotlib inline
 ```
@@ -333,7 +333,7 @@ for i in range(100):
  - We can now make a contour plot.
 
 ```{.python .input}
-# %load -s regression_contour teaching_plots.py
+# %load -s regression_contour mlai.plot.py
 def regression_contour(f, ax, m_vals, c_vals, E_grid):
     "Regression contour plot."
     hcont = ax.contour(m_vals, c_vals, E_grid, levels=[0, 0.5, 1, 2, 4, 8, 16, 32, 64]) # this makes the contour plot 

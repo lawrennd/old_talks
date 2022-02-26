@@ -4,7 +4,7 @@
 
 \newslide{Sampling Two Dimensional Variables}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.independent_height_weight(num_samps=8, 
                                diagrams='\writeDiagramsDir/ml')}
 							   

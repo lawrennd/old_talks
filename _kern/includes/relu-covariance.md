@@ -13,7 +13,7 @@
 \left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)}
 
 
-\setupplotcode{import teaching_plots as plot
+\setupplotcode{import mlai.plot as plot
 import mlai
 import numpy as np}
 

@@ -15,7 +15,7 @@
                      formula='\formula',
 					 lengthscale=0.2)}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.covariance_func(kernel=kernel, diagrams='\writeDiagramsDir/kern/')}
 
 \notes{The expontential covariance, in one dimension this is also known as the Ornstein Uhlenbeck covariance, and in multiple dimensions it's also the Mater 1/2 covaraince. It has an interpretation as a stochastic differential equation with a linear drift term (equivalent to a quadratic potential). The drift keeps the covariance stationary (unlike the Brownian motion covariance). It also has an interpretation as a Cauchy filter in Fourier space [@Stein:interpolation99] (from Bochner's theorem). 

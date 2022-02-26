@@ -221,7 +221,7 @@ Probabilistic methods explore more of the space by considering a range of possib
 
 ```{.python}
 import numpy as np
-import teaching_plots as plot
+import mlai.plot as plot
 ```
 
 ```{.python}
@@ -326,10 +326,10 @@ yt_mean, yt_var = m_full.predict(xt)
 yt_sd=np.sqrt(yt_var)
 ```
 
-Now we plot the results using the helper function in ```teaching_plots```.
+Now we plot the results using the helper function in ```mlai.plot```.
 
 ```{.python}
-import teaching_plots as plot
+import mlai.plot as plot
 ```
 
 ```{.python}

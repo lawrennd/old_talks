@@ -106,7 +106,7 @@ $$
 $$
 }
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 
 \plotcode{plot.logistic('\writeDiagramsDir/ml/logistic.svg')}
 

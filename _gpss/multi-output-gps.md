@@ -1,6 +1,7 @@
 ---
 title: Multi-output Gaussian Processes
 session: 5
+youtube: MkkeBmEZ8LE
 abstract: >
   In this talk we review multi-output Gaussian processes. Introducing them initially through a Kalman filter representation of a GP.
 ---

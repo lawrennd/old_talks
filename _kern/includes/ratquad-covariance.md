@@ -16,7 +16,7 @@
 					 lengthscale=0.2,
 					 alpha=1)}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{plot.covariance_func(kernel=kernel, diagrams='\writeDiagramsDir/kern/')}
 
 \notes{The rational quadratic covariance function is derived by a continuous mixture of exponentiated quadratic covariance funcitons, where the lengthscale is given by an inverse gamma distribution. The resulting covariance is infinitely smooth (in terms of differentiability) but has a family of length scales present. As $a$ gets larger, the exponentiated quadratic covariance funciton is recovered.}

@@ -1,6 +1,6 @@
 \section{Challenges in Technology Deployment}
 
-\setupcode{import teaching_plots as plot}
+\setupcode{import mlai.plot as plot}
 
 \plotcode{plot.three_pillars_innovation(diagrams='\writeDiagramsDir/ai')}
 

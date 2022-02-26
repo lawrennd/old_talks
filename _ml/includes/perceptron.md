@@ -50,7 +50,7 @@
 
 \newslide{Computing Decision Boundary}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 
 \plotcode{f, ax = plt.subplots(1, 2, figsize=(14,7))
 w, b = init_perceptron(x_plus, x_minus)

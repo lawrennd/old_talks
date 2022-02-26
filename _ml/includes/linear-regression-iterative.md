@@ -29,7 +29,7 @@ for i in range(100):
 
 \slides{* We can now make a contour plot.}
 
-\setupplotcode{import teaching_plots as plot
+\setupplotcode{import mlai.plot as plot
 import mlai}
 
 \plotcode{f, ax = plt.subplots(figsize=(5,5))
@@ -104,7 +104,7 @@ changes all the time.
 
 \subsection{Move in Direction of Gradient}
 
-\setupplotcode{import teaching_plots as plot}
+\setupplotcode{import mlai.plot as plot}
 \plotcode{f, ax = plt.subplots(figsize=plot.big_figsize)
 plot.regression_contour(f, ax, m_vals, c_vals, E_grid)
 ax.plot(m_star, c_star, 'g*', markersize=20)

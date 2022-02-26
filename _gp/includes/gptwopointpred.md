@@ -7,7 +7,7 @@
 \setupcode{import numpy as np
 np.random.seed(4949)}
 
-\setupcode{import teaching_plots as plot
+\setupcode{import mlai.plot as plot
 import pods}
 
 \include{_gp/includes/gaussian-predict-index-one-and-two.md}

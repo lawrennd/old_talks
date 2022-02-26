@@ -590,7 +590,7 @@ f2_test, f2_var = model2.predict(x_test)
 ```
 
 ```{.python .input}
-import teaching_plots as plot
+import mlai.plot as plot
 from matplotlib import rc, rcParams
 rcParams.update({'font.size': 22})
 rc('text', usetex=True)

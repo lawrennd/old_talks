@@ -30,7 +30,7 @@ y = movies[['IMDB_Rating']]}
 resid = y-ypred}
 
 \setupplotcode{import matplotlib.pyplot as plt
-import teaching_plots as plot
+import mlai.plot as plot
 import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
