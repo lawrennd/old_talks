@@ -10,6 +10,7 @@
 
 \setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
+
 \displaycode{nu.display_plots('correlated_height_weight{fig:0>3}.svg', 
                             directory='\writeDiagramsDir/ml', 
 							fig=IntSlider(0, 0, 7, 1))}
