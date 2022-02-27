@@ -19,7 +19,7 @@ transition: None
 incremental: True
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 \section{Introduction}
 

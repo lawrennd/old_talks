@@ -11,7 +11,7 @@
 
 \centerdiv{\gurKimchiPicture{15%}\paulViolaPicture{15%}\davidMoroPicture{15%}}
 
-\include{_supply-chain/includes/amazon-drone-flight.md}
+talk-macros.gpp}upply-chain/includes/amazon-drone-flight.md}
 
 \notes{As Jeff Wilke (who was CEO of Amazon Retail at the time)
 [announced in June 2019](https://blog.aboutamazon.com/transportation/a-drone-program-taking-flight)

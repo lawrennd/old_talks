@@ -42,7 +42,7 @@ What I do know about is deployments of machine learning, how they succeed, how t
 We are bandwidth limited, so when interacting with other intelligent agents, we make assumptions that they think and operate like us. That is the tendency to anthrox. The problem is pernicious because it's difficult to say, so we tend not to call it out in case our tongue trips us up. That's why we'll call it anthtrox. When communicating with humans, anthrox is a short cut to gaining a form of information coherence of what your objectives are. You can use contextual analogies to align activities. You don't need to send detailed and explicit instructions. You can rely on your team of professionals to work towards one goal, making the patient safe and comfortable. All of this is implicit in the humans around you. It cannot be taken forgranted in the computer.}
 
 \define{\stubname}{anne-bob-conversation}
-\include{_ai/includes/anne-bob-talk.md}
+talk-macros.gpp}i/includes/anne-bob-talk.md}
 
 \notes{If you must anthrox AI, then please think of it as an extremely literal and willful friend, who ignores social cues. Is the last to remain at the party, will blurt out the most inappropriate conclusions regardless of the social context. Has an encyclopedic knowledge about things that sound irrelevant to you. 
 
@@ -50,7 +50,7 @@ The truth is that the current generation of artificial intelligence solutions ar
 
 
 \define{\stubname}{anne-computer-conversation}
-\include{_ai/includes/anne-bob-talk.md}
+talk-macros.gpp}i/includes/anne-bob-talk.md}
 
 
 \notes{A particular bias that is important is [automation bias](https://en.wikipedia.org/wiki/Automation_bias)}
@@ -63,7 +63,7 @@ Domain experts have an understanding of context of decisions, and an intuition a
 
 Users are placing trust in the decision making process. They want to believe in the outcome, and like to think that it considers there personal circumstances and that it is fair in some way.}
 
-\include{_ai/includes/newcomen-steam-engine.md}
+talk-macros.gpp}i/includes/newcomen-steam-engine.md}
 
 \notes{The promise of artificial intelligence is that it is the first generation of automation that will adapt to us rather than us adapting to it. What do I mean by that? The challenges of automation are not new. In the 18th century, automation of the physical labour of pumping mines clear of water was a priority, and the steam engine was invented and evolved for that task. The challenge is that the engine is not flexible, it is designed to do one job repetitively. It is like a small baby. It needs feeding, it needs cleaning, and it has regular emissions. It has no concept of time or convenience of those that maintain it. 
 
@@ -74,7 +74,7 @@ Although the computer is more advanced than the steam engine in many respects, i
 \figure{\includejpg{\diagramsDir/ai/person-cute-portrait-young-small-child-684477-pxhere.com}{70%}}{Machines are as helpless and unaware as small children, and less cute. Just like a small child they require us to maintain and service them.}{young-baby-image}
 
 
-\include{_health/includes/doctor-and-patient.md}
+talk-macros.gpp}ealth/includes/doctor-and-patient.md}
 
 \newslide{}
 
@@ -87,16 +87,16 @@ Although the computer is more advanced than the steam engine in many respects, i
 
 How have we achieved this?}
 
-\include{_ml/includes/deep-learning-overview.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
 
 \notes{Similar comments could be made for machine learning systems that are recognising speech (e.g. in voice assistances such as Siri, Alexa and Google Assistant). And for automated language translation. However, these systems are critically dependent on our data, on data that has been labelled by humans. They are emulating our perceptual set up through having observed lare amounts of data.}
 
 \notes{On average we may be able to show that these machines outperform us, but this also can bring problems. It turns out to be important not just whether we are wrong, but how we are wrong.}
 
 
-\include{_ai/includes/watt-steam-engine.md}
+talk-macros.gpp}i/includes/watt-steam-engine.md}
 
-\include{_ml/includes/bias-variance-plots.md}
+talk-macros.gpp}l/includes/bias-variance-plots.md}
 
 \notes{One of the very real problems we face at the moment is we have an ecosystem of people and companies that are delivering solutions that are not driven by the 'pain points' of our health service, not driven by getting the fundamentals right. Not driven by solutions that would make a difference for patients, doctors, nurses and administrators but driven by headlines. These are companies that are not making money from these solutions, but are engaged in a wider battle for mindshare. To give the impression that AI systems are delivering magical solutions.}
 
@@ -118,12 +118,12 @@ How have we achieved this?}
 
 }
 
-\include{_health/includes/rolls-royce-analogy.md}
-\include{_business/includes/black-box-thinking.md}
+talk-macros.gpp}ealth/includes/rolls-royce-analogy.md}
+talk-macros.gpp}usiness/includes/black-box-thinking.md}
 
 \notes{In particular, while there is much to be gained by involving commercial companies in the care of patients, if the process by which they are drawing inference about patient condition is hidden (for example, due to commercial confidentiality), this may prevent us from understanding errors in diagnosis or treatment. This would be a retrograde step. It may be that health device certification needs modification or reform for data-driven automated decision making, but we need a spirit of transparency around how these systems are deriving their inferences to ensure best practice.}
 
-\include{_books/includes/rebel-ideas.md}
+talk-macros.gpp}ooks/includes/rebel-ideas.md}
 
 
 \thanks

@@ -36,13 +36,13 @@ transition: None
 \aligncenter{Neil Lawrence}
 \aligncenter{Professor of Machine Learning}}
 
-\include{_notebooks/includes/notebook-setup.md}
+talk-macros.gpp}otebooks/includes/notebook-setup.md}
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
-\include{_ml/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
 
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \newslide{Exercise: Score Yourself}
 
@@ -59,23 +59,23 @@ transition: None
 
 <!-- Embodiment Factors-->
 
-\include{_ai/includes/embodiment-factors-celsius.md}
+talk-macros.gpp}i/includes/embodiment-factors-celsius.md}
 
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ai/includes/conversation-tedx.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/conversation-tedx.md}
 
 <!-- Data Science (why it's happening) -->
 
-\include{_data-science/includes/lies-damned-lies.md}
-\include{_ai/includes/heider-simmel.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+talk-macros.gpp}i/includes/heider-simmel.md}
 
-\include{_ai/includes/conversation-computer.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
 
-\include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/big-model-paradox.md}
-\include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-inattention-bias.md}
-\include{_business/includes/gorilla-conclusion.md}
+talk-macros.gpp}ata-science/includes/big-data-paradox.md}
+talk-macros.gpp}ata-science/includes/big-model-paradox.md}
+talk-macros.gpp}sychology/includes/selective-attention-bias.md}
+talk-macros.gpp}ata-science/includes/data-inattention-bias.md}
+talk-macros.gpp}usiness/includes/gorilla-conclusion.md}
 
 
 \reading

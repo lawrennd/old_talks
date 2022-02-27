@@ -19,39 +19,39 @@ venue: Virtual Interaction with Machine Learning Course
 transition: None
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_ai/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 
-\include{_software/includes/separation-of-concerns.md}
-\include{_software/includes/mythical-man-month.md}
-\include{_ai/includes/ml-system-decomposability.md}
+talk-macros.gpp}oftware/includes/separation-of-concerns.md}
+talk-macros.gpp}oftware/includes/mythical-man-month.md}
+talk-macros.gpp}i/includes/ml-system-decomposability.md}
 
-\include{_ai/includes/embodiment-factors-celsius.md}
-\include{_ai/includes/conversation-tedx.md}
-\include{_ai/includes/heider-simmel.md}
-\include{_ai/includes/conversation-computer.md}
+talk-macros.gpp}i/includes/embodiment-factors-celsius.md}
+talk-macros.gpp}i/includes/conversation-tedx.md}
+talk-macros.gpp}i/includes/heider-simmel.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
 
-\include{_ml/includes/data-science-vs-ai.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
 
-\include{_ai/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
 
-\include{_ai/includes/ml-systems-design-short.md}
+talk-macros.gpp}i/includes/ml-systems-design-short.md}
 
-\include{_business/includes/bezos-question-mark-email.md}
+talk-macros.gpp}usiness/includes/bezos-question-mark-email.md}
 
-\include{_ai/includes/intellectual-debt-short.md}
-\include{_ai/includes/fit-systems.md}
-\include{_ai/includes/buying-system.md}
-\include{_ai/includes/buying-to-banking.md}
+talk-macros.gpp}i/includes/intellectual-debt-short.md}
+talk-macros.gpp}i/includes/fit-systems.md}
+talk-macros.gpp}i/includes/buying-system.md}
+talk-macros.gpp}i/includes/buying-to-banking.md}
 
-\include{_governance/includes/how-gdpr-may-help.md}
+talk-macros.gpp}overnance/includes/how-gdpr-may-help.md}
 
-\include{_uq/includes/statistical-emulation.md}
+talk-macros.gpp}q/includes/statistical-emulation.md}
 
-\include{_gp/includes/gp-intro-very-short.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
 
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 
 

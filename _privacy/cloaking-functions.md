@@ -26,15 +26,15 @@ transition: None
 
 
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ai/includes/conversation-technical.md}
-\include{_gp/includes/gp-book.md}
-\include{_gp/includes/gp-intro-very-short.md}
-\include{_privacy/includes/differential-privacy-for-gps.md}
-\include{_privacy/includes/differential-privacy-with-cloaking.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/conversation-technical.md}
+talk-macros.gpp}p/includes/gp-book.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
+talk-macros.gpp}rivacy/includes/differential-privacy-for-gps.md}
+talk-macros.gpp}rivacy/includes/differential-privacy-with-cloaking.md}
 
 
 \newslide{Conclusions}{data-background="\writeDiagramsDir/pres_bg.png"}

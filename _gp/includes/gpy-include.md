@@ -3,7 +3,7 @@
 \editme
 
 
-\include{_software/includes/gpy-software.md}
+talk-macros.gpp}oftware/includes/gpy-software.md}
 
 
 \endif

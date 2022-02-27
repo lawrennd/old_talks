@@ -4,8 +4,8 @@
 
 \notes{\subsection{The Centrifugal Governor}}
 
-\include{_ai/includes/holborn-science-centrifugal-governor.md}
-\include{_ai/includes/watt-steam-engine.md}
+talk-macros.gpp}i/includes/holborn-science-centrifugal-governor.md}
+talk-macros.gpp}i/includes/watt-steam-engine.md}
 
 \notes{The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors [@Maxwell:governors1867]. This paper is a founding paper of control theory. In an acknowledgment of its influence, Wiener used the name [*cybernetics*](https://en.wikipedia.org/wiki/Cybernetics) to describe the field of control and communication in animals and the machine [@Wiener:cybernetics48]. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.}
 
@@ -21,7 +21,7 @@
 2. The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by *data*.
 }
 
-\include{_ai/includes/centrifugal-governor-diagram.md}
+talk-macros.gpp}i/includes/centrifugal-governor-diagram.md}
 
 \notes{This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.
 

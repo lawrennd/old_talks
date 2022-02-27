@@ -24,8 +24,8 @@ start: "14:00"
 end: "15:00"
 ---
 
-\include{_deepnn/includes/overview-2021.md}
-\include{_ml/includes/what-is-ml.md}
+talk-macros.gpp}eepnn/includes/overview-2021.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
 
 \subsection{Ingredients}
 
@@ -33,12 +33,12 @@ end: "15:00"
 
 \notes{So how do these ingredients pan out in our recipe for deep learning? To better understand this, we're going to add more historical context and go back go 1997 when, here in Cambridge, there was a six-month programme at the Isaac Newton Institute run on Machine Learning, Neural Networks and Generalisation.}
 
-\include{_ml/includes/cybernetics-ratio-club.md}
-\include{_ml/includes/connectionist-revival.md}
+talk-macros.gpp}l/includes/cybernetics-ratio-club.md}
+talk-macros.gpp}l/includes/connectionist-revival.md}
 
 <!--include{_ml/includes/what-does-machine-learning-do.md}-->
 
-\include{_ml/includes/neil-newton-institute.md}
+talk-macros.gpp}l/includes/neil-newton-institute.md}
 
 \newslide{}
 

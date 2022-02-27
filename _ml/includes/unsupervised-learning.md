@@ -50,7 +50,7 @@ Humans can easily sort a number of objects into objects that share similar chara
 \notes{Supervised learning is broadly divided into classification: i.e. wake word classification in the Amazon Echo, and regression, e.g. shelf life prediction for perishable goods.  Similarly, unsupervised learning can be broadly split into methods that cluster the data (i.e. provide a discrete label) and methods that represent the data as a continuous value.}
 
 
-\include{_ml/includes/clustering.md}
-\include{_ml/includes/dimensionality-reduction.md}
+talk-macros.gpp}l/includes/clustering.md}
+talk-macros.gpp}l/includes/dimensionality-reduction.md}
 
 \endif

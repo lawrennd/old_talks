@@ -7,7 +7,7 @@
 
 \notes{Before we start, I'd like to highlight one idea that will be key for contextualisation of everything else. There is a strong interaction between the structure of an organisation and the structure of its software.}
 
-\include{_business/includes/the-api-mandate-bezos.md}
+talk-macros.gpp}usiness/includes/the-api-mandate-bezos.md}
 
 \newslide{Amazon and Agility}
 

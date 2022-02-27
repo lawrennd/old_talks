@@ -1,7 +1,7 @@
 \ifndef{olympicMarathonBootstrapPolynomial}
 \define{olympicMarathonBootstrapPolynomial}
 
-\include{_ml/includes/olympic-marathon-polynomial.md}
+talk-macros.gpp}l/includes/olympic-marathon-polynomial.md}
 
 \editme
 

@@ -19,6 +19,6 @@ $$\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predic
 
 \notes{The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different but overlapping domains: data science and artificial intelligence.}
 
-\include{_ml/includes/what-is-ml-end-to-end.md}
+talk-macros.gpp}l/includes/what-is-ml-end-to-end.md}
 
 \endif

@@ -2,7 +2,7 @@
 \define{robotWirelessBgplvm}
 
 
-\include{_datasets/includes/robot-wireless-data.md}
+talk-macros.gpp}atasets/includes/robot-wireless-data.md}
 
 \editme
 

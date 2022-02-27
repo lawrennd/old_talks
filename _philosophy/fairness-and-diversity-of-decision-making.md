@@ -24,18 +24,18 @@ date: 2018-11-08
 transition: None
 ---
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
 <!--include{_philosophy/includes/utilitarianism.md}
 include{_philosophy/includes/utility-utilitarianism.md}
 include{_philosophy/includes/trolley-push.md}-->
-\include{_ml/includes/what-is-ml-2.md}
-<!--\include{_philosophy/includes/bias-towards-variance.md}-->
-<!--\include{_philosophy/includes/bias-variance-in-ml.md}-->
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+<!--talk-macros.gpp}hilosophy/includes/bias-towards-variance.md}-->
+<!--talk-macros.gpp}hilosophy/includes/bias-variance-in-ml.md}-->
 \newslide{BIAS-VARIANCE DILEMMA}
-\include{_ml/includes/bias-variance-plots.md}
-<!--\include{_philosophy/includes/bias-variance-rational.md}-->
-<!--\include{_philosophy/includes/uncertainty-and-absolutism.md}-->
+talk-macros.gpp}l/includes/bias-variance-plots.md}
+<!--talk-macros.gpp}hilosophy/includes/bias-variance-rational.md}-->
+<!--talk-macros.gpp}hilosophy/includes/uncertainty-and-absolutism.md}-->
 
 <!-- \newslide{Trolleys!?!} -->
 <!-- \slides{ -->

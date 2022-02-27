@@ -20,9 +20,9 @@ venue: Future of Work, Chatham House
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_supply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
 
 \thanks
 

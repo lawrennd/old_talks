@@ -1,4 +1,4 @@
-\include{_ml/includes/movie-body-count-data.md}
+talk-macros.gpp}l/includes/movie-body-count-data.md}
 
 \notes{Let's use the sum rule to compute the approximate
 probability that a film from the movie body count website has over 40 deaths.}

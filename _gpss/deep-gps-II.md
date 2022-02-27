@@ -4,11 +4,11 @@ session: 12
 abstract:
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_deepgp/includes/robot-wireless-deep-gp.md}
-\include{_deepgp/includes/deep-results.md}
-\include{_health/includes/deep-health-model.md}
+talk-macros.gpp}eepgp/includes/robot-wireless-deep-gp.md}
+talk-macros.gpp}eepgp/includes/deep-results.md}
+talk-macros.gpp}ealth/includes/deep-health-model.md}
 
 \thanks
 

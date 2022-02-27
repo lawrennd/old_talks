@@ -4,8 +4,8 @@
 \editme
 
 
-\include{_uq/includes/emukit-linear-multifidelity.md}
-\include{_uq/includes/emukit-nonlinear-multifidelity.md}
+talk-macros.gpp}q/includes/emukit-linear-multifidelity.md}
+talk-macros.gpp}q/includes/emukit-nonlinear-multifidelity.md}
 
 
 \endif

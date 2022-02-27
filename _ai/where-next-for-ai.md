@@ -19,16 +19,16 @@ papersize: a4paper
 transition: None
 ---
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
 \section{Introduction}
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-\include{_ai/includes/hype-about-hype.md}
-\include{_data-science/includes/lies-damned-lies.md}
-\include{_data-science/includes/why-didnt-electricity.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+talk-macros.gpp}i/includes/hype-about-hype.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+talk-macros.gpp}ata-science/includes/why-didnt-electricity.md}
 \newslide{Internet of People}
 \newslide{Machine Learning Systems Design}
-\include{_ai/includes/watt-steam-engine.md}
+talk-macros.gpp}i/includes/watt-steam-engine.md}
 
 \thanks
 

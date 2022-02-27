@@ -12,25 +12,25 @@ date: 1970-01-01
 
 ### DRAFT SLIDES
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
 <!--Introduction-->
 
-\include{_deepgp/includes/deep_nn_gp.md}
-\include{_gp/includes/gp_extremely_short.md}
+talk-macros.gpp}eepgp/includes/deep_nn_gp.md}
+talk-macros.gpp}p/includes/gp_extremely_short.md}
 
 \newcommand{\hiddenScalar}{f}
 \newcommand{\latentScalar}{x}
 
 <!--Deep Gaussian Process Models-->
 
-\include{_deepgp/includes/deeptheory.md}
-\include{_gp/includes/gp-variational-complexity.md}
+talk-macros.gpp}eepgp/includes/deeptheory.md}
+talk-macros.gpp}p/includes/gp-variational-complexity.md}
 
 <!--Parametric Bottleneck-->
 
-\include{_gp/includes/bottleneck.md}
-\include{_gp/includes/low-rank-motivation.md}
+talk-macros.gpp}p/includes/bottleneck.md}
+talk-macros.gpp}p/includes/low-rank-motivation.md}
 
 ### Information capture
 
@@ -46,9 +46,9 @@ $\mappingFunctionVector$]
 The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
-\include{_gp/includes/nystrom.md}
-\include{_gp/includes/inducing-notation.md}
-\include{_gp/includes/inducing-introduction.md}
+talk-macros.gpp}p/includes/nystrom.md}
+talk-macros.gpp}p/includes/inducing-notation.md}
+talk-macros.gpp}p/includes/inducing-introduction.md}
 
 ### The alternative posterior
 
@@ -61,9 +61,9 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 
 <!--Flexible Parametric Approximation-->
 
-\include{_gp/includes/larger-graph-intro.md}
-\include{_gp/includes/larger-variational.md}
-\include{_gp/includes/larger-factorize.md}
+talk-macros.gpp}p/includes/larger-graph-intro.md}
+talk-macros.gpp}p/includes/larger-variational.md}
+talk-macros.gpp}p/includes/larger-factorize.md}
 
 
 ###
@@ -73,50 +73,50 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 <!--Variational Compression-->
 
-\include{_gp/includes/variational-compression.md}
-\include{_gp/includes/low-rank-variational.md}
-\include{_gplvm/includes/bayes-gplvm-intro.md}
-\include{_gplvm/includes/variational-bayes-gplvm-long.md}
-\include{_gplvm/includes/nested-variational-compression.md}
-\include{_gp/includes/larger-gaussian.md}
+talk-macros.gpp}p/includes/variational-compression.md}
+talk-macros.gpp}p/includes/low-rank-variational.md}
+talk-macros.gpp}plvm/includes/bayes-gplvm-intro.md}
+talk-macros.gpp}plvm/includes/variational-bayes-gplvm-long.md}
+talk-macros.gpp}plvm/includes/nested-variational-compression.md}
+talk-macros.gpp}p/includes/larger-gaussian.md}
 
 <!--Bayesian GP-LVM-->
 
 
-\include{_gplvm/includes/ard-gplvm.md}
-\include{_gplvm/includes/bayes-gplvm-intro.md}
-\include{_gplvm/includes/variational-bayes-gplvm-long.md}
+talk-macros.gpp}plvm/includes/ard-gplvm.md}
+talk-macros.gpp}plvm/includes/bayes-gplvm-intro.md}
+talk-macros.gpp}plvm/includes/variational-bayes-gplvm-long.md}
 
-\include{_gp/includes/gp-big-data-technical.md}
-\include{_gp/includes/gp-big-data.md}
+talk-macros.gpp}p/includes/gp-big-data-technical.md}
+talk-macros.gpp}p/includes/gp-big-data.md}
 
-\include{_deepgp/includes/deep-gps.md}
+talk-macros.gpp}eepgp/includes/deep-gps.md}
 
-\include{_deepgp/includes/deep-step-function.md}
-\include{_deepgp/includes/deep-loop-detection.md}
+talk-macros.gpp}eepgp/includes/deep-step-function.md}
+talk-macros.gpp}eepgp/includes/deep-loop-detection.md}
 
 \newcommand{\latentScalar}{f}
 
-\include{_health/includes/deep-health-model.md}
+talk-macros.gpp}ealth/includes/deep-health-model.md}
 
 
 <!--Conclusions-->
 
-\include{_gplvm/includes/ard_model.md}
-\include{_gplvm/includes/ard_results.md}
+talk-macros.gpp}plvm/includes/ard_model.md}
+talk-macros.gpp}plvm/includes/ard_results.md}
 
 <!--Gaussian Process Dynamical Systems-->
 
-\include{_gplvm/includes/gpds.md}
+talk-macros.gpp}plvm/includes/gpds.md}
 
 <!--Shared GP-LVM-->
 
-\include{_gplvm/includes/mrd-gplvm.md}
-\include{_deepgp/includes/stack-gp-intro.md}
-\include{_deepgp/includes/stacked-pca.md}
-\include{_deepgp/includes/stacked-gp.md}
-\include{_deepgp/includes/deep-pathologies.md}
-\include{_deepgp/includes/deep-results.md}
+talk-macros.gpp}plvm/includes/mrd-gplvm.md}
+talk-macros.gpp}eepgp/includes/stack-gp-intro.md}
+talk-macros.gpp}eepgp/includes/stacked-pca.md}
+talk-macros.gpp}eepgp/includes/stacked-gp.md}
+talk-macros.gpp}eepgp/includes/deep-pathologies.md}
+talk-macros.gpp}eepgp/includes/deep-results.md}
 
 \section{What Can We Do that Google Can’t?}
 
@@ -134,8 +134,8 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 -   These methodologies are part of that picture.
 
-\include{_health/includes/deep-health-model.md}
-\include{_health/includes/deep-health-rangers.md}
+talk-macros.gpp}ealth/includes/deep-health-model.md}
+talk-macros.gpp}ealth/includes/deep-health-rangers.md}
 
 \section{Summary}
 

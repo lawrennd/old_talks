@@ -26,7 +26,7 @@ venue: Data Science Africa, Ashesi University
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \subsection{Introduction}
 
@@ -43,7 +43,7 @@ include [@Lawrence:threeds19]: the *decomposition* of the system, the
 *deployment*. Collectively we refer to these challenges as the "Three
 Ds of ML Systems Design".}
 
-\include{_ai/includes/turing-ai-fellowship.md}
+talk-macros.gpp}i/includes/turing-ai-fellowship.md}
 
 \subsection{Announcement}
 \slides{
@@ -79,23 +79,23 @@ Ds of ML Systems Design".}
 The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa](http://datascienceafrica.org).}
 
 
-\include{_ai/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
 
-\include{_ai/includes/the-promise-of-ai.md}
+talk-macros.gpp}i/includes/the-promise-of-ai.md}
 
 \notes{This proposal is about addressing that gap, but to first understand the gap, let's look at comparisons between the approach we take to systems design, and the way that natural systems evolve.}
 
-\include{_ai/includes/artificial-vs-natural-systems-short.md}
+talk-macros.gpp}i/includes/artificial-vs-natural-systems-short.md}
 
 \notes{Currently, our main approach to systems design involves designing a system in a component-wise manner. Attempts to replicate the capabilities of evolved systems through specifying the objective, rather than evolving behaviour.}
 
-\include{_ai/includes/ml-system-decomposability.md}
-\include{_ml/includes/ml-paradigm-shift.md}
+talk-macros.gpp}i/includes/ml-system-decomposability.md}
+talk-macros.gpp}l/includes/ml-paradigm-shift.md}
 
 \notes{This gives vulnerabilities that we are exposing to the natural environment. Many security problems that we face today are the result of bugs that mean that code and data are not separate in thee systems we deploy, imagine what will happen when we deploy systems that purposefully short-circuit this protection into uncontrolled environments.}
 
-\include{_ai/includes/intelligent-system-paolo.md}
-\include{_ai/includes/peppercorn.md}
+talk-macros.gpp}i/includes/intelligent-system-paolo.md}
+talk-macros.gpp}i/includes/peppercorn.md}
 
 \subsection{The Three Ds of Machine Learning Systems Design}
 
@@ -121,19 +121,19 @@ The project partners are [Element AI](https://www.elementai.com/),  [Open ML](ht
 }
 \notes{In this talk, we will focus on the third challenge, the deployment challenge.}
 
-\include{_ml/includes/ml-deployment-challenge.md}
+talk-macros.gpp}l/includes/ml-deployment-challenge.md}
 
-\include{_ai/includes/ml-system-decomposability.md}
-\include{_ai/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/ml-system-decomposability.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
 
-\include{_data-science/includes/data-oriented-architectures.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
 
-\include{_uq/includes/emulation.md}
-\include{_uq/includes/deep-emulation.md}
-\include{_uq/includes/bayesian-system-optimization.md}
-\include{_uq/includes/auto-ai.md}
+talk-macros.gpp}q/includes/emulation.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
+talk-macros.gpp}q/includes/bayesian-system-optimization.md}
+talk-macros.gpp}q/includes/auto-ai.md}
 
-\include{_data-science/includes/data-oriented-conclusions.md}
+talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
 
 
 

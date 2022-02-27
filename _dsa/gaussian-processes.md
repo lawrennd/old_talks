@@ -11,35 +11,35 @@ time: "15:00 (West Africa Standard Time)"
 transition: None
 ---
 
-\include{talk-macros.tex}
-\include{_mlai/includes/mlai-notebook-setup.md}
+talk-macros.gpp}lk-macros.tex}
+talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 
-\include{_gp/includes/gp-book.md}
-\include{_ml/includes/first-course-book.md}
+talk-macros.gpp}p/includes/gp-book.md}
+talk-macros.gpp}l/includes/first-course-book.md}
 <!--include{_gp/includes/what-is-a-gp.md}-->
 
-\include{_health/includes/malaria-gp.md}
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/overdetermined-inaugural.md}
-\include{_ml/includes/univariate-gaussian-properties.md}
+talk-macros.gpp}ealth/includes/malaria-gp.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/overdetermined-inaugural.md}
+talk-macros.gpp}l/includes/univariate-gaussian-properties.md}
 
 
-\include{_ml/includes/multivariate-gaussian-properties.md}
-\notes{\include{_ml/includes/linear-regression-log-likelihood.md}
-\include{_ml/includes/olympic-marathon-linear-regression.md}
-\include{_ml/includes/linear-regression-multivariate-log-likelihood.md}
+talk-macros.gpp}l/includes/multivariate-gaussian-properties.md}
+\notes{talk-macros.gpp}l/includes/linear-regression-log-likelihood.md}
+talk-macros.gpp}l/includes/olympic-marathon-linear-regression.md}
+talk-macros.gpp}l/includes/linear-regression-multivariate-log-likelihood.md}
 \define{designVector}{\basisVector}
 \define{designVariable}{Phi}
 \define{designMatrix}{\basisMatrix}
-\include{_ml/includes/linear-regression-direct-solution.md}}
-\include{_ml/includes/linear-regression-objective-optimisation.md}
-\include{_ml/includes/movie-body-count-linear-regression.md}
+talk-macros.gpp}l/includes/linear-regression-direct-solution.md}}
+talk-macros.gpp}l/includes/linear-regression-objective-optimisation.md}
+talk-macros.gpp}l/includes/movie-body-count-linear-regression.md}
 
-\include{_ml/includes/underdetermined-system.md}
-\include{_ml/includes/two-d-gaussian.md}
+talk-macros.gpp}l/includes/underdetermined-system.md}
+talk-macros.gpp}l/includes/two-d-gaussian.md}
 
-\include{_ml/includes/basis-functions-nn.md}
-\include{_ml/includes/relu-basis.md}
+talk-macros.gpp}l/includes/basis-functions-nn.md}
+talk-macros.gpp}l/includes/relu-basis.md}
 
 \subsection{Gaussian Processes}
 \slides{
@@ -61,29 +61,29 @@ $$
 
 
 
-\include{_ml/includes/linear-model-overview.md}
+talk-macros.gpp}l/includes/linear-model-overview.md}
 
-\include{_ml/includes/radial-basis.md}
+talk-macros.gpp}l/includes/radial-basis.md}
 
-\include{_gp/includes/gp-from-basis-functions.md}
+talk-macros.gpp}p/includes/gp-from-basis-functions.md}
 
-\include{_gp/includes/non-degenerate-gps.md}
-\include{_gp/includes/gp-function-space.md}
+talk-macros.gpp}p/includes/non-degenerate-gps.md}
+talk-macros.gpp}p/includes/gp-function-space.md}
 
-\include{_gp/includes/gptwopointpred.md}
+talk-macros.gpp}p/includes/gptwopointpred.md}
 
-\include{_gp/includes/gp-covariance-function-importance.md}
-\include{_gp/includes/gp-numerics-and-optimization.md}
+talk-macros.gpp}p/includes/gp-covariance-function-importance.md}
+talk-macros.gpp}p/includes/gp-numerics-and-optimization.md}
 
-\include{_gp/includes/gp-optimize.md}
-\include{_kern/includes/eq-covariance.md}
-\include{_gp/includes/gp-summer-school.md}
-\include{_gp/includes/gpy-software.md}
-\include{_gp/includes/gpy-tutorial.md}
+talk-macros.gpp}p/includes/gp-optimize.md}
+talk-macros.gpp}ern/includes/eq-covariance.md}
+talk-macros.gpp}p/includes/gp-summer-school.md}
+talk-macros.gpp}p/includes/gpy-software.md}
+talk-macros.gpp}p/includes/gpy-tutorial.md}
 
 \subsection{Review}
 
-\include{_gp/includes/other-gp-software.md}
+talk-macros.gpp}p/includes/other-gp-software.md}
 
 \reading
 

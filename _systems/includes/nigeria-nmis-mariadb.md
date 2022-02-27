@@ -13,7 +13,7 @@
 
 
 
-\include{_cloud/includes/aws-mariadb-server.md}
+talk-macros.gpp}loud/includes/aws-mariadb-server.md}
 
 \installcode{ipython-sql}
 \installcode{PyMySQL}

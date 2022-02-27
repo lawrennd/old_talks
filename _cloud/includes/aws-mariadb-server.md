@@ -18,11 +18,11 @@
 
 \notes{We'll use the following code for recording the username and password for the SQL client.}
 
-\include{_software/includes/save-credentials-file.md}
+talk-macros.gpp}oftware/includes/save-credentials-file.md}
 
-\include{_cloud/includes/history-of-cloud.md}
+talk-macros.gpp}loud/includes/history-of-cloud.md}
 
-\include{_cloud/includes/aws-sign-up.md}
+talk-macros.gpp}loud/includes/aws-sign-up.md}
 
 \notes{The earliest AWS services of S3 and EC2 gave storage and compute. Together these could be combined to host a database service. Today cloud providers also provide machines that are already set up to provide a database service. We will make use of AWS's Relational Database Service to provide our `MariaDB` server.}
 

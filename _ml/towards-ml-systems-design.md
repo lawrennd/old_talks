@@ -30,21 +30,21 @@ categories:
 - glasgow2019
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
-\include{_ml/includes/deep-learning-overview.md}
-\include{_gp/includes/gp-intro-very-short.md}
-\include{_deepgp/includes/deep-olympic.md}
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-\include{_ai/includes/deploying-ai.md}
-\include{_ai/includes/ml-systems-design-long.md}
-\include{_uq/includes/emukit-software.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
+talk-macros.gpp}eepgp/includes/deep-olympic.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}i/includes/deploying-ai.md}
+talk-macros.gpp}i/includes/ml-systems-design-long.md}
+talk-macros.gpp}q/includes/emukit-software.md}
 
 \editme
 \section{Conclusion}

@@ -2,7 +2,7 @@
 \define{mlSystemsDesign}
 \editme
 
-\include{_ai/includes/ml-systems-design-short.md}
+talk-macros.gpp}i/includes/ml-systems-design-short.md}
 
 \newslide{Rapid Reimplementation}
 
@@ -14,7 +14,7 @@
 
 \notes{However, the systems we are deploying into the real world actually effect their environment. They change users responses and experience evolved adversarial behaviour.}
 
-\include{_ai/includes/centrifugal-governor.md}
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
 \newslide{Turnaround And Update}
 \slides{
@@ -38,5 +38,5 @@ One example is asking Siri the question "What is 10 trillion to the power of 100
 
 }
 
-\include{_ai/includes/peppercorn.md}
+talk-macros.gpp}i/includes/peppercorn.md}
 \endif

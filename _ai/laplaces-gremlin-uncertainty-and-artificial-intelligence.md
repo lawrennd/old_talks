@@ -37,19 +37,19 @@ transition: None
 
 
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 \define{noSlideTitle}
 
-\include{_physics/includes/laplaces-demon.md}
-\include{_physics/includes/emergent-behaviour.md}
-\include{_physics/includes/laplaces-gremlin.md}
-\include{_physics/includes/lap-engine.md}
-\include{_physics/includes/theory-of-ignorance.md}
-\include{_physics/includes/entropy-billiards.md}
-\include{_physics/includes/maxwells-demon-short.md}
-\include{_ai/includes/embodiment-factors-celsius.md}
-\include{_ai/includes/conversation-tedx.md}
+talk-macros.gpp}hysics/includes/laplaces-demon.md}
+talk-macros.gpp}hysics/includes/emergent-behaviour.md}
+talk-macros.gpp}hysics/includes/laplaces-gremlin.md}
+talk-macros.gpp}hysics/includes/lap-engine.md}
+talk-macros.gpp}hysics/includes/theory-of-ignorance.md}
+talk-macros.gpp}hysics/includes/entropy-billiards.md}
+talk-macros.gpp}hysics/includes/maxwells-demon-short.md}
+talk-macros.gpp}i/includes/embodiment-factors-celsius.md}
+talk-macros.gpp}i/includes/conversation-tedx.md}
 
 \notes{Stories, between humans.}
 
@@ -57,8 +57,8 @@ transition: None
 
 Norbert Wiener in a letter to his family, 1913}
 
-\include{_ai/includes/heider-simmel.md}
-\include{_ai/includes/conversation-computer.md}
+talk-macros.gpp}i/includes/heider-simmel.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
 
 
 \newslide{}
@@ -69,23 +69,23 @@ Norbert Wiener in a letter to his family, 1913}
 
 \notes{Depending on whether this powerful technology is viewed as beneficent or maleficent, it can be viewed either as a helpful assistant, in the manner of Jeeves, or a tyrannical dictator.}
 
-\include{_ai/includes/ai-as-manservant.md}
+talk-macros.gpp}i/includes/ai-as-manservant.md}
 
 \notes{The history of automation and technology is a history of us adapting to technological change. The invention of the railways, and the need for consistent national times to timetable our movements. The development of the factory system in the mills of Derbyshire required workers to operate and maintain the machines that replaced them.}
 
 \notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that }
 
-\include{_ai/includes/lenox-globe.md}
+talk-macros.gpp}i/includes/lenox-globe.md}
 
 \notes{Introduce Linnaeus and the hydra.}
 
-\include{_philosophy/includes/the-hamburg-hydra.md}
+talk-macros.gpp}hilosophy/includes/the-hamburg-hydra.md}
 
 \speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
 
 
-\include{_ml/includes/deep-face.md}
-\include{_ml/includes/deep-learning-as-pinball.md}
+talk-macros.gpp}l/includes/deep-face.md}
+talk-macros.gpp}l/includes/deep-learning-as-pinball.md}
 
 \newslide{Royal Swedish Academy of Sciences}
 
@@ -117,7 +117,7 @@ Norbert Wiener in a letter to his family, 1913}
 
 \figure{\includediagram{\diagramsDir/ai/human-computers-interacting}{80%}}{Humans and computers interacting should be a major focus of our research and engineering efforts.}{human-computers-interacting}
 
-\include{_physics/includes/richard-feynmann-doubt.md}
+talk-macros.gpp}hysics/includes/richard-feynmann-doubt.md}
 
 \thanks
 

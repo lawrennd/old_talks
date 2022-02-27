@@ -24,7 +24,7 @@ transition: None
 
 
 
-\include{../talk-macros.gpp}
+talk-macros.gpp}/talk-macros.gpp}
 
 
 \subsection{Accelerate-Spark information session}
@@ -58,8 +58,8 @@ To open, Raoul and I will say a few words about the Accelerate
         questions. To ask a question, you can post in the chat or use
         the ‘raise hand’ function.}
 
-\include{_compsci/includes/computer-laboratory.md}
-\include{_accelerate/includes/ai-for-science.md}
+talk-macros.gpp}ompsci/includes/computer-laboratory.md}
+talk-macros.gpp}ccelerate/includes/ai-for-science.md}
 
 \notes{This week we received the wonderful news about the AlphaFold2's
 breakthrough in protein folding prediction. I've already sent my
@@ -101,10 +101,10 @@ learning tools. After initial introduction courses on ML, Challenger
 Mishra will deliver a day focusing on how AI techniques are used in
 science.}
 
-\include{_accelerate/includes/rs-turing-ai-science.md}
-\include{_accelerate/includes/ai-changing-science.md}
-\include{_accelerate/includes/accelerate-programme.md}
-\include{_compsci/includes/j-j-thomson.md}
+talk-macros.gpp}ccelerate/includes/rs-turing-ai-science.md}
+talk-macros.gpp}ccelerate/includes/ai-changing-science.md}
+talk-macros.gpp}ccelerate/includes/accelerate-programme.md}
+talk-macros.gpp}ompsci/includes/j-j-thomson.md}
 
 
 

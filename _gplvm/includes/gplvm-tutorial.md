@@ -1,7 +1,7 @@
 \ifndef{gplvmTutorial}
 \define{gplvmTutorial}
 
-\include{_gplvm/includes/gplvm-tutorial-data.md}
+talk-macros.gpp}plvm/includes/gplvm-tutorial-data.md}
 
 \editme
 
@@ -63,6 +63,6 @@ pb.legend()}
 \codeAssignment{Try modifying the covariance function and running the model again. For example you could try a combination of the linear and exponentiated quadratic covariance function or the Matern 5/2. If you run into stability problems try initializing the covariance function parameters differently.}
 
 
-\include{_gplvm/includes/cmu-mocap-gplvm.md}
+talk-macros.gpp}plvm/includes/cmu-mocap-gplvm.md}
 
 \endif

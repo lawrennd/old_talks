@@ -33,10 +33,10 @@ ipynb: False
   * Place *people* at the heart.}
 
 
-\include{_ai/includes/deploying-ai.md}
-\include{_data-science/includes/access-assess-address.md}
+talk-macros.gpp}i/includes/deploying-ai.md}
+talk-macros.gpp}ata-science/includes/access-assess-address.md}
 
-\include{_data-science/includes/fynesse-template.md}
+talk-macros.gpp}ata-science/includes/fynesse-template.md}
 
 \newslide{Assignment}
 
@@ -66,7 +66,7 @@ ipynb: False
 
 \references
 
-\include{_ai/includes/ml-systems-design-long.md}
+talk-macros.gpp}i/includes/ml-systems-design-long.md}
 
 \subsection{The Three Ds of Machine Learning Systems Design}
 
@@ -82,18 +82,18 @@ ipynb: False
 
 \notes{The first two components *decomposition* and *data* are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
 
-\include{_data-science/includes/a-time-for-professionalisation.md}
-\include{_policy/includes/data-as-a-convener.md}
+talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
+talk-macros.gpp}olicy/includes/data-as-a-convener.md}
 
 \section{Delve}
 
-\include{_delve/includes/delve-report-list.md}
+talk-macros.gpp}elve/includes/delve-report-list.md}
 
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
-\include{_delve/includes/delve-data-report.md}
+talk-macros.gpp}elve/includes/delve-data-report.md}
 
-\notes{\include{_delve/includes/data-report-recommendations.md}}
+\notes{talk-macros.gpp}elve/includes/data-report-recommendations.md}}
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 

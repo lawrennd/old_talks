@@ -21,6 +21,6 @@ Methods that are based on gradients only include [L-BFGS](http://en.wikipedia.or
 \notes{We've introduced the formalism for generalized linear models. Have a think about how you might model count data using the [Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) and a log link function for the rate, $\lambda(\inputVector)$. If you want a data set you can try the `pods.datasets.google_trends()` for some count data.}
 
 
-\include{_ml/includes/poisson-regression.md}
+talk-macros.gpp}l/includes/poisson-regression.md}
 
 \endif

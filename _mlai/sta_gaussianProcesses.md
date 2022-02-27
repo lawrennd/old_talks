@@ -32,7 +32,7 @@ import mlai
 * Gaussian processes is a general framework (basis functions special case)
 * Within the framework you can consider models with infinite basis functions.
 
-\include{_gp/includes/gptwopointpred.md}
+talk-macros.gpp}p/includes/gptwopointpred.md}
 \newslide{Sampling a Function}
 
 **Multi-variate Gaussians**

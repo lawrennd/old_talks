@@ -29,35 +29,35 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \section{Introduction}
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-\include{_ai/includes/centrifugal-governor.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
 \section{Machine Learning, Artificial Intelligence and Data Science}
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \section{Human Intelligence}
 
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ai/includes/intelligenceDefinition.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
-\include{_ml/includes/deep-learning-overview.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/intelligenceDefinition.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
 \section{Data Science and Professionalisation}
-\include{_data-science/includes/a-time-for-professionalisation.md}
-\include{_supply-chain/includes/bits-and-atoms.md}
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
+talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
+talk-macros.gpp}upply-chain/includes/bits-and-atoms.md}
+talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
 
 \todo{THE DANGER OF LOST TECHNOLOGIES THE PROGRAMMER CAN DEPLOY QUICKLY}
 
 \section{The Three Ds of ML Systems Design}
-\include{_ml/includes/the-3ds-of-ml-systems-design.md}
-\include{_ml/includes/ml-outlook.md}
+talk-macros.gpp}l/includes/the-3ds-of-ml-systems-design.md}
+talk-macros.gpp}l/includes/ml-outlook.md}
 
 \section{Conclusion}
 

@@ -19,10 +19,10 @@ If you were designing your own ride hailing app, or any other major commercial s
   \define{databaseType}{sqlite}
 \endif
 \ifeq{\databaseType}{sqlite}
-  \include{_systems/includes/nigeria-nmis-sqlite.md}
+  talk-macros.gpp}ystems/includes/nigeria-nmis-sqlite.md}
 \else
   \ifeq{\databaseType}{mariadb}
-    \include{_systems/includes/nigeria-nmis-mariadb.md}
+    talk-macros.gpp}ystems/includes/nigeria-nmis-mariadb.md}
   \endif
 \endif
 
@@ -48,10 +48,10 @@ We can pass the `table_name` and number of rows, `n`, to the python command.}
 
 
 \ifeq{\databaseType}{sqlite}
-  \include{_systems/includes/nigeria-nmis-wrap-sqlite.md}
+  talk-macros.gpp}ystems/includes/nigeria-nmis-wrap-sqlite.md}
 \else
   \ifeq{\databaseType}{mariadb}
-    \include{_systems/includes/nigeria-nmis-wrap-mariadb.md}
+    talk-macros.gpp}ystems/includes/nigeria-nmis-wrap-mariadb.md}
   \endif
 \endif
 

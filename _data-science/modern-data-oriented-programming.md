@@ -32,13 +32,13 @@ venue: Advances and Challenges in Machine Learning Languages, Centre for Mathema
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-<!--\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}-->
-\include{_ai/includes/centrifugal-governor.md}
+<!--talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}-->
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \subsection{Amazon: Bits and Atoms}
 
@@ -91,12 +91,12 @@ include{_data-science/includes/data-readiness-levels.md}
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 -->
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/supply-chain-motto.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain-motto.md}
 
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 \subsection{The Three Ds of Machine Learning Systems Design}
@@ -108,19 +108,19 @@ include{_data-science/includes/data-readiness-levels.md}
 3. Deployment
 }
 
-\include{_data-science/includes/experiment-analyze-design.md}
+talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
 
 \notes{We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.}
 
 \notes{The first two components *decomposition* and *data* are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
 
-\include{_ml/includes/ml-data-challenge.md}
-\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
-\include{_ml/includes/ml-outlook.md}
+talk-macros.gpp}l/includes/ml-data-challenge.md}
+talk-macros.gpp}l/includes/ml-combining-data-and-systems-design-challenge.md}
+talk-macros.gpp}l/includes/ml-outlook.md}
 
 
-\include{_data-science/includes/data-oriented-architectures.md}
-\include{_data-science/includes/data-oriented-conclusions.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
+talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
 
 
 \thanks

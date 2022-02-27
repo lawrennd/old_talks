@@ -19,7 +19,7 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \notes{\subsection{Introduction}
 

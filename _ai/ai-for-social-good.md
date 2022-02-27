@@ -17,20 +17,20 @@ venue: Downing College, Cambridge
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
 
-\include{_ai/includes/centrifugal-governor.md}
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
-\include{_ai/includes/the-fourth-industrial-revolution.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}i/includes/the-fourth-industrial-revolution.md}
 
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-\include{_data-science/includes/data-science-africa.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}ata-science/includes/data-science-africa.md}
 
 
 \subsection{Conclusion}

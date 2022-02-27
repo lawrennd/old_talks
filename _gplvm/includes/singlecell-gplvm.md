@@ -1,7 +1,7 @@
 \ifndef{singlecellGplvm}
 \define{singlecellGplvm}
 
-\include{_datasets/includes/singlecell-data.md}
+talk-macros.gpp}atasets/includes/singlecell-data.md}
 
 \editme
 

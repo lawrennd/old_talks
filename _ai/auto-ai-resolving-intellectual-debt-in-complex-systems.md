@@ -20,20 +20,20 @@ venue: "The Turing Presents: AI UK"
 transition: None
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_ai/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 
 
-\include{_ai/includes/embodiment-factors-celsius.md}
-\include{_ai/includes/conversation-tedx.md}
-\include{_ai/includes/conversation-computer.md}
-\include{_ml/includes/data-science-vs-ai.md}
+talk-macros.gpp}i/includes/embodiment-factors-celsius.md}
+talk-macros.gpp}i/includes/conversation-tedx.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
 
-\include{_ai/includes/buying-system.md}
-\include{_ai/includes/buying-to-banking.md}
+talk-macros.gpp}i/includes/buying-system.md}
+talk-macros.gpp}i/includes/buying-to-banking.md}
 
-\include{_business/includes/bezos-question-mark-email.md}
+talk-macros.gpp}usiness/includes/bezos-question-mark-email.md}
 
 \slides{
 \newslide{Intellectual Debt}
@@ -42,8 +42,8 @@ transition: None
 
 }
 
-\notes{\include{_ai/includes/intellectual-debt-short.md}}
-\include{_ai/includes/fit-systems.md}
+\notes{talk-macros.gpp}i/includes/intellectual-debt-short.md}}
+talk-macros.gpp}i/includes/fit-systems.md}
 
 
 \thanks
@@ -53,16 +53,16 @@ transition: None
 
 \subsection{Appendices}
 
-\include{_governance/includes/how-gdpr-may-help.md}
+talk-macros.gpp}overnance/includes/how-gdpr-may-help.md}
 
 
-\include{_uq/includes/emulation.md}
+talk-macros.gpp}q/includes/emulation.md}
 
 \notes{The first tutorial I saw on Gaussian processes was given by [Chris Williams](https://homepages.inf.ed.ac.uk/ckiw/) at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, [Chris Bishop](https://www.microsoft.com/en-us/research/people/cmbishop/) (now Director of Microsoft Research in Cambridge).}
 
-\include{_gp/includes/gp-intro-very-short.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
 
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 \references
 

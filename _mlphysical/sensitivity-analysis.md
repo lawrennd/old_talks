@@ -24,10 +24,10 @@ oldyoutube:
 transition: None
 ---
 
-\include{_mlphysical/includes/mlphysical-notebook-setup.md}
+talk-macros.gpp}lphysical/includes/mlphysical-notebook-setup.md}
 
-\include{_uq/includes/emukit-sensitivity-analysis.md}
-\include{_uq/includes/catapult-sensitivity-analysis.md}
+talk-macros.gpp}q/includes/emukit-sensitivity-analysis.md}
+talk-macros.gpp}q/includes/catapult-sensitivity-analysis.md}
 
 \thanks
 

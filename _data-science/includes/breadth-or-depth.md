@@ -59,7 +59,7 @@
 \slides{
 * Can either see a wood or a tree.}
 
-\include{_data-science/includes/wood-or-trees-picture.md}
+talk-macros.gpp}ata-science/includes/wood-or-trees-picture.md}
 
 <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
 

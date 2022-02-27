@@ -12,8 +12,8 @@
 
 While recent achievements might give the sense that the answer is yes, the short answer is that we are nowhere near. All we’ve achieved for the moment is a breakthrough in *emulating intelligence*. }
 
-\include{_ai/includes/what-is-intelligence.md}
-\include{_ai/includes/current-situation-short.md}
+talk-macros.gpp}i/includes/what-is-intelligence.md}
+talk-macros.gpp}i/includes/current-situation-short.md}
 
 \newslide{}
 \slides{
@@ -22,7 +22,7 @@ While recent achievements might give the sense that the answer is yes, the short
 * My favourite example is the [Centrifugal governor](https://en.wikipedia.org/wiki/Centrifugal_governor). 
 }
 
-\include{_ai/includes/a-man-and-his-dog.md}
+talk-macros.gpp}i/includes/a-man-and-his-dog.md}
 
 
 \newslide{Computers}

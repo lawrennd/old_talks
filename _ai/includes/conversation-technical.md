@@ -1,3 +1,3 @@
 \define{\stubname}{anne-bob}
 
-\include{_ai/includes/anne-bob-talk.md}
+talk-macros.gpp}i/includes/anne-bob-talk.md}

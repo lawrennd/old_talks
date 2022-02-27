@@ -24,7 +24,7 @@ reveal: True
 transition: None
 ---
 
-\include{_mlphysical/includes/mlphysical-notebook-setup.md}
+talk-macros.gpp}lphysical/includes/mlphysical-notebook-setup.md}
 
 \section{An Introduction to Multi-fidelity Modeling in Emukit}
 
@@ -87,12 +87,12 @@ and demonstrate how an alternate model proposed in
 presented in this notebook can then be easily adapted to a variety of
 problem settings.}
 
-\include{_uq/includes/emukit-multifidelity.md}
-\include{_deepgp/includes/stochastic-process-composition.md}
-\include{_deepgp/includes/process-composition.md}
-\include{_deepgp/includes/deep-gp-setup-code.md}
-\include{_deepgp/includes/olympic-marathon-deep-gp.md}
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}q/includes/emukit-multifidelity.md}
+talk-macros.gpp}eepgp/includes/stochastic-process-composition.md}
+talk-macros.gpp}eepgp/includes/process-composition.md}
+talk-macros.gpp}eepgp/includes/deep-gp-setup-code.md}
+talk-macros.gpp}eepgp/includes/olympic-marathon-deep-gp.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 \subsection{Brief Reflection}
 \slides{* Given you a toolkit of Surrogate Modelling.
@@ -109,14 +109,14 @@ problem settings.}
 
 \figure{\includediagram{\diagramsDir/uq/mountain-car-emulation}{80%}}{The mountain car example contains a simulation of a car's dynamics within the wider simulation of the mountain. The simulation of the car is called as a subroutine many times by the wider simulation of the mountain. We can choose to build a surrogate model of the car, and work with a modified mountain simulation where the emulator is called instead of the car's simulation directly.}{mountain-car-emulation}
 
-\include{_uq/includes/mountain-car-simulation.md}
-\include{_uq/includes/mountain-car-data-efficient.md}
-\include{_uq/includes/mountain-car-multi-fidelity-introduction.md}
+talk-macros.gpp}q/includes/mountain-car-simulation.md}
+talk-macros.gpp}q/includes/mountain-car-data-efficient.md}
+talk-macros.gpp}q/includes/mountain-car-multi-fidelity-introduction.md}
 
 \codeAssignment{Can you build a multifidelity emulator for the mountain car problem similar to that we build for the Forrester function above?}{}{40}
 
 
-\include{_ai/includes/prime-air-system.md}
+talk-macros.gpp}i/includes/prime-air-system.md}
 
 \thanks
 

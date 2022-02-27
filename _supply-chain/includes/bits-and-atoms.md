@@ -20,18 +20,18 @@ That notion is the most fundamental notion for how the modern information infras
 
 \notes{There is a gap between the world of data science and AI. The mapping of the virtual onto the physical world, e.g causal and mechanistic understanding.}
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
 
 
 \newslide{Bits and Atoms: Information Meets Goods}
 
-\include{_data-science/includes/data-science-africa.md}
-\include{_data-science/includes/crop-monitoring.md}
-\include{_data-science/includes/biosurveillance.md}
-\include{_data-science/includes/community-radio.md}
-\include{_data-science/includes/kudu-project.md}
-\include{_data-science/includes/safe-boda.md}
+talk-macros.gpp}ata-science/includes/data-science-africa.md}
+talk-macros.gpp}ata-science/includes/crop-monitoring.md}
+talk-macros.gpp}ata-science/includes/biosurveillance.md}
+talk-macros.gpp}ata-science/includes/community-radio.md}
+talk-macros.gpp}ata-science/includes/kudu-project.md}
+talk-macros.gpp}ata-science/includes/safe-boda.md}
 
 
 \endif

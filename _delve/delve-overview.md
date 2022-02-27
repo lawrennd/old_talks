@@ -6,7 +6,7 @@ venue: HDR Meeting
 layout: talk
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 
 \newslide{Overview}

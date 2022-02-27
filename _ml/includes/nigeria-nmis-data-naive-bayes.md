@@ -1,7 +1,7 @@
 \ifndef{nigeriaNmisDataNaiveBayes}
 \define{nigeriaNmisDataNaiveBayes}
 
-\include{_datasets/includes/nigeria-nmis-data-classification.md}
+talk-macros.gpp}atasets/includes/nigeria-nmis-data-classification.md}
 
 \editme
 

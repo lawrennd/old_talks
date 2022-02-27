@@ -2,7 +2,7 @@
 \define{keplerLightcurveDataCleaning}
 
 
-\include{_datasets/includes/kepler-lightcurve-data.md}
+talk-macros.gpp}atasets/includes/kepler-lightcurve-data.md}
 
 \editme
 

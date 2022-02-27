@@ -3,8 +3,8 @@
 
 
 
-\include{_physics/includes/daniel-bernoulli-hydrodynamica.md}
-\include{_physics/includes/entropy-billiards.md}
+talk-macros.gpp}hysics/includes/daniel-bernoulli-hydrodynamica.md}
+talk-macros.gpp}hysics/includes/entropy-billiards.md}
 
 \editme
 

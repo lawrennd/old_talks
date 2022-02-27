@@ -11,7 +11,7 @@
 <div><input type="range" min="0" max="100" value="0" class="slider" id="kappenball-stochasticity" style="width:900px;"/></div>
 <div><button id="kappenball-newball" style="text-align:right">New Ball</button><button id="kappenball-pause" style="text-align:right">Pause</button></div>
 <output id="kappenball-count"></output>
-\include{_scripts/includes/kappenball-js.md}
+talk-macros.gpp}cripts/includes/kappenball-js.md}
 </div>}{Kappen Ball}{kappen-ball}
 
 

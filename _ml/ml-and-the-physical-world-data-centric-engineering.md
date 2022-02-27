@@ -31,13 +31,13 @@ venue: Data Centric Engineering
 transition: None
 ---
 
-<!--\include{_physics/includes/laplaces-demon.md}-->
-\include{_physics/includes/emergent-behaviour.md}
-<!--\include{_physics/includes/laplaces-gremlin.md}-->
+<!--talk-macros.gpp}hysics/includes/laplaces-demon.md}-->
+talk-macros.gpp}hysics/includes/emergent-behaviour.md}
+<!--talk-macros.gpp}hysics/includes/laplaces-gremlin.md}-->
 
-\include{_ai/includes/centrifugal-governor.md}
-<!--\include{_ml/includes/process-automation.md}
-\include{_ai/includes/ai-vs-data-science-2.md}-->
+talk-macros.gpp}i/includes/centrifugal-governor.md}
+<!--talk-macros.gpp}l/includes/process-automation.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}-->
 
 \newslide{The Gap}
 
@@ -45,21 +45,21 @@ transition: None
 * The mapping of the virtual onto the physical world.
 * E.g. Causal understanding. 
 
-\include{_ai/includes/prime-air-system.md}
+talk-macros.gpp}i/includes/prime-air-system.md}
 
 
-\include{_ai/includes/buying-system.md}
+talk-macros.gpp}i/includes/buying-system.md}
 
-\include{_ai/includes/intellectual-debt-short.md}
+talk-macros.gpp}i/includes/intellectual-debt-short.md}
 
-\include{_uq/includes/emulation.md}
+talk-macros.gpp}q/includes/emulation.md}
 
-\include{_ai/includes/auto-ai-overview.md}
+talk-macros.gpp}i/includes/auto-ai-overview.md}
 
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
-\include{_accelerate/includes/accelerate-programme.md}
-\include{_ml/includes/ml-and-the-physical-world-course.md}
+talk-macros.gpp}ccelerate/includes/accelerate-programme.md}
+talk-macros.gpp}l/includes/ml-and-the-physical-world-course.md}
 
 
 

@@ -143,7 +143,7 @@ $\mappingFunction_i = \mappingVector^\top
 \basisVector(\inputVector_i)$ we can plot the value of the inverse
 link function as below.
 
-\include{_ml/includes/sigmoid-function.md}
+talk-macros.gpp}l/includes/sigmoid-function.md}
 
 By replacing the inverse link with the sigmoid we can write $\pi$ as a
 function of the input and the parameter vector as,

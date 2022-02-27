@@ -5,9 +5,9 @@ abstract: Naive Bayes assumptions allow us to specify class conditional densitie
 youtube: e-BWWidfbT4
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_mlai/includes/mlai-notebook-setup.md}
+talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
@@ -65,7 +65,7 @@ always have all the inputs at run time, it may make sense to
 *directly* model the conditional density,
 $p(\dataVector|\inputMatrix)$.}
 
-\include{_ml/includes/logistic-regression.md}
+talk-macros.gpp}l/includes/logistic-regression.md}
 
 \newslide{Ad Matching for Facebook}
 
@@ -90,8 +90,8 @@ data = pods.datasets.olivetti_glasses()
 X = data['X']
 y = data['Y']}
 
-\include{_ml/includes/logistic-regression-gradient-descent.md}
-\include{_ml/includes/logistic-regression-going-further.md}
+talk-macros.gpp}l/includes/logistic-regression-gradient-descent.md}
+talk-macros.gpp}l/includes/logistic-regression-going-further.md}
 
 
 \subsection{Bayesian Approaches}

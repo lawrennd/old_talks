@@ -27,40 +27,40 @@ categories:
 - notes
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \section{Introduction}
 
 
-\include{_ml/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
 
 <!-- Embodiment Factors-->
 
-\include{_ai/includes/embodiment-factors-tedx.md}
+talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
 
 <!-- Data Science (why it's happening) -->
 
-\include{_data-science/includes/evolved-relationship.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
 
-\include{_data-science/includes/lies-damned-lies.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
 
 \subsection{Post Digital Transformation}
 
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \subsection{Example: Supply Chain}
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
 
 <!--Duke of York Effect -->
 
-\include{_data-science/includes/value-of-data.md}
-\include{_data-science/includes/data-readiness-levels.md}
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
+talk-macros.gpp}ata-science/includes/value-of-data.md}
+talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
+talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
 
 
-\include{_ai/includes/five-ai-myths.md}
+talk-macros.gpp}i/includes/five-ai-myths.md}
 
 
 \thanks

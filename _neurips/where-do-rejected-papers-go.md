@@ -35,7 +35,7 @@ transition: None
 ---
 
 
-\include{_neurips/includes/where-do-the-rejected-papers-go.md}
+talk-macros.gpp}eurips/includes/where-do-the-rejected-papers-go.md}
 
 
 \thanks

@@ -1,6 +1,6 @@
 \ifndef{mlParadigmShift}
 \define{mlParadigmShift}
 
-\include{_ml/includes/code-data-separation-transgression.md}
+talk-macros.gpp}l/includes/code-data-separation-transgression.md}
 
 \endif

@@ -1,4 +1,4 @@
-\include{_ml/includes/regression.md}
+talk-macros.gpp}l/includes/regression.md}
 
 ### Contour Plot of Error Function
 

@@ -39,7 +39,7 @@ P(Y=y) \approx \frac{n_y}{N}.
 $$}
 
 
-\include{_ml/includes/nigeria-nmis-probability.md}
-\include{_ml/includes/probability-review.md}
+talk-macros.gpp}l/includes/nigeria-nmis-probability.md}
+talk-macros.gpp}l/includes/probability-review.md}
 
 \endif

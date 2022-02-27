@@ -23,7 +23,7 @@ Amazon is known for being longer term thinking than many companies, and a lot of
 
 <!--These challenges are not just there for Amazon and Formula 1. In Sheffield, we worked closely with a Chesterfield based company called Fusion Group. They make joints that fuse PTFE pipes together. These pipes are used for transporting both water and gas. Their founder, Eric Bridgstock, was an engineer who introduced PTFE piping to the UK when working for DuPont. Eric set up Fusion group to manufacture the fusion fittings. Because PTFE pipes carry water or gas at high pressure, when these fittings fail significant damage can occur. When these fittings were originally installed in the early 1980s, the job was done by a specialist, but nowadays the pipe weld is compelted by the same team that digs the hole. While costs have come down, the number of PTFE weld failures went up. Eric's company focussed on new systems for auto-->
 
-\include{_data-science/includes/experiment-analyze-design-diagram.md}
+talk-macros.gpp}ata-science/includes/experiment-analyze-design-diagram.md}
 
 \newslide{A Vision}
 

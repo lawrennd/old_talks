@@ -15,18 +15,18 @@ venue: Computational Oncology Meeting, CRUK
 transition: None
 ---
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
 
-\include{_health/includes/deep-health-model.md}
-\include{_health/includes/data-sources.md}
-\include{_health/includes/rolls-royce-analogy.md}
-\include{_governance/includes/feudal-era-data-ecosystem.md}
-\include{_governance/includes/data-governance-toolkit.md}
-\include{_governance/includes/how-gdpr-may-help.md}
+talk-macros.gpp}ealth/includes/deep-health-model.md}
+talk-macros.gpp}ealth/includes/data-sources.md}
+talk-macros.gpp}ealth/includes/rolls-royce-analogy.md}
+talk-macros.gpp}overnance/includes/feudal-era-data-ecosystem.md}
+talk-macros.gpp}overnance/includes/data-governance-toolkit.md}
+talk-macros.gpp}overnance/includes/how-gdpr-may-help.md}
 
 <!--include{_ai/includes/government-reports.md}-->
-\include{_governance/includes/data-trusts.md}
+talk-macros.gpp}overnance/includes/data-trusts.md}
 
 \thanks
 

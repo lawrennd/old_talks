@@ -26,7 +26,7 @@ papersize: a4paper
 transition: None
 ---
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
 \newslide{}
 
@@ -49,11 +49,11 @@ transition: None
 
 \includejpg{\diagramsDir/ai/superintelligence-paths-dangers-strategies}{50%}-->
 
-\include{_ai/includes/thinking-fast-and-slow.md}
+talk-macros.gpp}i/includes/thinking-fast-and-slow.md}
 
-\include{_ai/includes/the-righteous-mind.md}
+talk-macros.gpp}i/includes/the-righteous-mind.md}
 
-\include{_ai/includes/elephant-boy-poster.md}
+talk-macros.gpp}i/includes/elephant-boy-poster.md}
 \undef{elephantBoyPoster}
 
 
@@ -182,7 +182,7 @@ transition: None
 
 \includeyoutube{tUlAV-stPvE}
 
-\include{_ai/includes/elephant-boy-poster.md}
+talk-macros.gpp}i/includes/elephant-boy-poster.md}
 
 \section{Unconscious Bias and System Zero}
 
@@ -190,15 +190,15 @@ transition: None
 
 \newslide{}
 
-\include{_ai/includes/mechanical-elephant.md}
+talk-macros.gpp}i/includes/mechanical-elephant.md}
 
 \newslide{}
 
 \includejpg{\diagramsDir/ai/star-trek-borg}{80%}
 
-\include{_ai/includes/thinking-fast-and-slow.md}
-\include{_ml/includes/deep-learning-overview.md}
-\include{_ai/includes/the-hindoo-earth.md}
+talk-macros.gpp}i/includes/thinking-fast-and-slow.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
+talk-macros.gpp}i/includes/the-hindoo-earth.md}
 
 \newslide{}
 

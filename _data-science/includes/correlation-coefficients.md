@@ -39,7 +39,7 @@ Computing the correlation between two values is a way to determine if the values
 
 \notes{Let's look an example using the Nigerian NMIS data.}
 
-\include{_systems/includes/nigeria-nmis-data-systems.md}
+talk-macros.gpp}ystems/includes/nigeria-nmis-data-systems.md}
 
 \notes{We'll just look at the numbers of nurses, doctors, midwives and community health extension workers (CHEWs).}
 

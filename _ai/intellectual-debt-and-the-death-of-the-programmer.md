@@ -19,10 +19,10 @@ venue: Distinguished Lecture Series on Information Engineering
 transition: None
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 
-\include{_ai/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 
 \subsection{The News}
 
@@ -80,7 +80,7 @@ exactly those that my research is designed to address.
 
 So, what is intellectual debt?}
 
-\include{_ai/includes/intellectual-debt.md}
+talk-macros.gpp}i/includes/intellectual-debt.md}
 
 \subsection{Virtual Gemba Walks}
 
@@ -128,13 +128,13 @@ to hope you have an old-hand Engineer, let's call him Lancelot, whose
 long-standing presence in your organisation gives them a handle on how
 things are constructed.}
 
-\include{_software/includes/lancelot.md}
-\include{_ai/includes/data-and-intellectual-debt.md}
+talk-macros.gpp}oftware/includes/lancelot.md}
+talk-macros.gpp}i/includes/data-and-intellectual-debt.md}
 
-\include{_ml/includes/the-death-of-the-programmer.md}
-\include{_ai/includes/fit-systems.md}
-\include{_data-science/includes/data-oriented-architectures-short.md}
-\include{_data-science/includes/milan.md}
+talk-macros.gpp}l/includes/the-death-of-the-programmer.md}
+talk-macros.gpp}i/includes/fit-systems.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures-short.md}
+talk-macros.gpp}ata-science/includes/milan.md}
 
 \section{News}
 

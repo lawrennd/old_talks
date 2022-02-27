@@ -16,13 +16,13 @@ venue: MLSS, Stellenbosch, South Africa
 transition: None
 ---
 \define{draft}
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_gp/includes/planck-cmp-master-gp.md}
+talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
 
 \newslide{Approximate Gaussian Processes}
 
-\include{_gp/includes/approximate-gps.md}
+talk-macros.gpp}p/includes/approximate-gps.md}
 
 \newslide{Thanks!}
 

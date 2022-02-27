@@ -6,9 +6,9 @@ abstract: |
 youtube: 5VPr6NbHHjg
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_mlai/includes/mlai-notebook-setup.md}
+talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
@@ -16,15 +16,15 @@ youtube: 5VPr6NbHHjg
 * Minimized sum of squares objective by steepest descent and stochastic gradients.
 * This time: explore least squares for regression.
 
-\include{_ml/includes/regression-examples.md}
+talk-macros.gpp}l/includes/regression-examples.md}
 
-\include{_datasets/includes/olympic-100m-data.md}
+talk-macros.gpp}atasets/includes/olympic-100m-data.md}
 
 
-\include{_datasets/includes/olympic-marathon-data.md}
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/sum-of-squares-error.md}
-\include{_ml/includes/linear-algebra-regression.md}
+talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/sum-of-squares-error.md}
+talk-macros.gpp}l/includes/linear-algebra-regression.md}
 
 \thanks
 

@@ -22,28 +22,28 @@ categories:
 - notes
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/olympic-marathon-data.md}
-\include{_ml/includes/linear-algebra-regression.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/olympic-marathon-data.md}
+talk-macros.gpp}l/includes/linear-algebra-regression.md}
 
-\include{_ml/includes/basis-functions-intro.md}
+talk-macros.gpp}l/includes/basis-functions-intro.md}
 
-\include{_ml/includes/olympic-marathon-polynomial.md}
+talk-macros.gpp}l/includes/olympic-marathon-polynomial.md}
 
-\include{_ml/includes/underdetermined-system.md}
+talk-macros.gpp}l/includes/underdetermined-system.md}
 
-\include{_ml/includes/alan-turing-marathon.md}
+talk-macros.gpp}l/includes/alan-turing-marathon.md}
 
-\include{_ml/includes/bayesian-regression1d.md}
+talk-macros.gpp}l/includes/bayesian-regression1d.md}
 
-\include{_ml/includes/two-d-gaussian.md}
+talk-macros.gpp}l/includes/two-d-gaussian.md}
 
-\include{_ml/includes/prior-sampling-basis.md}
-\include{_ml/includes/posterior-computation-gaussian.md}
-\include{_ml/includes/olympic-marathon-bayesian-polynomial.md}
-\include{_ml/includes/polynomial-marginal-likelihood.md}
+talk-macros.gpp}l/includes/prior-sampling-basis.md}
+talk-macros.gpp}l/includes/posterior-computation-gaussian.md}
+talk-macros.gpp}l/includes/olympic-marathon-bayesian-polynomial.md}
+talk-macros.gpp}l/includes/polynomial-marginal-likelihood.md}
 
 \thanks
 

@@ -1,7 +1,7 @@
 \ifndef{mnistDigitsSubsampleDeepGp}
 \define{mnistDigitsSubsampleDeepGp}
 
-\include{_datasets/includes/mnist-digits-subsample-data.md}
+talk-macros.gpp}atasets/includes/mnist-digits-subsample-data.md}
 
 \editme
 
@@ -11,7 +11,7 @@
 
 \notes{We now look at the deep Gaussian processes' capacity to perform unsupervised learning.}
 
-\include{_deepgp/includes/pydeepgp-include.md}
+talk-macros.gpp}eepgp/includes/pydeepgp-include.md}
 
 \notes{
 \subsection{Fit a Deep GP}

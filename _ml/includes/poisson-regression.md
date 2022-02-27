@@ -1,7 +1,7 @@
 \ifndef{poissonRegression}
 \define{poissonRegression}
 
-\include{_ml/includes/poisson-distribution.md}
+talk-macros.gpp}l/includes/poisson-distribution.md}
 
 \editme
 

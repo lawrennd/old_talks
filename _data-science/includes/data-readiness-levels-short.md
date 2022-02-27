@@ -14,6 +14,6 @@
 
 \notes{See this }\addblog{Data Readiness Levels}{2017/01/12/data-readiness-levels}
 
-\include{_data-science/includes/three-grades-of-data-readiness.md}
+talk-macros.gpp}ata-science/includes/three-grades-of-data-readiness.md}
 
 \endif

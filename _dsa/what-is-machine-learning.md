@@ -20,12 +20,12 @@ papersize: a4paper
 transition: None
 ---
 
-\include{../talk-macros.gpp}
+talk-macros.gpp}/talk-macros.gpp}
 
 \section{Introduction}
 
-\include{_data-science/includes/data-science-africa.md}
-\include{_health/includes/malaria-gp.md}
+talk-macros.gpp}ata-science/includes/data-science-africa.md}
+talk-macros.gpp}ealth/includes/malaria-gp.md}
 
 \subsection{Machine Learning}
 \notes{This talk is a general introduction to machine learning, we will highlight the technical challenges and the current solutions. We will give an overview of what is machine learning and why it is important.}
@@ -44,8 +44,8 @@ $$
 \notes{Machine learning has risen in prominence due to the rise in data availability, and its interconnection with computers. The high bandwidth connection between data and computer leads to a new interaction between us and data via the computer. It is that channel that is being mediated by machine learning techniques.}
 \figure{\includediagram{\diagramsDir/data-science/new-flow-of-information}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
 
-\include{_supply-chain/includes/supply-chain-africa.md}
-\include{_ml/includes/process-emulation.md}
+talk-macros.gpp}upply-chain/includes/supply-chain-africa.md}
+talk-macros.gpp}l/includes/process-emulation.md}
 
 \newslide{Kapchorwa District}
 
@@ -53,12 +53,12 @@ $$
 
 \notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
 
-\include{_ml/includes/olympic-marathon-polynomial.md}
-\include{../_ml/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}l/includes/olympic-marathon-polynomial.md}
+talk-macros.gpp}/_ml/includes/what-does-machine-learning-do.md}
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
-\include{_ml/includes/neural-networks.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/neural-networks.md}
 
 \subsection{Machine Learning}
 \slides{
@@ -81,16 +81,16 @@ $$
 2. <s>Unsupervised learning</s>
 3. <s>Reinforcement learning</s>
 }
-\include{_ml/includes/supervised-learning.md}
+talk-macros.gpp}l/includes/supervised-learning.md}
 <!-- Leave unsupervised and reinforcement learning in the notes -->
 \notes{
-\include{_ml/includes/unsupervised-learning.md}
-\include{_ml/includes/reinforcement-learning.md}
+talk-macros.gpp}l/includes/unsupervised-learning.md}
+talk-macros.gpp}l/includes/reinforcement-learning.md}
 
 \notes{We have introduced a range of machine learning approaches by focusing on their use of mathematical functions to replace manually coded systems of rules. The important characteristic of machine learning is that the form of these functions, as dictated by their parameters, is determined by acquiring data from the real world.}
 
 
-\include{_ml/includes/deployment.md}}
+talk-macros.gpp}l/includes/deployment.md}}
 
 \thanks
 

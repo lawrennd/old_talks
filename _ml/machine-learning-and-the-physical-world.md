@@ -17,12 +17,12 @@ papersize: a4paper
 transition: None
 ---
 
-\include{_ai/includes/centrifugal-governor.md}
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ml/includes/process-automation.md}
-\include{_supply-chain/includes/amazon-drone-flight.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}l/includes/process-automation.md}
+talk-macros.gpp}upply-chain/includes/amazon-drone-flight.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \newslide{The Gap}
 
@@ -30,18 +30,18 @@ transition: None
 * The mapping of the virtual onto the physical world.
 * E.g. Causal understanding. 
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 
 \section{UNCERTAINTY QUANTIFICATION}
 
-\include{_ml/includes/process-emulation.md}
-\include{_uq/includes/emukit-playground.md}
-\include{_uq/includes/uncertainty-quantification.md}
-\include{_software/includes/emukit-software.md}
-\include{_ml/includes/mxfusion-software.md}
-\include{_ml/includes/mxfusion-pilco.md}
+talk-macros.gpp}l/includes/process-emulation.md}
+talk-macros.gpp}q/includes/emukit-playground.md}
+talk-macros.gpp}q/includes/uncertainty-quantification.md}
+talk-macros.gpp}oftware/includes/emukit-software.md}
+talk-macros.gpp}l/includes/mxfusion-software.md}
+talk-macros.gpp}l/includes/mxfusion-pilco.md}
 
 \subsection{Long term Aim}
 

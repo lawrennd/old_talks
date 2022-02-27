@@ -1,8 +1,8 @@
 \ifndef{dellaGattaDeepGp}
 \define{dellaGattaDeepGp}
 
-\include{_gp/includes/della-gatta-gene-gp.md}
-\include{_deepgp/includes/deepgp-enhance.md}
+talk-macros.gpp}p/includes/della-gatta-gene-gp.md}
+talk-macros.gpp}eepgp/includes/deepgp-enhance.md}
 
 \editme
 

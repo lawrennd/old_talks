@@ -73,9 +73,9 @@ and models need retraining or restructuring.
 }
 
 \ifndef{shortVersion}
-\include{_data-science/includes/data-oriented-architectures.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
 \else
-\include{_data-science/includes/data-oriented-architectures-short.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures-short.md}
 \endif
 
 \endif

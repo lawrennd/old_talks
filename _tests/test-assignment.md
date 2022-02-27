@@ -16,7 +16,7 @@ author:
 venue: University of Testing
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 \writeassignment{Give seventeen reasons why testing code is a good idea.}{17}
 

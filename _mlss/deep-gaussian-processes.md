@@ -18,13 +18,13 @@ transition: None
 
 \notes{In the previous session on Gaussian processes, we introduced the Gaussian process model and the covariance function. In this session we are going to address two challenges of the Gaussian process. Firstly, we look at the computational tractability and secondly we look at extending the nature of the process beyond Gaussian.}
 
-\include{_gp/includes/planck-cmp-master-gp.md}
+talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
 
 \section{Computational Complexity}
 
-\include{_gp/includes/approximate-gps-short.md}
-\include{_gp/includes/gp-big-data-technical.md}
-\include{_gp/includes/gp-big-data.md}
+talk-macros.gpp}p/includes/approximate-gps-short.md}
+talk-macros.gpp}p/includes/gp-big-data-technical.md}
+talk-macros.gpp}p/includes/gp-big-data.md}
 
 \newslide{Modern Review}
 
@@ -34,7 +34,7 @@ transition: None
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-\include{_deepgp/includes/deep-gaussian-processes.md}
+talk-macros.gpp}eepgp/includes/deep-gaussian-processes.md}
 
 \newslide{From NIPS 2017}
 
@@ -57,11 +57,11 @@ transition: None
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
-\include{_ml/includes/process-emulation.md}
-\include{_uq/includes/emukit-playground.md}
-\include{_uq/includes/uncertainty-quantification.md}
-\include{_software/includes/emukit-software.md}
-\include{_ml/includes/mxfusion-software.md}
+talk-macros.gpp}l/includes/process-emulation.md}
+talk-macros.gpp}q/includes/emukit-playground.md}
+talk-macros.gpp}q/includes/uncertainty-quantification.md}
+talk-macros.gpp}oftware/includes/emukit-software.md}
+talk-macros.gpp}l/includes/mxfusion-software.md}
 
 \subsection{Long term Aim}
 

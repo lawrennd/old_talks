@@ -3,7 +3,7 @@
 
 \editme
 
-\include{_datasets/includes/robot-wireless-data.md}
+talk-macros.gpp}atasets/includes/robot-wireless-data.md}
 
 \subsection{Gaussian Process Fit to Robot Wireless Data}
 

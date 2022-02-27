@@ -3,7 +3,7 @@
 
 \editme
 
-\include{_deepgp/includes/pydeepgp-include.md}
+talk-macros.gpp}eepgp/includes/pydeepgp-include.md}
 
 \installcode{mlai}
 \setupcode{# Late bind setup methods to DeepGP object

@@ -75,7 +75,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{The same concept of modelling at a particular fidelity comes up in epidemiology. Disease is transmitted by direct person to person interactions between individuals and objects. But in theoretical epidemiology, this is approximated by differential equations. The resulting models look very similar to reaction rate models used in Chemistry for well mixed beakers. Let's have a look at a simple example used for modelling the policy of 'herd immunity' for Covid19.}
 
-\include{_simulation/includes/herd-immunity.md}
+talk-macros.gpp}imulation/includes/herd-immunity.md}
 
 \notes{Thinking about our Formula 1 example, and the differing levels of fidelity that might be included in a model, you can now imagine the challenges of doing large scale theoretical epidemiology. The compartment model is operating at a particular level of fidelity. Imagine trying to modify this model for a specific circumstance, like the way that the University of Cambridge chooses to do lectures. It's not appropriate for this level of fidelity. You need to use different types of models for that decision making. Later, we'll look at a simulation that was used to advise the government on the Test Trace Isolate program that took a different approach [@Delve-tti20].}
 
@@ -105,10 +105,10 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{In Amazon the team I led looked at examples of simulations and emulation as varied as Prime Air drones across to the Amazon Supply Chain. In a purchasing system, the idea is to store stock to balance supply and demand. The aim is to keep product in stock for quick dispatch while keeping prices (and therefore costs) low. This idea is at the heart of Amazon's focus on customer experience.}
 
-<!--\include{_ai/includes/alexa-system.md}-->
-<!--\include{_ai/includes/prime-air-system.md}-->
-\include{_ai/includes/supply-chain-system.md}
-\include{_ai/includes/buying-system.md}
+<!--talk-macros.gpp}i/includes/alexa-system.md}-->
+<!--talk-macros.gpp}i/includes/prime-air-system.md}-->
+talk-macros.gpp}i/includes/supply-chain-system.md}
+talk-macros.gpp}i/includes/buying-system.md}
 
 \notes{Clearly Conway's Game of Life exhibits an enormous amount of intellectual debt, indeed that was the idea. Build something simple that exhibits great complexity. That's what makes it so popular. But in deployed system software, intellectual debt is a major headache and emulation presents one way of dealing with it.}
 
@@ -134,16 +134,16 @@ Over time there were a number of similar changes, each of which should have impr
 -->
 
 
-\include{_simulation/includes/simulation-system.md}
-\include{_data-science/includes/experiment-analyze-design.md}
-\include{_uq/includes/emulation.md}
+talk-macros.gpp}imulation/includes/simulation-system.md}
+talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
+talk-macros.gpp}q/includes/emulation.md}
 
-\include{_software/includes/gpy-software.md}
-\include{_gp/includes/gpy-tutorial.md}
-\include{_gp/includes/gpy-emulation.md}
+talk-macros.gpp}oftware/includes/gpy-software.md}
+talk-macros.gpp}p/includes/gpy-tutorial.md}
+talk-macros.gpp}p/includes/gpy-emulation.md}
 
 
-\include{_uq/includes/emukit-playground.md}
+talk-macros.gpp}q/includes/emukit-playground.md}
 
 \notes{\codeassignment{You now know enough to build a simple emulation. To test your knowledge have a go at cobmining GPy with Thomas House's herd immunity simulation. Can you build a Gaussian process emulator of the simulation? Don't spent do long on this exercise. The idea is just to consolidate things like what the inputs and outputs should be.}}
 

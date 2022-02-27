@@ -5,9 +5,9 @@ abstract: >
   In this talk we consider data readiness levels and how they may be deployed.
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 <!--include{_ai/includes/game-playing-ai.md}-->
 \subsection{Machine Learning}
 $$
@@ -22,19 +22,19 @@ $$
 
 \subsection{Example: Supply Chain}
 
-\include{_data-science/includes/why-didnt-electricity.md}
+talk-macros.gpp}ata-science/includes/why-didnt-electricity.md}
 
-\include{_supply-chain/includes/bits-and-atoms.md}
-\include{_supply-chain/includes/experiment-analyze-design-supply-chain.md}
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}upply-chain/includes/bits-and-atoms.md}
+talk-macros.gpp}upply-chain/includes/experiment-analyze-design-supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
 
 <!--Duke of York Effect -->
 
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
+talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
 
-\include{_data-science/includes/data-readiness-levels.md}
-\include{_data-science/includes/data-maturity-assessment.md}
+talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
+talk-macros.gpp}ata-science/includes/data-maturity-assessment.md}
 <!--include{_ml/includes/shiny-bike-model.md}-->
 
 \section{Introduction}

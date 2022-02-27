@@ -4,16 +4,16 @@ title: "Post-Digital Transformation: Intellectual Debt"
 abstract:
 ---
 
-\include{_ai/includes/the-great-ai-fallacy.md}
-\include{_ai/includes/artificial-vs-natural-systems.md}
-\include{_software/includes/mythical-man-month.md}
-\include{_ai/includes/ml-system-decomposability.md}
-\include{_ai/includes/ride-allocation-prediction.md}
-\include{_ai/includes/ml-systems-design-short.md}
-\include{_ml/includes/ml-paradigm-shift.md}
-\include{_ai/includes/peppercorn.md}
-\include{_data-science/includes/experiment-analyze-design.md}
-\include{_data-science/includes/data-oriented-architectures.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/artificial-vs-natural-systems.md}
+talk-macros.gpp}oftware/includes/mythical-man-month.md}
+talk-macros.gpp}i/includes/ml-system-decomposability.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/ml-systems-design-short.md}
+talk-macros.gpp}l/includes/ml-paradigm-shift.md}
+talk-macros.gpp}i/includes/peppercorn.md}
+talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
 
 
 \reading

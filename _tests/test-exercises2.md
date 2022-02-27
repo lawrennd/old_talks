@@ -22,7 +22,7 @@ youtube: 5VPr6NbHHjg
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \subsection{Review}
 
@@ -30,7 +30,7 @@ transition: None
 * Minimized sum of squares objective by steepest descent and stochastic gradients.
 * This time: explore least squares for regression.
 
-\include{_ml/includes/regression-examples.md}
+talk-macros.gpp}l/includes/regression-examples.md}
 
 \subsection{Olympic 100m Data}
 
@@ -48,8 +48,8 @@ from matplotlib import pyplot as plt
 f, ax = plt.subplots(figsize=(7,7))
 ax.plot(data['X'], data['Y'], 'ro', markersize=10)}
 
-\include{_ml/includes/olympic-marathon-data.md}
-\include{_ml/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/olympic-marathon-data.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
 
 \section{Sum of Squares Error}
 
@@ -69,7 +69,7 @@ where $s_{i,j}$ is an indicator variable which is set to 1 if the rating of movi
 
 \notes{This week we will reinterpret the error as a *probabilistic model*. We will consider the difference between our data and our model to have come from unconsidered factors which exhibit as a probability density. This leads to a more principled definition of least squares error that is originally due to [Carl Friederich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss), but is mainly inspired by the thinking of [Pierre-Simon Laplace](https://en.wikipedia.org/wiki/Pierre-Simon_Laplace).}
 
-\include{_ml/includes/linear-algebra-regression.md}
+talk-macros.gpp}l/includes/linear-algebra-regression.md}
 
 \thanks
 

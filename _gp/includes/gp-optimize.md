@@ -48,9 +48,9 @@ $$
 $$
 
 
-\include{_gp/includes/gp-optimize-capacity.md}
-\include{_gp/includes/gp-optimize-data-fit.md}
-\include{_gp/includes/gp-optimize-data-fit-capacity.md}
+talk-macros.gpp}p/includes/gp-optimize-capacity.md}
+talk-macros.gpp}p/includes/gp-optimize-data-fit.md}
+talk-macros.gpp}p/includes/gp-optimize-data-fit-capacity.md}
 
 
 \endif

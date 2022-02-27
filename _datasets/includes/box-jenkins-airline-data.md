@@ -8,7 +8,7 @@
 \notes{This data is giving airline passenger numbers between 1948 and 1960. It was published by @Box-timeseries76.}
 
 
-\include{_data-science/includes/pods-install.md}
+talk-macros.gpp}ata-science/includes/pods-install.md}
 
 \setupcode{import numpy as np
 import pods}
