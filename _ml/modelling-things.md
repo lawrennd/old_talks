@@ -32,7 +32,7 @@ date: 2020-08-23
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \section{Introduction}
 
@@ -53,9 +53,9 @@ learning journal.}
 \notes{From a personal perspective, a strand of work that is highly inspirational in prediction also comes from a statistician. The prequential formalism [@Dawid:callibrated82;@Dawid:prequential84] also emerges from statistics. It provides some hope that a predictive approach can be reconciled with attribution in the manner highlighted also by @Friedman:discussion20. The prequential approach is predictive but allows us to falsify
 poorly calibrated models [@Lawrence:licsbintro10]. So while it doesn't give us truth, it does give as falsehood in line with Popper's vision of the philosophy of science [@Popper:conjectures63].}
 
-\include{_ml/includes/ml-and-statistics-interface.md}
+talk-macros.gpp}l/includes/ml-and-statistics-interface.md}
 
-\include{_data-science/includes/happenstance-data.md}
+talk-macros.gpp}ata-science/includes/happenstance-data.md}
 
 \section{Generalization}
 
@@ -68,16 +68,16 @@ beyond the traditional notions of what generalization is or rather,
 what it has been, to practitioners on both the statistical and machine
 learning sides of the data sciences.}
 
-\include{_ml/includes/deep-models-and-generalization.md}
+talk-macros.gpp}l/includes/deep-models-and-generalization.md}
 
 \notes{An excellent characterization of generalization is normally
 given by the bias-variance dilemma. The bias-variance decomposition
 for regression models separates the generalization error into two
 components [@Geman:biasvariance92].}
 
-\include{_ml/includes/bias-variance-dilemma.md}
+talk-macros.gpp}l/includes/bias-variance-dilemma.md}
 
-\include{_ml/includes/double-descent.md}
+talk-macros.gpp}l/includes/double-descent.md}
 
 \notes{As Professor Efron points out, modern machine learning models
 are often fitted using many millions of data points. The most extreme
@@ -87,9 +87,9 @@ model was trained on a data set containing 499 billion tokens (about 2
 terabytes of text). Estimates suggest that the model costs around
 $4.5 million dollars to train (see e.g. @Li:openai20).}
 
-\include{_ml/includes/empirical-effectiveness-of-deep-learning.md}
+talk-macros.gpp}l/includes/empirical-effectiveness-of-deep-learning.md}
 
-\include{_ml/includes/new-methods-required.md}
+talk-macros.gpp}l/includes/new-methods-required.md}
 
 <!--include{_ml/includes/massively-missing-data.md}-->
 
@@ -114,26 +114,26 @@ our main control is over the model and the algorithm.
 > Statisticians want to turn humans into computers, machine learners want to turn computers into humans. Neither is possible so we meet somewhere in the middle.
 
 
-\include{_ml/includes/model-vs-algorithm.md}
+talk-macros.gpp}l/includes/model-vs-algorithm.md}
 
-\include{_ml/includes/is-my-model-useful.md}
+talk-macros.gpp}l/includes/is-my-model-useful.md}
 
-\include{_ml/includes/big-data-health-motivation.md}
+talk-macros.gpp}l/includes/big-data-health-motivation.md}
 
-\include{_ml/includes/not-useful-model.md}
+talk-macros.gpp}l/includes/not-useful-model.md}
 
-\include{_ml/includes/big-data-consistency.md}
+talk-macros.gpp}l/includes/big-data-consistency.md}
 
-\include{_ml/includes/parameter-bottleneck.md}
+talk-macros.gpp}l/includes/parameter-bottleneck.md}
 
-\include{_ml/includes/non-parametric-challenge.md}
+talk-macros.gpp}l/includes/non-parametric-challenge.md}
 
-\include{_ml/includes/multivariate-gaussian-closure.md}
+talk-macros.gpp}l/includes/multivariate-gaussian-closure.md}
 
-\include{_ml/includes/making-parameters-non-parametric.md}
-\include{_ml/includes/instantiating-the-model.md}
-%\include{_ml/includes/the-mean-function.md}
-%\include{_ml/includes/making-parameters-non-parametric-illustration.md}
+talk-macros.gpp}l/includes/making-parameters-non-parametric.md}
+talk-macros.gpp}l/includes/instantiating-the-model.md}
+%talk-macros.gpp}l/includes/the-mean-function.md}
+%talk-macros.gpp}l/includes/making-parameters-non-parametric-illustration.md}
 
 The use of inducing variables in Gaussian process models to make inference efficient is now commonplace. By exploiting the parametric form given in Figure \ref{given-u-to-f_i-to-y_i} @Hensman:bigdata13 were able to adapt the stochastic variational inference approach of @Hoffman:stochastic12 to the nonparametric formalism. This promising direction may allow us to bridge from a rigorous probabilistic formalism for predictive modeling as enabled by nonparametric methods to the very rich modeling frameworks provided by deep learning. In particular, work in composition of Gaussian processes by @Damianou:deepgp13 has been extended to incorporate variational inference formalisms (see e.g. @Hensman:nested14;@Dai:variationally16;@Salimbeni:doubly2017). The scale at which these models can operate means that they are now being deployed in some of the domains where deep neural networks have traditionally dominated (@Dutordoir-bayesian20).
 

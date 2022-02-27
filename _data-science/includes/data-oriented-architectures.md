@@ -3,12 +3,12 @@
 
 \editme
 
-\include{_data-science/includes/data-oriented-architectures-intro.md}
-\include{_data-science/includes/apache-flink.md}
-\include{_data-science/includes/milan.md}
-\include{_data-science/includes/hypothetical-trading-system.md}
-\include{_ai/includes/safe-boda.md}
-\include{_ai/includes/ride-allocation-prediction.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures-intro.md}
+talk-macros.gpp}ata-science/includes/apache-flink.md}
+talk-macros.gpp}ata-science/includes/milan.md}
+talk-macros.gpp}ata-science/includes/hypothetical-trading-system.md}
+talk-macros.gpp}i/includes/safe-boda.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
 
 
 \notes{Let's consider a ride sharing app, for example the SafeBoda system. 
@@ -27,8 +27,8 @@ When Anne calls for a ride, she is provided with an estimate based on the expect
 
 This best guess may well be driven by previous data.}
 
-\include{_data-science/includes/ride-sharing-soa-doa.md}
-\include{_data-science/includes/information-dynamics.md}
+talk-macros.gpp}ata-science/includes/ride-sharing-soa-doa.md}
+talk-macros.gpp}ata-science/includes/information-dynamics.md}
 
 
 

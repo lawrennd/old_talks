@@ -8,14 +8,14 @@ youtube: U85XFCt3Lak
 date: 2019-01-09
 ---
 
-\include{talk-macros.tex}
-\include{_gp/includes/gp-book.md}
-\include{_gp/includes/what-is-a-gp.md}
+talk-macros.gpp}lk-macros.tex}
+talk-macros.gpp}p/includes/gp-book.md}
+talk-macros.gpp}p/includes/what-is-a-gp.md}
 
-\include{_gp/includes/gp-summer-school.md}
-\include{_software/includes/gpy-software.md}
-\include{_gp/includes/other-gp-software.md}
-\include{_ml/includes/mxfusion-intro.md}
+talk-macros.gpp}p/includes/gp-summer-school.md}
+talk-macros.gpp}oftware/includes/gpy-software.md}
+talk-macros.gpp}p/includes/other-gp-software.md}
+talk-macros.gpp}l/includes/mxfusion-intro.md}
 
 \subsection{Acknowledgments}
 

@@ -12,7 +12,7 @@ They provide their data in GitHub. We can access the cases we're interested in f
 
 For convenience, we'll load the data into pandas first, but our next step will be to create a new SQLite table containing the data. Then we'll join that table to our existing tables.}
 
-\include{_datasets/includes/nigerian-covid-data.md}
+talk-macros.gpp}atasets/includes/nigerian-covid-data.md}
 
 \ifeq{\databaseType}{sqlite}
 \code{covid_data=data
@@ -91,7 +91,7 @@ To access the number of people we can get population statistics from the [Humani
 We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.}
 
 
-\include{_datasets/includes/nigerian-population-data.md}
+talk-macros.gpp}atasets/includes/nigerian-population-data.md}
 
 \code{pop_data=data}
 
@@ -101,7 +101,7 @@ We also want to have population data for each state in Nigeria, so that we can s
 
 The next step is to add this new CSV file as an additional table in our database.}
 
-\include{_systems/includes/nigerian-population-data-sql.md}
+talk-macros.gpp}ystems/includes/nigerian-population-data-sql.md}
 
 
 \notes{\subsection{Computing per capita hospitals and COVID}

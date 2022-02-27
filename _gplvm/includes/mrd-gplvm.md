@@ -5,8 +5,8 @@
 
 \subsection{Manifold Relevance Determination}
 
-\include{_gplvm/includes/shared-intro.md}
-\include{_gplvm/includes/mrd-intro.md}
-\include{_gplvm/includes/mrd-results.md}
+talk-macros.gpp}plvm/includes/shared-intro.md}
+talk-macros.gpp}plvm/includes/mrd-intro.md}
+talk-macros.gpp}plvm/includes/mrd-results.md}
 
 \endif

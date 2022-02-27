@@ -6,7 +6,7 @@
 \newslide{}
 
 \define{\stubname}{anne-bob-conversation}
-\include{_ai/includes/anne-bob-talk.md}
+talk-macros.gpp}i/includes/anne-bob-talk.md}
 
 \notes{The consequences between this mismatch of power and delivery are to be seen all around us. Because, just as driving an F1 car with bicycle wheels would be a fine art, so is the process of communication between humans.
 

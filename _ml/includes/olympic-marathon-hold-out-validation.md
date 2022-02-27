@@ -1,7 +1,7 @@
 \ifndef{olympicMarathonHoldOutValidation}
 \define{olympicMarathonHoldOutValidation}
 
-\include{_datasets/includes/olympic-marathon-data.md}
+talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
 
 \editme
 

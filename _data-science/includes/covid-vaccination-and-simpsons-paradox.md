@@ -7,7 +7,7 @@
 
 \notes{In this exercise we're going to consider an analysis example that involves computing probabilities. The scenario is associated with covid vaccination and disease.}
 
-\include{_datasets/includes/hospitalized-covid-data.md}
+talk-macros.gpp}atasets/includes/hospitalized-covid-data.md}
 
 \notes{`pods` has taken care of loading the data into a `pandas.DataFrame` for us.}
 

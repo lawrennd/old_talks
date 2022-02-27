@@ -4,10 +4,10 @@ date: 2014-05-28
 ---
 
 
-\include{../talk-macros.gpp}
+talk-macros.gpp}/talk-macros.gpp}
 
-\include{_datasets/includes/datasets-notebook-setup.md}
+talk-macros.gpp}atasets/includes/datasets-notebook-setup.md}
 
-\include{_datasets/includes/google-trends-data.md}
+talk-macros.gpp}atasets/includes/google-trends-data.md}
 
 \references

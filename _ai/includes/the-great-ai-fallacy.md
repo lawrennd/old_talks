@@ -29,6 +29,6 @@ The problem is compounded because many of the techniques that we're
 speaking of were originally developed in academic laboratories in
 isolation from real-world deployment.}
 
-\include{_ai/includes/ai-as-manservant.md}
+talk-macros.gpp}i/includes/ai-as-manservant.md}
 
 \endif

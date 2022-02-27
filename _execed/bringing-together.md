@@ -4,13 +4,13 @@ title: Bringing it Together
 abstract: "In this final session we bring together the different lessons learned about the new wave of technologies."
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 
-\include{_ai/includes/are-we-close-to-creating-intelligence.md}
-\include{_ai/includes/the-promise-of-ai.md} 
+talk-macros.gpp}i/includes/are-we-close-to-creating-intelligence.md}
+talk-macros.gpp}i/includes/the-promise-of-ai.md} 
 <!-- See the great AI fallacy -->
-\include{_ai/includes/five-ai-myths.md}
+talk-macros.gpp}i/includes/five-ai-myths.md}
 
 \reading
 

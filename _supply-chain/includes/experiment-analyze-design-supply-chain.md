@@ -2,7 +2,7 @@
 \define{experimentAnalyzeDesignSupplyChain}
 
 
-\include{_data-science/includes/experiment-analyze-design.md}
+talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
 
 \editme
 

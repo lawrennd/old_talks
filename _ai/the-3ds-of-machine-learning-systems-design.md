@@ -18,25 +18,25 @@ date: 2018-09-20
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 
-\include{_ai/includes/holborn-science-centrifugal-governor.md}
-\include{_ai/includes/watt-steam-engine.md}
+talk-macros.gpp}i/includes/holborn-science-centrifugal-governor.md}
+talk-macros.gpp}i/includes/watt-steam-engine.md}
 
-\include{../_ai/includes/embodiment-factors.md}
+talk-macros.gpp}/_ai/includes/embodiment-factors.md}
 <!--include{../_data-science/includes/evolved-relationship.md}
 include{../_ml/includes/what-does-machine-learning-do.md}-->
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \subsection{Example}
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
-\include{_ml/includes/general-ml-challenges.md}
-\include{_ml/includes/ml-outlook.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
+talk-macros.gpp}l/includes/general-ml-challenges.md}
+talk-macros.gpp}l/includes/ml-outlook.md}
 
 \subsection{Conclusion}
 \slides{

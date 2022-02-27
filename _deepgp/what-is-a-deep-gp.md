@@ -13,10 +13,10 @@ author:
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 \subsection{Deep Gaussian Processes}
 
-\include{_gp/includes/approximate-gps-short.md}
+talk-macros.gpp}p/includes/approximate-gps-short.md}
 
 \subsection{Modern Review}
 
@@ -26,7 +26,7 @@ transition: None
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-\include{_deepgp/includes/deep-gaussian-processes.md}
+talk-macros.gpp}eepgp/includes/deep-gaussian-processes.md}
 
 \thanks
 

@@ -1,9 +1,9 @@
 \ifndef{mlToDeepLearning}
 \define{mlToDeepLearning}
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
 
 \newslide{Deep Learning}
 
@@ -13,5 +13,5 @@
 
 * Example: face recognition
 
-\include{_ml/includes/deep-learning-overview.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
 \endif

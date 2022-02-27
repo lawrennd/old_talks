@@ -30,15 +30,15 @@ categories:
 - genomics
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-\include{_ai/includes/deploying-ai.md}
-\include{_ai/includes/ml-systems-design-long.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}i/includes/deploying-ai.md}
+talk-macros.gpp}i/includes/ml-systems-design-long.md}
 
 \editme
 \section{Conclusion}

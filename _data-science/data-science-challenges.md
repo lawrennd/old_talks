@@ -21,9 +21,9 @@ transition: None
 date: 2018-05-08
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_data-science/includes/lies-damned-lies.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
 
 \newslide{Background: Big Data}
 \slides{
@@ -31,16 +31,16 @@ date: 2018-05-08
 
 * Data diffusiveness is both a challenge and an opportunity
 }
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ai/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
 
 \newslide{Evolved Relationship}
 
 \figure{\includediagram{\diagramsDir/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
 
-\include{_data-science/includes/societal-effects.md}
+talk-macros.gpp}ata-science/includes/societal-effects.md}
 
-\include{_data-science/includes/data-science-challenges.md}
+talk-macros.gpp}ata-science/includes/data-science-challenges.md}
 
 
 \newslide{Conclusion}

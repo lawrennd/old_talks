@@ -26,7 +26,7 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \section{Introduction}
 
@@ -34,16 +34,16 @@ transition: None
 
 \notes{This presentation represents my personal opinion as an academic with 20 years experience in machine learning, computational biology and data science. This is not in any sense *Amazon* policy, but since September 2016 I have been on leave of absence at Amazon.}
 
-\include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
-\include{_ml/includes/what-is-ml.md}
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship-society.md}
-\include{_ai/includes/embodiment-and-narrative.md}
-\include{_data-science/includes/lies-damned-lies.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship-society.md}
+talk-macros.gpp}i/includes/embodiment-and-narrative.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
 
-\include{_ml/includes/deep-learning-overview.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
 
 \newslide{Uncertainty and Learning}
 \slides{
@@ -56,10 +56,10 @@ transition: None
 \slides{
 * The emulation of intelligence does not exhibit all the meta-modelling humans perform.
 }
-\include{_data-science/includes/a-time-for-professionalisation.md}
-\include{_data-science/includes/the-data-crisis.md}
+talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
+talk-macros.gpp}ata-science/includes/the-data-crisis.md}
 
-\include{_governance/includes/feudal-era-data-ecosystem.md}
+talk-macros.gpp}overnance/includes/feudal-era-data-ecosystem.md}
 
 \newslide{Rest of the Talk}
 \slides{
@@ -68,13 +68,13 @@ transition: None
 <!--include{_data-science/includes/data-infrastructure.md}-->
 <!--include{_data-science/includes/data-readiness-levels.md}-->
 <!--include{_data-science/includes/data-science-as-debugging.md}-->
-\include{_health/includes/rolls-royce-analogy.md}
-\include{_business/includes/black-box-thinking.md}
+talk-macros.gpp}ealth/includes/rolls-royce-analogy.md}
+talk-macros.gpp}usiness/includes/black-box-thinking.md}
 <!--include{_governance/includes/how-gdpr-may-help.md}-->
 
 <!--include{_ai/includes/government-reports.md}-->
 
-\include{_governance/includes/data-trusts.md}
+talk-macros.gpp}overnance/includes/data-trusts.md}
 
 <!--include{_ml/includes/resolve-deploy-innovate.md}-->
 

@@ -5,7 +5,7 @@
 
 \section{Experimental Design in Emukit}
 
-\include{_uq/includes/forrester-function.md}
+talk-macros.gpp}q/includes/forrester-function.md}
 
 \subsection{Initial Design}
 

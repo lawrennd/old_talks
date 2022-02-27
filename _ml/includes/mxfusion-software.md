@@ -2,7 +2,7 @@
 \define{mxfusionSoftware}
 \editme
 
-\include{_ml/includes/mxfusion-intro.md}
+talk-macros.gpp}l/includes/mxfusion-intro.md}
 
 \subsection{MxFusion}
 

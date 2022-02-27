@@ -22,12 +22,12 @@ transition: None
 date: 2018-09-05
 ---
 
-\include{../talk-macros.tex}
-\include{ _ml/includes/what-is-ml.md}
-\include{ _ml/includes/data-science-vs-ai.md}
-\include{ _ai/includes/embodiment-factors.md}
-\include{ _data-science/includes/evolved-relationship.md}
-\include{ _ml/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}/talk-macros.tex}
+talk-macros.gpp}ml/includes/what-is-ml.md}
+talk-macros.gpp}ml/includes/data-science-vs-ai.md}
+talk-macros.gpp}ai/includes/embodiment-factors.md}
+talk-macros.gpp}data-science/includes/evolved-relationship.md}
+talk-macros.gpp}ml/includes/what-does-machine-learning-do.md}
 
 \newslide{Deep Learning}
 
@@ -35,19 +35,19 @@ date: 2018-09-05
 * Modern machine learning methods are less interpretable
 * Example: face recognition
 
-\include{ _ml/includes/deep-learning-overview.md}
+talk-macros.gpp}ml/includes/deep-learning-overview.md}
 
-\include{_data-science/includes/a-time-for-professionalisation.md}
+talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
 
-\include{ _data-science/includes/the-data-crisis.md}
+talk-macros.gpp}data-science/includes/the-data-crisis.md}
 
 \newslide{Power Asymmetries and Data}
 
-\include{_data-science/includes/privacy-loss-of-control.md}
+talk-macros.gpp}ata-science/includes/privacy-loss-of-control.md}
 
-\include{ _governance/includes/how-gdpr-may-help.md}
-\include{ _data-science/includes/the-assault-on-privacy.md}
-\include{ _governance/includes/data-trusts.md}
+talk-macros.gpp}governance/includes/how-gdpr-may-help.md}
+talk-macros.gpp}data-science/includes/the-assault-on-privacy.md}
+talk-macros.gpp}governance/includes/data-trusts.md}
 
 
 \newslide{Rest of this Talk: Two Areas of Focus}
@@ -55,10 +55,10 @@ date: 2018-09-05
 * Reusability of Data
 * Deployment of Machine Learning Systems
 
-\include{ _data-science/includes/data-readiness-levels.md}
-\include{ _data-science/includes/data-joel-tests.md}
-\include{ _ai/includes/deploying-ai.md}
-\include{ _ai/includes/ml-systems-design-long.md}
+talk-macros.gpp}data-science/includes/data-readiness-levels.md}
+talk-macros.gpp}data-science/includes/data-joel-tests.md}
+talk-macros.gpp}ai/includes/deploying-ai.md}
+talk-macros.gpp}ai/includes/ml-systems-design-long.md}
 
 \newslide{Conclusion}
 

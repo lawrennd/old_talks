@@ -138,7 +138,7 @@ $$
 
 <!--![image](../../../multigp/tex/diagrams/icmCovarianceImage)![image](../../../multigp/tex/diagrams/icmCovarianceSample1)![image](../../../multigp/tex/diagrams/icmCovarianceSample2)![image](../../../multigp/tex/diagrams/icmCovarianceSample3)![image](../../../multigp/tex/diagrams/icmCovarianceSample4)-->
 
-\include{_kern/includes/icm-covariance.md}
+talk-macros.gpp}ern/includes/icm-covariance.md}
 
 \subsection{Intrinsic Coregionalization Model}
 
@@ -198,7 +198,7 @@ $${\ell}_2 = 0.2$$
 -   Authors suggest using an exponentiated quadratic characteristic
     length-scale for each input dimension.
 
-\include{_kern/includes/slfm-covariance.md}
+talk-macros.gpp}ern/includes/slfm-covariance.md}
 
 \subsection{Semiparametric Latent Factor Model Samples}
 

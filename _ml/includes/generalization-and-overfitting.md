@@ -22,9 +22,9 @@ An important distinction in machine learning is the separation between training 
 * Vital that you avoid test data in training.
 * Validation data is different from test data. }
 
-\include{_ml/includes/olympic-marathon-hold-out-validation.md}
+talk-macros.gpp}l/includes/olympic-marathon-hold-out-validation.md}
 
-\include{_ml/includes/bias-variance-dilemma.md}
+talk-macros.gpp}l/includes/bias-variance-dilemma.md}
 
 \subsection{Overfitting}
 

@@ -38,7 +38,7 @@ $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 }
 
 \slides{\undef{multivariateGaussianProperties}
-\include{_ml/includes/multivariate-gaussian-properties.md}}
+talk-macros.gpp}l/includes/multivariate-gaussian-properties.md}}
 
 
 \newslide{Prior Density}

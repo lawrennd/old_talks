@@ -9,10 +9,10 @@ authors:
 
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_datasets/includes/datasets-notebook-setup.md}
+talk-macros.gpp}atasets/includes/datasets-notebook-setup.md}
 
-\include{_datasets/includes/kepler-lightcurve-data.md}
+talk-macros.gpp}atasets/includes/kepler-lightcurve-data.md}
 
 \references

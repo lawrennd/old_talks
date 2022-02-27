@@ -13,11 +13,11 @@ transition: None
 incremental: True
 ---
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dl.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dl.md}
 
 \newslide{What about IoT?}
 
-\include{_ai/includes/gartner-hype-cycle-bd-iot.md}
+talk-macros.gpp}i/includes/gartner-hype-cycle-bd-iot.md}
 
 \newslide{Background: Big Data}
 
@@ -25,8 +25,8 @@ incremental: True
 * Emerging themes: Devolving compute onto device. 
 * Data preprocessing: Internet of Intelligence.
 
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
 
 
 
@@ -48,7 +48,7 @@ incremental: True
 2. Quantifying the Value of Data
 3. Privacy, loss of control, marginalisation
 
-\include{_data-science/includes/value-of-data.md}
+talk-macros.gpp}ata-science/includes/value-of-data.md}
 
 \newslide{Quantifying the Value of Data}
 
@@ -159,7 +159,7 @@ question or to be subject to a particular analysis.
 
 * Need better technological solutions: trust and algorithms.
 
-\include{../_ai/includes/ml-systems-design.md}
+talk-macros.gpp}/_ai/includes/ml-systems-design.md}
 
 \newslide{Conclusion}
 

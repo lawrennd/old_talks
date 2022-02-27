@@ -24,11 +24,11 @@ start: "10:00"
 end: "11:00"
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_notebooks/includes/notebook-setup.md}
-\include{_dimred/includes/high-dimensional-data.md}
-\include{_dimred/includes/dimensionality-reduction-intro.md}
+talk-macros.gpp}otebooks/includes/notebook-setup.md}
+talk-macros.gpp}imred/includes/high-dimensional-data.md}
+talk-macros.gpp}imred/includes/dimensionality-reduction-intro.md}
 
 \subsection{Gaussian Variables and Linear Dimensionality Reduction}
 
@@ -38,11 +38,11 @@ end: "11:00"
 
 \notes{We will return to non-linear dimensionality reduction approaches shortly, but first we're going to consider *linear* approaches to dimensionality reduction. To do so, we'll first review some characteristics of the Gaussian density.}
 
-\include{_ml/includes/univariate-gaussian-properties.md}
+talk-macros.gpp}l/includes/univariate-gaussian-properties.md}
 \section{Linear Latent Variable Models}
-\include{_ml/includes/multivariate-gaussian-properties.md}
+talk-macros.gpp}l/includes/multivariate-gaussian-properties.md}
 
-\include{_dimred/includes/latent-variables.md}
+talk-macros.gpp}imred/includes/latent-variables.md}
 
 \thanks
 

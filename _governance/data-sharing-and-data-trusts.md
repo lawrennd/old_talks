@@ -15,15 +15,15 @@ venue: Wellcome Human Cell Atlas Meeting
 transition: None
 ---
 
-\include{../talk-macros.tex}
+talk-macros.gpp}/talk-macros.tex}
 
 \notes{These notes give background to a 10 minute talk on Data Trusts given at the Human Cell Atlas Meeting. For more information on this work you can check our recently announced ["Data Trusts Initiative"]() and the [associated website](https://datatrusts.uk/).}
 
-\include{_governance/includes/data-property.md}
-\include{_governance/includes/gdpr-origins.md}
-\include{_governance/includes/feudal-era-data-ecosystem.md}
-\include{_governance/includes/digital-highway-code.md}
-\include{_governance/includes/data-trusts2.md}
+talk-macros.gpp}overnance/includes/data-property.md}
+talk-macros.gpp}overnance/includes/gdpr-origins.md}
+talk-macros.gpp}overnance/includes/feudal-era-data-ecosystem.md}
+talk-macros.gpp}overnance/includes/digital-highway-code.md}
+talk-macros.gpp}overnance/includes/data-trusts2.md}
 
 \thanks
 

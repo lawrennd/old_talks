@@ -4,12 +4,12 @@
 
 \subsection{Technical Contributions}
 
-\include{_software/includes/gpy-software.md}
-\include{_ml/includes/mxfusion-intro.md}
+talk-macros.gpp}oftware/includes/gpy-software.md}
+talk-macros.gpp}l/includes/mxfusion-intro.md}
 
-<!--\include{_ml/includes/mxfusion-pilco.md}-->
-\include{_ml/includes/xfer-intro.md}
-\include{_software/includes/emukit-software.md}
+<!--talk-macros.gpp}l/includes/mxfusion-pilco.md}-->
+talk-macros.gpp}l/includes/xfer-intro.md}
+talk-macros.gpp}oftware/includes/emukit-software.md}
 
 
 \endif

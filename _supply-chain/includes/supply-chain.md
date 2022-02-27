@@ -13,9 +13,9 @@ The profession of leading the horses was known as a Jagger and leading out of th
 
 The movement of goods from regions of supply to areas of demand is fundamental to our society. The physical infrastructure of supply chain has evolved a great deal over the last 300 years.}
 
-\include{_supply-chain/includes/cromford.md}
+talk-macros.gpp}upply-chain/includes/cromford.md}
 
-\include{_supply-chain/includes/containerisation.md}
+talk-macros.gpp}upply-chain/includes/containerisation.md}
 
 
 \endif

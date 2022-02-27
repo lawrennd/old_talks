@@ -2,7 +2,7 @@
 \define{bayesianRegression1d}
 \editme
 
-\include{_ml/includes/bayesian-regression1d-short.md}
+talk-macros.gpp}l/includes/bayesian-regression1d-short.md}
 
 \newslide{Main Trick}
 

@@ -3,8 +3,8 @@
 
 \editme
 
-\include{_ml/includes/nigeria-nmis-data-explore.md}
-\include{_ml/includes/probability-intro.md}
-\include{_ml/includes/supervised-learning.md}
+talk-macros.gpp}l/includes/nigeria-nmis-data-explore.md}
+talk-macros.gpp}l/includes/probability-intro.md}
+talk-macros.gpp}l/includes/supervised-learning.md}
 
 \endif

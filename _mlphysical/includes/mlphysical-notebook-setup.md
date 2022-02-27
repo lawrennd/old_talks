@@ -4,7 +4,7 @@
 \editme
 
 
-\include{_notebooks/includes/notebook-setup.md}
+talk-macros.gpp}otebooks/includes/notebook-setup.md}
 \installcode{GPy}
 \installcode{pyDOE}
 \installcode{EmuKit}

@@ -6,14 +6,14 @@ transition: None
 date: 2020-06-01
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ai/includes/embodiment-factors-short.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}i/includes/embodiment-factors-short.md}
 
-\include{_ml/includes/data-plus-model.md}
+talk-macros.gpp}l/includes/data-plus-model.md}
 
-\include{_governance/includes/data-governance-toolkit.md}
+talk-macros.gpp}overnance/includes/data-governance-toolkit.md}
 
 \newslide{Data and Risk}
 

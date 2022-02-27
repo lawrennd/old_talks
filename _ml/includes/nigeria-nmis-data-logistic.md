@@ -1,10 +1,10 @@
 \ifndef{nigeriaNmisDataLogistic}
 \define{nigeriaNmisDataLogistic}
 
-\include{_ml/includes/nigeria-nmis-data-classification.md}
+talk-macros.gpp}l/includes/nigeria-nmis-data-classification.md}
 
 \editme
 
-\include{_ml/includes/logistic-regression-gradient-descent.md}
+talk-macros.gpp}l/includes/logistic-regression-gradient-descent.md}
 
 \endif

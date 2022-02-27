@@ -30,9 +30,9 @@ transition: None
 
 <!--camvideo: 3536156-->
 
-\include{_data-science/includes/lies-damned-lies.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
 
-\include{_delve/includes/delve-overview.md}
+talk-macros.gpp}elve/includes/delve-overview.md}
 
 \subsection{What is Machine Learning?}
 
@@ -41,27 +41,27 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 
 
-\include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/big-model-paradox.md}
-\include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
+talk-macros.gpp}ata-science/includes/big-data-paradox.md}
+talk-macros.gpp}ata-science/includes/big-model-paradox.md}
+talk-macros.gpp}olicy/includes/diane-coyle-fitzwilliam-lecture.md}
 
-\include{_policy/includes/data-as-a-convener.md}
+talk-macros.gpp}olicy/includes/data-as-a-convener.md}
 
 \section{Delve}
 
-\include{_delve/includes/delve-report-list.md}
+talk-macros.gpp}elve/includes/delve-report-list.md}
 
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
-\include{_delve/includes/delve-data-report.md}
-\include{_delve/includes/data-report-recommendations.md}
+talk-macros.gpp}elve/includes/delve-data-report.md}
+talk-macros.gpp}elve/includes/data-report-recommendations.md}
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 
-\include{_simulation/includes/simulation-system.md}
-\include{_uq/includes/statistical-emulation.md}
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}imulation/includes/simulation-system.md}
+talk-macros.gpp}q/includes/statistical-emulation.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 \newslide{}
 \slides{\figure{\includejpg{\diagramsDir/simulation/carbon_cycle}{60%}}{Representation of the Carbon Cycle from the US National Oceanic and Atmospheric Administration. While everything is interconnected in the system, we can decompose into separate models for atmosphere, ocean, land.}{carbon-cycle-noaa}}

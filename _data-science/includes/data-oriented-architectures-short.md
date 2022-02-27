@@ -24,6 +24,6 @@ are built compositionally, the actual inputs that affect a final
 decision may not be known to any of the software engineers who are
 maintaining the system\ifdef{lancelot} (except perhaps Lancelot)\endif.}
 
-\include{_data-science/includes/milan.md}
+talk-macros.gpp}ata-science/includes/milan.md}
 
 \endif

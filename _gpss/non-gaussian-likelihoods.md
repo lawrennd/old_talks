@@ -4,9 +4,9 @@ session: 7
 abstract:
 ---
 
-\include{_gpss/includes/gpss-notebook-setup.md}
+talk-macros.gpp}pss/includes/gpss-notebook-setup.md}
 
-\include{_gp/includes/non-gaussian-gps.md}
+talk-macros.gpp}p/includes/non-gaussian-gps.md}
 
 \thanks
 

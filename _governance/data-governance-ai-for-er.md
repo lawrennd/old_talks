@@ -19,15 +19,15 @@ ipynb: false
 ---
 
 
-\include{_data-science/includes/lies-damned-lies.md}
-\include{_ai/includes/embodiment-factors-short.md}
-\include{_ai/includes/conversation-tedx.md}
-\include{_ai/includes/conversation-computer.md}
-\include{_data-science/includes/evolved-relationship.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+talk-macros.gpp}i/includes/embodiment-factors-short.md}
+talk-macros.gpp}i/includes/conversation-tedx.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
 
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-\include{_data-science/includes/three-data-science-challenges.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+talk-macros.gpp}ata-science/includes/three-data-science-challenges.md}
 
 \notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 
@@ -41,11 +41,11 @@ ipynb: false
 3. Privacy, loss of control, marginalization
 }
 
-\include{_data-science/includes/privacy-intro.md}
-\include{_data-science/includes/digital-revolution-and-inequality.md}
-\include{_data-science/includes/data-science-africa.md}
-\include{_health/includes/malaria-gp.md}
-\include{_data-science/includes/crop-monitoring.md}
+talk-macros.gpp}ata-science/includes/privacy-intro.md}
+talk-macros.gpp}ata-science/includes/digital-revolution-and-inequality.md}
+talk-macros.gpp}ata-science/includes/data-science-africa.md}
+talk-macros.gpp}ealth/includes/malaria-gp.md}
+talk-macros.gpp}ata-science/includes/crop-monitoring.md}
 
 \subsection{Ernest's Talk}
 
@@ -53,14 +53,14 @@ You can see more details on Ernest's work [in this talk](https://mlatcl.github.i
 
 \figure{\includeyoutube{lf1F1XTyxRE}{640}{480}}{Lecture from Ernest Mwebaze on Deep Learning for Developmental Challenges}{ernest-deep-learning}
 
-\include{_data-science/includes/biosurveillance.md}
-\include{_data-science/includes/community-radio.md}
-\include{_data-science/includes/kudu-project.md}
-\include{_data-science/includes/safe-boda.md}
+talk-macros.gpp}ata-science/includes/biosurveillance.md}
+talk-macros.gpp}ata-science/includes/community-radio.md}
+talk-macros.gpp}ata-science/includes/kudu-project.md}
+talk-macros.gpp}ata-science/includes/safe-boda.md}
 
 
-\include{_governance/includes/feudal-era-data-ecosystem.md}
-\include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
+talk-macros.gpp}overnance/includes/feudal-era-data-ecosystem.md}
+talk-macros.gpp}overnance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
 
 
 

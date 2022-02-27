@@ -4,7 +4,7 @@ abstract: |
   Test to ensure code types are created correctly.
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 
 \installcode{jax}

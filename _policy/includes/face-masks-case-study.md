@@ -6,7 +6,7 @@
 \section{Case Study: Face Masks}
 
 
-\include{_delve/includes/delve-overview.md}
+talk-macros.gpp}elve/includes/delve-overview.md}
 
 \notes{I was involved in the convening of the group. Experience from previous projects suggested that data expertise that was independent of domain knowledge often leads to misdirected efforts. We therefore convened a group that consisted of domain experts (public health, epidemiology, immunology, economics, behavioral economics, statistics, machine learning, education).}
 

@@ -34,32 +34,32 @@ transition: None
 
 \notes{To run the experiment, we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
 
-\include{_neurips/includes/neurips-in-numbers.md}
-\include{_neurips/includes/paper-scoring.md}
-\include{_neurips/includes/neurips-experiment-speculation.md}
-\include{_neurips/includes/neurips-experiment-results.md}
-\include{_neurips/includes/neurips-experiment-reaction.md}
-\include{_neurips/includes/neurips-experiment-random-committee.md}
+talk-macros.gpp}eurips/includes/neurips-in-numbers.md}
+talk-macros.gpp}eurips/includes/paper-scoring.md}
+talk-macros.gpp}eurips/includes/neurips-experiment-speculation.md}
+talk-macros.gpp}eurips/includes/neurips-experiment-results.md}
+talk-macros.gpp}eurips/includes/neurips-experiment-reaction.md}
+talk-macros.gpp}eurips/includes/neurips-experiment-random-committee.md}
 
 <!--include{_neurips/includes/neurips-experiment.md}-->
-\include{_neurips/includes/neurips-reviewer-calibration.md}
-\include{_neurips/includes/neurips-simulation.md}
-\include{_neurips/includes/where-do-the-rejected-papers-go.md}
+talk-macros.gpp}eurips/includes/neurips-reviewer-calibration.md}
+talk-macros.gpp}eurips/includes/neurips-simulation.md}
+talk-macros.gpp}eurips/includes/where-do-the-rejected-papers-go.md}
 
-\notes{\include{_neurips/includes/effect-of-late-reviewers.md}}
+\notes{talk-macros.gpp}eurips/includes/effect-of-late-reviewers.md}}
 
 \newslide{Late Reviewers}
 
 \slides{\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{}{correlation-duplicate-reviews-bootstrap}}
 
-\include{_neurips/includes/impact-of-papers-seven-years-on.md}
+talk-macros.gpp}eurips/includes/impact-of-papers-seven-years-on.md}
 
 \newslide{Conclusion}
 
 \slides{* Inconsistent errors are better than consistent errors
 * NeurIPS and Impractical Knives}
 
-\notes{\include{_neurips/includes/neurips-experiment-conclusion.md}}
+\notes{talk-macros.gpp}eurips/includes/neurips-experiment-conclusion.md}}
 
 \notes{I would prefer a world were a conference is no longer viewed as a proxy for research quality. The true test of quality is time. In the current world, papers from conferences such as NeurIPS are being used to judge whether a researcher is worthy of a position at a leading company, or whether a researcher gets tenure. This is problematic and damaging for the community. Reviewing is an inconsistent process, but that is not a bad thing. It is far worse to have a reviewing system that is consistently wrong than one which is inconsistently wrong.}
 

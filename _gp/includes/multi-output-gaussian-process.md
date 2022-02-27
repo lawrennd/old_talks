@@ -3,14 +3,14 @@
 
 \editme
 
-\include{_gp/includes/simple-kalman-filter.md}
-\include{_kern/includes/multi-output-kernels.md}
+talk-macros.gpp}p/includes/simple-kalman-filter.md}
+talk-macros.gpp}ern/includes/multi-output-kernels.md}
 
 \subsection{Modelling Multiple Outputs}
 
 \subsection{Running Example}
 
-\include{_datasets/includes/olympic-sprint-data.md}
-\include{_gp/includes/olympic-sprint-gp.md}
+talk-macros.gpp}atasets/includes/olympic-sprint-data.md}
+talk-macros.gpp}p/includes/olympic-sprint-gp.md}
 
 \endif

@@ -34,7 +34,7 @@ $$
 \left.\mathbf{U}^\prime\right.^\top\mathbf{U}^\prime = \eye
 $$
 
-\include{_dimred/includes/olivetti-eigenfaces.md}
-\include{_dimred/includes/spellman-eigengenes.md}
+talk-macros.gpp}imred/includes/olivetti-eigenfaces.md}
+talk-macros.gpp}imred/includes/spellman-eigengenes.md}
 
 \endif

@@ -42,7 +42,7 @@ Both of these works, however, make constraining assumptions on the form of the G
 * *How Deep Are Deep Gaussian Processes?* @Dunlop:deep2017 perform a theoretical analysis possible through conditional Gaussian Markov property.
 }
 
-\include{_deepgp/includes/deep-pathologies.md}
+talk-macros.gpp}eepgp/includes/deep-pathologies.md}
 
 
 \endif

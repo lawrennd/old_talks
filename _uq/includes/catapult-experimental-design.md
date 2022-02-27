@@ -2,7 +2,7 @@
 \define{catapultExperimentalDesign}
 
 
-\include{_uq/includes/catapult-simulation.md}
+talk-macros.gpp}q/includes/catapult-simulation.md}
 
 \editme
 

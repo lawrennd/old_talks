@@ -17,7 +17,7 @@ venue: Gaussian Process Summer School, University of Sheffield, UK
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \ifdef{SLIDES}
 \define{pydeepgpInclude}
@@ -30,7 +30,7 @@ transition: None
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-\include{_deepgp/includes/deep-gaussian-processes.md}
+talk-macros.gpp}eepgp/includes/deep-gaussian-processes.md}
 
 \thanks
 

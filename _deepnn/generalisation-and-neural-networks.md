@@ -30,38 +30,38 @@ end: "15:00"
 \define{\errorFunction}{L}
 \define{\designVector}{\boldsymbol{\phi}}
 
-\include{_deepnn/includes/deepnn-notebook-setup.md}
+talk-macros.gpp}eepnn/includes/deepnn-notebook-setup.md}
 
 \subsection{Quadratic Loss and Linear System}
 
 \notes{We will consider a simplified system, to remind us of some of the linear algebra involved, and introduce some of the fundamental issues.}
 
-\include{_ml/includes/expected-loss.md}
-\notes{\include{_ml/includes/linear-regression-log-likelihood.md}
-\include{_ml/includes/olympic-marathon-linear-regression.md}
+talk-macros.gpp}l/includes/expected-loss.md}
+\notes{talk-macros.gpp}l/includes/linear-regression-log-likelihood.md}
+talk-macros.gpp}l/includes/olympic-marathon-linear-regression.md}
 \define{designVector}{\basisVector}
 \define{designVariable}{Phi}
 \define{designMatrix}{\basisMatrix}
 \define{noNoiseTerm}
-\include{_ml/includes/linear-regression-direct-solution.md}
-\include{_ml/includes/linear-regression-objective-optimisation.md}
-\include{_ml/includes/linear-regression-hessian.md}
+talk-macros.gpp}l/includes/linear-regression-direct-solution.md}
+talk-macros.gpp}l/includes/linear-regression-objective-optimisation.md}
+talk-macros.gpp}l/includes/linear-regression-hessian.md}
 
-\include{_ml/includes/nigeria-nmis-linear-regression.md}
+talk-macros.gpp}l/includes/nigeria-nmis-linear-regression.md}
 
 \notes{\section{Aside}}
 \define{designMatrix}{\basisMatrix}
 
 \notes{Just for informational purposes, the actual approach used in software for fitting a linear model *should* be a QR decomposition.}
 
-\notes{\include{_ml/includes/qr-decomposition-regression.md}}
+\notes{talk-macros.gpp}l/includes/qr-decomposition-regression.md}}
 }
 
 \subsection{Basis Function Models}
 
 \notes{We are reviewing models that are *linear* in the parameters. Very often we are interested in *non-linear* predictions. We can make models that are linear in the parameters and given non-linear predictions by introducing non-linear *basis functions*. A common example is the polynomial basis.}
 
-\include{_ml/includes/polynomial-basis.md}
+talk-macros.gpp}l/includes/polynomial-basis.md}
 
 \notes{The predictions from this model,
 $$
@@ -72,15 +72,15 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 \notes{In the neural network models, the "RELU function" is normally used as a basis function, but for illustration we will continue with the polynomial basis for these linear models.}
 
 \undef{olympicMarathonData}
-\include{_ml/includes/olympic-marathon-polynomial.md}
+talk-macros.gpp}l/includes/olympic-marathon-polynomial.md}
 
-\include{_ml/includes/the-bootstrap.md}
+talk-macros.gpp}l/includes/the-bootstrap.md}
 
-\include{_ml/includes/olympic-marathon-bootstrap-polynomial.md}
+talk-macros.gpp}l/includes/olympic-marathon-bootstrap-polynomial.md}
 
 \define{biasVariancePlots}
 
-\include{_ml/includes/bias-variance-dilemma.md}
+talk-macros.gpp}l/includes/bias-variance-dilemma.md}
 
 \notes{Also related on generalization error is the so called 'no free lunch theorem', which refers to our inability to decide what a better learning algorithm is without making assumptions about the data [@Wolpert:lack96] (see also @Wolpert-supervised02).}
 
@@ -88,15 +88,15 @@ are *linear* in the parameters, $\mappingVector$, but *non-linear* in the input 
 \define{designVariable}{Phi}
 \define{designMatrix}{\basisMatrix}
 
-\include{_ml/includes/linear-regression-regularisation.md}
-\include{_ml/includes/training-with-noise-tikhonov-regularisation.md}
+talk-macros.gpp}l/includes/linear-regression-regularisation.md}
+talk-macros.gpp}l/includes/training-with-noise-tikhonov-regularisation.md}
 <!--include{_ml/includes/bayesian-interpretation-of-regularisation.md}-->
 
 \subsection{Shallow and Deep Learning}
 
 \notes{So far, we have been talking about *linear models* or *shallow learning* as we might think of it. Let's pause for a moment and consider a *fully connected* deep neural network model to relate the two ideas.}
 
-\include{_deepnn/includes/deep-neural-network.md}
+talk-macros.gpp}eepnn/includes/deep-neural-network.md}
 
 \newslide{Neural Network Prediction Function}
 
@@ -138,10 +138,10 @@ $$
 
 \notes{Simply put, there is not enough regularization encoded in the objective function of the neural network models we are using to explain the generalization performance. There must be something in the algorithms we are using that causes these highly overparameterized models to generalise well.}
 
-\include{_deepnn/includes/double-descent.md}
-\include{_deepnn/includes/neural-tangent-kernel.md}
+talk-macros.gpp}eepnn/includes/double-descent.md}
+talk-macros.gpp}eepnn/includes/neural-tangent-kernel.md}
 
-\include{_deepnn/includes/regularisation-in-optimisation.md}
+talk-macros.gpp}eepnn/includes/regularisation-in-optimisation.md}
 
 \thanks
 

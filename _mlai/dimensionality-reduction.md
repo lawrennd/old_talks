@@ -5,9 +5,9 @@ abstract: "In this lecture we turn to *unsupervised learning*. Specifically, we 
 youtube: 0mtK2_rc0IY
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_mlai/includes/mlai-notebook-setup.md}
+talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
@@ -23,20 +23,20 @@ the objective function) and in the last session we saw how we can *marginalize*
 the parameters in a process known as Bayesian inference.}
 
 
-\include{_ml/includes/clustering.md}
+talk-macros.gpp}l/includes/clustering.md}
 
-\include{_dimred/includes/high-dimensional-data.md}
-\include{_dimred/includes/latent-variables.md}
-\include{_dimred/includes/principal-component-analysis.md}
+talk-macros.gpp}imred/includes/high-dimensional-data.md}
+talk-macros.gpp}imred/includes/latent-variables.md}
+talk-macros.gpp}imred/includes/principal-component-analysis.md}
 
-\include{_dimred/includes/probabilistic-pca.md}
+talk-macros.gpp}imred/includes/probabilistic-pca.md}
 
-\include{_dimred/includes/mocap-ppca.md}
-\include{_dimred/includes/robot-wireless-ppca.md}
-\include{_dimred/includes/ppca-interpretations.md}
-\include{_dimred/includes/pca-in-practice.md}
-\include{_dimred/includes/ppca-marginal-likelihood.md}
-\include{_dimred/includes/ppca-reconstruction.md}
+talk-macros.gpp}imred/includes/mocap-ppca.md}
+talk-macros.gpp}imred/includes/robot-wireless-ppca.md}
+talk-macros.gpp}imred/includes/ppca-interpretations.md}
+talk-macros.gpp}imred/includes/pca-in-practice.md}
+talk-macros.gpp}imred/includes/ppca-marginal-likelihood.md}
+talk-macros.gpp}imred/includes/ppca-reconstruction.md}
 
 \reading
 

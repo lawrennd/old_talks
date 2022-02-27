@@ -14,38 +14,38 @@ venue: Cambridge AI Group Seminar
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ai/includes/ride-allocation-prediction.md}
-\include{_ai/includes/the-promise-of-ai.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/the-promise-of-ai.md}
 
-\include{_ai/includes/turing-ai-fellowship.md}
+talk-macros.gpp}i/includes/turing-ai-fellowship.md}
 
 
-\include{_ai/includes/artificial-vs-natural-systems.md}
+talk-macros.gpp}i/includes/artificial-vs-natural-systems.md}
 
-\include{_ai/includes/ml-system-decomposability.md}
-\include{_ai/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/ml-system-decomposability.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
 
-\include{_ai/includes/ml-systems-design-short.md}
-\include{_data-science/includes/the-data-crisis.md}
+talk-macros.gpp}i/includes/ml-systems-design-short.md}
+talk-macros.gpp}ata-science/includes/the-data-crisis.md}
 
-\include{_ml/includes/ml-paradigm-shift.md}
+talk-macros.gpp}l/includes/ml-paradigm-shift.md}
 
-\include{_ai/includes/intelligent-system-paolo.md}
+talk-macros.gpp}i/includes/intelligent-system-paolo.md}
 
-\include{_ai/includes/peppercorn.md}
+talk-macros.gpp}i/includes/peppercorn.md}
 
 <!-- remove the data challenge -->
 \define{mlDataChallenge}
 
-\include{_ml/includes/the-3ds-of-ml-systems-design.md}
+talk-macros.gpp}l/includes/the-3ds-of-ml-systems-design.md}
 
 \subsection{The Machine Learning Bit}
 
-\include{_uq/includes/emulation.md}
-\include{_gp/includes/gp-intro-very-short.md}
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}q/includes/emulation.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 
 \newslide{Emulation}

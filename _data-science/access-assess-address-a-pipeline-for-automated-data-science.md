@@ -16,39 +16,39 @@ transition: None
 ---
 
 
-\include{_data-science/includes/lies-damned-lies.md}
+talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
 
 \newslide{DELVE}
 
 \figure{\includepng{\diagramsDir/delve/rs-delve-announcement}{70%}}{The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/>.}{delve-announcement}
 
 
-\notes{\include{_delve/includes/delve-overview.md}}
+\notes{talk-macros.gpp}elve/includes/delve-overview.md}}
 
 \subsection{What is Machine Learning?}
 
 $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 
-\include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/big-model-paradox.md}
-\include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
+talk-macros.gpp}ata-science/includes/big-data-paradox.md}
+talk-macros.gpp}ata-science/includes/big-model-paradox.md}
+talk-macros.gpp}olicy/includes/diane-coyle-fitzwilliam-lecture.md}
 
-\include{_policy/includes/data-as-a-convener.md}
+talk-macros.gpp}olicy/includes/data-as-a-convener.md}
 
 \section{Delve}
 
-\include{_delve/includes/delve-report-list.md}
+talk-macros.gpp}elve/includes/delve-report-list.md}
 
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
-\include{_delve/includes/delve-data-report.md}
+talk-macros.gpp}elve/includes/delve-data-report.md}
 
-\notes{\include{_delve/includes/data-report-recommendations.md}}
+\notes{talk-macros.gpp}elve/includes/data-report-recommendations.md}}
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
-\include{_data-science/includes/access-assess-address.md}
+talk-macros.gpp}ata-science/includes/access-assess-address.md}
 
 \subsection{Conclusions}
 

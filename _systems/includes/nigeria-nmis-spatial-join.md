@@ -16,7 +16,7 @@ This is where "geo" data becomes important. We need to download a dataset that s
 
 There are special databases for storing this type of information, the database we are using is in the ```gdb``` or GeoDataBase format. It comes in a zip file. Let's download the outline files for the Nigerian states. They have been made available by the [Humanitarian Data Exchange](https://data.humdata.org/), you can also find other states data from the same site.}
 
-\include{_datasets/includes/nigerian-administrative-zones-data.md}
+talk-macros.gpp}atasets/includes/nigerian-administrative-zones-data.md}
 
 \code{zones_gdf = data}
 

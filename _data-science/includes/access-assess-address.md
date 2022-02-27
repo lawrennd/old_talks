@@ -22,7 +22,7 @@
 \define{\terms}{'data mining', 'data science'}
 \define{\initials}{dm-ds}
 
-\include{_data-science/includes/gartner-hype-cycle-base.md}
+talk-macros.gpp}ata-science/includes/gartner-hype-cycle-base.md}
 
 \notes{We note that the term *data mining* is falling somewhat out of favour, and the CRISP-DM data mining process also feels somewhat dated. In particular software engineering has moved on a great deal since it was defined, with modern software engineering more focussed on service oriented architectures. Software design has a pervasive effect on our ability to do data science.}
 
@@ -40,7 +40,7 @@
 
 \figure{\includepng{\diagramsDir/data-science/dnds_0202}{70%}}{Another perspective on the data science process, this one from @ONeil-doing13.}{data-science-process-oneil}
 
-\include{_data-science/includes/experiment-analyze-design.md}
+talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
 
 \notes{One challenge for data science and data science processes is that they do not always accommodate the real-time and evolving nature of data science advice as required, for example in pandemic response or in managing an international supply chain.}
 
@@ -48,7 +48,7 @@
 
 \figure{\includeyoutube{-QjJLgRni-M}{600}{450}}{Data science processes do not always accommodate the real-time and evolving nature of data science advice as required, for example, for policy advice as described in this presentation.}{policy-science-convening-power-of-data}
 
-\include{_data-science/includes/ride-sharing-soa-doa.md}
+talk-macros.gpp}ata-science/includes/ride-sharing-soa-doa.md}
 
 \newslide{Inspiration}
 
@@ -93,7 +93,7 @@
 \centerdiv{\jimmyKinyonyiPicture{15%}\michaelSmithPicture{15%}}
 \figure{\includepng{\diagramsDir/data-science/crash-map-kampala}{60%}}{Crash Map Kampala was an initiative by Michael T. Smith and Bagonza Jimmy Owa Kinyonyi to map the location, date and severity of vehicle accidents across the city of Kampala. Original storage location for the data was in police log books.}{crash-map-kampala}}
 
-\include{_data-science/includes/crash-map-kampala.md}
+talk-macros.gpp}ata-science/includes/crash-map-kampala.md}
 
 \newslide{Access Automation}
 
@@ -124,7 +124,7 @@
 \slides{\centerdiv{\joyceNabendePicture{15%}}
 \figure{\includepng{\diagramsDir/data-science/joyce-nabende-uganda-social-media-killing}{60%}}{Misinformation through media has been a challenge for as long as we've been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende's presentation.}{uganda-social-medial-killing}}
 
-\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
+talk-macros.gpp}ata-science/includes/joyce-nabende-text-mining-case-study.md}
 
 \subsection{Automating Assess}
 

@@ -42,6 +42,6 @@ $$
 $$
 \notes{where we are still in the one dimensional input setting so $\inputVector$ here represents a vector of our inputs with $\numData$ elements.}
 
-\include{_ml/includes/quadratic-basis.md}
+talk-macros.gpp}l/includes/quadratic-basis.md}
 
 \endif

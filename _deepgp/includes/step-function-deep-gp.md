@@ -1,8 +1,8 @@
 \ifndef{stepFunctionDeepGp}
 \define{stepFunctionDeepGp}
 
-\include{_gp/includes/step-function-gp.md}
-\include{_deepgp/includes/deepgp-enhance.md}
+talk-macros.gpp}p/includes/step-function-gp.md}
+talk-macros.gpp}eepgp/includes/deepgp-enhance.md}
 
 \editme
 

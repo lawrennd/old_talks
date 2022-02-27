@@ -22,7 +22,7 @@
 
 \notes{OK, we'll try and keep this session below five hours, but Tony's instinct is quite correct here. You will learn more from playing with data than in any formal session. So let's give it a try in the way Tony suggests.}
 
-\include{_datasets/includes/drawdata-data.md}
+talk-macros.gpp}atasets/includes/drawdata-data.md}
 
 \subsubsection{Name the Drawdata Dataframe}
 

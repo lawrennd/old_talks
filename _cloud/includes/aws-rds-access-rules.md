@@ -9,6 +9,6 @@
 
 \notes{}
 
-\include{_cloud/includes/aws-access-rules.md}
+talk-macros.gpp}loud/includes/aws-access-rules.md}
 
 \endif

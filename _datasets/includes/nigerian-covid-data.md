@@ -10,7 +10,7 @@
 
 \notes{For ease of use we've packaged this data set in the `pods` library}
 
-\include{_software/includes/pods-software.md}
+talk-macros.gpp}oftware/includes/pods-software.md}
 
 \setupcode{import pods}
 \code{data = pods.datasets.nigerian_covid()['Y']

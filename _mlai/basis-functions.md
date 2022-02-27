@@ -7,13 +7,13 @@ abstract: |
   In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_mlai/includes/mlai-notebook-setup.md}
-\include{_ml/includes/non-linear-regression-intro.md}
+talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+talk-macros.gpp}l/includes/non-linear-regression-intro.md}
 
-\include{_ml/includes/basis-functions.md}
-\include{_ml/includes/basis-function-models.md}
+talk-macros.gpp}l/includes/basis-functions.md}
+talk-macros.gpp}l/includes/basis-function-models.md}
 
 \addreading{@Rogers:book11}{Section 1.4}
 \addreading{@Bishop:book06}{Chapter 1, pg 1-6}

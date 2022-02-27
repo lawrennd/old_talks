@@ -18,20 +18,20 @@ Didn't have a chance to give you feedback during the call, so here goes:
 - When introducing DOA, it isn't immediately obvious that streams are at a heart of it. And then Milan comes a bit of a surprise.
 - It's probably worth spending a minute discussing how the ride booking system could be built using today's approaches, in service oriented way. Just saying "service A called service B with that input and got that answer, both of which are never stored" would make it immediately clear how the data is dissappearing.
 - Emukit page looks really out of place, it's isn't as famous as we'd like to it be. So maybe just replace it with a quick intution about emulator are?
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ai/includes/ml-systems-design-short.md}
-\include{_ai/includes/ride-allocation-prediction.md}
-\include{_ai/includes/fit-systems.md}
-\include{_ai/includes/intellectual-debt.md}
+talk-macros.gpp}i/includes/ml-systems-design-short.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/fit-systems.md}
+talk-macros.gpp}i/includes/intellectual-debt.md}
 
-\include{_ai/includes/ml-system-decomposability.md}
+talk-macros.gpp}i/includes/ml-system-decomposability.md}
 
-\include{_ai/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 
-\include{_data-science/includes/data-oriented-architectures-short.md}
-\include{_data-science/includes/milan.md}
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures-short.md}
+talk-macros.gpp}ata-science/includes/milan.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 
 \newslide{Emulation}

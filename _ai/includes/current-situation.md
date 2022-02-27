@@ -11,8 +11,8 @@
 * So what are deep learning and machine leaning? 
 }
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
 
 \newslide{Deep Learning}
 \slides{
@@ -21,13 +21,13 @@
 * Example: face recognition
 }
 
-\include{_ml/includes/deep-learning-overview.md}
-\include{_ai/includes/deploying-ai.md}
-\include{_ai/includes/ml-systems-design-long.md}
-\include{_ai/includes/artificial-vs-natural-systems.md}
-\include{_ai/includes/engineering-systems-design.md}
-\include{_ai/includes/pigeonholing.md}
-\include{_ai/includes/intelligent-system-paolo.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
+talk-macros.gpp}i/includes/deploying-ai.md}
+talk-macros.gpp}i/includes/ml-systems-design-long.md}
+talk-macros.gpp}i/includes/artificial-vs-natural-systems.md}
+talk-macros.gpp}i/includes/engineering-systems-design.md}
+talk-macros.gpp}i/includes/pigeonholing.md}
+talk-macros.gpp}i/includes/intelligent-system-paolo.md}
 
 \newslide{}
 \slides{

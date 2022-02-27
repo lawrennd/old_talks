@@ -32,7 +32,7 @@ transition: None
 incremental: True
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \section{Introduction}
 
@@ -248,7 +248,7 @@ without damaging the interpretability of the underlying system.}
 \newslide{Emulation}
 
 \figure{\includediagram{\diagramsDir/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
-\include{_gp/includes/gp-intro-very-short.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
@@ -290,7 +290,7 @@ system-wide tractability into consideration, it will be impossible.}
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
-\include{_deepgp/includes/stochastic-process-composition.md}
+talk-macros.gpp}eepgp/includes/stochastic-process-composition.md}
 
 \newslide{Bayesian Optimisation}
 
@@ -396,7 +396,7 @@ partner Element AI has been working with Nesta to drive this debate
 our data management plans (WP2 \textsection \ref{sec:readiness}).}
 
 \notes{
-\include{_data-science/includes/ride-sharing-soa-doa.md}
+talk-macros.gpp}ata-science/includes/ride-sharing-soa-doa.md}
 }
 \notes{While the existence and/or substance of a right to explanation in the
 General Data Protection Regulation has been questioned

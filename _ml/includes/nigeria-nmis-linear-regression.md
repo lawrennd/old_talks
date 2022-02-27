@@ -1,7 +1,7 @@
 \ifndef{nigeriaNmisLinearRegression}
 \define{nigeriaNmisLinearRegression}
 
-\include{_datasets/includes/nigeria-nmis-data.md}
+talk-macros.gpp}atasets/includes/nigeria-nmis-data.md}
 
 \editme
 

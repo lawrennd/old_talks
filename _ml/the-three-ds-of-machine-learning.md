@@ -17,24 +17,24 @@ venue: Data Science Africa, Addis Ababa
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \section{Introduction}
-\include{_ai/includes/centrifugal-governor.md}
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
+talk-macros.gpp}l/includes/what-is-ml-2.md}
+talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 
 \subsection{Amazon: Bits and Atoms}
 
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-\include{_supply-chain/includes/supply-chain-motto.md}
+talk-macros.gpp}upply-chain/includes/supply-chain.md}
+talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
+talk-macros.gpp}upply-chain/includes/supply-chain-motto.md}
 
-\include{_ml/includes/the-3ds-of-ml-systems-design.md}
+talk-macros.gpp}l/includes/the-3ds-of-ml-systems-design.md}
 
-\include{_data-science/includes/data-oriented-architectures.md}
-\include{_data-science/includes/data-oriented-conclusions.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
+talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
 
 \thanks
 

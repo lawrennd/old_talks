@@ -26,15 +26,15 @@ categories:
 - notes
 ---
 
-\include{../talk-macros.tex}
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
-\include{_ml/includes/what-does-machine-learning-do.md}
-\include{_ml/includes/deep-learning-overview.md}
-\include{_data-science/includes/a-time-for-professionalisation.md}
-\include{_data-science/includes/the-data-crisis.md}
+talk-macros.gpp}/talk-macros.tex}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/data-science-vs-ai.md}
+talk-macros.gpp}i/includes/embodiment-factors.md}
+talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
+talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
+talk-macros.gpp}ata-science/includes/the-data-crisis.md}
 
 \newslide{Rest of this Talk: Two Areas of Focus}
 
@@ -42,10 +42,10 @@ categories:
 
 * Deployment of Machine Learning Systems
 
-\include{_data-science/includes/data-readiness-levels.md}
-\include{_data-science/includes/data-joel-tests.md}
-\include{_ai/includes/deploying-ai.md}
-\include{_ai/includes/ml-systems-design-long.md}
+talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
+talk-macros.gpp}ata-science/includes/data-joel-tests.md}
+talk-macros.gpp}i/includes/deploying-ai.md}
+talk-macros.gpp}i/includes/ml-systems-design-long.md}
 
 \section{Conclusion}
 \newslide{Conclusion}

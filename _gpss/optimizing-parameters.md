@@ -6,10 +6,10 @@ abstract: >
 session: 4
 ---
 
-\include{_gpss/includes/gpss-notebook-setup.md}
-\include{_gp/includes/gp-numerics-and-optimization.md}
-\include{_gp/includes/gp-optimize.md}
-\include{_gp/includes/della-gatta-gene-gp.md}
+talk-macros.gpp}pss/includes/gpss-notebook-setup.md}
+talk-macros.gpp}p/includes/gp-numerics-and-optimization.md}
+talk-macros.gpp}p/includes/gp-optimize.md}
+talk-macros.gpp}p/includes/della-gatta-gene-gp.md}
 
 \thanks
 

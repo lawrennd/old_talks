@@ -4,7 +4,7 @@
 
 \notes{\subsection{Combining Data and Systems Design}}
 
-\include{_data-science/includes/data-science-as-debugging.md}
+talk-macros.gpp}ata-science/includes/data-science-as-debugging.md}
 
 \newslide{}
 

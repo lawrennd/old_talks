@@ -6,7 +6,7 @@ venue: ELLIS Coivd Seminar
 layout: talk
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 
 \newslide{DELVE}

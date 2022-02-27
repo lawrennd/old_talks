@@ -15,7 +15,7 @@ venue: Interspeech Tutorial 2009
 published: 2009-09-06
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \subsection{Online Resources}
 
@@ -28,27 +28,27 @@ font}.
 
 \section{Thinking in High Dimensions}
 
-\include{_dimred/includes/thinking.md}
+talk-macros.gpp}imred/includes/thinking.md}
 
 \section{Probabilistic Linear Dimensionality Reduction}
 
-\include{_dimred/includes/linear.md}
+talk-macros.gpp}imred/includes/linear.md}
 
 \section{Spectral Methods}
 
-\include{_dimred/includes/spectral.md}
+talk-macros.gpp}imred/includes/spectral.md}
 
 \section{Density Networks and GTM}
 
-\include{_dimred/includes/generative.md}
+talk-macros.gpp}imred/includes/generative.md}
 
 \section{Dual Probabilistic PCA and GP-LVM}
 
-\include{_dimred/includes/gplvm.md}
+talk-macros.gpp}imred/includes/gplvm.md}
 
 \section{Conclusions}
 
-\include{_dimred/includes/conclusions.md}
+talk-macros.gpp}imred/includes/conclusions.md}
 
 \thanks 
 
@@ -56,17 +56,17 @@ font}.
 
 \section{Probabilistic PCA Proof}
 
-\include{_dimred/includes/supplementary.md}
+talk-macros.gpp}imred/includes/supplementary.md}
 
 
-\include{_dimred/tex/talks/thinking}
-\include{_dimred/tex/talks/linear}
-\include{_dimred/tex/talks/spectral}
-\include{_dimred/tex/talks/generative}
-\include{_dimred/tex/talks/gplvm}
+talk-macros.gpp}imred/tex/talks/thinking}
+talk-macros.gpp}imred/tex/talks/linear}
+talk-macros.gpp}imred/tex/talks/spectral}
+talk-macros.gpp}imred/tex/talks/generative}
+talk-macros.gpp}imred/tex/talks/gplvm}
 
-\include{_dimred/tex/talks/conclusions}
-\include{_dimred/tex/talks/supplementary}
+talk-macros.gpp}imred/tex/talks/conclusions}
+talk-macros.gpp}imred/tex/talks/supplementary}
 
 \thanks
 

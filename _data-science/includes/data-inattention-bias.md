@@ -7,7 +7,7 @@
 
 \notes{We are going to see how inattention biases can play out in data analysis by going through a simple example. The analysis involves body mass index and activity information.}
 
-\include{_data-science/includes/bmi-steps-analysis.md}
+talk-macros.gpp}ata-science/includes/bmi-steps-analysis.md}
 
 \subsection{A Hypothesis as a Liability}
 
@@ -51,7 +51,7 @@
 
 \notes{The best book I have found for teaching the skeptical sense of data that underlies the statisticians craft is David Spiegelhalter's *Art of Statistics*.}
 
-\include{_books/includes/the-art-of-statistics.md}
+talk-macros.gpp}ooks/includes/the-art-of-statistics.md}
 
 
 \endif

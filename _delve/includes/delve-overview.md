@@ -17,7 +17,7 @@
 > * Using emerging sources of data as new evidence from the unfolding pandemic comes to light
 > * Ensuring that the work of this group is coordinated with others and communicated as necessary both nationally and internationally
 
-\include{_delve/includes/delve-timeline.md}
+talk-macros.gpp}elve/includes/delve-timeline.md}
 
 \notes{Any policy question can be framed in a number of different
 ways - what are the health outcomes; what is the impact on NHS

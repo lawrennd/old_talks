@@ -3,7 +3,7 @@
 
 \editme
 
-\include{_ai/includes/intellectual-debt-short.md}
+talk-macros.gpp}i/includes/intellectual-debt-short.md}
 
 \subsection{Lean Startup Methodology}
 
@@ -31,7 +31,7 @@ system is deployed.
 The notion of the Sculley paper is that there are particular challenges
 for machine learning models around technical debt.}
 
-\include{_software/includes/mythical-man-month.md}
-\include{_software/includes/separation-of-concerns.md}
+talk-macros.gpp}oftware/includes/mythical-man-month.md}
+talk-macros.gpp}oftware/includes/separation-of-concerns.md}
 
 \endif

@@ -2,9 +2,9 @@
 \define{mlSystemsDesignLong}
 \editme
 
-\include{_ai/includes/ml-systems-design-short.md}
+talk-macros.gpp}i/includes/ml-systems-design-short.md}
 
-\include{_ai/includes/pigeonholing.md}
+talk-macros.gpp}i/includes/pigeonholing.md}
 
 \subsection{Rapid Reimplementation}
 
@@ -24,7 +24,7 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 
 \newslide{Machine Learning Systems Design}
 
-\include{_ai/includes/centrifugal-governor.md}
+talk-macros.gpp}i/includes/centrifugal-governor.md}
 
 \newslide{Adversaries}
 \slides{
@@ -47,8 +47,8 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 \notes{That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.}
 
 
-\include{_ai/includes/intelligent-system-paolo.md}
-\include{_ai/includes/peppercorn.md}
+talk-macros.gpp}i/includes/intelligent-system-paolo.md}
+talk-macros.gpp}i/includes/peppercorn.md}
 
 
 \newslide{Turnaround And Update}

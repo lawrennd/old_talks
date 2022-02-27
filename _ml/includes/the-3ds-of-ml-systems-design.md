@@ -4,10 +4,10 @@
 
 \section{The Three Ds of Machine Learning Systems Design}
 
-\include{_ml/includes/ml-three-primary-challenges.md}
-\include{_ml/includes/ml-decomposition-challenge.md}
-\include{_ml/includes/ml-data-challenge.md}
-\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
-\include{_ml/includes/ml-deployment-challenge.md}
+talk-macros.gpp}l/includes/ml-three-primary-challenges.md}
+talk-macros.gpp}l/includes/ml-decomposition-challenge.md}
+talk-macros.gpp}l/includes/ml-data-challenge.md}
+talk-macros.gpp}l/includes/ml-combining-data-and-systems-design-challenge.md}
+talk-macros.gpp}l/includes/ml-deployment-challenge.md}
 
 \endif

@@ -4,15 +4,15 @@ session: 10
 abstract:
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
-\include{_gpss/includes/gpss-notebook-setup.md}
+talk-macros.gpp}pss/includes/gpss-notebook-setup.md}
 
-\include{_gplvm/includes/bayes-gplvm-intro.md}
-\include{_gplvm/includes/variational-bayes-gplvm-long.md}
-\include{_gplvm/includes/mrd-gplvm.md}
-\include{_gplvm/includes/bayes-gplvm-tutorial.md}
-\include{_gplvm/includes/singlecell-bayes-gplvm.md}
+talk-macros.gpp}plvm/includes/bayes-gplvm-intro.md}
+talk-macros.gpp}plvm/includes/variational-bayes-gplvm-long.md}
+talk-macros.gpp}plvm/includes/mrd-gplvm.md}
+talk-macros.gpp}plvm/includes/bayes-gplvm-tutorial.md}
+talk-macros.gpp}plvm/includes/singlecell-bayes-gplvm.md}
 
 \thanks
 

@@ -1,8 +1,8 @@
 \ifndef{motorcycleHelmetDeepGp}
 \define{motorcycleHelmetDeepGp}
 
-\include{_gp/includes/motorcycle-helmet-gp.md}
-\include{_deepgp/includes/deepgp-enhance.md}
+talk-macros.gpp}p/includes/motorcycle-helmet-gp.md}
+talk-macros.gpp}eepgp/includes/deepgp-enhance.md}
 
 \editme
 

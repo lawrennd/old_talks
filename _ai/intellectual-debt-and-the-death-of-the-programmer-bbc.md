@@ -19,10 +19,10 @@ venue: BBC Lectures on ML
 transition: None
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 
-\include{_ai/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 
 \subsection{The News}
 

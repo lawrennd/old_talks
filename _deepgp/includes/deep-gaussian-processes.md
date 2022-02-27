@@ -1,11 +1,11 @@
 \ifndef{deepGaussianProcesses}
 \define{deepGaussianProcesses}
 \editme
-\include{_gp/includes/mackay-bathwater.md}
-\include{_deepgp/includes/deep-nn-gp.md}
-\include{_ml/includes/deep-learning-overview.md}
-\include{_deepgp/includes/deep-theory.md}
-\include{_deepgp/includes/deep-results.md}
-\include{_health/includes/deep-health-model.md}
+talk-macros.gpp}p/includes/mackay-bathwater.md}
+talk-macros.gpp}eepgp/includes/deep-nn-gp.md}
+talk-macros.gpp}l/includes/deep-learning-overview.md}
+talk-macros.gpp}eepgp/includes/deep-theory.md}
+talk-macros.gpp}eepgp/includes/deep-results.md}
+talk-macros.gpp}ealth/includes/deep-health-model.md}
 
 \endif

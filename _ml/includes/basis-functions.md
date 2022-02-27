@@ -3,7 +3,7 @@
 
 \section{Basis Functions}
 
-\include{_ml/includes/basis-functions-intro.md}
+talk-macros.gpp}l/includes/basis-functions-intro.md}
 
 \editme
 
@@ -15,7 +15,7 @@ $$
 $$
 \notes{which is known as the *polynomial basis*.}
 
-\include{_ml/includes/polynomial-basis.md}
+talk-macros.gpp}l/includes/polynomial-basis.md}
 
 \notes{To aid in understanding how a basis works, we've provided you with a small interactive tool for exploring this polynomial basis. The tool can be summoned with the following command.}
 
@@ -33,10 +33,10 @@ $$
 
 \notes{Now we look at basis functions that have been used as the *activation* functions in neural network model.}
 
-\include{_ml/includes/radial-basis.md}
-\include{_ml/includes/relu-basis.md}
-\include{_ml/includes/hyperbolic-tangent-basis.md}
-\include{_ml/includes/fourier-basis.md}
+talk-macros.gpp}l/includes/radial-basis.md}
+talk-macros.gpp}l/includes/relu-basis.md}
+talk-macros.gpp}l/includes/hyperbolic-tangent-basis.md}
+talk-macros.gpp}l/includes/fourier-basis.md}
 
 
 

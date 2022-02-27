@@ -22,18 +22,18 @@ transition: None
 incremental: True
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ai/includes/the-diving-bell-butterfly.md}
-\include{_ai/includes/jean-dominique-bauby.md}
-\include{_ai/includes/embodiment-factors-tedx.md}
-\include{_ai/includes/marcel-renault.md}
-\include{_ai/includes/caleb-mcduff.md}
-\include{_ai/includes/embodiment-and-narrative.md}
-\include{_ai/includes/conversation-computer.md}
-\include{_books/includes/why-red-doesnt-sound-like-a-bell.md}
-\include{_books/includes/the-mind-is-flat.md}
-\include{_books/includes/rebel-ideas.md}
+talk-macros.gpp}i/includes/the-diving-bell-butterfly.md}
+talk-macros.gpp}i/includes/jean-dominique-bauby.md}
+talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
+talk-macros.gpp}i/includes/marcel-renault.md}
+talk-macros.gpp}i/includes/caleb-mcduff.md}
+talk-macros.gpp}i/includes/embodiment-and-narrative.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
+talk-macros.gpp}ooks/includes/why-red-doesnt-sound-like-a-bell.md}
+talk-macros.gpp}ooks/includes/the-mind-is-flat.md}
+talk-macros.gpp}ooks/includes/rebel-ideas.md}
 
 \subsection{Conclusions}
 

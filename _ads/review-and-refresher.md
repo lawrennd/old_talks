@@ -27,10 +27,10 @@ ipynb: true
 
 \notes{We suggest you complete at least Exercises 4-9.}
 
-\include{_ads/includes/ads-notebook-setup.md}
+talk-macros.gpp}ds/includes/ads-notebook-setup.md}
 
-\include{_systems/includes/nigeria-nmis-data-systems.md}
-\include{_ml/includes/probability-intro.md}
+talk-macros.gpp}ystems/includes/nigeria-nmis-data-systems.md}
+talk-macros.gpp}l/includes/probability-intro.md}
 
 \newslide{}
 
@@ -59,13 +59,13 @@ ipynb: true
 
 \section{A First Analysis}
 
-\include{_data-science/includes/covid-vaccination-and-simpsons-paradox.md}
+talk-macros.gpp}ata-science/includes/covid-vaccination-and-simpsons-paradox.md}
 
 
-\include{_data-science/includes/correlation-coefficients.md}
+talk-macros.gpp}ata-science/includes/correlation-coefficients.md}
 
 \section{A Second Analysis}
-\include{_datasets/includes/bmi-steps-data.md}
+talk-macros.gpp}atasets/includes/bmi-steps-data.md}
 
 \subsection{BMI Steps Analysis}
 

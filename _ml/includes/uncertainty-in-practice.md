@@ -3,7 +3,7 @@
 
 \editme
 
-\include{_ml/includes/sheffield-porter.md}
-\include{_gp/includes/gp-optimize-data-fit-capacity.md}
+talk-macros.gpp}l/includes/sheffield-porter.md}
+talk-macros.gpp}p/includes/gp-optimize-data-fit-capacity.md}
 
 \endif

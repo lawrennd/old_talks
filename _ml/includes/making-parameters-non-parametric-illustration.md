@@ -30,7 +30,7 @@ locations, $\inputMatrix$, are in two separate clusters. The response
 variable, $\dataVector$, is sampled from a Gaussian process with an
 exponentiated quadratic covariance.}
 
-\include{_gp/includes/gpy-install.md}
+talk-macros.gpp}p/includes/gpy-install.md}
 
 \setupcode{import numpy as np
 import GPy

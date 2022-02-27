@@ -17,28 +17,28 @@ venue: Virtual Advances in Data Science Seminar, Manchester
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ai/includes/the-great-ai-fallacy.md}
+talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 
-\include{_ai/includes/artificial-vs-natural-systems-short.md}
+talk-macros.gpp}i/includes/artificial-vs-natural-systems-short.md}
 
-\include{_ai/includes/intellectual-debt-short.md}
-\include{_ai/includes/buying-system.md}
-\include{_ai/includes/buying-to-banking.md}
-\include{_ai/includes/safe-boda.md}
-\include{_ai/includes/fit-systems.md}
+talk-macros.gpp}i/includes/intellectual-debt-short.md}
+talk-macros.gpp}i/includes/buying-system.md}
+talk-macros.gpp}i/includes/buying-to-banking.md}
+talk-macros.gpp}i/includes/safe-boda.md}
+talk-macros.gpp}i/includes/fit-systems.md}
 
-\include{_ai/includes/ride-allocation-prediction.md}
+talk-macros.gpp}i/includes/ride-allocation-prediction.md}
 
 \section{A Solution}
-\include{_data-science/includes/data-oriented-architectures-short.md}
-\include{_data-science/includes/milan.md}
+talk-macros.gpp}ata-science/includes/data-oriented-architectures-short.md}
+talk-macros.gpp}ata-science/includes/milan.md}
 
-\include{_ai/includes/fit-models-to-fit-systems.md}
-\include{_uq/includes/emulation.md}
-\include{_gp/includes/gp-intro-very-short.md}
-\include{_uq/includes/deep-emulation.md}
+talk-macros.gpp}i/includes/fit-models-to-fit-systems.md}
+talk-macros.gpp}q/includes/emulation.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
+talk-macros.gpp}q/includes/deep-emulation.md}
 
 
 \newslide{Emulation}

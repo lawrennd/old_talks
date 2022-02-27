@@ -11,7 +11,7 @@
 
 -   First example: learn the dimensionality of latent space.
 
-\include{../../_gplvm/includes/graphical_gplvm.md}
-\include{../../_gplvm/includes/ard_description.md}
-\include{../../_gplvm/includes/ard_results.md}
+talk-macros.gpp}/../_gplvm/includes/graphical_gplvm.md}
+talk-macros.gpp}/../_gplvm/includes/ard_description.md}
+talk-macros.gpp}/../_gplvm/includes/ard_results.md}
 

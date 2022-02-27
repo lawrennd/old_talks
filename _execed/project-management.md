@@ -5,7 +5,7 @@ abstract: >
 
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 <!-- Explore exploit cycles -->
 

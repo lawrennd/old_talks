@@ -15,18 +15,18 @@ date: 2020-09-26
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_ai/includes/diving-bell-butterfly.md}
-\include{_ai/includes/embodiment-factors-tedx.md}
+talk-macros.gpp}i/includes/diving-bell-butterfly.md}
+talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
 <!--include{_ai/includes/sahelanthropus-tchadensis.md}-->
-\include{_ai/includes/formula-one-engine.md}
-\include{_ai/includes/marcel-renault.md}
-\include{_ai/includes/caleb-mcduff.md}
-\include{_ai/includes/conversation.md}
-\include{_data-science/includes/information-growth.md}
-\include{_ai/includes/baby-shoes.md}
-\include{_ai/includes/conversation-computer.md}
+talk-macros.gpp}i/includes/formula-one-engine.md}
+talk-macros.gpp}i/includes/marcel-renault.md}
+talk-macros.gpp}i/includes/caleb-mcduff.md}
+talk-macros.gpp}i/includes/conversation.md}
+talk-macros.gpp}ata-science/includes/information-growth.md}
+talk-macros.gpp}i/includes/baby-shoes.md}
+talk-macros.gpp}i/includes/conversation-computer.md}
 
 \notes{Some researchers talk about transhumanism, releasing us from our own limitations, gaining the bandwidth of the computer. Who wouldn’t want the equivalent of billions of dollars of communication that a computer has?
 

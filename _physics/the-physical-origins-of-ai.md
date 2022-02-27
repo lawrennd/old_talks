@@ -15,12 +15,12 @@ venue: TBA
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
-\include{_physics/includes/ceres-discovery.md}
-\include{_physics/includes/laplace-portrait.md}
-\include{_physics/includes/laplaces-determinism.md}
-\include{_physics/includes/entropy-intro.md}
+talk-macros.gpp}hysics/includes/ceres-discovery.md}
+talk-macros.gpp}hysics/includes/laplace-portrait.md}
+talk-macros.gpp}hysics/includes/laplaces-determinism.md}
+talk-macros.gpp}hysics/includes/entropy-intro.md}
 
 \thanks
 

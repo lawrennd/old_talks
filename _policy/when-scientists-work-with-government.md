@@ -20,7 +20,7 @@ abstract: |
 date: 2020-12-16
 ---
 
-\include{talk-macros.gpp}
+talk-macros.gpp}lk-macros.gpp}
 
 \section{Lessons Learned}
 
@@ -114,7 +114,7 @@ respond rapidly and effectively to national crises. These included:
 
 \subsection{Highlights}
 
-\include{_delve/includes/delve-report-list.md}
+talk-macros.gpp}elve/includes/delve-report-list.md}
 
 \thanks
 

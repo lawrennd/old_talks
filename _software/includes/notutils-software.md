@@ -9,7 +9,7 @@
 
 \notes{The software can be installed using}
 
-\include{_software/includes/notutils-install.md}
+talk-macros.gpp}oftware/includes/notutils-install.md}
 
 \notes{from the command prompt where you can access your python installation.}
 

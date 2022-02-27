@@ -8,18 +8,18 @@ youtube: M67rG3cZoVg
 
 \installcode{pods}
 
-\include{_mlai/includes/welcome.md}
-\include{_mlai/includes/assumed-knowledge.md}
-\include{_mlai/includes/environment-python-jupyter.md}
+talk-macros.gpp}lai/includes/welcome.md}
+talk-macros.gpp}lai/includes/assumed-knowledge.md}
+talk-macros.gpp}lai/includes/environment-python-jupyter.md}
 
 \writeassignment{What is jupyter and why was it invented? Give some
 examples of functionality it gives over standard python. What is the jupyter
 project? Name two languages involved in the Jupyter project other than python.}{10}
 
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/overdetermined-inaugural.md}
-\include{_datasets/includes/nigeria-nmis-data.md}
-\include{_ml/includes/probability-intro.md}
+talk-macros.gpp}l/includes/what-is-ml.md}
+talk-macros.gpp}l/includes/overdetermined-inaugural.md}
+talk-macros.gpp}atasets/includes/nigeria-nmis-data.md}
+talk-macros.gpp}l/includes/probability-intro.md}
 
 \newslide{}
 

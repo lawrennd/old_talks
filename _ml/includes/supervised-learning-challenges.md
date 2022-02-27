@@ -11,10 +11,10 @@
 2. defining the appropriate *class of function*, $\mappingFunction(\cdot)$.
 3. selecting the right parameters, $\weightVector$.
 
-\include{_ml/includes/feature-selection.md}
-\include{_ml/includes/class-of-function.md}
-\include{_ml/includes/parameter-estimation.md}
-\include{_ml/includes/generalization-and-overfitting.md}
-\include{_ml/includes/olympic-marathon-bayesian-polynomial.md}
+talk-macros.gpp}l/includes/feature-selection.md}
+talk-macros.gpp}l/includes/class-of-function.md}
+talk-macros.gpp}l/includes/parameter-estimation.md}
+talk-macros.gpp}l/includes/generalization-and-overfitting.md}
+talk-macros.gpp}l/includes/olympic-marathon-bayesian-polynomial.md}
 
 \endif

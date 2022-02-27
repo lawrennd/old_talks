@@ -1,8 +1,8 @@
 \ifndef{robotWirelessDeepGp}
 \define{robotWirelessDeepGp}
 
-\include{_gp/includes/robot-wireless-gp.md}
-\include{_deepgp/includes/deepgp-enhance.md}
+talk-macros.gpp}p/includes/robot-wireless-gp.md}
+talk-macros.gpp}eepgp/includes/deepgp-enhance.md}
 
 \editme
 

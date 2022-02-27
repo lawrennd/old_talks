@@ -19,7 +19,7 @@ venue: Analyticon
 transition: None
 ---
 
-\include{talk-macros.tex}
+talk-macros.gpp}lk-macros.tex}
 
 \notes{Machine learning allows us to extract knowledge from data to
 form a prediction.}

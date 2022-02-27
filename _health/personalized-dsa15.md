@@ -15,29 +15,29 @@ pdf: personalized_dsa15.pdf
 transition: None
 ---
 
-<!--\include{_ml/includes/data-plus-model.md}-->
-<!--\include{_health/includes/health-motivation-africa.md}-->
+<!--talk-macros.gpp}l/includes/data-plus-model.md}-->
+<!--talk-macros.gpp}ealth/includes/health-motivation-africa.md}-->
 
 \subsection{Diversity of Data}
-\include{_ml/includes/diversity-of-data.md}
+talk-macros.gpp}l/includes/diversity-of-data.md}
 
 \subsection{Massively Missing Data}
-\include{_health/includes/missing-data.md}
-\include{_health/includes/avoid-marginalization.md}
+talk-macros.gpp}ealth/includes/missing-data.md}
+talk-macros.gpp}ealth/includes/avoid-marginalization.md}
 
 <!--\subsection{Image Data}
-\include{_health/includes/image-data.md}-->
+talk-macros.gpp}ealth/includes/image-data.md}-->
 
 <!--\subsection{Survival Data}
-\include{_health/includes/survival-data.md}-->
+talk-macros.gpp}ealth/includes/survival-data.md}-->
 
 <!--\subsection{Spatial Data}
-\include{_health/includes/spatial-data.md}-->
+talk-macros.gpp}ealth/includes/spatial-data.md}-->
 
-\include{_health/includes/malaria.md}
-<!--\include{_health/includes/deep-health-parts.md}-->
-\include{_health/includes/deep-health-parts-short.md}
-<!--\include{_health/includes/interface.md}-->
+talk-macros.gpp}ealth/includes/malaria.md}
+<!--talk-macros.gpp}ealth/includes/deep-health-parts.md}-->
+talk-macros.gpp}ealth/includes/deep-health-parts-short.md}
+<!--talk-macros.gpp}ealth/includes/interface.md}-->
 
 \subsection{Summary}
 

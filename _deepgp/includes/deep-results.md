@@ -3,14 +3,14 @@
 \editme
 
 
-\include{_deepgp/includes/deep-gp-setup-code.md}
-\include{_deepgp/includes/olympic-marathon-deep-gp.md}
-\include{_deepgp/includes/della-gatta-deep-gp.md}
-\include{_deepgp/includes/step-function-deep-gp.md}
-\include{_deepgp/includes/motorcycle-helmet-deep-gp.md}
-\include{_deepgp/includes/robot-wireless-deep-gp.md}
+talk-macros.gpp}eepgp/includes/deep-gp-setup-code.md}
+talk-macros.gpp}eepgp/includes/olympic-marathon-deep-gp.md}
+talk-macros.gpp}eepgp/includes/della-gatta-deep-gp.md}
+talk-macros.gpp}eepgp/includes/step-function-deep-gp.md}
+talk-macros.gpp}eepgp/includes/motorcycle-helmet-deep-gp.md}
+talk-macros.gpp}eepgp/includes/robot-wireless-deep-gp.md}
 
-\include{_deepgp/includes/high-five-deep-gp.md}
-\include{_deepgp/includes/mnist-digits-subsample-deep-gp.md}
+talk-macros.gpp}eepgp/includes/high-five-deep-gp.md}
+talk-macros.gpp}eepgp/includes/mnist-digits-subsample-deep-gp.md}
 
 \endif

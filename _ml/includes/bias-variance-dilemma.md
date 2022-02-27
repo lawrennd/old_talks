@@ -68,6 +68,6 @@ $$
 
 \notes{Models that exhibit high variance are sometimes said to 'overfit' the data whereas models that exhibit high bias are sometimes described as 'underfitting' the data.}
 
-\include{_ml/includes/bias-variance-plots.md}
+talk-macros.gpp}l/includes/bias-variance-plots.md}
 
 \endif

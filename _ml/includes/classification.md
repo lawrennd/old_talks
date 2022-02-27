@@ -1,8 +1,8 @@
 \ifndef{classification}
 \define{classification}
 
-\include{_ml/includes/classification-intro.md}
-\include{_ml/includes/classification-examples.md}
+talk-macros.gpp}l/includes/classification-intro.md}
+talk-macros.gpp}l/includes/classification-examples.md}
 
 \editme
 

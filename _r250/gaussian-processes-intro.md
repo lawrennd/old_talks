@@ -19,11 +19,11 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.gpp}
-\include{_physics/includes/laplace-portrait.md}
-\include{_physics/includes/laplaces-determinism.md}
-\include{_gp/includes/gp-intro-very-short.md}
-\include{_gp/includes/what-is-a-gp.md}
+talk-macros.gpp}lk-macros.gpp}
+talk-macros.gpp}hysics/includes/laplace-portrait.md}
+talk-macros.gpp}hysics/includes/laplaces-determinism.md}
+talk-macros.gpp}p/includes/gp-intro-very-short.md}
+talk-macros.gpp}p/includes/what-is-a-gp.md}
 
 \subsection{Extensions}
 \slides{
