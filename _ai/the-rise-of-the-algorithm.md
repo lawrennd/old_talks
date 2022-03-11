@@ -15,7 +15,7 @@ author:
 transition: None
 ---
 
-talk-macros.gpp}/talk-macros.tex}
+\include{../talk-macros.tex}
 
 \newslide{}
 
@@ -74,7 +74,7 @@ talk-macros.gpp}/talk-macros.tex}
 
 \includepng{\diagramsDir/rapid-diagnosis-and-consultation-save-lives}{90%}
 
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+\include{_data-science/includes/evolved-relationship.md}
 
 \newslide{}
 
@@ -88,7 +88,7 @@ talk-macros.gpp}ata-science/includes/evolved-relationship.md}
 
 \speakernotes{Most people think of  intelligence as Sherlock Holmes like deduction. But actually what we can achiee is closer to what a spiritualist might do when cold reading. Understanding of statistics, no rationalisation.}
 
-talk-macros.gpp}l/includes/deep-learning-overview.md}
+\include{_ml/includes/deep-learning-overview.md}
 
 \newslide{}
 
@@ -102,7 +102,7 @@ talk-macros.gpp}l/includes/deep-learning-overview.md}
 
 \speakernotes{Or perhaps a better analogy is that we’ve created the turtle. System Zero in the Kahneman parlance. A large data aware organ that operates at a level below our subconscious.}
 
-talk-macros.gpp}i/includes/conversation.md}
+\include{_ai/includes/conversation.md}
 
 \newslide{}
 

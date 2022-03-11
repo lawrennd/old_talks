@@ -1,7 +1,7 @@
 \ifndef{bayesGplvmTutorial}
 \define{bayesGplvmTutorial}
 
-talk-macros.gpp}plvm/includes/gplvm-tutorial-data.md}
+\include{_gplvm/includes/gplvm-tutorial-data.md}
 
 \editme
 

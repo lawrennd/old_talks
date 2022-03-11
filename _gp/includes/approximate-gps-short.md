@@ -4,11 +4,11 @@
 
 \subsection{Low Rank Gaussian Processes}
 
-talk-macros.gpp}p/includes/sparse-gp-comic.md}
-talk-macros.gpp}p/includes/low-rank-motivation.md}
-talk-macros.gpp}p/includes/gp-variational-complexity.md}
+\include{_gp/includes/sparse-gp-comic.md}
+\include{_gp/includes/low-rank-motivation.md}
+\include{_gp/includes/gp-variational-complexity.md}
 <!--include{_gp/includes/larger-factorize.md}-->
-talk-macros.gpp}p/includes/bottleneck.md}
+\include{_gp/includes/bottleneck.md}
 
 \subsection{Augment Variable Space}
 
@@ -82,8 +82,8 @@ $$
 \notes{Unfortunately, computation of $p(\dataVector|\inducingVector)$ turns out to be intractable. As a result, we need to turn to approximations to make progress.}
 \slides{* Unfortunately computing $p(\dataVector|\inducingVector)$ is intractable}
 
-talk-macros.gpp}p/includes/larger-variational.md}
+\include{_gp/includes/larger-variational.md}
 <!--include{_gp/includes/larger-graph-intro.md}-->
-talk-macros.gpp}p/includes/inducing-variables-demo.md}
+\include{_gp/includes/inducing-variables-demo.md}
 
 \endif

@@ -130,7 +130,7 @@ for samp in range(num_samps):
                           xlim=xlim,
                           ylim=ylim)}
 
-talk-macros.gpp}ata-science/includes/pods-install.md}
+\include{_data-science/includes/pods-install.md}
 
 
 \setupdisplaycode{import notutils as nu

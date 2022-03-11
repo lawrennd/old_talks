@@ -18,7 +18,7 @@ think is somewhat hidden from the academic community, because it is a
 phenomenon that occurs when a computer software system is deployed.}
 
 \ifndef{intellectualDebt}
-talk-macros.gpp}oftware/includes/separation-of-concerns.md}
+\include{_software/includes/separation-of-concerns.md}
 \endif
 
 \endif

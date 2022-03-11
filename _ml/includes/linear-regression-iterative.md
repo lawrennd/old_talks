@@ -2,7 +2,7 @@
 \define{linearRegressionIterative}
 \editme
 
-talk-macros.gpp}l/includes/regression.md}
+\include{_ml/includes/regression.md}
 
 \subsection{Contour Plot of Error Function}
 

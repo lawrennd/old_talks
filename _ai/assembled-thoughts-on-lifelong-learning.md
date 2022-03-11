@@ -12,17 +12,17 @@ venue: Naples or Zoom
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
 https://sites.google.com/view/ll4lhri2020
 
-talk-macros.gpp}l/includes/empirical-effectiveness-of-deep-learning.md}
+\include{_ml/includes/empirical-effectiveness-of-deep-learning.md}
 
-talk-macros.gpp}l/includes/new-methods-required.md}
+\include{_ml/includes/new-methods-required.md}
 
-talk-macros.gpp}l/includes/massively-missing-data.md}
+\include{_ml/includes/massively-missing-data.md}
 
 \notes{Machine learning involves taking data and combining it with a model in
 order to make a prediction. The data consist of measurements recorded
@@ -44,25 +44,25 @@ collected. If the model is chosen well we will be able to interpolate
 the data and precit likely values of future data points. If it is chosen
 badly our predictions will be overconfident and wrong.}
 
-talk-macros.gpp}l/includes/model-vs-algorithm.md}
+\include{_ml/includes/model-vs-algorithm.md}
 
-talk-macros.gpp}l/includes/is-my-model-useful.md}
+\include{_ml/includes/is-my-model-useful.md}
 
-talk-macros.gpp}l/includes/big-data-health-motivation.md}
+\include{_ml/includes/big-data-health-motivation.md}
 
-talk-macros.gpp}l/includes/not-useful-model.md}
+\include{_ml/includes/not-useful-model.md}
 
-talk-macros.gpp}l/includes/big-data-consistency.md}
+\include{_ml/includes/big-data-consistency.md}
 
-talk-macros.gpp}l/includes/parameter-bottleneck.md}
+\include{_ml/includes/parameter-bottleneck.md}
 
-talk-macros.gpp}l/includes/non-parametric-challenge.md}
+\include{_ml/includes/non-parametric-challenge.md}
 
-talk-macros.gpp}l/includes/multivariate-gaussian-closure.md}
+\include{_ml/includes/multivariate-gaussian-closure.md}
 
-talk-macros.gpp}l/includes/making-parameters-non-parametric.md}
+\include{_ml/includes/making-parameters-non-parametric.md}
 
-talk-macros.gpp}l/includes/making-parameters-non-parametric-illustration.md}
+\include{_ml/includes/making-parameters-non-parametric-illustration.md}
 
 \section{Conclusions}
 

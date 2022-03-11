@@ -25,18 +25,18 @@ transition: None
 ---
 
 
-talk-macros.gpp}lphysical/includes/mlphysical-notebook-setup.md}
-talk-macros.gpp}q/includes/uq-sampling-history-doe.md}
-talk-macros.gpp}oftware/includes/emukit-software.md}
-talk-macros.gpp}q/includes/emukit-vision.md}
-talk-macros.gpp}q/includes/emukit-tutorial.md}
+\include{_mlphysical/includes/mlphysical-notebook-setup.md}
+\include{_uq/includes/uq-sampling-history-doe.md}
+\include{_software/includes/emukit-software.md}
+\include{_uq/includes/emukit-vision.md}
+\include{_uq/includes/emukit-tutorial.md}
 
 
 \notes{This introduction is based on [An Introduction to Experimental Design with Emukit](https://github.com/EmuKit/emukit/blob/master/notebooks/Emukit-tutorial-experimental-design-introduction.ipynb) written by Andrei Paleyes and Maren Mahsereci.}
 
-talk-macros.gpp}q/includes/model-free-experimental-design.md}
+\include{_uq/includes/model-free-experimental-design.md}
 
-talk-macros.gpp}q/includes/emukit-experimental-design.md}
+\include{_uq/includes/emukit-experimental-design.md}
 
 \subsection{Conclusions}
 

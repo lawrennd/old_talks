@@ -47,6 +47,6 @@ $$
 \end{align}
 $$
 
-talk-macros.gpp}eepgp/includes/cascade-of-gps.md}
+\include{_deepgp/includes/cascade-of-gps.md}
 
 \endif

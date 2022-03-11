@@ -25,7 +25,7 @@ transition: None
 incremental: True
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Jeff's Shop}
 
@@ -42,7 +42,7 @@ selection available.}
 
 \notes{The way Jeff does this is that he focusses on his supply chain. He realises that always having the right things in stock brings customers back. So he's prepared to make a loss on some products to maintain customer loyalty. Jeff's main business is deliveries, and his biggest sales occur in the Christmas period. Jeff's supply chain is designed to deliver Christmas. He is Father Christmas, Papa Noel, Santa Claus, Christkind, Bom Velhinho and the Befana rolled into one. His entire supply chain is designed to handle gift-giving at this time of year.}
 
-\slides{talk-macros.gpp}upply-chain/includes/arthur-christmas-trailer.md}}
+\slides{\include{_supply-chain/includes/arthur-christmas-trailer.md}}
 
 \notes{To deliver all these presents, just like Santa, Jeff has a
 fleet of flying machines. Some of these flying machines are designed
@@ -50,9 +50,9 @@ to go across continents. And some of these flying machines are
 designed to go across towns. They don't drop presents down your
 chimney, but they come close.}
 
-\slides{talk-macros.gpp}upply-chain/includes/prime-air-plane.md}}
+\slides{\include{_supply-chain/includes/prime-air-plane.md}}
 
-\slides{talk-macros.gpp}upply-chain/includes/amazon-drone-flight.md}}
+\slides{\include{_supply-chain/includes/amazon-drone-flight.md}}
 
 \section{Innovation}
 
@@ -76,7 +76,7 @@ improve. I've not talked to Jeff much about innovation, but I do know
 he thinks that an idea can never be disruptive unless its deployed to
 the customer.}
 
-talk-macros.gpp}usiness/includes/the-innovators-dilemma.md}
+\include{_business/includes/the-innovators-dilemma.md}
 
 \section{Little Jeff}
 
@@ -123,7 +123,7 @@ and ready to pluck. And all that's happening is that the store-owner
 is popping up the tree and bringing us a fresh one down.}
 
 
-talk-macros.gpp}usiness/includes/kerala-coconut.md}
+\include{_business/includes/kerala-coconut.md}
 
 \section{Dabbawalas}
 
@@ -134,7 +134,7 @@ proud of the Indian food in Cambridge because they told him to go to
 the best Indian Restaurant in Cambridge. That restaurant is called the
 Tiffin Truck.}
 
-talk-macros.gpp}usiness/includes/the-dabbawalas.md}
+\include{_business/includes/the-dabbawalas.md}
 
 \notes{The next day I saw Narayan and when I asked him about his
 dinner he scowled a bit. He asked if I knew what a Tiffin Box was. I
@@ -221,7 +221,7 @@ delivered cheaply and they can be made available quickly. Disruptive
 innovation needs the dabbawalas of ideas. }
 
 \slides{\undef{theDabbaWalas}}
-talk-macros.gpp}usiness/includes/the-dabbawalas.md}
+\include{_business/includes/the-dabbawalas.md}
 
 \section{Epilogue}
 

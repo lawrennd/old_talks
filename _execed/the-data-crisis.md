@@ -5,14 +5,14 @@ abstract: >
   In this talk we consider data readiness levels and how they may be deployed.
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
 
-talk-macros.gpp}ata-science/includes/the-data-crisis.md}
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
-talk-macros.gpp}ata-science/includes/value-of-data.md}
-talk-macros.gpp}ata-science/includes/data-science-as-debugging.md}
-talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/the-data-crisis.md}
+\include{_data-science/includes/lies-damned-lies.md}
+\include{_data-science/includes/value-of-data.md}
+\include{_data-science/includes/data-science-as-debugging.md}
+\include{_data-science/includes/data-readiness-levels.md}
 
 \newslide{Background: Big Data}
 \slides{

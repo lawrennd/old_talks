@@ -23,25 +23,25 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
-talk-macros.gpp}ata-science/includes/data-science-africa.md}
-talk-macros.gpp}ealth/includes/malaria-gp.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_data-science/includes/data-science-africa.md}
+\include{_health/includes/malaria-gp.md}
 
-talk-macros.gpp}upply-chain/includes/supply-chain.md}
-talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
-talk-macros.gpp}i/includes/safe-boda.md}
+\include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_ai/includes/safe-boda.md}
 
-talk-macros.gpp}upply-chain/includes/supply-chain-motto.md}
+\include{_supply-chain/includes/supply-chain-motto.md}
 
-talk-macros.gpp}i/includes/turing-ai-fellowship.md}
-talk-macros.gpp}l/includes/the-3ds-of-ml-systems-design.md}
+\include{_ai/includes/turing-ai-fellowship.md}
+\include{_ml/includes/the-3ds-of-ml-systems-design.md}
 
-talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
-talk-macros.gpp}q/includes/auto-ai.md}
+\include{_data-science/includes/data-oriented-conclusions.md}
+\include{_uq/includes/auto-ai.md}
 
 
 \thanks

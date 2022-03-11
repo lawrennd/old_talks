@@ -18,19 +18,19 @@ venue: Webinar for The Cambridge Network
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
-talk-macros.gpp}i/includes/the-promise-of-ai.md}
-talk-macros.gpp}i/includes/centrifugal-governor.md}
-talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
-talk-macros.gpp}i/includes/baby-shoes.md}
-talk-macros.gpp}i/includes/conversation-computer.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
+\include{_ai/includes/the-promise-of-ai.md}
+\include{_ai/includes/centrifugal-governor.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_ai/includes/conversation-computer.md}
 * \addblog{Natural and Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}
-talk-macros.gpp}l/includes/code-data-separation-transgression.md}
-talk-macros.gpp}i/includes/intellectual-debt.md}
+\include{_ml/includes/code-data-separation-transgression.md}
+\include{_ai/includes/intellectual-debt.md}
 \define{mlDataChallenge}\define{shortVersion}
-talk-macros.gpp}l/includes/the-3ds-of-ml-systems-design.md}
+\include{_ml/includes/the-3ds-of-ml-systems-design.md}
 
 \subsection{Conclusion}
 

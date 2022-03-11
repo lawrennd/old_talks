@@ -20,6 +20,6 @@ For further thoughts see \addguardian{marketing in the internet era}{2015/jul/23
 
 \notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}\notes{ also from 2015.}
 
-talk-macros.gpp}ata-science/includes/new-flow-of-information.md}
+\include{_data-science/includes/new-flow-of-information.md}
 
 \endif

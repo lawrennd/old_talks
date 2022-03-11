@@ -7,7 +7,7 @@
 \subsection{Spectral Mixture Kernel}
 
 
-talk-macros.gpp}atasets/includes/box-jenkins-airline-data.md}
+\include{_datasets/includes/box-jenkins-airline-data.md}
 
 
 \setupcode{import GPy}
@@ -43,7 +43,7 @@ mlai.write_figure('box-jenkins-spectral-mixture-gp', directory='\writeDiagramsDi
 \figure{\includediagram{\diagramsDir/gp/box-jenkins-spectral-mixture-gp}{80%}}{Spectral mixture GP as applied to the Box-Jenkins airline data.}{box-jenkins-spectral-mixture-gp}
 
 
-talk-macros.gpp}atasets/includes/mauna-loa-data.md}
+\include{_datasets/includes/mauna-loa-data.md}
 
 \setupcode{import GPy}
 

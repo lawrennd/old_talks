@@ -228,7 +228,7 @@ which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pro
 
 \exercises
 
-talk-macros.gpp}l/includes/probability-examples.md}
+\include{_ml/includes/probability-examples.md}
 
 \notes{
 \subsection{Probabilities for Extracting Information from Data}

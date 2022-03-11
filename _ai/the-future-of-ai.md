@@ -25,20 +25,20 @@ categories:
 - health
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
-talk-macros.gpp}upply-chain/includes/supply-chain.md}
-talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
-talk-macros.gpp}upply-chain/includes/arthur-christmas.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}eepgp/includes/deep-olympic.md}
-talk-macros.gpp}eepgp/includes/deep-step-function.md}
-talk-macros.gpp}eepgp/includes/deep-della-gatta.md}
-talk-macros.gpp}i/includes/deploying-ai.md}
-talk-macros.gpp}ealth/includes/malaria-gp.md}
-talk-macros.gpp}ealth/includes/deep-health-model.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/arthur-christmas.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_deepgp/includes/deep-olympic.md}
+\include{_deepgp/includes/deep-step-function.md}
+\include{_deepgp/includes/deep-della-gatta.md}
+\include{_ai/includes/deploying-ai.md}
+\include{_health/includes/malaria-gp.md}
+\include{_health/includes/deep-health-model.md}
 
 
 \editme

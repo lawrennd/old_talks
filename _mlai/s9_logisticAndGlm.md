@@ -7,7 +7,7 @@ abstract: Naive Bayes assumptions allow us to specify class conditional densitie
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \newslide{Review}
 

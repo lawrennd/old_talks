@@ -20,7 +20,7 @@ categories:
 - notes
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
@@ -33,12 +33,12 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 * Classical computer science separates code and data.
 * Machine learning short-circuits this separation.
 
-talk-macros.gpp}ata-science/includes/the-data-crisis.md}
+\include{_data-science/includes/the-data-crisis.md}
 
 
-talk-macros.gpp}ata-science/includes/data-science-as-debugging.md}
-talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
-talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
+\include{_data-science/includes/data-science-as-debugging.md}
+\include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-oriented-architectures.md}
 
 \subsection{Conclusions}
 

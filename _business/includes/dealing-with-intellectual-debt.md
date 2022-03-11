@@ -5,7 +5,7 @@
 
 \section{Dealing with Intellectual Debt}
 
-talk-macros.gpp}usiness/includes/dealing-with-intellectual-debt-amazon.md}
-talk-macros.gpp}usiness/includes/dealing-with-intellectual-debt-delve.md}
+\include{_business/includes/dealing-with-intellectual-debt-amazon.md}
+\include{_business/includes/dealing-with-intellectual-debt-delve.md}
 
 \endif

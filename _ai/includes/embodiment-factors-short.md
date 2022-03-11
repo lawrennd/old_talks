@@ -5,7 +5,7 @@
 \subsection{Embodiment Factors}
 
 
-\figure{talk-macros.gpp}i/includes/embodiment-factors-computer-human-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years. See also "Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}{embodiment-factors-table}
+\figure{\include{_ai/includes/embodiment-factors-computer-human-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years. See also "Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}{embodiment-factors-table}
 
 \notes{There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to.[^knowledge-representation]
 

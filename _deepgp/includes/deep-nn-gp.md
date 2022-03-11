@@ -2,9 +2,9 @@
 \define{deepNnGp}
 \editme
 
-talk-macros.gpp}eepnn/includes/deep-neural-network.md}
-talk-macros.gpp}eepgp/includes/overfitting-low-rank.md}
-talk-macros.gpp}eepgp/includes/deep-gp.md}
+\include{_deepnn/includes/deep-neural-network.md}
+\include{_deepgp/includes/overfitting-low-rank.md}
+\include{_deepgp/includes/deep-gp.md}
 \endif
 
 

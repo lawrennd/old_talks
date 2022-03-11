@@ -34,7 +34,7 @@ transition: None
 
 
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
 \notes{GREAT AI FALLACY
 
@@ -65,7 +65,7 @@ UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER}
 \speakernotes{Nice quote but having a unifying theory doesn't give us omniscience.}
 
 
-talk-macros.gpp}imulation/includes/life-glider-loafer-conway.md}
+\include{_simulation/includes/life-glider-loafer-conway.md}
 
 <!--include{_simulation/includes/life-rules.md}-->
 
@@ -109,7 +109,7 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 <!--ENTROPY BILLIARDS-->
 
-talk-macros.gpp}hysics/includes/entropy-billiards.md}
+\include{_physics/includes/entropy-billiards.md}
 <!--include{_physics/includes/maxwells-demon.md}-->
 
 \newslide{}
@@ -139,7 +139,7 @@ talk-macros.gpp}hysics/includes/entropy-billiards.md}
 <button id="maxwell-histogram" style="text-align:right">Histogram</button>
 </div>
 
-talk-macros.gpp}cripts/includes/maxwell-js.md}
+\include{_scripts/includes/maxwell-js.md}
 }{Maxwell's Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right, only if they are hot.}{maxwells-demon}
 
 
@@ -164,9 +164,9 @@ talk-macros.gpp}cripts/includes/maxwell-js.md}
 
 \newslide{Locked In}
 
-\figure{talk-macros.gpp}i/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}
+\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}
 
-talk-macros.gpp}i/includes/conversation-tedx.md}
+\include{_ai/includes/conversation-tedx.md}
 
 \notes{Stories, between humans.}
 
@@ -175,7 +175,7 @@ talk-macros.gpp}i/includes/conversation-tedx.md}
 Norbert Wiener in a letter to his family, 1913}
 
 
-talk-macros.gpp}i/includes/conversation-computer.md}
+\include{_ai/includes/conversation-computer.md}
 
 
 \section{ARTIFICIAL}
@@ -186,7 +186,7 @@ talk-macros.gpp}i/includes/conversation-computer.md}
 
 \notes{Depending on whether this powerful technology is viewed as beneficent or maleficent, it can be viewed either as a helpful assistant, in the manner of Jeeves, or a tyrannical dictator.}
 
-talk-macros.gpp}i/includes/ai-as-manservant.md}
+\include{_ai/includes/ai-as-manservant.md}
 
 \notes{The history of automation and technology is a history of us adapting to technological change. The invention of the railways, and the need for consistent national times to timetable our movements. The development of the factory system in the mills of Derbyshire required workers to operate and maintain the machines that replaced them.}
 
@@ -203,7 +203,7 @@ talk-macros.gpp}i/includes/ai-as-manservant.md}
 
 \notes{Introduce Linnaeus and the hydra.}
 
-talk-macros.gpp}hilosophy/includes/the-hamburg-hydra.md}
+\include{_philosophy/includes/the-hamburg-hydra.md}
 
 \speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
 
@@ -236,8 +236,8 @@ talk-macros.gpp}hilosophy/includes/the-hamburg-hydra.md}
 
 \section{*ARTIFICIAL* INTELLIGENCE}
 
-talk-macros.gpp}l/includes/deep-face.md}
-talk-macros.gpp}l/includes/deep-learning-as-pinball.md}
+\include{_ml/includes/deep-face.md}
+\include{_ml/includes/deep-learning-as-pinball.md}
 
 \newslide{Where there be dragons}
 
@@ -263,9 +263,9 @@ feature space where there be dragons.}
 \figure{\includeyoutube{iWGhXof45zI}{600}{450}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
 
 
-talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
+\include{_gp/includes/planck-cmp-master-gp.md}
 
-talk-macros.gpp}imulation/includes/herd-immunity.md}
+\include{_simulation/includes/herd-immunity.md}
 
 \newslide{}
 
@@ -285,7 +285,7 @@ talk-macros.gpp}imulation/includes/herd-immunity.md}
 INTRODUCE THE SOLUTIONS}
 
 
-talk-macros.gpp}ata-science/includes/experiment-analyze-design-diagram.md}
+\include{_data-science/includes/experiment-analyze-design-diagram.md}
 
 
 \newslide{Accelerate Science}

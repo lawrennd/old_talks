@@ -5,7 +5,7 @@
 
 \subsection{Forrester Function}
 
-talk-macros.gpp}q/includes/alex-forrester.md}
+\include{_uq/includes/alex-forrester.md}
 
 \notes{We're going to introduce the experimental design acquisiton functions by looking at the Forrester function [@Forrester-engineering08]}
 

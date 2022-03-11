@@ -23,20 +23,20 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
-talk-macros.gpp}eepgp/includes/deep-olympic.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_gp/includes/gp-intro-very-short.md}
+\include{_deepgp/includes/deep-olympic.md}
 
-<!-- talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md} -->
-<!-- talk-macros.gpp}ata-science/includes/the-data-crisis.md} -->
+<!-- \include{_data-science/includes/a-time-for-professionalisation.md} -->
+<!-- \include{_data-science/includes/the-data-crisis.md} -->
 
 <!-- ### Rest of this Talk: Two Areas of Focus  -->
 
@@ -50,7 +50,7 @@ talk-macros.gpp}eepgp/includes/deep-olympic.md}
 
 <!-- * Deployment of Machine Learning Systems -->
 
-<!--talk-macros.gpp}ata-science/includes/data-readiness-levels.md}-->
+<!--\include{_data-science/includes/data-readiness-levels.md}-->
 
 ### Artificial Intelligence
 
@@ -72,9 +72,9 @@ talk-macros.gpp}eepgp/includes/deep-olympic.md}
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
 
-talk-macros.gpp}i/includes/ml-systems-design-long.md}
+\include{_ai/includes/ml-systems-design-long.md}
 
-talk-macros.gpp}q/includes/uncertainty-quantification.md}
+\include{_uq/includes/uncertainty-quantification.md}
 
 
 \newslide{Conclusion}

@@ -15,19 +15,19 @@ abstract: >
 transition: None
 ---
 
-talk-macros.gpp}/talk-macros.tex}
+\include{../talk-macros.tex}
 
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
-talk-macros.gpp}l/includes/ml-to-deep-learning.md}
-talk-macros.gpp}l/includes/what-is-ml-end-to-end.md}
-talk-macros.gpp}i/includes/amazon-delivery-drone.md}
-talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
-talk-macros.gpp}upply-chain/includes/supply-chain-motto.md}
-talk-macros.gpp}upply-chain/includes/supply-chain.md}
-talk-macros.gpp}i/includes/safe-boda.md}
-talk-macros.gpp}ata-science/includes/data-science-africa.md}
-talk-macros.gpp}ealth/includes/malaria-gp.md}
-talk-macros.gpp}l/includes/ml-deployment-challenge.md}
+\include{_data-science/includes/lies-damned-lies.md}
+\include{_ml/includes/ml-to-deep-learning.md}
+\include{_ml/includes/what-is-ml-end-to-end.md}
+\include{_ai/includes/amazon-delivery-drone.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain-motto.md}
+\include{_supply-chain/includes/supply-chain.md}
+\include{_ai/includes/safe-boda.md}
+\include{_data-science/includes/data-science-africa.md}
+\include{_health/includes/malaria-gp.md}
+\include{_ml/includes/ml-deployment-challenge.md}
 
 \subsection{Conclusions}
 

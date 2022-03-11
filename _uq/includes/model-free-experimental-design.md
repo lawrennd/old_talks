@@ -5,6 +5,6 @@
 
 \subsection{Model Free Experimental Design}
 
-talk-macros.gpp}q/includes/pydoe-software.md}
+\include{_uq/includes/pydoe-software.md}
 
 \endif

@@ -1,4 +1,4 @@
-talk-macros.gpp}eepgp/includes/deep-neural-network.md}
+\include{_deepgp/includes/deep-neural-network.md}
 
 
 \subsection{Overfitting}
@@ -73,45 +73,45 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/wisuvt.svg')
 
 * Geoff Hinton's view of Deep Learning
 
-talk-macros.gpp}eepgp/includes/deep-nn-gp.md}
+\include{_deepgp/includes/deep-nn-gp.md}
 
 <!--Deep Gaussian Process Models-->
 
-talk-macros.gpp}eepgp/includes/deep-theory.md}
+\include{_deepgp/includes/deep-theory.md}
 
 <!--Bayesian GP-LVM-->
 
 
 <!--include{_gplvm/includes/ard_gplvm.md} -->
-<!-- talk-macros.gpp}plvm/includes/bayes_gplvm_intro.md} -->
-<!-- talk-macros.gpp}plvm/includes/variational_bayes_gplvm_long.md} -->
+<!-- \include{_gplvm/includes/bayes_gplvm_intro.md} -->
+<!-- \include{_gplvm/includes/variational_bayes_gplvm_long.md} -->
 
-<!-- talk-macros.gpp}p/includes/gp_big_data_technical.md} -->
-<!--talk-macros.gpp}p/includes/gp_big_data.md}-->
+<!-- \include{_gp/includes/gp_big_data_technical.md} -->
+<!--\include{_gp/includes/gp_big_data.md}-->
 
-talk-macros.gpp}eepgp/includes/deep-gps.md}
+\include{_deepgp/includes/deep-gps.md}
 
-talk-macros.gpp}eepgp/includes/stack-gp-intro.md}
-talk-macros.gpp}eepgp/includes/stacked-pca.md}
-talk-macros.gpp}eepgp/includes/stacked-gp.md}
-talk-macros.gpp}eepgp/includes/deep-pathologies.md}
-talk-macros.gpp}eepgp/includes/deep-results.md}
+\include{_deepgp/includes/stack-gp-intro.md}
+\include{_deepgp/includes/stacked-pca.md}
+\include{_deepgp/includes/stacked-gp.md}
+\include{_deepgp/includes/deep-pathologies.md}
+\include{_deepgp/includes/deep-results.md}
 
-talk-macros.gpp}ealth/includes/deep-health-model.md}
+\include{_health/includes/deep-health-model.md}
 
 
 <!--Conclusions-->
 
-<!-- talk-macros.gpp}plvm/includes/ard_model.md} -->
-<!-- talk-macros.gpp}plvm/includes/ard_results.md} -->
+<!-- \include{_gplvm/includes/ard_model.md} -->
+<!-- \include{_gplvm/includes/ard_results.md} -->
 
 <!--Gaussian Process Dynamical Systems-->
 
-<!-- talk-macros.gpp}plvm/includes/gpds.md} -->
+<!-- \include{_gplvm/includes/gpds.md} -->
 
 <!--Shared GP-LVM-->
 
-<!-- talk-macros.gpp}plvm/includes/mrd_gplvm.md} -->
+<!-- \include{_gplvm/includes/mrd_gplvm.md} -->
 
 \subsection{What Can We Do that Google Can’t?}
 
@@ -129,5 +129,5 @@ talk-macros.gpp}ealth/includes/deep-health-model.md}
 
 -   These methodologies are part of that picture.
 
-talk-macros.gpp}ealth/includes/deep-health-model.md}
-talk-macros.gpp}ealth/includes/deep-health-rangers.md}
+\include{_health/includes/deep-health-model.md}
+\include{_health/includes/deep-health-rangers.md}

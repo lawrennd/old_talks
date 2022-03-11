@@ -3,6 +3,6 @@
 
 \editme
 
-talk-macros.gpp}i/includes/auto-ai-overview.md}
+\include{_ai/includes/auto-ai-overview.md}
 
 \endif

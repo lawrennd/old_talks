@@ -18,15 +18,15 @@ ipynb: false
 ---
 
 
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
-talk-macros.gpp}i/includes/embodiment-factors-short.md}
-talk-macros.gpp}i/includes/conversation-tedx.md}
-talk-macros.gpp}i/includes/conversation-computer.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+\include{_data-science/includes/lies-damned-lies.md}
+\include{_ai/includes/embodiment-factors-short.md}
+\include{_ai/includes/conversation-tedx.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/evolved-relationship.md}
 
 
-talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-talk-macros.gpp}ata-science/includes/three-data-science-challenges.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_data-science/includes/three-data-science-challenges.md}
 
 \notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 
@@ -40,17 +40,17 @@ talk-macros.gpp}ata-science/includes/three-data-science-challenges.md}
 3. Privacy, loss of control, marginalization
 }
 
-talk-macros.gpp}ata-science/includes/privacy-intro.md}
-talk-macros.gpp}ata-science/includes/digital-revolution-and-inequality.md}
-talk-macros.gpp}ata-science/includes/data-science-africa.md}
-talk-macros.gpp}ealth/includes/malaria-gp.md}
+\include{_data-science/includes/privacy-intro.md}
+\include{_data-science/includes/digital-revolution-and-inequality.md}
+\include{_data-science/includes/data-science-africa.md}
+\include{_health/includes/malaria-gp.md}
 
 
-talk-macros.gpp}overnance/includes/feudal-era-data-ecosystem.md}
-talk-macros.gpp}overnance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
-talk-macros.gpp}ata-science/includes/privacy-amelioration.md}
-talk-macros.gpp}overnance/includes/data-governance-toolkit.md}
-talk-macros.gpp}overnance/includes/data-trusts.md}
+\include{_governance/includes/feudal-era-data-ecosystem.md}
+\include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
+\include{_data-science/includes/privacy-amelioration.md}
+\include{_governance/includes/data-governance-toolkit.md}
+\include{_governance/includes/data-trusts.md}
 
 
 

@@ -20,6 +20,6 @@
 
 }
 
-\notes{talk-macros.gpp}i/includes/peppercorn.md}}
+\notes{\include{_ai/includes/peppercorn.md}}
 
 \endif

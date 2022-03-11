@@ -3,7 +3,7 @@
 
 \newslide{}
 
-talk-macros.gpp}upply-chain/includes/arthur-christmas-trailer.md}
+\include{_supply-chain/includes/arthur-christmas-trailer.md}
 
 \notes{\subsection{Arthur Christmas}}
 
@@ -16,6 +16,6 @@ Of course, gift giving occurs at different times in different cultures, internal
 
 \notes{In Arthur Christmas the entire operation was run from a flying ship for present delivery, of course, that's a little ridiculous. The truth is that Amazon wants to use lots of little ships, or drones, and the team had the pleasure of working on developing those too.}
 
-talk-macros.gpp}upply-chain/includes/amazon-drone-flight.md}
+\include{_supply-chain/includes/amazon-drone-flight.md}
 
 \endif

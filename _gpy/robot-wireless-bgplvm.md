@@ -4,10 +4,10 @@ date: 2021-05-21
 ---
 
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}py/includes/gpy-notebook-setup.md}
+\include{_gpy/includes/gpy-notebook-setup.md}
 
-talk-macros.gpp}plvm/includes/robot-wireless-bgplvm.md}
+\include{_gplvm/includes/robot-wireless-bgplvm.md}
 
 \references

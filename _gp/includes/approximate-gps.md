@@ -2,14 +2,14 @@
 \define{approximateGps}
 \editme
 
-talk-macros.gpp}p/includes/sparse-gp-comic.md}
+\include{_gp/includes/sparse-gp-comic.md}
 
 \newslide{Approximate Gaussian Processes}
 
 
-talk-macros.gpp}p/includes/low-rank-motivation.md}
-talk-macros.gpp}p/includes/gp-variational-complexity.md}
-talk-macros.gpp}p/includes/bottleneck.md}
+\include{_gp/includes/low-rank-motivation.md}
+\include{_gp/includes/gp-variational-complexity.md}
+\include{_gp/includes/bottleneck.md}
 
 \newslide{Information capture}
 
@@ -20,9 +20,9 @@ talk-macros.gpp}p/includes/bottleneck.md}
 * The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
-talk-macros.gpp}p/includes/nystrom.md}
-talk-macros.gpp}p/includes/inducing-notation.md}
-talk-macros.gpp}p/includes/inducing-introduction.md}
+\include{_gp/includes/nystrom.md}
+\include{_gp/includes/inducing-notation.md}
+\include{_gp/includes/inducing-introduction.md}
 
 \newslide{The alternative posterior}
 
@@ -38,9 +38,9 @@ $$
 
 <!--Flexible Parametric Approximation-->
 
-talk-macros.gpp}p/includes/larger-graph-intro.md}
-talk-macros.gpp}p/includes/larger-variational.md}
-talk-macros.gpp}p/includes/larger-factorize.md}
+\include{_gp/includes/larger-graph-intro.md}
+\include{_gp/includes/larger-variational.md}
+\include{_gp/includes/larger-factorize.md}
 
 \newslide{Inducing Variables}
 
@@ -140,12 +140,12 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 <!--Variational Compression-->
 
-talk-macros.gpp}p/includes/variational-compression.md}
-talk-macros.gpp}p/includes/low-rank-variational.md}
-talk-macros.gpp}plvm/includes/bayes-gplvm-intro.md}
-talk-macros.gpp}plvm/includes/variational-bayes-gplvm-long.md}
-talk-macros.gpp}plvm/includes/nested-variational-compression.md}
-talk-macros.gpp}p/includes/larger-gaussian.md}
+\include{_gp/includes/variational-compression.md}
+\include{_gp/includes/low-rank-variational.md}
+\include{_gplvm/includes/bayes-gplvm-intro.md}
+\include{_gplvm/includes/variational-bayes-gplvm-long.md}
+\include{_gplvm/includes/nested-variational-compression.md}
+\include{_gp/includes/larger-gaussian.md}
 
 \newslide{Efficient Computation}
 
@@ -155,6 +155,6 @@ talk-macros.gpp}p/includes/larger-gaussian.md}
 
 * Joint Gaussianity is analytic, but not flexible.
 
-talk-macros.gpp}p/includes/inducing-variables-demo.md}
+\include{_gp/includes/inducing-variables-demo.md}
 
 \endif

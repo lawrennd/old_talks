@@ -4,17 +4,17 @@
 
 \section{Supervised Learning}
 
-talk-macros.gpp}l/includes/supervised-learning-intro.md}
+\include{_ml/includes/supervised-learning-intro.md}
 
-talk-macros.gpp}l/includes/classification-intro.md}
-talk-macros.gpp}l/includes/classification-examples.md}
-talk-macros.gpp}l/includes/the-perceptron.md}
-talk-macros.gpp}l/includes/logistic-regression.md}
-talk-macros.gpp}l/includes/nigeria-nmis-data-logistic.md}
-talk-macros.gpp}l/includes/regression-intro.md}
-talk-macros.gpp}l/includes/regression-examples.md}
-talk-macros.gpp}l/includes/olympic-marathon-polynomial.md}
+\include{_ml/includes/classification-intro.md}
+\include{_ml/includes/classification-examples.md}
+\include{_ml/includes/the-perceptron.md}
+\include{_ml/includes/logistic-regression.md}
+\include{_ml/includes/nigeria-nmis-data-logistic.md}
+\include{_ml/includes/regression-intro.md}
+\include{_ml/includes/regression-examples.md}
+\include{_ml/includes/olympic-marathon-polynomial.md}
 
-talk-macros.gpp}l/includes/supervised-learning-challenges.md}
+\include{_ml/includes/supervised-learning-challenges.md}
 
 \endif

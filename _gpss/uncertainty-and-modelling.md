@@ -11,20 +11,20 @@ transition: None
 ---
 
 
-talk-macros.gpp}p/includes/gp-book.md}
-talk-macros.gpp}l/includes/what-is-ml.md}
+\include{_gp/includes/gp-book.md}
+\include{_ml/includes/what-is-ml.md}
 
-talk-macros.gpp}pss/includes/gpss-notebook-setup.md}
+\include{_gpss/includes/gpss-notebook-setup.md}
 
-talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
-talk-macros.gpp}l/includes/overdetermined-inaugural.md}
+\include{_ml/includes/overdetermined-inaugural.md}
 
-talk-macros.gpp}l/includes/univariate-gaussian.md}
-talk-macros.gpp}l/includes/univariate-gaussian-properties.md}
-talk-macros.gpp}l/includes/regression-examples.md}
+\include{_ml/includes/univariate-gaussian.md}
+\include{_ml/includes/univariate-gaussian-properties.md}
+\include{_ml/includes/regression-examples.md}
 
-talk-macros.gpp}l/includes/underdetermined-system.md}
+\include{_ml/includes/underdetermined-system.md}
 
 \newslide{Overdetermined System}
 \slides{
@@ -104,7 +104,7 @@ talk-macros.gpp}l/includes/underdetermined-system.md}
 
 \newslide{Bayesian Regression}
 
-talk-macros.gpp}l/includes/bayesian-regression1d-short.md}
+\include{_ml/includes/bayesian-regression1d-short.md}
 
 \newslide{Multivariate System}
 \slides{
@@ -131,7 +131,7 @@ $$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i.$$
 
 \newslide{Multivariate Bayesian Regression}
 
-talk-macros.gpp}l/includes/multivariate-bayesian-linear-short.md}
+\include{_ml/includes/multivariate-bayesian-linear-short.md}
 
 
 \thanks

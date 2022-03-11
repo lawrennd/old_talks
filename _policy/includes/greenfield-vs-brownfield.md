@@ -15,7 +15,7 @@
 
 \notes{In the 1980's Robert Solow said: "You can see the computer age everywhere except in the productivity statistics." I see this quote as a consequence of the challenge of *brownfield innovation*. The largest part of the economy will naturally not (at the outset) be the greenfield innovations. The dominant portion of the economy will be existing businesses. Retrofitting the technology into existing businesses. For example, the process of digital transformation is still not complete in supply chain (my team at Amazon focussed on delivering machine learning technology in that domain).}
 
-talk-macros.gpp}usiness/includes/solow-paradox.md}
+\include{_business/includes/solow-paradox.md}
 
 \notes{There is a massive opportunity for the UK in *brownfield innovation*, but it's easier to talk about greenfield innovation (e.g. how Google does things) regardless of whether those ideas transfer to the institutional characters that we're looking to form.}
 

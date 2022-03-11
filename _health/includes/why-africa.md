@@ -19,6 +19,6 @@
 
 \notes{When we turn to the developing world, we see many of these issues amplified. The relative lack of an existing health infrastructure leads to great opportunities to bring individual benefits for health. But the pitfalls, in terms of the vulnerability of the population to manipulation, are also greater.}
 
-talk-macros.gpp}ata-science/includes/citizenme.md}
+\include{_data-science/includes/citizenme.md}
 
 \endif

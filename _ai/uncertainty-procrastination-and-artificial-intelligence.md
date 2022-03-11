@@ -14,24 +14,24 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
 \define{noSlideTitle}
 
-talk-macros.gpp}hysics/includes/laplaces-demon.md}
-talk-macros.gpp}hysics/includes/emergent-behaviour.md}
-talk-macros.gpp}hysics/includes/laplaces-gremlin.md}
-talk-macros.gpp}hysics/includes/lap-engine.md}
-talk-macros.gpp}hysics/includes/theory-of-ignorance.md}
-talk-macros.gpp}hysics/includes/entropy-billiards.md}
-talk-macros.gpp}hysics/includes/maxwells-demon-short.md}
+\include{_physics/includes/laplaces-demon.md}
+\include{_physics/includes/emergent-behaviour.md}
+\include{_physics/includes/laplaces-gremlin.md}
+\include{_physics/includes/lap-engine.md}
+\include{_physics/includes/theory-of-ignorance.md}
+\include{_physics/includes/entropy-billiards.md}
+\include{_physics/includes/maxwells-demon-short.md}
 
 \subsection{Procrastination}
 
-talk-macros.gpp}hysics/includes/kappenball.md}
+\include{_physics/includes/kappenball.md}
 
-talk-macros.gpp}i/includes/embodiment-factors-celsius.md}
-talk-macros.gpp}i/includes/conversation-tedx.md}
+\include{_ai/includes/embodiment-factors-celsius.md}
+\include{_ai/includes/conversation-tedx.md}
 
 \notes{Stories, between humans.}
 
@@ -39,8 +39,8 @@ talk-macros.gpp}i/includes/conversation-tedx.md}
 >
 > Norbert Wiener in a letter to his family, 1913}
 
-talk-macros.gpp}i/includes/heider-simmel.md}
-talk-macros.gpp}i/includes/conversation-computer.md}
+\include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/conversation-computer.md}
 
 \newslide{}
 
@@ -51,7 +51,7 @@ talk-macros.gpp}i/includes/conversation-computer.md}
 \figure{\includediagramclass{\diagramsDir/ai/human-culture-interacting}{80%}}{Humans use culture, facts and 'artefacts' to communicate.}{human-culture-interacting}
 
 
-talk-macros.gpp}hysics/includes/richard-feynmann-doubt.md}
+\include{_physics/includes/richard-feynmann-doubt.md}
 
 \thanks
 

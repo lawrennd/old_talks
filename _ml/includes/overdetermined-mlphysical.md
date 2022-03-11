@@ -2,10 +2,10 @@
 \define{overdeterminedMlphysical}
 \editme
 
-talk-macros.gpp}l/includes/overdetermined-system.md}
-talk-macros.gpp}l/includes/overdetermined-laplace-intro.md}
-talk-macros.gpp}hysics/includes/laplaces-demon.md}
-talk-macros.gpp}hysics/includes/laplaces-gremlin.md}
+\include{_ml/includes/overdetermined-system.md}
+\include{_ml/includes/overdetermined-laplace-intro.md}
+\include{_physics/includes/laplaces-demon.md}
+\include{_physics/includes/laplaces-gremlin.md}
 
 \notes{Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, $\noiseScalar$, that represents the unknown. In modern parlance we would call this a *latent* variable. But in the context Laplace uses it, the variable is so common that it has other names such as a "slack" variable or the *noise* in the system.
 

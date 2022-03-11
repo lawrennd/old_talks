@@ -20,13 +20,13 @@ categories:
 - notes
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \subsection{Machine Learning}
 
 $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
-talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-readiness-levels.md}
 
 
 

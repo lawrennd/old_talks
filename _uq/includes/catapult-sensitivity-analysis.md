@@ -5,11 +5,11 @@
 \editme
 
 
-talk-macros.gpp}q/includes/catapult-simulation.md}
+\include{_uq/includes/catapult-simulation.md}
 
 \notes{Before we perform sensitivity analysis, we need to build an emulator of the catapulter, which we do using our experimental design process.}
 
-talk-macros.gpp}q/includes/catapult-experimental-design.md}
+\include{_uq/includes/catapult-experimental-design.md}
 
 \subsection{Sensitivity Analysis of a Catapult Simulation}
 

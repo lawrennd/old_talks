@@ -3,9 +3,9 @@
 \editme
 
 
-talk-macros.gpp}l/includes/overdetermined-system.md}
-talk-macros.gpp}l/includes/overdetermined-laplace-intro.md}
-talk-macros.gpp}hysics/includes/laplaces-determinism.md}
-talk-macros.gpp}l/includes/laplace-latent-variable-solution.md}
+\include{_ml/includes/overdetermined-system.md}
+\include{_ml/includes/overdetermined-laplace-intro.md}
+\include{_physics/includes/laplaces-determinism.md}
+\include{_ml/includes/laplace-latent-variable-solution.md}
 
 \endif

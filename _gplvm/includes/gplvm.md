@@ -96,7 +96,7 @@ $$
 \eigenvectorMatrix_{\latentDim}=\dataMatrix^{\top}\eigenvectorMatrix_{\latentDim}^{\prime}\Lambda_{\latentDim}^{-\frac{1}{2}}
     $$
 
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
+\include{_gp/includes/gp-intro-very-short.md}
 
 
 \newslide{Gaussian Process (GP)}
@@ -165,8 +165,8 @@ talk-macros.gpp}p/includes/gp-intro-very-short.md}
 
 
 
-talk-macros.gpp}ern/includes/eq-covariance.md}
-talk-macros.gpp}p/includes/gp-optimize.md}
+\include{_kern/includes/eq-covariance.md}
+\include{_gp/includes/gp-optimize.md}
 
 
 \newslide{Non-Linear Latent Variable Model}

@@ -3,8 +3,8 @@
 
 \editme 
 
-talk-macros.gpp}i/includes/conversation.md}
-talk-macros.gpp}i/includes/baby-shoes.md}
-talk-macros.gpp}i/includes/heider-simmel.md}
+\include{_ai/includes/conversation.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_ai/includes/heider-simmel.md}
 
 \endif

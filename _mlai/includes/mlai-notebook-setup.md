@@ -3,6 +3,6 @@
 
 \editme
 
-talk-macros.gpp}otebooks/includes/notebook-setup.md}
+\include{_notebooks/includes/notebook-setup.md}
 
 \endif

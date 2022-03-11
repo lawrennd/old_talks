@@ -20,9 +20,9 @@ venue: CW AI SIG Byte-size Event
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
-talk-macros.gpp}i/includes/are-we-close-to-creating-intelligence.md}
-talk-macros.gpp}i/includes/locked-in-intelligence.md}
+\include{talk-macros.tex}
+\include{_ai/includes/are-we-close-to-creating-intelligence.md}
+\include{_ai/includes/locked-in-intelligence.md}
 
 \subsection{Conclusion}
 

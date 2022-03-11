@@ -13,17 +13,15 @@ author:
   url: https://www.inference.vc/about/
 abstract: >
   This lecture will introduce recurrent neural networks, these structures allow us to deal with sequences.
-youtube: ZwON3GGA_GI
-oldyoutube:
-- code: 0BwwedEJ5iU
-  year: 2021
-hackmdslides: fhuszar/SJRZ6QYkq#
+talkscam:
+youtube: 0BwwedEJ5iU
+hackmdslides: fhuszar/B1TCGA_bd#
 time: "14:00"
 start: "14:00"
 end: "15:00"
 ---
 
-\subsection{Different from what we've seen before:}
+## Different from what we had before:
 
 * different input type (sequences)
 * different network building blocks
@@ -34,30 +32,40 @@ end: "15:00"
     * maximum likelihood
     * generative modelling
 
-\subsection{Modelling sequences}
 
-* input to the network: $x_1, x_2, \ldots, x_T$
+
+## Modelling sequences
+
+* input to the network: $x_1, x_3, \ldots, x_T$
 * sequences of different length
 * sometimes 'EOS' symbol
 * sequence classification (e.g. text classification)
 * sequence generation (e.g. language generation)
 * sequence-to-sequence (e.g. translation)
 
-\subsection{Recurrent Neural Network}
 
-![](https://i.imgur.com/UJYrL7I.png)
 
-\subsection{RNN: Unrolled through time}
+\subsubsection{Recurrent Neural Network}
 
-![](https://i.imgur.com/YnkgS5P.png)
+\aligncenter{\includepng{https://i.imgur.com/UJYrL7I}{}{nnegate}}
 
-\subsection{RNN: different uses}
 
-![](https://i.imgur.com/WGl90lv.jpg)
+
+\subsubsection{RNN: Unrolled through time}
+
+\aligncenter{\includepng{https://i.imgur.com/YnkgS5P}{}{nnegate}}
+
+
+
+\subsubsection{RNN: different uses}
+
+\aligncenter{\includejpg{https://i.imgur.com/WGl90lv}{}}
 
 figure from [Andrej Karpathy's blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-\subsection{Generating sequences}
+
+
+\subsubsection{Generating sequences}
 
 Goal: model the distribution of sequences 
 
@@ -71,52 +79,79 @@ $$
 p(x_{1:T}) = p(x_T\vert x_{1:T-1}) p(x_{T-1} \vert x_{1:T-2}) \cdots p(x_1)
 $$
 
-\subsection{Modeling sequence distributions}
 
-![](https://i.imgur.com/WfPwnjZ.png)
 
-\subsection{Training: maximum likelihood}
+\subsubsection{Modeling sequence distributions}
 
-![](https://i.imgur.com/Z8sLsQI.png)
+\aligncenter{\includepng{https://i.imgur.com/WfPwnjZ}{}{nnegate}}
 
-\subsection{Sampling sequences}
 
-![](https://i.imgur.com/c9WcaD0.png)
 
-\subsection{Char-RNN: Shakespeare}
+\subsubsection{Training: maximum likelihood}
+
+\aligncenter{\includepng{https://i.imgur.com/Z8sLsQI}{}{nnegate}}
+
+
+
+\subsubsection{Sampling sequences}
+
+\aligncenter{\includepng{https://i.imgur.com/c9WcaD0}{}{nnegate}}
+
+
+
+\subsubsection{Char-RNN: Shakespeare}
 from [Andrej Karpathy's 2015 blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-![](https://i.imgur.com/cN25jUL.png)
+\aligncenter{\includepng{https://i.imgur.com/cN25jUL}{}}
 
-\subsection{Char-RNN: Wikipedia}
+
+
+\subsubsection{Char-RNN: Wikipedia}
 from [Andrej Karpathy's 2015 blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-![](https://i.imgur.com/Nr0UjtR.png)
+\aligncenter{\includepng{https://i.imgur.com/Nr0UjtR}{}}
 
 
-\subsection{Char-RNN: Wikipedia}
+
+
+\subsubsection{Char-RNN: Wikipedia}
 from [Andrej Karpathy's 2015 blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-![](https://i.imgur.com/R91pDeJ.png)
+\aligncenter{\includepng{https://i.imgur.com/R91pDeJ}{}}
 
 
-\subsection{Char-RNN example: random XML}
+
+
+\subsubsection{Char-RNN example: random XML}
 from [Andrej Karpathy's 2015 blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-![](https://i.imgur.com/H3b3QjC.png)
+\aligncenter{\includepng{https://i.imgur.com/H3b3QjC}{}}
 
-\subsection{Char-RNN example: LaTeX}
+
+
+\subsubsection{Char-RNN example: LaTeX}
 from [Andrej Karpathy's 2015 blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-![](https://i.imgur.com/GgXRG4n.jpg)
+\aligncenter{\includejpg{https://i.imgur.com/GgXRG4n}{}}
 
-\subsection{But, it was not that easy}
+
+
+\subsubsection{But, it was not that easy}
 
 * vanilla RNNs forget too quickly
 * vanishing gradients problem
 * exploding gradients problem
+* colab illustration
 
-\subsection{Vanishing/exploding gradients problem}
+
+
+\subsubsection{Vanishing gradient problem}
+
+\aligncenter{\includepng{https://i.imgur.com/cLhmhjv}{}}
+
+
+
+\subsubsection{Vanishing/exploding gradients problem}
 
 Vanilla RNN:
 
@@ -128,33 +163,58 @@ $$
 \hat{y} = \phi(W_y \mathbf{h}_{T} + \mathbf{b}_y)
 $$
 
-\subsection{The gradients of the loss are}
+
+
+\subsubsection{The gradients of the loss are}
 
 \begin{align}
-\frac{\partial \hat{L}}{\partial \mathbf{h}_t} &= \frac{\partial \hat{L}}{\partial \mathbf{h}_T} \prod_{s=t}^{T-1} \frac{\partial h_{s+1}}{\partial h_s} \\
-&= \frac{\partial \hat{L}}{\mathbf{h}_T} \left( \prod_{s=t}^{T-1} D_s \right) W^{T-t}_h,
+\frac{\partial \hat{L}}{\partial \mathbf{h}_t} &= \frac{\partial \hat{L}}{\mathbf{h}_T} \prod_{s=t}^{T-1} \frac{\partial h_{t+1}}{\partial h_t} \\
+&= \frac{\partial \hat{L}}{\mathbf{h}_T} \prod_{s=t}^{T-1} D_s W^{T-t}_h,
 \end{align}
 
 where
+
 * $D_t = \operatorname{diag} \left[\sigma'(W_t \mathbf{h}_{t-1} + + W_x \mathbf{x}_t + \mathbf{b_h})\right]$
+
 * if $\sigma$ is ReLU, $\sigma'(z) \in \{0, 1\}$
 
 
 
-\subsection{The norm of the gradient is upper bounded}
+
+\subsubsection{The norm of the gradient is upper bounded}
 
 \begin{align}
-\left\|\frac{\partial \hat{L}}{\partial \mathbf{h}_t}\right\| &\leq \left\|\frac{\partial \hat{L}}{\mathbf{h}_T}\right\| \left\|W_h\right\|^{T-t} \prod_{s=t}^{T-1} \left\|D_s\right\|,
+\left\|\frac{\partial \hat{L}}{\partial \mathbf{h}_t}\right\| &\leq \left\|\frac{\partial \hat{L}}{\mathbf{h}_T}\right\| \prod_{s=t}^{T-1} \left\|D_s\right\| \left\|W_h\right\|^{T-t},
 \end{align}
 
 * the norm of $D_s$ is less than 1 (ReLU)
 * the norm of $W_h$ can cause gradients to explode
 
-\newslide
+\newslide{}
 
-![](https://i.imgur.com/DVFyskJ.png)
+\aligncenter{\includepng{https://i.imgur.com/DVFyskJ}{}}
 
-\subsection{More typical solution: gating}
+
+
+\subsubsection{Unitary Evolution RNNs}
+
+Idea: constrain $W_h$ to be unit-norm.
+
+\aligncenter{\includepng{https://i.imgur.com/9Thc6AS}{}}
+
+
+
+\subsubsection{Unitary Evolution RNNs}
+
+Compose weight matrix out of simple unitary transforms:
+
+$$
+W_h = D_3R_2\mathcal{F}^{-1}D_2\Pi R_1\mathcal{F}D_1
+$$
+
+
+
+\subsubsection{More typical solution: gating}
 
 Vanilla RNN:
 
@@ -171,11 +231,15 @@ Gated Recurrent Unit:
 \mathbf{z}_t &= \sigma(W_z\mathbf{x}_t + U_z\mathbf{h}_t)\\
 \end{align}
 
-\subsection{GRU diagram}
 
-![](https://i.imgur.com/TrhwIcC.png)
 
-\subsection{LSTM: Long Short-Term Memory}
+## GRU diagram
+
+\aligncenter{\includepng{https://i.imgur.com/TrhwIcC}{}}
+
+
+
+\subsubsection{LSTM: Long Short-Term Memory}
 
 * by Hochreiter and Schmidhuber (1997)
 * improved/tweaked several times since
@@ -185,169 +249,77 @@ Gated Recurrent Unit:
 * 2014: GRU proposed (simplified LSTM)
 * 2016: neural machine translation
 
-\subsection{RNNs for images}
 
-![](https://karpathy.github.io/assets/rnn/house_read.gif)
 
-([Ba et al, 2014](https://arxiv.org/abs/1412.7755))
+\subsubsection{Side note: dealing with depth}
 
-\subsection{RNNs for images}
+\aligncenter{\includepng{https://i.imgur.com/sTaW6fT}{}{nnegate}}
 
-![](https://karpathy.github.io/assets/rnn/house_generate.gif)
-([Gregor et al, 2015](https://arxiv.org/abs/1502.04623))
 
-\subsection{RNNs for painting}
 
-![](https://i.imgur.com/DhbBAl2.png)
+\subsubsection{Side note: dealing with depth}
 
-([Mellor et al, 2019](https://learning-to-paint.github.io/))
+\aligncenter{\includepng{https://i.imgur.com/2oCXEIh}{}{nnegate}}
 
-\subsection{RNNs for painting}
 
-![](https://i.imgur.com/KKg33WR.jpg)
 
-\subsection{Spatial LSTMs}
+\subsubsection{Side note: dealing with depth}
 
-![](https://i.imgur.com/4fOP3FR.png)
+\aligncenter{\includepng{https://i.imgur.com/w8BmEfS}{260x}{nnegate}}
 
-([Theis et al, 2015](https://arxiv.org/pdf/1506.03478.pdf))
 
-\subsection{Spatial LSTMs generating textures}
 
-![](https://i.imgur.com/uLYyB3l.jpg)
+\subsubsection{Deep Residual Networks (ResNets)}
 
-\subsection{Seq2Seq: sequence-to-sequence}
+\aligncenter{\includepng{https://i.imgur.com/hJK6Rx4}{}}
 
-![](https://i.imgur.com/Ki8xpvY.png)
 
-([Sutskever et al, 2014](https://arxiv.org/pdf/1409.3215.pdf))
 
-\subsection{Seq2Seq: neural machine translation}
+\subsubsection{Deep Residual Networks (ResNets)}
 
-![](https://i.imgur.com/WrZg5r4.png)
+\aligncenter{\includepng{https://i.imgur.com/wjBWNn9}{}}
 
-\subsection{Show and Tell: "Image2Seq"}
 
-![](https://i.imgur.com/hyUtUjl.png)
 
-([Vinyals et al, 2015](https://arxiv.org/pdf/1411.4555.pdf))
-
-\subsection{Show and Tell: "Image2Seq"}
-
-![](https://i.imgur.com/MSU5mIw.jpg)
-
-([Vinyals et al, 2015](https://arxiv.org/pdf/1411.4555.pdf))
-
-\subsection{Sentence to Parsing tree "Seq2Tree"}
-
-![](https://i.imgur.com/ywwmSCK.png)
-
-([Vinyals et al, 2014](https://arxiv.org/abs/1412.7449))
-
-\subsection{General algorithms as Seq2Seq}
-
-travelling salesman
-
-![](https://i.imgur.com/B8jsaMt.png)
-
-([Vinyals et al, 2015](https://arxiv.org/abs/1506.03134))
-
-\subsection{General algorithms as Seq2Seq}
-
-convex hull and triangulation
-
-![](https://i.imgur.com/mTQhCTi.png)
-
-\subsection{Pointer networks}
-
-![](https://i.imgur.com/JhFpOkZ.png)
-
-\subsection{Revisiting the basic idea}
-
-![](https://i.imgur.com/Ki8xpvY.png)
-
-"Asking the network too much"
-
-\subsection{Attention layer}
-
-![](https://i.imgur.com/nskRYts.png)
-
-\subsection{Attention layer}
-
-Attention weights:
-
-$$
-\alpha_{t,s} = \frac{e^{\mathbf{e}^T_t \mathbf{d}_s}}{\sum_u e^{\mathbf{e}^T_t \mathbf{d}_s}} 
-$$
-
-Context vector:
-
-$$
-\mathbf{c}_s = \sum_{t=1}^T \alpha_{t,s} \mathbf{e}_t
-$$
-
-\subsection{Attention layer visualised}
-
-![](https://i.imgur.com/MVt50yl.png =500x)
-
----
-
-![](https://i.imgur.com/uNwTRux.png)
-
-\subsection{To engage with this material at home}
-
-Try the [char-RNN Exercise](https://github.com/udacity/deep-learning-v2-pytorch/blob/master/recurrent-neural-networks/char-rnn/Character_Level_RNN_Exercise.ipynb) from Udacity.
-
-
-\subsection{Side note: dealing with depth}
-
-![](https://i.imgur.com/sTaW6fT.png)
-
-\subsection{Side note: dealing with depth}
-
-![](https://i.imgur.com/2oCXEIh.png)
-
-\subsection{Side note: dealing with depth}
-
-![](https://i.imgur.com/w8BmEfS.png =260x)
-
-\subsection{Deep Residual Networks (ResNets)}
-
-![](https://i.imgur.com/hJK6Rx4.png)
-
-\subsection{Deep Residual Networks (ResNets)}
-
-![](https://i.imgur.com/wjBWNn9.png)
-
-\subsection{ResNets}
+\subsubsection{ResNets}
 
 * allow for much deeper networks (101, 152 layer)
 * performance increases with depth
 * new record in benchmarks (ImageNet, COCO)
 * used almost everywhere now
 
-\subsection{Resnets behave like ensembles}
 
-![](https://i.imgur.com/LNPB4e8.png)
+
+\subsubsection{Resnets behave like ensembles}
+
+\aligncenter{\includepng{https://i.imgur.com/LNPB4e8}{}}
 
 from ([Veit et al, 2016](https://arxiv.org/pdf/1605.06431.pdf))
 
-\subsection{DenseNets}
 
-![](https://i.imgur.com/Eyyx1uK.png)
 
-\subsection{DenseNets}
+\subsubsection{DenseNets}
 
-![](https://i.imgur.com/a5dQUl8.png)
+\aligncenter{\includepng{https://i.imgur.com/Eyyx1uK}{}}
 
-\subsection{Back to RNNs}
+
+
+\subsubsection{DenseNets}
+
+\aligncenter{\includepng{https://i.imgur.com/a5dQUl8}{}}
+
+
+
+\subsubsection{Back to RNNs}
 
 * like ResNets, LSTMs and GRU create "shortcuts"
 * allows information to skip processing
 * data-dependent gating
 * data-dependent shortcuts
 
-\subsection{Different from what we had before:
+
+
+## Different from what we had before:
 
 * different input type (sequences)
 * different network building blocks
@@ -358,4 +330,16 @@ from ([Veit et al, 2016](https://arxiv.org/pdf/1605.06431.pdf))
     * maximum likelihood
     * generative modelling
 
----
+
+
+
+\subsubsection{RNN: different uses}
+
+\aligncenter{\includejpg{https://i.imgur.com/WGl90lv}{}}
+
+figure from [Andrej Karpathy's blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+
+
+\subsubsection{To engage with this material at home}
+
+Try the [char-RNN Exercise](https://github.com/udacity/deep-learning-v2-pytorch/blob/master/recurrent-neural-networks/char-rnn/Character_Level_RNN_Exercise.ipynb) from Udacity.

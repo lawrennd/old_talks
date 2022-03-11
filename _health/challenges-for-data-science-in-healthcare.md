@@ -12,11 +12,11 @@ author:
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
+\include{_data-science/includes/lies-damned-lies.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
 
 \subsection)Background: Big Data}
 
@@ -24,26 +24,26 @@ talk-macros.gpp}l/includes/data-science-vs-ai.md}
 * Those challenges are most sharply in focus for personalized health.
 * Particular opportunities, in challenging areas such as *mental health*.
 
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
 
 
 \subsection{Evolved Relationship}
 
 \includediagram{\diagramsDir/data-science/information-flow003}
 
-talk-macros.gpp}ata-science/includes/societal-effects.md}
+\include{_data-science/includes/societal-effects.md}
 
-talk-macros.gpp}ata-science/includes/the-data-crisis.md}
-talk-macros.gpp}overnance/includes/feudal-era-data-ecosystem.md}
+\include{_data-science/includes/the-data-crisis.md}
+\include{_governance/includes/feudal-era-data-ecosystem.md}
 
-talk-macros.gpp}ata-science/includes/value-of-data.md}
-talk-macros.gpp}ealth/includes/rolls-royce-analogy.md}
-talk-macros.gpp}usiness/includes/black-box-thinking.md}
+\include{_data-science/includes/value-of-data.md}
+\include{_health/includes/rolls-royce-analogy.md}
+\include{_business/includes/black-box-thinking.md}
 
  \notes{In particular, while there is much to be gained by involving commercial companies in the care of patients, if the process by which they are drawing inference about patient condition is hidden (for example, due to commercial confidentiality), this may prevent us from understanding errors in diagnosis or treatment. This would be a retrograde step. It may be that health device certification needs modification or reform for data-driven automated decision making, but we need a spirit of transparency around how these systems are deriving their inferences to ensure best practice.}
 
-talk-macros.gpp}overnance/includes/data-trusts.md}
+\include{_governance/includes/data-trusts.md}
 
 
 \subsection{Conclusion} 

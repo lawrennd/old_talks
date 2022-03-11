@@ -14,8 +14,8 @@ transition: None
 #### Amazon and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
-talk-macros.gpp}lk-macros.tex}
-talk-macros.gpp}ata-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
+\include{talk-macros.tex}
+\include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
 
 
 \newslide{Machine Learning}
@@ -38,8 +38,8 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 * Data preprocessing: Internet of Intelligence.
 
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
 
 \newslide{Effects}
 
@@ -103,9 +103,9 @@ We require data-desalination before it can be consumed!
     * Incentivization for sharing and production.
     * Quantifying the value in the contribution of *each actor*.
 
-talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
-talk-macros.gpp}ata-science/includes/data-joel-tests.md}
-talk-macros.gpp}i/includes/ml-systems-design.md}
+\include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-joel-tests.md}
+\include{_ai/includes/ml-systems-design.md}
 
 \newslide{Conclusion}
 

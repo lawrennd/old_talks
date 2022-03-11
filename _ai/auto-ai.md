@@ -20,7 +20,7 @@ venue: 10 Minute Talk, Wednesday Meeting, Department of Computer Science and Tec
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \subsection{Introduction}
 
@@ -37,15 +37,15 @@ include [@Lawrence:threeds19]: the *decomposition* of the system, the
 *deployment*. Collectively we refer to these challenges as the "Three
 Ds of ML Systems Design".}
 
-talk-macros.gpp}i/includes/turing-ai-fellowship.md}
-talk-macros.gpp}i/includes/ride-allocation-prediction.md}
-talk-macros.gpp}i/includes/the-promise-of-ai.md}
-talk-macros.gpp}l/includes/ml-paradigm-shift.md}
+\include{_ai/includes/turing-ai-fellowship.md}
+\include{_ai/includes/ride-allocation-prediction.md}
+\include{_ai/includes/the-promise-of-ai.md}
+\include{_ml/includes/ml-paradigm-shift.md}
 
 \notes{This gives vulnerabilities that we are exposing to the natural environment. Many security problems that we face today are the result of bugs that mean that code and data are not separate in thee systems we deploy, imagine what will happen when we deploy systems that purposefully short-circuit this protection into uncontrolled environments.}
 
 
-talk-macros.gpp}i/includes/ml-system-decomposability.md}
+\include{_ai/includes/ml-system-decomposability.md}
 \subsection{Data Oriented Architectures}
 \slides{
 * Convert data to a *first-class citizen*.
@@ -102,9 +102,9 @@ There are constraints on the hypothetical, they include: the *input* information
 
 \notes{What is the advantage to defining things in this way? By defining, clearly, the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be *instantiated* against the real, and design criteria can be constantly evaluated triggering retraining when necessary.}
 
-talk-macros.gpp}i/includes/safe-boda.md}
+\include{_ai/includes/safe-boda.md}
 
-talk-macros.gpp}i/includes/ride-allocation-prediction.md}
+\include{_ai/includes/ride-allocation-prediction.md}
 
 
 \notes{Let's consider a ride sharing app, for example the SafeBoda system. 
@@ -124,11 +124,11 @@ When Anne calls for a ride, she is provided with an estimate based on the expect
 This best guess may well be driven by previous data.
 }
 
-talk-macros.gpp}ata-science/includes/ride-sharing-soa-doa.md}
-talk-macros.gpp}ata-science/includes/information-dynamics.md}
-talk-macros.gpp}q/includes/auto-ai.md}
+\include{_data-science/includes/ride-sharing-soa-doa.md}
+\include{_data-science/includes/information-dynamics.md}
+\include{_uq/includes/auto-ai.md}
 
-talk-macros.gpp}i/includes/auto-ai-conclusions.md}
+\include{_ai/includes/auto-ai-conclusions.md}
 
 
 

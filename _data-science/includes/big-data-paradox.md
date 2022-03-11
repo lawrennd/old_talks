@@ -15,7 +15,7 @@
 
 \newslide{Wood or Tree}
 
-talk-macros.gpp}ata-science/includes/wood-or-trees-picture.md}
+\include{_data-science/includes/wood-or-trees-picture.md}
 
 \notes{The new phenomenon is *happenstance data*. Data that is not actively collected with a question in mind. As a result, it can mislead us. For example, if we assume the politics of active users of twitter is reflective of the wider population's politics, then we may be misled.}
 

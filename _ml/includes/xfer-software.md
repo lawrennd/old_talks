@@ -2,7 +2,7 @@
 \define{xferSoftware}
 \editme
 
-talk-macros.gpp}l/includes/xfer-intro.md}
+\include{_ml/includes/xfer-intro.md}
 
 \subsection{Xfer}
 

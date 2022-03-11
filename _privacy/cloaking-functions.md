@@ -25,6 +25,13 @@ venue: CD-Make 2017 Keynote, Reggio Calabria, Italy
 transition: None
 ---
 
+<<<<<<< HEAD
+=======
+
+
+\include{../talk-macros.tex}
+
+>>>>>>> parent of 37b8775b (Rewmove talk-macros loads.)
 \include{_ai/includes/embodiment-factors.md}
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/conversation-technical.md}

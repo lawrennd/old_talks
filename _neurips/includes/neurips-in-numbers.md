@@ -42,6 +42,6 @@
   * Reviewers allocated at random
   * Area Chairs allocated to ensure distribution of expertise}
 
-talk-macros.gpp}eurips/includes/neurips-timeline.md}
+\include{_neurips/includes/neurips-timeline.md}
 
 \endif

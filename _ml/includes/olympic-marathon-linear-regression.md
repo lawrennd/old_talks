@@ -3,7 +3,7 @@
 
 \editme
 
-talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \subsection{Running Example: Olympic Marathons}
 

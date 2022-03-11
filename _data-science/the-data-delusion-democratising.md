@@ -43,14 +43,14 @@ venue: Rework Deep Learning Summit, London, UK
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \define{\newslide{text}}{---}
 \newslide{}
 
 \div{\includediagram{\diagramsDir/data-science/hilbert-info-growth}}{}{text-align:center}
 
-talk-macros.gpp}ata-science/includes/newcomen-engine.md}
+\include{_data-science/includes/newcomen-engine.md}
 
 \newslide{}
 
@@ -66,7 +66,7 @@ talk-macros.gpp}ata-science/includes/newcomen-engine.md}
 
 \newslide{}
 
-talk-macros.gpp}ealth/includes/doctor-and-patient.md}
+\include{_health/includes/doctor-and-patient.md}
 
 \newslide{}
 
@@ -78,7 +78,7 @@ talk-macros.gpp}ealth/includes/doctor-and-patient.md}
 
 \div{\includeimg{\diagramsDir/SteamEngine_Boulton&Watt_1784.png}{}{negate}}{}{height:600px;text-align:center}
 
-talk-macros.gpp}l/includes/deep-learning-overview.md}
+\include{_ml/includes/deep-learning-overview.md}
 
 \newslide{}
  
@@ -87,7 +87,7 @@ talk-macros.gpp}l/includes/deep-learning-overview.md}
 <!--</span>-->
 
 
-talk-macros.gpp}ealth/includes/deep-health-model.md}
+\include{_health/includes/deep-health-model.md}
 
 \newslide{}
 

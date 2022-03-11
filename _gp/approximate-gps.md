@@ -5,11 +5,11 @@ author: Neil D. Lawrence
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
 
-talk-macros.gpp}/talk-macros.tex}
+\include{../talk-macros.tex}
 
 \section{Approximate Gaussian Processes}
 
-talk-macros.gpp}p/includes/approximate-gps-short.md}
+\include{_gp/includes/approximate-gps-short.md}
 
 \thanks
 

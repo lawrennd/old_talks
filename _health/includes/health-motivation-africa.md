@@ -7,10 +7,10 @@
 
 \slides{*  Try Googling for: "patient data "...}
 
-talk-macros.gpp}overnance/includes/red-flag-analogy.md}
-talk-macros.gpp}ealth/includes/data-diversity.md}
-talk-macros.gpp}ealth/includes/open-data.md}
-talk-macros.gpp}ealth/includes/why-africa.md}
-talk-macros.gpp}ealth/includes/data-sources.md}
+\include{_governance/includes/red-flag-analogy.md}
+\include{_health/includes/data-diversity.md}
+\include{_health/includes/open-data.md}
+\include{_health/includes/why-africa.md}
+\include{_health/includes/data-sources.md}
 
 \endif

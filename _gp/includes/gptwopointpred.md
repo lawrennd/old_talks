@@ -10,7 +10,7 @@ np.random.seed(4949)}
 \setupcode{import mlai.plot as plot
 import pods}
 
-talk-macros.gpp}p/includes/gaussian-predict-index-one-and-two.md}
+\include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
 \newslide{Prediction of $\mappingFunction_{2}$ from $\mappingFunction_{1}$}
 
@@ -39,7 +39,7 @@ talk-macros.gpp}p/includes/gaussian-predict-index-one-and-two.md}
   \kernelMatrix= \begin{bmatrix} \kernelScalar_{1, 1} & \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} & \kernelScalar_{2, 2}\end{bmatrix}
   $$
 
-talk-macros.gpp}p/includes/gaussian-predict-index-one-and-eight.md}
+\include{_gp/includes/gaussian-predict-index-one-and-eight.md}
 
 \newslide{Details}
 

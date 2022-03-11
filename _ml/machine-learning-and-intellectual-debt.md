@@ -19,10 +19,10 @@ venue: School of Mathematics, University of Leeds
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
 
-talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
 
 \subsection{The News}
 
@@ -80,7 +80,7 @@ exactly those that my research is designed to address.
 
 So, what is intellectual debt?}
 
-talk-macros.gpp}i/includes/intellectual-debt.md}
+\include{_ai/includes/intellectual-debt.md}
 
 \subsection{Virtual Gemba Walks}
 
@@ -128,7 +128,7 @@ to hope you have an old-hand Engineer, let's call him Lancelot, whose
 long-standing presence in your organisation gives them a handle on how
 things are constructed.}
 
-talk-macros.gpp}oftware/includes/lancelot.md}
+\include{_software/includes/lancelot.md}
 
 \subsection{Adding Data}
 
@@ -244,8 +244,8 @@ How to address these challenges? With collaborators I've been working
 towards a solution that contains broadly two parts. The first part is
 what we refer to as "Data-Oriented Architectures". The second part is "meta modelling", machine learning techniques that help us model the models. }
 
-talk-macros.gpp}ata-science/includes/data-oriented-architectures-short.md}
-talk-macros.gpp}ata-science/includes/milan.md}
+\include{_data-science/includes/data-oriented-architectures-short.md}
+\include{_data-science/includes/milan.md}
 
 \section{News}
 

@@ -26,10 +26,10 @@ transition: None
 progress: False
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
-talk-macros.gpp}i/includes/the-promise-of-ai.md}
+\include{_ai/includes/the-promise-of-ai.md}
 
 \notes{This proposal is about addressing that gap, but to first understand the gap, let's look at comparisons between the approach we take to systems design, and the way that natural systems evolve.}
 
@@ -46,13 +46,13 @@ include [@Lawrence:threeds19]: the *decomposition* of the system, the
 *deployment*. Collectively we refer to these challenges as the "Three
 Ds of ML Systems Design".}
 
-talk-macros.gpp}i/includes/turing-ai-fellowship.md}
+\include{_ai/includes/turing-ai-fellowship.md}
 
 
 
-talk-macros.gpp}i/includes/ride-allocation-prediction.md}
+\include{_ai/includes/ride-allocation-prediction.md}
 
-talk-macros.gpp}i/includes/the-promise-of-ai.md}
+\include{_ai/includes/the-promise-of-ai.md}
 
 \notes{Currently, our main approach to systems design involves designing a system in a component-wise manner. Attempts to replicate the capabilities of evolved systems through specifying the objective, rather than evolving behaviour.}
 
@@ -70,10 +70,10 @@ talk-macros.gpp}i/includes/the-promise-of-ai.md}
 
 \addblog{The 3Ds of Machine Learning Systems Design}{2018/11/05/the-3ds-of-machine-learning-systems-design}
 
-talk-macros.gpp}l/includes/ml-paradigm-shift.md}
-talk-macros.gpp}q/includes/bayesian-system-optimization.md}
-talk-macros.gpp}q/includes/auto-ai.md}
-talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
+\include{_ml/includes/ml-paradigm-shift.md}
+\include{_uq/includes/bayesian-system-optimization.md}
+\include{_uq/includes/auto-ai.md}
+\include{_data-science/includes/data-oriented-conclusions.md}
 
 \thanks
 
@@ -82,16 +82,16 @@ talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
 
 \subsection{APPENDIX} 
 
-talk-macros.gpp}l/includes/ml-three-primary-challenges.md}
-talk-macros.gpp}l/includes/ml-decomposition-challenge.md}
-talk-macros.gpp}l/includes/ml-data-challenge.md}
-talk-macros.gpp}l/includes/ml-combining-data-and-systems-design-challenge.md}
-talk-macros.gpp}l/includes/ml-deployment-challenge.md}
+\include{_ml/includes/ml-three-primary-challenges.md}
+\include{_ml/includes/ml-decomposition-challenge.md}
+\include{_ml/includes/ml-data-challenge.md}
+\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
+\include{_ml/includes/ml-deployment-challenge.md}
 
-talk-macros.gpp}q/includes/emulation.md}
-talk-macros.gpp}q/includes/deep-emulation.md}
-talk-macros.gpp}q/includes/bayesian-system-optimization.md}
-talk-macros.gpp}q/includes/auto-ai.md}}
+\include{_uq/includes/emulation.md}
+\include{_uq/includes/deep-emulation.md}
+\include{_uq/includes/bayesian-system-optimization.md}
+\include{_uq/includes/auto-ai.md}}
 
 \references
 

@@ -19,7 +19,7 @@ transition: None
 incremental: True
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
@@ -27,7 +27,7 @@ talk-macros.gpp}lk-macros.tex}
 
 \notes{Or to put it more precisely, it is a revolution in how information can affect the physical world. The interchange between information and the physical world.}
 
-talk-macros.gpp}i/includes/amazon-delivery-drone.md}
+\include{_ai/includes/amazon-delivery-drone.md}
 
 \newslide{Bits and Atoms}
 
@@ -35,7 +35,7 @@ talk-macros.gpp}i/includes/amazon-delivery-drone.md}
 
 \section{End-to-End: Environment and Decision}
 
-talk-macros.gpp}l/includes/what-is-ml-end-to-end.md}
+\include{_ml/includes/what-is-ml-end-to-end.md}
 
 \newslide{}
 
@@ -45,7 +45,7 @@ talk-macros.gpp}l/includes/what-is-ml-end-to-end.md}
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
-talk-macros.gpp}q/includes/emulation.md}
+\include{_uq/includes/emulation.md}
 
 \newslide{}
 
@@ -68,12 +68,12 @@ talk-macros.gpp}q/includes/emulation.md}
 
 \newslide{Technology: Deep Emulation}
 
-talk-macros.gpp}l/includes/deep-face.md}
-<!--talk-macros.gpp}l/includes/deep-learning-as-pinball.md}-->
+\include{_ml/includes/deep-face.md}
+<!--\include{_ml/includes/deep-learning-as-pinball.md}-->
 
-talk-macros.gpp}eepnn/includes/deep-neural-networks.md}
-talk-macros.gpp}eepgp/includes/overfitting-low-rank.md}
-talk-macros.gpp}eepgp/includes/deep-gp.md}
+\include{_deepnn/includes/deep-neural-networks.md}
+\include{_deepgp/includes/overfitting-low-rank.md}
+\include{_deepgp/includes/deep-gp.md}
 
 \newslide{Stochastic Process Composition}
 
@@ -83,11 +83,11 @@ $$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\map
 <!-- in this short overview, don't introduce GPy or the data-->
 <!--\define{stepFunctionData} -->
 \define{gpySoftware}
-talk-macros.gpp}eepgp/includes/deep-motorcycle.md}
-talk-macros.gpp}l/includes/graphical-models.md}
+\include{_deepgp/includes/deep-motorcycle.md}
+\include{_ml/includes/graphical-models.md}
 
 
-<!--talk-macros.gpp}ealth/includes/malaria-gp.md}-->
+<!--\include{_health/includes/malaria-gp.md}-->
 
 \subsection{Related Papers}
 
@@ -124,7 +124,7 @@ talk-macros.gpp}l/includes/graphical-models.md}
 * Bayesian Systems Optimization
 }
 
-talk-macros.gpp}ata-science/includes/data-science-africa.md}
+\include{_data-science/includes/data-science-africa.md}
 
 \newslide{ML in Cambridge}
 

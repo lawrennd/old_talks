@@ -6,8 +6,8 @@ abstract: >
   In this lecture we review multi-output Gaussian processes. Introducing them initially through a Kalman filter representation of a GP.
 ---
 
-talk-macros.gpp}pss/includes/gpss-notebook-setup.md}
-talk-macros.gpp}p/includes/multi-output-gaussian-process.md}
+\include{_gpss/includes/gpss-notebook-setup.md}
+\include{_gp/includes/multi-output-gaussian-process.md}
 
 \thanks
 

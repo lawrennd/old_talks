@@ -2,7 +2,7 @@
 \define{olympicMarathonDeepGp}
 \define{deepGpEnhanced}
 
-talk-macros.gpp}p/includes/olympic-marathon-gp.md}
+\include{_gp/includes/olympic-marathon-gp.md}
 
 \editme
 

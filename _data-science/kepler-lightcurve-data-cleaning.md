@@ -11,10 +11,10 @@ authors:
   given: Kate
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}atasets/includes/datasets-notebook-setup.md}
+\include{_datasets/includes/datasets-notebook-setup.md}
 
-talk-macros.gpp}ata-science/includes/kepler-lightcurve-data-cleaning.md}
+\include{_data-science/includes/kepler-lightcurve-data-cleaning.md}
 
 \references

@@ -7,7 +7,7 @@
 
 \notes{For ease of use we've packaged this data set in the `pods` library}
 
-talk-macros.gpp}oftware/includes/pods-software.md}
+\include{_software/includes/pods-software.md}
 
 \code{data = pods.datasets.nigerian_administrative_zones()['Y']
 data.set_index("admin1Name_en", inplace=True)

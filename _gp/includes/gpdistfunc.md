@@ -48,7 +48,7 @@ from ipywidgets import IntSlider}
 
 \notes{\figure{\includediagram{\diagramsDir/gp/two_point_sample008}{80%}}{A 25 dimensional correlated random variable (values ploted against index)}{gp-two-point-sample-1}}
 
-talk-macros.gpp}p/includes/gaussian-predict-index-one-and-two.md}
+\include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
 \subsection{Uluru}
 
@@ -74,5 +74,5 @@ $$
 
 \notes{Using these formulae we can determine the conditional density for any of the elements of our vector $\mappingFunctionVector$. For example, the variable $\mappingFunction_8$ is less correlated with $\mappingFunction_1$ than $\mappingFunction_2$. If we consider this variable we see the conditional density is more diffuse.}
 
-talk-macros.gpp}p/includes/gaussian-predict-index-one-and-eight.md}
+\include{_gp/includes/gaussian-predict-index-one-and-eight.md}
 \endif

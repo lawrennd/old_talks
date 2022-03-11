@@ -6,9 +6,9 @@ abstract: |
 youtube: Gq6bjcm8AqQ
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \newslide{Objective Function}
 \slides{
@@ -16,8 +16,8 @@ talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 - This week we motivate the idea of the 'objective function'.}
 
 \slides{
-talk-macros.gpp}l/includes/perceptron.md}
-talk-macros.gpp}l/includes/linear-regression-iterative.md}
+\include{_ml/includes/perceptron.md}
+\include{_ml/includes/linear-regression-iterative.md}
 }
 
 
@@ -45,17 +45,17 @@ are going to take a slightly different tack.}
 
 \notes{This week we are going to try and build a simple movie recommender system using an objective function. To do this, the first thing I'd like you to do is to install some software we've written for sharing information across google documents.}
 
-talk-macros.gpp}ata-science/includes/pods-software.md}
+\include{_data-science/includes/pods-software.md}
 
-talk-macros.gpp}l/includes/movie-body-count-data.md}
+\include{_ml/includes/movie-body-count-data.md}
 
 \writeassignment{Data ethics. If you find data available on the
 internet, can you simply use it without consequence? If you are given data by a
 fellow researcher can you publish that data on line?}{1}{10}
 
-talk-macros.gpp}l/includes/recommender-systems.md}
-talk-macros.gpp}l/includes/recommender-data.md}
-talk-macros.gpp}l/includes/matrix-factorization.md}
+\include{_ml/includes/recommender-systems.md}
+\include{_ml/includes/recommender-data.md}
+\include{_ml/includes/matrix-factorization.md}
 
 
 \thanks

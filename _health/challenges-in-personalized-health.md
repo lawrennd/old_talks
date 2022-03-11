@@ -12,9 +12,9 @@ author:
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+\include{_data-science/includes/lies-damned-lies.md}
 
 \subsection{Background: Big Data}
 
@@ -22,15 +22,15 @@ talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
 * Those challenges are most sharply in focus for personalized health.
 * Particular opportunities, in challenging areas such as *mental health*.
 
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
 
 
 \subsection{Evolved Relationship}
 
 \includediagram{\diagramsDir/data-science-information-flow_neg003}
 
-talk-macros.gpp}ata-science/includes/societal-effects.md}
+\include{_data-science/includes/societal-effects.md}
 
 \subsection{Challenges}
 
@@ -38,12 +38,12 @@ talk-macros.gpp}ata-science/includes/societal-effects.md}
 2. Quantifying the Value of Data
 3. Privacy, loss of control, marginalization
 
-talk-macros.gpp}ata-science/includes/breadth-or-depth.md}
-talk-macros.gpp}ata-science/includes/value-of-data.md}
-talk-macros.gpp}ata-science/includes/privacy-loss-of-control.md}
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
-talk-macros.gpp}rivacy/includes/differential-privacy-for-gps.md}
-talk-macros.gpp}rivacy/includes/differential-privacy-with-cloaking.md}
+\include{_data-science/includes/breadth-or-depth.md}
+\include{_data-science/includes/value-of-data.md}
+\include{_data-science/includes/privacy-loss-of-control.md}
+\include{_gp/includes/gp-intro-very-short.md}
+\include{_privacy/includes/differential-privacy-for-gps.md}
+\include{_privacy/includes/differential-privacy-with-cloaking.md}
 
 \subsection{Awareness}
 

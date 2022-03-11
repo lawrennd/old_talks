@@ -16,7 +16,7 @@
    * Use simpler models (better consistency and generalization)
    * Use more complex models and average.
 
-talk-macros.gpp}l/includes/bias-variance-plots.md}
+\include{_ml/includes/bias-variance-plots.md}
 
 \subsection{Decision Making and Bias-Variance}
 

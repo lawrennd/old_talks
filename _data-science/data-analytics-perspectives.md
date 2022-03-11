@@ -16,9 +16,9 @@ abstract: >
 
 
 
-talk-macros.gpp}lk-macros.tex}
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
+\include{talk-macros.tex}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
 
 \subsection{Two Phenomena underpinned by ML}
 

@@ -1,7 +1,7 @@
 \ifndef{perceptron}
 \define{perceptron}
 
-talk-macros.gpp}l/includes/classification.md}
+\include{_ml/includes/classification.md}
 
 \editme 
 

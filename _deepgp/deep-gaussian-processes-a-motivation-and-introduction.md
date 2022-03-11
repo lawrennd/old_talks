@@ -29,32 +29,32 @@ transition: None
 
 \section{Introduction}
 
-talk-macros.gpp}i/includes/the-fourth-industrial-revolution-intro.md}
+\include{_ai/includes/the-fourth-industrial-revolution-intro.md}
 \installcode{mlai}
 \installcode{notutils}
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}eepnn/includes/deep-neural-network.md}
-talk-macros.gpp}i/includes/sedolian-voids.md}
-talk-macros.gpp}l/includes/why-uncertainty.md}
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
-talk-macros.gpp}p/includes/mackay-bathwater.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_deepnn/includes/deep-neural-network.md}
+\include{_ai/includes/sedolian-voids.md}
+\include{_ml/includes/why-uncertainty.md}
+\include{_gp/includes/gp-intro-very-short.md}
+\include{_gp/includes/mackay-bathwater.md}
 
 \newslide{Deep Neural Network}
 
 \slides{\includediagram{\diagramsDir/deepgp/deep-nn2}{50%}}
-talk-macros.gpp}eepgp/includes/overfitting-low-rank.md}
-talk-macros.gpp}eepgp/includes/deep-gp.md}
-talk-macros.gpp}eepgp/includes/stochastic-process-composition.md}
-talk-macros.gpp}eepgp/includes/process-composition.md}
+\include{_deepgp/includes/overfitting-low-rank.md}
+\include{_deepgp/includes/deep-gp.md}
+\include{_deepgp/includes/stochastic-process-composition.md}
+\include{_deepgp/includes/process-composition.md}
 
 \section{Deep Gaussian Processes}
 \centerdiv{\andreasDamianouPicture{15%}}
   @Damianou:thesis2015
 
 \installcode{mlai}
-talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
+\include{_gp/includes/planck-cmp-master-gp.md}
 
 \subsection{Modern Review}
 
@@ -64,15 +64,15 @@ talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
   @Damianou:thesis2015
 
-talk-macros.gpp}eepgp/includes/deep-gp-setup-code.md}
-talk-macros.gpp}eepgp/includes/olympic-marathon-deep-gp.md}
-talk-macros.gpp}eepgp/includes/step-function-deep-gp.md}
-talk-macros.gpp}eepgp/includes/motorcycle-helmet-deep-gp.md}
+\include{_deepgp/includes/deep-gp-setup-code.md}
+\include{_deepgp/includes/olympic-marathon-deep-gp.md}
+\include{_deepgp/includes/step-function-deep-gp.md}
+\include{_deepgp/includes/motorcycle-helmet-deep-gp.md}
 
-talk-macros.gpp}eepgp/includes/mnist-digits-subsample-deep-gp.md}
+\include{_deepgp/includes/mnist-digits-subsample-deep-gp.md}
 
-talk-macros.gpp}eepgp/includes/deep-neural-networks-as-point-estimates.md}
-talk-macros.gpp}ealth/includes/deep-health-model.md}
+\include{_deepgp/includes/deep-neural-networks-as-point-estimates.md}
+\include{_health/includes/deep-health-model.md}
 
 \thanks
 

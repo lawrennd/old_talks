@@ -5,7 +5,7 @@
 
 \notes{\subsection{AWS Sign Up}}
 
-talk-macros.gpp}loud/includes/history-of-cloud.md}
+\include{_cloud/includes/history-of-cloud.md}
 
 \notes{Alternative cloud providers to AWS include Azure, Alibaba, Google, Huawei and others. Here we will use AWS services.}
 

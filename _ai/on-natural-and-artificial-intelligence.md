@@ -43,12 +43,12 @@ So what will be the last bastion
 - Or at least in emulating a set of actions that we regard as intelligent. Whether it’s 
 -->
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
-talk-macros.gpp}i/includes/are-we-close-to-creating-intelligence.md}
-talk-macros.gpp}i/includes/locked-in-intelligence.md}
-talk-macros.gpp}i/includes/transhumanism.md}
+\include{_ai/includes/are-we-close-to-creating-intelligence.md}
+\include{_ai/includes/locked-in-intelligence.md}
+\include{_ai/includes/transhumanism.md}
 
 \section{Conclusions}
 \newslide{Conclusion I}

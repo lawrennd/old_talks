@@ -1,7 +1,7 @@
 \ifndef{olympicMarathonKFoldValidation}
 \define{olympicMarathonKFoldValidation}
 
-talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 \editme
 

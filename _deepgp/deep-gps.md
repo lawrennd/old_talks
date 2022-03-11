@@ -17,7 +17,7 @@ date: 2020-09-16
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
 \section{Deep Gaussian Processes}
@@ -32,14 +32,14 @@ for path in ['gp', 'datasets', 'deepgp']:
     if not os.path.exists(path):
         os.mkdir(path)}
 		
-talk-macros.gpp}ata-science/includes/pods-install.md}
-talk-macros.gpp}p/includes/gpy-install.md}
-talk-macros.gpp}eepgp/includes/pydeepgp-include.md}
+\include{_data-science/includes/pods-install.md}
+\include{_gp/includes/gpy-install.md}
+\include{_deepgp/includes/pydeepgp-include.md}
 
 
-talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
+\include{_gp/includes/planck-cmp-master-gp.md}
 
-talk-macros.gpp}p/includes/approximate-gps-short.md}
+\include{_gp/includes/approximate-gps-short.md}
 
 \subsection{Modern Review}
 
@@ -49,7 +49,7 @@ talk-macros.gpp}p/includes/approximate-gps-short.md}
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-talk-macros.gpp}eepgp/includes/deep-gaussian-processes.md}
+\include{_deepgp/includes/deep-gaussian-processes.md}
 
 \thanks
 

@@ -17,13 +17,13 @@ date: 2017-12-04
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
 
-talk-macros.gpp}lk-macros.tex}
-talk-macros.gpp}p/includes/what-is-a-gp.md}
+\include{talk-macros.tex}
+\include{_gp/includes/what-is-a-gp.md}
 
 
 \subsection{Deep Gaussian Processes}
 
-talk-macros.gpp}p/includes/approximate-gps-short.md}
+\include{_gp/includes/approximate-gps-short.md}
 
 \subsection{Modern Review}
 
@@ -33,7 +33,7 @@ talk-macros.gpp}p/includes/approximate-gps-short.md}
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
-talk-macros.gpp}eepgp/includes/deep-gaussian-processes.md}
+\include{_deepgp/includes/deep-gaussian-processes.md}
 
 \subsection{At this Year's NIPS}
 
@@ -56,7 +56,7 @@ talk-macros.gpp}eepgp/includes/deep-gaussian-processes.md}
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
-talk-macros.gpp}q/includes/uncertainty-quantification.md}
+\include{_uq/includes/uncertainty-quantification.md}
 
 \subsection{Acknowledgments}
 

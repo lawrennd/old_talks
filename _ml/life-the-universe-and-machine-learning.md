@@ -37,14 +37,14 @@ video: https://uecho.shef.ac.uk:8443/ess/echo/presentation/cf5b4a10-cf6c-4446-b8
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}hysics/includes/ceres-discovery.md}
-talk-macros.gpp}l/includes/overdetermined-inaugural.md}
-talk-macros.gpp}hysics/includes/entropy-intro.md}
-talk-macros.gpp}l/includes/uncertainty-in-practice.md}
+\include{_physics/includes/ceres-discovery.md}
+\include{_ml/includes/overdetermined-inaugural.md}
+\include{_physics/includes/entropy-intro.md}
+\include{_ml/includes/uncertainty-in-practice.md}
 <!--include{_ml/includes/firstOrderSystem.tex}-->
-talk-macros.gpp}ysbio/includes/p53-example.md}
+\include{_sysbio/includes/p53-example.md}
 
 <!--include{_ml/includes/underdeterminedInaugural.tex}-->
 

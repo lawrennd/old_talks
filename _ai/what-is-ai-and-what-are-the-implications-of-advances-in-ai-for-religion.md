@@ -15,26 +15,26 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
-talk-macros.gpp}l/includes/what-is-ml.md}
+\include{_ml/includes/what-is-ml.md}
 
 
 \notes{
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
-talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ml/includes/deep-learning-overview.md}
 }
 
-talk-macros.gpp}i/includes/embodiment-factors.md}
-<!--talk-macros.gpp}ata-science/includes/evolved-relationship-society.md}-->
-talk-macros.gpp}i/includes/embodiment-and-narrative.md}
+\include{_ai/includes/embodiment-factors.md}
+<!--\include{_data-science/includes/evolved-relationship-society.md}-->
+\include{_ai/includes/embodiment-and-narrative.md}
 
 \notes{
-talk-macros.gpp}i/includes/faith-and-ai.md}
-talk-macros.gpp}i/includes/faith-and-ai-conclusions.md}
+\include{_ai/includes/faith-and-ai.md}
+\include{_ai/includes/faith-and-ai-conclusions.md}
 }
 
 

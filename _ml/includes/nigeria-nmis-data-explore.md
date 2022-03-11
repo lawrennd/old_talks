@@ -2,7 +2,7 @@
 \define{nigeriaNmisDataExplore}
 
 
-talk-macros.gpp}atasets/includes/nigeria-nmis-data.md}
+\include{_datasets/includes/nigeria-nmis-data.md}
 
 \editme
 

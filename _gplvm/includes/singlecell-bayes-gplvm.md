@@ -1,7 +1,7 @@
 \ifndef{singlecellBayesGplvm}
 \define{singlecellBayesGplvm}
 
-talk-macros.gpp}atasets/includes/singlecell-data.md}
+\include{_datasets/includes/singlecell-data.md}
 
 \editme
 

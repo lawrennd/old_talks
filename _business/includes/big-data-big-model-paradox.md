@@ -3,9 +3,9 @@
 
 \editme
 
-talk-macros.gpp}ata-science/includes/big-data-paradox.md}
+\include{_data-science/includes/big-data-paradox.md}
 
-talk-macros.gpp}l/includes/big-model-paradox.md}
+\include{_ml/includes/big-model-paradox.md}
 
 
 \endif

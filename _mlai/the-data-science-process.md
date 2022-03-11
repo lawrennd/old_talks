@@ -5,17 +5,17 @@ abstract: |
   In this session we look at some of what makes the data science process different from classical computer science.
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/embodiment-factors.md}
-<!--talk-macros.gpp}ata-science/includes/societal-effects.md}-->
-talk-macros.gpp}l/includes/ml-three-primary-challenges.md}
-<!--talk-macros.gpp}l/includes/ml-decomposition-challenge.md}-->
-talk-macros.gpp}l/includes/ml-data-challenge.md}
-talk-macros.gpp}l/includes/ml-combining-data-and-systems-design-challenge.md}
-talk-macros.gpp}overnance/includes/gdpr-overview.md}
-<!--talk-macros.gpp}l/includes/ml-deployment-challenge.md}-->
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
+<!--\include{_data-science/includes/societal-effects.md}-->
+\include{_ml/includes/ml-three-primary-challenges.md}
+<!--\include{_ml/includes/ml-decomposition-challenge.md}-->
+\include{_ml/includes/ml-data-challenge.md}
+\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
+\include{_governance/includes/gdpr-overview.md}
+<!--\include{_ml/includes/ml-deployment-challenge.md}-->
 
 \subsection{Putting in Practice}
 

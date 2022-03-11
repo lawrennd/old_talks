@@ -26,10 +26,10 @@ venue: Cambridge Ring Dinner
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
-talk-macros.gpp}l/includes/code-data-separation-transgression.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
+\include{_ml/includes/code-data-separation-transgression.md}
 
 \thanks
 

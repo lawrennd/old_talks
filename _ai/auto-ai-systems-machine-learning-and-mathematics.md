@@ -19,9 +19,9 @@ venue: Isaac Newton Institute Virtual Christmas Dinner
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
 
 \slides{
 \newslide{Intellectual Debt}
@@ -29,19 +29,19 @@ talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
 \figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
 
 }
-\notes{talk-macros.gpp}i/includes/intellectual-debt-short.md}}
-talk-macros.gpp}i/includes/fit-systems.md}
-talk-macros.gpp}i/includes/buying-system.md}
-talk-macros.gpp}i/includes/buying-to-banking.md}
-talk-macros.gpp}q/includes/emulation.md}
+\notes{\include{_ai/includes/intellectual-debt-short.md}}
+\include{_ai/includes/fit-systems.md}
+\include{_ai/includes/buying-system.md}
+\include{_ai/includes/buying-to-banking.md}
+\include{_uq/includes/emulation.md}
 
-talk-macros.gpp}l/includes/neil-newton-institute.md}
+\include{_ml/includes/neil-newton-institute.md}
 
 \notes{The first tutorial I saw on Gaussian processes was given by [Chris Williams](https://homepages.inf.ed.ac.uk/ckiw/) at the Newton Institute in August 1997. The school was part of a program on Generalisation in Neural Networks and Machine Learning organised by my PhD supervisor, [Chris Bishop](https://www.microsoft.com/en-us/research/people/cmbishop/) (now Director of Microsoft Research in Cambridge).}
 
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
+\include{_gp/includes/gp-intro-very-short.md}
 
-talk-macros.gpp}q/includes/deep-emulation.md}
+\include{_uq/includes/deep-emulation.md}
 
 
 
@@ -65,13 +65,13 @@ talk-macros.gpp}q/includes/deep-emulation.md}
 
 
 
-\notes{talk-macros.gpp}eepgp/includes/process-composition.md}}
+\notes{\include{_deepgp/includes/process-composition.md}}
 
 \newslide{}
 
 \figure{\includediagram{\diagramsDir/gp/step-function-gp}{80%}}{Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.}{step-function-gp}
 
-\notes{talk-macros.gpp}eepgp/includes/step-function-deep-gp.md}}
+\notes{\include{_deepgp/includes/step-function-deep-gp.md}}
 
 \newslide{}
 

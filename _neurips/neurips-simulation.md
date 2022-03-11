@@ -35,7 +35,7 @@ transition: None
 ---
 
 
-talk-macros.gpp}eurips/includes/neurips-simulation.md}
+\include{_neurips/includes/neurips-simulation.md}
 
 
 \thanks

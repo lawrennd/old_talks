@@ -1,7 +1,7 @@
 \ifndef{motorcycleHelmetGp}
 \define{motorcycleHelmetGp}
 
-talk-macros.gpp}atasets/includes/motorcycle-helmet-data.md}
+\include{_datasets/includes/motorcycle-helmet-data.md}
 
 \editme
 
