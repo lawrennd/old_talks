@@ -8,27 +8,26 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/reveal.css">
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-  <link rel="stylesheet" href="talks.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://inverseprobability.com/assets/css/talks.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2/css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -37,302 +36,9 @@
       }
     });
   </script>
-  <script src="figure-animate.js"></script>
+  <script src="../assets/js/figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
-\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
-\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
-\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
-\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
-\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
-\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
-\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
-\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
-\newcommand{\Kuui}{\Kuu^{-1}}
-\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
-\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
-\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
-\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
-\newcommand{\aMatrix}{\mathbf{A}}
-\newcommand{\aScalar}{a}
-\newcommand{\aVector}{\mathbf{a}}
-\newcommand{\acceleration}{a}
-\newcommand{\bMatrix}{\mathbf{B}}
-\newcommand{\bScalar}{b}
-\newcommand{\bVector}{\mathbf{b}}
-\newcommand{\basisFunc}{\phi}
-\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
-\newcommand{\basisFunction}{\phi}
-\newcommand{\basisLocation}{\mu}
-\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
-\newcommand{\basisScalar}{\basisFunction}
-\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
-\newcommand{\activationFunction}{\phi}
-\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
-\newcommand{\activationScalar}{\basisFunction}
-\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
-\newcommand{\bigO}{\mathcal{O}}
-\newcommand{\binomProb}{\pi}
-\newcommand{\cMatrix}{\mathbf{C}}
-\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
-\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
-\newcommand{\cdataScalar}{\hat{\dataScalar}}
-\newcommand{\cdataVector}{\hat{\dataVector}}
-\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
-\newcommand{\centeredKernelScalar}{b}
-\newcommand{\centeredKernelVector}{\centeredKernelScalar}
-\newcommand{\centeringMatrix}{\mathbf{H}}
-\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
-\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
-\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
-\newcommand{\coregionalizationMatrix}{\mathbf{B}}
-\newcommand{\coregionalizationScalar}{b}
-\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
-\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
-\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
-\newcommand{\covarianceScalar}{c}
-\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
-\newcommand{\covarianceMatrix}{\mathbf{C}}
-\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
-\newcommand{\croupierScalar}{s}
-\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
-\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
-\newcommand{\dataDim}{p}
-\newcommand{\dataIndex}{i}
-\newcommand{\dataIndexTwo}{j}
-\newcommand{\dataMatrix}{\mathbf{Y}}
-\newcommand{\dataScalar}{y}
-\newcommand{\dataSet}{\mathcal{D}}
-\newcommand{\dataStd}{\sigma}
-\newcommand{\dataVector}{\mathbf{ \dataScalar}}
-\newcommand{\decayRate}{d}
-\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
-\newcommand{\degreeScalar}{d}
-\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
-% Already defined by latex
-%\newcommand{\det}[1]{\left|#1\right|}
-\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
-\newcommand{\diagonalMatrix}{\mathbf{D}}
-\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
-\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
-\newcommand{\displacement}{x}
-\newcommand{\displacementVector}{\textbf{\displacement}}
-\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
-\newcommand{\distanceScalar}{d}
-\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
-\newcommand{\eigenvaltwo}{\ell}
-\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
-\newcommand{\eigenvaltwoVector}{\mathbf{l}}
-\newcommand{\eigenvalue}{\lambda}
-\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
-\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
-\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
-\newcommand{\eigenvectorMatrix}{\mathbf{U}}
-\newcommand{\eigenvectorScalar}{u}
-\newcommand{\eigenvectwo}{\mathbf{v}}
-\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
-\newcommand{\eigenvectwoScalar}{v}
-\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
-\newcommand{\errorFunction}{E}
-\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
-\newcommand{\expSamp}[1]{\left<#1\right>}
-\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
-\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
-\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
-\newcommand{\eye}{\mathbf{I}}
-\newcommand{\fantasyDim}{r}
-\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
-\newcommand{\fantasyScalar}{z}
-\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
-\newcommand{\featureStd}{\varsigma}
-\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
-\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
-\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
-\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
-\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
-\newcommand{\given}{|}
-\newcommand{\half}{\frac{1}{2}}
-\newcommand{\heaviside}{H}
-\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
-\newcommand{\hiddenScalar}{h}
-\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
-\newcommand{\identityMatrix}{\eye}
-\newcommand{\inducingInputScalar}{z}
-\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
-\newcommand{\inducingInputMatrix}{\mathbf{Z}}
-\newcommand{\inducingScalar}{u}
-\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
-\newcommand{\inducingMatrix}{\mathbf{U}}
-\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
-\newcommand{\inputDim}{q}
-\newcommand{\inputMatrix}{\mathbf{X}}
-\newcommand{\inputScalar}{x}
-\newcommand{\inputSpace}{\mathcal{X}}
-\newcommand{\inputVals}{\inputVector}
-\newcommand{\inputVector}{\mathbf{ \inputScalar}}
-\newcommand{\iterNum}{k}
-\newcommand{\kernel}{\kernelScalar}
-\newcommand{\kernelMatrix}{\mathbf{K}}
-\newcommand{\kernelScalar}{k}
-\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
-\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
-\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
-\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
-\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
-\newcommand{\lagrangeMultiplier}{\lambda}
-\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
-\newcommand{\lagrangian}{L}
-\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
-\newcommand{\laplacianFactorScalar}{m}
-\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
-\newcommand{\laplacianMatrix}{\mathbf{L}}
-\newcommand{\laplacianScalar}{\ell}
-\newcommand{\laplacianVector}{\mathbf{ \ell}}
-\newcommand{\latentDim}{q}
-\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
-\newcommand{\latentDistanceScalar}{\delta}
-\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
-\newcommand{\latentForce}{f}
-\newcommand{\latentFunction}{u}
-\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
-\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
-\newcommand{\latentIndex}{j}
-\newcommand{\latentScalar}{z}
-\newcommand{\latentVector}{\mathbf{ \latentScalar}}
-\newcommand{\latentMatrix}{\mathbf{Z}}
-\newcommand{\learnRate}{\eta}
-\newcommand{\lengthScale}{\ell}
-\newcommand{\rbfWidth}{\ell}
-\newcommand{\likelihoodBound}{\mathcal{L}}
-\newcommand{\likelihoodFunction}{L}
-\newcommand{\locationScalar}{\mu}
-\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
-\newcommand{\locationMatrix}{\mathbf{M}}
-\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
-\newcommand{\mappingFunction}{f}
-\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
-\newcommand{\mappingFunctionTwo}{g}
-\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
-\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
-\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
-\newcommand{\scaleScalar}{s}
-\newcommand{\mappingScalar}{w}
-\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
-\newcommand{\mappingMatrix}{\mathbf{W}}
-\newcommand{\mappingScalarTwo}{v}
-\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
-\newcommand{\mappingMatrixTwo}{\mathbf{V}}
-\newcommand{\maxIters}{K}
-\newcommand{\meanMatrix}{\mathbf{M}}
-\newcommand{\meanScalar}{\mu}
-\newcommand{\meanTwoMatrix}{\mathbf{M}}
-\newcommand{\meanTwoScalar}{m}
-\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
-\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
-\newcommand{\mrnaConcentration}{m}
-\newcommand{\naturalFrequency}{\omega}
-\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
-\newcommand{\neilurl}{http://inverseprobability.com/}
-\newcommand{\noiseMatrix}{\boldsymbol{ E}}
-\newcommand{\noiseScalar}{\epsilon}
-\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
-\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
-\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
-\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
-\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
-\newcommand{\numActive}{m}
-\newcommand{\numBasisFunc}{m}
-\newcommand{\numComponents}{m}
-\newcommand{\numComps}{K}
-\newcommand{\numData}{n}
-\newcommand{\numFeatures}{K}
-\newcommand{\numHidden}{h}
-\newcommand{\numInducing}{m}
-\newcommand{\numLayers}{\ell}
-\newcommand{\numNeighbors}{K}
-\newcommand{\numSequences}{s}
-\newcommand{\numSuccess}{s}
-\newcommand{\numTasks}{m}
-\newcommand{\numTime}{T}
-\newcommand{\numTrials}{S}
-\newcommand{\outputIndex}{j}
-\newcommand{\paramVector}{\boldsymbol{ \theta}}
-\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
-\newcommand{\parameterScalar}{\theta}
-\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
-\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
-\newcommand{\precisionScalar}{j}
-\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
-\newcommand{\precisionMatrix}{\mathbf{J}}
-\newcommand{\pseudotargetScalar}{\widetilde{y}}
-\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
-\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
-\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
-\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
-\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
-\newcommand{\responsibility}{r}
-\newcommand{\rotationScalar}{r}
-\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
-\newcommand{\rotationMatrix}{\mathbf{R}}
-\newcommand{\sampleCovScalar}{s}
-\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
-\newcommand{\sampleCovMatrix}{\mathbf{s}}
-\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
-\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
-\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
-\newcommand{\singularvalue}{\ell}
-\newcommand{\singularvalueMatrix}{\mathbf{L}}
-\newcommand{\singularvalueVector}{\mathbf{l}}
-\newcommand{\sorth}{\mathbf{u}}
-\newcommand{\spar}{\lambda}
-\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
-\newcommand{\BasalRate}{B}
-\newcommand{\DampingCoefficient}{C}
-\newcommand{\DecayRate}{D}
-\newcommand{\Displacement}{X}
-\newcommand{\LatentForce}{F}
-\newcommand{\Mass}{M}
-\newcommand{\Sensitivity}{S}
-\newcommand{\basalRate}{b}
-\newcommand{\dampingCoefficient}{c}
-\newcommand{\mass}{m}
-\newcommand{\sensitivity}{s}
-\newcommand{\springScalar}{\kappa}
-\newcommand{\springVector}{\boldsymbol{ \kappa}}
-\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
-\newcommand{\tfConcentration}{p}
-\newcommand{\tfDecayRate}{\delta}
-\newcommand{\tfMrnaConcentration}{f}
-\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
-\newcommand{\velocity}{v}
-\newcommand{\sufficientStatsScalar}{g}
-\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
-\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
-\newcommand{\switchScalar}{s}
-\newcommand{\switchVector}{\mathbf{ \switchScalar}}
-\newcommand{\switchMatrix}{\mathbf{S}}
-\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
-\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
-\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
-\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
-\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
-\newcommand{\vScalar}{v}
-\newcommand{\vVector}{\mathbf{v}}
-\newcommand{\vMatrix}{\mathbf{V}}
-\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
-% Already defined by latex
-%\newcommand{\vec}{#1:}
-\newcommand{\vecb}[1]{\left(#1\right):}
-\newcommand{\weightScalar}{w}
-\newcommand{\weightVector}{\mathbf{ \weightScalar}}
-\newcommand{\weightMatrix}{\mathbf{W}}
-\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
-\newcommand{\weightedAdjacencyScalar}{a}
-\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
-\newcommand{\onesVector}{\mathbf{1}}
-\newcommand{\zerosVector}{\mathbf{0}}
-\]
   <div class="reveal">
     <div class="slides">
 
@@ -340,406 +46,272 @@
   <h1 class="title">Cloaking Functions: Differential Privacy with Gaussian Processes</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
   <p class="date" style="text-align:center"><time>2017-08-30</time></p>
+  <p class="venue" style="text-align:center">CD-Make 2017 Keynote, Reggio Calabria, Italy</p>
 </section>
 
-<section class="slide level3">
+<section class="slide level2">
 
-<!-- Front matter -->
+<!-- Do not edit this file locally. -->
 <!---->
-<!--Back matter-->
-<p>.</p>
+<!-- Do not edit this file locally. -->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-</section>
-<section id="embodiment-factors" class="slide level3">
-<h3>Embodiment Factors</h3>
-<table>
-<tr>
-<td>
-</td>
-<td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-<td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-<tr>
-<td>
-compute
-</td>
-<td align="center">
-<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
-</td>
-<td align="center">
-<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
-</td>
-</tr>
-<tr>
-<td>
-communicate
-</td>
-<td align="center">
-<span class="math display">\[1 \text{ gigbit/s}\]</span>
-</td>
-<td align="center">
-<span class="math display">\[100 \text{ bit/s}\]</span>
-</td>
-</tr>
-<tr>
-<td>
-(compute/communicate)
-</td>
-<td align="center">
-<span class="math display">\[10^{4}\]</span>
-</td>
-<td align="center">
-<span class="math display">\[10^{14}\]</span>
-</td>
-</tr>
-</table>
-<p>See <a href="https://arxiv.org/abs/1705.07996" target="_blank" >“Living Together: Mind and Machine Intelligence” <span class="citation" data-cites="Lawrence:embodiment17">Lawrence (2017)</span></a></p>
-</section>
-<section id="section" class="slide level3">
-<h3></h3>
-<div class="figure">
-<div id="lotus-49-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-</section>
-<section id="section-1" class="slide level3">
-<h3></h3>
-<div class="figure">
-<div id="marcel-renault-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-</section>
-<section id="section-2" class="slide level3">
-<h3></h3>
-<div class="figure">
-<div id="caleb-mcduff-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
+<p>talk-macros.gpp}i/includes/embodiment-factors-short.md} talk-macros.gpp}i/includes/formula-one-engine.md} talk-macros.gpp}i/includes/marcel-renault.md} talk-macros.gpp}i/includes/caleb-mcduff.md}</p>
 <!-- SECTION Evolved Relationship with Information -->
 </section>
-<section id="evolved-relationship" class="slide level3">
-<h3>Evolved Relationship</h3>
-<div class="new-flow-of-information" style="max-width:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information001.svg" style="vertical-align:middle;">
-</object>
-</div>
+<section id="evolved-relationship-with-information" class="slide level2">
+<h2>Evolved Relationship with Information</h2>
+<p>talk-macros.gpp}ata-science/includes/new-flow-of-information.md}</p>
+<p>talk-macros.gpp}i/includes/anne-bob-talk.md}</p>
 </section>
-<section id="evolved-relationship-1" class="slide level3">
-<h3>Evolved Relationship</h3>
-<div class="new-flow-of-information" style="max-width:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-3" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob000.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-4" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob001.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-5" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob002.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-6" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob003.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-7" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob004.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-8" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob005.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-9" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob006.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-10" class="slide level3">
-<h3></h3>
-<div class="anne-bob" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " data="../slides/diagrams/anne-bob007.svg" style="vertical-align:middle;">
-</object>
-</div>
-</section>
-<section id="section-11" class="slide level3">
-<h3></h3>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="figure">
 <div id="gaussian-processes-for-machine-learning-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 </div>
-<p><span style="text-align:right"><span class="citation" data-cites="Rasmussen:book06">Rasmussen and Williams (2006)</span></span></p>
-</section>
-<section id="section-12" class="slide level3">
-<h3></h3>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</section>
-<section id="section-13" class="slide level3">
-<h3></h3>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<aside class="notes">
+A key reference for Gaussian process models remains the excellent book “Gaussian Processes for Machine Learning” (<span class="citation" data-cites="Rasmussen:book06">Rasmussen and Williams (2006)</span>). The book is also <a href="http://www.gaussianprocess.org/gpml/" target="_blank">freely available online</a>.
+</aside>
+<div style="text-align:right">
+<span class="citation" data-cites="Rasmussen:book06">Rasmussen and Williams (2006)</span>
 </div>
 </section>
-<section id="section-14" class="slide level3">
-<h3></h3>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<aside class="notes">
+Here we’re showing 20 samples taken from the prior over functions defined by our covarariance
+</aside>
 </section>
-<section id="section-15" class="slide level3">
-<h3></h3>
+<section id="section-2" class="slide level2">
+<h2></h2>
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<aside class="notes">
+We can sample many such functions, in this slide there are now 1000 in total. This is a sample from our prior over functions.
+</aside>
 </section>
-<section id="section-16" class="slide level3">
-<h3></h3>
+<section id="section-3" class="slide level2">
+<h2></h2>
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-{
-<div class="figure">
-<div id="gp-rejection-samples-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
+<aside class="notes">
+Now we observe data. Here there are three data points. Conceptually in Bayesian inference we discard all samples that are distant from the data.
+</aside>
 </section>
-<section id="differential-privacy-summary" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Differential Privacy, summary</h3>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+Throwing away such samples we are left with our posterior. This is the collection of samples from the prior that are consistent with the data.
+</aside>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="centered" style="">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<aside class="notes">
+The elegance of the Gaussian process is that this result can be computed analytically using linear algebra.
+</aside>
+</section>
+<section id="differential-privacy-summary" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Differential Privacy, summary</h2>
 <ul>
 <li><p>We want to protect a user from a linkage attack…</p>
 <p>…while still performing inference over the whole group.</p></li>
 <li><p>Making a dataset private is more than just erasing names.</p></li>
 </ul>
-<p><span class="citation" data-cites="Narayanan:nosilver14">Narayanan and Felten (2014)</span>;<span class="citation" data-cites="Ohm:broken10">Ohm (2010)</span>;<span class="citation" data-cites="BarthJones:governor12">(<span class="citeproc-not-found" data-reference-id="BarthJones:governor12"><strong>???</strong></span>)</span></p>
+<p><span class="citation" data-cites="Narayanan:nosilver14">Narayanan and Felten (2014)</span>;<span class="citation" data-cites="Ohm:broken10">Ohm (2010)</span>;<span class="citation" data-cites="BarthJones:governor12">Barth-Jones (2012)</span></p>
 <ul>
 <li><p>To achieve a level of privacy one needs to add <strong>randomness</strong> to the data.</p></li>
 <li><p>This is a fundamental feature of differential privacy.</p></li>
 </ul>
 <p>See <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">The Algorithmic Foundations of Differential Privacy</a> by <span class="citation" data-cites="Dwork:algorithmic14">Dwork and Roth (2014)</span> for a rigorous introduction to the framework.</p>
 </section>
-<section id="differential-privacy-for-gaussian-processes" class="slide level3">
-<h3>Differential Privacy for Gaussian Processes</h3>
-<p>We have a dataset in which the inputs, <span class="math inline">\(\inputMatrix\)</span>, are <strong>public</strong>. The outputs, <span class="math inline">\(\dataVector\)</span>, we want to keep <strong>private</strong>.</p>
+<section id="differential-privacy-for-gaussian-processes" class="slide level2">
+<h2>Differential Privacy for Gaussian Processes</h2>
+<p>We have a dataset in which the inputs, <span class="math inline">\(\mathbf{X}\)</span>, are <strong>public</strong>. The outputs, <span class="math inline">\(\mathbf{ y}\)</span>, we want to keep <strong>private</strong>.</p>
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/kung_pseudo_pert.png" width="65%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/kung_pseudo_pert.png" width="65%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p><strong>Data consists of the heights and weights of 287 women from a census of the !Kung <span class="citation" data-cites="Howell:kungsan67">(Howell, 1967)</span></strong></p>
 </section>
-<section id="vectors-and-functions" class="slide level3">
-<h3>Vectors and Functions</h3>
-<p><span class="citation" data-cites="Hall:dpfunctions13">Hall et al. (2013)</span> showed that one can ensure that a version of <span class="math inline">\(\mappingFunction\)</span>, function <span class="math inline">\(\tilde{f}\)</span> is <span class="math inline">\((\varepsilon, \delta)\)</span>-differentially private by adding a scaled sample from a GP prior.</p>
-<p><img class="negate" src="../slides/diagrams/privacy/hall1.png" width="30%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
+<section id="vectors-and-functions" class="slide level2">
+<h2>Vectors and Functions</h2>
+<p><span class="citation" data-cites="Hall:dpfunctions13">Hall et al. (2013)</span> showed that one can ensure that a version of <span class="math inline">\(f\)</span>, function <span class="math inline">\(\tilde{f}\)</span> is <span class="math inline">\((\varepsilon, \delta)\)</span>-differentially private by adding a scaled sample from a GP prior.</p>
+<p><img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/hall1.png" width="30%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
 <p>3 pages of maths ahead!</p>
 </section>
-<section id="applied-to-gaussian-processes" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Applied to Gaussian Processes</h3>
+<section id="applied-to-gaussian-processes" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Applied to Gaussian Processes</h2>
 <ul>
 <li><p>We applied this method to the GP posterior.</p></li>
-<li><p>The covariance of the posterior only depends on the inputs, <span class="math inline">\(\inputMatrix\)</span>. So we can compute this without applying DP.</p></li>
-<li><p>The mean function, <span class="math inline">\(\mappingFunction_D(\inputVector_*)\)</span>, does depend on <span class="math inline">\(\dataVector\)</span>. <span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(x_*, \inputMatrix)
-\kernelMatrix^{-1} \dataVector\]</span></p></li>
+<li><p>The covariance of the posterior only depends on the inputs, <span class="math inline">\(\mathbf{X}\)</span>. So we can compute this without applying DP.</p></li>
+<li><p>The mean function, <span class="math inline">\(f_D(\mathbf{ x}_*)\)</span>, does depend on <span class="math inline">\(\mathbf{ y}\)</span>. <span class="math display">\[f_D(\mathbf{ x}_*) = \mathbf{ k}(x_*, \mathbf{X})
+\mathbf{K}^{-1} \mathbf{ y}\]</span></p></li>
 <li><p>We are interested in finding</p>
-<p><span class="math display">\[|| \mappingFunction_D(\inputVector_*) -
-\mappingFunction_{D^\prime}(\inputVector_*) ||_H^2\]</span></p>
-<p>…how much the mean function (in RKHS) can change due to a change in <span class="math inline">\(\dataVector\)</span>.</p></li>
+<p><span class="math display">\[|| f_D(\mathbf{ x}_*) -
+f_{D^\prime}(\mathbf{ x}_*) ||_H^2\]</span></p>
+<p>…how much the mean function (in RKHS) can change due to a change in <span class="math inline">\(\mathbf{ y}\)</span>.</p></li>
 </ul>
 </section>
-<section id="applied-to-gaussian-processes-1" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Applied to Gaussian Processes</h3>
+<section id="applied-to-gaussian-processes-1" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Applied to Gaussian Processes</h2>
 <ul>
-<li><p>Using the representer theorem, we can write <span class="math display">\[|| \mappingFunction_D(\inputVector_*) -
-\mappingFunction_{D^\prime}(\inputVector_*) ||_H^2\]</span></p>
+<li><p>Using the representer theorem, we can write <span class="math display">\[|| f_D(\mathbf{ x}_*) -
+  f_{D^\prime}(\mathbf{ x}_*) ||_H^2\]</span></p>
 <p>as:</p>
-<p><span class="math display">\[\Big|\Big|\sum_{i=1}^\numData \kernelScalar(\inputVector_*,\inputVector_i)
+<p><span class="math display">\[\Big|\Big|\sum_{i=1}^nk(\mathbf{ x}_*,\mathbf{ x}_i)
 \left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2\]</span></p>
-<p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \kernelMatrix^{-1} \left(\dataVector - \dataVector^\prime \right)\)</span></p></li>
+<p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1} \left(\mathbf{ y}- \mathbf{ y}^\prime \right)\)</span></p></li>
 </ul>
 </section>
-<section id="section-17" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3></h3>
+<section id="section-6" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png"></h2>
 <ul>
 <li><p>L2 Norm</p>
-<p><span class="math display">\[\Big|\Big|\sum_{i=1}^\numData \kernelScalar(\inputVector_*,\inputVector_i)
+<p><span class="math display">\[\Big|\Big|\sum_{i=1}^nk(\mathbf{ x}_*,\mathbf{ x}_i)
 \left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2\]</span></p>
-<p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \kernelMatrix^{-1} \left(\dataVector - \dataVector^\prime \right)\)</span></p></li>
-<li><p>We constrain the kernel: <span class="math inline">\(-1\leq \kernelScalar(\cdot,\cdot) \leq 1\)</span> and we only allow one element of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\dataVector^\prime\)</span> to differ (by at most <span class="math inline">\(d\)</span>).</p></li>
-<li><p>So only one column of <span class="math inline">\(\kernelMatrix^{-1}\)</span> will be involved in the change of mean (which we are summing over).</p></li>
-<li><p>The distance above can then be shown to be no greater than <span class="math inline">\(d\;||\kernelMatrix^{-1}||_\infty\)</span></p></li>
+<p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1} \left(\mathbf{ y}- \mathbf{ y}^\prime \right)\)</span></p></li>
+<li><p>We constrain the kernel: <span class="math inline">\(-1\leq k(\cdot,\cdot) \leq 1\)</span> and we only allow one element of <span class="math inline">\(\mathbf{ y}\)</span> and <span class="math inline">\(\mathbf{ y}^\prime\)</span> to differ (by at most <span class="math inline">\(d\)</span>).</p></li>
+<li><p>So only one column of <span class="math inline">\(\mathbf{K}^{-1}\)</span> will be involved in the change of mean (which we are summing over).</p></li>
+<li><p>The distance above can then be shown to be no greater than <span class="math inline">\(d\;||\mathbf{K}^{-1}||_\infty\)</span></p></li>
 </ul>
 </section>
-<section id="applied-to-gaussian-processes-2" class="slide level3">
-<h3>Applied to Gaussian Processes</h3>
+<section id="applied-to-gaussian-processes-2" class="slide level2">
+<h2>Applied to Gaussian Processes</h2>
 <p>This ‘works’ in that it allows DP predictions…but to avoid too much noise, the value of <span class="math inline">\(\varepsilon\)</span> is too large (here it is 100)</p>
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/kung_standard_simple.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/kung_standard_simple.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>EQ kernel, <span class="math inline">\(\lengthScale = 25\)</span> years, <span class="math inline">\(\Delta=100\)</span>cm</p>
+<p>EQ kernel, <span class="math inline">\(\ell= 25\)</span> years, <span class="math inline">\(\Delta=100\)</span>cm</p>
 </section>
-<section id="inducing-inputs" class="slide level3">
-<h3>Inducing Inputs</h3>
+<section id="inducing-inputs" class="slide level2">
+<h2>Inducing Inputs</h2>
 <p>Using sparse methods (i.e. inducing inputs) can help reduce the sensitivity a little. We’ll see more on this later.</p>
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/kung_inducing_simple.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/kung_inducing_simple.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </section>
-<section id="cloaking" class="slide level3">
-<h3>Cloaking</h3>
+<section id="cloaking" class="slide level2">
+<h2>Cloaking</h2>
 <ul>
 <li><p>So far we’ve made the whole posterior mean function private…</p>
 <p>…what if we just concentrate on making particular predictions private?</p></li>
 </ul>
 </section>
-<section id="effect-of-perturbation" class="slide level3">
-<h3>Effect of perturbation</h3>
+<section id="effect-of-perturbation" class="slide level2">
+<h2>Effect of perturbation</h2>
 <ul>
 <li><p>Standard approach: sample the noise is from the GP’s <strong>prior</strong>.</p></li>
 <li><p>Not necessarily the most ‘efficient’ covariance to use.</p></li>
 </ul>
 </section>
-<section id="cloaking-1" class="slide level3">
-<h3>Cloaking</h3>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint000.svg" style="vertical-align:middle;">
+<section id="cloaking-1" class="slide level2">
+<h2>Cloaking</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//privacy/dp-firstpoint000.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
-<section id="cloaking-2" class="slide level3">
-<h3>Cloaking</h3>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint002.svg" style="vertical-align:middle;">
+<section id="cloaking-2" class="slide level2">
+<h2>Cloaking</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//privacy/dp-firstpoint002.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
-<section id="cloaking-3" class="slide level3">
-<h3>Cloaking</h3>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint000.svg" style="vertical-align:middle;">
+<section id="cloaking-3" class="slide level2">
+<h2>Cloaking</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//privacy/dp-secondpoint000.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
-<section id="cloaking-4" class="slide level3">
-<h3>Cloaking</h3>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint002.svg" style="vertical-align:middle;">
+<section id="cloaking-4" class="slide level2">
+<h2>Cloaking</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//privacy/dp-secondpoint002.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
-<section id="cloaking-5" class="slide level3">
-<h3>Cloaking</h3>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse001.svg" style="vertical-align:middle;">
+<section id="cloaking-5" class="slide level2">
+<h2>Cloaking</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//privacy/dp-with-ellipse001.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
-<section id="cloaking-6" class="slide level3">
-<h3>Cloaking</h3>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse002.svg" style="vertical-align:middle;">
+<section id="cloaking-6" class="slide level2">
+<h2>Cloaking</h2>
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//privacy/dp-with-ellipse002.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
-<section id="dp-vectors" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>DP Vectors</h3>
+<section id="dp-vectors" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">DP Vectors</h2>
 <ul>
-<li><p>Hall et al. (2013) also presented a bound on vectors.</p></li>
+<li><p>Hall et al. (2013) also presented a bound on vectors.</p></li>
 <li><p>Find a bound (<span class="math inline">\(\Delta\)</span>) on the scale of the output change, in term of its Mahalanobis distance (wrt the added noise covariance).</p>
-<p><span class="math display">\[\sup_{D \sim {D^\prime}} ||\mathbf{M}^{-1/2} (\dataVector_* - \dataVector_{*}^\prime)||_2 \leq \Delta\]</span></p></li>
+<p><span class="math display">\[\sup_{D \sim {D^\prime}} ||\mathbf{M}^{-1/2} (\mathbf{ y}_* - \mathbf{ y}_{*}^\prime)||_2 \leq \Delta\]</span></p></li>
 <li><p>We use this to scale the noise we add:</p>
 <p><span class="math display">\[\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})\]</span></p>
 <p>We get to pick <span class="math inline">\(\mathbf{M}\)</span></p></li>
 </ul>
 </section>
-<section id="cloaking-7" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Cloaking</h3>
+<section id="cloaking-7" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Cloaking</h2>
 <ul>
 <li><p>Intuitively we want to construct <span class="math inline">\(\mathbf{M}\)</span> so that it has greatest covariance in those directions most affected by changes in training points, so that it will be most able to mask those changes.</p></li>
 <li><p>The change in posterior mean predictions is,</p>
-<p><span class="math display">\[\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)\]</span></p></li>
+<p><span class="math display">\[\mathbf{ y}_* - \mathbf{ y}^\prime_* = \mathbf{K}_{*f} \mathbf{K}^{-1} (\mathbf{ y}-\mathbf{ y}^\prime)\]</span></p></li>
 <li><p>Effect of perturbing each training point on each test point is represented in the cloaking matrix,</p>
-<p><span class="math display">\[\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}\]</span></p></li>
+<p><span class="math display">\[\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}\]</span></p></li>
 </ul>
 </section>
-<section id="cloaking-8" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Cloaking</h3>
+<section id="cloaking-8" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Cloaking</h2>
 <ul>
 <li><p>We assume we are protecting only one training input’s change, by at most <span class="math inline">\(d\)</span>.</p></li>
-<li>So <span class="math inline">\(\dataVector-\dataVector^\prime\)</span> will be all zeros except for one element, <span class="math inline">\(i\)</span>.<br />
-</li>
+<li><p>So <span class="math inline">\(\mathbf{ y}-\mathbf{ y}^\prime\)</span> will be all zeros except for one element, <span class="math inline">\(i\)</span>.<br />
+</p></li>
 <li><p>So the change in test points will be (at most)</p>
-<p><span class="math display">\[\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}\]</span></p></li>
+<p><span class="math display">\[\mathbf{ y}_*^\prime - \mathbf{ y}_* = d \mathbf{C}_{:i}\]</span></p></li>
 <li><p>We’re able to write the earlier bound as,</p>
 <p><span class="math display">\[d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq\Delta\]</span></p>
 <p>where <span class="math inline">\(\mathbf{c}_i \triangleq \mathbf{C}_{:i}\)</span></p></li>
 </ul>
 </section>
-<section id="cloaking-9" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Cloaking</h3>
+<section id="cloaking-9" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Cloaking</h2>
 <ul>
 <li><p>Dealing with <span class="math inline">\(d\)</span> elsewhere and setting <span class="math inline">\(\Delta = 1\)</span> (thus <span class="math inline">\(0 \leq \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1\)</span>) and minimise <span class="math inline">\(\log |\mathbf{M}|\)</span> (minimises the partial entropy).</p></li>
-<li><p>Using Lagrange multipliers and gradient descent, we find</p>
-<p><span class="math display">\[\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}\]</span></p></li>
+<li><p>Using Lagrange multipliers and gradient descent, we find <span class="math display">\[
+\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}
+\]</span></p></li>
 </ul>
 </section>
-<section id="cloaking-results" class="slide level3">
-<h3>Cloaking: Results</h3>
+<section id="cloaking-results" class="slide level2">
+<h2>Cloaking: Results</h2>
 <p>The noise added by this method is now practical.</p>
+<div class="figure">
+<div id="kung-cloaking-simple-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+</aside>
 <p>EQ kernel, <span class="math inline">\(l = 25\)</span> years, <span class="math inline">\(\Delta=100\)</span>cm, <span class="math inline">\(\varepsilon=1\)</span></p>
 </section>
-<section id="cloaking-results-1" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Cloaking: Results</h3>
+<section id="cloaking-results-1" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Cloaking: Results</h2>
 <p>It also has some interesting features;</p>
 <ul>
 <li>Less noise where data is concentrated</li>
@@ -747,54 +319,89 @@ communicate
 <li>Most noise just outside data</li>
 </ul>
 </section>
-<section id="cloaking-results-2" class="slide level3">
-<h3>Cloaking: Results</h3>
+<section id="cloaking-results-2" class="slide level2">
+<h2>Cloaking: Results</h2>
+<div class="figure">
+<div id="kung-cloaking-simple-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Simple cloaking function.
+</aside>
 </section>
-<section id="house-prices-around-london" class="slide level3">
-<h3>House Prices Around London</h3>
+<section id="house-prices-around-london" class="slide level2">
+<h2>House Prices Around London</h2>
+<div class="figure">
+<div id="house-prices-cloaking-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/houseprices_bigcirc_15km_0_labels.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Simple cloaking function on house price data.
+</aside>
 </section>
-<section id="citibike" class="slide level3">
-<h3>Citibike</h3>
+<section id="citibike" class="slide level2">
+<h2>Citibike</h2>
 <ul>
 <li><p>Tested on 4D citibike dataset (predicting journey durations from start/finish station locations).</p></li>
 <li><p>The method appears to achieve lower noise than binning alternatives (for reasonable <span class="math inline">\(\varepsilon\)</span>).</p></li>
 </ul>
 </section>
-<section id="citibike-1" class="slide level3">
-<h3>Citibike</h3>
+<section id="citibike-1" class="slide level2">
+<h2>Citibike</h2>
+<div class="figure">
+<div id="citibike-data-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/newtable2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/newtable2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Citibike data. Lengthscale in degrees, values above, journey duration (in seconds).
+</aside>
 <p>lengthscale in degrees, values above, journey duration (in seconds)</p>
 </section>
-<section id="cloaking-and-inducing-inputs" class="slide level3">
-<h3>Cloaking and Inducing Inputs</h3>
+<section id="cloaking-and-inducing-inputs" class="slide level2">
+<h2>Cloaking and Inducing Inputs</h2>
 <ul>
 <li><p>Outliers poorly predicted.</p></li>
-<li><p>Too much noise around data ‘edges’.</p></li>
+<li><p>Too much noise around data ‘edges.’</p></li>
 <li><p>Use inducing inputs to reduce the sensitivity to these outliers.</p></li>
 </ul>
 </section>
-<section id="cloaking-no-inducing-inputs" class="slide level3">
-<h3>Cloaking (no) Inducing Inputs</h3>
+<section id="cloaking-no-inducing-inputs" class="slide level2">
+<h2>Cloaking (no) Inducing Inputs</h2>
+<div class="figure">
+<div id="cloaking-no-inducing-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/cloaking-no-inducing.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/cloaking-no-inducing.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Cloaking function with no inducing inputs.
+</aside>
 </section>
-<section id="cloaking-and-inducing-inputs-1" class="slide level3">
-<h3>Cloaking and Inducing Inputs</h3>
+<section id="cloaking-and-inducing-inputs-1" class="slide level2">
+<h2>Cloaking and Inducing Inputs</h2>
+<div class="figure">
+<div id="cloaking-inducing-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/cloaking-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/cloaking-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Cloaking function with inducing inputs.
+</aside>
 </section>
-<section id="results" class="slide level3">
-<h3>Results</h3>
+<section id="results" class="slide level2">
+<h2>Results</h2>
 <ul>
 <li><p>For 1D !Kung, RMSE improved from <span class="math inline">\(15.0 \pm 2.0 \text{cm}\)</span> to <span class="math inline">\(11.1 \pm 0.8 \text{cm}\)</span></p>
 <p>Use Age and Weight to predict Height</p></li>
@@ -802,20 +409,34 @@ communicate
 <p>Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data’s 1D manifold.</p></li>
 </ul>
 </section>
-<section id="cloaking-no-inducing-inputs-1" class="slide level3">
-<h3>Cloaking (no) Inducing Inputs</h3>
+<section id="cloaking-no-inducing-inputs-1" class="slide level2">
+<h2>Cloaking (no) Inducing Inputs</h2>
+<div class="figure">
+<div id="cloaking-housing-no-inducing-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/housing-no-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/housing-no-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Cloaking functions on the housing data with no inducing inputs.
+</aside>
 </section>
-<section id="cloaking-and-inducing-inputs-2" class="slide level3">
-<h3>Cloaking and Inducing Inputs</h3>
+<section id="cloaking-and-inducing-inputs-2" class="slide level2">
+<h2>Cloaking and Inducing Inputs</h2>
+<div class="figure">
+<div id="cloaking-housing-inducing-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/privacy/housing-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/./slides/diagrams//privacy/housing-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+<aside class="notes">
+Cloaking functions on the housing data with inducing inputs.
+</aside>
 </section>
-<section id="conclusions" class="slide level3" data-background="../slides/diagrams/pres_bg.png">
-<h3>Conclusions</h3>
+<section id="conclusions" class="slide level2" data-background="./pres_bg.png">
+<h2 data-background="./pres_bg.png">Conclusions</h2>
 <ul>
 <li><p><strong>Summary</strong> We have developed an improved method for performing differentially private regression.</p></li>
 <li><p><strong>Future work</strong> Multiple outputs, GP classification, DP Optimising hyperparameters, Making the inputs private.</p></li>
@@ -823,19 +444,20 @@ communicate
 <li><p><strong>Recruiting</strong> Deep Probabilistic Models: 2 year postdoc (<a href="http://tinyurl.com/shefpostdoc">tinyurl.com/shefpostdoc</a>)</p></li>
 </ul>
 </section>
-<section id="thanks" class="slide level3">
-<h3>Thanks!</h3>
+<section id="thanks" class="slide level2 scrollable">
+<h2 class="scrollable">Thanks!</h2>
 <ul>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
+<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></p></li>
 <li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p>Blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">System Zero</a></p></li>
+<li><p>blog posts:</p>
+<p><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">System Zero</a></p></li>
 <li><p><strong>Images used:</strong> BostonGlobe: <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg">Mass Mutual</a>, <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg">Weld</a>. Harvard: <a href="http://www.gov.harvard.edu/files/Sweeney6crop.jpg">Sweeney</a>. Rich on flickr: <a href="https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/">Sheffield skyline</a>.</p></li>
 </ul>
 </section>
-<section id="references" class="slide level3">
-<h3>References</h3>
-<!--###  {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
+<section id="references" class="slide level2 scrollable">
+<h2 class="scrollable">References</h2>
+<!--###  {.allowframebreaks data-background="./pres_bg.png"}
 
 * [**The go-to book on differential privacy, by Dwork and Roth;**\
 ]{style="margin-left:-50px;"} Dwork, Cynthia, and Aaron Roth. "The
@@ -869,35 +491,35 @@ De-identification still doesn’t work." White Paper (2014).
 * Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
 <https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes>, 1967.
 -->
-<div id="refs" class="references">
-<div id="ref-Dwork:algorithmic14">
-<p>Dwork, C., Roth, A., 2014. The algorithmic foundations of differential privacy. Foundations and Trends in Theoretical Computer Science 9, 211–407.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-BarthJones:governor12" class="csl-entry" role="doc-biblioentry">
+Barth-Jones, D.C., 2012. The ’re-identification’ of governor william weld’s medical information: A critical re-examination of health data identification risks and privacy protections, then and now. Then and Now.
 </div>
-<div id="ref-Hall:dpfunctions13">
-<p>Hall, R., Rinaldo, A., Wasserman, L., 2013. Differential privacy for functions and functional data. Journal of Machine Learning Research 14, 703–727.</p>
+<div id="ref-Dwork:algorithmic14" class="csl-entry" role="doc-biblioentry">
+Dwork, C., Roth, A., 2014. The algorithmic foundations of differential privacy. Foundations and Trends in Theoretical Computer Science 9, 211–407. <a href="https://doi.org/10.1561/0400000042">https://doi.org/10.1561/0400000042</a>
 </div>
-<div id="ref-Howell:kungsan67">
-<p>Howell, N., 1967. Data from a partial census of the !kung san, dobe. 1967-1969.</p>
+<div id="ref-Hall:dpfunctions13" class="csl-entry" role="doc-biblioentry">
+Hall, R., Rinaldo, A., Wasserman, L., 2013. Differential privacy for functions and functional data. Journal of Machine Learning Research 14, 703–727.
 </div>
-<div id="ref-Lawrence:embodiment17">
-<p>Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.</p>
+<div id="ref-Howell:kungsan67" class="csl-entry" role="doc-biblioentry">
+Howell, N., 1967. Data from a partial census of the !kung san, dobe. 1967-1969.
 </div>
-<div id="ref-Narayanan:nosilver14">
-<p>Narayanan, A., Felten, E.W., 2014. No silver bullet: De-identification still doesn’t work.</p>
+<div id="ref-Narayanan:nosilver14" class="csl-entry" role="doc-biblioentry">
+Narayanan, A., Felten, E.W., 2014. No silver bullet: De-identification still doesn’t work.
 </div>
-<div id="ref-Ohm:broken10">
-<p>Ohm, P., 2010. Broken promises of privacy: Responding to the surprising failure of anonymization. UCLA Law Review 57, 1701.</p>
+<div id="ref-Ohm:broken10" class="csl-entry" role="doc-biblioentry">
+Ohm, P., 2010. Broken promises of privacy: Responding to the surprising failure of anonymization. UCLA Law Review 57, 1701.
 </div>
-<div id="ref-Rasmussen:book06">
-<p>Rasmussen, C.E., Williams, C.K.I., 2006. Gaussian processes for machine learning. mit, Cambridge, MA.</p>
+<div id="ref-Rasmussen:book06" class="csl-entry" role="doc-biblioentry">
+Rasmussen, C.E., Williams, C.K.I., 2006. Gaussian processes for machine learning. mit, Cambridge, MA.
 </div>
 </div>
 </section>
     </div>
   </div>
 
-  <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2/js/reveal.js"></script>
 
   <script>
 
@@ -908,12 +530,29 @@ De-identification still doesn’t work." White Paper (2014).
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://unpkg.com/reveal.js@3.9.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/math/math.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

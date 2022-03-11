@@ -1,7 +1,7 @@
 ---
-layout: slides
+layout: talk
 title:  "Cloaking Functions: Differential Privacy with Gaussian Processes"
-abstract: > 
+abstract: | 
   Processing of personally sensitive information should respect an individual's
   privacy. One promising framework is Differential Privacy (DP). In this talk
   I'll present work led by Michael Smith at the University of Sheffield on the
@@ -21,20 +21,17 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2017-08-30
+venue: CD-Make 2017 Keynote, Reggio Calabria, Italy
 transition: None
 ---
 
-
-
-talk-macros.gpp}/talk-macros.tex}
-
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/conversation-technical.md}
-talk-macros.gpp}p/includes/gp-book.md}
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
-talk-macros.gpp}rivacy/includes/differential-privacy-for-gps.md}
-talk-macros.gpp}rivacy/includes/differential-privacy-with-cloaking.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/conversation-technical.md}
+\include{_gp/includes/gp-book.md}
+\include{_gp/includes/gp-intro-very-short.md}
+\include{_privacy/includes/differential-privacy-for-gps.md}
+\include{_privacy/includes/differential-privacy-with-cloaking.md}
 
 
 \newslide{Conclusions}{data-background="\writeDiagramsDir/pres_bg.png"}
