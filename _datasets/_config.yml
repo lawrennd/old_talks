@@ -11,8 +11,8 @@ ipynb: True
 reveal: False
 postsdir: ../../../lawrennd/ods/_datasets/
 notebooksdir: ../../../lawrennd/ods/notebooks/pods/datasets/
-slidesdir: ../../../lawrennd/ods/assets/diagrams/
-diagramsdir: slides/diagrams/
+slidesdir: ../../../lawrennd/ods/assets/
+diagramsdir: ./slides/diagrams/
 writediagramsdir: .
 baseurl: "talks/" # the subpath of your site, e.g. /blog/
 url: "https://inverseprobability.com/" # the base hostname & protocol for your site

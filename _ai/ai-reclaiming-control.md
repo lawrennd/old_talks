@@ -30,6 +30,8 @@ transition: None
 ---
  
 
+Sarah Morgan: come to her on how humans work vs computers.
+
 Beth Singler's work on AI as a creation narrative
 https://bvsingler.com
 
