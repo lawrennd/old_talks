@@ -60,19 +60,21 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \notes{<https://commons.wikimedia.org/wiki/File:Michelangelo,_Creation_of_Adam_04.jpg>}
 
-\newslide
-
-\figure{\includejpg{\diagramsDir/people/beth-singler}{80%}}{Beth Singler is a digital anthropologist who holds a JRF at Homerton College. She has explored parallels between the Michelangelo image of creation and our own notion of robotic creation}{beth-singler}
 
 \newslide
 
-\notes{<https://bvsingler.com>}
 
 \figure{\includejpg{\diagramsDir/ai/terminator-image}{70%}}{Image of James Cameron's terminator. Images like this have been used to illustrate articles about artificial intelligence.}{terminator-image}
 
 \notes{<https://www.flickr.com/photos/tom-margie/2144882415/sizes/o/>}
 
-\figure{\includejpg{\diagramsDir/ai/david-j-c-mackay}{40%}}{Photo of David Mackay on Bicycle by David Stern. Taken for the book "Sustainable Energy without the Hot Air".}{david-j-c-mackay}
+\newslide
+
+\figure{\includejpg{\diagramsDir/people/beth-singler}{80%}}{Beth Singler is a digital anthropologist who holds a JRF at Homerton College. She has explored parallels between the Michelangelo image of creation and our own notion of robotic creation}{beth-singler}
+
+\notes{<https://bvsingler.com>}
+
+\figure{\includejpg{\diagramsDir/people/david-j-c-mackay}{40%}}{Photo of David Mackay on Bicycle by David Stern. Taken for the book "Sustainable Energy without the Hot Air".}{david-j-c-mackay}
 
 \notes{<http://www.withouthotair.com/about.html>}
 
@@ -88,7 +90,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
-\figure{\twoColumns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Domiinique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}}}}{bauby-shannon}
+\figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}}}}{bauby-shannon}
 
 
 \include{_ai/includes/heider-simmel.md}
@@ -100,7 +102,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
-\figure{\includediagram{\diagramsDir/ai/anne-imagine-god}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-god}
+\figure{\includediagramclass{\diagramsDir/ai/anne-imagine-god}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-god}
 
 \newslide
 
@@ -150,7 +152,7 @@ AI@Cam: Bring together University to develop technological and social solutions 
 
 
 
-Start with some of the explanation of the difference between artificial and human intelligence. (With Pepper and Nao at the front to illustrate anthropomorphism.) 
+\comment{Start with some of the explanation of the difference between artificial and human intelligence. (With Pepper and Nao at the front to illustrate anthropomorphism.) 
 
 The embodiment factor – we represent an all-seeing, all-knowing God as a bearded, robed character. We represent AI as the Terminator. But these are completely ‘other’ intelligence and neither is embodied in that way. We do so because of our human tendency to anthropomorphise, but doing that with machines is problematic. If you try and interact in a human way with an artificial intelligence, that’s how you lose control.
 Pepper and Nao can communicate as one, and as one with the internet, whereas we are restricted. That goes to the heart of the theme. 
@@ -183,3 +185,4 @@ If we are going to be empowered by AI, rather than ruled by it, it’s important
 
 15 minutes for questions – could take some as we go along (gathering them via Slido), or we could leave them for the end. 
 
+}
