@@ -1,6 +1,5 @@
 ---
 title: "Artificial Intelligence: Reclaiming Control"
-subtitle: “FIT Models must become FIT Systems”
 abstract: |
   Though artificial intelligence is ubiquitous in our homes and
   workplaces, there is widespread misunderstanding of what it really
