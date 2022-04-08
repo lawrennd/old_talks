@@ -141,8 +141,9 @@ Require Human in the loop
 
 \newslide
 
-\centeralign{\sarahMorganPicture{30%}}
-Sarah Morgan: come to her on how humans work vs computers.
+\aligncenter{\sarahMorganPicture{30%}}
+
+\notes{Sarah Morgan: how we can use machine learning tools to improve diagnostics.}
 
 \newslide{Auto AI: Resolve Intellectual Debt}
 
@@ -161,7 +162,7 @@ Sarah Morgan: come to her on how humans work vs computers.
 \figure{\includegif{\diagramsDir/ai/inference-group-logo}{60%}}{AI@Cam is a Flagship Programme that supports AI research across the University.}{ai-at-cam-flagship}
 
 
-
+\newslide
 
 \comment{Start with some of the explanation of the difference between artificial and human intelligence. (With Pepper and Nao at the front to illustrate anthropomorphism.) 
 
