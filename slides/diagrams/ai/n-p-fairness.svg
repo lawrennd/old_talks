@@ -87,7 +87,8 @@
      class="dpath"
      d="M 0 140 l 35 35 l 0 -15 l 330 0 l 0 15 l 35 -35 l -35 -35 l 0 15 l -330 0 l 0 -15 l -35 35 z" />
   <text
-     style="fill:rgb(221,221,78);font-weight:bold;"
+     style="fill:rgb(221,221,78);font-weight:bold;font-size:0.75em;"
+"
      x="50"
      y="30"
      class="dtext"
@@ -98,7 +99,7 @@
        id="tspan3984">n-Fairness</tspan>
   </text>
   <text
-     style="fill:rgb(78,78,221);font-weight:bold;"
+     style="fill:rgb(78,78,221);font-weight:bold;font-size:0.75em;"
      x="350"
      y="30"
      class="dtext"
@@ -109,7 +110,7 @@
        id="tspan3987">p-Fairness</tspan>
   </text>
   <text
-     style="fill:rgb(78,78,221)"
+     style="fill:rgb(78,78,221);font-size:0.75em;"
      x="350"
      y="75"
      class="dtext"
@@ -120,7 +121,7 @@
        id="tspan3990">comprehensible</tspan>
   </text>
   <text
-     style="fill:rgb(221,221,78)"
+     style="fill:rgb(221,221,78);font-size:0.75em;"
      x="50"
      y="75"
      class="dtext"
@@ -131,7 +132,7 @@
        id="tspan3993">nuanced</tspan>
   </text>
   <text
-     style="fill:rgb(221,221,78)"
+     style="fill:rgb(221,221,78);font-size:0.75em;"
      x="50"
      y="95"
      class="dtext"
@@ -142,7 +143,7 @@
        id="tspan3996">substantive</tspan>
   </text>
   <text
-     style="fill:rgb(78,78,221)"
+     style="fill:rgb(78,78,221);font-size:0.75em;"
      x="350"
      y="95"
      class="dtext"
@@ -153,7 +154,7 @@
        id="tspan3999">procedural</tspan>
   </text>
   <text
-     style="fill:rgb(221,221,78)"
+     style="fill:rgb(221,221,78);font-size:0.75em;"
      x="50"
      y="55"
      class="dtext"
@@ -164,7 +165,7 @@
        id="tspan4002">normative</tspan>
   </text>
   <text
-     style="fill:rgb(78,78,221)"
+     style="fill:rgb(78,78,221);font-size:0.75em;"
      x="350"
      y="55"
      class="dtext"
