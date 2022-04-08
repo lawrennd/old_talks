@@ -74,6 +74,8 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \notes{<https://bvsingler.com>}
 
+\newslide
+
 \figure{\includejpg{\diagramsDir/people/david-j-c-mackay}{40%}}{Photo of David Mackay on Bicycle by David Stern. Taken for the book "Sustainable Energy without the Hot Air".}{david-j-c-mackay}
 
 \notes{<http://www.withouthotair.com/about.html>}
@@ -90,7 +92,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
-\figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}}}}{bauby-shannon}
+\figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}}}}{Claude Shannon developed information theory which allows us to quantify how much Bauby can communicate. This allows us to compare how locked in he is to us.}{bauby-shannon}
 
 
 \include{_ai/includes/heider-simmel.md}
@@ -98,7 +100,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
-\figure{\includediagram{\diagramsDir/ai/anne-imagine-ai}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-ai}
+\figure{\includediagramclass{\diagramsDir/ai/anne-imagine-ai}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-ai}
 
 \newslide
 
@@ -126,29 +128,35 @@ Require Human in the loop
 
 \newslide
 
-The AI Fallacy
-
-Reclaim Control of Agenda
+\centeralign{The AI Fallacy}
 
 \newslide
 
-Accelerate Program: Empower to Have an Outcome
+\centeralign{If AI isn't a tool for us, then we are the tool of AI.}
+
+\newslide{Accelerate Program: Empower Domain Experts}
+
+\figure{\includepng{\diagramsDir/ai/accelerate-science-project-page}{60%}}{Empower domain experts to ensure that they are using AI as a tool, understanding the implications of how they deploy their solutions, and how they can refine their scientific explorations with these new capabilities.}{accelerate-science-project}
+
 
 \newslide
 
+\centeralign{\sarahMorganPicture{30%}}
 Sarah Morgan: come to her on how humans work vs computers.
 
+\newslide{Auto AI: Resolve Intellectual Debt}
+
+\figure{\includepng{\diagramsDir/ai/autoai-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{autoai-project-page}
+
+\notes{<https://mlatcl.github.io/projects/autoai.html>}
+
+\newslide{Data Trusts: Empower People through their Data}
+
+\figure{\includepng{\diagramsDir/ai/data-trusts-initiative-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{data-trusts-initiative-project-page}
+
 \newslide
 
-Auto AI: Resolve Intellectual Debt
-
-\newslide
-
-Data Trusts: Raise a voice which represents our Agenda
-
-\newslide
-
-AI@Cam: Bring together University to develop technological and social solutions for addressing these problems.
+\centeralgin{\largetext{AI@Cam}}
 
 
 
