@@ -30,16 +30,82 @@ transition: None
 ---
  
 
-Sarah Morgan: come to her on how humans work vs computers.
+Photo of Neil in front of Newton Institute
 
-Beth Singler's work on AI as a creation narrative
-https://bvsingler.com
+Photo of Sistine Chapel Ceiling (Patrick Boyd)
 
 Patrick Boyde's talks on Sistine Chapel
 https://www.mmll.cam.ac.uk/pb127
 
+Photo of Detail of Creation of Man
+
+Photo of Beth Singler 
+
+Beth Singler's work on AI as a creation narrative
+https://bvsingler.com
+
+Photo of Terminator
+
+Photo of David Mackay on Bicycle
+
 David MacKay's work on information theory.
 https://en.wikipedia.org/wiki/David_J._C._MacKay
+
+Photo of Diving Bell and Buttefly Cover
+
+Photo of Jean Dominique Bauby
+
+Photo of Bauby and Shannon
+
+Photo of Donald MacKay, Turing, Wilkes and Horace Barlow??
+
+Video of Heidle and Simmel
+
+Conversation between Human and Human
+
+Conversation between us and Machine
+
+Diana Robinson (Computers and People Interacting)
+
+Conversation between us and God (prayer, introspection)
+
+Reflective Self, culture Cicero cultura animi, music, sistine chapel, literature.
+
+cultura autem animi philosophia est
+
+Book II of Tuscan
+https://www.christies.com/lot/lot-cicero-marcus-tullius-1837724/?intObjectID=1837724
+
+Downing College
+
+Significant decisions GDPR. 
+
+Procedural fairness/p-fairness
+
+Substantive fairness/n-fairness
+
+p-Fair --- n-Fair diagram
+(complexity increase)
+
+Require Human in the loop
+
+The AI Fallacy
+
+System Zero (Machine Makes Decisions about us without understanding us)
+
+Reclaim Control of Agenda
+
+Accelerate Program: Empower to Have an Outcome
+
+Sarah Morgan: come to her on how humans work vs computers.
+
+Auto AI: Resolve Intellectual Debt
+
+Data Trusts: Raise a voice which represents our Agenda
+
+AI@Cam: Bring together University to develop technological and social solutions for addressing these problems. 
+
+
 
 
 It’s said that Henry Ford’s customers wanted a “a faster horse”. If Henry Ford was selling us artificial intelligence today, what would the customer call for, “a smarter human”? That’s certainly the picture of machine intelligence we find in science fiction narratives, but the reality of what we’ve developed is much more mundane. 
