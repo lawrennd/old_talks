@@ -92,7 +92,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
-\figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}}}}{Claude Shannon developed information theory which allows us to quantify how much Bauby can communicate. This allows us to compare how locked in he is to us.}{bauby-shannon}
+\figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{70%}}}}{Claude Shannon developed information theory which allows us to quantify how much Bauby can communicate. This allows us to compare how locked in he is to us.}{bauby-shannon}
 
 
 \include{_ai/includes/heider-simmel.md}
@@ -117,22 +117,16 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
-Procedural fairness/p-fairness
 
-Substantive fairness/n-fairness
-
-p-Fair --- n-Fair diagram
-(complexity increase)
-
-Require Human in the loop
+\figure{\includediagramclass{\diagramsDir/ai/n-p-fairness}{80%}}{We seem to have two different aspects to fairness, which in practice can be in tension.}{n-p-fairness}
 
 \newslide
 
-\centeralign{The AI Fallacy}
+\aligncenter{The AI Fallacy}
 
 \newslide
 
-\centeralign{If AI isn't a tool for us, then we are the tool of AI.}
+\aligncenter{If AI isn't a tool for us, then we are the tool of AI.}
 
 \newslide{Accelerate Program: Empower Domain Experts}
 
@@ -159,7 +153,7 @@ Require Human in the loop
 
 \newslide{AI@Cam}
 
-\figure{\includegif{\diagramsDir/ai/inference-group-logo}{60%}}{AI@Cam is a Flagship Programme that supports AI research across the University.}{ai-at-cam-flagship}
+\figure{\includegif{\diagramsDir/ai/inference-group-logo}{20%}}{AI@Cam is a Flagship Programme that supports AI research across the University.}{ai-at-cam-flagship}
 
 
 \newslide
