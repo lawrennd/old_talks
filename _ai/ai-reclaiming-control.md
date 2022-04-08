@@ -154,9 +154,12 @@ Sarah Morgan: come to her on how humans work vs computers.
 
 \figure{\includepng{\diagramsDir/ai/data-trusts-initiative-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{data-trusts-initiative-project-page}
 
-\newslide
+\notes{<https://datatrusts.uk/>}
 
-\centeralgin{\largetext{AI@Cam}}
+\newslide{AI@Cam}
+
+\figure{\includegif{\diagramsDir/ai/inference-group-logo}{60%}}{AI@Cam is a Flagship Programme that supports AI research across the University.}{ai-at-cam-flagship}
+
 
 
 
