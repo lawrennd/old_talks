@@ -30,55 +30,89 @@ transition: None
 ---
  
 
-Photo of Neil in front of Newton Institute
 
-Photo of Sistine Chapel Ceiling (Patrick Boyd)
+\notes{It’s said that Henry Ford’s customers wanted a “a faster horse”. If Henry Ford was selling us artificial intelligence today, what would the customer call for, “a smarter human”? That’s certainly the picture of machine intelligence we find in science fiction narratives, but the reality of what we’ve developed is much more mundane. 
+ 
+Car engines produce prodigious power from petrol. Machine intelligences deliver decisions derived from data. In both cases the scale of consumption enables a speed of operation that is far beyond the capabilities of their natural counterparts. Unfettered energy consumption has consequences in the form of climate change. Does unbridled data consumption also have consequences for us? 
+ 
+ If we devolve decision making to machines, we depend on those machines to accommodate our needs. If we don’t understand how those machines operate, we lose control over our destiny. Our mistake has been to see machine intelligence as a reflection of our intelligence. We cannot understand the smarter human without understanding the human. To understand the machine, we need to better understand ourselves.}
 
-Patrick Boyde's talks on Sistine Chapel
-https://www.mmll.cam.ac.uk/pb127
+\newslide
+ 
+\figure{\includejpg{\diagramsDir/people/1997-08-02-neil-newton-institute}{70%}}{Neil standing outside the Newton Institute on 2nd August 1997, just after arriving for "Generalisation in Neural Networks and Machine Learning", [see page 26-30 of this report](http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf).}{neil-newton-institute}
 
-Photo of Detail of Creation of Man
+\newslide
 
-Photo of Beth Singler 
+\figure{\includejpg{\diagramsDir/art/sistine-chapel-ceiling}{100%}}{The ceiling of the Sistine Chapel.}{cappella-sistina-ceiling}
 
-Beth Singler's work on AI as a creation narrative
-https://bvsingler.com
 
-Photo of Terminator
+\notes{Patrick Boyde's talks on Sistine Chapel <https://www.mmll.cam.ac.uk/pb127>}
 
-Photo of David Mackay on Bicycle
+\newslide
 
-David MacKay's work on information theory.
-https://en.wikipedia.org/wiki/David_J._C._MacKay
+\figure{\includejpg{\diagramsDir/art/the-creation-of-man-michelangelo}{80%}}{Photo of Detail of Creation of Man from the Sistine chapel ceiling.}{the-creation-of-man-michelangelo}
 
-Photo of Diving Bell and Buttefly Cover
+\notes{<https://upload.wikimedia.org/wikipedia/commons/4/4c/Adam_na_restauratie.jpg>}
 
-Photo of Jean Dominique Bauby
+\newslide
 
-Photo of Bauby and Shannon
 
-Photo of Donald MacKay, Turing, Wilkes and Horace Barlow??
+\figure{\includejpg{\diagramsDir/art/the-creation-of-man-detail-god-michelangelo}{80%}}{Photo detail of God.}{the-creation-of-man-detail-god-michelangelo}
 
-Video of Heidle and Simmel
+\notes{<https://commons.wikimedia.org/wiki/File:Michelangelo,_Creation_of_Adam_04.jpg>}
 
-Conversation between Human and Human
+\newslide
 
-Conversation between us and Machine
+\figure{\includejpg{\diagramsDir/people/beth-singler}{80%}}{Beth Singler is a digital anthropologist who holds a JRF at Homerton College. She has explored parallels between the Michelangelo image of creation and our own notion of robotic creation}{beth-singler}
 
-Diana Robinson (Computers and People Interacting)
+\newslide
 
-Conversation between us and God (prayer, introspection)
+\notes{<https://bvsingler.com>}
 
-Reflective Self, culture Cicero cultura animi, music, sistine chapel, literature.
+\figure{\includejpg{\diagramsDir/ai/terminator-image}{70%}}{Image of James Cameron's terminator. Images like this have been used to illustrate articles about artificial intelligence.}{terminator-image}
 
-cultura autem animi philosophia est
+\notes{<https://www.flickr.com/photos/tom-margie/2144882415/sizes/o/>}
 
-Book II of Tuscan
-https://www.christies.com/lot/lot-cicero-marcus-tullius-1837724/?intObjectID=1837724
+\figure{\includejpg{\diagramsDir/ai/david-j-c-mackay}{40%}}{Photo of David Mackay on Bicycle by David Stern. Taken for the book "Sustainable Energy without the Hot Air".}{david-j-c-mackay}
 
-Downing College
+\notes{<http://www.withouthotair.com/about.html>}
 
-Significant decisions GDPR. 
+\newslide
+
+\figure{\includejpg{\diagramsDir/ai/the-diving-bell-and-the-butterfly}{40%}}{The Diving Bell and the Buttefly, a memoir by Jean-Dominique Bauby describing the sensation of locked in syndrome.}{the-diving-bell-and-the-butterfly}
+
+\notes{<https://www.penguinrandomhouse.com/books/9616/the-diving-bell-and-the-butterfly-by-jean-dominique-bauby/>}
+
+\newslide
+
+\figure{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{40%}}{Jean Dominique Bauby was the Editor in Chief of the French Elle Magazine, he suffered a stroke that destroyed his brainstem, leaving him only capable of moving one eye. Jean Dominique became a victim of locked in syndrome.}{jean-dominique-bauby}
+
+\newslide
+
+\figure{\twoColumns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Domiinique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}}}}{bauby-shannon}
+
+
+\include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/conversation.md}
+
+\newslide
+
+\figure{\includediagram{\diagramsDir/ai/anne-imagine-ai}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-ai}
+
+\newslide
+
+\figure{\includediagram{\diagramsDir/ai/anne-imagine-god}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-god}
+
+\newslide
+
+\aligncenter{\dianaRobinsonPicture{30%}}
+
+\newslide{}
+
+\figure{\includepng{\diagramsDir/data-science/convention-108-coe}{70%}}{The convention for the protection of individuals with regard to the processing of personal data was opened for signature on 28th January 1981. It was the first legally binding international instrument in the field of data protection.}{convention-108-coe}
+
+
+\newslide
 
 Procedural fairness/p-fairness
 
@@ -89,30 +123,33 @@ p-Fair --- n-Fair diagram
 
 Require Human in the loop
 
-The AI Fallacy
+\newslide
 
-System Zero (Machine Makes Decisions about us without understanding us)
+The AI Fallacy
 
 Reclaim Control of Agenda
 
+\newslide
+
 Accelerate Program: Empower to Have an Outcome
+
+\newslide
 
 Sarah Morgan: come to her on how humans work vs computers.
 
+\newslide
+
 Auto AI: Resolve Intellectual Debt
+
+\newslide
 
 Data Trusts: Raise a voice which represents our Agenda
 
-AI@Cam: Bring together University to develop technological and social solutions for addressing these problems. 
+\newslide
+
+AI@Cam: Bring together University to develop technological and social solutions for addressing these problems.
 
 
-
-
-It’s said that Henry Ford’s customers wanted a “a faster horse”. If Henry Ford was selling us artificial intelligence today, what would the customer call for, “a smarter human”? That’s certainly the picture of machine intelligence we find in science fiction narratives, but the reality of what we’ve developed is much more mundane. 
- 
-Car engines produce prodigious power from petrol. Machine intelligences deliver decisions derived from data. In both cases the scale of consumption enables a speed of operation that is far beyond the capabilities of their natural counterparts. Unfettered energy consumption has consequences in the form of climate change. Does unbridled data consumption also have consequences for us? 
- 
-If we devolve decision making to machines, we depend on those machines to accommodate our needs. If we don’t understand how those machines operate, we lose control over our destiny. Our mistake has been to see machine intelligence as a reflection of our intelligence. We cannot understand the smarter human without understanding the human. To understand the machine, we need to better understand ourselves.
 
 Start with some of the explanation of the difference between artificial and human intelligence. (With Pepper and Nao at the front to illustrate anthropomorphism.) 
 
