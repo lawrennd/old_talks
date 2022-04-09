@@ -30,7 +30,7 @@ print(data['info'], data['details'])}
 
 \code{print(data['citation'])}
 
-\notes{The data consists of all the male and female sprinting data for 100m, 200m and 400m since 1896 (six outputs in total). The ouput information can be found from: `data['output_info']`}
+\notes{The data consists of all the male and female sprinting data for 100m, 200m and 400m since 1896 (six outputs in total). The output information can be found from: `data['output_info']`}
 
 \code{print(data['output_info'])}
 
