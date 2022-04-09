@@ -37,6 +37,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
  If we devolve decision making to machines, we depend on those machines to accommodate our needs. If we don’t understand how those machines operate, we lose control over our destiny. Our mistake has been to see machine intelligence as a reflection of our intelligence. We cannot understand the smarter human without understanding the human. To understand the machine, we need to better understand ourselves.}
 
 \newslide
+\notesCambridge has been involved in the formulation of the methods used in the current wave of AI solutions since their beginnings. In 1997 I attend the Machine Learning and Generalisation Summer School at the Newton Institute. There we heard from many of those who developed the methods that are foundational to the recent wave of progress, including Geoff Hinton and Yann LeCun.}
  
 \figure{\includejpg{\diagramsDir/people/1997-08-02-neil-newton-institute}{70%}}{Neil standing outside the Newton Institute on 2nd August 1997, just after arriving for "Generalisation in Neural Networks and Machine Learning", [see page 26-30 of this report](http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf).}{neil-newton-institute}
 
