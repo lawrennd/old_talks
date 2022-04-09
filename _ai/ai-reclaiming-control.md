@@ -97,6 +97,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation.md}
+\include{_ai/includes/conversation-computer.md}
 
 \newslide
 
@@ -106,9 +107,17 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \figure{\includediagramclass{\diagramsDir/ai/anne-imagine-god}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-god}
 
+\include{_data-science/includes/evolved-relationship.md}
+
 \newslide
 
 \aligncenter{\dianaRobinsonPicture{30%}}
+
+\notes{
+\subsection{Fairness in Decision Making}}
+
+\notes{As an example, let's consider fairness in decision making. Computers make decisions on the basis of our data.}
+
 
 \newslide{}
 
