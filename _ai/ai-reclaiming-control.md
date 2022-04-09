@@ -38,6 +38,7 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
  If we devolve decision making to machines, we depend on those machines to accommodate our needs. If we don’t understand how those machines operate, we lose control over our destiny. Our mistake has been to see machine intelligence as a reflection of our intelligence. We cannot understand the smarter human without understanding the human. To understand the machine, we need to better understand ourselves.}
 
 \newslide
+
 \notes{Cambridge has been involved in the formulation of the methods used in the current wave of AI solutions since their beginnings. In 1997 I attend the Machine Learning and Generalisation Summer School at the Newton Institute. There we heard from many of those who developed the methods that are foundational to the recent wave of progress, including Geoff Hinton and Yann LeCun.}
  
 \figure{\includejpg{\diagramsDir/people/1997-08-02-neil-newton-institute}{70%}}{Neil standing outside the Newton Institute on 2nd August 1997, just after arriving for "Generalisation in Neural Networks and Machine Learning", [see page 26-30 of this report](http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf).}{neil-newton-institute}
@@ -47,16 +48,17 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 \figure{\includejpg{\diagramsDir/art/sistine-chapel-ceiling}{100%}}{The ceiling of the Sistine Chapel.}{cappella-sistina-ceiling}
 
 
-\notes{Patrick Boyde's talks on Sistine Chapel <https://www.mmll.cam.ac.uk/pb127>}
+\notes{[Patrick Boyde](https://www.mmll.cam.ac.uk/pb127)'s talks on the Sistine Chapel focussed on both the structure of the chapel ceiling, describing the impression of height it was intended to give, as well as the significance and positioning of each of the panels and the meaning of the individual figures.}
 
 \newslide
 
 \figure{\includejpg{\diagramsDir/art/the-creation-of-man-michelangelo}{80%}}{Photo of Detail of Creation of Man from the Sistine chapel ceiling.}{the-creation-of-man-michelangelo}
 
-\notes{<https://upload.wikimedia.org/wikipedia/commons/4/4c/Adam_na_restauratie.jpg>}
+\notes{One of the most famous panels is central in the ceiling, it's the creation of man. Here, God in the guise of a pink-robed bearded man reaches out to a languid Adam.}
 
 \newslide
 
+\notes{The representation of God in this form seems typical of the time, because elsewhere in the Vatican Museums there are similar representations.}
 
 \figure{\includejpg{\diagramsDir/art/the-creation-of-man-detail-god-michelangelo}{80%}}{Photo detail of God.}{the-creation-of-man-detail-god-michelangelo}
 
@@ -65,37 +67,38 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \newslide
 
+\notes{For a time at the head of all articles about AI, an [image of the terminator](https://www.flickr.com/photos/tom-margie/2144882415/sizes/o/) was included.}
 
 \figure{\includejpg{\diagramsDir/ai/terminator-image}{70%}}{Image of James Cameron's terminator. Images like this have been used to illustrate articles about artificial intelligence.}{terminator-image}
 
-\notes{<https://www.flickr.com/photos/tom-margie/2144882415/sizes/o/>}
 
 \newslide
 
+\notes{Sometimes, this image is even combined with that of God to create what [Beth Singler](https://bvsingler.com), a digital anthropologist who is a JRF at Hmerton College, refers to as the creation meme [@Singler-aicreation20].} 
+
 \figure{\includejpg{\diagramsDir/people/beth-singler}{80%}}{Beth Singler is a digital anthropologist who holds a JRF at Homerton College. She has explored parallels between the Michelangelo image of creation and our own notion of robotic creation}{beth-singler}
 
-\notes{<https://bvsingler.com>}
+\notes{So in a very real sense, we can see that both God and AI are viewed by us as embodied intelligences, whether creator or created. We show these other-intelligences in a humanoid form.}
 
 \newslide
 
 \figure{\includejpg{\diagramsDir/people/david-j-c-mackay}{40%}}{Photo of David Mackay on Bicycle by David Stern. Taken for the book "Sustainable Energy without the Hot Air".}{david-j-c-mackay}
 
-\notes{<http://www.withouthotair.com/about.html>}
+\notes{My own understanding of why we might want to picture these intelligences as embodied goes back to lectures I heard at the institute by David MacKay. By the time I arrived in Cambridge, David was very focussed on the relationships between learning and information theory, and as well as his lecture at the Newton Institute, his group meetings were focussed on information theory and machine learning.}
 
 \newslide
 
-\figure{\includejpg{\diagramsDir/ai/the-diving-bell-and-the-butterfly}{40%}}{The Diving Bell and the Buttefly, a memoir by Jean-Dominique Bauby describing the sensation of locked in syndrome.}{the-diving-bell-and-the-butterfly}
+\notes{The key idea I wasnt to communicate next is related to our ability to share our thoughts.}
 
-\notes{<https://www.penguinrandomhouse.com/books/9616/the-diving-bell-and-the-butterfly-by-jean-dominique-bauby/>}
+\include{_ai/includes/the-diving-bell-butterfly.md}
 
-\newslide
-
-\figure{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{70%}}{Jean Dominique Bauby was the Editor in Chief of the French Elle Magazine, he suffered a stroke that destroyed his brainstem, leaving him only capable of moving one eye. Jean Dominique became a victim of locked in syndrome.}{jean-dominique-bauby}
+\include{_ai/includes/jean-dominique-bauby.md}
 
 \newslide
 
 \figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{70%}}}}{Claude Shannon developed information theory which allows us to quantify how much Bauby can communicate. This allows us to compare how locked in he is to us.}{bauby-shannon}
 
+\include{_ai/includes/embodiment-factors-short.md}
 
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation.md}
@@ -115,59 +118,118 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \aligncenter{\dianaRobinsonPicture{30%}}
 
+\notes{In the group [Diana Robinson]() has been focussing on how we can communicate the machine's understanding of *uncertainty* to clinicians, within the context blood plasma infusions and surgical operations.}
+
 \notes{
 \subsection{Fairness in Decision Making}}
 
-\notes{As an example, let's consider fairness in decision making. Computers make decisions on the basis of our data.}
-
+\notes{As a more general example, let's consider fairness in decision making. Computers make decisions on the basis of our data, how can we have confidence in those decisions?}
 
 \newslide{}
 
 \figure{\includepng{\diagramsDir/data-science/convention-108-coe}{70%}}{The convention for the protection of individuals with regard to the processing of personal data was opened for signature on 28th January 1981. It was the first legally binding international instrument in the field of data protection.}{convention-108-coe}
 
+\notes{\include{_governance/includes/gdpr-overview.md}}
+
+\notes{The GDPR gives us some indications of the aspects we might consider when judging whether or not a decision is "fair".}
+
+\notes{But when considering fairness, it seems that there's two forms that we might consider.}
 
 \newslide
 
 
 \figure{\includediagramclass{\diagramsDir/ai/n-p-fairness}{80%}}{We seem to have two different aspects to fairness, which in practice can be in tension.}{n-p-fairness}
 
+\notes{We've outlined $n$-fairness and $p$-fairness. By $n$-fairness we mean the sort of considerations that are associated with *substantive* equality of opportunity vs *formal* equality of opportunity. Formal equality of community is related to $p$-fairness. This is sometimes called procedural fairness and we might think of it as a *performative* form of fairness. It's about clarity of rules, for example as applied in sport. $n$-Fairness is more nuanced. It's a reflection of society's normative judgment about how individuals may have been disadvantaged, e.g. due to their upbringing.}
+
+\notes{The important point here is that these forms of fairness are in tension. Good procedural fairness needs to be clear and understandable. It should be clear to everyone what the rules are, they shouldn't be obscured by jargon or overly subtle concepts. $p$-Fairness should not be easily undermined by adversaries, it should be difficult to "cheat" good $p$-fairness. However, $n$-fairness requires nuance, understanding of the human condition, where we came from and how different individuals in our society have been advantaged or disadvantaged in their upbringing and their access to opportunity.}
+
+\notes{Pure $n$-fairness and pure $p$-fairness both have the feeling of dystopias. In practice, any decision making system needs to balance the two. The correct point of operation will depend on the context of the decision. Consider fair rules of a game of football, against fair distribution of social benefit. It is unlikely that there is ever an objectively correct balance between the two for any given context. Different individuals will favour $p$ vs $n$ according to their personal values.}
+
+\notes{Given the tension between the two forms of fairness, with $p$ fairness requiring simple rules that are understandable by all, and $n$ fairness requiring nuance and subtlety, how do we resolve this tension in practice?}
+
+\notes{Normally in human systems, significant decisions involve trained professionals. For example, judges, or accountants or doctors.}
+
+\notes{Training a professional involves lifting their "reflexive" response to a situation with "reflective" thinking about the consequences of their decision that rely not just on the professional's expertise, but also their knowledge of what it is to be a human.}
+
+\notes{This *marvellous* resolution exploits the fact that while humans are increadibly complicated nuanced entities, other humans have an intuitive ability to understand their motivations and values. So the human is a complex entity that seems simple to other humans.}
+
 \newslide
 
-\aligncenter{The AI Fallacy}
+$$\text{reflect} \Longleftrightarrow \text{reflex}$$
+
+\newslide
+
+\slides{\aligncenter{The Great AI Fallacy}}
+
+\notes{\include{_ai/includes/the-great-ai-fallacy.md}}
+
+\notes{In large part, these challenges associated with AI are because AI has no understanding of the human condition. But there's also a problem that we don't have an intuitive understanding of AI and how it is working.}
+
+\notes{The marvellous resolution does not apply to machine driven decisions, because we *don't* have an intuitive understanding of what motivates the machine.}
 
 \newslide
 
 \aligncenter{If AI isn't a tool for us, then we are the tool of AI.}
 
-\newslide{Accelerate Program: Empower Domain Experts}
+\notes{The consequence is that the AI, driven by it's detailed knowledge of who we are, arising from its access to large quantities of our data, can undermine the delicate balance of our decision-making, and replace our objectives with it's own simplistic ideas of how things should be.}
+
+\notes{So, what are the resolutions for this problem? At Cambridge we are focussed on three different interventions.}
+
+\newslide{Accelerate Program: Empower the User}
+
+\notes{The first example is empowering those who want to use AI through *education* and tool development. The [Accelerate Programme for Scientific Discovery](https://acceleratescience.github.io/index.html), sponsored by Schmidt Futures, focusses on empowering scientists and other domains across the University with the tools and understanding they need to make use of AI in practice.}
 
 \figure{\includepng{\diagramsDir/ai/accelerate-science-project-page}{60%}}{Empower domain experts to ensure that they are using AI as a tool, understanding the implications of how they deploy their solutions, and how they can refine their scientific explorations with these new capabilities.}{accelerate-science-project}
-
 
 \newslide
 
 \aligncenter{\sarahMorganPicture{30%}}
 
-\notes{Sarah Morgan: how we can use machine learning tools to improve diagnostics.}
+\notes{Sarah Morgan is one of our fellows, she'll tell us about how she makes use of the machine's capabilities in improving understanding and diagnostics of schizophrenia.}
+
+\notes{Other examples of this form of work include our collaboration with [Data Science Africa](http://www.datascienceafrica.org/), which focusses on empowering individuals with solutions for solving challenges that emerge in the African context.}
 
 \newslide{Auto AI: Resolve Intellectual Debt}
 
 \figure{\includepng{\diagramsDir/ai/autoai-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{autoai-project-page}
 
-\notes{<https://mlatcl.github.io/projects/autoai.html>}
+\notes{A second intervention is dealing with the complexity of the software systems that underpin modern AI solutions. Even if two individuals, say African masters students, who are technically capable and have an interesting idea, deploy their idea. One challenge they face is the operational load in *maintaining* and *explaining* their software systems. The challenge of *maintaining* is known as intellectual debt [@Sculley:debt15], the problem of *explaining* is known as [intellectual debt](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c).}
+
+\notes{The [AutoAI project](https://mlatcl.github.io/projects/autoai.html), sponsored by an ATI Senior AI Fellowship addresses this challenge.}
 
 \newslide{Data Trusts: Empower People through their Data}
 
-\figure{\includepng{\diagramsDir/ai/data-trusts-initiative-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{data-trusts-initiative-project-page}
+\notes{The third intervention goes direct to the source of the machine's power. What we are seeing is an emergent *[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)* based on the power that comes with aggregation of data. [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) are form of data intermediary designed to reutrn the power associated with this data accumulation to the originators of the data, that is us.}
 
-\notes{<https://datatrusts.uk/>}
+\notes{The [Data Trusts Initiative](https://datatrusts.uk/), funded by the Patrick J. McGovern Foundation is supporting three pilot projects that consider how bottom-up empowerment can redress the imbalance associated with the digital oligarchy.}
+
+\figure{\includepng{\diagramsDir/ai/data-trusts-initiative-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{data-trusts-initiative-project-page}
 
 \newslide{AI@Cam}
 
 \figure{\includegif{\diagramsDir/ai/inference-group-logo}{20%}}{AI@Cam is a Flagship Programme that supports AI research across the University.}{ai-at-cam-flagship}
 
+\notes{Finally, we are working across the University to empower the diversity ofexpertise and capability we have to focus on these broad societal problems. We will shortly be launching AI@Cam, with a landscaping document, outlining these challenges and exploring different strategies the University has to address them.} 
 
-\newslide
+\subsection{Conclusions}
+
+* Humans view intelligence as embodied, but AI is not embodied.
+* Critical decisions are dependent on human nuance to reconcile the tension between $p$-Fairness and $n$-Fairness.
+* This implies that AI should only ever be seen as a tool of humans.
+* Much of current technology makes us a tool of the AI.
+
+\newslide{Conclusions Contd}
+
+* Three interventions to address this.
+  * Empower the humans to better use the tools.
+  * Develop better standards for creating AI systems.
+  * Develop data intermediaries to allow citizens to have a voice in how their data is used.
+  
+\thanks
+
+\references
+
 
 \comment{Start with some of the explanation of the difference between artificial and human intelligence. (With Pepper and Nao at the front to illustrate anthropomorphism.) 
 
