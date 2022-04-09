@@ -29,6 +29,7 @@ transition: None
 ---
  
 
+\notes{\section{Introduction}}
 
 \notes{It’s said that Henry Ford’s customers wanted a “a faster horse”. If Henry Ford was selling us artificial intelligence today, what would the customer call for, “a smarter human”? That’s certainly the picture of machine intelligence we find in science fiction narratives, but the reality of what we’ve developed is much more mundane. 
  
