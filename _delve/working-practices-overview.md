@@ -7,7 +7,7 @@ venue: DECOVID Team Tour
 layout: talk
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
 \section{DRAFT: DELVE Action Team: Working Practices and Philosophy}

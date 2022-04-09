@@ -4,10 +4,10 @@ date: 2021-05-22
 ---
 
 
-talk-macros.gpp}/talk-macros.gpp}
+\include{../talk-macros.gpp}
 
-talk-macros.gpp}atasets/includes/datasets-notebook-setup.md}
+\include{_datasets/includes/datasets-notebook-setup.md}
 
-talk-macros.gpp}atasets/includes/robot-wireless-data.md}
+\include{_datasets/includes/robot-wireless-data.md}
 
 \references

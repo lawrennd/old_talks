@@ -5,11 +5,11 @@
 
 \section{Data Science Africa}
 
-talk-macros.gpp}ata-science/includes/data-science-africa.md}
-talk-macros.gpp}ata-science/includes/crop-monitoring.md}
-talk-macros.gpp}ata-science/includes/biosurveillance.md}
-talk-macros.gpp}ata-science/includes/community-radio.md}
-talk-macros.gpp}ata-science/includes/kudu-project.md}
-talk-macros.gpp}ata-science/includes/safe-boda.md}
+\include{_data-science/includes/data-science-africa.md}
+\include{_data-science/includes/crop-monitoring.md}
+\include{_data-science/includes/biosurveillance.md}
+\include{_data-science/includes/community-radio.md}
+\include{_data-science/includes/kudu-project.md}
+\include{_data-science/includes/safe-boda.md}
 
 \endif

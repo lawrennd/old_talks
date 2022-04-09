@@ -26,13 +26,13 @@ venue: Fifth International Workshop on Sustainable Road Freight, Cambridge
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-talk-macros.gpp}i/includes/centrifugal-governor.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_ai/includes/centrifugal-governor.md}
 
-talk-macros.gpp}l/includes/what-is-ml-2.md}
-talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+\include{_ml/includes/what-is-ml-2.md}
+\include{_ai/includes/ai-vs-data-science-2.md}
 
 \subsection{Amazon: Bits and Atoms}
 <!--
@@ -84,11 +84,11 @@ include{_data-science/includes/data-readiness-levels.md}
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
 
-talk-macros.gpp}l/includes/what-is-ml-2.md}
-talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+\include{_ml/includes/what-is-ml-2.md}
+\include{_ai/includes/ai-vs-data-science-2.md}
 -->
 
-talk-macros.gpp}upply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 \subsection{The Three Ds of Machine Learning Systems Design}
 
@@ -113,9 +113,9 @@ talk-macros.gpp}upply-chain/includes/supply-chain.md}
 
 \notes{The first two components *decomposition* and *data* are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
 
-talk-macros.gpp}l/includes/ml-data-challenge.md}
-talk-macros.gpp}l/includes/ml-combining-data-and-systems-design-challenge.md}
-talk-macros.gpp}l/includes/ml-outlook.md}
+\include{_ml/includes/ml-data-challenge.md}
+\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
+\include{_ml/includes/ml-outlook.md}
 
 \subsection{Conclusion}
 \slides{

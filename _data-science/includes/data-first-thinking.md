@@ -5,6 +5,6 @@
 
 \section{Data First Thinking}
 
-talk-macros.gpp}l/includes/ml-data-challenge.md}
+\include{_ml/includes/ml-data-challenge.md}
 
 \endif

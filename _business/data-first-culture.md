@@ -21,26 +21,26 @@ categories:
 - notes
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
 <!-- Embodiment Factors-->
 
-talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
 
 <!-- Data Science (why it's happening) -->
 
 
-talk-macros.gpp}ata-science/includes/evolved-relationship-society.md}
+\include{_data-science/includes/evolved-relationship-society.md}
 
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+\include{_data-science/includes/lies-damned-lies.md}
 
-talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+\include{_ai/includes/ai-vs-data-science-2.md}
 
-<!--talk-macros.gpp}l/includes/what-is-ml-2.md}-->
-<!--talk-macros.gpp}l/includes/what-does-machine-learning-do.md}-->
-<!--talk-macros.gpp}l/includes/deep-learning-overview.md}-->
+<!--\include{_ml/includes/what-is-ml-2.md}-->
+<!--\include{_ml/includes/what-does-machine-learning-do.md}-->
+<!--\include{_ml/includes/deep-learning-overview.md}-->
 
 
 <!-- Example of how these phenomena play out in a modern business environment.-->
@@ -53,20 +53,20 @@ talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
 <!--\subsection{Digital Transformation}-->
 
 
-<!--talk-macros.gpp}upply-chain/includes/bits-and-atoms.md}
-talk-macros.gpp}upply-chain/includes/supply-chain.md}-->
+<!--\include{_supply-chain/includes/bits-and-atoms.md}
+\include{_supply-chain/includes/supply-chain.md}-->
 
 
 \subsection{Post Digital Transformation}
 
 <!--Duke of York Effect -->
 
-talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
+\include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
-<!--talk-macros.gpp}ata-science/includes/the-data-crisis.md}-->
+<!--\include{_data-science/includes/the-data-crisis.md}-->
 
-<!--talk-macros.gpp}i/includes/watt-steam-engine.md}
-talk-macros.gpp}ata-science/includes/data-infrastructure.md}
+<!--\include{_ai/includes/watt-steam-engine.md}
+\include{_data-science/includes/data-infrastructure.md}
 -->
 
 \subsection{Areas of Good Data}
@@ -82,11 +82,11 @@ talk-macros.gpp}ata-science/includes/data-infrastructure.md}
 
 <!-- Professionalisation of Data Science -->
 
-<!--talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}-->
+<!--\include{_data-science/includes/a-time-for-professionalisation.md}-->
 
-<!--talk-macros.gpp}ata-science/includes/supply-chain-of-ideas.md}-->
+<!--\include{_data-science/includes/supply-chain-of-ideas.md}-->
 
-<!--talk-macros.gpp}ata-science/includes/data-first-thinking.md}-->
+<!--\include{_data-science/includes/data-first-thinking.md}-->
 
 \subsection{Normal Organisational Rules Apply}
 

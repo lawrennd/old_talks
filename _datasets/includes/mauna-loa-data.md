@@ -9,7 +9,7 @@
 
 > The carbon dioxide data on Mauna Loa constitute the longest record of direct measurements of CO2 in the atmosphere. They were started by C. David Keeling of the Scripps Institution of Oceanography in March of 1958 at a facility of the National Oceanic and Atmospheric Administration [@Keeling-atmospheric76]. NOAA started its own CO2 measurements in May of 1974, and they have run in parallel with those made by Scripps since then [@Thoning-atmospheric89].}
 
-talk-macros.gpp}ata-science/includes/pods-install.md}
+\include{_data-science/includes/pods-install.md}
 
 \setupcode{import numpy as np
 import pods}

@@ -1,7 +1,7 @@
 \ifndef{precisionMatrices}
 \define{precisionMatrices}
 
-talk-macros.gpp}ern/includes/brownian-covariance.md}
+\include{_kern/includes/brownian-covariance.md}
 
 \editme
 

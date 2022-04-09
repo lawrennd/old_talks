@@ -26,7 +26,7 @@ categories:
 - Lawrence-birley15
 ---
 
-talk-macros.gpp}/talk-macros.tex}
+\include{../talk-macros.tex}
 
 \section{High Profile Advances}
 

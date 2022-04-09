@@ -19,6 +19,6 @@ $$
 \kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\basisVector(\inputVals)^\top \basisVector(\inputVals^\prime).
 $$
 
-talk-macros.gpp}ern/includes/basis-covariance.md}
+\include{_kern/includes/basis-covariance.md}
 
 \endif

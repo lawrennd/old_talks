@@ -32,15 +32,15 @@ venue: AI and data science in the age of COVID-19
 transition: None
 ---
 
-talk-macros.gpp}/talk-macros.gpp}
+\include{../talk-macros.gpp}
 
 
-talk-macros.gpp}elve/includes/delve-timeline.md}
+\include{_delve/includes/delve-timeline.md}
 
 \section{Formal Background}
 
-talk-macros.gpp}i/includes/embodiment-factors-short.md}
-talk-macros.gpp}i/includes/conversation.md}
+\include{_ai/includes/embodiment-factors-short.md}
+\include{_ai/includes/conversation.md}
 
 \subsection{What is Machine Learning?}
 
@@ -54,12 +54,12 @@ impact – and each has different types of evidence associated with
 it. Complex and uncertain challenges require efforts to draw insights
 together from across disciplines.}
 
-talk-macros.gpp}olicy/includes/data-as-a-convener.md}
+\include{_policy/includes/data-as-a-convener.md}
 
 \section{Supply Chain of Ideas}
 
-talk-macros.gpp}usiness/includes/the-supply-chain-of-ideas.md}
-talk-macros.gpp}usiness/includes/coconut-scientist.md}
+\include{_business/includes/the-supply-chain-of-ideas.md}
+\include{_business/includes/coconut-scientist.md}
 
 \notes{Sustained engagement between government and academia plays an
 important role in building mutual understanding about what each can
@@ -83,33 +83,33 @@ questions.}{supply-chain-of-ideas}
 
 
 
-talk-macros.gpp}olicy/includes/storming-the-castle.md}
-talk-macros.gpp}usiness/includes/black-box-thinking-and-rebel-ideas.md}
-talk-macros.gpp}olicy/includes/science-not-scientists.md}
+\include{_policy/includes/storming-the-castle.md}
+\include{_business/includes/black-box-thinking-and-rebel-ideas.md}
+\include{_policy/includes/science-not-scientists.md}
 
 \section{Delve}
 
-talk-macros.gpp}elve/includes/delve-information-coherence.md}
-talk-macros.gpp}elve/includes/delve-tenets.md}
+\include{_delve/includes/delve-information-coherence.md}
+\include{_delve/includes/delve-tenets.md}
 <!--include{_delve/includes/delve-sci-ops.md}-->
-talk-macros.gpp}elve/includes/delve-multidisciplinarity.md}
-talk-macros.gpp}elve/includes/delve-avatar-model.md}
+\include{_delve/includes/delve-multidisciplinarity.md}
+\include{_delve/includes/delve-avatar-model.md}
 
-talk-macros.gpp}elve/includes/delve-explore-exploit.md}
-talk-macros.gpp}elve/includes/delve-report-list.md}
+\include{_delve/includes/delve-explore-exploit.md}
+\include{_delve/includes/delve-report-list.md}
 
 \notes{There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]}
 
-talk-macros.gpp}elve/includes/delve-data-report.md}
-talk-macros.gpp}elve/includes/data-report-recommendations.md}
+\include{_delve/includes/delve-data-report.md}
+\include{_delve/includes/data-report-recommendations.md}
 
 \notes{Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from \addblog{open data science}{2014/07/01/open-data-science} to facilitate communication and understanding.}
 
 
-talk-macros.gpp}elve/includes/delve-action-team.md}
-talk-macros.gpp}elve/includes/delve-working-group.md}
-talk-macros.gpp}elve/includes/delve-steering-committee.md}
-talk-macros.gpp}elve/includes/delve-secretariat.md}
+\include{_delve/includes/delve-action-team.md}
+\include{_delve/includes/delve-working-group.md}
+\include{_delve/includes/delve-steering-committee.md}
+\include{_delve/includes/delve-secretariat.md}
 
 \subsection{Conclusions}
 

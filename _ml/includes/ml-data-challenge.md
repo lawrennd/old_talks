@@ -38,7 +38,7 @@ heavily neglected in courses on machine learning and data science.
 Despite data being half the equation, most University courses spend
 little to no time on its challenges.}
 
-talk-macros.gpp}ata-science/includes/the-data-crisis.md}
+\include{_data-science/includes/the-data-crisis.md}
 
 \notes{Data is the new software, and the data crisis is already upon us. It is
 driven by the cost of cleaning data, the paucity of tools for monitoring
@@ -81,7 +81,7 @@ put.
 }
 
 
-talk-macros.gpp}ata-science/includes/data-readiness-levels-short.md}
+\include{_data-science/includes/data-readiness-levels-short.md}
 
 \recommendation{Build a shared understanding of the language of data readiness levels for use in planning documents and costing of data cleaning and the benefits of reusing cleaned data.}
 

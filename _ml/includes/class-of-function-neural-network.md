@@ -18,7 +18,7 @@
 
 It's impressive that only this additional invariance is enough to improve performance so much, particularly when we know that rotational invariances and scale invariances are also applicable for object detection in images.}
 
-talk-macros.gpp}l/includes/deep-learning-overview.md}
+\include{_ml/includes/deep-learning-overview.md}
 
 \subsection{Encoding Knowledge}
 \slides{

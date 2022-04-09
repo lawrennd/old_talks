@@ -2,9 +2,9 @@
 \define{deepTheory}
 \editme
 
-talk-macros.gpp}eepgp/includes/process-composition.md}
-talk-macros.gpp}imred/includes/non-linear-difficulty.md}
-talk-macros.gpp}plvm/includes/variational-bayes-gplvm-long.md}
+\include{_deepgp/includes/process-composition.md}
+\include{_dimred/includes/non-linear-difficulty.md}
+\include{_gplvm/includes/variational-bayes-gplvm-long.md}
 
 \newslide{See also ...}
 \slides{
@@ -20,7 +20,7 @@ talk-macros.gpp}plvm/includes/variational-bayes-gplvm-long.md}
 \slides{\alignright{@Izmailov:subspace19}}
 
 
-talk-macros.gpp}eepgp/includes/stack-gp-intro.md}
-talk-macros.gpp}eepgp/includes/stacked-pca.md}
-talk-macros.gpp}eepgp/includes/stacked-gp.md}
+\include{_deepgp/includes/stack-gp-intro.md}
+\include{_deepgp/includes/stacked-pca.md}
+\include{_deepgp/includes/stacked-gp.md}
 \endif

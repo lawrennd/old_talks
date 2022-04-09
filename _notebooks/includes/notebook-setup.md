@@ -4,8 +4,8 @@
 \notes{\subsection{Setup}}
 
 
-talk-macros.gpp}otebooks/includes/plot-setup.md}
-talk-macros.gpp}oftware/includes/notutils-software.md}
+\include{_notebooks/includes/plot-setup.md}
+\include{_software/includes/notutils-software.md}
 
 
 \endif

@@ -5,9 +5,9 @@ abstract:
 youtube: B2XhFoCehy8
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
@@ -41,33 +41,33 @@ $$
 $$
 \notes{When we form a Gaussian process we do something that is slightly more akin to the naive Bayes approach, but actually is closely related to the generalized linear model approach.}
 
-talk-macros.gpp}p/includes/gp-intro-lectures.md}
-talk-macros.gpp}p/includes/gptwopointpred.md}
-talk-macros.gpp}p/includes/gp-from-basis-functions.md}
+\include{_gp/includes/gp-intro-lectures.md}
+\include{_gp/includes/gptwopointpred.md}
+\include{_gp/includes/gp-from-basis-functions.md}
 
-talk-macros.gpp}p/includes/non-degenerate-gps.md}
-talk-macros.gpp}p/includes/gp-function-space.md}
-talk-macros.gpp}p/includes/gp-covariance-function-importance.md}
-talk-macros.gpp}p/includes/gp-numerics-and-optimization.md}
+\include{_gp/includes/non-degenerate-gps.md}
+\include{_gp/includes/gp-function-space.md}
+\include{_gp/includes/gp-covariance-function-importance.md}
+\include{_gp/includes/gp-numerics-and-optimization.md}
 
-talk-macros.gpp}p/includes/gp-optimize.md}
+\include{_gp/includes/gp-optimize.md}
 
-talk-macros.gpp}ern/includes/eq-covariance.md}
+\include{_kern/includes/eq-covariance.md}
 
-talk-macros.gpp}p/includes/olympic-marathon-gp.md}
+\include{_gp/includes/olympic-marathon-gp.md}
 
-talk-macros.gpp}p/includes/della-gatta-gene-gp.md}
-talk-macros.gpp}ealth/includes/malaria-gp.md}
+\include{_gp/includes/della-gatta-gene-gp.md}
+\include{_health/includes/malaria-gp.md}
 
-talk-macros.gpp}ern/includes/add-covariance.md}
-talk-macros.gpp}p/includes/bda-forecasting.md}
+\include{_kern/includes/add-covariance.md}
+\include{_gp/includes/bda-forecasting.md}
 
-talk-macros.gpp}ern/includes/basis-covariance.md}
-talk-macros.gpp}ern/includes/brownian-covariance.md}
-talk-macros.gpp}ern/includes/mlp-covariance.md}
+\include{_kern/includes/basis-covariance.md}
+\include{_kern/includes/brownian-covariance.md}
+\include{_kern/includes/mlp-covariance.md}
 
-talk-macros.gpp}p/includes/gp-summer-school.md}
-talk-macros.gpp}p/includes/gpy-software.md}
+\include{_gp/includes/gp-summer-school.md}
+\include{_gp/includes/gpy-software.md}
 
 \thanks
 

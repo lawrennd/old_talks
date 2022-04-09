@@ -25,16 +25,16 @@ published: 2018-11-08
 transition: None
 ---
 
-talk-macros.gpp}/talk-macros.tex}
+\include{../talk-macros.tex}
 
 <!--include{_philosophy/includes/utilitarianism.md}
 include{_philosophy/includes/utility-utilitarianism.md}
 include{_philosophy/includes/trolley-push.md}-->
-talk-macros.gpp}l/includes/what-is-ml2.md}
-talk-macros.gpp}hilosophy/includes/bias-towards-variance.md}
-talk-macros.gpp}hilosophy/includes/bias-variance-in-ml.md}
-talk-macros.gpp}hilosophy/includes/bias-variance-rational.md}
-talk-macros.gpp}hilosophy/includes/uncertainty-and-absolutism.md}
+\include{_ml/includes/what-is-ml2.md}
+\include{_philosophy/includes/bias-towards-variance.md}
+\include{_philosophy/includes/bias-variance-in-ml.md}
+\include{_philosophy/includes/bias-variance-rational.md}
+\include{_philosophy/includes/uncertainty-and-absolutism.md}
 
 \newslide{Conclusion}
 \slides{

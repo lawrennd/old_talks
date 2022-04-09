@@ -17,7 +17,7 @@
 
 \notes{Our report focusses on what more we can do to ensure that this data is readily available [@Delve-data20].}
 
-talk-macros.gpp}elve/includes/data-report-recommendations.md}
+\include{_delve/includes/data-report-recommendations.md}
 
 
 \endif

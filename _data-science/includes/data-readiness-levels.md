@@ -4,7 +4,7 @@
 
 \subsection{Data Readiness Levels}
 
-talk-macros.gpp}ata-science/includes/data-readiness-levels-short.md}
+\include{_data-science/includes/data-readiness-levels-short.md}
 
 \subsection{Accessibility: Grade C}
 

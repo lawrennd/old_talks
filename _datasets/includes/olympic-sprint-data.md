@@ -14,7 +14,7 @@
 \smalltext{Image from Wikimedia Commons <http://bit.ly/16kMKHQ> by [Darren Wilkinson](https://www.staff.ncl.ac.uk/d.j.wilkinson/)}
 }{70%}{30%}
 
-talk-macros.gpp}ata-science/includes/pods-install.md}
+\include{_data-science/includes/pods-install.md}
 
 \notes{The first think we will look at is a multiple output model. Our aim is to jointly model all *sprinting* events from olympics since 1896. Data is provided by Rogers & Girolami's "First Course in Machine Learning". Firstly, let's load in the data.}
 

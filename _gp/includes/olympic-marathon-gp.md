@@ -1,8 +1,8 @@
 \ifndef{olympicMarathonGp}
 \define{olympicMarathonGp}
 
-talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
-talk-macros.gpp}l/includes/alan-turing-marathon.md}
+\include{_datasets/includes/olympic-marathon-data.md}
+\include{_ml/includes/alan-turing-marathon.md}
 
 \editme
 

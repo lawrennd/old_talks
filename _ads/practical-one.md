@@ -31,14 +31,14 @@ ipynb: true
 \notes{Tick Session for this Practical is 11th November 2021}
 
 \define{databaseType}{mariadb}
-talk-macros.gpp}ystems/includes/nigeria-nmis-installs.md}
+\include{_systems/includes/nigeria-nmis-installs.md}
 
-talk-macros.gpp}ystems/includes/nigeria-health-intro.md}
-talk-macros.gpp}ystems/includes/nigeria-nmis-data-systems.md}
-talk-macros.gpp}ystems/includes/databases-and-joins.md}
-talk-macros.gpp}ystems/includes/nigeria-nmis-spatial-join.md}
-talk-macros.gpp}ystems/includes/nigeria-nmis-sql.md}
-talk-macros.gpp}ystems/includes/nigeria-nmis-covid-join.md}
+\include{_systems/includes/nigeria-health-intro.md}
+\include{_systems/includes/nigeria-nmis-data-systems.md}
+\include{_systems/includes/databases-and-joins.md}
+\include{_systems/includes/nigeria-nmis-spatial-join.md}
+\include{_systems/includes/nigeria-nmis-sql.md}
+\include{_systems/includes/nigeria-nmis-covid-join.md}
 
 
 

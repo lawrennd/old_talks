@@ -4,7 +4,7 @@ date: 2014-05-28
 ---
 
 
-talk-macros.gpp}/talk-macros.gpp}
+\include{../talk-macros.gpp}
 
 \notes{Adding a data set to GPy should be done in two stages. Firstly, you need to edit the `data_resources.json` file to provide information about where to download the data from and what the license and citation information for the data is. Then you can edit the `datasets.py` file, located in `GPy.util` to load in the data and perform any preprocessing, before returning the data set to the user in the standard dictionary format.}
 

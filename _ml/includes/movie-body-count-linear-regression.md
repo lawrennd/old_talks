@@ -1,7 +1,7 @@
 \ifndef{movieBodyCountLinearRegression}
 \define{movieBodyCountLinearRegression}
 
-talk-macros.gpp}atasets/includes/movie-body-count-data.md}
+\include{_datasets/includes/movie-body-count-data.md}
 
 \editme
 

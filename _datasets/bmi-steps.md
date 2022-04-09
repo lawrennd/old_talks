@@ -4,10 +4,10 @@ date: 2021-05-16
 ---
 
 
-talk-macros.gpp}/talk-macros.gpp}
+\include{../talk-macros.gpp}
 
-talk-macros.gpp}atasets/includes/datasets-notebook-setup.md}
+\include{_datasets/includes/datasets-notebook-setup.md}
 
-talk-macros.gpp}atasets/includes/bmi-steps-data.md}
+\include{_datasets/includes/bmi-steps-data.md}
 
 \references

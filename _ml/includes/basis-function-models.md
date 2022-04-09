@@ -9,7 +9,7 @@ Now we are going to consider how these basis functions can be adjusted to fit to
 a particular data set. We will return to the olympic marathon data from last
 time. First we will scale the output of the data to be zero mean and variance 1.
 
-talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
+\include{_datasets/includes/olympic-marathon-data.md}
 
 
 \comment{\writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{10}}
@@ -182,9 +182,9 @@ $$
 * In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).}
 \notes{But the correct and more stable approach is to make use of the QR decomposition.}
 
-talk-macros.gpp}l/includes/qr-decomposition-regression.md}
+\include{_ml/includes/qr-decomposition-regression.md}
 
-talk-macros.gpp}l/includes/olympic-marathon-all-polynomial.md}
+\include{_ml/includes/olympic-marathon-all-polynomial.md}
 
 \subsection{Non-linear but Linear in the Parameters}
 

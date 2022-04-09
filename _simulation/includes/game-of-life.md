@@ -10,8 +10,8 @@
 
 \notes{The Game of Life is played on a grid of squares, or pixels. Each pixel is either on or off. The game has no players, but a set of simple rules that are followed at each turn the rules are.}
 
-talk-macros.gpp}imulation/includes/life-rules.md}
-talk-macros.gpp}imulation/includes/life-glider-loafer-conway.md}
+\include{_simulation/includes/life-rules.md}
+\include{_simulation/includes/life-glider-loafer-conway.md}
 
 \notes{Once these patterns are discovered, they are combined (or engineered) to create new Life patterns that do some remarkable things. For example, there's a life pattern that runs a Turing machine, or more remarkably there's a Life pattern that runs Life itself.}
 

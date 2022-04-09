@@ -20,8 +20,8 @@ ipynb: false
 
 \section{The Challenge}
 
-talk-macros.gpp}usiness/includes/institutional-character.md}
-talk-macros.gpp}olicy/includes/amazon-to-policy.md}
+\include{_business/includes/institutional-character.md}
+\include{_policy/includes/amazon-to-policy.md}
 
 \notes{With the Amazon and F1 examples in mind, I'd like to suggest that no-one is (yet) doing data-science well at *scale*. And that is largely to do with how recently we've gained these capabilities. But with that in mind we'll I'd like to look at some solutions for integrating the necessary change in culture.}
 
@@ -29,31 +29,31 @@ talk-macros.gpp}olicy/includes/amazon-to-policy.md}
 
 \section{1. Executive Awareness}
 
-talk-macros.gpp}usiness/includes/executive-awareness.md}
+\include{_business/includes/executive-awareness.md}
 
 \slides{\section{Data Maturity Assessment}
 
 \slides{* Emerging from the DELIVE Initiatives Data Work [@Delve-data20]
 * Recommendation for Data Maturity Assessments [@Lawrence-maturity20]}}
 
-\notes{talk-macros.gpp}usiness/includes/data-maturity-assessment.md}}
+\notes{\include{_business/includes/data-maturity-assessment.md}}
 
 \section{2. Executive Sponsorship}
 
-talk-macros.gpp}usiness/includes/executive-sponsorship.md}
+\include{_business/includes/executive-sponsorship.md}
 
 \section{3. Devolved Capability}
 
-talk-macros.gpp}usiness/includes/data-science-champions.md}
+\include{_business/includes/data-science-champions.md}
 
 \section{4. Intersectional Projects}
 
-talk-macros.gpp}olicy/includes/departmental-planning.md}
-talk-macros.gpp}olicy/includes/greenfield-vs-brownfield.md}
+\include{_policy/includes/departmental-planning.md}
+\include{_policy/includes/greenfield-vs-brownfield.md}
 
 \section{5. Relevant Education}
 
-talk-macros.gpp}usiness/includes/bridging-datascience-education.md}
+\include{_business/includes/bridging-datascience-education.md}
 
 \section{Conclusions}
 

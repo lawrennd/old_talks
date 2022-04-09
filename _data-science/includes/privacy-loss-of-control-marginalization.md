@@ -3,6 +3,6 @@
 
 \editme
 
-talk-macros.gpp}ata-science/includes/privacy-loss-of-control.md}
+\include{_data-science/includes/privacy-loss-of-control.md}
 
 \endif

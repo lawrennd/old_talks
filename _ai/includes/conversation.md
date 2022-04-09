@@ -10,6 +10,6 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 
 \define{\stubname}{anne-bob-conversation}
-talk-macros.gpp}i/includes/anne-bob-talk.md}
+\include{_ai/includes/anne-bob-talk.md}
 
 \endif

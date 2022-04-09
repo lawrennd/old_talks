@@ -29,10 +29,10 @@ categories:
 - Lawrence-cfi17
 ---
 
-talk-macros.gpp}lk-macros.tex}
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/embodiment-and-narrative.md}
+\include{talk-macros.tex}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-and-narrative.md}
 
 \thanks
 

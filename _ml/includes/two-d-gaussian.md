@@ -31,7 +31,7 @@
   $$
 \notes{Given this assumption we can sample from the joint distribution by independently sampling weights and heights.}
 
-talk-macros.gpp}l/includes/two-d-gaussian-independent-sample.md}
+\include{_ml/includes/two-d-gaussian-independent-sample.md}
 
 \newslide{Body Mass Index}
 \slides{
@@ -41,8 +41,8 @@ $$
 $$}\slides{
 * To deal with this dependence we introduce *correlated* multivariate Gaussians.}\notes{To deal with this dependence we now introduce the notion of *correlation* to the multivariate Gaussian density.}
 
-talk-macros.gpp}l/includes/two-d-gaussian-correlated-sample.md}
+\include{_ml/includes/two-d-gaussian-correlated-sample.md}
 
-talk-macros.gpp}l/includes/two-d-gaussian-maths.md}
+\include{_ml/includes/two-d-gaussian-maths.md}
 
 \endif

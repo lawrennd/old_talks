@@ -27,23 +27,23 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}i/includes/the-diving-bell-butterfly.md}
-talk-macros.gpp}i/includes/jean-dominique-bauby.md}
-talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
-talk-macros.gpp}i/includes/formula-one-engine.md}
-talk-macros.gpp}i/includes/marcel-renault.md}
-talk-macros.gpp}i/includes/caleb-mcduff.md}
-talk-macros.gpp}i/includes/conversation.md}
-talk-macros.gpp}ata-science/includes/information-growth.md}
-talk-macros.gpp}i/includes/baby-shoes.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/rapid-diagnosis-and-consultation.md}
-talk-macros.gpp}ata-science/includes/the-assault-on-privacy.md}
-talk-macros.gpp}i/includes/1984.md}
-talk-macros.gpp}i/includes/the-circle.md}
-talk-macros.gpp}i/includes/the-invisible-man.md}
+\include{_ai/includes/the-diving-bell-butterfly.md}
+\include{_ai/includes/jean-dominique-bauby.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/formula-one-engine.md}
+\include{_ai/includes/marcel-renault.md}
+\include{_ai/includes/caleb-mcduff.md}
+\include{_ai/includes/conversation.md}
+\include{_data-science/includes/information-growth.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/rapid-diagnosis-and-consultation.md}
+\include{_data-science/includes/the-assault-on-privacy.md}
+\include{_ai/includes/1984.md}
+\include{_ai/includes/the-circle.md}
+\include{_ai/includes/the-invisible-man.md}
 
 \newslide{}
 
@@ -52,15 +52,15 @@ talk-macros.gpp}i/includes/the-invisible-man.md}
 * Convention for the Protection of Individuals with regard to Automatic
 Processing of Personal Data (1981/1/28)
 
-talk-macros.gpp}i/includes/conversation-computer.md}
-talk-macros.gpp}ata-science/includes/data-science-africa.md}
-talk-macros.gpp}i/includes/thinking-fast-and-slow.md}
-talk-macros.gpp}i/includes/the-righteous-mind.md}
-talk-macros.gpp}i/includes/elephant-boy-poster.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}i/includes/mechanical-elephant.md}
-talk-macros.gpp}i/includes/the-hindoo-earth.md}
-talk-macros.gpp}ata-science/includes/user-centric-data.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/data-science-africa.md}
+\include{_ai/includes/thinking-fast-and-slow.md}
+\include{_ai/includes/the-righteous-mind.md}
+\include{_ai/includes/elephant-boy-poster.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_ai/includes/mechanical-elephant.md}
+\include{_ai/includes/the-hindoo-earth.md}
+\include{_data-science/includes/user-centric-data.md}
 
 
 <!--Ruth Gavison:

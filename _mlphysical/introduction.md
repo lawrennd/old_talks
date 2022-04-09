@@ -22,19 +22,19 @@ transition: None
 ipynb: true
 ---
 
-talk-macros.gpp}lphysical/includes/overview-2021.md}
+\include{_mlphysical/includes/overview-2021.md}
 
-talk-macros.gpp}otebooks/includes/plot-setup.md}
-talk-macros.gpp}oftware/includes/notutils-software.md}
-talk-macros.gpp}oftware/includes/mlai-software.md}
-talk-macros.gpp}hysics/includes/ceres-discovery.md}
+\include{_notebooks/includes/plot-setup.md}
+\include{_software/includes/notutils-software.md}
+\include{_software/includes/mlai-software.md}
+\include{_physics/includes/ceres-discovery.md}
 
 \notes{Let's have a look at how Gauss determined the orbit of Ceres and how (taking ideas from Pierre Simon Laplace) he used approaches that would prove to be conceptually fundamental to machine learning and statistical approaches.}
 
-talk-macros.gpp}l/includes/overdetermined-mlphysical.md}
-talk-macros.gpp}hysics/includes/entropy-intro.md}
-talk-macros.gpp}l/includes/underdetermined-system.md}
-talk-macros.gpp}hysics/includes/brownian-wiener.md}
+\include{_ml/includes/overdetermined-mlphysical.md}
+\include{_physics/includes/entropy-intro.md}
+\include{_ml/includes/underdetermined-system.md}
+\include{_physics/includes/brownian-wiener.md}
 
 
 \subsection{Conclusions}

@@ -4,17 +4,17 @@ session: 11
 abstract: 
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}p/includes/mackay-bathwater.md}
-talk-macros.gpp}eepgp/includes/deep-nn-gp.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}eepgp/includes/deep-theory.md}
-talk-macros.gpp}eepgp/includes/deep-gp-setup-code.md}
-talk-macros.gpp}eepgp/includes/olympic-marathon-deep-gp.md}
-talk-macros.gpp}eepgp/includes/della-gatta-deep-gp.md}
-talk-macros.gpp}eepgp/includes/step-function-deep-gp.md}
-talk-macros.gpp}eepgp/includes/motorcycle-helmet-deep-gp.md}
+\include{_gp/includes/mackay-bathwater.md}
+\include{_deepgp/includes/deep-nn-gp.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_deepgp/includes/deep-theory.md}
+\include{_deepgp/includes/deep-gp-setup-code.md}
+\include{_deepgp/includes/olympic-marathon-deep-gp.md}
+\include{_deepgp/includes/della-gatta-deep-gp.md}
+\include{_deepgp/includes/step-function-deep-gp.md}
+\include{_deepgp/includes/motorcycle-helmet-deep-gp.md}
 
 \thanks
 

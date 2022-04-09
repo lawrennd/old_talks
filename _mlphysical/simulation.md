@@ -26,21 +26,21 @@ transition: None
 
 \notes{Last lecture Carl Henrik introduced you to some of the challenges of approximate inference. Including the problem of mathematical tractability. Before that he introduced you to a particular form of model, the Gaussian process.}
 
-talk-macros.gpp}otebooks/includes/plot-setup.md}
-talk-macros.gpp}oftware/includes/notutils-software.md}
-talk-macros.gpp}oftware/includes/mlai-software.md}
+\include{_notebooks/includes/plot-setup.md}
+\include{_software/includes/notutils-software.md}
+\include{_software/includes/mlai-software.md}
 
-talk-macros.gpp}imulation/includes/game-of-life.md}
-talk-macros.gpp}imulation/includes/packing-problems.md}
+\include{_simulation/includes/game-of-life.md}
+\include{_simulation/includes/packing-problems.md}
 
 
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
+\include{_gp/includes/gp-intro-very-short.md}
 
 \notes{So, Gaussian processes provide an example of a particular type of model. Or, scientifically, we can think of such a model as a mathematical representation of a hypothesis around data. The rejection sampling view of Bayesian inference can be seen as rejecting portions of that initial hypothesis that are inconsistent with the data. From a Popperian perspective, areas of the prior space are falsified by the data, leaving a posterior space that represents remaining plausible hypotheses.}
 
 \notes{The flaw with this point of view is that the initial hypothesis space was also restricted. It only contained functions where the instantiated points from the function are jointly Gaussian distributed.}
 
-talk-macros.gpp}p/includes/planck-cmp-master-gp.md}
+\include{_gp/includes/planck-cmp-master-gp.md}
 
 \notes{Those cosmological simulations are based on a relatively simple set of 'rules' that stem from our understanding of natural laws. These 'rules' are mathematical abstractions of the physical world. Representations of behavior in mathematical form that capture the interaction forces between particles. The grand aim of physics has been to unify these rules into a single unifying theory. Popular understanding of this quest developed because of Stephen Hawking's book, "[A Brief History of Time](https://en.wikipedia.org/wiki/A_Brief_History_of_Time)". The idea of these laws as 'ultimate causes' has given them a pseudo religious feel, see for example Paul Davies's book "[The Mind of God](https://en.wikipedia.org/wiki/The_Mind_of_God)" which comes from a quotation form Stephen Hawking. }
 
@@ -82,7 +82,7 @@ $$
 $$
 \notes{As we pointed out, there is an irony in Laplace's demon forming the cornerstone of a movement known as 'determinism', because Laplace wrote about this idea in an essay on probabilities. The more important quote in the essay was }
 
-talk-macros.gpp}hysics/includes/laplaces-gremlin.md}
+\include{_physics/includes/laplaces-gremlin.md}
 
 \newslide{}
 
@@ -92,7 +92,7 @@ There is a nice symmetry between this approach and how Karl Popper describes the
 
 We can see this process as a spiral driving forward, importantly Popper relates the relationship between hypothesis (model) and experiment (predictions) as akin to the relationship between the chicken and the egg. Which comes first? The answer is that they co-evolve together.}
 
-talk-macros.gpp}ata-science/includes/experiment-analyze-design-diagram.md}
+\include{_data-science/includes/experiment-analyze-design-diagram.md}
 
 \newslide{}
 

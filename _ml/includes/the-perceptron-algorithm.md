@@ -23,6 +23,6 @@
     * If $\learnRate$ is large enough this will guarantee this point becomes correctly classified.
 3.  Repeat until there are no misclassified points.
 
-talk-macros.gpp}l/includes/the-perceptron.md}
+\include{_ml/includes/the-perceptron.md}
 
 \endif

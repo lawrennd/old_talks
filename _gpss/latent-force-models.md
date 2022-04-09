@@ -4,7 +4,7 @@ session: 9
 abstract: 
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
 
 \thanks

@@ -19,7 +19,7 @@ venue: Analyticon
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
 \newslide{}
@@ -30,20 +30,20 @@ talk-macros.gpp}lk-macros.tex}
 
 \div{\includeimg{\diagramsDir/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}}{}{text-align:center}
 
-talk-macros.gpp}/_ai/includes/embodiment-factors.md}
+\include{../_ai/includes/embodiment-factors.md}
 <!--include{../_data-science/includes/evolved-relationship.md}
 include{../_ml/includes/what-does-machine-learning-do.md}-->
 
-talk-macros.gpp}l/includes/what-is-ml-2.md}
-talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+\include{_ml/includes/what-is-ml-2.md}
+\include{_ai/includes/ai-vs-data-science-2.md}
 
 
-talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
-talk-macros.gpp}mazon/includes/amazon-scot.md}
-talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
-talk-macros.gpp}l/includes/general-ml-challenges.md}
-talk-macros.gpp}mazon/includes/amazon-ml-zero.md}
-talk-macros.gpp}l/includes/ml-outlook.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_amazon/includes/amazon-scot.md}
+\include{_ml/includes/or-control-econometrics-statistics-ml.md}
+\include{_ml/includes/general-ml-challenges.md}
+\include{_amazon/includes/amazon-ml-zero.md}
+\include{_ml/includes/ml-outlook.md}
 
 \subsection{Conclusion}
 \slides{

@@ -22,22 +22,22 @@ ipynb: false
 
 
 
-talk-macros.gpp}ds/includes/overview-2021.md}
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}i/includes/conversation-tedx.md}
-talk-macros.gpp}i/includes/heider-simmel.md}
-talk-macros.gpp}i/includes/baby-shoes.md}
-talk-macros.gpp}i/includes/conversation-computer.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+\include{_ads/includes/overview-2021.md}
+\include{_data-science/includes/lies-damned-lies.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_ai/includes/conversation-tedx.md}
+\include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/evolved-relationship.md}
 \newslide{Background: Big Data}
 \slides{
 * Data is Pervasive phenomenon that affects all aspects of our activities
 
 * Data diffusiveness is both a challenge and an opportunity
 }
-talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-talk-macros.gpp}l/includes/what-is-ml.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_ml/includes/what-is-ml.md}
 
 \subsection{Classical Statistical Analysis}
 

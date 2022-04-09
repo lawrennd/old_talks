@@ -28,9 +28,9 @@ ipynb: true
 
 \notes{We suggest you complete at least Exercises 2-5.}
 
-talk-macros.gpp}ds/includes/ads-notebook-setup.md}
+\include{_ads/includes/ads-notebook-setup.md}
 
-talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
@@ -38,15 +38,15 @@ talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 * Minimized sum of squares objective by steepest descent and stochastic gradients.
 * This time: explore least squares for regression.
 
-talk-macros.gpp}l/includes/regression-examples.md}
+\include{_ml/includes/regression-examples.md}
 
-talk-macros.gpp}atasets/includes/olympic-100m-data.md}
+\include{_datasets/includes/olympic-100m-data.md}
 
 
-talk-macros.gpp}atasets/includes/olympic-marathon-data.md}
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/sum-of-squares-error.md}
-talk-macros.gpp}l/includes/linear-algebra-regression.md}
+\include{_datasets/includes/olympic-marathon-data.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/sum-of-squares-error.md}
+\include{_ml/includes/linear-algebra-regression.md}
 
 \thanks
 

@@ -1,7 +1,7 @@
 \ifndef{highFiveDeepGp}
 \define{highFiveDeepGp}
 
-talk-macros.gpp}atasets/includes/high-five-data.md}
+\include{_datasets/includes/high-five-data.md}
 
 \editme
 

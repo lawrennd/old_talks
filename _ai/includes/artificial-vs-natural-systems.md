@@ -2,7 +2,7 @@
 \define{artificialVsNaturalSystems}
 \editme
 
-talk-macros.gpp}i/includes/artificial-vs-natural-systems-short.md}
+\include{_ai/includes/artificial-vs-natural-systems-short.md}
 
 \notes{\subsection{Today's Artificial Systems}}
 

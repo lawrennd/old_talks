@@ -35,8 +35,8 @@
 
 \notes{A hundred years ago *computers* were human beings, often female, who conducted repetitive mathematical tasks for the creation of mathematical tables such as logarithms. Our modern digital computers were originally called *automatic computers* to reflect the fact that the intelligence of these human operators had been automated. But despite the efficiency with which they perform these tasks, very few think of their mobile phones or computers as intelligent.}
 
-talk-macros.gpp}i/includes/cybernetics-ratio-club.md}
-talk-macros.gpp}i/includes/holborn-science-centrifugal-governor.md}
+\include{_ai/includes/cybernetics-ratio-club.md}
+\include{_ai/includes/holborn-science-centrifugal-governor.md}
 
 \notes{Artificial intelligence is a badly defined term. Successful deployments of intelligent systems are common, but normally they are redefined to be non-intelligent. My favourite example is [the Centrifugal governor](https://en.wikipedia.org/wiki/Centrifugal_governor). Applied to the Steam Engine by Boulton and Watt and immortalised in the arms of the statue of “Science” on the Holborn viaduct in London, the centrifugal governor automatically regulated the speed of a steam engine, closing the inlet valve progressively as the engine ran faster. It did the job that an intelligent operator used to have to do, but few today would describe it as “artificial intelligence”.}
 

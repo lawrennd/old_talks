@@ -5,9 +5,9 @@ abstract: "Bayesian formalisms deal with uncertainty in parameters, "
 youtube: 17zr5dGcUzE
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Overdetermined System}
 
@@ -79,8 +79,8 @@ $$}
 <!-- $$ -->
 <!-- } -->
 
-talk-macros.gpp}l/includes/underdetermined-system.md}
-talk-macros.gpp}l/includes/types-of-uncertainty.md}
+\include{_ml/includes/underdetermined-system.md}
+\include{_ml/includes/types-of-uncertainty.md}
 
 \addreading{@Bishop:book06}{Section 1.2.3 (pg 21–24)}
 \addreading{@Rogers:book11}{Sections 3.1-3.4 (pg 95-117)}
@@ -89,17 +89,17 @@ talk-macros.gpp}l/includes/types-of-uncertainty.md}
 
 \reading
 
-talk-macros.gpp}hysics/includes/gauss-least-squares.md}
-talk-macros.gpp}l/includes/the-bayesian-approach.md}
-talk-macros.gpp}l/includes/bayesian-regression1d.md}
-talk-macros.gpp}l/includes/bayesian-1d-maths.md}
+\include{_physics/includes/gauss-least-squares.md}
+\include{_ml/includes/the-bayesian-approach.md}
+\include{_ml/includes/bayesian-regression1d.md}
+\include{_ml/includes/bayesian-1d-maths.md}
 
 \subsection{The Joint Density}
 
 * Really want to know the *joint* posterior density over the parameters $c$ *and* $m$.
 * Could now integrate out over $m$, but it’s easier to consider the multivariate case.
 
-talk-macros.gpp}l/includes/two-d-gaussian.md}
+\include{_ml/includes/two-d-gaussian.md}
 
 \subsection{The Prior Density}
 
@@ -135,9 +135,9 @@ sigma2 = 0.01}
 * Choose noise variance $\dataStd^2 = 0.01$
 }
 
-talk-macros.gpp}l/includes/prior-sampling-basis.md}
-talk-macros.gpp}l/includes/posterior-computation-gaussian.md}
-talk-macros.gpp}l/includes/olympic-marathon-bayesian-polynomial.md}
+\include{_ml/includes/prior-sampling-basis.md}
+\include{_ml/includes/posterior-computation-gaussian.md}
+\include{_ml/includes/olympic-marathon-bayesian-polynomial.md}
 
 \newslide{Model Fit}
 
@@ -164,9 +164,9 @@ talk-macros.gpp}l/includes/olympic-marathon-bayesian-polynomial.md}
 * Equivalent to a prior for $\mappingVector$ with infinite variance.
 * In other cases $\alpha \eye$ *regularizes* the system (keeps parameters smaller).
 }
-talk-macros.gpp}l/includes/posterior-sampling-basis.md}
-talk-macros.gpp}l/includes/polynomial-marginal-likelihood.md}
-talk-macros.gpp}l/includes/compute-output-expectations.md}
+\include{_ml/includes/posterior-sampling-basis.md}
+\include{_ml/includes/polynomial-marginal-likelihood.md}
+\include{_ml/includes/compute-output-expectations.md}
 
 \addreading{@Rogers:book11}{Section 3.7–3.8 (pg 122–133)}
 \addreading{@Bishop:book06}{Section 3.4 (pg 161–165)}

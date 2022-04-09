@@ -14,8 +14,8 @@ venue: Royal Society Interdisciplinary Workshop at Stanford University
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 
-talk-macros.gpp}i/includes/embodiment-factors.md}
+\include{_ai/includes/embodiment-factors.md}
 

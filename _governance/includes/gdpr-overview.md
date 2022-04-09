@@ -1,8 +1,8 @@
 \ifndef{gdprOverview}
 \define{gdprOverview}
 
-talk-macros.gpp}overnance/includes/gdpr-origins.md}
-talk-macros.gpp}overnance/includes/how-gdpr-may-help.md}
+\include{_governance/includes/gdpr-origins.md}
+\include{_governance/includes/how-gdpr-may-help.md}
 
 \editme
 

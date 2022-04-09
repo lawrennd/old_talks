@@ -12,8 +12,8 @@ transition: None
 ---
 
 
-talk-macros.gpp}lk-macros.tex}
-talk-macros.gpp}q/includes/uncertainty-quantification.md}
+\include{talk-macros.tex}
+\include{_uq/includes/uncertainty-quantification.md}
 
 \thanks
 

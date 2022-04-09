@@ -1,6 +1,6 @@
-talk-macros.gpp}/gplvm/includes/stack_gp_intro.md}
-talk-macros.gpp}/gplvm/includes/stacked_pca.md}
-talk-macros.gpp}/gplvm/includes/stacked_gp.md}
+\include{../gplvm/includes/stack_gp_intro.md}
+\include{../gplvm/includes/stacked_pca.md}
+\include{../gplvm/includes/stacked_gp.md}
 
 <!--frame start-->
 ### What Can Academics Do that Google Can’t?
@@ -20,4 +20,4 @@ talk-macros.gpp}/gplvm/includes/stacked_gp.md}
 -   These methodologies are part of that picture.
 
 <!--frame end-->
-talk-macros.gpp}/health/includes/deep_health_model.md}
+\include{../health/includes/deep_health_model.md}

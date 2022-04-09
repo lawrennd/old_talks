@@ -3,7 +3,7 @@
 
 \editme
 
-talk-macros.gpp}oftware/includes/gpy-install.md}
+\include{_software/includes/gpy-install.md}
 
 \subsection{GPy and Emulation}
 
@@ -116,6 +116,6 @@ print('The estimate of the mean of the Branin function is {mean}'.format(mean=np
 
 \codeassignment{You've seen how the Monte Carlo estimates work with the Gaussian process. Now make your estimate of the probability that the Branin function is greater than 200 with the uniform random inputs.}}
 
-talk-macros.gpp}q/includes/uq-sampling-history-doe.md}
+\include{_uq/includes/uq-sampling-history-doe.md}
 
 \endif

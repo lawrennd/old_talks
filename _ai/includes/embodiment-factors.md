@@ -1,10 +1,10 @@
 \ifndef{embodimentFactors}
 \define{embodimentFactors}
 
-talk-macros.gpp}i/includes/embodiment-factors-short.md}
-talk-macros.gpp}i/includes/formula-one-engine.md}
-talk-macros.gpp}i/includes/marcel-renault.md}
-talk-macros.gpp}i/includes/caleb-mcduff.md}
+\include{_ai/includes/embodiment-factors-short.md}
+\include{_ai/includes/formula-one-engine.md}
+\include{_ai/includes/marcel-renault.md}
+\include{_ai/includes/caleb-mcduff.md}
 
 \editme
 

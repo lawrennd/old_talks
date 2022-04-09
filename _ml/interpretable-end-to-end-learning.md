@@ -19,51 +19,51 @@ transition: None
 incremental: True
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
-talk-macros.gpp}i/includes/the-fourth-industrial-revolution.md}
+\include{_ai/includes/the-fourth-industrial-revolution.md}
 
 \section{End-to-End: Environment and Decision}
 
-talk-macros.gpp}l/includes/what-is-ml-end-to-end.md}
+\include{_ml/includes/what-is-ml-end-to-end.md}
 
-talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
+\include{_data-science/includes/experiment-analyze-design.md}
 
-talk-macros.gpp}ata-science/includes/data-oriented-architectures.md}
+\include{_data-science/includes/data-oriented-architectures.md}
 
 \newslide{Autonomous Vehicles}
 
 \figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
-talk-macros.gpp}q/includes/emulation.md}
-talk-macros.gpp}q/includes/deep-emulation.md}
-talk-macros.gpp}q/includes/bayesian-system-optimization.md}
+\include{_uq/includes/emulation.md}
+\include{_uq/includes/deep-emulation.md}
+\include{_uq/includes/bayesian-system-optimization.md}
 
-talk-macros.gpp}q/includes/auto-ai.md}
+\include{_uq/includes/auto-ai.md}
 
 \newslide{Technology: Deep Emulation}
 
-talk-macros.gpp}l/includes/deep-face.md}
-<!--talk-macros.gpp}l/includes/deep-learning-as-pinball.md}-->
+\include{_ml/includes/deep-face.md}
+<!--\include{_ml/includes/deep-learning-as-pinball.md}-->
 
-talk-macros.gpp}eepnn/includes/deep-neural-networks.md}
-talk-macros.gpp}eepgp/includes/overfitting-low-rank.md}
-talk-macros.gpp}eepgp/includes/deep-gp.md}
-talk-macros.gpp}eepgp/includes/stochastic-process-composition.md}
+\include{_deepnn/includes/deep-neural-networks.md}
+\include{_deepgp/includes/overfitting-low-rank.md}
+\include{_deepgp/includes/deep-gp.md}
+\include{_deepgp/includes/stochastic-process-composition.md}
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
 <!-- in this short overview, don't introduce GPy or the data-->
 <!--\define{stepFunctionData} -->
 \define{gpySoftware}
-talk-macros.gpp}eepgp/includes/deep-motorcycle.md}
-talk-macros.gpp}l/includes/graphical-models.md}
+\include{_deepgp/includes/deep-motorcycle.md}
+\include{_ml/includes/graphical-models.md}
 
-talk-macros.gpp}ata-science/includes/data-oriented-conclusions.md}
+\include{_data-science/includes/data-oriented-conclusions.md}
 
-<!--talk-macros.gpp}ealth/includes/malaria-gp.md}-->
+<!--\include{_health/includes/malaria-gp.md}-->
 
 \subsection{Related Papers}
 

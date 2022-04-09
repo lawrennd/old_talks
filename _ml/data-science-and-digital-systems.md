@@ -24,26 +24,26 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
 \notes{The modern world is becoming increasingly dominated by data. In this talk we consider consider the emerging field of *data science* and what it takes to build a modern digital system. We will look at the challenges we face now and in the future. Finally we end by considering a set of solutions for deploying machine learning systems today. The three Ds of machine learning systems design.}
 
-talk-macros.gpp}ata-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
-talk-macros.gpp}ata-science/includes/lies-damned-lies.md}
+\include{_data-science/includes/lies-damned-lies.md}
 
-talk-macros.gpp}l/includes/what-is-ml-2.md}
-talk-macros.gpp}i/includes/ai-vs-data-science-2.md}
+\include{_ml/includes/what-is-ml-2.md}
+\include{_ai/includes/ai-vs-data-science-2.md}
 
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}ata-science/includes/societal-effects.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_data-science/includes/societal-effects.md}
 
-talk-macros.gpp}l/includes/what-does-machine-learning-do.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_data-science/includes/a-time-for-professionalisation.md}
 
 <!--
 <!--include{_gp/includes/gp-intro-very-short.md}-->
@@ -64,9 +64,9 @@ talk-macros.gpp}ata-science/includes/a-time-for-professionalisation.md}
 
 \notes{It's true that the world of data is changing, but this should be leading to a golden era for statistics. But to take advantage statisticians need to learn to scale. That means sharing their expertise and empowering domain experts. That means learning to *code properly*. I.e. to work with software engineers in deployment of solutions. The world is changing around statistics, and these changes require a *can do* attitude. Data science is a garden in which Computer Scientists and Statisticians can finally play together, undoing years of institutional and cultural barriers between the fields.}
 
-talk-macros.gpp}ata-science/includes/data-science-challenges.md}
+\include{_data-science/includes/data-science-challenges.md}
 
-talk-macros.gpp}i/includes/centrifugal-governor.md}
+\include{_ai/includes/centrifugal-governor.md}
 
 \subsection{Amazon: Bits and Atoms}
 
@@ -87,15 +87,15 @@ talk-macros.gpp}i/includes/centrifugal-governor.md}
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
 
-talk-macros.gpp}upply-chain/includes/supply-chain.md}
-talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
-talk-macros.gpp}l/includes/or-control-econometrics-statistics-ml.md}
+\include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
 \newslide{THE THREE Ds of ML SYSTEMS DESIGN}
 
-talk-macros.gpp}l/includes/the-3ds-of-ml-systems-design.md}
-<!--talk-macros.gpp}l/includes/the-3ds-enough-talk.md}-->
-talk-macros.gpp}l/includes/ml-outlook.md}
+\include{_ml/includes/the-3ds-of-ml-systems-design.md}
+<!--\include{_ml/includes/the-3ds-enough-talk.md}-->
+\include{_ml/includes/ml-outlook.md}
 
 \subsection{Conclusion}
 \slides{

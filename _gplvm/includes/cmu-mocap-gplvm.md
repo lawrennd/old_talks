@@ -1,7 +1,7 @@
 \ifndef{cmuMocapGplvm}
 \define{cmuMocapGplvm}
 
-talk-macros.gpp}atasets/includes/cmu-mocap-data.md}
+\include{_datasets/includes/cmu-mocap-data.md}
 
 \editme
 

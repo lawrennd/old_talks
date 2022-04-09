@@ -1,7 +1,7 @@
 \ifndef{olympicSprintGp}
 \define{olypmicSprintGp}
 
-talk-macros.gpp}atasets/includes/olympic-sprint-data.md}
+\include{_datasets/includes/olympic-sprint-data.md}
 
 \editme
 

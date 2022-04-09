@@ -3,8 +3,8 @@
 
 \editme
 
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
+\include{_data-science/includes/evolved-relationship.md}
 
-talk-macros.gpp}ata-science/includes/societal-effects.md}
+\include{_data-science/includes/societal-effects.md}
 
 \endif

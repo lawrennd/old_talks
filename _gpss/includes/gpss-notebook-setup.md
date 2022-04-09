@@ -4,7 +4,7 @@
 \editme
 
 
-talk-macros.gpp}oftware/includes/gpy-software.md}
+\include{_software/includes/gpy-software.md}
 
 \endif
 	

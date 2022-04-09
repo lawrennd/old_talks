@@ -5,9 +5,9 @@ abstract: "Generalization is the main objective of a machine learning algorithm.
 youtube: wy0J6cgqlf8
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
@@ -15,11 +15,11 @@ talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
 * Showed how to maximize the likelihood of a non-linear model that's linear in parameters.
 * Explored the different characteristics of different basis function models
 
-talk-macros.gpp}l/includes/alan-turing-marathon.md}
-talk-macros.gpp}l/includes/expected-loss.md}
-talk-macros.gpp}l/includes/empirical-risk-minimization.md}
-talk-macros.gpp}l/includes/validation.md}
-talk-macros.gpp}l/includes/bias-variance-dilemma.md}
+\include{_ml/includes/alan-turing-marathon.md}
+\include{_ml/includes/expected-loss.md}
+\include{_ml/includes/empirical-risk-minimization.md}
+\include{_ml/includes/validation.md}
+\include{_ml/includes/bias-variance-dilemma.md}
 
 \addreading{@Rogers:book11}{Section 1.5}
 

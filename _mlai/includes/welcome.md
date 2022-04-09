@@ -4,11 +4,11 @@
 
 \section{Course Texts}
 
-talk-macros.gpp}l/includes/first-course-book.md}
+\include{_ml/includes/first-course-book.md}
 
 \newslide{Additional Course Text}
 
-talk-macros.gpp}l/includes/prml-book.md}
+\include{_ml/includes/prml-book.md}
 
 \notes{Welcome to the Machine Learning and Adaptive Intelligence
 course. In this course we will introduce the basic concepts of machine

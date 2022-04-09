@@ -35,7 +35,7 @@ transition: None
 ---
 
 
-talk-macros.gpp}/talk-macros.tex}
+\include{../talk-macros.tex}
 
 \newslide{}
 

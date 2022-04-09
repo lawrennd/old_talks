@@ -15,13 +15,13 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \editme
 \section{Introduction}
 
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}i/includes/artificial-vs-natural-systems.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ai/includes/artificial-vs-natural-systems.md}
 
 \notes{Uncertainty in models is handled by Bayesian inference, here we
 consider uncertainty arising in loss functions.
@@ -147,7 +147,7 @@ $$
 \beta = \frac{\numData}{\sum_{i=1}^\numData \expectationDist{\scaleScalar_i}{q(\scaleScalar_i)} L(\dataScalar_i, \mappingFunction(\inputVector_i))}
 $$}
 
-talk-macros.gpp}l/includes/olympic-marathon-data.md}
+\include{_ml/includes/olympic-marathon-data.md}
 
 \subsection{Example: Linear Regression}
 

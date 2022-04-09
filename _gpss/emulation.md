@@ -40,7 +40,7 @@ layout: talk
 > --- Pierre Simon Laplace [@Laplace-essai14]
 
 
-talk-macros.gpp}imulation/includes/game-of-life.md}
+\include{_simulation/includes/game-of-life.md}
 
 \speakernotes{Laplace's demon requires us to also know positions of all items and to submit the data to analysis.}
 
@@ -52,18 +52,18 @@ $$
 $$
 \notes{As we pointed out, there is an irony in Laplace's demon forming the cornerstone of a movement known as 'determinism', because Laplace wrote about this idea in an essay on probabilities. The more important quote in the essay was }
 
-talk-macros.gpp}hysics/includes/laplaces-gremlin.md}
+\include{_physics/includes/laplaces-gremlin.md}
 
-talk-macros.gpp}imulation/includes/simulation-system.md}
-talk-macros.gpp}ata-science/includes/experiment-analyze-design.md}
-talk-macros.gpp}q/includes/emulation.md}
-\notes{talk-macros.gpp}p/includes/gpy-emulation.md}}
-talk-macros.gpp}oftware/includes/emukit-software.md}
-talk-macros.gpp}q/includes/emukit-vision.md}
-talk-macros.gpp}q/includes/emukit-playground.md}
-\notes{talk-macros.gpp}q/includes/emukit-tutorial.md}}
-\notes{talk-macros.gpp}q/includes/emukit-sensitivity-analysis.md}}
-\notes{talk-macros.gpp}q/includes/catapult-sensitivity-analysis.md}}
+\include{_simulation/includes/simulation-system.md}
+\include{_data-science/includes/experiment-analyze-design.md}
+\include{_uq/includes/emulation.md}
+\notes{\include{_gp/includes/gpy-emulation.md}}
+\include{_software/includes/emukit-software.md}
+\include{_uq/includes/emukit-vision.md}
+\include{_uq/includes/emukit-playground.md}
+\notes{\include{_uq/includes/emukit-tutorial.md}}
+\notes{\include{_uq/includes/emukit-sensitivity-analysis.md}}
+\notes{\include{_uq/includes/catapult-sensitivity-analysis.md}}
 
 \thanks
 

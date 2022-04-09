@@ -18,12 +18,12 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}i/includes/are-we-close-to-creating-intelligence.md}
-talk-macros.gpp}i/includes/the-promise-of-ai.md}
-talk-macros.gpp}i/includes/five-ai-myths.md}
-talk-macros.gpp}i/includes/turing-ai-fellowship.md}
+\include{_ai/includes/are-we-close-to-creating-intelligence.md}
+\include{_ai/includes/the-promise-of-ai.md}
+\include{_ai/includes/five-ai-myths.md}
+\include{_ai/includes/turing-ai-fellowship.md}
 
 \thanks
 

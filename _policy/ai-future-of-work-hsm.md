@@ -18,7 +18,7 @@ venue: Hot Spots Movement AI and Future of Work Event
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
 
 \subsection{The AI Fallacy}

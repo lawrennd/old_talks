@@ -43,7 +43,7 @@ for i in range(10):
 covariance function (the lengthscale and the variance) and see what effects the
 parameters have on the types of functions you observe.}
 
-talk-macros.gpp}p/includes/gp-intro-very-short.md}
+\include{_gp/includes/gp-intro-very-short.md}
 
 
 \subsection{Gaussian Process}

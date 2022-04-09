@@ -20,13 +20,13 @@ pace.
 
 \notes{For the olympic marathon example $\dataScalar_i$ is the winning pace and it is given as a function of the year which is represented by $\inputScalar_i$. There are two further parameters of the prediction function. For the olympics example we can interpret these parameters, the scale $m$ is the rate of improvement of the olympic marathon pace on a yearly basis. And $c$ is the winning pace as estimated at year 0.}
 
-talk-macros.gpp}l/includes/overdetermined-inaugural.md}
-talk-macros.gpp}l/includes/univariate-gaussian.md}
-talk-macros.gpp}l/includes/univariate-gaussian-properties.md}
-talk-macros.gpp}l/includes/linear-regression-log-likelihood.md}
-talk-macros.gpp}l/includes/sum-of-squares-log-likelihood.md}
-talk-macros.gpp}l/includes/olympic-marathon-linear-regression.md}
-talk-macros.gpp}l/includes/linear-regression-coordinate-ascent.md}
+\include{_ml/includes/overdetermined-inaugural.md}
+\include{_ml/includes/univariate-gaussian.md}
+\include{_ml/includes/univariate-gaussian-properties.md}
+\include{_ml/includes/linear-regression-log-likelihood.md}
+\include{_ml/includes/sum-of-squares-log-likelihood.md}
+\include{_ml/includes/olympic-marathon-linear-regression.md}
+\include{_ml/includes/linear-regression-coordinate-ascent.md}
 
 \subsection{Important Concepts Not Covered}
 
@@ -57,9 +57,9 @@ talk-macros.gpp}l/includes/linear-regression-coordinate-ascent.md}
   $$\mappingFunction(\inputVector_i) = \mappingVector^\top \inputVector_i$$
 }
 
-talk-macros.gpp}l/includes/linear-regression-iterative.md}
-talk-macros.gpp}l/includes/linear-regression-multivariate-log-likelihood.md}
-talk-macros.gpp}l/includes/linear-regression-direct-solution.md}
+\include{_ml/includes/linear-regression-iterative.md}
+\include{_ml/includes/linear-regression-multivariate-log-likelihood.md}
+\include{_ml/includes/linear-regression-direct-solution.md}
 \writeassignment{The prediction for our movie recommender system had the form
 $$
 f_{i,j} = \mathbf{u}_i^\top \mathbf{v}_j
@@ -71,8 +71,8 @@ E = \sum_{i,j} s_{i,j}(\dataScalar_{i,j} - f_{i, j})^2
 $$
 Try writing this down in matrix and vector form. How many of the terms can you do? For each variable and parameter carefully think about whether it should be represented as a matrix or vector. Do as many of the terms as you can. Use $\LaTeX$ to give your answers and give the *dimensions* of any matrices you create.}{20}
 
-talk-macros.gpp}l/includes/linear-regression-objective-optimisation.md}
-talk-macros.gpp}l/includes/movie-body-count-linear-regression.md}
+\include{_ml/includes/linear-regression-objective-optimisation.md}
+\include{_ml/includes/movie-body-count-linear-regression.md}
 
 \notes{
 \figure{\includeyoutube{ui-uNlFHoms}{600}{450}}{MLAI Lecture 15 from 2014 on Multivariate Regression.}{mlai-15-multivariate-regression}
@@ -80,7 +80,7 @@ talk-macros.gpp}l/includes/movie-body-count-linear-regression.md}
 \figure{\includeyoutube{78YNphT90-k}{600}{450}}{MLAI Lecture 3 from 2012 on Maximum Likelihood}{mlai-3-maximum-likelihood}
 }
 
-talk-macros.gpp}l/includes/qr-decomposition-regression.md}
+\include{_ml/includes/qr-decomposition-regression.md}
 
 \addreading{@Rogers:book11}{Section 1.3 for Matrix & Vector Review}
 

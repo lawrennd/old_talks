@@ -4,7 +4,7 @@
 
 \section{What is Machine Learning?}
 
-talk-macros.gpp}l/includes/data-plus-model.md}
+\include{_ml/includes/data-plus-model.md}
 
 \newslide{What is Machine Learning?}
 \slides{

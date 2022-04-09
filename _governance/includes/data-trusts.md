@@ -53,6 +53,6 @@ It feels important to have a diversity of approaches, and yet it feels important
 * Power of data accumulation wielded on the beneficiaries behalf
 * See @Edwards:privacy04, @Delacroix:trusts19 and @Lawrence:trusts16
 }
-talk-macros.gpp}overnance/includes/data-trusts-initiative.md}
+\include{_governance/includes/data-trusts-initiative.md}
 
 \endif

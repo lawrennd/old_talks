@@ -130,7 +130,7 @@ $$
 
 \notes{We illustrate the exact calculation of the Sobol indices with the three-dimensional Ishigami function of [@Ishigami-importance90].} 
 
-talk-macros.gpp}q/includes/ishigami-function.md}
+\include{_uq/includes/ishigami-function.md}
 
 \subsection{Total Variance}
 

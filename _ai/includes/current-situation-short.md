@@ -4,10 +4,10 @@
 \editme
 
 
-talk-macros.gpp}l/includes/what-is-ml-2.md}
-talk-macros.gpp}i/includes/artificial-vs-natural-systems.md}
-talk-macros.gpp}i/includes/engineering-systems-design.md}
-talk-macros.gpp}i/includes/intelligent-system-paolo.md}
+\include{_ml/includes/what-is-ml-2.md}
+\include{_ai/includes/artificial-vs-natural-systems.md}
+\include{_ai/includes/engineering-systems-design.md}
+\include{_ai/includes/intelligent-system-paolo.md}
 
 \newslide{}
 \slides{

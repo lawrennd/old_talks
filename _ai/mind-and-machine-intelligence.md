@@ -22,19 +22,19 @@ transition: None
 ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 ---
 
-talk-macros.gpp}i/includes/diving-bell-butterfly.md}
-talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
-talk-macros.gpp}i/includes/formula-one-engine.md}
-talk-macros.gpp}i/includes/marcel-renault.md}
-talk-macros.gpp}i/includes/caleb-mcduff.md}
-talk-macros.gpp}i/includes/conversation.md}
-talk-macros.gpp}ata-science/includes/information-growth.md}
-talk-macros.gpp}i/includes/baby-shoes.md}
-talk-macros.gpp}i/includes/conversation-computer.md}
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/centrifugal-governor.md}
-talk-macros.gpp}l/includes/what-is-ml-2.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
+\include{_ai/includes/diving-bell-butterfly.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/formula-one-engine.md}
+\include{_ai/includes/marcel-renault.md}
+\include{_ai/includes/caleb-mcduff.md}
+\include{_ai/includes/conversation.md}
+\include{_data-science/includes/information-growth.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/centrifugal-governor.md}
+\include{_ml/includes/what-is-ml-2.md}
+\include{_ml/includes/deep-learning-overview.md}
 
 \newslide{Systems Design}
 \slides{

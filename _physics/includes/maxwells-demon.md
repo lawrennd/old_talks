@@ -42,7 +42,7 @@
 <button id="maxwell-histogram" style="text-align:right">Histogram</button>
 </div>
 
-talk-macros.gpp}cripts/includes/maxwell-js.md}
+\include{_scripts/includes/maxwell-js.md}
 }{Maxwell's Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right, only if they are hot.}{maxwells-demon}
 
 

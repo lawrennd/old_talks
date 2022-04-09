@@ -25,21 +25,21 @@ venue: Huawei-Cambridge Workshop
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}i/includes/the-great-ai-fallacy.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
 
 \section{The Problem}
-talk-macros.gpp}i/includes/intellectual-debt-short.md}
-talk-macros.gpp}i/includes/buying-system.md}
-talk-macros.gpp}i/includes/buying-to-banking.md}
-talk-macros.gpp}i/includes/fit-systems.md}
+\include{_ai/includes/intellectual-debt-short.md}
+\include{_ai/includes/buying-system.md}
+\include{_ai/includes/buying-to-banking.md}
+\include{_ai/includes/fit-systems.md}
 \section{A Technology}
-talk-macros.gpp}q/includes/emulation.md}
+\include{_uq/includes/emulation.md}
 \section{A Solution}
-talk-macros.gpp}ata-science/includes/data-oriented-architectures-short.md}
-talk-macros.gpp}ata-science/includes/milan.md}
-talk-macros.gpp}q/includes/deep-emulation.md}
+\include{_data-science/includes/data-oriented-architectures-short.md}
+\include{_data-science/includes/milan.md}
+\include{_uq/includes/deep-emulation.md}
 
 \section{Conclusion}
 \slides{

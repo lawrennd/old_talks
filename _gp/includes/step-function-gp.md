@@ -2,8 +2,8 @@
 \define{stepFunctionGp}
 \editme
 
-talk-macros.gpp}l/includes/step-function-data.md}
-talk-macros.gpp}oftware/includes/gpy-software.md}
+\include{_ml/includes/step-function-data.md}
+\include{_software/includes/gpy-software.md}
 
 \subsection{Step Function Data GP}
 

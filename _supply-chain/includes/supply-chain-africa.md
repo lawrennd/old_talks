@@ -3,8 +3,8 @@
 
 \editme 
 
-talk-macros.gpp}upply-chain/includes/supply-chain.md}
-talk-macros.gpp}upply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 
 \subsection{For Africa}
 \slides{

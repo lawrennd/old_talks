@@ -3,7 +3,7 @@
 
 \editme
 
-talk-macros.gpp}imred/includes/dimensionality-reduction-intro.md}
+\include{_dimred/includes/dimensionality-reduction-intro.md}
 
 \subsubsection{Principal Component Analysis}
 \slides{

@@ -17,11 +17,11 @@ transition: None
 
 \slides{\section{AI via ML Systems}
 
-talk-macros.gpp}i/includes/alexa-system.md}
-talk-macros.gpp}i/includes/prime-air-system.md}
-talk-macros.gpp}q/includes/emulation.md}
-talk-macros.gpp}i/includes/supply-chain-system.md}
-talk-macros.gpp}i/includes/aws-soa.md}
+\include{_ai/includes/alexa-system.md}
+\include{_ai/includes/prime-air-system.md}
+\include{_uq/includes/emulation.md}
+\include{_ai/includes/supply-chain-system.md}
+\include{_ai/includes/aws-soa.md}
 
 
 \section{Intellectual Debt}
@@ -30,11 +30,11 @@ talk-macros.gpp}i/includes/aws-soa.md}
 
 \centerdiv{\daveClarkPicture{15%}\nevenaLalicPicture{15%}}
 
-talk-macros.gpp}i/includes/dsa-systems.md}
+\include{_ai/includes/dsa-systems.md}
 \section{AutoAI}
 
 
-talk-macros.gpp}q/includes/deep-emulation.md}
+\include{_uq/includes/deep-emulation.md}
 
 
 

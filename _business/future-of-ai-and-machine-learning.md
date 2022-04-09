@@ -22,15 +22,15 @@ potx: ../_includes/judge-exec-reference.potx
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
-talk-macros.gpp}ata-science/includes/evolved-relationship.md}
-talk-macros.gpp}i/includes/embodiment-factors-tedx.md}
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
-talk-macros.gpp}i/includes/five-ai-myths.md}
-talk-macros.gpp}usiness/includes/three-ai-actions.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_ai/includes/five-ai-myths.md}
+\include{_business/includes/three-ai-actions.md}
 
 
 \thanks

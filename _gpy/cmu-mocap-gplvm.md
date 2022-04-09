@@ -4,10 +4,10 @@ date: 2021-05-19
 ---
 
 
-talk-macros.gpp}lk-macros.gpp}
+\include{talk-macros.gpp}
 
-talk-macros.gpp}py/includes/gpy-notebook-setup.md}
+\include{_gpy/includes/gpy-notebook-setup.md}
 
-talk-macros.gpp}plvm/includes/cmu-mocap-gplvm.md}
+\include{_gplvm/includes/cmu-mocap-gplvm.md}
 
 \references

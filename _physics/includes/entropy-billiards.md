@@ -23,7 +23,7 @@
 <button id="multiball-histogram" style="text-align:right">Histogram</button>
 </div>
 
-talk-macros.gpp}cripts/includes/multiball-js.md}}{Bernoulli's simple kinetic models of gases assume that the molecules of air operate like billiard balls.}{entropy-billiards-js}
+\include{_scripts/includes/multiball-js.md}}{Bernoulli's simple kinetic models of gases assume that the molecules of air operate like billiard balls.}{entropy-billiards-js}
 
 
 \endif

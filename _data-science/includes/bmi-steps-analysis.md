@@ -1,7 +1,7 @@
 \ifndef{bmiStepsAnalysis}
 \define{bmiStepsAnalysis}
 
-talk-macros.gpp}atasets/includes/bmi-steps-data.md}
+\include{_datasets/includes/bmi-steps-data.md}
 
 \editme
 

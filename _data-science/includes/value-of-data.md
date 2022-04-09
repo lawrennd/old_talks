@@ -84,8 +84,8 @@ We require data-desalination before it can be consumed!
 
 But incentivising sharing requires incentivising collection and collation of data, and the associated credit allocation models.}
 
-talk-macros.gpp}ata-science/includes/data-readiness-levels.md}
-talk-macros.gpp}ata-science/includes/data-joel-tests.md}
+\include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-joel-tests.md}
 
 \newslide{Solutions}
 \slides{

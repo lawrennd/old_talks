@@ -15,7 +15,7 @@ First, we're going to download some particular python libraries for dealing with
 \installcode{geopandas}
 \installcode{pygeos}
 
-talk-macros.gpp}lai/includes/mlai-notebook-setup.md}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 
 \endif

@@ -26,16 +26,16 @@ papersize: a4paper
 transition: None
 ---
 
-talk-macros.gpp}lk-macros.tex}
+\include{talk-macros.tex}
 
 \section{Introduction}
 
-talk-macros.gpp}l/includes/what-is-ml.md}
-talk-macros.gpp}l/includes/data-science-vs-ai.md}
-talk-macros.gpp}i/includes/embodiment-factors.md}
-talk-macros.gpp}i/includes/deploying-ai.md}
-talk-macros.gpp}i/includes/ml-systems-design-long.md}
-talk-macros.gpp}i/includes/intelligent-system-paolo.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_ai/includes/deploying-ai.md}
+\include{_ai/includes/ml-systems-design-long.md}
+\include{_ai/includes/intelligent-system-paolo.md}
 
 \section{Conclusion}
 \newslide{Conclusion}

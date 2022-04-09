@@ -29,9 +29,9 @@ ipynb: true
 \code{%pip uninstall --yes matplotlib}
 \code{%pip install matplotlib==3.1.3}
 
-talk-macros.gpp}ds/includes/ads-notebook-setup.md}
+\include{_ads/includes/ads-notebook-setup.md}
 
-talk-macros.gpp}aps/includes/mapping-intro.md}
+\include{_maps/includes/mapping-intro.md}
 
 \notes{With all of this in mind, mapping data seems an appropriate domain in which to explore how we can assess a data set for use in a particular data science domain.}
 
@@ -39,17 +39,17 @@ talk-macros.gpp}aps/includes/mapping-intro.md}
 
 \notes{Before we start, we'll introduce a few other ideas to inspire how you think about the data you collage. In particular, a tool for creating "play data" and we'll introduce you to the interactive funcitonality of the notebook.}
 
-talk-macros.gpp}ata-science/includes/drawdata-play.md}
+\include{_data-science/includes/drawdata-play.md}
 
 \code{data_interact = drawdata_data}
 
-talk-macros.gpp}ata-science/includes/dataframe-interact.md}
+\include{_data-science/includes/dataframe-interact.md}
 
-talk-macros.gpp}aps/includes/mapping-intro.md}
-talk-macros.gpp}aps/includes/open-street-map.md}
+\include{_maps/includes/mapping-intro.md}
+\include{_maps/includes/open-street-map.md}
 
 
-talk-macros.gpp}ata-science/includes/open-street-map-nigeria-nmis-exercise.md}
+\include{_data-science/includes/open-street-map-nigeria-nmis-exercise.md}
 
 
 

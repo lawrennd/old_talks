@@ -2,7 +2,7 @@
 \define{gpySoftware}
 \editme
 
-talk-macros.gpp}oftware/includes/gpy-install.md}
+\include{_software/includes/gpy-install.md}
 
 \subsection{GPy: A Gaussian Process Framework in Python}
 

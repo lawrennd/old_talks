@@ -21,21 +21,21 @@ transition: None
 
 \section{Introduction}
 
-talk-macros.gpp}i/includes/intelligent-system-paolo.md}
-talk-macros.gpp}l/includes/deep-learning-overview.md}
+\include{_ai/includes/intelligent-system-paolo.md}
+\include{_ml/includes/deep-learning-overview.md}
 
 
-talk-macros.gpp}upply-chain/includes/containerisation.md}
-talk-macros.gpp}upply-chain/includes/supply-chain-motto.md}
+\include{_supply-chain/includes/containerisation.md}
+\include{_supply-chain/includes/supply-chain-motto.md}
 
 
-talk-macros.gpp}q/includes/emulation.md}
+\include{_uq/includes/emulation.md}
 
-\notes{talk-macros.gpp}q/includes/uq-intro.md}}
-talk-macros.gpp}q/includes/uncertainty-quantification.md}
+\notes{\include{_uq/includes/uq-intro.md}}
+\include{_uq/includes/uncertainty-quantification.md}
 
-talk-macros.gpp}q/includes/emukit-playground.md}
-talk-macros.gpp}oftware/includes/emukit-software.md}
+\include{_uq/includes/emukit-playground.md}
+\include{_software/includes/emukit-software.md}
 
 \notes{For monitoring systems in production, emulation needn't just be about simulator models. What we envisage, is that even data driven models could be emulated. This is important for understanding system behaviour, how the different components are interconnected. This drives the notion of the *information dynamics* of the machine learning system. What is the effect of one particular intervention in the wider system? One way of answering this is through emulation. But it requires that our machine learning models (and our simulators) are deployed in an environment where emulation can be automatically deployed. The resulting system would allow us to monitor the downstream effects of indivdiual decision making on the wider system. 
 
@@ -47,10 +47,10 @@ talk-macros.gpp}oftware/includes/emukit-software.md}
 
 While there are some difficulties in algorithmically implementing these algorithms at scale, they are mathematically far simpler than the equivalent neural network models, and perhaps as a result offer greater promise for theoretical understanding of deep learning [see e.g. @Dunlop:deep2017]. }
 
-talk-macros.gpp}eepgp/includes/deep-gp.md}
-talk-macros.gpp}eepgp/includes/olympic-marathon-deep-gp.md}
+\include{_deepgp/includes/deep-gp.md}
+\include{_deepgp/includes/olympic-marathon-deep-gp.md}
 
-talk-macros.gpp}l/includes/mxfusion-intro.md}
+\include{_ml/includes/mxfusion-intro.md}
 
 
 \subsection{Conclusion}
