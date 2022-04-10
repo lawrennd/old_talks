@@ -24,7 +24,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2022-04-09
-venue: "William Gates Building"
+venue: "LT1, William Gates Building, Cambridge Festival"
 transition: None
 ---
  
