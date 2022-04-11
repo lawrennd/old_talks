@@ -135,24 +135,13 @@ Car engines produce prodigious power from petrol. Machine intelligences deliver 
 
 \notes{But when considering fairness, it seems that there's two forms that we might consider.}
 
+\notes{\include{_ai/includes/p-n-fairness.md}}
+
 \newslide
 
+\slides{\figure{\includediagramclass{\diagramsDir/ai/n-p-fairness}{80%}}{We seem to have two different aspects to fairness, which in practice can be in tension.}{n-p-fairness}}
 
-\figure{\includediagramclass{\diagramsDir/ai/n-p-fairness}{80%}}{We seem to have two different aspects to fairness, which in practice can be in tension.}{n-p-fairness}
-
-\notes{We've outlined $n$-fairness and $p$-fairness. By $n$-fairness we mean the sort of considerations that are associated with *substantive* equality of opportunity vs *formal* equality of opportunity. Formal equality of community is related to $p$-fairness. This is sometimes called procedural fairness and we might think of it as a *performative* form of fairness. It's about clarity of rules, for example as applied in sport. $n$-Fairness is more nuanced. It's a reflection of society's normative judgment about how individuals may have been disadvantaged, e.g. due to their upbringing.}
-
-\notes{The important point here is that these forms of fairness are in tension. Good procedural fairness needs to be clear and understandable. It should be clear to everyone what the rules are, they shouldn't be obscured by jargon or overly subtle concepts. $p$-Fairness should not be easily undermined by adversaries, it should be difficult to "cheat" good $p$-fairness. However, $n$-fairness requires nuance, understanding of the human condition, where we came from and how different individuals in our society have been advantaged or disadvantaged in their upbringing and their access to opportunity.}
-
-\notes{Pure $n$-fairness and pure $p$-fairness both have the feeling of dystopias. In practice, any decision making system needs to balance the two. The correct point of operation will depend on the context of the decision. Consider fair rules of a game of football, against fair distribution of social benefit. It is unlikely that there is ever an objectively correct balance between the two for any given context. Different individuals will favour $p$ vs $n$ according to their personal values.}
-
-\notes{Given the tension between the two forms of fairness, with $p$ fairness requiring simple rules that are understandable by all, and $n$ fairness requiring nuance and subtlety, how do we resolve this tension in practice?}
-
-\notes{Normally in human systems, significant decisions involve trained professionals. For example, judges, or accountants or doctors.}
-
-\notes{Training a professional involves lifting their "reflexive" response to a situation with "reflective" thinking about the consequences of their decision that rely not just on the professional's expertise, but also their knowledge of what it is to be a human.}
-
-\notes{This *marvellous* resolution exploits the fact that while humans are increadibly complicated nuanced entities, other humans have an intuitive ability to understand their motivations and values. So the human is a complex entity that seems simple to other humans.}
+\notes{\include{_ai/includes/reflexive-reflective.md}}
 
 \newslide
 
@@ -176,11 +165,14 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \notes{So, what are the resolutions for this problem? At Cambridge we are focussed on three different interventions.}
 
-\newslide{Accelerate Program: Empower the User}
-
 \notes{The first example is empowering those who want to use AI through *education* and tool development. The [Accelerate Programme for Scientific Discovery](https://acceleratescience.github.io/index.html), sponsored by Schmidt Futures, focusses on empowering scientists and other domains across the University with the tools and understanding they need to make use of AI in practice.}
 
-\figure{\includepng{\diagramsDir/ai/accelerate-science-project-page}{60%}}{Empower domain experts to ensure that they are using AI as a tool, understanding the implications of how they deploy their solutions, and how they can refine their scientific explorations with these new capabilities.}{accelerate-science-project}
+\notes{\include{_accelerate/includes/accelerate-programme.md}}
+
+\newslide{Accelerate Program: Empower the User}
+
+\slides{\figure{\includepng{\diagramsDir/accelerate/accelerate-website}{70%}}{The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <http://acceleratescience.github.io>}{accelerate-website}
+}
 
 \newslide
 
@@ -190,9 +182,12 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \notes{Other examples of this form of work include our collaboration with [Data Science Africa](http://www.datascienceafrica.org/), which focusses on empowering individuals with solutions for solving challenges that emerge in the African context.}
 
-\newslide{Auto AI: Resolve Intellectual Debt}
+\newslide{AutoAI: Resolve Intellectual Debt}
 
 \figure{\includepng{\diagramsDir/ai/autoai-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{autoai-project-page}
+
+\notes{\include{_ai/includes/turing-ai-fellowship-intro.md}}
+
 
 \notes{A second intervention is dealing with the complexity of the software systems that underpin modern AI solutions. Even if two individuals, say African masters students, who are technically capable and have an interesting idea, deploy their idea. One challenge they face is the operational load in *maintaining* and *explaining* their software systems. The challenge of *maintaining* is known as intellectual debt [@Sculley:debt15], the problem of *explaining* is known as [intellectual debt](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c).}
 
@@ -200,32 +195,15 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \newslide{Data Trusts: Empower People through their Data}
 
+\figure{\includepng{\diagramsDir/governance/data-trusts-initiative-project-page}{60%}}{The Data Trusts Initiative (\href{https://datatrusts.uk/}{http://datatrusts.uk}) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.}{data-trusts-initiative-website}
+
 \notes{The third intervention goes direct to the source of the machine's power. What we are seeing is an emergent *[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)* based on the power that comes with aggregation of data. [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) are form of data intermediary designed to reutrn the power associated with this data accumulation to the originators of the data, that is us.}
 
-\notes{The [Data Trusts Initiative](https://datatrusts.uk/), funded by the Patrick J. McGovern Foundation is supporting three pilot projects that consider how bottom-up empowerment can redress the imbalance associated with the digital oligarchy.}
+\notes{\include{_governance/includes/data-trusts.md}
 
-\figure{\includepng{\diagramsDir/ai/data-trusts-initiative-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{data-trusts-initiative-project-page}
-
-\newslide{AI@Cam}
-
-\figure{\includegif{\diagramsDir/ai/inference-group-logo}{20%}}{AI@Cam is a Flagship Programme that supports AI research across the University.}{ai-at-cam-flagship}
-
-\notes{Finally, we are working across the University to empower the diversity ofexpertise and capability we have to focus on these broad societal problems. We will shortly be launching AI@Cam, with a landscaping document, outlining these challenges and exploring different strategies the University has to address them.} 
-
-\subsection{Conclusions}
-
-* Humans view intelligence as embodied, but AI is not embodied.
-* Critical decisions are dependent on human nuance to reconcile the tension between $p$-Fairness and $n$-Fairness.
-* This implies that AI should only ever be seen as a tool of humans.
-* Much of current technology makes us a tool of the AI.
-
-\newslide{Conclusions Contd}
-
-* Three interventions to address this.
-  * Empower the humans to better use the tools.
-  * Develop better standards for creating AI systems.
-  * Develop data intermediaries to allow citizens to have a voice in how their data is used.
-  
+\include{_ai/includes/ai-at-cam.md}
+\include{_ai/includes/reclaiming-control-conclusions.md}
+ 
 \thanks
 
 \references

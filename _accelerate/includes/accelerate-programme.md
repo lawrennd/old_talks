@@ -32,9 +32,8 @@ AI in their research.}
 
 \notes{* Research: we’re developing a research agenda that develops
 and applies cutting edge machine learning methods to scientific
-challenges, with four Accelerate Research fellows working directly on
-issues relating to computational biology, psychiatry, string theory
-and materials science. While we’re concentrating on STEM subjects for
+challenges, with three Accelerate Research fellows working directly on
+issues relating to computational biology, psychiatry, and string theory. While we’re concentrating on STEM subjects for
 now, in the longer term our ambition is to build links with the social
 sciences and humanities.}
 
