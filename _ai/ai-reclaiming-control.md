@@ -193,13 +193,13 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \notes{The [AutoAI project](https://mlatcl.github.io/projects/autoai.html), sponsored by an ATI Senior AI Fellowship addresses this challenge.}
 
-\newslide{Data Trusts: Empower People through their Data}
+\subsection{Data Trusts: Empower People through their Data}
 
 \figure{\includepng{\diagramsDir/governance/data-trusts-initiative-project-page}{60%}}{The Data Trusts Initiative (\href{https://datatrusts.uk/}{http://datatrusts.uk}) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.}{data-trusts-initiative-website}
 
 \notes{The third intervention goes direct to the source of the machine's power. What we are seeing is an emergent *[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)* based on the power that comes with aggregation of data. [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) are form of data intermediary designed to reutrn the power associated with this data accumulation to the originators of the data, that is us.}
 
-\notes{\include{_governance/includes/data-trusts.md}
+\notes{\include{_governance/includes/data-trusts.md}}
 
 \include{_ai/includes/ai-at-cam.md}
 \include{_ai/includes/reclaiming-control-conclusions.md}
