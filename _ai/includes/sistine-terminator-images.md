@@ -1,7 +1,7 @@
 \ifndef{sistineTerminatorImages}
 \define{sistineTerminatorImages}
 
-\endif
+\editme
 
 \newslide
 
