@@ -45,6 +45,8 @@ transition: None
 
 \notes{Please watch [this excerpt](https://www.youtube.com/watch?v=ubq3ayuG2EY) from the Lex Friedman podcast, interviewing with the roboticist Rodney Brooks. Please read this [blog post by Jonathan Zittrain on Intellectual Debt](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c).}
 
+\notes{For another informed opinion read what [John Naughton has to say on the UK situation](https://www.theguardian.com/commentisfree/2022/apr/23/a-self-driving-revolution-dont-believe-the-hype-were-barely-out-of-second-gear).}
+
 \notes{For the facemasks case study read the summary of [this report on facemasks](https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html) and the responses [from scientists to the report](https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/).}
 
 

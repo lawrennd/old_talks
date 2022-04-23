@@ -7,9 +7,7 @@ abstract: |
   a lot better than radiologists, it might be 10 years, but we've got
   plenty of radiologists already."
 
-Geoff likes to court controversy, but how well does that statement stand up with time? Elon Musk also said that we'd have
-
-
+  Geoff likes to court controversy, but how well does that statement stand up with time? Elon Musk also said that we'd have full sel
 
 date: 2022-04-27
 pptx: False
@@ -33,9 +31,10 @@ transition: None
 <https://www.youtube.com/watch?v=2HMPRXstSvQ&t=29s>
 <https://youtu.be/wsixsRI-Sz4?t=4682>
 
-Rod Brooks: <https://youtu.be/ubq3ayuG2EY?t=183>
+Rod Brooks: <https://youtu.be/ubq3ayuG2EY?t=620>
 
-"I think we're less than 2 years away form complete autonomy, safer than a human.
+"I think that we're basically less than 2 years away form complete autonomy, safer than a human." at the Code Conference 2nd June 2016. https://youtu.be/wsixsRI-Sz4?t=4680
+
 \section{My Background}
 
 \notes{I'd like to start this talk by emphasizing that I don't know anything about emergency medicine, except what I picked up by cycling with a friend who works in A&E in Rotherham. 
