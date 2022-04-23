@@ -3,11 +3,9 @@
 
 \editme
 
-\section{Intellectual Debt}
+\include{_ai/includes/intellectual-debt-blog-post.md}
 
-\figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
-
-\newslide{Technical Debt}
+\subsection{Technical Debt}
 
 \slides{* Compare with *technical debt*.
 * Highlighted by @Sculley:debt15.}
