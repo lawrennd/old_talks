@@ -17,7 +17,7 @@
 				  
 \setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
-\displaycode{nu.notebook.display_plots('\initials-google-trends{sample:0>3}.svg', 
+\displaycode{nu.display_plots('\initials-google-trends{sample:0>3}.svg', 
                             '\writeDiagramsDir/data-science/', sample=IntSlider(0, 0, 4, 1))}
 
 
