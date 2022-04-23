@@ -20,7 +20,7 @@ You can also check this} \addblog{Open Data Science}{2014/07/01/open-data-scienc
 
 \notes{The code is also available on GitHub: <https://github.com/lawrennd/ods>
 
-Once ``pods`` is installed, it can be imported in the usual manner.}
+Once `pods` is installed, it can be imported in the usual manner.}
 
 \setupcode{import pods}
 
