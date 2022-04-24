@@ -141,7 +141,7 @@ How have we achieved this?}
 
 \include{_books/includes/rebel-ideas.md}
 
-\comment{Hygeia and Panacea}
+\comment{Hygeia and Panacea ... calibrated understanding (it is not a fix all, but it is not useless).}
 
 \comment{AI@Cam}
 
