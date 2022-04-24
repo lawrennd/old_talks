@@ -5,10 +5,11 @@ abstract: |
   suggested "People should stop training radiologists now, it's just
   completely obvious that within 5 years deep learning is going to do
   a lot better than radiologists, it might be 10 years, but we've got
-  plenty of radiologists already."
+  plenty of radiologists already.
 
-  Geoff likes to court controversy, but how well does that statement stand up with time? Elon Musk also said that we'd have full sel
+  Geoff likes to court controversy, but how well does that statement stand up with time? Elon Musk also said that we'd have fully autonomous drivng by 2018. What happened to that? Both these predictions are examples of the Great AI Fallacy. The idea that we have finally devoloped automation technology that can adapt to that. The reality is more mundane, but it doesn't mean that AI can't help.
 
+  In this talk I'll give some sense of the challenges and the solutions.
 date: 2022-04-27
 pptx: False
 docx: False
@@ -26,20 +27,18 @@ venue: East Anglian Radiological Society Annual Meeting
 transition: None
 ---
 
-<https://qz.com/2016153/ai-promised-to-revolutionize-radiology-but-so-far-its-failing/>
+\comment{<https://qz.com/2016153/ai-promised-to-revolutionize-radiology-but-so-far-its-failing/>
 
 <https://www.youtube.com/watch?v=2HMPRXstSvQ&t=29s>
 <https://youtu.be/wsixsRI-Sz4?t=4682>
 
 Rod Brooks: <https://youtu.be/ubq3ayuG2EY?t=620>
 
-"I think that we're basically less than 2 years away form complete autonomy, safer than a human." at the Code Conference 2nd June 2016. https://youtu.be/wsixsRI-Sz4?t=4680
+"I think that we're basically less than 2 years away form complete autonomy, safer than a human." at the Code Conference 2nd June 2016. https://youtu.be/wsixsRI-Sz4?t=4680}
 
 \section{My Background}
 
-\notes{I'd like to start this talk by emphasizing that I don't know anything about emergency medicine, except what I picked up by cycling with a friend who works in A&E in Rotherham. 
-
-So as far as I'm aware, all emergency medicine doctors are extremely good cyclists. 
+\notes{I'd like to start this talk by emphasizing that I'm not an expert in radiology.
 
 What I do know about is deployments of machine learning, how they succeed, how they fail. Both from a manager's perspective, a domain expert's perspective and a user's perspective. For our context, let's map these people onto the senior administrator, the doctors and nurses and the patients.}
 
@@ -69,17 +68,22 @@ The truth is that the current generation of artificial intelligence solutions ar
 
 \notes{I was skimming a recent nature paper about these techniques in medicine, a paper that used machine learning to classify potentially cancerous images. Throuhout the paper they refer to an 'AI system'. Whether it is conscious or not, the paper plays on our tendency to anthrox. It makes the work feel like it's doing something magical, that it relates to our intelligence. This is a particularly dangerous trap for a medical professional to fall into.}
 
-\notes{Managers see AI as a way of improving processes and giving them more control over decision making in their organisation. People are hard to control, computers are easy to control.
+\include{_ai/includes/sistine-terminator-images.md}
 
-Domain experts have an understanding of context of decisions, and an intuition about what the right decision might be. But they can be blind to unusual situations and overly convinced by their own expertise. 
+\notes{Managers see AI as a way of improving processes and giving them more control over decision making in their organisation. People are hard to control, computers are easy to control.}
 
-Users are placing trust in the decision making process. They want to believe in the outcome, and like to think that it considers there personal circumstances and that it is fair in some way.}
+\notes{Domain experts have an understanding of context of decisions, and an intuition about what the right decision might be. But they can be blind to unusual situations and overly convinced by their own expertise.}
+
+\notes{Users are placing trust in the decision making process. They want to believe in the outcome, and like to think that it considers there personal circumstances and that it is fair in some way.}
 
 \include{_ai/includes/newcomen-steam-engine.md}
 
-\notes{The promise of artificial intelligence is that it is the first generation of automation that will adapt to us rather than us adapting to it. What do I mean by that? The challenges of automation are not new. In the 18th century, automation of the physical labour of pumping mines clear of water was a priority, and the steam engine was invented and evolved for that task. The challenge is that the engine is not flexible, it is designed to do one job repetitively. It is like a small baby. It needs feeding, it needs cleaning, and it has regular emissions. It has no concept of time or convenience of those that maintain it. 
+\subsection{The Great AI Fallacy}
 
-Although the computer is more advanced than the steam engine in many respects, it is still utterly dependent on its human operators. For the information it gets in the form of data (the input coal) to the actions it takes in response (the operation of the mine pump). It doesn't have a contextual awareness of side effects of those decisions because they don't fall within its cognitive landscape. Just like the steam engine, it doesn't wear nappies, so any unaccounted for side effects of feeding it with data are felt by the environment.}
+\notes{The promise of artificial intelligence is that it is the first generation of automation that will adapt to us rather than us adapting to it. What do I mean by that? The challenges of automation are not new. In the 18th century, automation of the physical labour of pumping mines clear of water was a priority, and the steam engine was invented and evolved for that task. The challenge is that the engine is not flexible, it is designed to do one job repetitively. It is like a small baby. It needs feeding, it needs cleaning, and it has regular emissions. It has no concept of time or convenience of those that maintain it.}
+
+\notes{Although the computer is more advanced than the steam engine in many respects, it is still utterly dependent on its human operators. For the information it gets in the form of data (the input coal) to the actions it takes in response (the operation of the mine pump). It doesn't have a contextual awareness of side effects of those decisions because they don't fall within its cognitive landscape. Just like the steam engine, it doesn't wear nappies, so any unaccounted for side effects of feeding it with data are felt by the environment.}
+
 
 \newslide{}
 
@@ -122,9 +126,9 @@ How have we achieved this?}
 
 \notes{An excellent way of considering these two challenges can be done today, without major AI expertise. If you have an idea for how AI can help you in your job, here's my suggestion. Go back to your department and mock-it-up. Whatever decision the AI is going to take can be first taken by a human. Decide what information that human will have available. Choose something where the human is going to make a decision quickly on the basis of only the information they have in front of them. The decision should be one that can take less than a second. Now install that human in your decision making pipeline. How is that decision going to be presented to patients, nurses and doctors? What does the interface look like? Remember, you don't get to ask the decision maker to contextualise it, you need to be able to take the decision at face value and integrate it into your existing processes.}
 
-\notes{I suspect there are very few areas where this can be usefully done in an exising A&E department. Why aren't there more? Because currently most of the processes rely on human flexibility and ability to contextualise. They are poorly documented, and in many cases deliberately obscured in an effort to protect individual domains. The very excercise of understanding why these decisions are difficult to make can be helpful in improving processes in any organisation, and I suspect A&E departments in hospitals are no different.}
+\notes{This is the reason that radiology has been such a target for machine learning algorithms. So the question for radiologists, what is it that they are bringing on top of this type of judgmenet?}
 
-\notes{It's equivalent to turning up in a 16th century farm with an internal combustion engine. At that time in the UK^[farm] 58% of the labour force worked in agriculture, today 1.2% of the labour force are in agriculture. But the only people who are empowered to make this change are the domain experts. The people in this room.
+\notes{Deploying AI in these environments is equivalent to turning up in a 16th century farm with an internal combustion engine. At that time in the UK^[farm] 58% of the labour force worked in agriculture, today 1.2% of the labour force are in agriculture. But the only people who are empowered to make this change are the domain experts. The people in this room.
 
 [farm]: https://ourworldindata.org/employment-in-agriculture
 
@@ -137,6 +141,11 @@ How have we achieved this?}
 
 \include{_books/includes/rebel-ideas.md}
 
+\comment{Hygeia and Panacea}
+
+\comment{AI@Cam}
+
+\reading
 
 \thanks
 

@@ -36,7 +36,7 @@ transition: None
 
 \newslide
 
-\notes{The key idea I wasnt to communicate next is related to our ability to share our thoughts.}
+\notes{The key idea I want to communicate next is related to our ability to share our thoughts.}
 
 \include{_ai/includes/the-diving-bell-butterfly.md}
 
