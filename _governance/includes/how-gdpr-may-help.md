@@ -8,7 +8,7 @@
 
 \newslide{}
 
-\slides{\aligncenter{Convention for the Protection of *Individuals* with regard to Automatic Processing of *Personal Data* (1981/1/28)}}
+\figure{\includepng{\diagramsDir/data-science/convention-108-coe}{70%}}{The convention for the protection of individuals with regard to the processing of personal data was opened for signature on 28th January 1981. It was the first legally binding international instrument in the field of data protection.}{convention-108-coe}
 
 \newslide{How GDPR May Help}
 \slides{

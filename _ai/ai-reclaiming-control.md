@@ -29,66 +29,14 @@ transition: None
 ---
  
 
-\notes{\section{Introduction}}
+\notes{\section{Introduction}
 
-\notes{It’s said that Henry Ford’s customers wanted a “a faster horse”. If Henry Ford was selling us artificial intelligence today, what would the customer call for, “a smarter human”? That’s certainly the picture of machine intelligence we find in science fiction narratives, but the reality of what we’ve developed is much more mundane. 
- 
-Car engines produce prodigious power from petrol. Machine intelligences deliver decisions derived from data. In both cases the scale of consumption enables a speed of operation that is far beyond the capabilities of their natural counterparts. Unfettered energy consumption has consequences in the form of climate change. Does unbridled data consumption also have consequences for us? 
- 
- If we devolve decision making to machines, we depend on those machines to accommodate our needs. If we don’t understand how those machines operate, we lose control over our destiny. Our mistake has been to see machine intelligence as a reflection of our intelligence. We cannot understand the smarter human without understanding the human. To understand the machine, we need to better understand ourselves.}
+\notes{\include{_ai/includes/henry-ford-intro.md}}
+\include{_ai/includes/cambridge-personal-history.md}
 
 \newslide
 
-\notes{Cambridge has been involved in the formulation of the methods used in the current wave of AI solutions since their beginnings. In 1997 I attend the Machine Learning and Generalisation Summer School at the Newton Institute. There we heard from many of those who developed the methods that are foundational to the recent wave of progress, including Geoff Hinton and Yann LeCun.}
- 
-\figure{\includejpg{\diagramsDir/people/1997-08-02-neil-newton-institute}{70%}}{Neil standing outside the Newton Institute on 2nd August 1997, just after arriving for "Generalisation in Neural Networks and Machine Learning", [see page 26-30 of this report](http://www.newton.ac.uk/files/reports/annual/ini_annual_report_97-98.pdf).}{neil-newton-institute}
-
-\newslide
-
-\figure{\includejpg{\diagramsDir/art/sistine-chapel-ceiling}{100%}}{The ceiling of the Sistine Chapel.}{cappella-sistina-ceiling}
-
-
-\notes{[Patrick Boyde](https://www.mmll.cam.ac.uk/pb127)'s talks on the Sistine Chapel focussed on both the structure of the chapel ceiling, describing the impression of height it was intended to give, as well as the significance and positioning of each of the panels and the meaning of the individual figures.}
-
-\newslide
-
-\figure{\includejpg{\diagramsDir/art/the-creation-of-man-michelangelo}{80%}}{Photo of Detail of Creation of Man from the Sistine chapel ceiling.}{the-creation-of-man-michelangelo}
-
-\notes{One of the most famous panels is central in the ceiling, it's the creation of man. Here, God in the guise of a pink-robed bearded man reaches out to a languid Adam.}
-
-\newslide
-
-\notes{The representation of God in this form seems typical of the time, because elsewhere in the Vatican Museums there are similar representations.}
-
-\figure{\includejpg{\diagramsDir/art/the-creation-of-man-detail-god-michelangelo}{80%}}{Photo detail of God.}{the-creation-of-man-detail-god-michelangelo}
-
-\notes{<https://commons.wikimedia.org/wiki/File:Michelangelo,_Creation_of_Adam_04.jpg>}
-
-
-\newslide
-
-\notes{For a time at the head of all articles about AI, an [image of the terminator](https://www.flickr.com/photos/tom-margie/2144882415/sizes/o/) was included.}
-
-\figure{\includejpg{\diagramsDir/ai/terminator-image}{70%}}{Image of James Cameron's terminator. Images like this have been used to illustrate articles about artificial intelligence.}{terminator-image}
-
-
-\newslide
-
-\notes{Sometimes, this image is even combined with that of God to create what [Beth Singler](https://bvsingler.com), a digital anthropologist who is a JRF at Hmerton College, refers to as the creation meme [@Singler-aicreation20].} 
-
-\figure{\includejpg{\diagramsDir/people/beth-singler}{80%}}{Beth Singler is a digital anthropologist who holds a JRF at Homerton College. She has explored parallels between the Michelangelo image of creation and our own notion of robotic creation}{beth-singler}
-
-\notes{So in a very real sense, we can see that both God and AI are viewed by us as embodied intelligences, whether creator or created. We show these other-intelligences in a humanoid form.}
-
-\newslide
-
-\figure{\includejpg{\diagramsDir/people/david-j-c-mackay}{40%}}{Photo of David Mackay on Bicycle by David Stern. Taken for the book "Sustainable Energy without the Hot Air".}{david-j-c-mackay}
-
-\notes{My own understanding of why we might want to picture these intelligences as embodied goes back to lectures I heard at the institute by David MacKay. By the time I arrived in Cambridge, David was very focussed on the relationships between learning and information theory, and as well as his lecture at the Newton Institute, his group meetings were focussed on information theory and machine learning.}
-
-\newslide
-
-\notes{The key idea I wasnt to communicate next is related to our ability to share our thoughts.}
+\notes{The key idea I want to communicate next is related to our ability to share our thoughts.}
 
 \include{_ai/includes/the-diving-bell-butterfly.md}
 
@@ -193,13 +141,13 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \notes{The [AutoAI project](https://mlatcl.github.io/projects/autoai.html), sponsored by an ATI Senior AI Fellowship addresses this challenge.}
 
-\newslide{Data Trusts: Empower People through their Data}
+\subsection{Data Trusts: Empower People through their Data}
 
 \figure{\includepng{\diagramsDir/governance/data-trusts-initiative-project-page}{60%}}{The Data Trusts Initiative (\href{https://datatrusts.uk/}{http://datatrusts.uk}) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.}{data-trusts-initiative-website}
 
 \notes{The third intervention goes direct to the source of the machine's power. What we are seeing is an emergent *[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)* based on the power that comes with aggregation of data. [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) are form of data intermediary designed to reutrn the power associated with this data accumulation to the originators of the data, that is us.}
 
-\notes{\include{_governance/includes/data-trusts.md}
+\notes{\include{_governance/includes/data-trusts.md}}
 
 \include{_ai/includes/ai-at-cam.md}
 \include{_ai/includes/reclaiming-control-conclusions.md}
