@@ -30,7 +30,7 @@
 
 * Report: <https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html>
 * Responses: <https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/>
-\slides{* Decision making with uncertainty ([@Diggle-decision20](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463))
+\slides{* Decision making with uncertainty [[@Diggle-decision20]](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463)}
 
 \notes{For further reading on how some felt that decisions should be made, you can [see @Diggle-decision20](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463).}
 

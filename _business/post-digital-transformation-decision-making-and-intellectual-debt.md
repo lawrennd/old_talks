@@ -41,7 +41,7 @@ transition: None
 \aligncenter{Neil Lawrence}
 \aligncenter{Professor of Machine Learning}}
 
-\subsection{Pre-Read Material}
+\notes{\subsection{Pre-Read Material}}
 
 \notes{Please watch [this excerpt](https://www.youtube.com/watch?v=ubq3ayuG2EY) from the Lex Friedman podcast, interviewing with the roboticist Rodney Brooks. Please read this [blog post by Jonathan Zittrain on Intellectual Debt](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c).}
 
@@ -66,7 +66,7 @@ transition: None
 3. visibility and some influence
 4. leader (lead on data and AI developments)}
 
-\slides{\aligncenter{Discussion: to 14:15}}
+\slides{\aligncenter{**Discussion**}}
 
 \section{Embodiment and Intellectual Debt}
 
@@ -119,9 +119,8 @@ transition: None
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
 
-\newslide{Case Study: 15:00}
+\newslide{Case Study}
 
-\newslide{15 Minute Break!}
 
 \include{_policy/includes/face-masks-case-study.md}
 
@@ -131,7 +130,6 @@ transition: None
 
 \newslide{Breakout: What would *you* do in *your* company?}
 
-* Finish 16:30
 
 \include{_business/includes/gorilla-conclusion.md}
 
