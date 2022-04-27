@@ -9,7 +9,7 @@ abstract: |
 
   Geoff likes to court controversy, but how well does that statement stand up with time? Elon Musk also said that we'd have fully autonomous drivng by 2018. What happened to that? Both these predictions are examples of the Great AI Fallacy. The idea that we have finally devoloped automation technology that can adapt to that. The reality is more mundane, but it doesn't mean that AI can't help.
 
-  In this talk I'll give some sense of the challenges and the solutions.
+  This talk will start with this provocation, and comparing it with the situation with self driving cars, we'll then move to discussion.
 date: 2022-04-27
 pptx: False
 docx: False
