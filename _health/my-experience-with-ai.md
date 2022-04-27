@@ -2,10 +2,10 @@
 title: "My Experience with AI"
 abstract: |
   In 2016 Geoff Hinton, one of the most respected researchers in AI
-  suggested "People should stop training radiologists now, it's just
+  suggested 'People should stop training radiologists now, it's just
   completely obvious that within 5 years deep learning is going to do
   a lot better than radiologists, it might be 10 years, but we've got
-  plenty of radiologists already.
+  plenty of radiologists already.'
 
   Geoff likes to court controversy, but how well does that statement stand up with time? Elon Musk also said that we'd have fully autonomous drivng by 2018. What happened to that? Both these predictions are examples of the Great AI Fallacy. The idea that we have finally devoloped automation technology that can adapt to that. The reality is more mundane, but it doesn't mean that AI can't help.
 
