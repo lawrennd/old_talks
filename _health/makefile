@@ -1,3 +1,3 @@
-BASE=leveraging-opportunities-of-the-fourth-industrial-revolution-to-develop-successful-careers-in-the-field-of-healthcare-the-pains-and-gains
+BASE=my-experience-with-ai
 include ../make-talk-flags.mk
 include ../make-talk.mk
