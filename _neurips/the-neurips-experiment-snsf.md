@@ -34,6 +34,7 @@ Inconsistency is to do with subjectivity: Lack of Transitivity in Rankings
 https://twitter.com/Michael_J_Black/status/1487744025239117829?s=20&t=H2Gb2b51HoZPatHYT0CJOw
 
 https://samgoree.github.io/2021/09/14/iaqa.html
+https://samgoree.github.io/2021/11/02/optimization.html
 
 https://twitter.com/lawrennd/status/1440560979260051466?s=21&t=k5yUWz2hXac3ZDJPWXVBDg
 
