@@ -1,8 +1,60 @@
+---
+title: The NeurIPS Experiment
+venue: Swiss National Science Foundation
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Cambridge
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+abstract: >
+  In 2014, along with Corinna Cortes, I was Program Chair of the Neural Information Processing Systems conference. At the time, when wondering about innovations for the conference, Corinna and I decided it would be interesting to test the consistency of reviewing. With this in mind, we randomly selected 10% of submissions and had them reviewed by two independent committees. 
+  
+  In this talk I will briefly review the construction of the experiment, explain how the NeurIPS review process worked and talk about what I felt the implications for reviewing were, vs what the community reaction was.
+date: 2022-05-10
+ipynb: True
+categories:
+- notes
+layout: talk
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
+---
 
 
+
+Correctness is elusive, so people use consistency as a replacement.
+
+Since we are incorrect, consistency is dangerous.
+
+Inconsistency is to do with subjectivity: Lack of Transitivity in Rankings
+
+https://twitter.com/Michael_J_Black/status/1487744025239117829?s=20&t=H2Gb2b51HoZPatHYT0CJOw
+
+https://samgoree.github.io/2021/09/14/iaqa.html
 
 https://twitter.com/lawrennd/status/1440560979260051466?s=21&t=k5yUWz2hXac3ZDJPWXVBDg
 
+Neurips summary: basically most reviewers are 50% subjective and 50% objective (comes from calibration and experiment)
+
+Given that we can simulate consistency of decisions. 
+
+\section{Introduction}
+
+\notes{The NIPS experiment was an experiment to determine the consistency of the review process. After receiving papers, we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}
+
+\notes{To run the experiment, we created two separate committees within the NIPS program committee. The idea was that the two separate committees would review each duplicated paper independently and results compared.}
+
+\include{_neurips/includes/neurips-in-numbers.md}
+\include{_neurips/includes/paper-scoring.md}
+\include{_neurips/includes/neurips-experiment-speculation.md}
+\include{_neurips/includes/neurips-experiment-results.md}
+\include{_neurips/includes/neurips-experiment-reaction.md}
+\include{_neurips/includes/neurips-experiment-random-committee.md}
+
+<!--include{_neurips/includes/neurips-experiment.md}-->
 \include{_neurips/includes/neurips-reviewer-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
