@@ -15,8 +15,6 @@ venue: Wellcome Human Cell Atlas Meeting
 transition: None
 ---
 
-\include{../talk-macros.tex}
-
 \notes{These notes give background to a 10 minute talk on Data Trusts given at the Human Cell Atlas Meeting. For more information on this work you can check our recently announced ["Data Trusts Initiative"]() and the [associated website](https://datatrusts.uk/).}
 
 \include{_governance/includes/data-property.md}
