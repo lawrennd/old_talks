@@ -25,8 +25,14 @@ transition: None
 ---
 
 \include{_ai/includes/embodiment-factors-short.md}
+\include{_data-science/includes/evolved-relationship.md}
 \include{_governance/includes/data-property.md}
-\include{_governance/includes/gdpr-origins.md}
+\newslide{}
+
+\figure{\includepng{\diagramsDir/data-science/convention-108-coe}{70%}}{The convention for the protection of individuals with regard to the processing of personal data was opened for signature on 28th January 1981. It was the first legally binding international instrument in the field of data protection.}{convention-108-coe}
+
+\slides{\include{_governance/includes/gdpr-origins.md}}
+\notes{\include{_governance/includes/gdpr-overview.md}}
 \include{_governance/includes/feudal-era-data-ecosystem.md}
 \include{_governance/includes/digital-highway-code.md}
 \include{_governance/includes/data-trusts2.md}
