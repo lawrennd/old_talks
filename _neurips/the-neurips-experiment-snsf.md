@@ -25,7 +25,7 @@ transition: None
 
 
 
-Correctness is elusive, so people use consistency as a replacement.
+\comment{Correctness is elusive, so people use consistency as a replacement.
 
 Since we are incorrect, consistency is dangerous.
 
@@ -40,7 +40,7 @@ https://twitter.com/lawrennd/status/1440560979260051466?s=21&t=k5yUWz2hXac3ZDJPW
 
 Neurips summary: basically most reviewers are 50% subjective and 50% objective (comes from calibration and experiment)
 
-Given that we can simulate consistency of decisions. 
+Given that we can simulate consistency of decisions. }
 
 \section{Introduction}
 
@@ -50,21 +50,21 @@ Given that we can simulate consistency of decisions.
 
 \include{_neurips/includes/neurips-in-numbers.md}
 \include{_neurips/includes/paper-scoring.md}
-\include{_neurips/includes/neurips-experiment-speculation.md}
+<!--\include{_neurips/includes/neurips-experiment-speculation.md}-->
 \include{_neurips/includes/neurips-experiment-results.md}
-\include{_neurips/includes/neurips-experiment-reaction.md}
-\include{_neurips/includes/neurips-experiment-random-committee.md}
+<!--\include{_neurips/includes/neurips-experiment-reaction.md}-->
+<!--\include{_neurips/includes/neurips-experiment-random-committee.md}-->
 
 <!--include{_neurips/includes/neurips-experiment.md}-->
 \include{_neurips/includes/neurips-reviewer-calibration.md}
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
 
-\notes{\include{_neurips/includes/effect-of-late-reviewers.md}}
+<!-- \notes{\include{_neurips/includes/effect-of-late-reviewers.md}} -->
 
-\newslide{Late Reviewers}
+<!-- \newslide{Late Reviewers} -->
 
-\slides{\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{}{correlation-duplicate-reviews-bootstrap}}
+<!-- \slides{\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{}{correlation-duplicate-reviews-bootstrap}} -->
 
 \include{_neurips/includes/impact-of-papers-seven-years-on.md}
 
