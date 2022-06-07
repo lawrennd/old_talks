@@ -29,7 +29,6 @@ transition: None
 \notes{\section{Introduction}
 
 \notes{\include{_ai/includes/henry-ford-intro.md}}
-\include{_ai/includes/cambridge-personal-history.md}
 
 \newslide
 
@@ -44,7 +43,6 @@ transition: None
 \figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{70%}}}}{Claude Shannon developed information theory which allows us to quantify how much Bauby can communicate. This allows us to compare how locked in he is to us.}{bauby-shannon}
 
 \include{_ai/includes/embodiment-factors-short.md}
-
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation.md}
 \include{_ai/includes/conversation-computer.md}
