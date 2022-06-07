@@ -52,9 +52,6 @@ transition: None
 
 \figure{\includediagramclass{\diagramsDir/ai/anne-imagine-ai}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-ai}
 
-\newslide
-
-\figure{\includediagramclass{\diagramsDir/ai/anne-imagine-god}{50%}}{Our tendency to anthrox means that even when an intelligence is very different from ours we tend to embody it and represent it as having objectives similar to human.}{anne-imageine-god}
 
 \include{_data-science/includes/evolved-relationship.md}
 
