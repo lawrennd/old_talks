@@ -26,9 +26,9 @@ transition: None
 ---
  
 
-\notes{\section{Introduction}
+\notes{\section{Introduction}}
 
-\notes{\include{_ai/includes/henry-ford-intro.md}}
+\include{_ai/includes/henry-ford-intro.md}
 
 \newslide
 
@@ -46,6 +46,7 @@ transition: None
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation.md}
 \include{_ai/includes/conversation-computer.md}
+\include{_ai/includes/baby-shoes.md}
 
 \newslide
 
