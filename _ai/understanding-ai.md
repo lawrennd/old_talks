@@ -121,7 +121,9 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \newslide{AutoAI: Resolve Intellectual Debt}
 
-\figure{\includepng{\diagramsDir/ai/autoai-project-page}{60%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{autoai-project-page}
+\figure{\includepng{\diagramsDir/ai/autoai-sra}{40%}}{Address challenges in the way that complex software systems involving machine learning components are constructed to deal with the challenge of Intellectual Debt.}{autoai-project-page}
+
+\notes{You can find our strategic research agenda here: <https://mlatcl.github.io/papers/autoai-sra.pdf>.}
 
 \notes{\include{_ai/includes/turing-ai-fellowship-intro.md}}
 
