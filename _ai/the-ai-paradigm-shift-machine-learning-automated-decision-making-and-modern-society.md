@@ -19,6 +19,8 @@ transition: None
 
 Likely to be informed by ideas that arise in AI@Cam}
 
+20 minutes
+
 \notes{\include{_ai/includes/henry-ford-intro.md}}
 \include{_ai/includes/cambridge-personal-history.md}
 
