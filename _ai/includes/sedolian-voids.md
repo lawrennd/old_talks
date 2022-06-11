@@ -4,7 +4,7 @@
 \editme
 
 \subsection{AlphaGo}
-\notes{In January 2016, the UK company DeepMind's machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Se-Deol.}
+\notes{In January 2016, the UK company DeepMind's machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Sedol.}
 
 
 \figure{\includejpg{\diagramsDir/ai/nature-go}{50%}}{AlphaGo's win made the front cover of the journal Nature.}{nature-go}
