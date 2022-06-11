@@ -19,6 +19,7 @@ author:
   url: http://inverseprobability.com
 venue: Heilbronn Data Science Seminar, Jean Golding Institute
 ipynb: true
+youtube: 3-msskdvRqQ
 date: 2022-06-06
 transition: None
 ---
