@@ -24,12 +24,12 @@ transition: None
 
 Likely to be informed by ideas that arise in AI@Cam}
 
-20 minutes
+\comment{20 minutes}
 
 \include{_ai/includes/henry-ford-intro.md}
 
 \include{_ai/includes/the-diving-bell-butterfly.md}
-
+\slides{
 \include{_ai/includes/jean-dominique-bauby.md}
 
 \newslide
@@ -39,6 +39,7 @@ Likely to be informed by ideas that arise in AI@Cam}
 \include{_ai/includes/embodiment-factors-short.md}
 
 \include{_ai/includes/heider-simmel.md}
+}
 \include{_ai/includes/conversation.md}
 \include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/conversation-computer.md}
@@ -58,7 +59,7 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \slides{\aligncenter{The Great AI Fallacy}}
 
-\notes{\include{_ai/includes/the-great-ai-fallacy.md}}
+\include{_ai/includes/the-great-ai-fallacy.md}
 
 \notes{In large part, these challenges associated with AI are because AI has no understanding of the human condition. But there's also a problem that we don't have an intuitive understanding of AI and how it is working.}
 
@@ -86,3 +87,6 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \references
 
+\newslide
+
+\includepng{\diagramsDir/slides/diagram/ai/blake-lemoine-washington-post}{30%}
