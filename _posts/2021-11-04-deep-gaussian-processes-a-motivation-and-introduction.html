@@ -50,9 +50,9 @@ categories:
 <p><span class="math display">\[\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
 <p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
-<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
-<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world’s generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
-<p>The combination of data and model through the prediction function and the objective function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g., smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically, it includes knowledge about the world’s generating processes (probabilistic objectives) or the costs we pay for mispredictions (empirical risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objective function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the academic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my post blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a>.</p>
 <h2 id="what-does-machine-learning-do">What does Machine Learning do?</h2>
@@ -94,7 +94,7 @@ categories:
 <p>Figure: The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
 </div>
 </div>
-<p>The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<p>The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> invariances, known as convolutional layers. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 <h3 id="deep-learning-as-pinball">Deep Learning as Pinball</h3>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -174,7 +174,7 @@ categories:
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/sedolian-voids.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/sedolian-voids.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>In January 2016, the UK company DeepMind’s machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Se-Deol.</p>
+<p>In January 2016, the UK company DeepMind’s machine learning system AlphaGo won a challenge match in which it beat the world champion Go player, Lee Sedol.</p>
 <div class="figure">
 <div id="nature-go-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -253,12 +253,12 @@ categories:
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
+<p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing an accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
-<p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
+<p>We combine our prior belief with our observations of the real world by discarding all those prior samples that are inconsistent with our observations. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the observations. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
 <p>The samples that remain are samples from the <em>posterior</em>.</p>
 <p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
-<p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism must be operated many times to obtain a few posterior samples.</p>
+<p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the observations and as a result the mechanism must be operated many times to obtain a few posterior samples.</p>
 <p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
 <p>First, we will load in two python functions for computing the covariance function.</p>
 <p>Next, we sample from a multivariate normal density (a multivariate Gaussian), using the covariance function as the covariance matrix.</p>
@@ -585,9 +585,9 @@ Andreas Damianou
 <td width="70%">
 <ul>
 <li>Gold medal times for Olympic Marathon since 1896.</li>
-<li>Marathons before 1924 didn’t have a standardised distance.</li>
+<li>Marathons before 1924 didn’t have a standardized distance.</li>
 <li>Present results using pace per km.</li>
-<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+<li>In 1904 Marathon was badly organized leading to very slow times.</li>
 </ul>
 </td>
 <td width="30%">
@@ -598,7 +598,7 @@ Andreas Damianou
 </td>
 </tr>
 </table>
-<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
+<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. Let’s load in the data and plot.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pods</span></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
@@ -621,8 +621,7 @@ Andreas Damianou
 <p>Figure: Olympic marathon pace times since 1896.</p>
 </div>
 </div>
-<p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
-<p>More recent years see more consistently quick marathons.</p>
+<p>Things to notice about the data include the outlier in 1904, in that year the Olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. More recent years see more consistently quick marathons.</p>
 <h2 id="alan-turing">Alan Turing</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
