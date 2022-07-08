@@ -21,6 +21,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2022-06-07
+youtube: ld8_f1zUIhM
 venue: "Bristol Data and AI Showcase"
 transition: None
 ---
