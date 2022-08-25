@@ -16,6 +16,7 @@ slidesdir: ../slides/
 writediagramsdir: .
 scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
+dotx: ../_includes/custom-reference.dotx
 ghub:
 - organization: lawrennd
   repository: talks

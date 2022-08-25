@@ -10,10 +10,10 @@ layout: lecture
 room: LT2
 venue: William Gates Building
 talkcss: https://inverseprobability.com/assets/css/talks.css
-postsdir: ../../../mlatcl/ads/_lectures/
-slidesdir: ../../../mlatcl/ads/slides/
-notesdir: ../../../mlatcl/ads/_notes/
-notebooksdir: ../../../mlatcl/ads/_notebooks/
+postsdir: ../../../mlatcl/advds/_lectures/
+slidesdir: ../../../mlatcl/advds/slides/
+notesdir: ../../../mlatcl/advds/_notes/
+notebooksdir: ../../../mlatcl/advds/_notebooks/
 writediagramsdir: .
 scriptsdir: ./scripts/
 diagramsdir: ./slides/diagrams/
@@ -23,6 +23,6 @@ ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
-  directory: _ads
+  directory: _advds
 transition: None
   

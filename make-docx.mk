@@ -4,6 +4,7 @@
 
 ${BASE}.docx: ${BASE}.notes.docx.markdown ${DOCXDEPS}
 	pandoc  -s \
+		--resource-path=.:.. \
 		${CITEFLAGS} \
 		${DOCXFLAGS} \
 		-B ../_includes/${NOTATION} \
