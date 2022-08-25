@@ -28,7 +28,7 @@ ipynb: true
 
 \notes{We suggest you complete at least Exercises 2-5.}
 
-\include{_ads/includes/ads-notebook-setup.md}
+\include{_advds/includes/advds-notebook-setup.md}
 
 \include{_mlai/includes/mlai-notebook-setup.md}
 

@@ -17,7 +17,7 @@ notebooksdir: ../../../mlatcl/advds/_notebooks/
 writediagramsdir: .
 scriptsdir: ./scripts/
 diagramsdir: ./slides/diagrams/
-baseurl: "ads/" # the subpath of your site, e.g. /blog/
+baseurl: "advds/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd

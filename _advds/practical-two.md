@@ -29,7 +29,7 @@ ipynb: true
 \code{%pip uninstall --yes matplotlib}
 \code{%pip install matplotlib==3.1.3}
 
-\include{_ads/includes/ads-notebook-setup.md}
+\include{_advds/includes/advds-notebook-setup.md}
 
 \include{_maps/includes/mapping-intro.md}
 

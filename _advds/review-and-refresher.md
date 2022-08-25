@@ -27,7 +27,7 @@ ipynb: true
 
 \notes{We suggest you complete at least Exercises 4-9.}
 
-\include{_ads/includes/ads-notebook-setup.md}
+\include{_advds/includes/advds-notebook-setup.md}
 
 \include{_systems/includes/nigeria-nmis-data-systems.md}
 \include{_ml/includes/probability-intro.md}
