@@ -17,12 +17,13 @@ oldyoutube:
 - code: NGP7O1B9XzM
   year: 2020
 time: "12:00"
+featured_image: /slides/diagrams/ceres/giuseppe-piazzi.png
 date: 2021-10-08
 transition: None
 ipynb: true
 ---
 
-\include{_mlphysical/includes/overview-2021.md}
+\include{_mlphysical/includes/overview-2022.md}
 
 \include{_notebooks/includes/plot-setup.md}
 \include{_software/includes/notutils-software.md}
