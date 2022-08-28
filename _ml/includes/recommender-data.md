@@ -68,7 +68,7 @@ command.
 import os}
 
 \code{# uncomment the line below if you are doing this task by self study.
-pods.access.download_url('https://dl.dropboxusercontent.com/u/4347554/mlai_movies.csv', store_directory = 'class_movie', save_name='movies.csv')
+pods.access.download_url('https://raw.githubusercontent.com/lawrennd/datasets_mirror/main/movie_recommender/movies.csv', store_directory = 'class_movie', save_name='movies.csv')
 #pods.access.download_url('https://www.dropbox.com/s/s6gqvp9b383b59y/movies.csv?dl=0&raw=1', store_directory = 'class_movie', save_name='movies.csv')
 movies = pd.read_csv(os.path.join('class_movie', 'movies.csv'),encoding='latin-1').set_index('index')}
 
