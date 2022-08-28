@@ -8,14 +8,16 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 ipynb: True
+talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/mlai/_lectures/
 slidesdir: ../../../mlatcl/mlai/slides/
 notesdir: ../../../mlatcl/mlai/_notes/
 notebooksdir: ../../../mlatcl/mlai/_notebooks/
 writediagramsdir: .
+scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
 baseurl: "mlai/" # the subpath of your site, e.g. /blog/
-url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
+url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 time:
 ghub:
 - organization: lawrennd

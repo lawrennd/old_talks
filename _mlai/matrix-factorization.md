@@ -45,7 +45,7 @@ are going to take a slightly different tack.}
 
 \notes{This week we are going to try and build a simple movie recommender system using an objective function. To do this, the first thing I'd like you to do is to install some software we've written for sharing information across google documents.}
 
-\include{_data-science/includes/pods-software.md}
+\include{_software/includes/pods-software.md}
 
 \include{_ml/includes/movie-body-count-data.md}
 

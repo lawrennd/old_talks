@@ -67,7 +67,7 @@ $$
 \include{_kern/includes/mlp-covariance.md}
 
 \include{_gp/includes/gp-summer-school.md}
-\include{_gp/includes/gpy-software.md}
+\include{_software/includes/gpy-software.md}
 
 \thanks
 

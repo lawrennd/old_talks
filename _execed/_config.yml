@@ -9,14 +9,16 @@ author:
 layout: lecture
 pptx: True
 potx: ../_includes/judge-exec-reference.potx
+talkcss: https://inverseprobability.com/assets/css/talks.css
 postsdir: ../../../mlatcl/execed/_lectures/
 slidesdir: ../../../mlatcl/execed/slides/
 notesdir: ../../../mlatcl/execed/_notes/
 notebooksdir: ../../../mlatcl/execed/_notebooks/
 writediagramsdir: .
+scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
 baseurl: "execed/" # the subpath of your site, e.g. /blog/
-url: "https://mlatcl.github.com/" # the base hostname & protocol for your site
+url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 transition: None
 ghub:
 - organization: lawrennd

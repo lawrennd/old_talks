@@ -87,6 +87,6 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \references
 
-\newslide
+\slides{\newslide}
 
-\includepng{\diagramsDir/slides/diagram/ai/blake-lemoine-washington-post}{30%}
+\slides{\includepng{\diagramsDir/slides/diagram/ai/blake-lemoine-washington-post}{30%}}

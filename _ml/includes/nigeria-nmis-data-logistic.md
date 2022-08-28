@@ -1,7 +1,7 @@
 \ifndef{nigeriaNmisDataLogistic}
 \define{nigeriaNmisDataLogistic}
 
-\include{_ml/includes/nigeria-nmis-data-classification.md}
+\include{_datasets/includes/nigeria-nmis-data-classification.md}
 
 \editme
 
