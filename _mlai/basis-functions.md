@@ -7,8 +7,6 @@ abstract: |
   In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
 ---
 
-\include{talk-macros.gpp}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 \include{_ml/includes/non-linear-regression-intro.md}
 

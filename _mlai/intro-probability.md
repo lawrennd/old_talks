@@ -6,7 +6,6 @@ abstract: |
 youtube: M67rG3cZoVg
 ---
 
-\installcode{pods}
 
 \include{_mlai/includes/welcome.md}
 \include{_mlai/includes/assumed-knowledge.md}
@@ -15,6 +14,8 @@ youtube: M67rG3cZoVg
 \writeassignment{What is jupyter and why was it invented? Give some
 examples of functionality it gives over standard python. What is the jupyter
 project? Name two languages involved in the Jupyter project other than python.}{10}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/overdetermined-inaugural.md}
