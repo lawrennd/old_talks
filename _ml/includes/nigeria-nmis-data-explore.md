@@ -15,9 +15,7 @@
 
 \notes{This shows the number of doctors per facility, number of nurses and number of community health workers (CHEWS). We can plot the number of doctors against the number of nurses as follows.}
 
-\setupcode{# this ensures the plot appears in the web browser
-%matplotlib inline 
-import matplotlib.pyplot as plt # this imports the plotting library in python}
+\setupcode{import matplotlib.pyplot as plt # this imports the plotting library in python}
 
 \code{_ = plt.plot(data['num_doctors_fulltime'], data['num_nurses_fulltime'], 'rx')}
 
