@@ -56,7 +56,7 @@ for user in data:
         movies[user] = data[user]['rating']
 
 # Store the csv on disk where it will be shared through dropbox.
-movies.to_csv(os.path.join(pods.lab.class_dir,'movies.csv'), index_label='index')
+movies.to_csv(os.path.join(pods.lab.class_dir,'movies.csv'), skiprows=1, index_label='ResponseID')
 ```
 
 Now we will convert our data structure into a form that is appropriate
