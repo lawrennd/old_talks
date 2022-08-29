@@ -15,7 +15,6 @@ $$\kernelScalar_{i, j} = \kernelScalar(\inputVals_i, \inputVals_j; \parameterVec
 [\Large
 $$\kernelMatrix = \rotationMatrix \eigenvalueMatrix^2 \rotationMatrix^\top$$]{}
 
-\code{gpoptimizePlot1}
 
 \columns{\includepng{\diagramsDir/gp/gp-optimize-eigen}{100%}{negate}}{$\eigenvalueMatrix$ represents distance on axes.
 $\rotationMatrix$ gives rotation.}{50%}{50%}
