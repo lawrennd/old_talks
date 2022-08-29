@@ -39,8 +39,8 @@ import mlai.plot as plot}
 \setupdisplaycode{import notutils as nu
 from ipywidgets import IntSlider}
 \displaycode{nu.display_plots('gp-optimise-determinant{sample:0>3}.svg', 
-                            '\writeDiagramsDir/gp', 
-							sample=IntSlider(0, 0, 9, 1))}
+                                          directory='\writeDiagramsDir/gp', 
+			                  sample=IntSlider(0, 0, 9, 1))}
 
 \slides{\define{width}{80%}
 \startanimation{gp-optimise-determinant}{0}{10}
