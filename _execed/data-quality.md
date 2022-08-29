@@ -5,8 +5,6 @@ abstract: >
   In this talk we consider data readiness levels and how they may be deployed.
 ---
 
-\include{talk-macros.tex}
-
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 <!--include{_ai/includes/game-playing-ai.md}-->
 \subsection{Machine Learning}
@@ -34,7 +32,7 @@ $$
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
 \include{_data-science/includes/data-readiness-levels.md}
-\include{_data-science/includes/data-maturity-assessment.md}
+\include{_business/includes/data-maturity-assessment.md}
 <!--include{_ml/includes/shiny-bike-model.md}-->
 
 \section{Introduction}

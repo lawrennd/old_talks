@@ -62,7 +62,7 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-
 
 \newslide{Robot WiFi Data Latent Space}
 
-\figure{\includediagram{\diagramsDir/deepgp/robot-wireless-latent-space}{60%}}{Inferred two dimensional latent space of the model for the robot wireless data.}{robot-wireless-latent-space}
+\figure{\includediagram{\diagramsDir/deepgp/robot-wireless-latent-space}{60%}}{Inferred two dimensional latent space from the model for the robot wireless data.}{robot-wireless-latent-space}
 
 
 \endif

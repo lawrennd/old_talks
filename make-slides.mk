@@ -1,4 +1,4 @@
-%.slides.pptx.markdown: %.md ${DEPS}
+%.slides.pptx.markdown: %.md ${PPTXDEPS}
 	${PP} $< -o $@ --to pptx --format slides --code none ${PPFLAGS} --diagrams-dir ../slides/diagrams  --replace-notation
 
 %.slides.html.markdown: %.md ${DEPS}

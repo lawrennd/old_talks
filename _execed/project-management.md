@@ -5,8 +5,6 @@ abstract: >
 
 ---
 
-\include{talk-macros.gpp}
-
 <!-- Explore exploit cycles -->
 
 <!-- tenets -->

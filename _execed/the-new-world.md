@@ -5,8 +5,6 @@ abstract: >
   This session introduces the challenges behind data, machine learning and artificial intelligence.
 ---
 
-\include{talk-macros.gpp}
-
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/embodiment-factors.md}
 

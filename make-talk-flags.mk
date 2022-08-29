@@ -44,6 +44,7 @@ DEPS=$(shell dependencies inputs $(BASE).md)
 DIAGDEPS=$(shell dependencies diagrams $(BASE).md)
 BIBDEPS=$(shell dependencies bibinputs $(BASE).md)
 DOCXDEPS=$(shell dependencies docxdiagrams $(BASE).md)
+PPTXDEPS=$(shell dependencies docxdiagrams $(BASE).md)
 TEXDEPS=$(shell dependencies texdiagrams $(BASE).md)
 
 POSTFLAGS=$(shell flags post $(BASE))

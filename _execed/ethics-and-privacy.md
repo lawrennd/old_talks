@@ -5,8 +5,6 @@ abstract: >
 
 ---
 
-\include{talk-macros.gpp}
-
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_governance/includes/data-property.md}
 \include{_governance/includes/gdpr-origins.md}

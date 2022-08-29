@@ -5,9 +5,6 @@ abstract: >
   In this talk we consider data readiness levels and how they may be deployed.
 ---
 
-\include{talk-macros.gpp}
-
-
 \include{_data-science/includes/the-data-crisis.md}
 \include{_data-science/includes/lies-damned-lies.md}
 \include{_data-science/includes/value-of-data.md}
