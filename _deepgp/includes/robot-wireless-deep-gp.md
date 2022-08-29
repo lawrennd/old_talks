@@ -46,7 +46,7 @@ mlai.write_figure(figure=fig, filename='\writeDiagramsDir/deepgp/robot-wireless-
 
 \subsection{Robot WiFi Data Latent Space}
 
-\slides{\includediagram{\diagramsDir/deepgp/robot-wireless-ground-truth}{60%}}
+\slides{\figure{\includediagram{\diagramsDir/deepgp/robot-wireless-ground-truth}{60%}}{The ground truth movement of the WiFi reception apparatus in the Robot WiFi experiment}{robot-wireless-ground-truth}}
 
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_figsize)
