@@ -20,6 +20,7 @@ oldyoutube:
   year: 2020
 ipynb: true
 reveal: true
+featured_image: /slides/diagrams/uq/emukit-playground-bayes-opt.png
 transition: None
 ---
 
