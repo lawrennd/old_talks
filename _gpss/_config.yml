@@ -19,6 +19,7 @@ scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
 potx: ../_includes/custom-reference.potx 
 dotx: ../_includes/custom-reference.dotx
+transition: None
 baseurl: "gpss/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:

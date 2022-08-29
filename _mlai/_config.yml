@@ -16,6 +16,7 @@ notebooksdir: ../../../mlatcl/mlai/_notebooks/
 writediagramsdir: .
 scriptsdir: ../scripts/
 diagramsdir: ./slides/diagrams/
+transition: None
 baseurl: "mlai/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 time:
