@@ -9,12 +9,12 @@ youtube: B2XhFoCehy8
 
 \subsection{Review}
 
-* Last week: Logistic Regression and Generalised Linear Models
+\slides{* Last week: Logistic Regression and Generalised Linear Models
 * Introduced link functions and different transformations.
 * Showed examples in classification and mentioned possibilities for disease rate models.
 * This week: 
-    * Gaussian Processes: non parametric Bayesian modelling
-}
+    * Gaussian Processes: non parametric Bayesian modelling}
+
 
 \notes{Over the last two sessions we've begun considering classification models and logistic regresssion. In particular, for naive Bayes, we considered a set of assumptions that allowed us to build a joint model of our data set. In particular for naive Bayes we specified
 
@@ -26,18 +26,23 @@ This allowed us to specify the joint density of our labels and our input data, $
 
 \subsection{Generalized Linear Models}
 
-Logistic regression is part of a wider class of models known as *generalized linear models*. In these models we determine that some characteristic of the model is speicified by a function that is liniear in the parameters. So we might suggest that
+\notes{Logistic regression is part of a wider class of models known as *generalized linear models*. In these models we determine that some characteristic of the model is speicified by a function that is liniear in the parameters. So we might suggest that}\slides{* Logistic regression is a *generalized linear model*
+* Prediction function that is linear in parameters}
 $$
 \log \frac{p(\inputVector)}{1-p(\inputVector)} = \mappingFunction(\inputVector; \mappingVector)
 $$
-where $\mappingFunction(\inputVector; \mappingVector)$ is a linear-in-the-parameters function (here the
-parameters are $\mappingVector$, which is generally non-linear in the inputs. So far
-we have considered basis function models of the form
+\notes{where $\mappingFunction(\inputVector; \mappingVector)$ is a linear-in-the-parameters function (here the
+parameters are $\mappingVector$, which is generally non-linear in the inputs.}\slides{* Where $\mappingFunction(\cdot)$ is linear in parameters.}
+\newslide{Basis Functions}
+
+\notes{So far we have considered basis function models of the form}
+\slides{* Linear models have the form}
 $$
 \mappingFunction(\inputVector) =
 \mappingVector^\top \basisVector(\inputVector).
 $$
 \notes{When we form a Gaussian process we do something that is slightly more akin to the naive Bayes approach, but actually is closely related to the generalized linear model approach.}
+\slides{* Gaussian processes are related to generalized linear models.}
 
 \include{_gp/includes/gp-intro-lectures.md}
 \include{_gp/includes/gptwopointpred.md}

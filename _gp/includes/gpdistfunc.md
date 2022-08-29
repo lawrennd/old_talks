@@ -86,7 +86,7 @@ $$
 
 . . .
 	
-* Conditional density: \colorred{$p(\mappingFunction_5|\mappingFunction_1=?)$}.
+* Conditional density: \colorred{$p(\mappingFunction_8|\mappingFunction_1=?)$}.
 
 \newslide{Prediction with Correlated Gaussians}
 

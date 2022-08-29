@@ -168,6 +168,8 @@ $\mappingFunctionVector$ directly we created the covariance for
 $\mappingFunctionVector$. We can visualise the form of this covaraince
 in an image in python with a colorbar to show scale.}
 
+\newslide{}
+
 \setupplotcode{import mlai.plot as plot
 import mlai}
 
