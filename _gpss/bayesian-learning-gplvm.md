@@ -4,8 +4,6 @@ session: 10
 abstract:
 ---
 
-\include{talk-macros.gpp}
-
 \include{_gpss/includes/gpss-notebook-setup.md}
 
 \include{_gplvm/includes/bayes-gplvm-intro.md}

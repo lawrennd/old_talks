@@ -12,14 +12,6 @@ author:
   twitter: lawrennd
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
-postsdir: ../_posts/
-slidesdir: ../slides/
-notesdir: ../_notes/
-notebooksdir: ../_notebooks/
-writediagramsdir: .
-diagramsdir: ./slides/diagrams/
-transition: None
-layout: talk
 ---
 
 

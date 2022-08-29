@@ -4,8 +4,6 @@ session: 11
 abstract: 
 ---
 
-\include{talk-macros.gpp}
-
 \include{_gp/includes/mackay-bathwater.md}
 \include{_deepgp/includes/deep-nn-gp.md}
 \include{_ml/includes/deep-learning-overview.md}
