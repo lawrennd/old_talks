@@ -56,7 +56,7 @@ for user in data:
         movies[user] = data[user]['rating']
 
 # Store the csv on disk where it will be shared through dropbox.
-movies.to_csv(os.path.join(pods.lab.class_dir,'movies.csv'), index_label='index')
+movies.to_csv(os.path.join(pods.lab.class_dir,'movies.csv'), skiprows=1, index_label='ResponseID')
 ```
 
 Now we will convert our data structure into a form that is appropriate
@@ -68,8 +68,8 @@ command.
 import os}
 
 \code{# uncomment the line below if you are doing this task by self study.
-pods.util.download_url('https://dl.dropboxusercontent.com/u/4347554/mlai_movies.csv', store_directory = 'class_movie', save_name='movies.csv')
-#pods.util.download_url('https://www.dropbox.com/s/s6gqvp9b383b59y/movies.csv?dl=0&raw=1', store_directory = 'class_movie', save_name='movies.csv')
+pods.access.download_url('https://raw.githubusercontent.com/lawrennd/datasets_mirror/main/movie_recommender/movies.csv', store_directory = 'class_movie', save_name='movies.csv')
+#pods.access.download_url('https://www.dropbox.com/s/s6gqvp9b383b59y/movies.csv?dl=0&raw=1', store_directory = 'class_movie', save_name='movies.csv')
 movies = pd.read_csv(os.path.join('class_movie', 'movies.csv'),encoding='latin-1').set_index('index')}
 
 \writeassignment{The movies data is now in a data frame which contains

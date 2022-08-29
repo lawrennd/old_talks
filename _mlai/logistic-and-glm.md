@@ -79,18 +79,7 @@ $p(\dataVector|\inputMatrix)$.}
 * [Paper available here](http://www.herbrich.me/papers/adclicksfacebook.pdf)
 }
 
-\notes{
-\subsection{Olivetti Glasses Data}
-
-Let's classify images with logistic regression. We'll look at a data set of individuals with glasses. We can load in the data from `pods` as follows.
-
-\setupcode{import pods}
-\code{# Change this example for 2016#data = pods.datasets.movie_body_count_r_classify()
-data = pods.datasets.olivetti_glasses()
-X = data['X']
-y = data['Y']}
-
-\include{_ml/includes/logistic-regression-gradient-descent.md}
+\notes{\include{_ml/includes/olivetti-glasses-logistic.md}}
 \include{_ml/includes/logistic-regression-going-further.md}
 
 
