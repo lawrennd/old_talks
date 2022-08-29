@@ -34,7 +34,7 @@ fig.colorbar(im)}
 
 \notes{Finally, we can sample functions from the marginal likelihood.}
 
-\displaycode{fig, ax = plt.subplots(figsize(8, 5))
+\displaycode{fig, ax = plt.subplots(figsize=(8, 5))
 for i in range(10):
     y_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
     ax.plot(x_pred.flatten(), y_sample.flatten())}
@@ -71,8 +71,12 @@ $$
 \notes{where the *parameters* of the model are also embedded in the
 covariance function, they include the parameters of the kernel (such
 as lengthscale and variance), and the noise variance, $\dataStd^2$.
-Let's create a class in python for storing these variables.}
+Let's create a set of classes in python for storing these variables.}
 
+\loadcode{Model}{mlai}
+\loadcode{MapModel}{mlai}
+\loadcode{ProbModel}{mlai}
+\loadcode{ProbMapModel}{mlai}
 \loadcode{GP}{mlai}
 
 \subsection{Making Predictions}

@@ -5,8 +5,6 @@ abstract: In the last lecture we looked at unsupervised learning. We introduced 
 youtube: G7NbyCcuGmg
 ---
 
-\include{talk-macros.tex}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 
 \newslide{Review}

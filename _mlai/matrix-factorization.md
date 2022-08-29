@@ -6,8 +6,6 @@ abstract: |
 youtube: Gq6bjcm8AqQ
 ---
 
-\include{talk-macros.tex}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 
 \newslide{Objective Function}

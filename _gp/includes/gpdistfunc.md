@@ -75,4 +75,56 @@ $$
 \notes{Using these formulae we can determine the conditional density for any of the elements of our vector $\mappingFunctionVector$. For example, the variable $\mappingFunction_8$ is less correlated with $\mappingFunction_1$ than $\mappingFunction_2$. If we consider this variable we see the conditional density is more diffuse.}
 
 \include{_gp/includes/gaussian-predict-index-one-and-eight.md}
+
+\newslide{Details}
+
+* The single contour of the Gaussian density represents the \colorblue{joint distribution, $p(\mappingFunction_1, \mappingFunction_8)$}
+
+. . .
+
+* We observe a value for \colorgreen{$\mappingFunction_1=-?$}
+
+. . .
+	
+* Conditional density: \colorred{$p(\mappingFunction_5|\mappingFunction_1=?)$}.
+
+\newslide{Prediction with Correlated Gaussians}
+
+* Prediction of $\mappingFunctionVector_*$ from $\mappingFunctionVector$ requires
+    multivariate *conditional density*.
+
+* Multivariate conditional density is *also* Gaussian. 
+  <large>
+  $$
+  p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingFunctionVector_*|\kernelMatrix_{*,\mappingFunctionVector}\kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\mappingFunctionVector,\kernelMatrix_{*,*}-\kernelMatrix_{*,\mappingFunctionVector} \kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\kernelMatrix_{\mappingFunctionVector,*}\right)}
+  $$
+  </large>
+
+* Here covariance of joint density is given by
+  $$
+  \kernelMatrix= \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector} & \kernelMatrix_{*, \mappingFunctionVector}\\ \kernelMatrix_{\mappingFunctionVector, *} & \kernelMatrix_{*, *}\end{bmatrix}
+  $$
+
+\newslide{Prediction with Correlated Gaussians}
+
+* Prediction of $\mappingFunctionVector_*$ from $\mappingFunctionVector$ requires multivariate *conditional density*.
+
+* Multivariate conditional density is *also* Gaussian. 
+  <large>
+  $$
+  p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingFunctionVector_*|\meanVector,\conditionalCovariance\right)}
+  $$
+  $$
+  \meanVector= \kernelMatrix_{*,\mappingFunctionVector}\kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\mappingFunctionVector
+  $$
+  $$
+  \conditionalCovariance = \kernelMatrix_{*,*}-\kernelMatrix_{*,\mappingFunctionVector} \kernelMatrix_{\mappingFunctionVector,\mappingFunctionVector}^{-1}\kernelMatrix_{\mappingFunctionVector,*}
+  $$
+  </large>
+
+* Here covariance of joint density is given by
+  $$
+  \kernelMatrix= \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector} & \kernelMatrix_{*, \mappingFunctionVector}\\ \kernelMatrix_{\mappingFunctionVector, *} & \kernelMatrix_{*, *}\end{bmatrix}
+  $$
+
 \endif

@@ -5,8 +5,6 @@ abstract: |
   In this session we look at some of what makes the data science process different from classical computer science.
 ---
 
-\include{talk-macros.gpp}
-
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/embodiment-factors.md}
 <!--\include{_data-science/includes/societal-effects.md}-->

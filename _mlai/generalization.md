@@ -5,8 +5,6 @@ abstract: "Generalization is the main objective of a machine learning algorithm.
 youtube: wy0J6cgqlf8
 ---
 
-\include{talk-macros.tex}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}

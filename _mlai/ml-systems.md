@@ -19,8 +19,6 @@ author:
   institute: University of Cambridge
 ---
 
-\include{talk-macros.tex}
-
 \slides{\section{AI via ML Systems}
 
 \include{_ai/includes/supply-chain-system.md}

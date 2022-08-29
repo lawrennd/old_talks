@@ -5,8 +5,6 @@ abstract: Naive Bayes assumptions allow us to specify class conditional densitie
 youtube: e-BWWidfbT4
 ---
 
-\include{talk-macros.tex}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}

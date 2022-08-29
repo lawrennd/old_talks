@@ -204,15 +204,15 @@ corrupted functions,}
 
 \newslide{}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)}
-
-\code{K = alpha*Phi_pred@Phi_pred.T + sigma2*np.eye(x_pred.size)
+\setupplotcode{import mlai}
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+K = alpha*Phi_pred@Phi_pred.T + sigma2*np.eye(x_pred.size)
 for i in range(10):
     y_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
     ax.plot(x_pred.flatten(), y_sample.flatten())
 	
 mlai.write_figure('gp-sample-basis-function-plus-noise.svg', 
-                  '\writeDiagramsDir/kern')}
+                  directory='\writeDiagramsDir/kern')}
 
 \figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top + \dataStd^2 \eye$.}{gp-sample-basis-functions-plus-noise}
 
@@ -229,7 +229,7 @@ for i in range(10):
     plt.plot(x_pred.flatten(), y_sample.flatten())
 	
 mlai.write_figure('gp-sample-basis-function-plus-large-noise.svg', 
-                  '\writeDiagramsDir/kern')}
+                  directory='\writeDiagramsDir/kern')}
 
 \figure{\includediagram{\diagramsDir/kern/gp-sample-basis-function-plus-large-noise}{80%}}{Samples directly from the covariance function implied by the noise corrupted basis function based covariance, $\alpha \basisMatrix\basisMatrix^\top + \eye$.}{gp-sample-basis-functions-plus-large-noise}
 

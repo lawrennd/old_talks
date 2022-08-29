@@ -5,8 +5,6 @@ abstract: "In this lecture we turn to *unsupervised learning*. Specifically, we 
 youtube: 0mtK2_rc0IY
 ---
 
-\include{talk-macros.gpp}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}

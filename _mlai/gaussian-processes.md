@@ -5,8 +5,6 @@ abstract:
 youtube: B2XhFoCehy8
 ---
 
-\include{talk-macros.tex}
-
 \include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
