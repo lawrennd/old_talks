@@ -134,14 +134,21 @@ $$
 & \kernelMatrix_{\ast,\ast}\end{bmatrix}
 $$
 
-\displaycode{fig, ax = plt.subplots(figsize=(8,8))
+\setupplotcode{import mlai}
+
+\plotcode{fig, ax = plt.subplots(figsize=(8,8))
 im = ax.imshow(np.vstack([np.hstack([K, K_star]), np.hstack([K_star.T, K_starstar])]), interpolation='none')
 # Add lines for separating training and test data
 ax.axvline(x.shape[0]-1, color='w')
 ax.axhline(x.shape[0]-1, color='w')
-fig.colorbar(im)}
+fig.colorbar(im)
 
-\notes{There are four blocks to this color plot. The upper left block
+mlai.write_figure('block-predictive-covariance.svg', diagrams='\writeDiagramsDir/gp')
+}
+
+\figure{\includediagram{\diagramsDir/gp/block-predictive-covariance}{80%}}{Different blocks of the covariance function. The upper left block is the covariance of the training data with itself, $\kernelMatrix$. The top right is the cross covariance between training data (rows) and prediction locations (columns). The lower left is the same matrix transposed. The bottom right is the covariance matrix of the test data with itself.}{block-predictive-covariance}
+
+\notes{There are four blocks to this plot. The upper left block
 is the covariance of the training data with itself,
 $\kernelMatrix$. We see some structure here due to the missing data
 from the first and second world wars. Alongside this covariance (to
