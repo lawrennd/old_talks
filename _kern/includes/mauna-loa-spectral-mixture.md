@@ -46,7 +46,7 @@ import mlai}
 
 model.plot(ax=ax)
 
-mlai.write_figure('mauna-loa-spectral-mixture-gp', directory='\writeDiagramsDir/gp')}
+mlai.write_figure('mauna-loa-spectral-mixture-gp.svg', directory='\writeDiagramsDir/gp')}
 
 \figure{\includediagram{\diagramsDir/gp/mauna-loa-spectral-mixture-gp}{80%}}{Spectral mixture GP as applied to the Mauna Loa Observatory carbon dioxide concentration data.}{mauna-loa-spectral-mixture-gp}
 
