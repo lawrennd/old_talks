@@ -1,6 +1,6 @@
 ---
-week: 5
-session: 4
+week: 4
+session: 3
 title: "Data Science Challenges II"
 abstract:  >
   In this lecture we continue our exploration of data science challenges.
@@ -15,7 +15,7 @@ author:
   url: http://inverseprobability.com
 time: "10:00"
 youtube: t0819B2kboc
-date: 2021-11-10
+date: 2022-11-02
 transition: None
 ipynb: false
 ---

@@ -1,6 +1,6 @@
 ---
-week: 8
-session: 3
+week: 7
+session: 1
 title: "Summary"
 abstract:  >
 layout: lecture
@@ -18,7 +18,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "10:00"
-date: 2021-11-29
+date: 2022-11-18
 transition: None
 ipynb: false
 ---

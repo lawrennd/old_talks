@@ -1,5 +1,5 @@
 ---
-week: 5
+week: 4
 session: 2
 title: "The Challenges of Data Science"
 abstract:  >
@@ -15,7 +15,7 @@ author:
   url: http://inverseprobability.com
 youtube: KXnZ4nj-ahA
 time: "10:00"
-date: 2021-11-08
+date: 2022-10-31
 transition: None
 ipynb: false
 ---

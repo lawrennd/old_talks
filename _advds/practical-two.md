@@ -1,5 +1,5 @@
 ---
-week: 6
+week: 5
 title: "Practical 2"
 abstract:  >
   In this practical session we look at the second aspect of the Fynesse data science process, *assess*. In particular, we are going to download data from OpenStreetMap and verify its quality and utility.
@@ -13,13 +13,13 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-11
+date: 2022-11-03
 transition: None
 reveal: false
 ipynb: true
 ---
 
-\notes{Tick Session for this Practical is 16th November 2021}
+\notes{Tick Session for this Practical is 8th November 2022}
 
 \subsection{Revert Matplotlib Version}
 

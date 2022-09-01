@@ -1,6 +1,6 @@
 ---
-week: 7
-session: 1
+week: 5
+session: 3
 title: "Generalised Linear Models"
 abstract:  >
 layout: lecture
@@ -12,7 +12,7 @@ author:
   institute: University of Cambridge
   url: http://carlhenrik.com/
 time: "10:00"
-date: 2021-11-22
+date: 2022-11-09
 youtube: VQvYg3jin-k
 pdfslides: advanced-datascience-glm.pdf
 transition: None

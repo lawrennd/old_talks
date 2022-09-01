@@ -1,5 +1,5 @@
 ---
-week: 5
+week: 4
 title: "Practical 1 - SQLite variant"
 abstract:  >
   In this lab session we look at setting up a SQL server and making joins between different data sets.
@@ -21,14 +21,14 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-09
+date: 2022-11-01
 transition: None
 reveal: false
 ipynb: true
 ---
 
 
-\notes{Tick Session for this Practical is 11th November 2021}
+\notes{Tick Session for this Practical is 3rd November 2022}
 
 \define{databaseType}{sqlite}
 \include{_systems/includes/nigeria-nmis-installs.md}

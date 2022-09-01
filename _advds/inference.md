@@ -1,6 +1,6 @@
 ---
-week: 7
-session: 3
+week: 6
+session: 2
 title: "Inference"
 abstract:  >
 layout: lecture
@@ -12,7 +12,7 @@ author:
   institute: University of Cambridge
   url: http://carlhenrik.com/
 time: "10:00"
-date: 2021-11-24
+date: 2022-11-14
 transition: None
 ipynb: false
 ---

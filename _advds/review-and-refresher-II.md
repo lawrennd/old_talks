@@ -1,6 +1,6 @@
 ---
-week: 6
-session: 3
+week: 5
+session: 1
 title: "Review and Refresher II"
 abstract:  >
   In this review and refresher notebook we remind ourselves about linear models and use the opportunity to provide some review of linear algebra. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
@@ -14,7 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
-date: 2021-11-16
+date: 2022-11-08
 transition: None
 reveal: false
 ipynb: true

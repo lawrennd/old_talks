@@ -1,6 +1,6 @@
 ---
-week: 7
-session: 2
+week: 6
+session: 1
 title: "Visualisation"
 abstract:  >
 layout: lecture
@@ -12,7 +12,7 @@ author:
   institute: University of Cambridge
   url: http://carlhenrik.com/
 time: "10:00"
-date: 2021-11-24
+date: 2022-11-11
 youtube: hUI-nV0uyv4
 pdfslides: advanced-datascience-visualisation.pdf
 pdfworksheet: mds.pdf
