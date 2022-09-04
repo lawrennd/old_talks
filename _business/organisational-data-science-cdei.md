@@ -17,7 +17,7 @@ transition: None
 ipynb: false
 ---
 
-lots of relevant ideas for this away day in your 10DS remarks (I particularly liked the focus on 'brownfield innovation'), while perhaps drawing out some of the themes in your presentations on data governance? As such, perhaps you could talk about what it takes to achieve responsible innovation in the context of different organisational cultures?
+\comment{lots of relevant ideas for this away day in your 10DS remarks (I particularly liked the focus on 'brownfield innovation'), while perhaps drawing out some of the themes in your presentations on data governance? As such, perhaps you could talk about what it takes to achieve responsible innovation in the context of different organisational cultures?}
 
 \section{The Challenge}
 
