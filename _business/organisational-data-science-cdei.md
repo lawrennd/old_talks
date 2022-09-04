@@ -56,6 +56,29 @@ ipynb: false
 
 \include{_business/includes/bridging-datascience-education.md}
 
+\section{Four Current Examples of Interventions from My Work}
+
+\newslide{Accelerate Program: Empower the User}
+
+\slides{\figure{\includepng{\diagramsDir/accelerate/accelerate-website}{70%}}{The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <http://acceleratescience.github.io>}{accelerate-website}
+}
+
+\newslide
+
+
+\notes{Other examples of this form of work include our collaboration with [Data Science Africa](http://www.datascienceafrica.org/), which focusses on empowering individuals with solutions for solving challenges that emerge in the African context.}
+
+\include{_ai/includes/auto-ai.md}
+
+\subsection{Data Trusts: Empower People through their Data}
+
+\figure{\includepng{\diagramsDir/governance/data-trusts-initiative-project-page}{60%}}{The Data Trusts Initiative (\href{https://datatrusts.uk/}{http://datatrusts.uk}) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.}{data-trusts-initiative-website}
+
+\notes{The third intervention goes direct to the source of the machine's power. What we are seeing is an emergent *[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)* based on the power that comes with aggregation of data. [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) are form of data intermediary designed to reutrn the power associated with this data accumulation to the originators of the data, that is us.}
+
+\notes{\include{_governance/includes/data-trusts.md}}
+
+\include{_ai/includes/ai-at-cam.md}
 \section{Conclusions}
 
 \newslide{Overview}
@@ -86,29 +109,7 @@ ipynb: false
 
 \notes{The key design criterion for these actions is that each of these ideas brings short term benefits as well as effecting long term cultural change. Any idea that delivers on these two fronts is also likely to be suitable for integration in an institutional data-science programme.}
 
-\section{Four Current Examples of Interventions from My Work}
 
-\newslide{Accelerate Program: Empower the User}
-
-\slides{\figure{\includepng{\diagramsDir/accelerate/accelerate-website}{70%}}{The Accelerate Programme for Scientific Discovery covers research, education and training, engagement. Our aim is to bring about a step change in scientific discovery through AI. <http://acceleratescience.github.io>}{accelerate-website}
-}
-
-\newslide
-
-
-\notes{Other examples of this form of work include our collaboration with [Data Science Africa](http://www.datascienceafrica.org/), which focusses on empowering individuals with solutions for solving challenges that emerge in the African context.}
-
-\include{_ai/includes/auto-ai.md}
-
-\subsection{Data Trusts: Empower People through their Data}
-
-\figure{\includepng{\diagramsDir/governance/data-trusts-initiative-project-page}{60%}}{The Data Trusts Initiative (\href{https://datatrusts.uk/}{http://datatrusts.uk}) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.}{data-trusts-initiative-website}
-
-\notes{The third intervention goes direct to the source of the machine's power. What we are seeing is an emergent *[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)* based on the power that comes with aggregation of data. [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) are form of data intermediary designed to reutrn the power associated with this data accumulation to the originators of the data, that is us.}
-
-\notes{\include{_governance/includes/data-trusts.md}}
-
-\include{_ai/includes/ai-at-cam.md}
 
 \thanks
 
