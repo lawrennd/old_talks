@@ -20,8 +20,8 @@ ipynb: False
 pdfslides: l49-mlpw-02.pdf
 pdfworksheet: 01_introduction.pdf
 youtube: sN0_pL9rm5I
-date: 2020-10-09
-venue: Virtual (Zoom)
+date: 2022-11-13
+venue: LT1, William Gates Building
 time: "12:00"
 ---
 
