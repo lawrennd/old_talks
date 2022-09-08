@@ -13,7 +13,8 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 time: "10:00"
-date: 2021-10-19
+date: 2022-10-20
+venue: LT1, William Gates Building
 youtube: k46Av3liq7M
 oldyoutube: 
 - code: AmI5nq8s4qc
