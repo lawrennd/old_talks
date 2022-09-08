@@ -18,6 +18,7 @@ oldyoutube:
   year: 2020
 time: "12:00"
 featured_image: /slides/diagrams/ceres/giuseppe-piazzi.png
+venue: LT1, William Gates Building
 date: 2022-10-11
 transition: None
 ipynb: true
