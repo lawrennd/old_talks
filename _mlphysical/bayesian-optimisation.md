@@ -15,8 +15,8 @@ reveal: False
 pdfslides: l48-mlpw-06.pdf
 pdfworksheet: 03_sequentialdecisionmaking.pdf
 youtube: zVXJ238j5KM
-time: "10:00"
-date: 2021-10-26
+time: "12:00"
+date: 2022-10-27
 ---
 
 Related publications and links will appear here.

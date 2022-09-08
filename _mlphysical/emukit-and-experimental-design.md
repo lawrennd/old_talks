@@ -13,8 +13,8 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 layout: lecture
-time: "10:00"
-date: 2021-11-02
+time: "12:00"
+date: 2022-11-03
 ipynb: true
 reveal: true
 youtube: NVEX8v3eO6Y

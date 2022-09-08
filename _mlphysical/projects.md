@@ -12,7 +12,7 @@ author:
   url: http://carlhenrik.com
 layout: lecture
 time: "12:00"
-date: 2021-11-13
+date: 2022-11-15
 ipynb: False
 pdfslides: l48-mlpw-projects.pdf
 reveal: False
