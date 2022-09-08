@@ -18,7 +18,7 @@ oldyoutube:
   year: 2020
 time: "12:00"
 featured_image: /slides/diagrams/ceres/giuseppe-piazzi.png
-date: 2021-10-08
+date: 2022-10-11
 transition: None
 ipynb: true
 ---
