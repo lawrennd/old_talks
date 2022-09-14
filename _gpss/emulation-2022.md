@@ -66,6 +66,19 @@ $$
 \notes{\include{_uq/includes/emukit-tutorial.md}}
 \notes{\include{_uq/includes/emukit-sensitivity-analysis.md}}
 \notes{\include{_uq/includes/catapult-sensitivity-analysis.md}}
+\include{_ai/includes/buying-system.md}
+
+\include{_business/includes/bezos-question-mark-email.md}
+
+\slides{
+\newslide{Intellectual Debt}
+
+\figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
+
+}
+
+\notes{\include{_ai/includes/intellectual-debt-short.md}}
+\include{_ai/includes/fit-systems.md}
 
 \thanks
 
