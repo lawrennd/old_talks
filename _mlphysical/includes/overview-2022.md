@@ -43,6 +43,9 @@
     * Climate Modelling (Scott Hoskins, BAS)
     * Simulation and Personalized Medicine (Javier Gonzalez, Microsoft Research)}
 
+
+\newslide{Special Topics}
+
 \slides{* Weeks 6-8 will involve three special topics.
 * In 2021 we had:
     * Spectroscopy data (Marie Synakewicz, Zurich)
@@ -64,9 +67,12 @@
 
 \subsection{Assessment}
 
-\notes{We will use the examples we present this year to help inspire a set of mini projects for you to work on in small groups. The aim will be to produce a report on the different challenges, detailing what questions you asked and how you answered them using the techniques we’ll teach.}
+\notes{There are two forms of assessment. Firstly, we will ask you to a "lab sheet" of answer (based on the notes we provide). The lab can be completed using python and the jupyter notebook (for example on [colab](https://colab.research.google.com/)). This will be completed by Week 5 and is worth 15%.}
 
-\slides{* Mini projects starting in Week 6 in small groups deploying lessons you’ve learnt}
+\notes{We will use the examples we present this year to help inspire a set of mini projects for you to work on in small groups. The aim will be to produce a report on the different challenges, detailing what questions you asked and how you answered them using the techniques we’ll teach. This is submitted first day of Lent term and is worth 85%.}
+
+\slides{* Lab sheet for completion by end of Week 5.
+* Mini projects starting in Week 6 in small groups deploying lessons you’ve learnt}
 
 \subsection{Course Material}
 
