@@ -19,7 +19,7 @@ reveal: false
 ipynb: true
 ---
 
-\notes{Tick Session for this Practical is 8th November 2022}
+\notes{Check Session for this Practical is 8th November 2022}
 
 \subsection{Revert Matplotlib Version}
 

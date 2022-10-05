@@ -1,6 +1,6 @@
 ---
 week: 6
-session: 2
+session: 1
 label: A
 layout: lecture
 title: "Projects"
@@ -12,7 +12,7 @@ author:
   url: http://carlhenrik.com
 layout: lecture
 time: "12:00"
-date: 2022-11-15
+date: 2022-11-10
 ipynb: False
 pdfslides: l48-mlpw-projects.pdf
 reveal: False

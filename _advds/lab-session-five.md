@@ -1,7 +1,7 @@
 ---
 week: 
 session: 1
-title: "Lab Session Five **Tick**"
+title: "Lab Session Five **Check**"
 abstract:  >
 layout: notebook
 venue: Intel Lab, William Gates Building

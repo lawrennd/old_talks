@@ -14,7 +14,7 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 time: "12:00"
-date: 2022-11-03
+date: 2022-11-01
 ipynb: true
 reveal: true
 youtube: NVEX8v3eO6Y

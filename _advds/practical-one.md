@@ -28,7 +28,7 @@ ipynb: true
 ---
 
 
-\notes{Tick Session for this Practical is 3rd November 2022}
+\notes{Check Session for this Practical is 3rd November 2022}
 
 \define{databaseType}{mariadb}
 \include{_systems/includes/nigeria-nmis-installs.md}

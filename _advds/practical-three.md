@@ -18,5 +18,5 @@ reveal: false
 ipynb: false
 ---
 
-\notes{Tick Session for this Practical is 15th November 2022}
+\notes{Check Session for this Practical is 15th November 2022}
 

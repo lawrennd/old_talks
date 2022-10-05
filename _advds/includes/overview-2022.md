@@ -31,20 +31,22 @@
 
 \notes{The teaching is based not only on technical experience of the machine learning community, but real world experience of deploying and/or assisting with deployments of data science solutions at Amazon, for pandemic policy advice and in the African context (particularly Uganda and Kenya).}
 
-\subsection{Week 5}
+\subsection{Week 4}
 
   1. The Data Science Landscape. Lecturer: Neil D. Lawrence
   2. The Challenges of Data Science. Lecturer: Neil D. Lawrence
-  3. Lab Session One (Review and Refresher, Practical 1)
-  4. A Data Science Process. Lecturer: Neil D. Lawrence
+  3. The Challenges of Data Science II. Lecturer: Neil D. Lawrence
+
+  Lab Session One (Review and Refresher, Practical 1)
 
 \subsection{Week 6}
 
-  1. Lab Session Two (Hand in Practical 1 & Tick)
-  2. Statistical Learning. Lecturer: Carl Henrik Ek 
+  1. A Data Science Process. Lecturer: Neil D. Lawrence
+  2. Introduction to Statistical Learning. Lecturer: Carl Henrik Ek 
+  3. Generalised Linear Models. Lecturer: Carl Henrik Ek
+
+  Lab Session Two (Hand in Practical 1 & Practical One Check)
   
- <!-- 3. Lab Session Three Tick
-  4. Linear Models Lecturer: Carl Henrik Ek 
   
 \subsection{Week 7}
 
@@ -57,7 +59,7 @@
   1. Lab Session Four Questions
   2. Inference III Lecturer: Carl Henrik Ek
   3. Summary Lecturer: Carl Henrik Ek and Neil D. Lawrence
-  4. Project Results Tick
+  4. Project Results Check
   5. Course Q&A Lecturer: Carl Henrik Ek and Neil D. Lawrence-->
 
 \subsection{Assessment}
