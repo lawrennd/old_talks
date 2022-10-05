@@ -43,6 +43,13 @@
     * Climate Modelling (Scott Hoskins, BAS)
     * Simulation and Personalized Medicine (Javier Gonzalez, Microsoft Research)}
 
+\slides{* Weeks 6-8 will involve three special topics.
+* In 2021 we had:
+    * Spectroscopy data (Marie Synakewicz, Zurich)
+    * Amazon Supply Chain (Jordan Bell-Masterson, Amazon)
+    * Climate Science (Scott Hoskins, BAS)
+    * Elasticity Data (Tim Dodwell, Exeter)}
+
 \notes{These guest lectures focus on various approaches to simulating the physical world around us, and we will invite you (as part of your mini projects) to consider how important questions around these approaches can be answered as part with the techniques you’ve learnt in the module.}
 
 \notes{In 2020 the special topics included Simulation in the Pandemic. This will be presented by the Royal Society convened DELVE team who’ve been providing policy advice to government during the pandemic. The particular focus will be on simulations that were used to inform a report on the Test, Trace, Isolate system [@Delve-tti20].}
@@ -50,6 +57,10 @@
 \notes{Also in 2020, we looked at simulation and surrogate modelling in climate models with the British Antarctic Survey.}
 
 \notes{Finally, with Javier Gonzalez of Microsoft Research, we considered approaches in computational biology and medicine.}
+
+\notes{In 2021 we looked at force spectroscopy with Marie Synakewicz, supply chain with Jordan Bell-Masterson, climate science with Scott Hoskins and elasticity data with Tim Dodwell.}
+
+\notes{This year we are planning examples on understanding machine learning models, the Antartic ice sheet and more!}
 
 \subsection{Assessment}
 
