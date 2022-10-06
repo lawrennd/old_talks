@@ -47,13 +47,13 @@ mlai.write_figure('gaussian-histogram.svg', directory='\writeDiagramsDir/ml')}
 
 \newslide{}
 
-\notes{One ongoing characteristic of people who study probability and uncertainty is the confidence with which they hold opinions about it. Another leader of the Cavendish laboratory expressed his support of the second law of thermodynamics (which can be proven through the work of Gibbs/Boltzmann with ean emphatic statement at the beginning of his book.}
+\notes{One ongoing characteristic of people who study probability and uncertainty is the confidence with which they hold opinions about it. Another leader of the Cavendish laboratory expressed his support of the second law of thermodynamics (which can be proven through the work of Gibbs/Boltzmann) with an emphatic statement at the beginning of his book.}
 
-\figure{\columns{\includejpg{\diagramsDir/physics/arthur-stanley-eddington}{}{}{left}}{\includepng{\diagramsDir/physics/natureofphysical00eddi_7}{}{}{right}}{49%}{49%}}{Eddington's book on the Nature of the Physical World [@Eddington:nature29]}{eddington-book}
+\figure{\columns{\includejpg{\diagramsDir/physics/arthur-stanley-eddington}{100%}{}{left}}{\includepng{\diagramsDir/physics/natureofphysical00eddi_7}{80%}{}{right}}{49%}{49%}}{Eddington's book on the Nature of the Physical World [@Eddington:nature29]}{eddington-book}
 
 \newslide{}
 
-\notes{The same Eddington is also unfortunately famous for dismissing the ideas of a young Chandrasekhar who had come to Cambridge to study in the Cavendish lab. Chandrasekhar demonstrated the limit at which a star would collapse under its own weight to a singularity, but when he presented the work to Eddington, he was dismissive suggesting that there "must be some natural law that prevents this abomination from happening".}
+\notes{The same Eddington is also famous for dismissing the ideas of a young Chandrasekhar who had come to Cambridge to study in the Cavendish lab. Chandrasekhar demonstrated the limit at which a star would collapse under its own weight to a singularity, but when he presented the work to Eddington, he was dismissive suggesting that there "must be some natural law that prevents this abomination from happening".}
 
 \figure{\columns{\includepng{\diagramsDir/physics/natureofphysical00eddi_100}{80%}{}{left}}{\includepng{\diagramsDir/physics/ChandraNobel}{100%}{}{right}}{49%}{49%}}{Chandrasekhar (1910-1995) derived the limit at which a star collapses in on itself. Eddington's confidence in the 2nd law may have been what drove him to dismiss Chandrasekhar's ideas, humiliating a young scientist who would later receive a Nobel prize for the work.}{physical-world-chandra}
 
