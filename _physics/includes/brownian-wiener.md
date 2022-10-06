@@ -30,7 +30,7 @@
 
 \newslide{Stochasticity and Control}
 
-\figure{\columns{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}}{\aligncenter{\includepng{\diagramsDir/books/wiener-yellow-peril}{100%}}}{45%}{45%}}{Norbert Wiener (1894 - 1964). Founder of cybernetics and the information era. He used Gibbs’s ideas to develop a “theory of ignorance” that he deployed in early communication. On the right is Wiener's wartime report that used stochastic processes in forecasting with applications in radar control (image from @Coales-yellow14).}{norbert-wiener-yellow-peril}
+\figure{\columns{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}{}{left}}}{\includepng{\diagramsDir/books/wiener-yellow-peril}{100%}{}{right}}}{45%}{45%}}{Norbert Wiener (1894 - 1964). Founder of cybernetics and the information era. He used Gibbs’s ideas to develop a “theory of ignorance” that he deployed in early communication. On the right is Wiener's wartime report that used stochastic processes in forecasting with applications in radar control (image from @Coales-yellow14).}{norbert-wiener-yellow-peril}
 
 \notes{Wiener himself used the processes in his work. He was focused on mathematical theories of communication. Between the world wars he was based at Massachusetts Institute of Technology where the burgeoning theory of electrical engineering was emerging, with a particular focus on communication lines. Winer developed theories of communication that used Gibbs’s entropy to encode information. He also used the ideas behind the Wiener process for developing tracking methods for radar systems in the second world war. These processes are what we know of now as Gaussian processes (@Wiener:yellow49).}
 
