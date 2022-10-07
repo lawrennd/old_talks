@@ -12,8 +12,10 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-youtube: vc3_gSRpHNI
+youtube: V9XzHXuWkoM
 oldyoutube: 
+- code: vc3_gSRpHNI
+  year: 2021
 - code: NGP7O1B9XzM
   year: 2020
 time: "12:00"
