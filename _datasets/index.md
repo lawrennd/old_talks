@@ -3,8 +3,6 @@ title: Description of Datasets Available in `pods`
 date: 2020-11-19
 ---
 
-\include{../talk-macros.gpp}
-
 \notes{The pods toolbox provides easy access to various data sets. The data sets are accessed through calls to the `pods.datasets` module. This module contains functions which download and preprocess the data for you, presenting it in a dictionary with a standard format for use in `pods`. On download you will also be informed of any licensing restrictions and relevant citations for the data. The data is then cached on your local drive.}
 
 \notes{Here are some descriptions of the data sets in different notebooks.}

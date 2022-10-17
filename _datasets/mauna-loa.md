@@ -1,6 +1,6 @@
 ---
-title: Mauna Loa Carbon Dioxide Data
-date: 2022-10-17
+title: The Mauna Loa Observatory Data
+date: 2014-05-28
 ---
 
 \include{_datasets/includes/datasets-notebook-setup.md}
