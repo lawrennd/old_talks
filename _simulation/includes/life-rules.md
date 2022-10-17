@@ -17,7 +17,7 @@
 
 \figure{\columns{\threeColumns{\aligncenter{\includediagramclass{\diagramsDir/simulation/life-rules-2-0}{100%}}}{\aligncenter{*overcrowding*}\aligncenter{\includediagram{\diagramsDir/util/right-arrow}{60%}}}{\aligncenter{\includediagramclass{\diagramsDir/simulation/life-rules-2-1}{100%}}}{30%}{39%}{30%}}{\aligncenter{\includejpg{\diagramsDir/maths/John-Conway}{100%}{}{right}}}{70%}{30%}}{'Death' through overpopulation in Conway's game of life. If a cell is surrounded by more than three cells, it 'dies' through loneliness.}{life-rules-crowding}
 
-\notes{If there are four or more neighbors, the cell 'dies' from 'overcrowding'. If there are three neigbors, the cell persists, or if it is currently dead, a new cell is born.}
+\notes{If there are four or more neighbors, the cell 'dies' from 'overcrowding'. If there are three neighbors, the cell persists, or if it is currently dead, a new cell is born.}
 
 \newslide{Birth}
 
