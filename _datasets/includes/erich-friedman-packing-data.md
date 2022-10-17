@@ -43,6 +43,6 @@ mlai.write_figure(filename='squares-in-squares.svg',
 
 \newslide{Erich Friedman Packing Data: Squares in Squares}
 
-\figure{\includediagram{\diagramsDir/datasets/squares-in-squares}{50%}}{Plot of minimum side length known as a function of number of squares inside.}{squares-in-squares}
+\figure{\includediagram{\diagramsDir/datasets/squares-in-squares}{80%}}{Plot of minimum side length known as a function of number of squares inside.}{squares-in-squares}
 
 \endif

@@ -137,6 +137,16 @@ Over time there were a number of similar changes, each of which should have impr
 
 \include{_simulation/includes/simulation-system.md}
 \include{_data-science/includes/experiment-analyze-design.md}
+\include{_simulation/includes/packing-problems.md}
+\subsection{Modelling with a Function}
+
+\notes{What if the question of interest was quite simple, for example in the packing problem, we just wanted to know the minimum side length. Sometimes, regardless of the complexity of the problem, there can be a pattern to the answer that is emergent due to regularities in the underlying problem.}
+
+\slides{* What if question of interest is simple?
+* For example in packing problem: what is minimum side length?}
+
+\include{_datasets/includes/erich-friedman-packing-data.md}
+
 \include{_uq/includes/emulation.md}
 
 \include{_software/includes/gpy-software.md}
