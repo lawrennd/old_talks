@@ -5,7 +5,7 @@
 
 \notes{\subsection{Life Rules}}
 
-\notes{John Conway's game of life is a cellular automata where the cells obey three very simple rules. The cells live on a rectangular grid, so that each cell has 8 possible neighbors.}
+\notes{John Conway's game of life is a cellular automaton where the cells obey three very simple rules. The cells live on a rectangular grid, so that each cell has 8 possible neighbors.}
 
 \newslide{Loneliness}
 
