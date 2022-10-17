@@ -15,7 +15,7 @@
 
 \notes{Although we're approaching this from the machine learning perspective, with a computer-scientist's approach, you won't be surprised to find out that this field is not new and there are a range of research groups interested in this domain.}
 
-\notes{We've also been mainly focussing on *active* experimental design. In particular the case where we are sequentially selecting points to run our simulation based on previous results.}
+\notes{We've been focussing on *active* experimental design. In particular the case where we are sequentially selecting points to run our simulation based on previous results.}
 
 \notes{Here, we pause for a moment and cover approaches to *passive* experimental design. Almost all the emulation examples we've looked at so far need some initial points to 'seed' the emulator. Selecting these is also a task of experimental design, but one we perform without running our simulator.}
 
