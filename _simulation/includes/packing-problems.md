@@ -11,7 +11,7 @@
 
 \figure{\includegif{\diagramsDir/simulation/friedman/s17}{50%}}{Packing 17 squares into a single square. The optimal solution is sometimes hard to find. Here the side length of the smallest square that holds 17 similarly shaped squares is at least 4.675 times the smaller square. This solution found by John Bidwell in 1997. Credit <https://erich-friedman.github.io/packing/>}{friedman-s17}
 
-\notes{Another example of a problem where the "physics" is understood because it's really mathematics, is packing problems. Here the mathematics is just geometry, but still we need some form of compute to solve these problems. [Erich Friedman's website](https://erich-friedman.github.io/packing/) contains a host of these problems some of which are computationally understood. }
+\notes{Another example of a problem where the "physics" is understood because it's really mathematics, is packing problems. Here the mathematics is just geometry, but still we need some form of compute to solve these problems. [Erich Friedman's website](https://erich-friedman.github.io/packing/) contains a host of these problems, only some of which are analytically tractable.}
 
 \newslide{Packing Problems}
 
