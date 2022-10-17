@@ -26,7 +26,7 @@
 
 \newslide{Loafer}
 
-\notes{Despite widespread interest in Life, some of its patterns were only very recently discovered like the Loafer, discovered in 2013 by Josh Ball. So despite the game having existed for over forty years, and the rules of the game being simple, there are emergent behaviours that are unknown.}
+\notes{Despite widespread interest in Life, some of its patterns were only very recently discovered like the Loafer, discovered in 2013 by Josh Ball. So, despite the game having existed for over forty years, and the rules of the game being simple, there are emergent behaviors that are unknown.}
 
 \newslide{}
 
