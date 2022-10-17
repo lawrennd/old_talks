@@ -22,7 +22,7 @@
 \figure{\includediagram{\diagramsDir/software/buying-schematic}{40%}}{A schematic of a typical buying system for supply chain.}{buying-schematic}
 
 
-\notes{To make these decisions predictive models (often machine learning or statistical models) have to be moved. For example, the demand for a particular product needs to be pforecast.}
+\notes{To make these decisions predictive models (often machine learning or statistical models) have to be moved. For example, the demand for a particular product needs to be forecast.}
 
 \subsection{Forecasting}
 
@@ -42,6 +42,6 @@
   * Supplier lead times.
   * Demand Forecast.
   * Cost basis of the product.}
-\notes{Forecast information is combined with predictions around lead times from suppliers, understanding of the network's capacity (in terms of how much space is available in which fulfillment centres), the cost of storing and transporting products and the "value" for the consumer in finding the product is in stock. These models are typically operational research models (such as the "newsvendor problem" combined with machine learning and/or statistical forecasts.}
+\notes{Forecast information is combined with predictions around lead times from suppliers, understanding of the network's capacity (in terms of how much space is available in which fulfillment centers), the cost of storing and transporting products and the "value" for the consumer in finding the product is in stock. These models are typically operational research models (such as the "newsvendor problem" combined with machine learning and/or statistical forecasts.}
 
 \endif

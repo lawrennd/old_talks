@@ -41,6 +41,6 @@
 
 \notes{Similarly, the emulator can adjudicate between simulations. This is known as *multi-fidelity emulation*. The emulator characterizes which emulations perform well where.
 
-If all this modelling is done with judicious handling of the uncertainty, the *computational doubt*, then the emulator can assist in desciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real-world intervention.}
+If all this modelling is done with judicious handling of the uncertainty, the *computational doubt*, then the emulator can assist in deciding what experiment should be run next to aid a decision: should we run a simulator, in which case which one, or should we attempt to acquire data from a real-world intervention.}
 
 \endif

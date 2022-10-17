@@ -5,7 +5,7 @@
 
 \subsection{Packing Problems}
 
-\figure{\includegif{\diagramsDir/simulation/friedman/s17}{50%}}{Packing 9 squares into a single square. This example is trivially solved. Credit <https://erich-friedman.github.io/packing/>}{friedman-s9}
+\figure{\includegif{\diagramsDir/simulation/friedman/s9}{50%}}{Packing 9 squares into a single square. This example is trivially solved. Credit <https://erich-friedman.github.io/packing/>}{friedman-s9}
 
 \newslide{Packing Problems}
 
@@ -15,7 +15,7 @@
 
 \newslide{Packing Problems}
 
-\figure{\includegif{\diagramsDir/simulation/friedman/s10}{50%}}{Packing 10 squares into a single square. This example is proven by Walter Stromquist [@Stromquist-packingIII84]. Here $s=3+\frac{1}{\sqrt{2}}$. Credit <https://erich-friedman.github.io/packing/>}{friedman-s9}
+\figure{\includegif{\diagramsDir/simulation/friedman/s10}{50%}}{Packing 10 squares into a single square. This example is proven by Walter Stromquist [@Stromquist-packingIII84]. Here $s=3+\frac{1}{\sqrt{2}}$. Credit <https://erich-friedman.github.io/packing/>}{friedman-s10}
 
 
 

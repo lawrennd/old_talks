@@ -7,9 +7,9 @@
 
 \notes{One thing about working in an industrial environment, is the way that short-term thinking actions become important. For example, in Formula One, the teams are working on a two-week cycle to digest information from the previous week's race and incorporate updates to the car or their strategy. 
 
-However, businesses must also think about more medium-term horizons. For example, in Formula 1 you need to worry about next year's car. So while you're working on updating this year's car, you also need to think about what will happen for next year and prioritize these conflicting needs appropriately. 
+However, businesses must also think about more medium-term horizons. For example, in Formula 1 you need to worry about next year's car. So, while you're working on updating this year's car, you also need to think about what will happen for next year and prioritize these conflicting needs appropriately. 
 
-In the Amazon supply chain, there are the equivalent demands. If we accept that an artificial intelligence is just an automated decision-making system. And if we measure in terms of money automatically spent, or goods automatically moved, then Amazon's buying system is perhaps the world's largest AI.
+In the Amazon supply chain, there are equivalent demands. If we accept that an artificial intelligence is just an automated decision-making system. And if we measure in terms of money automatically spent, or goods automatically moved, then Amazon's buying system is perhaps the world's largest AI.
 
 Those decisions are being made on short time schedules; purchases are made by the system on weekly cycles. But just as in Formula 1, there is also a need to think about what needs to be done next month, next quarter and next year. Planning meetings are held not only on a weekly basis (known as weekly business reviews), but monthly, quarterly, and then yearly meetings for planning spends and investments.
 
@@ -44,7 +44,7 @@ Amazon is known for being longer term thinking than many companies, and a lot of
 * Data maturity assessments.
 * Data readiness levels.}
 
-\notes{We need faster, cheaper and more diverse experiments which implies we need better ecosystems for experimentation. This has led us to focus on the software frameworks we're using to develop machine learning systems including data oriented architectures (@Borchert-dataoriented20;@Lawrence-doa19;@Vorhemus-doa17;@Joshi-doa07), data maturity assessments (@Lawrence-maturity20) and data readiness levels (See this \addblog{Data Readiness Levels}{2017/01/12/data-readiness-levels} and @Lawrence-drl17;@Delve-data20)}
+\notes{We need faster, cheaper and more diverse experiments which implies we need better ecosystems for experimentation. This has led us to focus on the software frameworks we're using to develop machine learning systems including data oriented architectures (@Borchert-dataoriented20;@Lawrence-dop19;@Vorhemus-doa17;@Joshi-doa07), data maturity assessments (@Lawrence-maturity20) and data readiness levels (See this \addblog{Data Readiness Levels}{2017/01/12/data-readiness-levels} and @Lawrence-drl17;@Delve-data20)}
 
 
 \endif

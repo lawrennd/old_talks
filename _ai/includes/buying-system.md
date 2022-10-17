@@ -10,7 +10,7 @@
 
 The matching of demand and supply is a repetitive theme for decision making systems. Not only does it occur in automated buying, but also in the allocation of drivers to riders in a ride sharing system. Or in the allocation of compute resource to users in a cloud system. 
 
-The components of any of these system include predictions of the demand for the product, the drivers, or the compute. Predictions of the supply. Decisions are then made for how much material to keep in stock, or how many drivers to have on the road, or how much computer capacity to have in your data centers. These decisions have cost implications. The optimal amount of product will depend on the cost of making it available. For a buying system this is the storage costs. 
+The components of any of these systems include predictions of the demand for the product, the drivers, or the compute. Predictions of the supply. Decisions are then made for how much material to keep in stock, or how many drivers to have on the road, or how much computer capacity to have in your data centers. These decisions have cost implications. The optimal amount of product will depend on the cost of making it available. For a buying system this is the storage costs. 
 
 Decisions are made based on the supply and demand to make new orders, to encourage more drivers to come into the system or to build new data centers or rent more computational power.}
 
