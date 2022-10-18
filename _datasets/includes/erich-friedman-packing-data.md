@@ -15,10 +15,7 @@ import pods}
 
 \code{data = pods.datasets.erich_friedman_packing_data()
 x = data['X']
-y = data['Y']
-
-offset = y.mean()
-scale = np.sqrt(y.var())}
+y = data['Y']}
 
 \setupplotcode{import matplotlib.pyplot as plt
 import mlai.plot as plot
