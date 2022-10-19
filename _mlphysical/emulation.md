@@ -25,6 +25,10 @@ transition: None
 ---
 
 
+\include{_notebooks/includes/plot-setup.md}
+\include{_software/includes/notutils-software.md}
+\include{_software/includes/mlai-software.md}
+
 \section{Emulation}
 
 
@@ -106,8 +110,8 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{In Amazon the team I led looked at examples of simulations and emulation as varied as Prime Air drones across to the Amazon Supply Chain. In a purchasing system, the idea is to store stock to balance supply and demand. The aim is to keep product in stock for quick dispatch while keeping prices (and therefore costs) low. This idea is at the heart of Amazon's focus on customer experience.}
 
-<!--\include{_ai/includes/alexa-system.md}-->
-<!--\include{_ai/includes/prime-air-system.md}-->
+\include{_ai/includes/alexa-system.md}
+\include{_ai/includes/prime-air-system.md}
 \include{_ai/includes/supply-chain-system.md}
 \include{_ai/includes/buying-system.md}
 
@@ -116,7 +120,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{Unfortunately, it also makes sophisticated software systems a breeding ground for intellectual debt. Particularly when they contain components which are themselves ML components. Dealing with this challenge is a major objective of my Senior AI Fellowship at the Alan Turing Institute. You can see me talking about the problems [at this recent seminar given virtually in Manchester](http://inverseprobability.com/talks/notes/deploying-machine-learning-systems-intellectual-debt-and-auto-ai.html).}
 
-<!--[Simpy](https://simpy.readthedocs.io/en/latest/examples/gas_station_refuel.html)
+[Simpy](https://simpy.readthedocs.io/en/latest/examples/gas_station_refuel.html)
 
 * News Vendor Problem
 * Trolley & Pendulum
@@ -130,9 +134,8 @@ Over time there were a number of similar changes, each of which should have impr
 
 
 * Reaction Rates: 
-<>
 
--->
+
 
 
 \include{_simulation/includes/simulation-system.md}
@@ -145,7 +148,7 @@ Over time there were a number of similar changes, each of which should have impr
 \slides{* What if question of interest is simple?
 * For example in packing problem: what is minimum side length?}
 
-\include{_datasets/includes/erich-friedman-packing-data.md}
+\include{_gp/includes/erich-friedman-packing-gp.md}
 
 \include{_uq/includes/emulation.md}
 

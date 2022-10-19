@@ -5,7 +5,7 @@
 
 \subsection{Statistical Emulation}
 
-\figure{\includediagram{\diagramsDir/simulation/unified-model-systems}{70%}{negate}}{The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.}{met-office-unified-model}
+\figure{\includediagram{\diagramsDir/simulation/unified-model-systems}{80%}}{The UK Met office runs a shared code base for its simulations of climate and the weather. This plot shows the different spatial and temporal scales used.}{met-office-unified-model}
 
 \notes{In many real-world systems, decisions are made through simulating the environment. Simulations may operate at different granularities. For example, simulations are used in weather forecasts and climate forecasts. Interestingly, the UK Met office uses the same code for both, it has a ["Unified Model" approach](https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/index), but they operate climate simulations at greater spatial and temporal resolutions.}
 
