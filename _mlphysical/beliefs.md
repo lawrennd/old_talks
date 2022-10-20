@@ -17,7 +17,7 @@ author:
 talkscam:
 reveal: False
 ipynb: False
-pdfslides: l49-mlpw-02.pdf
+pdfslides: l48-mlpw-02.pdf
 pdfworksheet: 01_introduction.pdf
 youtube: sN0_pL9rm5I
 date: 2022-10-11

@@ -154,7 +154,7 @@ Over time there were a number of similar changes, each of which should have impr
 \slides{
 * [Formula One Race Simulation in Python](https://github.com/rothnic/formulapy) by Nick Roth.}
 
-\notes{Formula one teams also make use of simulation to design car parts. There are at least two components to this, simulations that allow the modelling of fluid flow across the car, and simulations that analyze the capabilities of materials under stress. You can find computational [fluild dynamics simulations in python here](https://github.com/barbagroup/CFDPython) and [finite element analysis methods for computing stress in materials here](https://solidspy.readthedocs.io/en/latest/readme.html).
+\notes{Formula one teams also make use of simulation to design car parts. There are at least two components to this, simulations that allow the modelling of fluid flow across the car, and simulations that analyze the capabilities of materials under stress. You can find computational [fluild dynamics simulations in python here](https://github.com/barbagroup/CFDPython) and [finite element analysis methods for computing stress in materials here](https://solidspy.readthedocs.io/en/latest/readme.html).}
 \slides{* [Fluid Dynamics](https://github.com/barbagroup/CFDPython) Discretisation of PDEs
 * [Stress in a connecting rod](https://solidspy.readthedocs.io/en/latest/readme.html) Discretisation of PDEs
 }
