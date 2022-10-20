@@ -120,7 +120,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{Unfortunately, it also makes sophisticated software systems a breeding ground for intellectual debt. Particularly when they contain components which are themselves ML components. Dealing with this challenge is a major objective of my Senior AI Fellowship at the Alan Turing Institute. You can see me talking about the problems [at this recent seminar given virtually in Manchester](http://inverseprobability.com/talks/notes/deploying-machine-learning-systems-intellectual-debt-and-auto-ai.html).}
 
-\newslide{Examples in Python}
+\subsection{Examples in Python}
 
 
 \notes{There are a number of different simulations available in python, and tools specifically design for simulation. For example `simpy` has a [list of example simulations](https://simpy.readthedocs.io/en/latest/examples/) around machine shops, gas stations, car washes.}
