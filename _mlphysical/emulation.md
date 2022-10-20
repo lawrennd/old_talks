@@ -127,7 +127,7 @@ Over time there were a number of similar changes, each of which should have impr
 \slides{
 * [Simpy](https://simpy.readthedocs.io/en/latest/examples/gas_station_refuel.html)}
 
-\notes{Operations research ideas like the newsvendor problem, can also be solved, Andrea Fabry provides an example of the newsvendor problem in python for order of [NFL replica jerseys here]((https://github.com/fabryandrea/newsvendor).}
+\notes{Operations research ideas like the newsvendor problem, can also be solved, Andrea Fabry provides an example of the newsvendor problem in python for order of [NFL replica jerseys here](https://github.com/fabryandrea/newsvendor).}
 \slides{
 * [News Vendor Problem](https://github.com/fabryandrea/newsvendor) in python (for ordering NFL Replica Jerseys.}
 
@@ -143,7 +143,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{In reinforcement learning similar control problems are studied, a classic reinforcement learning problem is known as the [Mountain Car](https://github.com/openai/gym/blob/master/gym/envs/classic_control/mountain_car.py). You can work with this problem using an environment known as [OpenAI gym](https://github.com/openai/gym) that includes many different reinforcement learning scenarios.}
 \slides{
-* [Mountain Car](https://github.com/openai/gym/blob/master/gym/envs/classic_control/mountain_car.py) in the OpenAI Gym.}
+* [Mountain Car](https://github.com/openai/gym/blob/master/gym/envs/classic_control/mountain_car.py) in the OpenAI Gym.
 }
 
 \notes{In neuroscience Hodgkin and Huxley studied the giant axon in squid to work out a set of differential equations that are still used today to model spiking neurons. Mark Kramer explains how to [simulate them in python here](https://mark-kramer.github.io/Case-Studies-Python/HH.html).}
