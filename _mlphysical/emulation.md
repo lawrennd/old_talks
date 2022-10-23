@@ -14,8 +14,10 @@ author:
 layout: lecture
 time: "12:00"
 date: 2022-10-20
-youtube: 2-kB5J_pfno
-oldyoutube: 
+youtube: Zw2es1Khu_c
+oldyoutube:
+- code: 2-kB5J_pfno
+  year: 2021
 - code: 7Ct_16JicLw
   year: 2020
 ipynb: true
