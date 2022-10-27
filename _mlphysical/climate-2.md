@@ -14,7 +14,7 @@ published: 2021-11-26
 time: "12:00"
 week: 8
 session: 1
-postsdir: ../../../mlatcl/mlphysical/_special_topics/
+postsdir: ../../../mlatcl/mlphysical/_casestudies/
 youtube: "PO7lRleEJBs"
 layout: casestudy
 ipynb: False

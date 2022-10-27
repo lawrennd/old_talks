@@ -13,7 +13,7 @@ published: 2021-11-19
 time: "12:00"
 week: 7
 session: 1
-postsdir: ../../../mlatcl/mlphysical/_special_topics/
+postsdir: ../../../mlatcl/mlphysical/_casestudies/
 reveal: false
 layout: casestudy
 categories:

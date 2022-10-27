@@ -28,8 +28,7 @@ author:
   family: Elesedy
   institution: University of Oxford
   url: https://www.cs.ox.ac.uk/people/bryn.elesedy/
-postsdir: ../../../mlatcl/mlphysical/_special_topics/
-layout: talk
+postsdir: ../../../mlatcl/mlphysical/_casestudies/
 time: "10:00"
 date: 2020-11-12
 venue: Virtual (Zoom)

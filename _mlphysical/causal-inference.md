@@ -16,7 +16,7 @@ abstract:
   avoided with proper causal thinking.
 week: 7
 session: 1
-postsdir: ../../../mlatcl/mlphysical/_special_topics/
+postsdir: ../../../mlatcl/mlphysical/_casestudies/
 pdfslides: 07-01-causal-inference.pdf
 time: "10:00"
 date: 2020-11-19

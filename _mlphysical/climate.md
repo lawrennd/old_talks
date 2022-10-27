@@ -26,7 +26,7 @@ abstract: >
   Multifidelity Climate Modelling data challenge!
 week: 8
 session: 1
-postsdir: ../../../mlatcl/mlphysical/_special_topics/
+postsdir: ../../../mlatcl/mlphysical/_casestudies/
 youtube: LDH3xr_W1_c
 time: "10:00"
 date: 2020-11-26

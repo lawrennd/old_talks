@@ -14,7 +14,7 @@ published: 2021-11-16
 time: "10:00"
 week: 6
 session: 2
-postsdir: ../../../mlatcl/mlphysical/_special_topics/
+postsdir: ../../../mlatcl/mlphysical/_casestudies/
 youtube: "I1-WKi-svhI"
 reveal: false
 layout: casestudy
