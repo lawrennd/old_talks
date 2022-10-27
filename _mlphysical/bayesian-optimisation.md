@@ -14,7 +14,11 @@ talkscam:
 reveal: False
 pdfslides: l48-mlpw-06.pdf
 pdfworksheet: 03_sequentialdecisionmaking.pdf
-youtube: zVXJ238j5KM
+linkipynb: _notebooks/bayesopt-notebook.ipynb
+youtube: O-a_6U42d2g
+oldyoutube:
+- code: zVXJ238j5KM
+  year: 2021
 time: "12:00"
 date: 2022-10-25
 ---

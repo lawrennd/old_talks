@@ -1,9 +1,10 @@
 ---
 week: 4
 title: "Practical 1"
+practical: 1
 abstract:  >
   In this lab session we look at setting up a SQL server and making joins between different data sets.
-layout: notebook
+layout: practical
 venue: Intel Lab, William Gates Building
 author:
 - family: Cabrera

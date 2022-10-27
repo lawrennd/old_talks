@@ -13,7 +13,6 @@ transition: None
 ---
 
 
-\include{talk-macros.tex}
 
 
 http://media.nips.cc/Conferences/2013/nips-dec2013-pearl-bareinboim-tutorial-full.pdf

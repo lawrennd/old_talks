@@ -2,7 +2,7 @@
 week: 6
 session: 1
 label: A
-layout: lecture
+layout: talk
 title: "Simulating Contact Tracing in the Pandemic: TTI Explorer"
 abstract: >
   COVID-19 pandemic has become the major influence on life of billions
@@ -27,10 +27,7 @@ author:
   family: Elesedy
   institution: University of Oxford
   url: https://www.cs.ox.ac.uk/people/bryn.elesedy/
-postdir: ../../../mlatcl/mlphysical/_special_topics/
-slidedir: ../../../mlatcl/mlphysical/slides/
-notedir: ../../../mlatcl/mlphysical/_notes/
-notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+postsdir: ../../../mlatcl/mlphysical/_special_topics/
 layout: lecture
 time: "10:00"
 date: 2020-11-12

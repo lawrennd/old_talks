@@ -1,5 +1,5 @@
 ---
-layout: lecture
+layout: talk
 title: Climate Science Challenges and Opportunities for Machine Learning
 label: C
 author:
@@ -26,10 +26,7 @@ abstract: >
   Multifidelity Climate Modelling data challenge!
 week: 8
 session: 1
-postdir: ../../../mlatcl/mlphysical/_special_topics/
-slidedir: ../../../mlatcl/mlphysical/slides/
-notedir: ../../../mlatcl/mlphysical/_notes/
-notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+postsdir: ../../../mlatcl/mlphysical/_special_topics/
 youtube: LDH3xr_W1_c
 time: "10:00"
 date: 2020-11-26

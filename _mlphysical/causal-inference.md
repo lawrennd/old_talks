@@ -1,5 +1,5 @@
 ---
-layout: lecture
+layout: talk
 title: Regression, Causality, Statistical Paradoxes and other Fairy Tales
 label: B
 author:
@@ -16,10 +16,7 @@ abstract:
   avoided with proper causal thinking.
 week: 7
 session: 1
-postdir: ../../../mlatcl/mlphysical/_special_topics/
-slidedir: ../../../mlatcl/mlphysical/slides/
-notedir: ../../../mlatcl/mlphysical/_notes/
-notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+postsdir: ../../../mlatcl/mlphysical/_special_topics/
 pdfslides: 07-01-causal-inference.pdf
 time: "10:00"
 date: 2020-11-19
