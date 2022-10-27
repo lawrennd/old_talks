@@ -1,5 +1,5 @@
 ---
-layout: talk
+layout: casestudy
 title: Regression, Causality, Statistical Paradoxes and other Fairy Tales
 label: B
 author:

@@ -14,10 +14,12 @@ time: "12:00"
 week: 7
 session: 1
 postsdir: ../../../mlatcl/mlphysical/_special_topics/
-layout: talk
+reveal: false
+layout: casestudy
 categories:
 - notes
 ---
 
 
 GitHub repo with miniSCOT: <https://github.com/amzn/supply-chain-simulation-environment>
+

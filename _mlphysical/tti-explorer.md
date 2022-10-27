@@ -1,8 +1,9 @@
 ---
 week: 6
+icon: tti-flowchart.png
 session: 1
 label: A
-layout: talk
+layout: casestudy
 title: "Simulating Contact Tracing in the Pandemic: TTI Explorer"
 abstract: >
   COVID-19 pandemic has become the major influence on life of billions
@@ -28,7 +29,7 @@ author:
   institution: University of Oxford
   url: https://www.cs.ox.ac.uk/people/bryn.elesedy/
 postsdir: ../../../mlatcl/mlphysical/_special_topics/
-layout: lecture
+layout: talk
 time: "10:00"
 date: 2020-11-12
 venue: Virtual (Zoom)

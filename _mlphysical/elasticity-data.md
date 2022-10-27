@@ -14,7 +14,10 @@ time: "10:00"
 week: 8
 session: 2
 postsdir: ../../../mlatcl/mlphysical/_special_topics/
-layout: lecture
+layout: casestudy
+ipynb: False
+pptx: False
+reveal: False
 youtube: 0ZWGqYUzNtc
 categories:
 - notes

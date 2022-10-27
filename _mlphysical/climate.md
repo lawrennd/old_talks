@@ -1,5 +1,5 @@
 ---
-layout: talk
+layout: casestudy
 title: Climate Science Challenges and Opportunities for Machine Learning
 label: C
 author:

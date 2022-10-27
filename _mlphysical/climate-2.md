@@ -16,7 +16,10 @@ week: 8
 session: 1
 postsdir: ../../../mlatcl/mlphysical/_special_topics/
 youtube: "PO7lRleEJBs"
-layout: talk
+layout: casestudy
+ipynb: False
+pptx: False
+reveal: False
 categories:
 - notes
 ---

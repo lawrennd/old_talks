@@ -16,7 +16,8 @@ week: 6
 session: 2
 postsdir: ../../../mlatcl/mlphysical/_special_topics/
 youtube: "I1-WKi-svhI"
-layout: talk
+reveal: false
+layout: casestudy
 categories:
 - notes
 ---
