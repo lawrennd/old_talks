@@ -32,7 +32,7 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\notes{\figure{\includediagram{\diagramsDir/data-science/\initials-google-trends}{80%}}{Google trends for \terms as different technological terms gives us insight into their popularity over time.}{\initials-gartner-hype-cycle-google-trends}}
+\notes{\figure{\includediagram{\diagramsDir/data-science/\initials-google-trends}{80%}}{A Google trends search for \terms as different technological terms gives us insight into their popularity over time.}{\initials-gartner-hype-cycle-google-trends}}
 
 
 \notes{Google trends gives us insight into the interest for different terms over time.}

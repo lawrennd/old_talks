@@ -2,7 +2,7 @@
 \define{marcelRenault}
 \editme
 
-\notes{But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.}
+\notes{But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So, when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.}
 
 \newslide{}
 
