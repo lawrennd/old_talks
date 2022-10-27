@@ -60,7 +60,7 @@
   2. Inference III Lecturer: Carl Henrik Ek
   3. Summary Lecturer: Carl Henrik Ek and Neil D. Lawrence
   4. Project Results Check
-  5. Course Q&A Lecturer: Carl Henrik Ek and Neil D. Lawrence-->
+  5. Course Q&A Lecturer: Carl Henrik Ek and Neil D. Lawrence
 
 \subsection{Assessment}
 

@@ -50,10 +50,10 @@ ipynb: false
 \subsection{What Next?}
 
 \slides{* Review notebook (covers `pandas`, probability and correlation)
-* Practical 1 (more `pandas`, setting up SQL on AWS, uploading data and performing joins with SQL.
+* Practical 1 (more `pandas`, setting up SQL on AWS, uploading data and performing joins with SQL).
 * Read through assignment to contextualise material.}
 
-\notes{As a refresher, we've provided a notebook to remind yourselves about probability and correlation, <https://mlatcl.github.io/ads/lectures/review-and-refresher.html>. We recommend that you go through exercises 4-9 of this notebook as soon as possible.}
+\notes{As a refresher, we've provided a notebook to remind yourselves about probability and correlation, <https://mlatcl.github.io/advds/lectures/review-and-refresher.html>. We recommend that you go through exercises 4-9 of this notebook as soon as possible.}
 
 \notes{You can also make a start on the first practical, <https://mlatcl.github.io/ads/lectures/practical-one.html> which covers SQL databases and joins.}
 
