@@ -1,6 +1,6 @@
 ---
 week: 6
-icon: tti-flowchart.png
+icon: assets/images/tti-flowchart.png
 session: 1
 label: A
 layout: casestudy
