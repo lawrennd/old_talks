@@ -1,5 +1,6 @@
 ---
 title: "Making sense of messy force spectroscopy data"
+featured_image: assets/images/protein-data.png
 abstract: "All processes of life depend on the correct functioning of biomolecules. To investigate the biochemical and biophysical properties of biomolecules and how they are affected by changes in environment or by disease-causing mutations, scientists challenge them with chemicals, temperature, pressure or force. Here, we will focus on force spectroscopy, a type of experiment in which piconewton forces can be applied to single molecules. The first bottleneck that scientists encounter is that of setting up the experiment and acquiring the data. However, if they are really unlucky, there can be a second bottleneck: messy data that nobody knows what to do with! In the world of single-molecule force spectroscopy, such data usually signifies the end of a project. But what if we found new methods of analysing the data that could potentially be combined with biophysical models to help us understand the system under investigation? In this session, we will first cover a few basics on proteins, optical tweezers and the data that is produced, before discussing examples of ‘nice’ and ‘messy’ data, the inherent limitations and the necessary pre-processing."
 author:
 - given: Marie

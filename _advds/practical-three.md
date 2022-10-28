@@ -3,7 +3,7 @@ week: 5
 title: "Practical 3"
 abstract:  >
   In this practical session we look at the second aspect of the Fynesse data science process, *assess*. In particular, we are going to download data from OpenStreetMap and verify its quality and utility.
-layout: notebook
+layout: practical
 venue: Intel Lab, William Gates Building
 author:
 - given: Carl Henrik
@@ -12,6 +12,7 @@ author:
   url: http://carlhenrik.com
 time: "15:00"
 date: 2022-11-08
+postsdir: ../../../mlatcl/advds/_practicals/
 pdfworksheet: practical-three.pdf
 transition: None
 reveal: false

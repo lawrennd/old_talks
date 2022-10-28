@@ -3,8 +3,8 @@ week: 4
 title: "Review and Refresher"
 abstract:  >
   In this review and refresher notebook we mix some review work with some of the concepts we'd like you to develop and understand as you progress through the course. The review work focuses on the use of probability, correlation, pandas and the jupyter notebook. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
-layout: notebook
-venue: Intel Lab, William Gates Building
+layout: practical
+venue: In your own time
 author:
 - family: Lawrence
   given: Neil D.
@@ -12,7 +12,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-time: "10:00"
+postsdir: ../../../mlatcl/advds/_practicals/
 date: 2022-10-28
 transition: None
 reveal: false

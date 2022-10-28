@@ -1,5 +1,6 @@
 ---
 layout: casestudy
+featured_image: assets/images/causal-inference.png
 title: Regression, Causality, Statistical Paradoxes and other Fairy Tales
 label: B
 author:

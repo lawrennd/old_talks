@@ -1,5 +1,6 @@
 ---
 title: "Elasticity Data"
+featured_image: assets/images/elasticity-data.png
 author:
 - given: Tim
   family: Dodwell

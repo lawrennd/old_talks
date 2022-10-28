@@ -3,7 +3,7 @@ week: 5
 title: "Practical 2"
 abstract:  >
   In this practical session we look at the second aspect of the Fynesse data science process, *assess*. In particular, we are going to download data from OpenStreetMap and verify its quality and utility.
-layout: notebook
+layout: practical
 venue: Intel Lab, William Gates Building
 author:
 - family: Lawrence
@@ -12,6 +12,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+postsdir: ../../../mlatcl/advds/_practicals/
 time: "15:00"
 date: 2022-11-03
 transition: None

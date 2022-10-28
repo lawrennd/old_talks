@@ -4,8 +4,8 @@ session: 1
 title: "Review and Refresher II"
 abstract:  >
   In this review and refresher notebook we remind ourselves about linear models and use the opportunity to provide some review of linear algebra. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
-layout: notebook
-venue: Intel Lab, William Gates Building
+layout: practical
+venue: In your own time
 author:
 - family: Lawrence
   given: Neil D.
@@ -13,7 +13,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-time: "15:00"
+postsdir: ../../../mlatcl/advds/_practicals/
 date: 2022-11-08
 transition: None
 reveal: false

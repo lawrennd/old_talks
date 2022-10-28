@@ -22,6 +22,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "15:00"
+postsdir: ../../../mlatcl/advds/_practicals/
 date: 2022-11-01
 transition: None
 reveal: false

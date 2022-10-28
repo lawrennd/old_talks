@@ -1,6 +1,7 @@
 ---
 week: 3
 title: "Causality and Statistical Models"
+featured_image: assets/images/causality-and-statistical-models.png
 abstract:  >
   This lecture will introduce the concept of causality and describe how it applies to statistical models. 
 layout: lecture

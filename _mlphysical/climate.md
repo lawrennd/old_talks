@@ -1,5 +1,6 @@
 ---
 layout: casestudy
+featured_image: assets/images/climate.png
 title: Climate Science Challenges and Opportunities for Machine Learning
 label: C
 author:
