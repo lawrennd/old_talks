@@ -3,7 +3,7 @@ week: 4
 title: "Practical 1 - SQLite variant"
 abstract:  >
   In this lab session we look at setting up a SQL server and making joins between different data sets.
-layout: notebook
+layout: practical
 venue: Intel Lab, William Gates Building
 author:
 - family: Cabrera
@@ -20,6 +20,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+postsdir: ../../../mlatcl/advds/_practicals/
 time: "15:00"
 date: 2022-11-01
 transition: None
