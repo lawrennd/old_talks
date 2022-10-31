@@ -48,7 +48,7 @@ transition: None
 
 \newslide{}
 
-With thanks to Jessical Beasley for graphic facilitaton and Jessica Montgomery, Ule von Luxburg, Philipp Berens and Kyle Cranmer for co-organisation as well as all attendees.
+With thanks to Jessical Beasley (Collective Next) for graphic facilitaton and Jessica Montgomery, Ule von Luxburg, Philipp Berens and Kyle Cranmer for co-organisation as well as all attendees.
 
 \thanks
 
