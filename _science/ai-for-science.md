@@ -15,13 +15,6 @@ venue: AI Seminar, Cambridge Computer Laboratory
 transition: None
 ---
 
-\newslide
-
-\figure{\includepng{\diagramsDir/science/aspirations-for-the-field-over-next-five-years}{}{80%}}{}{}
-
-\newslide
-
-\figure{\includejpg{\diagramsDir/science/building-effective-simulations}{}{80%}}{}{}
 
 \newslide
 
@@ -30,6 +23,11 @@ transition: None
 \newslide
 
 \figure{\includejpg{\diagramsDir/science/machine-learning-ecosystem}{}{80%}}{}{}
+
+
+\newslide
+
+\figure{\includejpg{\diagramsDir/science/building-effective-simulations}{}{80%}}{}{}
 
 \newslide
 
@@ -42,6 +40,15 @@ transition: None
 \newslide
 
 \figure{\includejpg{\diagramsDir/science/plenary-discussion-on-encoding-domain-knowledge}{}{80%}}{}{}
+
+\newslide
+
+\figure{\includepng{\diagramsDir/science/aspirations-for-the-field-over-next-five-years}{}{80%}}{}{}
+
+
+\newslide{}
+
+With thanks to Jessical Beasley for graphic facilitaton and Jessica Montgomery, Ule von Luxburg, Philipp Berens and Kyle Cranmer for co-organisation as well as all attendees.
 
 \thanks
 
