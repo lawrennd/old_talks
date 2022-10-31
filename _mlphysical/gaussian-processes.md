@@ -1,5 +1,6 @@
 ---
 title: "Gaussian processes"
+featured_image: assets/images/gaussian-processes.png
 abstract: "In this lecture we will introduce Gaussian processes and how they can be used to specify probability distributions over the space of functions. We will provide both an practical intuitive explanation and a more mathematically rigourus definition through stochastic processes."
 author:
 - given: Carl Henrik

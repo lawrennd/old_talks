@@ -4,6 +4,7 @@ session: 1
 label: A
 layout: lecture
 title: "Projects"
+featured_image: assets/images/projects.png
 abstract: In this session we review the assessment for the course.
 author:
 - given: Carl Henrik

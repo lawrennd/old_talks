@@ -2,6 +2,7 @@
 week: 6
 session: 1
 title: "Visualisation"
+featured_image: assets/images/visualisation.png
 abstract:  >
 layout: lecture
 venue: LT2, William Gates Building

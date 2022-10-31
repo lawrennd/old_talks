@@ -1,7 +1,7 @@
 ---
-week: 4
 title: "Practical 1"
 practical: 1
+featured_image: assets/images/practical-one.png
 abstract:  >
   In this lab session we look at setting up a SQL server and making joins between different data sets.
 layout: practical
@@ -29,6 +29,9 @@ reveal: false
 ipynb: true
 ---
 
+
+<!-- have students use AWS details we provided -->
+\define{awsSignUp}
 
 \notes{Check Session for this Practical is 3rd November 2022}
 

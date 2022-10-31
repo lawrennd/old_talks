@@ -1,6 +1,7 @@
 ---
 week: 5
 session: 3
+featured_image: assets/images/generalised-linear-models.png 
 title: "Generalised Linear Models"
 abstract:  >
 layout: lecture

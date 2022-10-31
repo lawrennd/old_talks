@@ -1,6 +1,7 @@
 ---
 layout: lecture
 title: "Sequential Decision Making Under Uncertainty: Bayesian Optimisation"
+featured_image: assets/images/bayesian-optimisation.png 
 week: 3
 session: 2
 author:

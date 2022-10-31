@@ -2,6 +2,7 @@
 week: 4
 session: 3
 title: "Data Science Challenges II"
+featured_image: assets/images/the-challenges-of-data-science-ii.png
 abstract:  >
   In this lecture we continue our exploration of data science challenges.
 layout: lecture

@@ -1,6 +1,7 @@
 ---
 layout: lecture
 title: Quantification of Beliefs
+featured_image: assets/images/beliefs.png
 abstract: >
   This lecture will provide the background in probability theory that
   we will make use of during the coming weeks. For many of you this

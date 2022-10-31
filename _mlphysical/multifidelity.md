@@ -3,6 +3,7 @@ week: 5
 session: 2
 layout: lecture
 title: "Multifidelity Modelling"
+featured_image: slides/diagrams/uq/statistical-emulation004.svg
 abstract: >
   This week we introduce multifidelity modelling. We use surrogate models to capture different qualities of information from different simulations.
 author:

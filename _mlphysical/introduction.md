@@ -2,6 +2,7 @@
 week: 1
 session: 1
 title: "Introduction: ML and the Physical World"
+featured_image: slides/diagrams/ceres/giuseppe-piazzi.png
 abstract:  >
   This lecture will introduce the course and provide a motivation and a historical account of machine learning and mathematical modelling. It will further detail the special challenges associated with the application of machine learning to physical systems. We will also outline the objectives of the course and how it will be structured over the term.
 layout: lecture

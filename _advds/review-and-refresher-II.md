@@ -1,7 +1,7 @@
 ---
-week: 5
-session: 1
 title: "Review and Refresher II"
+practical: 2
+featured_image: assets/images/review-and-refresher-II.png
 abstract:  >
   In this review and refresher notebook we remind ourselves about linear models and use the opportunity to provide some review of linear algebra. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
 layout: practical

@@ -1,6 +1,7 @@
 ---
-week: 4
 title: "Review and Refresher"
+practical: 1
+featured_image: assets/images/review-and-refresher.png
 abstract:  >
   In this review and refresher notebook we mix some review work with some of the concepts we'd like you to develop and understand as you progress through the course. The review work focuses on the use of probability, correlation, pandas and the jupyter notebook. Most of the code you need is provided in the notebook, there are a few exercises to help develop your understanding. 
 layout: practical

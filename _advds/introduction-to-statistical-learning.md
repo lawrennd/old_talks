@@ -1,6 +1,7 @@
 ---
 week: 5
 session: 2
+featured_image: assets/images/introduction-to-statistical-learning.png
 title: "Introduction to Statistical Learning"
 abstract:  >
 layout: lecture

@@ -1,6 +1,7 @@
 ---
 title: "Probabilistic Numerics"
 abstract: "In this lecture we will talk about probabilistic inference and decision making."
+featured_image: assets/images/probabilistic-numerics.png
 author:
 - given: Carl Henrik
   family: Ek

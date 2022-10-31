@@ -44,7 +44,7 @@ this line of code than any line of code you have written before.}
 \notes{An enormous amount of debugging would be required. As the
 nature of the code base is understood, software tests to verify it
 also need to be constructed. At the end of all your work, the lines of
-software you write to actually interact with the software on the USB
+software you write to interact with the software on the USB
 stick are likely to be minimal. But more thought would be put into
 those lines than perhaps any other lines of code in the system.}
 
@@ -52,7 +52,7 @@ those lines than perhaps any other lines of code in the system.}
 it needs to be deployed in an environment that monitors it. We cannot
 rely on an individual’s decision making to ensure the quality of all our
 systems. We need to create an environment that includes quality
-controls, checks and bounds, tests, all designed to ensure that
+controls, checks, and bounds, tests, all designed to ensure that
 assumptions made about this foreign code base are remaining valid.}
 
 \notes{This situation is akin to what we are doing when we incorporate data in
@@ -101,8 +101,8 @@ without bugs in the first place.}
   * Be constantly skeptical.
   * Use the best tools available, develop a deep understand how they work.
   * Share your experience of what challenges you’re facing. Have others (software engineers, fellow data analysts, your manager) review your work.
-  * Never go straight for the goal: you’d never try and write the API call straight away on the discarded hard drive, so why are you launching your classification algorithm before visualising the data?
-  * Ensure your analysis is documented and accessible. If your code does go wrong in production you’ll need to be able to retrace to where the error crept in.
+  * Never go straight for the goal: you’d never try and write the API call straight away on the discarded hard drive, so why are you launching your classification algorithm before visualizing the data?
+  * Ensure your analysis is documented and accessible. If your code does go wrong in production, you’ll need to be able to retrace to where the error crept in.
 2. When managing the data science process, don’t treat it as standard code development.
   * Don’t deploy a traditional agile development pipeline and expect it to work the same way it does for standard code development. Think about how you handle bugs, think about how you would handle very many bugs.
   * Don’t leave the data scientist alone to wade through the mess.

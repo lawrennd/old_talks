@@ -1,11 +1,10 @@
 ---
-week: 5
-session: 1
-layout: lecture
-title: "Sensitivity Analysis"
+practical: 2
+layout: practical
+title: "Practical 2"
 featured_image: slides/diagrams/uq/non-zero-sobol-ishigami.svg
 abstract: >
-  This week we introduce sensitivity analysis through Emukit, showing how Emukit can deliver Sobol indices for understanding how the output of the system is affected by different inputs.
+  In this practical we undertake a sensitivity analysis using Emukit, we explore how Emukit can deliver Sobol indices for understanding how the output of the system is affected by different inputs.
 author:
 - family: Lawrence
   given: Neil D.
@@ -13,15 +12,10 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-layout: lecture
-time: "12:00"
 date: 2022-11-03
+postsdir: ../../../mlatcl/mlphysical/_practicals/
 ipynb: True
-reveal: True
-youtube: PtE_EFyUkkE
-oldyoutube: 
-- code: I5ZlCLR89AU
-  year: 2020
+reveal: False
 transition: None
 ---
 
@@ -30,7 +24,8 @@ transition: None
 \include{_uq/includes/emukit-sensitivity-analysis.md}
 \include{_uq/includes/catapult-sensitivity-analysis.md}
 
-\thanks
+
+\notes{You can submit the notebook on Moodle. Name your notebook using your CRSid as `crsid_practical-two.ipynb` before submitting to Moodle.}
 
 \reading
 

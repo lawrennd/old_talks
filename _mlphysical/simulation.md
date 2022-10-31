@@ -2,6 +2,7 @@
 week: 2
 session: 2
 title: "Simulation"
+featured_image: slides/diagrams/simulation/Loafer.gif
 abstract:  >
   This lecture will introduce the notion of simulation and review the different types of simulation we might use to represent the physical world. 
 author:
