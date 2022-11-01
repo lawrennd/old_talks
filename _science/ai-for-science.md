@@ -43,6 +43,10 @@ transition: None
 
 \newslide
 
+\figure{\includepng{\diagramsDir/science/connecting-data-to-causality}{}{80%}}{}{}
+
+\newslide
+
 \figure{\includepng{\diagramsDir/science/aspirations-for-the-field-over-next-five-years}{}{80%}}{}{}
 
 
