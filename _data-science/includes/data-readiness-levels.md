@@ -61,7 +61,7 @@ In a *data first* company teams own their data quality issues at least as far as
 * Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.
 }
 
-\notes{Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set. 
+\notes{Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in universities. Bringing an algorithm to bear on a well understood data set. 
 
 In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.
 
