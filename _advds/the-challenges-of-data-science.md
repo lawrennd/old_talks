@@ -50,11 +50,6 @@ ipynb: false
 
 \include{_data-science/includes/data-science-as-debugging.md}
 
-\include{_psychology/includes/selective-attention-bias.md}
-\define{bmiStepsAnalysis}
-\include{_data-science/includes/data-inattention-bias.md}
-
-\include{_data-science/includes/societal-effects.md}
 
 \subsection{Conclusions}
 
