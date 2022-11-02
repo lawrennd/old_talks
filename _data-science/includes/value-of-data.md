@@ -4,7 +4,7 @@
 
 \section{Quantifying the Value of Data}
 
-\notes{The situation is reminiscent of a thirsty castaway, set adrift. There is a sea of data, but it is not fit to drink. We need some form of data desalination before it can be consumed. But like real desalination, this is a non trivial process, particularly if we want to achieve it at scale.}
+\notes{The situation is reminiscent of a thirsty castaway, set adrift. There is a sea of data, but it is not fit to drink. We need some form of data desalination before it can be consumed. But like real desalination, this is a non-trivial process, particularly if we want to achieve it at scale.}
 
 \newslide{Quantifying the Value of Data}
 
@@ -40,7 +40,7 @@ We require data-desalination before it can be consumed!
   * Quantifying the value in the contribution of *each actor*.
 }
 
-\notes{We need to properly incetivize the sharing and production of clean data sets, we need to correctly quantify the value in the contribution of each actor, otherwise there won't be enough clean data to satiate the thirst of our decision making processes.}
+\notes{We need to properly incentivize the sharing and production of clean data sets, we need to correctly quantify the value in the contribution of each actor, otherwise there won't be enough clean data to satiate the thirst of our decision-making processes.}
 
 \setupdisplaycode{import notutils as nu}
 \setupdisplaycode{import notutils as nu}
