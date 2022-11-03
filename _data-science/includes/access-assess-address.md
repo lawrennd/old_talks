@@ -9,13 +9,13 @@
 \slides{* Access
 * Assess
 * Address}
-\notes{Here we present a new framework for thinking about data science. The Fynesse framework splits the activities of the data scientist into three aspects, each aspect is repressented by a one of three words that highlight different activities that occur within a data science project: we call them access, assess and address.}
+\notes{Here we present a new framework for thinking about data science. The Fynesse framework splits the activities of the data scientist into three aspects, each aspect is represented by a one of three words that highlight different activities that occur within a data science project: we call them access, assess and address.}
 
-\notes{Before going deeper into the framework, we will contextualise by looking at some other formalisations of the data analysis pipeline.}
+\notes{Before going deeper into the framework, we will contextualize by looking at some other formalizations of the data analysis pipeline.}
 
 \newslide{CRISP-DM}
 
-\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram: it stands for cross industry standard process for data mining. The process was defined in 2000 (@Chapman-step00), well before the modern service oriented architecture approach to software engineering emerged.}{crisp-dm-diagram}
+\figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram: it stands for cross industry standard process for data mining. The process was defined in 2000 (@Chapman-step00), well before the modern service-oriented architecture approach to software engineering emerged.}{crisp-dm-diagram}
 
 \notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
 
@@ -24,9 +24,9 @@
 
 \include{_data-science/includes/gartner-hype-cycle-base.md}
 
-\notes{We note that the term *data mining* is falling somewhat out of favour, and the CRISP-DM data mining process also feels somewhat dated. In particular software engineering has moved on a great deal since it was defined, with modern software engineering more focussed on service oriented architectures. Software design has a pervasive effect on our ability to do data science.}
+\notes{We note that the term *data mining* is falling somewhat out of favour, and the CRISP-DM data mining process also feels somewhat dated. In particular software engineering has moved on a great deal since it was defined, with modern software engineering more focused on service oriented architectures. Software design has a pervasive effect on our ability to do data science.}
 
-\notes{When thinking about the data science process it is important to consider the *software architectures* that are used in large scale decision making systems, and understand what it is that they are bring to help solve these problems.}
+\notes{When thinking about the data science process it is important to consider the *software architectures* that are used in large scale decision making systems and understand what it is that they are bring to help solve these problems.}
 
 \notes{A more modern view from the O'Reilly book *Doing Data Science* frames the problem as shown in Figure \ref{data-science-process-oneil}.}
 
@@ -72,7 +72,7 @@
   * Assess - work that can be done *without* the question
   * Address - giving answers to question at hand}
 
-\notes{The Fynesse paradigm considers three *aspects* to data analysis: Access, Assess, Address. In this way it builds on many two stage processes that consider *data collection* and *data wrangling* to be two separate stages. There are two key differences to the Fynesse process. Firstly, the attempt to separate data wrangling tasks into (a) those that can be done *without* knowing the downstream task (Assess) and (b) those that can only be done *with* knowing the downstream task (Address). Naturally, this won't turn out to be a clean separation. But the ethos is to ensure that any reusable tasks that is done in the process of data wrgangling is labelled as such and pushed back into the data ecosystem. Secondly, our use of the term *aspects* instead of stages acknowledges the fact that although there is a natural ordering to the aspects, we find that in practice the data scientist is often moving quicly across the different aspects, so that the mind set of "stages" can be unhelpful}
+\notes{The Fynesse paradigm considers three *aspects* to data analysis: Access, Assess, Address. In this way it builds on many two stage processes that consider *data collection* and *data wrangling* to be two separate stages. There are two key differences to the Fynesse process. Firstly, the attempt to separate data wrangling tasks into (a) those that can be done *without* knowing the downstream task (Assess) and (b) those that can only be done *with* knowing the downstream task (Address). Naturally, this won't turn out to be a clean separation. But the ethos is to ensure that any reusable tasks that is done in the process of data wrangling is labelled as such and pushed back into the data ecosystem. Secondly, our use of the term *aspects* instead of stages acknowledges the fact that although there is a natural ordering to the aspects, we find that in practice the data scientist is often moving quickly across the different aspects, so that the mind set of "stages" can be unhelpful}
 
 
 \subsection{Access}

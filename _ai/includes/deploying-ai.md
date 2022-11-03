@@ -7,7 +7,7 @@
 * Challenges in deploying AI.
 * Currently this is in the form of "machine learning systems"
 }
-\notes{With the wide availability of new techniques, we are currently creating Artifical Intelligence through combination of machine learning algorithms to form machine learning systems.}
+\notes{With the wide availability of new techniques, we are currently creating Artificial Intelligence through combination of machine learning algorithms to form machine learning systems.}
 
 \newslide{Internet of People}
 \slides{

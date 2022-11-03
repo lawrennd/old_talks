@@ -1,5 +1,6 @@
 ---
 week: 1
+featured_image: slides/diagrams/data-science/new-flow-of-information003.svg
 title: The Data Science Process
 abstract: |
   In this session we look at some of what makes the data science process different from classical computer science.
