@@ -14,7 +14,10 @@ author:
   url: http://carlhenrik.com/
 time: "10:00"
 date: 2022-11-07
-youtube: r5WFIloyVx0
+youtube: KWP58rugi4E
+oldyoutube: 
+- code: r5WFIloyVx0
+  year: 2021
 pdfslides: advanced-datascience-learning.pdf
 transition: None
 reveal: false
