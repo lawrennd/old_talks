@@ -1,6 +1,7 @@
 ---
 title: Bayesian Learning of GP-LVM
-session: 10
+featured_image: slides/diagrams/gplvm/singlecell-bayes-gplvm.svg
+week: 10
 abstract:
 ---
 

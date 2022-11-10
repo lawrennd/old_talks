@@ -18,8 +18,10 @@ time: "12:00"
 date: 2022-11-03
 ipynb: True
 reveal: True
-youtube: PtE_EFyUkkE
-oldyoutube: 
+youtube: HbtFVqVy5yI
+oldyoutube:
+- code: PtE_EFyUkkE
+  year: 2021
 - code: I5ZlCLR89AU
   year: 2020
 transition: None

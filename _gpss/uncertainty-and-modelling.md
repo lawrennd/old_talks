@@ -1,6 +1,7 @@
 ---
 title: Uncertainty and Modelling
-session: 1
+featured_image: slides/diagrams/ml/under_determined_system009.svg
+week: 1
 abstract: >
   In this talk we motivate the representation of uncertainty through probability distributions we review Laplace's approach to understanding uncertainty and how uncertainty in functions can be represented through a multivariate Gaussian density.
 author: 

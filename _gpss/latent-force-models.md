@@ -1,6 +1,6 @@
 ---
 title: Latent Force Models
-session: 9
+week: 9
 abstract: 
 ---
 

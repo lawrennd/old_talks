@@ -1,5 +1,5 @@
 ---
-week: 1
+week: 2
 featured_image: slides/diagrams/data-science/new-flow-of-information003.svg
 title: The Data Science Process
 abstract: |

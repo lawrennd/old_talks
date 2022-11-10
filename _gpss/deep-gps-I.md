@@ -1,6 +1,7 @@
 ---
 title: Deep Gaussian Processes I
-session: 11
+featured_image: slides/diagrams//deepgp/deep-nn-bottleneck2.svg
+week: 11
 abstract: 
 ---
 

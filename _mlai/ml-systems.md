@@ -1,6 +1,7 @@
 ---
-week: 4
+week: 5
 title: "Data and Machine Learning Systems"
+featured_image: slides/diagrams//ml/nigerian-state-borders.svg
 abstract: "So far we have introduced objective functions, and (linear) prediction functions. This gives us two key ingredients of the machine learning formula. But to build machine learning systems you also need data. This lecture introduces some of the challenges of building machine learning data systems. It will introduce (or review) for you the concepts around joining of databases together. The storage and manipulation of data is at the core of machine learning systems and data science. Note: the notebook makes use of Covid19 data from Nigeria, but the goal of this notebook is to introduce the reader to these concepts, not to authoritatively answer any questions about the state of Nigerian health facilities or Covid19, but to give you an understanding of data infrastructures and bringing data sets together."
 author:
 - given: Eric
