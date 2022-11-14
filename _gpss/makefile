@@ -1,3 +1,3 @@
-BASE=emulation-2022
+BASE=emulation
 include ../make-talk-flags.mk
 include ../make-talk.mk

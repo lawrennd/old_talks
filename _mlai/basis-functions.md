@@ -1,5 +1,6 @@
 ---
-week: 5
+week: 6
+featured_image: slides/diagrams/ml/radial_function002.svg
 title: Basis Functions
 abstract: |
   In the last session we explored least squares for univariate and multivariate *regression*. We introduced *matrices*, *linear algebra* and *derivatives*. 

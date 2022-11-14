@@ -1,5 +1,5 @@
 ---
-week: 2
+week: 3
 featured_image: slides/diagrams/mlai/carthaginian-empire.png
 title: "Objective Functions: A Simple Example with Matrix Factorisation"
 abstract: |

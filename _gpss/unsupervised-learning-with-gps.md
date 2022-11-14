@@ -1,6 +1,7 @@
 ---
 title: Unsupervised Learning with Gaussian Processes
-session: 8
+featured_image: slides/diagrams//dimred/nonlinear-mapping-3d-plot.svg
+week: 8
 abstract: 
 ---
 

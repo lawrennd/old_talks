@@ -1,5 +1,6 @@
 ---
-week: 11
+week: 12
+featured_image: slides/diagrams/gp/two_point_sample001.svg
 title: "Special Topics: Gaussian Processes"
 abstract: 
 youtube: B2XhFoCehy8

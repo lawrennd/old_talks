@@ -1,6 +1,6 @@
 ---
 title: Non Gaussian Likelihoods
-session: 7
+week: 7
 abstract:
 ---
 

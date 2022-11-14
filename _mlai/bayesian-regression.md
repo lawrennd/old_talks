@@ -1,5 +1,6 @@
 ---
-week: 7
+week: 8
+featured_image: slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
 youtube: 17zr5dGcUzE

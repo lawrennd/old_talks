@@ -1,5 +1,5 @@
 ---
-week: 3
+week: 4
 featured_image: slides/diagrams/ml/regression_contour_fit028.svg
 title: Linear Algebra and Linear Regression
 abstract: |

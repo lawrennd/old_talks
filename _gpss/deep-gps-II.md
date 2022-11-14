@@ -1,6 +1,7 @@
 ---
 title: Deep Gaussian Processes II
-session: 12
+featured_image: slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg
+week: 12
 abstract:
 ---
 

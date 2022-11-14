@@ -1,5 +1,6 @@
 ---
-week: 0
+week: 1
+featured_image: slides/diagrams/ml/over_determined_system007.svg
 title: Probability and an Introduction to Jupyter, Python and Pandas
 abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.

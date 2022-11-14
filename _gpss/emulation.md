@@ -1,6 +1,7 @@
 ---
 title: Emulation
-session: 13
+week: 13
+featured_image: slides/diagrams/uq/statistical-emulation001.svg
 abstract: In this session we introduce the notion of emulation and systems modeling with Gaussian processes.
 date: 2021-09-15
 venue: Virtual GPSS

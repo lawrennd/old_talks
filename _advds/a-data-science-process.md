@@ -7,7 +7,10 @@ abstract:  >
   In this lecture we introduce a data science process: access, assess and address. The process Given the landscape we've outlined, in this lecture we will look at the challenges of deploying data science solutions in practice. We categorize them into three groups.
 layout: lecture
 venue: LT2, William Gates Building
-youtube: kDOCnZcVEQA
+youtube: BfkEg7BTbHA
+oldyoutube:
+- code: kDOCnZcVEQA
+  year: 2021
 author:
 - family: Lawrence
   given: Neil D.
