@@ -32,6 +32,8 @@ ipynb: True
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 
+\include{_data-science/includes/evolved-relationship.md}
+
 \include{_data-science/includes/three-data-science-challenges.md}
 \notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 \include{_data-science/includes/big-data-paradox.md}

@@ -66,8 +66,8 @@ transition: None
 
 \include{_ai/includes/embodiment-factors-celsius.md}
 
-\include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/conversation-tedx.md}
+\include{_data-science/includes/evolved-relationship.md}
 
 <!-- Data Science (why it's happening) -->
 
