@@ -18,7 +18,14 @@ author:
   url: http://inverseprobability.com
 date: 2022-11-14
 venue: The Engineer in Society
+ipynb: True
 ---
+
+\slides{\aligncenter{\neilLawrencePicture{20%}}
+\aligncenter{Neil Lawrence}
+\aligncenter{Professor of Machine Learning}}
+
+\include{_notebooks/includes/notebook-setup.md}
 
 \include{_psychology/includes/selective-attention-bias.md}
 \include{_data-science/includes/data-inattention-bias.md}

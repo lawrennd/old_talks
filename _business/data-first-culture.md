@@ -21,7 +21,6 @@ categories:
 - notes
 ---
 
-\include{talk-macros.tex}
 
 \section{Introduction}
 
