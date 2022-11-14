@@ -1,5 +1,5 @@
 ---
-title: "Real World Machine Learning Challenges"
+title: "How Engineers Solve Big and Difficult Problems Part 1: The Challenges/Opportunities Presented to Engineers by AI/ML"
 abstract: >
   Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the 
   current revolution in “artificial intelligence” that has dominated popular press headlines and is having a 
@@ -16,11 +16,8 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2019-11-28
-venue: Astra Zeneca Data Science Meetup
-geometry: ["a4paper", "margin=2cm"]
-papersize: a4paper
-transition: None
+date: 2022-11-14
+venue: The Engineer in Society
 ---
 
 \include{_ml/includes/what-is-ml.md}
@@ -31,6 +28,7 @@ transition: None
 \include{_supply-chain/includes/supply-chain.md}
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ai/includes/safe-boda.md}
+\include{_ai/includes/prime-air-system.md}
 
 \include{_supply-chain/includes/supply-chain-motto.md}
 
