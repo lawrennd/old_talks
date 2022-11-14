@@ -28,15 +28,14 @@ ipynb: True
 \include{_notebooks/includes/notebook-setup.md}
 
 \include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-inattention-bias.md}
-
+\include{_data-science/includes/data-selection-attention-bias.md}
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
-\include{_data-science/includes/societal-effects.md}
+
 \include{_data-science/includes/three-data-science-challenges.md}
 \notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 \include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/breadth-or-depth.md}
+\include{_data-science/includes/number-data-theatre.md}
 \include{_data-science/includes/big-model-paradox.md}
 \include{_data-science/includes/value-of-data.md}
 \include{_data-science/includes/privacy-intro.md}
@@ -44,16 +43,13 @@ ipynb: True
 \include{_data-science/includes/marketing-and-free-will.md}
 \include{_data-science/includes/digital-revolution-and-inequality.md}
 \include{_data-science/includes/privacy-amelioration.md}
+
 \include{_governance/includes/data-trusts.md}
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
-\include{_supply-chain/includes/supply-chain.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-\include{_ai/includes/safe-boda.md}
-\include{_ai/includes/prime-air-system.md}
 
+\include{_books/includes/the-art-of-statistics.md}
 
-\notes{We separated the challenges we face into three groups: (1) paradoxes of the odern data society, (2) quantifying the value of data and (3) privacy loss of control and marginalization. We've noted the origins of the paradoxes, speculating that it is based in a form of data (or modelling) inattention bias demonstrated through the Gorilla. We've drawn parallels between challenges of rewarding the addition of value and the credit assignment problem in reinforecement learning and we've looked at approaches to introduce the voice of marginalized societies and people into the conversation.}
 
 
 
