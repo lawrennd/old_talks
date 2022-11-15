@@ -33,7 +33,8 @@ ipynb: True
 \include{_ml/includes/data-science-vs-ai.md}
 
 \include{_data-science/includes/evolved-relationship.md}
-
+\include{_data-science/includes/data-science-africa.md}
+\include{_health/includes/malaria-gp.md}
 \include{_data-science/includes/three-data-science-challenges.md}
 \notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
 \include{_data-science/includes/big-data-paradox.md}
@@ -45,10 +46,7 @@ ipynb: True
 \include{_data-science/includes/marketing-and-free-will.md}
 \include{_data-science/includes/digital-revolution-and-inequality.md}
 \include{_data-science/includes/privacy-amelioration.md}
-
 \include{_governance/includes/data-trusts.md}
-\include{_data-science/includes/data-science-africa.md}
-\include{_health/includes/malaria-gp.md}
 
 \include{_books/includes/the-art-of-statistics.md}
 
