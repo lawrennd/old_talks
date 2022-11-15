@@ -41,6 +41,7 @@ ipynb: True
 \include{_data-science/includes/number-data-theatre.md}
 \include{_data-science/includes/big-model-paradox.md}
 \include{_data-science/includes/value-of-data.md}
+\include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
 \include{_data-science/includes/privacy-intro.md}
 \include{_data-science/includes/hate-speech-or-political-dissent.md}
 \include{_data-science/includes/marketing-and-free-will.md}
