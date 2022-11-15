@@ -44,6 +44,7 @@ ipynb: True
 \include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
 \include{_data-science/includes/privacy-intro.md}
 \include{_data-science/includes/hate-speech-or-political-dissent.md}
+\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
 \include{_data-science/includes/marketing-and-free-will.md}
 \include{_data-science/includes/digital-revolution-and-inequality.md}
 \include{_data-science/includes/privacy-amelioration.md}

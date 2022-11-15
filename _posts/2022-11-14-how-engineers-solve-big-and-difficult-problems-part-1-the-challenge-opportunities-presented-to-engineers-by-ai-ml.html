@@ -744,6 +744,173 @@ Victor Ohuruogu
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/privacy-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/privacy-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Society is becoming harder to monitor, but the individual is becoming easier to monitor. Social media monitoring for ‘hate speech’ can easily be turned to monitoring of political dissent. Marketing becomes more sinister when the target of the marketing is so well understood and the digital environment of the target is so well controlled.</p>
+<h2 id="case-study-text-mining-for-misinformation">Case Study: Text Mining for Misinformation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/joyce-nabende-text-mining-case-study.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/joyce-nabende-text-mining-case-study.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="centered" style="">
+<svg viewBox="0 0 200 200" style="width:15%">
+<defs> <clipPath id="clip6">
+<style>
+circle {
+  fill: black;
+}
+</style>
+<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
+<title>
+Joyce Nakatumba-Nabende
+</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip6)"/>
+</svg>
+</div>
+<p>We consider a case study from Joyce Nabende, Head of the <a href="https://air.ug/">Makerere AI Lab</a>. This case study is based on a presentation given by Joyce to the DSA Research Grants, “Project Progress” session on 20th August 2021.</p>
+<p>The aim of the case study is to map some of the approaches used by Joyce onto the Access, Assess, Address paradigm.</p>
+<p>The aim of the project is to develop tools for automated misinformation detection. Web, mobile based social media platforms. Social media posts are invalid, inaccurate, potentially harmful. This is set within the context of the Covid-19 pandemic within Uganda.</p>
+<div class="figure">
+<div id="uganda-social-medial-killing-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-uganda-social-media-killing.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="uganda-social-medial-killing-magnify" class="magnify" onclick="magnifyFigure(&#39;uganda-social-medial-killing&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="uganda-social-medial-killing-caption" class="caption-frame">
+<p>Figure: Misinformation through media has been a challenge for as long as we’ve been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende’s presentation.</p>
+</div>
+</div>
+<p>In common with many applications of data science, and in line with traditional statistics, the question here comes first, at the beginning of the data collection. But the access of the data is made easier by the fact that the data exists in the digital space already. There are APIs for collecting data from Facebook and Twitter.</p>
+<p>The focus here will be trying to understand which parts of this data collection process might be reusable for others. The aim is to separate those reusable parts from aspects that are specific to the question.</p>
+<div class="figure">
+<div id="napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06-magnify" class="magnify" onclick="magnifyFigure(&#39;napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06-caption" class="caption-frame">
+<p>Figure: Social media is widespread in Uganda, perhaps largely due to widespread availability of mobile phone access.</p>
+</div>
+</div>
+<p>As with any data science problem, it’s vital that domain knowledge is included in the analysis of the problem. To set context, we see in Figure  how widespread use of social media is in Uganda for different age groups. The total population of Uganda is around 47 million.</p>
+<div class="figure">
+<div id="joyce-nabende-data-science-objective-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-data-science-objective.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="joyce-nabende-data-science-objective-magnify" class="magnify" onclick="magnifyFigure(&#39;joyce-nabende-data-science-objective&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="joyce-nabende-data-science-objective-caption" class="caption-frame">
+<p>Figure: The objective of the project is to track misinformation and understandperceptions of Ugandan Government’s COVID-19 transmission mitigation strategies.</p>
+</div>
+</div>
+<p>One particular challenge for this project is dealing with a data set with multiple languages. In Uganda, people don’t just communicate in English, but they will <a href="https://en.wikipedia.org/wiki/Code-switching">code-switch</a> or communicate purely in, e.g. Luganda. Tools and resources for dealing with code-switching or the Lugandan language in NLP are much less common than tools for dealing with high resource languages (e.g. German, English, French, Spanish, Mandarin). See <span class="citation" data-cites="Magueresse-lowresource20">Magueresse et al. (2020)</span> for a review of NLP in low resource languages, multilingual data sets bring their own problems <span class="citation" data-cites="Aman-dataset20">Aman Ullah et al. (2020)</span>.</p>
+<p>The Luganda language is the most widely spoken indigenous language in Uganda with more than seven million speakers. By definition, a low resourced language has less capabilities for data annotation and augmentation, e.g. part of speech taggers.</p>
+<h2 id="data-access">Data Access</h2>
+<p>The social media data was collected from a set of pages (media institutions, ministry of health, media personalities, top twitter/facebook users from Uganda. All data was then filtered using keywords, ‘ssenyiga,’ ‘kolona,’ ‘corona’ ,‘virus’ ,‘obulwadde,’ ‘corona,’ ‘covid,’ ‘abalwadde,’ ‘ekirwadde,’ ‘akawuka,’ ‘staysafeug,’ ‘stayhome,’ ‘tonsemberera,’ ‘tokwatakudereva,’ ‘vaccine’ to select with Covid-19 related tweets. Very short Facebook posts were also removed. Data was collected in two phases, from March 2020 - March 2021 and then from June 2021 - August 2021. Raw data points 15,354 posts from twitter and 430,075 from Facebook.</p>
+<p>Note that in this case, knowledge of the question has been used in accessing the data. The context of the data is Uganda and the focus is Covid-19. That focus is driven by the pandemic. However, as we see when we get to data assessment, there is still an amount of reusable work that could/should be automated.</p>
+<h2 id="data-assessment">Data Assessment</h2>
+<p>After collecting data, the initial assessment was formed to understand the data, uncover patterns and gain insights. Here various visualisations can be used to find any unexpected factors in the data.</p>
+<div class="figure">
+<div id="joyce-nabende-word-cloud-twitter-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-word-cloud-twitter.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="joyce-nabende-word-cloud-twitter-magnify" class="magnify" onclick="magnifyFigure(&#39;joyce-nabende-word-cloud-twitter&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="joyce-nabende-word-cloud-twitter-caption" class="caption-frame">
+<p>Figure: Word cloud from the Twitter data collected through the filtering.</p>
+</div>
+</div>
+<p>In the case of the Uganda data set, Joyce found that mixed in with the Covid-19 data were topics focussed on popular Ugandan TV shows and the Ugandan election.</p>
+<div class="figure">
+<div id="joyce-nabende-word-cloud-twitter-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-word-cloud-facebook.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="joyce-nabende-word-cloud-twitter-magnify" class="magnify" onclick="magnifyFigure(&#39;joyce-nabende-word-cloud-twitter&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="joyce-nabende-word-cloud-twitter-caption" class="caption-frame">
+<p>Figure: Word cloud from the Facebook data collected through the filtering.</p>
+</div>
+</div>
+<div class="figure">
+<div id="joyce-nabende-lda-topics-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-lda-topics.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="joyce-nabende-lda-topics-magnify" class="magnify" onclick="magnifyFigure(&#39;joyce-nabende-lda-topics&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="joyce-nabende-lda-topics-caption" class="caption-frame">
+<p>Figure: LDA topics and topic distance maps. Interspersed with the Covid-19 topics are topics associated with television dance shows, elections, and the president showing the importance of having domain knowledge.</p>
+</div>
+</div>
+<p>Topic modeling highlights the different subjects present in the data, and how they interrelate.</p>
+<ul>
+<li>Annotation attributes:
+<ol type="a">
+<li>Data source [Facebook, Twitter]</li>
+<li>Language [English, Luganda, and codemixed]</li>
+<li>Aspect [truck drivers, hospitals, vaccine, cases, SOPs, NPIs, Testing, Border, Covid19_Impact, Presidential address, death, elections and Covid19]</li>
+<li>Sentiment [positive, negative and neutral]</li>
+<li>Misinformation [Not Fake, Fake, Partially Fake, and Others]</li>
+</ol></li>
+<li>As part of quality assurance, the data was reviewed by an independent team to ensure that the annotation guidelines were followed.}</li>
+</ul>
+<p>Annotation carried out by seven annotators who could understand both English and Luganda. The data was labeled with the <a href="https://github.com/doccano/doccano">Doccano</a> text annotation tool. Annotations included the data source, the language, the label, the sentiment and the misinformation status.</p>
+<p>{Quality assurance performed by reviewing data with an independent team for ensuring annotation guidelines were followed.</p>
+<div class="table">
+<div id="annotated-portion-of-data-caption" class="caption-frame">
+<p>Table: Portion of data that was annotated.</p>
+</div>
+<div id="annotated-portion-of-data-table" class="table-frame">
+<div class="line-block"> | Twitter Data | Facebook Data |<br />
+Initial dataset | 15,354 | 430,075 |<br />
+Dataset after Annotation | 3,527 | 4,479 |</div>
+</div>
+<div id="annotated-portion-of-data-magnify" class="magnify" onclick="magnifyFigure(&#39;annotated-portion-of-data&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Cohen’s kappa</a> inter-annotation used to measure annotator agreement.</p>
+<div class="table">
+<div id="cohen-kappa-agreement-caption" class="caption-frame">
+<p>Table: Cohen’s kappa agreement scores for the data.</p>
+</div>
+<div id="cohen-kappa-agreement-table" class="table-frame">
+<div class="line-block">Language | 0.89 |<br />
+Aspect | 0.69 |<br />
+Sentiment | 0.73 |<br />
+Misinformation | 0.74 |</div>
+</div>
+<div id="cohen-kappa-agreement-magnify" class="magnify" onclick="magnifyFigure(&#39;cohen-kappa-agreement&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+</div>
+<div class="figure">
+<div id="joyce-nabende-data-annotation-example-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-data-annotation-example.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="joyce-nabende-data-annotation-example-magnify" class="magnify" onclick="magnifyFigure(&#39;joyce-nabende-data-annotation-example&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="joyce-nabende-data-annotation-example-caption" class="caption-frame">
+<p>Figure: Example of data annotation for sentiment and misinformation from the data set.</p>
+</div>
+</div>
+<p>The idea of the analysis is to bring this information together for sentiment and misinformation analysis in a <a href="https://dsa-uganda.herokuapp.com/dashboard/">dashboard for Covid-19 in Uganda</a>.</p>
 <h2 id="marketing-and-free-will">Marketing and Free Will</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/marketing-and-free-will.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/marketing-and-free-will.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -841,7 +1008,7 @@ Victor Ohuruogu
 </div>
 <center>
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip6">
+<defs> <clipPath id="clip7">
 <style>
 circle {
   fill: black;
@@ -851,7 +1018,7 @@ circle {
 <title>
 David Spiegelhalter
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/david-spiegelhalter.png" clip-path="url(#clip6)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/david-spiegelhalter.png" clip-path="url(#clip7)"/>
 </svg>
 </center>
 <div class="figure">
@@ -878,6 +1045,9 @@ David Spiegelhalter
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Aman-dataset20" class="csl-entry" role="doc-biblioentry">
+Aman Ullah, M., Azman, N., Mohd Zaki, Z., Monirul Islam, Md., 2020. Dataset creation from multilingual data of social media: Challenges and consequences, in: 2020 IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering (WIECON-ECE). pp. 288–291. <a href="https://doi.org/10.1109/WIECON-ECE52138.2020.9398002">https://doi.org/10.1109/WIECON-ECE52138.2020.9398002</a>
+</div>
 <div id="ref-Andrade:consistent14" class="csl-entry" role="doc-biblioentry">
 Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014. Consistent mapping of government malaria records across a changing territory delimitation. Malaria Journal 13. <a href="https://doi.org/10.1186/1475-2875-13-S1-P5">https://doi.org/10.1186/1475-2875-13-S1-P5</a>
 </div>
@@ -904,6 +1074,9 @@ Lawrence, N.D., 2015. How <span>A</span>frica can benefit from the data revoluti
 </div>
 <div id="ref-Lawrence:licsbintro10" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2010. Introduction to learning and inference in computational systems biology.
+</div>
+<div id="ref-Magueresse-lowresource20" class="csl-entry" role="doc-biblioentry">
+Magueresse, A., Carles, V., Heetderks, E., 2020. Low-resource languages: <span>A</span> review of past work and future challenges. CoRR.
 </div>
 <div id="ref-Mubangizi:malaria14" class="csl-entry" role="doc-biblioentry">
 Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence, N.D., 2014. Malaria surveillance with multiple data sources using <span>Gaussian</span> process models, in: 1st International Conference on the Use of Mobile <span>ICT</span> in Africa.
