@@ -43,8 +43,10 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">How Engineers Solve Big and Difficult Problems Part 1: The Challenges/Opportunities Presented to Engineers by AI/ML</h1>
-  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <h1 class="title">How Engineers Solve Big and Difficult Problems Part
+1: The Challenges/Opportunities Presented to Engineers by AI/ML</h1>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil
+D. Lawrence</a></p>
   <p class="date" style="text-align:center"><time>2022-11-14</time></p>
   <p class="venue" style="text-align:center">The Engineer in Society</p>
 </section>
@@ -90,7 +92,8 @@ sns.set_palette('colorblind')}-->
 </div>
 </div>
 <aside class="notes">
-Daniel Simon’s famous illusion “monkey business.” Focus on the movement of the ball distracts the viewer from seeing other aspects of the image.
+Daniel Simon’s famous illusion “monkey business”. Focus on the movement
+of the ball distracts the viewer from seeing other aspects of the image.
 </aside>
 </section>
 <section id="data-selective-attention-bias" class="slide level2">
@@ -111,13 +114,17 @@ Daniel Simon’s famous illusion “monkey business.” Focus on the movement of
 </div>
 </div>
 <aside class="notes">
-BMI/ steps data. The data consists of step readings for different subjects plotted against their BMI
+BMI/ steps data. The data consists of step readings for different
+subjects plotted against their BMI
 </aside>
 </section>
 <section id="a-hypothesis-as-a-liability" class="slide level2">
 <h2>A Hypothesis as a Liability</h2>
 <blockquote>
-<p>“ ‘When someone seeks,’ said Siddhartha, ‘then it easily happens that his eyes see only the thing that he seeks, and he is able to find nothing, to take in nothing. […] Seeking means: having a goal. But finding means: being free, being open, having no goal.’ ”</p>
+<p>“ ‘When someone seeks,’ said Siddhartha, ‘then it easily happens that
+his eyes see only the thing that he seeks, and he is able to find
+nothing, to take in nothing. […] Seeking means: having a goal. But
+finding means: being free, being open, having no goal.’ ”</p>
 <p>Hermann Hesse</p>
 </blockquote>
 </section>
@@ -131,7 +138,9 @@ BMI/ steps data. The data consists of step readings for different subjects plott
 </div>
 </div>
 <aside class="notes">
-Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2010)</span> highlighting the importance of interaction between data and hypothesis.
+Quote from <span class="citation"
+data-cites="Lawrence:licsbintro10">Lawrence (2010)</span> highlighting
+the importance of interaction between data and hypothesis.
 </aside>
 <!-- SECTION What is Machine Learning? -->
 </section>
@@ -141,36 +150,48 @@ Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2
 <section id="what-is-machine-learning-1" class="slide level2">
 <h2>What is Machine Learning?</h2>
 <div class="fragment">
-<p><span class="math display">\[ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
+<p><span class="math display">\[ \text{data} + \text{model}
+\stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>data</strong> : observations, could be actively or passively acquired (meta-data).</li>
+<li><strong>data</strong> : observations, could be actively or passively
+acquired (meta-data).</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>model</strong> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+<li><strong>model</strong> : assumptions, based on previous experience
+(other data! transfer learning etc), or beliefs about the regularities
+of the universe. Inductive bias.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>prediction</strong> : an action to be taken or a categorization or a quality score.</li>
+<li><strong>prediction</strong> : an action to be taken or a
+categorization or a quality score.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+<li>Royal Society Report: <a
+href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine
+Learning: Power and Promise of Computers that Learn by Example</a></li>
 </ul>
 </div>
 </section>
 <section id="what-is-machine-learning-2" class="slide level2">
 <h2>What is Machine Learning?</h2>
-<p><span class="math display">\[\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
+<p><span class="math display">\[\text{data} + \text{model}
+\stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
 <ul>
 <li class="fragment">To combine data with a model need:</li>
-<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(f(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
-<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(E(\cdot)\)</span> defines the cost of misprediction.</li>
+<li class="fragment"><strong>a prediction function</strong> <span
+class="math inline">\(f(\cdot)\)</span> includes our beliefs about the
+regularities of the universe</li>
+<li class="fragment"><strong>an objective function</strong> <span
+class="math inline">\(E(\cdot)\)</span> defines the cost of
+misprediction.</li>
 </ul>
 </section>
 <section id="machine-learning" class="slide level2">
@@ -178,7 +199,8 @@ Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2
 <ul>
 <li>Driver of two different domains:
 <ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Data Science</em>: arises from the fact that we now capture data
+by happenstance.</li>
 <li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
 </ol></li>
 <li>Connection: Internet of Things</li>
@@ -189,7 +211,8 @@ Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2
 <ul>
 <li>Driver of two different domains:
 <ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Data Science</em>: arises from the fact that we now capture data
+by happenstance.</li>
 <li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
 </ol></li>
 <li>Connection: Internet of <del>Things</del></li>
@@ -200,7 +223,8 @@ Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2
 <ul>
 <li>Driver of two different domains:
 <ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Data Science</em>: arises from the fact that we now capture data
+by happenstance.</li>
 <li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
 </ol></li>
 <li>Connection: Internet of People</li>
@@ -209,7 +233,8 @@ Quote from <span class="citation" data-cites="Lawrence:licsbintro10">Lawrence (2
 <section id="section-1" class="slide level2">
 <h2></h2>
 <center>
-Convention for the Protection of <em>Individuals</em> with regard to Automatic Processing of <em>Personal Data</em> (1981/1/28)
+Convention for the Protection of <em>Individuals</em> with regard to
+Automatic Processing of <em>Personal Data</em> (1981/1/28)
 </center>
 </section>
 <section id="what-does-machine-learning-do" class="slide level2">
@@ -218,20 +243,24 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 <li>ML Automates through Data
 <ul>
 <li><em>Strongly</em> related to statistics.</li>
-<li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
+<li>Field underpins revolution in <em>data science</em> and
+<em>AI</em></li>
 </ul></li>
 <li>With AI:
 <ul>
-<li><em>logic</em>, <em>robotics</em>, <em>computer vision</em>, <em>speech</em></li>
+<li><em>logic</em>, <em>robotics</em>, <em>computer vision</em>,
+<em>speech</em></li>
 </ul></li>
 <li>With Data Science:
 <ul>
-<li><em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
+<li><em>databases</em>, <em>data mining</em>, <em>statistics</em>,
+<em>visualization</em></li>
 </ul></li>
 </ul>
 <!-- SECTION Evolved Relationship with Information -->
 </section>
-<section id="evolved-relationship-with-information" class="slide level2">
+<section id="evolved-relationship-with-information"
+class="slide level2">
 <h2>Evolved Relationship with Information</h2>
 </section>
 <section id="new-flow-of-information" class="slide level2">
@@ -265,7 +294,14 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 </div>
 </div>
 <aside class="notes">
-The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
+The trinity of human, data, and computer, and highlights the modern
+phenomenon. The communication channel between computer and data now has
+an extremely high bandwidth. The channel between human and computer and
+the channel between data and human is narrow. New direction of
+information flow, information is reaching us mediated by the computer.
+The focus on classical statistics reflected the importance of the direct
+communication between human and data. The modern challenges of data
+science emerge when that relationship is being mediated by the machine.
 </aside>
 </section>
 <section id="section-2" class="slide level2">
@@ -278,9 +314,13 @@ The trinity of human, data, and computer, and highlights the modern phenomenon. 
 </div>
 </div>
 <aside class="notes">
-Data Science Africa <a href="http://datascienceafrica.org" class="uri">http://datascienceafrica.org</a> is a ground up initiative for capacity building around data science, machine learning and artificial intelligence on the African continent.
+Data Science Africa <a href="http://datascienceafrica.org"
+class="uri">http://datascienceafrica.org</a> is a ground up initiative
+for capacity building around data science, machine learning and
+artificial intelligence on the African continent.
 </aside>
-<p>Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and AI on the African continent</p>
+<p>Data Science Africa is a bottom up initiative for capacity building
+in data science, machine learning and AI on the African continent</p>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
@@ -304,10 +344,14 @@ Data Science Africa meetings held up to October 2021.
 </div>
 </div>
 <aside class="notes">
-The lack of existing physical infrastructure on the African continent makes it a particularly interesting environment for deploying solutions based on the <em>information infrastructure</em>. The idea is explored more in this Guardian op-ed on .
+The lack of existing physical infrastructure on the African continent
+makes it a particularly interesting environment for deploying solutions
+based on the <em>information infrastructure</em>. The idea is explored
+more in this Guardian op-ed on .
 </aside>
 </section>
-<section id="example-prediction-of-malaria-incidence-in-uganda" class="slide level2">
+<section id="example-prediction-of-malaria-incidence-in-uganda"
+class="slide level2">
 <h2>Example: Prediction of Malaria Incidence in Uganda</h2>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
@@ -351,9 +395,11 @@ John Quinn
 </svg>
 </div>
 <ul>
-<li>Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubangizi (Makerere University, Uganda)</li>
+<li>Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubangizi
+(Makerere University, Uganda)</li>
 <li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
-<li>See <a href="https://diseaseoutbreaks.unglobalpulse.net/uganda/">UN Global Pulse Disease Outbreaks Site</a></li>
+<li>See <a href="https://diseaseoutbreaks.unglobalpulse.net/uganda/">UN
+Global Pulse Disease Outbreaks Site</a></li>
 </ul>
 </section>
 <section id="malaria-prediction-in-uganda" class="slide level2">
@@ -366,10 +412,14 @@ John Quinn
 </div>
 </div>
 <aside class="notes">
-Ugandan districts. Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/version2_1" class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a>.
+Ugandan districts. Data SRTM/NASA from <a
+href="https://dds.cr.usgs.gov/srtm/version2_1"
+class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a>.
 </aside>
 <div style="text-align:right">
-<span class="citation" data-cites="Andrade:consistent14 Mubangizi:malaria14">(Andrade-Pacheco et al., 2014; Mubangizi et al., 2014)</span>
+<span class="citation"
+data-cites="Andrade:consistent14 Mubangizi:malaria14">(Andrade-Pacheco
+et al., 2014; Mubangizi et al., 2014)</span>
 </div>
 </section>
 <section id="tororo-district" class="slide level2">
@@ -384,7 +434,8 @@ Ugandan districts. Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/ver
 The Tororo district, where the sentinel site, Nagongera, is located.
 </aside>
 </section>
-<section id="malaria-prediction-in-nagongera-sentinel-site" class="slide level2">
+<section id="malaria-prediction-in-nagongera-sentinel-site"
+class="slide level2">
 <h2>Malaria Prediction in Nagongera (Sentinel Site)</h2>
 <div class="figure">
 <div id="sentinel-nagongera-figure" class="figure-frame">
@@ -394,7 +445,8 @@ The Tororo district, where the sentinel site, Nagongera, is located.
 </div>
 </div>
 <aside class="notes">
-Sentinel and HMIS data along with rainfall and temperature for the Nagongera sentinel station in the Tororo district.
+Sentinel and HMIS data along with rainfall and temperature for the
+Nagongera sentinel station in the Tororo district.
 </aside>
 </section>
 <section id="mubende-district" class="slide level2">
@@ -432,7 +484,9 @@ Prediction of malaria incidence in Mubende.
 </div>
 </div>
 <aside class="notes">
-The project arose out of the Gaussian process summer school held at Makerere in Kampala in 2013. The school led, in turn, to the Data Science Africa initiative.
+The project arose out of the Gaussian process summer school held at
+Makerere in Kampala in 2013. The school led, in turn, to the Data
+Science Africa initiative.
 </aside>
 </section>
 <section id="kabarole-district" class="slide level2">
@@ -457,7 +511,9 @@ The Kabarole district in Uganda.
 </div>
 </div>
 <aside class="notes">
-Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.
+Estimate of the current disease situation in the Kabarole district over
+time. Estimate is constructed with a Gaussian process with an additive
+covariance funciton.
 </aside>
 </section>
 <section id="early-warning-systems" class="slide level2">
@@ -470,537 +526,57 @@ Estimate of the current disease situation in the Kabarole district over time. Es
 </div>
 </div>
 <aside class="notes">
-The map of Ugandan districts with an overview of the Malaria situation in each district.
-</aside>
-</section>
-<section id="challenges" class="slide level2">
-<h2>Challenges</h2>
-<ol type="1">
-<li>Paradoxes of the Data Society</li>
-<li>Quantifying the Value of Data</li>
-<li>Privacy, loss of control, marginalization</li>
-</ol>
-</section>
-<section id="the-big-data-paradox" class="slide level2">
-<h2>The Big Data Paradox</h2>
-<ul>
-<li>We collect more data, but we understand less.</li>
-</ul>
-</section>
-<section id="wood-or-tree" class="slide level2">
-<h2>Wood or Tree</h2>
-<div class="figure">
-<div id="gribskov-forest-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//Grib_skov.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-New beech leaves growing in the Gribskov Forest in the northern part of Sealand, Denmark. Photo from wikimedia commons by Malene Thyssen, <a href="http://commons.wikimedia.org/wiki/User:Malene" class="uri">http://commons.wikimedia.org/wiki/User:Malene</a>.
-</aside>
-</section>
-<section id="number-theatre" class="slide level2">
-<h2>Number Theatre</h2>
-<div class="figure">
-<div id="david-andrew-marr-figure" class="figure-frame">
-<iframe width="600" height="450" src="https://www.youtube.com/embed/9388XmWIHXg?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</div>
-</div>
-<aside class="notes">
-Professor Sir David Spiegelhalter on Andrew Marr on 10th May 2020 speaking about some of the challengers around data, data presentation, and decision making in a pandemic. David mentions number theatre at 9 minutes 10 seconds.
-</aside>
-<!--includebbcvideo{p08csg28}-->
-</section>
-<section id="data-theatre" class="slide level2">
-<h2>Data Theatre</h2>
-<div class="figure">
-<div id="data-theatre-000-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//business/data-theatre000.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-The phenomenon of number theatre or <em>data theatre</em> was described by David Spiegelhalter and is nicely summarized by Martin Robbins in this sub-stack article <a href="https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards" class="uri">https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards</a>.
-</aside>
-</section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="data-theatre-001-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//business/data-theatre001.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-<aside class="notes">
-The phenomenon of number theatre or <em>data theatre</em> was described by David Spiegelhalter and is nicely summarized by Martin Robbins in this sub-stack article <a href="https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards" class="uri">https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards</a>.
-</aside>
-</section>
-<section id="big-model-paradox" class="slide level2">
-<h2>Big Model Paradox</h2>
-<ul>
-<li>Add complexity to the model to make it realistic.</li>
-<li>Move model “beyond human intuition”</li>
-<li>But model still falls well short of mark in terms of representing reality</li>
-</ul>
-<!-- SECTION Quantifying the Value of Data -->
-</section>
-<section id="quantifying-the-value-of-data" class="slide level2">
-<h2>Quantifying the Value of Data</h2>
-</section>
-<section id="quantifying-the-value-of-data-1" class="slide level2">
-<h2>Quantifying the Value of Data</h2>
-<p>There’s a sea of data, but most of it is undrinkable.</p>
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//sea-water-ocean-waves.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<p>We require data-desalination before it can be consumed!</p>
-</section>
-<section id="african-data-sharing-covid-19" class="slide level2">
-<h2>African Data Sharing Covid-19</h2>
-<div class="centered" style="">
-<svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip4">
-<style>
-circle {
-  fill: black;
-}
-</style>
-<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
-<title>
-Morine Amutorine
-</title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/morine-amutorine.png" clip-path="url(#clip4)"/>
-</svg>
-</div>
-<div class="centered" style="">
-<svg viewBox="0 0 200 200" style="width:10%">
-<defs> <clipPath id="clip5">
-<style>
-circle {
-  fill: black;
-}
-</style>
-<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
-<title>
-Jessica Montgomery
-</title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/jessica-montgomery.jpg" clip-path="url(#clip5)"/>
-</svg>
-<svg viewBox="0 0 200 200" style="width:10%">
-<defs> <clipPath id="clip6">
-<style>
-circle {
-  fill: black;
-}
-</style>
-<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
-<title>
-Victor Ohuruogu
-</title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/victor-ohuruogu.jpg" clip-path="url(#clip6)"/>
-</svg>
-</div>
-</section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="increasing-data-sharing-from-africas-covid-19-response-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//governance/increasing-data-sharing-from-africas-covid-19-response.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Blog post, <a href="https://www.datascienceafrica.org/dsablog/" class="uri">https://www.datascienceafrica.org/dsablog/</a>, by Morine Amutorine and Jessica Montgomery summarising some of the issues around data sharing in the Covid-19 response
-</aside>
-</section>
-<section id="section-7" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="morine-slides-area-where-data-has-been-impactful19-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//governance/morine-slides-areas-where-data-has-been-impactful-covid19.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Areas where data has been impactful summarised from Morine Amutorine’s survey work on data sharing in Africa during the Covid19 response.
-</aside>
-</section>
-<section id="section-8" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="morine-slides-four-areas-of-opportunity-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//governance/morine-slides-four-areas-of-opportunity.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Four areas of opportunity to learn from identified by Morine Amutorine in her survey work on Africa’s data driven Covid-19 response.
-</aside>
-</section>
-<section id="section-9" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="morine-slides-areas-for-action-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//governance/morine-slides-areas-for-action.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Areas for action arising from Morine Amutorine’s survey work on Africa’s data driven Covid-19 response.
-</aside>
-</section>
-<section id="privacy-loss-of-control-and-marginalization" class="slide level2">
-<h2>Privacy, Loss of Control and Marginalization</h2>
-<ul>
-<li>Society is becoming harder to monitor</li>
-<li>Individual is becoming easier to monitor</li>
-</ul>
-</section>
-<section id="case-study-text-mining-for-misinformation" class="slide level2">
-<h2>Case Study: Text Mining for Misinformation</h2>
-<div class="centered" style="">
-<svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip7">
-<style>
-circle {
-  fill: black;
-}
-</style>
-<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
-<title>
-Joyce Nakatumba-Nabende
-</title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/joyce-nabende.jpg" clip-path="url(#clip7)"/>
-</svg>
-</div>
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="uganda-social-medial-killing-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-uganda-social-media-killing.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Misinformation through media has been a challenge for as long as we’ve been communicating. Social media misinformation is a particular challenge due to the number of possible sources, the scale and speed with which it can propagate. Slide from Joyce Nabende’s presentation.
-</aside>
-</section>
-<section id="section-11" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/napoleoncat-social-media-statistics-facebook-users-in-uganda_2021_06.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Social media is widespread in Uganda, perhaps largely due to widespread availability of mobile phone access.
-</aside>
-</section>
-<section id="section-12" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="joyce-nabende-data-science-objective-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-data-science-objective.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-The objective of the project is to track misinformation and understandperceptions of Ugandan Government’s COVID-19 transmission mitigation strategies.
-</aside>
-</section>
-<section id="section-13" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="joyce-nabende-the-luganda-language-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-the-luganda-language.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-</aside>
-</section>
-<section id="data-access" class="slide level2">
-<h2>Data Access</h2>
-</section>
-<section id="section-14" class="slide level2">
-<h2></h2>
-</section>
-<section id="data-assessment" class="slide level2">
-<h2>Data Assessment</h2>
-<p>Data Exploration - Used the initial data analysis phase to understand the data, uncover patterns, get insights within the data. - Generated word clouds from the raw dataset. - Performed topic modelling using Latent Dirichlet Allocation (LDA) to discover topics and similarity of the data for Covid-19 on social media.</p>
-</section>
-<section id="section-15" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="joyce-nabende-word-cloud-twitter-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-word-cloud-twitter.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Word cloud from the Twitter data collected through the filtering.
-</aside>
-</section>
-<section id="section-16" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="joyce-nabende-word-cloud-twitter-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-word-cloud-facebook.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Word cloud from the Facebook data collected through the filtering.
-</aside>
-</section>
-<section id="section-17" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="joyce-nabende-lda-topics-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-lda-topics.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-LDA topics and topic distance maps. Interspersed with the Covid-19 topics are topics associated with television dance shows, elections, and the president showing the importance of having domain knowledge.
-</aside>
-</section>
-<section id="data-annotation-process" class="slide level2">
-<h2>Data Annotation Process</h2>
-<ul>
-<li>Carried out by 7 annotators who could read/comprehend English and Luganda</li>
-<li>Used the <a href="https://github.com/doccano/doccano">Doccano Tool</a> - an open source text annotation tool.</li>
-</ul>
-</section>
-<section id="data-annotation-process-1" class="slide level2">
-<h2>Data Annotation Process</h2>
-<ul>
-<li>Annotation attributes:
-<ol type="a">
-<li>Data source [Facebook, Twitter]</li>
-<li>Language [English, Luganda, and codemixed]</li>
-<li>Aspect [truck drivers, hospitals, vaccine, cases, SOPs, NPIs, Testing, Border, Covid19_Impact, Presidential address, death, elections and Covid19]</li>
-<li>Sentiment [positive, negative and neutral]</li>
-<li>Misinformation [Not Fake, Fake, Partially Fake, and Others]</li>
-</ol></li>
-<li>As part of quality assurance, the data was reviewed by an independent team to ensure that the annotation guidelines were followed.}</li>
-</ul>
-<p>{Quality assurance performed by reviewing data with an independent team for ensuring annotation guidelines were followed.</p>
-</section>
-<section id="section-18" class="slide level2">
-<h2></h2>
-<div class="table">
-<div id="annotated-portion-of-data-caption" class="caption-frame">
-<p>Table: Portion of data that was annotated.</p>
-</div>
-<div id="annotated-portion-of-data-table" class="table-frame">
-<div class="line-block"> | Twitter Data | Facebook Data |<br />
-Initial dataset | 15,354 | 430,075 |<br />
-Dataset after Annotation | 3,527 | 4,479 |</div>
-</div>
-<div id="annotated-portion-of-data-magnify" class="magnify" onclick="magnifyFigure(&#39;annotated-portion-of-data&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-</div>
-</section>
-<section id="section-19" class="slide level2">
-<h2></h2>
-<p><a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Cohen’s kappa</a> inter-annotation used to measure annotator agreement.</p>
-<div class="table">
-<div id="cohen-kappa-agreement-caption" class="caption-frame">
-<p>Table: Cohen’s kappa agreement scores for the data.</p>
-</div>
-<div id="cohen-kappa-agreement-table" class="table-frame">
-<div class="line-block">Language | 0.89 |<br />
-Aspect | 0.69 |<br />
-Sentiment | 0.73 |<br />
-Misinformation | 0.74 |</div>
-</div>
-<div id="cohen-kappa-agreement-magnify" class="magnify" onclick="magnifyFigure(&#39;cohen-kappa-agreement&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-</div>
-</section>
-<section id="section-20" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="joyce-nabende-data-annotation-example-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/joyce-nabende-data-annotation-example.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Example of data annotation for sentiment and misinformation from the data set.
-</aside>
-</section>
-<section id="personal-data-trusts" class="slide level2">
-<h2>Personal Data Trusts</h2>
-</section>
-<section id="section-21" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="data-trusts-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/data-trusts.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>For thoughts on data trusts see</p>
-.
-</aside>
-</section>
-<section id="section-22" class="slide level2">
-<h2></h2>
-<div class="figure">
-<div id="hall-presenti-report-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/data-trusts-review.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-Data Trusts were the first recommendation of the <a href="https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/" target="_blank">Hall-Presenti Report</a>. Unfortunately, since then the role of data trusts vs other data sharing mechanisms in the UK has been somewhat confused.
-</aside>
-</section>
-<section id="motivation" class="slide level2">
-<h2>Motivation</h2>
-<ol type="1">
-<li>Indsidious decision-making that has downstream instrumental effects we don’t control.</li>
-<li>A power-asymmetry between data-controllers and data-subjects</li>
-<li>A loss of personhood in the re-representation of ourselves in the digital world.</li>
-<li>The GDPR’s endeavour to curb contractual freedom cannot by itself reverse the power-asymmetry between data-controllers and data-subjects.</li>
-</ol>
-</section>
-<section id="analogy" class="slide level2">
-<h2>Analogy</h2>
-<ul>
-<li>Digital Democracy vs Digital Oligarchy <span class="citation" data-cites="Lawrence:digitaloligarchy15">Lawrence (2015a)</span> or Information Feudalism <span class="citation" data-cites="Lawrence:informationbarons15">Lawrence (2015b)</span></li>
-<li>Data <em>subjects</em>, data <em>controllers</em> and data <em>processors</em>.</li>
-</ul>
-</section>
-<section id="legal-mechanism-of-trusts" class="slide level2">
-<h2>Legal Mechanism of Trusts</h2>
-<ul>
-<li>Fiduciary responsibility of Trustees.
-<ul>
-<li>Burden of proof in negligence is reversed.</li>
-</ul></li>
-<li>Trustees are data <em>controllers</em></li>
-<li>Beneficiaries are data <em>subjects</em></li>
-<li>Power of data accumulation wielded on the beneficiaries behalf</li>
-<li>See <span class="citation" data-cites="Edwards:privacy04">Edwards (2004)</span>, <span class="citation" data-cites="Delacroix:trusts19">Delacroix and Lawrence (2019)</span> and <span class="citation" data-cites="Lawrence:trusts16">Lawrence (2016)</span></li>
-</ul>
-</section>
-<section id="data-trusts-initiative" class="slide level2">
-<h2>Data Trusts Initiative</h2>
-<div class="figure">
-<div id="data-trusts-initiative-website-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//governance/data-trusts-initiative-project-page.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-The Data Trusts Initiative (<a href="https://datatrusts.uk/" target="_blank">http://datatrusts.uk</a>) hosts blog posts helping build understanding of data trusts and supports research and pilot projects.
-</aside>
-</section>
-<section id="progress-so-far" class="slide level2">
-<h2>Progress So Far</h2>
-<p>In its first 18 months of operation, the Initiative has:</p>
-<ul>
-<li><p>Convened over 200 leading data ethics researchers and practitioners;</p></li>
-<li><p>Funded 7 new research projects tackling knowledge gaps in data trust theory and practice;</p></li>
-<li><p>Supported 3 real-world data trust pilot projects establishing new data stewardship mechanisms.</p></li>
-</ul>
-<!-- SECTION The Art of Statistics -->
-</section>
-<section id="the-art-of-statistics" class="slide level2">
-<h2>The Art of Statistics</h2>
-<center>
-<svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip8">
-<style>
-circle {
-  fill: black;
-}
-</style>
-<circle cx="100" cy="100" r="100"/> </clipPath> </defs>
-<title>
-David Spiegelhalter
-</title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/./slides/diagrams//people/david-spiegelhalter.png" clip-path="url(#clip8)"/>
-</svg>
-</center>
-<div class="figure">
-<div id="art-of-statistics-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//books/the-art-of-statistics.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-</div>
-<aside class="notes">
-<a href="https://www.amazon.co.uk/Art-Statistics-Learning-Pelican-Books-ebook/dp/B07HQDJD99">The Art of Statistics by David Spiegelhalter</a> is an excellent read on the pitfalls of data interpretation.
+The map of Ugandan districts with an overview of the Malaria situation
+in each district.
 </aside>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
 <ul>
-<li><p>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
-<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></p></li>
-<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How African can benefit from the data revolution</a></p></li>
-<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">Data Science Africa</a></p></li>
-<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy">Data Trusts</a></p></li>
-<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">Digital Oligarchies</a></p></li>
-<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online">Information Feudalism</a></p></li>
+<li><p>twitter: <a
+href="https://twitter.com/lawrennd">@lawrennd</a></p></li>
+<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking
+Machines</a></p></li>
+<li><p>Guardian article on <a
+href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How
+African can benefit from the data revolution</a></p></li>
+<li><p>Guardian article on <a
+href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">Data
+Science Africa</a></p></li>
 <li><p>blog posts:</p>
-<p><a href="http://inverseprobability.com/2014/07/01/open-data-science">Open Data Science</a></p>
-<p><a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a></p>
-<p><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">System Zero</a></p></li>
+<p><a
+href="http://inverseprobability.com/2014/07/01/open-data-science">Open
+Data Science</a></p>
+<p><a
+href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What
+is Machine Learning?</a></p>
+<p><a
+href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">System
+Zero</a></p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 unnumbered scrollable">
 <h2 class="unnumbered scrollable">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Andrade:consistent14" class="csl-entry" role="doc-biblioentry">
-Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014. Consistent mapping of government malaria records across a changing territory delimitation. Malaria Journal 13. <a href="https://doi.org/10.1186/1475-2875-13-S1-P5">https://doi.org/10.1186/1475-2875-13-S1-P5</a>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-Andrade:consistent14" class="csl-entry"
+role="doc-biblioentry">
+Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014.
+Consistent mapping of government malaria records across a changing
+territory delimitation. Malaria Journal 13. <a
+href="https://doi.org/10.1186/1475-2875-13-S1-P5">https://doi.org/10.1186/1475-2875-13-S1-P5</a>
 </div>
-<div id="ref-Delacroix:trusts19" class="csl-entry" role="doc-biblioentry">
-Delacroix, S., Lawrence, N.D., 2019. Bottom-up data trusts: Disturbing the <span>‘one size fits all’</span> approach to data governance. International Data Privacy Law. <a href="https://doi.org/10.1093/idpl/ipz014">https://doi.org/10.1093/idpl/ipz014</a>
+<div id="ref-Lawrence:licsbintro10" class="csl-entry"
+role="doc-biblioentry">
+Lawrence, N.D., 2010. Introduction to learning and inference in
+computational systems biology.
 </div>
-<div id="ref-Edwards:privacy04" class="csl-entry" role="doc-biblioentry">
-Edwards, L., 2004. The problem with privacy. International Review of Law Computers &amp; Technology 18, 263–294.
-</div>
-<div id="ref-Lawrence:trusts16" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2016. Data trusts could allay our privacy fears.
-</div>
-<div id="ref-Lawrence:informationbarons15" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2015b. The information barons threaten our autonomy and our privacy.
-</div>
-<div id="ref-Lawrence:digitaloligarchy15" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2015a. Beware the rise of the digital oligarchy.
-</div>
-<div id="ref-Lawrence:licsbintro10" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2010. Introduction to learning and inference in computational systems biology.
-</div>
-<div id="ref-Mubangizi:malaria14" class="csl-entry" role="doc-biblioentry">
-Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence, N.D., 2014. Malaria surveillance with multiple data sources using <span>Gaussian</span> process models, in: 1st International Conference on the Use of Mobile <span>ICT</span> in Africa.
+<div id="ref-Mubangizi:malaria14" class="csl-entry"
+role="doc-biblioentry">
+Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence,
+N.D., 2014. Malaria surveillance with multiple data sources using
+<span>Gaussian</span> process models, in: 1st International Conference
+on the Use of Mobile <span>ICT</span> in Africa.
 </div>
 </div>
 </section>
@@ -1015,8 +591,39 @@ Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence, N.D., 2014
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
           config: 'TeX-AMS_HTML-full',

@@ -19,6 +19,7 @@ author:
 date: 2022-11-14
 venue: The Engineer in Society
 ipynb: True
+transition: None
 ---
 
 \slides{\aligncenter{\neilLawrencePicture{20%}}
@@ -35,18 +36,6 @@ ipynb: True
 \include{_data-science/includes/evolved-relationship.md}
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
-\include{_data-science/includes/three-data-science-challenges.md}
-\notes{You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.}
-\include{_data-science/includes/big-data-paradox.md}
-\include{_data-science/includes/number-data-theatre.md}
-\include{_data-science/includes/big-model-paradox.md}
-\include{_data-science/includes/value-of-data-intro.md}
-\include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
-\include{_data-science/includes/privacy-intro.md}
-\include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
-\include{_governance/includes/data-trusts.md}
-
-\include{_books/includes/the-art-of-statistics.md}
 
 
 
