@@ -529,7 +529,6 @@ John Quinn
 <p>Figure: The phenomenon of number theatre or <em>data theatre</em> was described by David Spiegelhalter and is nicely summarized by Martin Robbins in this sub-stack article <a href="https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards" class="uri">https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards</a>.</p>
 </div>
 </div>
-<p>The best book I have found for teaching the skeptical sense of data that underlies the statisticians craft is David Spiegelhalter’s <em>Art of Statistics</em>.</p>
 <h2 id="big-model-paradox">Big Model Paradox</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/big-model-paradox.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/big-model-paradox.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -537,7 +536,7 @@ John Quinn
 <p>The big data paradox has a sister: the big model paradox. As we build more and more complex models, we start believing that we have a high-fidelity representation of reality. But the complexity of reality is way beyond our feeble imaginings. So we end up with a highly complex model, but one that falls well short in terms of reflecting reality. The complexity of the model means that it moves beyond our understanding.</p>
 <h1 id="quantifying-the-value-of-data">Quantifying the Value of Data</h1>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/value-of-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/value-of-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/value-of-data-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/value-of-data-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>The situation is reminiscent of a thirsty castaway, set adrift. There is a sea of data, but it is not fit to drink. We need some form of data desalination before it can be consumed. But like real desalination, this is a non-trivial process, particularly if we want to achieve it at scale.</p>
 <p>There’s a sea of data, but most of it is undrinkable.</p>
@@ -556,84 +555,6 @@ John Quinn
 </div>
 <p>We require data-desalination before it can be consumed!</p>
 <p>I spoke about the challenges in data science at the NIPS 2016 Workshop on Machine Learning for Health. NIPS mainly focuses on machine learning methodologies, and many of the speakers were doing so. But before my talk, I listened to some of the other speakers talk about the challenges they had with data preparation.</p>
-<ul>
-<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
-<li>“The Dirty Work We Don’t Want to Think About” (Eric Xing)</li>
-<li>“Voodoo to get it decompressed” (Francisco Giminez)</li>
-</ul>
-<p>A further challenge in healthcare is that the data is collected by clinicians, often at great inconvenience to both themselves and the patient, but the control of the data is sometimes used to steer the direction of research.</p>
-<p>The fact that we put so much effort into processing the data, but so little into allocating credit for this work is a major challenge for realizing the benefit in the data we have.</p>
-<p>This type of work is somewhat thankless, with the exception of the clinicians’ control of the data, which probably takes things too far, those that collate and correct data sets gain little credit. In the domain of <em>reinforcement learning</em> the aim is to take a series of actions to achieve a stated goal and gain a reward. The <em>credit assignment problem</em> is the challenge in the learning algorithm of distributing credit to each of the actions which brought about the reward. We also experience this problem in society, we use proxies such as monetary reward to incentivise intermediate steps in our economy. Modern society functions because we agree to make basic expenditure on infrastructure, such as roads, which we all make use of. Our data-society is not sufficiently mature to be correctly crediting and rewarding those that undertake this work.</p>
-<p>This situation is no better in industry than in academia. Many companies have been persuaded to accumulate all their data centrally in a so-called “data lake.” This attractive idea is problematic, because data is added to the “lake” without thought to its quality. As a result, a better name for these resources would be data swamps. Because the quality of data in them is often dubious. Data scientists when working with these sources often need to develop their own processes for checking the quality of the data before it is used. Unfortunately, the quality improvements they make are rarely fed back into the ecosystem, meaning the same purification work needs to be done repeatedly.</p>
-<p>We need to properly incentivize the sharing and production of clean data sets, we need to correctly quantify the value in the contribution of each actor, otherwise there won’t be enough clean data to satiate the thirst of our decision-making processes.</p>
-<div class="figure">
-<div id="pomdp-credit-assignment-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//pomdp004.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="pomdp-credit-assignment-magnify" class="magnify" onclick="magnifyFigure(&#39;pomdp-credit-assignment&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="pomdp-credit-assignment-caption" class="caption-frame">
-<p>Figure: Partially observable Markov decision process observing reward as actions are taken in different states</p>
-</div>
-</div>
-<p>The value of shared data infrastructures in computational biology was recognized by the 2010 joint statement from the Wellcome Trust and other funders of research at the “Foggy Bottom” meeting. They recognised three key benefits to sharing of health data:</p>
-<ul>
-<li>faster progress in improving health</li>
-<li>better value for money</li>
-<li>higher quality science</li>
-</ul>
-<p>But incentivising sharing requires incentivising collection and collation of data, and the associated credit allocation models.</p>
-<h2 id="data-readiness-levels">Data Readiness Levels</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<h3 id="data-readiness-levels-1">Data Readiness Levels</h3>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence-drl17">(Lawrence, 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.</p>
-<p>See this blog post on <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a>.</p>
-<h3 id="three-grades-of-data-readiness">Three Grades of Data Readiness</h3>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
-<ul>
-<li>Grade C - accessibility
-<ul>
-<li>Transition: data becomes electronically available</li>
-</ul></li>
-<li>Grade B - validity
-<ul>
-<li>Transition: pose a question to the data.</li>
-</ul></li>
-<li>Grade A - usability</li>
-</ul>
-<p>The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the <em>electronic availability</em> of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data <span class="citation" data-cites="Lawrence-drl17">(Lawrence, 2017)</span>.</p>
-<h2 id="accessibility-grade-c">Accessibility: Grade C</h2>
-<p>The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they “have the data.” More often than not, they have not verified this. A convenient term for this is “Hearsay Data,” someone has <em>heard</em> that they have the data so they <em>say</em> they have it. This is the lowest grade of data readiness.</p>
-<p>Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.</p>
-<h2 id="validity-grade-b">Validity: Grade B</h2>
-<p>Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the <em>validity</em> of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated.</p>
-<p>Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis"><em>exploratory data analysis</em></a> <span class="citation" data-cites="Tukey:exploratory77">(Tukey, 1977)</span>.</p>
-<p>The need for Grade B emerges due to the fundamental change in the availability of data. Classically, the scientific question came first, and the data came later. This is still the approach in a randomized control trial, e.g. in A/B testing or clinical trials for drugs. Today data is being laid down by happenstance, and the question we wish to ask about the data often comes after the data has been created. The Grade B of data readiness ensures thought can be put into data quality <em>before</em> the question is defined. It is this work that is reusable across multiple teams. It is these processes that the team which is <em>standing up</em> the data must deliver.</p>
-<h2 id="usability-grade-a">Usability: Grade A</h2>
-<p>Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in universities. Bringing an algorithm to bear on a well understood data set.</p>
-<p>In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.</p>
-<p>This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.</p>
-<p>Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.</p>
-<h2 id="recursive-effects">Recursive Effects</h2>
-<p>To find out more, or to contribute ideas go to <a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></p>
-<p>Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.</p>
-<p>The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor.</p>
-<p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
-<h1 id="assessing-the-organizations-readiness">Assessing the Organizations Readiness</h1>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-joel-tests.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-joel-tests.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Assessing the readiness of data for analysis is one action that can be taken, but assessing teams that need to assimilate the information in the data is the other side of the coin. With this in mind both <a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">Damon Civin</a> and <a href="https://blog.dominodatalab.com/joel-test-data-science/">Nick Elprin</a> have independently proposed the idea of a “Data Joel Test.” A “<a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">Joel Test</a>” is a short questionnaire to establish the ability of a team to handle software engineering tasks. It is designed as a rough and ready capability assessment. A “Data Joel Test” is similar, but for assessing the capability of a team in performing data science.</p>
 <h2 id="african-data-sharing-covid-19">African Data Sharing Covid-19</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -911,35 +832,6 @@ Misinformation | 0.74 |</div>
 </div>
 </div>
 <p>The idea of the analysis is to bring this information together for sentiment and misinformation analysis in a <a href="https://dsa-uganda.herokuapp.com/dashboard/">dashboard for Covid-19 in Uganda</a>.</p>
-<h2 id="marketing-and-free-will">Marketing and Free Will</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/marketing-and-free-will.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/marketing-and-free-will.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>What does it mean for our free will if a computer can predict our individual behavior better than we ourselves can?</p>
-<p>There is potential for both explicit and implicit discrimination on the basis of race, religion, sexuality or health status. All of these are prohibited under European law but can pass unawares or be implicit.</p>
-<p>The GDPR is the General Data Protection Regulation, but a better name for it would simply be Good Data Practice Rules. It covers how to deal with discrimination which has a consequential effect on the individual. For example, entrance to university, access to loans or insurance. But the new phenomenon is dealing with a series of inconsequential decisions that taken together have a consequential effect.</p>
-<div class="figure">
-<div id="woman-tends-house-in-village-of-uganda-africa-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//woman-tends-house-in-village-of-uganda-africa.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="woman-tends-house-in-village-of-uganda-africa-magnify" class="magnify" onclick="magnifyFigure(&#39;woman-tends-house-in-village-of-uganda-africa&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="woman-tends-house-in-village-of-uganda-africa-caption" class="caption-frame">
-<p>Figure: A woman tends her house in a village in Uganda.</p>
-</div>
-</div>
-<p>Statistics as a community is also focused on the single consequential effect of an analysis (efficacy of drugs, or distribution of Mosquito nets). Associated with happenstance data is <em>happenstance decision making</em>.</p>
-<p>These algorithms behind these decisions are developed in a particular context. The so-called Silicon Valley bubble. But they are deployed across the world. To address this, a key challenge is capacity building in contexts which are remote from the Western norm.</p>
-<h2 id="amelioration">Amelioration</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/privacy-amelioration.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/privacy-amelioration.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Addressing challenges in privacy, loss of control and marginalization includes ensuring that the individual retains control of their own data. We accept privacy in our real loves, we need to accept it in our digital persona. This is vital for our control of persona and our ability to project ourselves.</p>
-<p>Fairness goes hand in hand with privacy to protect the individual. Regulations like the GDPR date from a time where the main worry was <em>consequential</em> decision making. Today we also face problems from accumulation of inconsequential decisions leading to a resulting consequential effect.</p>
-<p>Capacity building in different contexts, empowering domain experts to solve their own problems, is one aspect to the solution. A further proposal is the use of data trusts to reintroduce control of personal data for the individual.</p>
 <h2 id="personal-data-trusts">Personal Data Trusts</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_governance/includes/data-trusts.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_governance/includes/data-trusts.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1006,6 +898,7 @@ Misinformation | 0.74 |</div>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_books/includes/the-art-of-statistics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_books/includes/the-art-of-statistics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>The best book I have found for teaching the skeptical sense of data that underlies the statistician’s craft is David Spiegelhalter’s <em>Art of Statistics</em>.</p>
 <center>
 <svg viewBox="0 0 200 200" style="width:15%">
 <defs> <clipPath id="clip7">
@@ -1063,9 +956,6 @@ Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R., 2021. The da
 <div id="ref-Gething:hmis06" class="csl-entry" role="doc-biblioentry">
 Gething, P.W., Noor, A.M., Gikandi, P.W., Ogara, E.A.A., Hay, S.I., Nixon, M.S., Snow, R.W., Atkinson, P.M., 2006. Improving imperfect data from health management information systems in <span>A</span>frica using space–time geostatistics. PLoS Medicine 3. <a href="https://doi.org/10.1371/journal.pmed.0030271">https://doi.org/10.1371/journal.pmed.0030271</a>
 </div>
-<div id="ref-Lawrence-drl17" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2017. Data readiness levels. ArXiv.
-</div>
 <div id="ref-Lawrence:trusts16" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2016. Data trusts could allay our privacy fears.
 </div>
@@ -1086,9 +976,6 @@ Simons, D.J., Chabris, C.F., 1999. Gorillas in our midst: Sustained inattentiona
 </div>
 <div id="ref-Spiegelhalter-art19" class="csl-entry" role="doc-biblioentry">
 Spiegelhalter, D.J., 2019. The art of statistics. Pelican.
-</div>
-<div id="ref-Tukey:exploratory77" class="csl-entry" role="doc-biblioentry">
-Tukey, J.W., 1977. Exploratory data analysis. Addison-Wesley.
 </div>
 <div id="ref-Wiener:cybernetics48" class="csl-entry" role="doc-biblioentry">
 Wiener, N., 1948. Cybernetics: Control and communication in the animal and the machine. MIT Press, Cambridge, MA.

@@ -40,14 +40,10 @@ ipynb: True
 \include{_data-science/includes/big-data-paradox.md}
 \include{_data-science/includes/number-data-theatre.md}
 \include{_data-science/includes/big-model-paradox.md}
-\include{_data-science/includes/value-of-data.md}
+\include{_data-science/includes/value-of-data-intro.md}
 \include{_governance/includes/increasing-data-sharing-from-africas-covid-19-response.md}
 \include{_data-science/includes/privacy-intro.md}
-\include{_data-science/includes/hate-speech-or-political-dissent.md}
 \include{_data-science/includes/joyce-nabende-text-mining-case-study.md}
-\include{_data-science/includes/marketing-and-free-will.md}
-\include{_data-science/includes/digital-revolution-and-inequality.md}
-\include{_data-science/includes/privacy-amelioration.md}
 \include{_governance/includes/data-trusts.md}
 
 \include{_books/includes/the-art-of-statistics.md}
