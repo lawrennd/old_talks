@@ -16,7 +16,7 @@ time: "12:00"
 date: 2022-11-22
 youtube: 
 ipynb: False
-pptx: 2022-11-17_ice-sheet.pptx
+pptx: 2022-11-22_machine-learning-multiverse.pptx
 reveal: False
 ---
 
