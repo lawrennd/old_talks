@@ -14,7 +14,10 @@ author:
   url: http://carlhenrik.com/
 time: "10:00"
 date: 2022-11-09
-youtube: VQvYg3jin-k
+youtube: DgaZQcNp9fU
+oldyoutube: 
+- code: VQvYg3jin-k
+  year: 2021
 pdfslides: advanced-datascience-glm.pdf
 transition: None
 reveal: false
