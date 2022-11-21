@@ -14,7 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 layout: lecture
-time: "10:00"
+time: "12:00"
 date: 2022-11-08
 youtube: vZ1uBlyoX6w
 oldyoutube: 
