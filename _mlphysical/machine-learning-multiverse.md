@@ -14,9 +14,11 @@ author:
 postsdir: ../../../mlatcl/mlphysical/_casestudies/
 time: "12:00"
 date: 2022-11-22
-youtube: 
+youtube: m2BLtVuDDdI
 ipynb: False
-pptx: 2022-11-22_machine-learning-multiverse.pptx
+pdfslides: 2022-11-22_machine-learning-multiverse.pdf
 reveal: False
 ---
 
+
+Here's a link to the paper describing this work <https://arxiv.org/abs/2206.05985>.
