@@ -75,9 +75,7 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \include{_ai/includes/the-righteous-mind.md}
 
-\newslide{}
-
-\includejpg{\diagramsDir/ai/the-chimp-paradox}{30%}
+\include{_books/includes/the-chimp-paradox.md}
 
 \newslide{}
 
