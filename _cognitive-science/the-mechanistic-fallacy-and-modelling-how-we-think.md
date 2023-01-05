@@ -44,6 +44,11 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \figure{\includediagram{\diagramsDir/compsci/IP_stack_connections}{60%}}{Rube Goldberg's self operating napkin.}{rube-goldberg}
 
+
+\newslide
+
+\figure{\includediagram{\diagramsDir/mouse-47172}{80%}}{The mouse is a model, a physical model of how the world works. This drawing is a drawing of the mouse, so it's a model of the model.}{mouse-47172}
+
 \newslide
 
 \include{_data-science/includes/information-growth.md}
@@ -62,15 +67,13 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \addblog{System Zero}{2015/12/04/what-kind-of-ai/}
 
-\newslide
-
 \include{_philosophy/includes/trolley-switch.md}
 
 \include{_philosophy/includes/trolley-push.md}
 
-\include{_ai/includes/the-righteous-mind.md}
-
 \include{_ai/includes/elephant-boy-poster.md}
+
+\include{_ai/includes/the-righteous-mind.md}
 
 \newslide{}
 
@@ -80,6 +83,10 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \figure{\includejpg{\diagramsDir/cognitive-science/id-ego-superego}{80%}}{Freud's model of the Id, the Ego and the Superego.}{id-ego-superego}
 
+
+\newslide
+
+\figure{\includepng{\diagramsDir/ai/big-data}{70%}}{Word cloud for big data.}{big-data}
 
 \newslide{}
 
@@ -92,3 +99,5 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 \includepng{\diagramsDir/systemOneAsSurrogate}{80%}
 
 \thanks
+
+\references
