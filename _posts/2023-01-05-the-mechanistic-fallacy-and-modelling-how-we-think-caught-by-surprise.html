@@ -1,20 +1,21 @@
 ---
-title: "The Mechanistic Fallacy and Modelling How We Think"
-venue: "NIPS Workshop on Statistical Methods for Understanding Neural
-Systems"
-abstract: "<p>In this talk we will discuss how our current set of
-modelling solutions relates to dual process models from psychology. By
-analogising with layered models of networks we first address the danger
-of focussing purely on mechanism (or biological plausibility) when
-discussion modelling in the brain. We term this idea the mechanistic
-fallacy. In an attempt to operate at a higher level of abstraction, we
-then take a conceptual approach and attempt to map the broader domain of
-mechanistic and phenomological models to dual process ideas from
-psychology. It seems that System 1 is closer to phenomological and
-System 2 is closer to mechanistic ideas. We will draw connections to
-surrogate modelling (also known as emmulation) and speculate that one
-role of System 2 may be to provide additional simulation data for System
-1.</p>"
+title: "Caught by Surprise Retrospective: The Mechanistic Fallacy and
+Modelling How We Think"
+venue: "ELLIS Unconference"
+abstract: "<p>In this talk, I revisit a talk given at NeurIPS 2015 where
+I speculated about the next directions for ML.</p>
+<p>In this talk we will discuss how our current set of modelling
+solutions relates to dual process models from psychology. By analogising
+with layered models of networks we first address the danger of focussing
+purely on mechanism (or biological plausibility) when discussion
+modelling in the brain. We term this idea the mechanistic fallacy. In an
+attempt to operate at a higher level of abstraction, we then take a
+conceptual approach and attempt to map the broader domain of mechanistic
+and phenomological models to dual process ideas from psychology. it
+seems that System 1 is closer to phenomological and System 2 is closer
+to mechanistic ideas. We will draw connections to surrogate modelling
+(also known as emmulation) and speculate that one role of System 2 may
+be to provide additional simulation data for System 1.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -23,14 +24,14 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orcid: 
-edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_cognitive-science/the-mechanistic-fallacy-and-modelling-how-we-think.md
-date: 2015-12-11
-published: 2015-12-11
+edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_cognitive-science/the-mechanistic-fallacy-and-modelling-how-we-think-caught-by-surprise.md
+date: 2023-01-05
+published: 2023-01-05
 week: 0
-reveal: 2015-12-11-the-mechanistic-fallacy-and-modelling-how-we-think.slides.html
+reveal: 2023-01-05-the-mechanistic-fallacy-and-modelling-how-we-think-caught-by-surprise.slides.html
 layout: talk
 categories:
-- Lawrence-mechanistic15
+- notes
 ---
 
 
@@ -43,9 +44,44 @@ categories:
 <!--
 
 -->
-<p>Summary of the workshop can be found here: <a
+<h1 id="context">Context</h1>
+<p>The background to this talk is a talk I gave in 2015 at NeurIPS in
+Montreal called “Statistical Methods for Understanding Neural Systems”.
+The workshop was organised by Allie Fletcher, Jakob Macke, Ryan P.
+Adams, Jascha Sohl-Dickstein, there’s a summar here: <a
 href="https://memming.wordpress.com/2015/12/15/nips-2015-workshops/"
-class="uri">https://memming.wordpress.com/2015/12/15/nips-2015-workshops/</a></p>
+class="uri">https://memming.wordpress.com/2015/12/15/nips-2015-workshops/</a>.</p>
+<p>My sense at the time was that the “rise of the neural network” was an
+opportunity to reinject some of the “funkiness” into the field. In
+particular, to revisit ideas from neuroscience and cognitive science and
+work on algorithms that are inspired by those ideas.</p>
+<p>With that in mind I agreed to give a talk when Allie invited me.</p>
+<p>This photo is from the panel session.</p>
+<div class="figure">
+<div id="panel-statistical-neural-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//people/2015-12-11-17-51-37-1.jpg.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="panel-statistical-neural-magnify" class="magnify"
+onclick="magnifyFigure(&#39;panel-statistical-neural&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="panel-statistical-neural-caption" class="caption-frame">
+<p>Figure: Panel session at the Statistical Methods for Understanding
+Neural Systems workshop.</p>
+</div>
+</div>
+<p>It was a great workshop and with retrospect, I now think of it as the
+last event at NeurIPS that I attended that captured the spirit of those
+early meetings. It was in a small room, which was packed, and had a
+diversity of people from different fields, offering opinions in an open
+and constructive manner.</p>
+<p>At the time the Human Brain project was recently launched, and I
+think it’s fair to say that most people in the room felt it was a
+colossal waste of money. The objective was to build a full simulation of
+the brain, and the counter point was, well even if you could do that,
+what do you learn by it.</p>
 <div class="figure">
 <div id="hbp-logo-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -60,6 +96,32 @@ onclick="magnifyFigure(&#39;hbp-logo&#39;)">
 <p>Figure: Logo of the human brain project.</p>
 </div>
 </div>
+<p>So by starting with the HBP logo, I was highlighting that even a
+“faithful” mechanistic model isn’t what we actually want, because it
+doesn’t enable us to understand the system. It’s just a mirror of the
+existing system.</p>
+<p>Bernhard and I often talk about the issue of the kingdom that made
+maps that were more and more accurate. It features in a Jorge Luis
+Borges story, but predating that it appears in a Lewis Carroll
+story.</p>
+<blockquote>
+<p>“What a useful thing a pocket-map is!” I remarked.</p>
+<p>“That’s another thing we’ve learned from your Nation,” said Mein
+Herr, “map-making. But we’ve carried it much further than you. What do
+you consider the largest map that would be really useful?”</p>
+<p>“About six inches to the mile.”</p>
+<p>“Only six inches!” exclaimed Mein Herr. “We very soon got to six
+yards to the mile. Then we tried a hundred yards to the mile. And then
+came the grandest idea of all ! We actually made a map of the country,
+on the scale of a mile to the mile!”</p>
+<p>“Have you used it much?” I enquired.</p>
+<p>“It has never been spread out, yet,” said Mein Herr: “the farmers
+objected: they said it would cover the whole country, and shut out the
+sunlight ! So we now use the country itself, as its own map, and I
+assure you it does nearly as well.”</p>
+<p>from Lewis Carroll, Sylvie and Bruno Concluded, Chapter XI, London,
+1895</p>
+</blockquote>
 <div class="figure">
 <div id="rube-goldberg-figure" class="figure-frame">
 <div class="centered" style="">
@@ -74,6 +136,11 @@ onclick="magnifyFigure(&#39;rube-goldberg&#39;)">
 <p>Figure: Rube Goldberg’s self operating napkin.</p>
 </div>
 </div>
+<p>Also of interest to me was general properties of models, how we think
+about complex objects and I used a layered model of the computer network
+to represent the contextual idea of a model. That different layers are
+different ways of talking about the system (equivalent to different
+maps).</p>
 <div class="figure">
 <div id="ip-stack-connections-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//compsci/IP_stack_connections.svg" width="60%" style=" ">
@@ -102,6 +169,18 @@ works. This drawing is a drawing of the mouse, so it’s a model of the
 model.</p>
 </div>
 </div>
+<p>The point about these stories was to highlight something we talked
+about yesterday, that the model is contextual, like a good map. It needs
+to be something that we can use to answer a specific question. And like
+the different map scales are useful for walkers, cyclist and car
+drivers. And the different features on the map are also appropriate for
+different users, the right form of the model varies according to the
+user, or more broadly the context in which the user is operating.</p>
+<p>I went on to argue that the rise of machine learning was being driven
+by the rise in data availability, as depicted in the graph below which
+shows digital data availability up to 2007. I suspect that to draw such
+a graph today would render the analogue component of data too small to
+fit.</p>
 <div class="figure">
 <div id="hilbert-info-growth-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//data-science/hilbert-info-growth.svg" width="80%" style=" ">
@@ -131,6 +210,12 @@ onclick="magnifyFigure(&#39;big-data&#39;)">
 <p>Figure: Word cloud for big data.</p>
 </div>
 </div>
+<p>One of the interesting features about machine learning is how it
+includes relatively simple (what I call weakly mechanistic) assumptions
+about the data. I think the interesting aspect of machine learning
+algorithms is the extent to w hich they allow the data to speak. For
+example the convolutional neural networks encode translation
+invariance.</p>
 <div class="figure">
 <div id="htm-hierarchy-figure" class="figure-frame">
 <div class="centered" style="">
@@ -145,6 +230,12 @@ onclick="magnifyFigure(&#39;htm-hierarchy&#39;)">
 <p>Figure: Hierarchical models for machine learning.</p>
 </div>
 </div>
+<p>An additional model for intelligence comes from logic, which is often
+represented by Holmes and Watson, I could have been making one of two
+points here, and I don’t recall which it was. Either I was using the
+picture to remind me about graphical models, which are a very
+interesting way of introducing conditional independencies, or I was
+being rude about first order logic as a route to intelligence.</p>
 <div class="figure">
 <div id="holmes-watson-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -156,12 +247,14 @@ onclick="magnifyFigure(&#39;holmes-watson&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="holmes-watson-caption" class="caption-frame">
-<p>Figure: Holmes and Watson discussing a case</p>
+<p>Figure: Holmes and Watson discussing a case.</p>
 </div>
 </div>
-<p>blog post on <a
-href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">System
-Zero</a>.</p>
+<p>One of the limitations of simplistic models of thought is nicely
+revealed by the “trolley problem” tropes, where human ethics is judged
+by asking for decisions around whether to take actions where a runaway
+trolley can either be diverted through some points, or by “throwing a
+fat man off a bridge”.</p>
 <h2 id="the-trolley-problem">The Trolley Problem</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -202,6 +295,21 @@ onclick="magnifyFigure(&#39;the-trolley-problem&#39;)">
 <p>Figure: The trolley problem.</p>
 </div>
 </div>
+<p>I later explored more ideas on these problems and the need for
+diversity in decision making blog post on <a
+href="http://inverseprobability.com/2017/11/15/decision-making">in this
+blog post.</a>.</p>
+<p>My memory is that I shifted to use the rest of the talk to reveal my
+secret interest in cognitive science, and was sharing some rough ideas
+from popular books and how these facets might map back to the way we
+perceive the world.</p>
+<p>One of my major interests at the time (and in an ongoing way) was the
+manner in which the machines we were building were not <em>sentient</em>
+in the manner of the systems that we were being warned about by Elon
+Musk, Stephen Hawking, Nick Bostrom and others, they were non sentient.
+And therein lied the problem. I described these systems as “System
+Zero”, taking my cue from dual-process models in psychology which
+suggest that we have two thinking processes … fast and slow.</p>
 <h3 id="the-elephant-and-its-rider">The Elephant and its Rider</h3>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -223,6 +331,9 @@ onclick="magnifyFigure(&#39;elephant-boy-poster&#39;)">
 describe the difference between System One and System Two.</p>
 </div>
 </div>
+<p>At the time one of my favourite approaches for thinking about these
+systems was from Jonathan Haidt’s book, where he suggests that the fast
+thinking side is an elephant, and the slow is a rider.</p>
 <h3 id="the-righteous-mind">The Righteous Mind</h3>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -232,6 +343,8 @@ style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/t
 <div class="centered" style="">
 <img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/the-righteous-mind.png" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<p>Another book on these models is from the sports psychologist, Steve
+Peters, who was a former colleague from the University of Sheffield.</p>
 <h1 id="the-chimp-paradox">The Chimp Paradox</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -253,6 +366,11 @@ onclick="magnifyFigure(&#39;chimp-paradox&#39;)">
 used by the sports psychologist Steve Peters.</p>
 </div>
 </div>
+<p>And I attended a talk of his where he suggested that these were just
+analogies that were highlighting work from early psychoanalysis such a
+Freud’s model of the Id, the Ego and the Superego, showing the long
+history of the dual process models (equivalent to the Chimp, the Human
+and the Computer in Peters’s model).</p>
 <div class="figure">
 <div id="id-ego-superego-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -267,29 +385,77 @@ onclick="magnifyFigure(&#39;id-ego-superego&#39;)">
 <p>Figure: Freud’s model of the Id, the Ego and the Superego.</p>
 </div>
 </div>
+<p>My suggestion was that the AI that we’d built was operating as a
+System Zero that was interfacing with our fast thinking, potentially to
+the detriment of our autonomy. There’s a blog post on <a
+href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">blog
+post here where you can read more</a>..</p>
+<p>That process was being driven by the extent to which we were (and
+are) using data to create these “non-sentient” systems that were making
+decisions about us. From an ethical perspective this seemed problematic
+and our work on the data trusts initiative <a
+href="https://datatrusts.uk" class="uri">https://datatrusts.uk</a> was
+inspired by these concerns. Currently we are supporting three pilot
+projects which attempt to give control of data back to the “citizens”.
+See also this <a
+href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy">Guardian
+article</a>.</p>
+<p>Other work I’m excited about that responds to these problems is
+Sylvie Delacroix’s book on <a
+href="https://www.bloomsbury.com/uk/habitual-ethics-9781509920419/">habitual
+ethics</a>. See also the youtube video below.</p>
 <div class="figure">
-<div id="big-data-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/big-data.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div id="habitual-ethics-figure" class="figure-frame">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/OHweOGW5Ju4?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 </div>
-</div>
-<div id="big-data-magnify" class="magnify"
-onclick="magnifyFigure(&#39;big-data&#39;)">
+<div id="habitual-ethics-magnify" class="magnify"
+onclick="magnifyFigure(&#39;habitual-ethics&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="big-data-caption" class="caption-frame">
-<p>Figure: Word cloud for big data.</p>
+<div id="habitual-ethics-caption" class="caption-frame">
+<p>Figure: Launch event for Sylvie Delacroix’s book on habitual ethics
+which covers the challenges of ethical thinking when we are devolving
+decision making to habit.</p>
 </div>
 </div>
+<p>But at the conference, the main I deas I wanted to get across was how
+we might merge the data driven and the mechanistic approach by viewing
+System 2 as a mechanistic-like model, which is a new way of feeding data
+to the data-driven component.</p>
+<p>This means that the relationship between System One and System Two
+would be like a surrogate model or an emulator, similar to work seen in
+Bayesian optimisation and other emulators. (Since then at Amazon the
+team, led by Andrei Paleyes and Javier Gonzalez built a framework for
+statistical emulation, <a href="https://emukit.github.io/">Emukit</a>,
+that we also place at the core of one of the Masters courses I <a
+href="https://mlatcl.github.io/mlphysical/">teach on in
+Cambridge.</a>.</p>
 <div class="centered" style="">
 <img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ml/bayes-opt.png" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>blog post on <a
+<p>But key amoungst the surrogate, is the importance of “doubt”, the
+ability of System One to know when it doesn’t know, and take a sensible
+action. That was a theme I’d discussed in this blog post on blog post on
+<a
 href="http://inverseprobability.com/2015-11-09-artificial-stupidity">Artificial
-Stupidity</a>.</p>
+Stupidity</a>..</p>
+<p>The final slide hints at the workshop we had yesterday, on Causal
+Digital Twins. Because what it says is that (roughly) our System Two
+could be thought of as a (causal) digital twin of the real world, that
+we use for planning. I think that relates very nicely to Bernhard’s
+Konrad Lorenz quote thinking is acting in an imagined space.</p>
 <div class="centered" style="">
 <img class="" src="https://inverseprobability.com/talks/./slides/diagrams//systemOneAsSurrogate.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<p>The theme for this section is caught by surprise, so what’s intesting
+to me is how much of what I was proposing in this talk is work that we
+continue to focus on today. However, if I was to be asked what caught me
+by surprise, it’s the extent to which the data driven approach can be
+extrapolated. I think the recent results aren’t a surprise given GPT-2,
+but I think if you’d asked any of the people on that panel at the time
+they wouldn’t have predicted the capabilities of GPT-2 with very little
+“weak mechanism” in the model.</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to
 check the following resources.</p>
