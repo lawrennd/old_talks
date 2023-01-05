@@ -109,7 +109,7 @@ categories:
 
 \newslide{}
 
-\includegif{\diagramsDir/ai/rude-goldbergs-self-operating-napikin}{60%}
+\includegif{\includegif{\diagramsDir/physics/rube-goldbergs-self-operating-napkin}}{60%}
 
 \newslide{}
 
