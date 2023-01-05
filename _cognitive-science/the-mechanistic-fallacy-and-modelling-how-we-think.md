@@ -9,7 +9,7 @@ abstract: |
   mechanistic fallacy. In an attempt to operate at a higher level of
   abstraction, we then take a conceptual approach and attempt to map
   the broader domain of mechanistic and phenomological models to dual
-  process ideas from psychology. it seems that System 1 is closer to
+  process ideas from psychology. It seems that System 1 is closer to
   phenomological and System 2 is closer to mechanistic ideas. We will
   draw connections to surrogate modelling (also known as emmulation)
   and speculate that one role of System 2 may be to provide additional
