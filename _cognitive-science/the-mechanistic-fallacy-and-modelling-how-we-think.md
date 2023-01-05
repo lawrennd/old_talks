@@ -44,7 +44,7 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \newslide
 
-\include{_data-science/includes/information-growth}
+\include{_data-science/includes/information-growth.md}
 
 \newslide
 
