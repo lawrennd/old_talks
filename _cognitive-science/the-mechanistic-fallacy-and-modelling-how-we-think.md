@@ -14,8 +14,6 @@ abstract: |
   draw connections to surrogate modelling (also known as emmulation)
   and speculate that one role of System 2 may be to provide additional
   simulation data for System 1.
-  
-  See workshop summary here: <https://memming.wordpress.com/2015/12/15/nips-2015-workshops/>
 author:
 - family: Lawrence
   given: Neil D.
@@ -29,6 +27,10 @@ day: '11'
 date: 2015-12-11
 venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 ---
+
+
+
+\notes{Summary of the workshop can be found here: <https://memming.wordpress.com/2015/12/15/nips-2015-workshops/>}
 
 \newslide
 
@@ -48,15 +50,15 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \newslide
 
-\includepng{\diagramsDir/ai/big-data}{70%}
+\figure{\includepng{\diagramsDir/ai/big-data}{70%}}{Word cloud for big data.}{big-data}
 
 \newslide
 
-\includepng{../slides/ai/diagrams/htm-hierarchy-example}{80%}
+\figure{\includepng{\diagramsDir/ai/htm-hierarchy-example}{80%}}{Hierarchical models in computer science.}{htm-hierarchy}
 
 \newslide
 
-\includejpg{\diagramsDir/ai/holmes-watson}{80%}
+\figure{\includejpg{\diagramsDir/ai/holmes-watson}{80%}}{Holmes and Watson discussing a case}{holmes-watson}
 
 \addblog{System Zero}{2015/12/04/what-kind-of-ai/}
 
@@ -76,7 +78,7 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \newslide{}
 
-\includejpg{\diagramsDir/psychology/id-ego-superego}{30%}
+\figure{\includejpg{\diagramsDir/cognitive-science/id-ego-superego}{80%}}{Freud's model of the Id, the Ego and the Superego.}{id-ego-superego}
 
 
 \newslide{}
