@@ -42,7 +42,7 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \newslide
 
-\figure{\includediagram{\diagramsDir/compsci/IP_stack_connections}{60%}}{Rube Goldberg's self operating napkin.}{rube-goldberg}
+\figure{\includediagram{\diagramsDir/compsci/IP_stack_connections}{60%}}{Network Layer models in Computer Science.}{ip-stack-connections}
 
 
 \newslide
@@ -59,7 +59,7 @@ venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 
 \newslide
 
-\figure{\includepng{\diagramsDir/ai/htm-hierarchy-example}{80%}}{Hierarchical models in computer science.}{htm-hierarchy}
+\figure{\includepng{\diagramsDir/ai/htm-hierarchy-example}{80%}}{Hierarchical models for machine learning.}{htm-hierarchy}
 
 \newslide
 
