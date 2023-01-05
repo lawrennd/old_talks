@@ -5,6 +5,6 @@
 \notes{\subsubsection{The Righteous Mind}}
 \newslide{}
 
-\includepng{\diagramsDir/The-Righteous-Mind-Cover1}{40%}
+\includepng{\diagramsDir/ai/the-righteous-mind}{40%}
 
 \endif
