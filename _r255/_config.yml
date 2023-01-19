@@ -1,0 +1,22 @@
+author:
+- given: Neil D.
+  family: Lawrence
+  institution: University of Cambridge
+  gscholar: r3SJcvoAAAAJ
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: http://inverseprobability.com
+layout: lecture
+venue: GN06, William Gates Building
+postsdir: ../../../mlatcl/r255/_lectures/
+slidesdir: ../../../mlatcl/r255/slides/
+notesdir: ../../../mlatcl/r255/_notes/
+notebooksdir: ../../../mlatcl/r255/_notebooks/
+writediagramsdir: .
+diagramsdir: ./slides/diagrams/
+transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _r255

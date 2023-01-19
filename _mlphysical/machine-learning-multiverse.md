@@ -21,4 +21,4 @@ reveal: False
 ---
 
 
-Here's a link to the paper describing this work <https://arxiv.org/abs/2206.05985>.
+Link to the paper describing this work <https://arxiv.org/abs/2206.05985>.
