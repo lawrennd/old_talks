@@ -2,9 +2,6 @@
 \define{uncertaintyAndAbsolutism}
 \editme
 
-\subsection{Uncertainty: The Tyger that Burns Bright}
-
-\notes{A major challenge with this notion of utility is the assumption that we can describe our objectives mathematically. Once this notion is challenged some severe weaknesses in the way we do machine learning can be seen to emerge.}
 
 \include{_ai/includes/artificial-vs-natural-systems-short.md}
 
@@ -15,7 +12,7 @@
 \notes{Because of these uncertainties there's an emergent rule:}
 \slides{* There is only one absolute policy we should follow. }
 
-> There will be single absolute policy that should be followed slavishly in all circumstances
+> There will be no single absolute policy that should be followed slavishly in all circumstances
 
 
 \subsection{George Box}
@@ -36,5 +33,17 @@
 \slides{* The second example is largely contrived, and riddled with uncertainty.}
 
 \include{_philosophy/includes/trolley-push.md}
+
+\subsection{Uncertainty: The Tyger that Burns Bright}
+
+> Tyter Tyger, burning bright,
+> In the forests of the night;
+> What immortal hand or eye,
+> Could frame thy fearful symmetry?
+>
+> First verse of The Tyger by William Blake, 1794
+
+\notes{A major challenge with this notion of utility is the assumption that we can describe our objectives mathematically. Once this notion is challenged some severe weaknesses in the way we do machine learning can be seen to emerge.}
+
 
 \endif
