@@ -16,9 +16,9 @@
 
 > There will be no single absolute policy that should be followed slavishly in all circumstances
 
+\notes{This is also acknowledged in the field of statistics, most famously in the quote by George Box.}
 
 \include{_philosophy/includes/george-box-useful-model.md}
-
 
 
 \subsection{Tigers and Trolleys}
