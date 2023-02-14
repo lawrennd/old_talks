@@ -5,7 +5,9 @@
 
 \include{_ai/includes/artificial-vs-natural-systems-short.md}
 
-\notes{One of the most understood aspects of evolution is the idea that evolution is survival of the fittest. It's better described of non-survival of the non-fit, and what fit even means is highly subjective. Any utility function evolves socially andwith our environment.  ["Survival of the fittest"](https://en.wikipedia.org/wiki/Survival_of_the_fittest)is not due to Darwin it's associated with [Herbert Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer) and closely associated with social Darwinism which has little to do with the way that evolution operates in practice.}
+\subsection{Uncertainty and Absolutism}
+
+\notes{One of the most understood aspects of evolution is the idea that evolution is survival of the fittest. It's better described of non-survival of the non-fit, and what fit even means is highly subjective. Any utility function evolves socially andwith our environment.  ["Survival of the fittest"](https://en.wikipedia.org/wiki/Survival_of_the_fittest) is not due to Darwin it's associated with [Herbert Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer) and closely associated with social Darwinism which has little to do with the way that evolution operates in practice.}
 
 \subsection{Absolute Policies}
 
@@ -14,12 +16,9 @@
 
 > There will be no single absolute policy that should be followed slavishly in all circumstances
 
+\notes{This is also acknowledged in the field of statistics, most famously in the quote by George Box.}
 
-\subsection{George Box}
-
-> Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.
->
-> George E. P. Box [@Box-science76]
+\include{_philosophy/includes/george-box-useful-model.md}
 
 
 \subsection{Tigers and Trolleys}

@@ -20,7 +20,6 @@ venue: "The Turing Presents: AI UK"
 transition: None
 ---
 
-\include{talk-macros.gpp}
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 

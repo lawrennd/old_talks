@@ -15,7 +15,7 @@ featured_image: slides/diagrams/ml/bias-variance008.png
 transition: None
 ---
 
-
+>>>>>>> d80589667b5c270bf9b8fc946f4d69b53cbb701d
 \notes{\subsection{Overview}}
 
 \notes{In this topic we will explore the relationship between the bias-variance dilemma and real world decisions. The opening session will set the context, then we will read the following four papers.}
@@ -73,14 +73,15 @@ $$\text{reflect} \Longleftrightarrow \text{reflex}$$
 
 \notes{Simplistic interpretations of utility theory are misleading about the real decisions we face, and similarly for the machines we design. These simplistic perspctives have also led to a tendency to seek proxies for a notion of "correct" decision making such as consistency. However, in practice uncertainty means that our decisions will often be incorrect. Faced with this incorrectness. Once we accept errors will be made, we can see that making consistent errors is likely to be more harmful than when those errors are inconsistent. }
 
-\newslide{Links}
-\slides{
+\subsection{Links}
+
+>>>>>>> d80589667b5c270bf9b8fc946f4d69b53cbb701d
 * [This paper on decision making and diversity](http://inverseprobability.com/2017/11/15/decision-making)
 * [This post on System Zero](http://inverseprobability.com/2015/12/04/what-kind-of-ai/) and [This post on the Mechanistic Fallacy](http://inverseprobability.com/2015/11/09/artificial-stupidity/) relate to the ideas in this talk.
 * [This post on natural vs artificial systems](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
 * Articles in the Guardian are available from my [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
 * [My blog](http://inverseprobability.com/blog.html) has articles relating to this area.
-}
+
 
 \thanks
 
