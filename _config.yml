@@ -37,7 +37,7 @@ plugins:
 - jekyll-feed
 - jekyll-seo-tag
 - jekyll-remote-theme
-remote_theme: lawrennd/proceedings
+remote_theme: lawrennd/jekyll-theme
 style: ndltalk
 
 comments: True
