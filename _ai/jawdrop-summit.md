@@ -22,7 +22,7 @@ author:
   institute: Imperial College London
 - family: Yaliraki
   given: Sophia
-  institute: Imperial College London)
+  institute: Imperial College London
 date: 2023-02-02
 youtube: dbbOTXuwhKk
 venue: "Jawdrop Summit, Imperial College, White City Campus"
