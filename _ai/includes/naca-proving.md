@@ -13,7 +13,7 @@
 >
 > W. Hewitt Phillips^[monographs]
 
-[mongraphs]: Jorney in Aeronautical Research: A career at NASA Langley Research Center, Monograph in Aerospace History No 12 by W. Hewitt Phillips https://history.nasa.gov/monograph12/contents.htm
+[monographs]: Jorney in Aeronautical Research: A career at NASA Langley Research Center, Monograph in Aerospace History No 12 by W. Hewitt Phillips https://history.nasa.gov/monograph12/contents.htm
 
 and
 
