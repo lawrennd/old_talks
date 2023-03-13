@@ -56,6 +56,7 @@ In that sense AI@Cam’s mission is close in spirit to that of Panacea’s elder
 \include{_accelerate/includes/accelerate-programme.md}
 
 \notes{\include{_governance/includes/data-trusts.md}}
+\include{_governance/includes/data-trusts-initiative.md}
 
 \include{_ai/includes/ai-at-cam.md}
 
