@@ -31,7 +31,6 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \include{_ai/includes/naca-proving.md}
 
-\include{
 
 \notes{Innovating to serve science and society requires a pipeline of interventions. As well as advances in the technical capabilities of AI technologies, engineering knowhow is required to safely deploy and monitor those solutions in practice. Regulatory frameworks need to adapt to ensure trustworthy use of these technologies. Aligning technology development with public interests demands effective stakeholder engagement to bring diverse voices and expertise into technology design.
 
