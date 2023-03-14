@@ -5,11 +5,13 @@
 
 \subsection{$p$-Fairness and $n$-Fairness}
 
-\notes{> Again Univesities are to treat each applicant fairly on the basis of ability and promise, but they are supposed also to admit a socially more representative intake. 
+> Again Univesities are to treat each applicant fairly on the basis of ability and promise, but they are supposed also to admit a socially more representative intake. 
 > 
 > There's no guarantee that the process meets the target.
 >
-> Onora O'Neill *A Question of Trust: Called to Account* Reith Lectures 2002 @ONeill-trust02]}
+> Onora O'Neill *A Question of Trust: Called to Account* Reith Lectures 2002 @ONeill-trust02]
+
+\newslide
 
 \figure{\includediagramclass{\diagramsDir/ai/n-p-fairness}{80%}}{We seem to have two different aspects to fairness, which in practice can be in tension.}{n-p-fairness}
 
