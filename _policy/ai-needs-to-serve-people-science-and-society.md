@@ -27,6 +27,8 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \include{_ai/includes/cuneiform.md}
 
+\include{_physics/includes/d-day-weather.md}
+
 \include{_books/includes/a-question-of-trust.md}
 
 \include{_ai/includes/naca-proving.md}
