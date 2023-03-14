@@ -40,7 +40,7 @@ It feels important to have a diversity of approaches, and yet it feels important
 * Digital Democracy vs Digital Oligarchy @Lawrence:digitaloligarchy15 or Information Feudalism @Lawrence:informationbarons15
 * Data *subjects*, data *controllers* and data *processors*.
 }
-\notes{See Guardian articles on }\addguardian{Digital Oligarchies}{https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data}\notes{ and }\addguardian{Information Feudalism}{https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online}\notes{.}
+\notes{See }\addguardian{Digital Oligarchies}{https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data}\notes{ and }\addguardian{Information Feudalism}{https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online}\notes{.}
 
 
 
