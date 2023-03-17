@@ -7,6 +7,14 @@
 
 \notes{Before we start, I'd like to highlight one idea that will be key for contextualisation of everything else. There is a strong interaction between the structure of an organisation and the structure of its software.}
 
+\notes{This is known as Conway's law:} 
+
+\notes{> Organizations, who design systems, are constrained to produce designs which are copies of the communication structures of these organizations.
+>
+> Melvin Conway @Conway-commitees68
+}
+
+
 \include{_business/includes/the-api-mandate-bezos.md}
 
 \newslide{Amazon and Agility}
