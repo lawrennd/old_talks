@@ -9,10 +9,10 @@ author:
   url: http://inverseprobability.com
 - given: Jessica
   family: Montgomery
-date: 2023-04-12
+date: 2023-04-14
 abstract: As artificial intelligence becomes ubiquitous in our homes and workplaces, we need to develop a widespread understanding of what it is and how we use it in the interests of our societies. Neil will discuss how the artificial systems we have developed operate in a fundamentally different way to our own intelligence and how this difference in operational capability leads us to misunderstand the influence that decisions made by machine intelligence are having on our lives. Without this understanding we cannot take back control of those decisions from the machine. This will set the scene for approaches we are taking in Cambridge to address these challenges such as AI@Cam, the University’s flagship mission on AI. 
 transition: None
-venue: Cambridge AI Society, West Hub, Cambridge
+venue: Cambridge AI Social, West Hub, Cambridge
 transition: None
 ---
 
