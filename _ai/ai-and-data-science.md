@@ -25,7 +25,6 @@ categories:
 - health
 ---
 
-\include{talk-macros.tex}
 
 \define{\ricardoPicture{width}}{}
 \include{_ml/includes/what-is-ml.md}
