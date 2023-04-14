@@ -23,7 +23,7 @@ It feels important to have a diversity of approaches, and yet it feels important
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}. Unfortunately, since then the role of data trusts vs other data sharing mechanisms in the UK has been somewhat confused.}{hall-presenti-report}
+\figure{\includepng{\diagramsDir/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}. More recently the nature of different data intermediaries was clarified in a report on \href{legal mechanisms for data sharing}{https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/} from the Ada Lovelace Institute.}{hall-presenti-report}
 
 
 \newslide{Motivation}
