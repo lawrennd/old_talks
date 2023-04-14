@@ -9,14 +9,14 @@
 
 \newslide{Public Research}
 
-\figure{\includepng{\diagramsDir/ml/rs-mori-views-of-specific-ml-applications-1}}{One of the questions focussed on machine learning applications.}{rs-report-mori-poll-cover}
+\figure{\includepng{\diagramsDir/ml/rs-mori-views-of-specific-ml-applications-1}}{One of the questions focussed on machine learning applications.}{rs-report-mori-poll-1}
 
 \newslide{Public Research}
 
-\figure{\includepng{\diagramsDir/ml/rs-mori-views-of-specific-ml-applications-2}}{The public were broadly duspportive of a range of application areas..}{rs-report-mori-poll-cover}
+\figure{\includepng{\diagramsDir/ml/rs-mori-views-of-specific-ml-applications-2}}{The public were broadly supportive of a range of application areas.}{rs-report-mori-poll-2}
 
 \newslide{Public Research}
 
-\figure{\includepng{\diagramsDir/ml/rs-mori-views-of-specific-ml-applications-3}}{But they failed to see the point in AI's that could produce poetry.}{rs-report-mori-poll-cover}
+\figure{\includepng{\diagramsDir/ml/rs-mori-views-of-specific-ml-applications-3}}{But they failed to see the point in AI's that could produce poetry.}{rs-report-mori-poll-3}
 
 \endif
