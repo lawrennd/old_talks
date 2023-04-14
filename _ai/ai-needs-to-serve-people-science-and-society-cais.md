@@ -76,6 +76,8 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 
 
+\include{_data-science/includes/data-science-africa.md}
+
 \include{_ai/includes/ai-at-cam.md}
 
 \include{_accelerate/includes/accelerate-programme.md}
@@ -86,6 +88,15 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \include{_governance/includes/data-trusts-initiative.md}
 
+
+\subsection{Conclusions}
+
+\notes{Although the capabilities of new generative AIs are surprising society, and being deployed more widely than previous waves of AI with greater accessibility, many of the fundamental policy challenges of AI haven't changed. There is perhaps a greater urgency in the need for solutions but the nature of the solutions needs to be responsive to the impact of the technology we see. All the initiatives above exploit great agility through building collaborations between social scientists, humanities experts, technical experts and policy experts to give agile advice to policy makers, domain experts and tech experts.}
+
+\slides{
+* New Capabilities surprise society.
+* But they are part of an ongoing revolution.
+* Our approaches attempt to build interdisciplinary responses based on shared understanding of the real problems we face.}
 
 \thanks
 
