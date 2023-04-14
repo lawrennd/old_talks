@@ -39,7 +39,12 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/baby-shoes.md}
 
 \include{_ai/includes/cuneiform.md}
-\include{_books/includes/future-of-professions.md}
+\include{_books/includes/the-future-of-professions.md}
+
+\notes{And this is very likely true, but in practice we know that even if the disruption is being felt initially by the professional classes, those groups tend to be protected by their ability to adapt, which is correlated with higher education.}
+
+\notes{Whether this remains true this time is another question. I'm particularly struck by the "convergent evolution" of ChatGPT. The model is trained by reinforcement learning with feedback provided by people. ChatGPT's answers are highly plausible, make use of sophisticated language in an intelligent sounding way and are often fundamentally flawed. I'm struck by the similarity to fresh Oxbridge graduates. I wonder if this is also an example of convergent evolution.}
+
 \include{_policy/includes/coin-pusher.md}
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}
