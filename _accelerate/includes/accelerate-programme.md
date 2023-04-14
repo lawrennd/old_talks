@@ -37,20 +37,43 @@ issues relating to computational biology, psychiatry, and string theory. While w
 now, in the longer term our ambition is to build links with the social
 sciences and humanities.}
 
+\notes{Progress so far includes: 
+* Recruited a core research team working on the application of AI in mental health, bioinformatics, healthcare, string theory, and complex systems.
+* Funded 9 interdisciplinary projects:
+  *	Antimicrobial resistance in farming
+  * Quantifying Design Trade-offs in Electricity-generation-focused Tokamaks using AI
+  * Automated preclinical drug discovery in vivo using pose estimation
+  * Causal Methods for Environmental Science Workshop
+  * Automatic tree mapping in Cambridge
+  * Acoustic monitoring for biodiversity conservation
+  * AI, mathematics and string theory
+  * Theoretical, Scientific, and Philosophical Perspectives on Biological Understanding in the age of Artificial Intelligence
+  * AI in pathology: optimising a classifier for digital images of duodenal biopsies}
+
+
 \notes{* Teaching and learning: building on the teaching activities
 already delivered through University courses, we’re creating a
 pipeline of learning opportunities to help PhD students and
 postdocs better understand how to use data science and machine
-learning in their work. Our programme with Spark is one element
-of this, and we’ll be announcing further activities soon.}
+learning in their work. }
+
+\notes{Progress so far includes:
+Teaching and learning
+* Brought over 250 participants from over 30 departments through tailored data science and machine learning for science training (Data Science Residency and Machine Learning Academy);
+* Convened workshops with over 80 researchers across the University on the development of data pipelines for science;
+* Delivered University courses to over 100 students in Advanced Data Science and Machine Learning and the Physical World.}
 
 \notes{* Engagement: we hope that Accelerate will help build a community
 of researchers working across the University at the interface on
 machine learning and the sciences, helping to share best
 practice and new methods, and support each other in advancing
 their research. Over the coming years, we’ll be running a
-variety of events and activities in support of this, and would
-welcome your ideas about what might be most useful.}
+variety of events and activities in support of this.}
+
+\notes{Progress so far includes:
+* Launched a Machine Learning Engineering Clinic that has supported over 40 projects across the University with MLE troubleshooting and advice;
+* Hosted and participated in events reaching over 300 people;
+* Created a roadmap for the development of AI in science, based on a Dagstuhl event that brought together 30 researchers from across the world.}
 
 
 \endif
