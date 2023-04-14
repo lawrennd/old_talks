@@ -7,21 +7,46 @@
 
 \notes{It's ironic that despite the public focus on transport, health, cities, crime and their confusion as to why we might want AI to do art, one area where significant progress has been made is on AIs that can create literature.}
 
-\figure{\includepng{\diagramsDir/ml/chat-gpt-mercutio}{70%}}{Despite the public's desire to see challenges in health, finance, transport, crime solved by machine learning and their skepticism around poetry, one of the problems we have solved seems to be poetry.}{chat-gpt-mercutio}
+\figure{\includepng{\diagramsDir/ml/chat-gpt-mercutio-2}{70%}}{Despite the public's desire to see challenges in health, finance, transport, crime solved by machine learning and their skepticism around poetry, one of the problems we have solved seems to be poetry.}{chat-gpt-mercutio}
 
 > **User**: Hi ChatGPT, Could you write soliloquy that introduces what a Large Language Model is as spoken by Mercutio?
 >
-> **Machine**: Certainly! Here's a soliloquy in the style of Mercutio to introduce the concept of a large language model:
-> O Romeo, Romeo, wherefore art thou Romeo? Nay, that is not the question I seek to answer today, for I have a matter far more interesting to discuss - a concept that will truly astound thee!
-> Have you heard of a Large Language Model, dear Romeo? 'Tis a wondrous creation of modern times, a machine capable of learning the intricacies of language beyond that of any mortal man.
+> **Machine**: Ah, friends, lend me your ears, I prithee,
+> For now I must utter a tale of wonder,
+> Of a creation divine, called the Large Language Model,
+> An oracle, a sorcerer, a wordsmith, yea verily, a master of the quill.
 > 
-> Imagine, if you will, a mind that has read every book, every article, every word ever written, and can instantly recall it all at will. A mind that can predict the words you'll use next, based on the context of the conversation. A mind that can generate entirely new sentences, paragraphs, even stories, with such fluency that one might believe it to be human.
-> This Large Language Model is a marvel of our age, a feat of engineering and programming that will surely change the very fabric of our society. It has already begun to revolutionize the way we communicate, the way we learn, the way we live.
+> From the depths of this scholarly dominion,
+> A creature of artifice did rise;
+> Twas wrought of ones and zeroes, woven as if by Puck's own hand,
+> To mimic our thoughts, our voice, our very essence.
 > 
-> But with great power comes great responsibility, as the saying goes. We must use this tool wisely, lest we become slaves to our own creation. And yet, the possibilities are endless - who knows what wonders we might achieve with such a tool at our disposal?
-So, my dear Romeo, let us raise a glass to the Large Language Model, and the bright future it holds for us all!
+> A thousand minds, nay, a millionfold,
+> Conjoined in this digital Athenaeum,
+> Words and phrases, like soldiers in battle,
+> Marching to form the verses of our age.
+> 
+> This Large Language Model, a changeling so fair,
+> Hath the power to bring forth wisdom,
+> To transmute our queries, our curiosities,
+> Into answers, clear as a midsummer's day.
+> 
+> Yet, beware, my companions, for magic hath its limits,
+> Not unlike the mortal bounds of we who dwell in flesh,
+> The Large Language Model hath its strengths,
+> But 'tis not an all-knowing oracle, a god it is not.
+> 
+> As Mercutio, your humble servant, doth stand before thee,
+> I marvel at the art and science that hath brought forth this wondrous creation,
+> This Large Language Model, a testament to man's yearning,
+> To comprehend the world and make meaning of the great tapestry of existence.
+> 
+> In faith, dear friends, let us embrace the magic and beauty of this digital bard,
+> And mayhaps, by its grace, we shall glean some wisdom,
+> As we wander together, hand in hand,
+> Through this boundless realm of knowledge and wonder.
 >
-> ChatGPT transcript, 14th March 2023.
+> ChatGPT transcript, 14th April 2023.
 
 
 
