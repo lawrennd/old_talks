@@ -39,6 +39,7 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/baby-shoes.md}
 
 \include{_ai/includes/cuneiform.md}
+\include{_books/includes/future-of-professions.md}
 \include{_policy/includes/coin-pusher.md}
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}

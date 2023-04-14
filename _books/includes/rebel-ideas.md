@@ -1,4 +1,4 @@
-k\ifndef{rebelIdeas}
+\ifndef{rebelIdeas}
 \define{rebelIdeas}
 
 \editme 
