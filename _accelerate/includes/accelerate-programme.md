@@ -58,10 +58,14 @@ postdocs better understand how to use data science and machine
 learning in their work. }
 
 \notes{Progress so far includes:
+
 Teaching and learning
 * Brought over 250 participants from over 30 departments through tailored data science and machine learning for science training (Data Science Residency and Machine Learning Academy);
+
 * Convened workshops with over 80 researchers across the University on the development of data pipelines for science;
-* Delivered University courses to over 100 students in Advanced Data Science and Machine Learning and the Physical World.}
+
+* Delivered University courses to over 100 students in Advanced Data Science and Machine Learning and the Physical World.
+* }
 
 \notes{* Engagement: we hope that Accelerate will help build a community
 of researchers working across the University at the interface on
@@ -72,7 +76,9 @@ variety of events and activities in support of this.}
 
 \notes{Progress so far includes:
 * Launched a Machine Learning Engineering Clinic that has supported over 40 projects across the University with MLE troubleshooting and advice;
+
 * Hosted and participated in events reaching over 300 people;
+
 * Created a roadmap for the development of AI in science, based on a Dagstuhl event that brought together 30 researchers from across the world.}
 
 
