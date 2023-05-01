@@ -12,9 +12,10 @@
 
 \notes{The initiative was funded in November 2022 where a £5M investment from the University was secured.}
 
-\notes{Progress so far:}
+Progress so far:
+
 * Developing the vision
   * Engaged over 100 members of the University community across 30 departments/institutes, start-ups, and large businesses.
-  * Supported 6 new funding bids}
+  * Supported 6 new funding bids
 
 \endif
