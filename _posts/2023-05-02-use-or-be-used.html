@@ -382,6 +382,134 @@ than the Met Office.</p>
 the Allies than for the defending forces. As a result, on the morning
 that Eisenhower invated, Rommel was back in Germany attending his wife’s
 50th birthday party.</p>
+<h1 id="the-great-ai-fallacy">The Great AI Fallacy</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/the-great-ai-fallacy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/the-great-ai-fallacy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>There is a lot of variation in the use of the term artificial
+intelligence. I’m sometimes asked to define it, but depending on whether
+you’re speaking to a member of the public, a fellow machine learning
+researcher, or someone from the business community, the sense of the
+term differs.</p>
+<p>However, underlying its use I’ve detected one disturbing trend. A
+trend I’m beginining to think of as “The Great AI Fallacy”.</p>
+<p>The fallacy is associated with an implicit promise that is embedded
+in many statements about Artificial Intelligence. Artificial
+Intelligence, as it currently exists, is merely a form of automated
+decision making. The implicit promise of Artificial Intelligence is that
+it will be the first wave of automation where the machine adapts to the
+human, rather than the human adapting to the machine.</p>
+<p>How else can we explain the suspension of sensible business judgment
+that is accompanying the hype surrounding AI?</p>
+<p>This fallacy is particularly pernicious because there are serious
+benefits to society in deploying this new wave of data-driven automated
+decision making. But the AI Fallacy is causing us to suspend our
+calibrated skepticism that is needed to deploy these systems safely and
+efficiently.</p>
+<p>The problem is compounded because many of the techniques that we’re
+speaking of were originally developed in academic laboratories in
+isolation from real-world deployment.</p>
+<div class="figure">
+<div id="jeeves-springtime-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/Jeeves_in_the_Springtime_01.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="jeeves-springtime-magnify" class="magnify"
+onclick="magnifyFigure(&#39;jeeves-springtime&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="jeeves-springtime-caption" class="caption-frame">
+<p>Figure: We seem to have fallen for a perspective on AI that suggests
+it will adapt to our schedule, rather in the manner of a 1930s
+manservant.</p>
+</div>
+</div>
+<p>So far we haven’t seen AI that does a very good job with
+understanding humans, but with large generative models we’re starting to
+see AI that through consuming vast quantities of our data has begun to
+understand something about our culture.</p>
+<h2 id="p-fairness-and-n-fairness"><span
+class="math inline">\(p\)</span>-Fairness and <span
+class="math inline">\(n\)</span>-Fairness</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/p-n-fairness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/p-n-fairness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<blockquote>
+<p>Again Univesities are to treat each applicant fairly on the basis of
+ability and promise, but they are supposed also to admit a socially more
+representative intake.</p>
+<p>There’s no guarantee that the process meets the target.</p>
+<p>Onora O’Neill <em>A Question of Trust: Called to Account</em> Reith
+Lectures 2002 <span class="citation" data-cites="ONeill-trust02">O’Neill
+(2002)</span>]</p>
+</blockquote>
+<div class="figure">
+<div id="n-p-fairness-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/./slides/diagrams//ai/n-p-fairness.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="n-p-fairness-magnify" class="magnify"
+onclick="magnifyFigure(&#39;n-p-fairness&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="n-p-fairness-caption" class="caption-frame">
+<p>Figure: We seem to have two different aspects to fairness, which in
+practice can be in tension.</p>
+</div>
+</div>
+<p>We’ve outlined <span class="math inline">\(n\)</span>-fairness and
+<span class="math inline">\(p\)</span>-fairness. By <span
+class="math inline">\(n\)</span>-fairness we mean the sort of
+considerations that are associated with <em>substantive</em> equality of
+opportunity vs <em>formal</em> equality of opportunity. Formal equality
+of community is related to <span
+class="math inline">\(p\)</span>-fairness. This is sometimes called
+procedural fairness and we might think of it as a <em>performative</em>
+form of fairness. It’s about clarity of rules, for example as applied in
+sport. <span class="math inline">\(n\)</span>-Fairness is more nuanced.
+It’s a reflection of society’s normative judgment about how individuals
+may have been disadvantaged, e.g. due to their upbringing.</p>
+<p>The important point here is that these forms of fairness are in
+tension. Good procedural fairness needs to be clear and understandable.
+It should be clear to everyone what the rules are, they shouldn’t be
+obscured by jargon or overly subtle concepts. <span
+class="math inline">\(p\)</span>-Fairness should not be easily
+undermined by adversaries, it should be difficult to “cheat” good <span
+class="math inline">\(p\)</span>-fairness. However, <span
+class="math inline">\(n\)</span>-fairness requires nuance, understanding
+of the human condition, where we came from and how different individuals
+in our society have been advantaged or disadvantaged in their upbringing
+and their access to opportunity.</p>
+<p>Pure <span class="math inline">\(n\)</span>-fairness and pure <span
+class="math inline">\(p\)</span>-fairness both have the feeling of
+dystopias. In practice, any decision making system needs to balance the
+two. The correct point of operation will depend on the context of the
+decision. Consider fair rules of a game of football, against fair
+distribution of social benefit. It is unlikely that there is ever an
+objectively correct balance between the two for any given context.
+Different individuals will favour <span class="math inline">\(p\)</span>
+vs <span class="math inline">\(n\)</span> according to their personal
+values.</p>
+<p>Given the tension between the two forms of fairness, with <span
+class="math inline">\(p\)</span> fairness requiring simple rules that
+are understandable by all, and <span class="math inline">\(n\)</span>
+fairness requiring nuance and subtlety, how do we resolve this tension
+in practice?</p>
+<p>Normally in human systems, significant decisions involve trained
+professionals. For example, judges, or accountants or doctors.</p>
+<p>Training a professional involves lifting their “reflexive” response
+to a situation with “reflective” thinking about the consequences of
+their decision that rely not just on the professional’s expertise, but
+also their knowledge of what it is to be a human.</p>
+<p>This <em>marvellous</em> resolution exploits the fact that while
+humans are increadibly complicated nuanced entities, other humans have
+an intuitive ability to understand their motivations and values. So the
+human is a complex entity that seems simple to other humans.</p>
 <h2 id="a-question-of-trust">A Question of Trust</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -469,6 +597,11 @@ role="doc-noteref"><sup>2</sup></a></p>
 <p>Gilruth went beyond the reports of feel to characterise how the plane
 should respond to different inputs on the control stick. In other words
 he quantified that feel of the plane.</p>
+<h2 id="ai-proving-grounds">AI Proving Grounds</h2>
+<p>We need mechanisms to rapidly understand the capabilities of these
+new tools, what is the potential of the technology, and what are the
+pitfalls? With this in mind we can build a societal AI capability that
+means understanding is pervasive.</p>
 <p>Innovating to serve science and society requires a pipeline of
 interventions. As well as advances in the technical capabilities of AI
 technologies, engineering knowhow is required to safely deploy and
@@ -510,130 +643,6 @@ benefit and mitigate social harm.</p>
 Panacea’s elder sister Hygeia. It is focussed on building and
 maintaining the hygiene of a robust and equitable AI research
 ecosystem.</p>
-<h2 id="p-fairness-and-n-fairness"><span
-class="math inline">\(p\)</span>-Fairness and <span
-class="math inline">\(n\)</span>-Fairness</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/p-n-fairness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/p-n-fairness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<blockquote>
-<p>Again Univesities are to treat each applicant fairly on the basis of
-ability and promise, but they are supposed also to admit a socially more
-representative intake.</p>
-<p>There’s no guarantee that the process meets the target.</p>
-<p>Onora O’Neill <em>A Question of Trust: Called to Account</em> Reith
-Lectures 2002 <span class="citation" data-cites="ONeill-trust02">O’Neill
-(2002)</span>]</p>
-</blockquote>
-<div class="figure">
-<div id="n-p-fairness-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/./slides/diagrams//ai/n-p-fairness.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="n-p-fairness-magnify" class="magnify"
-onclick="magnifyFigure(&#39;n-p-fairness&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="n-p-fairness-caption" class="caption-frame">
-<p>Figure: We seem to have two different aspects to fairness, which in
-practice can be in tension.</p>
-</div>
-</div>
-<p>We’ve outlined <span class="math inline">\(n\)</span>-fairness and
-<span class="math inline">\(p\)</span>-fairness. By <span
-class="math inline">\(n\)</span>-fairness we mean the sort of
-considerations that are associated with <em>substantive</em> equality of
-opportunity vs <em>formal</em> equality of opportunity. Formal equality
-of community is related to <span
-class="math inline">\(p\)</span>-fairness. This is sometimes called
-procedural fairness and we might think of it as a <em>performative</em>
-form of fairness. It’s about clarity of rules, for example as applied in
-sport. <span class="math inline">\(n\)</span>-Fairness is more nuanced.
-It’s a reflection of society’s normative judgment about how individuals
-may have been disadvantaged, e.g. due to their upbringing.</p>
-<p>The important point here is that these forms of fairness are in
-tension. Good procedural fairness needs to be clear and understandable.
-It should be clear to everyone what the rules are, they shouldn’t be
-obscured by jargon or overly subtle concepts. <span
-class="math inline">\(p\)</span>-Fairness should not be easily
-undermined by adversaries, it should be difficult to “cheat” good <span
-class="math inline">\(p\)</span>-fairness. However, <span
-class="math inline">\(n\)</span>-fairness requires nuance, understanding
-of the human condition, where we came from and how different individuals
-in our society have been advantaged or disadvantaged in their upbringing
-and their access to opportunity.</p>
-<p>Pure <span class="math inline">\(n\)</span>-fairness and pure <span
-class="math inline">\(p\)</span>-fairness both have the feeling of
-dystopias. In practice, any decision making system needs to balance the
-two. The correct point of operation will depend on the context of the
-decision. Consider fair rules of a game of football, against fair
-distribution of social benefit. It is unlikely that there is ever an
-objectively correct balance between the two for any given context.
-Different individuals will favour <span class="math inline">\(p\)</span>
-vs <span class="math inline">\(n\)</span> according to their personal
-values.</p>
-<p>Given the tension between the two forms of fairness, with <span
-class="math inline">\(p\)</span> fairness requiring simple rules that
-are understandable by all, and <span class="math inline">\(n\)</span>
-fairness requiring nuance and subtlety, how do we resolve this tension
-in practice?</p>
-<p>Normally in human systems, significant decisions involve trained
-professionals. For example, judges, or accountants or doctors.</p>
-<p>Training a professional involves lifting their “reflexive” response
-to a situation with “reflective” thinking about the consequences of
-their decision that rely not just on the professional’s expertise, but
-also their knowledge of what it is to be a human.</p>
-<p>This <em>marvellous</em> resolution exploits the fact that while
-humans are increadibly complicated nuanced entities, other humans have
-an intuitive ability to understand their motivations and values. So the
-human is a complex entity that seems simple to other humans.</p>
-<h1 id="the-great-ai-fallacy">The Great AI Fallacy</h1>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/the-great-ai-fallacy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/the-great-ai-fallacy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>There is a lot of variation in the use of the term artificial
-intelligence. I’m sometimes asked to define it, but depending on whether
-you’re speaking to a member of the public, a fellow machine learning
-researcher, or someone from the business community, the sense of the
-term differs.</p>
-<p>However, underlying its use I’ve detected one disturbing trend. A
-trend I’m beginining to think of as “The Great AI Fallacy”.</p>
-<p>The fallacy is associated with an implicit promise that is embedded
-in many statements about Artificial Intelligence. Artificial
-Intelligence, as it currently exists, is merely a form of automated
-decision making. The implicit promise of Artificial Intelligence is that
-it will be the first wave of automation where the machine adapts to the
-human, rather than the human adapting to the machine.</p>
-<p>How else can we explain the suspension of sensible business judgment
-that is accompanying the hype surrounding AI?</p>
-<p>This fallacy is particularly pernicious because there are serious
-benefits to society in deploying this new wave of data-driven automated
-decision making. But the AI Fallacy is causing us to suspend our
-calibrated skepticism that is needed to deploy these systems safely and
-efficiently.</p>
-<p>The problem is compounded because many of the techniques that we’re
-speaking of were originally developed in academic laboratories in
-isolation from real-world deployment.</p>
-<div class="figure">
-<div id="jeeves-springtime-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/Jeeves_in_the_Springtime_01.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="jeeves-springtime-magnify" class="magnify"
-onclick="magnifyFigure(&#39;jeeves-springtime&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="jeeves-springtime-caption" class="caption-frame">
-<p>Figure: We seem to have fallen for a perspective on AI that suggests
-it will adapt to our schedule, rather in the manner of a 1930s
-manservant.</p>
-</div>
-</div>
 <h2 id="the-accelerate-programme">The Accelerate Programme</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -697,27 +706,34 @@ learning opportunities to help PhD students and postdocs better
 understand how to use data science and machine learning in their
 work.</li>
 </ul>
-<p>Progress so far includes: Teaching and learning * Brought over 250
-participants from over 30 departments through tailored data science and
-machine learning for science training (Data Science Residency and
-Machine Learning Academy); * Convened workshops with over 80 researchers
-across the University on the development of data pipelines for science;
-* Delivered University courses to over 100 students in Advanced Data
-Science and Machine Learning and the Physical World.</p>
+<p>Progress so far includes:</p>
+<p>Teaching and learning * Brought over 250 participants from over 30
+departments through tailored data science and machine learning for
+science training (Data Science Residency and Machine Learning
+Academy);</p>
 <ul>
-<li>Engagement: we hope that Accelerate will help build a community of
-researchers working across the University at the interface on machine
+<li><p>Convened workshops with over 80 researchers across the University
+on the development of data pipelines for science;</p></li>
+<li><p>Delivered University courses to over 100 students in Advanced
+Data Science and Machine Learning and the Physical World.</p></li>
+<li></li>
+<li><p>Engagement: we hope that Accelerate will help build a community
+of researchers working across the University at the interface on machine
 learning and the sciences, helping to share best practice and new
 methods, and support each other in advancing their research. Over the
 coming years, we’ll be running a variety of events and activities in
-support of this.</li>
+support of this.</p></li>
 </ul>
 <p>Progress so far includes: * Launched a Machine Learning Engineering
 Clinic that has supported over 40 projects across the University with
-MLE troubleshooting and advice; * Hosted and participated in events
-reaching over 300 people; * Created a roadmap for the development of AI
-in science, based on a Dagstuhl event that brought together 30
-researchers from across the world.</p>
+MLE troubleshooting and advice;</p>
+<ul>
+<li><p>Hosted and participated in events reaching over 300
+people;</p></li>
+<li><p>Created a roadmap for the development of AI in science, based on
+a Dagstuhl event that brought together 30 researchers from across the
+world.</p></li>
+</ul>
 <h2 id="personal-data-trusts">Personal Data Trusts</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -872,9 +888,15 @@ societal problems. We will recently launched AI@Cam with a vision
 document that outlines these challenges for the University.</p>
 <p>The initiative was funded in November 2022 where a £5M investment
 from the University was secured.</p>
-<p>Progress so far: * Developing the vision * Engaged over 100 members
-of the University community across 30 departments/institutes, start-ups,
-and large businesses. * Supported 6 new funding bids}</p>
+<p>Progress so far:</p>
+<ul>
+<li>Developing the vision
+<ul>
+<li>Engaged over 100 members of the University community across 30
+departments/institutes, start-ups, and large businesses.</li>
+<li>Supported 6 new funding bids</li>
+</ul></li>
+</ul>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to
 check the following resources.</p>

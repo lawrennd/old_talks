@@ -49,9 +49,23 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ml/includes/chat-gpt-mercutio.md}
 \include{_physics/includes/d-day-weather.md}
 
+\include{_ai/includes/the-great-ai-fallacy.md}
+
+\notes{So far we haven't seen AI that does a very good job with understanding humans, but with large generative models we're starting to see AI that through consuming vast quantities of our data has begun to understand something about our culture.}
+
+\include{_ai/includes/p-n-fairness.md}
+
 \include{_books/includes/a-question-of-trust.md}
 
 \include{_ai/includes/naca-proving.md}
+
+\subsection{AI Proving Grounds}
+
+\slides{* Understand the nature of the tool.
+* What is the potential, what are the pitfalls?
+* Build societal AI capability.}
+
+\notes{We need mechanisms to rapidly understand the capabilities of these new tools, what is the potential of the technology, and what are the pitfalls? With this in mind we can build a societal AI capability that means understanding is pervasive.}
 
 \notes{Innovating to serve science and society requires a pipeline of interventions. As well as advances in the technical capabilities of AI technologies, engineering knowhow is required to safely deploy and monitor those solutions in practice. Regulatory frameworks need to adapt to ensure trustworthy use of these technologies. Aligning technology development with public interests demands effective stakeholder engagement to bring diverse voices and expertise into technology design.}
 
@@ -69,10 +83,6 @@ The University operates as both an engine of AI-enabled innovation and steward o
 AI is not a universal remedy. It is a set of tools, techniques and practices that correctly deployed can be leveraged to deliver societal benefit and mitigate social harm.
 
 In that sense AI@Cam’s mission is close in spirit to that of Panacea’s elder sister Hygeia. It is focussed on building and maintaining the hygiene of a robust and equitable AI research ecosystem.}
-
-\include{_ai/includes/p-n-fairness.md}
-
-\include{_ai/includes/the-great-ai-fallacy.md}
 
 \include{_accelerate/includes/accelerate-programme.md}
 
