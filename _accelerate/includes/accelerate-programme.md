@@ -38,16 +38,27 @@ now, in the longer term our ambition is to build links with the social
 sciences and humanities.}
 
 \notes{Progress so far includes: 
+
 * Recruited a core research team working on the application of AI in mental health, bioinformatics, healthcare, string theory, and complex systems.
+
 * Funded 9 interdisciplinary projects:
+
   * Antimicrobial resistance in farming
+
   * Quantifying Design Trade-offs in Electricity-generation-focused Tokamaks using AI
+  
   * Automated preclinical drug discovery in vivo using pose estimation
+  
   * Causal Methods for Environmental Science Workshop
+  
   * Automatic tree mapping in Cambridge
+  
   * Acoustic monitoring for biodiversity conservation
+  
   * AI, mathematics and string theory
+  
   * Theoretical, Scientific, and Philosophical Perspectives on Biological Understanding in the age of Artificial Intelligence
+  
   * AI in pathology: optimising a classifier for digital images of duodenal biopsies}
 
 
@@ -60,6 +71,7 @@ learning in their work. }
 \notes{Progress so far includes:
 
 Teaching and learning
+
 * Brought over 250 participants from over 30 departments through tailored data science and machine learning for science training (Data Science Residency and Machine Learning Academy);
 
 * Convened workshops with over 80 researchers across the University on the development of data pipelines for science;
