@@ -12,6 +12,8 @@
 
 \notes{The initiative was funded in November 2022 where a £5M investment from the University was secured.}
 
+\newslide{AI@Cam}
+
 Progress so far:
 
 * Developing the vision
