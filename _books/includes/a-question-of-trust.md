@@ -9,6 +9,15 @@
 
 \figure{\includejpg{\diagramsDir/books/a-question-of-trust}{40%}}{[A Question of Trust by Onora O'Neil](https://www.bbc.co.uk/programmes/p00gpzfq) which examines the nature of trust and its role in society.}{a-question-of-trust}
 
+\newslide{A Question of Trust}
+
+> Again Univesities are to treat each applicant fairly on the basis of ability and promise, but they are supposed also to admit a socially more representative intake. 
+> 
+> There's no guarantee that the process meets the target.
+>
+> Onora O'Neill *A Question of Trust: Called to Account* Reith Lectures 2002 @ONeill-trust02]
+
+
 \notes{O'Neill is speaking in 2002, in the early days of the internet and before social media. Much of her thoughts are even more relevant for today than they were when she spoke. This is because the increased availability of information and machine driven decision-making makes the mistaken premise, that process is an adequate substitute for duty, more apparently plausible. But this undermines what O'Neill calls "intelligent accountability", which is not accounting by the numbers, but through professional education and institutional safeguards.}
 
 \endif
