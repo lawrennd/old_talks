@@ -87,6 +87,7 @@ their research. Over the coming years, we’ll be running a
 variety of events and activities in support of this.}
 
 \notes{Progress so far includes:
+
 * Launched a Machine Learning Engineering Clinic that has supported over 40 projects across the University with MLE troubleshooting and advice;
 
 * Hosted and participated in events reaching over 300 people;
