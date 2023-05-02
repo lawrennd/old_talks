@@ -40,7 +40,7 @@ sciences and humanities.}
 \notes{Progress so far includes: 
 * Recruited a core research team working on the application of AI in mental health, bioinformatics, healthcare, string theory, and complex systems.
 * Funded 9 interdisciplinary projects:
-  *	Antimicrobial resistance in farming
+  * Antimicrobial resistance in farming
   * Quantifying Design Trade-offs in Electricity-generation-focused Tokamaks using AI
   * Automated preclinical drug discovery in vivo using pose estimation
   * Causal Methods for Environmental Science Workshop
@@ -65,7 +65,7 @@ Teaching and learning
 * Convened workshops with over 80 researchers across the University on the development of data pipelines for science;
 
 * Delivered University courses to over 100 students in Advanced Data Science and Machine Learning and the Physical World.
-* }
+}
 
 \notes{* Engagement: we hope that Accelerate will help build a community
 of researchers working across the University at the interface on
