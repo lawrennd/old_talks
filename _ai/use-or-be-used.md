@@ -46,7 +46,10 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/cuneiform.md}
 
-\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/evolved-relationship-ai.md}
+
+
+
 \include{_books/includes/the-future-of-professions.md}
 
 \notes{And this is very likely true, but in practice we know that even if the disruption is being felt initially by the professional classes, those groups tend to be protected by their ability to adapt, which is correlated with higher education.}
