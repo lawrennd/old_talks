@@ -44,7 +44,7 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/baby-shoes.md}
-
+\include{_data-science/includes/lies-damned-lies.md}
 \include{_ai/includes/evolved-relationship-ai.md}
 
 \include{_ai/includes/cuneiform.md}
