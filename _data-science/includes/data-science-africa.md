@@ -16,7 +16,7 @@
 \figure{\includediagram{\diagramsDir/dsa/dsa-events-october-2021}{60%}}{Data Science Africa meetings held up to October 2021.}{dsa-events-october-2021}
 \notes{Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and artificial intelligence on the African continent. 
 
-As of May 2023 there have been nine workshops and nine schools, located in seven different countries: Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania; Abuja, Nigeria; Addis Ababa, Ethiopia; Accra, Ghana; Kampala, Uganda and Kimberley, South Africa (virtual). The next event is in a couple of weeks in Kigali, Rwanda.
+As of May 2023 there have been eleven  workshops and schools, located in seven different countries: Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania; Abuja, Nigeria; Addis Ababa, Ethiopia; Accra, Ghana; Kampala, Uganda and Kimberley, South Africa (virtual), and in Kigali, Rwanda.
 
 The main notion is *end-to-end* data science. For example, going from data collection in the farmer's field to decision making in the Ministry of Agriculture. Or going from malaria disease counts in health centers to medicine distribution.}
 
