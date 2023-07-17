@@ -14,3 +14,12 @@ date: 2023-07-21
 venue: ELLIS Summer School, Cambridge
 transition: None
 ---
+
+
+Start with Great AI fallacy. Question whether this is now different
+
+Mention role of statistics, 
+
+Are probabilities intuitive? 
+
+How are two experts sharing uncertainty?
