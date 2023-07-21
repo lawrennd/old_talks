@@ -24,4 +24,9 @@
 
 * This might allow us to deal with the challenge of *intellectual debt* where we create machines we cannot explain.
 
+\newslide{}
+
+\figure{\includepng{\diagramsDir/ai/new-flow-of-information-ham}{60%}}{The HAM now sits between us and the traditional digital computer.}{new-flow-of-information-ham}
+
+
 \endif

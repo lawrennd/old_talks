@@ -42,14 +42,17 @@ transition: None
 \include{_ai/includes/conversation-probability.md}
 \include{_data-science/includes/number-data-theatre.md}
 \include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-selection-attention-bias.md}
+<!--include{_data-science/includes/data-selection-attention-bias.md}-->
 \include{_ai/includes/conversation-llm.md}
 \include{_ai/includes/human-analogue-machines.md}
 
 <!-- Interfaces AI for Science -->
-\include{_ai/includes/interfaces-ai-for-science.md}
+<!--include{_ai/includes/interfaces-ai-for-science.md}-->
 
 \subsection{Conclusions}
 
 \notes{The probabilistic modelling community has evolved in an era where the assumption was that ambiguous conclusions are best shared with a (trained) professional through probabilities. Recent advances in generative AI offer the possibility of machines that have a better understanding of human subjective ambiguities and therefore machines that can summarise information in a way that can be interogated rather than just through a series of numbers.}
+
+\slides{* HAMs change how we share ambiguous information.
+* We need to think about how that effects our sharing of proabilities.}
 

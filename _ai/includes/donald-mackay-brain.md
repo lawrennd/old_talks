@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Donald MacKay in *Behind the Eye*}
+\subsection{*Behind the Eye*}
 
 > Later in the 1940\'s, when I was doing my Ph.D. work, there was much
 > talk of the brain as a computer and of the early digital computers

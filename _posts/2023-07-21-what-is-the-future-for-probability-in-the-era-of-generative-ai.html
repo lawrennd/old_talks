@@ -760,138 +760,7 @@ onclick="magnifyFigure(&#39;daniel-simons-monkey-business&#39;)">
 see this video.</p>
 </div>
 </div>
-<h2 id="data-selective-attention-bias">Data Selective Attention
-Bias</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-selection-attention-bias.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-selection-attention-bias.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>We are going to see how inattention biases can play out in data
-analysis by going through a simple example. The analysis involves body
-mass index and activity information.</p>
-<h2 id="bmi-steps-data">BMI Steps Data</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The BMI Steps example is taken from <span class="citation"
-data-cites="Yanai-hypothesis20">Yanai and Lercher (2020)</span>. We are
-given a data set of body-mass index measurements against step counts.
-For convenience we have packaged the data so that it can be easily
-downloaded.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.bmi_steps()</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>] </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span></code></pre></div>
-<p>It is good practice to give our variables interpretable names so that
-the analysis may be clearly understood by others. Here the
-<code>steps</code> count is the first dimension of the covariate, the
-<code>bmi</code> is the second dimension and the <code>gender</code> is
-stored in <code>y</code> with <code>1</code> for female and
-<code>0</code> for male.</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> X[:, <span class="dv">0</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> X[:, <span class="dv">1</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> y[:, <span class="dv">0</span>]</span></code></pre></div>
-<p>We can check the mean steps and the mean of the BMI.</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>steps.mean()))</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>bmi.mean()))</span></code></pre></div>
-<h2 id="bmi-steps-data-analysis">BMI Steps Data Analysis</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>We can also separate out the means from the male and female
-populations. In python this can be done by setting male and female
-indices as follows.</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>male_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">0</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>female_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">1</span>)</span></code></pre></div>
-<p>And now we can extract the variables for the two populations.</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>male_steps <span class="op">=</span> steps[male_ind]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>male_bmi <span class="op">=</span> bmi[male_ind]</span></code></pre></div>
-<p>And as before we compute the mean.</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_steps.mean()))</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_bmi.mean()))</span></code></pre></div>
-<p>Similarly, we can get the same result for the female portion of the
-populaton.</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>female_steps <span class="op">=</span> steps[female_ind]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>female_bmi <span class="op">=</span> bmi[female_ind]</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_steps.mean()))</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_bmi.mean()))</span></code></pre></div>
-<p>Interesting, the female BMI average is slightly higher than the male
-BMI average. The number of steps in the male group is higher than that
-in the female group. Perhaps the steps and the BMI are anti-correlated.
-The more steps, the lower the BMI.</p>
-<p>Python provides a statistics package. We’ll import this in
-<code>python</code> so that we can try and understand the correlation
-between the <code>steps</code> and the <code>BMI</code>.</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>corr, _ <span class="op">=</span> pearsonr(steps, bmi)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s overall correlation: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>corr))</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>male_corr, _ <span class="op">=</span> pearsonr(male_steps, male_bmi)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for males: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>male_corr))</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>female_corr, _ <span class="op">=</span> pearsonr(female_steps, female_bmi)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for females: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>female_corr))</span></code></pre></div>
-<h2 id="a-hypothesis-as-a-liability">A Hypothesis as a Liability</h2>
-<p>This analysis is from an article titled “A Hypothesis as a Liability”
-<span class="citation" data-cites="Yanai-hypothesis20">(Yanai and
-Lercher, 2020)</span>, they start their article with the following quite
-from Herman Hesse.</p>
-<blockquote>
-<p>“ ‘When someone seeks,’ said Siddhartha, ‘then it easily happens that
-his eyes see only the thing that he seeks, and he is able to find
-nothing, to take in nothing. […] Seeking means: having a goal. But
-finding means: being free, being open, having no goal.’ ”</p>
-<p>Hermann Hesse</p>
-</blockquote>
-<p>Their idea is that having a hypothesis can constrain our thinking.
-However, in answer to their paper <span class="citation"
-data-cites="Felin-data20">Felin et al. (2021)</span> argue that some
-form of hypothesis is always necessary, suggesting that a hypothesis
-<em>can</em> be a liability</p>
-<p>My view is captured in the introductory chapter to an edited volume
-on computational systems biology that I worked on with Mark Girolami,
-Magnus Rattray and Guido Sanguinetti.</p>
-<div class="figure">
-<div id="licsb-popper-quote-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/licsb-popper-quote.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="licsb-popper-quote-magnify" class="magnify"
-onclick="magnifyFigure(&#39;licsb-popper-quote&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="licsb-popper-quote-caption" class="caption-frame">
-<p>Figure: Quote from <span class="citation"
-data-cites="Lawrence:licsbintro10">Lawrence (2010)</span> highlighting
-the importance of interaction between data and hypothesis.</p>
-</div>
-</div>
-<p>Popper nicely captures the interaction between hypothesis and data by
-relating it to the chicken and the egg. The important thing is that
-these two co-evolve.</p>
+<!--include{_data-science/includes/data-selection-attention-bias.md}-->
 <h2 id="llm-conversations">LLM Conversations</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -935,8 +804,7 @@ uncertainty in the same way humans do. See for example the paper <a
 href="https://innermonologue.github.io/">Inner Monologue: Embodied
 Reasoning through Planning</a> <span class="citation"
 data-cites="Huang-inner22">Huang et al. (2023)</span>.</p>
-<h2 id="donald-mackay-in-behind-the-eye">Donald MacKay in <em>Behind the
-Eye</em></h2>
+<h2 id="behind-the-eye"><em>Behind the Eye</em></h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
 class="editsection"
@@ -984,108 +852,23 @@ article in The Atlantic</a>.</p></li>
 <em>intellectual debt</em> where we create machines we cannot
 explain.</p></li>
 </ul>
-<!-- Interfaces AI for Science -->
-<h2 id="the-accelerate-programme">The Accelerate Programme</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_accelerate/includes/accelerate-programme.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_accelerate/includes/accelerate-programme.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <div class="figure">
-<div id="accelerate-website-figure" class="figure-frame">
+<div id="new-flow-of-information-ham-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//accelerate/accelerate-website.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/new-flow-of-information-ham.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="accelerate-website-magnify" class="magnify"
-onclick="magnifyFigure(&#39;accelerate-website&#39;)">
+<div id="new-flow-of-information-ham-magnify" class="magnify"
+onclick="magnifyFigure(&#39;new-flow-of-information-ham&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="accelerate-website-caption" class="caption-frame">
-<p>Figure: The Accelerate Programme for Scientific Discovery covers
-research, education and training, engagement. Our aim is to bring about
-a step change in scientific discovery through AI. <a
-href="http://acceleratescience.github.io"
-class="uri">http://acceleratescience.github.io</a></p>
+<div id="new-flow-of-information-ham-caption" class="caption-frame">
+<p>Figure: The HAM now sits between us and the traditional digital
+computer.</p>
 </div>
 </div>
-<p>We’re now in a new phase of the development of computing, with rapid
-advances in machine learning. But we see some of the same issues –
-researchers across disciplines hope to make use of machine learning, but
-need access to skills and tools to do so, while the field machine
-learning itself will need to develop new methods to tackle some complex,
-‘real world’ problems.</p>
-<p>It is with these challenges in mind that the Computer Lab has started
-the Accelerate Programme for Scientific Discovery. This new Programme is
-seeking to support researchers across the University to develop the
-skills they need to be able to use machine learning and AI in their
-research.</p>
-<p>To do this, the Programme is developing three areas of activity:</p>
-<ul>
-<li>Research: we’re developing a research agenda that develops and
-applies cutting edge machine learning methods to scientific challenges,
-with three Accelerate Research fellows working directly on issues
-relating to computational biology, psychiatry, and string theory. While
-we’re concentrating on STEM subjects for now, in the longer term our
-ambition is to build links with the social sciences and humanities.</li>
-</ul>
-<p>Progress so far includes:</p>
-<ul>
-<li><p>Recruited a core research team working on the application of AI
-in mental health, bioinformatics, healthcare, string theory, and complex
-systems.</p></li>
-<li><p>Funded 9 interdisciplinary projects:</p>
-<ul>
-<li><p>Antimicrobial resistance in farming</p></li>
-<li><p>Quantifying Design Trade-offs in Electricity-generation-focused
-Tokamaks using AI</p></li>
-<li><p>Automated preclinical drug discovery in vivo using pose
-estimation</p></li>
-<li><p>Causal Methods for Environmental Science Workshop</p></li>
-<li><p>Automatic tree mapping in Cambridge</p></li>
-<li><p>Acoustic monitoring for biodiversity conservation</p></li>
-<li><p>AI, mathematics and string theory</p></li>
-<li><p>Theoretical, Scientific, and Philosophical Perspectives on
-Biological Understanding in the age of Artificial Intelligence</p></li>
-<li><p>AI in pathology: optimising a classifier for digital images of
-duodenal biopsies</p></li>
-</ul></li>
-<li><p>Teaching and learning: building on the teaching activities
-already delivered through University courses, we’re creating a pipeline
-of learning opportunities to help PhD students and postdocs better
-understand how to use data science and machine learning in their
-work.</p></li>
-</ul>
-<p>Progress so far includes:</p>
-<p>Teaching and learning</p>
-<ul>
-<li><p>Brought over 250 participants from over 30 departments through
-tailored data science and machine learning for science training (Data
-Science Residency and Machine Learning Academy);</p></li>
-<li><p>Convened workshops with over 80 researchers across the University
-on the development of data pipelines for science;</p></li>
-<li><p>Delivered University courses to over 100 students in Advanced
-Data Science and Machine Learning and the Physical World.</p></li>
-<li><p>Engagement: we hope that Accelerate will help build a community
-of researchers working across the University at the interface on machine
-learning and the sciences, helping to share best practice and new
-methods, and support each other in advancing their research. Over the
-coming years, we’ll be running a variety of events and activities in
-support of this.</p></li>
-</ul>
-<p>Progress so far includes:</p>
-<ul>
-<li><p>Launched a Machine Learning Engineering Clinic that has supported
-over 40 projects across the University with MLE troubleshooting and
-advice;</p></li>
-<li><p>Hosted and participated in events reaching over 300
-people;</p></li>
-<li><p>Created a roadmap for the development of AI in science, based on
-a Dagstuhl event that brought together 30 researchers from across the
-world.</p></li>
-</ul>
-<h2 id="interface">Interface</h2>
-<p>The accelerate programme for science is about empowering</p>
+<!-- Interfaces AI for Science -->
+<!--include{_ai/includes/interfaces-ai-for-science.md}-->
 <h2 id="conclusions">Conclusions</h2>
 <p>The probabilistic modelling community has evolved in an era where the
 assumption was that ambiguous conclusions are best shared with a
@@ -1096,11 +879,6 @@ that can summarise information in a way that can be interogated rather
 than just through a series of numbers.</p>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
-<div id="ref-Felin-data20" class="csl-entry" role="listitem">
-Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R.,
-2021. The data-hypothesis relationship. Genome Biology 22. <a
-href="https://doi.org/10.1186/s13059-021-02276-4">https://doi.org/10.1186/s13059-021-02276-4</a>
-</div>
 <div id="ref-Heider:interpersonal58" class="csl-entry" role="listitem">
 Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
 </div>
@@ -1124,10 +902,6 @@ K., Kulic, D., Ichnowski, J. (Eds.), Proceedings of the 6th Conference
 on Robot Learning, Proceedings of Machine Learning Research. PMLR, pp.
 1769–1782.
 </div>
-<div id="ref-Lawrence:licsbintro10" class="csl-entry" role="listitem">
-Lawrence, N.D., 2010. Introduction to learning and inference in
-computational systems biology.
-</div>
 <div id="ref-Simons-gorillas99" class="csl-entry" role="listitem">
 Simons, D.J., Chabris, C.F., 1999. Gorillas in our midst: Sustained
 inattentional blindness for dynamic events. Perception 28, 1059–1074. <a
@@ -1137,10 +911,6 @@ href="https://doi.org/10.1068/p281059">https://doi.org/10.1068/p281059</a>
 Thompson, W.C., 1989. <a href="http://www.jstor.org/stable/1191906">Are
 juries competent to evaluate statistical evidence?</a> Law and
 Contemporary Problems 52, 9–41.
-</div>
-<div id="ref-Yanai-hypothesis20" class="csl-entry" role="listitem">
-Yanai, I., Lercher, M., 2020. A hypothesis is a liability. Genome
-Biology 21.
 </div>
 </div>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
