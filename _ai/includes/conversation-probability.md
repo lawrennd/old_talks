@@ -6,7 +6,7 @@
 \notes{\subsection{Probability Conversations}}
 
 
-\figure{\includediagram{\diagramsDir/ai/anne-probability-conversation}}{80%}}{The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor's fallacy.}{anne-probability-conversation}
+\figure{\includediagram{\diagramsDir/ai/anne-probability-conversation}{80%}}{The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor's fallacy.}{anne-probability-conversation}
 
 \newslide{In practice ...}
 
