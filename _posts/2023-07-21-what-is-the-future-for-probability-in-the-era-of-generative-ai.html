@@ -1,8 +1,21 @@
 ---
 title: "What is the Future for Probability in the Era of Generative AI?"
 venue: "ELLIS Summer School, Cambridge"
-abstract: "<p>Provactive talk that suggests we will need to revisit how
-we think about uncertainty.</p>"
+abstract: "<p>In this talk I will speculate on what the current
+generation of generative AI technologies means for those of us who have
+been building probabilistic models in machine learning. In particular,
+I’ll explore what these models mean at the human computer interface,
+suggesting that the generative AI models allow for a new type of
+computer a “human-analagous machine” (HAM) which constructs a feature
+space that is analagouse the equivalent “feature space” we use in our
+head for human reasoning. This allows for these machines to be much more
+robust to the types of ambiguity typically expressed by humans and to
+present the most salient information to humans about the status of a
+machine system. However, it also allows for what Daniel Dennet has
+referred to as “counterfeit humans”. This presents new opportunities for
+those in probabilistic modelling to understand what it means for a human
+to gain a calibrated understanding of uncertainty through interacting
+with a HAM.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -630,6 +643,255 @@ example in court there is a fallacy known as the “prosecutor’s fallacy”
 that confuses conditional probabilities. This can cause problems in jury
 trials <span class="citation" data-cites="Thompson-juries89">(Thompson,
 1989)</span>.</p>
+<h2 id="number-theatre">Number Theatre</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/number-data-theatre.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/number-data-theatre.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Unfortunately, we don’t always have time to wait for this process to
+converge to an answer we can all rely on before a decision is
+required.</p>
+<p>Not only can we be misled by data before a decision is made, but
+sometimes we can be misled by data to justify the making of a decision.
+David Spiegelhalter refers to the phenomenon of “Number Theatre” in a
+conversation with Andrew Marr from May 2020 on the presentation of
+data.</p>
+<div class="figure">
+<div id="david-andrew-marr-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/9388XmWIHXg?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="david-andrew-marr-magnify" class="magnify"
+onclick="magnifyFigure(&#39;david-andrew-marr&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="david-andrew-marr-caption" class="caption-frame">
+<p>Figure: Professor Sir David Spiegelhalter on Andrew Marr on 10th May
+2020 speaking about some of the challengers around data, data
+presentation, and decision making in a pandemic. David mentions number
+theatre at 9 minutes 10 seconds.</p>
+</div>
+</div>
+<!--includebbcvideo{p08csg28}-->
+<h2 id="data-theatre">Data Theatre</h2>
+<p>Data Theatre exploits data inattention bias to present a particular
+view on events that may misrepresents through selective presentation.
+Statisticians are one of the few groups that are trained with a
+sufficient degree of data skepticism. But it can also be combatted
+through ensuring there are domain experts present, and that they can
+speak freely.</p>
+<div class="figure">
+<div id="data-theatre-001-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/./slides/diagrams//business/data-theatre001.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="data-theatre-001-magnify" class="magnify"
+onclick="magnifyFigure(&#39;data-theatre-001&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="data-theatre-001-caption" class="caption-frame">
+<p>Figure: The phenomenon of number theatre or <em>data theatre</em> was
+described by David Spiegelhalter and is nicely summarized by Martin
+Robbins in this sub-stack article <a
+href="https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards"
+class="uri">https://martinrobbins.substack.com/p/data-theatre-why-the-digital-dashboards</a>.</p>
+</div>
+</div>
+<h2 id="complexity-in-action">Complexity in Action</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_psychology/includes/selective-attention-bias.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_psychology/includes/selective-attention-bias.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>As an exercise in understanding complexity, watch the following
+video. You will see the basketball being bounced around, and the players
+moving. Your job is to count the passes of those dressed in white and
+ignore those of the individuals dressed in black.</p>
+<div class="figure">
+<div id="monkey-business-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/vJG698U2Mvo?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="monkey-business-magnify" class="magnify"
+onclick="magnifyFigure(&#39;monkey-business&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="monkey-business-caption" class="caption-frame">
+<p>Figure: Daniel Simon’s famous illusion “monkey business”. Focus on
+the movement of the ball distracts the viewer from seeing other aspects
+of the image.</p>
+</div>
+</div>
+<p>In a classic study <span class="citation"
+data-cites="Simons-gorillas99">Simons and Chabris (1999)</span> ask
+subjects to count the number of passes of the basketball between players
+on the team wearing white shirts. Fifty percent of the time, these
+subjects don’t notice the gorilla moving across the scene.</p>
+<p>The phenomenon of inattentional blindness is well known, e.g in their
+paper Simons and Charbris quote the Hungarian neurologist, Rezsö
+Bálint,</p>
+<blockquote>
+<p>It is a well-known phenomenon that we do not notice anything
+happening in our surroundings while being absorbed in the inspection of
+something; focusing our attention on a certain object may happen to such
+an extent that we cannot perceive other objects placed in the peripheral
+parts of our visual field, although the light rays they emit arrive
+completely at the visual sphere of the cerebral cortex.</p>
+<p>Rezsö Bálint 1907 (translated in Husain and Stein 1988, page 91)</p>
+</blockquote>
+<p>When we combine the complexity of the world with our relatively low
+bandwidth for information, problems can arise. Our focus on what we
+perceive to be the most important problem can cause us to miss other
+(potentially vital) contextual information.</p>
+<p>This phenomenon is known as selective attention or ‘inattentional
+blindness’.</p>
+<div class="figure">
+<div id="daniel-simons-monkey-business-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/_oGAzq5wM_Q?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="daniel-simons-monkey-business-magnify" class="magnify"
+onclick="magnifyFigure(&#39;daniel-simons-monkey-business&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="daniel-simons-monkey-business-caption" class="caption-frame">
+<p>Figure: For a longer talk on inattentional bias from Daniel Simons
+see this video.</p>
+</div>
+</div>
+<h2 id="data-selective-attention-bias">Data Selective Attention
+Bias</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-selection-attention-bias.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-selection-attention-bias.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>We are going to see how inattention biases can play out in data
+analysis by going through a simple example. The analysis involves body
+mass index and activity information.</p>
+<h2 id="bmi-steps-data">BMI Steps Data</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/bmi-steps-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The BMI Steps example is taken from <span class="citation"
+data-cites="Yanai-hypothesis20">Yanai and Lercher (2020)</span>. We are
+given a data set of body-mass index measurements against step counts.
+For convenience we have packaged the data so that it can be easily
+downloaded.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pods.datasets.bmi_steps()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>] </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</span></code></pre></div>
+<p>It is good practice to give our variables interpretable names so that
+the analysis may be clearly understood by others. Here the
+<code>steps</code> count is the first dimension of the covariate, the
+<code>bmi</code> is the second dimension and the <code>gender</code> is
+stored in <code>y</code> with <code>1</code> for female and
+<code>0</code> for male.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> X[:, <span class="dv">0</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> X[:, <span class="dv">1</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> y[:, <span class="dv">0</span>]</span></code></pre></div>
+<p>We can check the mean steps and the mean of the BMI.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>bmi.mean()))</span></code></pre></div>
+<h2 id="bmi-steps-data-analysis">BMI Steps Data Analysis</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/bmi-steps-analysis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>We can also separate out the means from the male and female
+populations. In python this can be done by setting male and female
+indices as follows.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>male_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">0</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>female_ind <span class="op">=</span> (gender<span class="op">==</span><span class="dv">1</span>)</span></code></pre></div>
+<p>And now we can extract the variables for the two populations.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>male_steps <span class="op">=</span> steps[male_ind]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>male_bmi <span class="op">=</span> bmi[male_ind]</span></code></pre></div>
+<p>And as before we compute the mean.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Male BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>male_bmi.mean()))</span></code></pre></div>
+<p>Similarly, we can get the same result for the female portion of the
+populaton.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>female_steps <span class="op">=</span> steps[female_ind]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>female_bmi <span class="op">=</span> bmi[female_ind]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female steps mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_steps.mean()))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Female BMI mean is </span><span class="sc">{mean}</span><span class="st">.&#39;</span>.<span class="bu">format</span>(mean<span class="op">=</span>female_bmi.mean()))</span></code></pre></div>
+<p>Interesting, the female BMI average is slightly higher than the male
+BMI average. The number of steps in the male group is higher than that
+in the female group. Perhaps the steps and the BMI are anti-correlated.
+The more steps, the lower the BMI.</p>
+<p>Python provides a statistics package. We’ll import this in
+<code>python</code> so that we can try and understand the correlation
+between the <code>steps</code> and the <code>BMI</code>.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>corr, _ <span class="op">=</span> pearsonr(steps, bmi)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s overall correlation: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>corr))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>male_corr, _ <span class="op">=</span> pearsonr(male_steps, male_bmi)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for males: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>male_corr))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>female_corr, _ <span class="op">=</span> pearsonr(female_steps, female_bmi)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for females: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>female_corr))</span></code></pre></div>
+<h2 id="a-hypothesis-as-a-liability">A Hypothesis as a Liability</h2>
+<p>This analysis is from an article titled “A Hypothesis as a Liability”
+<span class="citation" data-cites="Yanai-hypothesis20">(Yanai and
+Lercher, 2020)</span>, they start their article with the following quite
+from Herman Hesse.</p>
+<blockquote>
+<p>“ ‘When someone seeks,’ said Siddhartha, ‘then it easily happens that
+his eyes see only the thing that he seeks, and he is able to find
+nothing, to take in nothing. […] Seeking means: having a goal. But
+finding means: being free, being open, having no goal.’ ”</p>
+<p>Hermann Hesse</p>
+</blockquote>
+<p>Their idea is that having a hypothesis can constrain our thinking.
+However, in answer to their paper <span class="citation"
+data-cites="Felin-data20">Felin et al. (2021)</span> argue that some
+form of hypothesis is always necessary, suggesting that a hypothesis
+<em>can</em> be a liability</p>
+<p>My view is captured in the introductory chapter to an edited volume
+on computational systems biology that I worked on with Mark Girolami,
+Magnus Rattray and Guido Sanguinetti.</p>
+<div class="figure">
+<div id="licsb-popper-quote-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//data-science/licsb-popper-quote.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="licsb-popper-quote-magnify" class="magnify"
+onclick="magnifyFigure(&#39;licsb-popper-quote&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="licsb-popper-quote-caption" class="caption-frame">
+<p>Figure: Quote from <span class="citation"
+data-cites="Lawrence:licsbintro10">Lawrence (2010)</span> highlighting
+the importance of interaction between data and hypothesis.</p>
+</div>
+</div>
+<p>Popper nicely captures the interaction between hypothesis and data by
+relating it to the chicken and the egg. The important thing is that
+these two co-evolve.</p>
 <h2 id="llm-conversations">LLM Conversations</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -673,6 +935,55 @@ uncertainty in the same way humans do. See for example the paper <a
 href="https://innermonologue.github.io/">Inner Monologue: Embodied
 Reasoning through Planning</a> <span class="citation"
 data-cites="Huang-inner22">Huang et al. (2023)</span>.</p>
+<h2 id="donald-mackay-in-behind-the-eye">Donald MacKay in <em>Behind the
+Eye</em></h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/donald-mackay-brain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/donald-mackay-brain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<blockquote>
+<p>Later in the 1940's, when I was doing my Ph.D. work, there was much
+talk of the brain as a computer and of the early digital computers that
+were just making the headlines as "electronic brains." As an analogue
+computer man I felt strongly convinced that the brain, whatever it was,
+was not a digital computer. I didn't think it was an analogue computer
+either in the conventional sense.</p>
+</blockquote>
+<h2 id="human-analogue-machine">Human Analogue Machine</h2>
+<div class="figure">
+<div id="human-analogue-machine-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/./slides/diagrams//ai/human-analogue-machine.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="human-analogue-machine-magnify" class="magnify"
+onclick="magnifyFigure(&#39;human-analogue-machine&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="human-analogue-machine-caption" class="caption-frame">
+<p>Figure: The human analogue machine creates a feature space which is
+analagous to that we use to reason, one way of doing this is to have a
+machine attempt to compress all human generated text in an
+auto-regressive manner.</p>
+</div>
+</div>
+<ul>
+<li><p>A human-analogue machine is a machine that has created a feature
+space that is analagous to the “feature space” our brain uses to
+reason.</p></li>
+<li><p>The latest generation of LLMs are exhibiting this charateristic,
+giving them ability to converse.</p></li>
+<li><p>Perils of this include <em>counterfeit people</em>.</p></li>
+<li><p>Daniel Dennett has described the challenges these bring in <a
+href="https://www.theatlantic.com/technology/archive/2023/05/problem-counterfeit-people/674075/">an
+article in The Atlantic</a>.</p></li>
+<li><p>But if correctly done, the machine can be appropriately
+“psychologically represented”</p></li>
+<li><p>This might allow us to deal with the challenge of
+<em>intellectual debt</em> where we create machines we cannot
+explain.</p></li>
+</ul>
 <!-- Interfaces AI for Science -->
 <h2 id="the-accelerate-programme">The Accelerate Programme</h2>
 <div style="text-align:right">
@@ -785,6 +1096,11 @@ that can summarise information in a way that can be interogated rather
 than just through a series of numbers.</p>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
+<div id="ref-Felin-data20" class="csl-entry" role="listitem">
+Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R.,
+2021. The data-hypothesis relationship. Genome Biology 22. <a
+href="https://doi.org/10.1186/s13059-021-02276-4">https://doi.org/10.1186/s13059-021-02276-4</a>
+</div>
 <div id="ref-Heider:interpersonal58" class="csl-entry" role="listitem">
 Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
 </div>
@@ -808,10 +1124,23 @@ K., Kulic, D., Ichnowski, J. (Eds.), Proceedings of the 6th Conference
 on Robot Learning, Proceedings of Machine Learning Research. PMLR, pp.
 1769–1782.
 </div>
+<div id="ref-Lawrence:licsbintro10" class="csl-entry" role="listitem">
+Lawrence, N.D., 2010. Introduction to learning and inference in
+computational systems biology.
+</div>
+<div id="ref-Simons-gorillas99" class="csl-entry" role="listitem">
+Simons, D.J., Chabris, C.F., 1999. Gorillas in our midst: Sustained
+inattentional blindness for dynamic events. Perception 28, 1059–1074. <a
+href="https://doi.org/10.1068/p281059">https://doi.org/10.1068/p281059</a>
+</div>
 <div id="ref-Thompson-juries89" class="csl-entry" role="listitem">
 Thompson, W.C., 1989. <a href="http://www.jstor.org/stable/1191906">Are
 juries competent to evaluate statistical evidence?</a> Law and
 Contemporary Problems 52, 9–41.
+</div>
+<div id="ref-Yanai-hypothesis20" class="csl-entry" role="listitem">
+Yanai, I., Lercher, M., 2020. A hypothesis is a liability. Genome
+Biology 21.
 </div>
 </div>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
