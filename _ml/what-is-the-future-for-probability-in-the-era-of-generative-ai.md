@@ -15,11 +15,37 @@ venue: ELLIS Summer School, Cambridge
 transition: None
 ---
 
+<!-- Faster horse -->
+\include{_ai/includes/henry-ford-intro.md}
 
-Start with Great AI fallacy. Question whether this is now different
+<!-- Embodiment Factors -->
+\include{_ai/includes/embodiment-factors-celsius.md}
 
-Mention role of statistics, 
+<!-- Information Triangle -->
+\include{_data-science/includes/societal-effects.md}
 
-Are probabilities intuitive? 
+<!-- AI Fallacy -->
+\include{_ai/includes/the-great-ai-fallacy.md}
 
-How are two experts sharing uncertainty?
+<!-- Mathematical Statistics -->
+\include{_data-science/includes/lies-damned-lies.md}
+
+<!-- Conversation -->
+\include{_ai/includes/conversation.md}
+
+<!-- Fritz Heider -->
+\include{_ai/includes/heider-simmel.md}
+
+<!-- Conversation LLM -->
+\include{_ai/includes/conversation-computer.md}
+\include{_ai/includes/conversation-probability.md}
+\include{_ai/includes/conversation-llm.md}
+
+
+<!-- Interfaces AI for Science -->
+\include{_ai/includes/interfaces-ai-for-science.md}
+
+\subsection{Conclusions}
+
+\notes{The probabilistic modelling community has evolved in an era where the assumption was that ambiguous conclusions are best shared with a (trained) professional through probabilities. Recent advances in generative AI offer the possibility of machines that have a better understanding of human subjective ambiguities and therefore machines that can summarise information in a way that can be interogated rather than just through a series of numbers.}
+
