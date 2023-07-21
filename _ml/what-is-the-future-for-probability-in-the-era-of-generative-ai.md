@@ -36,7 +36,7 @@ transition: None
 
 <!-- Fritz Heider -->
 \include{_ai/includes/heider-simmel.md}
-
+\include{_ai/includes/baby-shoes.md}
 <!-- Conversation LLM -->
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/conversation-probability.md}
