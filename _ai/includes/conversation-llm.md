@@ -3,61 +3,21 @@
 \editme
 \newslide{}
 
-\notes{\subsection{LLM Conversations}}
-
-\setupdisplaycode{import notutils as nu
-from ipywidgets import IntSlider}
+\subsection{LLM Conversations}
 
 
-\setupdisplaycode{import notutils as nu}
-\displaycode{nu.display_plots('\stubname{sample:0>3}.svg', 
-                            '\diagramsDir',  sample=IntSlider(0, 0, 7, 1))}
+\figure{\includediagram{\diagramsDir/ai/anne-llm-conversation}}{80%}}{The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor's fallacy.}{anne-llm-conversation}
 
-\define{\stubname}{anne-llm-conversation}
+\newslide{In practice ...}
 
-\define{\divoptions}{maxwidth:100vw; max-height:100vh}
-\define{\widthVal}{80%}
-\newslide{}
+\slides{* LLMs are already being used for robot planning @Huang-inner22
 
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{000}}{\widthVal}}
+* Ambiguities are reduced when the machine has had large scale access to human cultural understanding.}
 
-\newslide{}
+\newslide{Inner Monologue}
 
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{001}}{\widthVal}}
+\figure{\includeyoutube{0sJjdxn5kcI}{600}{450}}{The Inner Monologue paper suggests using LLMs for robotic planning [@Huang-inner22].}{ai-for-data-analytics}
 
-\newslide{}
+\notes{By interacting directly with machines that have an understanding of human cultural context, it should be possible to share the nature of uncertainty in the same way humans do. See for example the paper [Inner Monologue: Embodied Reasoning through Planning](https://innermonologue.github.io/) @Huang-inner22.}
 
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{002}}{\widthVal}}
-
-\newslide{}
-
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{003}}{\widthVal}}
-
-\newslide{}
-
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{004}}{\widthVal}}
-
-\newslide{}
-
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{005}}{\widthVal}}
-
-\newslide{}
-
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{006}}{\widthVal}}
-
-\newslide{}
-
-\slides{\includediagram{\diagramsDir/\concat{\stubname}{007}}{\widthVal}}
-
-\notes{\figure{\includediagram{\diagramsDir/\concat{\stubname}{006}}{80%}}{Conversation relies on internal models of other individuals.}{anne-llm-conversation-6}}
-
-\notes{\figure{\includediagram{\diagramsDir/\concat{\stubname}{007}}{80%}}{Misunderstanding of context and who we are talking to leads to arguments.}{anne-llm-conversation-8}}
-
-\notes{Inner Monologue: Embodied Reasoning through Planning
-with Language Models
-Conference on Robot Learning (CoRL), 2022
-https://proceedings.mlr.press/v205/huang23c.html
-https://innermonologue.github.io/
-https://www.youtube.com/watch?v=0sJjdxn5kcI&t=136s
-}
 \endif
