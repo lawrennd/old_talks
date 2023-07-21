@@ -41,7 +41,7 @@ transition: None
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/conversation-probability.md}
 \include{_data-science/includes/number-data-theatre.md}
-\include{_psychology/includes/selective-attention-bias.md}
+<!--\include{_psychology/includes/selective-attention-bias.md}-->
 <!--include{_data-science/includes/data-selection-attention-bias.md}-->
 \include{_ai/includes/conversation-llm.md}
 \include{_ai/includes/human-analogue-machines.md}
@@ -56,3 +56,6 @@ transition: None
 \slides{* HAMs change how we share ambiguous information.
 * We need to think about how that effects our sharing of proabilities.}
 
+\thanks
+
+\references
