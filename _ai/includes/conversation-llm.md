@@ -1,9 +1,10 @@
 \ifndef{conversationLlm}
 \define{conversationLlm}
 \editme
+
 \newslide{}
 
-\subsection{LLM Conversations}
+\notes{\subsection{LLM Conversations}}
 
 
 \figure{\includediagram{\diagramsDir/ai/anne-llm-conversation}}{80%}}{The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor's fallacy.}{anne-llm-conversation}
