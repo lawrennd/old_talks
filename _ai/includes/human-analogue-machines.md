@@ -30,7 +30,7 @@
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/ai/new-flow-of-information-ham}{70%}}{The HAM now sits between us and the traditional digital computer.}{new-flow-of-information-ham}
+\figure{\includediagram{\diagramsDir/data-science/new-flow-of-information-ham}{70%}}{The HAM now sits between us and the traditional digital computer.}{new-flow-of-information-ham}
 
 
 \endif
