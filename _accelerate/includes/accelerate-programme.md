@@ -41,6 +41,8 @@ sciences and humanities.}
 
 * Recruited a core research team working on the application of AI in mental health, bioinformatics, healthcare, string theory, and complex systems.
 
+* Created a research agenda and roadmap for the development of AI in science. 
+
 * Funded 9 interdisciplinary projects:
 
   * Antimicrobial resistance in farming
@@ -77,6 +79,8 @@ Teaching and learning
 * Convened workshops with over 80 researchers across the University on the development of data pipelines for science;
 
 * Delivered University courses to over 100 students in Advanced Data Science and Machine Learning and the Physical World.
+
+* Online training course in Python and Pandas accessed by over 380 researchers.
 }
 
 \notes{* Engagement: we hope that Accelerate will help build a community
@@ -90,9 +94,11 @@ variety of events and activities in support of this.}
 
 * Launched a Machine Learning Engineering Clinic that has supported over 40 projects across the University with MLE troubleshooting and advice;
 
-* Hosted and participated in events reaching over 300 people;
+* Hosted and participated in events reaching over 300 people in Cambridge;
 
-* Created a roadmap for the development of AI in science, based on a Dagstuhl event that brought together 30 researchers from across the world.}
+* Led international workshops at Dagstuhl and Oberwolfach, convening over 60 leading researchers;
+
+* Engaged over 70 researchers through outreach sessions and workshops with the School of Clinical Medicine, the Faculty of Education, Cambridge Digital Humanities and the School of Biological Sciences.  }
 
 
 \endif
