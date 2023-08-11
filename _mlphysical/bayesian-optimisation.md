@@ -18,10 +18,12 @@ pdfworksheet: 03_sequentialdecisionmaking.pdf
 linkipynb: _notebooks/bayesopt-notebook.ipynb
 youtube: O-a_6U42d2g
 oldyoutube:
+- code: O-a_6U42d2g
+  year: 2022
 - code: zVXJ238j5KM
   year: 2021
 time: "12:00"
-date: 2022-10-25
+date: 2023-10-24
 ---
 
 Related publications and links will appear here.

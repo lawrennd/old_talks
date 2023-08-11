@@ -13,7 +13,8 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 ---
-https://airtable.com/shrQsDoK3ElfRNfk2/tblwZ5SF18LUJTPTs
+
+<https://airtable.com/shrQsDoK3ElfRNfk2/tblwZ5SF18LUJTPTs>
 
 <!-- Faster horse -->
 \include{_ai/includes/henry-ford-intro.md}

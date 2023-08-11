@@ -15,11 +15,13 @@ author:
   url: http://inverseprobability.com
 layout: lecture
 time: "12:00"
-date: 2022-11-03
+date: 2022-11-02
 ipynb: True
 reveal: True
 youtube: HbtFVqVy5yI
 oldyoutube:
+- code: HbtFVqVy5yI
+  year: 2022
 - code: PtE_EFyUkkE
   year: 2021
 - code: I5ZlCLR89AU
