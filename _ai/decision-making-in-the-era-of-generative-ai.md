@@ -15,7 +15,6 @@ transition: None
 abstract: The excitement around large language models such as ChatGPT has led to great enthusiasm about the possibilities for computer aided decision making across the professions. In this talk, we will look at why these models are important and speculate on how they may help and hinder progress in automated decision making.
 ---
 
-<https://airtable.com/shrQsDoK3ElfRNfk2/tblwZ5SF18LUJTPTs>
 
 <!--Mention Kuhn and paradigm shifts and Popper and refutation.-->
 
