@@ -1,5 +1,5 @@
 ---
-title: AI for Science in the Era of Generative AI Models
+title: Decision Making in the Era of Generative AI
 author:
 - family: Lawrence
   given: Neil D.
@@ -7,11 +7,12 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2023-08-18
-venue: Schmidt Futures AI in Science PD Convening
+date: 2023-10-02
+venue: Healthy Lifespan Institute Annual Meeting
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
+abstract: The excitement around large language models such as ChatGPT has led to great enthusiasm about the possibilities for computer aided decision making across the professions. In this talk, we will look at why these models are important and speculate on how they may help and hinder progress in automated decision making.
 ---
 
 <https://airtable.com/shrQsDoK3ElfRNfk2/tblwZ5SF18LUJTPTs>
