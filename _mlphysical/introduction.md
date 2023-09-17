@@ -15,13 +15,15 @@ author:
   url: http://inverseprobability.com
 youtube: V9XzHXuWkoM
 oldyoutube: 
+- code: V9XzHXuWkoM
+  year: 2022
 - code: vc3_gSRpHNI
   year: 2021
 - code: NGP7O1B9XzM
   year: 2020
 time: "12:00"
 featured_image: /slides/diagrams/ceres/giuseppe-piazzi.png
-date: 2022-10-06
+date: 2023-10-05
 transition: None
 ipynb: true
 ---

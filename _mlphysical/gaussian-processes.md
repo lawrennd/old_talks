@@ -10,13 +10,16 @@ author:
   twitter: 
   gscholar: 
   orchid: 
-date: 2022-10-13
+date: 2022-10-12
 time: "12:00"
 week: 2
 session: 1
 pdfslides: l48-mlpw-03.pdf
 pdfworksheet: 02_gaussianprocesses.pdf
 youtube: "cCJ3qh5LY9o"
+oldyoutube: 
+- code: cCJ3qh5LY9o
+  year: 2022
 layout: lecture
 categories:
 - notes

@@ -21,7 +21,10 @@ ipynb: False
 pdfslides: l48-mlpw-02.pdf
 pdfworksheet: 01_introduction.pdf
 youtube: sN0_pL9rm5I
-date: 2022-10-11
+oldyoutube: 
+- code: sN0_pL9rm5I
+  year: 2022
+date: 2023-10-10
 time: "12:00"
 ---
 
