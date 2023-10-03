@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="1450pt"
+   height="1650pt"
+   viewBox="0 0 1450 1650"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg6190"
+   sodipodi:docname="processor.svg"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6194">
+    <marker
+       style="overflow:visible"
+       id="Dot"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="5.6666665"
+       markerHeight="5.6666665"
+       viewBox="0 0 5.6666667 5.6666667"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="Dot1"
+         sodipodi:nodetypes="sssss" />
+    <style>
+      .myprocessor { fill:#407096;stroke-width:6;}
+      .mylegs { fill:#91cfe7;stroke-width:6;}
+      .myruns { fill:none;stroke:#afb9be;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Dot);}
+    </style>
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview6192"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="0.40430927"
+     inkscape:cx="937.40121"
+     inkscape:cy="706.1426"
+     inkscape:window-width="1147"
+     inkscape:window-height="755"
+     inkscape:window-x="71"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6190" />
+  <metadata
+     id="metadata6178">
+Created by potrace 1.15, written by Peter Selinger 2001-2017
+</metadata>
+  <rect
+     class="myprocessor"
+     id="rect8157"
+     width="670"
+     height="670"
+     x="380"
+     y="490" />
+  <rect
+     class="mylegs"
+     id="rect8159"
+     width="30"
+     height="30"
+     x="420"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-8"
+     width="30"
+     height="30"
+     x="500"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-2"
+     width="30"
+     height="30"
+     x="580"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-9"
+     width="30"
+     height="30"
+     x="660"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-82"
+     width="30"
+     height="30"
+     x="740"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-0"
+     width="30"
+     height="30"
+     x="820"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-7"
+     width="30"
+     height="30"
+     x="900"
+     y="460" />
+  <rect
+     class="mylegs"
+     id="rect8159-4"
+     width="30"
+     height="30"
+     x="980"
+     y="460" />
+  <path
+     class="myruns"
+     d="M 435,460 v -10 h -200"
+     id="path8231" />
+  <path
+     class="myruns"
+     d="m 515,460 v -90 h -120"
+     id="path8233" />
+  <path
+     class="myruns"
+     d="M 595,460 v -275 h -140 v -100"
+     id="path8235" />
+  <path
+     class="myruns"
+     d="M 675,460 v -230"
+     id="path8237" />
+  <path
+     class="myruns"
+     d="M 755,460 v -430"
+     id="path8239" />
+  <path
+     class="myruns"
+     d="m 835,460 v -320 h 140 v -100"
+     id="path8241" />
+  <path
+     class="myruns"
+     d="m 915,460 v -190 h 190"
+     id="path8243" />
+  <path
+     class="myruns"
+     d="M 995,460 v -80 h 200"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159"
+     width="30"
+     height="30"
+     x="350"
+     y="530" />
+  <path
+     class="myruns"
+     d="M 350,545 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-8"
+     width="30"
+     height="30"
+     x="350"
+     y="610" />
+  <path
+     class="myruns"
+     d="M 350,625 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-2"
+     width="30"
+     height="30"
+     x="350"
+     y="690" />
+  <path
+     class="myruns"
+     d="M 350,705 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-9"
+     width="30"
+     height="30"
+     x="350"
+     y="770" />
+  <path
+     class="myruns"
+     d="M 350,785 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-82"
+     width="30"
+     height="30"
+     x="350"
+     y="850" />
+  <path
+     class="myruns"
+     d="M 350,865 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-0"
+     width="30"
+     height="30"
+     x="350"
+     y="930" />
+  <path
+     class="myruns"
+     d="M 350,945 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-7"
+     width="30"
+     height="30"
+     x="350"
+     y="1010" />
+  <path
+     class="myruns"
+     d="M 350,1025 h -80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-4"
+     width="30"
+     height="30"
+     x="350"
+     y="1090" />
+  <path
+     class="myruns"
+     d="M 350,1105 h -80"
+     id="path8245" />
+
+  
+  <rect
+     class="mylegs"
+     id="rect8159"
+     width="30"
+     height="30"
+     x="1050"
+     y="530" />
+  <path
+     class="myruns"
+     d="M 1080,545 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-8"
+     width="30"
+     height="30"
+     x="1050"
+     y="610" />
+  <path
+     class="myruns"
+     d="M 1080,625 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-2"
+     width="30"
+     height="30"
+     x="1050"
+     y="690" />
+  <path
+     class="myruns"
+     d="M 1080,705 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-9"
+     width="30"
+     height="30"
+     x="1050"
+     y="770" />
+  <path
+     class="myruns"
+     d="M 1080,785 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-82"
+     width="30"
+     height="30"
+     x="1050"
+     y="850" />
+  <path
+     class="myruns"
+     d="M 1080,865 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-0"
+     width="30"
+     height="30"
+     x="1050"
+     y="930" />
+  <path
+     class="myruns"
+     d="M 1080,945 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-7"
+     width="30"
+     height="30"
+     x="1050"
+     y="1010" />
+  <path
+     class="myruns"
+     d="M 1080,1025 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159-4"
+     width="30"
+     height="30"
+     x="1050"
+     y="1090" />
+  <path
+     class="myruns"
+     d="M 1080,1105 h 80"
+     id="path8245" />
+  <rect
+     class="mylegs"
+     id="rect8159"
+     width="30"
+     height="30"
+     x="420"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-8"
+     width="30"
+     height="30"
+     x="500"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-2"
+     width="30"
+     height="30"
+     x="580"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-9"
+     width="30"
+     height="30"
+     x="660"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-82"
+     width="30"
+     height="30"
+     x="740"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-0"
+     width="30"
+     height="30"
+     x="820"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-7"
+     width="30"
+     height="30"
+     x="900"
+     y="1160" />
+  <rect
+     class="mylegs"
+     id="rect8159-4"
+     width="30"
+     height="30"
+     x="980"
+     y="1160" />
+  <path
+     class="myruns"
+     d="M 435,1190 v 10 h -200"
+     id="path8231" />
+  <path
+     class="myruns"
+     d="m 515,1190 v 100 h -480"
+     id="path8233" />
+  <path
+     class="myruns"
+     d="M 595,1190 v 275 h -140 v 100"
+     id="path8235" />
+  <path
+     class="myruns"
+     d="M 675,1190 v 330 h -60"
+     id="path8237" />
+  <path
+     class="myruns"
+     d="M 755,1190 v 360 h 60"
+     id="path8239" />
+  <path
+     class="myruns"
+     d="m 835,1190 v 320 h 140 v 100"
+     id="path8241" />
+  <path
+     class="myruns"
+     d="m 915,1190 v 100 h 480"
+     id="path8243" />
+  <path
+     class="myruns"
+     d="M 995,1190 v 10 h 200"
+     id="path8245" />
+</svg>

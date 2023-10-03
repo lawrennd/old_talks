@@ -16,7 +16,7 @@ author:
 - given: Jean
   family: Innes
 - given: Ben
-- family: Brooks
+  family: Brooks
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
