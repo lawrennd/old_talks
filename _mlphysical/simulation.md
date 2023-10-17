@@ -204,7 +204,7 @@ These properties cannot be predicted without running the physics, or the equival
 >
 >--- Paul Dirac (6 April 1929)
 
-\notes{Bingqing has now taken a position at IST Austria.
+\notes{Bingqing has now taken a position at IST Austria.}
 
 \newslide{Accelerate Fellows}
 
