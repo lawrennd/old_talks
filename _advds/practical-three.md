@@ -12,7 +12,7 @@ author:
   institution: University of Cambridge
   url: http://carlhenrik.com
 time: "15:00"
-date: 2022-11-08
+date: 2023-11-07
 postsdir: ../../../mlatcl/advds/_practicals/
 pdfworksheet: practical-three.pdf
 transition: None
@@ -20,5 +20,5 @@ reveal: false
 ipynb: false
 ---
 
-\notes{Check Session for this Practical is 15th November 2022}
+\notes{Check Session for this Practical is 14th November 2023}
 

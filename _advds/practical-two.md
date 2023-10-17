@@ -14,13 +14,13 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 postsdir: ../../../mlatcl/advds/_practicals/
-date: 2022-11-03
+date: 2023-11-02
 transition: None
 reveal: false
 ipynb: true
 ---
 
-\notes{Check Session for this Practical is 8th November 2022}
+\notes{Check Session for this Practical is 7th November 2023}
 
 \subsection{Revert Matplotlib Version}
 

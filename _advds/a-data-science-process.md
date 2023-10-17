@@ -9,6 +9,8 @@ layout: lecture
 venue: LT2, William Gates Building
 youtube: BfkEg7BTbHA
 oldyoutube:
+- code: BfkEg7BTbHA
+  year: 2022
 - code: kDOCnZcVEQA
   year: 2021
 author:
@@ -19,7 +21,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "10:00"
-date: 2022-11-04
+date: 2023-11-03
 transition: None
 ipynb: False
 ---

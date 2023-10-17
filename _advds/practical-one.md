@@ -23,7 +23,7 @@ author:
   url: http://inverseprobability.com
 time: "15:00"
 postsdir: ../../../mlatcl/advds/_practicals/
-date: 2022-11-01
+date: 2023-10-31
 transition: None
 reveal: false
 ipynb: true
@@ -33,7 +33,7 @@ ipynb: true
 <!-- have students use AWS details we provided -->
 \define{awsSignUp}
 
-\notes{Check Session for this Practical is 3rd November 2022}
+\notes{Check Session for this Practical is 2nd November 2023}
 
 \define{databaseType}{mariadb}
 \include{_systems/includes/nigeria-nmis-installs.md}

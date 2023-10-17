@@ -13,9 +13,11 @@ author:
   institute: University of Cambridge
   url: http://carlhenrik.com/
 time: "10:00"
-date: 2022-11-07
+date: 2023-11-06
 youtube: KWP58rugi4E
 oldyoutube: 
+- code: KWP58rugi4E
+  year: 2022
 - code: r5WFIloyVx0
   year: 2021
 pdfslides: advanced-datascience-learning.pdf

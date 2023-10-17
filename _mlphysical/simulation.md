@@ -128,7 +128,7 @@ But while Gaussian processes are highly flexible non-parametric function models,
 
 \speakernotes{Precise physical laws are predictive of the future. Met office super computer uses 1 km grids cells to compute the weather.}
 
-\notes{We've already reviewed the importance of Newton's laws in forging our view of science: we mentioned the influence [Christiaan Huygens'](https://en.wikipedia.org/wiki/Christiaan_Huygens) work on collisions had on Daniel Bernoulli in forming the kinetic theory of gases. These ideas inform many of the physical models we have today around a number of natural phenomena. The MET Office supercomputer in Exeter spends its mornings computing the weather across the world its afternoons modelling climate scenarios. It uses the same set of principles that Newton described and Bernoulli explored for gases. They are encoded in the Navier-Stokes equations. Differential equations that govern the flow of compressible and incompressible fluids. As well as predicting our weather, these equations are used in fluid dynamics models to understand the flight of aircraft, the driving characteristics of racing cars and the efficiency of gas turbine engines.
+\notes{We've already reviewed the importance of Newton's laws in forging our view of science: we mentioned the influence [Christiaan Huygens'](https://en.wikipedia.org/wiki/Christiaan_Huygens) work on collisions had on Daniel Bernoulli in forming the kinetic theory of gases. These ideas inform many of the physical models we have today around a number of natural phenomena. The MET Office supercomputer in Exeter spends its mornings computing the weather across the world its afternoons modelling climate scenarios. It uses the same set of principles that Newton described, and Bernoulli explored for gases. They are encoded in the Navier-Stokes equations. Differential equations that govern the flow of compressible and incompressible fluids. As well as predicting our weather, these equations are used in fluid dynamics models to understand the flight of aircraft, the driving characteristics of racing cars and the efficiency of gas turbine engines.
 
 This broad class of physical models, or 'natural laws' is probably the closest to what Laplace was referring to in the demon. The search for unifying physical laws that dictate everything we observe around us has gone on. Alongside Newton we must mention James Clerk Maxwell, who unified electricity and magnetism in one set of equations that were inspired by the work and ideas of Michael Faraday. And still today we look for unifying equations that bring together in a single mathematical model the 'natural laws' we observe. One equation that for Laplace would be "all forces that set nature in motion". We can think of this as our first time of physical model, a 'precise model' of the known laws of our Universe, a model where we expect that the mapping from the mathematical abstraction to the physical reality is 'exact'.[^exact]
 
@@ -164,15 +164,15 @@ This broad class of physical models, or 'natural laws' is probably the closest t
 
 \subsection{Molecular Dynamics Simulations}
 
-\notes{By understanding and simulating the physics, we can recreate operations that are happening at the level of proteins in the human cell. [V-ATPase](https://en.wikipedia.org/wiki/V-ATPase) is an enzyme that pumps protons.  But at the microscopic level it's a small machine. It produces ATP in response to a proton gradient. A recent paper in *Science Advances* [@Roh-cryo-em20] simulates the functioning of these proteins that operate across the cell membrane. This makes these proteins difficult to crystallize, the response to this challenge is to use a simulation which (somewhat) abstracts the processes. You can also check this [blog post](https://www6.slac.stanford.edu/news/2020-10-07-first-detailed-look-how-molecular-ferris-wheel-delivers-protons-cellular-factories) from the paper's press release.}
+\notes{By understanding and simulating the physics, we can recreate operations that are happening at the level of proteins in the human cell. [V-ATPase](https://en.wikipedia.org/wiki/V-ATPase) is an enzyme that pumps protons.  But at the microscopic level it's a small machine. It produces ATP in response to a proton gradient. A paper in *Science Advances* [@Roh-cryo-em20] simulates the functioning of these proteins that operate across the cell membrane. This makes these proteins difficult to crystallize, the response to this challenge is to use a simulation which (somewhat) abstracts the processes. You can also check this [blog post](https://www6.slac.stanford.edu/news/2020-10-07-first-detailed-look-how-molecular-ferris-wheel-delivers-protons-cellular-factories) from the paper's press release.}
 
-\figure{\includegif{\diagramsDir/sysbio/rotary_proton_sv_pump_anim_final}{40%}}{The V-ATPase enzyme pumps proteins across membranes. This molecular dynamics simulation was recently published in *Science Advances* [@Roh-cryo-em20]. The scale is roughly $10^{-8} m$.}{v-atp-ase}
+\figure{\includegif{\diagramsDir/sysbio/rotary_proton_sv_pump_anim_final}{40%}}{The V-ATPase enzyme pumps proteins across membranes. This molecular dynamics simulation was published in *Science Advances* [@Roh-cryo-em20]. The scale is roughly $10^{-8} m$.}{v-atp-ase}
 
 \speakernotes{Those complex interactions can also be modelled, but we can no longer summarize with the Maxwell-Boltzmann distribution. We need molecular dynamics simulations which can be combined with imaging using electron microscopes operating at extremely cold temperatures.}
 
 \subsection{Quantum Mechanics}
 
-\notes{Alternative we can drop down a few scales and consider simulation of the Schrödinger equation. A recent paper uses deep neural networks to speed up the solution of the many-electron Schrödinger equation enabling simulation of chemical bonds [@Pfau-abinitio20]. The [PR-blog post is also available](https://deepmind.com/blog/article/FermiNet). The paper uses a neural network to model the quantum state of a number of electrons.}
+\notes{Alternatively, we can drop down a few scales and consider simulation of the Schrödinger equation. Intractabilities in the many-electron Schrödinger equation have been addressed using deep neural networks to speed up the solution enabling simulation of chemical bonds [@Pfau-abinitio20]. The [PR-blog post is also available](https://deepmind.com/blog/article/FermiNet). The paper uses a neural network to model the quantum state of a number of electrons.}
 
 \figure{\includegif{\diagramsDir/physics/many-electron-schroedinger}{40%}}{The many-electron Schrödinger equation is important in understanding how Chemical bonds are formed.}{many-electron-schroedinger}
 
@@ -190,7 +190,7 @@ These properties cannot be predicted without running the physics, or the equival
 
 \notes{We now have four fellows appointed, each of whom works at the interface of machine learning and scientific discovery. They are using the ideas around machine learning modelling to drive their scientific research.}
 
-\notes{For example, [Bingqing Cheng](https://sites.google.com/site/tonicbq/), one of the Department's former DECAF Fellows has used neural network accelerated molecular dynamics simulations to understand a new form of metallic hydrogen, likely to occur at the heart of stars [@Cheng-evidence20]. The University's [press release is here](https://www.cam.ac.uk/research/news/ai-shows-how-hydrogen-becomes-a-metal-inside-giant-planets).}
+\notes{For example, [Bingqing Cheng](https://acceleratescience.github.io/team/bingqing-cheng.html), one of the Department's former DECAF Fellows has used neural network accelerated molecular dynamics simulations to understand a new form of metallic hydrogen, likely to occur at the heart of stars [@Cheng-evidence20]. The University's [press release is here](https://www.cam.ac.uk/research/news/ai-shows-how-hydrogen-becomes-a-metal-inside-giant-planets).}
 
 \notes{On her website Bingqing quotes Paul Dirac.}
 
@@ -204,13 +204,14 @@ These properties cannot be predicted without running the physics, or the equival
 >
 >--- Paul Dirac (6 April 1929)
 
-\notes{Bingqing has now taken a position at IST Austria, our other DECAF fellows are [Challenger Mishra](https://oatml.cs.ox.ac.uk/members/challenger_mishra/), a physicist interested in string theory and quantizing gravity. [Sarah Morgan](https://www.neuroscience.cam.ac.uk/directory/profile.php?SarahMorgan) from the Brain Mapping Unit, who is focused on predicting psychosis trajectories and [Bianca Dumitrascu](https://b2du.github.io/) who focuses on the interface of machine learning and biology with particular interests in emergent behavior in complex systems.}
+\notes{Bingqing has now taken a position at IST Austria, our other DECAF fellows are [Challenger Mishra](https://acceleratescience.github.io/team/challenger-mishra.html), a physicist interested in string theory and quantizing gravity. [Sarah Morgan](https://acceleratescience.github.io/team/sarah-morgan.html) from the Brain Mapping Unit, who is focused on predicting psychosis trajectories, [Soumya Bannerjee](https://acceleratescience.github.io/team/soumya-banerjee.html) who focuses on complex systems and healthcare and [Sam Nallaperuma](https://acceleratescience.github.io/team/sam-nallaperuma.html) who the interface of machine learning and biology with particular interests in emergent behavior in complex systems.}
 
 \newslide{Accelerate Fellows}
 
-\slides{* Bianca Dumitrascu
-* Challenger Mishra
-* Sarah Morgan}
+\slides{* Challenger Mishra
+* Sarah Morgan
+* Soumya Banerjee
+* Sam Nallaperuma}
 
 \notes{For those interested in Part III/MPhil projects, you can see their project suggestions on [this page](https://mlatcl.github.io/internal/projects/).}
 
@@ -234,12 +235,14 @@ These properties cannot be predicted without running the physics, or the equival
 
 This is the objective of probabilistic programming. The idea is that you write your model in a language, and that language is automatically converted into the different modelling codes you need to perform Bayesian inference.
 
-The ideas for probabilistic programming originate in [BUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/). The software was developed at the MRC Biostatistics Unit here in Cambridge in the early 1990s, by among others, David Spiegelhalter. Carl Henrik covered in last week's lecture some of the approaches for approximate inference. BUGS uses Gibbs sampling. Gibbs sampling, however, can be slow to converge when there are strong correlations in the posterior between variables. 
+The ideas for probabilistic programming originate in [BUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/). The software was developed at the MRC Biostatistics Unit here in Cambridge in the early 1990s, by among others, [Sir David Spiegelhalter](https://en.wikipedia.org/wiki/David_Spiegelhalter). Carl Henrik covered in last week's lecture some of the approaches for approximate inference. BUGS uses Gibbs sampling. Gibbs sampling, however, can be slow to converge when there are strong correlations in the posterior between variables. 
 
 The descendent of BUGS that is probably most similar in the spirit of its design is [Stan](https://mc-stan.org/). Stan came from researchers at Columbia University and makes use of a variant of Hamiltonian Monte Carlo called the No-U-Turn sampler. It builds on automatic differentiation for the gradients it needs. It's all written in C++ for speed, but has interfaces to Python, R, Julia, MATLAB etc. Stan has been highly successful during the Coronavirus pandemic, with a number of epidemiological simulations written in the language, for example see this [blog post](https://mc-stan.org/users/documentation/case-studies/boarding_school_case_study.html).}
 
 \notes{Other probabilistic programming languages of interest include those that make use of variational approaches (such as [pyro](https://pyro.ai/)) and allow use of neural network components.}
 
+\notes{One important probabilistic programming language being developed is [Turing](https://turinglang.org/stable/), one of the key developers is  [Hong Ge](https://mlg.eng.cam.ac.uk/hong/) who is a Senior Research Associate in Cambridge Engineering.}
+ 
 \subsection{Approximate Bayesian Computation}
 
 \notes{We reintroduced Gaussian processes at the start of this lecture by sampling from the Gaussian process and matching the samples to data, discarding those that were distant from our observations. This approach to Bayesian inference is the starting point for *approximate Bayesian computation* or ABC.}

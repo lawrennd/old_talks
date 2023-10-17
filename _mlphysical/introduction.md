@@ -23,6 +23,7 @@ oldyoutube:
   year: 2020
 time: "12:00"
 featured_image: /slides/diagrams/ceres/giuseppe-piazzi.png
+pdfslides: l48-mlpw-01.pdf
 date: 2023-10-05
 transition: None
 ipynb: true

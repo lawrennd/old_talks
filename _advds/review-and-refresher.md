@@ -14,7 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 postsdir: ../../../mlatcl/advds/_practicals/
-date: 2022-10-28
+date: 2023-10-27
 transition: None
 reveal: false
 ipynb: true

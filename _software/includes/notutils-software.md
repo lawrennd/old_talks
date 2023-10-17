@@ -5,7 +5,7 @@
 \notes{\subsection{notutils}}
 
 
-\notes{This small package is a helper package for various notebook utilities used}
+\notes{This small package is a helper package for various notebook utilities used below.}
 
 \notes{The software can be installed using}
 

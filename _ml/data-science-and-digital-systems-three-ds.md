@@ -29,8 +29,6 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
-
 \section{Introduction}
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}

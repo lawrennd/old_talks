@@ -17,9 +17,11 @@ author:
 time: "10:00"
 youtube: IGRecWhh2Mo
 oldyoutube: 
+- code: IGRecWhh2Mo
+  year: 2022
 - code: j1MjFd_2U80
   year: 2021
-date: 2022-10-28
+date: 2023-10-27
 transition: None
 ipynb: false
 ---

@@ -3,6 +3,7 @@
 
 \editme
 
+\include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/donald-mackay-brain.md}
 
 \subsection{Human Analogue Machine}
