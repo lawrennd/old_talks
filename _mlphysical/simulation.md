@@ -204,14 +204,13 @@ These properties cannot be predicted without running the physics, or the equival
 >
 >--- Paul Dirac (6 April 1929)
 
-\notes{Bingqing has now taken a position at IST Austria, our other DECAF fellows are [Challenger Mishra](https://acceleratescience.github.io/team/challenger-mishra.html), a physicist interested in string theory and quantizing gravity. [Sarah Morgan](https://acceleratescience.github.io/team/sarah-morgan.html) from the Brain Mapping Unit, who is focused on predicting psychosis trajectories, [Soumya Bannerjee](https://acceleratescience.github.io/team/soumya-banerjee.html) who focuses on complex systems and healthcare and [Sam Nallaperuma](https://acceleratescience.github.io/team/sam-nallaperuma.html) who the interface of machine learning and biology with particular interests in emergent behavior in complex systems.}
+\notes{Bingqing has now taken a position at IST Austria.
 
 \newslide{Accelerate Fellows}
 
-\slides{* Challenger Mishra
-* Sarah Morgan
-* Soumya Banerjee
-* Sam Nallaperuma}
+\centerdiv{\challengerMishraPicture{15%}\sarahMorganPicture{15%}\soumyaBanerjeePicture{15%}\samNallaperumaPicture{15%}}
+
+\notes{Our four current Accelerate fellows are [Challenger Mishra](https://acceleratescience.github.io/team/challenger-mishra.html), a physicist interested in string theory and quantizing gravity. [Sarah Morgan](https://acceleratescience.github.io/team/sarah-morgan.html) from the Brain Mapping Unit, who is focused on predicting psychosis trajectories, [Soumya Bannerjee](https://acceleratescience.github.io/team/soumya-banerjee.html) who focuses on complex systems and healthcare and [Sam Nallaperuma](https://acceleratescience.github.io/team/sam-nallaperuma.html) who the interface of machine learning and biology with particular interests in emergent behavior in complex systems.}
 
 \notes{For those interested in Part III/MPhil projects, you can see their project suggestions on [this page](https://mlatcl.github.io/internal/projects/).}
 
