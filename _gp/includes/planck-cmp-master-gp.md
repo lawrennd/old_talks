@@ -15,7 +15,7 @@ The objective of the Planck spacecraft was to measure the anisotropy and statist
 
 \newslide{}
 
-\notes{To the high degree of precision that we could measure with the Planck space telescope, the CMB appears to be a Gaussian process. The parameters of its covariance function are given by the fundamental parameters of the universe, for example the amount of dark matter and matter in the universe}
+\notes{To the high degree of precision that we could measure with the Planck space telescope, the CMB appears to be a Gaussian process. The parameters of its covariance function are given by the fundamental parameters of the Universe, for example the amount of dark matter and matter in the Universe.}
 
 \figure{\includepng{\diagramsDir/Planck_CMB}{50%}{vertical-align:middle}}{The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.}{cosmic-microwave-background}
 
