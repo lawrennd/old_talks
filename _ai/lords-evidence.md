@@ -26,7 +26,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
-  orchid: 
+  orcid: 
 date: 2023-09-12
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
