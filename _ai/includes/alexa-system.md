@@ -18,7 +18,7 @@
 
 \centerdiv{\tomTaylorPicture{15%}\joeWalowskiPicture{15%}\rohitPrasadPicture{15%}}
 
-\figure{\includediagram{\diagramsDir/software/alexa-schematic}{40%}}{Simple schmeatic of a intelligent agent set of components.}{alexa-schematic}
+\figure{\includediagram{\diagramsDir/software/alexa-schematic}{40%}}{Simple schmeatic of an intelligent agent's components.}{alexa-schematic}
 
 \subsection{Speech to Text}
 
