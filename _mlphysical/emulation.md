@@ -86,7 +86,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \include{_simulation/includes/herd-immunity.md}
 
-\notes{Thinking about our Formula 1 example, and the differing levels of fidelity that might be included in a model, you can now imagine the challenges of doing large scale theoretical epidemiology. The compartment model is operating at a particular level of fidelity. Imagine trying to modify this model for a specific circumstance, like the way that the University of Cambridge chooses to do lectures. It's not appropriate for this level of fidelity. You need to use different types of models for that decision making. Later, we'll look at a simulation that was used to advise the government on the Test Trace Isolate program that took a different approach [@Delve-tti20].}
+\notes{Thinking about our Formula 1 example, and the differing levels of fidelity that might be included in a model, you can now imagine the challenges of doing large scale theoretical epidemiology. The compartment model is operating at a particular level of fidelity. Imagine trying to modify this model for a specific circumstance, like the way that the University of Cambridge chooses to do lectures. It's not appropriate for this level of fidelity. You need to use different types of models for that decision making. [One of our case studies](https://mlatcl.github.io/mlphysical/casestudies/tti-explorer.html) looks at a simulation that was used to advise the government on the Test Trace Isolate program that took a different approach [@Delve-tti20].}
 
 \section{Strategies for Simulation}
 
