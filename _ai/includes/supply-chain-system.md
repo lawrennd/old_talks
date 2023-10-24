@@ -11,7 +11,7 @@
 
 \figure{\includeyoutube{ncwsr1Of6Cw}{600}{450}}{Promotional video for the Amazon supply chain optimization team.}{scot-promo-video}
 
-\notes{Arugably the Amazon supply chain is the largest automated decision making system in the world in terms of the amount of money spent and the quantity of product moved through automated decision making.}
+\notes{Arugably the Amazon supply chain is (or was) the largest automated decision-making system in the world in terms of the amount of money spent and the quantity of product moved through automated decision making.}
 
 \subsection{Supply Chain Optimization}
 
