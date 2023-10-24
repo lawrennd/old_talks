@@ -38,7 +38,7 @@ ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
                   filename="erich-friedman-packing-gp.svg", 
                   directory = "\writeDiagramsDir/gp",
-                  transparent=True, frameon=True)}
+                  transparent=True)}
 
 \newslide{Erich Friedman Packing Data GP}
 
