@@ -16,7 +16,7 @@
 \setupcode{import numpy as np
 from scipy import integrate}
 
-\notes{The next piece of code sets up the dynamics of the compartmental model. He doesn't give the specific details in the blog post, but my understanding is that the four states are as follows. `x[0]` is the susceptible population, those that haven't had the disease yet. The susceptible population decreases by encounters with infections people. In Thomas's model, both `x[3]` and `x[4]` are infections. So the dynamics of the reduction of the susceptible is given by}
+\notes{The next piece of code sets up the dynamics of the compartmental model. He doesn't give the specific details in the blog post, but my understanding is that the four states are as follows. `x[0]` is the susceptible population, those that haven't had the disease yet. The susceptible population decreases by encounters with infections people. In Thomas's model, both `x[3]` and `x[4]` are infections. So, the dynamics of the reduction of the susceptible is given by}
 $$
 \frac{\text{d}{S}}{\text{d}t} = - \beta S (I_1 + I_2).
 $$
@@ -28,7 +28,7 @@ $$
 $$
 \notes{Note that the first term matches the term from the Susceptible equation. This is because it is the incoming exposed population.
 
-The exposed population move to a second compartment of exposure, $E_2$. I believe the reason for this is that if you use only one exposure compartment, then the statistics of the duration of exposure are incorrect (implicitly they are exponentially distributed in the underlying stochastic version of the model). By using two exposure departments, Thomas is making a slight correction to this which would impose a first order gamma distribution on those statistics. A similar trick is being deployed for the 'infectious group'. So we gain an additional equation to help with these statistics,}\newslide{}
+The exposed population move to a second compartment of exposure, $E_2$. I believe the reason for this is that if you use only one exposure compartment, then the statistics of the duration of exposure are incorrect (implicitly they are exponentially distributed in the underlying stochastic version of the model). By using two exposure departments, Thomas is making a slight correction to this which would impose a first order gamma distribution on those statistics. A similar trick is being deployed for the 'infectious group'. So, we gain an additional equation to help with these statistics,}\newslide{}
 $$
 \frac{\text{d}{E_2}}{\text{d}t} = \sigma E_1 - \sigma E_2.
 $$
@@ -44,7 +44,7 @@ $$
 $$
 \frac{\text{d}R}{\text{d}t} = \gamma I_2.
 $$
-\notes{All of these equations are then represented in code as follows.}
+\notes{All these equations are then represented in code as follows.}
 
 \code{def odefun(t,x,beta0,betat,t0,t1,sigma,gamma):
     dx = np.zeros(6)
