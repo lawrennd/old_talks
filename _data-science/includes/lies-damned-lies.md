@@ -24,11 +24,10 @@
 >
 > Arthur Balfour 1848-1930
 
-\notes{Arthur Balfour was quoting the lawyer James Munro[^guardian] when he said[^twain] that there three types of lies: lies, damned lies and statistics in 1892. This is 20 years before the first academic department of applied statistics was founded at UCL. If Balfour were alive today, it is likely that he'd rephrase his quote:}
+\notes{Arthur Balfour was quoting the lawyer James Munro[^guardian] when he said that there three types of lies: lies, damned lies and statistics in 1892. This is 20 years before the first academic department of applied statistics was founded at UCL. If Balfour were alive today, it is likely that he'd rephrase his quote:}
 
 [^guardian]: The quote is reported in the *Manchester Guardian* on 29th June 1892. See also <https://www.york.ac.uk/depts/maths/histstat/lies.htm>.
 
-[^twain]: Benjamin Disraeli is attributed this quote by Mark Twain, [but there's no record of him having said this.](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
 
 \newslide{}
 \slides{
@@ -41,7 +40,9 @@
 }
 \notes{Why? Because the challenges of understanding and interpreting big data today are similar to those that Balfour (who was a Conservative politician and statesman and would later become Prime Minister) faced in governing an empire through statistics in the latter part of the 19th century.}
 
-\notes{The quote lies, damned lies and statistics was also credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to over-interpet data came with the formalization of the field through the development of *mathematical statistics*.}
+\notes{The quote lies, damned lies and statistics was also credited to Benjamin Disraeli by Mark Twain in Twain's autobiography.[^twain] It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to over-interpet data came with the formalization of the field through the development of *mathematical statistics*.}
+
+[^twain]: Although Twain attributes Disraeli in this way there's [no record of him having said this.](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
 
 \notes{Data has an elusive quality, it promises so much but can deliver little, it can mislead and misrepresent. To harness it, it must be tamed. In Balfour and Disraeli's time during the second half of the 19th century, numbers and data were being accumulated, the social sciences were being developed. There was a large-scale collection of data for the purposes of government.}
 
