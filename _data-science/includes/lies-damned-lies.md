@@ -49,6 +49,8 @@
 
 \notes{The antidote to this verbiage is found in increasing awareness. When dealing with data the first trap to avoid is the games of buzzword bingo that we are wont to play. The first goal is to quantify what challenges can be addressed and what techniques are required. Behind the hype fundamentals are changing. The phenomenon is about the increasing access we have to data. The way customers' information is recorded and processes are codified and digitized with little overhead. Internet of things is about the increasing number of cheap sensors that can be easily interconnected through our modern network structures. But businesses are about making money, and these phenomena need to be recast in those terms before their value can be realized.}
 
+\notes{For more thoughts on the challenges that statistics brings see Chapter 8 of @Lawrence-atomic24.}
+
 \subsection{*Mathematical* Statistics}
 
 \notes{[Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) (1857-1936), [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.}
