@@ -87,11 +87,15 @@ ppt:
 <!-- Conversation LLM -->
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/conversation-probability.md}
+\include{_ai/includes/human-computers-interacting.md}
+\include{_ai/includes/human-culture-interacting.md}
 \include{_data-science/includes/number-data-theatre.md}
 <!--\include{_psychology/includes/selective-attention-bias.md}-->
 <!--include{_data-science/includes/data-selection-attention-bias.md}-->
 \include{_ai/includes/conversation-llm.md}
 \include{_ai/includes/human-analogue-machines.md}
+
+\include{_physics/includes/richard-feynmann-doubt.md}
 
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->

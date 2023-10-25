@@ -3,7 +3,7 @@ week: 3
 session: 1
 title: "Emulation"
 abstract:  >
-  In this lecture we motivate the use of emulation, and introduce the GPy software as a framework for building Gaussian process emulators.
+  In this lecture we motivate the use of emulation and introduce the GPy software as a framework for building Gaussian process emulators.
 author:
 - family: Lawrence
   given: Neil D.
@@ -38,11 +38,109 @@ transition: None
 
 \notes{There are a number of ways we can use machine learning to accelerate scientific discovery. But one way is to have the machine learning model learn the effect of the rules. Rather than worrying about the detail of the rules through computing each step, we can have the machine learning model look to abstract the rules and capture emergent phenomena, just as the Maxwell-Boltzmann distribution captures the essence of the behavior of the ideal gas.}
 
-\notes{In the papers listed above, neural networks are being used to speed up computations. In this course we've introduced Gaussian processes that will be used to speed up these computations. In both cases the ideas are similar. Rather than rerunning the simulation, we use data from the simulation to *fit* the neural network or the Gaussian process to the data.}
+\notes{The challenges of Laplace's gremlin present us with issues that we solve in a particular way, this is the focus of Chapter 6 in *The Atomic Human*.}
+
+\include{_books/includes/the-atomic-human.md}
+
+\notes{What follows is a quote form Chapter 6, which introduces Laplace's gremlin and its consequences.
+
+In Douglas Adams's *Hitchhiker's Guide to the Galaxy* the computer Deep
+Thought is asked to provide the answer to the 'great question' of 'life,
+the universe and everything'. After seven and a half million years of
+computation, Deep Thought has completed its program but is reluctant to
+give its creators the answer.
+
+> 'You're really not going to like it,' observed Deep Thought.\
+> 'Tell us!'\
+> 'All right,' said Deep Thought. 'The Answer to the Great Question . .
+> .'\
+> 'Yes . . . !'\
+> 'Of Life, the Universe and Everything ...' said Deep Thought.\
+> 'Yes ... !'\
+> 'Is ...' said Deep Thought, and paused.\
+> 'Yes ... !'\
+> 'Is ...'\
+> 'Yes ... !!! ... ?'\
+> 'Forty-two,' said Deep Thought, with infinite majesty and calm.
+>
+> Douglas Adams *The Hitchhiker's Guide to the Galaxy*, 1979, Chapter 27
+
+After a period of shock from the questioners, the machine goes on to
+explain.}
+
+\newslide{}
+
+> 'I checked it very thoroughly,' said the computer, 'and that quite
+> definitely is the answer. I think the problem, to be quite honest with
+> you, is that you've never actually known what the question is.'
+>
+> Douglas Adams *The Hitchhiker's Guide to the Galaxy*, 1979, Chapter 28
+
+\notes{To understand the question, Deep Thought goes on to agree to design a
+computer which will work out what the question is. In the book that
+machine is the planet Earth, and its operators are mice. Deep Thought's
+idea is that the mice will observe the Earth and their observations will
+allow them to know what the Great Question is.
+
+To understand the consequences of Hawking's Theory of Everything, we
+would have to carry out a scheme similar to Deep Thought's. The Theory
+wouldn't directly tell us that hurricanes exist or that when the sun
+sets on Earth the sky will have a red hue. It wouldn't directly tell us
+that water will boil at 100 degrees centigrade. These consequences of
+the Theory would only play out once it was combined with the data to
+give us the emergent qualities of the Universe. The Deep Thought problem
+hints at the intractability of doing this. The computation required to
+make predictions from Laplace's demon can be enormous, Deep Thought
+intends to create a planet to run it. As a result, this isn't how our
+intelligence works in practice. The computations required are just too
+gargantuan. Relative to the scale of the Universe our brains are
+extremely limited. Fortunately though, to make these predictions, we
+don't have to build our own Universe, because we've already got one.}
+
+\newslide{}
+
+\figure{\includejpg{\diagramsDir/ml/E.-H.-Shepard_Two-ink-drawings-from-The-House-at-Pooh-Corner-I_}{80%}}{Rabbit and Pooh watch the result of Pooh's hooshing idea to move Eeyore towards the shore.}{pooh-rabbit-hoosh}
+
+\newslide{}
+
+> When you are a Bear of Very Little Brain, and you Think of Things, you
+> find sometimes that a Thing which seemed very Thingish inside you is
+> quite different when it gets out into the open and has other people
+> looking at it.
+>
+> A.A. Milne as Winnie-the-Pooh in *The House at Pooh Corner*, 1928
+
+\notes{This comment from Pooh bear comes just as he's tried to rescue his
+donkey friend, Eeyore, from a river by dropping a large stone on him
+from a bridge. Pooh's idea had been to create a wave to push the donkey
+to the shore, a process that Pooh's rabbit friend calls "hooshing".
+
+Hooshing is a technique many children will have tried to retrieve a ball
+from a river. It can work, so Pooh's idea wasn't a bad one, but the
+challenge he faced was in its execution. Pooh aimed to the side of
+Eeyore, unfortunately the stone fell directly on the stuffed donkey. But
+where is Laplace's demon in hooshing? Just as we can talk about Gliders
+and Loafers in Conway's Game of Life, we talk about stones and donkeys
+in our Universe. Pooh's prediction that he can hoosh the donkey with the
+stone is not based on the Theory, it comes from observing the way
+objects interact in the actual Universe. Pooh is like the mice in
+Douglas Adams's Earth. He is observing his environment. He looks for
+patterns in that environment. Pooh then borrows the computation that the
+Universe has already done for us. He has seen similar situations before,
+perhaps he once used a stone to hoosh a ball. He is then generalising
+from these previous circumstances to suggest that he can also hoosh the
+donkey. Despite being a bear of little brain, like the mice on Adams's
+Earth, Pooh can answer questions about his universe by observing the
+results of the Theory of Everything playing out around him.}
+
+\section{Surrogate Modelling in Practice}
+
+\notes{The knowledge of ones own limitations that Pooh shows is sometimes known as Socratic wisdom, and its a vital part of our intelligence. It expresses itself as humility and skepticism.}
+
+\notes{In the papers we reviewed last lecture, neural networks are being used to speed up computations. In this course we've introduced Gaussian processes that will be used to speed up these computations. In both cases the ideas are similar. Rather than rerunning the simulation, we use data from the simulation to *fit* the neural network or the Gaussian process to the data.}
 
 \notes{We'll see an example of how this is done in a moment, taken from a simple ride hailing simulator, but before we look at that, we'll first consider why this might be a useful approach.}
 
-\section{Surrogate Modelling in Practice}
 
 \slides{* Emergent phenomena require computational power.
 * In surrogate modelling we use statistical/ML models to learn regularities in those emergent phenomena.}
@@ -57,7 +155,7 @@ transition: None
   * Either turn based (e.g. Game of Life or F1 Strategy Simulations)
   * Or Event based (e.g. Gillespie algorithm for chemical models}
 
-\notes{We've introduced simulations from the perspective of laws of physics. In practice, many simulations may not directly encode for the laws of physics, but they might encode expert intuitions about a problem. 
+\notes{We've introduced simulations from the perspective of laws of physics. In practice, many simulations may not directly encode for the laws of physics, but they might encode expert intuitions about a problem (like Pooh's intuition about hooshing). 
 
 For example, in Formula 1 races, the cars have tyres that wear at different rates. Softer tyres allow the cars to drive faster but wear quicker. Harder tyres man the car drives slower but they last longer. Changing between tyres is part of the race, and it has a time penalty. Before each race the teams decide what their strategy will be with tyre changes. It's not only how many tyre changes that are important, but when they happen. If you change your tyre early, you might get a speed advantage and be able to pass your rival when they change their tyre later. This is a trick known as 'undercutting', but if your early change puts you back onto the track behind other slower cars, you will lose this advantage. }
 
@@ -105,7 +203,7 @@ Over time there were a number of similar changes, each of which should have impr
 
 \notes{So far, we've introduced simulation motivated by the physical laws of the universe. Those laws are sometimes encoded in differential equations, in which case we can try to solve those systems (like with Herd Immunity or Navier Stokes). An alternative approach is taken in the Game of Life. There a turn-based simulation is used, at each turn, we iterate through the simulation updating the state of the simulation. This is known as a *discrete event simulation*. In race simulation for Formula 1 a discrete event simulation is also used. There is another form of discrete event simulation, often used in chemical models, where the events don't take place at regular intervals. Instead, the timing to the next event is computed, and the simulator advances that amount of time. For an example of this see [the Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm)}.
 
-\notes{There is a third type of simulation that we'd also like to introduce. That is simulation within computer software. In particular, the need to backtest software with 'what if' ideas, or to trace errors that may have occurred in production. This can involve loading up entire code bases and rerunning them with simulated inputs. This is a third form of simulation where emulation can also come in useful.}
+\notes{There is a third type of simulation that we'd also like to introduce. That is simulation within computer software. In particular, the need to backtest software with 'what if' ideas -- known as counter factual simulation -- or to trace errors that may have occurred in production. This can involve loading up entire code bases and rerunning them with simulated inputs. This is a third form of simulation where emulation can also come in useful.}
 
 \subsection{Backtesting Production Code}
 

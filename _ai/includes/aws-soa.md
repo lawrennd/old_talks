@@ -27,7 +27,7 @@ In practice, shared dynamically linked libraries may be used for aspects such as
 
 \notes{Modern software development uses an approach known as *service-oriented architecture* to build highly complex systems. Such systems have similar emergent properties to Conway's "Game of Life". Understanding these emergent properties is vitally important when diagnosing problems in the system.}
 
-\notes{In the context of machine learning and complex systems, Jonathan Zittrain has coined the term ["Intellectual Debt"](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c) to describe the challenge of understanding what you've created.}
+\notes{In the context of machine learning and complex systems, Jonathan Zittrain has coined the term ["Intellectual Debt"](https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c) to describe the challenge of understanding what you've created. In [the ML@CL group we've been foucssing on developing the notion of a *data-oriented architecture*](https://mlatcl.github.io/projects/data-oriented-architectures-for-ai-based-systems.html) to deal with intellectual debt [@Cabrera-realworld23].}
 
 
 \endif

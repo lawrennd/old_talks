@@ -34,4 +34,7 @@
 \figure{\includediagram{\diagramsDir/data-science/new-flow-of-information-ham}{70%}}{The HAM now sits between us and the traditional digital computer.}{new-flow-of-information-ham}
 
 
+\include{_ai/includes/human-computers-interacting.md}
+
+
 \endif

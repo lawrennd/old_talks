@@ -41,16 +41,8 @@ transition: None
 
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}
-
-\newslide{}
-
-\figure{\includediagram{\diagramsDir/ai/human-computers-interacting}{80%}}{Humans and computers interacting should be a major focus of our research and engineering efforts.}{human-computers-interacting}
-
-\newslide{}
-
-\figure{\includediagramclass{\diagramsDir/ai/human-culture-interacting}{80%}}{Humans use culture, facts and 'artefacts' to communicate.}{human-culture-interacting}
-
-
+\include{_ai/includes/human-computers-interacting.md}
+\include{_ai/includes/human-culture-interacting.md}
 \include{_physics/includes/richard-feynmann-doubt.md}
 
 \thanks

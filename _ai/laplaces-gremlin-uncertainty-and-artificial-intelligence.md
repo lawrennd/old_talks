@@ -113,9 +113,7 @@ Norbert Wiener in a letter to his family, 1913}
 
 \aligncenter{A chance for us to acknowledge our ignorance and to rediscover interdisplinary science.}
 
-\newslide{}
-
-\figure{\includediagram{\diagramsDir/ai/human-computers-interacting}{80%}}{Humans and computers interacting should be a major focus of our research and engineering efforts.}{human-computers-interacting}
+\include{_ai/includes/human-computers-interacting.md}
 
 \include{_physics/includes/richard-feynmann-doubt.md}
 
