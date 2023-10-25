@@ -24,7 +24,9 @@
 >
 > Arthur Balfour 1848-1930
 
-\notes{Arthur Balfour was quoting the lawyer James Munro when he said[^twain] that there three types of lies: lies, damned lies and statistics in 1892. This is 20 years before the first academic department of applied statistics was founded at UCL. If Balfour were alive today, it is likely that he'd rephrase his quote:}
+\notes{Arthur Balfour was quoting the lawyer James Munro[^guardian] when he said[^twain] that there three types of lies: lies, damned lies and statistics in 1892. This is 20 years before the first academic department of applied statistics was founded at UCL. If Balfour were alive today, it is likely that he'd rephrase his quote:}
+
+[^guardian]: The quote is reported in the *Manchester Guardian* on 29th June 1892. See also <https://www.york.ac.uk/depts/maths/histstat/lies.htm>.
 
 [^twain]: [Benjamin Disraeli is attributed this quote by Mark Twain, but there's no record of him having said this.](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
 
