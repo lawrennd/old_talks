@@ -28,7 +28,7 @@
 
 [^guardian]: The quote is reported in the *Manchester Guardian* on 29th June 1892. See also <https://www.york.ac.uk/depts/maths/histstat/lies.htm>.
 
-[^twain]: [Benjamin Disraeli is attributed this quote by Mark Twain, but there's no record of him having said this.](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
+[^twain]: Benjamin Disraeli is attributed this quote by Mark Twain, [but there's no record of him having said this.](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
 
 \newslide{}
 \slides{
