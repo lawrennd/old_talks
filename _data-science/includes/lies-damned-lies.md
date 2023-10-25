@@ -15,18 +15,18 @@
 \slides{
 > There are three types of lies: lies, damned lies and statistics
 >
-> Benjamin Disraeli
+> Arthur Balfour 1848-1930
 }
 
 \newslide{}
 
 > There are three types of lies: lies, damned lies and statistics
 >
-> Benjamin Disraeli 1804-1881
+> Arthur Balfour 1848-1930
 
-\notes{Benjamin Disraeli said[^twain] that there three types of lies: lies, damned lies and statistics. Disraeli died in 1881, 30 years before the first academic department of applied statistics was founded at UCL. If Disraeli were alive today, it is likely that he'd rephrase his quote:}
+\notes{Arthur Balfour was quoting the lawyer James Munro when he said[^twain] that there three types of lies: lies, damned lies and statistics in 1892. This is 20 years before the first academic department of applied statistics was founded at UCL. If Balfour were alive today, it is likely that he'd rephrase his quote:}
 
-[^twain]: [Disraeli is attributed this quote by Mark Twain](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
+[^twain]: [Benjamin Disraeli is attributed this quote by Mark Twain, but there's no record of him having said this.](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
 
 \newslide{}
 \slides{
@@ -37,13 +37,13 @@
 \notes{
 > There are three types of lies, lies damned lies and *big data*. 
 }
-\notes{Why? Because the challenges of understanding and interpreting big data today are similar to those that Disraeli faced in governing an empire through statistics in the latter part of the 19th century.}
+\notes{Why? Because the challenges of understanding and interpreting big data today are similar to those that Balfour (who was a Conservative politician and statesman and would later become Prime Minister) faced in governing an empire through statistics in the latter part of the 19th century.}
 
-\notes{The quote lies, damned lies and statistics was credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to over-interpet data came with the formalization of the field through the development of *mathematical statistics*.}
+\notes{The quote lies, damned lies and statistics was also credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to over-interpet data came with the formalization of the field through the development of *mathematical statistics*.}
 
-\notes{Data has an elusive quality, it promises so much but can deliver little, it can mislead and misrepresent. To harness it, it must be tamed. In Disraeli's time during the second half of the 19th century, numbers and data were being accumulated, the social sciences were being developed. There was a large-scale collection of data for the purposes of government.}
+\notes{Data has an elusive quality, it promises so much but can deliver little, it can mislead and misrepresent. To harness it, it must be tamed. In Balfour and Disraeli's time during the second half of the 19th century, numbers and data were being accumulated, the social sciences were being developed. There was a large-scale collection of data for the purposes of government.}
 
-\notes{The modern 'big data era' is on the verge of delivering the same sense of frustration that Disraeli experienced, the early promise of big data as a panacea is evolving to demands for delivery. For me, personally, peak-hype coincided with an email I received inviting collaboration on a project to deploy "*Big Data* and *Internet of Things* in an *Industry 4.0* environment". Further questioning revealed that the actual project was optimization of the efficiency of a manufacturing production line, a far more tangible and *realizable* goal.}
+\notes{The modern 'big data era' is on the verge of delivering the same sense of frustration that Balfour experienced, the early promise of big data as a panacea is evolving to demands for delivery. For me, personally, peak-hype coincided with an email I received inviting collaboration on a project to deploy "*Big Data* and *Internet of Things* in an *Industry 4.0* environment". Further questioning revealed that the actual project was optimization of the efficiency of a manufacturing production line, a far more tangible and *realizable* goal.}
 
 \notes{The antidote to this verbiage is found in increasing awareness. When dealing with data the first trap to avoid is the games of buzzword bingo that we are wont to play. The first goal is to quantify what challenges can be addressed and what techniques are required. Behind the hype fundamentals are changing. The phenomenon is about the increasing access we have to data. The way customers' information is recorded and processes are codified and digitized with little overhead. Internet of things is about the increasing number of cheap sensors that can be easily interconnected through our modern network structures. But businesses are about making money, and these phenomena need to be recast in those terms before their value can be realized.}
 
@@ -55,7 +55,7 @@
 
 \notes{Their movement did the most to put statistics to rights, to eradicate the 'damned lies'. It was known as ['mathematical statistics'](https://en.wikipedia.org/wiki/Mathematical_statistics). Today I believe we should look to the emerging field of  *data science* to provide the same role. Data science is an amalgam of statistics, data mining, computer systems, databases, computation, machine learning and artificial intelligence. Spread across these fields are the tools we need to realize data's potential. For many businesses this might be thought of as the challenge of 'converting bits into atoms'. Bits: the data stored on computer, atoms: the physical manifestation of what we do; the transfer of goods, the delivery of service. From fungible to tangible. When solving a challenge through data there are a series of obstacles that need to be addressed.}
 
-\notes{Firstly, data awareness: what data you have and where its stored. Sometimes this includes changing your conception of what data is and how it can be obtained. From automated production lines to apps on employee smart phones. Often data is locked away: manual logbooks, confidential data, personal data. For increasing awareness an internal audit can help. The website [data.gov.uk](https://data.gov.uk/) hosts data made available by the UK government. To create this website the government's departments went through an audit of what data they each hold and what data they could make available. Similarly, within private busnesses this type of audit could be useful for understanding their internal digital landscape: after all the key to any successful campaign is a good map.}
+\notes{Firstly, data awareness: what data you have and where its stored. Sometimes this includes changing your conception of what data is and how it can be obtained. From automated production lines to apps on employee smart phones. Often data is locked away: manual logbooks, confidential data, personal data. For increasing awareness an internal audit can help. The website [data.gov.uk](https://data.gov.uk/) hosts data made available by the UK government. To create this website the government's departments went through an audit of what data they each hold and what data they could make available. Similarly, within private businesses this type of audit could be useful for understanding their internal digital landscape: after all the key to any successful campaign is a good map.}
 
 \notes{Secondly, availability. How well are the data sources interconnected? How well curated are they? The curse of Disraeli was associated with unreliable data and *unreliable statistics*. The misrepresentations this leads to are worse than the absence of data as they give a false sense of confidence to decision making. Understanding how to avoid these pitfalls involves an improved sense of data and its value, one that needs to permeate the organization.}
 
