@@ -82,17 +82,6 @@ LINES STARTING BY '' TERMINATED BY '\n';}
   \endif
 \endif
 
-\notes{\subsection{Population Data}
-
-Now we have information about COVID cases, and we have information about how many health centers and how many doctors and nurses there are in each health center. But unless we understand how many people there are in each state, then we cannot make decisions about where they may be problems with the disease. 
-
-If we were running our ride hailing service, we would also need information about how many people there were in different areas, so we could understand what the *demand* for the boda boda rides might be.
-
-To access the number of people we can get population statistics from the [Humanitarian Data Exchange](https://data.humdata.org/).
-
-We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.}
-
-
 \include{_datasets/includes/nigerian-population-data.md}
 
 \code{pop_data=data}
