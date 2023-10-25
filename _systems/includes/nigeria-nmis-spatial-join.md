@@ -18,7 +18,8 @@ There are special databases for storing this type of information, the database w
 
 \include{_datasets/includes/nigerian-administrative-zones-data.md}
 
-\code{zones_gdf = data}
+\code{zones_gdf = data
+zones_gdf['admin1Name_en'] = zones_gdf.index}
 
 \notes{Now we have this data of the outlines of the different states in Nigeria. 
 
@@ -40,7 +41,7 @@ A spatial join involves finding out which state each health facility belongs to.
 
 \setupcode{import geopandas as gpd}
 
-\code{geometry=gpd.points_from_xy(hospital_data.longitude, hospital_data.latitude)
+\code{geometry = gpd.points_from_xy(hospital_data.longitude, hospital_data.latitude)
 hosp_gdf = gpd.GeoDataFrame(hospital_data, 
                             geometry=geometry)
 hosp_gdf.crs = "EPSG:4326"}

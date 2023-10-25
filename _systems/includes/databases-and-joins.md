@@ -14,9 +14,13 @@ Pandas is great for the data scientist to analyze data because it makes many ope
 
 \subsection{Scaling ML Systems}
 
-But what if you are successful? What if everyone in Kampala wants to use your system? There are 1.5 million people in Kampala and maybe 100,000 Boda Boda drivers.
+But what if you are successful? What if everyone in Kampala wants to use your system? There are 1.5 million people in Kampala and maybe 100,000 Boda Boda drivers.[^boda]
 
-What if you are even more succesful? What if everyone in Lagos wants to use your system? There are around 20 million people in Lagos ... and maybe as many Okada drivers as people in Kampala!
+[^boda]: Boda Boda is the name for the motorbike taxis found commonly in Kampala.
+
+What if you are even more succesful? What if everyone in Lagos wants to use your system? There are around 20 million people in Lagos ... and maybe as many Okada[^okada] drivers as people in Kampala!
+
+[^okada] In Lagos the Boda Boda is called an Okada.
 
 We want to build safe and reliable machine learning systems. Building them from `pandas` and python is about as safe and reliable as [taking six children to school on a boda boda](https://www.monitor.co.ug/News/National/Boda-accidents-kill-10-city-UN-report-Kampala/688334-4324032-15oru2dz/index.html).
 
@@ -26,6 +30,6 @@ In a machine learning system, you will need to bring different data sets togethe
 
 But instead of using a welder or screws to join data, we join it using columns of the data. We can join data together using people's names. One database may contain where people live, another database may contain where they go to school. If we join these two databases, we can have a database which shows where people live and where they got to school.
 
-In the notebook, we will join some data about where the health centers are in Nigeria with data about where there have been cases of Covid19. There are other challenges in the ML System Design that are not going to be covered here. They include how to update the databases and how to control access to the databases from different users (boda boda drivers, riders, administrators etc). }
+In the notebook, we will join some data about where the health centers are in Nigeria with data about where there have been cases of Covid19. There are other challenges in the ML System Design that are not going to be covered here. They include how to update the databases and how to control access to the databases from different users (boda boda drivers, riders, administrators etc).}
 
 \endif

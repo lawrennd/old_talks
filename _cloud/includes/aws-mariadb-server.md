@@ -34,17 +34,17 @@
 
 4. `Standard Create` should be selected. In the box below, which is titled `Engine Options` you should select `MariaDB`. You can leave the `Version` as it's set,
 
-  \figure{\includepng{\diagramsDir/cloud/aws-select-mariadb-rds}{60%}}{The AWS console box for selecting the `MariaDB` database.}{aws-select-mariadb-rds}
+   \figure{\includepng{\diagramsDir/cloud/aws-select-mariadb-rds}{60%}}{The AWS console box for selecting the `MariaDB` database.}{aws-select-mariadb-rds}
 
 5. In the box below that, make sure you select `Free tier`.
 
-  \figure{\includepng{\diagramsDir/cloud/aws-select-free-tier}{60%}}{Make sure you select the free tier option for your database.}{aws-select-free-tier}
+   \figure{\includepng{\diagramsDir/cloud/aws-select-free-tier}{60%}}{Make sure you select the free tier option for your database.}{aws-select-free-tier}
 
 6. Name your database. For this setup we suggest you use `\sqlDatabaseName` for the name.
 
 7. Set a master password for accessing the data base as admin.
 
-  \figure{\includepng{\diagramsDir/cloud/aws-mariadb-settings}{60%}}{Set the password and username for the database access.}{aws-mariadb-settings}
+   \figure{\includepng{\diagramsDir/cloud/aws-mariadb-settings}{60%}}{Set the password and username for the database access.}{aws-mariadb-settings}
 
 8. Leave the `DB instance class` as it is.
 

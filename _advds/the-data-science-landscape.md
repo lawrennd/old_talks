@@ -30,9 +30,18 @@ ipynb: false
 
 \include{_advds/includes/overview-2022.md}
 \include{_data-science/includes/lies-damned-lies.md}
+
+\addreading{@Lawrence-atomic24}{Chapter 5}
+
 \include{_ai/includes/embodiment-factors.md}
 \include{_ai/includes/conversation-tedx.md}
+
+\addreading{@Lawrence-atomic24}{Chapter 1}
+
 \include{_ai/includes/heider-simmel.md}
+
+\addreading{@Lawrence-atomic24}{Chapter 1}
+
 \include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/evolved-relationship.md}
@@ -48,6 +57,8 @@ ipynb: false
 \notes{You can also make a start on the first practical, <https://mlatcl.github.io/ads/lectures/practical-one.html> which covers SQL databases and joins.}
 
 \notes{You should also give the main assignment (available through [Moodle](https://vle.cam.ac.uk)) a read through to give yourself a sense of the questions you'll need to answer.}
+
+\reading
 
 \thanks
 

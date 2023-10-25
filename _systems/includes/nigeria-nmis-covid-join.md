@@ -10,6 +10,8 @@ Now we have the health data, we're going to combine it with [data about COVID-19
 
 They provide their data in GitHub. We can access the cases we're interested in from the following URL.
 
+<https://raw.githubusercontent.com/dsfsi/covid19africa/master/data/line_lists/line-list-nigeria.csv>
+
 For convenience, we'll load the data into pandas first, but our next step will be to create a new SQLite table containing the data. Then we'll join that table to our existing tables.}
 
 \include{_datasets/includes/nigerian-covid-data.md}
