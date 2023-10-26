@@ -20,6 +20,8 @@ For further thoughts see \addguardian{marketing in the internet era}{2015/jul/23
 
 \notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}\notes{ This was also written in 2015.}
 
+\addreading{@Lawrence-atomic24}{Chapter 8}
+
 \include{_data-science/includes/new-flow-of-information.md}
 
 \endif
