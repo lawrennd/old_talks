@@ -37,7 +37,7 @@ Start by making a connection to the database. This will often be done via remote
 
 We do this using an `execute` command on the connection. 
 
-Typically, its good software engineering practice to 'wrap' the database command in some python code. This allows the commands to be maintained. Below we wrap the SQL command
+Typically, its good software engineering practice to 'wrap' the database command in some python code. This allows the commands to be maintained. You will also be asked to do this in your final assessment, including re-writing some of the code - pay attention to the slight syntax differences and multi-statement queries.Below we wrap the SQL command
 
 ```
 SELECT * FROM table_name LIMIT N
