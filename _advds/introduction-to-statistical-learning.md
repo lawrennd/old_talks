@@ -1,6 +1,6 @@
 ---
-week: 5
-session: 2
+week: 4
+session: 3
 featured_image: assets/images/introduction-to-statistical-learning.png
 title: "Introduction to Statistical Learning"
 abstract:  >
@@ -13,7 +13,7 @@ author:
   institute: University of Cambridge
   url: http://carlhenrik.com/
 time: "10:00"
-date: 2023-11-06
+date: 2023-11-01
 youtube: KWP58rugi4E
 oldyoutube: 
 - code: KWP58rugi4E

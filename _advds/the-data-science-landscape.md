@@ -28,7 +28,7 @@ ipynb: false
 
 
 
-\include{_advds/includes/overview-2022.md}
+\include{_advds/includes/overview-2023.md}
 \include{_data-science/includes/lies-damned-lies.md}
 
 \addreading{@Lawrence-atomic24}{Chapter 5}
@@ -44,7 +44,7 @@ ipynb: false
 
 \include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/conversation-computer.md}
-\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/evolved-relationship-ai.md}
 
 \subsection{What Next?}
 

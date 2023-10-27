@@ -1,6 +1,6 @@
 ---
 week: 5
-session: 1
+session: 2
 title: "A Data Science Process"
 featured_image: assets/images/a-data-science-process.png
 abstract:  >
@@ -21,7 +21,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 time: "10:00"
-date: 2023-11-03
+date: 2023-11-06
 transition: None
 ipynb: False
 ---

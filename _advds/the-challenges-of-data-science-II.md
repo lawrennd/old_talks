@@ -1,6 +1,6 @@
 ---
-week: 4
-session: 3
+week: 5
+session: 1
 title: "Data Science Challenges II"
 featured_image: assets/images/the-challenges-of-data-science-ii.png
 abstract:  >
@@ -19,7 +19,7 @@ youtube: jdrw3kW0J18
 oldyoutube: 
 - code: t0819B2kboc
   year: 2021
-date: 2023-11-01
+date: 2023-11-03
 transition: None
 ipynb: false
 ---
