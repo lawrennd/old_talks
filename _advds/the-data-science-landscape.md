@@ -29,6 +29,8 @@ ipynb: false
 
 
 \include{_advds/includes/overview-2023.md}
+\include{_ai/includes/henry-ford-intro.md}
+\include{_books/includes/the-atomic-human.md}
 \include{_data-science/includes/lies-damned-lies.md}
 
 \addreading{@Lawrence-atomic24}{Chapter 5}
