@@ -54,6 +54,8 @@ ipynb: false
 \include{_ml/includes/data-science-vs-ai.md}
 
 \include{_data-science/includes/data-science-as-debugging.md}
+
+\include{_ml/includes/what-are-large-language-models.md}
 \include{_ai/includes/conversation-probability.md}
 
 \include{_ai/includes/conversation-llm.md}
