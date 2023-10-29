@@ -2,6 +2,11 @@
 \define{donaldMackayBrain}
 
 \editme
+\subsection{Donald MacKay}
+
+\notes{Donald MacKay was a physicist who worked on naval gun targetting during the second world war. The challenge with gun targetting for ships is that both the target and the gun platform are moving. The challenge was tackled using analogue computers, for example in the US the [Mark I fire control computer](https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer) which was a mechanical computer. MacKay worked on radar systems for gun laying, here the velocity and distance of the target could be assessed through radar and an mechanical electrical analogue computer.}
+
+\include{../_ai/includes/fire-control-systems.md}
 
 \subsection{*Behind the Eye*}
 
