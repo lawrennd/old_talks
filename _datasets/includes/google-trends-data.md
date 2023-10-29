@@ -14,6 +14,11 @@ locally prevents this happening.
 
 sahuguet's original code stopped working so the notebook was updated to use the `pytrends` package instead on 6th May 2021.}
 
+\ifndef{pytrendsInstalled}
+\define{pytrendsInstalled}
+\installcode{pytrends}
+\endif
+
 \setupcode{import pods}
 
 

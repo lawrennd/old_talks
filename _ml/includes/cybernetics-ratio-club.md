@@ -28,54 +28,7 @@
 
 \subsection{Analogue and Digital}
 
-\figure{\includejpg{\diagramsDir/physics/dmaccrimmonmackay}{30%}}{Donald M. MacKay (1922-1987), an early member of the Cybernetics community and member of the Ratio Club.}{donald-maccrimmon-mackay}
-
-\notes{Donald MacKay wrote of the influence that his own work on radar had on
-his interest in the brain.
-
-> ... during the war I had worked on the theory of automated and
-> electronic computing and on the theory of information, all of which
-> are highly relevant to such things as automatic pilots and automatic
-> gun direction. I found myself grappling with problems in the design of
-> artificial sense organs for naval gun-directors and with the
-> principles on which electronic circuits could be used to simulate
-> situations in the external world so as to provide goal-directed
-> guidance for ships, aircraft, missiles and the like.
->
-> Later in the 1940's, when I was doing my Ph.D. work, there was much
-> talk of the brain as a computer and of the early digital computers
-> that were just making the headlines as "electronic brains." As an
-> analogue computer man I felt strongly convinced that the brain,
-> whatever it was, was not a digital computer. I didn't think it was an
-> analogue computer either in the conventional sense.
->
-> But this naturally rubbed under my skin the question: well, if it is
-> not either of these, what kind of system is it? Is there any way of
-> following through the kind of analysis that is appropriate to their
-> artificial automata so as to understand better the kind of system the
-> human brain is? That was the beginning of my slippery slope into brain
-> research.
->
-> *Behind the Eye* pg 40. Edited version of the 1986 Gifford Lectures given by Donald M. MacKay and edited by Valerie MacKay
-}
-
-\notes{Importantly, MacKay distinguishes between the *analogue*
-computer and the *digital* computer. As he mentions, his experience
-was with analogue machines. An analogue machine is *literally* an
-analogue. The radar systems that Wiener and MacKay both worked on were
-made up of electronic components such as resistors, capacitors, and
-inductors, that together represented a physical system, such as an
-anti-aircraft gun and a plane. The design of the analogue computer
-required the engineer to simulate the real world in analogue
-electronics, using dualities that exist between e.g. mechanical
-circuits (mass, spring, damper) and electronic circuits (inductor,
-resistor, capacitor). The analogy between mass and a damper, between
-spring and a resistor and between capacitor and a damper works because
-the underlying mathematics is approximated with the same linear
-system: a second order differential equation. This mathematical
-analogy allowed the designer to map from the real world, through
-mathematics, to a virtual world where the components reflected the
-real world through analogy.}
+\include{_ai/includes/donald-mackay-brain.md}
 
 \notes{This is a quite different from the approach that McCulloch and
 Pitts were taking with their paper on the logical calculus of the
