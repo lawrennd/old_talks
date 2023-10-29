@@ -23,7 +23,7 @@ youtube: BQKfIJHPiCQ
 time: "10:00"
 date: 2023-10-30
 transition: None
-ipynb: false
+ipynb: True
 ---
 
 \section{Introduction}
@@ -38,7 +38,7 @@ ipynb: false
 
 * Data diffusiveness is both a challenge and an opportunity
 }
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml-llm.md}
 \include{_data-science/includes/data-science-as-debugging.md}
 
 \include{_ml/includes/statistics-to-deep-learning.md}
