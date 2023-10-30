@@ -9,5 +9,8 @@
 \notes{\include{_ml/includes/logistic-regression.md}}
 \endif
 
+\ifdef{technicalEdition}
+\include{_health/includes/malaria-gp.md}
+\endif
 \include{_ml/includes/deep-learning-overview.md}
 \endif

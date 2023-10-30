@@ -32,20 +32,18 @@ ipynb: False
 
 \notes{Data science is an emerging discipline. That makes it harder to make clean decisions about what any given individual will need to know to become a data scientist. Those of you who are studying now will be those that define the discipline. As we deploy more data driven decision making in the world, the role will be refined. Until we achieve that refinement, your knowledge needs to be broad based.}
 
-\notes{In this lecture we will first continue our theme of how our limitations as humans mean that our analysis of data can be affected, and I will introduce an analogy that should help you understand *how* data science differs significantly from traditional software engineering. We'll then contextualize some of the challenges the domain into three different groups.}
+\notes{In this lecture we will first continue our theme of how our limitations as humans mean that our analysis of data can be affected, and I will introduce an analogy that should help you understand *how* data science differs significantly from traditional software engineering.}
 
-\newslide{Background: Big Data}
+<!--\newslide{Background: Big Data}
 \slides{
 * Data is Pervasive phenomenon that affects all aspects of our activities
 
 * Data diffusiveness is both a challenge and an opportunity
-}
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+}-->
+<!--include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}-->
 \include{_data-science/includes/data-science-as-debugging.md}
 
 \include{_ml/includes/statistics-to-deep-learning.md}
-\include{_ml/includes/data-science-vs-ai.md}
-\include{_health/includes/malaria-gp.md}
 
 \include{_ml/includes/what-are-large-language-models.md}
 
