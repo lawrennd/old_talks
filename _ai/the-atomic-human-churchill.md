@@ -54,6 +54,7 @@ papersize: a4paper
 transition: None
 ppt: 
 ---
+\define{noSlideTitle}
 
 
 \include{_books/includes/the-atomic-human.md}

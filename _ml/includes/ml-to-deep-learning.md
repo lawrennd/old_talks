@@ -9,13 +9,5 @@
 \notes{\include{_ml/includes/logistic-regression.md}}
 \endif
 
-\newslide{Deep Learning}
-
-* These are interpretable models: vital for disease etc.
-
-* Modern machine learning methods are less interpretable
-
-* Example: face recognition
-
 \include{_ml/includes/deep-learning-overview.md}
 \endif
