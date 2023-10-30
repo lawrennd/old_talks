@@ -5,7 +5,7 @@
 
 \subsection{Statistics to Deep Learning}
 
-\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/what-is-ml-2.md}
 
 \subsection{Classical Statistical Analysis}
 

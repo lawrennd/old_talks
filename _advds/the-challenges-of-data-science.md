@@ -43,6 +43,8 @@ ipynb: False
 
 \include{_ml/includes/statistics-to-deep-learning.md}
 \include{_ml/includes/data-science-vs-ai.md}
+\include{_health/includes/malaria-gp.md}
+
 \include{_ml/includes/what-are-large-language-models.md}
 
 \subsection{Conclusions}
