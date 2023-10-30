@@ -36,7 +36,7 @@ This is called a generalized linear model, we can also think of it as estimating
 * Jumper (jersey/sweater) purchase with logistic regression
 }
 $$ p(\text{bought}) =  \sigmoid{\paramScalar_0 + \paramScalar_1 \text{age} + paramScalar_2 \text{latitude}}.$$
-\notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \paramScalar_1 \inputScalar_1 + \paramScalar_2 \inputScalar_2 + paramScalar_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.}
+\notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\paramVector^\top \inputVector = \paramScalar_1 \inputScalar_1 + \paramScalar_2 \inputScalar_2 + paramScalar_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.}
 
 \newslide{Codify Through Mathematical Functions}
 \slides{
