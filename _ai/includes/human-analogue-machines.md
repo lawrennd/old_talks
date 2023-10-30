@@ -14,6 +14,10 @@
 
 \figure{\includepng{\diagramsDir/ai/human-analogue-machine}{60%}}{The human analogue machine creates a feature space which is analagous to that we use to reason, one way of doing this is to have a machine attempt to compress all human generated text in an auto-regressive manner.}{human-analogue-machine}
 
+\newslide{Human Analogue Machine}
+
+\slides{\figure{\includediagram{\diagramsDir/ai/processor-ham}{40%}}{}{human-analogue-machine-2}}
+
 \slides{* A human-analogue machine is a machine that has created a feature space that is analagous to the "feature space" our brain uses to reason.
 
 * The latest generation of LLMs are exhibiting this charateristic, giving them ability to converse.}
@@ -32,6 +36,8 @@
 \slides{* But if correctly done, the machine can be appropriately "psychologically represented"
 
 * This might allow us to deal with the challenge of *intellectual debt* where we create machines we cannot explain.}
+
+\include{_ai/includes/conversation-llm.md}
 
 \notes{\include{_ai/includes/intellectual-debt-blog-post.md}}
 
