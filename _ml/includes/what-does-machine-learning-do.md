@@ -23,8 +23,8 @@
 }
 $$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$
 
-$$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.$$
-\notes{Here $\beta_0$, $\beta_1$ and $\beta_2$ are the parameters of the model. If $\beta_1$ and $\beta_2$  are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter $\beta_0$ is an offset parameter and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithm] indicating that the purchase is odds-against. This is also a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.
+$$ \log \text{odds}  = \paramScalar_0 + \paramScalar_1 \text{age} + \paramScalar_2 \text{latitude}.$$
+\notes{Here $\paramScalar_0$, $\paramScalar_1$ and $\paramScalar_2$ are the parameters of the model. If $\paramScalar_1$ and $\paramScalar_2$  are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter $\paramScalar_0$ is an offset parameter and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithm] indicating that the purchase is odds-against. This is also a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to disease risk.
 
 [^logarithm]: The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.
 
@@ -35,23 +35,23 @@ This is called a generalized linear model, we can also think of it as estimating
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression
 }
-$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$
-\notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.}
+$$ p(\text{bought}) =  \sigmoid{\paramScalar_0 + \paramScalar_1 \text{age} + paramScalar_2 \text{latitude}}.$$
+\notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \paramScalar_1 \inputScalar_1 + \paramScalar_2 \inputScalar_2 + paramScalar_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.}
 
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression
 }
-$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$
-\notes{More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$.}
+$$ p(\text{bought}) =  \sigmoid{\paramVector^\top \inputVector}.$$
+\notes{More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\paramVector$ and the data, $\inputVector$.}
 
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression
 }
-$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$
+$$ \dataScalar =  \mappingFunction\left(\inputVector, \paramVector\right).$$
 \slides{
 . . .
 
@@ -63,12 +63,12 @@ $$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).
 \slides{
 * Use an objective function
 }
-$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
+$$\errorFunction(\paramVector, \dataMatrix, \inputMatrix)$$
 \slides{
 . . .
 
 * E.g. least squares}\notes{A commonly used examples (for example in a regression problem) is least squares,}
-$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
+$$\errorFunction(\paramVector, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \paramVector)\right)^2.$$
 
 \newslide{Two Components}
 \slides{
@@ -76,5 +76,10 @@ $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\nu
 * Objective function, $\errorFunction(\cdot)$
 }
 \notes{If a linear prediction function is combined with the least squares objective function, then that gives us a classical *linear regression*, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focused more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by $\mathbf{w}$ instead of $\boldsymbol{\beta}$. As a result, *non-linear* functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.}
+
+\newslide{Prediction vs Interpretation}
+
+$$ p(\text{bought}) =  \sigmoid{w_0 + w_1 \text{age} + w_2 \text{latitude}}.$$
+$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$
 
 \endif
