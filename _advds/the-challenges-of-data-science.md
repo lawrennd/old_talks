@@ -26,6 +26,8 @@ transition: None
 ipynb: False
 ---
 
+\include{_ml/includes/technical-edition.md}
+
 \section{Introduction}
 
 \notes{Data science is an emerging discipline. That makes it harder to make clean decisions about what any given individual will need to know to become a data scientist. Those of you who are studying now will be those that define the discipline. As we deploy more data driven decision making in the world, the role will be refined. Until we achieve that refinement, your knowledge needs to be broad based.}

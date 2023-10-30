@@ -5,6 +5,10 @@
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 
+\ifdef{technicalEdition}
+\notes{\include{_ml/includes/logistic-regression.md}}
+\endif
+
 \newslide{Deep Learning}
 
 * These are interpretable models: vital for disease etc.

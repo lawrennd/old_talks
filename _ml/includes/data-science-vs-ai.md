@@ -56,9 +56,9 @@ There are strong overlaps between the fields, the wide availability of data by h
     * *Strongly* related to statistics.
     * Field underpins revolution in *data science* and *AI*
 * With AI: 
-    * *logic*, *robotics*, *computer vision*, *speech*
+    * *logic*, *robotics*, *computer vision*, *language*, *speech*
 * With Data Science: 
-    * *databases*, *data mining*, *statistics*, *visualization*
+    * *databases*, *data mining*, *statistics*, *visualization*, *software systems*
 }
 
 \endif

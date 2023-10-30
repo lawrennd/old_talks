@@ -1,5 +1,6 @@
 \ifndef{whatDoesMachineLearningDo}
 \define{whatDoesMachineLearningDo}
+
 \editme
 
 \subsection{What does Machine Learning do?}
@@ -12,9 +13,21 @@
     * cf Colt 45, Ford Model T
 }
 
-\notes{Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.}
+\notes{Any process of automation allows us to scale what we do by
+codifying a process in some way that makes it efficient and
+repeatable. Machine learning automates by emulating human (or other
+actions) found in data. Machine learning codifies in the form of a
+mathematical function that is learnt by a computer. If we can create
+these mathematical functions in ways in which they can interconnect,
+then we can also build systems.}
 
-\notes{Machine learning works through codifying a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.}
+\notes{Machine learning works through codifying a prediction of
+interest into a mathematical function. For example, we can try and
+predict the probability that a customer wants to by a jersey given
+knowledge of their age, and the latitude where they live. The
+technique known as logistic regression estimates the odds that someone
+will by a jumper as a linear weighted sum of the features of
+interest.}
 
 \newslide{Codify Through Mathematical Functions}
 \slides{
@@ -24,19 +37,46 @@
 $$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$
 
 $$ \log \text{odds}  = \weightScalar_0 + \weightScalar_1 \text{age} + \weightScalar_2 \text{latitude}.$$
-\notes{Here $\weightScalar_0$, $\weightScalar_1$ and $\weightScalar_2$ are the parameters of the model. If $\weightScalar_1$ and $\weightScalar_2$  are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter $\weightScalar_0$ is an offset parameter and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithm] indicating that the purchase is odds-against. This is also a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to disease risk.
+\notes{Here $\weightScalar_0$, $\weightScalar_1$ and $\weightScalar_2$
+are the parameters of the model. If $\weightScalar_1$ and
+$\weightScalar_2$ are both positive, then the log-odds that someone
+will buy a jumper increase with increasing latitude and age, so the
+further north you are and the older you are the more likely you are to
+buy a jumper. The parameter $\weightScalar_0$ is an offset parameter
+and gives the log-odds of buying a jumper at zero age and on the
+equator. It is likely to be negative[^logarithm] indicating that the
+purchase is odds-against. This is also a classical statistical model,
+and models like logistic regression are widely used to estimate
+probabilities from ad-click prediction to disease risk.
 
-[^logarithm]: The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.
+[^logarithm]: The logarithm of a number less than one is negative, for
+    a number greater than one the logarithm is positive. So if odds
+    are greater than evens (odds-on) the log-odds are positive, if the
+    odds are less than evens (odds-against) the log-odds will be
+    negative.}
 
-This is called a generalized linear model, we can also think of it as estimating the *probability* of a purchase as a nonlinear function of the features (age, latitude) and the parameters (the $\weightScalar$ values). The function is known as the *sigmoid* or [logistic function](https://en.wikipedia.org/wiki/Logistic_regression), thus the name *logistic* regression.}
+\notes{This is called a generalized linear model, we can also think of
+it as estimating the *probability* of a purchase as a nonlinear
+function of the features (age, latitude) and the parameters (the
+$\weightScalar$ values). The function is known as the *sigmoid* or
+[logistic function](https://en.wikipedia.org/wiki/Logistic_regression),
+thus the name *logistic* regression.}
+
+\include{_ml/includes/sigmoid-function.md}
 
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression
 }
-$$ p(\text{bought}) =  \sigmoid{\weightScalar_0 + \weightScalar_1 \text{age} + paramScalar_2 \text{latitude}}.$$
-\notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\weightVector^\top \inputVector = \weightScalar_1 \inputScalar_1 + \weightScalar_2 \inputScalar_2 + \weightScalar_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.}
+$$ p(\text{bought}) =  \sigmoid{\weightScalar_0 + \weightScalar_1 \text{age} + \weightScalar_2 \text{latitude}}.$$
+
+\notes{In the case where we have *features* to help us predict, we
+sometimes denote such features as a vector, $\inputVector$, and we
+then use an inner product between the features and the parameters,
+$\weightVector^\top \inputVector = \weightScalar_1 \inputScalar_1 +
+\weightScalar_2 \inputScalar_2 + \weightScalar_3 \inputScalar_3 ...$,
+to represent the argument of the sigmoid.}
 
 \newslide{Codify Through Mathematical Functions}
 \slides{
