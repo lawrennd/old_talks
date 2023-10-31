@@ -52,7 +52,7 @@ date: 2023-10-23
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
-ppt: 2023-10-03_the-atomic-human.pptx
+ppt: 
 ---
 \define{noSlideTitle}
 
