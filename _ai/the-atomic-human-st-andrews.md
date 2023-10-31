@@ -47,12 +47,11 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-venue: Churchill College Science Society
-date: 2023-10-23
+venue: St Andrews' Distinguished Lecture Series
+date: 2024-03-12
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
-ppt: 
 ---
 \define{noSlideTitle}
 
