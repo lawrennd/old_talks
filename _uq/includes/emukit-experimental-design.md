@@ -51,9 +51,9 @@ $$
 $$
 where $\mu(\inputVector^*)$ and $\sigma^2(\inputVector^*)$ have a closed form solution as we've seen in the earlier lectures (see also @Rasmussen:book06).}
 
-\notes{Note that Gaussian processes are also characterized by hyperparameters, for example in the exponentiated quadratic case we have $\paramVector = \left\{ \alpha, \ell, \dataStd^2 \right\}$ for the scale of the covariance, the lengthscale and the noise variance. Here, for simplicitly we will keep these hyperparameters fixed. However, we will usually either optimize or sample these hyperparameters using the marginal loglikelihood of the GP. 
+\notes{Note that Gaussian processes are also characterized by hyperparameters, for example in the exponentiated quadratic case we have $\paramVector = \left\{ \alpha, \ell, \dataStd^2 \right\}$ for the scale of the covariance, the lengthscale and the noise variance. Here, for simplicity we will keep these hyperparameters fixed. However, we will usually either optimize or sample these hyperparameters using the marginal loglikelihood of the GP. 
 
-In this module we've focussed on Gaussian processes, but we could also use any other model that returns a mean $\mu(\inputVector)$ and variance $\sigma^2(\inputVector)$ on an arbitrary input points $\inputVector$ such as Bayesian neural networks or random forests. In Emukit these different models can also be used by defining a new `ModelWrapper`.
+In this module we've focussed on Gaussian processes, but we could also use any other model that returns a mean $\mu(\inputVector)$ and variance $\sigma^2(\inputVector)$ on arbitrary input points $\inputVector$ such as Bayesian neural networks or random forests. In Emukit these different models can also be used by defining a new `ModelWrapper`.
 
 Here we're going to wrap a GPy model.}
 
@@ -127,7 +127,7 @@ a_{\text{IVR}} & = \int_{\mathbb{X}}[\sigma^2(\inputVector') - \sigma^2(\inputVe
 $$
 \notes{Here $\sigma^2(\inputVector'; \inputVector)$ is the predictive variance at $\inputVector'$ had $\inputVector$ been observed. Thus IVR computes the overall reduction in variance (for all points in $\mathbb{X}$) had $f$ been observed at $\inputVector$.
 
-The finite sum approximation on the right hand side of the equation is usually used because the integral over $\inputVector'$ is not analytic. In that case $\inputVector_i$ are sampled randomly. For a GP model the right hand side simplifies to}
+The finite sum approximation on the right-hand side of the equation is usually used because the integral over $\inputVector'$ is not analytic. In that case $\inputVector_i$ are sampled randomly. For a GP model the right-hand side simplifies to}
 \newslide{}
 
 $$
@@ -160,7 +160,7 @@ mlai.write_figure('experimental-design-acquisition-forrester-00.svg', directory=
 
 \newslide{}
 
-\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-00}{80%}}{The *uncertainty sampling* and *integrated variance reduction* acquisition functions for the Forrester example.}{experimental-design-acquisition-forrester-00}
+\figure{\includediagram{\diagramsDir/uq/experimental-design-acquisition-forrester-00}{80%}}{The uncertainty sampling and integrated variance reduction acquisition functions for the Forrester example.}{experimental-design-acquisition-forrester-00}
 
 \subsection{Evaluating the objective function}
 
