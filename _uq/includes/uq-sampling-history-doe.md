@@ -13,7 +13,7 @@
 }
 \notes{We're introducing you to the optimization and analysis of real-world models through emulation, this domain is part of a broader field known as surrogate modelling.}
 
-\notes{Although we're approaching this from the machine learning perspective, with a computer-scientist's approach, you won't be surprised to find out that this field is not new and there are a range of research groups interested in this domain.}
+\notes{Although we're approaching this from the machine learning perspective, with a computer-scientist's approach, you won't be surprised to find out that this field is not new and there are a diverse range of research communities interested in this domain.}
 
 \notes{We've been focussing on *active* experimental design. In particular, the case where we are sequentially selecting points to run our simulation based on previous results.}
 
