@@ -24,7 +24,7 @@
 
 \notes{**Methods**. Relatively low-level techniques that are aimed that either understanding, quantifying or using uncertainty that the model provides. Examples: Bayesian optimization, experimental design.}
 
-\notes{**Tasks**. High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.}
+\notes{**Tasks**. High level goals that owners of the process/simulator might be interested in. Examples: measure quality of a simulator, explain complex system behavior.}
 
 \notes{Typical workflow that we envision for a user interested in emulation is:
 
@@ -44,19 +44,19 @@
 
 \slides{* The different methods: Bayesian optimization, experimental design.}
 
-\notes{This is the main focus of Emukit. Emukit defines a general sctructure of a decision making method, called OuterLoop, and then offers implementations of few such methods: Bayesian optimization, experimental design. In addition to provide a framework for decision making Emukit provide other tools, like sensitivity analysis, that help to debug and interpret emulators. All methods in Emukit are model-agnostic.}
+\notes{This is the main focus of Emukit. Emukit defines a general structure of a decision-making method, called OuterLoop, and then offers implementations of few such methods: Bayesian optimization, experimental design. In addition to provide a framework for decision making Emukit provide other tools, like sensitivity analysis, that help to debug and interpret emulators. All methods in Emukit are model agnostic.}
 
 \subsection{Models}
 
 \slides{* The probabilistic model that will be used to emulate. Emukit doesn't define these, the user brings their own.}
 
-\notes{Generally speaking, Emukit does not provide modelling capabilities, instead expecting users to bring their own models. Because of the variety of modelling frameworks out there, Emukit does not mandate or make any assumptions about a particular modelling technique or a library. Instead it suggests to implement a subset of defined model interfaces required to use a particular method. Nevertheless, there are a few model-related functionalities in Emukit: - Example models, which give users something to play with to explore Emukit. - Model wrappers, which are designed to help adapting models in particular modelling frameworks to Emukit interfaces. - Multi-fidelity models, implemented based on GPy.}
+\notes{Generally speaking, Emukit does not provide modelling capabilities, instead expecting users to bring their own models. Because of the variety of modelling frameworks out there, Emukit does not mandate or make any assumptions about a particular modelling technique or a library. Instead, it suggests to implement a subset of defined model interfaces required to use a particular method. Nevertheless, there are a few model-related functionalities in Emukit: - Example models, which give users something to play with to explore Emukit. - Model wrappers, which are designed to help adapting models in particular modelling frameworks to Emukit interfaces. - Multi-fidelity models, implemented based on GPy.}
 
 \subsection{Tasks}
 
 \slides{* Still in development: High level goals that owners of the process/simulator might be actually interested in. Examples: measure quality of a simulator, explain complex system behavior.}
 
-\notes{Emukit does not contribute much to this part at the moment. However Emukit team are on lookout for typical use cases for Emukit, and if a reoccuring pattern emerges, it may become a part of the library.}
+\notes{Emukit does not contribute much to this part at the moment. However, the Emukit team are on lookout for typical use cases for Emukit, and if a reoccuring pattern emerges, it may become a part of the library.}
 
 \newslide{Structure}
 
@@ -67,7 +67,7 @@ while stopping condition is not met:
     update model with new observation
 ```
 
-\notes{Emukit is build in a modular way so that each component in this loop can be swapped out. This means that scientists, applied mathematicians, machine learnings, statisticians can swap out the relavant part of their method and build on the undelrying structure. You just need to pick out the part that requires implementation.}
+\notes{Emukit is built in a modular way so that each component in this loop can be swapped out. This means that scientists, applied mathematicians, machine learnings, statisticians can swap out the relevant part of their method and build on the underlying structure. You just need to pick out the part that requires implementation.}
 
 \subsection{Loop}
 \slides{* An abstract class where the different components come together.}
@@ -79,7 +79,7 @@ while stopping condition is not met:
 \slides{* The surrogate model or *emulator*, often a Gaussian process.}
 \notes{All `Emukit` loops need a probabilistic model of the underlying system. Emukit does not provide functionality to build models as there are already many good modelling frameworks available in python. Instead, we provide a way of interfacing third part modelling libraries with Emukit. We already provide a wrapper for using a model created with `GPy`. For instructions on how to include your own model please [see this notebook](https://emukit.readthedocs.io/en/latest/notebooks/Emukit-tutorial-custom-model.html).}
 
-\notes{Different models and modelling frameworks will provide different functionality. For instance a Gaussian process will usually have derivatives of the predictions available but random forests will not. These different functionalities are represented by a set of interfaces which a model implements. The basic interface that all models must implement is `IModel`, which implements functionality to make predictions and update the model but a model may implement any number of other interfaces such as `IDifferentiable` which indicates a model has prediction derivatives available.}
+\notes{Different models and modelling frameworks will provide different functionality. For instance, a Gaussian process will usually have derivatives of the predictions available but random forests will not. These different functionalities are represented by a set of interfaces which a model implements. The basic interface that all models must implement is `IModel`, which implements functionality to make predictions and update the model but a model may implement any number of other interfaces such as `IDifferentiable` which indicates a model has prediction derivatives available.}
 
 \subsection{Candidate Point Calculator}
 
@@ -96,7 +96,7 @@ while stopping condition is not met:
 
 \slides{* The optimization routine we use to optimize the acquisition function. (often this is a non-linear optimizer like L-BFGS [@Byrd:lbfgsb95])}
 
-\notes{The `AcquisitionOptimizer` optimizes the acquisition function to find the point at which the acquisition is a maximum. This will use the acquisition function gradients if they are available. If gradients of the acquisition function are not available it will either estimate them numerically or use a gradient free optimizer.}
+\notes{The `AcquisitionOptimizer` optimizes the acquisition function to find the point at which the acquisition is a maximum. This will use the acquisition function gradients if they are available. If gradients of the acquisition function are not available, it will either estimate them numerically or use a gradient free optimizer.}
 
 \subsection{User Function}
 
@@ -114,5 +114,7 @@ while stopping condition is not met:
 \slides{* How to decide when to stop our cycle of data acquisition from the target function.}
 
 \notes{The `StoppingCondition` class chooses when we should stop collecting points. The most commonly used example is to stop when a set number of iterations have been reached.}
+
+\notes{You can see more of Emukit being put into practice in [this case study on Machine Learning in the Multiverse by Sam Bell](https://mlatcl.github.io/mlphysical/casestudies/machine-learning-multiverse.html).}
 
 \endif
