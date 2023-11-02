@@ -7,7 +7,7 @@
 
 \include{_uq/includes/alex-forrester.md}
 
-\notes{We're going to introduce the experimental design acquisiton functions by looking at the Forrester function [@Forrester-engineering08]}
+\notes{We're going to introduce the experimental design acquisition functions by looking at the Forrester function [@Forrester-engineering08]}
 
 \setupcode{import numpy as np
 
