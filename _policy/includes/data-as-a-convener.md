@@ -23,7 +23,7 @@ importance.}
 \notes{Models, while also of great potential value in externalising
 cognition, can be two complex to have conversations about and they can
 entrench beliefs, triggering *model induced blindness* (a variation on
-Kahneman's *theory induced blindness* [@Kahneman:fastslow11]).}
+Kahneman's *theory induced blindness* [@Kahneman-fastslow11]).}
 
 \newslide{}
 
@@ -41,7 +41,7 @@ for those on the more theoretical side, because mathematical models
 are complex, and require a lot of deep thought. However, when
 communicating with others, unless they have the same in depth
 experience of mathematical modelling as the theoreticians, the models
-do not bring about good information coherehnce. Indeed, many
+do not bring about good information coherehence. Indeed, many
 computational models themselves are so complex now that no individual
 can understand the model whole.}
 
@@ -55,7 +55,7 @@ for convening a multidisciplinary conversation.}{anne-bob-data}
 
 \notes{Fritz Heider referred to happenings that are "*psychologically
 represented* in each of the participants" [@Heider:interpersonal58] as
-a preqequisite for conversation. Data is a route to that psychological
+a prerequisite for conversation. Data is a route to that psychological
 representation.}
 
 \notes{*Note*: my introduction to Fritz Heider was through a talk by
