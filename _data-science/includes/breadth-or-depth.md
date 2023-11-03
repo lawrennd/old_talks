@@ -4,7 +4,7 @@
 
 \subsection{Breadth or Depth Paradox}
 
-\notes{The first challenge we'd like to highlight is the unusual paradoxes of the data society. It is too early to determine whether these paradoxes are fundmental or transient. Evidence for them is still somewhat anecdotal, but they seem worthy of further attention.}
+\notes{The first challenge we'd like to highlight is the unusual paradoxes of the data society. It is too early to determine whether these paradoxes are fundamental or transient. Evidence for them is still somewhat anecdotal, but they seem worthy of further attention.}
 
 \subsubsection{The Paradox of Measurement}
 \slides{* Able to quantify to a greater and greater degree the actions of individuals
@@ -49,7 +49,7 @@
     * *\dataDim* roughly equal to *\numData*?
     * Stratification of populations: batch effects etc.
 }
-\notes{Classical approaches to data analysis made use of many subjects to achieve statistical power. Traditionally, we measure a few things about many people. For example cardiac disease risks can be based on a limited number of factors inmany patients (such as whether the patient smokes, blood pressure, cholesterol levels etc). Because, traditionally, data matrices are stored with individuals in rows and features in columns[^depth-measurement], we refer to this as *depth* of measurement. In statistics this is sometimes known as the *large $p$, small $n$* domain because traditionally $p$ is used to denote the number of features we know about an individual and $n$ is used to denote the number of individuals. 
+\notes{Classical approaches to data analysis made use of many subjects to achieve statistical power. Traditionally, we measure a few things about many people. For example cardiac disease risks can be based on a limited number of factors in many patients (such as whether the patient smokes, blood pressure, cholesterol levels etc). Because, traditionally, data matrices are stored with individuals in rows and features in columns[^depth-measurement], we refer to this as *depth* of measurement. In statistics this is sometimes known as the *large $p$, small $n$* domain because traditionally $p$ is used to denote the number of features we know about an individual and $n$ is used to denote the number of individuals. 
 
 [^depth-measurement]: In statistics this is known as a *design matrix*, representing the design of a study. But in databases, one might think of each patient being in a row, or record of the database.}
 
