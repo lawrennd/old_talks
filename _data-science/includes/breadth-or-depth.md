@@ -4,7 +4,7 @@
 
 \subsection{Breadth or Depth Paradox}
 
-\notes{The first challenge we'd like to highlight is the unusual paradoxes of the data society. It is too early to determine whether these paradoxes are fundmental or transient. Evidence for them is still somewhat anecdotal, but they seem worthy of further attention.}
+\notes{The first challenge we'd like to highlight is the unusual paradoxes of the data society. It is too early to determine whether these paradoxes are fundamental or transient. Evidence for them is still somewhat anecdotal, but they seem worthy of further attention.}
 
 \subsubsection{The Paradox of Measurement}
 \slides{* Able to quantify to a greater and greater degree the actions of individuals
