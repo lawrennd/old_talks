@@ -5,7 +5,7 @@
 
 \section{The Art of Statistics}
 
-\notes{The best book I have found for teaching the skeptical sense of data that underlies the statistician's craft is David Spiegelhalter's *Art of Statistics*.}
+\notes{The statistician's craft is based on humility in front of data and developing the appropriate skeptical thinking around conclusions from data. The best book I've seen for developing that sense is Sir David Spiegelhalter's *Art of Statistics*.}
 
 \aligncenter{\davidSpiegelhalterPicture{15%}}
 
