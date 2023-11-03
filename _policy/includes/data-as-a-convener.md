@@ -55,7 +55,7 @@ for convening a multidisciplinary conversation.}{anne-bob-data}
 
 \notes{Fritz Heider referred to happenings that are "*psychologically
 represented* in each of the participants" [@Heider:interpersonal58] as
-a preqequisite for conversation. Data is a route to that psychological
+a prerequisite for conversation. Data is a route to that psychological
 representation.}
 
 \notes{*Note*: my introduction to Fritz Heider was through a talk by
