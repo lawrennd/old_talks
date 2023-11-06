@@ -17,22 +17,22 @@
 
 \figure{\includepng{\diagramsDir/data-science/1022px-CRISP-DM_Process_Diagram}{50%}}{The CRISP Data Mining Process diagram: it stands for cross industry standard process for data mining. The process was defined in 2000 (@Chapman-step00), well before the modern service-oriented architecture approach to software engineering emerged.}{crisp-dm-diagram}
 
-\notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes, but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
+\notes{There are formal processes designed for, e.g., data mining, but they are not always appropriate for operational science or continuous deployment. One is the CRISP-DM @Chapman-step00 process, which does a nice job of capturing the cyclic nature of these processes but fails to capture the need to build resources that answer questions in real time that occurs in operational science and continuous deployment.}
 
 \define{\terms}{'data mining', 'data science'}
 \define{\initials}{dm-ds}
 
 \include{_data-science/includes/gartner-hype-cycle-base.md}
 
-\notes{We note that the term *data mining* is falling somewhat out of favour, and the CRISP-DM data mining process also feels somewhat dated. In particular software engineering has moved on a great deal since it was defined, with modern software engineering more focused on service oriented architectures. Software design has a pervasive effect on our ability to do data science.}
+\notes{We note that the term *data mining* is falling somewhat out of favour, and the CRISP-DM data mining process also feels somewhat dated. In particular software engineering has moved on a great deal since it was defined, with modern software engineering more focused on service-oriented architectures. Software design has a pervasive effect on our ability to do data science.}
 
-\notes{When thinking about the data science process it is important to consider the *software architectures* that are used in large scale decision making systems and understand what it is that they are bring to help solve these problems.}
+\notes{When thinking about the data science process it is important to consider the *software architectures* that are used in large-scale decision-making systems and understand what it is that they are bring to help solve these problems.}
 
 \notes{A more modern view from the O'Reilly book *Doing Data Science* frames the problem as shown in Figure \ref{data-science-process-oneil}.}
 
 \newslide{}
 
->More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills--—skills that are also necessary for understanding biases in the data, and for debugging logging output from code.
+>More generally, a data scientist is someone who knows how to extract meaning from and interpret data, which requires both tools and methods from statistics and machine learning, as well as being human. She spends a lot of time in the process of collecting, cleaning, and munging data, because data is never clean. This process requires persistence, statistics, and software engineering skills---skills that are also necessary for understanding biases in the data, and for debugging logging output from code.
 >
 > Cathy O'Neil and Rachel Strutt from @ONeil-doing13
 
