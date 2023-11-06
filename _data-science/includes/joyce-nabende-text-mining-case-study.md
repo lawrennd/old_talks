@@ -31,7 +31,7 @@
 
 \figure{\includepng{\diagramsDir/data-science/joyce-nabende-data-science-objective}{90%}}{The objective of the project is to track misinformation and understandperceptions of Ugandan Government's COVID-19 transmission mitigation strategies.}{joyce-nabende-data-science-objective}
 
-\notes{One particular challenge for this project is dealing with a data set with multiple languages. In Uganda, people don't just communicate in English, but they will [code-switch](https://en.wikipedia.org/wiki/Code-switching) or communicate purely in, e.g. Luganda. Tools and resources for dealing with code-switching or the Lugandan language in NLP are much less common than tools for dealing with high resource languages (e.g. German, English, French, Spanish, Mandarin). See @Magueresse-lowresource20 for a review of NLP in low resource languages, multilingual data sets bring their own problems @Aman-dataset20.}
+\notes{One challenge for this project is dealing with a data set with multiple languages. In Uganda, people don't just communicate in English, but they will [code-switch](https://en.wikipedia.org/wiki/Code-switching) or communicate purely in, e.g. Luganda. Tools and resources for dealing with code-switching or the Lugandan language in NLP are much less common than tools for dealing with high resource languages (e.g. German, English, French, Spanish, Mandarin). See @Magueresse-lowresource20 for a review of NLP in low resource languages, multilingual data sets bring their own problems @Aman-dataset20.}
 
 \newslide{}
 
@@ -86,9 +86,9 @@
   e. Misinformation [Not Fake, Fake, Partially Fake, and Others]
 - As part of quality assurance, the data was reviewed by an independent team to ensure that the annotation guidelines were followed.}
 
-\notes{Annotation carried out by seven annotators who could understand both English and Luganda. The data was labeled with the [Doccano](https://github.com/doccano/doccano) text annotation tool. Annotations included the data source, the language, the label, the sentiment and the misinformation status.}
+\notes{Annotation carried out by seven annotators who could understand both English and Luganda. The data was labeled with the [Doccano](https://github.com/doccano/doccano) text annotation tool. Annotations included the data source, the language, the label, the sentiment, and the misinformation status.}
 
-\notes{Quality assurance performed by reviewing data with an independent team for ensuring annotation guidelines were followed.
+\notes{Quality assurance performed by reviewing data with an independent team for ensuring annotation guidelines were followed.}
 
 \newslide{}
 
