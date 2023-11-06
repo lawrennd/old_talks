@@ -106,7 +106,7 @@ for i in range(6):
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
 
 
-\setupplotcode{import matplotlib.pyplot as plt}
+\setupplotcode{import matplotlib.pyplot as plt
 import numpy as np
 import mlai}
 

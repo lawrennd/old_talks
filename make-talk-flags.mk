@@ -28,6 +28,7 @@ CITEFLAGS=--citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
 
+SNIPPETSDIR=$(shell mdfield snippetsdir $(BASE).md)
 DIAGRAMSDIR=$(shell mdfield diagramsdir $(BASE).md)
 WRITEDIAGRAMSDIR=$(shell mdfield writediagramsdir $(BASE).md)
 POSTSDIR=$(shell mdfield postsdir $(BASE).md)
