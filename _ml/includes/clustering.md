@@ -49,14 +49,14 @@
 \setupplotcode{import mlai
 import numpy as np}
 
-\plotcode{def write_plot(counter, caption):
+\helpercode{def write_plot(counter, caption):
     filebase = f"ml/kmeans_clustering_{counter:0>3}"
     plt.savefig(filebase + '.svg')
     f = open(filebase + '.tex', 'w')
     f.write(caption)
-    f.close()
+    f.close()}
     
-fig, ax = plt.subplots(figsize=(5,5))
+\plotcode{fig, ax = plt.subplots(figsize=(5,5))
 fontsize = 20
 
 num_clust_points = 30
