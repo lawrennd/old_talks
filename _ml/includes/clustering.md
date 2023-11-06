@@ -50,7 +50,7 @@
 import numpy as np}
 
 \plotcode{def write_plot(counter, caption):
-    filebase = '\writeDiagramsDir/ml/kmeans_clustering_{counter:0>3}'.format(counter=counter)
+    filebase = f"ml/kmeans_clustering_{counter:0>3}"
     plt.savefig(filebase + '.svg')
     f = open(filebase + '.tex', 'w')
     f.write(caption)
@@ -98,7 +98,7 @@ for i in range(6):
           centres[j, :] = np.mean(Y[ind==j, :], 0)
     c[0].set_data(centres[:, 0], centres[:, 1])
     counter+=1
-    mlai.write_figure(\diagramsDir/ml/kmeans_clustering_{counter:0>3}.svg'.format(counter=counter))
+    mlai.write_figure(f"kmeans_clustering_{counter:0>3}.svg", directory="ml")
     write_plot(counter, 'Allocate each data point to the nearest cluster centre.')}
 
 \setupdisplaycode{import notutils as nu}
