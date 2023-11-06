@@ -11,7 +11,7 @@
 
 \notes{This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are *fragile*.
 
-Our intelligent systems are composed by "pigeonholing" each indvidual task, then substituting with a machine learning model.}
+Our intelligent systems are composed by "pigeonholing" each individual task, then substituting with a machine learning model.}
 
 \newslide{Robust}
 
