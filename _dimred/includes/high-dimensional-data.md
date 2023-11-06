@@ -21,19 +21,22 @@
 
 \setupplotcode{import matplotlib.pyplot as plt
 import numpy as np
-import mlai}
+import mlai
+import pods}
 \plotcode{fig, ax = plt.subplots(figsize=(5,5))
 
-six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='\diagramsDir/ml')
+pods.access.download_url("https://github.com/lawrennd/talks/raw/gh-pages/slides/diagrams/ml/br1561_6.3.pgm",
+                         store_directory="\writeDiagramsDir/ml")
+six_image = mlai.load_pgm("br1561_6.3.pgm", directory ="\writeDiagramsDir/ml")
 rows = six_image.shape[0]
 col = six_image.shape[1]
       
 ax.imshow(six_image,interpolation='none').set_cmap('gray')
-mlai.write_figure('\writeDiagramsDir/dimred/dem_six000.png')
+mlai.write_figure("dem_six000.png", directory="\writeDiagramsDir/dimred/")
 for i in range(3):
     rand_image = np.random.rand(rows, col)<((six_image>0).sum()/float(rows*col))
     ax.imshow(rand_image,interpolation='none').set_cmap('gray')
-    mlai.write_figure('\writeDiagramsDir/dimred/dem_six{i:0>3}.png'.format(i=i+1))}
+    mlai.write_figure('dem_six{i:0>3}.png'.format(i=i+1), directory="\writeDiagramsDir/dimred/")}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
