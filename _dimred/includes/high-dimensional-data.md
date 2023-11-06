@@ -25,9 +25,9 @@ import mlai
 import pods}
 \plotcode{fig, ax = plt.subplots(figsize=(5,5))
 
-pods.access.download_url("https://github.com/lawrennd/talks/raw/gh-pages/slides/diagrams/ml/br1561_6.3.pgm",
-                         store_directory="\writeDiagramsDir/ml")
-six_image = mlai.load_pgm("br1561_6.3.pgm", directory ="\writeDiagramsDir/ml")
+pods.access.download_url("https://github.com/lawrennd/talks/raw/gh-pages/slides/diagrams/dimred/br1561_6.3.pgm",
+                         store_directory="\writeDiagramsDir/dimred")
+six_image = mlai.load_pgm("br1561_6.3.pgm", directory ="\writeDiagramsDir/dimred")
 rows = six_image.shape[0]
 col = six_image.shape[1]
       
@@ -39,9 +39,8 @@ for i in range(3):
     mlai.write_figure('dem_six{i:0>3}.png'.format(i=i+1), directory="\writeDiagramsDir/dimred/")}
 
 \setupdisplaycode{from ipywidgets import IntSlider
-import pods}
-\setupdisplaycode{import notutils as nu}
-\displaycode{nu.display_plots('dem_six{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
+import notutils as nu}
+\displaycode{nu.display_plots('dem_six{counter:0>3}.png', directory='\writeDiagramsDir/dimred', counter=IntSlider(0, 0, 3, 1))}
 
 
 \slides{\define{width}{40%}
@@ -68,7 +67,7 @@ import pods}
 
 \setupcode{from scipy.misc import imrotate}
 
-\code{six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='\diagramsDir/dimred')
+\code{six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='\writeDiagramsDir/dimred')
 six_image = np.hstack([np.zeros((rows, 3)), six_image, np.zeros((rows, 4))])
 dim_one = np.asarray(six_image.shape)
 angles = range(360)
@@ -82,7 +81,7 @@ for angle in angles:
     Y[i, :] = crop_image.flatten()}
 
 \setupdisplaycode{import notutils as nu}
-\displaycode{nu.display_plots('\diagramsDir/dimred/dem_six_rotate{counter:0>3}.png', directory='\writeDiagramsDir/ml', counter=(0, 6))}
+\displaycode{nu.display_plots('dem_six_rotate{counter:0>3}.png', directory='\writeDiagramsDir/dimred', counter=(0, 6))}
 
 \slides{\define{width}{40%}
 \startanimation{dem-six-rotate}{1}{6}

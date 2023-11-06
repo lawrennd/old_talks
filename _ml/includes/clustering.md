@@ -102,7 +102,7 @@ for i in range(6):
     write_plot(counter, 'Allocate each data point to the nearest cluster centre.')}
 
 \setupdisplaycode{import notutils as nu}
-\displaycode{nu.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='\writeDiagramsDir/ml', 
+\displaycode{nu.display_plots("kmeans_clustering_{counter:0>3}.svg", directory="\writeDiagramsDir/ml", 
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
 
 
@@ -126,7 +126,7 @@ ax.plot(Y[:, 0], Y[:, 1], 'rx')
 ax.set_xlabel('$y_1$', fontsize=20)
 ax.set_ylabel('$y_2$', fontsize=20)
 
-mlai.write_figure("cluster_data00.svg', directory="\writeDiagramsDir/ml/")
+mlai.write_figure("cluster_data00.svg", directory="\writeDiagramsDir/ml/")
 pi_vals = np.linspace(-np.pi, np.pi, 200)[:, None]
 for i in range(num_centres):
     ax.plot(centres[i, 0], centres[i, 1], 'o', markersize=5, color=[0, 0, 0], linewidth=2)
