@@ -51,7 +51,7 @@ ipynb: False
 \notes{For your assignment in this unit, we'd like you to base your submission around the Fynesse framework[^other]. You can do this by forking the Fynesse template, or simply creating a python library which reflects that organisational structure.}
 
 
-[^other]: If you find another approach to data science that also takes into account these aspects please feel to use that apparoach. We've designed this framework to help you think through the data science process and ensure that your aretefacts are more reusable.}
+[^other]: If you find another approach to data science that also takes into account these aspects, please feel to use that apparoach. We've designed this framework to help you think through the data science process and ensure that your aretefacts are more reusable.}
 
 \subsection{Conclusions}
 
@@ -64,7 +64,7 @@ ipynb: False
 
 \notes{The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we've given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.}
 
-\notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.}
+\notes{Recommendations from the DELVE Data report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs, we are better prepared to deal with the questions we face.}
 
 \newslide{Q&A}
 

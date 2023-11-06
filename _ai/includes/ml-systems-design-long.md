@@ -16,11 +16,11 @@
 
 \notes{This is also the classical approach to automation, but in traditional automation we also ensure the *environment* in which the system operates becomes controlled. For example, trains run on railway lines, fast cars run on motorways, goods are manufactured in a controlled factory environment. 
 
-The difference with modern automated decision making systems is our intention is to deploy them in the *uncontrolled* environment that makes up our own world.}
+The difference with modern automated decision-making systems is our intention is to deploy them in the *uncontrolled* environment that makes up our own world.}
 
-\notes{This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.
+\notes{This exposes us to either unforeseen circumstances or adversarial action. And yet it is unclear our intelligent systems are capable of adapting to this.
 
-We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the "intelligent" agent seem foolish. }
+We become exposed to mischief and adversaries. Adversaries intentionally may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10-year-old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the "intelligent" agent seem foolish. }
 
 \newslide{Machine Learning Systems Design}
 
@@ -40,11 +40,11 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 
 \notes{Stuxnet was a virus designed to infect the Iranian nuclear program's Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like the centrifugal governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller. }
 
-\notes{Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast. }
+\notes{Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occurring. As a result, the centrifuges destroyed themselves through spinning too fast. }
 
 \notes{This is equivalent to detaching the governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.}
 
-\notes{That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.}
+\notes{That is the effect of an adversary on an intelligent system, but even without advesaries, the mischief of a 10-year-old can confuse our AIs.}
 
 
 \include{_ai/includes/intelligent-system-paolo.md}
