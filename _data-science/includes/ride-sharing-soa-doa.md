@@ -17,7 +17,7 @@ maintained by rigorous standards around *testing* of software systems.}
 
 \newslide{Ride Sharing: Data Oriented}
 
-\figure{\includediagram{\diagramsDir/data-science/ride-share-service-doa}{80%}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.}{ride-share-service-doa}
+\figure{\includediagram{\diagramsDir/data-science/ride-share-service-doa}{80%}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programmatically determine the factor graph which gives the thread through the model.}{ride-share-service-doa}
 
 \notes{In data driven decision-making systems, the quality of decision-making
 is determined by the quality of the data. We need to extend the notion
@@ -40,12 +40,12 @@ and the social responsibility of ML systems.}
 \notes{Software development proceeds with a *test-oriented*
 culture. One where tests are written before software, and software is
 not incorporated in the wider system until all tests pass. We must
-apply the same standards of care to our ML systems, although for ML we need statistical tests for quality, fairness and consistency within the
+apply the same standards of care to our ML systems, although for ML we need statistical tests for quality, fairness, and consistency within the
 environment. Fortunately, the main burden of this testing need not
 fall to the engineers themselves: through leveraging *classical
 statistics* and *emulation* we will automate the creation and
 redeployment of these tests across the software ecosystem, we call
-this *ML hypervision* (WP5 \textsection \ref{sec:hypervision}).
+this *ML hypervision*.
 
 Modern AI can be based on ML models with many millions of parameters,
 trained on very large data sets. In ML, strong emphasis is placed on
@@ -60,7 +60,7 @@ boxes' which make decisions that are not explainable.[^dark-secret]
 
 \figure{\includediagram{\diagramsDir/data-science/ride-share-service-doa-hypothetical}{80%}}{Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.}{ride-share-service-doa-hypothetical}
 
-\notes{For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multilple times. Let's look at the decisions we need along with some design criteria.
+\notes{For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multiple times. Let's look at the decisions we need along with some design criteria.
 
 1. Driver Availability: Estimate time to arrival for Anne's ride using Anne's location and local available car locations. Latency 50 milliseconds
 2. Cost Estimate: Estimate cost for journey using Anne's destination, location and local available car current destinations and availability. Latency 50 milliseconds
