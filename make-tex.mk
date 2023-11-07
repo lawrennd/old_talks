@@ -1,5 +1,5 @@
 %.notes.tex.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to tex --code sparse --diagrams-dir diagrams --edit-links ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to tex --code sparse --snippets-path ${SNIPPETSDIR} --diagrams-dir diagrams --edit-links ${PPFLAGS} 
 	# Fix percentage width for latex.
 	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' $@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@

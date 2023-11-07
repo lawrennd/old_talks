@@ -41,12 +41,14 @@ SESSION=$(shell mdfield session $(BASE).md)
 
 
 
-DEPS=$(shell dependencies inputs $(BASE).md)
-DIAGDEPS=$(shell dependencies diagrams $(BASE).md)
-BIBDEPS=$(shell dependencies bibinputs $(BASE).md)
-DOCXDEPS=$(shell dependencies docxdiagrams $(BASE).md)
-PPTXDEPS=$(shell dependencies docxdiagrams $(BASE).md)
-TEXDEPS=$(shell dependencies texdiagrams $(BASE).md)
+DEPS=$(shell dependencies inputs $(BASE).md --snippets-path $(SNIPPETSDIR))
+DIAGDEPS=$(shell dependencies diagrams $(BASE).md --snippets-path $(SNIPPETSDIR))
+BIBDEPS=$(shell dependencies bibinputs $(BASE).md --snippets-path $(SNIPPETSDIR))
+DOCXDEPS=$(shell dependencies docxdiagrams $(BASE).md --snippets-path $(SNIPPETSDIR))
+PPTXDEPS=$(shell dependencies docxdiagrams $(BASE).md --snippets-path $(SNIPPETSDIR))
+TEXDEPS=$(shell dependencies texdiagrams $(BASE).md --snippets-path $(SNIPPETSDIR))
+
+ALL=$(shell dependencies all $(BASE).md --snippets-path $(SNIPPETSDIR))
 
 POSTFLAGS=$(shell flags post $(BASE))
 PPTXFLAGS=$(shell flags pptx $(BASE))
@@ -54,4 +56,3 @@ DOCXFLAGS=$(shell flags docx $(BASE))
 SLIDEFLAGS=$(shell flags reveal $(BASE))
 
 
-ALL=$(shell dependencies all $(BASE).md)

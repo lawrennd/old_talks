@@ -7,22 +7,25 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 layout: lecture
-room: LT1
+room: LT2
 venue: William Gates Building
 talkcss: https://inverseprobability.com/assets/css/talks.css
-postsdir: ../../../mlatcl/mlphysical/_lectures/
-slidesdir: ../../../mlatcl/mlphysical/slides/
-notesdir: ../../../mlatcl/mlphysical/_notes/
-notebooksdir: ../../../mlatcl/mlphysical/_notebooks/
+postsdir: ../../../mlatcl/advds/_lectures/
+slidesdir: ../../../mlatcl/advds/slides/
+notesdir: ../../../mlatcl/advds/_notes/
+notebooksdir: ../../../mlatcl/advds/_notebooks/
+practicalsdir: ../../../mlatcl/advds/_practicals/
+snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .
-scriptsdir: ../scripts/
+scriptsdir: ./scripts/
 diagramsdir: ./slides/diagrams/
 transition: None
-baseurl: "mlphysical/" # the subpath of your site, e.g. /blog/
+baseurl: "advds/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
-  directory: _mlphysical
+  directory: _advds
+transition: None
   
