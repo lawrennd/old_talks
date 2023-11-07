@@ -1,0 +1,284 @@
+@string{phdthesis = {PhD Theses}}
+
+@string{article = {Journal Papers}}
+@string{book = {Books}}
+@string{techreport = {Technical Reports}}
+@string{unpublished = {Submitted Papers}}
+@string{inproceedings = {Refereed Conference Papers}}
+@string{proceedings = {Proceedings}}
+@string{incollection = {In Collected Volumes}}
+@string{collection = {Volumes of Collected Papers}}
+@string{misc = {Miscellaneous}}
+@string{patent = {Patents}}
+@string{talk = {Talks}}
+@string{poster = {Posters}}
+@string{mainheading = {Machine Learning Publications}}
+@String{bioinf = {Bioinformatics}}
+@String{bmcbioinf = {BMC Bioinformatics}}
+
+@string{RMP =      {Reviews of Modern Physics}}
+@string{ieeecomp = {IEEE Computer Society Press}}
+@string{pCVPR =    {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition}}
+@string{jasa = {Journal of the American Statistical Association}}
+@string{icml =     {Proceedings of the International Conference in
+                   Machine Learning}}
+@string{auai =      {AUAI Press}}
+@string{uai =      {Uncertainty in Artificial Intelligence}}
+@string{icann =    {International Conference on Artificial Neural Networks}}
+@String{jmbcell = {Mol. Biol. Cell.}}
+@String{pnasusa = {Proc. Natl. Acad. Sci. USA}}
+@String{jair = {Journal of Artificial Intelligence Research}}
+@String{jmlr = {Journal of Machine Learning Research}}
+@String{lncs = {Lecture Notes in Computer Science}}
+@string{nips =     {Advances in Neural Information Processing Systems}}
+@string{NC =       {Neural Computation}}
+@string{ML =       {Machine Learning}}
+@string{NN =       {Neural Networks}}
+@string{NW =       {Network: Computation in Neural Systems}}
+@string{IJNS =     {International Journal of Neural Systems}}
+@string{PRa =      {Physical Review A}}
+@string{PRL =      {Physical Review Letters}}
+@string{EPL =      {Europhysics Letters}}
+@string{icassp =   {International Conference on Acoustics, Speech and Signal Processing}}
+@string{IEEE =     {IEEE Transactions on Neural Networks}}
+@string{TIT =      {IEEE Transactions on Information Theory}}
+@string{TKDE =     {IEEE Transactions on Knowledge and Data Engineering}}
+@string{AMS =      {Annals of Mathematical Statistics}}
+@string{PAMI =     {IEEE Transactions on Pattern Analysis and
+                   Machine Intelligence}}
+@string{DOKLADY =  {Doklady Akademiia Nauk SSSR}}
+@string{network =  {Network: Computation in Neural Systems}}
+@string{ijcnn =    {Proceedings of the International Joint Conference on
+                   Neural Networks}}
+
+@string{addison =  {Addison-Wesley}}
+@string{mcgraw =   {McGraw-Hill}}
+@string{nholland = {North Holland}}
+@string{ams = {AMS}}
+@string{springer = {Springer-Verlag}}
+@string{harvard =      {Harvard University Press}}
+@string{mit =      {MIT Press}}
+@string{cup =      {Cambridge University Press}}
+@string{mk =       {Morgan Kauffman}}
+@string{wiley =    {John Wiley and Sons}}
+@string{JRSSb =    {Journal of the Royal Statistical Society, B}}
+@string{JMB =    {Journal of Molecular Biology}}
+
+
+@INCOLLECTION{MacKay:gpintroduction98,
+  author = {David J. C. {MacKay}},
+  title = {Introduction to {G}aussian {P}rocesses},
+  pages = {133--166},
+  abstract = {Feedforward neural networks such as multilayer perceptrons are popular
+	tools for nonlinear regression and classification problems. From
+	a Bayesian perspective, a choice of a neural network model can be
+	viewed as defining a prior probability distribution over non-linear
+	functions, and the neural network's learning process can be interpreted
+	in terms of the posterior probability distribution over the unknown
+	function. (Some learning algorithms search for the function with
+	maximum posterior probability and other Monte Carlo methods draw
+	samples from this posterior probability). In the limit of large but
+	otherwise standard networks, \cite{Neal:book96} has shown that the
+	prior distribution over non-linear functions implied by the Bayesian
+	neural network falls in a class of probability distributions known
+	as Gaussian processes. The hyperparameters of the neural network
+	model determine the characteristic lengthscales of the Gaussian process.
+	Neal's observation motivates the idea of discarding parameterized
+	networks and working directly with Gaussian processes. Computations
+	in which the parameters of the network are optimized are then replaced
+	by simple matrix operations using the covariance matrix of the Gaussian
+	process. In this chapter I will review work on this idea by \cite{Williams:Gaussian96},
+	\cite{Neal:montecarlogp97}, \cite{Barber:Gaussian97} and \cite{Gibbs:variational00},
+	and will assess whether, for supervised regression and classification
+	tasks, the feedforward network has been superceded.},
+  crossref = {Bishop:neural98},
+  group = {gp},
+  linkpsgz = {http://www.cs.toronto.edu/~mackay/gpB.ps.gz}
+}
+@InProceedings{Hensman:bigdata13,
+  author = 	 {James Hensman and Nicol\'o Fusi and Neil D. Lawrence},
+  title = 	 {{G}aussian Processes for Big Data},
+  title = uai,
+  year = {2013},
+  editor = {Ann Nicholson and Padhraic Smyth},
+  volume = {29},
+  publisher = auai,
+  booktitle = uai,
+  linkpdf =	 {http://auai.org/uai2013/prints/papers/244.pdf},
+}
+
+@ARTICLE{McCulloch:neuron43,
+  author = {Warren S. McCulloch and Walter Pitts},
+  title = {A Logical Calculus of the Ideas Immanent in Nervous Activity},
+  journal = {Bulletin of Mathematical Biophysics},
+  year = {1943},
+  volume = {5},
+  pages = {115--133},
+  pdf = {https://pdfs.semanticscholar.org/5272/8a99829792c3272043842455f3a110e841b1.pdf},
+  abstract = {Because of the "all-or-none" character of nervous activity, neural
+events and the relations among them can be treated by means of propositional
+logic. It is found that the behavior of every net can be described
+in these terms, with the addition of more complicated logical means for
+nets containing circles; and that for any logical expression satisfying
+certain conditions, one can find a net behaving in the fashion it describes.
+It is shown that many particular choices among possible neurophysiological
+assumptions are equivalent, in the sense that for every net behaving
+under one assumption, there exists another net which behaves under
+the other and gives the same results, although perhaps not in the
+same time. Various applications of the calculus are discussed. }
+}
+
+@incollection{Snoek:practical12,
+title = {Practical Bayesian Optimization of Machine Learning Algorithms},
+author = {Snoek, Jasper and Larochelle, Hugo and Adams, Ryan P},
+booktitle = {Advances in Neural Information Processing Systems 25},
+editor = {F. Pereira and C. J. C. Burges and L. Bottou and K. Q. Weinberger},
+pages = {2951--2959},
+year = {2012},
+publisher = {Curran Associates, Inc.},
+url = {http://papers.nips.cc/paper/4522-practical-bayesian-optimization-of-machine-learning-algorithms.pdf}
+}
+@Article{Lawrence:pnpca05,
+  author =	 {Neil D. Lawrence},
+  title =	 {Probabilistic Non-linear Principal Component
+                  Analysis with {G}aussian Process Latent Variable
+                  Models},
+  journal =	 jmlr,
+  year =	 2005,
+  volume =	 6,
+  pages =	 {1783--1816},
+  month =	 11,
+  pdf = {http://www.jmlr.org/papers/volume6/lawrence05a/lawrence05a.pdf},
+  abstract =	 {Summarising a high dimensional data set with a low
+                  dimensional embedding is a standard approach for
+                  exploring its structure. In this paper we provide an
+                  overview of some existing techniques for discovering
+                  such embeddings. We then introduce a novel
+                  probabilistic interpretation of principal component
+                  analysis (PCA) that we term dual probabilistic PCA
+                  (DPPCA). The DPPCA model has the additional
+                  advantage that the linear mappings from the embedded
+                  space can easily be non-linearised through Gaussian
+                  processes. We refer to this model as a Gaussian
+                  process latent variable model (GP-LVM). Through
+                  analysis of the GP-LVM objective function, we relate
+                  the model to popular spectral techniques such as
+                  kernel PCA and multidimensional scaling. We then
+                  review a practical algorithm for GP-LVMs in the
+                  context of large data sets and develop it to also
+                  handle discrete valued data and missing
+                  attributes. We demonstrate the model on a range of
+                  real-world and artificially generated data sets.}
+}
+@article{Kennedy:code00,
+ ISSN = {00063444},
+ URL = {http://www.jstor.org/stable/2673557},
+ abstract = {We consider prediction and uncertainty analysis for complex computer codes which can be run at different levels of sophistication. In particular, we wish to improve efficiency by combining expensive runs of the most complex versions of the code with relatively cheap runs from one or more simpler approximations. A Bayesian approach is described in which prior beliefs about the codes are represented in terms of Gaussian processes. An example is presented using two versions of an oil reservoir simulator.},
+ author = {M. C. Kennedy and A. O'Hagan},
+ journal = {Biometrika},
+ number = {1},
+ pages = {1-13},
+ publisher = {[Oxford University Press, Biometrika Trust]},
+ title = {Predicting the Output from a Complex Computer Code When Fast Approximations Are Available},
+ volume = {87},
+ year = {2000}
+}
+@ARTICLE{LeGratiet:cokriging12,
+   author = {{Le Gratiet}, L.},
+    title = "{Recursive co-kriging model for Design of Computer experiments with multiple levels of fidelity with an application to hydrodynamic}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1210.0686},
+ primaryClass = "math.ST",
+ keywords = {Mathematics - Statistics Theory},
+     year = 2012,
+    month = oct,
+   adsurl = {http://adsabs.harvard.edu/abs/2012arXiv1210.0686L},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@ARTICLE{Kandasamy:multifidelity16,
+   author = {{Kandasamy}, K. and {Dasarathy}, G. and {Oliva}, J.~B. and {Schneider}, J. and 
+	{Poczos}, B.},
+    title = "{Multi-fidelity Gaussian Process Bandit Optimisation}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1603.06288},
+ primaryClass = "stat.ML",
+ keywords = {Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Learning},
+     year = 2016,
+    month = mar,
+   adsurl = {http://adsabs.harvard.edu/abs/2016arXiv160306288K},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+@inproceedings{Alonso:virtual17,
+  title = {Virtual vs. {R}eal: Trading Off Simulations and Physical Experiments in Reinforcement Learning with {B}ayesian Optimization},
+  author = {Marco Alonso and Felix Berkenkamp and Philipp Hennig and Schoellig, Angela P. and Krause, Andreas and Schaal, Stefan and Trimpe, Sebastian},
+  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  pages = {1557-1563},
+  month = may,
+  year = {2017},
+  month_numeric = {5}
+}
+
+@InProceedings{Duvenaud:pathologies14,
+  title = 	 {{Avoiding pathologies in very deep networks}},
+  author = 	 {David Duvenaud and Oren Rippel and Ryan Adams and Zoubin Ghahramani},
+  booktitle = 	 {Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics},
+  pages = 	 {202--210},
+  year = 	 {2014},
+  editor = 	 {Samuel Kaski and Jukka Corander},
+  volume = 	 {33},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Reykjavik, Iceland},
+  month = 	 {22--25 Apr},
+  publisher = 	 {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v33/duvenaud14.pdf},
+  url = 	 {http://proceedings.mlr.press/v33/duvenaud14.html},
+  abstract = 	 {Choosing appropriate architectures and regularization strategies of deep networks is crucial to good predictive performance.  To shed light on this problem, we analyze the analogous problem of constructing useful priors on compositions of functions.  Specifically, we study the deep Gaussian process, a type of infinitely-wide, deep neural network.  We show that in standard architectures, the representational capacity of the network tends to capture fewer degrees of freedom as the number of layers increases, retaining only a single degree of freedom in the limit.  We propose an alternate network architecture which does not suffer from this pathology.  We also examine deep covariance functions, obtained by composing infinitely many feature transforms.  Lastly, we characterize the class of models obtained by performing dropout on Gaussian processes.}
+}
+
+
+
+
+@article{Bengio:deep09,
+ author = {Yoshua Bengio},
+ title = {{Learning Deep Architectures for AI}},
+ journal = {Found. Trends Mach. Learn.},
+ issue_date = {January 2009},
+ volume = {2},
+ number = {1},
+ month = jan,
+ year = {2009},
+ issn = {1935-8237},
+ pages = {1--127},
+ numpages = {127},
+ doi = {10.1561/2200000006},
+ acmid = {1658424},
+ publisher = {Now Publishers Inc.},
+ address = {Hanover, MA, USA},
+} 
+
+@ARTICLE{Hinton:fast06,
+    author = {Geoffrey E. Hinton and Simon Osindero},
+    title = {A fast learning algorithm for deep belief nets},
+    journal = {Neural Computation},
+    year = {2006},
+    volume = {18},
+    pages = {2006}
+}
+
+@INPROCEEDINGS{Salakhutdinov:quantitative08,
+  author = {Ruslan Salakhutdinov and Iain Murray},
+  title = {On the Quantitative Analysis of Deep Belief Networks},
+  pages = {872--879},
+  year = {2008},
+  editor = {Sam Roweis and Andrew McCallum},
+  volume = {25},
+  publisher = {Omnipress},
+  booktitle = icml
+}
+
+
+
+

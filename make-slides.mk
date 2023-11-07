@@ -1,8 +1,8 @@
 %.slides.pptx.markdown: %.md ${PPTXDEPS}
-	${PP} $< -o $@  --to pptx --format slides --code none ${PPFLAGS} --snippets-path ${SNIPPETSDIR} --diagrams-dir ${DIAGRAMSDIR}  --replace-notation
+	${PP} $< -o $@ --to pptx --format slides --code none ${PPFLAGS} --diagrams-dir ../slides/diagrams  --replace-notation
 
 %.slides.html.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} --snippets-path ${SNIPPETSDIR} --replace-notation
+	${PP} $< -o $@ --to html --format slides --code none ${PPFLAGS} --replace-notation
 
 
 ${BASE}.slides.html: ${BASE}.slides.html.markdown ${BIBDEPS}

@@ -1,11 +1,11 @@
 %.notes.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --snippets-path ${SNIPPETSDIR} --write-diagrams-dir ${WRITEDIAGRAMSDIR} --to ipynb --code ipynb --replace-notation --edit-links --exercises ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --write-diagrams-dir ${WRITEDIAGRAMSDIR} --to ipynb --code ipynb --replace-notation --edit-links --exercises ${PPFLAGS} 
 
 %.full.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to ipynb --code full --snippets-path ${SNIPPETSDIR} --edit-links --replace-notation ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to ipynb --code full --edit-links --replace-notation ${PPFLAGS} 
 
 %.slides.ipynb.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format slides --to ipynb --snippets-path ${SNIPPETSDIR} ${PPFLAGS} 
+	${PP} $< -o $@ --format slides --to ipynb ${PPFLAGS} 
 
 
 ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown

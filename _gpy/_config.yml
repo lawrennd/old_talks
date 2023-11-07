@@ -1,0 +1,24 @@
+layout: notebook
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: http://inverseprobability.com
+ipynb: True
+reveal: False
+postsdir: ../../../lawrennd/gpy-gallery/_gallery/
+notebooksdir: ../../../lawrennd/gpy-gallery/_notebooks/
+slidesdir: ../../../lawrennd/gpy-gallery/assets/diagrams/
+diagramsdir: assets/diagrams/
+baseurl: "gpy-gallery/" # the subpath of your site, e.g. /blog/
+url: "https://inverseprobability.com/" # the base hostname & protocol for your site
+writediagramsdir: .
+transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _gpy

@@ -1,0 +1,24 @@
+layout: dataset
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: http://inverseprobability.com
+ipynb: True
+reveal: False
+postsdir: ../../../lawrennd/ods/_datasets/
+notebooksdir: ../../../lawrennd/ods/notebooks/pods/datasets/
+slidesdir: ../../../lawrennd/ods/assets/
+diagramsdir: ./slides/diagrams/
+writediagramsdir: .
+baseurl: "talks/" # the subpath of your site, e.g. /blog/
+url: "https://inverseprobability.com/" # the base hostname & protocol for your site
+transition: None
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _datasets

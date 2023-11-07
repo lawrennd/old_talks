@@ -1,9 +1,9 @@
 
 %.plots.py.markdown: %.md ${DEPS}
-	${PP} $< -o $@  --snippets-path ${SNIPPETSDIR} --format code --to python --code plot ${PPFLAGS} 
+	${PP} $< -o $@ --format code --to python --code plot ${PPFLAGS} 
 
 %.all.py.markdown: %.md ${DEPS}
-	${PP} $< -o $@  --snippets-path ${SNIPPETSDIR} --format code --to python --code diagnostic ${PPFLAGS} 
+	${PP} $< -o $@ --format code --to python --code diagnostic ${PPFLAGS} 
 
 ${BASE}.py: ${BASE}.plots.py.markdown
 	cp $< $@

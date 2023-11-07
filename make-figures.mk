@@ -1,5 +1,5 @@
 %.svg: %.svgi
-	${PP} $< -o $@ --snippets-path ${SNIPPETSDIR} --format slides --to svg ${PPFLAGS} --include-before-body ../svgi-includes.gpp  --no-header
+	${PP} $< -o $@ --format slides --to svg ${PPFLAGS} --include-before-body ../svgi-includes.gpp  --no-header
 
 %.pdf: %.svg
 	${INKSCAPE} $< --export-filename=$@ 
