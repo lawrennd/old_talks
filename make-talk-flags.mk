@@ -54,4 +54,4 @@ DOCXFLAGS=$(shell flags docx $(BASE))
 SLIDEFLAGS=$(shell flags reveal $(BASE))
 
 
-ALL=$(shell dependencies all $(BASE).md)
+ALL=$(shell dependencies all $(BASE).md --snippets-path $(SNIPPETSDIR))
