@@ -76,7 +76,7 @@ categories:
     \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 $$</span><br /></p>
-<h2 id="overfitting-edit">Overfitting <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/overfitting-low-rank.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/overfitting-low-rank.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="overfitting-edit">Overfitting <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/overfitting-low-rank.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/overfitting-low-rank.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One potential problem is that as the number of nodes in two adjacent layers increases, the number of parameters in the affine transformation between layers, <span class="math inline">$\mappingMatrix$</span>, increases. If there are <span class="math inline"><em>k</em><sub><em>i</em> − 1</sub></span> nodes in one layer, and <span class="math inline"><em>k</em><sub><em>i</em></sub></span> nodes in the following, then that matrix contains <span class="math inline"><em>k</em><sub><em>i</em></sub><em>k</em><sub><em>i</em> − 1</sub></span> parameters, when we have layer widths in the 1000s that leads to millions of parameters.</p>
 <p>One proposed solution is known as <em>dropout</em> where only a sub-set of the neural network is trained at each iteration. An alternative solution would be to reparameterize <span class="math inline">$\mappingMatrix$</span> with its <em>singular value decomposition</em>. <br /><span class="math display">$$
   \mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
@@ -96,7 +96,7 @@ $$</span><br /></p>
 <p>Figure: Pictorial representation of the low rank form of the matrix <span class="math inline">$\mappingMatrix$</span>.</p>
 </div>
 </div>
-<h2 id="bottleneck-layers-in-deep-neural-networks-edit">Bottleneck Layers in Deep Neural Networks <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="bottleneck-layers-in-deep-neural-networks-edit">Bottleneck Layers in Deep Neural Networks <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</a></code></pre></div>
 <div class="figure">
 <div id="deep-nn-bottleneck-figure" class="figure-frame">
@@ -129,7 +129,7 @@ $$</span><br /></p>
   \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
 \end{align}
 $$</span><br /></p>
-<h2 id="cascade-of-gaussian-processes-edit">Cascade of Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/cascade-of-gps.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/cascade-of-gps.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="cascade-of-gaussian-processes-edit">Cascade of Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/cascade-of-gps.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/cascade-of-gps.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Now if we replace each of these neural networks with a Gaussian process. This is equivalent to taking the limit as the width of each layer goes to infinity, while appropriately scaling down the outputs.</p>
 <p><br /><span class="math display">$$
 \begin{align}
@@ -139,9 +139,9 @@ $$</span><br /></p>
   \dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
 \end{align}
 $$</span><br /></p>
-<h1 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<h1 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <!-- No slide titles in this context -->
-<h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="figure">
 <div id="deep-face-figure" class="figure-frame">
 <div class="centered" style="">
@@ -156,7 +156,7 @@ $$</span><br /></p>
 </div>
 </div>
 <p>The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
-<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="figure">
 <div id="early-pinball-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -238,7 +238,7 @@ $$</span><br /></p>
 <p>Figure: More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.</p>
 </div>
 </div>
-<h2 id="why-deep-edit">Why Deep? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/process-composition.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/process-composition.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="why-deep-edit">Why Deep? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/process-composition.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/process-composition.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>If the result of composing many functions together is simply another function, then why do we bother? The key point is that we can change the class of functions we are modeling by composing in this manner. A Gaussian process is specifying a prior over functions, and one with a number of elegant properties. For example, the derivative process (if it exists) of a Gaussian process is also Gaussian distributed. That makes it easy to assimilate, for example, derivative observations. But that also might raise some alarm bells. That implies that the <em>marginal derivative distribution</em> is also Gaussian distributed. If that’s the case, then it means that functions which occasionally exhibit very large derivatives are hard to model with a Gaussian process. For example, a function with jumps in.</p>
 <p>A one off discontinuity is easy to model with a Gaussian process, or even multiple discontinuities. They can be introduced in the mean function, or independence can be forced between two covariance functions that apply in different areas of the input space. But in these cases we will need to specify the number of discontinuities and where they occur. In otherwords we need to <em>parameterise</em> the discontinuities. If we do not know the number of discontinuities and don’t wish to specify where they occur, i.e. if we want a non-parametric representation of discontinuities, then the standard Gaussian process doesn’t help.</p>
 <h2 id="stochastic-process-composition">Stochastic Process Composition</h2>
@@ -256,7 +256,7 @@ $$</span><br /></p>
 <p>Figure: More generally we aren’t constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.</p>
 </div>
 </div>
-<h2 id="difficulty-for-probabilistic-approaches-edit">Difficulty for Probabilistic Approaches <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_dimred/includes/non-linear-difficulty.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_dimred/includes/non-linear-difficulty.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="difficulty-for-probabilistic-approaches-edit">Difficulty for Probabilistic Approaches <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_dimred/includes/non-linear-difficulty.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_dimred/includes/non-linear-difficulty.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The challenge for composition of probabilistic models is that you need to propagate a probability densities through non linear mappings. This allows you to create broader classes of probability density. Unfortunately it renders the resulting densities <em>intractable</em>.</p>
 <div class="figure">
 <div id="nonlinear-mapping-3d-plot-figure" class="figure-frame">
@@ -294,7 +294,7 @@ $$</span><br /></p>
 <p>Figure: A Gaussian density over the input of a non linear function leads to a very non Gaussian output. Here the output is multimodal.</p>
 </div>
 </div>
-<h2 id="standard-variational-approach-fails-edit">Standard Variational Approach Fails <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gplvm/includes/variational-bayes-gplvm-long.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gplvm/includes/variational-bayes-gplvm-long.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="standard-variational-approach-fails-edit">Standard Variational Approach Fails <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_gplvm/includes/variational-bayes-gplvm-long.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_gplvm/includes/variational-bayes-gplvm-long.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Standard variational bound has the form: <br /><span class="math display">$$
 \likelihoodBound = \expDist{\log p(\dataVector|\latentMatrix)}{q(\latentMatrix)} + \KL{q(\latentMatrix)}{p(\latentMatrix)}
@@ -348,7 +348,7 @@ $$</span><br /> which can be computed analytically for some covariance functions
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="im">import</span> pods</a></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-Linear-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, </a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</a></code></pre></div>
-<h2 id="stacked-pca-edit">Stacked PCA <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-pca.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-pca.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="stacked-pca-edit">Stacked PCA <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/stacked-pca.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/stacked-pca.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="stack-pca-sample-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-4.svg" width="20%" style=" ">
@@ -383,7 +383,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 \vMatrix &amp; \vMatrix   \weightMatrix_1^\top  &amp; \vMatrix \weightMatrix_1^\top \weightMatrix_2^\top&amp; \dots &amp; \vMatrix\vMatrix^\top
 \end{bmatrix}}$$</span><br /> which is a highly structured Gaussian covariance with hierarchical dependencies between the variables <span class="math inline">$\latentMatrix_i$</span>.</p>
-<h2 id="stacked-gp-edit">Stacked GP <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="stacked-gp-edit">Stacked GP <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/stacked-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/stacked-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-RBF-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, </a>
 <a class="sourceLine" id="cb8-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</a></code></pre></div>
 <div class="figure">
@@ -404,7 +404,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <p>Such folding over in the latent spaces necessarily forces the density to be non-Gaussian. Indeed, since folding-over is avoided as we increase the dimensionality of the latent spaces, such processes become more Gaussian. If we take the limit of the latent space dimensionality as it tends to infinity, the entire deep Gaussian process returns to a standard Gaussian process, with a covariance function given as a deep kernel (such as those described by <span class="citation" data-cites="Cho:deep09">Cho and Saul (2009)</span>).</p>
 <p>Further analysis of these deep networks has been conducted by <span class="citation" data-cites="Dunlop:deep2017">Dunlop et al. (n.d.)</span>, who use analysis of the deep network’s stationary density (treating it as a Markov chain across layers), to explore the nature of the implied process prior for a deep GP.</p>
 <p>Both of these works, however, make constraining assumptions on the form of the Gaussian process prior at each layer (e.g. same covariance at each layer). In practice, the form of this covariance can be learnt and the densities described by the deep GP are more general than those mentioned in either of these papers.</p>
-<h2 id="stacked-gps-video-by-david-duvenaud-edit">Stacked GPs (video by David Duvenaud) <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-pathologies.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-pathologies.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="stacked-gps-video-by-david-duvenaud-edit">Stacked GPs (video by David Duvenaud) <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-pathologies.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-pathologies.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="visualization-deep-gp-figure" class="figure-frame">
 <iframe width="800" height="600" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -418,7 +418,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 </div>
 </div>
 <p>David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.</p>
-<h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="gpy-software-figure" class="figure-frame">
 <div class="centered" style="">
@@ -439,7 +439,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <pre><code>pip install GPy</code></pre>
 <p>This notebook depends on PyDeepGP. These libraries can be installed via pip:</p>
 <pre><code>pip install git+https://github.com/SheffieldML/PyDeepGP.git</code></pre>
-<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="70%">
@@ -500,7 +500,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
-<h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="turing-run-times-figure" class="figure-frame">
 <table>
@@ -565,7 +565,7 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
-<h2 id="deep-gp-fit-edit">Deep GP Fit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-olympic.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-olympic.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="deep-gp-fit-edit">Deep GP Fit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-olympic.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-olympic.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Let’s see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
 <p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="im">import</span> GPy</a>
@@ -668,9 +668,9 @@ _ = m_clean.optimize()</code></pre>
 </div>
 </div>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
-<h2 id="gene-expression-example-edit">Gene Expression Example <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="gene-expression-example-edit">Gene Expression Example <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_gp/includes/della-gatta-gene-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_gp/includes/della-gatta-gene-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We now consider an example in gene expression. Gene expression is the measurement of mRNA levels expressed in cells. These mRNA levels show which genes are ‘switched on’ and producing data. In the example we will use a Gaussian process to determine whether a given gene is active, or we are merely observing a noise response.</p>
-<h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation" data-cites="DellaGatta:direct08">Della Gatta et al. (2008)</span>.</li>
 </ul>
@@ -925,7 +925,7 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: A pinball plot shows the movement of the ‘ball’ as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. Pinball plot of the della Gatta gene expression data.</p>
 </div>
 </div>
-<h2 id="step-function-edit">Step Function <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="step-function-edit">Step Function <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/step-function-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/step-function-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Next we consider a simple step function data set.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1">num_low<span class="op">=</span><span class="dv">25</span></a>
 <a class="sourceLine" id="cb53-2" data-line-number="2">num_high<span class="op">=</span><span class="dv">25</span></a>
@@ -1100,7 +1100,7 @@ _ = m_clean.optimize()</code></pre>
 <a class="sourceLine" id="cb65-8" data-line-number="8">ax.set_ylim(ylim)</a>
 <a class="sourceLine" id="cb65-9" data-line-number="9">mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/motorcycle-helmet.svg&#39;</span>, </a>
 <a class="sourceLine" id="cb65-10" data-line-number="10">            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<h2 id="motorcycle-helmet-data-edit">Motorcycle Helmet Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/motorcycle-helmet-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/motorcycle-helmet-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="motorcycle-helmet-data-edit">Motorcycle Helmet Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/motorcycle-helmet-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/motorcycle-helmet-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="motorcycle-helment-data-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/motorcycle-helmet.svg" width="80%" style=" ">
@@ -1234,7 +1234,7 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: Pinball plot for the mapping from input to output layer for the motorcycle helmet accelerometer data.</p>
 </div>
 </div>
-<h2 id="motion-capture-edit">Motion Capture <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="motion-capture-edit">Motion Capture <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-high-five.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-high-five.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>‘High five’ data.</li>
 <li>Model learns structure between two interacting subjects.</li>
@@ -1263,7 +1263,7 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: Latent spaces of the ‘high five’ data. The structure of the model is automatically learnt. One of the latent spaces is coordinating how the two figures walk together, the other latent spaces contain latent variables that are specific to each of the figures separately.</p>
 </div>
 </div>
-<h2 id="fitting-a-gp-to-the-usps-digits-data-edit">Fitting a GP to the USPS Digits Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="fitting-a-gp-to-the-usps-digits-data-edit">Fitting a GP to the USPS Digits Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-usps-digits.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_deepgp/includes/deep-usps-digits.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 <p>We now look at the deep Gaussian processes’ capacity to perform unsupervised learning.</p>
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
@@ -1436,7 +1436,7 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.</p>
 </div>
 </div>
-<h2 id="deep-health-edit">Deep Health <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="deep-health-edit">Deep Health <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_health/includes/deep-health-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_health/includes/deep-health-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="deep-health-model-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deep-health.svg" width="70%" style=" ">
