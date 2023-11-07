@@ -1,5 +1,5 @@
 %.paper.tex.markdown: %.md ${DEPS}
-	${PP} $< -o $@ --format notes --to tex --code none ${PPFLAGS} 
+	${PP} $< -o $@ --format notes --to tex --snippets-path ${SNIPPETSDIR} --code none ${PPFLAGS} 
 	# Fix percentage width for latex.
 	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' $@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@

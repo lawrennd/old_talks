@@ -1,1 +1,0 @@
-../../_deepgp/notebooks/teaching_plots.py
