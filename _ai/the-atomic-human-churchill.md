@@ -1,6 +1,5 @@
 ---
-title: "The Atomic Human"
-subtitle: "Understanding Ourselves in the Age of AI"
+title: "The Atomic Human and Implications for AI and Professonal Services"
 abstract: |
   A vital perspective is missing from the discussions we're having
   about Artificial Intelligence: what does it mean for our identity?
