@@ -15,6 +15,7 @@ postsdir: ../_posts/
 notebooksdir: ../_notebooks/
 slidesdir: ../slides/
 diagramsdir: ./slides/diagrams/
+snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .
 ghub:
 - organization: lawrennd
